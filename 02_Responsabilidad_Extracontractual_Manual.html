@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsabilidad Extracontractual — Manual de Estudio | Derecho Libre</title>
+<style>
+  :root{
+    --accent:#1F4E79;--accent2:#2E75B6;--light:#D9E2F3;--soft:#F2F5FB;
+    --grey:#595959;--warn:#E65100;--warnbg:#FFF3E0;
+    --green:#1A6B3A;--greenbg:#EAF5EE;--greenborder:#4CAF50;
+    --orange:#7B3F00;--orangebg:#FFF3E0;--orangeborder:#E65100;
+    --juris:#1a237e;--jurisbg:#E8EAF6;--jurisborder:#3F51B5;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#222;line-height:1.75;max-width:900px;margin:0 auto;padding:44px 40px 80px;background:#fff;}
+  h1{color:var(--accent);font-size:1.6rem;margin:2.6rem 0 .5rem;border-bottom:2px solid var(--light);padding-bottom:.3rem;}
+  h2{color:var(--accent2);font-size:1.22rem;margin:1.8rem 0 .4rem;}
+  h3{color:#333;font-size:1.05rem;margin:1.2rem 0 .25rem;}
+  p{margin:.5rem 0;}
+  ul,ol{margin:.4rem 0 .8rem;padding-left:1.4rem;}
+  li{margin:.3rem 0;}
+  table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:.9rem;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:9px 12px;}
+  td{border:1px solid #ccc;padding:9px 12px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:600;color:var(--accent);white-space:nowrap;}
+  .callout{border-left:6px solid var(--accent2);background:var(--light);padding:14px 18px;margin:1.4rem 0;border-radius:4px;}
+  .callout .title,.callout .titulo-bloque{font-weight:700;color:var(--accent);display:block;margin-bottom:.35rem;}
+  .warn{border-left:6px solid var(--warn);background:var(--warnbg);padding:14px 18px;margin:1.4rem 0;border-radius:4px;}
+  .warn .title,.warn .titulo-bloque{font-weight:700;color:var(--warn);display:block;margin-bottom:.35rem;}
+  .jurisprudencia{border-left:6px solid var(--jurisborder);background:var(--jurisbg);padding:14px 18px;margin:1.4rem 0;border-radius:4px;}
+  .jurisprudencia .titulo-bloque{font-weight:700;color:var(--juris);display:block;margin-bottom:.4rem;font-size:.95rem;}
+  .ejemplo{border-left:6px solid var(--greenborder);background:var(--greenbg);padding:14px 18px;margin:1.4rem 0;border-radius:4px;}
+  .ejemplo .titulo-bloque{font-weight:700;color:var(--green);display:block;margin-bottom:.4rem;font-size:.95rem;}
+  .dato-grado{border-left:6px solid var(--orangeborder);background:var(--orangebg);padding:14px 18px;margin:1.4rem 0;border-radius:4px;}
+  .dato-grado .titulo-bloque{font-weight:700;color:var(--orange);display:block;margin-bottom:.4rem;font-size:.95rem;}
+  .cover{text-align:center;padding:70px 0 40px;border-bottom:1px solid #eee;margin-bottom:.5rem;}
+  .cover .brand{color:var(--accent);font-size:2.1rem;font-weight:800;letter-spacing:1px;}
+  .cover .doc{color:#222;font-size:1.75rem;font-weight:700;margin-top:1rem;}
+  .cover .sub{color:var(--grey);font-size:1.05rem;margin-top:.4rem;}
+  .cover .meta{color:var(--grey);margin-top:1.4rem;font-size:.9rem;}
+  .muted{color:var(--grey);font-style:italic;}
+  .toc{background:var(--soft);border:1px solid var(--light);border-radius:6px;padding:16px 24px;margin-bottom:2rem;}
+  .toc a{color:var(--accent2);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  code{background:#eef2f9;padding:1px 5px;border-radius:3px;font-size:.92em;}
+  .nota-fuente{font-size:.8rem;color:#888;margin-top:.2rem;font-style:italic;}
+  @media print{body{padding:0 12px;}h1{page-break-after:avoid;}.callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,table{page-break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">DERECHO LIBRE</div>
+  <div class="doc">Responsabilidad Extracontractual</div>
+  <div class="sub">Manual de estudio · Nivel examen de grado · Síntesis Barros Bourie + Boetsch</div>
+  <div class="meta">Versión Junio 2026 · Incluye jurisprudencia, ejemplos y datos de grado</div>
+</div>
+
+<div class="toc">
+<strong>Contenido</strong>
+<ol>
+<li><a href="#i">Marco general y funciones de la responsabilidad extracontractual</a></li>
+<li><a href="#ii">El hecho voluntario y la capacidad delictual</a></li>
+<li><a href="#iii">La culpa: concepto, estándar y prueba</a></li>
+<li><a href="#iv">Culpa infraccional, culpa por omisión y el art. 2329</a></li>
+<li><a href="#v">Antijuridicidad y causales de justificación</a></li>
+<li><a href="#vi">Responsabilidad por hecho ajeno (arts. 2320–2322)</a></li>
+<li><a href="#vii">Responsabilidad por el hecho de las cosas</a></li>
+<li><a href="#viii">Responsabilidad objetiva o estricta</a></li>
+<li><a href="#ix">El daño: concepto, clases y requisitos</a></li>
+<li><a href="#x">El daño moral: evolución, prueba y cuantificación</a></li>
+<li><a href="#xi">La relación de causalidad</a></li>
+<li><a href="#xii">La acción aquiliana: legitimación, solidaridad y prescripción</a></li>
+<li><a href="#xiii">Método para resolver casos prácticos</a></li>
+<li><a href="#xiv">Cuadro comparativo y errores típicos</a></li>
+</ol>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="i">1. Marco general y funciones de la responsabilidad extracontractual</h1>
+
+<h2>1.1. Concepto y fundamento</h2>
+<p>La responsabilidad extracontractual —llamada también «aquiliana» por derivar históricamente de la <em>Lex Aquilia</em> romana— es la obligación de reparar el daño causado a otro por un hecho ilícito (delito o cuasidelito civil) cuando no existe entre el autor y la víctima un vínculo obligacional previo. Su fuente normativa principal en Chile son los <span class="art">arts. 2314 a 2334 del Código Civil</span> (Libro IV, Título XXXV).</p>
+<p>La disposición cardinal es el <span class="art">art. 2314 CC</span>: <em>«El que ha cometido un delito o cuasidelito que ha inferido daño a otro, es obligado a la indemnización»</em>. A ella se agrega el <span class="art">art. 2329</span>, que consagra el principio general de que todo daño imputable a culpa o malicia de otro debe ser reparado.</p>
+<p>Barros Bourie identifica como fundamento último de la responsabilidad extracontractual el principio <em>alterum non laedere</em> (no dañar a otro), que opera como deber general de cuidado en las relaciones entre personas que no están unidas por un contrato. Este principio —de raíz romana y recogido tácitamente en el art. 2314— impone a cada individuo la carga de comportarse de modo que no lesione los intereses legítimos de terceros.</p>
+
+<h2>1.2. Funciones de la responsabilidad extracontractual</h2>
+<p>La doctrina moderna (Barros, Boetsch) identifica cuatro funciones:</p>
+<ul>
+<li><strong>Función reparadora o compensatoria:</strong> es la función nuclear. La responsabilidad civil busca dejar a la víctima indemne, restablecer la situación patrimonial anterior al daño. No es pena, sino reparación.</li>
+<li><strong>Función de garantía de la libertad de actuar:</strong> paradójicamente, la responsabilidad no solo limita la conducta —también la libera: quien cumple el estándar de diligencia puede actuar sin temor a ser condenado. Define el espacio lícito de la conducta.</li>
+<li><strong>Función preventiva:</strong> la amenaza de indemnización desincentiva conductas dañosas. La economía del derecho (Calabresi, Posner) ha desarrollado extensamente esta función.</li>
+<li><strong>Función punitiva:</strong> históricamente presente (la <em>Lex Aquilia</em> era en parte penal), hoy es marginal en el derecho civil chileno. Sin embargo, reaparece en el debate sobre el «daño punitivo» o <em>punitive damages</em>, que la doctrina y jurisprudencia chilenas no han acogido como principio general.</li>
+</ul>
+
+<div class="callout">
+<span class="title">Debate: ¿es la responsabilidad civil un mecanismo de prevención eficiente?</span>
+El análisis económico del derecho (Posner) sostiene que la responsabilidad por culpa es eficiente porque incentiva a internalizar los costos del daño. Barros es más cauto: reconoce la función preventiva pero advierte que la evidencia empírica sobre su efectividad es escasa y que el fundamento de la justicia correctiva —no el cálculo utilitario— es lo que mejor explica la responsabilidad civil como institución. Para el examen, lo relevante es poder mencionar el debate sin afirmar dogmáticamente ninguna posición.
+</div>
+
+<h2>1.3. Sistemas de atribución de responsabilidad</h2>
+<p>Existen dos grandes modelos:</p>
+<ul>
+<li><strong>Responsabilidad subjetiva:</strong> se responde solo cuando el daño se debe a dolo o culpa del agente (régimen general del CC: arts. 2314 y ss.). El factor de atribución es el reproche personal.</li>
+<li><strong>Responsabilidad objetiva o estricta:</strong> se responde por el solo hecho de causar el daño con una actividad riesgosa, sin necesidad de probar culpa. Su fundamento es la teoría del riesgo creado. Es excepción en Chile (ver §8).</li>
+</ul>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho Penal</span>
+La responsabilidad civil y la penal tienen raíces comunes (la <em>Lex Aquilia</em> era en parte penal), pero sus funciones difieren radicalmente: la penal es punitiva y preventiva; la civil, reparadora. En Chile, un mismo hecho puede generar ambas responsabilidades de forma independiente (principio de independencia de acciones). El art. 59 del CPP permite ejercer la acción civil en el proceso penal, pero con limitaciones: en el juicio oral solo se puede demandar la indemnización derivada del delito. Si el imputado es absuelto por no haberse acreditado el delito, ello no impide la acción civil autónoma en sede civil, porque los estándares de prueba son distintos (más exigentes en penal: más allá de toda duda razonable).
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho Administrativo</span>
+La responsabilidad del Estado en Chile se rige por un estatuto especial, no por las reglas del Título XXXV del CC. Las bases están en el <strong>art. 38 inc. 2 CPR</strong> y en la <strong>Ley 18.575 (LOCBGAE)</strong>. El criterio de atribución es la <em>falta de servicio</em> (el servicio público no funcionó, funcionó mal o tardíamente), que es un estándar objetivo distinto de la culpa subjetiva. La CS ha consolidado esta doctrina. Para el examen: distingue siempre responsabilidad civil (privados) de responsabilidad estatal (falta de servicio), y no apliques los arts. 2320 y ss. al Estado cuando el sujeto pasivo es un órgano público.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="ii">2. El hecho voluntario y la capacidad delictual</h1>
+
+<h2>2.1. El hecho voluntario: acción y omisión</h2>
+<p>El primer elemento de la responsabilidad extracontractual es un <strong>hecho voluntario</strong> del agente, que puede consistir en una acción (conducta positiva) o en una omisión (abstención). La voluntariedad exige que el agente haya tenido control sobre su conducta.</p>
+<p>La <strong>omisión</strong> solo genera responsabilidad cuando existe un <strong>deber jurídico de actuar</strong>. No existe en Chile un deber general de auxiliar a terceros (a diferencia del Código Penal en algunos supuestos), pero sí deberes específicos: el médico que atiende a un paciente, el guardián del incapaz, el empleador respecto de sus dependientes, etc. La creación de un riesgo también puede generar el deber de actuar para controlarlo.</p>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Omisión con deber de actuar</span>
+Pedro, guardián de una piscina privada, advierte que un niño se está ahogando pero no actúa porque «no es su turno». El niño muere. Aquí no hay un deber general de rescate, pero <em>sí</em> hay un deber específico derivado de su calidad de guardián de la instalación. Su omisión constituye el hecho voluntario que funda la responsabilidad extracontractual. En cambio, si es un transeúnte quien pasa y no auxilia, la situación jurídica es distinta (aunque puede haber responsabilidad penal por art. 494 N° 14 CP — dato de grado).
+</div>
+
+<h2>2.2. Casos que excluyen la voluntariedad</h2>
+<p>No hay hecho voluntario —y por tanto no hay responsabilidad extracontractual subjetiva— cuando:</p>
+<ul>
+<li><strong>Actos reflejos:</strong> el movimiento muscular no está gobernado por la voluntad.</li>
+<li><strong>Estado de inconsciencia:</strong> hipnosis, sonambulismo, privación total de sentidos.</li>
+<li><strong>Fuerza física irresistible:</strong> el agente actúa mecánicamente por una fuerza externa que no puede resistir.</li>
+<li><strong>Caso fortuito o fuerza mayor</strong> (<span class="art">art. 45 CC</span>): imprevisto imposible de resistir. Excluye la voluntariedad y/o la culpa, y rompe el nexo causal.</li>
+</ul>
+
+<h2>2.3. Capacidad delictual</h2>
+<p>El <span class="art">art. 2319 CC</span> establece las reglas de capacidad para ser responsable extracontractualmente. El sistema es distinto —y más amplio— que la capacidad contractual:</p>
+
+<table>
+<tr><th>Persona</th><th>Capacidad delictual</th><th>Norma</th></tr>
+<tr><td><strong>Demente</strong></td><td>Incapaz. No responde aunque no esté bajo interdicción.</td><td>Art. 2319 inc. 1</td></tr>
+<tr><td><strong>Infante</strong> (menor de 7 años)</td><td>Incapaz de pleno derecho. Sin admitir prueba en contrario.</td><td>Art. 2319 inc. 1</td></tr>
+<tr><td><strong>Mayor de 7, menor de 16</strong></td><td>Capaz <em>solo si</em> el juez estima que obró con discernimiento (juicio prudencial en concreto). Sin discernimiento: incapaz.</td><td>Art. 2319 inc. 1</td></tr>
+<tr><td><strong>Mayor de 16 años</strong></td><td>Plenamente capaz.</td><td>Art. 2319 (a contrario)</td></tr>
+<tr><td><strong>Ebrio</strong></td><td>Responsable del daño causado, aunque sea incapaz de conocer el alcance de su conducta.</td><td>Art. 2318</td></tr>
+<tr><td><strong>Personas jurídicas</strong></td><td>Responden por hecho propio (de sus órganos) y por hecho ajeno (de sus dependientes, art. 2320).</td><td>Doctrina y jurisprudencia</td></tr>
+</table>
+
+<div class="callout">
+<span class="title">¿Por qué el ebrio responde? — Art. 2318</span>
+El legislador establece la responsabilidad del ebrio como excepción expresa porque la embriaguez es voluntaria: el agente eligió consumir alcohol y debe asumir las consecuencias de la incapacidad que se autogeneró. Es una norma de política legislativa que asegura que la víctima no quede sin reparación. No confundas: el ebrio <em>responde</em> aunque su discernimiento al momento del acto estuviera anulado.
+</div>
+
+<h2>2.4. Responsabilidad del guardián del incapaz</h2>
+<p>Cuando el causante del daño es incapaz, responde quien lo tiene a su cuidado, <em>si</em> se prueba que el guardián no ejerció el cuidado debido (<span class="art">art. 2319 inc. 2</span>). La culpa del guardián debe <strong>probarse</strong> — no se presume. Si el incapaz sí tenía discernimiento, puede responder él mismo, y se abre la discusión sobre si el guardián responde también por el art. 2320.</p>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 4.038-2002 (Civil)</span>
+<strong>Caso:</strong> Un menor de 14 años lesionó gravemente a otro menor con un arma blanca dentro de un establecimiento educacional durante el recreo. Los padres demandaron civilmente al colegio. <br>
+<strong>Decisión:</strong> La CS condenó al establecimiento en virtud del art. 2320 (responsabilidad del jefe de colegio por sus alumnos), estimando que hubo culpa in vigilando al no haber supervisión suficiente del patio. <br>
+<strong>Relevancia:</strong> Clarifica que el art. 2320 inc. 4 (jefes de colegios) comprende tanto a establecimientos privados como públicos, y que el estándar de vigilancia es el del «buen padre de familia» aplicado a un contexto educacional (no la vigilancia policial, pero sí la supervisión razonable según la edad y el contexto).
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho de Familia</span>
+La capacidad delictual a partir de los 7 años (con discernimiento) difiere radicalmente de la capacidad contractual, que requiere 18 años (regla general). Un menor de 15 años con discernimiento puede ser civilmente responsable por un cuasidelito, aunque no puede celebrar contratos. Además, los padres pueden ser responsables por los delitos de sus hijos bajo dos estatutos distintos: el art. 2320 (presunción simplemente legal de culpa in vigilando) y el art. 2321 (presunción de derecho cuando el daño proviene de mala educación o hábitos viciosos). Este último es uno de los pocos casos de responsabilidad <em>casi objetiva</em> contemplados en el CC en sede de hecho ajeno.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="iii">3. La culpa: concepto, estándar y prueba</h1>
+
+<h2>3.1. El concepto de culpa extracontractual</h2>
+<p>La culpa es la <strong>infracción de un deber general de cuidado</strong>. A diferencia de la responsabilidad contractual, que tiene una graduación tripartita (<span class="art">arts. 44 y 1547 CC</span>), en sede extracontractual no existe graduación: hay un solo estándar de conducta exigible a todo agente.</p>
+<p>El debate central es si la culpa se aprecia de manera <strong>subjetiva</strong> o <strong>objetiva</strong>:</p>
+<ul>
+<li><strong>Concepción subjetiva</strong> (Alessandri): la culpa es un reproche personal al agente, un juicio sobre sus condiciones individuales. Esta visión retributiva exigiría un análisis <em>in concreto</em> de las capacidades del demandado.</li>
+<li><strong>Concepción objetiva</strong> (Barros, doctrina moderna): la culpa es la infracción de un estándar de conducta que se aprecia <em>in abstracto</em>, con referencia a la conducta que habría tenido una <strong>persona razonable</strong> (o buen padre de familia) puesta en la misma situación externa del agente. Las características personales del demandado —su inteligencia inferior, torpeza especial, nerviosismo— son irrelevantes.</li>
+</ul>
+<p>La concepción objetiva es la dominante en Chile hoy, tanto en doctrina (Barros, Corral, Domínguez) como en jurisprudencia. Su justificación es de justicia correctiva: si se consideraran las deficiencias personales del agente, se desprotegería a las víctimas y se premiaría la incompetencia.</p>
+
+<div class="callout">
+<span class="title">¿De qué culpa se responde en sede extracontractual? El debate Alessandri vs. Barros</span>
+Alessandri sostuvo que en sede extracontractual se responde de <em>toda</em> culpa, incluso la <em>levísima</em>, porque la ley no distingue. Barros argumenta —con mejor fundamento— que la referencia legal a «culpa o negligencia» sin otra calificación debe entenderse remitida al <span class="art">art. 44 inc. 2</span>, que define la culpa sin calificativo como <em>culpa leve</em> (falta de la diligencia de un buen padre de familia). Lo decisivo para el examen es saber que <strong>no hay graduación</strong> como en la sede contractual: no se aplica el art. 1547 y su reparto según a quién beneficia el contrato. Hay un solo estándar.
+</div>
+
+<h2>3.2. El estándar de diligencia: la persona razonable</h2>
+<p>El modelo de comparación es la <strong>persona razonable y prudente</strong> puesta en las mismas circunstancias externas del agente. Este estándar tiene tres características:</p>
+<ul>
+<li><strong>Abstracto:</strong> se compara con el tipo, no con el individuo concreto.</li>
+<li><strong>Contextual:</strong> «las mismas circunstancias externas» significa el mismo contexto situacional (no las mismas características psicológicas). Un conductor experto que causa un accidente en una carretera con lluvia se compara con un conductor razonable bajo lluvia.</li>
+<li><strong>Especializado cuando corresponde:</strong> si el agente actúa en ejercicio de una actividad profesional, el estándar se eleva al de un <em>profesional competente de esa área</em> (lex artis). El médico se compara con un médico razonable; el abogado, con un abogado diligente.</li>
+</ul>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Estándar profesional elevado</span>
+María, cardióloga, opera a Juan de una arritmia. Durante la intervención comete un error que no habría cometido un cardiólogo competente. Aunque María es una profesional medianamente hábil, responde porque el estándar no es el de la «persona razonable» genérica, sino el del «cardiólogo razonable y competente». Su torpeza individual no es excusa. En cambio, si un transeúnte sin conocimientos médicos auxilia a un accidentado y por inexperiencia agrava las lesiones, el estándar que se le aplica es el de una persona razonable sin formación médica.
+</div>
+
+<h2>3.3. La prueba de la culpa</h2>
+<p>En sede extracontractual rige la regla general del <span class="art">art. 1698 CC</span>: la carga de la prueba recae sobre quien alega el hecho que funda su derecho. Así, <strong>la víctima debe probar la culpa del autor del daño</strong>. Esta es la diferencia cardinal con la sede contractual, donde la culpa del deudor se <em>presume</em> (<span class="art">art. 1547 inc. 3</span>).</p>
+<p>Excepción: las <strong>presunciones de culpa</strong> establecidas en los arts. 2320, 2322, 2326, 2328 y 2329 invierten la carga de la prueba. En esos casos, acreditada la situación que funda la presunción, es el demandado quien debe probar su diligencia.</p>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 5.765-2010 (Civil)</span>
+<strong>Caso:</strong> Familia demanda a clínica por muerte de paciente durante cirugía electiva. La demandante no pudo acreditar en concreto cuál fue el acto negligente específico. <br>
+<strong>Decisión:</strong> La CS acogió la demanda aplicando la doctrina del <em>res ipsa loquitur</em> derivada del art. 2329: cuando el daño no ocurre normalmente sin negligencia, y la cosa o actividad estaba bajo control exclusivo del demandado, puede inferirse la culpa. La clínica no logró acreditar su diligencia. <br>
+<strong>Relevancia:</strong> Reconoce la aplicación de <em>res ipsa loquitur</em> como criterio de inversión de la carga probatoria en actividades bajo control exclusivo del demandado, aunque la CS chilena no siempre aplica esta doctrina con ese nombre.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="iv">4. Culpa infraccional, culpa por omisión y el art. 2329</h1>
+
+<h2>4.1. La culpa infraccional</h2>
+<p>Se denomina <strong>culpa infraccional</strong> (o <em>culpa contra la legalidad</em>) al supuesto en que el deber de cuidado está definido por una norma legal o reglamentaria, y su sola infracción hace al acto <em>per se</em> negligente. El demandante no necesita demostrar la falta de diligencia: basta acreditar que se infringió la norma.</p>
+<p>Ejemplos clásicos: exceder el límite de velocidad, construir sin cumplir normas sísmicas, no respetar protocolos de seguridad laboral, omitir señalización reglamentaria.</p>
+
+<div class="warn">
+<span class="title">⚠️ OJO: la culpa infraccional no exime de probar el nexo causal</span>
+Este es el error más frecuente. Que haya culpa infraccional no significa automáticamente que el demandado sea responsable: <strong>igual hay que probar que la infracción causó el daño</strong>. Si un conductor porta licencia vencida y atropella a un peatón, la licencia vencida acredita la infracción reglamentaria, pero lo que causó el atropello es la conducción descuidada, no la licencia en sí. En cambio, si excede la velocidad permitida y ello es la causa eficiente del accidente, ahí sí hay nexo causal. Recuerda: culpa infraccional → prueba de culpa simplificada, pero el nexo causal siempre debe probarse.
+</div>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CA Valdivia, 9.11.1988, confirmada CS 3.5.1990, GJ 119, 72</span>
+<strong>Caso:</strong> Accidente de tránsito producido por un conductor que circulaba a velocidad superior a la permitida por la Ley del Tránsito. <br>
+<strong>Decisión:</strong> La Corte estableció que la infracción del límite de velocidad fija la culpa del conductor, sin necesidad de probar negligencia adicional. Sin embargo, el tribunal también verificó que la velocidad excesiva fue la causa eficiente del accidente. <br>
+<strong>Relevancia:</strong> Pionero en Chile en reconocer la culpa infraccional. Barros lo cita como caso paradigmático. Importante aclaración: el fallo también señaló que respetar el límite legal de velocidad no garantiza que la conducción sea prudente en todo caso —si las circunstancias (lluvia, niños cruzando) exigen mayor precaución, el conductor igualmente puede incurrir en culpa aunque no haya infracción formal.
+</div>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Culpa infraccional en construcción</span>
+Una constructora erige un edificio de departamentos sin cumplir la norma sísmica MINVU aplicable. Sobreviene un terremoto de magnitud 6,5 (esperado en la zona) y el edificio colapsa, causando la muerte de tres residentes. Los herederos demandan. La constructora alega caso fortuito (el terremoto). <br>
+<strong>Análisis:</strong> (1) Culpa: la infracción de la norma sísmica establece la culpa infraccional. (2) Caso fortuito: no opera, porque la norma sísmica existe precisamente para resistir terremotos de esa magnitud en esa zona —el terremoto no era un imprevisto ajeno, sino el riesgo contra el cual la norma protege. (3) Nexo causal: el colapso fue consecuencia de no cumplir la norma. → Responsabilidad.
+</div>
+
+<h2>4.2. La culpa por omisión</h2>
+<p>Se responde por omisión solo cuando existe un <strong>deber positivo de actuar</strong>. Este deber puede provenir de: (i) una norma legal expresa; (ii) la creación previa de un riesgo por el propio agente; (iii) la asunción voluntaria de una función de protección; o (iv) una relación especial (médico-paciente, empleador-trabajador, transportista-pasajero).</p>
+<p>No existe en Chile un deber general de socorro entre particulares bajo el Código Civil (aunque sí en sede penal, <span class="art">art. 494 N° 14 CP</span>). La omisión del transeúnte que presencia un accidente y no auxilia al herido puede ser penalmente relevante, pero no automáticamente funda responsabilidad civil.</p>
+
+<h2>4.3. El art. 2329 y la presunción general de culpa</h2>
+<p>El <span class="art">art. 2329 CC</span> dispone que «por regla general todo daño que pueda imputarse a malicia o negligencia de otra persona debe ser reparado por ésta» y enumera tres hipótesis específicas: disparar imprudentemente un arma, remover losas de una acequia sin resguardo, y mantener en mal estado un puente o acueducto. </p>
+<p>La doctrina clásica (Alessandri) leyó estas tres hipótesis como ejemplos meramente ilustrativos sin efecto presuntivo. La doctrina moderna (Barros, adoptada ampliamente por la jurisprudencia) les asigna un efecto muy relevante: el art. 2329 contiene una <strong>presunción general de culpa por el hecho propio</strong>, que opera cuando:</p>
+<ol>
+<li>El daño proviene de una <strong>actividad intrínsecamente peligrosa</strong> cuyo riesgo se materializa; o</li>
+<li>La actividad o cosa estaba bajo el <strong>control exclusivo del demandado</strong> y, según la experiencia normal, el daño no ocurre sin negligencia (<em>res ipsa loquitur</em>), siempre que pueda descartarse la intervención de la víctima.</li>
+</ol>
+<p>Acreditadas estas condiciones, se invierte la carga de la prueba: el demandado debe probar su diligencia.</p>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 2.257-2008 (Civil)</span>
+<strong>Caso:</strong> Paciente sufrió lesiones en la córnea durante una cirugía ocular de rutina. Era imposible identificar el momento preciso del error. <br>
+<strong>Decisión:</strong> La CS aplicó el art. 2329 entendido como presunción de culpa bajo el principio <em>res ipsa loquitur</em>: una lesión en la córnea durante una cirugía controlada por el médico no ocurre normalmente sin negligencia. El médico no logró acreditar su diligencia. Condena. <br>
+<strong>Relevancia:</strong> Consolida la lectura moderna del art. 2329 como presunción de culpa, especialmente en actividades médicas de alta complejidad donde la víctima no puede acceder al qué ocurrió dentro del quirófano.
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho Procesal Civil</span>
+La presunción del art. 2329 opera como inversión de la carga de la prueba (art. 1698): acreditada la situación de peligro o control exclusivo, el demandado debe acreditar su diligencia. Esto conecta directamente con las reglas del onus probandi en el CPC. En el examen puede preguntarse cómo opera la inversión de la carga: no es que la víctima no pruebe nada — prueba la situación que activa la presunción (el daño, el control del demandado); es el demandado quien debe acreditar la diligencia para desvirtuarla.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="v">5. Antijuridicidad y causales de justificación</h1>
+
+<h2>5.1. La antijuridicidad en sede extracontractual</h2>
+<p>La antijuridicidad es la calidad de la conducta que lesiona un interés jurídicamente protegido sin que exista una causa que lo justifique. Barros advierte —con precisión importante— que en sede civil las causales de justificación no excluyen una «antijuridicidad» autónoma al modo penal: lo que operan es que <strong>excluyen la culpa o la ilicitud de la conducta</strong>, haciendo que el daño causado sea lícito y no indemnizable.</p>
+
+<h2>5.2. Causales de justificación</h2>
+
+<h3>a) Ejercicio legítimo de un derecho</h3>
+<p>Quien actúa dentro del ejercicio regular de un derecho reconocido por el ordenamiento no comete un ilícito, aunque cause daño a otro. El límite es el <strong>abuso del derecho</strong>: si el ejercicio del derecho deviene en abusivo (sin interés legítimo, con el solo propósito de dañar), se pierde la justificación y surge la responsabilidad. También incluye el cumplimiento de un deber legal (el médico que interviene sin consentimiento ante riesgo vital) y los actos autorizados por usos normativos.</p>
+
+<h3>b) Legítima defensa</h3>
+<p>Requiere: (i) agresión actual e ilegítima; (ii) falta de provocación suficiente por parte del defensor; (iii) necesidad racional del medio empleado. Sus requisitos son análogos a los penales, lo que hace especialmente relevante la interacción entre ambas sedes. El tercero que daña bienes del agresor para defender a la víctima también puede invocarla.</p>
+
+<h3>c) Estado de necesidad</h3>
+<p>Se causa un daño a un tercero para evitar un daño mayor a sí mismo o a otro. Requisitos: (i) peligro actual e inminente; (ii) el peligro no fue originado por culpa del agente; (iii) no existía un medio menos dañino disponible; (iv) el mal causado es menor que el que se evita. <strong>Importante:</strong> el estado de necesidad puede justificar la conducta, pero no siempre exime de pagar al damnificado: si quien sufrió el daño es un tercero inocente, la equidad puede exigir una compensación (acción restitutoria por enriquecimiento sin causa).</p>
+
+<h3>d) Consentimiento de la víctima y asunción de riesgos (<em>volenti non fit iniuria</em>)</h3>
+<p>La víctima puede consentir en soportar ciertos daños o asumir voluntariamente ciertos riesgos, excluyendo así la ilicitud del acto que los genera. Límites: (i) el consentimiento no vale respecto de derechos indisponibles (<span class="art">art. 12 CC</span>); (ii) no puede condonarse el dolo futuro (<span class="art">art. 1465 CC</span>); (iii) el mero conocimiento del riesgo no equivale a consentirlo.</p>
+
+<div class="warn">
+<span class="title">⚠️ Error frecuente: confundir causales de justificación con causas extrañas</span>
+El caso fortuito, el hecho de un tercero y el hecho de la víctima <strong>NO</strong> son causales de justificación. Operan en sede de <strong>causalidad</strong> (son causas extrañas que rompen el nexo causal), no de ilicitud. Ubicarlos correctamente distingue una respuesta excelente de una mediocre. Las causales de justificación dicen que la conducta del demandado era lícita; las causas extrañas dicen que el daño no fue causado por esa conducta.
+</div>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Estado de necesidad vs. caso fortuito</span>
+Carlos maneja su camión y los frenos fallan sin que hubiera indicios previos del problema (falla súbita e imprevisible). Para evitar atropellar a una multitud, vira y derriba la fachada de una tienda. <br>
+<strong>Causal de justificación:</strong> El estado de necesidad justifica la maniobra (daño menor para evitar mayor). Pero la tienda sufrió un daño real. ¿Carlos indemniza? Si la falla de los frenos fue caso fortuito (ajeno a él), no hay culpa y no hay responsabilidad. Si la falla fue consecuencia de su propia negligencia (no hizo mantención), la justificación no lo libera completamente — podría haber una acción restitutoria para compensar al dueño de la tienda, con cargo a quien corresponda.
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho Penal</span>
+Las causales de justificación de la responsabilidad civil y las del Código Penal (art. 10 CP: legítima defensa, estado de necesidad, cumplimiento de deber, etc.) son análogas pero no idénticas. En penal, la justificación excluye la antijuridicidad del hecho y, por ende, la tipicidad. En civil, la justificación excluye la ilicitud que funda la responsabilidad indemnizatoria. Una absolución penal por legítima defensa no genera automáticamente la exclusión de responsabilidad civil, aunque es un indicio muy relevante. El tribunal civil puede llegar a una conclusión distinta si estima que los requisitos civiles de la justificación no se cumplían.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="vi">6. Responsabilidad por hecho ajeno (arts. 2320–2322)</h1>
+
+<h2>6.1. Fundamento y estructura</h2>
+<p>La regla general del <span class="art">art. 2320 CC</span> establece que <em>«toda persona es responsable no sólo de sus propias acciones, sino del hecho de aquellos que estuvieren a su cuidado»</em>. El fundamento es una <strong>presunción de culpa in vigilando</strong> (descuido en la supervisión) o <em>in eligendo</em> (descuido en la selección del dependiente), que opera contra quien tiene autoridad sobre el autor directo del daño.</p>
+<p>La estructura de la responsabilidad por hecho ajeno es la siguiente:</p>
+<ol>
+<li>El <strong>autor directo</strong> comete un delito o cuasidelito civil.</li>
+<li>El <strong>tercero civilmente responsable</strong> (guardián, empleador, padre, jefe de colegio) responde solidariamente con el autor si se acredita la relación de dependencia o guarda.</li>
+<li>La presunción de culpa del tercero es <strong>simplemente legal</strong>: puede desvirtuarla probando que ejerció el cuidado y autoridad debidos y que aun así no pudo impedir el hecho.</li>
+<li>Si el tercero paga, tiene <strong>acción de reembolso</strong> contra el autor directo, si éste tenía discernimiento (<span class="art">art. 2325 CC</span>).</li>
+</ol>
+
+<h2>6.2. Casos específicos del art. 2320</h2>
+
+<table>
+<tr><th>Guardián</th><th>Por quienes responde</th><th>Presunción</th></tr>
+<tr><td>Padres</td><td>Hijos menores que habitan en la misma casa</td><td>Simplemente legal (art. 2320 inc. 2)</td></tr>
+<tr><td>Tutor o curador</td><td>El pupilo que vive bajo su dependencia y cuidado</td><td>Simplemente legal (art. 2320 inc. 3)</td></tr>
+<tr><td>Jefe de colegio o artesanos</td><td>Discípulos o aprendices mientras estén bajo su cuidado</td><td>Simplemente legal (art. 2320 inc. 4)</td></tr>
+<tr><td>Amos o empleadores</td><td>Criados o dependientes en el ejercicio de sus funciones</td><td>Simplemente legal (art. 2320 inc. 5)</td></tr>
+</table>
+
+<h2>6.3. Responsabilidad de pleno derecho: el art. 2321</h2>
+<p>El <span class="art">art. 2321 CC</span> establece una excepción de gran importancia: los padres responden <em>siempre</em> del daño causado por sus hijos menores que provengan de <strong>mala educación</strong> o <strong>hábitos viciosos</strong> que les han dejado adquirir. Esta presunción es <em>de derecho</em>: no admite prueba en contrario. Es uno de los pocos casos de responsabilidad cuasi-objetiva en el CC.</p>
+
+<div class="callout">
+<span class="title">¿Cómo se distingue el art. 2320 del art. 2321?</span>
+El art. 2320 crea una presunción <em>simplemente legal</em>: el padre responde salvo que pruebe que con la autoridad y cuidado que les correspondía no pudo impedir el hecho. El art. 2321 crea una presunción <em>de derecho</em>: si el daño del hijo proviene de mala educación o hábitos viciosos que los padres dejaron adquirir, los padres responden siempre, sin admitir prueba de diligencia. Para el examen: si un menor comete un ilícito y hay evidencia de que los padres lo descuidaron habitualmente, aplica el 2321. Si fue un acto aislado sin historia previa, aplica el 2320.
+</div>
+
+<h2>6.4. La responsabilidad del empleador (art. 2322)</h2>
+<p>Los empleadores responden del daño causado por sus dependientes en el ejercicio de sus funciones. El <span class="art">art. 2322</span> precisa que si el dependiente causa el daño <strong>fuera del ejercicio de sus funciones</strong>, el empleador no responde (a menos que se pruebe culpa propia del empleador, distinta de la presunción).</p>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Responsabilidad del empleador: dentro y fuera de funciones</span>
+<strong>Caso 1 (dentro de funciones):</strong> Pedro, repartidor de una empresa de courier, atropella a María mientras hace una entrega. La empresa responde solidariamente con Pedro bajo el art. 2320 — la presunción se activa porque el hecho ocurrió en ejercicio de las funciones del dependiente. <br>
+<strong>Caso 2 (fuera de funciones):</strong> Pedro, usando el furgón de la empresa un domingo (sin autorización) para ir a ver un partido, atropella a Juan. La empresa arguye el art. 2322. Si el tribunal estima que el uso no autorizado estaba fuera de las funciones, la empresa no responde bajo la presunción — pero podría responder si se prueba culpa propia (ej. si la empresa sabía que Pedro usaba el vehículo sin autorización y no lo impidió).
+</div>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 7.311-2009 (Laboral-Civil)</span>
+<strong>Caso:</strong> Trabajador de una empresa constructora sufrió la caída de un objeto desde un andamio mal instalado por otro trabajador. La empresa alegó que el accidente ocurrió por culpa exclusiva del compañero de trabajo (también dependiente). <br>
+<strong>Decisión:</strong> La CS condenó a la empresa bajo el art. 2320 CC en relación con las obligaciones del empleador establecidas en la Ley 16.744 (accidentes del trabajo). Estimó que la empresa no probó haber ejercido el cuidado y supervisión debidos respecto de la instalación del andamio. <br>
+<strong>Relevancia:</strong> Muestra la interacción entre el art. 2320 CC y el estatuto especial de accidentes laborales. La empresa no puede limitarse a señalar a otro trabajador como culpable: debe acreditar que desplegó todos los medios de supervisión razonables.
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho del Trabajo / Ley 16.744</span>
+La Ley 16.744 sobre accidentes del trabajo y enfermedades profesionales crea un sistema especial de seguro y responsabilidad que coexiste con el art. 2320 CC. El trabajador accidentado tiene derecho a prestaciones de la mutualidad (o FONASA) independientemente de la culpa del empleador. Sin perjuicio de ello, si hay culpa o negligencia del empleador, el trabajador (o sus herederos) puede ejercer la acción civil ordinaria del art. 2320 CC para obtener la diferencia entre la indemnización del seguro y el daño total. Esta es una situación de doble cobertura muy preguntada en el examen.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="vii">7. Responsabilidad por el hecho de las cosas</h1>
+
+<h2>7.1. Ausencia de principio general en Chile</h2>
+<p>A diferencia del Código Civil francés (cuyo art. 1384 estableció una responsabilidad general por el hecho de las cosas bajo custodia), el Código chileno no contiene una norma general análoga. Solo contempla casos específicos: daños por animales (<span class="art">arts. 2326–2327</span>), ruina de edificios (<span class="art">arts. 2323–2324</span>) y caída de objetos desde edificios (<span class="art">art. 2328</span>). Fuera de esos casos, la responsabilidad por el hecho de las cosas solo puede fundarse en los principios generales (arts. 2314 y 2329).</p>
+
+<h2>7.2. Ruina de edificio (arts. 2323–2324)</h2>
+<p>El <span class="art">art. 2323 CC</span> hace responsable al <strong>dueño del edificio</strong> que por omisión de las reparaciones necesarias o por haber faltado de otra manera al cuidado de un buen padre de familia, cause daño a otro. La responsabilidad se funda en una <strong>culpa presumida</strong> del dueño. Requisitos:</p>
+<ul>
+<li>Que se trate de un edificio (construcción inmueble, no cualquier mueble).</li>
+<li>Que haya ruina (deterioro, derrumbe total o parcial).</li>
+<li>Que la ruina se deba a falta de reparaciones necesarias u omisión del cuidado de un buen padre de familia.</li>
+<li>Que el daño sea consecuencia de la ruina.</li>
+</ul>
+<p>El <span class="art">art. 2324 CC</span> extiende la responsabilidad al arquitecto o constructor si la ruina se debe a vicio de construcción.</p>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 1.804-2005 (Civil)</span>
+<strong>Caso:</strong> Una muralla perimetral de una propiedad colapsó sobre la vereda pública, lesionando a un peatón. El dueño alegó que la muralla había sido construida por el antecesor hace décadas. <br>
+<strong>Decisión:</strong> La CS confirmó la responsabilidad del dueño actual. La obligación de mantener el inmueble en condiciones seguras incumbe al propietario presente, no importa quién lo construyó. El tiempo transcurrido sin mantención es indicio de culpa. <br>
+<strong>Relevancia:</strong> Refuerza que la responsabilidad del art. 2323 recae sobre el <em>actual</em> dueño y que la antigüedad de la construcción no es defensa suficiente.
+</div>
+
+<h2>7.3. Daño causado por animales</h2>
+<p>El Código distingue dos regímenes que <strong>no deben confundirse</strong>:</p>
+
+<table>
+<tr><th>Norma</th><th>Supuesto</th><th>Tipo de responsabilidad</th><th>¿Exime la diligencia?</th></tr>
+<tr><td><span class="art">Art. 2326</span></td><td>Animal doméstico o de trabajo del que se sirve el dueño o guardador</td><td>Culpa presumida</td><td>Sí, probando que se tomaron las precauciones debidas</td></tr>
+<tr><td><span class="art">Art. 2327</span></td><td>Animal fiero del que no se reporta utilidad para guarda o servicio de un predio</td><td>Responsabilidad estricta u objetiva</td><td>No. No se admite excusa de diligencia</td></tr>
+</table>
+
+<p>El <span class="art">art. 2327 CC</span> es uno de los pocos casos de <strong>responsabilidad objetiva consagrada expresamente en el CC</strong>. Si alguien tiene un tigre u otro animal peligroso sin utilidad para la guarda del predio, responde del daño que cause independientemente de si tomó o no precauciones.</p>
+
+<div class="callout">
+<span class="title">Ley 21.020 sobre tenencia responsable de mascotas (2017)</span>
+Esta ley complementó el régimen del art. 2326 CC para los animales de compañía. Establece deberes de identificación, vacunación, trato digno y control de los animales, y hace responsable al propietario o tenedor de los daños que cause su mascota. En términos civiles, consolida la culpa presumida y obliga a tomar medidas concretas (contención en espacios públicos, bozal para razas potencialmente peligrosas). Para el examen: si hay un perro que causa daño, aplica art. 2326 CC (culpa presumida del dueño) más las exigencias de la Ley 21.020.
+</div>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Los dos regímenes de animales</span>
+<strong>Caso 1:</strong> El perro labrador de María escapa del jardín y muerde a un vecino. María es responsable bajo el art. 2326 (culpa presumida), a menos que pruebe que el perro estaba debidamente contenido y que el vecino ingresó al jardín sin autorización. <br>
+<strong>Caso 2:</strong> Juan mantiene un cocodrilo en su departamento como mascota exótica. El cocodrilo muerde a un visitante. Juan responde bajo el art. 2327 —responsabilidad estricta— porque el cocodrilo es un animal fiero sin utilidad de guarda. No puede alegar que lo tenía encerrado o que nunca había agredido a nadie.
+</div>
+
+<h2>7.4. Cosa que cae o se arroja de un edificio (art. 2328)</h2>
+<p>Si de la parte superior de un edificio <em>cae</em> (sin intervención humana) una cosa que causa daño, responden <strong>todas las personas que habitan esa parte del edificio</strong>, dividiéndose la indemnización entre ellas <em>excepto</em> si se prueba que la cosa cayó por culpa o dolo de una persona determinada. En ese caso, solo esa persona responde. Si la cosa es <em>arrojada</em> por alguien, esa persona responde directamente por el art. 2314.</p>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Bienes: la acción popular del art. 948 CC</span>
+El art. 948 CC contempla una acción popular para denunciar edificios en mal estado o árboles que amenazan caída. Cualquier ciudadano puede ejercerla, no solo el eventual perjudicado. Si el denunciante logra la demolición o reparación, tiene derecho a una recompensa a cargo del dueño del edificio. Esta acción actúa de forma preventiva (antes del daño), mientras que la del art. 2323 es resarcitoria (después del daño). Ambas nacen del mismo supuesto (edificio peligroso) pero en momentos distintos.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="viii">8. Responsabilidad objetiva o estricta</h1>
+
+<h2>8.1. Concepto y fundamento</h2>
+<p>La responsabilidad objetiva o estricta es aquella en que el deber de indemnizar nace del <strong>solo hecho de haber causado el daño</strong> con una actividad o cosa riesgosa, sin que sea necesario probar culpa. Su fundamento doctrinal es la <strong>teoría del riesgo creado</strong> (también llamada riesgo provecho): quien introduce en la comunidad una actividad o cosa que genera riesgos anormales para los demás debe soportar las consecuencias cuando ese riesgo se materializa en daño.</p>
+<p>La responsabilidad objetiva es <strong>excepcional</strong> en el sistema chileno: requiere texto legal expreso. No puede presumirse a partir de principios generales.</p>
+
+<h2>8.2. Casos en el Código Civil</h2>
+<ul>
+<li><span class="art">Art. 2327:</span> animal fiero del que no se reporta utilidad (único caso de responsabilidad estricta pura en el CC).</li>
+<li><span class="art">Art. 2328:</span> según algunos autores (Barros), la responsabilidad por cosa caída de edificio tiene elementos de responsabilidad objetiva, aunque la mayoría la trata como presunción de culpa.</li>
+</ul>
+
+<h2>8.3. Leyes especiales de responsabilidad objetiva</h2>
+<table>
+<tr><th>Materia</th><th>Norma</th><th>Régimen</th></tr>
+<tr><td>Accidentes del trabajo</td><td>Ley 16.744</td><td>Seguro obligatorio; prestaciones sin prueba de culpa</td></tr>
+<tr><td>Daño ambiental</td><td>Ley 19.300 (art. 52)</td><td>Responsabilidad objetiva si se infringe la normativa ambiental</td></tr>
+<tr><td>Energía nuclear</td><td>Ley 18.302</td><td>Responsabilidad objetiva del explotador</td></tr>
+<tr><td>Transmisión eléctrica</td><td>Ley 20.936</td><td>Responsabilidad por daños de instalaciones eléctricas de alta tensión</td></tr>
+<tr><td>Responsabilidad del Estado</td><td>Ley 18.575 + CPR art. 38</td><td>Falta de servicio (estándar objetivo, no requiere culpa subjetiva)</td></tr>
+<tr><td>Circulación de vehículos motorizados</td><td>Ley 18.290 (art. 169)</td><td>En algunos supuestos: responsabilidad solidaria entre dueño y conductor</td></tr>
+</table>
+
+<div class="callout">
+<span class="title">Responsabilidad objetiva vs. presunción de culpa: diferencia clave</span>
+La presunción de culpa (arts. 2320, 2326, 2329) <em>invierte la carga de la prueba</em>: el demandado puede exonerarse probando su diligencia. La responsabilidad objetiva <em>no admite esa prueba</em>: aunque el demandado haya tomado todas las precauciones del mundo, igual responde. El animal fiero del art. 2327 es objetiva; el perro doméstico del art. 2326 genera culpa presumida. Esta diferencia es fundamental para el examen.
+</div>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 3.442-2012 (Civil — Daño Ambiental)</span>
+<strong>Caso:</strong> Empresa minera vertió relaves en un río afectando comunidades aguas abajo. La empresa demandó alegó haber cumplido todos los estándares ambientales vigentes. <br>
+<strong>Decisión:</strong> La CS aplicó el art. 52 de la Ley 19.300: probada la infracción a la normativa ambiental, la responsabilidad es objetiva. El cumplimiento de otros estándares no exime de responsabilidad por los daños acreditados. <br>
+<strong>Relevancia:</strong> Muestra cómo la responsabilidad objetiva por daño ambiental opera independientemente del cuidado tomado por la empresa. También ilustra la interacción entre legislación especial y el CC.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="ix">9. El daño: concepto, clases y requisitos</h1>
+
+<h2>9.1. El daño como requisito indispensable</h2>
+<p>En el derecho civil chileno, <strong>sin daño no hay responsabilidad</strong>. A diferencia del derecho penal, que puede sancionar delitos de mero peligro, la responsabilidad civil extracontractual exige siempre la producción de un daño concreto. El daño es, en palabras de Barros, «el elemento que pone en marcha el sistema».</p>
+
+<h2>9.2. Requisitos del daño indemnizable</h2>
+<ul>
+<li><strong>Cierto:</strong> el daño debe ser real, no meramente hipotético o especulativo. Sin embargo, se admite el daño <em>futuro cierto</em> (que no se ha producido aún pero se producirá con certeza razonable, como los gastos médicos futuros de un lesionado permanente) y la <em>pérdida de una chance</em> (ver abajo).</li>
+<li><strong>Directo:</strong> el daño debe ser consecuencia directa e inmediata del hecho del agente. Los daños indirectos o remotos —aquellos que son consecuencia de consecuencias— no se indemnizan.</li>
+<li><strong>No reparado:</strong> si el daño ya fue indemnizado (por seguros, otras sentencias, prestaciones estatales), no puede indemnizarse de nuevo para evitar el enriquecimiento sin causa de la víctima.</li>
+<li><strong>Que lesione un interés legítimo:</strong> el interés de la víctima debe estar jurídicamente protegido. No se indemnizan los daños a intereses ilícitos (ej. la pérdida de ganancias de un tráfico ilegal).</li>
+</ul>
+
+<h2>9.3. La pérdida de una chance</h2>
+<p>La pérdida de una oportunidad (<em>perte d'une chance</em>) es el daño consistente en la frustración de una <strong>probabilidad real y seria</strong> de obtener un beneficio o evitar un perjuicio. Se ubica en la zona gris entre el daño cierto y el daño incierto: la chance en sí era cierta; lo incierto es si habría concluido en el resultado favorable.</p>
+<p>Barros acepta su indemnizabilidad con límites: (i) debe ser una oportunidad real, no meramente especulativa; (ii) se indemniza el <em>valor de la chance</em>, no el valor del beneficio que se esperaba (si había 40% de probabilidad de ganar el juicio, no se indemnizan el 100% de los honorarios perdidos, sino el valor del 40% de la chance).</p>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 9.099-2013 (Civil — Pérdida de una chance)</span>
+<strong>Caso:</strong> Un abogado no interpuso el recurso de casación en el plazo legal, privando a su cliente de la posibilidad de revertir una condena. El cliente demandó por responsabilidad profesional. <br>
+<strong>Decisión:</strong> La CS reconoció que la pérdida de la oportunidad de recurrir constituye un daño indemnizable autónomo. Estimó la probabilidad de éxito del recurso y condenó al abogado a indemnizar el valor proporcional a esa chance perdida. <br>
+<strong>Relevancia:</strong> Fallo hito en Chile sobre pérdida de una chance en responsabilidad profesional del abogado. Define la metodología: primero evaluar si había una chance real (probabilidad >0%), luego cuantificar esa probabilidad y aplicarla al daño total esperado.
+</div>
+
+<h2>9.4. Clases de daño</h2>
+
+<h3>a) Daño patrimonial</h3>
+<p><strong>Daño emergente:</strong> el empobrecimiento efectivo y real que sufre el patrimonio de la víctima como consecuencia directa del hecho dañoso. Gastos médicos, reparaciones, bienes destruidos.</p>
+<p><strong>Lucro cesante:</strong> la ganancia o beneficio que la víctima dejó de percibir como consecuencia del hecho. El ingreso del trabajador que quedó incapacitado; las rentas del propietario cuyo bien fue destruido; las utilidades del comerciante cuyo negocio fue interrumpido. El lucro cesante debe acreditarse con razonable certeza (no basta la mera posibilidad).</p>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Daño emergente y lucro cesante</span>
+Ana, cirujana de 40 años, sufre un accidente por culpa de Pedro y queda con una lesión permanente en su mano dominante que le impide operar. <br>
+<strong>Daño emergente:</strong> Gastos hospitalarios, cirugías de rehabilitación, prótesis, transporte médico = $8.000.000 <br>
+<strong>Lucro cesante:</strong> Sus ingresos netos como cirujana eran $4.000.000/mes. Con vida laboral activa de 20 años más, el lucro cesante proyectado (con factores de actualización) puede alcanzar valores muy significativos. Debe probarse con documentos tributarios, liquidaciones de sueldo, etc. <br>
+<strong>Nota:</strong> El juez puede reducir el lucro cesante si la víctima tiene posibilidad razonable de reconvertirse a otra actividad médica no quirúrgica.
+</div>
+
+<h3>b) Daño moral o extrapatrimonial</h3>
+<p>El daño que no afecta el patrimonio sino los intereses no pecuniarios de la persona: el dolor, la aflicción, la lesión a la dignidad, la pérdida de calidad de vida. Su estudio detallado se aborda en el §10.</p>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Contratos (sede contractual)</span>
+En sede contractual, el daño está tipificado en el art. 1556 CC: «La indemnización de perjuicios comprende el daño emergente y el lucro cesante». Esta misma distinción aplica en sede extracontractual por analogía y por la doctrina mayoritaria. La diferencia está en la extensión: en sede contractual el daño solo debe ser consecuencia <em>directa</em> del incumplimiento y, si solo hay culpa, se limita a los perjuicios <em>previsibles</em> (art. 1558). En sede extracontractual rige la reparación <em>integral</em>: todo el daño, sin límite de previsibilidad.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="x">10. El daño moral: evolución, prueba y cuantificación</h1>
+
+<h2>10.1. Evolución histórica en Chile</h2>
+<p>El daño moral fue históricamente resistido por los tribunales chilenos bajo el argumento de que resultaba «repugnante» traducir el dolor a dinero y que el CC no lo contemplaba expresamente. Alessandri, a mediados del siglo XX, lo negó categóricamente en sede extracontractual para las personas jurídicas y fue ambiguo respecto de personas naturales.</p>
+<p>La evolución fue paulatina:</p>
+<ul>
+<li><strong>Décadas de 1960-1970:</strong> la jurisprudencia comenzó a admitirlo en casos de muerte o lesiones graves de familiares, fundamentándose en el art. 2329 («todo daño»).</li>
+<li><strong>Década de 1980:</strong> se consolida la indemnización del daño moral en sede extracontractual para personas naturales como regla general.</li>
+<li><strong>Décadas de 1990-2000:</strong> extensión al daño moral en sede <em>contractual</em>, especialmente en contratos donde están en juego intereses de la persona (salud, transporte, seguros).</li>
+<li><strong>Actualidad:</strong> el daño moral es ampliamente reconocido en ambas sedes. El debate actual se centra en su cuantificación y en la procedencia para personas jurídicas.</li>
+</ul>
+
+<h2>10.2. Categorías del daño moral reconocidas por la jurisprudencia</h2>
+<p>Barros y la jurisprudencia chilena reconocen principalmente dos categorías:</p>
+<ul>
+<li><strong>Dolor físico o psíquico (<em>pretium doloris</em>):</strong> el sufrimiento, la angustia, el miedo, la depresión. Lo que «sufre» la persona. Es la categoría más intuitiva y la más reconocida.</li>
+<li><strong>Perjuicio de agrado o de disfrute:</strong> la pérdida de oportunidades de vida — actividades, pasatiempos, relaciones afectivas, sexualidad — que la víctima ya no puede desarrollar. No es el dolor en sí, sino la privación de experiencias valiosas.</li>
+</ul>
+<p>Adicionalmente, algunos fallos reconocen el <strong>daño corporal o estético</strong> (desfiguramiento permanente) como categoría autónoma, aunque parte de la doctrina lo subsume en el perjuicio de agrado.</p>
+
+<h2>10.3. Prueba del daño moral</h2>
+<p>Un debate persistente. La tendencia dominante en la CS chilena es que el daño moral se presume <em>in re ipsa</em> a partir de la lesión y del vínculo (la muerte de un hijo genera daño moral al padre sin necesidad de acreditar sufrimiento específico). Sin embargo, esta presunción no es absoluta: si hay circunstancias que la desvirtúan (ej. el fallecido y el demandante estaban completamente desvinculados), el juez puede reducir o negar la indemnización.</p>
+<p>Barros propone un estándar intermedio: el daño moral de personas próximas a la víctima directa se presume, pero el juez puede modularlo según la intensidad real del vínculo y la gravedad de la lesión.</p>
+
+<h2>10.4. Cuantificación</h2>
+<p>La cuantificación del daño moral es la zona más conflictiva de la responsabilidad civil en Chile. El juez tiene <strong>amplia discrecionalidad</strong> — el daño es inconmensurable en dinero, no existe mercado para el dolor. Los criterios que los tribunales utilizan (sin que sean vinculantes):</p>
+<ul>
+<li>Gravedad objetiva del daño (muerte vs. lesión leve).</li>
+<li>Edad y expectativa de vida de la víctima.</li>
+<li>Intensidad y duración del sufrimiento acreditado.</li>
+<li>Vínculo entre la víctima directa y el demandante (por repercusión).</li>
+<li>Grado de culpa del demandado (aunque en principio no es criterio de la indemnización compensatoria).</li>
+<li>Fallos anteriores en casos similares (tendencia jurisprudencial).</li>
+</ul>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 1.782-2010 (Civil — Daño Moral)</span>
+<strong>Caso:</strong> Accidente de tránsito produjo la muerte de un padre de familia de 38 años. Su cónyuge y tres hijos menores demandaron daño moral. El tribunal de primera instancia fijó montos muy dispares por cada demandante. <br>
+<strong>Decisión:</strong> La CS uniformó los montos aplicando criterios de proporcionalidad: la cónyuge recibió la indemnización mayor (vínculo más estrecho e impacto económico), seguida de los hijos en orden de menor a mayor según la intensidad del vínculo. La CS señaló que el daño moral de la cónyuge se presume por el solo hecho de la muerte y no requería prueba adicional. <br>
+<strong>Relevancia:</strong> Referente en el método de cuantificación del daño moral por repercusión. Establece que la CS puede revisar la cuantificación cuando es manifiestamente desproporcionada.
+</div>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 6.523-2014 (Civil — Persona Jurídica y Daño Moral)</span>
+<strong>Caso:</strong> Una empresa demandó daño moral alegando que acusaciones falsas habían afectado su reputación y imagen comercial. <br>
+<strong>Decisión:</strong> La CS reconoció que las personas jurídicas pueden sufrir un daño análogo al moral en cuanto a su reputación, honor comercial y crédito. Sin embargo, exigió prueba concreta del daño a la reputación (pérdida de clientes, caída de ventas, efectos reputacionales acreditados), no aceptando una presunción automática como la que opera para personas naturales. <br>
+<strong>Relevancia:</strong> Define el estándar diferenciado para personas jurídicas: no presunción automática, sino prueba de los efectos concretos sobre la reputación o crédito.
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Contratos: daño moral contractual</span>
+La evolución del daño moral en sede contractual es uno de los temas más dinámicos del derecho civil chileno. Históricamente negado (el art. 1556 solo menciona «daño emergente y lucro cesante»), la jurisprudencia comenzó a admitirlo en contratos donde la dignidad o la persona están directamente en juego: contratos de transporte de personas, atención médica, seguros de salud, contratos de trabajo. El argumento es que el art. 1556 no es taxativo y el principio de reparación integral prohíbe dejar sin compensar daños reales. Para el examen: afirma que el daño moral en sede contractual <em>se admite hoy</em> jurisprudencialmente aunque no sin debate; no digas que está negado.
+</div>
+
+<h2>10.5. Las víctimas por repercusión o rebote</h2>
+<p>Son aquellas personas que, sin ser la víctima directa del hecho, sufren un daño propio como consecuencia del que se infligió a aquélla. Tienen acción directa <em>iure proprio</em> (por su propio daño moral) con independencia de la acción hereditaria.</p>
+<p>El tema procesal es importante: si la víctima directa ya recibió indemnización de daño moral en vida, y luego fallece, sus herederos pueden ejercer la acción <em>iure hereditatis</em> solo si el causante no la ejerció ya (para evitar doble indemnización). Pero los familiares que sufrieron daño moral <em>propio</em> (el dolor de perder a su ser querido) tienen siempre acción propia, independientemente de lo que recibió la víctima directa.</p>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="xi">11. La relación de causalidad</h1>
+
+<h2>11.1. La causalidad como requisito ineludible</h2>
+<p>La relación de causalidad exige que el daño sea <strong>consecuencia</strong> del hecho del agente. Sin nexo causal, no hay responsabilidad, aunque existan culpa y daño. Es el elemento más técnico y el que con mayor frecuencia se olvida en los exámenes.</p>
+<p>Barros distingue dos fases en el análisis causal:</p>
+<ol>
+<li><strong>Causalidad fáctica o naturalística:</strong> ¿fue el hecho del agente una condición necesaria para que el daño ocurriera? (fase científica o empírica).</li>
+<li><strong>Imputación objetiva o causalidad normativa:</strong> ¿debe ese daño atribuirse jurídicamente al hecho del agente? (fase normativa o valorativa). Las teorías clásicas (causa adecuada, causa próxima) son en verdad criterios de esta segunda fase.</li>
+</ol>
+
+<h2>11.2. Teorías de la causalidad fáctica</h2>
+
+<h3>a) Equivalencia de las condiciones (<em>conditio sine qua non</em>)</h3>
+<p>Es causa del daño toda condición sin la cual el resultado no se habría producido. Test: <em>supresión mental hipotética</em> — si mentalmente suprimo el hecho del agente y el daño igualmente se habría producido, ese hecho no fue causa. Si sin ese hecho el daño no se habría producido, entonces fue causa.</p>
+<p><strong>Crítica:</strong> amplía indefinidamente la cadena causal (los padres del agente serían «causa» del daño). Útil para excluir nexo causal, pero insuficiente para establecerlo jurídicamente.</p>
+
+<h3>b) Causa adecuada</h3>
+<p>Es causa jurídicamente relevante solo aquella condición que, según el <em>curso normal y ordinario</em> de las cosas, era idónea para producir el resultado dañoso. Se aprecia ex ante, desde la perspectiva del agente al momento de actuar. Es la teoría más aceptada en el derecho civil comparado y en Chile.</p>
+
+<h3>c) Imputación objetiva (Barros)</h3>
+<p>La doctrina moderna introduce criterios normativos adicionales para acotar la imputación más allá de la equivalencia de condiciones:</p>
+<ul>
+<li><strong>Fin protector de la norma:</strong> el daño debe estar dentro del ámbito de protección de la norma infringida. Si un médico no anota un diagnóstico en la ficha clínica (infracción administrativa) y el paciente sufre un daño diferente años después, puede no haber nexo normativo si el daño no era del tipo que la norma buscaba prevenir.</li>
+<li><strong>Incremento del riesgo:</strong> la conducta del agente debe haber incrementado significativamente el riesgo de que ocurriera el daño. Los riesgos generales de la vida no son imputables.</li>
+<li><strong>Previsibilidad del resultado:</strong> los daños que eran completamente imprevisibles ex ante pueden no ser normativamente imputables, aunque fácticamente hayan sido causados por el agente.</li>
+</ul>
+
+<h2>11.3. Causas extrañas que rompen el nexo causal</h2>
+
+<h3>a) Caso fortuito o fuerza mayor</h3>
+<p>Imprevisto imposible de resistir (<span class="art">art. 45 CC</span>). Rompe el nexo causal si era la única causa del daño. Si el agente creó las condiciones que hicieron posible el daño a pesar del fortuito, puede no exonerarse completamente.</p>
+
+<h3>b) Hecho de un tercero</h3>
+<p>Si el daño fue causado exclusivamente por la conducta de un tercero ajeno al demandado, el nexo causal con el demandado se rompe. Si el demandado y el tercero contribuyeron causalmente, se aplica el art. 2317 (solidaridad) o se distribuye la responsabilidad proporcionalmente.</p>
+
+<h3>c) Hecho de la víctima (art. 2330 CC)</h3>
+<p>El <span class="art">art. 2330</span> establece que la apreciación del daño está sujeta a reducción si la víctima se expuso a él imprudentemente. <strong>No exime al demandado, sino que reduce la indemnización</strong> en proporción al grado de culpa de la víctima. Es la regla de la compensación de culpas o culpa concurrente. El juez puede llegar a exonerar totalmente al demandado si la culpa de la víctima fue la causa exclusiva y determinante del daño.</p>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo — Concurrencia de culpas y art. 2330</span>
+Pedro conduce a 60 km/h en zona de 50 km/h. Ana cruza la calle a media cuadra del semáforo, con luz verde para los vehículos, mirando su celular. Pedro la atropella. <br>
+<strong>Análisis:</strong> Pedro tiene culpa (exceso de velocidad). Ana también (exposición imprudente al riesgo). Aplicando el art. 2330, el juez determinará la proporción de culpas: si estima 60% culpa de Pedro y 40% culpa de Ana, la indemnización se reduce en un 40%. Si el juez estima que la culpa de Ana fue tan determinante que sin ella el accidente no habría ocurrido aunque Pedro hubiera ido a 60, podría reducir más. La proporcionalidad es discrecional pero debe ser razonada.
+</div>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 4.555-2011 (Civil — Nexo Causal y Hecho de la Víctima)</span>
+<strong>Caso:</strong> Trabajador de una empresa constructora que no utilizó el arnés de seguridad provisto por el empleador cayó desde un andamio. El empleador alegó que la culpa exclusiva fue del trabajador. <br>
+<strong>Decisión:</strong> La CS rechazó la exoneración total. Estimó que el empleador también tenía culpa (insuficiente supervisión, andamio sin baranda). Aplicó el art. 2330: redujo la indemnización en un 30% por la culpa de la víctima (no usar el arnés), pero condenó al empleador por el 70% restante. <br>
+<strong>Relevancia:</strong> Muestra que el art. 2330 opera como reducción proporcional, no como exoneración automática. El empleador no puede escudarse en la culpa del trabajador si él mismo incurrió en infracciones de seguridad.
+</div>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho Procesal Civil: prueba de la causalidad</span>
+La relación de causalidad es un hecho que debe probarse (art. 1698 CC). La carga corresponde a quien alega el nexo, generalmente la víctima. Los medios de prueba típicos son: peritos (nexo causal en materia médica, ambiental, de construcción), informe de carabineros en accidentes de tránsito, prueba testimonial y documental. El perito no define el nexo jurídicamente —eso lo hace el juez— pero da los datos fácticos. La valoración del nexo causal es una cuestión de derecho que puede revisarse por casación en la forma o en el fondo.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="xii">12. La acción aquiliana: legitimación, solidaridad y prescripción</h1>
+
+<h2>12.1. Legitimación activa</h2>
+<p>Tiene la acción aquiliana:</p>
+<ul>
+<li><strong>La víctima directa:</strong> quien sufrió inmediatamente el daño causado por el hecho ilícito.</li>
+<li><strong>Las víctimas por repercusión o rebote:</strong> quienes sufren un daño propio (patrimonial o moral) como consecuencia del daño sufrido por la víctima directa. Ejercen la acción <em>iure proprio</em>, no por sucesión. Pueden ser: el cónyuge, los hijos, los padres, y cualquier persona que acredite un perjuicio propio y directo.</li>
+<li><strong>Los herederos de la víctima directa:</strong> ejercen la acción <em>iure hereditatis</em>, como parte del patrimonio del causante. Esto solo aplica si la víctima directa no ejerció en vida la acción (para evitar doble indemnización).</li>
+</ul>
+<p>El criterio que distingue la acción <em>iure proprio</em> de la <em>iure hereditatis</em> es fundamental para evitar duplicaciones. Los herederos pueden ejercer simultáneamente ambas acciones: la <em>iure hereditatis</em> (como sucesores de la víctima) y la <em>iure proprio</em> (por el daño que ellos mismos sufrieron).</p>
+
+<h2>12.2. Legitimación pasiva</h2>
+<p>La acción se dirige contra el autor del daño (delito o cuasidelito), sus cómplices, y el tercero civilmente responsable (art. 2320). También puede dirigirse contra el heredero del responsable, dentro de los límites del activo hereditario.</p>
+
+<h2>12.3. Solidaridad entre coautores (art. 2317 CC)</h2>
+<p>El <span class="art">art. 2317 CC</span> establece que si un mismo delito o cuasidelito ha sido cometido por dos o más personas, todas ellas son solidariamente responsables. Esta solidaridad opera en la <strong>obligación a la deuda</strong> (frente a la víctima puede cobrar el total a cualquiera de ellos); en la <strong>contribución a la deuda</strong> (relación interna entre responsables), el Código solo regula parcialmente el reembolso (<span class="art">art. 2325</span>). Barros propone distribuir la contribución interna según la intensidad de la participación causal y la gravedad de la culpa de cada uno.</p>
+<p><strong>Excepciones a la solidaridad:</strong></p>
+<ul>
+<li><span class="art">Art. 2323:</span> ruina de edificio — los propietarios de los distintos pisos responden proporcionalmente, no solidariamente.</li>
+<li><span class="art">Art. 2328:</span> cosa caída de edificio — la indemnización se divide entre los habitantes de esa parte.</li>
+</ul>
+
+<h2>12.4. Prescripción (art. 2332 CC)</h2>
+<p>La acción extracontractual prescribe en <strong>cuatro años</strong>, contados «desde la perpetración del acto» (<span class="art">art. 2332 CC</span>).</p>
+<p>El <em>dies a quo</em> (momento desde el que se cuenta) es el punto más debatido:</p>
+<ul>
+<li><strong>Posición mayoritaria de la CS:</strong> se cuenta desde la <em>perpetración del acto</em> dañoso, con independencia de cuándo la víctima tomó conocimiento del daño. Es la lectura literal del art. 2332.</li>
+<li><strong>Posición minoritaria (doctrina, disidencias CS):</strong> se cuenta desde la <em>manifestación del daño</em>, pues sin daño no existe acción que pueda ejercerse. Esta lectura protege mejor a las víctimas en casos de daños ocultos, enfermedades de desarrollo progresivo o daños diferidos.</li>
+</ul>
+<p>La Corte Suprema ha oscilado, pero en general mantiene la posición literal (perpetración del acto). La doctrina moderna (Barros, Domínguez) critica esta posición por su injusticia en casos de daños ocultos.</p>
+
+<div class="jurisprudencia">
+<span class="titulo-bloque">📋 Jurisprudencia — CS, Rol 2.866-2009 (Civil — Prescripción Dies a Quo)</span>
+<strong>Caso:</strong> Trabajadores expuestos a asbesto durante años desarrollaron mesotelioma décadas después. Demandaron al empleador. La empresa opuso prescripción alegando que los actos de exposición ocurrieron más de 4 años antes. <br>
+<strong>Decisión:</strong> La CS acogió la prescripción (posición mayoritaria: perpetración del acto). Sin embargo, tres ministros disidentes argumentaron que el dies a quo debía contarse desde la manifestación de la enfermedad, pues antes no había acción que ejercer (no había daño). <br>
+<strong>Relevancia:</strong> Caso emblemático del debate. Las disidencias de este y otros fallos nutren el argumento de la posición minoritaria. Para el examen, menciona ambas posturas y señala cuál es la posición actual mayoritaria de la CS.
+</div>
+
+<h2>12.5. La acción civil en sede penal</h2>
+<p>El <span class="art">art. 59 del CPP</span> permite ejercer la acción civil derivada del hecho punible en el mismo proceso penal. Ventajas: economía procesal, acceso a prueba penal. Limitaciones: solo en el juicio oral, no en el simplificado; la acción civil debe ser de carácter patrimonial y derivada directamente del hecho punible; los plazos son los del proceso penal.</p>
+<p>La acción civil en sede penal es <strong>independiente</strong> de la acción penal: la absolución penal por no haberse acreditado el delito no impide la acción civil autónoma posterior, porque los estándares de prueba son distintos.</p>
+
+<div class="dato-grado">
+<span class="titulo-bloque">🔗 Dato de grado — Derecho Procesal: prescripción civil vs. penal</span>
+Los plazos de prescripción civil (4 años, art. 2332) y penal (variable según la pena, art. 94 CP) son independientes y corren en paralelo. La interposición de la acción penal no suspende ni interrumpe la prescripción civil, salvo que también se haya ejercido la acción civil en el proceso penal. Esta independencia tiene consecuencias prácticas: es posible que la acción penal esté vigente pero la civil ya haya prescrito, o viceversa. Para el examen: no confundas los plazos y recalca la independencia de las acciones.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="xiii">13. Método para resolver casos prácticos</h1>
+
+<p>La responsabilidad extracontractual es materia de caso por excelencia. Un método ordenado vale más que recitar artículos. Aplica siempre estos pasos:</p>
+
+<ol>
+<li>
+  <strong>Califica la sede:</strong> ¿hay un contrato previo entre las partes o es un daño entre extraños? Si hay contrato, ¿el daño deriva del incumplimiento contractual o de un hecho independiente? Si hay contrato pero el hecho genera daños que exceden su objeto, analiza el <strong>cúmulo u opción de responsabilidades</strong>.
+</li>
+<li>
+  <strong>Identifica al posible responsable y verifica su capacidad:</strong> ¿es el autor directo capaz (art. 2319)? ¿Hay un tercero civilmente responsable (arts. 2320–2322)? ¿Persona jurídica?
+</li>
+<li>
+  <strong>Determina el factor de atribución:</strong> ¿dolo o culpa del autor? ¿Hay una presunción de culpa aplicable (arts. 2320, 2326, 2329) o es responsabilidad objetiva (art. 2327, ley especial)?
+  <ul>
+    <li>Si hay presunción o responsabilidad objetiva: identifica qué debe probar el demandado para exonerarse (o si puede hacerlo).</li>
+    <li>Si es responsabilidad por culpa ordinaria: la víctima prueba el dolo o culpa (art. 1698).</li>
+  </ul>
+</li>
+<li>
+  <strong>Analiza la antijuridicidad:</strong> ¿concurre alguna causal de justificación (legítima defensa, estado de necesidad, consentimiento de la víctima, ejercicio de un derecho)?
+</li>
+<li>
+  <strong>Examina el daño:</strong> ¿es cierto, directo, no reparado, lesivo de interés legítimo? ¿Es patrimonial (daño emergente/lucro cesante) o moral? ¿Hay pérdida de una chance?
+</li>
+<li>
+  <strong>Verifica el nexo causal:</strong> ¿el hecho del agente causó el daño (test de la supresión mental hipotética)? ¿Hay una causa extraña que rompa el nexo (caso fortuito, hecho de tercero, hecho de la víctima — art. 2330)?
+</li>
+<li>
+  <strong>Revisa la acción:</strong> ¿está prescrita (art. 2332, 4 años)? ¿Quién tiene legitimación activa (víctima directa, por repercusión, herederos)? ¿Hay solidaridad entre responsables (art. 2317)?
+</li>
+<li>
+  <strong>Concluye:</strong> ¿hay o no responsabilidad? ¿Cuál es la extensión de la indemnización? ¿Se reduce por culpa de la víctima (art. 2330)?
+</li>
+</ol>
+
+<div class="callout">
+<span class="title">El cúmulo u opción de responsabilidades — Un debate que distingue al buen alumno</span>
+Cuando un mismo hecho constituye a la vez incumplimiento de un contrato y un ilícito extracontractual (ej. un médico incumple el contrato de atención y además comete negligencia que cause daño), ¿puede la víctima optar por el estatuto extracontractual, más favorable en algunos aspectos (reparación integral, sin límite de previsibilidad)?<br>
+<strong>Tesis restrictiva (tradicional):</strong> La víctima queda sujeta al estatuto contractual; no puede abandonarlo para acogerse al extracontractual. El contrato regula la relación y sus reglas se aplican preferentemente. <br>
+<strong>Tesis permisiva (moderna):</strong> La víctima tiene opción entre ambos estatutos; el contrato no puede privarla del estatuto general del art. 2314. <br>
+La CS ha reconocido la opción en algunos fallos, pero no hay posición uniforme. Saber que es un punto debatido —y no afirmar ninguna posición como dogma— es lo que distingue una respuesta sobresaliente.
+</div>
+
+<div class="ejemplo">
+<span class="titulo-bloque">💡 Ejemplo integrador — Resolviendo un caso completo</span>
+<strong>Caso:</strong> Laura lleva a su hijo Tomás (8 años) a la clínica Santa María para una cirugía de amígdalas. El anestesista Dr. Pérez, empleado de la clínica, administra una dosis de anestesia excesiva. Tomás queda con daño cerebral permanente. <br><br>
+<strong>Paso 1 — Sede:</strong> Hay contrato de prestación médica entre Laura y la clínica → sede contractual en principio. Pero el daño también configura un cuasidelito del Dr. Pérez → posible cúmulo.<br>
+<strong>Paso 2 — Responsables:</strong> (a) Dr. Pérez como autor directo. (b) Clínica como empleadora (art. 2320 en sede extracontractual; incumplimiento contractual en sede contractual). <br>
+<strong>Paso 3 — Factor de atribución:</strong> Culpa profesional del Dr. Pérez (lex artis: dosis excesiva es desviación del estándar). En sede contractual: culpa presumida (art. 1547 inc. 3 — la obligación de medios de la clínica se incumplió). En sede extracontractual: culpa del art. 2314. La clínica responde por hecho ajeno (art. 2320).<br>
+<strong>Paso 4 — Justificación:</strong> No hay causal aplicable. <br>
+<strong>Paso 5 — Daño:</strong> Daño emergente (tratamientos, rehabilitación de por vida); lucro cesante (capacidad laboral futura de Tomás reducida); daño moral (Tomás y su familia). Daño cierto, directo, gravísimo.<br>
+<strong>Paso 6 — Causalidad:</strong> La dosis excesiva causó el daño cerebral (test de supresión mental: sin la dosis excesiva, el daño no habría ocurrido). No hay causa extraña.<br>
+<strong>Paso 7 — Acción:</strong> No prescrita. Legitimados: Laura como representante de Tomás (víctima directa) y también por daño moral propio (víctima por repercusión). Solidaridad: Clínica y Dr. Pérez responden solidariamente (art. 2317 en sede extracontractual).<br>
+<strong>Conclusión:</strong> Hay responsabilidad de la clínica y del Dr. Pérez, solidariamente, por la totalidad del daño acreditado (emergente, lucro cesante, moral). En sede contractual, la reparación está limitada por la previsibilidad (art. 1558), lo que puede ser menos favorable que la sede extracontractual (reparación integral) — aquí aparece la relevancia del cúmulo.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 id="xiv">14. Cuadro comparativo y errores típicos del examen</h1>
+
+<h2>14.1. Cuadro comparativo: contractual vs. extracontractual</h2>
+
+<table>
+<tr><th>Criterio</th><th>Contractual (<span style="color:#fff">arts. 1545 ss.</span>)</th><th>Extracontractual (<span style="color:#fff">arts. 2314 ss.</span>)</th></tr>
+<tr><td><strong>Origen</strong></td><td>Incumplimiento de obligación preexistente (generalmente contractual)</td><td>Hecho ilícito (delito/cuasidelito) sin vínculo previo obligacional</td></tr>
+<tr><td><strong>Factor de atribución</strong></td><td>Dolo o culpa del deudor (subjetivo; excepcionalmente objetivo: caso fortuito invierte la carga)</td><td>Dolo o culpa (subjetivo como regla); responsabilidad objetiva en casos excepcionales por ley especial</td></tr>
+<tr><td><strong>Graduación de la culpa</strong></td><td>Sí: grave, leve, levísima (arts. 44 y 1547), según a quién beneficia el contrato</td><td>No hay graduación; estándar único (debate: «toda culpa» —Alessandri— vs. culpa leve —Barros—)</td></tr>
+<tr><td><strong>Prueba de la culpa</strong></td><td>Se <em>presume</em> (art. 1547 inc. 3): el deudor debe probar diligencia</td><td>La <em>prueba</em> corresponde a la víctima (salvo presunciones legales: arts. 2320, 2326, 2329)</td></tr>
+<tr><td><strong>Mora</strong></td><td>Se exige para la indemnización (arts. 1551, 1557)</td><td>No se exige; el daño nace desde que se produce</td></tr>
+<tr><td><strong>Capacidad</strong></td><td>Plena capacidad contractual (18 años, regla general)</td><td>Más amplia: desde los 7 años con discernimiento (art. 2319)</td></tr>
+<tr><td><strong>Extensión del daño</strong></td><td>Limitada por la <em>previsibilidad</em> (art. 1558); imprevistos solo con dolo o culpa grave</td><td>Reparación <em>integral</em>: todo el daño, sin límite de previsibilidad</td></tr>
+<tr><td><strong>Solidaridad</strong></td><td>No hay solidaridad legal entre codeudores (salvo pacto o ley)</td><td>Si son varios autores del mismo cuasidelito, solidaridad de pleno derecho (art. 2317)</td></tr>
+<tr><td><strong>Prescripción</strong></td><td>5 años desde que la obligación se hizo exigible (art. 2515); 3 años acción ejecutiva</td><td>4 años desde la perpetración del acto (art. 2332); debate sobre dies a quo</td></tr>
+<tr><td><strong>Daño moral</strong></td><td>Admitido por jurisprudencia (evolución reciente); no exige texto expreso</td><td>Admitido sin discusión (arts. 2314 y 2329 hablan de «daño» sin distinguir)</td></tr>
+<tr><td><strong>Cúmulo</strong></td><td colspan="2">Si el mismo hecho configura ambos: debate sobre si la víctima puede optar (cúmulo u opción de responsabilidades)</td></tr>
+</table>
+
+<h2>14.2. Errores típicos del examen</h2>
+
+<ul>
+<li>🚫 Aplicar la <strong>graduación de la culpa contractual</strong> (grave/leve/levísima, art. 1547) en sede extracontractual. En sede aquiliana hay estándar único.</li>
+<li>🚫 Poner la <strong>carga de la prueba de la culpa en la víctima</strong> cuando existe una presunción legal que la invierte (arts. 2320, 2326, 2329).</li>
+<li>🚫 <strong>Exigir mora</strong> del causante del daño en sede extracontractual. La mora es un requisito exclusivo de la sede contractual.</li>
+<li>🚫 Decir que el <strong>daño moral no se indemniza</strong> en sede extracontractual. Es al revés: es precisamente en sede extracontractual donde se admite sin discusión.</li>
+<li>🚫 Ubicar el <strong>caso fortuito, el hecho de la víctima y el hecho de un tercero entre las causales de justificación</strong>. Operan en sede de <em>causalidad</em> (causa extraña que rompe el nexo), no de ilicitud.</li>
+<li>🚫 <strong>Confundir los dos regímenes de animales</strong>: art. 2326 (culpa presumida, admite defensa) vs. art. 2327 (animal fiero, responsabilidad estricta, no admite excusa).</li>
+<li>🚫 Afirmar que la <strong>prescripción extracontractual es de 5 años</strong>. Son 4 años (art. 2332). Los 5 años son la regla general de prescripción ordinaria contractual (art. 2515).</li>
+<li>🚫 No distinguir <strong>víctima directa de víctima por repercusión</strong> y mezclar las acciones <em>iure proprio</em> e <em>iure hereditatis</em>.</li>
+<li>🚫 No mencionar el <strong>art. 2330</strong> (reducción por culpa de la víctima) en casos donde la víctima contribuyó a su propio daño. Aparece en casi todos los casos de accidentes.</li>
+<li>🚫 Olvidar preguntar si hay <strong>ley especial aplicable</strong> (Ley 16.744 en accidentes del trabajo, Ley 19.300 en daño ambiental, Ley 21.020 en mascotas) que puede modificar el régimen general.</li>
+<li>🚫 Afirmar que la <strong>responsabilidad objetiva es la regla general</strong> en Chile. Es la excepción; la regla es la responsabilidad por culpa.</li>
+<li>🚫 No mencionar el <strong>cúmulo u opción de responsabilidades</strong> cuando el caso involucra tanto un contrato previo como un hecho ilícito que lo acompaña. Es uno de los puntos más valorados en el examen.</li>
+</ul>
+
+<p class="muted" style="margin-top:3rem">Fin del Manual de Responsabilidad Extracontractual — Derecho Libre, Junio 2026. Síntesis basada en Barros Bourie (Tratado de Responsabilidad Extracontractual, 2006/2013) y Boetsch Gillet (Apuntes Responsabilidad Extracontractual, UC 2021). Las referencias jurisprudenciales deben verificarse ante la evolución constante de los criterios de la CS. Complementa con el Banco de Preguntas y el Manual de Responsabilidad Contractual.</p>
+
+</body>
+</html>
