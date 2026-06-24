@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsabilidad Contractual — Manual de estudio | Derecho Libre</title>
+<style>
+  :root{--accent:#1F4E79;--accent2:#2E75B6;--light:#D9E2F3;--soft:#F2F5FB;--grey:#595959;--warn:#8A5A00;--warnbg:#FFF6E5;--ok:#1E6B3A;--okbg:#EAF6EE;--gold:#9A7B1F;}
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#222;line-height:1.64;max-width:880px;margin:0 auto;padding:44px 40px 80px;background:#fff;}
+  h1{color:var(--accent);font-size:1.5rem;margin:2.6rem 0 .5rem;border-bottom:2px solid var(--light);padding-bottom:.3rem;}
+  h2{color:var(--accent2);font-size:1.18rem;margin:1.6rem 0 .4rem;}
+  h3{color:#333;font-size:1.03rem;margin:1.15rem 0 .25rem;}
+  p{margin:.55rem 0;text-align:justify;}
+  ul,ol{margin:.4rem 0 .85rem;padding-left:1.4rem;}
+  li{margin:.32rem 0;}
+  table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:8px 11px;}
+  td{border:1px solid #ccc;padding:8px 11px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:600;color:var(--accent);white-space:nowrap;}
+  .callout{border-left:6px solid var(--accent2);background:var(--light);padding:12px 16px;margin:1rem 0;border-radius:4px;}
+  .callout .title{font-weight:700;color:var(--accent);display:block;margin-bottom:.25rem;}
+  .debate{border-left:6px solid #6A4C93;background:#F1ECF7;padding:12px 16px;margin:1rem 0;border-radius:4px;}
+  .debate .title{font-weight:700;color:#4B2E83;display:block;margin-bottom:.25rem;}
+  .ex{border-left:6px solid var(--ok);background:var(--okbg);padding:12px 16px;margin:1rem 0;border-radius:4px;}
+  .ex .title{font-weight:700;color:var(--ok);display:block;margin-bottom:.25rem;}
+  .caso{border:1px solid #8a6d1f;background:#FBF7EA;padding:13px 18px;margin:1.1rem 0;border-radius:8px;}
+  .caso .title{font-weight:800;color:#6b5414;display:block;margin-bottom:.35rem;}
+  .caso .ref{font-size:.84rem;color:#6b5414;font-weight:600;margin-bottom:.4rem;}
+  .caso .field{margin:.3rem 0;}
+  .caso .field .lbl{font-weight:700;color:#6b5414;}
+  .warn{border-left:6px solid var(--warn);background:var(--warnbg);padding:12px 16px;margin:1rem 0;border-radius:4px;}
+  .warn .title{font-weight:700;color:var(--warn);display:block;margin-bottom:.25rem;}
+  .lex{background:#FAFBFE;border:1px solid var(--light);border-radius:5px;padding:8px 14px;margin:.7rem 0;font-size:.92rem;color:#333;}
+  .lex b{color:var(--accent);}
+  .protip{border:2px dashed var(--accent2);background:#FBFDFF;padding:14px 18px;margin:1.4rem 0;border-radius:9px;}
+  .protip .title{font-weight:800;color:var(--accent);display:block;margin-bottom:.5rem;font-size:1.02rem;}
+  .protip .row{margin:.38rem 0;}
+  .protip .lbl{font-weight:700;color:var(--accent2);}
+  .protip .joke{background:#FFFDF2;border-left:4px solid var(--gold);padding:7px 13px;margin-top:.6rem;border-radius:4px;}
+  .protip .joke .lbl{color:var(--gold);}
+  .quiz{border:1px solid var(--accent2);background:var(--soft);border-radius:9px;padding:14px 20px;margin:1.5rem 0;}
+  .quiz .title{font-weight:800;color:var(--accent);display:block;margin-bottom:.45rem;}
+  .quiz ol{margin:.35rem 0;padding-left:1.5rem;}
+  .quiz li{margin:.48rem 0;}
+  .quiz .hint{font-size:.86rem;color:var(--grey);}
+  .ans{margin:.9rem 0;padding:10px 16px;border-left:4px solid var(--ok);background:var(--okbg);border-radius:4px;}
+  .ans .q{font-weight:700;color:var(--ok);display:block;}
+  .backlink{font-size:.82rem;color:var(--accent2);text-decoration:none;}
+  .cover{text-align:center;padding:60px 0 36px;border-bottom:1px solid #eee;margin-bottom:.5rem;}
+  .cover .brand{color:var(--accent);font-size:2.05rem;font-weight:800;letter-spacing:1px;}
+  .cover .doc{color:#222;font-size:1.55rem;font-weight:700;margin-top:1rem;}
+  .cover .sub{color:var(--grey);font-size:1.02rem;margin-top:.4rem;}
+  .cover .meta{color:var(--grey);margin-top:1.4rem;font-size:.9rem;}
+  .muted{color:var(--grey);font-style:italic;}
+  .toc{background:var(--soft);border:1px solid var(--light);border-radius:6px;padding:14px 22px;}
+  .toc a{color:var(--accent2);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  @media print{body{padding:0 12px;}h1{page-break-after:avoid;}.callout,.warn,.debate,.ex,.protip,.quiz,table{page-break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">DERECHO LIBRE</div>
+  <div class="doc">Responsabilidad Civil Contractual</div>
+  <div class="sub">Manual de estudio · Nivel examen de grado</div>
+  <div class="meta">Anclado en Boetsch y Orrego · Edición Junio 2026</div>
+</div>
+
+<div class="warn"><span class="title">Nota para Laura — muestra del nuevo formato</span>
+Esta es la sección de <strong>Responsabilidad contractual</strong> reescrita al nivel que pediste: pensada como <strong>material único</strong> para quien estudia la materia por primera vez. Incorpora lo que conversamos —más profundidad (siguiendo el desarrollo de <strong>Cristián Boetsch</strong> y el texto de <strong>J. A. Orrego</strong>), muchos más ejemplos, recuadros <em>«Pro tip · examen de grado»</em> entre temas (con qué materias se conecta, por qué importa y un gancho para memorizar), <strong>autoevaluaciones al final de cada tema</strong> con sus respuestas al cierre del apunte, y desarrollo extenso de los temas complementarios (imprevisión, derechos auxiliares, cláusulas modificatorias, prescripción). Quité las menciones tipo «esto es de lo más preguntado». Revisa como experta sobre todo las <strong>referencias jurisprudenciales</strong> (roles y fechas): las tomé de las fuentes y conviene corroborarlas; las marqué cuando había duda. Si te sirve la profundidad y el estilo, replico igual el resto del manual.</div>
+
+<div class="toc">
+<strong>Contenido</strong>
+<ol>
+<li><a href="#c1">Efecto de las obligaciones, fundamento y el sistema de remedios</a></li>
+<li><a href="#c2">El cumplimiento: el pago y sus principios</a></li>
+<li><a href="#c3">El incumplimiento: noción objetiva y obligaciones de medios y de resultado</a></li>
+<li><a href="#c4">Requisitos de la indemnización de perjuicios</a></li>
+<li><a href="#c5">La imputabilidad: culpa y dolo contractuales</a></li>
+<li><a href="#c6">La presunción de culpa y la carga de la prueba</a></li>
+<li><a href="#c7">La mora</a></li>
+<li><a href="#c8">El caso fortuito y la teoría de los riesgos</a></li>
+<li><a href="#c9">Los perjuicios indemnizables</a></li>
+<li><a href="#c10">La avaluación de los perjuicios y la cláusula penal</a></li>
+<li><a href="#c11">Los remedios del acreedor: cumplimiento forzado</a></li>
+<li><a href="#c12">La resolución y el pacto comisorio</a></li>
+<li><a href="#c13">La autonomía de la acción indemnizatoria</a></li>
+<li><a href="#c14">Las eximentes de responsabilidad</a></li>
+<li><a href="#c15">Imprevisión y frustración del fin del contrato</a></li>
+<li><a href="#c16">Los derechos auxiliares del acreedor</a></li>
+<li><a href="#c17">Cláusulas modificatorias de responsabilidad</a></li>
+<li><a href="#c18">Prescripción de las acciones</a></li>
+<li><a href="#resp"><strong>Respuestas a las autoevaluaciones</strong></a></li>
+</ol>
+</div>
+
+<p class="muted">Cómo usar este apunte: lee el tema, fíjate en los recuadros de artículos (el texto legal es lo que el examinador exige de memoria), detente en los «Pro tip» para conectar materias, y al terminar cada tema responde la autoevaluación <em>antes</em> de mirar las respuestas del final. Si fallas una, vuelve al punto correspondiente.</p>
+
+<h1 id="c1">1. Efecto de las obligaciones, fundamento y el sistema de remedios</h1>
+<p>La responsabilidad contractual es el conjunto de consecuencias jurídicas que el ordenamiento impone al deudor que <strong>no cumple, cumple imperfectamente o cumple tardíamente</strong> una obligación nacida de un contrato. Para situarla hay que partir de una distinción que el examinador agradece: la que existe entre los <strong>efectos del contrato</strong> y los <strong>efectos de las obligaciones</strong>.</p>
+<p>Conviene precisar bien esta distinción, porque ordena toda la materia y el examinador la usa como puerta de entrada. Los <strong>efectos del contrato</strong> son los <strong>derechos personales y las obligaciones correlativas</strong> que del contrato nacen: el contrato es <em>fuente</em> de obligaciones (<span class="art">art. 1437</span>) y, por la fuerza obligatoria del 1545, esas obligaciones vinculan a las partes como una ley. Mirar los «efectos del contrato» es mirar la <em>relación entre los contratantes</em>: quién se obligó a qué, cómo se interpreta lo pactado (1560 y ss.), y el principio del <strong>efecto relativo</strong> —el contrato sólo obliga a las partes, no a terceros (<em>res inter alios acta</em>)—, con sus excepciones clásicas: la estipulación a favor de otro (<span class="art">art. 1449</span>), la promesa de hecho ajeno (<span class="art">art. 1450</span>) y la inoponibilidad.</p>
+<p>Los <strong>efectos de las obligaciones</strong> son cosa distinta: son los <strong>mecanismos de tutela</strong> que la ley pone en manos del acreedor en torno al cumplimiento y al incumplimiento de la obligación, <em>cualquiera sea su fuente</em>. Mirar los «efectos de las obligaciones» es mirar las <em>herramientas del acreedor</em>: el pago y sus reglas, y —ante la patología— el cumplimiento forzado, la indemnización, la resolución y los derechos auxiliares. El Código los trata en el Título XII del Libro IV, «Del efecto de las obligaciones» (<span class="art">arts. 1545 a 1559</span>); Claro Solar critica que ese título regule «promiscuamente» ambas materias, porque mezcla la fuerza obligatoria del contrato (1545) y la buena fe (1546) —que son efectos <em>del contrato</em>— con normas sobre la indemnización (1556-1559) —que son efectos <em>de la obligación</em>—.</p>
+<div class="callout"><span class="title">¿Por qué importa la distinción?</span>
+Porque cada categoría se rige por reglas y problemas propios. Los <em>efectos del contrato</em> remiten a la interpretación contractual, al efecto relativo y a la autonomía de la voluntad; los <em>efectos de las obligaciones</em>, al derecho de prenda general, a la ejecución y a la responsabilidad. Confundirlas lleva, por ejemplo, a buscar en el régimen de la responsabilidad la respuesta a un problema que es de interpretación del contrato, o a la inversa.</div>
+<p>Sobre el <em>alcance</em> de la expresión «efectos de las obligaciones» hay dos visiones. La <strong>restringida</strong> (Alessandri, Claro Solar) la reduce a los derechos del acreedor frente al <em>incumplimiento</em> (ejecución forzada, indemnización, derechos auxiliares): los efectos de la obligación serían sólo su «patología». La <strong>amplia</strong> (Fueyo, Abeliuk, y que sigue Boetsch) comprende también la fase <em>normal</em>, es decir, el cumplimiento o pago: la obligación produce, ante todo, el efecto de <em>deber cumplirse</em>, y sólo en subsidio el de habilitar al acreedor para reaccionar. Adoptar la visión amplia permite leer la materia como un <strong>sistema unitario</strong> que va del pago (normalidad) a los remedios (patología), y es la que estructura este apunte.</p>
+<div class="ex"><span class="title">Ejemplo — la distinción en acción</span>
+Firmo contigo una compraventa de un departamento. Que tú quedes obligado a transferirme el dominio y yo a pagar el precio, que el contrato no obligue a tu hermano que no lo firmó (efecto relativo), y cómo se interpreta una cláusula ambigua sobre los gastos comunes: todo eso son <strong>efectos del contrato</strong>. En cambio, que yo pueda pagarte por consignación si te niegas a recibir, o que ante tu incumplimiento yo pueda pedir el cumplimiento forzado o la resolución con indemnización (1489), o embargar tus bienes (2465): eso son <strong>efectos de la obligación</strong>.</div>
+<p>Su <strong>fundamento positivo</strong> es la fuerza obligatoria del contrato:</p>
+<div class="lex"><b>Art. 1545 CC.</b> «Todo contrato legalmente celebrado es una ley para los contratantes, y no puede ser invalidado sino por su consentimiento mutuo o por causas legales.»</div>
+<p>De este <em>pacta sunt servanda</em> deriva que el contrato vincula con fuerza de ley y que su infracción genera responsabilidad. El cuadro se completa con la buena fe contractual:</p>
+<div class="lex"><b>Art. 1546 CC.</b> «Los contratos deben ejecutarse de buena fe, y por consiguiente obligan no sólo a lo que en ellos se expresa, sino a todas las cosas que emanan precisamente de la naturaleza de la obligación, o que por la ley o la costumbre pertenecen a ella.»</div>
+<p>La buena fe <strong>integra</strong> el contenido del contrato: de ella emanan deberes accesorios —de información, seguridad, protección y cooperación— cuya infracción también compromete al deudor. Boetsch, siguiendo a Betti, define esta buena fe objetiva como un «deber de cooperación debido en interés ajeno».</p>
+
+<h3>1.1. ¿Cuál es el «derecho común» de la responsabilidad?</h3>
+<p>Tradicionalmente (Stitchkin, Alessandri) se sostuvo que las normas de los <span class="art">arts. 1545 y ss.</span> forman el <strong>derecho común</strong> de la responsabilidad y se aplican supletoriamente incluso a la responsabilidad extracontractual. Boetsch prefiere la tesis contraria: esas normas se limitan a las obligaciones de fuente <em>contractual</em>, porque el <span class="art">art. 2284</span> distingue netamente las obligaciones que nacen de una convención de las que nacen sin convención (delito, cuasidelito, ley). No habría, entonces, un único derecho común. La discusión reaparece al estudiar el cúmulo u opción de responsabilidades.</p>
+
+<h3>1.2. La obligación de indemnizar: naturaleza y función</h3>
+<p>En la lectura <strong>clásica</strong>, la obligación de indemnizar es la <em>perpetuación de la obligación por equivalente</em> (<em>perpetuatio obligationis</em>): si el deudor no da la cosa debida, debe su valor en dinero (<em>aestimatio rei</em>) más los perjuicios. La doctrina <strong>moderna</strong> (Vidal, Pizarro, recogidos por Boetsch, con influencia del derecho uniforme) reordena la materia como un <strong>sistema de remedios</strong> que el acreedor activa según su interés: el cumplimiento en naturaleza, la resolución, la rebaja del precio, la suspensión del propio cumplimiento (excepción de contrato no cumplido) y la indemnización de perjuicios. La norma que vertebra ese sistema es el <span class="art">art. 1489</span> (condición resolutoria tácita), que ofrece al acreedor la opción entre cumplimiento y resolución, ambos «con indemnización de perjuicios».</p>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> fuentes de las obligaciones (<span class="art">art. 1437</span>), la clasificación de los contratos (bilaterales para el 1489), interpretación de los contratos (1560 y ss.) y, en el límite, con toda la teoría del acto jurídico.</div>
+<div class="row"><span class="lbl">Por qué importa:</span> es el «mapa» de la materia. Si al examinador le dices de entrada que el incumplimiento abre un <em>sistema de remedios</em> (cumplimiento, resolución, indemnización, excepción de contrato no cumplido), demuestras que entiendes la lógica y no sólo artículos sueltos.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> el contrato es «ley para las partes» (1545), pero como toda ley, tiene su «código penal»: los remedios del 1489 son la sanción por infringirla. Quien rompe el pacto no va preso… paga.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 1</span>
+<ol>
+<li>Distinga «efectos del contrato» y «efectos de las obligaciones». ¿Qué visión sigue Boetsch y por qué?</li>
+<li>¿Qué dos artículos forman el fundamento positivo de la responsabilidad contractual y qué aporta cada uno?</li>
+<li>¿Por qué se dice que el <span class="art">art. 1489</span> es la norma que vertebra el «sistema de remedios»?</li>
+<li>Explique la diferencia entre la concepción clásica (<em>perpetuatio obligationis</em>) y la moderna (sistema de remedios) de la obligación de indemnizar.</li>
+</ol>
+<span class="hint">Respuestas en la sección final → <a class="backlink" href="#r1">ver respuestas del tema 1</a></span></div>
+
+<h1 id="c2">2. El cumplimiento: el pago y sus principios</h1>
+<p>Antes de la patología conviene fijar la normalidad: el contrato se extingue, ante todo, <strong>cumpliéndose</strong>. Cumplimiento y pago son sinónimos en el Código:</p>
+<div class="lex"><b>Art. 1568 CC.</b> «El pago efectivo es la prestación de lo que se debe.» El pago es el primer modo de extinguir las obligaciones (<span class="art">art. 1567 N°2</span>).</div>
+<p>«Pago» no significa sólo entregar dinero: es ejecutar la prestación debida, sea dar, hacer o no hacer. Tres principios lo gobiernan:</p>
+<ul>
+<li><strong>Identidad</strong> (<span class="art">art. 1569</span>): debe pagarse exactamente lo debido; «el acreedor no podrá ser obligado a recibir otra cosa que lo que se le deba, ni aun a pretexto de ser de igual o mayor valor la ofrecida».</li>
+<li><strong>Integridad o indivisibilidad</strong> (<span class="art">art. 1591</span>): el pago debe ser total; el acreedor no está obligado a recibir por partes. Y «el pago total de la deuda comprende el de los intereses e indemnizaciones que se deban».</li>
+<li><strong>Gastos del pago</strong> (<span class="art">art. 1571</span>): son de cargo del deudor, salvo estipulación o regla legal en contrario.</li>
+</ul>
+<div class="ex"><span class="title">Ejemplo</span>
+Debo entregarte un caballo determinado y, llegado el día, te ofrezco otro «mejor». Por el principio de identidad puedes rechazarlo: nadie está obligado a recibir cosa distinta de la debida, aunque valga más. Y si te debo $1.000.000 y te ofrezco $600.000 «a cuenta», por el principio de integridad puedes negarte a recibir pagos parciales (salvo que lo hayamos convenido).</div>
+<p>Estos principios anclan toda la materia siguiente: el incumplimiento no es más que la <em>frustración</em> de este programa de pago (no se da lo idéntico, no se da lo íntegro, o no se da a tiempo).</p>
+
+<div class="quiz"><span class="title">Autoevaluación 2</span>
+<ol>
+<li>Defina el pago y nómbrelo dentro de los modos de extinguir.</li>
+<li>Enuncie los tres principios del pago con su artículo y dé un ejemplo de cada uno.</li>
+<li>¿Quién soporta los gastos del pago y con qué excepción?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r2">ver respuestas del tema 2</a></span></div>
+
+<h1 id="c3">3. El incumplimiento: noción objetiva y obligaciones de medios y de resultado</h1>
+<p>El punto de partida de la responsabilidad es el <strong>incumplimiento</strong>, definido objetivamente por el Código a propósito de la indemnización:</p>
+<div class="lex"><b>Art. 1556 CC.</b> «La indemnización de perjuicios comprende el daño emergente y el lucro cesante, ya provengan de no haberse cumplido la obligación, o de haberse cumplido imperfectamente, o de haberse retardado el cumplimiento.»</div>
+<p>De este texto se extraen las <strong>tres formas de incumplimiento</strong>: (i) <strong>total</strong> —no se cumple en absoluto—; (ii) <strong>imperfecto o parcial</strong> —se cumple de modo defectuoso o incompleto—; y (iii) <strong>tardío</strong> —se cumple, pero fuera de tiempo—. La doctrina moderna (Baraona, Peñailillo, Vidal) subraya que el incumplimiento es un concepto <strong>objetivo</strong>: basta la desviación entre la prestación debida y la conducta efectiva, con independencia de la culpa. El dolo y la culpa no integran el incumplimiento mismo: operan después, como <strong>factor de atribución</strong>, para decidir si procede la indemnización y con qué extensión.</p>
+<div class="ex"><span class="title">Ejemplo — las tres formas</span>
+Contrato la construcción de una bodega. Si el constructor nunca la levanta, hay incumplimiento <em>total</em>. Si la entrega con grietas y filtraciones, hay cumplimiento <em>imperfecto</em>. Si la termina perfecta pero tres meses después de lo pactado, hay cumplimiento <em>tardío</em>. Las tres caben en el 1556 y las tres pueden generar perjuicios distintos.</div>
+<p>No todo incumplimiento genera responsabilidad. Quedan fuera, entre otros, los casos en que la obligación se extinguió (remisión, novación, transacción, prescripción), aquellos en que opera la <strong>excepción de contrato no cumplido</strong> (<span class="art">art. 1552</span>), y aquellos en que media <strong>caso fortuito</strong> (punto 8).</p>
+
+<h3>3.1. Obligaciones de medios y obligaciones de resultado</h3>
+<p>Esta distinción (de raíz francesa —Demogue— y trabajada en Chile por Barros) es decisiva para la prueba:</p>
+<ul>
+<li><strong>Obligaciones de resultado:</strong> el deudor garantiza un <em>opus</em> determinado (entregar la cosa, pagar el precio, construir la obra). El solo hecho de que el resultado no se obtenga configura el incumplimiento, y opera de lleno la presunción de culpa del <span class="art">art. 1547 inc. 3</span>.</li>
+<li><strong>Obligaciones de medios:</strong> el deudor sólo se obliga a desplegar una <em>conducta diligente</em>. Aquí el cumplimiento <em>consiste</em> en la diligencia, de modo que el incumplimiento es, precisamente, la falta de ella.</li>
+</ul>
+<div class="ex"><span class="title">Ejemplo clásico</span>
+El abogado que toma un juicio no se obliga a <em>ganarlo</em> (eso no depende sólo de él), sino a defender con diligencia: la suya es obligación de medios. El transportista, en cambio, se obliga a un resultado: que la carga llegue a destino. Por eso, si pierdo el juicio no basta para demandar a mi abogado —debo probar que fue negligente—; en cambio, si la carga no llega, el transportista debe probar que actuó diligentemente o que hubo caso fortuito.</div>
+<div class="callout"><span class="title">La consecuencia probatoria</span>
+En las obligaciones de medios, como la diligencia es el objeto mismo de la prestación, <strong>el acreedor debe probar la conducta culpable del deudor</strong>: no le basta acreditar la obligación y un mal resultado. Como dice Orrego, «si estamos ante una obligación de medios, el acreedor no sólo deberá probar la existencia de la obligación, sino también la conducta culpable del deudor demandado». Por eso la prueba de la culpa en las obligaciones de medios se acerca al régimen extracontractual. Hay además un debate de fondo —¿toda obligación es reconducible a una u otra categoría?—: unos las creen todas de medio, otros todas de resultado, y la posición intermedia (mayoritaria) las distingue según la naturaleza de cada obligación.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> responsabilidad médica (la obligación del médico es, por regla, de medios), carga de la prueba (<span class="art">art. 1698</span>), presunción de culpa (1547 inc. 3) y la frontera entre responsabilidad contractual y extracontractual.</div>
+<div class="row"><span class="lbl">Por qué importa:</span> es la llave que decide <em>quién prueba qué</em>. Si confundes medios con resultado, inviertes la carga de la prueba y respondes mal el caso entero.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> el taxista promete <em>llegar</em> (resultado); el profesor promete <em>enseñar</em> bien, no que apruebes (medios). Si repruebas, no demandas al profe… salvo que se haya dormido toda la clase.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 3</span>
+<ol>
+<li>¿Por qué se dice que el incumplimiento es un concepto «objetivo»? ¿Dónde quedan el dolo y la culpa?</li>
+<li>Enuncie las tres formas de incumplimiento del <span class="art">art. 1556</span> con un ejemplo de cada una.</li>
+<li>Distinga obligaciones de medios y de resultado y explique la diferencia de <em>prueba</em> entre ambas.</li>
+<li>Mencione tres situaciones en que el incumplimiento no genera responsabilidad.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r3">ver respuestas del tema 3</a></span></div>
+
+<h1 id="c4">4. Requisitos de la indemnización de perjuicios</h1>
+<p>Siguiendo a Alessandri (recogido por Orrego), para que nazca el deber de indemnizar deben concurrir cinco requisitos. Memorízalos como columna vertebral; cada uno se desarrolla luego:</p>
+<ol>
+<li><strong>Incumplimiento</strong> de la obligación, en cualquiera de las formas del <span class="art">art. 1556</span>.</li>
+<li><strong>Imputabilidad</strong> del incumplimiento al deudor: dolo o culpa (punto 5).</li>
+<li><strong>Perjuicio</strong> al acreedor (punto 9): sin daño no hay indemnización.</li>
+<li><strong>Relación de causalidad</strong> entre el incumplimiento y el perjuicio.</li>
+<li><strong>Mora</strong> del deudor (<span class="art">arts. 1557 y 1538</span>), salvo en las obligaciones de no hacer (punto 7).</li>
+</ol>
+<p>Algunos autores agregan, como sexto elemento, la <strong>ausencia de causal de exención</strong> (que no concurra caso fortuito ni una cláusula eximente válida y que la obligación sea civil y actualmente exigible). Otros prefieren tratar la exención no como requisito positivo, sino como defensa del deudor.</p>
+
+<div class="quiz"><span class="title">Autoevaluación 4</span>
+<ol>
+<li>Enumere los cinco requisitos de la indemnización de perjuicios.</li>
+<li>¿En qué clase de obligaciones no se exige mora? ¿Por qué?</li>
+<li>¿Por qué algunos tratan la ausencia de exención como requisito y otros como defensa del deudor?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r4">ver respuestas del tema 4</a></span></div>
+
+<h1 id="c5">5. La imputabilidad: culpa y dolo contractuales</h1>
+<h3>5.1. La culpa contractual y su graduación tripartita</h3>
+<p>Apartándose del <em>Code</em> francés —que sólo conoce una culpa—, nuestro Código adopta la división escolástica de Pothier en tres grados:</p>
+<div class="lex"><b>Art. 44 CC.</b> Define la <b>culpa grave o lata</b> («no manejar los negocios ajenos con aquel cuidado que aun las personas negligentes y de poca prudencia suelen emplear en sus negocios propios»; «esta culpa en materias civiles equivale al dolo»); la <b>culpa leve</b> («la falta de aquella diligencia y cuidado que los hombres emplean ordinariamente en sus negocios propios»; modelo del <em>buen padre de familia</em>; es la regla general: «culpa o descuido, sin otra calificación, significa culpa o descuido leve»); y la <b>culpa levísima</b> («la falta de aquella esmerada diligencia que un hombre juicioso emplea en la administración de sus negocios importantes»). El mismo artículo define el <b>dolo</b> como «la intención positiva de inferir injuria a la persona o propiedad de otro».</div>
+<p>La culpa se aprecia <strong>en abstracto</strong>: la conducta del deudor se compara con un modelo ideal (el buen padre de familia, el hombre juicioso), no con su diligencia habitual. El <span class="art">art. 1547</span> distribuye <em>de qué grado</em> de culpa responde el deudor según la <strong>utilidad</strong> que el contrato le reporta:</p>
+<table>
+<tr><th>¿A quién beneficia el contrato?</th><th>Grado del que responde el deudor</th><th>Ejemplo</th></tr>
+<tr><td>Sólo al acreedor</td><td>Sólo de <strong>culpa grave</strong></td><td>Depósito (<span class="art">art. 2222</span>)</td></tr>
+<tr><td>A ambas partes</td><td>De <strong>culpa leve</strong> (regla general)</td><td>Compraventa, arrendamiento</td></tr>
+<tr><td>Sólo al deudor</td><td>Hasta de <strong>culpa levísima</strong></td><td>Comodato (<span class="art">art. 2178</span>)</td></tr>
+</table>
+<div class="ex"><span class="title">Ejemplo — la lógica del 1547</span>
+Si te guardo gratis tu bicicleta (depósito, contrato que sólo te beneficia a ti), sería injusto exigirme una diligencia exquisita: respondo sólo si fui <em>gravemente</em> negligente, por ejemplo si la dejé en la calle sin candado. En cambio, si te pedí prestada tu bicicleta para mi uso (comodato, contrato que sólo me beneficia a mí), se me exige el máximo cuidado: respondo hasta de la culpa levísima.</div>
+<p>Ahora bien, el <span class="art">art. 1547</span> es sólo el último escalón. Orrego ordena el <strong>orden de determinación</strong> del grado de culpa así:</p>
+<ol>
+<li><strong>Lo estipulado por las partes.</strong> Prima la autonomía de la voluntad: las partes pueden agravar o atenuar el grado de culpa exigible (<span class="art">arts. 1547 inc. final y 1558 inc. final</span>), con el único límite de que no se condone el dolo ni la culpa grave futuros (1465; punto 17). <span class="muted">Ej.: en un comodato las partes pactan que el comodatario responderá sólo de culpa grave, rebajando la culpa levísima que la ley le exigiría.</span></li>
+<li><strong>Las leyes especiales.</strong> Fuera del Código Civil hay regímenes que fijan estándares propios de diligencia. <span class="muted">Ej.: el contrato de transporte en el Código de Comercio, o la responsabilidad del proveedor en la Ley 19.496 sobre protección al consumidor, que no se mide por la tríada del art. 44 sino por sus propias reglas.</span></li>
+<li><strong>Las reglas propias de cada contrato</strong> dentro del Código. Cada contrato típico suele señalar de qué culpa responde el deudor, y a veces <em>se aparta</em> de lo que arrojaría la pura lógica del 1547. <span class="muted">Ej. de coincidencia: comodato → culpa levísima (<span class="art">art. 2178</span>); depósito → culpa grave (<span class="art">art. 2222</span>).</span></li>
+<li><strong>Supletoriamente, el <span class="art">art. 1547</span></strong>, según a quién beneficie el contrato.</li>
+</ol>
+<div class="warn"><span class="title">El ejemplo que delata si entendiste: la fianza</span>
+La fianza es un contrato gratuito que cede en beneficio exclusivo del <em>acreedor</em>. Por la lógica del <span class="art">art. 1547</span>, el fiador —que no obtiene provecho— «debería» responder sólo de <strong>culpa grave</strong>. Sin embargo, una <em>regla propia del contrato</em> lo desmiente: el <span class="art">art. 2351</span> dispone que «el fiador es responsable hasta de la culpa leve en todas las prestaciones a que fuere obligado». Es decir, la regla especial del contrato (escalón 3) <strong>prevalece</strong> sobre la regla general del 1547 (escalón 4) y le exige más diligencia de la esperable. Citar este caso muestra que dominas el <em>orden</em> de determinación y no sólo la tabla del 1547.</div>
+
+<h3>5.2. El dolo contractual</h3>
+<p>El dolo (<span class="art">art. 44 inc. final</span>) tiene en el Código <strong>tres roles</strong> (Orrego): (i) como <em>vicio del consentimiento</em> (<span class="art">arts. 1458-1459</span>); (ii) como elemento del <em>delito civil</em> (<span class="art">arts. 2284 y 2329</span>); y (iii) como <strong>agravante del incumplimiento</strong> contractual (<span class="art">art. 1558</span>): el incumplimiento ejecutado con el propósito deliberado de perjudicar al acreedor.</p>
+<p>Su efecto propio es <strong>agravar la extensión de la reparación</strong>: el deudor doloso responde no sólo de los perjuicios directos previstos, sino también de los <strong>directos imprevistos</strong> (<span class="art">art. 1558</span>, punto 9). Tres reglas capitales:</p>
+<ul>
+<li><strong>El dolo no se presume</strong> (<span class="art">art. 1459</span>): debe probarlo quien lo alega, porque la ley presume la buena fe (<span class="art">art. 707</span>).</li>
+<li><strong>El dolo futuro no puede condonarse</strong>: el <span class="art">art. 1465</span> sanciona con objeto ilícito (y por tanto nulidad absoluta) la condonación anticipada del dolo.</li>
+<li><strong>Si el dolo es de varios deudores, responden solidariamente</strong> (<span class="art">art. 2317 inc. 2</span>).</li>
+</ul>
+<div class="debate"><span class="title">Punto fino: la culpa grave «equivale al dolo» (art. 44) — ¿se presume o se prueba?</span>
+La equivalencia tiene dos consecuencias claras: el deudor con culpa grave responde de los perjuicios imprevistos como el doloso, y no puede pactarse su exoneración (sería condonar dolo futuro, <span class="art">art. 1465</span>). Lo discutido es la <strong>prueba</strong>. La <strong>tesis mayoritaria</strong> (Claro Solar, Alessandri, Fueyo, Abeliuk) sostiene que la equivalencia es sólo <em>de efectos</em>, de modo que la culpa grave se sigue <strong>presumiendo</strong> como toda culpa contractual (<span class="art">art. 1547 inc. 3</span>). La <strong>tesis minoritaria</strong> (Somarriva, Rodríguez Grez) afirma que, al equivaler al dolo, debe <strong>probarse</strong> como éste.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> dolo como vicio del consentimiento (<span class="art">art. 1458</span>), objeto ilícito y nulidad (1465, 1682), solidaridad (2317) y la extensión del daño en el 1558.</div>
+<div class="row"><span class="lbl">Por qué importa:</span> el grado de culpa decide <em>cuánto</em> responde el deudor y <em>cuánto</em> hay que probarle. La cadena «culpa grave = dolo → responde de imprevistos → no se puede condonar» es un combo que el examinador adora encadenar.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> tres niveles de descuido como tres niñeras: la <em>grave</em> deja al bebé solo en la plaza (¡casi maldad!); la <em>leve</em> se distrae con el celular un rato; la <em>levísima</em> revisa la temperatura de la mamadera con termómetro. La ley te exige más niñera mientras más te aproveches del contrato.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 5</span>
+<ol>
+<li>Defina los tres grados de culpa del <span class="art">art. 44</span>. ¿Cuál es la regla general?</li>
+<li>Explique cómo distribuye el <span class="art">art. 1547</span> el grado de culpa exigible y por qué esa lógica es justa.</li>
+<li>¿Cuál es el efecto propio del dolo en la extensión de la reparación?</li>
+<li>Enuncie las tres reglas capitales del dolo (presunción, condonación, solidaridad) con su artículo.</li>
+<li>Exponga el debate sobre si la culpa grave se presume o se prueba.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r5">ver respuestas del tema 5</a></span></div>
+
+<h1 id="c6">6. La presunción de culpa y la carga de la prueba</h1>
+<p>Es la diferencia capital con la sede extracontractual. Probado el incumplimiento de una obligación de resultado, <strong>la culpa del deudor se presume</strong>; es él quien debe acreditar diligencia o caso fortuito para liberarse:</p>
+<div class="lex"><b>Art. 1547 inc. 3 CC.</b> «La prueba de la diligencia o cuidado incumbe al que ha debido emplearlo; la prueba del caso fortuito al que lo alega.»</div>
+<div class="lex"><b>Art. 1698 inc. 1 CC.</b> «Incumbe probar las obligaciones o su extinción al que alega aquéllas o ésta.»</div>
+<p>Articulando ambas normas: el <strong>acreedor</strong> prueba la <em>existencia</em> de la obligación; al <strong>deudor</strong> que pretende haberse liberado le toca probar el <em>pago</em> u otra causa de extinción y, si se le imputa incumplimiento, la <em>diligencia</em> empleada o el <em>caso fortuito</em>. La sola insatisfacción del acreedor hace presumir la culpa.</p>
+<div class="callout"><span class="title">Contraste con la responsabilidad extracontractual</span>
+En sede aquiliana (<span class="art">art. 2314</span>) la regla inversa es la base: <em>la víctima debe probar la culpa del autor</em> (salvo las presunciones de los arts. 2320 a 2329). En sede contractual, en cambio, la culpa del deudor se presume. Esta es una de las grandes razones por las que conviene al demandante encuadrar su caso en lo contractual cuando puede (de allí la importancia del cúmulo u opción).</div>
+<div class="ex"><span class="title">Ejemplo</span>
+Dejo mi auto en un taller para reparar los frenos y, al retirarlo, los frenos fallan y choco. No tengo que probar <em>qué</em> hizo mal el mecánico: me basta probar el contrato y que el auto salió defectuoso. Será el taller quien deba probar que actuó con diligencia o que el desperfecto se debió a una causa ajena. La carga, aquí, juega a favor del acreedor.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> carga de la prueba (<span class="art">art. 1698</span>), prueba de las obligaciones, obligaciones de medios vs. resultado (en las de medios la presunción se diluye) y todo el régimen extracontractual por contraste.</div>
+<div class="row"><span class="lbl">Por qué importa:</span> es la pregunta de oro «¿quién prueba la culpa?». Si respondes «en contractual se presume, en extracontractual la prueba la víctima», y matizas con las obligaciones de medios, demuestras dominio fino.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> en el contrato, el deudor entra al examen «culpable hasta que pruebe lo contrario»; en el delito civil, la víctima debe «armar el caso». Contrato = se invierte la carga; delito = la carga es de quien acusa.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 6</span>
+<ol>
+<li>¿De qué norma se deriva la presunción de culpa del deudor y qué debe probar éste para liberarse?</li>
+<li>Reparta la carga de la prueba entre acreedor y deudor según el <span class="art">art. 1698</span>.</li>
+<li>Contraste la regla probatoria contractual con la extracontractual y explique por qué conviene al demandante lo contractual.</li>
+<li>¿Cómo se altera la presunción en las obligaciones de medios?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r6">ver respuestas del tema 6</a></span></div>
+
+<h1 id="c7">7. La mora</h1>
+<p>El simple retardo no basta para deber perjuicios: hace falta la <strong>mora</strong>, que es el <em>retardo imputable</em> en el cumplimiento una vez que el acreedor ha interpelado al deudor. Stitchkin y Abeliuk la definen como el retardo que persiste después de la interpelación.</p>
+<p><strong>Requisitos de la mora:</strong></p>
+<ol>
+<li><strong>Retardo</strong> en el cumplimiento.</li>
+<li>Que el retardo sea <strong>imputable</strong> al deudor (dolo o culpa; no hay mora si el retardo se debe a caso fortuito).</li>
+<li><strong>Interpelación</strong> del acreedor (<span class="art">art. 1551</span>), en alguna de sus tres formas.</li>
+<li>Que el acreedor haya cumplido o esté llano a cumplir (<span class="art">art. 1552</span>: «la mora purga la mora»).</li>
+</ol>
+<h3>7.1. Las tres formas de interpelación (art. 1551)</h3>
+<div class="lex"><b>Art. 1551 CC.</b> «El deudor está en mora: 1.º Cuando no ha cumplido la obligación dentro del término estipulado, salvo que la ley en casos especiales exija que se requiera al deudor para constituirle en mora; 2.º Cuando la cosa no ha podido ser dada o ejecutada sino dentro de cierto tiempo y el deudor lo ha dejado pasar sin darla o ejecutarla; 3.º En los demás casos, cuando el deudor ha sido judicialmente reconvenido por el acreedor.»</div>
+<ul>
+<li><strong>N°1 — interpelación contractual expresa:</strong> el propio plazo estipulado interpela («el día interpela por el hombre»). Vencido el término, el deudor queda en mora sin más.</li>
+<li><strong>N°2 — interpelación contractual tácita:</strong> aunque no haya plazo expreso, de la naturaleza de la prestación se desprende que sólo era útil dentro de cierto tiempo, y el deudor lo dejó pasar.</li>
+<li><strong>N°3 — interpelación judicial:</strong> es la <em>regla general supletoria</em>. A falta de las dos anteriores, el deudor sólo queda en mora cuando es <strong>demandado</strong> (reconvenido judicialmente).</li>
+</ul>
+<div class="ex"><span class="title">Ejemplos de cada forma</span>
+<strong>N°1:</strong> arriendo que fija el 31 de diciembre como fecha de restitución; pasado ese día, el arrendatario está en mora sin necesidad de aviso. <strong>N°2 (tácita):</strong> encargo un vestido de novia para casarme el sábado; si la modista no lo entrega antes, está en mora aunque no fijamos una hora exacta, porque la prestación sólo servía hasta ese día. Lo mismo con los disfraces que debían estar listos <em>para</em> el carnaval, o la trilladora arrendada <em>para</em> la época de cosecha. <strong>N°3:</strong> te presté dinero sin fecha de devolución; sólo quedas en mora cuando te demando el pago.</div>
+<h3>7.2. «La mora purga la mora» (art. 1552) y la excepción de contrato no cumplido</h3>
+<div class="lex"><b>Art. 1552 CC.</b> «En los contratos bilaterales ninguno de los contratantes está en mora dejando de cumplir lo pactado, mientras el otro no lo cumple por su parte, o no se allana a cumplirlo en la forma y tiempo debidos.»</div>
+<p>De aquí nace la <strong>excepción de contrato no cumplido</strong> (<em>exceptio non adimpleti contractus</em>): en un contrato bilateral, el deudor demandado puede negarse a cumplir mientras el otro no cumpla ni se allane a hacerlo. La lectura tradicional ve en el 1552 el fundamento de esta excepción; una lectura moderna (Vial) sostiene que el artículo sólo fija <em>cuándo</em> hay mora a efectos indemnizatorios, sin impedir por sí la resolución.</p>
+<h3>7.3. Efectos de la mora</h3>
+<ul>
+<li><strong>Da derecho a la indemnización moratoria</strong> (<span class="art">art. 1557</span>): los perjuicios del retardo se deben desde la mora.</li>
+<li><strong>Hace responsable al deudor del caso fortuito sobrevenido</strong> durante la mora (<span class="art">arts. 1547 inc. 2 y 1672 inc. 2</span>), salvo que la cosa hubiera perecido igualmente en poder del acreedor (<span class="art">art. 1674 inc. 2</span>).</li>
+<li><strong>Traslada el riesgo</strong> de la cosa (<span class="art">art. 1550</span>; ver punto 8.2).</li>
+</ul>
+<h3>7.4. La mora del acreedor (mora accipiendi)</h3>
+<p>También el acreedor puede incurrir en mora si se niega injustificadamente a recibir el pago. El Código no la regula sistemáticamente, pero la reconoce en varias normas (<span class="art">arts. 1548, 1680, 1827</span> y, en materia de pago por consignación, 1599 y ss.). Sus efectos: atenúa la responsabilidad del deudor (que pasa a responder sólo de culpa grave o dolo), pone los riesgos de cargo del acreedor y lo obliga a indemnizar los perjuicios de la negativa. Claro Solar sostiene que basta cualquier ofrecimiento del deudor para constituir en mora al acreedor.</p>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> condición resolutoria tácita (1489), excepción de contrato no cumplido, teoría de los riesgos (1550) y avaluación legal de perjuicios en obligaciones de dinero (1559).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> «retardo» y «mora» no son lo mismo, y confundirlos es un error típico. La mora es el gatillo de los perjuicios moratorios y traslada el riesgo: es bisagra de medio temario.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> el N°1 es «el día interpela por el hombre» (el calendario te reta); el N°2 es la prestación con «fecha de vencimiento» como la leche (sirve hasta el sábado de la boda); el N°3 es «hasta que no te demande, no estás en mora». Y recuerda: nadie puede exigir puntualidad si él mismo llega tarde (1552).</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 7</span>
+<ol>
+<li>Distinga «retardo» y «mora». ¿Qué agrega la mora al simple retardo?</li>
+<li>Enuncie los cuatro requisitos de la mora.</li>
+<li>Explique las tres formas de interpelación del <span class="art">art. 1551</span> con un ejemplo de cada una. ¿Cuál es la regla general?</li>
+<li>¿Qué es la excepción de contrato no cumplido y en qué norma se funda?</li>
+<li>Señale tres efectos de la mora del deudor y dos efectos de la mora del acreedor.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r7">ver respuestas del tema 7</a></span></div>
+
+<h1 id="c8">8. El caso fortuito y la teoría de los riesgos</h1>
+<h3>8.1. El caso fortuito o fuerza mayor</h3>
+<div class="lex"><b>Art. 45 CC.</b> «Se llama fuerza mayor o caso fortuito el imprevisto a que no es posible resistir, como un naufragio, un terremoto, el apresamiento de enemigos, los actos de autoridad ejercidos por un funcionario público, etc.»</div>
+<p>El Código equipara «fuerza mayor» y «caso fortuito». Sus <strong>elementos</strong> (sobre los que el examinador insiste) son tres:</p>
+<ol>
+<li><strong>Exterioridad o ajenidad:</strong> el hecho debe ser ajeno al deudor, no provenir de su esfera de control ni de su culpa.</li>
+<li><strong>Imprevisibilidad:</strong> que no haya podido preverse razonablemente al contratar.</li>
+<li><strong>Irresistibilidad:</strong> que, ocurrido, no haya podido resistirse ni evitarse. Se juzga conforme al modelo del buen padre de familia.</li>
+</ol>
+<p>Su efecto es <strong>extinguir la obligación</strong> (si la imposibilidad es definitiva; <span class="art">arts. 1670, 1672</span>) o <strong>eximir de responsabilidad</strong> (<span class="art">arts. 1547 inc. 2 y 1558 inc. 2</span>). La prueba del caso fortuito incumbe a quien lo alega (<span class="art">art. 1547 inc. 3</span>).</p>
+<div class="warn"><span class="title">Excepciones: el deudor responde aunque haya caso fortuito</span>
+(i) cuando el caso fortuito sobrevino por su <strong>culpa</strong> (<span class="art">art. 1547 inc. 2</span>); (ii) cuando ocurrió estando él <strong>en mora</strong> (<span class="art">art. 1547 inc. 2</span>), salvo que la cosa hubiera perecido igualmente donde el acreedor (1674 inc. 2); (iii) cuando se <strong>convino</strong> expresamente responder del caso fortuito (<span class="art">art. 1673</span>); y (iv) cuando la <strong>ley</strong> lo pone a su cargo, como el <span class="art">art. 1676</span> (quien hurtó o robó la cosa no puede excusarse en que pereció por caso fortuito).</div>
+<div class="ex"><span class="title">Ejemplo y contraejemplo</span>
+Un terremoto destruye la bodega con la mercadería que debía entregar: caso fortuito, me exonero. Pero si me había obligado a entregar mercadería que <em>nunca tuve ni encargué</em>, no hay caso fortuito sino falta de previsión (el ejemplo de Abeliuk): el «no tener» la cosa es un riesgo propio del negocio, no un imprevisto irresistible.</div>
+<div class="debate"><span class="title">¿Basta la ausencia de culpa, o hay que probar el caso fortuito?</span>
+Para <strong>Abeliuk</strong>, al deudor le basta probar que actuó con la diligencia debida (ausencia de culpa) para exonerarse (<span class="art">arts. 1547 inc. 3, 1670, 1672</span>). Para <strong>Claro Solar</strong>, en cambio, no basta la diligencia: hay que acreditar el <em>caso fortuito</em> como causa concreta de la imposibilidad. El matiz importa en la práctica probatoria: define cuánto debe demostrar el deudor para librarse.</div>
+<h3>8.2. La teoría de los riesgos</h3>
+<p>Cuando en un contrato bilateral la obligación de una parte se extingue por caso fortuito (la cosa debida perece sin culpa), surge la pregunta: ¿<strong>subsiste</strong> la obligación de la contraparte, o también se extingue? Quien soporta el riesgo es quien pierde: si el riesgo es del acreedor, debe pagar igual aunque no reciba nada; si es del deudor, nada puede cobrar.</p>
+<div class="lex"><b>Art. 1550 CC.</b> «El riesgo del cuerpo cierto cuya entrega se deba es siempre a cargo del acreedor; salvo que el deudor se constituya en mora de efectuarla, o que se haya comprometido a entregar una misma cosa a dos o más personas por obligaciones distintas; en cualquiera de estos casos será a cargo del deudor el riesgo de la cosa, hasta su entrega.»</div>
+<p>La regla general chilena es, pues, <strong><em>res perit creditori</em></strong>: el riesgo es del acreedor. En la compraventa lo confirma el <span class="art">art. 1820</span>. Es una regla muy criticada (proviene de un error histórico en la recepción del derecho romano-francés), porque parece injusto que el comprador deba pagar el precio de una cosa que nunca recibirá. Por eso sus <strong>excepciones</strong> son importantes: el riesgo pasa al deudor si está <em>en mora</em> o si se obligó a dar la misma cosa a dos personas (1550), y en las obligaciones <em>de género</em> no hay problema de riesgo porque «el género no perece» (<span class="art">art. 1510</span>).</p>
+<div class="ex"><span class="title">Ejemplo</span>
+Te vendo mi caballo «Relámpago» y, antes de entregártelo, un rayo lo mata sin culpa mía. Por el <span class="art">art. 1550</span> el riesgo es tuyo (acreedor de la entrega): mi obligación de entregar se extingue, pero tú debes pagarme igual el precio. Si, en cambio, yo ya estaba en mora de entregártelo cuando cayó el rayo, el riesgo se invierte y soy yo quien pierde.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> modos de extinguir (pérdida de la cosa debida, <span class="art">arts. 1670 y ss.</span>), mora (1550 invierte el riesgo), obligaciones de género (1510) y compraventa (1820).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> el <span class="art">art. 1550</span> es contraintuitivo y por eso es un favorito: muchos contestan «res perit debitori» por instinto y se equivocan. En Chile, salvo mora, <strong>el riesgo lo lleva el acreedor</strong>.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> compraste el caballo, se murió antes de la entrega… y igual pagas. «Mala suerte, pero ya era tuyo el riesgo.» <em>Res perit creditori</em>: el que espera la cosa, banca la desgracia (salvo que el vendedor estuviera en mora).</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 8</span>
+<ol>
+<li>Defina el caso fortuito y enuncie sus tres elementos.</li>
+<li>Señale cuatro casos en que el deudor responde a pesar del caso fortuito.</li>
+<li>Exponga el debate Abeliuk/Claro Solar sobre si basta la ausencia de culpa.</li>
+<li>¿Qué problema resuelve la teoría de los riesgos y cuál es la regla del <span class="art">art. 1550</span>?</li>
+<li>Mencione las excepciones a esa regla y qué ocurre en las obligaciones de género.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r8">ver respuestas del tema 8</a></span></div>
+
+<h1 id="c9">9. Los perjuicios indemnizables</h1>
+<p>Sin daño no hay indemnización. El perjuicio es, además, el objeto mismo de la reparación, de modo que sus clasificaciones determinan <em>qué</em> y <em>cuánto</em> se indemniza.</p>
+<h3>9.1. Requisitos del daño indemnizable</h3>
+<ul>
+<li><strong>Certidumbre:</strong> el daño debe ser cierto, real, no meramente hipotético o eventual. El lucro cesante futuro es indemnizable si es cierto.</li>
+<li><strong>Que no haya sido ya reparado:</strong> no procede el doble cobro; se descuenta lo cubierto, por ejemplo, por un seguro.</li>
+<li><strong>Interés legítimo del demandante:</strong> quien reclama debe haber sufrido la lesión de un interés jurídicamente protegido.</li>
+</ul>
+<div class="debate"><span class="title">La «pérdida de una chance»</span>
+Caso límite de la certidumbre: el abogado que por negligencia deja vencer el plazo de un recurso no priva al cliente de un resultado seguro (ganar nunca lo era), sino de la <em>posibilidad</em> de obtenerlo. La doctrina moderna indemniza esa <strong>chance perdida</strong> —no el resultado final— en proporción a la probabilidad que existía. Es certeza «de la oportunidad», aunque incierta la ganancia final.</div>
+<h3>9.2. Daño emergente y lucro cesante (art. 1556)</h3>
+<div class="lex"><b>Art. 1556 inc. 1 CC.</b> «La indemnización de perjuicios comprende el daño emergente y el lucro cesante…»</div>
+<p>El <strong>daño emergente</strong> es la <em>pérdida efectiva</em> que sufre el patrimonio (lo que sale del bolsillo). El <strong>lucro cesante</strong> es la <em>ganancia que se deja de percibir</em> a causa del incumplimiento (lo que no entra al bolsillo). El daño emergente se prueba con relativa facilidad; el lucro cesante exige una proyección razonable y por eso es más difícil de acreditar.</p>
+<div class="ex"><span class="title">Ejemplo — Pavarotti (Gatica)</span>
+Un empresario contrata a un célebre tenor para un concierto y éste no se presenta. El <strong>daño emergente</strong> son los gastos ya hechos: arriendo del teatro, publicidad, montaje. El <strong>lucro cesante</strong> son las entradas que se habrían vendido y que ya no se venderán. Ambos rubros caben en el 1556.</div>
+<h3>9.3. Daño moral contractual</h3>
+<p>Históricamente se negaba la reparación del daño moral en sede contractual, porque faltaba una norma equivalente al <span class="art">art. 2329</span> (que en lo extracontractual manda reparar «todo daño») y se entendía que el 1556 sólo cubría perjuicios patrimoniales. Hoy <strong>se admite</strong>, fundándose en una lectura amplia del 1556 y en la protección constitucional de la integridad psíquica y la honra (<span class="art">art. 19 N°1 y N°4 CPR</span>). Lo defienden Fueyo y Tomasello, y la jurisprudencia lo ha aceptado especialmente en contratos donde está comprometida la persona (salud, transporte, prestaciones bancarias que afectan la honra).</p>
+<div class="ex"><span class="title">Ejemplos de daño moral contractual… y cuándo no lo hay</span>
+<strong>Sí:</strong> entrego al joyero el anillo de compromiso para achicarlo y lo pierde; o el banco que, por error, protesta los cheques de un buen cliente y daña su honra comercial; o el laboratorio que destruye la única fotografía de un antepasado. <strong>No:</strong> el incumplimiento en la entrega de 100 sacos de porotos en una operación puramente mercantil no genera, por sí, daño moral: no hay un interés extrapatrimonial comprometido.</div>
+<h3>9.4. Daños directos e indirectos (art. 1558)</h3>
+<p>Sólo se indemnizan los daños <strong>directos</strong> —los que son consecuencia inmediata y necesaria del incumplimiento—. Los <strong>indirectos</strong> no se indemnizan <em>nunca</em>, ni siquiera mediando dolo, porque les falta nexo causal con el incumplimiento.</p>
+<div class="ex"><span class="title">Ejemplo — las vacas de Pothier</span>
+Un ganadero compra vacas enfermas (el vendedor lo sabía). Las vacas contagian al resto del rebaño, que muere (daño directo). Sin animales, el agricultor no puede arar y pierde la cosecha (daño ya más remoto). Sin cosecha, no paga sus deudas y le rematan el predio; arruinado, cae enfermo. La cadena se estira hasta lo absurdo: la ley corta en los daños <strong>directos</strong>; los eslabones lejanos (el remate, la enfermedad) son indirectos y no se indemnizan, aunque haya dolo.</div>
+<h3>9.5. Daños previstos e imprevistos (art. 1558)</h3>
+<div class="lex"><b>Art. 1558 inc. 1 CC.</b> «Si no se puede imputar dolo al deudor, sólo es responsable de los perjuicios que se previeron o pudieron preverse al tiempo del contrato; pero si hay dolo, es responsable de todos los perjuicios que fueron una consecuencia inmediata o directa de no haberse cumplido la obligación o de haberse demorado su cumplimiento.»</div>
+<p>Esta es la <strong>regla de oro de la extensión del daño</strong>: el deudor de buena fe (culpa) responde sólo de los perjuicios <em>previsibles al contratar</em>; el deudor <em>doloso</em> (o con culpa grave) responde además de los <em>imprevistos</em>, siempre que sean directos. El inciso final del 1558 permite, eso sí, modificar estas reglas por convención.</p>
+<div class="ex"><span class="title">Ejemplo — las castañas a El Cairo</span>
+Encargo a un transportista enviar castañas a El Cairo para una feria con fecha fija. Si llegan tarde y se pierde la venta, el lucro de esa feria era <em>previsible</em> (el destino y la urgencia constaban): se indemniza. Pero si dentro de la carga iba, sin declararlo, un maletín con joyas valiosísimas que se extravía, ese daño era <em>imprevisible</em> para el transportista: sólo respondería de él si actuó con dolo.</div>
+<h3>9.6. Prueba de los perjuicios</h3>
+<p>Por regla general, el acreedor debe <strong>probar</strong> los perjuicios (<span class="art">art. 1698</span>). Hay excepciones notables: la <strong>cláusula penal</strong> dispensa de probar perjuicio alguno (<span class="art">art. 1542</span>); en las obligaciones de dinero, para cobrar intereses moratorios el acreedor no necesita justificar perjuicios (<span class="art">art. 1559 regla 2.ª</span>); y el <span class="art">art. 173 CPC</span> permite reservar la discusión del monto para la etapa de cumplimiento del fallo.</p>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> causalidad (los daños indirectos se excluyen por falta de nexo), dolo como agravante (1558), daño moral en sede extracontractual (2329, por contraste) y avaluación de perjuicios (punto 10).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> casi todo caso práctico termina en «¿qué daños se indemnizan?». Dominar el doble eje <em>directo/indirecto</em> y <em>previsto/imprevisto</em>, más el efecto del dolo, te permite resolver cualquier hipótesis.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> el deudor <em>de buena fe</em> paga sólo lo que «se veía venir» (previsible); el <em>doloso</em> paga hasta lo que no se veía venir… pero ni el peor sinvergüenza paga la cadena infinita de Pothier (lo indirecto nunca). Dos filtros: primero «¿es directo?», después «¿era previsible?».</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 9</span>
+<ol>
+<li>Enuncie los requisitos del daño indemnizable y explique la «pérdida de una chance».</li>
+<li>Distinga daño emergente y lucro cesante con el ejemplo del concierto.</li>
+<li>¿Se indemniza el daño moral contractual? ¿En qué se funda hoy y con qué ejemplos?</li>
+<li>Explique el doble eje directo/indirecto y previsto/imprevisto, y el rol del dolo (<span class="art">art. 1558</span>).</li>
+<li>¿Quién prueba los perjuicios y cuáles son las tres excepciones?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r9">ver respuestas del tema 9</a></span></div>
+
+<h1 id="c10">10. La avaluación de los perjuicios y la cláusula penal</h1>
+<p>Determinado que hay daño, falta <strong>cuantificarlo</strong>. La avaluación puede ser de tres clases, según quién fije el monto: judicial, legal o convencional.</p>
+<h3>10.1. Avaluación judicial</h3>
+<p>Es la regla general: a falta de pacto y fuera de las obligaciones de dinero, <strong>el juez</strong> determina los perjuicios aplicando los <span class="art">arts. 1556</span> (daño emergente y lucro cesante) y <span class="art">1558</span> (directos; previstos o imprevistos según haya o no dolo). El acreedor prueba la existencia y el monto del daño, salvo la reserva del <span class="art">art. 173 CPC</span>.</p>
+<h3>10.2. Avaluación legal (art. 1559): obligaciones de dinero</h3>
+<p>Es <strong>excepcional y supletoria</strong>, y opera <em>sólo</em> respecto de la indemnización <strong>moratoria</strong> en obligaciones de <strong>dinero</strong>. Sus cuatro reglas:</p>
+<div class="lex"><b>Art. 1559 CC.</b> «Si la obligación es de pagar una cantidad de dinero, la indemnización de perjuicios por la mora está sujeta a las reglas siguientes: 1.ª Se siguen debiendo los intereses convencionales, si se ha pactado un interés superior al legal, o empiezan a deberse los intereses legales, en el caso contrario… 2.ª El acreedor no tiene necesidad de justificar perjuicios cuando sólo cobra intereses; basta el hecho del retardo. 3.ª Los intereses atrasados no producen interés. 4.ª La regla anterior se aplica a toda especie de rentas, cánones y pensiones periódicas.»</div>
+<p>Tres consecuencias prácticas: (i) en deudas de dinero el perjuicio por mora se traduce en <strong>intereses</strong>; (ii) el acreedor <strong>no prueba</strong> perjuicios para cobrarlos; y (iii) la regla 3.ª recoge la prohibición general del <strong>anatocismo</strong> (interés sobre interés), hoy matizada por el <span class="art">art. 9 de la Ley 18.010</span>, que lo permite bajo ciertas condiciones. El interés «legal» se entiende equivalente al <strong>interés corriente</strong> (<span class="art">art. 19 Ley 18.010</span>).</p>
+<h3>10.3. Avaluación convencional: la cláusula penal</h3>
+<div class="lex"><b>Art. 1535 CC.</b> «La cláusula penal es aquella en que una persona, para asegurar el cumplimiento de una obligación, se sujeta a una pena, que consiste en dar o hacer algo en caso de no ejecutar o de retardar la obligación principal.»</div>
+<p>Las partes <em>avalúan anticipadamente</em> los perjuicios. La cláusula penal cumple tres funciones simultáneas: es <strong>avaluación anticipada</strong> de los perjuicios, es <strong>caución</strong> (presiona al deudor a cumplir) y tiene un componente de <strong>pena civil</strong>. Sus rasgos:</p>
+<ul>
+<li><strong>Es accesoria</strong> (<span class="art">art. 1536</span>): sigue la suerte de la obligación principal; nula ésta, nula la pena. Con dos contraexcepciones: vale la pena que cauciona la <em>promesa de hecho ajeno</em> (1536 inc. 2, en relación con el 1450) y la estipulación a favor de otro (1536 inc. final, art. 1449).</li>
+<li><strong>No requiere prueba de perjuicios</strong> (<span class="art">art. 1542</span>): «habrá lugar a exigir la pena… aunque se pruebe que la inejecución… no ha inferido perjuicio alguno al acreedor». Esta es su gran ventaja práctica.</li>
+<li><strong>Su cobro exige mora</strong> (<span class="art">art. 1537</span>): constituido el deudor en mora, el acreedor puede pedir <em>a su arbitrio</em> el cumplimiento o la pena, pero no ambos —salvo que la pena se haya estipulado por el simple retardo, o que se haya pactado que el pago de la pena no extingue la obligación principal—.</li>
+</ul>
+<h3>10.4. La cláusula penal enorme (art. 1544)</h3>
+<p>Para evitar abusos, la ley permite <strong>rebajar</strong> la pena excesiva:</p>
+<div class="lex"><b>Art. 1544 CC.</b> En los contratos conmutativos en que la obligación principal sea pagar una cantidad determinada, «podrá pedirse que se rebaje de la segunda todo lo que exceda al duplo de la primera, incluyéndose ésta en él». En el mutuo se rebaja al máximo del interés permitido; en obligaciones de valor inapreciable o indeterminado, el juez modera prudencialmente.</div>
+<div class="debate"><span class="title">¿Qué significa «el duplo, incluyéndose ésta en él»?</span>
+La fórmula es famosa por su oscuridad. La lectura que sigue <strong>Abeliuk</strong> entiende que la pena máxima permitida es el <strong>doble</strong> de la obligación principal: si la obligación es 100, la pena no puede exceder de 200 (que «incluye» los 100 de la obligación). Otra lectura sostiene que el tope es el <em>duplo por sobre</em> la obligación (es decir, 100 de obligación + 200 de pena = 300). La discusión sigue abierta; en el examen basta plantear ambas y tomar partido razonado.</div>
+<div class="ex"><span class="title">Ejemplo</span>
+A un abogado se le prometió, como honorarios, «la mitad de una herencia» si lograba cierto resultado, pactándose una pena enorme por incumplir. La Corte la consideró desproporcionada y la rebajó drásticamente (en el caso citado, a una suma simbólica), aplicando el <span class="art">art. 1544</span> a una obligación de valor indeterminado, donde el juez modera con prudencia.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> obligaciones de dinero e intereses (Ley 18.010), cauciones (la pena es una caución personal), avaluación de perjuicios y arras en la compraventa.</div>
+<div class="row"><span class="lbl">Por qué importa:</span> la cláusula penal aparece en casi todos los contratos reales, y el 1544 («cláusula penal enorme») es un clásico de pregunta-trampa por su redacción confusa. Saber que <em>no hay que probar perjuicio</em> (1542) y que el cobro exige <em>mora</em> (1537) te salva el caso.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> la cláusula penal es el «seguro de cumplimiento» que las partes se ponen solas: «si fallas, pagas X, y no me pidas boletas» (no hay que probar daño). Pero si X es monstruosa, el juez la baja con el 1544: ni la venganza contractual puede pasarse de la raya.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 10</span>
+<ol>
+<li>Distinga las tres clases de avaluación de perjuicios.</li>
+<li>¿En qué casos opera la avaluación legal del <span class="art">art. 1559</span> y cuáles son sus reglas? ¿Qué es el anatocismo?</li>
+<li>Defina la cláusula penal y sus tres funciones.</li>
+<li>¿Por qué no hay que probar perjuicios (1542) y qué exige el cobro de la pena (1537)?</li>
+<li>Explique la cláusula penal enorme (1544) y el debate sobre el «duplo».</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r10">ver respuestas del tema 10</a></span></div>
+
+<h1 id="c11">11. Los remedios del acreedor: el cumplimiento forzado</h1>
+<p>Frente al incumplimiento, el primer remedio es exigir el cumplimiento <strong>en naturaleza</strong> (la prestación específica) y, cuando ello no es posible, el cumplimiento <strong>por equivalencia</strong> (el valor de la prestación en dinero). Una distinción doctrinaria útil (Peñailillo, Baraona): el cumplimiento por equivalencia es la <em>misma</em> obligación que subsiste bajo otra forma (su valor) y <strong>no requiere culpa</strong>; en cambio, la indemnización de los daños <em>ulteriores</em> (1556) sí exige imputabilidad.</p>
+<h3>11.1. La ejecución forzada según el tipo de obligación</h3>
+<ul>
+<li><strong>Obligaciones de dar</strong> (<span class="art">art. 434 CPC</span>): proceden por la vía ejecutiva si hay título ejecutivo, la obligación es líquida, actualmente exigible y la acción no está prescrita. La acción ejecutiva dura <strong>3 años</strong> y luego subsiste como ordinaria por 2 más (<span class="art">art. 2515</span>).</li>
+<li><strong>Obligaciones de hacer</strong> (<span class="art">art. 1553</span>): el acreedor puede pedir <em>a su elección</em>: (1) que se apremie al deudor para ejecutar el hecho; (2) que se le autorice para hacerlo ejecutar por un tercero a expensas del deudor; o (3) que el deudor le indemnice los perjuicios.</li>
+<li><strong>Obligaciones de no hacer</strong> (<span class="art">art. 1555</span>): se resuelven en indemnizar perjuicios; pero si lo hecho puede destruirse y su destrucción es necesaria, el deudor será obligado a ella, o se autorizará al acreedor para llevarla a cabo a expensas del deudor.</li>
+</ul>
+<div class="ex"><span class="title">Ejemplo — obligación de hacer</span>
+Contrato a un maestro para que instale una reja y no la instala. Por el <span class="art">art. 1553</span> puedo: apremiarlo para que la haga, o contratar a otro maestro y cobrarle a él el costo, o simplemente demandar los perjuicios. La elección es mía, no suya.</div>
+<h3>11.2. Límites del cumplimiento forzado</h3>
+<p>No puede exigirse lo física o jurídicamente <strong>imposible</strong>. Si la cosa debida perece sin culpa del deudor, la obligación se extingue (<span class="art">arts. 1670 y ss.</span>) y sólo cabrá, en su caso, discutir riesgos. La imposibilidad que libera debe ser sobrevenida, absoluta y definitiva.</p>
+
+<div class="quiz"><span class="title">Autoevaluación 11</span>
+<ol>
+<li>Distinga cumplimiento en naturaleza y por equivalencia. ¿Cuál requiere culpa?</li>
+<li>Señale las opciones del acreedor en las obligaciones de hacer (<span class="art">art. 1553</span>) y de no hacer (<span class="art">art. 1555</span>).</li>
+<li>¿Qué requisitos exige la ejecución de una obligación de dar (<span class="art">art. 434 CPC</span>) y cuánto dura la acción ejecutiva?</li>
+<li>¿Cuáles son los límites del cumplimiento forzado?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r11">ver respuestas del tema 11</a></span></div>
+
+<h1 id="c12">12. La resolución y el pacto comisorio</h1>
+<h3>12.1. La condición resolutoria tácita (art. 1489)</h3>
+<div class="lex"><b>Art. 1489 CC.</b> «En los contratos bilaterales va envuelta la condición resolutoria de no cumplirse por uno de los contratantes lo pactado. Pero en tal caso podrá el otro contratante pedir a su arbitrio o la resolución o el cumplimiento del contrato, con indemnización de perjuicios.»</div>
+<p>El contratante diligente, frente al incumplimiento del otro, <strong>opta</strong> entre exigir el cumplimiento o pedir la resolución, en ambos casos con indemnización. Sus <strong>fundamentos</strong> doctrinarios: la equidad, la voluntad presunta de las partes, la interdependencia de las obligaciones en los contratos bilaterales y la idea de falta de causa (Capitant) —que Mazeaud rebate, porque la causa se aprecia al contratar, no después—.</p>
+<p><strong>Características.</strong> La condición resolutoria tácita <strong>no opera de pleno derecho</strong>: requiere <em>declaración judicial</em>. Mientras no hay sentencia, el contrato subsiste y el deudor puede aún cumplir.</p>
+<p><strong>¿Sólo contratos bilaterales?</strong> La mayoría (Alessandri, Stitchkin, Abeliuk) lo afirma, por el tenor del 1489. Claro Solar la extiende a algunos unilaterales (invocando los <span class="art">arts. 2177, 2271, 2396</span>). En los contratos de <em>tracto sucesivo</em> la resolución toma el nombre de <strong>terminación</strong> y opera hacia el futuro (sin efecto retroactivo).</p>
+<p><strong>¿Cualquier incumplimiento?</strong> Claro Solar y Abeliuk exigen que el incumplimiento sea de cierta <strong>gravedad o entidad</strong>: un incumplimiento mínimo o de poca monta no justifica resolver todo el contrato.</p>
+<h3>12.2. Efectos de la resolución</h3>
+<ul>
+<li><strong>Efecto extintivo</strong> (<span class="art">art. 1567 N°9</span>): cumplida la condición resolutoria, se extingue la obligación.</li>
+<li><strong>Efecto restitutorio</strong> (<span class="art">art. 1487</span>): debe restituirse lo que se hubiere recibido bajo la condición.</li>
+<li><strong>Frente a terceros</strong> (<span class="art">arts. 1490 y 1491</span>): la resolución no afecta a terceros de buena fe; hay reglas distintas para muebles (1490) e inmuebles (1491), según si la condición constaba o no en el título.</li>
+</ul>
+<div class="callout"><span class="title">No confundir: resolución, nulidad y resciliación</span>
+La <strong>resciliación</strong> (<span class="art">art. 1567 inc. 1</span>) es dejar sin efecto el contrato por <em>mutuo acuerdo</em>. La <strong>nulidad</strong> supone un <em>vicio originario</em> del contrato. La <strong>resolución</strong> supone un contrato <em>válido</em> que se deja sin efecto por <em>incumplimiento</em> sobreviniente. Tres caminos distintos con efectos distintos.</div>
+<h3>12.3. El pacto comisorio (arts. 1877-1880)</h3>
+<p>Es la <strong>estipulación expresa</strong> de la condición resolutoria por incumplimiento. Se clasifica en <strong>simple</strong> (reitera la condición resolutoria tácita) y <strong>calificado</strong> (estipula que el contrato se resolverá <em>ipso facto</em> o de pleno derecho). Regulado a propósito de la compraventa por no pago del precio, pero admisible en otros contratos (pacto comisorio atípico) por la autonomía de la voluntad.</p>
+<p>Reglas centrales de la compraventa: el pacto comisorio no priva al vendedor de elegir entre exigir el precio o la resolución (<span class="art">arts. 1878 y 1873</span>); en el pacto comisorio <strong>calificado</strong>, el comprador puede hacer subsistir el contrato pagando dentro de las <strong>24 horas</strong> siguientes a la notificación de la demanda (<span class="art">art. 1879</span>); y la acción del pacto comisorio prescribe en el plazo fijado por las partes, que no puede exceder de <strong>4 años contados desde la fecha del contrato</strong> (<span class="art">art. 1880</span>).</p>
+<div class="debate"><span class="title">¿Cómo opera el pacto comisorio atípico calificado?</span>
+La tesis dominante (Abeliuk, Stitchkin, Ramos) sostiene que opera <strong>de pleno derecho</strong>, sin sentencia, por la fuerza de la autonomía de la voluntad (<span class="art">arts. 1545 y 1484</span>). La tesis restrictiva (Arturo Alessandri, Claro Solar) aplica por analogía el plazo de gracia de 24 horas del <span class="art">art. 1879</span> incluso fuera de la compraventa. La diferencia es práctica: define si el deudor todavía puede enervar la resolución pagando.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> condición (modalidades del acto jurídico), efectos respecto de terceros (1490-1491), compraventa (1873, 1878-1880), prescripción (1880, 2515) y la excepción de contrato no cumplido (1552).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> el 1489 es <em>la</em> norma de los remedios. Una pregunta frecuentísima encadena: condición resolutoria tácita → ¿opera de pleno derecho? (no) → ¿y el pacto comisorio calificado? → efectos frente a terceros (1490/1491). Si dominas esa cadena, dominas el corazón de la materia.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> el 1489 te da un menú: «o me cumples, o lo resolvemos —y en ambos casos, me indemnizas». Pero ojo: la resolución <em>tácita</em> necesita juez (no es automática); sólo el pacto comisorio <em>calificado</em> resuelve solo… y aun así, en la compraventa, el comprador tiene 24 horas para pagar y salvarse.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 12</span>
+<ol>
+<li>¿Qué opción ofrece el <span class="art">art. 1489</span> y a quién? ¿Opera de pleno derecho?</li>
+<li>¿Procede la resolución por cualquier incumplimiento? ¿Qué ocurre en los contratos de tracto sucesivo?</li>
+<li>Señale los tres efectos de la resolución y la regla frente a terceros (1490-1491).</li>
+<li>Distinga resolución, nulidad y resciliación.</li>
+<li>Distinga pacto comisorio simple y calificado, y explique el debate sobre el atípico calificado.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r12">ver respuestas del tema 12</a></span></div>
+
+<h1 id="c13">13. La autonomía de la acción indemnizatoria</h1>
+<p>Una de las grandes discusiones contemporáneas: ¿puede el acreedor pedir <strong>sólo indemnización</strong>, sin pedir a la vez el cumplimiento ni la resolución?</p>
+<ul>
+<li><strong>Tesis tradicional (accesoriedad):</strong> la indemnización es accesoria; el «con indemnización de perjuicios» del <span class="art">art. 1489</span> significa que la indemnización <em>acompaña</em> al cumplimiento o a la resolución, no que pueda pedirse aislada. Argumento de ubicación: el 1489 la menciona siempre unida a otra acción.</li>
+<li><strong>Tesis moderna (autonomía):</strong> la indemnización es una acción <em>autónoma</em> que el acreedor puede ejercer sola, como un remedio más del sistema. Se apoya en el derecho uniforme (CISG) y en normas internas que admiten indemnización aislada (<span class="art">arts. 1553, 1555, 1590</span>).</li>
+</ul>
+<div class="debate"><span class="title">La posición matizada de Boetsch</span>
+Boetsch matiza: la indemnización <em>compensatoria</em> no sería plenamente autónoma de la resolución en los contratos de ejecución instantánea (pedirla sola plantea problemas de <em>ultra petita</em> y de límites al <em>iura novit curia</em>). Pero reconoce casos donde sólo cabe indemnización: la indemnización <em>moratoria</em> (1559), los cumplimientos imperfectos no resolutorios (1590) y los contratos de tracto sucesivo.</div>
+
+<div class="caso"><span class="title">Ficha de jurisprudencia · El caso «Zorin con Huachipato»</span>
+<div class="ref">Corte Suprema, Rol N.º 3.325-2012, 31 de octubre de 2012 · Cita online CL/JUR/2412/2012 · redactor abog. integrante Jorge Baraona G.</div>
+<div class="field"><span class="lbl">El conflicto.</span> Zorin S.A. compró a la Compañía Siderúrgica Huachipato unos rodillos de laminación en desuso para revenderlos a una empresa estadounidense. El negocio internacional se frustró porque el material no tenía la <strong>concentración de níquel</strong> ofrecida. Zorin demandó indemnización por incumplimiento y lucro cesante, <strong>sin pedir la resolución ni la nulidad</strong> del contrato.</div>
+<div class="field"><span class="lbl">La controversia jurídica.</span> ¿Debe la acción indemnizatoria ir necesariamente unida a la petición de cumplimiento o de resolución del contrato (<span class="art">art. 1489</span>), o puede ejercerse de forma autónoma?</div>
+<div class="field"><span class="lbl">El fallo.</span> La entrega de una cosa sin las cualidades convenidas es un <strong>cumplimiento imperfecto</strong> (<span class="art">arts. 1556, 1568, 1569 y 1828</span>): la obligación de entrega del vendedor no se satisface con la mera entrega física. La Corte sostuvo que, conforme a la <em>moderna tendencia doctrinal</em>, el comprador podía demandar <strong>sólo los perjuicios manteniendo vigente el contrato</strong> y conservando la cosa imperfecta, sin pedir su resolución. Reconoció así, en los hechos, la <strong>autonomía de la acción indemnizatoria</strong> en el cumplimiento imperfecto.</div>
+<div class="field"><span class="lbl">El matiz fino (clave para el examen).</span> La Corte no proclamó una autonomía «pura»: encuadró esa indemnización como parte de lo que el vendedor debe «<em>en cumplimiento del contrato</em>» (1489), apoyándose en el <span class="art">art. 1591</span> —«el pago total de la deuda comprende el de los intereses e indemnizaciones que se deban»—. Además acogió la <strong>casación en la forma por <em>ultra petita</em></strong>, porque la sentencia recurrida había fundado la condena en el <span class="art">art. 1814</span>, norma no invocada por el actor; y en la sentencia de reemplazo concedió finalmente <strong>sólo el lucro cesante</strong>.</div>
+<div class="field"><span class="lbl">Por qué importa.</span> Es el <em>leading case</em> chileno de la autonomía de la indemnización por cumplimiento imperfecto, y la puerta de entrada al sistema de remedios de inspiración moderna (Vidal, Pizarro, Morales Moreno). Permite al acreedor satisfecho con la cosa —pero perjudicado por su calidad— cobrar el daño sin tener que resolver el contrato.</div></div>
+<div class="ex"><span class="title">Ejemplo</span>
+Me entregan una maquinaria que funciona, pero con un defecto que me hizo perder producción durante un mes. No quiero resolver (necesito la máquina) ni un nuevo cumplimiento (ya la tengo): sólo quiero que me paguen el mes perdido. La tesis de la autonomía permite demandar <em>sólo</em> esa indemnización por el cumplimiento imperfecto, sin pedir resolución.</div>
+
+<div class="quiz"><span class="title">Autoevaluación 13</span>
+<ol>
+<li>Plantee la discusión sobre la autonomía de la acción indemnizatoria con sus dos tesis.</li>
+<li>¿Qué casos reconoce Boetsch en que sólo cabe indemnización?</li>
+<li>¿Qué relevancia tiene el caso <em>Zorin con Huachipato</em>?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r13">ver respuestas del tema 13</a></span></div>
+
+<h1 id="c14">14. Las eximentes de responsabilidad</h1>
+<p>Son las circunstancias que liberan al deudor de responder, total o parcialmente. La principal —el <strong>caso fortuito</strong>— se trató en el punto 8. Aquí se completan las demás.</p>
+<h3>14.1. La ausencia de culpa</h3>
+<p>Como vimos (punto 8.1), se discute si al deudor le basta probar que actuó con la diligencia debida (<strong>Abeliuk</strong>) o si debe acreditar derechamente el caso fortuito (<strong>Claro Solar</strong>). La cuestión es relevante sobre todo en las obligaciones de medios, donde la diligencia <em>es</em> la prestación: probada la diligencia, no hay incumplimiento.</p>
+<h3>14.2. El estado de necesidad</h3>
+<p>El deudor causa el daño para evitar un mal mayor, propio o ajeno. El Código lo recoge puntualmente, por ejemplo en el <span class="art">art. 2178 N°3</span> (comodato). Su admisión como eximente general es discutida.</p>
+<div class="ex"><span class="title">Ejemplo (Fueyo)</span>
+El capitán que, en plena tormenta, ordena arrojar al mar parte de la mercadería transportada para aligerar la nave y salvarla. Sacrifica una prestación para evitar un mal mayor: opera, en lo pertinente, un estado de necesidad.</div>
+<h3>14.3. El hecho o culpa del acreedor</h3>
+<p>Si el incumplimiento o el daño se deben al hecho del propio acreedor, el deudor se exonera (o se reduce su responsabilidad): nadie puede aprovecharse de su propia conducta. Lo recogen los <span class="art">arts. 1548, 1680 y 1827</span>. Conecta con la <em>mora del acreedor</em> (punto 7.4) y con la <em>compensación de culpas</em>.</p>
+<h3>14.4. El hecho de un tercero</h3>
+<p>El deudor no responde del hecho de un tercero <em>extraño</em> (que puede constituir caso fortuito), pero sí responde del hecho de las personas <em>por quienes responde</em> —sus dependientes y auxiliares— (<span class="art">arts. 1590, 1679</span>). Nótese el contraste con la sede extracontractual, donde la responsabilidad por el hecho ajeno se regula expresamente en el <span class="art">art. 2320</span>.</p>
+
+<div class="quiz"><span class="title">Autoevaluación 14</span>
+<ol>
+<li>Enumere las eximentes de responsabilidad contractual.</li>
+<li>¿En qué consiste el estado de necesidad? Dé un ejemplo.</li>
+<li>¿Responde el deudor por el hecho de sus dependientes? ¿Y por el de un tercero extraño?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r14">ver respuestas del tema 14</a></span></div>
+
+<h1 id="c15">15. Imprevisión y frustración del fin del contrato</h1>
+<h3>15.1. La teoría de la imprevisión (excesiva onerosidad sobreviniente)</h3>
+<p>El conflicto enfrenta el principio <em>pacta sunt servanda</em> (los pactos se cumplen; <span class="art">art. 1545</span>) con la cláusula <em>rebus sic stantibus</em> (los contratos obligan «mientras las cosas sigan así»). La <strong>imprevisión</strong> es la facultad del deudor de pedir la revisión o la resolución del contrato cuando, por hechos sobrevinientes <em>extraordinarios e imprevisibles</em>, el cumplimiento se ha vuelto <strong>excesivamente oneroso</strong> (no imposible —eso sería caso fortuito—, sino ruinoso).</p>
+<p><strong>Requisitos</strong> que la doctrina exige: (i) contrato de <em>tracto sucesivo</em> o de ejecución diferida; (ii) <em>desequilibrio</em> sobreviniente grave entre las prestaciones; (iii) que provenga de hechos <em>extraordinarios, graves e imprevisibles</em> al contratar, ajenos a las partes.</p>
+<div class="callout"><span class="title">Situación en Chile</span>
+La imprevisión <strong>no está consagrada con carácter general</strong> en el Código Civil. Hay normas que parecen <em>acogerla</em> en casos puntuales (<span class="art">art. 2003 regla 2.ª</span>, contrato de construcción a precio fijo: aumento por vicios ocultos del suelo o circunstancias desconocidas) y otras que la <em>rechazan</em> derechamente (<span class="art">art. 2003 regla 1.ª</span>: el empresario no puede pedir aumento aunque suban los jornales o materiales; <span class="art">art. 1983</span>: el colono no tiene derecho a rebaja de renta por la pérdida de la cosecha por casos fortuitos ordinarios). La <strong>posición mayoritaria rechaza</strong> la imprevisión general, por la fuerza obligatoria del contrato (1545); la minoría la admite invocando la buena fe (1546), la intención de las partes (1560) y la limitación de los perjuicios a los previstos (1558).</div>
+<div class="ex"><span class="title">Ejemplo</span>
+Una empresa se obliga a suministrar gas a un precio fijo durante diez años. A mitad del contrato, un hecho extraordinario e imprevisible multiplica por diez el costo del gas, de modo que cumplir la arruina. No es <em>imposible</em> cumplir (hay gas), pero sí ruinoso: ese es el terreno de la imprevisión. En Chile, salvo pacto de reajuste, la mayoría sostiene que igual debe cumplir (1545); la justicia arbitral ha sido más receptiva a revisar el contrato que la ordinaria.</div>
+<h3>15.2. La frustración del fin del contrato</h3>
+<p>Distinta de la imprevisión: aquí el cumplimiento sigue siendo <em>posible</em> y no necesariamente más oneroso, pero el <strong>propósito práctico</strong> que las partes perseguían se ha frustrado, tornando inútil la prestación. La doctrina (Diez-Picazo; en Chile, Ríos) exige un contrato bilateral, oneroso, conmutativo, de ejecución diferida, en que el fin se frustra de modo absoluto, perpetuo, inimputable e imprevisible. Como la imprevisión, <strong>no tiene cabida general</strong> en nuestro derecho, aunque hay casos legales próximos (<span class="art">arts. 1932 y 1924 N°2</span>, en el arrendamiento).</p>
+<div class="ex"><span class="title">Ejemplo clásico (los «casos de la coronación»)</span>
+Alguien arrienda un balcón a precio altísimo para ver el desfile de coronación de un rey. La coronación se suspende. El balcón sigue ahí, el arriendo es perfectamente «cumplible»… pero su <em>fin</em> —ver el desfile— se esfumó. Eso es frustración del fin: la prestación quedó vacía de sentido.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> fuerza obligatoria del contrato (1545), buena fe (1546), caso fortuito (por contraste: imposibilidad vs. onerosidad), teoría de los riesgos e interpretación del contrato (1560).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> es el tema «moderno» con que el examinador prueba si distingues figuras vecinas. La clave es separar tres cosas: caso fortuito (imposible), imprevisión (posible pero ruinoso) y frustración del fin (posible, no ruinoso, pero inútil).</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> caso fortuito = «no puedo» (se cayó el puente); imprevisión = «puedo, pero me funde» (el gas se disparó); frustración del fin = «puedo y me sale igual, pero ya no me sirve» (se canceló el desfile que iba a ver). Tres «no» distintos.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 15</span>
+<ol>
+<li>Defina la imprevisión y distíngala del caso fortuito.</li>
+<li>Enuncie sus requisitos y explique por qué la mayoría la rechaza en Chile (con normas a favor y en contra).</li>
+<li>¿Qué es la frustración del fin del contrato y en qué se diferencia de la imprevisión?</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r15">ver respuestas del tema 15</a></span></div>
+
+<h1 id="c16">16. Los derechos auxiliares del acreedor</h1>
+<p>Son las facultades que la ley concede al acreedor para <strong>mantener íntegro</strong> el patrimonio del deudor —que es la garantía de su crédito— y reconstituirlo cuando el deudor lo merma. Su fundamento es el <strong>derecho de prenda general</strong>:</p>
+<div class="lex"><b>Art. 2465 CC.</b> «Toda obligación personal da al acreedor el derecho de perseguir su ejecución sobre todos los bienes raíces o muebles del deudor, sean presentes o futuros, exceptuándose solamente los no embargables, designados en el art. 1618.»</div>
+<p>De nada sirve este derecho si el deudor deja arruinar o esconde su patrimonio. Para protegerlo, el acreedor cuenta con cuatro herramientas:</p>
+<h3>16.1. Las medidas conservativas</h3>
+<p>Buscan <strong>mantener intacto</strong> el patrimonio del deudor mientras se cobra el crédito. Comprenden las <em>medidas precautorias</em> del <span class="art">art. 290 CPC</span> (secuestro de la cosa, nombramiento de interventores, retención de bienes determinados, prohibición de celebrar actos y contratos), la <em>guarda y aposición de sellos</em> (<span class="art">arts. 1222 y ss.</span>) y la confección de <em>inventario solemne</em>.</p>
+<h3>16.2. La acción oblicua o subrogatoria</h3>
+<p>Es aquella por la cual el acreedor ejerce, <strong>en lugar del deudor negligente</strong>, los derechos y acciones que éste no ejerce, para incorporar bienes a su patrimonio. A diferencia del derecho francés (<span class="art">art. 1166 del Code</span>), en Chile <strong>no existe como acción general</strong>: sólo procede en los casos expresamente señalados por la ley, como el <span class="art">art. 2466</span> (derechos del deudor sobre cosas dadas en prenda o usufructo, y derechos del arrendatario), el <span class="art">art. 1677</span> (acción por la pérdida de la cosa imputable a un tercero), el <span class="art">art. 1238</span> (repudiación de herencia en perjuicio de acreedores) y el <span class="art">art. 1394</span> (donaciones). Sus requisitos: crédito cierto y exigible; negligencia del deudor; interés del acreedor (insolvencia del deudor); y que los derechos sean patrimoniales y no personalísimos. <strong>Efecto:</strong> lo obtenido ingresa al patrimonio del deudor y aprovecha a <em>todos</em> los acreedores (no hay preferencia para quien la ejerce).</p>
+<div class="ex"><span class="title">Ejemplo</span>
+Mi deudor insolvente es, a su vez, acreedor de un tercero, pero por desidia no le cobra. Si la ley lo permite en ese caso, puedo <em>subrogarme</em> en su lugar y cobrarle yo al tercero, para que ese dinero entre al patrimonio de mi deudor y así poder pagarme.</div>
+<h3>16.3. La acción pauliana o revocatoria (art. 2468)</h3>
+<p>De origen romano (<em>fraus creditorum</em>), permite a los acreedores <strong>dejar sin efecto los actos del deudor ejecutados en fraude</strong> de sus derechos (por ejemplo, el deudor que, viéndose insolvente, regala o malvende sus bienes para que el acreedor no los alcance).</p>
+<div class="lex"><b>Art. 2468 CC (síntesis).</b> Pueden rescindirse los actos del deudor en perjuicio de los acreedores: (1) si el acto es <b>oneroso</b>, se exige mala fe del <em>deudor y del tercero</em> adquirente (que ambos conocieran el mal estado de los negocios); (2) si el acto es <b>gratuito</b>, basta la mala fe del <em>deudor</em> y el perjuicio del acreedor; (3) la acción prescribe en <b>un año</b> contado desde la fecha del acto o contrato.</div>
+<p><strong>Requisitos:</strong> perjuicio a los acreedores (<em>eventus damni</em>: el acto provoca o agrava la insolvencia); <em>mala fe pauliana</em> del deudor (conocimiento del mal estado de sus negocios); crédito del acreedor <em>anterior</em> al acto impugnado; y, según el acto sea gratuito u oneroso, la mala fe del tercero. <strong>Naturaleza jurídica</strong> (debate): para Alessandri es una nulidad relativa; para Somarriva y Abeliuk —tesis dominante— es una <strong>inoponibilidad</strong> (el acto es válido, pero inoponible al acreedor que la ejerce y sólo en la medida de su interés); para Planiol es una acción indemnizatoria. <strong>Prescripción:</strong> un año desde el acto (<span class="art">art. 2468 N°3</span>), plazo que no se suspende.</p>
+<div class="ex"><span class="title">Ejemplo</span>
+Sé que mi deudor está quebrado y, justo antes de que lo embargue, le «vende» su casa a un amigo que también sabe de su insolvencia, por un precio irrisorio, para sacarla de su patrimonio. Con la acción pauliana puedo pedir que esa enajenación fraudulenta sea revocada (inoponible a mí) y volver a perseguir la casa.</div>
+<h3>16.4. El beneficio de separación (arts. 1378-1385)</h3>
+<p>Permite a los <strong>acreedores hereditarios y testamentarios</strong> pedir que no se confundan los bienes del difunto con los del heredero, para pagarse con preferencia sobre los bienes del causante y evitar que la eventual insolvencia del heredero los perjudique.</p>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> prelación de créditos (2465 y ss.), inoponibilidad, medidas precautorias (CPC), derecho concursal (Ley 20.720) y derecho sucesorio (beneficio de separación).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> el examinador suele preguntar «¿qué puede hacer el acreedor si el deudor dilapida o esconde sus bienes?». La respuesta ordenada —medidas conservativas, acción oblicua, acción pauliana, beneficio de separación— luce muchísimo. Y ojo con el dato fino: la oblicua <em>no</em> es general en Chile; la pauliana prescribe en <em>un año</em>.</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> tres verbos: <em>conservar</em> (medidas conservativas: congelar el patrimonio), <em>cobrar por el flojo</em> (oblicua: el deudor no cobra, cobro yo por él) y <em>deshacer la trampa</em> (pauliana: el deudor regaló sus bienes para esconderlos, yo revoco). El patrimonio del deudor es «prenda general»: estas acciones son la alarma antirrobo.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 16</span>
+<ol>
+<li>¿Qué es el derecho de prenda general y en qué norma se consagra?</li>
+<li>Enumere los cuatro derechos auxiliares del acreedor.</li>
+<li>¿Por qué se dice que la acción oblicua no es general en Chile? Dé ejemplos de casos en que procede.</li>
+<li>Explique la acción pauliana: requisitos según el acto sea gratuito u oneroso, naturaleza jurídica y prescripción.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r16">ver respuestas del tema 16</a></span></div>
+
+<h1 id="c17">17. Cláusulas modificatorias de responsabilidad</h1>
+<p>Por la autonomía de la voluntad, las partes pueden <strong>alterar el régimen legal</strong> de responsabilidad. Las cláusulas pueden ser <strong>limitativas</strong> (ponen un tope al monto), <strong>exonerativas</strong> (liberan de responsabilidad) o <strong>agravantes</strong> (la aumentan, p. ej. hacer responder del caso fortuito, <span class="art">art. 1673</span>, o de los daños imprevistos). Su base normativa es el <span class="art">art. 1547 inc. final</span> («…sin perjuicio… de las estipulaciones expresas de las partes») y el <span class="art">art. 1558 inc. final</span>.</p>
+<h3>17.1. Exigencia de estipulación expresa e interpretación restrictiva</h3>
+<p>Estas cláusulas requieren una estipulación <strong>expresa, especial y explícita</strong>: no se presumen, porque alteran lo que es de la naturaleza del contrato (<span class="art">art. 1444</span>). Además, las cláusulas <em>limitativas o exonerativas</em> se interpretan <strong>restrictivamente</strong>, en favor del acreedor perjudicado, y siempre conforme a la buena fe (<span class="art">arts. 1546, 1560, 1561, 1563</span>).</p>
+<h3>17.2. El límite infranqueable: el dolo y la culpa grave futuros (art. 1465)</h3>
+<div class="lex"><b>Art. 1465 CC.</b> «El pacto de no pedir más en razón de una cuenta aprobada, no vale en cuanto al dolo contenido en ella, si no se ha condonado expresamente. La condonación del dolo futuro no vale.»</div>
+<p>De aquí, dos reglas: (i) el dolo <em>ya ocurrido</em> (pasado) puede condonarse, pero la condonación debe ser <strong>expresa</strong> y con conocimiento del afectado; y (ii) la condonación del <strong>dolo futuro no vale</strong> —adolece de objeto ilícito y nulidad absoluta—. Y como la <strong>culpa grave equivale al dolo</strong> (<span class="art">art. 44</span>), tampoco puede exonerarse anticipadamente la culpa grave futura. Este es el muro que ninguna cláusula puede traspasar.</p>
+<h3>17.3. Análisis de cláusulas de estilo (Boetsch)</h3>
+<p>Boetsch examina cláusulas frecuentes en los contratos y muestra sus límites:</p>
+<ul>
+<li><strong>«No se admitirá interpretación de este contrato»:</strong> ineficaz. Siempre cabe interpretar; las reglas de interpretación y la buena fe (<span class="art">art. 1546</span>) son de orden público y no pueden excluirse por la voluntad de las partes.</li>
+<li><strong>«El deudor responde de todo / cualquier incumplimiento»:</strong> por el principio de normalidad, se entiende referida a los incumplimientos <em>ordinarios</em> (culposos leves). <strong>No cubre el dolo ni la culpa grave:</strong> una cláusula genérica no equivale a condonación anticipada del dolo (lo que sería nulo, 1465), y el dolo siempre debe probarse (1459).</li>
+<li><strong>«Responde de cualquier daño»:</strong> quien responde de dolo responde de <em>todos</em> los daños, incluso imprevistos (<span class="art">art. 1558</span>); pero una cláusula genérica no transforma en doloso al deudor de buena fe.</li>
+<li><strong>«Se obliga a indemnizar también los daños indirectos»:</strong> Boetsch la rechaza como regla general, porque el <span class="art">art. 1558</span> excluye los daños indirectos incluso mediando dolo, y ese límite es de orden público. La vía válida para que el acreedor obtenga una suma adicional asegurada es la <strong>cláusula penal</strong> (<span class="art">art. 1542</span>), con el tope del 1544.</li>
+</ul>
+<div class="ex"><span class="title">Ejemplo</span>
+Un contrato de bodegaje dice: «la empresa no responde por ningún daño a la mercadería, cualquiera sea su causa». Si la mercadería se pierde por un descuido leve del bodeguero, la cláusula podría operar. Pero si se pierde porque el bodeguero la sustrajo (dolo) o la abandonó groseramente (culpa grave), la cláusula <em>no lo protege</em>: sería condonar dolo o culpa grave futuros, lo que el 1465 prohíbe.</div>
+
+<div class="protip"><span class="title">★ Pro tip · examen de grado</span>
+<div class="row"><span class="lbl">Se conecta con:</span> objeto ilícito y nulidad (1465, 1682), graduación de la culpa (44, 1547), extensión del daño (1558), cláusula penal (1535-1544) y protección al consumidor (cláusulas abusivas, Ley 19.496).</div>
+<div class="row"><span class="lbl">Por qué importa:</span> es el punto donde la autonomía de la voluntad choca con el orden público. La frase ganadora es: «las partes pueden modificar la responsabilidad, <em>pero jamás condonar el dolo ni la culpa grave futuros</em> (1465 + 44)».</div>
+<div class="joke"><span class="lbl">Para que no se te olvide:</span> puedes pactar casi todo… menos un «permiso para hacerme trampa después». El 1465 es el cartel de «prohibido firmar cheques en blanco a la mala fe»: condonar el dolo futuro es nulo, y como la culpa grave «es» dolo, tampoco se le perdona por adelantado.</div>
+</div>
+
+<div class="quiz"><span class="title">Autoevaluación 17</span>
+<ol>
+<li>Clasifique las cláusulas modificatorias de responsabilidad y dé su base normativa.</li>
+<li>¿Por qué se interpretan restrictivamente y exigen estipulación expresa?</li>
+<li>Explique la doble regla del <span class="art">art. 1465</span> y su relación con la culpa grave.</li>
+<li>Analice por qué una cláusula de «no responder de ningún daño» no cubre el dolo ni la culpa grave.</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r17">ver respuestas del tema 17</a></span></div>
+
+<h1 id="c18">18. Prescripción de las acciones</h1>
+<p>La acción de responsabilidad contractual prescribe, por regla general, según las reglas de la <strong>prescripción extintiva ordinaria</strong>:</p>
+<div class="lex"><b>Art. 2515 CC.</b> «Este tiempo es en general de tres años para las acciones ejecutivas y de cinco para las ordinarias. La acción ejecutiva se convierte en ordinaria por el lapso de tres años, y convertida en ordinaria durará solamente otros dos.»</div>
+<p>De modo que la acción <strong>ordinaria</strong> de cumplimiento o indemnización prescribe en <strong>cinco años</strong> desde que la obligación se hizo exigible (<span class="art">art. 2514</span>), y la <strong>ejecutiva</strong> en <strong>tres años</strong>. La acción resolutoria <em>ordinaria</em> sigue la regla de los cinco años; pero la del <strong>pacto comisorio</strong> prescribe en el plazo fijado por las partes, que no puede exceder de <strong>cuatro años desde la fecha del contrato</strong> (<span class="art">art. 1880</span>). La <strong>acción pauliana</strong>, en <strong>un año</strong> (<span class="art">art. 2468</span>).</p>
+<p>La prescripción se <strong>interrumpe</strong> natural o civilmente (<span class="art">arts. 2518, 2503</span>: demanda judicial; reconocimiento del deudor) y se <strong>suspende</strong> a favor de ciertas personas (<span class="art">art. 2509</span>), aunque las prescripciones de corto tiempo, como la pauliana, no se suspenden (<span class="art">art. 2524</span>).</p>
+<div class="warn"><span class="title">No confundir con la prescripción extracontractual</span>
+La acción de responsabilidad <em>extracontractual</em> prescribe en <strong>cuatro años</strong> contados desde la perpetración del acto (<span class="art">art. 2332</span>) —con debate sobre el <em>dies a quo</em>—. La <em>contractual</em>, en cambio, en <strong>cinco años</strong> desde que la obligación se hizo exigible (2515). Es una diferencia que el examinador usa para ver si distingues los regímenes.</div>
+
+<div class="quiz"><span class="title">Autoevaluación 18</span>
+<ol>
+<li>¿En cuánto tiempo prescribe la acción ordinaria de responsabilidad contractual y desde cuándo se cuenta?</li>
+<li>Señale los plazos de la acción ejecutiva, de la resolutoria del pacto comisorio y de la pauliana.</li>
+<li>Distinga interrupción y suspensión de la prescripción. ¿Se suspende la pauliana?</li>
+<li>Contraste el plazo contractual con el extracontractual (<span class="art">art. 2332</span>).</li>
+</ol>
+<span class="hint"><a class="backlink" href="#r18">ver respuestas del tema 18</a></span></div>
+
+<h1 id="resp">Respuestas a las autoevaluaciones</h1>
+<p class="muted">Compara tus respuestas con estas. No son la única redacción correcta: lo importante es que aparezcan los conceptos y los artículos clave. Si fallaste algo, vuelve al tema indicado.</p>
+
+<div class="ans" id="r1"><span class="q">Tema 1 — Efecto de las obligaciones y sistema de remedios</span>
+1) Los <em>efectos del contrato</em> son los derechos y obligaciones que nacen de él (1437); los <em>efectos de las obligaciones</em> son los mecanismos del acreedor en torno al cumplimiento e incumplimiento (Título XII, 1545-1559). Boetsch sigue la visión <em>amplia</em> (Fueyo, Abeliuk), que abarca tanto el pago como la patología, porque permite ver la materia como sistema unitario. 2) Los arts. <strong>1545</strong> (fuerza obligatoria: el contrato es «ley para los contratantes») y <strong>1546</strong> (buena fe, que integra deberes accesorios). 3) Porque el 1489 consagra la opción del acreedor entre cumplimiento y resolución, ambos con indemnización: es la matriz desde la que se despliegan los demás remedios. 4) La clásica ve el indemnizar como <em>perpetuatio obligationis</em> (la misma obligación que subsiste por equivalente en dinero); la moderna lo ve como un remedio más dentro de un sistema, con función satisfactiva del interés del acreedor.</div>
+
+<div class="ans" id="r2"><span class="q">Tema 2 — El pago</span>
+1) El pago es «la prestación de lo que se debe» (1568); es el primer modo de extinguir (1567 N°2). 2) <em>Identidad</em> (1569: debe pagarse lo idéntico, no otra cosa aunque valga más); <em>integridad</em> (1591: pago total, no por partes, y comprende intereses e indemnizaciones); <em>gastos del pago</em> (1571: de cargo del deudor). 3) Los gastos son del deudor, salvo estipulación o regla legal en contrario.</div>
+
+<div class="ans" id="r3"><span class="q">Tema 3 — El incumplimiento</span>
+1) Es objetivo porque basta la desviación entre lo debido y lo ejecutado, sin atender a la culpa; el dolo y la culpa operan después, como factor de atribución de la indemnización. 2) Total (no se cumple: la bodega nunca se construye), imperfecto (se cumple mal: con grietas), tardío (a destiempo: tres meses después). 3) En las de <em>resultado</em> el solo no-resultado es incumplimiento y la culpa se presume; en las de <em>medios</em> la prestación es la diligencia, de modo que el acreedor debe probar la conducta culpable del deudor. 4) Extinción de la obligación (remisión, novación, transacción, prescripción), excepción de contrato no cumplido (1552) y caso fortuito.</div>
+
+<div class="ans" id="r4"><span class="q">Tema 4 — Requisitos de la indemnización</span>
+1) Incumplimiento (1556), imputabilidad (dolo o culpa), perjuicio, causalidad y mora (1557-1538). 2) En las obligaciones de <em>no hacer</em>: la contravención misma genera el daño, sin necesidad de constituir en mora (se incumple por el solo hecho de hacer lo prohibido). 3) Porque la ausencia de exención puede formularse como elemento positivo que el actor debe alegar, o como defensa que el deudor debe oponer y probar (el caso fortuito lo prueba quien lo alega, 1547 inc. 3).</div>
+
+<div class="ans" id="r5"><span class="q">Tema 5 — Culpa y dolo</span>
+1) Culpa grave (descuido máximo, «equivale al dolo»), leve (diligencia del buen padre de familia; regla general) y levísima (esmerada diligencia del hombre juicioso) — art. 44. 2) El 1547 gradúa según la utilidad: si el contrato beneficia sólo al acreedor, el deudor responde de culpa grave (depósito); si a ambos, de culpa leve; si sólo al deudor, hasta de levísima (comodato). Es justo porque a mayor provecho propio, mayor diligencia exigible. 3) El dolo agrava la reparación: el deudor doloso responde también de los perjuicios directos <em>imprevistos</em> (1558). 4) No se presume (1459), no puede condonarse hacia el futuro (1465), y si es de varios, genera solidaridad (2317 inc. 2). 5) Mayoría (Claro Solar, Alessandri, Fueyo, Abeliuk): la culpa grave se sigue presumiendo (equivale al dolo sólo en efectos); minoría (Somarriva, Rodríguez Grez): debe probarse como el dolo.</div>
+
+<div class="ans" id="r6"><span class="q">Tema 6 — Presunción de culpa y prueba</span>
+1) Del art. 1547 inc. 3: probado el incumplimiento, la culpa se presume; el deudor debe probar diligencia o caso fortuito. 2) Por el 1698, el acreedor prueba la existencia de la obligación; el deudor prueba el pago u otra extinción, y la diligencia o el caso fortuito si se le imputa incumplimiento. 3) En lo contractual la culpa se presume; en lo extracontractual la víctima debe probarla (salvo presunciones 2320-2329). Por eso al demandante le conviene lo contractual (de ahí el interés en el cúmulo). 4) En las obligaciones de medios la presunción se diluye: como la diligencia es la prestación, el acreedor debe probar la conducta culpable.</div>
+
+<div class="ans" id="r7"><span class="q">Tema 7 — La mora</span>
+1) El retardo es el mero atraso; la mora es el retardo <em>imputable</em> tras la interpelación del acreedor. 2) Retardo, imputabilidad, interpelación (1551) y que el acreedor haya cumplido o esté llano a cumplir (1552). 3) N°1 contractual expresa (vence el plazo estipulado: restitución del arriendo el 31/12); N°2 contractual tácita (la prestación sólo servía a tiempo: el vestido de novia, los disfraces para el carnaval); N°3 judicial, regla general (préstamo sin fecha: mora al demandar). 4) Es la facultad del demandado, en un contrato bilateral, de negarse a cumplir mientras el otro no cumpla ni se allane (exceptio non adimpleti contractus), fundada en el 1552. 5) Del deudor: da derecho a indemnización moratoria (1557), lo hace responder del caso fortuito sobrevenido (1547 inc. 2, 1672), traslada el riesgo (1550). Del acreedor: atenúa la responsabilidad del deudor y pone los riesgos a cargo del acreedor (1548, 1680, 1827).</div>
+
+<div class="ans" id="r8"><span class="q">Tema 8 — Caso fortuito y riesgos</span>
+1) Imprevisto irresistible (art. 45); elementos: exterioridad/ajenidad, imprevisibilidad e irresistibilidad. 2) Cuando el caso fortuito sobrevino por su culpa, cuando ocurrió estando en mora (1547 inc. 2), cuando se pactó responder de él (1673), y cuando la ley lo pone a su cargo (1676, hurto/robo). 3) Abeliuk: basta probar la diligencia (ausencia de culpa); Claro Solar: hay que probar el caso fortuito concreto. 4) Resuelve quién soporta la pérdida cuando la cosa perece sin culpa en un contrato bilateral; la regla del 1550 es <em>res perit creditori</em> (el riesgo es del acreedor). 5) Excepciones: mora del deudor y obligarse a dar la misma cosa a dos personas (riesgo pasa al deudor); en las obligaciones de género no hay problema porque «el género no perece» (1510).</div>
+
+<div class="ans" id="r9"><span class="q">Tema 9 — Los perjuicios</span>
+1) Certidumbre, que no esté ya reparado e interés legítimo. La «pérdida de una chance» indemniza la <em>oportunidad</em> perdida (no el resultado), en proporción a su probabilidad. 2) Daño emergente: pérdida efectiva (gastos del concierto); lucro cesante: ganancia frustrada (entradas no vendidas) — 1556. 3) Sí se indemniza hoy, con base en una lectura amplia del 1556 y en el 19 N°1 y N°4 CPR; ejemplos: el anillo perdido por el joyero, el cliente cuyos cheques se protestan por error. 4) Doble filtro: primero «¿es directo?» (los indirectos nunca se indemnizan, ni con dolo); después «¿era previsible?» (el de buena fe responde sólo de previstos; el doloso, también de imprevistos directos) — 1558. 5) Lo prueba el acreedor (1698); excepciones: cláusula penal (1542), intereses moratorios en obligaciones de dinero (1559 regla 2.ª) y reserva del monto (173 CPC).</div>
+
+<div class="ans" id="r10"><span class="q">Tema 10 — Avaluación y cláusula penal</span>
+1) Judicial (la hace el juez, regla general), legal (la fija la ley, 1559) y convencional (la pactan las partes, cláusula penal). 2) El 1559 opera sólo en la indemnización <em>moratoria</em> de obligaciones de <em>dinero</em>: se deben intereses, no hay que probar perjuicios, y los intereses atrasados no producen interés (anatocismo = interés sobre interés, prohibido como regla general y permitido bajo condiciones por el art. 9 Ley 18.010). 3) Es la pena pactada para asegurar el cumplimiento (1535); funciones: avaluación anticipada, caución y pena civil. 4) Por el 1542 no hay que probar perjuicio; por el 1537 el cobro exige mora, y no se puede pedir a la vez la obligación y la pena (salvo pena por el simple retardo o pacto en contrario). 5) El 1544 permite rebajar la pena enorme; en contratos conmutativos sobre cantidad determinada, no puede exceder «el duplo, incluyéndose ésta en él»: lectura de Abeliuk = tope del doble de la obligación; otra lectura = el duplo por sobre la obligación.</div>
+
+<div class="ans" id="r11"><span class="q">Tema 11 — Cumplimiento forzado</span>
+1) En naturaleza: la prestación específica; por equivalencia: su valor en dinero. El cumplimiento por equivalencia (misma obligación bajo otra forma) no requiere culpa; la indemnización de los daños ulteriores sí. 2) De hacer (1553): apremiar, hacer ejecutar por un tercero a su costa, o indemnizar — a elección del acreedor. De no hacer (1555): indemnizar; y si lo hecho puede y debe destruirse, destruirlo a expensas del deudor. 3) Título ejecutivo, obligación líquida, actualmente exigible y acción no prescrita (434 CPC); la ejecutiva dura 3 años (2515). 4) La imposibilidad física o jurídica sobrevenida, absoluta y definitiva (1670 y ss.).</div>
+
+<div class="ans" id="r12"><span class="q">Tema 12 — Resolución y pacto comisorio</span>
+1) Ofrece al contratante diligente optar entre cumplimiento o resolución, ambos con indemnización (1489); <em>no</em> opera de pleno derecho: requiere sentencia. 2) No: se exige un incumplimiento de cierta gravedad o entidad (Claro Solar, Abeliuk); en el tracto sucesivo la resolución es «terminación» y opera hacia el futuro. 3) Extintivo (1567 N°9), restitutorio (1487) y frente a terceros (1490-1491: no afecta a terceros de buena fe, con reglas distintas para muebles e inmuebles). 4) Resciliación: mutuo acuerdo; nulidad: vicio originario; resolución: contrato válido dejado sin efecto por incumplimiento. 5) Simple: reitera la condición resolutoria tácita; calificado: resolución ipso facto. Debate sobre el atípico calificado: dominante (Abeliuk) = opera de pleno derecho; restrictiva (Alessandri, Claro Solar) = se aplica por analogía el plazo de 24 horas del 1879.</div>
+
+<div class="ans" id="r13"><span class="q">Tema 13 — Autonomía de la indemnización</span>
+1) ¿Puede pedirse sólo indemnización? Tesis tradicional (accesoriedad): no, acompaña al cumplimiento o a la resolución (1489); tesis moderna (autonomía): sí, es un remedio independiente (CISG; 1553, 1555, 1590). 2) Boetsch admite indemnización sola en: la moratoria (1559), los cumplimientos imperfectos no resolutorios (1590) y los contratos de tracto sucesivo. 3) <em>Zorin con Huachipato</em> (CS, Rol 3.325-2012, 31-10-2012) marcó el giro de la Corte Suprema hacia la autonomía de la indemnización en el cumplimiento imperfecto, aunque encuadrándola como parte del «cumplimiento» del contrato vía art. 1591 y acogiendo casación en la forma por ultra petita.</div>
+
+<div class="ans" id="r14"><span class="q">Tema 14 — Eximentes</span>
+1) Caso fortuito, ausencia de culpa, estado de necesidad, hecho o culpa del acreedor y hecho de un tercero extraño. 2) El deudor causa el daño para evitar un mal mayor (el capitán que arroja carga al mar para salvar la nave); su admisión general es discutida (recogido en casos como el 2178 N°3). 3) Sí responde por el hecho de sus dependientes/auxiliares (1590, 1679); no responde por el hecho de un tercero extraño, que puede constituir caso fortuito.</div>
+
+<div class="ans" id="r15"><span class="q">Tema 15 — Imprevisión y frustración del fin</span>
+1) Imprevisión: facultad de revisar/resolver cuando hechos sobrevinientes extraordinarios e imprevisibles vuelven el cumplimiento <em>excesivamente oneroso</em> (no imposible: eso es caso fortuito). 2) Requisitos: tracto sucesivo o ejecución diferida, desequilibrio grave sobreviniente, hechos extraordinarios e imprevisibles ajenos. La mayoría la rechaza por la fuerza obligatoria (1545); a favor se invocan 1546, 1560 y 1558; en contra, además, el 2003 regla 1.ª y el 1983 (y a favor puntual, el 2003 regla 2.ª). 3) En la frustración del fin el cumplimiento sigue posible y no más oneroso, pero el propósito práctico se frustra y la prestación queda inútil (el balcón para ver un desfile cancelado); tampoco tiene cabida general en Chile.</div>
+
+<div class="ans" id="r16"><span class="q">Tema 16 — Derechos auxiliares</span>
+1) El derecho de prenda general (2465): la obligación da al acreedor el derecho de perseguir todos los bienes embargables del deudor. 2) Medidas conservativas, acción oblicua o subrogatoria, acción pauliana o revocatoria y beneficio de separación. 3) No es general porque sólo procede en casos expresos (2466, 1677, 1238, 1394), a diferencia del modelo francés; requiere crédito cierto y exigible, negligencia del deudor e interés del acreedor. 4) Pauliana: si el acto es oneroso, mala fe del deudor y del tercero; si es gratuito, basta la mala fe del deudor; naturaleza = inoponibilidad (Somarriva, Abeliuk); prescribe en 1 año desde el acto (2468), sin suspensión.</div>
+
+<div class="ans" id="r17"><span class="q">Tema 17 — Cláusulas modificatorias</span>
+1) Limitativas, exonerativas y agravantes; base: 1547 inc. final y 1558 inc. final. 2) Porque alteran lo que es de la naturaleza del contrato (1444): exigen pacto expreso y se interpretan en favor del acreedor, conforme a la buena fe (1546, 1560-1563). 3) El 1465: el dolo pasado puede condonarse, pero sólo expresamente; el dolo <em>futuro</em> no vale (objeto ilícito, nulidad absoluta). Como la culpa grave equivale al dolo (44), tampoco puede exonerarse la culpa grave futura. 4) Porque interpretarla como condonación anticipada del dolo/culpa grave la haría nula (1465); por el principio de normalidad, sólo cubre los incumplimientos culposos leves.</div>
+
+<div class="ans" id="r18"><span class="q">Tema 18 — Prescripción</span>
+1) La acción ordinaria prescribe en 5 años (2515), contados desde que la obligación se hizo exigible (2514). 2) Ejecutiva: 3 años (2515); resolutoria del pacto comisorio: máximo 4 años desde la fecha del contrato (1880); pauliana: 1 año (2468). 3) La interrupción borra el tiempo corrido (natural: reconocimiento del deudor; civil: demanda judicial, 2518, 2503); la suspensión detiene el cómputo a favor de ciertas personas (2509). La pauliana, por ser de corto tiempo, no se suspende (2524). 4) La extracontractual prescribe en 4 años desde la perpetración del acto (2332); la contractual, en 5 años desde la exigibilidad (2515).</div>
+
+<hr style="margin:2.5rem 0;border:none;border-top:1px solid #e3e3e3;">
+<p class="muted">Fin de la sección de Responsabilidad contractual. Síntesis propia para Derecho Libre, anclada en los apuntes de C. Boetsch (2021) y J. A. Orrego, con la doctrina y jurisprudencia que esas fuentes citan. El caso «Zorin con Huachipato» se cita conforme a la sentencia (CS, Rol 3.325-2012, 31-10-2012, CL/JUR/2412/2012).</p>
+
+</body>
+</html>

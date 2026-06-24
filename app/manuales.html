@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leyes — Manuales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      background: #111111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+    }
+
+    .sidebar-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: #E8D8B8;
+      margin-bottom: 3rem;
+      text-decoration: none;
+    }
+
+    .sidebar-logo span { color: #C41E2E; }
+
+    .nav-section {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(232,216,184,0.3);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(232,216,184,0.55);
+      transition: all 0.15s;
+      margin-bottom: 0.2rem;
+    }
+
+    .nav-item:hover { background: rgba(232,216,184,0.06); color: #E8D8B8; }
+    .nav-item.active { background: rgba(196,30,46,0.15); color: #E8D8B8; }
+    .nav-item.active .nav-icon { color: #C41E2E; }
+
+    .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+    .nav-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      background: rgba(196,30,46,0.2);
+      color: #C41E2E;
+      padding: 0.1rem 0.45rem;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(232,216,184,0.08);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .user-avatar {
+      width: 36px; height: 36px;
+      background: #C41E2E;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: #F5EAD4;
+      flex-shrink: 0;
+    }
+
+    .user-name { font-size: 0.82rem; font-weight: 600; color: #E8D8B8; }
+    .user-plan { font-size: 0.72rem; color: rgba(232,216,184,0.4); }
+
+    .btn-logout {
+      width: 100%;
+      padding: 0.55rem;
+      background: transparent;
+      border: 1px solid rgba(232,216,184,0.12);
+      border-radius: 6px;
+      color: rgba(232,216,184,0.4);
+      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: #C41E2E; }
+
+    /* ── MAIN ── */
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── PANEL MATERIAS ── */
+    .materias-panel {
+      width: 260px;
+      background: #E8D8B8;
+      border-right: 1px solid rgba(17,17,17,0.08);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .panel-header {
+      padding: 1.75rem 1.5rem 1rem;
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .panel-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: #111111;
+    }
+
+    .panel-subtitle {
+      font-size: 0.75rem;
+      color: #7A6E5F;
+      margin-top: 0.2rem;
+    }
+
+    .materia-group { padding: 1rem 1rem 0; }
+
+    .materia-group-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      padding: 0.5rem 0.5rem 0.4rem;
+    }
+
+    .materia-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #7A6E5F;
+      transition: all 0.15s;
+      margin-bottom: 0.1rem;
+    }
+
+    .materia-item:hover { background: rgba(17,17,17,0.05); color: #111111; }
+
+    .materia-item.active {
+      background: #111111;
+      color: #E8D8B8;
+    }
+
+    .materia-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .materia-item.active .materia-dot { background: #C41E2E; }
+
+    /* ── PANEL TEMAS ── */
+    .temas-panel {
+      width: 240px;
+      background: #F5EAD4;
+      border-right: 1px solid rgba(17,17,17,0.08);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .temas-header {
+      padding: 1.75rem 1.5rem 1rem;
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+      position: sticky;
+      top: 0;
+      background: #F5EAD4;
+    }
+
+    .temas-materia {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      color: #111111;
+    }
+
+    .temas-list { padding: 0.75rem; }
+
+    .tema-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.75rem;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      color: #7A6E5F;
+      transition: all 0.15s;
+      margin-bottom: 0.15rem;
+      gap: 0.5rem;
+    }
+
+    .tema-item:hover { background: rgba(17,17,17,0.05); color: #111111; }
+
+    .tema-item.active {
+      background: rgba(196,30,46,0.1);
+      color: #111111;
+      font-weight: 600;
+    }
+
+    .tema-check {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+    }
+
+    .tema-check.done {
+      background: #C41E2E;
+      border-color: #C41E2E;
+      color: white;
+    }
+
+    /* ── CONTENIDO ── */
+    .content-panel {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2.5rem 3rem;
+    }
+
+    .content-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .content-breadcrumb {
+      font-size: 0.75rem;
+      color: #7A6E5F;
+      margin-bottom: 0.5rem;
+    }
+
+    .content-breadcrumb span { color: #C41E2E; }
+
+    .content-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: #111111;
+      line-height: 1;
+    }
+
+    .content-meta {
+      font-size: 0.78rem;
+      color: #7A6E5F;
+      margin-top: 0.5rem;
+    }
+
+    /* Contenido del manual */
+    .manual-body {
+      max-width: 720px;
+      line-height: 1.8;
+      color: #2A2A2A;
+    }
+
+    .manual-body h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 1.5px;
+      color: #111111;
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    .manual-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111111;
+      margin: 1.75rem 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+    }
+
+    .manual-body p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #3A3A3A;
+    }
+
+    .manual-body ul, .manual-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .manual-body li {
+      font-size: 0.95rem;
+      color: #3A3A3A;
+      margin-bottom: 0.4rem;
+    }
+
+    .concepto-box {
+      background: #E8D8B8;
+      border-left: 3px solid #C41E2E;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .concepto-box strong {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .concepto-box p {
+      font-size: 0.9rem;
+      color: #111111;
+      margin: 0;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: #7A6E5F;
+    }
+
+    .empty-state .emoji { font-size: 3rem; margin-bottom: 1rem; }
+
+    .empty-state h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: #111111;
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state p { font-size: 0.9rem; }
+
+    /* Nav bottom */
+    .content-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .btn-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: 7px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-nav:hover { background: #E8D8B8; }
+
+    .btn-nav.primary {
+      background: #C41E2E;
+      color: #F5EAD4;
+      border-color: transparent;
+    }
+
+    .btn-nav.primary:hover { background: #E02535; }
+
+    .btn-mark-done {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      color: #7A6E5F;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-mark-done:hover { border-color: #C41E2E; color: #C41E2E; }
+    .btn-mark-done.done { background: #C41E2E; border-color: #C41E2E; color: white; }
+
+    /* ── MODO DE LECTURA ── */
+    .reading-modes {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .reading-modes-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      margin-right: 0.25rem;
+    }
+    .modo-btn {
+      padding: 0.4rem 0.85rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      font-size: 0.77rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #7A6E5F;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .modo-btn:hover { border-color: #111; color: #111; }
+    .modo-btn.active { background: #111111; color: #E8D8B8; border-color: #111111; }
+    .modo-btn.pdf { border-color: rgba(196,30,46,0.25); color: #C41E2E; }
+    .modo-btn.pdf:hover { background: rgba(196,30,46,0.07); }
+
+    /* ── CHECKPOINT CARD (inline en modo online) ── */
+    .checkpoint-card {
+      background: #111111;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .cp-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .cp-badge {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: #C41E2E;
+      background: rgba(196,30,46,0.15);
+      padding: 0.15rem 0.6rem;
+      border-radius: 100px;
+    }
+    .cp-titulo {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(232,216,184,0.6);
+    }
+    .cp-intro {
+      font-size: 0.78rem;
+      color: rgba(232,216,184,0.35);
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+    .cp-pregunta { margin-bottom: 1.1rem; }
+    .cp-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: rgba(232,216,184,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .cp-pregunta-text {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #E8D8B8;
+      margin-bottom: 0.45rem;
+      line-height: 1.5;
+    }
+    .cp-textarea {
+      width: 100%;
+      min-height: 65px;
+      padding: 0.7rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid rgba(232,216,184,0.12);
+      background: rgba(232,216,184,0.05);
+      color: #E8D8B8;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .cp-textarea:focus { border-color: rgba(196,30,46,0.4); }
+    .cp-textarea::placeholder { color: rgba(232,216,184,0.18); }
+    .cp-textarea:disabled { opacity: 0.6; cursor: default; }
+    .cp-feedback {
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+      min-height: 1.1em;
+      line-height: 1.4;
+    }
+    .cp-feedback.ok { color: #5CB87A; }
+    .cp-feedback.warn { color: #E8A860; }
+    .cp-feedback.err { color: #E87070; }
+    .cp-btn-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .cp-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: none;
+    }
+    .cp-btn-primary { background: #C41E2E; color: #F5EAD4; }
+    .cp-btn-primary:hover { background: #E02535; }
+    .cp-btn-ghost { background: rgba(232,216,184,0.07); color: rgba(232,216,184,0.45); border: 1px solid rgba(232,216,184,0.12); }
+    .cp-btn-ghost:hover { background: rgba(232,216,184,0.12); color: rgba(232,216,184,0.7); }
+    .cp-completado {
+      text-align: center;
+      padding: 0.75rem;
+      font-size: 0.85rem;
+      color: #5CB87A;
+      font-weight: 600;
+    }
+    .cp-divider {
+      border: none;
+      border-top: 2px dashed rgba(17,17,17,0.08);
+      margin: 2.5rem 0 0;
+    }
+
+    /* ── PANEL PREGUNTAS POR SECCIÓN (modo impresión) ── */
+    .print-section-panel {
+      margin-top: 0;
+    }
+    .psp-intro {
+      background: rgba(196,30,46,0.07);
+      border: 1px solid rgba(196,30,46,0.15);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: #3A3A3A;
+      line-height: 1.6;
+    }
+    .psp-intro strong { color: #C41E2E; }
+    .psp-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .psp-tab {
+      padding: 0.5rem 1rem;
+      border-radius: 7px;
+      border: 1.5px solid rgba(17,17,17,0.12);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #7A6E5F;
+      transition: all 0.15s;
+    }
+    .psp-tab:hover { border-color: #111; color: #111; }
+    .psp-tab.active { background: #111; color: #E8D8B8; border-color: #111; }
+    .psp-card {
+      background: #E8D8B8;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .psp-qnum {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      margin-bottom: 0.3rem;
+    }
+    .psp-qtext {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #111;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .psp-textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: #F5EAD4;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .psp-textarea:focus { border-color: #C41E2E; }
+    .psp-feedback {
+      font-size: 0.8rem;
+      margin-top: 0.35rem;
+      min-height: 1.1em;
+    }
+    .psp-feedback.ok { color: #1A7A40; }
+    .psp-feedback.warn { color: #A06000; }
+    .psp-btn-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .psp-btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: none;
+    }
+    .psp-btn-primary { background: #C41E2E; color: #F5EAD4; }
+    .psp-btn-primary:hover { background: #E02535; }
+    .psp-btn-outline { background: transparent; color: #7A6E5F; border: 1.5px solid rgba(17,17,17,0.15); }
+    .psp-btn-outline:hover { color: #111; border-color: #111; }
+
+    /* ── PRINT CSS ── */
+    @media print {
+      .sidebar, .materias-panel, .temas-panel, .reading-modes,
+      .content-nav, .btn-mark-done, .cp-btn-row,
+      .cp-textarea, .cp-feedback, .psp-btn-row { display: none !important; }
+
+      body { background: white !important; font-size: 11pt; }
+      .main { margin-left: 0 !important; max-width: 100% !important; padding: 0 !important; }
+      .content-panel { padding: 0.5cm 1cm !important; overflow: visible !important; box-shadow: none !important; border-radius: 0 !important; }
+      .checkpoint-card {
+        background: #f5f5f5 !important;
+        border: 1.5px solid #aaa !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        padding: 14px !important;
+      }
+      .cp-pregunta-text { color: #111 !important; font-size: 10pt !important; }
+      .cp-titulo { color: #444 !important; }
+      .cp-badge { color: #C41E2E !important; -webkit-print-color-adjust: exact; }
+      .cp-num { color: #888 !important; }
+      .print-instruction {
+        display: block !important;
+        margin-top: 8px;
+        font-size: 9pt;
+        color: #555;
+        font-style: italic;
+        border-left: 3px solid #C41E2E;
+        padding-left: 8px;
+      }
+      .concepto-box {
+        border-left: 3px solid #C41E2E !important;
+        -webkit-print-color-adjust: exact;
+        background: #f5f5f5 !important;
+        break-inside: avoid;
+      }
+      table { page-break-inside: avoid; break-inside: avoid; }
+      h2 { page-break-after: avoid; margin-top: 18pt; }
+    }
+    .print-instruction { display: none; }
+
+    /* ── ESTILOS PARA CONTENIDO CARGADO DESDE ARCHIVOS FUENTE ── */
+    .manual-body h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.55rem; letter-spacing: 2px; color: #111;
+      margin: 2.5rem 0 0.6rem;
+      border-bottom: 2px solid rgba(17,17,17,0.1);
+      padding-bottom: 0.3rem;
+    }
+    .manual-body h2 { font-size: 1.08rem; font-weight: 700; color: #2A2A2A; margin: 1.5rem 0 0.4rem; }
+    .manual-body h3 { font-size: 0.95rem; font-weight: 700; color: #3A3A3A; margin: 1.1rem 0 0.25rem; }
+    .manual-body p  { margin: 0.45rem 0; line-height: 1.72; font-size: 0.91rem; color: #2A2A2A; }
+    .manual-body ul, .manual-body ol { margin: 0.4rem 0 0.8rem; padding-left: 1.4rem; font-size: 0.91rem; }
+    .manual-body li { margin: 0.28rem 0; line-height: 1.62; }
+    .manual-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.88rem; }
+    .manual-body th { background: #111; color: #E8D8B8; text-align: left; padding: 8px 10px; }
+    .manual-body td { border: 1px solid rgba(17,17,17,0.15); padding: 8px 10px; vertical-align: top; }
+    .manual-body tr:nth-child(even) td { background: rgba(17,17,17,0.03); }
+    .manual-body .cover, .manual-body .toc { display: none !important; }
+    .manual-body .art { font-weight: 700; color: #C41E2E; white-space: nowrap; }
+    .manual-body .muted { color: #7A6E5F; font-style: italic; }
+    .manual-body .backlink { font-size: 0.82rem; color: #C41E2E; text-decoration: none; }
+    .manual-body .callout {
+      border-left: 4px solid #C41E2E; background: rgba(196,30,46,0.06);
+      padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .callout .title { font-weight: 700; color: #C41E2E; display: block; margin-bottom: 0.25rem; }
+    .manual-body .warn {
+      border-left: 4px solid #A06000; background: rgba(160,96,0,0.07);
+      padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .warn .title { font-weight: 700; color: #A06000; display: block; margin-bottom: 0.25rem; }
+    .manual-body .debate {
+      border-left: 4px solid #6A4C93; background: rgba(106,76,147,0.06);
+      padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .debate .title { font-weight: 700; color: #6A4C93; display: block; margin-bottom: 0.25rem; }
+    .manual-body .ex {
+      border-left: 4px solid #1A7A40; background: rgba(26,122,64,0.06);
+      padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .ex .title { font-weight: 700; color: #1A7A40; display: block; margin-bottom: 0.25rem; }
+    .manual-body .lex {
+      background: rgba(17,17,17,0.04); border: 1px solid rgba(17,17,17,0.1);
+      border-radius: 6px; padding: 10px 14px; margin: 0.75rem 0;
+      font-size: 0.9rem; color: #2A2A2A;
+    }
+    .manual-body .lex b { color: #111; font-weight: 700; }
+    .manual-body .protip {
+      border: 2px dashed rgba(196,30,46,0.3); background: rgba(196,30,46,0.03);
+      padding: 14px 18px; margin: 1.5rem 0; border-radius: 9px;
+    }
+    .manual-body .protip .title { font-weight: 800; color: #C41E2E; display: block; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .manual-body .protip .row  { margin: 0.35rem 0; font-size: 0.88rem; }
+    .manual-body .protip .lbl  { font-weight: 700; color: #7A6E5F; }
+    .manual-body .protip .joke {
+      background: rgba(17,17,17,0.04); border-left: 3px solid #C41E2E;
+      padding: 8px 12px; margin-top: 0.5rem; border-radius: 0 4px 4px 0; font-size: 0.85rem;
+    }
+    .manual-body .quiz {
+      border: 1.5px solid rgba(17,17,17,0.12); background: rgba(17,17,17,0.03);
+      border-radius: 9px; padding: 14px 18px; margin: 1.5rem 0;
+    }
+    .manual-body .quiz .title { font-weight: 800; color: #111; display: block; margin-bottom: 0.4rem; }
+    .manual-body .quiz ol { margin: 0.3rem 0; padding-left: 1.5rem; }
+    .manual-body .quiz li { margin: 0.45rem 0; font-size: 0.88rem; }
+    .manual-body .quiz .hint { font-size: 0.82rem; color: #7A6E5F; }
+    .manual-body .ans {
+      margin: 0.75rem 0; padding: 10px 14px;
+      border-left: 3px solid #1A7A40; background: rgba(26,122,64,0.05); border-radius: 0 4px 4px 0;
+    }
+    .manual-body .ans .q { font-weight: 700; color: #1A7A40; display: block; }
+    .manual-body .caso {
+      border: 1px solid rgba(196,30,46,0.2); background: rgba(196,30,46,0.04);
+      padding: 14px 18px; margin: 1.25rem 0; border-radius: 8px;
+    }
+    .manual-body .caso .title { font-weight: 800; color: #C41E2E; display: block; margin-bottom: 0.3rem; }
+
+    /* ── LOADING ── */
+    .loading-state {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 4rem 2rem; color: #7A6E5F; font-size: 0.9rem;
+    }
+    .spinner {
+      width: 26px; height: 26px; flex-shrink: 0;
+      border: 3px solid rgba(17,17,17,0.1); border-top-color: #C41E2E;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-logo">Leyes<span>.</span></a>
+
+    <span class="nav-section">Estudio</span>
+    <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
+    <a class="nav-item active" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
+    <a class="nav-item" href="alternativas.html"><span class="nav-icon">✅</span> Alternativas</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🃏</span> Flashcards <span class="nav-badge">Pronto</span></a>
+
+    <span class="nav-section">Con IA</span>
+    <a class="nav-item" href="#"><span class="nav-icon">💬</span> Chat IA <span class="nav-badge">Pronto</span></a>
+    <a class="nav-item" href="#"><span class="nav-icon">🎙️</span> Interrogación oral <span class="nav-badge">Pronto</span></a>
+
+    <span class="nav-section">Comunidad</span>
+    <a class="nav-item" href="#"><span class="nav-icon">🏆</span> Liga <span class="nav-badge">Pronto</span></a>
+
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" id="user-avatar">?</div>
+        <div>
+          <div class="user-name" id="user-name">...</div>
+          <div class="user-plan">Plan Esencial</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="handleLogout()">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- Panel materias -->
+    <div class="materias-panel">
+      <div class="panel-header">
+        <div class="panel-title">Manuales</div>
+        <div class="panel-subtitle">Selecciona una materia</div>
+      </div>
+
+      <div class="materia-group">
+        <div class="materia-group-title">Obligatorias</div>
+        <div class="materia-item active" onclick="selectMateria(this, 'civil')">
+          <div class="materia-dot"></div> Derecho Civil
+        </div>
+        <div class="materia-item" onclick="selectMateria(this, 'procesal')">
+          <div class="materia-dot"></div> Derecho Procesal Civil
+        </div>
+      </div>
+
+      <div class="materia-group">
+        <div class="materia-group-title">Cédula</div>
+        <div class="materia-item" onclick="selectMateria(this, 'penal')">
+          <div class="materia-dot"></div> Derecho Penal
+        </div>
+        <div class="materia-item" onclick="selectMateria(this, 'administrativo')">
+          <div class="materia-dot"></div> Derecho Administrativo
+        </div>
+        <div class="materia-item" onclick="selectMateria(this, 'comercial')">
+          <div class="materia-dot"></div> Derecho Comercial
+        </div>
+        <div class="materia-item" onclick="selectMateria(this, 'canonico')">
+          <div class="materia-dot"></div> Derecho Canónico
+        </div>
+        <div class="materia-item" onclick="selectMateria(this, 'historia')">
+          <div class="materia-dot"></div> Historia del Derecho
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel temas -->
+    <div class="temas-panel" id="temas-panel">
+      <div class="temas-header">
+        <div class="temas-materia" id="temas-materia-title">Derecho Civil</div>
+      </div>
+      <div class="temas-list" id="temas-list">
+        <!-- Se llena con JS -->
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="content-panel" id="content-panel">
+      <div class="empty-state">
+        <div class="emoji">📖</div>
+        <h3>Selecciona un tema</h3>
+        <p>Elige una materia y un tema para comenzar a estudiar.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq';
+    const { createClient } = supabase;
+    const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ── Datos de temas por materia ──────────────────────────────────
+    const materias = {
+      civil: {
+        nombre: 'Derecho Civil',
+        temas: [
+          'Teoría de la Ley',
+          'Sujetos del Derecho',
+          'Acto Jurídico',
+          'Bienes y Derechos Reales',
+          'Posesión e inscripción',
+          'Teoría de las Obligaciones',
+          'Responsabilidad Contractual',
+          'Responsabilidad Extracontractual',
+          'Teoría del Contrato',
+          'Contratos en particular',
+          'Sucesión por causa de muerte',
+          'Derecho de Familia',
+        ]
+      },
+      procesal: {
+        nombre: 'Derecho Procesal Civil',
+        temas: [
+          'Bases del procedimiento',
+          'Acción y excepción',
+          'Jurisdicción y competencia',
+          'Las partes',
+          'El proceso',
+          'Los actos procesales',
+          'La prueba',
+          'Juicio ordinario de mayor cuantía',
+          'Juicio sumario',
+          'Juicio ejecutivo',
+          'Recursos procesales',
+          'Medidas cautelares',
+        ]
+      },
+      penal: {
+        nombre: 'Derecho Penal',
+        temas: [
+          'Teoría del delito',
+          'Tipicidad',
+          'Antijuridicidad',
+          'Culpabilidad',
+          'Iter criminis',
+          'Autoría y participación',
+          'Penas y su aplicación',
+          'Delitos en particular',
+        ]
+      },
+      administrativo: {
+        nombre: 'Derecho Administrativo',
+        temas: [
+          'El Estado y la Administración',
+          'Acto administrativo',
+          'Potestad reglamentaria',
+          'Responsabilidad del Estado',
+          'Control de la administración',
+          'Contratación administrativa',
+        ]
+      },
+      comercial: {
+        nombre: 'Derecho Comercial',
+        temas: [
+          'Actos de comercio',
+          'El comerciante',
+          'Sociedades comerciales',
+          'Títulos de crédito',
+          'Contratos mercantiles',
+          'Quiebra e insolvencia',
+        ]
+      },
+      canonico: {
+        nombre: 'Derecho Canónico',
+        temas: [
+          'Historia y fuentes',
+          'Las personas en el Derecho Canónico',
+          'Matrimonio canónico',
+          'Los sacramentos',
+          'Sanciones canónicas',
+        ]
+      },
+      historia: {
+        nombre: 'Historia del Derecho',
+        temas: [
+          'Derecho Romano',
+          'Derecho Medieval',
+          'Derecho Indiano',
+          'Codificación en Chile',
+          'Evolución constitucional',
+        ]
+      }
+    };
+
+    // ── Contenidos de manuales ──────────────────────────────────────
+    const contenidos = {
+      'civil_7': {
+        titulo: 'Responsabilidad Extracontractual',
+        minutos: 45,
+        sourceFile: '../01_Responsabilidad_Civil_Manual_de_Estudio.html',
+        extractFrom: 'iv',
+        extractUntil: null,           // Sections iv through end of file
+        cpInsertBefore: ['v', 'vii'], // CPs before "El daño" and before "Cuadro comparativo"
+        _loaded: false,
+        html: null,
+        checkpoints: [
+          {
+            id: 're7-cp1',
+            label: 'Control 1 · Sección 4',
+            subtitulo: 'Responsabilidad extracontractual: elementos y tipos',
+            preguntas: [
+              { texto: 'Enumere los 6 elementos de la responsabilidad extracontractual por el hecho propio. ¿Quién prueba la culpa y por qué eso contrasta con la sede contractual?', keywords: ['hecho','capacidad','imputabilidad','daño','causalidad','culpa','víctima','prueba'] },
+              { texto: 'Explique la responsabilidad por el hecho ajeno (art. 2320): ¿qué presunción opera, quién puede destruirla y qué acción tiene quien pagó?', keywords: ['2320','presunción','hecho ajeno','destruir','repetir','2325','vigilando'] },
+              { texto: '¿Qué diferencia hay entre los arts. 2326 y 2327 sobre animales? ¿En cuál hay responsabilidad estricta?', keywords: ['2326','2327','fiero','doméstico','estricta','culpa','inútil'] }
+            ]
+          },
+          {
+            id: 're7-cp2',
+            label: 'Control 2 · Secciones 5–6',
+            subtitulo: 'El daño y la relación de causalidad',
+            preguntas: [
+              { texto: '¿Qué requisitos debe reunir el daño para ser indemnizable? ¿En qué consiste la "pérdida de una chance"?', keywords: ['cierto','directo','legítimo','chance','reparado','probabilidad','interés'] },
+              { texto: 'Explique las dos principales teorías de la causalidad. ¿Cuál es la más aceptada en Chile?', keywords: ['equivalencia','causa adecuada','conditio','sine qua non','idónea','normal','causalidad'] },
+              { texto: '¿En cuánto tiempo prescribe la acción aquiliana y desde cuándo corre? Mencione el debate doctrinal sobre el dies a quo.', keywords: ['2332','4 años','perpetración','manifestación','dies a quo','debate','diferido'] }
+            ]
+          }
+        ]
+      },
+
+      'civil_6': {
+        titulo: 'Responsabilidad Contractual',
+        minutos: 55,
+        sourceFile: '../01_Responsabilidad_Civil_Manual_de_Estudio.html',
+        extractFrom: 'i',
+        extractUntil: 'iv',          // Sections i + ii + iii (excludes iv)
+        cpInsertBefore: ['iii'],      // Insert one CP marker before section iii
+        _loaded: false,
+        html: null,
+        checkpoints: [
+          {
+            id: 'rc6-cp1',
+            label: 'Control 1 · Secciones 1–2',
+            subtitulo: 'Marco general y elementos comunes',
+            preguntas: [
+              { texto: '¿Cuál es la diferencia fundamental entre responsabilidad contractual y extracontractual? ¿En qué artículos del Código Civil se ubica cada una?', keywords: ['contractual','extracontractual','1545','2314','incumplimiento','delito','cuasidelito'] },
+              { texto: 'Mencione al menos tres elementos comunes de toda responsabilidad civil y explique uno de ellos.', keywords: ['daño','causalidad','imputabilidad','culpa','dolo','hecho'] },
+              { texto: '¿Qué es la responsabilidad precontractual y cuál es su fundamento?', keywords: ['precontractual','tratativas','negociaciones','buena fe','1546','ruptura'] }
+            ]
+          },
+          {
+            id: 'rc6-cp2',
+            label: 'Control 2 · Sección 3',
+            subtitulo: 'Responsabilidad contractual: culpa, mora, perjuicios',
+            preguntas: [
+              { texto: '¿De qué grado de culpa responde el comodatario? ¿Y el depositario? Explique la lógica del art. 1547.', keywords: ['levísima','grave','comodato','depósito','1547','beneficia'] },
+              { texto: 'Nombre dos consecuencias concretas de que la culpa grave equivalga al dolo (art. 44). Cite los artículos.', keywords: ['1558','imprevistos','1465','condonar','equivale','dolo'] },
+              { texto: '¿Cuáles son las tres formas de interpelación del art. 1551? ¿Cuál es la regla general supletoria?', keywords: ['1551','contractual','tácita','judicial','reconvención','regla general'] }
+            ]
+          }
+        ]
+      }
+    };
+
+    // ── Estado ──────────────────────────────────────────────────────
+    let materiaActiva = 'civil';
+    let temaActivo = null;
+    let completados = JSON.parse(localStorage.getItem('temas_completados') || '{}');
+    let lecturaMode = 'online';    // 'online' | 'seccion' | 'pdf'
+    let cpSeccionActiva = {};      // { key: cpIdx } — qué sección está activa en modo impresión
+
+    // ── Init ────────────────────────────────────────────────────────
+    async function init() {
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) { window.location.href = 'auth.html'; return; }
+
+      const name = user.user_metadata?.full_name || user.email.split('@')[0];
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+
+      renderTemas('civil');
+    }
+
+    function selectMateria(el, id) {
+      document.querySelectorAll('.materia-item').forEach(i => i.classList.remove('active'));
+      el.classList.add('active');
+      materiaActiva = id;
+      renderTemas(id);
+      showEmpty();
+    }
+
+    function renderTemas(id) {
+      const m = materias[id];
+      document.getElementById('temas-materia-title').textContent = m.nombre;
+
+      const list = document.getElementById('temas-list');
+      list.innerHTML = m.temas.map((t, i) => {
+        const key = id + '_' + i;
+        const done = completados[key];
+        return `
+          <div class="tema-item ${temaActivo === key ? 'active' : ''}" onclick="selectTema('${id}', ${i}, this)">
+            <span>${t}</span>
+            <div class="tema-check ${done ? 'done' : ''}">${done ? '✓' : ''}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function selectTema(materiaId, idx, el) {
+      document.querySelectorAll('.tema-item').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+
+      const key = materiaId + '_' + idx;
+      temaActivo = key;
+
+      const m = materias[materiaId];
+      const tema = m.temas[idx];
+      const contenido = contenidos[key];
+
+      if (contenido) {
+        if (contenido.sourceFile && !contenido._loaded) {
+          showLoading(m.nombre, tema, contenido);
+          await loadManualContent(contenido);
+        }
+        renderContenido(m.nombre, tema, contenido, key, materiaId, idx);
+      } else {
+        renderProximamente(m.nombre, tema);
+      }
+    }
+
+    function showLoading(materia, tema, contenido) {
+      document.getElementById('content-panel').innerHTML = `
+        <div class="content-header">
+          <div class="content-breadcrumb">${materia} <span>›</span> ${tema}</div>
+          <div class="content-title">${contenido.titulo}</div>
+        </div>
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <span>Cargando manual…</span>
+        </div>
+      `;
+    }
+
+    async function loadManualContent(contenido) {
+      if (contenido._loaded) return;
+
+      try {
+        const res = await fetch(contenido.sourceFile);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const rawHTML = await res.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(rawHTML, 'text/html');
+
+        // Remove noise elements
+        doc.querySelectorAll('nav, script, style, .cover, .toc').forEach(e => e.remove());
+        // Remove the "Nota para Laura" first warning box
+        const firstWarn = doc.querySelector('.warn');
+        if (firstWarn) firstWarn.remove();
+
+        // Extract section range between extractFrom and extractUntil (by h1 id)
+        let extracted = '';
+        const from   = contenido.extractFrom  || null;
+        const until  = contenido.extractUntil || null;
+        let capturing = !from; // If no extractFrom, capture from the start
+
+        for (const el of Array.from(doc.body.children)) {
+          if (from  && el.id === from)  capturing = true;
+          if (until && el.id === until && capturing) break;
+          if (capturing) extracted += el.outerHTML;
+        }
+
+        // Insert <!-- CP --> markers before specified h1 IDs
+        if (contenido.cpInsertBefore && contenido.cpInsertBefore.length > 0) {
+          for (const anchorId of contenido.cpInsertBefore) {
+            // Match <h1 id="anchorId"> with possible extra attributes
+            const re = new RegExp(`(<h1[^>]*\\bid="${anchorId}"[^>]*>)`, 'i');
+            extracted = extracted.replace(re, '<!-- CP -->$1');
+          }
+        }
+
+        contenido.html    = extracted;
+        contenido._loaded = true;
+
+      } catch (e) {
+        console.warn('loadManualContent error:', e);
+        contenido.html = `
+          <div style="padding:2rem;background:rgba(196,30,46,0.08);border-radius:8px;
+                      color:#C41E2E;font-size:0.9rem;line-height:1.6;margin:1rem 0">
+            <strong>⚠️ No se pudo cargar el manual automáticamente.</strong><br><br>
+            Esta función requiere que la app esté servida desde un servidor web (HTTP).
+            Cuando publiques en Vercel cargará automáticamente.<br><br>
+            <em style="font-size:0.8rem;opacity:0.7">Fuente: ${contenido.sourceFile}</em>
+          </div>
+        `;
+        contenido._loaded = true;
+      }
+    }
+
+    function renderContenido(materia, tema, contenido, key, materiaId, idx) {
+      const done = completados[key];
+      const totalTemas = materias[materiaId].temas.length;
+      const prevIdx = idx > 0 ? idx - 1 : null;
+      const nextIdx = idx < totalTemas - 1 ? idx + 1 : null;
+      const hasCheckpoints = contenido.checkpoints && contenido.checkpoints.length > 0;
+
+      // ── Selector de modo ─────────────────────────────────────────
+      const modoSelector = hasCheckpoints ? `
+        <div class="reading-modes">
+          <span class="reading-modes-label">Cómo estudiar:</span>
+          <button class="modo-btn ${lecturaMode === 'online' ? 'active' : ''}"
+            onclick="setModoLectura('online','${key}','${materiaId}',${idx})">
+            📖 Leer online
+          </button>
+          <button class="modo-btn ${lecturaMode === 'seccion' ? 'active' : ''}"
+            onclick="setModoLectura('seccion','${key}','${materiaId}',${idx})">
+            🖨️ Tengo el manual impreso
+          </button>
+          <button class="modo-btn pdf"
+            onclick="prepararPDF()">
+            ⬇️ Descargar PDF
+          </button>
+        </div>
+      ` : `
+        <div class="reading-modes">
+          <button class="modo-btn pdf" onclick="prepararPDF()">⬇️ Descargar PDF</button>
+        </div>
+      `;
+
+      // ── Construir cuerpo según modo ───────────────────────────────
+      let bodyHTML = '';
+
+      if (lecturaMode === 'seccion' && hasCheckpoints) {
+        // Modo impresión: solo preguntas por sección
+        bodyHTML = buildSeccionPanel(contenido, key);
+      } else {
+        // Modo online: texto completo + checkpoints inline
+        if (hasCheckpoints && lecturaMode === 'online') {
+          bodyHTML = buildOnlineContent(contenido, key);
+        } else {
+          bodyHTML = `<div class="manual-body">${contenido.html}</div>`;
+        }
+      }
+
+      document.getElementById('content-panel').innerHTML = `
+        <div class="content-header">
+          <div class="content-breadcrumb">${materia} <span>›</span> ${tema}</div>
+          <div class="content-title">${contenido.titulo}</div>
+          <div class="content-meta">⏱ ${contenido.minutos} min de lectura</div>
+          ${modoSelector}
+          <button class="btn-mark-done ${done ? 'done' : ''}" onclick="toggleDone('${key}', '${materiaId}', ${idx})" id="btn-done">
+            ${done ? '✓ Completado' : '○ Marcar como leído'}
+          </button>
+        </div>
+        ${bodyHTML}
+        ${lecturaMode !== 'seccion' ? `
+        <div class="content-nav">
+          ${prevIdx !== null
+            ? `<button class="btn-nav" onclick="selectTema('${materiaId}', ${prevIdx}, document.querySelectorAll('.tema-item')[${prevIdx}])">← Tema anterior</button>`
+            : '<div></div>'
+          }
+          ${nextIdx !== null
+            ? `<button class="btn-nav primary" onclick="selectTema('${materiaId}', ${nextIdx}, document.querySelectorAll('.tema-item')[${nextIdx}])">Siguiente tema →</button>`
+            : '<div></div>'
+          }
+        </div>` : ''}
+      `;
+    }
+
+    // ── Modo online: texto dividido + checkpoint cards inline ─────────
+    function buildOnlineContent(contenido, key) {
+      const partes = contenido.html.split('<!-- CP -->');
+      let html = '<div class="manual-body">';
+      partes.forEach((parte, i) => {
+        html += parte;
+        if (i < partes.length - 1 && contenido.checkpoints[i]) {
+          html += buildCheckpointCard(contenido.checkpoints[i], i, key);
+        }
+      });
+      // Checkpoint final (after last section)
+      const lastCp = contenido.checkpoints[partes.length - 1];
+      if (lastCp) {
+        html += buildCheckpointCard(lastCp, partes.length - 1, key);
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function buildCheckpointCard(cp, cpIdx, key) {
+      const preguntas = cp.preguntas.map((p, qi) => `
+        <div class="cp-pregunta">
+          <div class="cp-num">Pregunta ${qi + 1}</div>
+          <div class="cp-pregunta-text">${p.texto}</div>
+          <textarea class="cp-textarea" id="cp-${key}-${cpIdx}-${qi}"
+            placeholder="Escribe tu respuesta desde lo que recuerdas…"></textarea>
+          <div class="cp-feedback" id="cp-fb-${key}-${cpIdx}-${qi}"></div>
+          <div class="print-instruction">
+            📌 Responde esta pregunta en la app: Manuales → ${temaActivo ? '' : ''}
+            Sección "${cp.label}"
+          </div>
+        </div>
+      `).join('');
+
+      return `
+        <hr class="cp-divider">
+        <div class="checkpoint-card" id="cp-card-${key}-${cpIdx}">
+          <div class="cp-header">
+            <span class="cp-badge">Control de lectura</span>
+            <span class="cp-titulo">${cp.label} — ${cp.subtitulo}</span>
+          </div>
+          <div class="cp-intro">
+            Antes de continuar: responde de memoria, sin volver a leer.
+            No tienen que ser respuestas perfectas.
+          </div>
+          ${preguntas}
+          <div class="cp-btn-row">
+            <button class="cp-btn cp-btn-primary" onclick="evaluarCheckpoint('${key}',${cpIdx},${cp.preguntas.length})">
+              Evaluar respuestas
+            </button>
+            <button class="cp-btn cp-btn-ghost" onclick="saltarCheckpoint('${key}',${cpIdx})">
+              Saltar y seguir leyendo
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function evaluarCheckpoint(key, cpIdx, numPregs) {
+      const cp = contenidos[key].checkpoints[cpIdx];
+      let todoOk = true;
+      for (let qi = 0; qi < numPregs; qi++) {
+        const ta = document.getElementById(`cp-${key}-${cpIdx}-${qi}`);
+        const fb = document.getElementById(`cp-fb-${key}-${cpIdx}-${qi}`);
+        if (!ta || !fb) continue;
+        const texto = ta.value.toLowerCase().trim();
+        if (texto.length < 20) {
+          fb.textContent = '⚠ Respuesta muy corta — intenta escribir algo.';
+          fb.className = 'cp-feedback warn';
+          todoOk = false;
+          continue;
+        }
+        const p = cp.preguntas[qi];
+        const hits = p.keywords.filter(kw => texto.includes(kw.toLowerCase())).length;
+        const pct = hits / p.keywords.length;
+        if (pct >= 0.5) {
+          fb.textContent = '✓ Bien — captaste los elementos clave.';
+          fb.className = 'cp-feedback ok';
+          ta.disabled = true;
+        } else if (pct >= 0.25) {
+          fb.textContent = '◐ Parcial — hay algo, pero faltaron conceptos centrales. Considera releer antes de avanzar.';
+          fb.className = 'cp-feedback warn';
+          todoOk = false;
+        } else {
+          fb.textContent = '✗ Muy incompleto — es probable que valga la pena releer esta sección.';
+          fb.className = 'cp-feedback err';
+          todoOk = false;
+        }
+      }
+      const card = document.getElementById(`cp-card-${key}-${cpIdx}`);
+      if (card) {
+        const btnRow = card.querySelector('.cp-btn-row');
+        if (btnRow) {
+          if (todoOk) {
+            btnRow.innerHTML = '<div class="cp-completado">✓ Control superado — continúa leyendo</div>';
+          } else {
+            btnRow.innerHTML = `
+              <button class="cp-btn cp-btn-primary" onclick="saltarCheckpoint('${key}',${cpIdx})">
+                Continuar de todas formas →
+              </button>`;
+          }
+        }
+      }
+    }
+
+    function saltarCheckpoint(key, cpIdx) {
+      const card = document.getElementById(`cp-card-${key}-${cpIdx}`);
+      if (card) {
+        card.style.opacity = '0.4';
+        card.style.pointerEvents = 'none';
+        const next = card.nextElementSibling;
+        if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // ── Modo impresión: panel de preguntas por sección ────────────────
+    function buildSeccionPanel(contenido, key) {
+      if (!cpSeccionActiva[key]) cpSeccionActiva[key] = 0;
+      const activeIdx = cpSeccionActiva[key];
+
+      const tabs = contenido.checkpoints.map((cp, i) => `
+        <button class="psp-tab ${i === activeIdx ? 'active' : ''}"
+          onclick="setPspTab('${key}',${i})">
+          ${cp.label}
+        </button>
+      `).join('');
+
+      const cp = contenido.checkpoints[activeIdx];
+      const preguntas = cp.preguntas.map((p, qi) => `
+        <div class="psp-card">
+          <div class="psp-qnum">Pregunta ${qi + 1}</div>
+          <div class="psp-qtext">${p.texto}</div>
+          <textarea class="psp-textarea" id="psp-${key}-${activeIdx}-${qi}"
+            placeholder="Escribe tu respuesta desde los apuntes impresos…"></textarea>
+          <div class="psp-feedback" id="psp-fb-${key}-${activeIdx}-${qi}"></div>
+          <div class="psp-btn-row">
+            <button class="psp-btn psp-btn-primary" onclick="evaluarPsp('${key}',${activeIdx},${qi},${p.keywords.length})" data-kws='${JSON.stringify(p.keywords)}'>
+              Evaluar
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      return `
+        <div class="manual-body print-section-panel">
+          <div class="psp-intro">
+            📖 Terminaste de leer una sección de tus apuntes impresos. Selecciona qué sección acabas de leer y responde las preguntas de control.<br>
+            <strong>Sin abrir el manual en pantalla</strong> — responde solo desde lo que recuerdas.
+          </div>
+          <div class="psp-tabs">${tabs}</div>
+          <div id="psp-questions">${preguntas}</div>
+        </div>
+      `;
+    }
+
+    function setPspTab(key, idx) {
+      cpSeccionActiva[key] = idx;
+      const contenido = contenidos[key];
+      const cp = contenido.checkpoints[idx];
+
+      // Rebuild tabs
+      const allTabs = document.querySelectorAll('.psp-tab');
+      allTabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+
+      // Rebuild questions
+      const preguntas = cp.preguntas.map((p, qi) => `
+        <div class="psp-card">
+          <div class="psp-qnum">Pregunta ${qi + 1}</div>
+          <div class="psp-qtext">${p.texto}</div>
+          <textarea class="psp-textarea" id="psp-${key}-${idx}-${qi}"
+            placeholder="Escribe tu respuesta desde los apuntes impresos…"></textarea>
+          <div class="psp-feedback" id="psp-fb-${key}-${idx}-${qi}"></div>
+          <div class="psp-btn-row">
+            <button class="psp-btn psp-btn-primary" onclick="evaluarPsp('${key}',${idx},${qi},${p.keywords.length})" data-kws='${JSON.stringify(p.keywords)}'>
+              Evaluar
+            </button>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('psp-questions').innerHTML = preguntas;
+    }
+
+    function evaluarPsp(key, cpIdx, qi, numKws) {
+      const contenido = contenidos[key];
+      const p = contenido.checkpoints[cpIdx].preguntas[qi];
+      const ta = document.getElementById(`psp-${key}-${cpIdx}-${qi}`);
+      const fb = document.getElementById(`psp-fb-${key}-${cpIdx}-${qi}`);
+      if (!ta || !fb) return;
+      const texto = ta.value.toLowerCase().trim();
+      if (texto.length < 15) { fb.textContent = '⚠ Escribe algo más.'; fb.className='psp-feedback warn'; return; }
+      const hits = p.keywords.filter(kw => texto.includes(kw.toLowerCase())).length;
+      const pct = hits / p.keywords.length;
+      if (pct >= 0.5) {
+        fb.textContent = '✓ Bien — cubriste los puntos principales.';
+        fb.className = 'psp-feedback ok';
+        ta.style.borderColor = '#1A7A40';
+      } else if (pct >= 0.25) {
+        fb.textContent = '◐ Parcial — vuelve a leer esa parte del apunte.';
+        fb.className = 'psp-feedback warn';
+      } else {
+        fb.textContent = '✗ Incompleto — repasa esa sección antes de continuar.';
+        fb.className = 'psp-feedback warn';
+      }
+    }
+
+    // ── Cambiar modo de lectura ───────────────────────────────────────
+    function setModoLectura(modo, key, materiaId, idx) {
+      lecturaMode = modo;
+      const m = materias[materiaId];
+      const tema = m.temas[idx];
+      const contenido = contenidos[key];
+      renderContenido(m.nombre, tema, contenido, key, materiaId, idx);
+      document.querySelectorAll('.tema-item')[idx].classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ── PDF ───────────────────────────────────────────────────────────
+    function prepararPDF() {
+      const element = document.querySelector('.manual-body');
+      if (!element) {
+        alert('Selecciona un manual antes de descargar.');
+        return;
+      }
+
+      const titulo = document.querySelector('.content-title')?.textContent || 'Manual Derecho Libre';
+      const btn = document.querySelector('.modo-btn.pdf');
+      if (btn) { btn.textContent = '⏳ Generando PDF…'; btn.disabled = true; }
+
+      const opt = {
+        margin:     [1.5, 1.8, 1.5, 1.8],
+        filename:   titulo.replace(/\s+/g, '_') + '.pdf',
+        image:      { type: 'jpeg', quality: 0.97 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF:      { unit: 'cm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save()
+        .then(() => {
+          if (btn) { btn.textContent = '⬇️ Descargar PDF'; btn.disabled = false; }
+        })
+        .catch(err => {
+          console.error('PDF error:', err);
+          if (btn) { btn.textContent = '⬇️ Descargar PDF'; btn.disabled = false; }
+          alert('Error generando el PDF. Intenta de nuevo.');
+        });
+    }
+
+    function renderProximamente(materia, tema) {
+      document.getElementById('content-panel').innerHTML = `
+        <div class="content-header">
+          <div class="content-breadcrumb">${materia} <span>›</span> ${tema}</div>
+          <div class="content-title">${tema}</div>
+        </div>
+        <div class="empty-state" style="padding: 3rem 0;">
+          <div class="emoji">✍️</div>
+          <h3>Contenido en preparación</h3>
+          <p>Este manual estará disponible muy pronto. Estamos trabajando en él.</p>
+        </div>
+      `;
+    }
+
+    function showEmpty() {
+      temaActivo = null;
+      document.getElementById('content-panel').innerHTML = `
+        <div class="empty-state">
+          <div class="emoji">📖</div>
+          <h3>Selecciona un tema</h3>
+          <p>Elige un tema de la lista para comenzar a estudiar.</p>
+        </div>
+      `;
+    }
+
+    function toggleDone(key, materiaId, idx) {
+      completados[key] = !completados[key];
+      localStorage.setItem('temas_completados', JSON.stringify(completados));
+      const btn = document.getElementById('btn-done');
+      if (completados[key]) {
+        btn.classList.add('done');
+        btn.textContent = '✓ Completado';
+      } else {
+        btn.classList.remove('done');
+        btn.textContent = '○ Marcar como leído';
+      }
+      renderTemas(materiaId);
+      document.querySelectorAll('.tema-item')[idx].classList.add('active');
+    }
+
+    async function handleLogout() {
+      await sb.auth.signOut();
+      window.location.href = '../index.html';
+    }
+
+    init();
+  </script>
+
+</body>
+</html>

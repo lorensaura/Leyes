@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsabilidad Contractual — Banco de Preguntas y Flashcards | Derecho Libre</title>
+<style>
+  :root{
+    --accent:#1F4E79;--accent2:#2E75B6;--light:#D9E2F3;--soft:#F2F5FB;--grey:#595959;
+    --basica:#2E7D32;--basicabg:#E8F5E9;
+    --inter:#1565C0;--interbg:#E3F2FD;
+    --avanz:#B23A00;--avanzbg:#FBE9E0;
+    --ok:#2E7D32;--okbg:#E8F5E9;--warn:#B23A00;--warnbg:#FBE9E0;--gold:#8a6d1f;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#222;line-height:1.6;
+       max-width:920px;margin:0 auto;padding:0 0 90px;background:#fafbfd;}
+  header.cover{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;
+       padding:38px 40px 30px;text-align:center;}
+  .cover .brand{font-size:1.9rem;font-weight:800;letter-spacing:1px;}
+  .cover .doc{font-size:1.25rem;font-weight:600;margin-top:.5rem;opacity:.96;}
+  .cover .sub{font-size:.95rem;margin-top:.4rem;opacity:.85;}
+  nav.tabs{display:flex;gap:0;background:#fff;border-bottom:2px solid var(--light);
+       position:sticky;top:0;z-index:20;box-shadow:0 1px 6px rgba(0,0,0,.05);}
+  nav.tabs button{flex:1;border:none;background:none;padding:15px 8px;font-size:1rem;
+       font-weight:600;color:var(--grey);cursor:pointer;border-bottom:3px solid transparent;}
+  nav.tabs button.active{color:var(--accent);border-bottom-color:var(--accent);}
+  nav.tabs button:hover{background:var(--soft);}
+  main{padding:24px 40px;}
+  .panel{display:none;}
+  .panel.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;}}
+  h2.sec{color:var(--accent);font-size:1.2rem;margin:1.6rem 0 .4rem;border-bottom:2px solid var(--light);padding-bottom:.3rem;}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 6px;}
+  select,.btn{font-size:.92rem;padding:8px 12px;border-radius:8px;border:1px solid var(--light);background:#fff;cursor:pointer;}
+  .btn{background:var(--accent);color:#fff;border:none;font-weight:600;}
+  .btn:hover{background:var(--accent2);}
+  .btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent);}
+  .btn.ghost:hover{background:var(--soft);}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:11px;
+       text-transform:uppercase;letter-spacing:.5px;vertical-align:middle;}
+  .tag.basica{background:var(--basicabg);color:var(--basica);}
+  .tag.intermedia{background:var(--interbg);color:var(--inter);}
+  .tag.avanzada{background:var(--avanzbg);color:var(--avanz);}
+  .tag.tipo{background:#eee;color:#555;}
+  /* ----- Banco ----- */
+  .qcard{border:1px solid #e3e6ec;border-radius:9px;padding:14px 17px;margin:12px 0;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+  .qcard .meta{margin-bottom:7px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  .qcard .qid{font-size:.72rem;color:#aaa;font-weight:700;}
+  .qcard .qtext{font-weight:600;color:#1a1a1a;}
+  .qcard .answer{display:none;margin-top:9px;padding-top:9px;border-top:1px dashed #e0e0e0;font-size:.96rem;color:#333;}
+  .qcard.open .answer{display:block;}
+  .qcard .art{font-weight:700;color:var(--accent);white-space:nowrap;}
+  .qcard .toggle{font-size:.82rem;color:var(--accent2);cursor:pointer;font-weight:600;margin-top:7px;display:inline-block;}
+  /* ----- Flashcards ----- */
+  #fcWrap{max-width:640px;margin:8px auto;}
+  .fc{background:#fff;border:1px solid var(--light);border-radius:14px;padding:30px 28px;
+      box-shadow:0 4px 18px rgba(31,78,121,.08);min-height:220px;display:flex;flex-direction:column;}
+  .fc .meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:14px;}
+  .fc .qtext{font-size:1.22rem;font-weight:600;color:#15233a;line-height:1.5;}
+  .fc .answer{margin-top:18px;padding-top:16px;border-top:1px solid var(--light);font-size:1.02rem;color:#2a2a2a;display:none;}
+  .fc.revealed .answer{display:block;}
+  .fc textarea{width:100%;min-height:92px;margin-top:16px;padding:11px 13px;border:1px solid var(--light);
+       border-radius:9px;font-family:inherit;font-size:1rem;line-height:1.5;resize:vertical;color:#222;}
+  .fc textarea:focus{outline:2px solid var(--accent2);border-color:var(--accent2);}
+  .fc textarea:disabled{background:#fafafa;color:#555;}
+  .myans{margin-top:16px;padding:11px 14px;border-radius:9px;background:var(--soft);border-left:4px solid var(--grey);display:none;}
+  .fc.revealed .myans{display:block;}
+  .myans .lbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.5px;color:var(--grey);font-weight:700;margin-bottom:3px;}
+  .fc .art{font-weight:700;color:var(--accent);}
+  .rate{margin-top:22px;}
+  .rate p{font-size:.9rem;color:var(--grey);margin-bottom:9px;font-weight:600;}
+  .rate .row{display:flex;gap:10px;}
+  .rate button{flex:1;padding:13px 6px;border-radius:10px;border:2px solid;background:#fff;
+       font-weight:700;font-size:.98rem;cursor:pointer;transition:.15s;}
+  .rate .dificil{border-color:var(--avanz);color:var(--avanz);}
+  .rate .dificil:hover{background:var(--avanzbg);}
+  .rate .mediana{border-color:var(--inter);color:var(--inter);}
+  .rate .mediana:hover{background:var(--interbg);}
+  .rate .facil{border-color:var(--basica);color:var(--basica);}
+  .rate .facil:hover{background:var(--basicabg);}
+  .sched{margin-top:16px;text-align:center;font-size:.95rem;color:var(--accent);font-weight:600;display:none;}
+  .sched.show{display:block;}
+  .progressline{font-size:.85rem;color:var(--grey);text-align:center;margin:10px 0 4px;}
+  .empty{text-align:center;padding:40px 20px;color:var(--grey);}
+  .empty .big{font-size:1.15rem;color:var(--accent);font-weight:700;margin-bottom:8px;}
+  /* ----- Progreso ----- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:16px 0;}
+  .stat{background:#fff;border:1px solid var(--light);border-radius:11px;padding:18px;text-align:center;}
+  .stat .n{font-size:2rem;font-weight:800;color:var(--accent);}
+  .stat .l{font-size:.82rem;color:var(--grey);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;}
+  table.tt{width:100%;border-collapse:collapse;margin-top:14px;font-size:.92rem;}
+  table.tt th,table.tt td{border-bottom:1px solid #eee;padding:9px 8px;text-align:left;}
+  table.tt th{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.4px;}
+  table.tt td.num{text-align:center;font-weight:700;}
+  .bar{height:8px;border-radius:5px;background:#eee;overflow:hidden;}
+  .bar>i{display:block;height:100%;background:var(--ok);}
+  .note{font-size:.85rem;color:var(--grey);background:var(--soft);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:5px;margin:12px 0;}
+  footer{text-align:center;font-size:.8rem;color:#aaa;margin-top:30px;}
+  @media (max-width:560px){main{padding:18px 16px;}header.cover{padding:28px 18px 22px;}}
+</style>
+</head>
+<body>
+<header class="cover">
+  <div class="brand">Derecho Libre</div>
+  <div class="doc">Responsabilidad Civil Contractual</div>
+  <div class="sub">Banco de preguntas · Flashcards con repetición espaciada</div>
+</header>
+
+<nav class="tabs">
+  <button id="tab-banco" class="active" onclick="showTab('banco')">📚 Banco</button>
+  <button id="tab-flash" onclick="showTab('flash')">🎴 Flashcards</button>
+  <button id="tab-prog" onclick="showTab('prog')">📊 Progreso</button>
+</nav>
+
+<main>
+  <!-- ================= BANCO ================= -->
+  <section id="panel-banco" class="panel active">
+    <div class="controls">
+      <label>Tema:
+        <select id="bancoTema" onchange="renderBanco()"></select>
+      </label>
+      <label>Dificultad:
+        <select id="bancoDif" onchange="renderBanco()">
+          <option value="">Todas</option>
+          <option value="basica">Básica</option>
+          <option value="intermedia">Intermedia</option>
+          <option value="avanzada">Avanzada</option>
+        </select>
+      </label>
+      <button class="btn ghost" onclick="toggleAll(true)">Abrir todas</button>
+      <button class="btn ghost" onclick="toggleAll(false)">Cerrar todas</button>
+      <button class="btn ghost" onclick="window.print()">Imprimir</button>
+    </div>
+    <div id="bancoCount" class="progressline"></div>
+    <div id="bancoList"></div>
+  </section>
+
+  <!-- ================= FLASHCARDS ================= -->
+  <section id="panel-flash" class="panel">
+    <div class="controls">
+      <label>Estudiar tema:
+        <select id="flashTema" onchange="startSession()"></select>
+      </label>
+      <button class="btn ghost" onclick="startSession()">Reiniciar sesión</button>
+    </div>
+    <div class="note">
+      Lee la pregunta y <b>escribe tu respuesta</b> con tus palabras; recién entonces revela la respuesta correcta y compárala.
+      Escribir (no sólo «decirla mentalmente») evita el autoengaño. Según qué tan bien la sabías, la app programa el próximo
+      repaso (1, 3, 6, 9, 12… días) y recuerda tus errores.
+    </div>
+    <div id="fcWrap"></div>
+  </section>
+
+  <!-- ================= PROGRESO ================= -->
+  <section id="panel-prog" class="panel">
+    <h2 class="sec">Tu avance</h2>
+    <div id="statsBox" class="stats"></div>
+    <h2 class="sec">Por tema</h2>
+    <table class="tt" id="progTable">
+      <thead><tr><th>Tema</th><th>Preguntas</th><th>Vistas</th><th>Dominadas</th><th>Avance</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="note">Una pregunta se considera <b>dominada</b> cuando la has calificado como «fácil» y su próximo repaso quedó a 9 o más días.</div>
+    <button class="btn ghost" onclick="resetProgress()" style="margin-top:14px;">Reiniciar todo mi progreso</button>
+  </section>
+</main>
+
+<footer>Derecho Libre · Material de preparación para el examen de grado · Versión muestra (Tema 1 cargado)</footer>
+
+<script>
+/* ===================================================================
+   BASE DE DATOS DE PREGUNTAS
+   Para escalar: basta agregar objetos a este arreglo.
+   Campos: id, tema (n°), dif ('basica'|'intermedia'|'avanzada'),
+           tipo (texto), q (pregunta), a (respuesta, admite HTML)
+   =================================================================== */
+const TEMAS = {
+  1:"1. Efecto de las obligaciones y sistema de remedios",
+  2:"2. El pago (cumplimiento) y sus principios",
+  3:"3. El incumplimiento: noción objetiva",
+  4:"4. Obligaciones de medios y de resultado",
+  5:"5. Requisitos de la indemnización de perjuicios",
+  6:"6. La culpa contractual y su graduación",
+  7:"7. El dolo contractual",
+  8:"8. Presunción de culpa y carga de la prueba",
+  9:"9. La mora",
+  10:"10. El caso fortuito o fuerza mayor",
+  11:"11. La teoría de los riesgos",
+  12:"12. Los perjuicios indemnizables",
+  13:"13. Avaluación de perjuicios y cláusula penal",
+  14:"14. El cumplimiento forzado",
+  15:"15. La resolución y el pacto comisorio",
+  16:"16. La autonomía de la acción indemnizatoria",
+  17:"17. Las eximentes de responsabilidad",
+  18:"18. Imprevisión y frustración del fin del contrato",
+  19:"19. Los derechos auxiliares del acreedor",
+  20:"20. Cláusulas modificatorias de responsabilidad",
+  21:"21. Prescripción de las acciones"
+};
+
+const QUESTIONS = [
+  // ============ TEMA 1 (muestra completa) ============
+  {id:"1-001",tema:1,dif:"basica",tipo:"Concepto",
+   q:"¿Qué es la responsabilidad civil contractual?",
+   a:"Es el conjunto de consecuencias jurídicas que el ordenamiento impone al deudor que <b>no cumple, cumple imperfectamente o cumple tardíamente</b> una obligación nacida de un contrato."},
+  {id:"1-002",tema:1,dif:"basica",tipo:"Distinción clave",
+   q:"¿Cuál es la distinción que ordena toda la materia y que el examinador usa como «puerta de entrada»?",
+   a:"La distinción entre los <b>efectos del contrato</b> y los <b>efectos de las obligaciones</b>."},
+  {id:"1-003",tema:1,dif:"basica",tipo:"Concepto",
+   q:"¿Qué son los «efectos del contrato»?",
+   a:"Son los <b>derechos personales y las obligaciones correlativas</b> que del contrato nacen. Mirarlos es mirar la relación entre los contratantes: quién se obligó a qué y cómo se interpreta lo pactado."},
+  {id:"1-004",tema:1,dif:"basica",tipo:"Concepto",
+   q:"¿Qué son los «efectos de las obligaciones»?",
+   a:"Son los <b>mecanismos de tutela</b> que la ley pone en manos del acreedor en torno al cumplimiento y al incumplimiento de la obligación, <i>cualquiera sea su fuente</i>."},
+  {id:"1-005",tema:1,dif:"basica",tipo:"Artículo",
+   q:"¿Qué norma consagra que el contrato es fuente de obligaciones?",
+   a:"El <span class='art'>art. 1437</span> CC, que enumera las fuentes de las obligaciones (entre ellas, el concurso real de voluntades o contrato)."},
+  {id:"1-006",tema:1,dif:"basica",tipo:"Artículo",
+   q:"¿Qué consagra el art. 1545 del Código Civil?",
+   a:"La <b>fuerza obligatoria del contrato</b>: «Todo contrato legalmente celebrado es una ley para los contratantes, y no puede ser invalidado sino por su consentimiento mutuo o por causas legales.»"},
+  {id:"1-007",tema:1,dif:"basica",tipo:"Artículo",
+   q:"¿Qué principio consagra el art. 1546 del Código Civil?",
+   a:"El principio de <b>buena fe</b> en la ejecución de los contratos: «Los contratos deben ejecutarse de buena fe, y por consiguiente obligan no sólo a lo que en ellos se expresa, sino a todas las cosas que emanan precisamente de la naturaleza de la obligación, o que por la ley o la costumbre pertenecen a ella.»"},
+  {id:"1-008",tema:1,dif:"basica",tipo:"Concepto",
+   q:"¿En qué consiste el efecto relativo de los contratos?",
+   a:"En que el contrato sólo produce derechos y obligaciones <b>entre las partes</b>, no respecto de terceros (<i>res inter alios acta</i>)."},
+  {id:"1-009",tema:1,dif:"basica",tipo:"Enumeración",
+   q:"Nombre las tres excepciones clásicas al efecto relativo del contrato.",
+   a:"(1) La <b>estipulación a favor de otro</b> (art. 1449); (2) la <b>promesa de hecho ajeno</b> (art. 1450); y (3) la <b>inoponibilidad</b>."},
+  {id:"1-010",tema:1,dif:"basica",tipo:"Artículo",
+   q:"¿Qué artículo regula la estipulación a favor de otro?",
+   a:"El <span class='art'>art. 1449</span> CC."},
+  {id:"1-011",tema:1,dif:"basica",tipo:"Artículo",
+   q:"¿Qué artículo regula la promesa de hecho ajeno?",
+   a:"El <span class='art'>art. 1450</span> CC."},
+  {id:"1-012",tema:1,dif:"basica",tipo:"Ubicación normativa",
+   q:"¿Dónde trata el Código Civil los efectos de las obligaciones?",
+   a:"En el <b>Título XII del Libro IV</b>, «Del efecto de las obligaciones», <span class='art'>arts. 1545 a 1559</span>."},
+  {id:"1-013",tema:1,dif:"basica",tipo:"Enumeración",
+   q:"¿Qué cuatro remedios integran el sistema de tutela del acreedor frente al incumplimiento?",
+   a:"(1) El <b>cumplimiento forzado</b>; (2) la <b>indemnización de perjuicios</b>; (3) la <b>resolución</b>; y (4) los <b>derechos auxiliares</b> del acreedor."},
+  {id:"1-014",tema:1,dif:"intermedia",tipo:"Fundamentación",
+   q:"¿Por qué importa distinguir efectos del contrato de efectos de las obligaciones?",
+   a:"Porque <b>ordena toda la materia</b>: los efectos del contrato miran la <i>relación entre las partes</i> (quién se obligó a qué, interpretación, efecto relativo y sus excepciones); los efectos de las obligaciones miran las <i>herramientas del acreedor</i> frente al cumplimiento o incumplimiento, con independencia de la fuente."},
+  {id:"1-015",tema:1,dif:"intermedia",tipo:"Doctrina",
+   q:"¿Qué crítica formula Claro Solar al Título XII del Libro IV?",
+   a:"Que regula «<b>promiscuamente</b>» ambas materias: mezcla la fuerza obligatoria (1545) y la buena fe (1546) —que son efectos del contrato— con normas sobre la indemnización (1556-1559) —que son efectos de la obligación."},
+  {id:"1-016",tema:1,dif:"intermedia",tipo:"Análisis",
+   q:"¿Los efectos de las obligaciones dependen de que la fuente sea un contrato?",
+   a:"No. Son mecanismos de tutela del acreedor que operan <b>cualquiera sea la fuente</b> de la obligación (contrato, cuasicontrato, delito, cuasidelito o la ley); por eso se estudian como «efectos de las obligaciones» y no sólo «del contrato»."},
+  {id:"1-017",tema:1,dif:"intermedia",tipo:"Caso breve",
+   q:"A vende a B un departamento. ¿Qué es «efecto del contrato» y qué es «efecto de la obligación» en este caso?",
+   a:"<b>Efecto del contrato</b>: que nace la obligación de A de entregar el departamento y la de B de pagar el precio (la relación misma entre las partes). <b>Efecto de la obligación</b>: si A no entrega, las herramientas de B —exigir el cumplimiento forzado, pedir la resolución, reclamar indemnización o ejercer derechos auxiliares—."},
+  {id:"1-018",tema:1,dif:"intermedia",tipo:"Artículo",
+   q:"¿Qué es la inoponibilidad como excepción al efecto relativo?",
+   a:"Es la <b>ineficacia respecto de terceros</b> de un acto válido entre las partes, por incumplirse requisitos de forma o fondo de publicidad (p. ej. la falta de notificación de una cesión de crédito, art. 1902). El tercero puede desconocer el acto."},
+  {id:"1-019",tema:1,dif:"intermedia",tipo:"Distinción",
+   q:"Diferencie «efecto absoluto» o expansivo del contrato del efecto relativo.",
+   a:"El efecto relativo limita los <b>derechos y obligaciones</b> a las partes. El efecto absoluto o expansivo alude a que el contrato, como hecho, <b>existe frente a todos</b> (oponibilidad de su existencia): los terceros deben reconocer la situación jurídica creada, aunque no queden obligados por él."},
+  {id:"1-020",tema:1,dif:"intermedia",tipo:"Concepto",
+   q:"¿Qué se entiende por «sistema de remedios» en la doctrina contractual moderna?",
+   a:"Es la mirada que concibe las reacciones frente al incumplimiento (cumplimiento forzado, indemnización, resolución, rebaja del precio, etc.) como un <b>conjunto de opciones a disposición del acreedor</b>, articuladas en torno a la satisfacción de su interés, más que como consecuencias aisladas. La impulsan autores como Vidal, Pizarro y Morales Moreno."},
+  {id:"1-021",tema:1,dif:"avanzada",tipo:"Discusión",
+   q:"¿Por qué se dice que el incumplimiento es la «llave» del sistema de remedios y no la culpa?",
+   a:"Porque en la concepción moderna el presupuesto común de todos los remedios es el <b>incumplimiento objetivo</b> (desviación entre lo debido y lo ejecutado). La culpa o el dolo no condicionan todos los remedios: el cumplimiento forzado y la resolución no exigen imputabilidad; sólo la <b>indemnización</b> requiere un factor de atribución. La culpa deja así de ser el eje y pasa a ser requisito de un remedio en particular."},
+  {id:"1-022",tema:1,dif:"avanzada",tipo:"Doctrina",
+   q:"¿Qué relación tiene el art. 1546 (buena fe) con la integración del contrato?",
+   a:"El 1546 opera como norma de <b>integración</b>: el contrato obliga no sólo a lo expresado, sino a lo que emana de la naturaleza de la obligación, la ley o la costumbre. De allí derivan deberes implícitos (de seguridad, información, custodia, lealtad) que amplían el contenido obligacional más allá del texto, y cuya infracción puede generar responsabilidad contractual."},
+  {id:"1-023",tema:1,dif:"avanzada",tipo:"V/F razonado",
+   q:"Verdadero o falso: «La indemnización de perjuicios es siempre un efecto del contrato.» Justifique.",
+   a:"<b>Falso.</b> La indemnización es un <b>efecto de la obligación</b> (un remedio del acreedor), no del contrato en sí. El contrato es su fuente mediata, pero la indemnización pertenece a los mecanismos de tutela que operan ante el incumplimiento de la obligación, cualquiera sea su origen."},
+  {id:"1-024",tema:1,dif:"avanzada",tipo:"Conexión",
+   q:"¿Cómo se conecta la fuerza obligatoria (1545) con la imprevisión?",
+   a:"La fuerza obligatoria (<i>pacta sunt servanda</i>) es el principal <b>obstáculo</b> a la imprevisión: si el contrato es «ley para las partes», no podría revisarse por hechos sobrevinientes. La teoría de la imprevisión (cláusula <i>rebus sic stantibus</i>) busca atenuar ese rigor cuando el cumplimiento se vuelve excesivamente oneroso. Es un conflicto entre 1545 y la equidad/buena fe (1546)."},
+  {id:"1-025",tema:1,dif:"avanzada",tipo:"Pregunta de examen",
+   q:"El examinador le pide «situar» la responsabilidad contractual dentro del Código. ¿Cómo respondería en 30 segundos?",
+   a:"«La responsabilidad contractual se ubica entre los <b>efectos de las obligaciones</b> (Título XII, Libro IV, arts. 1545-1559). Su fundamento es la fuerza obligatoria del contrato (1545) y la buena fe (1546); ante el incumplimiento, el acreedor dispone de un sistema de remedios: cumplimiento forzado, indemnización, resolución y derechos auxiliares. Conviene distinguirla de los efectos del contrato, que miran la relación entre las partes.»"},
+  {id:"6-001",tema:6,dif:"basica",tipo:"Definición",q:"¿Qué se entiende, en términos generales, por culpa según el apunte?",a:"Es <b>la omisión de la diligencia que se debe emplear</b> en el cumplimiento de una obligación o en la ejecución de un hecho."},
+  {id:"6-002",tema:6,dif:"basica",tipo:"Definición",q:"¿Qué es la culpa contractual?",a:"Es <b>la falta del cuidado debido en el cumplimiento de un contrato</b>."},
+  {id:"6-003",tema:6,dif:"basica",tipo:"Concepto",q:"¿Cuándo es imputable al deudor el incumplimiento por culpa?",a:"El incumplimiento es imputable al deudor cuando proviene de su culpa, esto es, cuando no empleó el cuidado debido en el cumplimiento del contrato."},
+  {id:"6-004",tema:6,dif:"basica",tipo:"Característica",q:"¿Por qué la culpa tiene mayor aplicación que el dolo en materia contractual?",a:"Porque es de más fácil prueba; en materia contractual la facilidad es todavía mayor, ya que <b>la culpa se presume</b>."},
+  {id:"6-005",tema:6,dif:"intermedia",tipo:"Característica",q:"¿Cómo se aprecia la culpa contractual: en abstracto o en concreto?",a:"<b>En abstracto</b>, pues la ley compara la conducta del sujeto con un modelo ideal (buen padre de familia, persona negligente y de poca prudencia, hombre juicioso en sus negocios importantes)."},
+  {id:"6-006",tema:6,dif:"intermedia",tipo:"Distinción",q:"¿Cómo se aprecia el dolo en comparación con la culpa?",a:"El <b>dolo</b> se aprecia <b>en concreto</b>, atendiendo a la conducta efectiva; la <b>culpa</b>, en cambio, se aprecia <b>en abstracto</b>, comparándola con un modelo ideal de conducta."},
+  {id:"6-007",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Quién y siguiendo a qué autor estableció la clasificación tripartita de la culpa?",a:"<b>BELLO</b>, siguiendo a <b>POTHIER</b>, la estableció en el <span class='art'>art. 44</span> del Código Civil, distinguiendo culpa grave, leve y levísima."},
+  {id:"6-008",tema:6,dif:"basica",tipo:"Enumeración",q:"¿Cuáles son las tres especies de culpa que distingue el art. 44?",a:"<b>Culpa grave o lata</b>, <b>culpa leve</b> y <b>culpa levísima</b>."},
+  {id:"6-009",tema:6,dif:"basica",tipo:"Definición",q:"¿Cómo define el art. 44 la culpa grave o lata?",a:"Es «la que consiste en no manejar los negocios ajenos con aquel cuidado que aun las personas negligentes y de poca prudencia suelen emplear en sus negocios propios»; en materias civiles <b>equivale al dolo</b> (<span class='art'>art. 44</span>)."},
+  {id:"6-010",tema:6,dif:"basica",tipo:"Sinónimos",q:"¿Con qué otras expresiones nombra el art. 44 a la culpa grave?",a:"La llama también <b>negligencia grave</b> y <b>culpa lata</b>."},
+  {id:"6-011",tema:6,dif:"basica",tipo:"Definición",q:"¿Cómo define el art. 44 la culpa leve?",a:"Es «la falta de aquella diligencia y cuidado que los hombres emplean ordinariamente en sus negocios propios»."},
+  {id:"6-012",tema:6,dif:"basica",tipo:"Sinónimos",q:"¿Qué otras denominaciones da el art. 44 a la culpa leve?",a:"La llama también <b>descuido leve</b> y <b>descuido ligero</b>."},
+  {id:"6-013",tema:6,dif:"basica",tipo:"Regla general",q:"Según el art. 44, ¿a qué grado de culpa equivale la expresión «culpa o descuido, sin otra calificación»?",a:"Significa <b>culpa o descuido leve</b>; la culpa leve es la regla general."},
+  {id:"6-014",tema:6,dif:"basica",tipo:"Concepto",q:"¿A qué diligencia se opone la culpa leve según el art. 44?",a:"Se opone a la <b>diligencia o cuidado ordinario o mediano</b>."},
+  {id:"6-015",tema:6,dif:"basica",tipo:"Modelo",q:"¿De qué especie de culpa responde el que debe administrar un negocio como un buen padre de familia?",a:"Es responsable de la <b>culpa leve</b> (<span class='art'>art. 44</span>)."},
+  {id:"6-016",tema:6,dif:"basica",tipo:"Definición",q:"¿Cómo define el art. 44 la culpa o descuido levísimo?",a:"Es «la falta de aquella esmerada diligencia que un hombre juicioso emplea en la administración de sus negocios importantes»."},
+  {id:"6-017",tema:6,dif:"basica",tipo:"Concepto",q:"¿A qué diligencia se opone la culpa levísima?",a:"Se opone a la <b>suma diligencia o cuidado</b>."},
+  {id:"6-018",tema:6,dif:"basica",tipo:"Modelo",q:"¿Cuál es el modelo de conducta que sirve de pauta para la culpa leve?",a:"El <b>buen padre de familia</b>, considerado como paradigma de hombre juicioso y diligente, entendido como diligencia mediana."},
+  {id:"6-019",tema:6,dif:"basica",tipo:"Comparación",q:"Ordene de menor a mayor exigencia de diligencia las tres especies de culpa.",a:"El que responde de <b>culpa grave</b> tiene la menor exigencia (cuidado mínimo); el de <b>culpa leve</b>, una exigencia media (buen padre de familia); el de <b>culpa levísima</b>, la mayor exigencia (esmerada diligencia del hombre juicioso)."},
+  {id:"6-020",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: el que responde de culpa grave es el que tiene mayor responsabilidad de cuidado. Razone.",a:"<b>Falso.</b> El que sólo responde de culpa grave tiene la <b>menor</b> responsabilidad, pues sólo debe emplear el cuidado que aun las personas negligentes y de poca prudencia suelen emplear en sus negocios propios."},
+  {id:"6-021",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: el que responde de culpa levísima es quien tiene la mayor obligación de cuidado. Razone.",a:"<b>Verdadero.</b> Debe emplear la esmerada diligencia que un hombre juicioso emplea en la administración de sus negocios importantes."},
+  {id:"6-022",tema:6,dif:"basica",tipo:"Regla",q:"¿Qué dice el art. 44 inciso 1º parte final respecto de la culpa grave?",a:"Que <b>en materias civiles equivale al dolo</b>."},
+  {id:"6-023",tema:6,dif:"intermedia",tipo:"Efecto",q:"¿Cuál es el alcance de que la culpa grave equivalga al dolo en cuanto a los perjuicios?",a:"Cuando el deudor incumple con culpa grave su responsabilidad se agrava igual que en el dolo, respondiendo de <b>todos los perjuicios directos, previstos e imprevistos</b>."},
+  {id:"6-024",tema:6,dif:"intermedia",tipo:"Efecto",q:"¿Puede renunciarse anticipadamente la culpa grave? Indique la norma.",a:"<b>No.</b> Como la culpa grave equivale al dolo, no podría renunciarse anticipadamente (<span class='art'>art. 1465</span>)."},
+  {id:"6-025",tema:6,dif:"basica",tipo:"Efecto",q:"Si varios deudores incurren en culpa grave, ¿cómo es su responsabilidad? Indique la norma.",a:"Su responsabilidad sería <b>solidaria</b> (<span class='art'>art. 2317 inc. 2º</span>), por asimilarse la culpa grave al dolo."},
+  {id:"6-026",tema:6,dif:"avanzada",tipo:"Discusión doctrinaria",q:"¿En qué consiste el problema de si la culpa grave se presume?",a:"Consiste en determinar si la asimilación de la culpa grave al dolo alcanza al <i>onus probandi</i>, es decir, si el acreedor que la invoca está eximido de probarla (como toda culpa) o debe acreditarla (como el dolo)."},
+  {id:"6-027",tema:6,dif:"avanzada",tipo:"Jurisprudencia",q:"¿Qué se ha fallado sobre la prueba de la culpa grave a propósito del art. 44?",a:"Se ha fallado que «la circunstancia de que el artículo 44 del Código Civil equipare el dolo a la culpa grave no significa que ésta deba probarse al igual que aquél»."},
+  {id:"6-028",tema:6,dif:"avanzada",tipo:"Doctrina",q:"¿Por qué razones critica SOMARRIVA la doctrina que no presume la culpa grave?",a:"Porque el <span class='art'>art. 44</span> no distingue y equipara en forma absoluta ambos conceptos; porque la norma viene de POTHIER, que le daba alcance amplio; y porque no es lógico presumir la culpa grave cuando ni el dolo ni la mala fe se presumen."},
+  {id:"6-029",tema:6,dif:"avanzada",tipo:"Doctrina",q:"¿Qué sostiene RODRÍGUEZ sobre la prueba de la culpa grave?",a:"Que si la culpa grave se asimila (la ley dice «equivale») al dolo, ella <b>debe también probarse al igual que el dolo</b>; de lo contrario sería más perjudicial incumplir con culpa grave que con dolo."},
+  {id:"6-030",tema:6,dif:"avanzada",tipo:"Doctrina mayoritaria",q:"Según la mayor parte de la doctrina, ¿la equivalencia entre culpa grave y dolo tiene alcances probatorios?",a:"<b>No.</b> La equivalencia no tiene alcances probatorios; tratándose de culpa, cualquiera que sea (incluso la grave), <b>se presume siempre</b>, correspondiendo al deudor probar el descargo."},
+  {id:"6-031",tema:6,dif:"avanzada",tipo:"Doctrina",q:"¿Qué argumento da CLARO SOLAR para negar que culpa grave y dolo sean una misma cosa?",a:"Que si fueran una misma cosa el <span class='art'>art. 44</span> no habría dado dos definiciones; además, el <span class='art'>art. 1547</span> no hace referencia al dolo, sino únicamente a la culpa al exigir al deudor la prueba del cuidado."},
+  {id:"6-032",tema:6,dif:"basica",tipo:"Prueba",q:"¿Distingue el art. 1547 inc. 3º entre las clases de culpa al presumirla?",a:"<b>No.</b> El <span class='art'>art. 1547 inc. 3º</span> que presume la culpa en materia contractual <b>no distingue</b> entre las clases de culpa."},
+  {id:"6-033",tema:6,dif:"basica",tipo:"Regla",q:"¿Cuál es la primera regla para saber de qué culpa responde el deudor?",a:"Que el deudor <b>responde de la culpa a que se haya obligado</b>, pues las partes pueden alterar las reglas legales de responsabilidad en virtud de la autonomía de la voluntad."},
+  {id:"6-034",tema:6,dif:"intermedia",tipo:"Norma",q:"¿Dónde reconoce el Código la facultad de las partes de pactar el grado de culpa?",a:"En el <b>inciso final del <span class='art'>art. 1547</span></b>: «Todo lo cual, sin embargo, se entiende sin perjuicio de las disposiciones especiales de las leyes, y de las estipulaciones expresas de las partes»."},
+  {id:"6-035",tema:6,dif:"basica",tipo:"Regla",q:"Si las partes nada han acordado, ¿qué norma determina de qué culpa responde el deudor?",a:"El <span class='art'>art. 1547</span>, según el cual debe distinguirse atendiendo a quién beneficia el contrato."},
+  {id:"6-036",tema:6,dif:"basica",tipo:"Complete el artículo",q:"Complete el art. 1547 inc. 1º: «El deudor no es responsable sino de la culpa lata en aquellos contratos que por su naturaleza sólo son útiles ____».",a:"«…al <b>acreedor</b>; es responsable de la <b>leve</b> en los contratos que se hacen para beneficio recíproco de las partes; y de la <b>levísima</b>, en los contratos en que el deudor es el único que reporta beneficio»."},
+  {id:"6-037",tema:6,dif:"basica",tipo:"Regla",q:"Según el art. 1547, si el contrato sólo es útil al acreedor, ¿de qué culpa responde el deudor?",a:"Sólo de <b>culpa lata o grave</b>."},
+  {id:"6-038",tema:6,dif:"basica",tipo:"Regla",q:"Según el art. 1547, si el contrato beneficia recíprocamente a ambas partes, ¿de qué culpa responde el deudor?",a:"De <b>culpa leve</b>."},
+  {id:"6-039",tema:6,dif:"basica",tipo:"Regla",q:"Según el art. 1547, si el contrato beneficia sólo al deudor, ¿de qué culpa responde?",a:"Hasta de <b>culpa levísima</b>."},
+  {id:"6-040",tema:6,dif:"intermedia",tipo:"Fundamento",q:"¿Por qué la responsabilidad del deudor es mayor cuando él es el único beneficiado con el contrato?",a:"Porque la ley exige más cuidado a quien más se beneficia; siendo el deudor el único beneficiado, es lógico que se le imponga la mayor diligencia (culpa levísima)."},
+  {id:"6-041",tema:6,dif:"basica",tipo:"Ejemplo",q:"En el contrato de depósito, ¿de qué culpa responde el depositario y por qué?",a:"Responde únicamente de <b>culpa grave</b> (<span class='art'>art. 2222</span>), porque el depósito sólo beneficia al depositante (acreedor)."},
+  {id:"6-042",tema:6,dif:"basica",tipo:"Ejemplo",q:"En el comodato, ¿de qué culpa responde el comodatario y por qué?",a:"Responde hasta de <b>culpa levísima</b> (<span class='art'>art. 2178</span>), porque el comodatario es el único beneficiado con el contrato."},
+  {id:"6-043",tema:6,dif:"basica",tipo:"Ejemplo",q:"En los contratos conmutativos, en que ambas partes se benefician, ¿de qué culpa se responde?",a:"Sólo hasta de <b>culpa leve</b>."},
+  {id:"6-044",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Cuál es la regla general en cuanto al grado de culpa de que se responde?",a:"Lo normal es responder hasta de <b>culpa leve</b>; así ocurre con quien administra bienes ajenos."},
+  {id:"6-045",tema:6,dif:"basica",tipo:"Enumeración",q:"Mencione cuatro casos de quien administra bienes ajenos que responde de culpa leve, con sus artículos.",a:"El padre de familia (<span class='art'>art. 250</span>), el tutor o curador (<span class='art'>art. 391</span>), el mandatario (<span class='art'>art. 2129</span>), el agente oficioso (<span class='art'>art. 2288</span>); también el albacea (<span class='art'>art. 1299</span>) y el partidor (<span class='art'>art. 1329</span>)."},
+  {id:"6-046",tema:6,dif:"basica",tipo:"Enumeración",q:"¿Qué titulares de derechos sujetos a plazo o condición responden de culpa leve?",a:"El propietario fiduciario (<span class='art'>art. 758 inc. 2º</span>), el usufructuario (<span class='art'>art. 787</span>) y el usuario o habitador (<span class='art'>art. 818</span>)."},
+  {id:"6-047",tema:6,dif:"intermedia",tipo:"Norma",q:"¿Qué dos preceptos permiten a las partes alterar el grado de responsabilidad?",a:"El <b>inciso final del <span class='art'>art. 1547</span></b> y el <b>inciso final del <span class='art'>art. 1558</span></b>."},
+  {id:"6-048",tema:6,dif:"intermedia",tipo:"Límite",q:"¿Cuál es el límite a la facultad de las partes de modificar la responsabilidad del deudor?",a:"Que <b>no se puede eximir de toda responsabilidad al deudor</b>, pues como la culpa grave equivale al dolo, ésta no puede condonarse anticipadamente."},
+  {id:"6-049",tema:6,dif:"intermedia",tipo:"Razonamiento",q:"¿Por qué eximir al deudor de toda responsabilidad equivaldría a condonar el dolo futuro?",a:"Porque la exención total incluiría la culpa grave, y como ésta equivale al dolo, condonarla anticipadamente implicaría condonar el dolo futuro, lo que adolece de objeto ilícito (<span class='art'>art. 1465</span>)."},
+  {id:"6-050",tema:6,dif:"basica",tipo:"Prueba",q:"En materia contractual, ¿la culpa se presume o debe probarse?",a:"<b>Se presume.</b> Este principio se desprende del <span class='art'>art. 1547 inc. 3º</span>."},
+  {id:"6-051",tema:6,dif:"basica",tipo:"Complete el artículo",q:"Complete el art. 1547 inc. 3º: «La prueba de la diligencia o cuidado incumbe ____; la prueba del caso fortuito ____».",a:"«…<b>al que ha debido emplearlo</b>; la prueba del caso fortuito <b>al que lo alega</b>»."},
+  {id:"6-052",tema:6,dif:"intermedia",tipo:"Razonamiento",q:"¿Por qué el art. 1547 inc. 3º implica que la culpa se presume?",a:"Porque si corresponde al deudor probar que empleó el cuidado debido, la ley está presumiendo que, si incumple, es porque no empleó ese cuidado, es decir, que actuó con culpa."},
+  {id:"6-053",tema:6,dif:"intermedia",tipo:"Excepción",q:"¿Qué excepción a la presunción de culpa contempla el art. 2158 en el mandato?",a:"Permite al mandante liberarse alegando que el negocio no tuvo buen éxito o que pudo desempeñarse a menos costo, <b>salvo que se le pruebe culpa</b> al mandatario."},
+  {id:"6-054",tema:6,dif:"avanzada",tipo:"Doctrina",q:"Según Orrego, ¿es realmente una excepción la regla del art. 2158 inciso final?",a:"No: en rigor es una <b>aplicación de la regla general del <span class='art'>art. 1698</span></b>, pues si el mandante alega la extinción de su obligación fundada en la culpa del mandatario, lógico es que deba probarla."},
+  {id:"6-055",tema:6,dif:"intermedia",tipo:"Responsabilidad por terceros",q:"¿Responde el deudor por el hecho o culpa de las personas que dependen de él? Indique la norma.",a:"<b>Sí.</b> El <span class='art'>art. 1679</span> dispone que «en el hecho o culpa del deudor se comprende el hecho o culpa de las personas por quienes fuere responsable»; lo reitera el <span class='art'>art. 1590</span>."},
+  {id:"6-056",tema:6,dif:"avanzada",tipo:"Responsabilidad por terceros",q:"Si el daño proviene del hecho de un tercero por quien el deudor NO responde, ¿qué puede exigir el acreedor?",a:"Sólo puede exigir que se le ceda la acción que tenga el deudor contra el tercero autor del daño (<span class='art'>art. 1590 inc. final</span>; <span class='art'>art. 1677</span>)."},
+  {id:"6-057",tema:6,dif:"basica",tipo:"Distinción",q:"Señale dos diferencias entre la culpa contractual y la extracontractual.",a:"La culpa contractual <b>supone un vínculo jurídico previo</b> entre las partes y <b>admite grados</b> (grave, leve, levísima); la extracontractual no supone vínculo previo y, según ciertos autores, es una sola sin graduación."},
+  {id:"6-058",tema:6,dif:"basica",tipo:"Distinción",q:"En cuanto a la prueba, ¿qué diferencia hay entre culpa contractual y extracontractual?",a:"La culpa <b>contractual se presume</b>; la <b>extracontractual debe probarse</b>."},
+  {id:"6-059",tema:6,dif:"avanzada",tipo:"Distinción",q:"Según ALESSANDRI, ¿qué diferencia hay en cuanto a la mora entre la culpa contractual y la delictual?",a:"En la culpa contractual es menester que el deudor se haya constituido en mora para exigir indemnización; en la culpa delictual basta la ejecución del simple hecho ilícito."},
+  {id:"6-060",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: la culpa contractual admite graduación porque las partes pudieron prever las consecuencias del incumplimiento. Razone.",a:"<b>Verdadero.</b> Tratándose de la culpa contractual las partes pudieron prever las consecuencias del incumplimiento y regular el grado de diligencia de cada una, lo que justifica la graduación."},
+  {id:"6-061",tema:6,dif:"avanzada",tipo:"Distinción",q:"¿Por qué la culpa extracontractual no admite gradaciones según el apunte de Orrego?",a:"Porque toda culpa aquiliana, cualquiera sea su gravedad, impone al deudor la misma responsabilidad: indemnizar todos los perjuicios."},
+  {id:"6-062",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué importancia tiene la clasificación tripartita del art. 44, según el art. 1547?",a:"Tiene importancia para <b>determinar el grado de culpa</b> del cual responden los deudores en los diversos contratos, según la utilidad que el contrato reporte a las partes."},
+  {id:"6-063",tema:6,dif:"avanzada",tipo:"Fundamento",q:"¿Qué intención de las partes cree interpretar la ley al fijar el grado de culpa según el art. 1547?",a:"La ley, creyendo interpretar la intención o voluntad de las partes, hace responder al deudor de cada especie de culpa según el contrato reporte utilidad al acreedor, sólo al deudor, o a ambas partes."},
+  {id:"6-064",tema:6,dif:"basica",tipo:"Orden de determinación",q:"Según Orrego, ¿cuál es el PRIMER factor para determinar de qué grado de culpa responde el deudor?",a:"<b>Lo que las partes hubieren estipulado</b> en el contrato."},
+  {id:"6-065",tema:6,dif:"basica",tipo:"Orden de determinación",q:"Según Orrego, ¿cuál es el SEGUNDO factor, a falta de estipulación?",a:"<b>Lo que dispongan las leyes especiales</b>, de haberlas."},
+  {id:"6-066",tema:6,dif:"basica",tipo:"Orden de determinación",q:"Según Orrego, ¿cuál es el TERCER factor, a falta de estipulación y de leyes especiales?",a:"Lo dispuesto en las <b>normas del Código Civil específicas de cada contrato</b> o para ciertas instituciones."},
+  {id:"6-067",tema:6,dif:"basica",tipo:"Orden de determinación",q:"Según Orrego, ¿cuál es el CUARTO y supletorio factor para determinar el grado de culpa?",a:"Lo dispuesto en el <span class='art'>art. 1547</span>, según si el contrato beneficia a ambas partes o a una sola; es la <b>norma general y supletoria</b>."},
+  {id:"6-068",tema:6,dif:"basica",tipo:"Examen oral",q:"Enumere en orden los cuatro pasos para determinar de qué culpa responde el deudor.",a:"1.º Lo estipulado por las partes; 2.º las leyes especiales; 3.º las normas del Código Civil propias de cada contrato; 4.º supletoriamente, el <span class='art'>art. 1547</span>."},
+  {id:"6-069",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: las reglas del art. 1547 son imperativas e inderogables. Razone.",a:"<b>Falso.</b> Son <b>supletorias</b> de la voluntad de las partes; la ley permite que éstas las modifiquen o «deroguen» en sus relaciones jurídicas (inciso final del <span class='art'>art. 1547</span>)."},
+  {id:"6-070",tema:6,dif:"intermedia",tipo:"Estipulación",q:"¿Qué se requiere de las partes para modificar las normas del art. 1547?",a:"Una <b>estipulación expresa</b>; puede incluso atenuarse la responsabilidad del deudor, con un límite: no puede pactarse que no responda ni siquiera de culpa lata o grave."},
+  {id:"6-071",tema:6,dif:"intermedia",tipo:"Razonamiento",q:"¿Por qué no puede estipularse que el deudor no responda ni siquiera de culpa grave?",a:"Porque la culpa grave equivale al dolo en materia civil y la <b>condonación del dolo futuro adolece de objeto ilícito</b> (<span class='art'>art. 1465</span>)."},
+  {id:"6-072",tema:6,dif:"basica",tipo:"Ley que altera",q:"Dé un ejemplo en que la propia ley impone al depositario una responsabilidad mayor que la ordinaria.",a:"El <b>depósito necesario</b>, caso en el cual la responsabilidad del depositario se extiende a la <b>culpa leve</b> (<span class='art'>art. 2239</span>), en vez de la sola culpa grave del depósito común."},
+  {id:"6-073",tema:6,dif:"basica",tipo:"Ley que altera",q:"Dé un ejemplo en que la ley DISMINUYE la responsabilidad del comodatario.",a:"El <b>comodato en pro de ambas partes</b>, en que la responsabilidad del comodatario disminuye a la <b>culpa leve</b> (<span class='art'>art. 2179</span>), en lugar de la culpa levísima del comodato común."},
+  {id:"6-074",tema:6,dif:"basica",tipo:"Ley que altera",q:"En la compraventa, ¿de qué culpa responde el vendedor si el comprador se niega injustificadamente a recibir la cosa?",a:"Sólo del <b>dolo o de la culpa lata o grave</b> (<span class='art'>art. 1827</span>)."},
+  {id:"6-075",tema:6,dif:"intermedia",tipo:"Interpretación",q:"Cuando la ley dice que una persona responde «de toda especie de culpa» o «de toda culpa», ¿qué grado entiende Orrego?",a:"Entiende que se trata de <b>culpa levísima</b>."},
+  {id:"6-076",tema:6,dif:"intermedia",tipo:"Ejemplo",q:"¿Qué norma del depósito autoriza estipular que el depositario responda de toda especie de culpa?",a:"El <span class='art'>art. 2222 inc. 1º</span>: «Las partes podrán estipular que el depositario responda de toda especie de culpa»."},
+  {id:"6-077",tema:6,dif:"basica",tipo:"Agencia oficiosa",q:"Según el art. 2288, ¿de qué responde el agente oficioso que se hizo cargo para salvar de un peligro inminente los intereses ajenos?",a:"Sólo del <b>dolo o de la culpa grave</b>."},
+  {id:"6-078",tema:6,dif:"basica",tipo:"Agencia oficiosa",q:"Según el art. 2288, ¿de qué responde el agente oficioso que tomó voluntariamente la gestión?",a:"Es responsable hasta de la <b>culpa leve</b>."},
+  {id:"6-079",tema:6,dif:"basica",tipo:"Agencia oficiosa",q:"Según el art. 2288, ¿de qué responde el agente oficioso que se ofreció a la gestión impidiendo que otros la hicieran?",a:"Responde de <b>toda culpa</b>, es decir, hasta de culpa levísima."},
+  {id:"6-080",tema:6,dif:"basica",tipo:"Prueba",q:"¿Qué dos disposiciones citadas por Orrego fundan que la culpa contractual se presume?",a:"El <span class='art'>art. 1547 inc. 3º</span> y el <span class='art'>art. 1671</span>."},
+  {id:"6-081",tema:6,dif:"intermedia",tipo:"Complete el artículo",q:"Complete el art. 1671: «Siempre que la cosa perece en poder del deudor, se presume que ha sido por ____».",a:"«…por <b>hecho o culpa suya</b>»."},
+  {id:"6-082",tema:6,dif:"basica",tipo:"Carga de la prueba",q:"Producido el incumplimiento, ¿qué debe probar el acreedor y qué debe probar el deudor?",a:"El acreedor sólo prueba la <b>existencia de la obligación</b>; el deudor debe probar que <b>empleó el cuidado debido</b> o que el incumplimiento se debió a caso fortuito o fuerza mayor."},
+  {id:"6-083",tema:6,dif:"intermedia",tipo:"Obligaciones de medios y resultado",q:"¿Cuál de los dos tipos de obligación constituye la regla general: de medios o de resultado?",a:"Las obligaciones <b>de resultado</b> son la regla general; las de medios son más bien excepcionales y usualmente las contraen los profesionales."},
+  {id:"6-084",tema:6,dif:"intermedia",tipo:"Obligaciones de medios y resultado",q:"En las obligaciones de resultado, ¿la culpa se presume o se prueba? ¿Qué norma aplica?",a:"La culpa <b>se presume</b>; opera la regla del <span class='art'>art. 1547 inc. 3º</span>."},
+  {id:"6-085",tema:6,dif:"intermedia",tipo:"Obligaciones de medios y resultado",q:"En las obligaciones de medios, ¿la culpa se presume o se prueba? ¿Qué norma aplica?",a:"Usualmente la culpa <b>debe ser probada</b> por el acreedor; aplica lo dispuesto en el <span class='art'>art. 1698</span>."},
+  {id:"6-086",tema:6,dif:"avanzada",tipo:"Obligaciones de medios y resultado",q:"Según BARROS (citado por Orrego), ¿por qué no hay diferencias esenciales en la prueba de la culpa en obligaciones de medios y en sede extracontractual?",a:"Porque en ambas el acreedor o víctima debe probar la infracción al deber de cuidado; la prueba de la negligencia en una obligación de medios se asemeja a la prueba de la culpa extracontractual."},
+  {id:"6-087",tema:6,dif:"avanzada",tipo:"Obligaciones de medios y resultado",q:"En obligaciones de medios, además de la existencia de la obligación, ¿qué más debe probar el acreedor según algunos autores?",a:"Debe probar también la <b>conducta culpable</b> del deudor demandado, esto es, su negligencia."},
+  {id:"6-088",tema:6,dif:"avanzada",tipo:"Obligaciones de medios y resultado",q:"Compare la prueba de la culpa en obligaciones de resultado, de medios y extracontractual.",a:"En las de resultado la culpa se presume (<span class='art'>art. 1547 inc. 3º</span>); en las de medios y en la extracontractual la culpa debe probarse por el acreedor o víctima (<span class='art'>art. 1698</span>)."},
+  {id:"6-089",tema:6,dif:"avanzada",tipo:"Definición jurisprudencial",q:"Según el fallo citado por Orrego, ¿cómo se describe el estándar de cuidado de la culpa grave?",a:"El estándar exigible es <b>mínimo</b>: hay culpa grave si el actuar del deudor raya en la mala fe; es la negligencia máxima que omite las precauciones más elementales, no previendo lo que cualquiera habría notado."},
+  {id:"6-090",tema:6,dif:"avanzada",tipo:"Observación",q:"De la definición del art. 44 sobre culpa grave, ¿qué nivel de cuidado exige a Orrego: máximo o mínimo?",a:"Exige sólo un <b>cuidado básico o mínimo</b>, el que cumplen aun los individuos negligentes y de poca prudencia en sus negocios propios."},
+  {id:"6-091",tema:6,dif:"basica",tipo:"Observación",q:"Según Orrego, ¿qué tres observaciones se deducen de la definición de culpa leve?",a:"1.º Alude al cuidado <b>ordinario o usual</b>; 2.º que emplean <b>los hombres en sus negocios propios</b>; 3.º cuando la ley menciona la «culpa» sin calificarla, debe entenderse <b>culpa leve</b>."},
+  {id:"6-092",tema:6,dif:"intermedia",tipo:"Observación",q:"Según Orrego, ¿qué tres notas caracterizan a la culpa levísima?",a:"1.º Exige una <b>esmerada o suma diligencia</b>; 2.º no la de un hombre medio sino la de un <b>hombre juicioso</b>; 3.º no en cualquier negocio sino en sus <b>negocios importantes</b>."},
+  {id:"6-093",tema:6,dif:"intermedia",tipo:"Examen oral",q:"¿Qué grado de culpa constituye la regla general en el Derecho y por qué?",a:"La <b>culpa leve</b>, pues es de la que ordinariamente se responde; por ello, cada vez que la ley alude a la «culpa» sin calificación, se entiende culpa leve."},
+  {id:"6-094",tema:6,dif:"basica",tipo:"Verdadero o falso",q:"Verdadero o falso: en materia extracontractual ciertos autores sostienen que la culpa es una sola y no admite graduación.",a:"<b>Verdadero.</b> En materia extracontractual ciertos autores afirman que la culpa es una sola y, por tanto, no admite graduación."},
+  {id:"6-095",tema:6,dif:"avanzada",tipo:"Cuasicontratos y obligaciones legales",q:"Según la doctrina mayoritaria, ¿por qué estatuto se rigen las obligaciones legales y cuasicontractuales?",a:"Por las normas de la <b>culpa contractual</b>, pues constituyen el derecho común en materia de responsabilidad; la delictual y cuasidelictual es de excepción (Claro Solar, Alessandri, Meza Barros, Abeliuk)."},
+  {id:"6-096",tema:6,dif:"avanzada",tipo:"Argumento",q:"¿Qué argumento sobre la graduación de la culpa invoca Meza Barros para sostener que las reglas contractuales son el derecho común?",a:"Que diversas normas de las obligaciones legales y cuasicontractuales aplican la <b>gradación de la culpa</b> (propia de la culpa contractual), por ejemplo los <span class='art'>arts. 427, 2288, 2308, 256, 391, 1748 y 1771</span>."},
+  {id:"6-097",tema:6,dif:"avanzada",tipo:"Cuasicontratos",q:"En la agencia oficiosa, ¿qué cuidado debe emplear el agente según el art. 2288?",a:"Los cuidados de un <b>buen padre de familia</b>, es decir, responde de culpa leve."},
+  {id:"6-098",tema:6,dif:"avanzada",tipo:"Cuasicontratos",q:"En el cuasicontrato de comunidad, ¿de qué culpa responde el comunero según el art. 2308?",a:"Es responsable hasta de la <b>culpa leve</b>."},
+  {id:"6-099",tema:6,dif:"avanzada",tipo:"Obligaciones legales",q:"Según el art. 256, ¿de qué culpa responde el padre o madre en la administración de los bienes del hijo?",a:"Hasta de la <b>culpa leve</b>."},
+  {id:"6-100",tema:6,dif:"avanzada",tipo:"Obligaciones legales",q:"Según los arts. 1748 y 1771, ¿de qué culpa responde el marido que administra la sociedad conyugal?",a:"Sólo de <b>culpa lata o grave</b>."},
+  {id:"6-101",tema:6,dif:"avanzada",tipo:"Obligaciones legales",q:"Según el art. 427, ¿de qué culpa responde quien retarda voluntariamente ocurrir al juez tras tomar la administración de los bienes del pupilo?",a:"Su retardo voluntario lo hace responsable hasta de la <b>culpa levísima</b>."},
+  {id:"6-102",tema:6,dif:"avanzada",tipo:"Doctrina minoritaria",q:"¿Qué postula la doctrina minoritaria (Ducci, Barros) sobre el estatuto de las obligaciones legales y cuasicontractuales?",a:"Que la regla general es la de la <b>responsabilidad extracontractual</b>, objetando que el argumento de la graduación no es categórico, pues incluso en sede extracontractual se habla del buen padre de familia (<span class='art'>art. 2323</span>)."},
+  {id:"6-103",tema:6,dif:"avanzada",tipo:"Doctrina",q:"¿Qué admite ABELIUK respecto del problema del estatuto aplicable a las obligaciones no contractuales?",a:"Admite que el punto es «muy relativo», pues el Título XII discurre sobre la idea de una estipulación previa de las partes, y las obligaciones no contractuales se asemejan más entre sí."},
+  {id:"6-104",tema:6,dif:"basica",tipo:"Caso práctico",q:"Caso: Ana presta gratuitamente su bicicleta a Beto (comodato) y éste la deja a la intemperie y se oxida. ¿De qué grado de culpa responde Beto?",a:"De <b>culpa levísima</b> (<span class='art'>art. 2178</span>), porque el comodato beneficia sólo al comodatario; debió emplear la esmerada diligencia de un hombre juicioso."},
+  {id:"6-105",tema:6,dif:"basica",tipo:"Caso práctico",q:"Caso: Carlos guarda gratuitamente un cuadro de su amiga (depósito) y lo deja caer por un descuido menor, no por negligencia grosera. ¿Responde?",a:"<b>No.</b> En el depósito el depositario sólo responde de <b>culpa grave</b> (<span class='art'>art. 2222</span>); un descuido leve no compromete su responsabilidad, salvo estipulación o depósito necesario."},
+  {id:"6-106",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: en una compraventa el vendedor entrega tarde la cosa por un descuido ordinario que un comerciante diligente habría evitado. ¿Responde?",a:"<b>Sí.</b> La compraventa beneficia a ambas partes, de modo que el vendedor responde de <b>culpa leve</b> (<span class='art'>art. 1547</span>); el descuido ordinario basta para comprometer su responsabilidad."},
+  {id:"6-107",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el deudor incumple y el acreedor lo demanda, pero no acompaña prueba de la negligencia. ¿Prospera la defensa de que «no se probó la culpa»?",a:"<b>No.</b> En materia contractual (obligación de resultado) la culpa se presume; es el deudor quien debe probar que empleó la diligencia debida (<span class='art'>art. 1547 inc. 3º</span>)."},
+  {id:"6-108",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: Diego es comodatario y la cosa perece en su poder. Alega que no debe probar nada. ¿Tiene razón?",a:"<b>No.</b> Como la cosa pereció en su poder, se presume que fue por hecho o culpa suya (<span class='art'>art. 1671</span>); debe probar diligencia o caso fortuito, y al ser comodatario responde hasta de culpa levísima."},
+  {id:"6-109",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: un médico se obliga a tratar a un paciente, que no sana. El paciente demanda sin probar negligencia. ¿Basta con la sola falta de curación?",a:"<b>No necesariamente.</b> La obligación del profesional suele ser de <b>medios</b>; usualmente la culpa debe probarla el acreedor (<span class='art'>art. 1698</span>), no basta el solo resultado adverso."},
+  {id:"6-110",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: en un contrato las partes pactan que el deudor «no responderá de ninguna especie de culpa, ni siquiera de la grave». ¿Es válida la cláusula?",a:"<b>No es válida</b> en cuanto exime de la culpa grave, pues ésta equivale al dolo y condonar el dolo futuro adolece de objeto ilícito (<span class='art'>art. 1465</span>)."},
+  {id:"6-111",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: las partes de un arrendamiento pactan expresamente que el arrendatario responda incluso de culpa levísima. ¿Es válido?",a:"<b>Sí.</b> Las partes pueden agravar la responsabilidad mediante estipulación expresa (inciso final del <span class='art'>art. 1547</span>); el límite es no eximir de culpa grave, no agravarla."},
+  {id:"6-112",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el depositante y el depositario nada pactaron, pero existe depósito necesario por un incendio. ¿De qué culpa responde el depositario?",a:"De <b>culpa leve</b> (<span class='art'>art. 2239</span>), pues en el depósito necesario la ley extiende la responsabilidad más allá de la culpa grave del depósito común."},
+  {id:"6-113",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: un comodato se celebra también en provecho del comodante. ¿Sigue respondiendo el comodatario de culpa levísima?",a:"<b>No.</b> En el comodato en pro de ambas partes la responsabilidad disminuye a <b>culpa leve</b> (<span class='art'>art. 2179</span>)."},
+  {id:"6-114",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: dos codeudores incumplen contractualmente por su culpa, sin pacto de solidaridad. ¿Cómo responden?",a:"En forma <b>simplemente conjunta</b> (<span class='art'>arts. 1511 inc. 1º y 1526 inc. 1º</span>), a menos que se hubiere pactado solidaridad o la ley dispusiere otra cosa."},
+  {id:"6-115",tema:6,dif:"avanzada",tipo:"Comparación",q:"Si dos individuos cometen un cuasidelito civil, ¿cómo responden, a diferencia de la culpa contractual?",a:"Responden <b>solidariamente</b> (<span class='art'>art. 2317 inc. 1º</span>), mientras que en la culpa contractual responderían simplemente conjuntamente salvo pacto en contrario."},
+  {id:"6-116",tema:6,dif:"intermedia",tipo:"Requisito",q:"Para que la culpa contractual en obligaciones de dar y hacer dé origen a indemnización, ¿qué se requiere además?",a:"Que el deudor haya sido <b>constituido en mora</b> (<span class='art'>art. 1557</span>)."},
+  {id:"6-117",tema:6,dif:"avanzada",tipo:"Distinción",q:"En las obligaciones de no hacer, ¿se requiere mora para la indemnización por culpa?",a:"<b>No.</b> En las obligaciones de no hacer basta la <b>contravención</b> a la obligación, sin necesidad de mora."},
+  {id:"6-118",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué se entiende por culpa contractual en la definición de Orrego?",a:"Es la que incide en el <b>cumplimiento de las obligaciones</b>, esto es, la omisión del cuidado debido por el deudor en la ejecución de la prestación."},
+  {id:"6-119",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: la culpa contractual supone un vínculo obligatorio preexistente. Razone.",a:"<b>Verdadero.</b> La culpa contractual supone un vínculo obligatorio preexistente; la extracontractual no, siendo el hecho culpable el que genera el vínculo."},
+  {id:"6-120",tema:6,dif:"basica",tipo:"Definición",q:"Según el art. 44 inc. final, ¿cómo se define el dolo?",a:"Como «la <b>intención positiva de inferir injuria</b> a la persona o propiedad de otro»."},
+  {id:"6-121",tema:6,dif:"basica",tipo:"Distinción",q:"¿Cuál es la diferencia esencial de apreciación entre el dolo y la culpa?",a:"El dolo se aprecia <b>en concreto</b> (según la intención y conducta efectiva); la culpa, <b>en abstracto</b> (comparándola con un modelo ideal)."},
+  {id:"6-122",tema:6,dif:"avanzada",tipo:"Complete el artículo",q:"Complete la definición del art. 44 sobre culpa grave: «…no manejar los negocios ajenos con aquel cuidado que aun ____ suelen emplear en sus negocios propios».",a:"«…aun <b>las personas negligentes y de poca prudencia</b>…»."},
+  {id:"6-123",tema:6,dif:"avanzada",tipo:"Complete el artículo",q:"Complete la definición del art. 44 sobre culpa levísima: «…la falta de aquella esmerada diligencia que ____ emplea en la administración de sus negocios importantes».",a:"«…que <b>un hombre juicioso</b>…»."},
+  {id:"6-124",tema:6,dif:"basica",tipo:"Modelo",q:"¿Qué modelos ideales usa la ley para apreciar en abstracto cada grado de culpa?",a:"La «persona negligente y de poca prudencia» (culpa grave), el «buen padre de familia» (culpa leve) y el «hombre juicioso que administra sus negocios importantes» (culpa levísima)."},
+  {id:"6-125",tema:6,dif:"basica",tipo:"Verdadero o falso",q:"Verdadero o falso: cuando la ley habla de «culpa» sin agregar el grado, debe entenderse culpa levísima.",a:"<b>Falso.</b> Debe entenderse <b>culpa leve</b>, que es la regla general (<span class='art'>art. 44</span>)."},
+  {id:"6-126",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: un contrato dice que el deudor responde «de la culpa» sin más. ¿De qué grado responde?",a:"De <b>culpa leve</b>, porque la expresión «culpa o descuido sin otra calificación» significa culpa leve (<span class='art'>art. 44</span>)."},
+  {id:"6-127",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: una ley especial fija expresamente que cierto deudor responde sólo de culpa grave. ¿Se aplica el art. 1547?",a:"<b>No directamente.</b> Prima la <b>ley especial</b> (2.º paso del orden de determinación) por sobre la regla supletoria del <span class='art'>art. 1547</span>, salvo estipulación de las partes que prevalece aún antes."},
+  {id:"6-128",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué relación hay entre el grado de culpa exigido y la utilidad que el contrato reporta al deudor?",a:"A mayor utilidad para el deudor, <b>mayor diligencia</b> se le exige: si sólo él se beneficia responde de culpa levísima; si ambos, de leve; si sólo el acreedor, de culpa grave."},
+  {id:"6-129",tema:6,dif:"basica",tipo:"Concepto",q:"¿Qué grado de culpa supone «el cuidado mínimo que aun los negligentes emplean»?",a:"La <b>culpa grave o lata</b>: quien no emplea ese cuidado mínimo tiene una conducta tan descuidada que la ley la asimila al dolo."},
+  {id:"6-130",tema:6,dif:"basica",tipo:"Razonamiento",q:"¿Por qué quien no emplea ni el cuidado mínimo tiene una conducta asimilable al dolo?",a:"Porque omite el cuidado que aun las personas negligentes y de poca prudencia emplean; tal descuido extremo lleva al legislador a equiparar la culpa grave al dolo (<span class='art'>art. 44</span>)."},
+  {id:"6-131",tema:6,dif:"intermedia",tipo:"Discusión doctrinaria",q:"¿Por qué sería ilógico, según RODRÍGUEZ, presumir la culpa grave con los efectos del dolo?",a:"Porque implicaría que sería <b>más grave y perjudicial</b> incumplir con culpa grave (presumida) que incumplir con dolo (que debe probarse), lo que carece de sentido."},
+  {id:"6-132",tema:6,dif:"intermedia",tipo:"Examen oral",q:"¿Qué autores sostienen que la equivalencia entre culpa grave y dolo no tiene alcances probatorios?",a:"<b>CLARO SOLAR, ALESSANDRI y FUEYO</b>: para ellos toda culpa, incluso la grave, se presume; sólo el dolo debe probarlo el acreedor."},
+  {id:"6-133",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: según la doctrina mayoritaria, el deudor que incumplió con culpa grave debe probar su descargo. Razone.",a:"<b>Verdadero.</b> La culpa, cualquiera que sea, se presume; corresponde al deudor probar que empleó la diligencia debida, también en la culpa grave."},
+  {id:"6-134",tema:6,dif:"avanzada",tipo:"Discusión",q:"Según Orrego, ¿está zanjado si la presunción de culpa se extiende a la culpa lata o grave?",a:"<b>No.</b> La cuestión se discute, y Orrego anuncia tratarla al estudiar el dolo y su equivalencia con la culpa lata o grave."},
+  {id:"6-135",tema:6,dif:"basica",tipo:"Enumeración",q:"¿Qué tres elementos compara el art. 44 al definir cada culpa como modelo ideal?",a:"El cuidado de las personas negligentes (grave), el de los hombres ordinariamente en sus negocios (leve) y la esmerada diligencia del hombre juicioso en negocios importantes (levísima)."},
+  {id:"6-136",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: en un mandato gratuito el mandatario administra y el negocio fracasa. El mandante alega que no debe pagar honorarios sin probar culpa. ¿Procede?",a:"<b>Sí puede liberarse</b> alegando que el negocio no tuvo buen éxito o que pudo desempeñarse a menos costo, <b>salvo que se pruebe culpa</b> al mandatario (<span class='art'>art. 2158</span>)."},
+  {id:"6-137",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el dependiente del deudor causa el daño que provoca el incumplimiento. ¿Responde el deudor?",a:"<b>Sí.</b> En el hecho o culpa del deudor se comprende el de las personas por quienes fuere responsable (<span class='art'>art. 1679</span>)."},
+  {id:"6-138",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: la cosa debida perece por hecho de un tercero por quien el deudor no responde. ¿Qué obtiene el acreedor?",a:"Sólo la <b>cesión de la acción</b> que el deudor tenga contra el tercero autor del daño (<span class='art'>arts. 1590 inc. final y 1677</span>)."},
+  {id:"6-139",tema:6,dif:"intermedia",tipo:"Examen oral",q:"¿Qué relación tiene el art. 1671 con la presunción de culpa?",a:"Refuerza la presunción: siempre que la cosa perece en poder del deudor, se presume que ha sido por hecho o culpa suya, trasladándole la carga de probar lo contrario."},
+  {id:"6-140",tema:6,dif:"basica",tipo:"Definición",q:"¿Qué es la culpa lata como sinónimo?",a:"Es la <b>culpa grave</b> o negligencia grave: no manejar los negocios ajenos ni con el cuidado que las personas negligentes emplean en los propios (<span class='art'>art. 44</span>)."},
+  {id:"6-141",tema:6,dif:"basica",tipo:"Comparación",q:"Compare el grado de cuidado exigido en el depósito y en el comodato.",a:"En el <b>depósito</b> el depositario sólo debe el cuidado mínimo (culpa grave, <span class='art'>art. 2222</span>); en el <b>comodato</b> el comodatario debe la esmerada diligencia (culpa levísima, <span class='art'>art. 2178</span>), pues es el único beneficiado."},
+  {id:"6-142",tema:6,dif:"intermedia",tipo:"Comparación",q:"¿Por qué el depositario responde de menos culpa que el comodatario, si ambos tienen una cosa ajena?",a:"Porque el <b>depósito beneficia al acreedor</b> (depositante), por lo que el deudor responde sólo de culpa grave; el <b>comodato beneficia al deudor</b> (comodatario), que por ello responde hasta de culpa levísima (<span class='art'>art. 1547</span>)."},
+  {id:"6-143",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué cuidado debe el mandatario y de qué culpa responde?",a:"El mandatario debe el cuidado de un buen padre de familia y responde de <b>culpa leve</b> (<span class='art'>art. 2129</span>)."},
+  {id:"6-144",tema:6,dif:"basica",tipo:"Enumeración",q:"Indique tres administradores de bienes ajenos que responden de culpa leve, con artículo.",a:"El tutor o curador (<span class='art'>art. 391</span>), el albacea (<span class='art'>art. 1299</span>) y el partidor (<span class='art'>art. 1329</span>)."},
+  {id:"6-145",tema:6,dif:"basica",tipo:"Enumeración",q:"¿Qué titulares de derechos sobre cosa sujeta a plazo o condición responden de culpa leve?",a:"El propietario fiduciario (<span class='art'>art. 758 inc. 2º</span>), el usufructuario (<span class='art'>art. 787</span>) y el usuario o habitador (<span class='art'>art. 818</span>)."},
+  {id:"6-146",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: el agente oficioso siempre responde de culpa levísima.",a:"<b>Falso.</b> Por regla responde de culpa leve (<span class='art'>art. 2288</span>); sólo de culpa grave si actuó para salvar de un peligro inminente, y de toda culpa si se ofreció impidiendo que otros la hicieran."},
+  {id:"6-147",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: un vecino, sin encargo, salva los muebles de la casa incendiada del ausente y los daña levemente. ¿Responde de ese daño leve?",a:"<b>No.</b> Como agente oficioso que actuó para salvar de un peligro inminente, sólo responde de <b>dolo o culpa grave</b> (<span class='art'>art. 2288</span>)."},
+  {id:"6-148",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué expresión legal equivale, según Orrego, a responder de culpa levísima?",a:"Las expresiones «<b>de toda especie de culpa</b>» o «<b>de toda culpa</b>» (p. ej. <span class='art'>arts. 2222 inc. 1º y 2288 inc. 2º</span>)."},
+  {id:"6-149",tema:6,dif:"basica",tipo:"Concepto",q:"¿Cuál es la consecuencia de que la culpa contractual se aprecie en abstracto?",a:"Que la conducta del deudor se contrasta con un <b>modelo ideal</b> de diligencia y no con su comportamiento habitual ni con sus capacidades personales."},
+  {id:"6-150",tema:6,dif:"intermedia",tipo:"Distinción",q:"¿Qué tienen en común y qué diferencia el dolo y la culpa grave en materia civil?",a:"En común: producen los mismos <b>efectos</b> (la culpa grave equivale al dolo). Difieren en su <b>definición</b> y, según la doctrina mayoritaria, en la <b>prueba</b>: la culpa grave se presume, el dolo debe probarse."},
+  {id:"6-151",tema:6,dif:"avanzada",tipo:"Razonamiento",q:"¿Por qué da CLARO SOLAR importancia a que el art. 44 contenga dos definiciones distintas para dolo y culpa grave?",a:"Porque si fueran una misma cosa el legislador no habría dado dos definiciones; ello prueba que la equivalencia es de <b>efectos</b>, no de identidad ni de régimen probatorio."},
+  {id:"6-152",tema:6,dif:"basica",tipo:"Caso práctico",q:"Caso: en un arrendamiento (beneficio recíproco) el arrendatario daña la cosa por descuido ordinario. ¿Responde?",a:"<b>Sí.</b> El arrendamiento beneficia a ambas partes, de modo que el arrendatario responde de <b>culpa leve</b> (<span class='art'>art. 1547</span>)."},
+  {id:"6-153",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el propietario fiduciario administra la cosa con descuido ordinario y se deteriora. ¿Responde?",a:"<b>Sí.</b> El propietario fiduciario responde de <b>culpa leve</b> (<span class='art'>art. 758 inc. 2º</span>), por tener una cosa sujeta a condición."},
+  {id:"6-154",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: una ley especial nada dice, no hay estipulación, pero el Código tiene una norma propia del contrato que fija la culpa. ¿Qué se aplica?",a:"Se aplica la <b>norma del Código propia de ese contrato</b> (3.er paso), antes de recurrir supletoriamente al <span class='art'>art. 1547</span>."},
+  {id:"6-155",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué quiere decir que el art. 1547 sea la norma «general y supletoria» en materia de grado de culpa?",a:"Que se aplica <b>en último término</b>, sólo a falta de estipulación, de leyes especiales y de normas del Código propias del contrato."},
+  {id:"6-156",tema:6,dif:"basica",tipo:"Verdadero o falso",q:"Verdadero o falso: las partes pueden agravar la responsabilidad del deudor por sobre la que legalmente le corresponde.",a:"<b>Verdadero.</b> Pueden hacerlo mediante estipulación expresa (inciso final del <span class='art'>art. 1547</span> y del <span class='art'>art. 1558</span>), p. ej. exigiendo culpa levísima donde legalmente bastaría la leve."},
+  {id:"6-157",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: las partes pueden atenuar la responsabilidad del deudor sin límite alguno.",a:"<b>Falso.</b> Pueden atenuarla, pero no pueden pactar que el deudor no responda ni siquiera de culpa lata o grave, pues equivale al dolo y su condonación futura es ilícita (<span class='art'>art. 1465</span>)."},
+  {id:"6-158",tema:6,dif:"avanzada",tipo:"Caso práctico",q:"Caso: un depósito común; las partes pactan que el depositario responda de toda especie de culpa. ¿Es válido y qué grado pasa a deber?",a:"<b>Es válido</b> (<span class='art'>art. 2222 inc. 1º</span>); el depositario pasa a responder hasta de <b>culpa levísima</b>, agravando la responsabilidad que normalmente sería sólo por culpa grave."},
+  {id:"6-159",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué grado de culpa corresponde a quien administra bienes ajenos, como regla general?",a:"La <b>culpa leve</b> (cuidado de buen padre de familia)."},
+  {id:"6-160",tema:6,dif:"intermedia",tipo:"Comparación",q:"Distinga el régimen de prueba de la culpa entre obligación de resultado y obligación de medios.",a:"En la obligación de <b>resultado</b> la culpa se presume y el deudor debe probar diligencia (<span class='art'>art. 1547 inc. 3º</span>); en la de <b>medios</b> el acreedor suele tener que probar la negligencia (<span class='art'>art. 1698</span>)."},
+  {id:"6-161",tema:6,dif:"basica",tipo:"Concepto",q:"¿Quiénes contraen usualmente obligaciones de medios?",a:"Usualmente los <b>profesionales</b>; las obligaciones de medios tienen carácter más bien excepcional frente a las de resultado."},
+  {id:"6-162",tema:6,dif:"intermedia",tipo:"Razonamiento",q:"¿Por qué se explica que en las obligaciones de resultado la culpa se presuma?",a:"Porque toda obligación coloca al deudor en la necesidad objetiva de emplear la diligencia debida; si no se cumple el resultado, se entiende que no empleó ese cuidado."},
+  {id:"6-163",tema:6,dif:"basica",tipo:"Definición",q:"¿Qué es la culpa, según Orrego, en su acepción contractual?",a:"Es la <b>omisión del cuidado</b> que el deudor debe emplear en el cumplimiento de las obligaciones."},
+  {id:"6-164",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué significa que el incumplimiento «se presume culpable» en materia contractual?",a:"Que el acreedor no debe probar la culpa del deudor; basta acreditar la obligación, y al deudor toca probar su diligencia o el caso fortuito (<span class='art'>art. 1547 inc. 3º</span>)."},
+  {id:"6-165",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el deudor alega caso fortuito para exonerarse. ¿A quién corresponde probarlo?",a:"Al <b>deudor que lo alega</b> (<span class='art'>art. 1547 inc. 3º</span>): «la prueba del caso fortuito al que lo alega»."},
+  {id:"6-166",tema:6,dif:"intermedia",tipo:"Distinción",q:"¿Qué debe probar el acreedor en la culpa extracontractual que no debe probar en la contractual de resultado?",a:"En la extracontractual debe probar la <b>culpa del autor</b> del daño (<span class='art'>art. 1698</span>); en la contractual de resultado la culpa se presume y no necesita probarla."},
+  {id:"6-167",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: un ingeniero se obliga a un resultado concreto (terminar una obra) y no lo entrega. ¿Se presume su culpa?",a:"<b>Sí.</b> Al ser una obligación de <b>resultado</b>, su incumplimiento se presume culpable y debe él probar diligencia o caso fortuito (<span class='art'>art. 1547 inc. 3º</span>)."},
+  {id:"6-168",tema:6,dif:"basica",tipo:"Concepto",q:"¿De qué culpa se responde cuando un contrato es beneficioso sólo para el acreedor?",a:"Sólo de <b>culpa lata o grave</b> (<span class='art'>art. 1547 inc. 1º</span>); ejemplo, el depósito."},
+  {id:"6-169",tema:6,dif:"basica",tipo:"Concepto",q:"¿De qué culpa se responde cuando un contrato beneficia sólo al deudor?",a:"Hasta de <b>culpa levísima</b> (<span class='art'>art. 1547 inc. 1º</span>); ejemplo, el comodato."},
+  {id:"6-170",tema:6,dif:"basica",tipo:"Examen oral",q:"Mencione un contrato de cada categoría del art. 1547 según a quién beneficia.",a:"Sólo al acreedor: <b>depósito</b> (culpa grave); a ambos: <b>compraventa o arrendamiento</b> (culpa leve); sólo al deudor: <b>comodato</b> (culpa levísima)."},
+  {id:"6-171",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: ¿de qué culpa responde el comprador que injustificadamente se niega a recibir la cosa, respecto del vendedor que la conserva?",a:"El vendedor que conserva la cosa, en ese caso, sólo responde del <b>dolo o de la culpa lata o grave</b> (<span class='art'>art. 1827</span>), atenuándose su responsabilidad."},
+  {id:"6-172",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: en el depósito necesario el depositario sólo responde de culpa grave, igual que en el depósito común.",a:"<b>Falso.</b> En el depósito necesario responde de <b>culpa leve</b> (<span class='art'>art. 2239</span>), agravándose respecto del depósito común."},
+  {id:"6-173",tema:6,dif:"basica",tipo:"Examen oral",q:"¿En qué consiste la utilidad práctica de saber de qué grado de culpa responde el deudor?",a:"Determina el <b>umbral de diligencia</b> a partir del cual hay responsabilidad: con culpa grave sólo responde por descuidos groseros; con culpa levísima, por la más leve falta de esmero."},
+  {id:"6-174",tema:6,dif:"intermedia",tipo:"Comparación",q:"Compare el régimen de mora para la indemnización en obligaciones de dar/hacer y en las de no hacer.",a:"En las de dar y hacer se requiere <b>constituir en mora</b> al deudor (<span class='art'>art. 1557</span>); en las de no hacer basta la <b>contravención</b> a la obligación."},
+  {id:"6-175",tema:6,dif:"basica",tipo:"Concepto",q:"¿Qué quiere decir que la culpa contractual «se opone» a un determinado cuidado?",a:"Que cada grado de culpa es la <b>falta del cuidado correlativo</b>: la grave se opone a un cuidado mínimo, la leve al ordinario o mediano, y la levísima a la suma diligencia."},
+  {id:"6-176",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: una cláusula del contrato fija que el deudor responda de culpa leve, pero la regla del contrato sería culpa levísima. ¿Cuál prima?",a:"Prima la <b>estipulación de las partes</b> (1.er paso del orden de determinación), pues las reglas legales son supletorias; el deudor responderá sólo de culpa leve."},
+  {id:"6-177",tema:6,dif:"intermedia",tipo:"Razonamiento",q:"¿Por qué se dice que la ley «cree interpretar la voluntad de las partes» al fijar el grado de culpa del art. 1547?",a:"Porque presume que las partes, al contratar, quisieron exigir más cuidado a quien más se beneficia con el contrato, repartiendo así la diligencia según la utilidad."},
+  {id:"6-178",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: la culpa grave, por equivaler al dolo, obliga a indemnizar incluso los perjuicios imprevistos. Razone.",a:"<b>Verdadero.</b> Al agravarse la responsabilidad como en el dolo, el deudor responde de todos los perjuicios directos, <b>previstos e imprevistos</b>."},
+  {id:"6-179",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el deudor incumple con culpa grave; el acreedor sostiene que también responde solidariamente con otro codeudor culpable. ¿Es correcto?",a:"<b>Sí.</b> Si hay culpa grave de varios deudores, su responsabilidad sería <b>solidaria</b> (<span class='art'>art. 2317 inc. 2º</span>), por asimilarse al dolo."},
+  {id:"6-180",tema:6,dif:"basica",tipo:"Definición",q:"¿Qué nombre recibe la teoría que sostiene que la culpa es una sola, sin distinguir contractual de extracontractual?",a:"La <b>teoría unitaria de la culpa</b>; se discute si la culpa es una sola o si difieren la contractual y la extracontractual."},
+  {id:"6-181",tema:6,dif:"intermedia",tipo:"Examen oral",q:"Aun aceptando la teoría unitaria, ¿qué diferencias prácticas subsisten entre culpa contractual y extracontractual?",a:"Subsisten: la contractual supone vínculo previo, admite graduación, se presume y requiere mora; la extracontractual no supone vínculo previo, no se gradúa (para ciertos autores) y debe probarse."},
+  {id:"6-182",tema:6,dif:"intermedia",tipo:"Comparación",q:"En cuanto a la responsabilidad de varios autores, ¿cómo se distingue la culpa contractual de la extracontractual?",a:"En la <b>contractual</b>, varios deudores responden simplemente conjuntamente salvo pacto de solidaridad (<span class='art'>arts. 1511 y 1526</span>); en la <b>extracontractual</b>, varios autores de un cuasidelito responden solidariamente (<span class='art'>art. 2317 inc. 1º</span>)."},
+  {id:"6-183",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: un usufructuario deja deteriorar la cosa por descuido ordinario. ¿Responde y de qué culpa?",a:"<b>Sí.</b> El usufructuario responde de <b>culpa leve</b> (<span class='art'>art. 787</span>), por tener una cosa sujeta a un derecho temporal."},
+  {id:"6-184",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el partidor de una herencia actúa con descuido ordinario y causa perjuicio a los comuneros. ¿Responde?",a:"<b>Sí.</b> El partidor responde de <b>culpa leve</b> (<span class='art'>art. 1329</span>), como administrador de intereses ajenos."},
+  {id:"6-185",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué grado de culpa exige la ley al comunero según el art. 2308?",a:"El comunero es responsable hasta de la <b>culpa leve</b> (<span class='art'>art. 2308</span>)."},
+  {id:"6-186",tema:6,dif:"avanzada",tipo:"Razonamiento",q:"¿Qué demuestra, según Meza Barros, que la ley aplique la gradación de la culpa a obligaciones legales y cuasicontractuales?",a:"Demuestra que las <b>reglas de la culpa contractual constituyen el derecho común</b> en materia de responsabilidad, aplicables también a esas obligaciones."},
+  {id:"6-187",tema:6,dif:"avanzada",tipo:"Doctrina",q:"¿Qué objeción hace BARROS BOURIE a los argumentos de la doctrina tradicional?",a:"Sostiene que esos argumentos «no resultan en absoluto convincentes» y se pliega a la tesis de que la regla general es la <b>responsabilidad extracontractual</b>."},
+  {id:"6-188",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: un acreedor de obligación de resultado solo prueba que el deudor no cumplió. El deudor guarda silencio. ¿Quién resulta vencido?",a:"El <b>deudor</b>, pues la culpa se presume; al no probar diligencia ni caso fortuito, queda comprometida su responsabilidad (<span class='art'>art. 1547 inc. 3º</span>)."},
+  {id:"6-189",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: el deudor prueba que empleó toda la diligencia exigible y aun así no cumplió. ¿Se exime?",a:"<b>Sí.</b> Al acreditar que empleó el cuidado debido, destruye la presunción de culpa y queda exento de responsabilidad (<span class='art'>art. 1547 inc. 3º</span>)."},
+  {id:"6-190",tema:6,dif:"intermedia",tipo:"Verdadero o falso",q:"Verdadero o falso: en las obligaciones de medios el solo incumplimiento del resultado prueba la culpa del deudor.",a:"<b>Falso.</b> En las obligaciones de medios la culpa usualmente <b>debe probarla el acreedor</b>; el solo resultado adverso no acredita la negligencia (<span class='art'>art. 1698</span>)."},
+  {id:"6-191",tema:6,dif:"basica",tipo:"Concepto",q:"¿Qué grado de cuidado supone la culpa leve respecto del «buen padre de familia»?",a:"El cuidado <b>ordinario o mediano</b> que el buen padre de familia, como hombre juicioso y diligente medio, emplea en sus negocios."},
+  {id:"6-192",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Por qué se afirma que la culpa leve impone una responsabilidad mayor que la culpa grave?",a:"Porque exige un cuidado mayor (ordinario, de buen padre de familia) que la culpa grave, que sólo exige el cuidado mínimo de las personas negligentes; así, se responde por descuidos menos graves."},
+  {id:"6-193",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: en un comodato el comodatario emplea el cuidado de un buen padre de familia, pero no la esmerada diligencia, y la cosa se daña. ¿Responde?",a:"<b>Sí.</b> El comodatario responde hasta de <b>culpa levísima</b> (<span class='art'>art. 2178</span>); el cuidado ordinario no basta, pues debía la esmerada diligencia del hombre juicioso."},
+  {id:"6-194",tema:6,dif:"intermedia",tipo:"Caso práctico",q:"Caso: en un depósito común el depositario emplea menos del cuidado mínimo y la cosa se pierde. ¿Responde y por qué?",a:"<b>Sí.</b> Incurre en <b>culpa grave</b>, que el depositario sí debe evitar (<span class='art'>art. 2222</span>); además, tal descuido grosero se asimila al dolo (<span class='art'>art. 44</span>)."},
+  {id:"6-195",tema:6,dif:"basica",tipo:"Examen oral",q:"¿Qué efecto tiene sobre la prueba el que la obligación sea de resultado y no de medios?",a:"En la de resultado opera la <b>presunción de culpa</b> (<span class='art'>art. 1547 inc. 3º</span>); en la de medios, el acreedor debe probar la negligencia (<span class='art'>art. 1698</span>)."},
+  {id:"6-196",tema:6,dif:"basica",tipo:"Concepto",q:"¿Qué es el «buen padre de familia» como criterio de culpa?",a:"Es el <b>modelo o paradigma</b> de hombre juicioso y diligente, de diligencia mediana, cuya conducta sirve para apreciar en abstracto la culpa leve (<span class='art'>art. 44</span>)."},
+  {id:"6-197",tema:6,dif:"avanzada",tipo:"Síntesis",q:"Resuma en una frase la regla del art. 1547 inc. 1º sobre el grado de culpa según la utilidad del contrato.",a:"A mayor beneficio para el deudor, mayor diligencia: sólo al acreedor → <b>culpa grave</b>; a ambos → <b>culpa leve</b>; sólo al deudor → <b>culpa levísima</b>."},
+  {id:"6-198",tema:6,dif:"basica",tipo:"Verdadero o falso",q:"Verdadero o falso: la prueba del cuidado o diligencia incumbe al acreedor que reclama. Razone.",a:"<b>Falso.</b> Incumbe al deudor, esto es, «al que ha debido emplearlo» (<span class='art'>art. 1547 inc. 3º</span>); por eso la culpa contractual se presume."},
+  {id:"6-199",tema:6,dif:"basica",tipo:"Examen oral",q:"Explique por qué la facilidad probatoria favorece más al acreedor en la culpa contractual que en la extracontractual.",a:"Porque en la contractual la culpa <b>se presume</b> y el acreedor no debe acreditarla, mientras que en la extracontractual debe probar la negligencia del autor del daño (<span class='art'>art. 1698</span>)."},
+  {id:"6-200",tema:6,dif:"avanzada",tipo:"Síntesis",q:"En un esquema, ¿qué cuatro fuentes y en qué orden fijan el grado de culpa del deudor?",a:"1.º estipulación de las partes; 2.º leyes especiales; 3.º normas del Código propias de cada contrato (p. ej. depósito <span class='art'>art. 2222</span>, comodato <span class='art'>art. 2178</span>); 4.º supletoriamente el <span class='art'>art. 1547</span> según a quién beneficie el contrato."},
+  //<<<INSERT_QUESTIONS>>>
+];
+
+/* ===== Configuración de repetición espaciada ===== */
+const INTERVALS = [1,3,6,9,12,20,35,60];  // días según nivel de dominio
+const SR_KEY = "dl_sr_contractual_v1";
+
+function loadSR(){ try{return JSON.parse(localStorage.getItem(SR_KEY))||{};}catch(e){return {};} }
+function saveSR(d){ localStorage.setItem(SR_KEY, JSON.stringify(d)); }
+function today(){ const d=new Date(); d.setHours(0,0,0,0); return d; }
+function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function iso(d){ return d.toISOString().slice(0,10); }
+
+/* ===== Navegación de pestañas ===== */
+function showTab(t){
+  ['banco','flash','prog'].forEach(x=>{
+    document.getElementById('panel-'+x).classList.toggle('active',x===t);
+    document.getElementById('tab-'+x).classList.toggle('active',x===t);
+  });
+  if(t==='prog') renderProgress();
+  if(t==='flash') startSession();
+}
+
+/* ===== Poblar selects de tema (sólo temas con preguntas) ===== */
+function temasConPreguntas(){
+  const s=new Set(QUESTIONS.map(q=>q.tema));
+  return Object.keys(TEMAS).map(Number).filter(n=>s.has(n)).sort((a,b)=>a-b);
+}
+function fillTemaSelects(){
+  const opts = temasConPreguntas().map(n=>`<option value="${n}">${TEMAS[n]}</option>`).join('');
+  document.getElementById('bancoTema').innerHTML = `<option value="">Todos los temas</option>`+opts;
+  document.getElementById('flashTema').innerHTML = opts;
+}
+
+/* ================= BANCO ================= */
+function renderBanco(){
+  const tema=document.getElementById('bancoTema').value;
+  const dif=document.getElementById('bancoDif').value;
+  let list=QUESTIONS.filter(q=>(!tema||q.tema==tema)&&(!dif||q.dif===dif));
+  document.getElementById('bancoCount').textContent=`${list.length} pregunta(s)`;
+  let html=''; let curTema=null;
+  list.forEach(q=>{
+    if(q.tema!==curTema){ curTema=q.tema; html+=`<h2 class="sec">${TEMAS[q.tema]}</h2>`; }
+    html+=`<div class="qcard" id="bc-${q.id}">
+      <div class="meta">
+        <span class="qid">${q.id}</span>
+        <span class="tag ${q.dif}">${q.dif}</span>
+        <span class="tag tipo">${q.tipo}</span>
+      </div>
+      <div class="qtext">${q.q}</div>
+      <span class="toggle" onclick="document.getElementById('bc-${q.id}').classList.toggle('open')">▸ Ver / ocultar respuesta</span>
+      <div class="answer">${q.a}</div>
+    </div>`;
+  });
+  document.getElementById('bancoList').innerHTML=html||'<div class="empty">No hay preguntas con esos filtros.</div>';
+}
+function toggleAll(open){
+  document.querySelectorAll('#bancoList .qcard').forEach(c=>c.classList.toggle('open',open));
+}
+
+/* ================= FLASHCARDS ================= */
+let session=[], current=0;
+function startSession(){
+  const tema=Number(document.getElementById('flashTema').value);
+  const sr=loadSR();
+  const t=today();
+  let pool=QUESTIONS.filter(q=>q.tema===tema);
+  // Vencidas (due<=hoy) o nuevas (sin registro) primero
+  const due=[], nuevas=[], futuras=[];
+  pool.forEach(q=>{
+    const r=sr[q.id];
+    if(!r) nuevas.push(q);
+    else if(new Date(r.due)<=t) due.push(q);
+    else futuras.push(q);
+  });
+  // ordenar vencidas por más atrasadas
+  due.sort((a,b)=> new Date(sr[a.id].due)-new Date(sr[b.id].due));
+  session=[...due,...nuevas];
+  current=0;
+  if(session.length===0){
+    const next= futuras.length? futuras.map(q=>new Date(sr[q.id].due)).sort((a,b)=>a-b)[0]:null;
+    document.getElementById('fcWrap').innerHTML=`<div class="empty">
+      <div class="big">¡Nada pendiente por hoy en este tema! 🎉</div>
+      Has repasado todo lo que tocaba. ${next?('Vuelve el <b>'+iso(next)+'</b> para el próximo repaso.'):''}
+      <div style="margin-top:14px"><button class="btn" onclick="forceReview()">Repasar igual todo el tema</button></div>
+    </div>`;
+    return;
+  }
+  renderCard();
+}
+function forceReview(){
+  const tema=Number(document.getElementById('flashTema').value);
+  session=QUESTIONS.filter(q=>q.tema===tema); current=0; renderCard();
+}
+function renderCard(){
+  if(current>=session.length){
+    document.getElementById('fcWrap').innerHTML=`<div class="empty">
+      <div class="big">Sesión completada ✅</div>
+      Repasaste ${session.length} tarjeta(s). Tus respuestas quedaron guardadas para programar los próximos repasos.
+      <div style="margin-top:14px"><button class="btn" onclick="startSession()">Nueva sesión</button></div>
+    </div>`;
+    renderProgress();
+    return;
+  }
+  const q=session[current];
+  document.getElementById('fcWrap').innerHTML=`
+    <div class="progressline">Tarjeta ${current+1} de ${session.length} · ${TEMAS[q.tema]}</div>
+    <div class="fc" id="theCard">
+      <div class="meta">
+        <span class="qid" style="font-size:.72rem;color:#aaa;font-weight:700">${q.id}</span>
+        <span class="tag ${q.dif}">${q.dif}</span>
+        <span class="tag tipo">${q.tipo}</span>
+      </div>
+      <div class="qtext">${q.q}</div>
+      <textarea id="userAnswer" placeholder="Escribe aquí tu respuesta con tus palabras antes de revelar…"></textarea>
+      <div style="margin-top:12px"><button class="btn" id="revealBtn" onclick="revealAnswer()">Revelar respuesta</button></div>
+      <div class="myans"><div class="lbl">Tu respuesta</div><div id="myAnsText"></div></div>
+      <div class="answer"><b>Respuesta correcta:</b> ${q.a}</div>
+      <div class="rate" id="rateBox" style="display:none">
+        <p>Comparando con la respuesta correcta, ¿qué tan bien la sabías?</p>
+        <div class="row">
+          <button class="dificil" onclick="rate('dificil')">No la sabía</button>
+          <button class="mediana" onclick="rate('mediana')">A medias</button>
+          <button class="facil" onclick="rate('facil')">La sabía bien</button>
+        </div>
+      </div>
+      <div class="sched" id="schedMsg"></div>
+    </div>`;
+}
+function revealAnswer(){
+  const ta=document.getElementById('userAnswer');
+  const val=ta.value.trim();
+  if(!val && !confirm('No escribiste nada. Escribir tu respuesta primero es clave para no autoengañarte. ¿Revelar de todos modos?')) return;
+  document.getElementById('myAnsText').textContent = val || '(no respondiste)';
+  document.getElementById('theCard').classList.add('revealed');
+  ta.disabled=true;
+  document.getElementById('revealBtn').style.display='none';
+  document.getElementById('rateBox').style.display='block';
+}
+function rate(level){
+  const q=session[current];
+  // calcular nuevo schedule
+  const sr=loadSR();
+  const r=sr[q.id]||{lvl:0,errors:0,seen:0};
+  r.seen=(r.seen||0)+1;
+  if(level==='facil'){ r.lvl=Math.min((r.lvl||0)+1, INTERVALS.length-1); }
+  else if(level==='mediana'){ /* mantiene nivel */ }
+  else { r.lvl=0; r.errors=(r.errors||0)+1; }
+  const dias = level==='dificil' ? 1 : INTERVALS[r.lvl];
+  r.due=iso(addDays(today(),dias));
+  r.last=iso(today());
+  sr[q.id]=r; saveSR(sr);
+  // mensaje
+  const msg=document.getElementById('schedMsg');
+  msg.classList.add('show');
+  msg.innerHTML=`Próximo repaso: <b>en ${dias} día${dias>1?'s':''}</b> (${r.due}).
+    <div style="margin-top:12px"><button class="btn" onclick="nextCard()">Siguiente →</button></div>`;
+  document.getElementById('rateBox').style.display='none';
+}
+function nextCard(){ current++; renderCard(); }
+
+/* ================= PROGRESO ================= */
+function renderProgress(){
+  const sr=loadSR();
+  const all=QUESTIONS;
+  const vistas=Object.keys(sr).length;
+  const t=today();
+  let dominadas=0, dueHoy=0, errores=0;
+  all.forEach(q=>{
+    const r=sr[q.id]; if(!r) return;
+    if(r.lvl>=3) dominadas++;
+    if(new Date(r.due)<=t) dueHoy++;
+    errores+=(r.errors||0);
+  });
+  document.getElementById('statsBox').innerHTML=`
+    <div class="stat"><div class="n">${all.length}</div><div class="l">Preguntas cargadas</div></div>
+    <div class="stat"><div class="n">${vistas}</div><div class="l">Vistas</div></div>
+    <div class="stat"><div class="n">${dominadas}</div><div class="l">Dominadas</div></div>
+    <div class="stat"><div class="n">${dueHoy}</div><div class="l">Para repasar hoy</div></div>
+    <div class="stat"><div class="n">${errores}</div><div class="l">Errores acumulados</div></div>`;
+  // tabla por tema
+  let rows='';
+  temasConPreguntas().forEach(n=>{
+    const qs=all.filter(q=>q.tema===n);
+    let v=0,d=0;
+    qs.forEach(q=>{const r=sr[q.id]; if(r){v++; if(r.lvl>=3)d++;}});
+    const pct=qs.length?Math.round(d/qs.length*100):0;
+    rows+=`<tr><td>${TEMAS[n]}</td><td class="num">${qs.length}</td><td class="num">${v}</td>
+      <td class="num">${d}</td>
+      <td><div class="bar"><i style="width:${pct}%"></i></div><span style="font-size:.78rem;color:#888">${pct}%</span></td></tr>`;
+  });
+  document.querySelector('#progTable tbody').innerHTML=rows;
+}
+function resetProgress(){
+  if(confirm('¿Seguro que quieres borrar todo tu progreso de repetición espaciada? No se puede deshacer.')){
+    localStorage.removeItem(SR_KEY); renderProgress(); alert('Progreso reiniciado.');
+  }
+}
+
+/* ===== init ===== */
+fillTemaSelects();
+renderBanco();
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsabilidad Civil — Manual de Estudio | Derecho Libre</title>
+<style>
+  :root{--accent:#1F4E79;--accent2:#2E75B6;--light:#D9E2F3;--soft:#F2F5FB;--grey:#595959;--warn:#8A5A00;--warnbg:#FFF6E5;}
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#222;line-height:1.6;max-width:880px;margin:0 auto;padding:44px 40px 80px;background:#fff;}
+  h1{color:var(--accent);font-size:1.55rem;margin:2.4rem 0 .5rem;border-bottom:2px solid var(--light);padding-bottom:.3rem;}
+  h2{color:var(--accent2);font-size:1.2rem;margin:1.6rem 0 .4rem;}
+  h3{color:#333;font-size:1.03rem;margin:1.1rem 0 .25rem;}
+  p{margin:.45rem 0;}
+  ul,ol{margin:.35rem 0 .7rem;padding-left:1.35rem;}
+  li{margin:.25rem 0;}
+  table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:8px 11px;}
+  td{border:1px solid #ccc;padding:8px 11px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:600;color:var(--accent);white-space:nowrap;}
+  .callout{border-left:6px solid var(--accent2);background:var(--light);padding:12px 16px;margin:1rem 0;border-radius:4px;}
+  .callout .title{font-weight:700;color:var(--accent);display:block;margin-bottom:.25rem;}
+  .warn{border-left:6px solid var(--warn);background:var(--warnbg);padding:12px 16px;margin:1rem 0;border-radius:4px;}
+  .warn .title{font-weight:700;color:var(--warn);display:block;margin-bottom:.25rem;}
+  .cover{text-align:center;padding:70px 0 40px;border-bottom:1px solid #eee;margin-bottom:.5rem;}
+  .cover .brand{color:var(--accent);font-size:2.1rem;font-weight:800;letter-spacing:1px;}
+  .cover .doc{color:#222;font-size:1.7rem;font-weight:700;margin-top:1rem;}
+  .cover .sub{color:var(--grey);font-size:1.05rem;margin-top:.4rem;}
+  .cover .meta{color:var(--grey);margin-top:1.4rem;font-size:.9rem;}
+  .muted{color:var(--grey);font-style:italic;}
+  .toc{background:var(--soft);border:1px solid var(--light);border-radius:6px;padding:14px 22px;}
+  .toc a{color:var(--accent2);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  code{background:#eef2f9;padding:1px 5px;border-radius:3px;font-size:.92em;}
+  @media print{body{padding:0 12px;}h1{page-break-after:avoid;}.callout,.warn,table{page-break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">DERECHO LIBRE</div>
+  <div class="doc">Responsabilidad Civil</div>
+  <div class="sub">Manual de estudio · Contractual y Extracontractual · Nivel examen de grado</div>
+  <div class="meta">Pieza 1 de 3 del paquete de la materia · Junio 2026</div>
+</div>
+
+<div class="warn"><span class="title">Nota para Laura (revisión experta)</span>
+Este manual está redactado al nivel del examen de grado, con los artículos del Código Civil chileno y la doctrina (Alessandri, Barros Bourie, Corral, Rodríguez Grez, Abeliuk). En esta versión se <strong>contrastó y amplió</strong> con los apuntes de Cristián Boetsch (contractual y extracontractual), el Tratado de Enrique Barros Bourie y el texto de J. A. Orrego, para cubrir materias antes ausentes (obligaciones de medios/resultado, autonomía de la indemnización, causales de justificación, imputación objetiva, la acción aquiliana) y corregir imprecisiones (graduación de la culpa aquiliana, animales fieros). Las tesis debatidas se presentan <strong>como debate</strong>, no como dogma. Es síntesis propia para Derecho Libre, no reproducción de esos textos; revisa y ajusta a tu criterio antes de publicarlo, sobre todo las referencias jurisprudenciales, que evolucionan.</div>
+
+<div class="toc">
+<strong>Contenido</strong>
+<ol>
+<li><a href="#i">Marco general de la responsabilidad civil</a></li>
+<li><a href="#ii">Elementos comunes de la responsabilidad</a></li>
+<li><a href="#iii">Responsabilidad contractual</a></li>
+<li><a href="#iv">Responsabilidad extracontractual</a></li>
+<li><a href="#v">El daño y su reparación</a></li>
+<li><a href="#vi">La relación de causalidad</a></li>
+<li><a href="#vii">Cuadro comparativo contractual vs extracontractual</a></li>
+<li><a href="#viii">Método para resolver casos prácticos</a></li>
+<li><a href="#ix">Errores típicos en el examen</a></li>
+</ol>
+</div>
+
+<h1 id="i">1. Marco general de la responsabilidad civil</h1>
+<h3>1.1. Concepto</h3>
+<p>La responsabilidad civil es la obligación de reparar el daño causado a otro, sea por el incumplimiento de un contrato, sea por la comisión de un hecho ilícito. Su finalidad nuclear es <strong>reparadora</strong> (dejar a la víctima indemne, restablecer el equilibrio patrimonial roto), y secundariamente cumple funciones <strong>preventiva</strong> y, según algunos, <strong>punitiva</strong> o demarcatoria.</p>
+<h3>1.2. La <em>summa divisio</em>: contractual y extracontractual</h3>
+<p>Nuestro Código Civil regula dos estatutos:</p>
+<ul>
+<li><strong>Responsabilidad contractual</strong> (Libro IV, Título XII, <span class="art">arts. 1545 y ss.</span>): surge del incumplimiento de una obligación preexistente, normalmente nacida de un contrato.</li>
+<li><strong>Responsabilidad extracontractual</strong> o aquiliana (Libro IV, Título XXXV, <span class="art">arts. 2314 y ss.</span>): surge de la comisión de un delito o cuasidelito civil, esto es, de un hecho ilícito que causa daño sin que medie vínculo obligacional previo.</li>
+</ul>
+<p>Se discute si existe un <strong>derecho común de la responsabilidad</strong>. La doctrina tradicional (Alessandri) sostuvo que la contractual es el régimen general supletorio; la doctrina moderna tiende a unificar los principios. Para el examen: conoce las diferencias de régimen (punto 7) y la discusión sobre el <strong>cúmulo u opción de responsabilidades</strong>.</p>
+<div class="callout"><span class="title">Tercer género: responsabilidad precontractual</span>
+Se ubica entre ambos estatutos. Procede cuando se causa daño en la etapa de tratativas o por ruptura injustificada de negociaciones avanzadas, fundada en la buena fe (<span class="art">art. 1546</span>). Su naturaleza (¿extracontractual? ¿autónoma?) es debatida — buen tema de profundización.</div>
+
+<h1 id="ii">2. Elementos comunes de la responsabilidad</h1>
+<p>Más allá del estatuto, para que nazca el deber de indemnizar deben concurrir, en términos generales:</p>
+<ol>
+<li><strong>Una acción u omisión</strong> (un hecho humano: en lo contractual, el incumplimiento; en lo extracontractual, el hecho ilícito).</li>
+<li><strong>Capacidad</strong> del agente (aptitud para responder).</li>
+<li><strong>Un factor de atribución</strong> o imputabilidad: dolo o culpa (responsabilidad subjetiva) o el riesgo creado (responsabilidad objetiva o estricta).</li>
+<li><strong>Antijuridicidad</strong> (que el daño sea contrario a derecho; relevante sobre todo en sede extracontractual y discutida como elemento autónomo).</li>
+<li><strong>El daño.</strong></li>
+<li><strong>Relación de causalidad</strong> entre la conducta y el daño.</li>
+</ol>
+<p>El daño y la causalidad son <strong>comunes e ineludibles</strong> a ambos estatutos: sin daño no hay responsabilidad civil (a diferencia de la penal), y el daño debe ser consecuencia de la conducta imputable.</p>
+
+<h1 id="iii">3. Responsabilidad contractual</h1>
+<h3>3.1. Concepto y requisitos</h3>
+<p>Es la que deriva del incumplimiento de una obligación contractual (o, más ampliamente, de una obligación preexistente). El contrato es ley para las partes (<span class="art">art. 1545</span>). Sus requisitos:</p>
+<ol>
+<li><strong>Existencia de un vínculo obligacional previo.</strong></li>
+<li><strong>Incumplimiento</strong> imputable (total, parcial o tardío; obligación de dar, hacer o no hacer).</li>
+<li><strong>Imputabilidad</strong>: dolo o culpa del deudor.</li>
+<li><strong>Mora</strong> del deudor (regla general para la indemnización: <span class="art">art. 1557</span>).</li>
+<li><strong>Daño</strong> al acreedor.</li>
+<li><strong>Relación de causalidad</strong> entre incumplimiento y daño.</li>
+</ol>
+<h3>3.2. El incumplimiento y las obligaciones de medios y de resultado</h3>
+<p>La doctrina moderna (Boetsch) construye el <strong>incumplimiento como noción objetiva</strong>: cualquier desviación del «pago íntegro y oportuno» de la prestación —incumplimiento total, parcial, imperfecto o tardío— con independencia del dolo o la culpa. El dolo y la culpa no integran el incumplimiento mismo: operan después, para determinar si procede la <strong>indemnización</strong> y con qué extensión. Bajo el <span class="art">art. 1556</span>, el incumplimiento puede consistir en no haberse cumplido la obligación, haberse cumplido imperfectamente, o haberse retardado el cumplimiento.</p>
+<p>De ahí la distinción capital, tomada de Demogue y desarrollada en Chile (Barros, Boetsch), entre:</p>
+<ul>
+<li><strong>Obligaciones de resultado:</strong> el deudor promete un resultado concreto (entregar la cosa, pagar el precio). Basta acreditar que el resultado no se obtuvo para tener por incumplida la obligación; opera de lleno la <strong>presunción de culpa</strong> del <span class="art">art. 1547 inc. 3</span>.</li>
+<li><strong>Obligaciones de medios:</strong> el deudor solo promete desplegar una conducta diligente (el médico, el abogado). Aquí el cumplimiento <em>es</em> la diligencia, de modo que el acreedor debe probar la falta de diligencia (<span class="art">art. 1698</span>): la prueba de la culpa se acerca al régimen extracontractual.</li>
+</ul>
+<div class="callout"><span class="title">Por qué importa en el examen</span>
+La calificación de la obligación como de medios o de resultado <strong>decide quién prueba la culpa</strong>, y es el corazón de los casos de responsabilidad médica y profesional. Es uno de los puntos más preguntados y suele omitirse. Hay también un debate de fondo (¿toda obligación es reconducible a una u otra?) que conviene poder mencionar.</div>
+<h3>3.3. La graduación de la culpa (<span class="art">arts. 44 y 1547</span>)</h3>
+<p>Sello distintivo del régimen contractual. El <span class="art">art. 44</span> define tres grados de culpa, y el <span class="art">art. 1547</span> los reparte según a quién beneficia el contrato:</p>
+<table>
+<tr><th>Grado de culpa</th><th>Estándar</th><th>¿De qué culpa responde el deudor?</th></tr>
+<tr><td>Culpa grave o lata</td><td>No manejar los negocios ajenos ni con el cuidado que aun las personas negligentes emplean. Se equipara al dolo.</td><td>Contratos que solo benefician al acreedor (ej. depósito): el deudor responde solo de culpa grave.</td></tr>
+<tr><td>Culpa leve</td><td>Falta de la diligencia de un buen padre de familia. Es la regla general.</td><td>Contratos en beneficio recíproco (ej. compraventa, arrendamiento).</td></tr>
+<tr><td>Culpa levísima</td><td>Falta de la esmerada diligencia de un hombre juicioso.</td><td>Contratos que solo benefician al deudor (ej. comodato): responde hasta de culpa levísima.</td></tr>
+</table>
+<div class="callout"><span class="title">Dato de oro para el examen</span>
+La <strong>culpa grave equivale al dolo</strong> (<span class="art">art. 44</span>). Consecuencias: agrava la responsabilidad del deudor (responde de perjuicios imprevistos, <span class="art">art. 1558</span>) y no se puede condonar anticipadamente (<span class="art">art. 1465</span> — la condonación del dolo futuro no vale).</p></div>
+<h3>3.4. La presunción de culpa contractual (<span class="art">art. 1547 inc. 3</span>)</h3>
+<p>Punto clave y diferencia capital con la sede extracontractual: <strong>«La prueba de la diligencia o cuidado incumbe al que ha debido emplearlo».</strong> Acreditado el incumplimiento, <strong>se presume la culpa del deudor</strong>; es éste quien debe probar que actuó con la diligencia debida o que el incumplimiento se debió a caso fortuito. El acreedor solo prueba la obligación y el incumplimiento, no la culpa.</p>
+<h3>3.5. El dolo contractual</h3>
+<p>Es el incumplimiento intencional, con el propósito de dañar al acreedor. Agrava la responsabilidad (<span class="art">art. 1558</span>: el deudor doloso responde también de los perjuicios <em>imprevistos</em>). El dolo <strong>no se presume</strong> (<span class="art">art. 1459</span>), salvo casos excepcionales: debe probarlo quien lo alega.</p>
+<h3>3.6. La mora (<span class="art">arts. 1551, 1552, 1557</span>)</h3>
+<p>El deudor está en mora cuando retarda culpablemente el cumplimiento y ha sido reconvenido. El <span class="art">art. 1551</span> contempla tres casos:</p>
+<ol>
+<li>Cuando no se cumple dentro del término <strong>estipulado</strong> (interpelación contractual expresa).</li>
+<li>Cuando la cosa solo pudo darse o hacerse dentro de cierto tiempo y dejó pasarlo (interpelación contractual tácita).</li>
+<li>En los demás casos, cuando el deudor ha sido <strong>judicialmente reconvenido</strong> (regla general).</li>
+</ol>
+<p>Reglas asociadas: la indemnización de perjuicios se debe desde que el deudor se constituye en mora (<span class="art">art. 1557</span>); y «la mora purga la mora»: en los contratos bilaterales ninguno está en mora dejando de cumplir mientras el otro no cumple o no se allana a cumplir (<span class="art">art. 1552</span>, base de la <em>exceptio non adimpleti contractus</em>).</p>
+<h3>3.7. El caso fortuito o fuerza mayor (<span class="art">arts. 45 y 1547 inc. 2</span>)</h3>
+<p>Es el imprevisto imposible de resistir. Sus requisitos: (i) <strong>exterioridad</strong> (ajeno a la voluntad del deudor), (ii) <strong>imprevisibilidad</strong> y (iii) <strong>irresistibilidad</strong>. Exime de responsabilidad porque excluye la imputabilidad y rompe la causalidad. Excepciones en que el deudor responde igual: si sobreviene por su culpa, durante su mora (salvo que la cosa hubiera perecido igualmente en poder del acreedor), o si se obligó expresamente a responder de él.</p>
+<h3>3.8. Los remedios del acreedor</h3>
+<p>Ante el incumplimiento, el acreedor de un contrato bilateral puede, conforme al <span class="art">art. 1489</span> (condición resolutoria tácita), pedir a su arbitrio el <strong>cumplimiento forzado</strong> o la <strong>resolución</strong> del contrato, en ambos casos <strong>con indemnización de perjuicios</strong>. La indemnización puede ser <strong>compensatoria</strong> (sustituye el cumplimiento) o <strong>moratoria</strong> (repara el retardo). No se acumulan cumplimiento e indemnización <em>compensatoria</em> (sería doble pago, cf. <span class="art">art. 1537</span>), pero sí cumplimiento más la <em>moratoria</em>, o resolución más compensatoria y moratoria.</p>
+<p><strong>El cumplimiento forzado</strong> supone un título ejecutivo (<span class="art">art. 434 CPC</span>) y una obligación líquida, actualmente exigible y no prescrita. Sus vías varían según la prestación: en las de hacer, el <span class="art">art. 1553</span> da al acreedor opción entre apremio, autorización para hacerla ejecutar por un tercero a costa del deudor, o indemnización; en las de no hacer rige el <span class="art">art. 1555</span>.</p>
+<div class="callout"><span class="title">Debate vivo: ¿es la indemnización un remedio autónomo?</span>
+La <strong>tesis tradicional</strong> lee el <span class="art">art. 1489</span> de forma literal: la indemnización es <em>accesoria</em>, solo procede acompañando al cumplimiento o a la resolución, nunca sola. La <strong>tesis moderna</strong> (Vidal, Pizarro, De la Maza; López Díaz) sostiene su <strong>autonomía</strong>: el acreedor puede demandar derechamente indemnización aun sin pedir cumplimiento ni resolución, en línea con la reparación integral y el derecho comparado. La Corte Suprema ha acogido la autonomía en fallos relevantes (caso <em>Zorin con Huachipato</em>). Saber que es una cuestión <strong>debatida</strong> —y no afirmar la accesoriedad como dogma— es justo lo que distingue una buena respuesta.</div>
+<div class="callout"><span class="title">La excepción de contrato no cumplido (<span class="art">art. 1552</span>), en detalle</span>
+La <em>exceptio non adimpleti contractus</em> es una excepción sustantiva, no un mero efecto de la mora recíproca. Requisitos (Orrego): (i) contrato bilateral; (ii) obligaciones recíprocas exigibles y de cumplimiento simultáneo; (iii) <strong>buena fe</strong> de quien la opone. Límite importante: no procede frente a un incumplimiento <strong>insignificante</strong> de la contraparte. Distíngela del aforismo «la mora purga la mora»: el <span class="art">art. 1552</span> contiene ambas dimensiones, pero no son lo mismo.</div>
+
+<h1 id="iv">4. Responsabilidad extracontractual</h1>
+<h3>4.1. Concepto: delito y cuasidelito civil (<span class="art">arts. 2284 y 2314</span>)</h3>
+<p>El que ha cometido un delito o cuasidelito que ha inferido daño a otro es obligado a la indemnización (<span class="art">art. 2314</span>). La diferencia entre <strong>delito</strong> y <strong>cuasidelito</strong> civil es el factor de atribución: el delito supone <strong>dolo</strong> (intención de dañar); el cuasidelito, <strong>culpa</strong> o negligencia. En la práctica civil la distinción es de escaso efecto, porque la reparación es la misma (se repara todo el daño, haya dolo o culpa).</p>
+<h3>4.2. Elementos</h3>
+<ol>
+<li><strong>Hecho voluntario</strong> del agente (acción u omisión).</li>
+<li><strong>Capacidad delictual</strong> (<span class="art">art. 2319</span>): son incapaces los dementes, los menores de 7 años (infantes) y los mayores de 7 y menores de 16 <strong>solo si el juez estima que obraron sin discernimiento</strong> (juicio prudencial en concreto). Por los incapaces responde quien los tiene a su cuidado, si se le prueba negligencia. El <strong>ebrio</strong> es responsable del daño causado (<span class="art">art. 2318</span>).</li>
+<li><strong>Imputabilidad</strong>: dolo o culpa. La culpa se aprecia <strong>en abstracto</strong> (modelo del buen padre de familia / persona razonable). Sobre <em>de qué culpa se responde</em> hay debate: la tesis clásica (Alessandri) afirma que se responde de <strong>toda culpa, incluso levísima</strong>, porque la ley no distingue; Barros sostiene, en cambio, que se responde de <strong>culpa leve</strong>, porque la referencia legal genérica a «culpa o negligencia» se rige por el <span class="art">art. 44 inc. 2</span> (culpa sin otra calificación = culpa leve). Lo importante para el examen es que no se replica la <em>graduación</em> contractual del 1547: el estándar es único.</li>
+<li><strong>Antijuridicidad</strong> (la conducta lesiona un interés jurídicamente protegido y no concurre causa de justificación).</li>
+<li><strong>Daño.</strong></li>
+<li><strong>Causalidad.</strong></li>
+</ol>
+<div class="callout"><span class="title">Diferencia clave con lo contractual: la prueba de la culpa</span>
+En sede extracontractual, por regla general, <strong>la culpa debe ser probada por la víctima</strong> (no se presume, salvo las presunciones legales del punto 4.6). Es la contracara del <span class="art">art. 1547 inc. 3</span>.</div>
+<h3>4.3. El estándar de la culpa, la culpa infraccional y su prueba</h3>
+<p>La culpa es la infracción de un deber de cuidado, apreciada conforme a un patrón objetivo (la persona razonable o buen padre de familia colocada en la posición del agente). Dos precisiones que el grado exige:</p>
+<ul>
+<li><strong>Culpa infraccional (o culpa contra la legalidad):</strong> cuando el deber de cuidado está fijado por una ley o reglamento (velocidad, normas de seguridad, sanitarias), su sola infracción hace al acto <em>per se</em> culpable. Pero sigue siendo necesario probar el <strong>nexo causal</strong> entre la infracción y el daño (la licencia vencida no causa, por sí, el choque).</li>
+<li><strong>Culpa por omisión:</strong> se responde por no actuar cuando existía un deber positivo de obrar (deberes de protección, deber de socorro), no por cualquier abstención.</li>
+<li><strong>Prueba:</strong> rige el <span class="art">art. 1698</span>. La víctima prueba el hecho voluntario y la infracción del deber de cuidado; el demandado, las circunstancias que excluyen su responsabilidad. La doctrina moderna (Barros) tiende a <strong>objetivar</strong> el concepto de culpa.</li>
+</ul>
+<h3>4.4. Causales de justificación (exclusión de la ilicitud)</h3>
+<p>El hecho culpable es, por definición, antijurídico (<span class="art">arts. 2284 y 2314</span>). Por eso Barros advierte que en sede civil las causales de justificación no excluyen una «antijuridicidad» autónoma al modo penal, sino que <strong>excluyen la culpa o ilicitud</strong> de la conducta. Las principales:</p>
+<ul>
+<li><strong>Ejercicio legítimo de un derecho</strong> y actos autorizados por el derecho (incluye el cumplimiento de un deber legal).</li>
+<li><strong>Legítima defensa</strong>, con requisitos análogos a los penales: agresión actual e ilegítima, falta de provocación suficiente y necesidad racional del medio empleado.</li>
+<li><strong>Estado de necesidad:</strong> se causa un daño menor para evitar uno mayor. Exige que el peligro no se haya originado por culpa del agente y que no hubiera un medio menos dañino; deja a salvo la acción restitutoria por enriquecimiento sin causa.</li>
+<li><strong>Consentimiento de la víctima y aceptación de riesgos</strong> (<em>volenti non fit iniuria</em>), con límites: no vale respecto de derechos indisponibles (<span class="art">art. 12</span>) ni puede condonar el dolo futuro (<span class="art">art. 1465</span>).</li>
+</ul>
+<div class="warn"><span class="title">Precisión que distingue a un buen alumno</span>
+El caso fortuito, el hecho de un tercero y el hecho de la víctima <strong>no</strong> son causales de justificación: operan en sede de <strong>causalidad</strong> (causa extraña que rompe el nexo), no de ilicitud. Ubicarlos bien es una finura muy valorada.</div>
+<h3>4.5. Clases de responsabilidad extracontractual</h3>
+<p><strong>a) Por el hecho propio.</strong> Régimen general (<span class="art">arts. 2314 y 2329</span>): cada cual responde del daño que causa por su dolo o culpa.</p>
+<p><strong>b) Por el hecho ajeno (<span class="art">arts. 2320 a 2322</span>).</strong> Se responde del hecho de quienes están bajo el cuidado o dependencia. Opera una <strong>presunción de culpa</strong> (in vigilando / in eligendo) respecto del guardián. Casos: los padres por los hijos menores que habitan con ellos; el tutor o curador por el pupilo; los empleadores/empresarios por sus dependientes; los jefes de colegios y artesanos por sus discípulos o aprendices. La presunción es <strong>simplemente legal</strong>: el tercero civilmente responsable se exime probando que con la autoridad y cuidado debidos no pudo impedir el hecho. Regla especial: <span class="art">art. 2321</span>, los padres responden <em>siempre</em> de los delitos/cuasidelitos de sus hijos que provengan de la mala educación o hábitos viciosos que les han dejado adquirir (presunción de derecho). Quien paga tiene <strong>acción de reembolso</strong> contra el autor directo si éste obró con discernimiento (<span class="art">art. 2325</span>).</p>
+<p><strong>c) Por el hecho de las cosas.</strong> No existe principio general (a diferencia del derecho francés), sino casos específicos:</p>
+<ul>
+<li><strong>Ruina de un edificio</strong> (<span class="art">arts. 2323 y 2324</span>): responde el dueño por haber omitido las reparaciones necesarias o faltado al cuidado de un buen padre de familia.</li>
+<li><strong>Daño causado por animales</strong>: distingue dos regímenes que no deben confundirse. El <span class="art">art. 2326</span> hace responder al dueño (o a quien se sirve del animal) con <strong>culpa presumida</strong>, admitiendo prueba de diligencia. El <span class="art">art. 2327</span>, en cambio, trata del <strong>animal fiero del que no se reporta utilidad</strong> para la guarda o servicio de un predio: es un caso de <strong>responsabilidad estricta u objetiva</strong> que no admite excusa de diligencia (Barros lo cuenta entre los pocos casos de responsabilidad estricta del propio Código). Hoy se complementa con la Ley 21.020 sobre tenencia responsable de mascotas.</li>
+<li><strong>Cosa que cae o se arroja</strong> de la parte superior de un edificio (<span class="art">art. 2328</span>): responden todas las personas que habitan esa parte, dividiéndose la indemnización entre ellas (salvo que se pruebe culpa de una sola).</li>
+</ul>
+<h3>4.6. Las presunciones de culpa (<span class="art">art. 2329</span>)</h3>
+<p>El <span class="art">art. 2329</span> dispone que «por regla general todo daño que pueda imputarse a malicia o negligencia de otra persona debe ser reparado por ésta» y enumera hipótesis (disparar imprudentemente, remover losas de una acequia, mantener en mal estado un puente o acueducto). La doctrina moderna (Barros) lee este artículo como una <strong>presunción general de culpa por el hecho propio</strong>, que opera en dos grupos de casos: (i) cuando el daño proviene de una <strong>actividad peligrosa</strong> y el peligro se materializa (de ahí se infiere la negligencia); y (ii) cuando la cosa o actividad estaba bajo el <strong>control del demandado</strong> y, según la experiencia, el daño no ocurre sin negligencia (<em>res ipsa loquitur</em>), siempre que se excluya la intervención de la víctima. Acreditadas esas condiciones, se invierte la carga: el demandado debe probar su diligencia. Tema de profundización muy valorado.</p>
+<h3>4.7. Responsabilidad objetiva o estricta</h3>
+<p>Excepción al régimen subjetivo: se responde por el solo hecho de haber causado el daño con una actividad riesgosa, sin necesidad de probar culpa, fundada en la teoría del <strong>riesgo creado</strong>. No es la regla general en el Código, pero existe en leyes especiales (ej. accidentes del trabajo, daño ambiental, daños nucleares, circulación de vehículos en ciertos casos, responsabilidad del Estado por falta de servicio) y en los pocos casos del propio Código ya vistos (<span class="art">arts. 2327 y 2328</span>). Conviene poder contrastar el fundamento subjetivo (culpa) con el objetivo (riesgo).</p>
+
+<h3>4.8. La acción de responsabilidad extracontractual</h3>
+<p><strong>Legitimación activa.</strong> Tiene la acción la víctima directa y también las <strong>víctimas por repercusión o rebote</strong>, que sufren un daño propio (patrimonial o moral) a consecuencia del que se infligió a otro. Conviene distinguir la acción que estas ejercen <em>iure proprio</em> (por su propio daño) de la que reciben <em>iure hereditatis</em> (transmitida por la víctima directa fallecida), para evitar la doble indemnización.</p>
+<p><strong>Pluralidad de responsables: solidaridad (<span class="art">art. 2317</span>).</strong> Si un mismo delito o cuasidelito ha sido cometido por varias personas, todas responden <strong>solidariamente</strong> frente a la víctima (obligación a la deuda). En la relación interna (contribución a la deuda) el Código solo regula el reembolso del <span class="art">art. 2325</span>; para los coautores, Barros propone repartir según la intensidad de la contribución causal y la culpa de cada uno —no por partes iguales—. Excepciones a la solidaridad: <span class="art">arts. 2323 y 2328</span>.</p>
+<p><strong>Prescripción (<span class="art">art. 2332</span>).</strong> La acción prescribe en <strong>cuatro años contados «desde la perpetración del acto»</strong>. El <em>dies a quo</em> es discutido: la jurisprudencia mayoritaria de la Corte Suprema cuenta desde la perpetración del hecho, mientras un sector de la doctrina (y fallos minoritarios) cuenta desde la <strong>manifestación del daño</strong>, pues sin daño no hay acción que ejercer (especialmente en daños ocultos o de manifestación tardía). Existen plazos especiales en leyes particulares.</p>
+<div class="callout"><span class="title">Otros responsables y sedes especiales (para ubicarse)</span>
+Las <strong>personas jurídicas</strong> responden tanto por hecho propio (de sus órganos) como por hecho ajeno (de sus dependientes). La <strong>responsabilidad del Estado</strong> se rige por reglas propias (falta de servicio; error judicial, <span class="art">art. 19 N° 7 letra i</span> CPR). Y recuerda el <strong>cúmulo u opción de responsabilidades</strong>: cuando un mismo hecho configura a la vez incumplimiento contractual e ilícito aquiliano, se discute si la víctima puede optar por el estatuto más favorable.</div>
+
+<h1 id="v">5. El daño y su reparación</h1>
+<h3>5.1. Requisitos del daño indemnizable</h3>
+<ul>
+<li><strong>Cierto</strong> (real, no meramente hipotético; admite el daño futuro cierto y la pérdida de una chance).</li>
+<li><strong>Directo</strong> (consecuencia inmediata y necesaria del hecho).</li>
+<li><strong>No reparado</strong> aún.</li>
+<li>Que lesione un <strong>interés legítimo</strong> de la víctima.</li>
+</ul>
+<h3>5.2. Clases de daño</h3>
+<p><strong>Daño patrimonial:</strong> se descompone en <strong>daño emergente</strong> (la pérdida efectiva sufrida) y <strong>lucro cesante</strong> (la ganancia que se dejó de percibir). En sede contractual lo recoge expresamente el <span class="art">art. 1556</span>.</p>
+<p><strong>Daño moral o extrapatrimonial:</strong> la lesión a intereses no pecuniarios (dolor, aflicción, atentado a derechos de la personalidad).</p>
+<ul>
+<li>En sede <strong>extracontractual</strong> su reparación se admite sin discusión (<span class="art">arts. 2314 y 2329</span> hablan de «daño» sin distinguir).</li>
+<li>En sede <strong>contractual</strong> fue históricamente negado, pero la jurisprudencia chilena lo <strong>admite hoy</strong> (evolución desde fines del s. XX y comienzos del XXI), especialmente en contratos donde están en juego la persona o intereses extrapatrimoniales (salud, transporte, prestaciones médicas).</li>
+</ul>
+<p>El daño moral admite distintas <strong>categorías</strong> que conviene nombrar: el <em>precio del dolor</em> (<em>pretium doloris</em>), el <em>perjuicio de agrado</em> (pérdida de las posibilidades de disfrute de la vida) y el <em>daño corporal o estético</em>. En cuanto a su <strong>prueba</strong>, suele presumirse <em>in re ipsa</em> a partir de la lesión y del vínculo (no se exige acreditar el sufrimiento), y su avaluación es <strong>prudencial</strong>, a cargo del juez. Se discute su procedencia respecto de las personas jurídicas.</p>
+<h3>5.3. La extensión de la reparación</h3>
+<p><strong>En sede extracontractual rige la reparación integral:</strong> se indemniza <em>todo</em> el daño y <em>solo</em> el daño (daño emergente, lucro cesante y daño moral), sin la limitación de la previsibilidad.</p>
+<p><strong>En sede contractual rige el límite de la previsibilidad (<span class="art">art. 1558</span>):</strong> si hay solo culpa, el deudor responde de los perjuicios <strong>previstos o que pudieron preverse</strong> al tiempo del contrato; si hay <strong>dolo (o culpa grave)</strong>, responde además de los perjuicios <strong>imprevistos</strong>. En todo caso, solo de los perjuicios que sean consecuencia <strong>directa</strong> del incumplimiento.</p>
+<h3>5.4. Avaluación de los perjuicios (en sede contractual)</h3>
+<table>
+<tr><th>Tipo de avaluación</th><th>Fuente</th><th>Idea central</th></tr>
+<tr><td>Judicial</td><td>Regla general</td><td>El juez determina la existencia y monto de los perjuicios conforme a la prueba.</td></tr>
+<tr><td>Legal</td><td><span class="art">art. 1559</span></td><td>En obligaciones de dinero, los perjuicios moratorios se avalúan en los intereses; no hay que probar el perjuicio para cobrarlos.</td></tr>
+<tr><td>Convencional</td><td><span class="art">arts. 1535–1544</span> (cláusula penal)</td><td>Las partes avalúan anticipadamente los perjuicios. La pena puede reducirse si es enorme (<span class="art">art. 1544</span>).</td></tr>
+</table>
+<p>Detalle de la <strong>cláusula penal</strong> que conviene dominar: por regla general el acreedor no puede acumular pena y obligación principal, salvo estipulación expresa o que la pena sea moratoria (<span class="art">art. 1537</span>); puede pedir, a su elección, la pena o la indemnización ordinaria de perjuicios probándolos (<span class="art">art. 1543</span>); si el deudor cumple solo en parte, la pena se rebaja proporcionalmente (<span class="art">art. 1539</span>); y la pena se reduce por <strong>enorme</strong> en tres hipótesis del <span class="art">art. 1544</span>: contratos conmutativos (tope = el duplo de la obligación principal, según la lectura mayoritaria de Abeliuk), mutuo (se rebaja al máximo de interés permitido) y obligaciones de valor inapreciable o indeterminado (rebaja prudencial del juez). La facultad de pedir la rebaja es irrenunciable.</p>
+
+<h1 id="vi">6. La relación de causalidad</h1>
+<p>Exige que el daño sea <strong>consecuencia</strong> de la conducta imputable. Es requisito común a ambos estatutos y el punto más fino del análisis. Principales teorías:</p>
+<ul>
+<li><strong>Equivalencia de las condiciones</strong> (<em>conditio sine qua non</em>): es causa toda condición sin la cual el daño no se habría producido. Critica: amplía en exceso la cadena causal.</li>
+<li><strong>Causa adecuada:</strong> es causa solo aquella condición que, según el curso normal de las cosas, era idónea para producir el daño. Es la más aceptada para acotar.</li>
+<li><strong>Causa próxima / causa necesaria y directa:</strong> conecta con la exigencia de daño «directo» (<span class="art">art. 1558</span> en lo contractual).</li>
+</ul>
+<p>Problemas asociados: la <strong>pluralidad de causas</strong> (concausas), la <strong>causa extraña</strong> que exime (caso fortuito, hecho de un tercero, hecho de la víctima) y la <strong>interrupción del nexo causal</strong>.</p>
+<div class="callout"><span class="title">La causalidad como imputación objetiva (Barros)</span>
+La doctrina moderna distingue <strong>dos fases</strong>. Una fase <strong>fáctica o naturalística</strong> (¿fue el hecho condición necesaria del daño? — test de la <em>supresión mental hipotética</em>, ligado a la equivalencia de las condiciones). Y una fase <strong>normativa de imputación objetiva</strong>, que decide cuáles de esos daños se atribuyen jurídicamente al hecho. Las teorías clásicas (causa adecuada, causa próxima) son en verdad <em>criterios</em> de esta segunda fase, junto a la <strong>previsibilidad</strong>, el <strong>incremento del riesgo</strong> y el <strong>fin protector de la norma</strong> infringida. Esta lectura enlaza con la exigencia de <strong>daño directo</strong> y es la forma más fina de razonar la causalidad en un examen.</div>
+
+<h1 id="vii">7. Cuadro comparativo: contractual vs. extracontractual</h1>
+<p>El cuadro que más se pregunta. Domínalo de memoria y razonado.</p>
+<table>
+<tr><th>Criterio</th><th>Contractual (<span style="color:#fff">arts. 1545 ss.</span>)</th><th>Extracontractual (<span style="color:#fff">arts. 2314 ss.</span>)</th></tr>
+<tr><td><strong>Origen</strong></td><td>Incumplimiento de obligación preexistente.</td><td>Hecho ilícito (delito/cuasidelito), sin vínculo previo.</td></tr>
+<tr><td><strong>Graduación de la culpa</strong></td><td>Sí: grave, leve, levísima (<span class="art">arts. 44, 1547</span>).</td><td>No hay graduación: estándar único. (Debate sobre <em>de qué</em> culpa se responde: «toda culpa» —Alessandri— vs. culpa leve —Barros, <span class="art">art. 44 inc. 2</span>.)</td></tr>
+<tr><td><strong>Prueba de la culpa</strong></td><td>Se <strong>presume</strong> la culpa del deudor (<span class="art">1547 inc. 3</span>).</td><td>La <strong>prueba</strong> la víctima (salvo presunciones legales).</td></tr>
+<tr><td><strong>Mora</strong></td><td>Se exige para la indemnización (<span class="art">1551, 1557</span>).</td><td>No se exige; el daño se debe desde que se produce.</td></tr>
+<tr><td><strong>Capacidad</strong></td><td>Plena capacidad contractual (18 años, regla general).</td><td>Capacidad delictual más amplia: desde los 7 años con discernimiento (<span class="art">2319</span>).</td></tr>
+<tr><td><strong>Extensión del daño</strong></td><td>Limitada por la <strong>previsibilidad</strong> (<span class="art">1558</span>); imprevistos solo con dolo/culpa grave.</td><td>Reparación <strong>integral</strong>: todo el daño, sin límite de previsibilidad.</td></tr>
+<tr><td><strong>Solidaridad</strong></td><td>No hay solidaridad legal entre codeudores (salvo pacto o ley).</td><td>Si son varios los autores, responden <strong>solidariamente</strong> (<span class="art">2317</span>).</td></tr>
+<tr><td><strong>Prescripción</strong></td><td>Regla general 5 años desde que la obligación se hizo exigible (<span class="art">2515</span>); reglas especiales (acción ejecutiva 3 años; pacto comisorio por no pago, <span class="art">1880</span>).</td><td>4 años desde la perpetración del acto (<span class="art">2332</span>); <em>dies a quo</em> discutido (perpetración vs. manifestación del daño).</td></tr>
+<tr><td><strong>Daño moral</strong></td><td>Admitido hoy por la jurisprudencia (evolución reciente).</td><td>Admitido sin discusión.</td></tr>
+</table>
+
+<h1 id="viii">8. Método para resolver casos prácticos</h1>
+<p>Responsabilidad es materia de caso. Un método ordenado vale más que recitar artículos. Sigue siempre estos pasos:</p>
+<ol>
+<li><strong>Califica la sede.</strong> ¿Hay un contrato incumplido entre las partes, o un daño entre extraños? De eso depende todo el régimen. Si hay contrato pero el daño excede su objeto, plantea el problema del <strong>cúmulo u opción</strong>.</li>
+<li><strong>Identifica al responsable</strong> y verifica su capacidad (<span class="art">2319</span> en sede aquiliana). ¿Responde por hecho propio, ajeno o de las cosas?</li>
+<li><strong>Determina el factor de atribución.</strong> ¿Dolo o culpa? ¿Hay presunción aplicable (<span class="art">1547 inc. 3</span>, <span class="art">2320</span>, <span class="art">2329</span>)? Esto define <strong>quién prueba qué</strong>.</li>
+<li><strong>Analiza el daño.</strong> ¿Es cierto, directo? ¿Patrimonial (emergente/lucro cesante) o moral? ¿Cuál es su extensión (previsibilidad si es contractual, <span class="art">1558</span>)?</li>
+<li><strong>Verifica la causalidad</strong> y descarta una causa extraña (caso fortuito, hecho de tercero, hecho de la víctima — <span class="art">2330</span>).</li>
+<li><strong>Revisa eximentes, atenuantes y la acción.</strong> Prescripción (<span class="art">2332</span> / <span class="art">2515</span>), legitimación activa, solidaridad (<span class="art">2317</span>), reducción por exposición imprudente de la víctima (<span class="art">2330</span>).</li>
+<li><strong>Concluye</strong> indicando si hay o no obligación de indemnizar, su fundamento y su extensión.</li>
+</ol>
+<div class="callout"><span class="title">La reducción por culpa de la víctima (<span class="art">art. 2330</span>)</span>
+«La apreciación del daño está sujeta a reducción, si el que lo ha sufrido se expuso a él imprudentemente». No exime, pero <strong>atenúa</strong>. Aparece en casi todos los casos de accidentes — tenlo siempre en el radar.</div>
+
+<h1 id="ix">9. Errores típicos en el examen</h1>
+<ul>
+<li>Confundir los regímenes: aplicar graduación de culpa o exigir mora en sede extracontractual.</li>
+<li>Olvidar la <strong>presunción de culpa contractual</strong> (<span class="art">1547 inc. 3</span>) y poner la carga de la prueba en el acreedor.</li>
+<li>Decir que el daño moral no se indemniza en sede contractual (criterio ya superado).</li>
+<li>No distinguir entre indemnización <strong>compensatoria</strong> y <strong>moratoria</strong>.</li>
+<li>Tratar la culpa grave como una culpa cualquiera, olvidando que <strong>se equipara al dolo</strong>.</li>
+<li>Saltar directo a los artículos sin <strong>calificar la sede</strong> ni ordenar el análisis por elementos.</li>
+<li>Confundir los plazos de prescripción (4 años aquiliana / 5 años contractual).</li>
+<li>No distinguir <strong>obligaciones de medios y de resultado</strong> al analizar quién prueba la culpa (clave en responsabilidad médica).</li>
+<li>Afirmar que la indemnización es <strong>siempre accesoria</strong> al cumplimiento o la resolución (<span class="art">1489</span>), ignorando el debate sobre su autonomía.</li>
+<li>Ubicar el caso fortuito o el hecho de la víctima entre las <strong>causales de justificación</strong>: operan en la <strong>causalidad</strong>, no en la ilicitud.</li>
+<li>Confundir el régimen de los animales: <span class="art">2326</span> (culpa presumida) vs. <span class="art">2327</span> (animal fiero, responsabilidad estricta).</li>
+</ul>
+
+<p class="muted" style="margin-top:2rem">Fin de la Pieza 1. Continúa con la Pieza 2 (Banco de preguntas y casos prácticos) y la Pieza 3 (Interrogador IA para Claude).</p>
+
+</body>
+</html>

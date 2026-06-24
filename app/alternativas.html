@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leyes — Evaluación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      background: #111111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+    }
+    .sidebar-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: #E8D8B8;
+      margin-bottom: 3rem;
+      text-decoration: none;
+    }
+    .sidebar-logo span { color: #C41E2E; }
+    .nav-section {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(232,216,184,0.3);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(232,216,184,0.55);
+      transition: all 0.15s;
+      margin-bottom: 0.2rem;
+    }
+    .nav-item:hover { background: rgba(232,216,184,0.06); color: #E8D8B8; }
+    .nav-item.active { background: rgba(196,30,46,0.15); color: #E8D8B8; }
+    .nav-item.active .nav-icon { color: #C41E2E; }
+    .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .nav-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      background: rgba(196,30,46,0.2);
+      color: #C41E2E;
+      padding: 0.1rem 0.45rem;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(232,216,184,0.08);
+    }
+    .user-info { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .user-avatar {
+      width: 36px; height: 36px;
+      background: #C41E2E;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: #F5EAD4;
+      flex-shrink: 0;
+    }
+    .user-name { font-size: 0.82rem; font-weight: 600; color: #E8D8B8; }
+    .user-plan { font-size: 0.72rem; color: rgba(232,216,184,0.4); }
+    .btn-logout {
+      width: 100%;
+      padding: 0.55rem;
+      background: transparent;
+      border: 1px solid rgba(232,216,184,0.12);
+      border-radius: 6px;
+      color: rgba(232,216,184,0.4);
+      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: #C41E2E; }
+
+    /* ── MAIN ── */
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      padding: 2.5rem 3rem;
+      max-width: calc(100% - 240px);
+    }
+
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: #111111;
+      line-height: 1;
+    }
+    .page-subtitle { font-size: 0.875rem; color: #7A6E5F; margin-top: 0.3rem; }
+
+    /* FILTROS */
+    .filtros {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filtro-btn {
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #7A6E5F;
+      transition: all 0.15s;
+    }
+    .filtro-btn:hover { border-color: #111111; color: #111111; }
+    .filtro-btn.active { background: #111111; color: #E8D8B8; border-color: #111111; }
+
+    /* ── PROGRESO ── */
+    .quiz-progress {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .progress-bar-bg {
+      flex: 1;
+      height: 5px;
+      background: rgba(17,17,17,0.08);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #C41E2E;
+      border-radius: 100px;
+      transition: width 0.5s ease;
+    }
+    .progress-text { font-size: 0.8rem; font-weight: 600; color: #7A6E5F; white-space: nowrap; }
+
+    /* ── TARJETA DE ÍTEM ── */
+    .item-card {
+      background: #E8D8B8;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 780px;
+      margin-bottom: 1.25rem;
+    }
+
+    .item-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .badge-tipo {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+    .badge-aplicacion { background: rgba(196,30,46,0.12); color: #C41E2E; }
+    .badge-deteccion  { background: rgba(180,100,0,0.12); color: #A05000; }
+    .badge-justificacion { background: rgba(30,130,80,0.12); color: #0F6040; }
+    .badge-mc         { background: rgba(50,80,180,0.12); color: #283880; }
+
+    .badge-materia {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #7A6E5F;
+    }
+
+    .item-num {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: #7A6E5F;
+    }
+
+    .caso-box {
+      background: #F5EAD4;
+      border-left: 3px solid #C41E2E;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #2A2A2A;
+    }
+    .caso-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .pregunta-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111111;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── STEP 1: RECALL LIBRE ── */
+    .step-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .step-num-badge {
+      width: 20px; height: 20px;
+      background: #111111;
+      color: #E8D8B8;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      padding: 0.9rem 1rem;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.65;
+      background: #F5EAD4;
+      color: #111111;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    textarea:focus { border-color: #C41E2E; }
+    textarea::placeholder { color: #B0A898; }
+
+    .char-count {
+      font-size: 0.72rem;
+      color: #7A6E5F;
+      text-align: right;
+      margin-top: 0.35rem;
+    }
+
+    /* ── BOTONES ── */
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border-radius: 7px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: #C41E2E; color: #F5EAD4; }
+    .btn-primary:hover { background: #E02535; }
+    .btn-dark { background: #111111; color: #E8D8B8; }
+    .btn-dark:hover { background: #2A2A2A; }
+    .btn-outline {
+      background: transparent;
+      color: #111111;
+      border: 1.5px solid rgba(17,17,17,0.2);
+    }
+    .btn-outline:hover { background: rgba(17,17,17,0.05); }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+
+    .btn-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ── FEEDBACK DIAGNÓSTICO ── */
+    .feedback-panel {
+      background: #F5EAD4;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .feedback-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .credito-bar-wrap { flex: 1; }
+    .credito-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      margin-bottom: 0.35rem;
+    }
+    .credito-bar-bg {
+      height: 8px;
+      background: rgba(17,17,17,0.08);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .credito-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 0.6s ease;
+    }
+    .credito-pct {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .veredicto {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111111;
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 7px;
+      background: rgba(17,17,17,0.04);
+    }
+
+    .elementos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .elementos-col h4 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .elementos-col.ok h4 { color: #1A7A40; }
+    .elementos-col.missing h4 { color: #C41E2E; }
+
+    .elemento-tag {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      margin-bottom: 0.5rem;
+      color: #2A2A2A;
+    }
+    .elemento-tag .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .elementos-col.ok .dot { background: #1A7A40; }
+    .elementos-col.missing .dot { background: #C41E2E; }
+
+    .confusion-box {
+      background: rgba(196,30,46,0.06);
+      border: 1px solid rgba(196,30,46,0.15);
+      border-radius: 7px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+    }
+    .confusion-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      margin-bottom: 0.3rem;
+    }
+    .confusion-text { font-size: 0.85rem; color: #2A2A2A; line-height: 1.55; }
+
+    .feedback-diag {
+      font-size: 0.875rem;
+      color: #3A3A3A;
+      line-height: 1.7;
+    }
+
+    /* ── MC SECTION ── */
+    .mc-section { margin-top: 1.5rem; }
+    .mc-intro {
+      font-size: 0.8rem;
+      color: #7A6E5F;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      border: 1.5px solid rgba(17,17,17,0.12);
+      background: #F5EAD4;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+      color: #111111;
+      text-align: left;
+      transition: all 0.15s;
+      line-height: 1.5;
+    }
+    .option-btn:hover:not(:disabled) { border-color: #111111; background: #EDE0C8; }
+    .option-btn:disabled { cursor: default; }
+    .option-btn.selected { border-color: #111111; background: #E0D0B0; }
+    .option-btn.correct { background: rgba(34,139,34,0.07); border-color: #228B22; }
+    .option-btn.wrong { background: rgba(196,30,46,0.07); border-color: #C41E2E; }
+    .option-btn.revealed { background: rgba(34,139,34,0.04); border-color: rgba(34,139,34,0.25); }
+
+    .option-letter {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: rgba(17,17,17,0.08);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .option-btn.correct .option-letter { background: #228B22; color: white; }
+    .option-btn.wrong .option-letter { background: #C41E2E; color: white; }
+    .option-btn.revealed .option-letter { background: rgba(34,139,34,0.2); color: #228B22; }
+
+    .justificacion-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #7A6E5F;
+      margin-bottom: 0.4rem;
+      margin-top: 0.75rem;
+    }
+    textarea.justificacion {
+      min-height: 60px;
+      font-size: 0.85rem;
+    }
+
+    /* MC feedback distractor */
+    .distractor-feedback {
+      background: rgba(17,17,17,0.04);
+      border-radius: 7px;
+      padding: 0.85rem 1rem;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: #3A3A3A;
+      line-height: 1.6;
+    }
+    .distractor-feedback strong { color: #111111; }
+
+    /* ── RESPUESTA MODELO ── */
+    .modelo-section {
+      background: #111111;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .modelo-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: #E8D8B8;
+      margin-bottom: 1rem;
+    }
+    .modelo-body {
+      font-size: 0.875rem;
+      color: rgba(232,216,184,0.8);
+      line-height: 1.75;
+    }
+    .articulos-ref {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .art-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: rgba(196,30,46,0.2);
+      color: #E8A0A0;
+      padding: 0.15rem 0.5rem;
+      border-radius: 100px;
+    }
+
+    /* ── SEGUNDA PASADA ── */
+    .segunda-pasada {
+      background: rgba(180,120,0,0.08);
+      border: 1px solid rgba(180,120,0,0.2);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .segunda-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #A06000;
+      margin-bottom: 0.4rem;
+    }
+    .segunda-text {
+      font-size: 0.875rem;
+      color: #2A2A2A;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── RESULTADOS ── */
+    .results-card {
+      background: #E8D8B8;
+      border-radius: 14px;
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 520px;
+    }
+    .results-emoji { font-size: 3rem; margin-bottom: 1rem; }
+    .results-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: #111111;
+      margin-bottom: 0.4rem;
+    }
+    .results-score {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.5rem;
+      letter-spacing: 2px;
+      color: #C41E2E;
+      line-height: 1;
+      margin: 0.75rem 0;
+    }
+    .results-detail { font-size: 0.9rem; color: #7A6E5F; margin-bottom: 0.5rem; }
+    .results-items-detail {
+      font-size: 0.8rem;
+      color: #7A6E5F;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .elementos-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-logo">Leyes<span>.</span></a>
+    <span class="nav-section">Estudio</span>
+    <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
+    <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
+    <a class="nav-item active" href="alternativas.html"><span class="nav-icon">✅</span> Evaluación</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🃏</span> Flashcards <span class="nav-badge">Pronto</span></a>
+    <span class="nav-section">Con IA</span>
+    <a class="nav-item" href="#"><span class="nav-icon">💬</span> Chat IA <span class="nav-badge">Pronto</span></a>
+    <a class="nav-item" href="#"><span class="nav-icon">🎙️</span> Interrogación oral <span class="nav-badge">Pronto</span></a>
+    <span class="nav-section">Comunidad</span>
+    <a class="nav-item" href="#"><span class="nav-icon">🏆</span> Liga <span class="nav-badge">Pronto</span></a>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" id="user-avatar">?</div>
+        <div>
+          <div class="user-name" id="user-name">...</div>
+          <div class="user-plan">Plan Esencial</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="handleLogout()">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Evaluación</div>
+        <div class="page-subtitle">Aplica, detecta, justifica — no solo reconoce</div>
+      </div>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="setFiltro('todos', this)">Todos</button>
+      <button class="filtro-btn" onclick="setFiltro('civil', this)">Civil</button>
+      <button class="filtro-btn" onclick="setFiltro('procesal', this)">Procesal</button>
+      <button class="filtro-btn" onclick="setFiltro('aplicacion', this)">Aplicación</button>
+      <button class="filtro-btn" onclick="setFiltro('deteccion_error', this)">Detección de error</button>
+      <button class="filtro-btn" onclick="setFiltro('justificacion', this)">Justificación</button>
+      <button class="filtro-btn" onclick="setFiltro('discriminacion_mc', this)">Discriminación MC</button>
+    </div>
+
+    <div id="quiz-container"></div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq';
+    const { createClient } = supabase;
+    const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ══════════════════════════════════════════════════════════════════
+    // BANCO DE ÍTEMS
+    // ══════════════════════════════════════════════════════════════════
+    const banco = [
+      {
+        id: 're-aplic-001',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Requisitos / art. 2330',
+        tipo: 'aplicacion',
+        caso: 'Una constructora deja de noche una zanja abierta y sin señalización en la vereda. Un peatón que caminaba mirando su teléfono cae y se lesiona. La constructora alega que el peatón tiene culpa exclusiva por no mirar por dónde caminaba.',
+        enunciado: '¿Responde extracontractualmente la constructora? Analiza cada requisito. ¿Qué efecto tiene la conducta del peatón sobre la indemnización? ¿Coincides con la defensa de la constructora?',
+        respuesta_modelo: 'La constructora responde extracontractualmente. Se verifican todos los requisitos del art. 2314: (1) hecho voluntario: omisión de señalizar la zanja; (2) capacidad delictual; (3) imputabilidad: culpa por omisión de un deber de cuidado elemental (no señalizar una zanja nocturna); (4) daño: lesiones del peatón; (5) causalidad: la zanja no señalizada causó la caída. La alegación de la constructora es incorrecta: la distracción del peatón no constituye culpa exclusiva de la víctima porque no fue la causa única del daño. La causa preponderante sigue siendo la omisión de señalizar. Lo que opera es el art. 2330 CC: la indemnización se reduce en proporción a la exposición imprudente de la víctima, pero no se exime totalmente a la constructora. Exención total solo procedería si la culpa de la víctima fuera la causa exclusiva y determinante del daño.',
+        elementos_clave: [
+          { texto: 'Recorre los 5 requisitos de la RE uno a uno', keywords: ['requisito', 'hecho', 'culpa', 'daño', 'causalidad', 'capacidad'] },
+          { texto: 'Identifica culpa por omisión y nexo causal', keywords: ['omisión', 'señalizar', 'causalidad', 'nexo'] },
+          { texto: 'Distingue reducción (art. 2330) de exención total', keywords: ['2330', 'reduce', 'reducción', 'no exime', 'no exonera'] },
+          { texto: 'Rechaza la tesis de culpa exclusiva de la víctima', keywords: ['exclusiva', 'no es exclusiva', 'causa única', 'preponderante'] }
+        ],
+        articulos_referencia: ['2314', '2329', '2330'],
+        objetivo_pedagogico: 'Subsumir hechos y distinguir exoneración total de reducción proporcional'
+      },
+      {
+        id: 're-detect-001',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Presunción de culpa / causalidad',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde en su examen de grado lo siguiente: "Como la víctima venía distraída mirando el teléfono, hay culpa de la víctima, y la culpa de la víctima siempre exime totalmente de responsabilidad al autor del daño. Además, en sede extracontractual la culpa del demandado se presume, igual que en sede contractual."',
+        enunciado: 'El alumno comete al menos dos errores jurídicos graves. Identifícalos con precisión, explica por qué están mal y señala la norma correcta.',
+        respuesta_modelo: 'Error 1: La culpa de la víctima no siempre exime totalmente. Solo la culpa exclusiva de la víctima, que sea la causa única y determinante del daño, puede eximir totalmente al demandado. Cuando la culpa de la víctima concurre con la culpa del autor (culpa concurrente), opera el art. 2330 CC: la indemnización se reduce en proporción a la exposición imprudente, pero no se elimina. En el caso de la zanja, la distracción del peatón es culpa concurrente, no exclusiva. Error 2: En sede extracontractual, la culpa NO se presume como regla general. La víctima debe probarla (art. 1698 CC). Esto contrasta radicalmente con la sede contractual, donde el art. 1547 inc. 3° presume la culpa del deudor. En RE existen presunciones específicas (arts. 2320 para el hecho ajeno y 2329 para ciertas actividades), pero no es la regla general.',
+        elementos_clave: [
+          { texto: 'Detecta que la culpa de la víctima no siempre exime: solo la exclusiva; la concurrente reduce vía art. 2330', keywords: ['exclusiva', '2330', 'reduce', 'concurrente', 'no siempre exime'] },
+          { texto: 'Detecta que en sede extracontractual la culpa NO se presume; la víctima debe probarla', keywords: ['no se presume', 'víctima prueba', 'no presume', '1547', 'diferencia'] },
+          { texto: 'Señala el contraste con el art. 1547 inc. 3° (presunción contractual)', keywords: ['1547', 'contractual', 'contraste', 'diferencia'] }
+        ],
+        articulos_referencia: ['2330', '1547', '2329'],
+        objetivo_pedagogico: 'Afinar la distinción entre exención y reducción, y entre régimen probatorio contractual y extracontractual'
+      },
+      {
+        id: 're-mc-001',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Art. 2330 / causas de exención',
+        tipo: 'discriminacion_mc',
+        caso: 'En el caso de la constructora y la zanja: la constructora omitió señalizar; el peatón caminaba mirando el teléfono. El peatón demanda indemnización total.',
+        enunciado: '¿Qué institución rige el efecto de la distracción del peatón sobre la indemnización?',
+        opciones: [
+          { letra: 'A', texto: 'Caso fortuito: la distracción es un hecho imprevisible que exime a la constructora', rationale: 'Error clásico: confunde un factor externo del demandante con caso fortuito. El caso fortuito es un hecho imprevisible e irresistible ajeno a ambas partes, no la conducta descuidada de la víctima.' },
+          { letra: 'B', texto: 'Culpa exclusiva de la víctima: la distracción es la única causa del daño, lo que exime totalmente a la constructora', rationale: 'Confusión muy frecuente. La culpa de la víctima solo exime si es exclusiva y determinante. Aquí la zanja sin señalizar es causa concurrente y preponderante, no la distracción sola.' },
+          { letra: 'C', texto: 'Exposición imprudente al daño → reducción proporcional de la indemnización (art. 2330 CC)', rationale: 'CORRECTO. El art. 2330 dispone que la indemnización se reduce si la víctima se expuso imprudentemente al daño. No exime, sino que reduce en proporción a la contribución causal de la víctima.' },
+          { letra: 'D', texto: 'Hecho de un tercero: la distracción del peatón es un hecho de tercero que corta el nexo causal', rationale: 'Error de calificación: el peatón es la propia víctima, no un tercero. El hecho del tercero opera cuando interviene alguien distinto al autor y a la víctima.' }
+        ],
+        correcta: 'C',
+        articulos_referencia: ['2330'],
+        objetivo_pedagogico: 'Discriminar entre las instituciones que operan sobre la causalidad y sobre la cuantía'
+      },
+      {
+        id: 'cont-aplic-001',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Presunción de culpa / carga probatoria',
+        tipo: 'aplicacion',
+        caso: 'Javiera contrata a una clínica para una operación de rodilla. La operación resulta en una infección grave que la deja con movilidad reducida. La clínica alega que cumplió todos los protocolos y que la infección fue un riesgo propio de toda cirugía. Javiera demanda indemnización.',
+        enunciado: '¿Qué tipo de obligación tiene la clínica respecto de la operación? ¿Sobre quién recae la carga de la prueba de la culpa? Analiza la viabilidad de la defensa de la clínica.',
+        respuesta_modelo: 'La clínica tiene una obligación de medios respecto del acto médico: no promete un resultado (que la rodilla quede perfecta), sino que se compromete a actuar con la diligencia de un buen médico. En las obligaciones de medios, el cumplimiento es la diligencia, por lo que Javiera —el acreedor— debe probar la falta de diligencia (art. 1698 CC), no simplemente el resultado insatisfactorio. La presunción del art. 1547 inc. 3° opera plenamente en obligaciones de resultado (basta probar que el resultado no se obtuvo), pero en obligaciones de medios la carga probatoria se acerca al régimen extracontractual: el acreedor prueba la culpa. La defensa de la clínica (que cumplió protocolos) es relevante precisamente porque en obligaciones de medios la diligencia es el centro del debate. Si acredita que actuó conforme a la lex artis, no hay culpa aunque el resultado haya sido malo. Javiera deberá probar la infracción concreta del deber de cuidado.',
+        elementos_clave: [
+          { texto: 'Califica la obligación como de medios (no de resultado)', keywords: ['medios', 'obligación de medios', 'no de resultado'] },
+          { texto: 'Concluye que la carga de la prueba recae sobre Javiera (acreedor)', keywords: ['javiera prueba', 'acreedor prueba', 'carga de la prueba', '1698'] },
+          { texto: 'Distingue el régimen probatorio de medios vs. resultado', keywords: ['resultado', 'contrasta', 'diferencia', 'presunción no opera', '1547'] },
+          { texto: 'Aplica el estándar de la lex artis', keywords: ['lex artis', 'diligencia', 'protocolo', 'buen médico', 'cuidado debido'] }
+        ],
+        articulos_referencia: ['1547', '1698'],
+        objetivo_pedagogico: 'Aplicar la distinción de obligaciones de medios y resultado a un caso de responsabilidad médica'
+      },
+      {
+        id: 'cont-just-001',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Culpa grave / dolo',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué la culpa grave "equivale al dolo" en materia civil chilena? Explica el fundamento y dos consecuencias prácticas concretas de esta equivalencia.',
+        respuesta_modelo: 'El art. 44 CC establece expresamente que "la culpa o negligencia grave equivale al dolo". El fundamento es que quien actúa con un descuido tan burdo que ni las personas negligentes lo cometerían, manifiesta una indiferencia equivalente a la intención de dañar; el derecho trata esa indiferencia extrema como si fuera intención. Consecuencias prácticas: (1) En cuanto a la extensión del daño (art. 1558): el deudor culpable solo de culpa leve responde de perjuicios previstos; el deudor con culpa grave responde también de perjuicios imprevistos, exactamente igual que si hubiera obrado con dolo. (2) En cuanto a la condonación anticipada: el art. 1465 prohíbe condonar el dolo futuro (la cláusula que lo haga es nula). Como la culpa grave equivale al dolo, tampoco puede condonarse anticipadamente la culpa grave; la cláusula que lo intente es nula.',
+        elementos_clave: [
+          { texto: 'Cita el art. 44 CC como fundamento normativo', keywords: ['art. 44', 'artículo 44', 'art 44'] },
+          { texto: 'Explica la extensión del daño: perjuicios imprevistos (art. 1558)', keywords: ['1558', 'imprevistos', 'previstos'] },
+          { texto: 'Explica la condonación anticipada prohibida (art. 1465)', keywords: ['1465', 'condonar', 'condonación', 'futuro', 'nula'] }
+        ],
+        articulos_referencia: ['44', '1558', '1465'],
+        objetivo_pedagogico: 'Justificar el fundamento y las consecuencias concretas de la equiparación culpa grave-dolo'
+      },
+      {
+        id: 'proc-aplic-001',
+        materia: 'procesal',
+        tema: 'Juicio ejecutivo',
+        subtema: 'Excepciones / tramitación',
+        tipo: 'aplicacion',
+        caso: 'El Banco XYZ inicia un juicio ejecutivo contra Pedro basado en un pagaré. Pedro opone dentro de plazo las excepciones de prescripción y de falta de mérito ejecutivo. El banco solicita al tribunal que dicte sentencia de inmediato rechazando las excepciones por ser dilatorias.',
+        enunciado: '¿Es correcta la petición del banco? ¿Cuál es la tramitación que corresponde luego de opuestas las excepciones? ¿Puede haber término probatorio?',
+        respuesta_modelo: 'La petición del banco es incorrecta. Conforme a los arts. 466 y ss. CPC, opuestas las excepciones dentro de plazo, el tribunal debe dar traslado al ejecutante por 4 días para que responda. Luego, si hay hechos controvertidos susceptibles de prueba, se abre un término probatorio de 10 días. No procede sentencia inmediata de rechazo solo porque el ejecutante lo pida: el tribunal debe pronunciarse sobre el fondo de las excepciones. En este caso, la prescripción y la falta de mérito ejecutivo son excepciones perentorias y requieren que el tribunal las analice. Si las acoge, absuelve al ejecutado; si las rechaza, ordena seguir adelante con la ejecución.',
+        elementos_clave: [
+          { texto: 'Rechaza la petición del banco como incorrecta', keywords: ['incorrecta', 'no procede', 'equivocado', 'incorrecto'] },
+          { texto: 'Describe el traslado al ejecutante (4 días)', keywords: ['traslado', '4 días', 'cuatro días'] },
+          { texto: 'Menciona el término probatorio de 10 días si hay hechos a probar', keywords: ['término probatorio', 'probatorio', '10 días', 'diez días'] },
+          { texto: 'Distingue el resultado según si se acogen o rechazan las excepciones', keywords: ['acoge', 'rechaza', 'absuelve', 'seguir adelante'] }
+        ],
+        articulos_referencia: ['466 CPC', '467 CPC', '468 CPC'],
+        objetivo_pedagogico: 'Aplicar correctamente la tramitación post-excepciones en el juicio ejecutivo'
+      },
+      {
+        id: 'proc-mc-001',
+        materia: 'procesal',
+        tema: 'Recursos',
+        subtema: 'Casación en la forma vs. en el fondo',
+        tipo: 'discriminacion_mc',
+        caso: 'La Corte de Apelaciones acoge un recurso de casación interpuesto contra una sentencia definitiva de primera instancia.',
+        enunciado: '¿Cuál es la consecuencia procesal correcta según el tipo de casación acogida?',
+        opciones: [
+          { letra: 'A', texto: 'En ambos tipos de casación, la Corte invalida la sentencia y dicta una de reemplazo resolviendo el fondo', rationale: 'Confunde las consecuencias de ambas casaciones. La sentencia de reemplazo es característica solo de la casación en el fondo.' },
+          { letra: 'B', texto: 'En casación en la forma: el proceso vuelve al estado anterior al vicio para subsanarlo; en casación en el fondo: la Corte dicta sentencia de reemplazo', rationale: 'CORRECTO. Art. 786 CPC para la forma (invalidación + retrotracción); arts. 785 y 808 CPC para el fondo (invalidación + sentencia de reemplazo inmediata).' },
+          { letra: 'C', texto: 'En ambos tipos, el proceso vuelve a primera instancia para que el juez dicte nueva sentencia', rationale: 'Error: esta es la consecuencia de la casación en la forma, no del fondo. En el fondo, la Corte no devuelve el asunto: resuelve ella misma.' },
+          { letra: 'D', texto: 'La Corte de Apelaciones no tiene competencia para conocer casaciones; solo la Corte Suprema puede', rationale: 'Error: la Corte de Apelaciones conoce la casación en la forma contra sentencias de primera instancia (art. 63 N°1 COT). La Corte Suprema conoce la casación en el fondo (art. 98 COT).' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['785 CPC', '786 CPC', '808 CPC'],
+        objetivo_pedagogico: 'Discriminar con precisión las consecuencias de cada tipo de casación'
+      },
+
+      // ── NUEVOS ÍTEMS: RESPONSABILIDAD CIVIL ───────────────────────
+
+      {
+        id: 'rc-just-001',
+        materia: 'civil',
+        tema: 'Responsabilidad civil',
+        subtema: 'Distinción de estatutos contractual / extracontractual',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Menciona y explica tres diferencias de régimen entre la responsabilidad contractual y la extracontractual. ¿Cuál te parece la más relevante en la práctica y por qué?',
+        respuesta_modelo: '(1) Prueba de la culpa: en sede contractual la culpa del deudor se presume (art. 1547 inc. 3°); basta al acreedor probar el incumplimiento. En sede extracontractual la víctima debe probar la culpa del autor, salvo presunciones específicas (arts. 2320, 2329). (2) Extensión del daño: en contractual, si hay solo culpa el deudor responde de perjuicios previstos; si hay dolo o culpa grave, también de imprevistos (art. 1558). En extracontractual la reparación es integral (todo el daño directo), sin distinción culpa/dolo. (3) Prescripción: la acción contractual prescribe en 5 años desde que la obligación se hizo exigible (art. 2515); la aquiliana prescribe en 4 años desde la perpetración del acto (art. 2332). La diferencia más relevante en la práctica suele ser la presunción de culpa contractual: en un litigio, esa presunción define quién carga con la prueba y normalmente decide el resultado.',
+        elementos_clave: [
+          { texto: 'Señala la presunción de culpa contractual (art. 1547 inc. 3°) vs. prueba por la víctima en extracontractual', keywords: ['1547', 'presume', 'presunción', 'víctima prueba', 'extracontractual prueba'] },
+          { texto: 'Menciona la extensión del daño / previsibilidad (art. 1558) como diferencia', keywords: ['1558', 'previstos', 'imprevistos', 'previsibilidad', 'extensión'] },
+          { texto: 'Señala la diferencia de prescripción (5 años / 4 años)', keywords: ['2515', '2332', '5 años', '4 años', 'prescripción'] }
+        ],
+        articulos_referencia: ['1547', '1558', '2515', '2332'],
+        objetivo_pedagogico: 'Dominar las diferencias de régimen entre los dos estatutos de responsabilidad civil'
+      },
+
+      {
+        id: 'rc-aplic-001',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Graduación de la culpa / comodato',
+        tipo: 'aplicacion',
+        caso: 'Pedro presta gratuitamente su notebook a Juan para que prepare un trabajo universitario. Juan lo deja sobre la mesa de un café; al levantarse a pagar, alguien lo roba. Pedro demanda el valor del equipo.',
+        enunciado: '¿Qué tipo de contrato es este? ¿De qué grado de culpa responde Juan? ¿Juan puede alegar caso fortuito exitosamente? Analiza cada punto.',
+        respuesta_modelo: 'El contrato es un comodato (art. 2174 CC): préstamo gratuito de una cosa no fungible. Como el contrato beneficia solo al comodatario (Juan), éste responde hasta de culpa levísima (art. 1547 CC): el estándar es la esmerada diligencia de un hombre juicioso. La culpa del comodatario se presume (art. 1547 inc. 3°): Juan debe probar que empleó la diligencia debida o que el robo fue caso fortuito. Juan probablemente no puede alegar caso fortuito exitosamente: dejar el equipo desatendido en un lugar público es precisamente la falta de la esmerada diligencia exigida. El caso fortuito requiere imprevisibilidad e irresistibilidad; pero el riesgo de robo en un café es razonablemente previsible, y era evitable llevando el equipo o vigilándolo. Juan responde del valor del notebook.',
+        elementos_clave: [
+          { texto: 'Califica el contrato como comodato (art. 2174)', keywords: ['comodato', '2174', 'préstamo gratuito'] },
+          { texto: 'Concluye que Juan responde hasta de culpa levísima porque el contrato lo beneficia solo a él', keywords: ['levísima', 'culpa levísima', 'solo al deudor', 'solo a juan', 'beneficia al comodatario'] },
+          { texto: 'Afirma que la culpa se presume (art. 1547 inc. 3°) y es Juan quien debe probar diligencia', keywords: ['1547', 'presume', 'juan prueba', 'deudor prueba'] },
+          { texto: 'Rechaza el caso fortuito: el riesgo de robo era previsible / no cumple requisitos', keywords: ['caso fortuito', 'no procede', 'previsible', 'evitable', 'no exime'] }
+        ],
+        articulos_referencia: ['2174', '1547', '45'],
+        objetivo_pedagogico: 'Aplicar la graduación de culpa del art. 1547 a un contrato específico y evaluar el caso fortuito'
+      },
+
+      {
+        id: 'rc-detect-001',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Mora / art. 1551',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno responde en el examen: "El deudor está en mora desde el momento en que incumple el contrato. En todos los contratos, el simple vencimiento del plazo produce la mora automáticamente. Además, en un contrato bilateral, si el vendedor no entrega, el comprador puede exigir indemnización aunque él tampoco haya pagado el precio."',
+        enunciado: 'El alumno comete dos errores en esta respuesta. Identifícalos con precisión y explica la regla correcta.',
+        respuesta_modelo: 'Error 1: El simple incumplimiento no produce mora automáticamente. El art. 1551 exige, como regla general, interpelación judicial (reconvención judicial, art. 1551 N°3). Solo por excepción opera la mora automática: cuando hay plazo estipulado expresamente (N°1, interpelación contractual expresa) o cuando la cosa solo podía darse en cierto tiempo que se dejó pasar (N°2, interpelación tácita). El "simple vencimiento" del plazo produce mora solo si el plazo fue expresamente convenido en el contrato. Error 2: En contratos bilaterales, la mora del deudor presupone que el acreedor haya cumplido o esté llano a cumplir su propia obligación. El art. 1552 consagra la regla "la mora purga la mora": si el vendedor no ha entregado y el comprador tampoco ha pagado, ninguno está en mora respecto del otro. El comprador no puede demandar indemnización si él mismo está incumpliendo.',
+        elementos_clave: [
+          { texto: 'Distingue los tres supuestos del art. 1551: solo el N°1 y N°2 producen mora automática; la regla general es la reconvención judicial (N°3)', keywords: ['1551', 'reconvención', 'interpelación', 'judicial', 'no automática', 'regla general'] },
+          { texto: 'Identifica la regla "la mora purga la mora" del art. 1552', keywords: ['1552', 'mora purga', 'purga la mora', 'mutua mora', 'bilateral'] },
+          { texto: 'Concluye que el comprador no puede pedir indemnización si él también incumple', keywords: ['no puede', 'incumple', 'no exige', 'excepción de contrato no cumplido'] }
+        ],
+        articulos_referencia: ['1551', '1552'],
+        objetivo_pedagogico: 'Distinguir los supuestos de mora del art. 1551 y la excepción del art. 1552 en contratos bilaterales'
+      },
+
+      {
+        id: 'rc-aplic-002',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Responsabilidad por hecho ajeno / art. 2320',
+        tipo: 'aplicacion',
+        caso: 'Un repartidor de la empresa LogiRed maneja la moto de la empresa en horario laboral y, por no respetar una luz roja, choca a Paula y le causa lesiones graves. Paula demanda a la empresa LogiRed. La empresa alega que el repartidor actuó en forma independiente y que ella no tiene responsabilidad.',
+        enunciado: '¿Puede Paula demandar directamente a LogiRed? ¿Qué norma ampara su acción? ¿Tiene LogiRed alguna defensa viable? ¿Puede la empresa recuperar lo que pague?',
+        respuesta_modelo: 'Sí, Paula puede demandar directamente a LogiRed. El art. 2320 CC establece la responsabilidad por el hecho ajeno cuando existe una relación de dependencia o cuidado. LogiRed responde por su dependiente (el repartidor) porque: (1) existía relación de trabajo/dependencia; (2) el hecho se cometió en ejercicio de las funciones propias del cargo (horario laboral, moto de la empresa). Respecto de LogiRed opera una presunción de culpa in eligendo (por elegir al trabajador) e in vigilando (por no supervisarlo). La defensa de LogiRed —que el repartidor actuó independientemente— es muy difícil de sostener si el accidente ocurrió en horario laboral con vehículo de la empresa: ello acredita el ejercicio de funciones. La única defensa viable sería probar que con la autoridad y cuidado debidos no pudo impedir el hecho (art. 2320 inc. final), estándar muy alto. LogiRed y el repartidor responden solidariamente (art. 2317). Una vez que LogiRed pague, puede repetir contra el repartidor por lo que éste le adeude (art. 2325), si el repartidor obró con discernimiento.',
+        elementos_clave: [
+          { texto: 'Cita el art. 2320 como fundamento de la responsabilidad por hecho ajeno', keywords: ['2320', 'hecho ajeno', 'dependiente', 'relación de dependencia'] },
+          { texto: 'Explica la presunción de culpa in eligendo / in vigilando contra LogiRed', keywords: ['presunción', 'in vigilando', 'in eligendo', 'presume culpa'] },
+          { texto: 'Señala la solidaridad (art. 2317) entre la empresa y el repartidor', keywords: ['2317', 'solidaria', 'solidariamente'] },
+          { texto: 'Menciona la acción de reembolso de la empresa contra el repartidor (art. 2325)', keywords: ['2325', 'repetir', 'reembolso', 'recuperar'] }
+        ],
+        articulos_referencia: ['2320', '2317', '2325'],
+        objetivo_pedagogico: 'Aplicar la responsabilidad por hecho ajeno y sus consecuencias procesales y económicas'
+      },
+
+      {
+        id: 'rc-aplic-003',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Daño moral contractual / previsibilidad',
+        tipo: 'aplicacion',
+        caso: 'Una clínica, por una falla organizativa, extravía los exámenes de Valentina y le comunica por error un diagnóstico de cáncer inexistente. Valentina vive semanas de angustia, adelgaza y necesita tratamiento psicológico antes de que el error se aclare. Valentina demanda daño moral.',
+        enunciado: '¿Procede la demanda de daño moral en sede contractual? ¿Debe la clínica probar su diligencia o es Valentina quien prueba la culpa? Analiza la previsibilidad del daño y la extensión de lo indemnizable.',
+        respuesta_modelo: 'Sí, el daño moral procede en sede contractual. La jurisprudencia chilena ha reconocido el daño moral contractual especialmente cuando el contrato compromete la integridad, salud o dignidad de la persona, como los contratos de prestación de servicios de salud. La falla organizativa de la clínica (extraviar exámenes y comunicar un diagnóstico errado) es incumplimiento de su obligación de cuidado, que incluye deber de precisión diagnóstica. En cuanto a la prueba: como la relación es contractual, opera la presunción de culpa del art. 1547 inc. 3°: la clínica debe probar que empleó la diligencia debida; Valentina solo acredita el incumplimiento (el diagnóstico errado) y los perjuicios. Sobre previsibilidad (art. 1558): el daño moral derivado de un diagnóstico errado es perfectamente previsible al tiempo de contratar una prestación de salud, por lo que entra en la extensión indemnizable incluso sin dolo. Lo indemnizable: daño moral (angustia, sufrimiento), y eventualmente daño emergente (gastos de tratamiento psicológico) y lucro cesante si corresponde.',
+        elementos_clave: [
+          { texto: 'Afirma que el daño moral procede en sede contractual en contratos que comprometen la persona', keywords: ['daño moral', 'procede', 'contractual', 'dignidad', 'salud'] },
+          { texto: 'Aplica la presunción de culpa del art. 1547: la clínica prueba diligencia', keywords: ['1547', 'presunción', 'clínica prueba', 'presume culpa', 'deudor prueba'] },
+          { texto: 'Analiza la previsibilidad del daño moral (art. 1558): era previsible al contratar un servicio de salud', keywords: ['1558', 'previsible', 'previsibilidad', 'al tiempo de contratar'] },
+          { texto: 'Distingue daño emergente, lucro cesante y daño moral (art. 1556)', keywords: ['1556', 'daño emergente', 'lucro cesante', 'daño moral'] }
+        ],
+        articulos_referencia: ['1547', '1556', '1558'],
+        objetivo_pedagogico: 'Aplicar el régimen de la responsabilidad contractual incluyendo el daño moral y la previsibilidad'
+      },
+
+      {
+        id: 're-mc-002',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Delito vs. cuasidelito civil / diferencias de régimen',
+        tipo: 'discriminacion_mc',
+        caso: 'Rodrigo, con intención de dañar, destruye el auto de su ex vecino. Martín, distraído, estrella su auto contra el de un tercero sin intención alguna. Ambas víctimas demandan indemnización.',
+        enunciado: '¿En qué difiere jurídicamente la situación de Rodrigo (dolo) respecto de Martín (culpa) para efectos de la indemnización extracontractual?',
+        opciones: [
+          { letra: 'A', texto: 'Rodrigo responde de más perjuicios que Martín porque en sede extracontractual el dolo amplía los daños indemnizables, igual que en sede contractual', rationale: 'Error de trasposición de regímenes: el art. 1558 (que distingue perjuicios previstos/imprevistos según culpa o dolo) es de sede contractual. En la responsabilidad extracontractual la reparación es integral para ambos: se indemnizan todos los daños directos, sin distinción dolo/culpa.' },
+          { letra: 'B', texto: 'Rodrigo y Martín responden exactamente igual: la distinción delito/cuasidelito civil es prácticamente irrelevante para la indemnización extracontractual', rationale: 'CORRECTO. Arts. 2284 y 2314: tanto el delito (dolo) como el cuasidelito (culpa) generan obligación de reparar todo el daño causado. La reparación integral no distingue dolo de culpa en sede aquiliana.' },
+          { letra: 'C', texto: 'Martín no responde porque la culpa en sede extracontractual se presume y él puede probar su diligencia', rationale: 'Doble error: primero, en sede extracontractual la culpa no se presume como regla general —la víctima debe probarla (art. 1698)—. Segundo, si hay culpa, Martín responde igual que Rodrigo en cuanto a extensión del daño.' },
+          { letra: 'D', texto: 'Rodrigo no puede condonar su responsabilidad en ningún caso; Martín podría pactar una cláusula de exoneración', rationale: 'Confunde el plano de las cláusulas modificatorias de responsabilidad con la distinción dolo/culpa. En sede extracontractual estas cláusulas son generalmente ineficaces respecto de daños futuros en contratos de adhesión; no depende de si hay dolo o culpa.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2284', '2314'],
+        objetivo_pedagogico: 'Distinguir el impacto del dolo vs. culpa en sede extracontractual vs. contractual'
+      },
+
+      {
+        id: 're-just-001',
+        materia: 'civil',
+        tema: 'Responsabilidad civil',
+        subtema: 'Prescripción comparada contractual / extracontractual',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿En cuánto tiempo prescriben respectivamente la acción de responsabilidad contractual y la acción aquiliana extracontractual? ¿Desde cuándo corre cada plazo? Señala los artículos.',
+        respuesta_modelo: 'La acción de responsabilidad contractual prescribe en 5 años contados desde que la obligación se hizo exigible (art. 2515 CC). La acción aquiliana extracontractual prescribe en 4 años contados desde la perpetración del acto (art. 2332 CC). Esta diferencia puede ser relevante cuando el demandante espera para demandar: si demanda bajo el estatuto contractual, tiene un año más; pero si el hecho se descubrió mucho después de ocurrido, existe debate sobre si en daños diferidos el plazo del art. 2332 corre desde el hecho o desde que el daño se manifiesta (jurisprudencia mayoritaria cuenta desde el hecho; parte de la doctrina aboga por la manifestación del daño en daños diferidos).',
+        elementos_clave: [
+          { texto: 'Señala que la acción contractual prescribe en 5 años (art. 2515)', keywords: ['2515', '5 años', 'cinco años', 'contractual prescribe'] },
+          { texto: 'Señala que la acción extracontractual prescribe en 4 años (art. 2332)', keywords: ['2332', '4 años', 'cuatro años', 'aquiliana prescribe', 'extracontractual prescribe'] },
+          { texto: 'Distingue el dies a quo: exigibilidad (contractual) vs. perpetración del acto (extracontractual)', keywords: ['desde que', 'exigible', 'perpetración', 'dies a quo', 'plazo corre'] }
+        ],
+        articulos_referencia: ['2515', '2332'],
+        objetivo_pedagogico: 'Memorizar y aplicar los plazos de prescripción de las acciones civiles'
+      },
+
+      {
+        id: 're-detect-002',
+        materia: 'civil',
+        tema: 'Responsabilidad civil',
+        subtema: 'Cúmulo de responsabilidades',
+        tipo: 'deteccion_error',
+        caso: 'Un médico que opera a su paciente la deja con secuelas graves por mala praxis. El paciente afirma: "Como hay un contrato de prestación de servicios, puedo demandar indemnización bajo ambos estatutos —contractual y extracontractual— a la vez, sumando las indemnizaciones de cada uno. Así obtengo el doble."',
+        enunciado: 'El paciente comete un error jurídico fundamental. Identifícalo y explica la doctrina correcta sobre el cúmulo u opción de responsabilidades.',
+        respuesta_modelo: 'El paciente está equivocado. La doctrina del cúmulo propiamente tal —acumular las indemnizaciones de ambos estatutos por el mismo daño— está rechazada, ya que implicaría enriquecimiento injusto: no se puede cobrar dos veces por el mismo perjuicio. Lo que puede discutirse es si el paciente tiene derecho a optar entre ambos estatutos, eligiendo el más favorable. La regla tradicional en Chile es que, existiendo contrato, el estatuto aplicable es el contractual. La doctrina moderna discute si la víctima puede optar por el estatuto extracontractual cuando le resulte más conveniente (por ejemplo, si le interesa evitar la presunción de culpa que favorece al médico en sede contractual, o si le interesa la reparación integral sin el límite de previsibilidad). Pero lo que no puede hacer es acumular ambas indemnizaciones por el mismo daño.',
+        elementos_clave: [
+          { texto: 'Rechaza el cúmulo propiamente tal (no se pueden sumar ambas indemnizaciones por el mismo daño)', keywords: ['no acumula', 'no puede sumar', 'mismo daño', 'enriquecimiento injusto', 'rechazado'] },
+          { texto: 'Distingue el cúmulo de la opción: puede haber derecho a elegir el estatuto más favorable', keywords: ['opción', 'elegir', 'optar', 'estatuto más favorable'] },
+          { texto: 'Señala que la regla general es que, existiendo contrato, se aplica el estatuto contractual', keywords: ['regla general', 'existiendo contrato', 'estatuto contractual', 'hay contrato'] }
+        ],
+        articulos_referencia: ['1545', '2314'],
+        objetivo_pedagogico: 'Distinguir el cúmulo impropio del derecho a optar entre estatutos de responsabilidad'
+      }
+    ];
+
+    // ══════════════════════════════════════════════════════════════════
+    // ESTADO
+    // ══════════════════════════════════════════════════════════════════
+    let filtroActivo = 'todos';
+    let itemsFiltrados = [];
+    let idxActual = 0;
+    let fase = 'recall';        // recall | evaluado | mc | mc_evaluado | modelo | segunda_pasada
+    let creditoTotal = 0;
+    let itemsCompletados = 0;
+    let seleccionMC = null;
+
+    // ══════════════════════════════════════════════════════════════════
+    // INIT
+    // ══════════════════════════════════════════════════════════════════
+    async function init() {
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) { window.location.href = 'auth.html'; return; }
+      const name = user.user_metadata?.full_name || user.email.split('@')[0];
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+      startSession();
+    }
+
+    function setFiltro(f, btn) {
+      filtroActivo = f;
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      idxActual = 0; creditoTotal = 0; itemsCompletados = 0;
+      startSession();
+    }
+
+    function startSession() {
+      itemsFiltrados = banco.filter(item => {
+        if (filtroActivo === 'todos') return true;
+        if (filtroActivo === 'civil' || filtroActivo === 'procesal') return item.materia === filtroActivo;
+        return item.tipo === filtroActivo;
+      });
+      itemsFiltrados.sort(() => Math.random() - 0.5);
+      idxActual = 0;
+      renderItem();
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // RENDER ÍTEM
+    // ══════════════════════════════════════════════════════════════════
+    function renderItem() {
+      if (idxActual >= itemsFiltrados.length) { renderResultados(); return; }
+      const item = itemsFiltrados[idxActual];
+      fase = 'recall';
+      seleccionMC = null;
+
+      const pct = Math.round((idxActual / itemsFiltrados.length) * 100);
+      const tipoLabel = { aplicacion: 'Aplicación', deteccion_error: 'Detección de error', justificacion: 'Justificación', discriminacion_mc: 'Discriminación' }[item.tipo];
+      const tipoCss   = { aplicacion: 'badge-aplicacion', deteccion_error: 'badge-deteccion', justificacion: 'badge-justificacion', discriminacion_mc: 'badge-mc' }[item.tipo];
+      const instruccion = {
+        aplicacion: 'Escribe tu análisis completo antes de ver cualquier opción.',
+        deteccion_error: 'Identifica y explica cada error que encuentres.',
+        justificacion: 'Explica el fundamento. Sé preciso en artículos y consecuencias.',
+        discriminacion_mc: 'Primero escribe lo que recuerdas. Luego verás las opciones.'
+      }[item.tipo];
+
+      document.getElementById('quiz-container').innerHTML = `
+        <div class="quiz-progress">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width:${pct}%"></div>
+          </div>
+          <span class="progress-text">${idxActual + 1} / ${itemsFiltrados.length}</span>
+        </div>
+
+        <div class="item-card">
+          <div class="item-meta">
+            <span class="badge-tipo ${tipoCss}">${tipoLabel}</span>
+            <span class="badge-materia">${item.tema} · ${item.subtema}</span>
+            <span class="item-num">${item.id}</span>
+          </div>
+
+          ${item.caso ? `
+            <div class="caso-box">
+              <span class="caso-label">Caso</span>
+              ${item.caso}
+            </div>
+          ` : ''}
+
+          <div class="pregunta-text">${item.enunciado}</div>
+
+          <div class="step-label">
+            <div class="step-num-badge">1</div>
+            Recuperación libre — ${instruccion}
+          </div>
+          <textarea id="recall-text" placeholder="Escribe aquí tu respuesta desde cero…" oninput="updateChar()"></textarea>
+          <div class="char-count"><span id="char-count">0</span> caracteres</div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="btn-evaluar" onclick="evaluarRespuesta()">Evaluar mi respuesta</button>
+            <button class="btn btn-outline" onclick="skipItem()">Saltar ítem</button>
+          </div>
+
+          <div id="feedback-area"></div>
+        </div>
+      `;
+    }
+
+    function updateChar() {
+      const txt = document.getElementById('recall-text');
+      document.getElementById('char-count').textContent = txt.value.length;
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // EVALUACIÓN (rubric-based, sin IA por ahora)
+    // ══════════════════════════════════════════════════════════════════
+    function evaluarRespuesta(esSegundaPasada = false) {
+      const item = itemsFiltrados[idxActual];
+      const texto = (document.getElementById('recall-text')?.value || '').toLowerCase();
+
+      if (texto.trim().length < 30) {
+        document.getElementById('recall-text').style.borderColor = '#C41E2E';
+        setTimeout(() => document.getElementById('recall-text').style.borderColor = '', 1500);
+        return;
+      }
+
+      document.getElementById('btn-evaluar').disabled = true;
+
+      const acertados = [];
+      const faltantes = [];
+
+      item.elementos_clave.forEach(el => {
+        const found = el.keywords.some(kw => texto.includes(kw.toLowerCase()));
+        if (found) acertados.push(el.texto);
+        else faltantes.push(el.texto);
+      });
+
+      const credito = acertados.length / item.elementos_clave.length;
+      const pct = Math.round(credito * 100);
+      const color = credito >= 0.75 ? '#1A7A40' : credito >= 0.4 ? '#A06000' : '#C41E2E';
+
+      let siguiente;
+      if (credito >= 0.75) siguiente = 'avanzar';
+      else if (credito >= 0.35 && !esSegundaPasada) siguiente = 'segunda_pasada';
+      else siguiente = 'ver_modelo';
+
+      let veredicto, feedbackDiag;
+      if (credito >= 0.75) {
+        veredicto = '✓ Respuesta sólida. Cubriste los elementos esenciales.';
+        feedbackDiag = faltantes.length > 0 ? `Estuviste muy bien. Para completar, considera también: ${faltantes.join('; ')}.` : 'Respuesta completa.';
+      } else if (credito >= 0.35) {
+        veredicto = '◐ Respuesta parcial. Captaste la idea general pero faltaron elementos clave.';
+        feedbackDiag = `Identificaste correctamente ${acertados.length} de ${item.elementos_clave.length} elementos. Lo que faltó es precisamente lo que más se pregunta en el examen. ${esSegundaPasada ? 'Revisa el modelo abajo.' : 'Tienes una segunda pasada.'}`;
+      } else {
+        veredicto = '✗ Respuesta insuficiente. Hay que trabajar este punto.';
+        feedbackDiag = `Solo cubriste ${acertados.length} de ${item.elementos_clave.length} elementos. Revisa el manual de ${item.tema} antes de continuar.`;
+      }
+
+      creditoTotal += credito;
+      itemsCompletados++;
+
+      const feedbackHTML = `
+        <div class="feedback-panel">
+          <div class="feedback-header">
+            <div class="credito-bar-wrap">
+              <div class="credito-label">Crédito parcial</div>
+              <div class="credito-bar-bg">
+                <div class="credito-bar-fill" style="width:${pct}%; background:${color}"></div>
+              </div>
+            </div>
+            <div class="credito-pct" style="color:${color}">${pct}%</div>
+          </div>
+
+          <div class="veredicto">${veredicto}</div>
+
+          <div class="elementos-grid">
+            <div class="elementos-col ok">
+              <h4>✓ Presentes</h4>
+              ${acertados.length > 0
+                ? acertados.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('')
+                : '<div class="elemento-tag" style="color:#7A6E5F; font-style:italic">Ninguno detectado</div>'
+              }
+            </div>
+            <div class="elementos-col missing">
+              <h4>✗ Faltaron</h4>
+              ${faltantes.length > 0
+                ? faltantes.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('')
+                : '<div class="elemento-tag" style="color:#1A7A40; font-style:italic">Todo cubierto</div>'
+              }
+            </div>
+          </div>
+
+          <div class="feedback-diag">${feedbackDiag}</div>
+
+          ${siguiente === 'segunda_pasada' ? `
+            <div class="segunda-pasada" style="margin-top:1.25rem;">
+              <div class="segunda-title">Segunda pasada</div>
+              <div class="segunda-text">
+                Estuviste cerca. No te doy la respuesta todavía: tienes una oportunidad más.
+                Foco en lo que faltó: <strong>${faltantes.slice(0,2).join(' / ')}</strong>.
+              </div>
+              <textarea id="recall-text-2" style="min-height:90px;" placeholder="Complementa o reescribe tu respuesta…"></textarea>
+              <div class="btn-row" style="margin-top:0.75rem;">
+                <button class="btn btn-primary" onclick="evaluarSegundaPasada()">Evaluar segunda pasada</button>
+                <button class="btn btn-outline" onclick="mostrarModelo()">Ver respuesta modelo</button>
+              </div>
+            </div>
+          ` : `
+            <div class="btn-row" style="margin-top:1.25rem;">
+              ${item.tipo === 'discriminacion_mc'
+                ? `<button class="btn btn-dark" onclick="mostrarMC()">Continuar → Alternativa de discriminación</button>`
+                : `<button class="btn btn-dark" onclick="mostrarModelo()">Ver respuesta modelo</button>`
+              }
+            </div>
+          `}
+        </div>
+      `;
+
+      document.getElementById('feedback-area').innerHTML = feedbackHTML;
+      document.getElementById('feedback-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function evaluarSegundaPasada() {
+      const txt2 = document.getElementById('recall-text-2')?.value || '';
+      const txt1 = document.getElementById('recall-text')?.value || '';
+      const combinado = txt1 + ' ' + txt2;
+      // Reemplazar texto para evaluación combinada
+      const fakeInput = document.createElement('textarea');
+      fakeInput.id = 'recall-text';
+      fakeInput.value = combinado;
+      document.getElementById('recall-text').replaceWith(fakeInput);
+      evaluarRespuesta(true);
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // MC
+    // ══════════════════════════════════════════════════════════════════
+    function mostrarMC() {
+      const item = itemsFiltrados[idxActual];
+      const letras = ['A', 'B', 'C', 'D'];
+
+      const mcHTML = `
+        <div class="mc-section">
+          <div class="step-label">
+            <div class="step-num-badge">2</div>
+            Discriminación — Selecciona la opción correcta y justifica en una línea.
+          </div>
+          <div class="mc-intro">Ahora que ya escribiste tu análisis, elige la alternativa que corresponde.</div>
+          <div class="options-grid" id="mc-options">
+            ${item.opciones.map((op, i) => `
+              <button class="option-btn" id="mc-opt-${i}" onclick="selectMC(${i})">
+                <span class="option-letter">${letras[i]}</span>
+                <span>${op.texto}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="justificacion-label">Justificación (1 línea) — ¿Por qué elegiste esa opción?</div>
+          <textarea id="justificacion-text" class="justificacion" placeholder="Elijo X porque…"></textarea>
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="evaluarMC()">Confirmar selección</button>
+          </div>
+          <div id="mc-feedback"></div>
+        </div>
+      `;
+
+      document.getElementById('feedback-area').insertAdjacentHTML('beforeend', mcHTML);
+      document.getElementById('mc-options').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function selectMC(idx) {
+      seleccionMC = idx;
+      document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      document.getElementById('mc-opt-' + idx).classList.add('selected');
+    }
+
+    function evaluarMC() {
+      const item = itemsFiltrados[idxActual];
+      if (seleccionMC === null) return;
+
+      const letras = ['A', 'B', 'C', 'D'];
+      const correctaIdx = item.opciones.findIndex(op => op.letra === item.correcta);
+      const esCorrecta = seleccionMC === correctaIdx;
+
+      document.querySelectorAll('.option-btn').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correctaIdx) btn.classList.add(esCorrecta && i === seleccionMC ? 'correct' : 'revealed');
+      });
+
+      if (!esCorrecta) {
+        document.getElementById('mc-opt-' + seleccionMC).classList.remove('revealed');
+        document.getElementById('mc-opt-' + seleccionMC).classList.add('wrong');
+      }
+
+      const opcionElegida = item.opciones[seleccionMC];
+      const distractorFeedback = esCorrecta
+        ? `<strong>Correcto.</strong> ${item.opciones[correctaIdx].rationale}`
+        : `<strong>Incorrecto.</strong> Elegiste ${letras[seleccionMC]}: ${opcionElegida.rationale}. La correcta es ${item.correcta}: ${item.opciones[correctaIdx].rationale}`;
+
+      document.getElementById('mc-feedback').innerHTML = `
+        <div class="distractor-feedback">${distractorFeedback}</div>
+        <div class="btn-row" style="margin-top:1rem;">
+          <button class="btn btn-dark" onclick="mostrarModelo()">Ver respuesta modelo completa</button>
+        </div>
+      `;
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // MODELO
+    // ══════════════════════════════════════════════════════════════════
+    function mostrarModelo() {
+      const item = itemsFiltrados[idxActual];
+      const modeloHTML = `
+        <div class="modelo-section">
+          <div class="modelo-title">Respuesta orientadora</div>
+          <div class="modelo-body">${item.respuesta_modelo}</div>
+          <div class="articulos-ref">
+            ${item.articulos_referencia.map(a => `<span class="art-tag">Art. ${a}</span>`).join('')}
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:1.5rem; max-width:780px;">
+          <button class="btn btn-dark" onclick="siguiente()">
+            ${idxActual < itemsFiltrados.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}
+          </button>
+        </div>
+      `;
+      document.getElementById('feedback-area').insertAdjacentHTML('beforeend', modeloHTML);
+      document.querySelector('.modelo-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function skipItem() {
+      itemsCompletados++;
+      siguiente();
+    }
+
+    function siguiente() {
+      idxActual++;
+      renderItem();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // RESULTADOS
+    // ══════════════════════════════════════════════════════════════════
+    function renderResultados() {
+      const pct = itemsCompletados > 0 ? Math.round((creditoTotal / itemsCompletados) * 100) : 0;
+      const emoji = pct >= 75 ? '🏆' : pct >= 50 ? '💪' : '📚';
+      const msg = pct >= 75 ? '¡Buen dominio!' : pct >= 50 ? 'Vas por buen camino' : 'Hay que trabajar más';
+
+      document.getElementById('quiz-container').innerHTML = `
+        <div class="results-card">
+          <div class="results-emoji">${emoji}</div>
+          <div class="results-title">${msg}</div>
+          <div class="results-score">${pct}%</div>
+          <div class="results-detail">Crédito promedio sobre ${itemsCompletados} ítems completados</div>
+          <div class="results-items-detail">
+            Aplicación y casos · Detección de error · Justificación · Discriminación
+          </div>
+          <button class="btn btn-primary" onclick="startSession()" style="margin-right:.5rem;">Nueva sesión</button>
+          <a href="manuales.html" class="btn btn-outline" style="display:inline-block; margin-top:.5rem;">Repasar manuales</a>
+        </div>
+      `;
+    }
+
+    async function handleLogout() {
+      await sb.auth.signOut();
+      window.location.href = '../index.html';
+    }
+
+    init();
+  </script>
+
+</body>
+</html>

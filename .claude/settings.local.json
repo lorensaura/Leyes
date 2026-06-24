@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open \"/Users/lorensaura/Desktop/DERECHO LIBRE/Derecho Libre/index.html\")",
+      "Bash(open \"/Users/lorensaura/Desktop/DERECHO LIBRE/Derecho Libre/app/manuales.html\")",
+      "Bash(open \"/Users/lorensaura/Desktop/DERECHO LIBRE/Derecho Libre/app/alternativas.html\")",
+      "Bash(find \"/Users/lorensaura/Desktop/DERECHO LIBRE\" -type f | sort)",
+      "Bash(npm --version)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

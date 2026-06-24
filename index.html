@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leyes — Prepara tu examen de grado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:        #111111;
+      --dark-soft:   #2A2A2A;
+      --beige:       #E8D8B8;
+      --beige-dark:  #DCCCA5;
+      --red:         #C41E2E;
+      --red-hover:   #E02535;
+      --text:        #111111;
+      --muted:       #7A6E5F;
+      --off-white:   #F5EAD4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #E8D8B8;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 5%;
+      background: rgba(232, 216, 184, 0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(17,17,17,0.1);
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      color: #111111;
+    }
+
+    .logo span { color: #C41E2E; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #7A6E5F;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #111111; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      border-radius: 5px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-dark {
+      background: #111111;
+      color: #E8D8B8;
+    }
+
+    .btn-dark:hover {
+      background: #2A2A2A;
+      transform: translateY(-1px);
+    }
+
+    .btn-red {
+      background: #C41E2E;
+      color: #F5EAD4;
+    }
+
+    .btn-red:hover {
+      background: #E02535;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #E8D8B8;
+      border: 1.5px solid rgba(232,216,184,0.4);
+    }
+
+    .btn-outline:hover {
+      background: rgba(232,216,184,0.1);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      padding-top: 80px;
+      background-color: #E8D8B8;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 40%;
+      height: 100%;
+      background: #111111;
+      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      max-width: 640px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(196, 30, 46, 0.12);
+      border: 1px solid rgba(196, 30, 46, 0.3);
+      color: #C41E2E;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: #111111;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #C41E2E;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #7A6E5F;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .hero-form {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-form input {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.85rem 1.25rem;
+      border: 1.5px solid rgba(17,17,17,0.2);
+      border-radius: 5px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .hero-form input:focus { border-color: #C41E2E; }
+    .hero-form input::placeholder { color: #7A6E5F; }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(17,17,17,0.12);
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      color: #111111;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: #7A6E5F;
+      margin-top: 0.25rem;
+    }
+
+    /* ── MATERIAS BANNER ── */
+    .materias {
+      background: #111111;
+      padding: 3.5rem 5%;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .materias-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #C41E2E;
+      white-space: nowrap;
+    }
+
+    .materias-list {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .materia-tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+    }
+
+    /* ── SECCIONES ── */
+    .section {
+      padding: 6rem 5%;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-tag {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #C41E2E;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      letter-spacing: 2px;
+      color: #111111;
+      line-height: 1.0;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+      color: #7A6E5F;
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: #F5EAD4;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(17,17,17,0.08);
+    }
+
+    .feature-card.highlight {
+      background: #111111;
+    }
+
+    .feature-card.highlight .feature-title { color: #F5EAD4; }
+    .feature-card.highlight .feature-desc  { color: rgba(245,234,212,0.55); }
+
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(196, 30, 46, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card.highlight .feature-icon {
+      background: rgba(196,30,46,0.2);
+    }
+
+    .feature-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 1.5px;
+      color: #111111;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-desc {
+      font-size: 0.875rem;
+      color: #7A6E5F;
+      line-height: 1.65;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(196,30,46,0.12);
+      color: #C41E2E;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-top: 0.75rem;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .step { text-align: center; padding: 1rem; }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: #111111;
+      color: #C41E2E;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .step h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      color: #111111;
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: #7A6E5F;
+      line-height: 1.65;
+    }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      background: #111111;
+      padding: 6rem 5%;
+    }
+
+    .pricing-section .section-header h2 { color: #F5EAD4; }
+    .pricing-section .section-header p  { color: rgba(245,234,212,0.45); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: transform 0.2s;
+    }
+
+    .price-card:hover { transform: translateY(-3px); }
+
+    .price-card.featured {
+      background: #E8D8B8;
+      border-color: transparent;
+    }
+
+    .price-card.featured .price-name   { color: #C41E2E; }
+    .price-card.featured .price-amount { color: #111111; }
+    .price-card.featured .price-period { color: #7A6E5F; }
+    .price-card.featured .price-feature { color: #111111; }
+    .price-card.featured .price-feature.disabled { color: #7A6E5F; }
+    .price-card.featured .price-divider { border-color: rgba(17,17,17,0.1); }
+
+    .price-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #C41E2E;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.2rem;
+      letter-spacing: 2px;
+      color: #F5EAD4;
+      line-height: 1;
+    }
+
+    .price-period {
+      font-size: 0.8rem;
+      color: rgba(245,234,212,0.4);
+      margin-top: 0.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 1.5rem;
+    }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: rgba(245,234,212,0.65);
+    }
+
+    .price-feature::before {
+      content: '✓';
+      color: #C41E2E;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .price-feature.disabled { color: rgba(245,234,212,0.25); }
+    .price-feature.disabled::before { content: '—'; color: rgba(245,234,212,0.2); }
+
+    /* ── CTA FINAL ── */
+    .cta-section {
+      background: #DCCCA5;
+      padding: 6rem 5%;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      letter-spacing: 2px;
+      color: #111111;
+      max-width: 620px;
+      margin: 0 auto 1rem;
+      line-height: 1.0;
+    }
+
+    .cta-section p {
+      color: #7A6E5F;
+      font-size: 1rem;
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-form input {
+      padding: 0.85rem 1.25rem;
+      min-width: 280px;
+      border: 1.5px solid rgba(17,17,17,0.2);
+      border-radius: 5px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      outline: none;
+    }
+
+    .cta-form input:focus { border-color: #C41E2E; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111111;
+      padding: 2.5rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: #E8D8B8;
+    }
+
+    .footer-logo span { color: #C41E2E; }
+
+    footer p {
+      font-size: 0.8rem;
+      color: rgba(232,216,184,0.3);
+    }
+
+    /* ── SUCCESS ── */
+    .success-msg {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      color: #C41E2E;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 0.75rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero::after { display: none; }
+      .hero-stats { gap: 1.5rem; }
+      .materias { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Leyes<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#features">Qué incluye</a></li>
+      <li><a href="#how">Cómo funciona</a></li>
+      <li><a href="#pricing">Planes</a></li>
+    </ul>
+    <a href="#waitlist" class="btn btn-dark">Reservar acceso</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">📚 Examen de grado · Chile 2025</div>
+      <h1>Aprueba tu examen de grado con <em>confianza real</em></h1>
+      <p>La plataforma de preparación más completa para el examen de grado de Derecho en Chile. Estudia a tu ritmo, practica con IA y compite con tus compañeros.</p>
+      <div class="hero-form">
+        <input type="email" id="hero-email" placeholder="Tu correo electrónico" />
+        <button class="btn btn-red" onclick="handleWaitlist('hero')">Quiero acceso anticipado</button>
+      </div>
+      <div class="success-msg" id="hero-success">
+        ✓ Perfecto, te avisamos cuando abramos.
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">7</div>
+          <div class="stat-label">materias cubiertas</div>
+        </div>
+        <div>
+          <div class="stat-num">Nov</div>
+          <div class="stat-label">exámenes de grado</div>
+        </div>
+        <div>
+          <div class="stat-num">3x</div>
+          <div class="stat-label">más preparado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIAS BANNER -->
+  <div class="materias">
+    <span class="materias-label">Materias cubiertas</span>
+    <div class="materias-list">
+      <span class="materia-tag">Derecho Civil</span>
+      <span class="materia-tag">Derecho Procesal Civil</span>
+      <span class="materia-tag">Derecho Penal</span>
+      <span class="materia-tag">Derecho Administrativo</span>
+      <span class="materia-tag">Derecho Comercial</span>
+      <span class="materia-tag">Derecho Canónico</span>
+      <span class="materia-tag">Historia del Derecho</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section" id="features" style="background:#E8D8B8;">
+    <div class="section-header">
+      <div class="section-tag">Herramientas de estudio</div>
+      <h2>Todo lo que necesitas en un solo lugar</h2>
+      <p>Diseñado específicamente para el examen de grado chileno. Sin distracciones, sin relleno.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">Manuales de estudio</div>
+        <div class="feature-desc">Contenido estructurado por materia y tema. Civil, procesal y todas las cédulas del examen de grado, organizadas para estudiar eficientemente.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🃏</div>
+        <div class="feature-title">Flashcards inteligentes</div>
+        <div class="feature-desc">Tarjetas de memoria con recordatorios a la hora que tú elijas. El sistema adapta la frecuencia según lo que más necesitas repasar.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <div class="feature-title">Preguntas de alternativa</div>
+        <div class="feature-desc">Banco de preguntas de selección múltiple con retroalimentación inmediata. Practica por materia o simula el examen completo.</div>
+      </div>
+      <div class="feature-card highlight">
+        <div class="feature-icon">🎙️</div>
+        <div class="feature-title">Interrogación oral con IA</div>
+        <div class="feature-desc">Practica como si estuvieras frente a la comisión. La IA te hace preguntas, evalúa tus respuestas y te da retroalimentación en tiempo real.</div>
+        <span class="coming-soon">Próximamente</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Chat con IA especializada</div>
+        <div class="feature-desc">Resuelve dudas sobre cualquier materia del examen con una IA entrenada en derecho chileno. Disponible 24/7.</div>
+        <span class="coming-soon">Próximamente</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-title">Liga de preparación</div>
+        <div class="feature-desc">Compite con otros estudiantes según tus resultados semanales. Sube de categoría y mantén tu racha de estudio activa.</div>
+        <span class="coming-soon">Próximamente</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how" style="background:#F5EAD4;">
+    <div class="section-header">
+      <div class="section-tag">Cómo funciona</div>
+      <h2>De cero a examen aprobado</h2>
+      <p>Un proceso claro y progresivo pensado para los meses previos al examen de grado.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Elige tu plan</h3>
+        <p>Selecciona el nivel de preparación que necesitas y accede de inmediato a la plataforma.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Estudia con los manuales</h3>
+        <p>Lee el contenido estructurado por materia y marca flashcards de lo que necesitas repasar.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Practica a diario</h3>
+        <p>Haz preguntas de alternativa, recibe tus flashcards a la hora que elegiste y sube posiciones en la liga.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Simula el examen</h3>
+        <p>Enfrenta una interrogación oral con IA y recibe retroalimentación detallada antes del día real.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">
+      <div class="section-tag">Planes y precios</div>
+      <h2>Invierte en tu titulación</h2>
+      <p>Sin permanencia. Cancela cuando quieras.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-name">Esencial</div>
+        <div class="price-amount">$12.990</div>
+        <div class="price-period">CLP / mes</div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li class="price-feature">Manuales de estudio completos</li>
+          <li class="price-feature">Banco de preguntas de alternativa</li>
+          <li class="price-feature">Flashcards con notificaciones</li>
+          <li class="price-feature">Acceso a la liga de preparación</li>
+          <li class="price-feature disabled">Chat con IA especializada</li>
+          <li class="price-feature disabled">Interrogación oral con IA</li>
+          <li class="price-feature disabled">Tutor especializado</li>
+        </ul>
+        <a href="#waitlist" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Empezar</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-name">Elite</div>
+        <div class="price-amount">$39.990</div>
+        <div class="price-period">CLP / mes</div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li class="price-feature">Manuales de estudio completos</li>
+          <li class="price-feature">Banco de preguntas de alternativa</li>
+          <li class="price-feature">Flashcards con notificaciones</li>
+          <li class="price-feature">Acceso a la liga de preparación</li>
+          <li class="price-feature">Chat con IA especializada</li>
+          <li class="price-feature">Interrogación oral con IA</li>
+          <li class="price-feature">Tutor especializado</li>
+        </ul>
+        <a href="#waitlist" class="btn btn-red" style="width:100%; text-align:center; display:block;">Empezar</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section" id="waitlist">
+    <h2>Prepárate antes que los demás</h2>
+    <p>Déjanos tu correo y te avisamos cuando abramos el acceso anticipado. Sin spam.</p>
+    <div class="cta-form">
+      <input type="email" id="cta-email" placeholder="tu@correo.com" />
+      <button class="btn btn-dark" onclick="handleWaitlist('cta')">Reservar mi lugar</button>
+    </div>
+    <div class="success-msg" id="cta-success" style="justify-content:center; margin-top:1rem;">
+      ✓ Listo. Te avisamos cuando abramos.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Leyes<span>.</span></div>
+    <p>© 2025 Leyes · Preparación para el examen de grado · Chile</p>
+  </footer>
+
+  <script>
+    const AIRTABLE_TOKEN = 'patVYZmp367lfnC9A.ac95af4c904b3b154a1f56953821011734a5fc4b48c3db5318110afe7c090183';
+    const AIRTABLE_BASE  = 'appjP6jK8Jbm5uaeG';
+    const AIRTABLE_TABLE = 'tblXj3d2lcufAD0KX';
+
+    async function handleWaitlist(source) {
+      const input   = document.getElementById(source + '-email');
+      const success = document.getElementById(source + '-success');
+      const btn     = input.closest('.hero-form, .cta-form').querySelector('button');
+      const email   = input.value.trim();
+
+      if (!email || !email.includes('@')) {
+        input.style.borderColor = '#C41E2E';
+        setTimeout(() => input.style.borderColor = '', 1500);
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Guardando...';
+
+      try {
+        const res = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_TABLE}`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            fields: {
+              Email: email,
+              Fecha: new Date().toISOString().split('T')[0],
+              Fuente: source === 'hero' ? 'Hero' : 'CTA Final'
+            }
+          })
+        });
+
+        if (!res.ok) throw new Error('Error Airtable');
+
+        input.style.display = 'none';
+        btn.style.display   = 'none';
+        success.style.display = 'flex';
+      } catch (e) {
+        btn.disabled = false;
+        btn.textContent = source === 'hero' ? 'Quiero acceso anticipado' : 'Reservar mi lugar';
+        alert('Hubo un error. Intenta de nuevo.');
+      }
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? '#111111' : '';
+      });
+    });
+  </script>
+
+</body>
+</html>

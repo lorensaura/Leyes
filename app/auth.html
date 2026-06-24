@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leyes — Acceso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #E8D8B8;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* Panel izquierdo decorativo */
+    .left-panel {
+      width: 45%;
+      background: #111111;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 60px solid rgba(196,30,46,0.15);
+      pointer-events: none;
+    }
+
+    .left-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      color: #E8D8B8;
+    }
+
+    .left-logo span { color: #C41E2E; }
+
+    .left-tagline h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: #E8D8B8;
+      line-height: 1.0;
+      margin-bottom: 1rem;
+    }
+
+    .left-tagline h2 em {
+      font-style: normal;
+      color: #C41E2E;
+    }
+
+    .left-tagline p {
+      font-size: 0.9rem;
+      color: rgba(232,216,184,0.5);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    /* Panel derecho - formulario */
+    .right-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+
+    .auth-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid rgba(17,17,17,0.1);
+    }
+
+    .tab {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      padding: 0.6rem 1.5rem 0.8rem;
+      cursor: pointer;
+      color: #7A6E5F;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .tab.active {
+      color: #111111;
+      border-bottom-color: #C41E2E;
+    }
+
+    /* Forms */
+    .form-section { display: none; }
+    .form-section.active { display: block; }
+
+    .form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: #111111;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-subtitle {
+      font-size: 0.875rem;
+      color: #7A6E5F;
+      margin-bottom: 2rem;
+    }
+
+    .field {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus { border-color: #C41E2E; }
+    input::placeholder { color: #B0A898; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.95rem;
+      background: #C41E2E;
+      color: #F5EAD4;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover { background: #E02535; transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+    .error-msg {
+      background: rgba(196,30,46,0.08);
+      border: 1px solid rgba(196,30,46,0.2);
+      color: #C41E2E;
+      font-size: 0.82rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .divider {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #7A6E5F;
+      margin: 1.25rem 0;
+      position: relative;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: rgba(17,17,17,0.1);
+    }
+
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #7A6E5F;
+      text-decoration: none;
+      margin-top: 1.5rem;
+    }
+
+    .back-link:hover { color: #111111; }
+
+    @media (max-width: 768px) {
+      .left-panel { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Panel izquierdo -->
+  <div class="left-panel">
+    <div class="left-logo">Leyes<span>.</span></div>
+    <div class="left-tagline">
+      <h2>Tu examen de grado empieza <em>aquí</em></h2>
+      <p>Manuales, flashcards, preguntas de alternativa e interrogación con IA. Todo para que llegues preparado.</p>
+    </div>
+  </div>
+
+  <!-- Panel derecho -->
+  <div class="right-panel">
+    <div class="auth-box">
+
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('login')">Ingresar</button>
+        <button class="tab" onclick="showTab('register')">Registrarse</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="form-section active" id="form-login">
+        <div class="form-title">Bienvenido de vuelta</div>
+        <div class="form-subtitle">Ingresa tu correo y contraseña</div>
+
+        <div class="error-msg" id="login-error"></div>
+
+        <div class="field">
+          <label>Correo</label>
+          <input type="email" id="login-email" placeholder="tu@correo.com" />
+        </div>
+        <div class="field">
+          <label>Contraseña</label>
+          <input type="password" id="login-password" placeholder="••••••••" />
+        </div>
+        <button class="btn-submit" id="login-btn" onclick="handleLogin()">Entrar</button>
+        <a href="../index.html" class="back-link">← Volver al inicio</a>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="form-section" id="form-register">
+        <div class="form-title">Crear cuenta</div>
+        <div class="form-subtitle">Comienza tu preparación hoy</div>
+
+        <div class="error-msg" id="register-error"></div>
+
+        <div class="field">
+          <label>Nombre</label>
+          <input type="text" id="register-name" placeholder="Tu nombre" />
+        </div>
+        <div class="field">
+          <label>Correo</label>
+          <input type="email" id="register-email" placeholder="tu@correo.com" />
+        </div>
+        <div class="field">
+          <label>Contraseña</label>
+          <input type="password" id="register-password" placeholder="Mínimo 8 caracteres" />
+        </div>
+        <button class="btn-submit" id="register-btn" onclick="handleRegister()">Crear cuenta</button>
+        <a href="../index.html" class="back-link">← Volver al inicio</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // ── Supabase ──────────────────────────────────────
+    const SUPABASE_URL  = 'https://byyukzhxhtopojgvgglp.supabase.co';
+    const SUPABASE_KEY  = 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq';
+    const { createClient } = supabase;
+    const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ── Tabs ──────────────────────────────────────────
+    function showTab(tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
+      document.getElementById('form-' + tab).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // ── Login ─────────────────────────────────────────
+    async function handleLogin() {
+      const email    = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const btn      = document.getElementById('login-btn');
+      const errEl    = document.getElementById('login-error');
+
+      errEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Ingresando...';
+
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+
+      if (error) {
+        errEl.textContent = 'Correo o contraseña incorrectos.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Entrar';
+      } else {
+        window.location.href = 'dashboard.html';
+      }
+    }
+
+    // ── Register ──────────────────────────────────────
+    async function handleRegister() {
+      const name     = document.getElementById('register-name').value.trim();
+      const email    = document.getElementById('register-email').value.trim();
+      const password = document.getElementById('register-password').value;
+      const btn      = document.getElementById('register-btn');
+      const errEl    = document.getElementById('register-error');
+
+      errEl.style.display = 'none';
+
+      if (!name || !email || password.length < 8) {
+        errEl.textContent = 'Completa todos los campos. La contraseña debe tener al menos 8 caracteres.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Creando cuenta...';
+
+      const { error } = await sb.auth.signUp({
+        email, password,
+        options: { data: { full_name: name } }
+      });
+
+      if (error) {
+        errEl.textContent = error.message;
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Crear cuenta';
+      } else {
+        window.location.href = 'dashboard.html';
+      }
+    }
+
+    // Enter para submit
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const active = document.querySelector('.form-section.active').id;
+        if (active === 'form-login') handleLogin();
+        else handleRegister();
+      }
+    });
+  </script>
+
+</body>
+</html>
