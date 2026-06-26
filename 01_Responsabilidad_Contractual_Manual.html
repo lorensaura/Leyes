@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsabilidad Contractual — Manual de Estudio | Digesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#C41E2E;--accent2:#111111;--light:#E8D8B8;--soft:#F5EAD4;
+    --grey:#7A6E5F;--warn:#8A5A00;--warnbg:#FFF6E5;
+    --green:#1A6B3A;--greenbg:#F4FAF6;--greenborder:#4CAF50;
+    --orange:#7B3F00;--orangebg:#FFFAF4;--orangeborder:#C87028;
+    --juris:#111111;--jurisbg:#F5EAD4;--jurisborder:#2A2A2A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Inter',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:11pt;
+    color:#111;
+    line-height:1.2;
+    max-width:800px;
+    margin:0 auto;
+    padding:52px 58px 88px;
+    background:#fff;
+    text-align:justify;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+  }
+  h1{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    color:var(--accent2);
+    font-size:1.35rem;
+    margin:3.6rem 0 .7rem;
+    border-bottom:2px solid var(--accent);
+    padding-bottom:.3rem;
+    text-align:left;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    page-break-after:avoid;
+  }
+  h2{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    color:var(--accent);
+    font-size:1.1rem;
+    margin:2.4rem 0 .45rem;
+    text-align:left;
+    page-break-after:avoid;
+  }
+  h3{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    color:#333;
+    font-size:1rem;
+    margin:1.7rem 0 .3rem;
+    text-align:left;
+    page-break-after:avoid;
+  }
+  p{margin:.75rem 0 .75rem;text-align:justify;}
+  ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
+  li{margin:.4rem 0;text-align:justify;}
+  table{
+    border-collapse:collapse;
+    width:100%;
+    margin:1.2rem 0;
+    font-size:10pt;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+  }
+  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;}
+  td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:700;color:var(--accent);white-space:nowrap;}
+
+  /* CALLOUT — doctrinal destacado */
+  .callout{
+    border-left:5px solid var(--accent);
+    background:var(--soft);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .callout .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--accent);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* ADVERTENCIA */
+  .warn{
+    border-left:5px solid var(--warn);
+    background:var(--warnbg);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .warn .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--warn);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* JURISPRUDENCIA — caja completa, letra 10pt */
+  .jurisprudencia{
+    border:1px solid var(--jurisborder);
+    background:var(--jurisbg);
+    padding:10px 14px;
+    margin:1.5rem 0;
+    font-size:12pt;
+    line-height:1.2;
+  }
+  .jurisprudencia .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;
+    color:var(--juris);
+    display:block;
+    margin-bottom:6px;
+    padding-bottom:5px;
+    border-bottom:1px solid var(--jurisborder);
+    font-size:9pt;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    text-align:left;
+  }
+  .jurisprudencia p,.jurisprudencia strong{font-size:12pt;}
+  .jurisprudencia strong{color:#333;}
+
+  /* EJEMPLO — espacio limpio, borde izquierdo sutil */
+  .ejemplo{
+    border-left:4px solid var(--greenborder);
+    background:var(--greenbg);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .ejemplo .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--green);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* DATO DE GRADO — borde entrecortado */
+  .dato-grado{
+    border:2px dashed var(--orangeborder);
+    background:var(--orangebg);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .dato-grado .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--orange);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* REPASO — checkpoint de comprensión lectora (preguntas alojadas en la web) */
+  .repaso{
+    border-left:4px solid var(--accent);
+    background:#FCF7EC;
+    padding:11px 16px;
+    margin:2.4rem 0 .4rem;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:9.5pt;
+    line-height:1.4;
+    color:#5a5043;
+    text-align:left;
+    page-break-inside:avoid;
+  }
+  .repaso .titulo-bloque{
+    font-weight:700;font-size:9pt;color:var(--accent);
+    display:block;margin-bottom:.3rem;
+    text-transform:uppercase;letter-spacing:.04em;
+  }
+  .repaso strong{color:var(--accent);font-weight:700;}
+
+  /* PORTADA — estilo de la plataforma (Bebas Neue + Inter) */
+  .cover{text-align:center;padding:96px 20px 60px;border-bottom:none;margin-bottom:2rem;}
+  .cover .brand{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;display:inline-block;background:var(--accent2);color:var(--light);font-size:1.5rem;letter-spacing:7px;font-weight:400;padding:9px 28px 6px;text-indent:7px;}
+  .cover .doc{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;color:var(--accent2);font-size:4.4rem;font-weight:400;line-height:.92;letter-spacing:1px;margin-top:2.2rem;text-transform:uppercase;}
+  .cover .rule{width:84px;height:4px;background:var(--accent);margin:1.8rem auto 1.5rem;}
+  .cover .sub{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--accent);font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;}
+  .cover .author{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--accent2);font-size:1.05rem;font-weight:400;margin-top:1.7rem;}
+  .cover .author strong{font-weight:600;}
+  .cover .meta{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--grey);margin-top:1.3rem;font-size:.8rem;font-weight:300;line-height:1.55;max-width:460px;margin-left:auto;margin-right:auto;}
+
+  /* ÍNDICE */
+  .toc{background:#FCF9F2;border:1px solid #E3D6BC;padding:18px 26px 20px;margin:2.5rem 0;}
+  .toc strong{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:.6rem;}
+  .toc ol{margin:0;padding-left:1.4rem;}
+  .toc li{margin:.28rem 0;}
+  .toc a{color:#333;text-decoration:none;}
+  .toc a:hover{color:var(--accent);text-decoration:underline;}
+  .toc ol ol{margin:.15rem 0 .35rem;}
+
+  @media print{
+    body{padding:1.8cm 2.2cm;font-size:11pt;line-height:1.2;}
+    h1{page-break-after:avoid;}
+    h2,h3{page-break-after:avoid;}
+    .callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,.repaso,table,tr,li{page-break-inside:avoid;}
+    .cover{page-break-after:always;}
+    .toc{page-break-after:always;}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">DIGESTO</div>
+  <div class="doc">Responsabilidad<br>Contractual</div>
+  <div class="rule"></div>
+  <div class="sub">Manual de estudio · Nivel examen de grado</div>
+  <div class="author">Elaborado por <strong>Laura Schultz Solano</strong></div>
+  <div class="meta">Síntesis propia en base a los apuntes de Cristián Boetsch Gillet, con apoyo de Orrego, Pizarro y Aedo Barrena, jurisprudencia seleccionada y comparaciones doctrinales · Versión Junio 2026</div>
+</div>
+
+<div class="toc">
+<strong>Índice</strong>
+<ol>
+  <li><a href="#s1">Marco general de la responsabilidad contractual</a>
+    <ol type="a">
+      <li><a href="#s1a">Concepto de responsabilidad civil y contractual</a></li>
+      <li><a href="#s1b">Responsabilidad contractual y «efectos de las obligaciones»</a></li>
+      <li><a href="#s1c">Sentido restringido y amplio</a></li>
+      <li><a href="#s1d">El sistema de remedios del art. 1489</a></li>
+      <li><a href="#s1e">Sistema de atribución: culpa y objetivación</a></li>
+    </ol>
+  </li>
+  <li><a href="#s2">El incumplimiento contractual</a>
+    <ol type="a">
+      <li><a href="#s2a">Concepto y clases de incumplimiento</a></li>
+      <li><a href="#s2b">Incumplimientos que no generan responsabilidad</a></li>
+      <li><a href="#s2c">Obligaciones de medio y de resultado</a></li>
+      <li><a href="#s2d">Prueba del incumplimiento y presunción de culpa</a></li>
+    </ol>
+  </li>
+  <li><a href="#s3">La acción de cumplimiento</a>
+    <ol type="a">
+      <li><a href="#s3a">Nociones generales y concepto</a></li>
+      <li><a href="#s3b">¿Es el «derecho principal» del acreedor?</a></li>
+      <li><a href="#s3c">Objeto: cumplimiento en naturaleza y por equivalencia</a></li>
+      <li><a href="#s3d">Presupuestos de procedencia</a></li>
+      <li><a href="#s3e">Ejecución forzada de obligaciones de dar, hacer y no hacer</a></li>
+      <li><a href="#s3f">Límites: la imposibilidad de la prestación</a></li>
+    </ol>
+  </li>
+  <li><a href="#s4">La resolución por incumplimiento</a>
+    <ol type="a">
+      <li><a href="#s4a">Generalidades y nomenclatura</a></li>
+      <li><a href="#s4b">La condición resolutoria tácita: concepto y fundamento</a></li>
+      <li><a href="#s4c">Características y ámbito de aplicación</a></li>
+      <li><a href="#s4d">El incumplimiento resolutorio</a></li>
+      <li><a href="#s4e">Necesidad de sentencia judicial</a></li>
+      <li><a href="#s4f">La acción resolutoria</a></li>
+      <li><a href="#s4g">Enervar la acción mediante el pago</a></li>
+      <li><a href="#s4h">El art. 1552 y la excepción de contrato no cumplido</a></li>
+      <li><a href="#s4i">Efectos de la resolución</a></li>
+      <li><a href="#s4j">Resolución, nulidad y resciliación</a></li>
+      <li><a href="#s4k">El pacto comisorio</a></li>
+      <li><a href="#s4l">La cláusula de término unilateral</a></li>
+    </ol>
+  </li>
+</ol>
+</div>
+
+<!-- ============================================================
+     SECCIÓN 1: MARCO GENERAL
+     ============================================================ -->
+<h1 id="s1">1. Marco general de la responsabilidad contractual</h1>
+
+<h2 id="s1a">1.1. Concepto de responsabilidad civil y de responsabilidad contractual</h2>
+
+<p>En términos muy generales, la responsabilidad consiste en la necesidad —efectiva o eventual— en que se encuentra una persona de hacerse cargo de las consecuencias gravosas de un acto que se le atribuye como propio. En particular, la <strong>responsabilidad civil</strong> consiste en la necesidad en que se encuentra un individuo de reparar un daño causado por su obrar; tal necesidad se satisface por medio de la indemnización de perjuicios. De ahí que la responsabilidad civil se encuentre esencialmente vinculada al daño y al deber de repararlo o compensarlo con medios equivalentes.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Jurisprudencia — Concepto de responsabilidad civil</span>
+  <p><strong>Corte Suprema, 6 de noviembre de 1972.</strong> "Por responsabilidad debe entenderse, en general, la obligación en que se coloca una persona para reparar adecuadamente todo daño o perjuicio causado." Es la definición jurisprudencial de referencia, común a ambos estatutos de responsabilidad.</p>
+</div>
+
+<p>Conforme al artículo <span class="art">1437</span>, las obligaciones pueden encontrar cinco fuentes: el contrato, el cuasicontrato, el delito, el cuasidelito y la ley. Frente al incumplimiento de una obligación, el Libro IV del Código Civil regula dos grandes estatutos de responsabilidad: en el <strong>Título XII</strong> regula la <em>responsabilidad contractual</em>, referida al incumplimiento de obligaciones nacidas de un contrato; y en el <strong>Título XXXV</strong> regula la <em>responsabilidad extracontractual</em>, que consiste en la obligación de indemnizar los perjuicios que el hecho ilícito —delito o cuasidelito— ha ocasionado a la víctima.</p>
+
+<p>La <strong>responsabilidad contractual</strong>, objeto de este manual, es la obligación del deudor de indemnizar al acreedor los perjuicios que le ha originado el incumplimiento, el cumplimiento imperfecto o el cumplimiento tardío de una obligación preexistente. A diferencia de la extracontractual —que tiene carácter <em>originario</em> o de primer grado, pues nace directamente del hecho ilícito—, la responsabilidad contractual es <em>secundaria</em> o de segundo grado: supone una obligación previa (cumplir lo convenido) y el deber de indemnizar surge sólo cuando esa obligación primaria ha sido infringida.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">¿Cuál es el estatuto general o supletorio?</span>
+  <p>Tradicionalmente (ALESSANDRI, STITCHKIN) se sostuvo que las normas del Título XII (arts. 1545 y ss.) constituyen el <strong>derecho común</strong> en materia de indemnización, aplicándose cualquiera sea el origen de la obligación incumplida (legal, cuasicontractual, etc.), salvo que la ley o las partes dispongan otra cosa. La doctrina moderna objeta esta conclusión: el Título "Del efecto de las obligaciones" discurre sobre la idea de una estipulación previa (un contrato), y el art. <span class="art">2284</span> distingue las obligaciones que nacen de convención de las que surgen sin ella. Por eso resulta más adecuado que los arts. 1545 y ss. se apliquen sólo a las obligaciones contractuales, mientras que las nacidas de la ley, un cuasicontrato, un delito o un cuasidelito se rigen por las reglas de la responsabilidad extracontractual (Título XXXV).</p>
+</div>
+
+<h2 id="s1b">1.2. Responsabilidad contractual y «efectos de las obligaciones»</h2>
+
+<p>Tradicionalmente la doctrina nacional estudia la responsabilidad contractual bajo el rótulo "<em>efecto de las obligaciones</em>", porque las principales normas —aunque no todas— se encuentran en el <strong>Título XII del Libro IV</strong> (arts. <span class="art">1545</span> a <span class="art">1559</span>), precisamente denominado "Del efecto de las obligaciones". Con todo, como observó CLARO SOLAR, ese título trata promiscuamente los <em>efectos del contrato</em> (los derechos y obligaciones que genera) y los <em>efectos de la obligación</em> (la necesidad jurídica del deudor de dar, hacer o no hacer, y los medios que la ley otorga al acreedor para obtener el pago), que son cosas diferentes; el defecto provendría de haber seguido en el punto al Código francés.</p>
+
+<p>La doctrina tradicional enfoca los efectos de las obligaciones en los derivados del <em>incumplimiento</em>. En tal sentido, ALESSANDRI define los efectos de las obligaciones como "los derechos que la ley confiere al acreedor para exigir del deudor el cumplimiento exacto, íntegro y oportuno de la obligación, cuando éste no la cumpla en todo o en parte o esté en mora de cumplirla". Bajo esta concepción clásica, los derechos del acreedor frente al incumplimiento serían tres:</p>
+
+<ul>
+  <li>Un <strong>derecho principal</strong>: la facultad de exigir el cumplimiento, aun forzado, de la obligación, si ello es posible.</li>
+  <li>Un <strong>derecho secundario</strong>, ejercitable ante la imposibilidad de obtener el cumplimiento y como sustituto de éste: la indemnización de perjuicios (también llamada "cumplimiento por equivalencia").</li>
+  <li>Los <strong>derechos auxiliares</strong>, destinados a mantener la integridad del patrimonio del deudor.</li>
+</ul>
+
+<p>Frente a esta visión, autores como FUEYO y ABELIUK ampliaron el enfoque: el adecuado estudio de los efectos de las obligaciones debe comprender también su <em>cumplimiento</em> (el pago), que es el efecto primero y normal de la obligación, la razón fundamental por la cual se contrató. Más allá de la discusión de método, lo decisivo es que —no obstante su ubicación entre las obligaciones condicionales— la norma fundamental en materia de efectos del incumplimiento es el artículo <span class="art">1489</span>, que consagra los remedios con que cuenta el acreedor.</p>
+
+<h2 id="s1c">1.3. Sentido restringido y amplio de la responsabilidad contractual</h2>
+
+<p>La doctrina tradicional entiende la responsabilidad contractual en un sentido <strong>restringido o estricto</strong>: el deber de indemnizar los perjuicios causados por el incumplimiento del deudor; es decir, se la asimila al "cumplimiento por equivalencia". Bajo esta concepción, la responsabilidad se vincula íntimamente a un hecho ilícito —el incumplimiento imputable a dolo o culpa del deudor— y su fundamento es la culpabilidad de éste. Por ello, para esta doctrina (responsabilidad subjetiva o por culpa) resulta esencial que el incumplimiento sea imputable.</p>
+
+<p>La doctrina nacional más moderna aboga por un sentido <strong>amplio</strong>, que no agota la responsabilidad contractual en la indemnización, sino que la concibe como el conjunto de derechos y acciones —los "<em>remedios</em>"— en cuya virtud el acreedor puede reclamar la satisfacción de su interés contractual. Comprende así el derecho a obtener el cumplimiento en naturaleza (la prestación de lo debido), la resolución, la indemnización y las acciones destinadas a conservar el patrimonio del deudor. Esta visión amplia se vincula con una comprensión más objetiva de la responsabilidad, cuyo fundamento no es propiamente el obrar imputable a dolo o culpa, sino el incumplimiento mismo (CÁRDENAS &amp; REVECO).</p>
+
+<h2 id="s1d">1.4. El sistema de remedios del artículo 1489</h2>
+
+<p>Concebida la responsabilidad contractual en sentido amplio, corresponde analizar el régimen de acciones que la ley confiere al acreedor frente al incumplimiento. En virtud de la <strong>autonomía de la voluntad</strong>, primero se aplica la regulación contenida en el propio contrato (grado de diligencia, cláusula penal, multas, pactos comisorios, causales específicas de incumplimiento resolutorio, etc.), con los límites generales de los arts. <span class="art">1461</span> y <span class="art">1467</span> (orden público, buenas costumbres y ley) y particulares (v. gr., la prohibición de condonar el dolo futuro). A falta de regulación convencional, o siendo ésta incompleta, rige el artículo <span class="art">1489</span>.</p>
+
+<p>El artículo 1489 dispone: "<em>En los contratos bilaterales va envuelta la condición resolutoria de no cumplirse por uno de los contratantes lo pactado. Pero en tal caso podrá el otro contratante pedir a su arbitrio o la resolución o el cumplimiento del contrato, con indemnización de perjuicios</em>". De allí emanan los tres remedios:</p>
+
+<ul>
+  <li><strong>(a) Cumplimiento forzado.</strong> El acreedor puede exigir la ejecución forzada de la obligación incumplida —obtener, con el auxilio de la fuerza pública, el cumplimiento en naturaleza—, distinguiéndose entre obligaciones de dar, hacer y no hacer.</li>
+  <li><strong>(b) Resolución del contrato.</strong> El acreedor puede pedir que se deje sin efecto —total o parcialmente— el contrato del que emanaba la obligación incumplida. Es la llamada <em>condición resolutoria tácita</em>.</li>
+  <li><strong>(c) Indemnización de perjuicios.</strong> En uno y otro caso, el acreedor puede pedir la indemnización de los perjuicios causados por el incumplimiento.</li>
+</ul>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado — La opción del art. 1489 «a su arbitrio»</span>
+  <p>El art. 1489 no distingue entre derechos "principales" y "secundarios": el acreedor <strong>opta a su arbitrio</strong> entre pedir el cumplimiento o la resolución, sin tener que justificar su decisión. Las acciones de cumplimiento y resolución son <strong>incompatibles entre sí</strong>: no pueden demandarse conjuntamente, salvo en forma subsidiaria (una en subsidio de la otra), pero nada obsta a que, ejercida una sin éxito, se ejerza después la otra (art. <span class="art">17</span> CPC). La indemnización <em>moratoria</em> acompaña al cumplimiento; la <em>compensatoria</em>, a la resolución.</p>
+</div>
+
+<p>Sobre la <strong>renuncia</strong> a estos remedios conviene distinguir. La mayoría de la doctrina estima que <em>no</em> es posible renunciar anticipadamente a la <strong>acción de cumplimiento</strong>, porque ello desnaturalizaría la obligación —que por definición es un vínculo cuyo cumplimiento es susceptible de exigirse por la fuerza— y equivaldría a una condición meramente potestativa del deudor ("cumpliré si quiero"), nula conforme al art. <span class="art">1478</span>. En cambio, la ley sí reconoce a las partes el derecho a renunciar anticipadamente a la <strong>acción resolutoria</strong> (art. <span class="art">1487</span>), lo que sólo significa que el contrato no terminará por el incumplimiento, subsistiendo siempre el derecho a pedir el cumplimiento forzado y la indemnización. Lo que en ningún caso puede renunciarse es a demandar <em>a la vez</em> el cumplimiento y la resolución, pues ello equivaldría también a un "me obligo si quiero".</p>
+
+<p>Junto a estos remedios, la ley otorga al acreedor los <strong>derechos auxiliares</strong>, destinados a conservar el patrimonio del deudor —donde se hará efectivo el cumplimiento, en virtud del derecho de prenda general del art. <span class="art">2465</span>—: el beneficio de separación, la acción subrogatoria u oblicua, la acción pauliana o revocatoria y las medidas conservativas. Conviene recordar, por último, que el incumplimiento de las <strong>obligaciones naturales</strong> no produce estos efectos, pues por definición no otorgan acción para exigir su cumplimiento (art. <span class="art">1470</span>).</p>
+
+<h2 id="s1e">1.5. Sistema de atribución: culpa y objetivación</h2>
+
+<p>La doctrina tradicional entiende que el factor de atribución de la responsabilidad contractual es de carácter <strong>subjetivo</strong>: sólo habrá responsabilidad en la medida en que el incumplimiento sea imputable a dolo o culpa del deudor. Sin embargo, doctrina más reciente —en nuestro medio BARAONA y PEÑAILILLO— sostiene que el principal factor de atribución es el <strong>incumplimiento mismo</strong>, aun cuando no sea imputable: verificado éste, y no mediando fuerza mayor, el deudor sigue obligado a cumplir. Por tanto, el incumplimiento no imputable a dolo o culpa igualmente faculta al acreedor para exigir el cumplimiento —o incluso la resolución—, pero <em>sin</em> derecho a indemnización, pues ésta sí presupone imputabilidad.</p>
+
+<p>El fundamento de esta tesis es la <strong>obligatoriedad del contrato</strong>: se pide la ejecución de la prestación simplemente porque a ello se obligó el deudor, sin necesidad de un requisito adicional. Demandada la prestación en especie, al acreedor le basta acreditar la existencia de la obligación, correspondiendo al deudor probar el pago o la extinción por algún otro medio del art. <span class="art">1567</span> (arts. <span class="art">1698</span> CC y <span class="art">438</span> CPC). Mientras la obligación no se extinga, la ejecución forzada procede, y el deudor no puede excepcionarse ofreciendo simplemente la prueba de su diligencia, pues la ausencia de culpa no figura entre las causales de extinción de la obligación.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa — Comprensión lectora</span>
+  Has terminado la <strong>Sección 1 — Marco general de la responsabilidad contractual</strong>. Entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     SECCIÓN 2: EL INCUMPLIMIENTO
+     ============================================================ -->
+<h1 id="s2">2. El incumplimiento contractual</h1>
+
+<p>El primer y elemental presupuesto para que el acreedor pueda ejercer cualquiera de los derechos que el contrato o la ley le otorgan es que exista un <strong>incumplimiento</strong> de la obligación por parte del deudor. El incumplimiento es el factor de atribución de la responsabilidad contractual.</p>
+
+<h2 id="s2a">2.1. Concepto y clases de incumplimiento</h2>
+
+<p>Empleando los términos del artículo <span class="art">1556</span>, hay incumplimiento en tres casos: (i) cuando la obligación <strong>no se cumple</strong>; (ii) cuando la obligación <strong>se cumple imperfectamente</strong>; o (iii) cuando se <strong>retarda</strong> el cumplimiento. Dicho de otro modo: cada vez que no se verifica un pago íntegro y oportuno —la "prestación de lo que se debe" (art. <span class="art">1568</span>)— hay incumplimiento. En rigor, el incumplimiento es un concepto de carácter <strong>objetivo</strong>; el hecho de que obedezca a un obrar doloso o negligente del deudor otorgará al acreedor el derecho a pedir —además del cumplimiento o la resolución— la indemnización de perjuicios, si la infracción efectivamente causó daño.</p>
+
+<p>El incumplimiento puede ser <strong>total</strong> (no se ejecuta la obligación en ninguna de sus partes) o <strong>parcial</strong>, en los dos últimos casos del art. 1556: cuando la obligación se cumple imperfectamente —no se paga en forma íntegra— o cuando existe retardo. Cabe recordar que el acreedor no está obligado a recibir un pago que no sea íntegro (art. <span class="art">1591</span>); si rechaza el cumplimiento incompleto, habrá lisa y llanamente incumplimiento total.</p>
+
+<div class="ejemplo">
+  <span class="titulo-bloque">Ejemplo — Las tres formas de incumplir</span>
+  <p>De una deuda de $10.000.000 por la construcción de una casa: si el constructor no construye nada, hay incumplimiento <em>total</em>; si construye, pero el edificio presenta defectos de construcción, hay cumplimiento <em>imperfecto</em>; si la entrega tres meses después del plazo pactado, hay <em>retardo</em>. En los tres casos el acreedor puede recurrir a los remedios del art. 1489.</p>
+</div>
+
+<h2 id="s2b">2.2. Casos en que el incumplimiento no genera responsabilidad</h2>
+
+<p>No siempre que se verifica un incumplimiento hay lugar a responsabilidad contractual. Puede ocurrir que:</p>
+
+<ul>
+  <li><strong>(a)</strong> El deudor deje de cumplir por <em>acuerdo</em> con el acreedor, que acepta el incumplimiento; así sucede con la remisión, la transacción o la novación.</li>
+  <li><strong>(b)</strong> El deudor no cumpla, pero se <em>justifique</em> en que el acreedor tampoco ha cumplido su propia obligación; es la <em>excepción de contrato no cumplido</em> (art. 1552), que se analiza más adelante.</li>
+  <li><strong>(c)</strong> El deudor deje de cumplir porque ha operado un <em>modo de extinguir liberatorio</em> para él: prescripción, nulidad, etc.</li>
+  <li><strong>(d)</strong> Concurra una <em>causal de exención</em> de responsabilidad. La principal es el <strong>caso fortuito o fuerza mayor</strong>, en cuyo caso la obligación se extingue sin ulterior responsabilidad para el deudor.</li>
+</ul>
+
+<h2 id="s2c">2.3. Obligaciones de medio y de resultado</h2>
+
+<p>Para analizar el incumplimiento y, sobre todo, las eventuales causales de exención, adquiere relevancia la distinción entre obligaciones de medio y de resultado. Son <strong>obligaciones de medio</strong> aquellas en que el deudor se compromete únicamente a poner la diligencia necesaria para alcanzar un resultado, sin garantizarlo (el abogado que litiga, el médico que trata). Son <strong>obligaciones de resultado</strong> aquellas en que, para cumplir, el deudor debe alcanzar el resultado propuesto (el transportista que debe entregar la mercadería en destino).</p>
+
+<p>La relevancia práctica es la siguiente: en las obligaciones de medio, la diligencia cumple una <em>función integradora</em> de la prestación, de modo que si el deudor obró diligentemente pero no se alcanzó el resultado, no hay responsabilidad; por eso se dice que, respecto de ellas, la <strong>ausencia de culpa</strong> configura una causal de exención. En las obligaciones de resultado, en cambio, la culpa no es elemento a considerar para determinar el incumplimiento, y el deudor sólo se exonera acreditando un evento de <strong>fuerza mayor</strong> que le imposibilitó cumplir.</p>
+
+<div class="warn">
+  <span class="titulo-bloque">Atención — La clasificación es debatida</span>
+  <p>No hay consenso doctrinal sobre esta distinción. Unos la hacen depender de la descripción de la obligación en la ley o el contrato; otros sostienen que en rigor <em>todas</em> las obligaciones son de medio (con lo que siempre cabría alegar ausencia de culpa); y otros, que todas son de resultado. También se discute si sólo se predica de las obligaciones de hacer, o si alcanza igualmente a las de dar y aun a las de no hacer.</p>
+</div>
+
+<h2 id="s2d">2.4. Prueba del incumplimiento y presunción de imputabilidad</h2>
+
+<p>De acuerdo con el artículo <span class="art">1698</span>, incumbe probar la obligación o su extinción al que alega una u otra. En consecuencia, al acreedor le corresponde acreditar la <em>existencia</em> de la obligación, pero <strong>no</strong> el incumplimiento: es el deudor quien debe establecer que ha cumplido, porque alega el pago —esto es, la extinción de la obligación—, y sobre él la ley coloca la carga de la prueba.</p>
+
+<p>Más aún: si el deudor no ha cumplido, deberá probar —si quiere quedar exento de responsabilidad— que el incumplimiento <strong>no le es imputable</strong>. Así lo confirma expresamente el inciso 3.º del artículo <span class="art">1547</span>: "<em>La prueba de la diligencia o cuidado incumbe al que ha debido emplearlo; la prueba del caso fortuito al que lo alega</em>". Si debe probar la diligencia quien debió emplearla, ello equivale a <strong>presumir la culpa</strong> del deudor: la conclusión es que sobre el deudor pesa una presunción legal de imputabilidad, que él debe destruir.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado — La presunción de culpa contractual</span>
+  <p>Ésta es una de las grandes diferencias con la responsabilidad extracontractual: en sede contractual, acreditada la obligación y su incumplimiento, <strong>la culpa del deudor se presume</strong> (art. 1547 inc. 3.º). El acreedor no debe probar la culpa; es el deudor quien debe probar su diligencia o el caso fortuito. En sede extracontractual, en cambio, la regla general es que la culpa del autor debe ser <em>probada</em> por la víctima (salvo las presunciones de los arts. 2320 y ss.).</p>
+</div>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa — Comprensión lectora</span>
+  Has terminado la <strong>Sección 2 — El incumplimiento contractual</strong>. Entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<h1 id="s3">3. La acción de cumplimiento</h1>
+
+<p>Verificado el incumplimiento, el primero de los remedios que el ordenamiento pone a disposición del acreedor es la <strong>acción de cumplimiento</strong> (o pretensión de cumplimiento): la facultad de exigir al deudor, aun de manera forzada, que ejecute exactamente la prestación a que se obligó. Es el remedio que mejor realiza el principio de la <em>fuerza obligatoria del contrato</em> (art. <span class="art">1545</span>), pues procura al acreedor precisamente aquello que se le prometió.</p>
+
+<h2 id="s3a">3.1. Nociones generales y concepto</h2>
+
+<p>La acción de cumplimiento es aquella que compete al acreedor para obtener, por los medios que franquea la ley, la ejecución íntegra y forzada de la obligación incumplida, ya sea en su <strong>naturaleza</strong> —el mismo objeto debido— o, cuando ello no es posible, por su <strong>equivalencia</strong> en dinero. Tratándose de un contrato bilateral, su fundamento positivo se encuentra en el artículo <span class="art">1489</span>, que faculta al contratante diligente para pedir, "a su arbitrio", la resolución <em>o</em> el cumplimiento del contrato, en ambos casos con indemnización de perjuicios. En los contratos unilaterales y, en general, en toda obligación, el fundamento está en la fuerza obligatoria del contrato y en el derecho del acreedor a perseguir la ejecución sobre el patrimonio del deudor (arts. <span class="art">2465</span> y <span class="art">2469</span>, derecho de prenda general).</p>
+
+<h2 id="s3b">3.2. ¿Es el «derecho principal» del acreedor?</h2>
+
+<p>Tradicionalmente se ha sostenido que el cumplimiento en naturaleza constituye el <strong>derecho principal</strong> del acreedor, y que sólo subsidiariamente —cuando aquél se hace imposible— procede el cumplimiento por equivalencia (la indemnización). Es la posición clásica de <strong>Claro Solar</strong>: el acreedor tiene <em>derecho</em> a la prestación misma, de modo que mientras ésta sea posible no puede ser compelido a conformarse con una suma de dinero.</p>
+
+<p>La doctrina moderna matiza esta jerarquía. Sostiene que el sistema del Código no establece una verdadera prelación rígida entre los remedios, sino un <strong>sistema de opción</strong> en favor del acreedor: frente al incumplimiento, éste puede elegir entre el cumplimiento, la resolución y la indemnización (que hoy se reconoce, además, como remedio autónomo), según cuál satisfaga mejor su interés. La idea del cumplimiento como "derecho principal" se relativiza así en favor de la <em>libertad de elección</em> del acreedor.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">Idea clave — Opción, no jerarquía absoluta</span>
+  <p>El art. 1489 entrega la elección "a su arbitrio" al contratante cumplidor. La discusión doctrinal no recae sobre si el acreedor puede elegir —puede—, sino sobre si, dentro de esa elección, el cumplimiento en naturaleza tiene una primacía que obligue a agotarlo antes de recurrir a la indemnización. La tendencia actual es reconocer al acreedor un margen amplio de opción entre remedios.</p>
+</div>
+
+<h2 id="s3c">3.3. Objeto: cumplimiento en naturaleza y por equivalencia</h2>
+
+<p>El objeto natural de la acción es la <strong>prestación en naturaleza</strong> (<em>in natura</em>): que el deudor entregue la cosa, ejecute el hecho o se abstenga de lo prohibido, exactamente como se pactó. Cuando ello ya no es posible —porque la cosa se destruyó, el hecho se hizo irrealizable, etc.—, el cumplimiento se transforma en cumplimiento <strong>por equivalencia</strong>: el deudor debe el valor de la prestación, la llamada <em>aestimatio rei</em> o estimación pecuniaria de la cosa debida.</p>
+
+<p>La doctrina discute la naturaleza de esta <em>aestimatio rei</em>. Para autores como <strong>Peñailillo</strong> y <strong>Baraona</strong>, el valor de la prestación (el equivalente) no es propiamente indemnización de perjuicios, sino la misma obligación que subsiste bajo otra forma —el <em>id quod interest</em> en su acepción de valor de la cosa—, de modo que se debe con independencia de la culpa y de la prueba del daño. La indemnización de perjuicios, en cambio, comprende los demás daños (emergente, lucro cesante, moral) y supone imputabilidad. El Código recoge esta lógica en varias normas: el art. <span class="art">1672</span> (si la cosa perece por culpa del deudor, la obligación subsiste pero varía de objeto: el deudor debe el <em>precio</em> de la cosa más la indemnización), el art. <span class="art">1486</span>, el art. <span class="art">1521</span> y el art. <span class="art">438</span> del Código de Procedimiento Civil (que regula cómo se determina la cantidad líquida cuando se ejecuta el valor de la especie debida).</p>
+
+<h2 id="s3d">3.4. Presupuestos de procedencia</h2>
+
+<p>Para que prospere la acción de cumplimiento se requiere:</p>
+
+<ul>
+  <li><strong>(a) Una obligación actualmente exigible.</strong> Es decir, una obligación pura y simple, o bien sujeta a plazo o condición ya cumplidos. No puede exigirse el cumplimiento de una obligación sometida a plazo o condición pendiente.</li>
+  <li><strong>(b) Incumplimiento del deudor.</strong> En cualquiera de las formas del art. 1556 (no cumplimiento, cumplimiento imperfecto o retardo).</li>
+  <li><strong>(c) En su caso, que el acreedor haya cumplido o esté llano a cumplir</strong> su propia obligación, pues de lo contrario el deudor podrá oponerle la <em>excepción de contrato no cumplido</em> (art. 1552).</li>
+</ul>
+
+<p>En cuanto a la <strong>prueba</strong>, rige lo ya dicho (art. <span class="art">1698</span>): al acreedor le basta acreditar la existencia de la obligación; es el deudor quien debe probar el pago o la extinción. El acreedor no necesita probar la culpa para pedir el cumplimiento, porque la acción de cumplimiento <em>no</em> exige imputabilidad: persigue la ejecución de lo debido, no la reparación de un daño.</p>
+
+<h2 id="s3e">3.5. Ejecución forzada de las obligaciones de dar, hacer y no hacer</h2>
+
+<p>La forma de obtener el cumplimiento forzado varía según la clase de obligación.</p>
+
+<p><strong>Obligaciones de dar.</strong> Si el acreedor cuenta con un <em>título ejecutivo</em>, podrá iniciar un juicio ejecutivo. El artículo <span class="art">434</span> del Código de Procedimiento Civil enumera los títulos ejecutivos, y para que proceda la ejecución se requiere, además: que la obligación sea <strong>líquida</strong> (o liquidable), <strong>actualmente exigible</strong> y que la <strong>acción ejecutiva no esté prescrita</strong>. La acción ejecutiva prescribe en <strong>tres años</strong> contados desde que la obligación se hizo exigible (art. <span class="art">2515</span>), tras lo cual subsiste dos años más como ordinaria. Embargados bienes del deudor, se realizan y con su producto se paga al acreedor.</p>
+
+<p><strong>Obligaciones de hacer.</strong> Rige el artículo <span class="art">1553</span>: ante la mora del deudor, el acreedor puede pedir, junto con la indemnización moratoria, cualquiera de estas tres cosas <em>a su elección</em>: (1) que se <strong>apremie</strong> al deudor para la ejecución del hecho convenido; (2) que se le autorice para hacer ejecutar el hecho por un <strong>tercero a expensas del deudor</strong>; o (3) que el deudor le <strong>indemnice</strong> los perjuicios resultantes de la infracción. La opción (2) sólo procede cuando el hecho es <em>fungible</em> (puede ejecutarlo otro); si la obligación es <em>intuito personae</em> (un retrato de cierto pintor), no cabe sustituir al deudor y el remedio se reduce al apremio o a la indemnización.</p>
+
+<p><strong>Obligaciones de no hacer.</strong> Rige el artículo <span class="art">1555</span>: la contravención se resuelve en la obligación de indemnizar los perjuicios. Pero si puede <strong>destruirse</strong> la cosa hecha en contravención, y la destrucción es necesaria para el objeto que se tuvo en mira al contratar, el acreedor podrá pedir que se deshaga lo hecho, o ser autorizado para deshacerlo a expensas del deudor. Si el objeto puede obtenerse por otros medios, será oído el deudor que se allane a prestarlo.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Marco normativo — Mapa de la ejecución forzada</span>
+  <p>Dar → juicio ejecutivo (arts. 434 y ss. CPC); requisitos: título, obligación líquida, exigible y acción no prescrita (art. 2515 CC: 3 años). Hacer → art. 1553 (apremio / tercero a expensas del deudor / indemnización). No hacer → art. 1555 (indemnización; o deshacer lo hecho cuando sea posible y necesario). En todos los casos puede acumularse la indemnización moratoria por el retardo.</p>
+</div>
+
+<div class="ejemplo">
+  <span class="titulo-bloque">Ejemplo — Tres deudores que no cumplen</span>
+  <p>A debe entregar un automóvil individualizado (dar): el acreedor, con título ejecutivo, embarga y obtiene la entrega o su valor. B, un maestro, se obligó a pintar la fachada y no lo hace (hacer): el acreedor puede pedir que se le autorice a contratar a otro pintor a expensas de B (art. 1553 N.º 2). C se obligó a no levantar un muro y lo construye (no hacer): si el muro estorba el fin del contrato, el acreedor puede pedir que se demuela a expensas de C (art. 1555).</p>
+</div>
+
+<h2 id="s3f">3.6. Límites: la imposibilidad de la prestación</h2>
+
+<p>El gran límite de la acción de cumplimiento en naturaleza es la <strong>imposibilidad</strong> de la prestación: a lo imposible nadie está obligado. Cuando la prestación en naturaleza se hace imposible, el cumplimiento <em>in natura</em> ya no puede exigirse y el remedio se traslada al equivalente pecuniario y, en su caso, a la indemnización. La imposibilidad admite varias clasificaciones:</p>
+
+<ul>
+  <li><strong>Física o jurídica:</strong> la cosa se destruyó materialmente (física), o bien una norma impide la prestación —v. gr., el bien fue declarado inembargable o quedó fuera del comercio— (jurídica).</li>
+  <li><strong>Originaria o sobrevenida:</strong> según exista ya al momento de contratar (la cosa nunca pudo entregarse) o sobrevenga después de nacida la obligación.</li>
+  <li><strong>Absoluta o relativa:</strong> según afecte a cualquier deudor (nadie podría cumplir) o sólo a este deudor en concreto.</li>
+  <li><strong>Definitiva o transitoria:</strong> según sea permanente o sólo temporal (en cuyo caso puede generar mero retardo).</li>
+</ul>
+
+<p>La figura típica es la <strong>pérdida de la cosa que se debe</strong>, regulada en los artículos <span class="art">1670</span> y siguientes: cuando el cuerpo cierto que se debe perece, o porque se destruye, o porque deja de estar en el comercio, o porque desaparece y se ignora si existe, se <strong>extingue la obligación</strong>. Pero el efecto liberatorio sólo opera plenamente si la pérdida es <em>fortuita</em>: si la cosa perece por culpa o durante la mora del deudor, la obligación subsiste y varía de objeto, debiendo el deudor el precio de la cosa y la indemnización de perjuicios (art. <span class="art">1672</span>).</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado — Imposibilidad ≠ exención automática</span>
+  <p>Que la prestación en naturaleza sea imposible no significa que el deudor quede sin responsabilidad. Sólo la imposibilidad <strong>fortuita</strong> (caso fortuito o fuerza mayor) extingue la obligación sin responsabilidad. Si la imposibilidad es imputable al deudor —culpa o mora—, la obligación subsiste bajo la forma del valor de la cosa más indemnización (art. 1672). De ahí la importancia de la presunción de culpa del art. 1547 inc. 3.º: probada la pérdida, el deudor deberá acreditar que fue fortuita para liberarse.</p>
+</div>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa — Comprensión lectora</span>
+  Has terminado la <strong>Sección 3 — La acción de cumplimiento</strong>. Entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<h1 id="s4">4. La resolución por incumplimiento</h1>
+
+<p>El segundo gran remedio del contratante diligente es la <strong>resolución</strong>: la facultad de pedir que se deje sin efecto el contrato bilateral cuando la contraparte no cumple lo pactado, liberándose así de su propia obligación y obteniendo la restitución de lo que hubiere dado o pagado. Su sede positiva es la <strong>condición resolutoria tácita</strong> del artículo <span class="art">1489</span>.</p>
+
+<h2 id="s4a">4.1. Generalidades y nomenclatura</h2>
+
+<p>El artículo 1489 dispone que en los contratos bilaterales va envuelta la <strong>condición resolutoria de no cumplirse por uno de los contratantes lo pactado</strong>; pero en tal caso podrá el otro contratante pedir, a su arbitrio, o la resolución o el cumplimiento del contrato, con indemnización de perjuicios. Se la llama tradicionalmente "condición resolutoria tácita" (CRT) porque la ley la subentiende en todo contrato bilateral, aunque las partes nada hayan estipulado.</p>
+
+<div class="warn">
+  <span class="titulo-bloque">Atención — Crítica a la nomenclatura</span>
+  <p>Parte de la doctrina (señaladamente <strong>Peñailillo</strong>) critica que se hable de "condición": la verdadera condición es un hecho futuro e incierto del que pende un derecho, y opera de pleno derecho; en cambio, la resolución del art. 1489 <em>no</em> opera automáticamente —requiere sentencia judicial— y supone una <em>opción</em> del acreedor. Por eso se sostiene que, más que una condición, el art. 1489 consagra un <strong>remedio</strong> frente al incumplimiento. La denominación "condición resolutoria tácita" se conserva por tradición, pero debe leerse con esta advertencia.</p>
+</div>
+
+<h2 id="s4b">4.2. Concepto y fundamento</h2>
+
+<p>Según <strong>Abeliuk</strong>, la condición resolutoria tácita es aquella que va envuelta en todo contrato bilateral para el caso de no cumplirse por la otra parte lo pactado, y que faculta a la parte cumplidora para solicitar, a su arbitrio, el cumplimiento o la resolución del contrato, con indemnización de perjuicios.</p>
+
+<p>Sobre su <strong>fundamento</strong> se han propuesto varias explicaciones: (i) la <strong>equidad</strong> —no es justo que quede ligado al contrato quien no recibe la contraprestación—; (ii) la <strong>voluntad presunta</strong> de las partes —se entiende que contrataron en el supuesto de que ambas cumplirían—; (iii) la <strong>interdependencia de las obligaciones</strong> en el contrato bilateral, donde la obligación de una parte es la causa de la de la otra (de modo que, faltando una, la otra carece de causa); y (iv) la idea de <strong>reparación</strong> o sanción, asociada por los <strong>Mazeaud</strong> a la noción de que la resolución repara al contratante frustrado liberándolo del vínculo.</p>
+
+<h2 id="s4c">4.3. Características y ámbito de aplicación</h2>
+
+<p>Como <strong>condición</strong>, la CRT es: (i) <em>resolutoria</em> (su cumplimiento extingue un derecho); (ii) <em>tácita</em> (la subentiende la ley); (iii) <em>negativa</em> (consiste en que <em>no</em> se cumpla lo pactado); y (iv) <em>simplemente potestativa</em>, pues depende de un hecho voluntario del deudor (que cumpla o no).</p>
+
+<p>Se diferencia de la <strong>condición resolutoria ordinaria</strong> en aspectos decisivos: la ordinaria opera <em>de pleno derecho</em>, mientras que la CRT requiere <strong>sentencia judicial</strong>; la ordinaria consiste en cualquier hecho futuro e incierto, mientras que la CRT consiste precisamente en el <em>incumplimiento</em>; y la ordinaria no da derecho a indemnización, mientras que la CRT sí (art. 1489).</p>
+
+<p>En cuanto al <strong>ámbito de aplicación</strong>, se discute si la CRT rige sólo en los contratos <strong>bilaterales</strong> o también en los unilaterales. La doctrina mayoritaria, atenida al tenor del art. 1489 ("en los contratos bilaterales"), la limita a éstos. Una posición minoritaria —sostenida por <strong>Claro Solar</strong> y, más modernamente, por <strong>Víctor Vial</strong>— admite que pueda extenderse a ciertos contratos unilaterales. Respecto de los contratos de <strong>tracto sucesivo</strong>, la resolución toma el nombre de <strong>terminación</strong> y opera sólo hacia el futuro (no afecta las prestaciones ya ejecutadas). Por último, la CRT <em>no</em> tiene cabida en la partición, regida por reglas propias (arts. <span class="art">1344</span> y <span class="art">1348</span>).</p>
+
+<h2 id="s4d">4.4. El incumplimiento resolutorio</h2>
+
+<p>No todo incumplimiento autoriza la resolución; debe tratarse de un <strong>incumplimiento resolutorio</strong>. La discusión gira en torno a tres cuestiones:</p>
+
+<p><strong>(a) ¿Debe ser imputable?</strong> La doctrina <em>tradicional</em> exige que el incumplimiento sea imputable al deudor (culpa o dolo), de modo que el incumplimiento fortuito no daría lugar a resolución sino a la extinción por imposibilidad. La doctrina <em>moderna</em>, en cambio —representada en Chile por <strong>Claudia Mejías</strong>—, sostiene una concepción <strong>objetiva</strong>: lo que habilita la resolución es la insatisfacción del interés del acreedor por el incumplimiento, con independencia de su imputabilidad; la culpa sólo es relevante para la indemnización, no para la resolución.</p>
+
+<p><strong>(b) ¿Cabe la resolución por incumplimiento parcial?</strong> Sí, en principio, pues el art. 1489 no distingue. Pero ello se conecta con la tercera cuestión.</p>
+
+<p><strong>(c) Gravedad: los incumplimientos intrascendentes.</strong> La doctrina y la jurisprudencia exigen que el incumplimiento tenga cierta <strong>gravedad</strong> o entidad; los incumplimientos de escasa importancia (de obligaciones secundarias o accesorias, o cumplimientos casi íntegros) no autorizan a resolver, en aplicación de la buena fe contractual. Así lo enseñan <strong>Claro Solar</strong> y <strong>Abeliuk</strong>: la resolución es un remedio drástico, reservado para incumplimientos que afecten lo esencial del contrato.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Jurisprudencia — Gravedad del incumplimiento</span>
+  <p><strong>Corte de Apelaciones de Talca, 1920.</strong> Sentó tempranamente que no cualquier incumplimiento habilita la resolución: un incumplimiento de poca monta, que no compromete la finalidad económica del contrato ni el interés sustancial del acreedor, no autoriza a pedir la resolución, la que queda reservada a las infracciones de cierta entidad. El criterio —incumplimiento <em>grave</em> o <em>esencial</em>— se ha mantenido como doctrina constante.</p>
+</div>
+
+<h2 id="s4e">4.5. Necesidad de sentencia judicial</h2>
+
+<p>A diferencia de la condición resolutoria ordinaria, la CRT <strong>no opera de pleno derecho</strong>: requiere una <strong>sentencia judicial</strong> que declare la resolución. Mientras ésta no se dicte, el contrato subsiste. De ello derivan dos consecuencias capitales: (i) el deudor puede <strong>enervar</strong> la acción pagando antes de cierta oportunidad procesal; y (ii) el acreedor conserva, hasta la sentencia, la <em>opción</em> entre pedir el cumplimiento o la resolución, pudiendo incluso variar su pretensión en las oportunidades que la ley procesal permite.</p>
+
+<h2 id="s4f">4.6. La acción resolutoria</h2>
+
+<p>La acción resolutoria es, en palabras de <strong>Abeliuk</strong>, la que emana de la condición resolutoria tácita y del pacto comisorio en los casos en que ellos operan, y que se dirige a obtener que se deje sin efecto el contrato por el incumplimiento de la contraparte. Sus características son:</p>
+
+<ul>
+  <li><strong>Personal:</strong> sólo puede entablarse contra el otro contratante, no contra terceros (sin perjuicio de los efectos respecto de terceros que se verán). Deriva del contrato, no de un derecho real.</li>
+  <li><strong>Patrimonial:</strong> y, por tanto, <em>renunciable</em> (art. <span class="art">1487</span>), <em>transferible</em> y <em>transmisible</em>.</li>
+  <li><strong>Prescriptible:</strong> al no tener regla especial, prescribe como acción ordinaria en <strong>cinco años</strong> contados desde que la obligación se hizo exigible (arts. <span class="art">2514</span> y <span class="art">2515</span>). Distinto es el plazo del pacto comisorio, que tiene regla propia (art. 1880).</li>
+  <li><strong>Mueble o inmueble:</strong> según lo sea la cosa sobre que recae (art. <span class="art">580</span>).</li>
+  <li><strong>Indivisible:</strong> tanto objetiva como subjetivamente. No puede pedirse en parte el cumplimiento y en parte la resolución; y habiendo pluralidad de acreedores o deudores, todos deben obrar de consuno.</li>
+</ul>
+
+<h2 id="s4g">4.7. Enervar la acción mediante el pago</h2>
+
+<p>Como la resolución requiere sentencia, se discute hasta qué momento puede el deudor <strong>enervar</strong> (paralizar) la acción resolutoria pagando lo debido.</p>
+
+<p>La doctrina <strong>tradicional</strong> sostiene que el deudor puede pagar hasta la citación a oír sentencia en primera instancia, o hasta la vista de la causa en segunda, conforme al artículo <span class="art">310</span> del Código de Procedimiento Civil (que permite oponer la excepción de pago en cualquier estado del juicio hasta esas oportunidades). La doctrina <strong>moderna</strong> —<strong>Vial</strong>, <strong>Peñailillo</strong>— niega esta posibilidad: una vez ejercida la acción resolutoria, el deudor estaría en mora y ya no podría imponer al acreedor un pago tardío que éste no está obligado a aceptar; admitir lo contrario haría ilusoria la opción del art. 1489.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Jurisprudencia — Enervamiento de la acción resolutoria</span>
+  <p><strong>Corte Suprema, 25 de mayo de 2011.</strong> La Corte se pronunció sobre la posibilidad de enervar la acción resolutoria mediante el pago, en el marco de la discusión entre la tesis tradicional (que lo admite con apoyo en el art. 310 CPC) y la moderna (que lo rechaza una vez deducida la demanda de resolución). El fallo ilustra que la cuestión sigue siendo discutida y que la oportunidad y admisibilidad del pago dependen del estado del juicio y de la naturaleza de la acción ejercida.</p>
+</div>
+
+<p>Distinto es el caso del <strong>pacto comisorio calificado por no pago del precio en la compraventa</strong>: allí el art. <span class="art">1879</span> concede al deudor un plazo fatal de <strong>veinticuatro horas</strong> —contadas desde la notificación de la demanda— para pagar y hacer subsistir el contrato (se vuelve sobre ello más abajo).</p>
+
+<h2 id="s4h">4.8. El art. 1552 y la excepción de contrato no cumplido</h2>
+
+<p>El artículo <span class="art">1552</span> consagra la regla <em>la mora purga la mora</em>: en los contratos bilaterales ninguno de los contratantes está en mora dejando de cumplir lo pactado mientras el otro no cumple por su parte, o no se allana a cumplirlo en la forma y tiempo debidos. De aquí nace la <strong>excepción de contrato no cumplido</strong> (<em>exceptio non adimpleti contractus</em>): el deudor demandado de resolución (o de cumplimiento) puede defenderse alegando que el propio actor no ha cumplido ni se ha allanado a cumplir su obligación correlativa.</p>
+
+<p>Consecuencia decisiva: para poder pedir la resolución, el actor debe ser un <strong>contratante diligente</strong>, que cumplió o está llano a cumplir. Quien no ha cumplido lo suyo no puede colocar en mora al otro ni, por tanto, demandar la resolución; el art. 1489 supone que quien pide es la parte cumplidora.</p>
+
+<h2 id="s4i">4.9. Efectos de la resolución</h2>
+
+<p>Declarada la resolución, sus efectos son de tres órdenes:</p>
+
+<ul>
+  <li><strong>Efecto extintivo:</strong> la resolución es un modo de extinguir las obligaciones (art. <span class="art">1567</span> N.º 9, "el evento de la condición resolutoria"). El contrato se deja sin efecto y las obligaciones pendientes se extinguen.</li>
+  <li><strong>Efecto restitutorio (entre las partes):</strong> opera con efecto <em>retroactivo</em>; las partes deben restituirse lo que hubieren recibido, como si el contrato no se hubiera celebrado. El art. <span class="art">1487</span> ordena que, cumplida la condición resolutoria, deberá restituirse lo que se hubiere recibido bajo tal condición. Cuestión aparte es la suerte de los frutos (art. <span class="art">1488</span>: por regla general no se restituyen).</li>
+  <li><strong>Efectos respecto de terceros:</strong> regidos por los artículos <span class="art">1490</span> (cosas muebles) y <span class="art">1491</span> (cosas inmuebles). La resolución afecta a los terceros adquirentes sólo cuando estaban de <strong>mala fe</strong> (muebles) o cuando la condición <strong>constaba en el título</strong> respectivo inscrito u otorgado por escritura pública (inmuebles). El tercero de buena fe, o frente a quien la condición no constaba, queda a salvo.</li>
+</ul>
+
+<h2 id="s4j">4.10. Resolución, nulidad y resciliación</h2>
+
+<p>Conviene no confundir la resolución con otras figuras que también dejan sin efecto el contrato:</p>
+
+<ul>
+  <li><strong>Nulidad:</strong> supone un <em>vicio originario</em> del acto (falta de un requisito de validez al celebrarlo). La resolución, en cambio, presupone un contrato <em>válido</em> que se deja sin efecto por un hecho <em>posterior</em> (el incumplimiento). La nulidad da acción reivindicatoria contra terceros aun de buena fe (art. <span class="art">1689</span>); la resolución, sólo en los casos de los arts. 1490-1491.</li>
+  <li><strong>Resciliación o mutuo disenso:</strong> es un <em>acuerdo de voluntades</em> de ambas partes para dejar sin efecto el contrato (art. <span class="art">1567</span> inc. 1.º). La resolución, en cambio, es un remedio <em>unilateral</em> del contratante diligente frente al incumplimiento, que requiere declaración judicial.</li>
+</ul>
+
+<h2 id="s4k">4.11. El pacto comisorio</h2>
+
+<p>El <strong>pacto comisorio</strong> es la estipulación expresa de la condición resolutoria por incumplimiento: las partes acuerdan que el contrato se resolverá si una de ellas no cumple. El art. <span class="art">1877</span> lo define a propósito de la compraventa por no pago del precio ("por el pacto comisorio se estipula expresamente que, no pagándose el precio al tiempo convenido, se resolverá el contrato de venta"), pero la doctrina admite que puede pactarse en <strong>cualquier contrato</strong> y por incumplimiento de <strong>cualquier obligación</strong>, en virtud de la autonomía de la voluntad.</p>
+
+<p>Se distingue:</p>
+
+<ul>
+  <li><strong>Pacto comisorio simple:</strong> es la mera estipulación expresa de la condición resolutoria; produce los mismos efectos que la CRT, esto es, faculta para pedir la resolución <em>o</em> el cumplimiento, pero <strong>requiere sentencia judicial</strong> y no opera de pleno derecho.</li>
+  <li><strong>Pacto comisorio calificado</strong> (o "con cláusula de resolución <em>ipso facto</em>"): se estipula que el contrato se resolverá inmediatamente, de pleno derecho, por el solo incumplimiento. En la compraventa por no pago del precio, el art. <span class="art">1879</span> matiza ese automatismo: aun así, el comprador puede hacer subsistir el contrato pagando <strong>dentro de las veinticuatro horas</strong> siguientes a la notificación judicial de la demanda. Fuera de ese caso típico, la doctrina mayoritaria entiende que el pacto comisorio calificado <em>atípico</em> (en otros contratos o por otras obligaciones) sí puede operar de pleno derecho, según lo pactado.</li>
+</ul>
+
+<p>De ahí la utilidad de distinguir el pacto comisorio <strong>típico</strong> (el de los arts. 1877-1880, compraventa por no pago del precio) del <strong>atípico</strong> (cualquier otro). Las reglas restrictivas de los arts. 1879 y 1880 se aplican al típico; el atípico se rige por lo pactado y por las reglas generales.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Jurisprudencia — Pacto comisorio</span>
+  <p><strong>Corte Suprema, 2 de julio de 1948.</strong> Reconoció que el pacto comisorio no es exclusivo de la compraventa ni del no pago del precio, sino que, en ejercicio de la autonomía de la voluntad, puede estipularse en cualquier contrato y respecto de cualquier obligación, aplicándose las reglas especiales de los arts. 1877 y siguientes sólo al caso típico de la compraventa por no pago del precio.</p>
+</div>
+
+<p><strong>Prescripción del pacto comisorio.</strong> El artículo <span class="art">1880</span> fija una regla especial: el pacto comisorio prescribe en el plazo prefijado por las partes, si no pasare de <strong>cuatro años</strong> contados desde la fecha del <em>contrato</em> (no desde el incumplimiento). Transcurrido ese plazo, se extingue la acción derivada del pacto, aunque pueda subsistir la acción resolutoria general del art. 1489 con su propio plazo (5 años desde la exigibilidad).</p>
+
+<h2 id="s4l">4.12. La cláusula de término unilateral</h2>
+
+<p>Distinta del pacto comisorio es la <strong>cláusula de término unilateral</strong> (o de desahucio convencional): aquella por la cual se faculta a una de las partes para poner fin al contrato por su sola voluntad, sin necesidad de invocar incumplimiento ni de recurrir al juez. Es frecuente en contratos de tracto sucesivo (arrendamientos, prestación de servicios, distribución).</p>
+
+<p>Su <strong>validez</strong> se funda en la fuerza obligatoria y la autonomía de la voluntad (art. <span class="art">1545</span>): si las partes pueden dar vida al contrato, pueden convenir las causas de su término. Se exige, eso sí, que la facultad tenga una <strong>causa real y lícita</strong> (art. <span class="art">1467</span>) y que se ejerza de <strong>buena fe</strong> (art. <span class="art">1546</span>), sin abuso; el ejercicio abusivo o de mala fe de la facultad de terminación puede generar responsabilidad. <strong>Corral</strong> ha destacado que estas cláusulas son válidas, pero quedan sujetas al control de la buena fe y de la interdicción del abuso del derecho.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Jurisprudencia — Cláusula de término unilateral</span>
+  <p><strong>Corte Suprema, 22 de mayo de 2019.</strong> Validó la cláusula que faculta a una parte para poner término unilateral al contrato, fundándola en la autonomía de la voluntad y la fuerza obligatoria (art. 1545), pero subrayando que su ejercicio queda sometido a las exigencias de la <strong>buena fe</strong> (art. 1546): la facultad debe ejercerse sin abuso y con una causa real y lícita, de modo que un ejercicio abusivo puede comprometer la responsabilidad de quien pone término.</p>
+</div>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado — No confundir las tres figuras</span>
+  <p><strong>CRT (art. 1489):</strong> la subentiende la ley en todo contrato bilateral; requiere incumplimiento + sentencia judicial. <strong>Pacto comisorio (arts. 1877 y ss.):</strong> es la CRT <em>expresada</em>; el calificado de la compraventa permite enervar pagando en 24 horas; prescribe en 4 años desde el contrato (art. 1880). <strong>Cláusula de término unilateral:</strong> no supone incumplimiento; permite a una parte terminar el contrato por su sola voluntad, con el límite de la buena fe.</p>
+</div>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa — Comprensión lectora</span>
+  Has terminado la <strong>Sección 4 — La resolución por incumplimiento</strong>. Entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+</body>
+</html>

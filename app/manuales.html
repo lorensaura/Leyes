@@ -1114,32 +1114,53 @@
 
       'civil_6': {
         titulo: 'Responsabilidad Contractual',
-        minutos: 55,
-        sourceFile: '../01_Responsabilidad_Civil_Manual_de_Estudio.html',
-        extractFrom: 'i',
-        extractUntil: 'iv',          // Sections i + ii + iii (excludes iv)
-        cpInsertBefore: ['iii'],      // Insert one CP marker before section iii
+        minutos: 60,
+        sourceFile: '../01_Responsabilidad_Contractual_Manual.html',
+        pdfFile: 'pdf/Responsabilidad_Contractual.pdf', // PDF pre-generado (portada + fuentes + cuadros con color, sin controles)
+        extractFrom: null,   // Cargar el archivo completo
+        extractUntil: null,
+        cpInsertBefore: ['s2', 's3', 's4'], // 3 marcadores → 4 partes → 1 control por sección
         _loaded: false,
         html: null,
         checkpoints: [
           {
             id: 'rc6-cp1',
-            label: 'Control 1 · Secciones 1–2',
-            subtitulo: 'Marco general y elementos comunes',
+            label: 'Control 1 · §1',
+            subtitulo: 'Marco general de la responsabilidad contractual',
             preguntas: [
-              { texto: '¿Cuál es la diferencia fundamental entre responsabilidad contractual y extracontractual? ¿En qué artículos del Código Civil se ubica cada una?', keywords: ['contractual','extracontractual','1545','2314','incumplimiento','delito','cuasidelito'] },
-              { texto: 'Mencione al menos tres elementos comunes de toda responsabilidad civil y explique uno de ellos.', keywords: ['daño','causalidad','imputabilidad','culpa','dolo','hecho'] },
-              { texto: '¿Qué es la responsabilidad precontractual y cuál es su fundamento?', keywords: ['precontractual','tratativas','negociaciones','buena fe','1546','ruptura'] }
+              { texto: '¿Qué es la responsabilidad contractual y cuál es su fundamento positivo? Relacione el incumplimiento con el art. 1489.', keywords: ['contractual','incumplimiento','1489','1545','fuerza obligatoria','remedio','bilateral'] },
+              { texto: 'Explique el sistema de remedios del art. 1489: ¿qué opciones tiene el contratante diligente y qué significa "a su arbitrio"?', keywords: ['1489','cumplimiento','resolución','indemnización','arbitrio','opción','diligente'] }
             ]
           },
           {
             id: 'rc6-cp2',
-            label: 'Control 2 · Sección 3',
-            subtitulo: 'Responsabilidad contractual: culpa, mora, perjuicios',
+            label: 'Control 2 · §2',
+            subtitulo: 'El incumplimiento contractual',
             preguntas: [
-              { texto: '¿De qué grado de culpa responde el comodatario? ¿Y el depositario? Explique la lógica del art. 1547.', keywords: ['levísima','grave','comodato','depósito','1547','beneficia'] },
-              { texto: 'Nombre dos consecuencias concretas de que la culpa grave equivalga al dolo (art. 44). Cite los artículos.', keywords: ['1558','imprevistos','1465','condonar','equivale','dolo'] },
-              { texto: '¿Cuáles son las tres formas de interpelación del art. 1551? ¿Cuál es la regla general supletoria?', keywords: ['1551','contractual','tácita','judicial','reconvención','regla general'] }
+              { texto: '¿Cuáles son las tres formas de incumplimiento del art. 1556? Distinga incumplimiento total y parcial.', keywords: ['1556','no cumple','imperfecto','retardo','total','parcial','1591'] },
+              { texto: 'Distinga obligaciones de medio y de resultado y explique su relevancia para la exención de responsabilidad.', keywords: ['medio','resultado','diligencia','ausencia de culpa','fuerza mayor','exención'] },
+              { texto: '¿Sobre quién pesa la prueba del incumplimiento y de la diligencia? Explique la presunción de culpa contractual (arts. 1698 y 1547 inc. 3).', keywords: ['1698','1547','presunción','culpa','diligencia','caso fortuito','deudor','prueba'] }
+            ]
+          },
+          {
+            id: 'rc6-cp3',
+            label: 'Control 3 · §3',
+            subtitulo: 'La acción de cumplimiento',
+            preguntas: [
+              { texto: '¿Qué es la acción de cumplimiento y cuál es su objeto? Distinga cumplimiento en naturaleza y por equivalencia (aestimatio rei).', keywords: ['cumplimiento','naturaleza','equivalencia','aestimatio rei','1489','1672','valor'] },
+              { texto: 'Explique cómo se ejecuta forzadamente cada clase de obligación: dar, hacer (art. 1553) y no hacer (art. 1555).', keywords: ['dar','ejecutivo','434','hacer','1553','apremio','tercero','no hacer','1555'] },
+              { texto: '¿Cuál es el gran límite de la acción de cumplimiento? Explique la imposibilidad y la pérdida de la cosa debida (arts. 1670 y 1672).', keywords: ['imposibilidad','física','jurídica','fortuita','1670','1672','pérdida','culpa'] }
+            ]
+          },
+          {
+            id: 'rc6-cp4',
+            label: 'Control 4 · §4',
+            subtitulo: 'La resolución por incumplimiento',
+            preguntas: [
+              { texto: '¿Qué es la condición resolutoria tácita (art. 1489)? Señale su fundamento y por qué requiere sentencia judicial.', keywords: ['condición resolutoria tácita','1489','equidad','voluntad presunta','sentencia','bilateral'] },
+              { texto: '¿Qué es el incumplimiento resolutorio? Explique la exigencia de gravedad y los incumplimientos intrascendentes.', keywords: ['incumplimiento resolutorio','gravedad','intrascendente','imputable','Mejías','Talca','buena fe'] },
+              { texto: 'Distinga el pacto comisorio simple del calificado y la cláusula de término unilateral. Plazo de prescripción del pacto comisorio.', keywords: ['pacto comisorio','simple','calificado','1879','24 horas','1880','cuatro años','término unilateral','1546'] },
+              { texto: '¿Cuáles son los efectos de la resolución entre las partes y respecto de terceros (arts. 1487, 1490 y 1491)?', keywords: ['extintivo','1567','restitutorio','retroactivo','1487','terceros','1490','1491','buena fe'] }
             ]
           }
         ]
