@@ -1567,34 +1567,35 @@
     }
 
     // ── PDF ───────────────────────────────────────────────────────────
+    // El PDF se genera desde el MANUAL ORIGINAL (con su portada, sus fuentes
+    // y sus cuadros con color), NO desde la versión web. Así el PDF es fiel
+    // al apunte y NO incluye los controles de comprensión (esos viven solo
+    // en la plataforma). Abrimos el archivo fuente e invocamos la impresión:
+    // el navegador respeta el @media print del manual (portada en página
+    // aparte, cuadros sin cortarse entre páginas).
     function prepararPDF() {
-      const element = document.querySelector('.manual-body');
-      if (!element) {
+      const contenido = temaActivo ? contenidos[temaActivo] : null;
+      if (!contenido || !contenido.sourceFile) {
         alert('Selecciona un manual antes de descargar.');
         return;
       }
 
-      const titulo = document.querySelector('.content-title')?.textContent || 'Manual Digesto';
-      const btn = document.querySelector('.modo-btn.pdf');
-      if (btn) { btn.textContent = '⏳ Generando PDF…'; btn.disabled = true; }
+      const win = window.open(contenido.sourceFile, '_blank');
+      if (!win) {
+        alert('Tu navegador bloqueó la ventana emergente. Permite las ventanas emergentes de este sitio y vuelve a intentarlo.');
+        return;
+      }
 
-      const opt = {
-        margin:     [1.5, 1.8, 1.5, 1.8],
-        filename:   titulo.replace(/\s+/g, '_') + '.pdf',
-        image:      { type: 'jpeg', quality: 0.97 },
-        html2canvas: { scale: 2, useCORS: true, logging: false },
-        jsPDF:      { unit: 'cm', format: 'a4', orientation: 'portrait' }
+      // Esperar a que el manual cargue por completo antes de abrir el diálogo
+      // de impresión / guardar como PDF.
+      const lanzarImpresion = () => {
+        try { win.focus(); win.print(); } catch (e) { /* el usuario puede imprimir con Cmd+P */ }
       };
-
-      html2pdf().set(opt).from(element).save()
-        .then(() => {
-          if (btn) { btn.textContent = '⬇️ Descargar PDF'; btn.disabled = false; }
-        })
-        .catch(err => {
-          console.error('PDF error:', err);
-          if (btn) { btn.textContent = '⬇️ Descargar PDF'; btn.disabled = false; }
-          alert('Error generando el PDF. Intenta de nuevo.');
-        });
+      if (win.document && win.document.readyState === 'complete') {
+        lanzarImpresion();
+      } else {
+        win.addEventListener('load', lanzarImpresion);
+      }
     }
 
     function renderProximamente(materia, tema) {
