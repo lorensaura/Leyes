@@ -1,6 +1,6 @@
 # Interrogador IA — Responsabilidad Civil (para Claude)
 
-**Pieza 3 de 3 del paquete de la materia · Derecho Libre · Junio 2026**
+**Pieza 3 de 3 del paquete de la materia · Digesto · Junio 2026**
 
 Este es el corazón del producto: el "guion del interrogador". Convierte a Claude en un examinador de grado real para Responsabilidad civil. Está escrito desde tu experiencia como interrogadora: interroga, repregunta, detecta memorización sin comprensión, modula la dificultad y entrega feedback con rúbrica.
 
