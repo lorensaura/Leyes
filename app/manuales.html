@@ -1017,6 +1017,7 @@
         titulo: 'Responsabilidad Extracontractual',
         minutos: 90,
         sourceFile: '../02_Responsabilidad_Extracontractual_Manual.html',
+        pdfFile: 'pdf/Responsabilidad_Extracontractual.pdf', // PDF pre-generado (portada + fuentes + cuadros con color, sin controles)
         extractFrom: null,   // Cargar el archivo completo
         extractUntil: null,
         cpInsertBefore: ['s2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'], // 8 marcadores → 9 partes → 1 control por sección
@@ -1567,35 +1568,24 @@
     }
 
     // ── PDF ───────────────────────────────────────────────────────────
-    // El PDF se genera desde el MANUAL ORIGINAL (con su portada, sus fuentes
-    // y sus cuadros con color), NO desde la versión web. Así el PDF es fiel
-    // al apunte y NO incluye los controles de comprensión (esos viven solo
-    // en la plataforma). Abrimos el archivo fuente e invocamos la impresión:
-    // el navegador respeta el @media print del manual (portada en página
-    // aparte, cuadros sin cortarse entre páginas).
+    // Descarga directa de un PDF PRE-GENERADO (un clic = se descarga). El PDF
+    // es fiel al manual: incluye portada, las fuentes y los cuadros con color,
+    // y NO incluye los controles de comprensión (esos viven solo en la web).
+    // Se regenera con Chrome headless desde el archivo fuente del manual.
     function prepararPDF() {
       const contenido = temaActivo ? contenidos[temaActivo] : null;
-      if (!contenido || !contenido.sourceFile) {
-        alert('Selecciona un manual antes de descargar.');
+      if (!contenido || !contenido.pdfFile) {
+        alert('El PDF de este manual aún no está disponible.');
         return;
       }
 
-      const win = window.open(contenido.sourceFile, '_blank');
-      if (!win) {
-        alert('Tu navegador bloqueó la ventana emergente. Permite las ventanas emergentes de este sitio y vuelve a intentarlo.');
-        return;
-      }
-
-      // Esperar a que el manual cargue por completo antes de abrir el diálogo
-      // de impresión / guardar como PDF.
-      const lanzarImpresion = () => {
-        try { win.focus(); win.print(); } catch (e) { /* el usuario puede imprimir con Cmd+P */ }
-      };
-      if (win.document && win.document.readyState === 'complete') {
-        lanzarImpresion();
-      } else {
-        win.addEventListener('load', lanzarImpresion);
-      }
+      const nombre = (contenido.titulo ? contenido.titulo.replace(/\s+/g, '_') : 'Manual') + '_Digesto.pdf';
+      const a = document.createElement('a');
+      a.href = contenido.pdfFile;
+      a.download = nombre;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
 
     function renderProximamente(materia, tema) {
