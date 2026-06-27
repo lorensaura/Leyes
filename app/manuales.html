@@ -1119,7 +1119,7 @@
         pdfFile: 'pdf/Responsabilidad_Contractual.pdf', // PDF pre-generado (portada + fuentes + cuadros con color, sin controles)
         extractFrom: null,   // Cargar el archivo completo
         extractUntil: null,
-        cpInsertBefore: ['s2', 's3', 's4'], // 3 marcadores → 4 partes → 1 control por sección
+        cpInsertBefore: ['s2', 's3', 's4', 's5', 's6', 's7', 's8'], // 7 marcadores → 8 partes → 1 control por sección
         _loaded: false,
         html: null,
         checkpoints: [
@@ -1161,6 +1161,47 @@
               { texto: '¿Qué es el incumplimiento resolutorio? Explique la exigencia de gravedad y los incumplimientos intrascendentes.', keywords: ['incumplimiento resolutorio','gravedad','intrascendente','imputable','Mejías','Talca','buena fe'] },
               { texto: 'Distinga el pacto comisorio simple del calificado y la cláusula de término unilateral. Plazo de prescripción del pacto comisorio.', keywords: ['pacto comisorio','simple','calificado','1879','24 horas','1880','cuatro años','término unilateral','1546'] },
               { texto: '¿Cuáles son los efectos de la resolución entre las partes y respecto de terceros (arts. 1487, 1490 y 1491)?', keywords: ['extintivo','1567','restitutorio','retroactivo','1487','terceros','1490','1491','buena fe'] }
+            ]
+          },
+          {
+            id: 'rc6-cp5',
+            label: 'Control 5 · §5',
+            subtitulo: 'La indemnización de perjuicios',
+            preguntas: [
+              { texto: 'Concepto y naturaleza de la indemnización: explique la perpetuatio obligationis y por qué no hay novación (art. 1672).', keywords: ['indemnización','equivalencia','perpetuatio','1672','novación','1628','segundo grado','garantías'] },
+              { texto: 'Distinga indemnización compensatoria y moratoria y su acumulabilidad. ¿Cuál es la doble función según Pizarro (aestimatio rei / id quod interest)?', keywords: ['compensatoria','moratoria','acumular','1537','1543','aestimatio rei','id quod interest','Pizarro'] },
+              { texto: '¿Es la indemnización un remedio autónomo? Exponga la tesis tradicional, la moderna (Zorin) y la posición matizada de Boetsch.', keywords: ['autónomo','1489','Zorin','Vidal','Pizarro','remedios','1590','tracto sucesivo','Boetsch'] },
+              { texto: 'Requisitos de la indemnización: dolo y culpa (art. 44), perjuicio (daño moral, pérdida de chance), causalidad y mora (art. 1551).', keywords: ['dolo','culpa','44','1547','daño moral','chance','causalidad','mora','1551','1558'] }
+            ]
+          },
+          {
+            id: 'rc6-cp6',
+            label: 'Control 6 · §6',
+            subtitulo: 'Causales de exención de responsabilidad',
+            preguntas: [
+              { texto: '¿Qué es el caso fortuito o fuerza mayor (art. 45)? Elementos, efectos y prueba (art. 1547 inc. 3).', keywords: ['caso fortuito','fuerza mayor','45','imprevisible','irresistible','exterioridad','1547','prueba','1674'] },
+              { texto: 'Otras causales: ausencia de culpa, estado de necesidad, hecho del acreedor, culpa del acreedor y teoría de los riesgos (art. 1550).', keywords: ['ausencia de culpa','estado de necesidad','hecho del acreedor','mora del acreedor','riesgo','1550','1820'] },
+              { texto: 'Explique la teoría de la imprevisión: pacta sunt servanda frente a rebus sic stantibus, requisitos y su recepción en Chile.', keywords: ['imprevisión','pacta sunt servanda','rebus sic stantibus','excesiva onerosidad','1545','1546','buena fe','revisión'] }
+            ]
+          },
+          {
+            id: 'rc6-cp7',
+            label: 'Control 7 · §7',
+            subtitulo: 'Los derechos auxiliares del acreedor',
+            preguntas: [
+              { texto: '¿Qué es el derecho de prenda general (art. 2465) y cuáles son los cuatro derechos auxiliares del acreedor?', keywords: ['prenda general','2465','2469','medidas conservativas','acción oblicua','acción pauliana','beneficio de separación'] },
+              { texto: 'Explique la acción oblicua o subrogatoria: concepto, casos legales (art. 2466), requisitos y efectos.', keywords: ['oblicua','subrogatoria','2466','2465','crédito','insolvencia','exigible','beneficia a todos'] },
+              { texto: 'Explique la acción pauliana o revocatoria: fraude pauliano, requisitos, gratuito/oneroso (art. 2468) y prescripción.', keywords: ['pauliana','revocatoria','2468','fraude pauliano','perjuicio','gratuito','oneroso','inoponibilidad','un año'] }
+            ]
+          },
+          {
+            id: 'rc6-cp8',
+            label: 'Control 8 · §8',
+            subtitulo: 'Cláusulas que modifican la responsabilidad',
+            preguntas: [
+              { texto: 'Distinga las cláusulas que agravan, atenúan y exoneran la responsabilidad. ¿Cuál es el límite infranqueable (arts. 1465 y 44)?', keywords: ['agravan','atenúan','exoneran','1465','44','dolo futuro','culpa grave','1547','1558','1673'] },
+              { texto: 'Reglas de interpretación de estas cláusulas: estipulación expresa, buena fe (art. 1546), interpretación restrictiva (art. 1563) y condonación del dolo.', keywords: ['expresa','1547','1560','1546','buena fe','restrictiva','1563','1465','dolo pasado','1682'] },
+              { texto: 'Analice las cláusulas de estilo: "todo incumplimiento", "todo daño" (Gatica) y la exclusión de daños indirectos (cláusula penal, arts. 1542 y 1544).', keywords: ['todo incumplimiento','1459','todo daño','1558','Gatica','daños indirectos','causalidad','cláusula penal','1542','1544'] }
             ]
           }
         ]
