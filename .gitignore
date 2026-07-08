@@ -3,3 +3,7 @@
 node_modules/
 .env
 .vercel
+
+# Material fuente de estudio (PDFs de terceros con derecho de autor).
+# Se mantienen en local; no se versionan ni se despliegan.
+Apuntes/
