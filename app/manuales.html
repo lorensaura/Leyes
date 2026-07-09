@@ -1510,7 +1510,10 @@
             btnRow.innerHTML = '<div class="cp-completado">✓ Control superado — continúa leyendo</div>';
           } else {
             btnRow.innerHTML = `
-              <button class="cp-btn cp-btn-primary" onclick="saltarCheckpoint('${key}',${cpIdx})">
+              <button class="cp-btn cp-btn-primary" onclick="evaluarCheckpoint('${key}',${cpIdx},${numPregs})">
+                Volver a evaluar
+              </button>
+              <button class="cp-btn cp-btn-ghost" onclick="saltarCheckpoint('${key}',${cpIdx})">
                 Continuar de todas formas →
               </button>`;
           }
