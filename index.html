@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leyes — Prepara tu examen de grado</title>
+  <title>Digesto — Prepara tu examen de grado</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -68,6 +68,24 @@
     }
 
     .nav-links a:hover { color: #111111; }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-login {
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #7A6E5F;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-login:hover { color: #111111; }
+    .nav-login strong { color: #C41E2E; font-weight: 700; }
 
     .btn {
       display: inline-block;
@@ -584,6 +602,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .nav-login-pre { display: none; }
       .hero::after { display: none; }
       .hero-stats { gap: 1.5rem; }
       .materias { flex-direction: column; gap: 1rem; }
@@ -594,19 +613,22 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">Leyes<span>.</span></div>
+    <div class="logo">Digesto<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#features">Qué incluye</a></li>
       <li><a href="#how">Cómo funciona</a></li>
       <li><a href="#pricing">Planes</a></li>
     </ul>
-    <a href="#waitlist" class="btn btn-dark">Reservar acceso</a>
+    <div class="nav-cta">
+      <a href="app/auth.html" class="nav-login"><span class="nav-login-pre">¿Ya tienes cuenta? </span><strong>Log in</strong></a>
+      <a href="#waitlist" class="btn btn-dark">Reservar acceso</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="badge">📚 Examen de grado · Chile 2025</div>
+      <div class="badge">📚 Examen de grado · Chile 2026</div>
       <h1>Aprueba tu examen de grado con <em>confianza real</em></h1>
       <p>La plataforma de preparación más completa para el examen de grado de Derecho en Chile. Estudia a tu ritmo, practica con IA y compite con tus compañeros.</p>
       <div class="hero-form">
@@ -783,8 +805,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Leyes<span>.</span></div>
-    <p>© 2025 Leyes · Preparación para el examen de grado · Chile</p>
+    <div class="footer-logo">Digesto<span>.</span></div>
+    <p>© 2026 Digesto · Preparación para el examen de grado · Chile</p>
   </footer>
 
   <script>
