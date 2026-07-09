@@ -191,6 +191,33 @@
       display: none;
     }
 
+    .info-msg {
+      background: rgba(17,17,17,0.04);
+      border: 1px solid rgba(17,17,17,0.12);
+      color: #4A4034;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      padding: 0.7rem 0.9rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .forgot-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #7A6E5F;
+      background: none;
+      border: none;
+      padding: 0;
+      margin-bottom: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .forgot-link:hover { color: #C41E2E; }
+
     .divider {
       text-align: center;
       font-size: 0.8rem;
@@ -243,8 +270,8 @@
     <div class="auth-box">
 
       <div class="tabs">
-        <button class="tab active" onclick="showTab('login')">Ingresar</button>
-        <button class="tab" onclick="showTab('register')">Registrarse</button>
+        <button class="tab active" data-tab="login" onclick="showForm('login')">Ingresar</button>
+        <button class="tab" data-tab="register" onclick="showForm('register')">Registrarse</button>
       </div>
 
       <!-- LOGIN -->
@@ -261,6 +288,9 @@
         <div class="field">
           <label>Contraseña</label>
           <input type="password" id="login-password" placeholder="••••••••" />
+        </div>
+        <div style="text-align:right;">
+          <button type="button" class="forgot-link" onclick="showForm('recover')">¿Olvidaste tu contraseña?</button>
         </div>
         <button class="btn-submit" id="login-btn" onclick="handleLogin()">Entrar</button>
         <a href="../index.html" class="back-link">← Volver al inicio</a>
@@ -289,6 +319,41 @@
         <a href="../index.html" class="back-link">← Volver al inicio</a>
       </div>
 
+      <!-- RECUPERAR CONTRASEÑA -->
+      <div class="form-section" id="form-recover">
+        <div class="form-title">Recuperar contraseña</div>
+        <div class="form-subtitle">Te enviaremos un enlace a tu correo para crear una nueva contraseña.</div>
+
+        <div class="error-msg" id="recover-error"></div>
+        <div class="info-msg" id="recover-info"></div>
+
+        <div class="field">
+          <label>Correo</label>
+          <input type="email" id="recover-email" placeholder="tu@correo.com" />
+        </div>
+        <button class="btn-submit" id="recover-btn" onclick="handleRecover()">Enviar enlace</button>
+        <button type="button" class="back-link" style="background:none;border:none;cursor:pointer;width:100%;" onclick="showForm('login')">← Volver a ingresar</button>
+      </div>
+
+      <!-- NUEVA CONTRASEÑA -->
+      <div class="form-section" id="form-newpassword">
+        <div class="form-title">Nueva contraseña</div>
+        <div class="form-subtitle">Ingresa tu nueva contraseña para continuar.</div>
+
+        <div class="error-msg" id="newpassword-error"></div>
+        <div class="info-msg" id="newpassword-info"></div>
+
+        <div class="field">
+          <label>Nueva contraseña</label>
+          <input type="password" id="newpassword-password" placeholder="Mínimo 8 caracteres" />
+        </div>
+        <div class="field">
+          <label>Repite la contraseña</label>
+          <input type="password" id="newpassword-confirm" placeholder="Repite la contraseña" />
+        </div>
+        <button class="btn-submit" id="newpassword-btn" onclick="handleNewPassword()">Guardar contraseña</button>
+      </div>
+
     </div>
   </div>
 
@@ -299,12 +364,13 @@
     const { createClient } = supabase;
     const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // ── Tabs ──────────────────────────────────────────
-    function showTab(tab) {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    // ── Navegación entre formularios ──────────────────
+    function showForm(name) {
       document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
-      document.getElementById('form-' + tab).classList.add('active');
-      event.target.classList.add('active');
+      document.getElementById('form-' + name).classList.add('active');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      const tab = document.querySelector('.tab[data-tab="' + name + '"]');
+      if (tab) tab.classList.add('active');
     }
 
     // ── Login ─────────────────────────────────────────
@@ -364,14 +430,98 @@
       }
     }
 
-    // Enter para submit
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        const active = document.querySelector('.form-section.active').id;
-        if (active === 'form-login') handleLogin();
-        else handleRegister();
+    // ── Recuperar contraseña (enviar enlace) ──────────
+    async function handleRecover() {
+      const email  = document.getElementById('recover-email').value.trim();
+      const btn    = document.getElementById('recover-btn');
+      const errEl  = document.getElementById('recover-error');
+      const infoEl = document.getElementById('recover-info');
+
+      errEl.style.display  = 'none';
+      infoEl.style.display = 'none';
+
+      if (!email) {
+        errEl.textContent = 'Ingresa tu correo.';
+        errEl.style.display = 'block';
+        return;
       }
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      const redirectTo = window.location.origin + window.location.pathname;
+      const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo });
+
+      if (error) {
+        errEl.textContent = error.message;
+        errEl.style.display = 'block';
+      } else {
+        infoEl.textContent = 'Listo. Te enviamos un correo con el enlace para restablecer tu contraseña. Revisa tu bandeja de entrada (y la carpeta de spam).';
+        infoEl.style.display = 'block';
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Enviar enlace';
+    }
+
+    // ── Guardar nueva contraseña ──────────────────────
+    async function handleNewPassword() {
+      const pw      = document.getElementById('newpassword-password').value;
+      const confirm = document.getElementById('newpassword-confirm').value;
+      const btn     = document.getElementById('newpassword-btn');
+      const errEl   = document.getElementById('newpassword-error');
+      const infoEl  = document.getElementById('newpassword-info');
+
+      errEl.style.display  = 'none';
+      infoEl.style.display = 'none';
+
+      if (pw.length < 8) {
+        errEl.textContent = 'La contraseña debe tener al menos 8 caracteres.';
+        errEl.style.display = 'block';
+        return;
+      }
+      if (pw !== confirm) {
+        errEl.textContent = 'Las contraseñas no coinciden.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Guardando...';
+
+      const { error } = await sb.auth.updateUser({ password: pw });
+
+      if (error) {
+        errEl.textContent = error.message;
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Guardar contraseña';
+      } else {
+        infoEl.textContent = 'Contraseña actualizada. Entrando...';
+        infoEl.style.display = 'block';
+        setTimeout(() => { window.location.href = 'dashboard.html'; }, 1200);
+      }
+    }
+
+    // Enter para enviar el formulario activo
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Enter') return;
+      const active = document.querySelector('.form-section.active').id;
+      if      (active === 'form-login')       handleLogin();
+      else if (active === 'form-register')    handleRegister();
+      else if (active === 'form-recover')     handleRecover();
+      else if (active === 'form-newpassword') handleNewPassword();
     });
+
+    // ── Regreso desde el enlace de recuperación ───────
+    // Cuando el usuario abre el enlace del correo, Supabase detecta el
+    // token y dispara PASSWORD_RECOVERY: mostramos el formulario de nueva clave.
+    sb.auth.onAuthStateChange((event) => {
+      if (event === 'PASSWORD_RECOVERY') showForm('newpassword');
+    });
+    if (window.location.hash.includes('type=recovery')) {
+      showForm('newpassword');
+    }
   </script>
 
 </body>
