@@ -216,7 +216,9 @@
   code{background:var(--light);padding:1px 4px;font-size:10pt;}
 
   @media print{
-    body{padding:1.8cm 2.2cm;font-size:11pt;line-height:1.2;}
+    /* Los márgenes reales los aplica printToPDF en TODAS las páginas
+       (no con padding del body, que solo margina la 1.ª y la última). */
+    body{padding:0;margin:0;font-size:11pt;line-height:1.2;}
     h1{page-break-after:avoid;}
     h2,h3{page-break-after:avoid;}
     .callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,.repaso,table,tr,li{page-break-inside:avoid;}
