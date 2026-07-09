@@ -220,8 +220,16 @@
     h1{page-break-after:avoid;}
     h2,h3{page-break-after:avoid;}
     .callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,.repaso,table,tr,li{page-break-inside:avoid;}
-    .cover{page-break-after:always;}
-    .toc{page-break-after:always;}
+    /* Portada: centrada vertical y horizontalmente, ocupa su propia página */
+    .cover{
+      page-break-after:always;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      min-height:24cm;box-sizing:border-box;
+      padding:0 20px;margin:0;
+    }
+    /* El índice fluye hacia el contenido (sin dejar media página en blanco) */
+    .toc{page-break-after:auto;margin-bottom:1.4rem;}
+    h1:first-of-type{page-break-before:avoid;}
   }
 </style>
 </head>
