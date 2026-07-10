@@ -810,10 +810,6 @@
   </footer>
 
   <script>
-    const AIRTABLE_TOKEN = 'patVYZmp367lfnC9A.ac95af4c904b3b154a1f56953821011734a5fc4b48c3db5318110afe7c090183';
-    const AIRTABLE_BASE  = 'appjP6jK8Jbm5uaeG';
-    const AIRTABLE_TABLE = 'tblXj3d2lcufAD0KX';
-
     async function handleWaitlist(source) {
       const input   = document.getElementById(source + '-email');
       const success = document.getElementById(source + '-success');
@@ -830,22 +826,13 @@
       btn.textContent = 'Guardando...';
 
       try {
-        const res = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_TABLE}`, {
+        const res = await fetch('/api/waitlist', {
           method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            fields: {
-              Email: email,
-              Fecha: new Date().toISOString().split('T')[0],
-              Fuente: source === 'hero' ? 'Hero' : 'CTA Final'
-            }
-          })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source })
         });
 
-        if (!res.ok) throw new Error('Error Airtable');
+        if (!res.ok) throw new Error('Error waitlist');
 
         input.style.display = 'none';
         btn.style.display   = 'none';
