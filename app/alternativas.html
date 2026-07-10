@@ -640,8 +640,8 @@
 
     <div class="filtros">
       <button class="filtro-btn active" onclick="setFiltro('todos', this)">Todos</button>
-      <button class="filtro-btn" onclick="setFiltro('civil', this)">Civil</button>
-      <button class="filtro-btn" onclick="setFiltro('procesal', this)">Procesal</button>
+      <button class="filtro-btn" onclick="setFiltro('contractual', this)">Contractual</button>
+      <button class="filtro-btn" onclick="setFiltro('extracontractual', this)">Extracontractual</button>
       <button class="filtro-btn" onclick="setFiltro('aplicacion', this)">Aplicación</button>
       <button class="filtro-btn" onclick="setFiltro('deteccion_error', this)">Detección de error</button>
       <button class="filtro-btn" onclick="setFiltro('justificacion', this)">Justificación</button>
@@ -969,10 +969,19 @@
     }
 
     function startSession() {
+      // Por ahora el banco se acota a Responsabilidad contractual y extracontractual.
+      // (Se ocultan Procesal y otros temas hasta que estén publicados sus manuales.)
+      const TEMAS_EN_ALCANCE = [
+        'Responsabilidad contractual',
+        'Responsabilidad extracontractual',
+        'Responsabilidad civil' // ítems comparados: distinción de estatutos, prescripción, cúmulo
+      ];
       itemsFiltrados = banco.filter(item => {
+        if (!TEMAS_EN_ALCANCE.includes(item.tema)) return false; // fuera Procesal y otros
         if (filtroActivo === 'todos') return true;
-        if (filtroActivo === 'civil' || filtroActivo === 'procesal') return item.materia === filtroActivo;
-        return item.tipo === filtroActivo;
+        if (filtroActivo === 'contractual') return item.tema === 'Responsabilidad contractual';
+        if (filtroActivo === 'extracontractual') return item.tema === 'Responsabilidad extracontractual';
+        return item.tipo === filtroActivo; // filtros por tipo de ejercicio
       });
       itemsFiltrados.sort(() => Math.random() - 0.5);
       idxActual = 0;
@@ -1058,6 +1067,23 @@
       }
 
       document.getElementById('btn-evaluar').disabled = true;
+
+      // Los ítems de discriminación (alternativas) no tienen rúbrica de palabras
+      // clave: la recuperación libre es solo práctica y la corrección real ocurre
+      // al elegir la alternativa. Sin esta guarda, item.elementos_clave.forEach
+      // lanzaba un TypeError y no se mostraba ningún feedback.
+      if (!item.elementos_clave || item.elementos_clave.length === 0) {
+        const cont = item.tipo === 'discriminacion_mc'
+          ? `<button class="btn btn-dark" onclick="mostrarMC()">Continuar → Alternativas</button>`
+          : `<button class="btn btn-dark" onclick="mostrarModelo()">Ver respuesta modelo</button>`;
+        document.getElementById('feedback-area').innerHTML = `
+          <div class="feedback-panel">
+            <div class="veredicto">✓ Recuperación registrada. Ahora contrasta tu recuerdo con las alternativas y elige la correcta.</div>
+            <div class="btn-row" style="margin-top:1.25rem;">${cont}</div>
+          </div>`;
+        document.getElementById('feedback-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
 
       const acertados = [];
       const faltantes = [];
@@ -1190,7 +1216,7 @@
           <div class="justificacion-label">Justificación (1 línea) — ¿Por qué elegiste esa opción?</div>
           <textarea id="justificacion-text" class="justificacion" placeholder="Elijo X porque…"></textarea>
           <div class="btn-row">
-            <button class="btn btn-primary" onclick="evaluarMC()">Confirmar selección</button>
+            <button class="btn btn-primary" id="btn-confirmar-mc" onclick="evaluarMC()">Confirmar selección</button>
           </div>
           <div id="mc-feedback"></div>
         </div>
@@ -1210,9 +1236,20 @@
       const item = itemsFiltrados[idxActual];
       if (seleccionMC === null) return;
 
+      const btnConfirmar = document.getElementById('btn-confirmar-mc');
+      if (btnConfirmar) {
+        if (btnConfirmar.disabled) return; // evita doble conteo si se reconfirma
+        btnConfirmar.disabled = true;
+      }
+
       const letras = ['A', 'B', 'C', 'D'];
       const correctaIdx = item.opciones.findIndex(op => op.letra === item.correcta);
       const esCorrecta = seleccionMC === correctaIdx;
+
+      // Estos ítems no pasan por la rúbrica de recuperación libre; su crédito se
+      // contabiliza aquí (acierto = 1, error = 0) para que sí cuenten en el puntaje.
+      creditoTotal += esCorrecta ? 1 : 0;
+      itemsCompletados++;
 
       document.querySelectorAll('.option-btn').forEach((btn, i) => {
         btn.disabled = true;
@@ -1232,7 +1269,9 @@
       document.getElementById('mc-feedback').innerHTML = `
         <div class="distractor-feedback">${distractorFeedback}</div>
         <div class="btn-row" style="margin-top:1rem;">
-          <button class="btn btn-dark" onclick="mostrarModelo()">Ver respuesta modelo completa</button>
+          <button class="btn btn-dark" onclick="siguiente()">
+            ${idxActual < itemsFiltrados.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}
+          </button>
         </div>
       `;
     }
@@ -1245,9 +1284,9 @@
       const modeloHTML = `
         <div class="modelo-section">
           <div class="modelo-title">Respuesta orientadora</div>
-          <div class="modelo-body">${item.respuesta_modelo}</div>
+          <div class="modelo-body">${item.respuesta_modelo || 'La corrección de este ítem se realiza al elegir la alternativa correcta.'}</div>
           <div class="articulos-ref">
-            ${item.articulos_referencia.map(a => `<span class="art-tag">Art. ${a}</span>`).join('')}
+            ${(item.articulos_referencia || []).map(a => `<span class="art-tag">Art. ${a}</span>`).join('')}
           </div>
         </div>
         <div class="btn-row" style="margin-top:1.5rem; max-width:780px;">
