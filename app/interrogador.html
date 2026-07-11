@@ -252,6 +252,11 @@
       border-bottom-left-radius: 3px;
     }
 
+    /* Convención de corrección: tachado = incorrecto, subrayado = correcto, negrita = faltó decir */
+    .burbuja.ia s { color: #A61825; text-decoration-color: rgba(166,24,37,0.6); }
+    .burbuja.ia u { color: #1A7A40; text-decoration-color: rgba(26,122,64,0.6); }
+    .burbuja.ia strong { color: #111111; font-weight: 700; }
+
     .burbuja.alumno {
       align-self: flex-end;
       background: #111111;
@@ -415,10 +420,18 @@
       modoElegido = modo;
     }
 
-    function escaparHTML(texto) {
-      const div = document.createElement('div');
-      div.textContent = texto;
-      return div.innerHTML;
+    // Escapa HTML y traduce la convención de marcado del examinador a
+    // etiquetas reales: ~~tachado~~, __subrayado__, **negrita**.
+    function formatearTextoIA(texto) {
+      let seguro = texto
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      seguro = seguro
+        .replace(/~~([\s\S]+?)~~/g, '<s>$1</s>')
+        .replace(/__([\s\S]+?)__/g, '<u>$1</u>')
+        .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
+      return seguro;
     }
 
     function scrollAbajo() {
@@ -430,7 +443,11 @@
       const cont = document.getElementById('mensajes');
       const div = document.createElement('div');
       div.className = 'burbuja ' + (rol === 'user' ? 'alumno' : 'ia');
-      div.textContent = texto;
+      if (rol === 'user') {
+        div.textContent = texto;
+      } else {
+        div.innerHTML = formatearTextoIA(texto);
+      }
       cont.appendChild(div);
       scrollAbajo();
       return div;
@@ -542,7 +559,7 @@
                 burbujaIA = agregarBurbuja('assistant', '');
               }
               textoAcumulado += evento.text;
-              burbujaIA.textContent = textoAcumulado;
+              burbujaIA.innerHTML = formatearTextoIA(textoAcumulado);
               scrollAbajo();
             } else if (evento.type === 'error') {
               huboError = true;
