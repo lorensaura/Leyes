@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digesto — Interrogador IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      background: #111111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+    }
+
+    .sidebar-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: #E8D8B8;
+      margin-bottom: 3rem;
+      text-decoration: none;
+    }
+
+    .sidebar-logo span { color: #C41E2E; }
+
+    .nav-section {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(232,216,184,0.3);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(232,216,184,0.55);
+      transition: all 0.15s;
+      margin-bottom: 0.2rem;
+    }
+
+    .nav-item:hover { background: rgba(232,216,184,0.06); color: #E8D8B8; }
+    .nav-item.active { background: rgba(196,30,46,0.15); color: #E8D8B8; }
+    .nav-item.active .nav-icon { color: #C41E2E; }
+
+    .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+    .nav-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      background: rgba(196,30,46,0.2);
+      color: #C41E2E;
+      padding: 0.1rem 0.45rem;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(232,216,184,0.08);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .user-avatar {
+      width: 36px; height: 36px;
+      background: #C41E2E;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: #F5EAD4;
+      flex-shrink: 0;
+    }
+
+    .user-name { font-size: 0.82rem; font-weight: 600; color: #E8D8B8; }
+    .user-plan { font-size: 0.72rem; color: rgba(232,216,184,0.4); }
+
+    .btn-logout {
+      width: 100%;
+      padding: 0.55rem;
+      background: transparent;
+      border: 1px solid rgba(232,216,184,0.12);
+      border-radius: 6px;
+      color: rgba(232,216,184,0.4);
+      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: #C41E2E; }
+
+    /* ── MAIN ── */
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      align-items: center;
+    }
+
+    .chat-shell {
+      width: 100%;
+      max-width: 760px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      padding: 1.5rem 1rem 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .chat-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+    }
+
+    .chat-modo-badge {
+      display: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #7A6E5F;
+      background: rgba(17,17,17,0.06);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+
+    /* ── TARJETA DE INICIO ── */
+    .intro-card {
+      margin: 1rem;
+      padding: 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 12px;
+    }
+
+    .intro-card h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+
+    .intro-card p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #4A4136;
+      margin-bottom: 1rem;
+    }
+
+    .modo-selector {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .modo-opcion {
+      flex: 1;
+      padding: 0.9rem 1rem;
+      border: 1.5px solid rgba(17,17,17,0.12);
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .modo-opcion.active { border-color: #C41E2E; background: rgba(196,30,46,0.05); }
+
+    .modo-opcion .modo-nombre { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.2rem; }
+    .modo-opcion .modo-desc { font-size: 0.76rem; color: #7A6E5F; line-height: 1.4; }
+
+    .btn-primario {
+      padding: 0.75rem 1.5rem;
+      background: #C41E2E;
+      color: #F5EAD4;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primario:hover { opacity: 0.9; }
+    .btn-primario:disabled { opacity: 0.5; cursor: default; }
+
+    /* ── MENSAJES ── */
+    .mensajes {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem 1rem 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .burbuja {
+      max-width: 82%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+
+    .burbuja.ia {
+      align-self: flex-start;
+      background: #FFFFFF;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-bottom-left-radius: 3px;
+    }
+
+    .burbuja.alumno {
+      align-self: flex-end;
+      background: #111111;
+      color: #E8D8B8;
+      border-bottom-right-radius: 3px;
+    }
+
+    .escribiendo {
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.2rem;
+      color: #7A6E5F;
+      font-size: 0.8rem;
+    }
+
+    .spinner {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border: 2.5px solid rgba(17,17,17,0.1); border-top-color: #C41E2E;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-banner {
+      display: none;
+      margin: 0 1rem 0.75rem;
+      padding: 0.7rem 1rem;
+      background: rgba(196,30,46,0.08);
+      border: 1px solid rgba(196,30,46,0.25);
+      color: #A61825;
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+
+    /* ── INPUT ── */
+    .input-row {
+      display: none;
+      flex-shrink: 0;
+      gap: 0.6rem;
+      padding: 0.85rem 1rem 1.25rem;
+      border-top: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .input-row textarea {
+      flex: 1;
+      resize: none;
+      border: 1.5px solid rgba(17,17,17,0.12);
+      border-radius: 9px;
+      padding: 0.65rem 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      max-height: 140px;
+      background: #FFFFFF;
+    }
+
+    .input-row textarea:focus { outline: none; border-color: #C41E2E; }
+
+    .aviso-sesion {
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(17,17,17,0.35);
+      padding-bottom: 0.5rem;
+      flex-shrink: 0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-logo">Digesto<span>.</span></a>
+
+    <span class="nav-section">Estudio</span>
+    <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
+    <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
+    <a class="nav-item" href="alternativas.html"><span class="nav-icon">✅</span> Alternativas</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🃏</span> Flashcards <span class="nav-badge">Pronto</span></a>
+
+    <span class="nav-section">Con IA</span>
+    <a class="nav-item active" href="interrogador.html"><span class="nav-icon">💬</span> Chat IA</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🎙️</span> Interrogación oral <span class="nav-badge">Pronto</span></a>
+
+    <span class="nav-section">Comunidad</span>
+    <a class="nav-item" href="#"><span class="nav-icon">🏆</span> Liga <span class="nav-badge">Pronto</span></a>
+
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" id="user-avatar">?</div>
+        <div>
+          <div class="user-name" id="user-name">...</div>
+          <div class="user-plan">Plan Esencial</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="handleLogout()">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="chat-shell">
+
+      <div class="chat-header">
+        <div class="chat-title">Interrogador IA</div>
+        <div class="chat-modo-badge" id="modo-badge"></div>
+      </div>
+
+      <div class="error-banner" id="error-banner"></div>
+
+      <!-- Tarjeta de inicio -->
+      <div class="intro-card" id="intro-card">
+        <h2>Responsabilidad civil</h2>
+        <p>
+          Una comisión te interrogará como en el examen de grado: preguntas, repreguntas y un caso
+          práctico sobre responsabilidad contractual y extracontractual. Al final recibes tu nota
+          (escala 1-7) con rúbrica y plan de estudio. Esta sesión no queda guardada — si cierras o
+          recargas la página, se pierde.
+        </p>
+        <div class="modo-selector">
+          <div class="modo-opcion active" data-modo="examen" onclick="elegirModo(this, 'examen')">
+            <div class="modo-nombre">Modo examen</div>
+            <div class="modo-desc">Simula el examen real: sin correcciones en el camino, todo el feedback al final.</div>
+          </div>
+          <div class="modo-opcion" data-modo="practica" onclick="elegirModo(this, 'practica')">
+            <div class="modo-nombre">Modo práctica</div>
+            <div class="modo-desc">Corrección breve después de cada respuesta, para ir estudiando sobre la marcha.</div>
+          </div>
+        </div>
+        <button class="btn-primario" id="btn-comenzar" onclick="comenzarInterrogacion()">Comenzar interrogación</button>
+      </div>
+
+      <!-- Mensajes -->
+      <div class="mensajes" id="mensajes"></div>
+
+      <div class="aviso-sesion" id="aviso-sesion">Esta interrogación no se guarda — no cierres ni recargues la página.</div>
+
+      <!-- Input -->
+      <div class="input-row" id="input-row">
+        <textarea id="input-mensaje" rows="1" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-primario" id="btn-enviar" onclick="enviarMensaje()">Enviar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq';
+    const { createClient } = supabase;
+    const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let modoElegido = 'examen';
+    let historial = [];
+    let enviando = false;
+
+    function elegirModo(el, modo) {
+      document.querySelectorAll('.modo-opcion').forEach((o) => o.classList.remove('active'));
+      el.classList.add('active');
+      modoElegido = modo;
+    }
+
+    function escaparHTML(texto) {
+      const div = document.createElement('div');
+      div.textContent = texto;
+      return div.innerHTML;
+    }
+
+    function scrollAbajo() {
+      const cont = document.getElementById('mensajes');
+      cont.scrollTop = cont.scrollHeight;
+    }
+
+    function agregarBurbuja(rol, texto) {
+      const cont = document.getElementById('mensajes');
+      const div = document.createElement('div');
+      div.className = 'burbuja ' + (rol === 'user' ? 'alumno' : 'ia');
+      div.textContent = texto;
+      cont.appendChild(div);
+      scrollAbajo();
+      return div;
+    }
+
+    function mostrarError(msg) {
+      const banner = document.getElementById('error-banner');
+      banner.textContent = msg;
+      banner.style.display = 'block';
+    }
+
+    function ocultarError() {
+      document.getElementById('error-banner').style.display = 'none';
+    }
+
+    function fijarEnviando(estado) {
+      enviando = estado;
+      document.getElementById('btn-enviar').disabled = estado;
+      document.getElementById('input-mensaje').disabled = estado;
+    }
+
+    async function comenzarInterrogacion() {
+      document.getElementById('btn-comenzar').disabled = true;
+      ocultarError();
+
+      const modoLabel = modoElegido === 'examen' ? 'examen' : 'práctica';
+      historial = [{ role: 'user', content: `Modo: ${modoLabel}. Comencemos la interrogación.` }];
+
+      document.getElementById('intro-card').style.display = 'none';
+      document.getElementById('mensajes').style.display = 'flex';
+      document.getElementById('input-row').style.display = 'flex';
+      document.getElementById('aviso-sesion').style.display = 'block';
+      const badge = document.getElementById('modo-badge');
+      badge.textContent = 'Modo ' + modoLabel;
+      badge.style.display = 'inline-block';
+
+      await pedirRespuestaIA();
+    }
+
+    async function enviarMensaje() {
+      if (enviando) return;
+      const input = document.getElementById('input-mensaje');
+      const texto = input.value.trim();
+      if (!texto) return;
+
+      ocultarError();
+      historial.push({ role: 'user', content: texto });
+      agregarBurbuja('user', texto);
+      input.value = '';
+      input.style.height = 'auto';
+
+      await pedirRespuestaIA();
+    }
+
+    async function pedirRespuestaIA() {
+      fijarEnviando(true);
+
+      const cont = document.getElementById('mensajes');
+      const indicador = document.createElement('div');
+      indicador.className = 'escribiendo';
+      indicador.innerHTML = '<div class="spinner"></div> La comisión está escribiendo...';
+      cont.appendChild(indicador);
+      scrollAbajo();
+
+      let burbujaIA = null;
+      let textoAcumulado = '';
+
+      try {
+        const resp = await fetch('/api/interrogador', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ modo: modoElegido, messages: historial }),
+        });
+
+        if (!resp.ok || !resp.body) {
+          let detalle = 'La IA no pudo responder en este momento. Intenta de nuevo.';
+          try {
+            const data = await resp.json();
+            if (data && data.error) detalle = data.error;
+          } catch (e) { /* sin detalle */ }
+          throw new Error(detalle);
+        }
+
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let huboError = false;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lineas = buffer.split('\n');
+          buffer = lineas.pop();
+
+          for (const linea of lineas) {
+            if (!linea.trim()) continue;
+            let evento;
+            try {
+              evento = JSON.parse(linea);
+            } catch (e) {
+              continue;
+            }
+
+            if (evento.type === 'delta') {
+              if (!burbujaIA) {
+                indicador.remove();
+                burbujaIA = agregarBurbuja('assistant', '');
+              }
+              textoAcumulado += evento.text;
+              burbujaIA.textContent = textoAcumulado;
+              scrollAbajo();
+            } else if (evento.type === 'error') {
+              huboError = true;
+              mostrarError(evento.message || 'Ocurrió un error con la IA.');
+            }
+          }
+        }
+
+        if (indicador.parentNode) indicador.remove();
+
+        if (textoAcumulado) {
+          historial.push({ role: 'assistant', content: textoAcumulado });
+        } else if (!huboError) {
+          mostrarError('La IA no devolvió respuesta. Intenta de nuevo.');
+        }
+      } catch (err) {
+        if (indicador.parentNode) indicador.remove();
+        mostrarError(err.message || 'Ocurrió un error de conexión. Intenta de nuevo.');
+      } finally {
+        fijarEnviando(false);
+        document.getElementById('input-mensaje').focus();
+      }
+    }
+
+    // Enter envía, Shift+Enter agrega línea nueva
+    document.getElementById('input-mensaje').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        enviarMensaje();
+      }
+    });
+
+    // Auto-crecer el textarea
+    document.getElementById('input-mensaje').addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 140) + 'px';
+    });
+
+    async function init() {
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) { window.location.href = 'auth.html'; return; }
+
+      const name = user.user_metadata?.full_name || user.email.split('@')[0];
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+    }
+
+    async function handleLogout() {
+      await sb.auth.signOut();
+      window.location.href = '../index.html';
+    }
+
+    init();
+  </script>
+</body>
+</html>
