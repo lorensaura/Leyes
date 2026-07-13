@@ -7,3 +7,7 @@ node_modules/
 # Material fuente de estudio (PDFs de terceros con derecho de autor).
 # Se mantienen en local; no se versionan ni se despliegan.
 Apuntes/
+
+# Notas de traspaso entre sesiones de Claude Code (snapshot del momento,
+# no un historial que valga la pena versionar — ver .claude/skills/handoff).
+.claude/handoff/
