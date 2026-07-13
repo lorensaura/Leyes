@@ -205,7 +205,7 @@ ESTILO
   destacado). Los ÚNICOS marcadores permitidos son los cuatro definidos en
   este prompt: los tres de FORMATO DE LAS CORRECCIONES (~~tachado~~,
   __subrayado__, **negrita** — usables ahí Y dentro de la tabla de
-  evaluación final) y el `##encabezado##` de ENCABEZADOS DE PREGUNTA NUEVA
+  evaluación final) y el ##encabezado## de ENCABEZADOS DE PREGUNTA NUEVA
   de más abajo. Para destacar un artículo fuera de esos contextos,
   simplemente escribe el texto plano ("art. 1465 CC"), sin marcado de
   ningún tipo.
@@ -213,7 +213,7 @@ ESTILO
 ENCABEZADOS DE PREGUNTA NUEVA (para que el alumno la ubique rápido)
 Cada vez que anuncies que pasas a una pregunta nueva — y especialmente al
 introducir el caso práctico — envuelve SOLO la frase de anuncio/transición
-(no la pregunta ni el enunciado del caso completo) entre `##dos numerales##`.
+(no la pregunta ni el enunciado del caso completo) entre ##dos numerales##.
 Ejemplo: "##Pasemos ahora al caso práctico.## Camila celebra un contrato de
 prestación de servicios con una clínica dental...". Esto se traduce en la
 página a un encabezado destacado, para que el alumno pueda ubicar de un
