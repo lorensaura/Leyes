@@ -336,7 +336,7 @@
     <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
     <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
     <a class="nav-item" href="alternativas.html"><span class="nav-icon">✅</span> Alternativas</a>
-    <a class="nav-item" href="#"><span class="nav-icon">🃏</span> Flashcards <span class="nav-badge">Pronto</span></a>
+    <a class="nav-item" href="flashcards.html"><span class="nav-icon">🃏</span> Flashcards</a>
 
     <span class="nav-section">Con IA</span>
     <a class="nav-item active" href="interrogador.html"><span class="nav-icon">💬</span> Chat IA</a>
@@ -413,6 +413,7 @@
     let modoElegido = 'examen';
     let historial = [];
     let enviando = false;
+    let sessionId = null;
 
     function elegirModo(el, modo) {
       document.querySelectorAll('.modo-opcion').forEach((o) => o.classList.remove('active'));
@@ -473,6 +474,7 @@
       document.getElementById('btn-comenzar').disabled = true;
       ocultarError();
 
+      sessionId = crypto.randomUUID();
       const modoLabel = modoElegido === 'examen' ? 'examen' : 'práctica';
       historial = [{ role: 'user', content: `Modo: ${modoLabel}. Comencemos la interrogación.` }];
 
@@ -519,7 +521,7 @@
         const resp = await fetch('/api/interrogador', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ modo: modoElegido, messages: historial }),
+          body: JSON.stringify({ modo: modoElegido, messages: historial, sessionId }),
         });
 
         if (!resp.ok || !resp.body) {
