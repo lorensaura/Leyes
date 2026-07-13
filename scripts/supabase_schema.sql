@@ -56,3 +56,39 @@ create policy "preguntas_evaluacion: lectura para usuarias con sesión"
   on public.preguntas_evaluacion for select
   to authenticated
   using (publicado = true);
+
+-- Progreso de repaso por alumna (repetición espaciada de Flashcards).
+-- calificacion: 'bien' (no repetir hasta en 7 días), 'mas_o_menos' (3 días),
+-- 'poco' (sin espera fija — proxima_revision queda en null, disponible ya).
+-- Cada alumna solo puede leer/escribir sus propias filas (auth.uid() = user_id).
+
+create table if not exists public.flashcard_progreso (
+  id bigint generated always as identity primary key,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  flashcard_id bigint not null references public.flashcards(id) on delete cascade,
+  calificacion text not null check (calificacion in ('bien', 'mas_o_menos', 'poco')),
+  ultima_revision timestamptz not null default now(),
+  proxima_revision timestamptz,
+  unique (user_id, flashcard_id)
+);
+
+create index if not exists idx_flashcard_progreso_user
+  on public.flashcard_progreso (user_id);
+
+alter table public.flashcard_progreso enable row level security;
+
+create policy "flashcard_progreso: cada usuaria ve solo lo suyo"
+  on public.flashcard_progreso for select
+  to authenticated
+  using (auth.uid() = user_id);
+
+create policy "flashcard_progreso: cada usuaria inserta solo lo suyo"
+  on public.flashcard_progreso for insert
+  to authenticated
+  with check (auth.uid() = user_id);
+
+create policy "flashcard_progreso: cada usuaria actualiza solo lo suyo"
+  on public.flashcard_progreso for update
+  to authenticated
+  using (auth.uid() = user_id)
+  with check (auth.uid() = user_id);

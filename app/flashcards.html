@@ -186,6 +186,19 @@
       color: #A61825;
     }
 
+    .filtro-separador {
+      width: 1px;
+      background: rgba(17,17,17,0.1);
+      margin: 0.2rem 0.3rem;
+    }
+
+    .filtro-chip.errores { color: #8A6300; }
+    .filtro-chip.errores.active {
+      border-color: #8A6300;
+      background: rgba(196,146,30,0.1);
+      color: #8A6300;
+    }
+
     /* ── TARJETA ── */
     .progreso {
       font-size: 0.8rem;
@@ -309,6 +322,38 @@
       margin-top: 1rem;
     }
 
+    /* ── CALIFICACIÓN ── */
+    .calificar-fila {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-calificar {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      border: 1.5px solid;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      cursor: pointer;
+      background: #FFFFFF;
+      transition: opacity 0.15s;
+    }
+
+    .btn-calificar:hover { opacity: 0.85; }
+
+    .btn-calificar.bien { border-color: #1A7A40; color: #1A7A40; }
+    .btn-calificar.bien:hover { background: rgba(26,122,64,0.08); }
+
+    .btn-calificar.mas_o_menos { border-color: #8A6300; color: #8A6300; }
+    .btn-calificar.mas_o_menos:hover { background: rgba(196,146,30,0.1); }
+
+    .btn-calificar.poco { border-color: #A61825; color: #A61825; }
+    .btn-calificar.poco:hover { background: rgba(196,30,46,0.08); }
+
     .estado {
       text-align: center;
       padding: 3rem 1rem;
@@ -386,6 +431,24 @@
     let indice = 0;
     let volteada = false;
     let dificultadActiva = 'todas';
+    let erroresActivo = false;
+    let usuarioId = null;
+    let progresoPorTarjeta = {};
+
+    const DIAS_BIEN = 7;
+    const DIAS_MAS_O_MENOS = 3;
+
+    function sumarDias(dias) {
+      return new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toISOString();
+    }
+
+    function esDebida(t) {
+      const p = progresoPorTarjeta[t.id];
+      if (!p) return true;
+      if (p.calificacion === 'poco') return true;
+      if (!p.proxima_revision) return true;
+      return new Date(p.proxima_revision) <= new Date();
+    }
 
     function escaparHtmlBase(texto) {
       return texto.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -408,9 +471,16 @@
     }
 
     function aplicarFiltro() {
-      filtradas = dificultadActiva === 'todas'
-        ? todas.slice()
-        : todas.filter((t) => t.dificultad === dificultadActiva);
+      filtradas = todas.filter((t) => {
+        if (erroresActivo) {
+          const p = progresoPorTarjeta[t.id];
+          if (!p || p.calificacion !== 'poco') return false;
+        } else if (!esDebida(t)) {
+          return false;
+        }
+        if (dificultadActiva !== 'todas' && t.dificultad !== dificultadActiva) return false;
+        return true;
+      });
       filtradas = shuffle(filtradas);
       indice = 0;
       volteada = false;
@@ -419,9 +489,11 @@
 
     function elegirDificultad(valor) {
       dificultadActiva = valor;
-      document.querySelectorAll('.filtro-chip').forEach((el) => {
-        el.classList.toggle('active', el.dataset.valor === valor);
-      });
+      aplicarFiltro();
+    }
+
+    function toggleErrores() {
+      erroresActivo = !erroresActivo;
       aplicarFiltro();
     }
 
@@ -457,16 +529,63 @@
       renderTarjeta();
     }
 
+    async function calificar(valor) {
+      const t = filtradas[indice];
+      if (!t) return;
+
+      let proxima = null;
+      if (valor === 'bien') proxima = sumarDias(DIAS_BIEN);
+      else if (valor === 'mas_o_menos') proxima = sumarDias(DIAS_MAS_O_MENOS);
+
+      progresoPorTarjeta[t.id] = { calificacion: valor, proxima_revision: proxima };
+
+      // Ya calificada: sale de la cola de esta sesión (si estaba en "Errores" y
+      // ya no es "poco", también desaparece de ese filtro).
+      filtradas.splice(indice, 1);
+      if (indice >= filtradas.length) indice = Math.max(0, filtradas.length - 1);
+      volteada = false;
+      renderTarjeta();
+
+      try {
+        await sb.from('flashcard_progreso').upsert(
+          {
+            user_id: usuarioId,
+            flashcard_id: t.id,
+            calificacion: valor,
+            ultima_revision: new Date().toISOString(),
+            proxima_revision: proxima,
+          },
+          { onConflict: 'user_id,flashcard_id' }
+        );
+      } catch (e) {
+        // Si falla el guardado no bloqueamos el estudio; se reflejará bien
+        // la próxima vez que se cargue la página.
+      }
+    }
+
     function renderTarjeta() {
       const cont = document.getElementById('contenido');
 
       if (filtradas.length === 0) {
-        cont.innerHTML = '<div class="estado">No hay flashcards para esta dificultad todavía.</div>';
+        const mensaje = erroresActivo
+          ? 'No tienes errores pendientes de revisar. 🎉'
+          : '¡Ya estudiaste todo lo que tocaba por ahora! Vuelve más tarde.';
+        cont.innerHTML = `<div class="filtros" id="filtros"></div><div class="estado">${mensaje}</div>`;
+        renderFiltros();
         return;
       }
 
       const t = filtradas[indice];
       const temaHtml = t.tema ? `<div class="tarjeta-tema">${escaparHtmlBase(t.tema)}</div>` : '';
+
+      const calificarHtml = volteada
+        ? `
+        <div class="calificar-fila">
+          <button class="btn-calificar bien" onclick="calificar('bien')">😊 Me acordaba</button>
+          <button class="btn-calificar mas_o_menos" onclick="calificar('mas_o_menos')">😐 Más o menos</button>
+          <button class="btn-calificar poco" onclick="calificar('poco')">😕 Poco</button>
+        </div>`
+        : '';
 
       cont.innerHTML = `
         <div class="filtros" id="filtros"></div>
@@ -478,9 +597,10 @@
           <div class="tarjeta-texto">${volteada ? formatearRespuesta(t.respuesta) : escaparHtmlBase(t.pregunta)}</div>
           <div class="tarjeta-pista">${volteada ? 'Click para ver la pregunta' : 'Click para ver la respuesta'}</div>
         </div>
+        ${calificarHtml}
         <div class="controles">
           <button class="btn-control" onclick="anterior()" ${indice === 0 ? 'disabled' : ''}>← Anterior</button>
-          <button class="btn-primario" onclick="siguiente()" ${indice === filtradas.length - 1 ? 'disabled' : ''}>Siguiente →</button>
+          ${volteada ? '' : `<button class="btn-primario" onclick="siguiente()" ${indice === filtradas.length - 1 ? 'disabled' : ''}>Siguiente →</button>`}
         </div>
         <div style="text-align:center;">
           <button class="btn-barajar" onclick="barajarDeNuevo()">Barajar de nuevo</button>
@@ -497,23 +617,36 @@
         ['intermedia', 'Intermedia'],
         ['avanzada', 'Avanzada'],
       ];
-      cont.innerHTML = opciones
+      const chipsDificultad = opciones
         .map(
           ([valor, nombre]) =>
             `<button class="filtro-chip ${valor === dificultadActiva ? 'active' : ''}" data-valor="${valor}" onclick="elegirDificultad('${valor}')">${nombre}</button>`
         )
         .join('');
+      const chipErrores = `<span class="filtro-separador"></span><button class="filtro-chip errores ${erroresActivo ? 'active' : ''}" onclick="toggleErrores()">⚠️ Revisar errores</button>`;
+      cont.innerHTML = chipsDificultad + chipErrores;
     }
 
     async function cargarFlashcards() {
       const cont = document.getElementById('contenido');
       try {
-        const { data, error } = await sb
-          .from('flashcards')
-          .select('id,tema,pregunta,respuesta,dificultad')
-          .eq('publicado', true);
-        if (error) throw error;
-        todas = data || [];
+        const [{ data: tarjetas, error: errorTarjetas }, { data: progreso, error: errorProgreso }] =
+          await Promise.all([
+            sb.from('flashcards').select('id,tema,pregunta,respuesta,dificultad').eq('publicado', true),
+            sb.from('flashcard_progreso').select('flashcard_id,calificacion,proxima_revision').eq('user_id', usuarioId),
+          ]);
+        if (errorTarjetas) throw errorTarjetas;
+        if (errorProgreso) throw errorProgreso;
+
+        todas = tarjetas || [];
+        progresoPorTarjeta = {};
+        for (const p of progreso || []) {
+          progresoPorTarjeta[p.flashcard_id] = {
+            calificacion: p.calificacion,
+            proxima_revision: p.proxima_revision,
+          };
+        }
+
         if (todas.length === 0) {
           cont.innerHTML = '<div class="estado">Todavía no hay flashcards publicadas.</div>';
           return;
@@ -528,6 +661,7 @@
       const { data: { user } } = await sb.auth.getUser();
       if (!user) { window.location.href = 'auth.html'; return; }
 
+      usuarioId = user.id;
       const name = user.user_metadata?.full_name || user.email.split('@')[0];
       document.getElementById('user-name').textContent = name;
       document.getElementById('user-avatar').textContent = name[0].toUpperCase();
