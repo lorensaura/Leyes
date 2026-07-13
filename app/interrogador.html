@@ -250,18 +250,55 @@
       background: #FFFFFF;
       border: 1px solid rgba(17,17,17,0.08);
       border-bottom-left-radius: 3px;
+      color: #7A2530;
     }
 
-    /* Convención de corrección: tachado = incorrecto, subrayado = correcto, negrita = faltó decir */
+    /* Convención de corrección: tachado = incorrecto, subrayado = correcto, negrita = faltó precisión.
+       Misma convención se usa dentro de la tabla de evaluación final (columna Valoración). */
     .burbuja.ia s { color: #A61825; text-decoration-color: rgba(166,24,37,0.6); }
     .burbuja.ia u { color: #1A7A40; text-decoration-color: rgba(26,122,64,0.6); }
-    .burbuja.ia strong { color: #111111; font-weight: 700; }
+    .burbuja.ia strong { color: #8A6300; font-weight: 700; }
+
+    /* Encabezado de pregunta nueva / caso práctico: para ubicarlo rápido al hacer scroll */
+    .burbuja.ia .pregunta-nueva {
+      display: block;
+      font-weight: 700;
+      color: #A61825;
+      border-left: 3px solid #A61825;
+      padding-left: 0.7rem;
+      margin: 0.2rem 0 0.6rem;
+    }
 
     .burbuja.alumno {
       align-self: flex-end;
       background: #111111;
-      color: #E8D8B8;
+      color: #FFFFFF;
       border-bottom-right-radius: 3px;
+    }
+
+    /* ── TABLA DE EVALUACIÓN ── */
+    .burbuja.ia table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.6rem 0;
+      font-size: 0.85rem;
+      color: #111111;
+    }
+
+    .burbuja.ia th, .burbuja.ia td {
+      border: 1px solid rgba(17,17,17,0.12);
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .burbuja.ia th {
+      background: rgba(17,17,17,0.05);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #4A4136;
     }
 
     .escribiendo {
@@ -421,18 +458,80 @@
       modoElegido = modo;
     }
 
-    // Escapa HTML y traduce la convención de marcado del examinador a
-    // etiquetas reales: ~~tachado~~, __subrayado__, **negrita**.
-    function formatearTextoIA(texto) {
-      let seguro = texto
+    function escaparHtml(texto) {
+      return texto
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
-      seguro = seguro
+    }
+
+    // Traduce la convención de marcado del examinador a etiquetas reales:
+    // ~~tachado~~ (incorrecto), __subrayado__ (correcto), **negrita**
+    // (faltó precisión), ##encabezado## (anuncio de pregunta/caso nuevo).
+    function convertirMarcado(textoEscapado) {
+      return textoEscapado
         .replace(/~~([\s\S]+?)~~/g, '<s>$1</s>')
         .replace(/__([\s\S]+?)__/g, '<u>$1</u>')
-        .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
-      return seguro;
+        .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/##([\s\S]+?)##/g, '<span class="pregunta-nueva">$1</span>');
+    }
+
+    // Una fila de tabla markdown ("| a | b |") separada en celdas, sin las
+    // barras de los extremos.
+    function partirFilaTabla(linea) {
+      let f = linea.trim();
+      if (f.startsWith('|')) f = f.slice(1);
+      if (f.endsWith('|')) f = f.slice(0, -1);
+      return f.split('|').map((c) => c.trim());
+    }
+
+    function esSeparadorTabla(linea) {
+      const f = linea.trim();
+      return /^\|?[\s:|-]+\|?$/.test(f) && f.includes('-');
+    }
+
+    // Intenta leer una tabla markdown a partir de `lineas[inicio]`. Devuelve
+    // null si no hay una tabla ahí (encabezado + fila separadora válidos).
+    function leerTablaMarkdown(lineas, inicio) {
+      if (!lineas[inicio].trim().startsWith('|')) return null;
+      if (!lineas[inicio + 1] || !esSeparadorTabla(lineas[inicio + 1])) return null;
+
+      const encabezados = partirFilaTabla(lineas[inicio]);
+      const filas = [];
+      let fin = inicio + 2;
+      while (fin < lineas.length && lineas[fin].trim().startsWith('|')) {
+        filas.push(partirFilaTabla(lineas[fin]));
+        fin++;
+      }
+
+      let html = '<table><thead><tr>';
+      html += encabezados.map((h) => `<th>${convertirMarcado(escaparHtml(h))}</th>`).join('');
+      html += '</tr></thead><tbody>';
+      for (const fila of filas) {
+        html += '<tr>' + fila.map((c) => `<td>${convertirMarcado(escaparHtml(c))}</td>`).join('') + '</tr>';
+      }
+      html += '</tbody></table>';
+
+      return { html, siguienteLinea: fin };
+    }
+
+    // Escapa HTML, convierte tablas markdown a <table> real, y traduce la
+    // convención de marcado del examinador a etiquetas reales.
+    function formatearTextoIA(texto) {
+      const lineas = texto.split('\n');
+      const partes = [];
+      let i = 0;
+      while (i < lineas.length) {
+        const tabla = leerTablaMarkdown(lineas, i);
+        if (tabla) {
+          partes.push(tabla.html);
+          i = tabla.siguienteLinea;
+          continue;
+        }
+        partes.push(convertirMarcado(escaparHtml(lineas[i])));
+        i++;
+      }
+      return partes.join('\n');
     }
 
     function scrollAbajo() {

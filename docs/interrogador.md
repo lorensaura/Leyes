@@ -47,16 +47,26 @@ el prefijo (reglas + manuales + código + muestra) de una vez.
 
 ## Convención de marcado (para el chat, no para markdown estándar)
 `app/interrogador.html` traduce esta convención a HTML real en pantalla:
-- `~~tachado~~` → lo que el alumno dijo MAL.
-- `__subrayado__` → lo que dijo BIEN (ojo: subrayado, no negrita — no es la
-  convención estándar de markdown).
-- `**negrita**` → lo que faltó decir o la precisión correcta.
+- `~~tachado~~` → lo que el alumno dijo MAL (rojo).
+- `__subrayado__` → lo que dijo BIEN (verde; ojo: subrayado, no negrita —
+  no es la convención estándar de markdown).
+- `**negrita**` → lo que faltó decir o la precisión correcta (ámbar).
+- `##encabezado##` (agregado 2026-07-13) → frase de anuncio al pasar a una
+  pregunta o caso nuevo (destacada con borde y color, para ubicarla rápido
+  al hacer scroll). Solo envuelve la frase de transición, no la pregunta
+  completa.
 
-**Regla explícita en el prompt (agregada 2026-07-13):** Claude tiene
-prohibido usar cualquier etiqueta HTML (`<span>`, `<b>`, etc.) fuera de esos
-tres marcadores — la página no las interpreta, aparecen como texto literal
-roto. Se agregó tras un caso real donde el modelo inventó
-`<span class='art'>art. 1465</span>` para destacar un artículo.
+Los tres primeros marcadores también se usan (agregado 2026-07-13) dentro
+de la **tabla de evaluación final**: Claude la entrega en markdown real
+(`| Criterio | Ponderación | Valoración |`), que la página convierte a una
+tabla HTML de verdad, coloreando cada Valoración con esos mismos tres
+colores en vez del texto plano feo de antes.
+
+**Regla explícita en el prompt:** Claude tiene prohibido usar cualquier
+etiqueta HTML (`<span>`, `<b>`, etc.) fuera de estos cuatro marcadores — la
+página no las interpreta, aparecen como texto literal roto. Se agregó tras
+un caso real donde el modelo inventó `<span class='art'>art. 1465</span>`
+para destacar un artículo.
 
 ## Costos
 - Costo real por interrogación completa con Opus 4.8: aprox. **$0.50–$2 USD
@@ -99,9 +109,20 @@ Variables de entorno necesarias en Production + Preview:
 ## Estado actual
 - **2026-07-11:** v1 probada por Laura (15 preguntas + caso de 3). Fix de
   preguntas compuestas que se respondían solas + formato de corrección.
-- **2026-07-13:** migración completa del muestreo de preguntas de archivo
-  estático (Airtable vía script) a consulta en vivo a Supabase, más el
-  bloque de Código Civil y el fix de etiquetas HTML. **Pendiente: correr
-  una interrogación real de punta a punta** para confirmar que todo el
-  grounding nuevo (Código Civil + muestra desde Supabase) funciona como se
-  espera en producción.
+- **2026-07-13 (tarde):** migración completa del muestreo de preguntas de
+  archivo estático (Airtable vía script) a consulta en vivo a Supabase, más
+  el bloque de Código Civil y el fix de etiquetas HTML.
+- **2026-07-13 (noche):** Laura corrió una interrogación real completa con
+  todo el grounding nuevo — en general mejor. Feedback de esa prueba:
+  - Tabla de evaluación final se veía como markdown crudo (`|---|---|`) →
+    arreglado: ahora es una tabla HTML real con colores (ver "Convención de
+    marcado" arriba).
+  - Costaba ubicar dónde empezaba cada pregunta/caso al hacer scroll →
+    arreglado con el marcador `##encabezado##`.
+  - Colores de las burbujas cambiados: comisión en rojizo, alumna en blanco
+    sobre negro (antes: comisión en negro, alumna en crema).
+  - **Observación abierta, sin arreglo todavía:** a Laura le pareció que la
+    IA podría estar siendo un poco dura/inconsistente con las notas — dijo
+    que necesita usarlo de nuevo para confirmar si es un patrón real antes
+    de tocar la rúbrica o las anclas de calibración del prompt. **No tocar
+    la calibración de notas hasta que Laura lo confirme con otra prueba.**
