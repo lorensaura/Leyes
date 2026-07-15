@@ -1,5 +1,6 @@
 {
   "buildCommand": "node scripts/extraer_contenido_interrogador.js",
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
   ],
