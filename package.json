@@ -1,0 +1,7 @@
+{
+  "name": "derecho-libre",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/extraer_contenido_interrogador.js"
+  }
+}

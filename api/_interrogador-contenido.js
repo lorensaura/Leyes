@@ -1,5 +1,5 @@
-// Generado automáticamente por scripts/extraer_contenido_interrogador.py
-// No editar a mano — volver a correr el script si cambian los manuales fuente.
+// Generado automáticamente por scripts/extraer_contenido_interrogador.js
+// No editar a mano — se regenera solo en cada deploy de Vercel (ver vercel.json).
 module.exports = `===== MANUAL: RESPONSABILIDAD CONTRACTUAL =====
 
 DIGESTO

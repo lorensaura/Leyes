@@ -20,9 +20,16 @@ en este orden:
 1. **Reglas del examinador** — `api/_interrogador-prompt.js` (adaptado de
    `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
 2. **Los dos manuales completos** — `api/_interrogador-contenido.js`,
-   generado por `scripts/extraer_contenido_interrogador.py`. **Si los
-   manuales fuente cambian, hay que volver a correr ese script** (no se
-   regenera solo).
+   generado por `scripts/extraer_contenido_interrogador.js` a partir de los
+   HTML fuente (`01_..._Manual.html`, `02_..._Manual.html`). **Se regenera
+   solo en cada deploy de Vercel** (`buildCommand` en `vercel.json` corre el
+   script antes de publicar) — no depende de que alguien se acuerde de
+   correrlo a mano; es imposible desplegar con el contenido desfasado
+   respecto de los manuales fuente. Verificado el 2026-07-15 comparando
+   byte a byte contra la versión anterior (generada con el script viejo en
+   Python, ya retirado) usando el motor V8 de Chrome — mismo hash SHA-256.
+   Para regenerar en desarrollo sin esperar un deploy: `node
+   scripts/extraer_contenido_interrogador.js`.
 3. **Artículos del Código Civil relevantes a Responsabilidad** —
    `api/_interrogador-codigo.js` (Título Preliminar, obligaciones
    condicionales, cláusula penal, efecto de las obligaciones, delitos y
@@ -107,6 +114,13 @@ Variables de entorno necesarias en Production + Preview:
   (agregada 2026-07-13).
 
 ## Estado actual
+- **2026-07-15:** cerrado el riesgo de que el Interrogador corrigiera sobre
+  manuales desactualizados. Antes había que acordarse de correr el script de
+  extracción a mano tras editar los HTML fuente; ahora `vercel.json` lo corre
+  como `buildCommand` en cada deploy, así que el contenido que usa el
+  Interrogador en producción siempre coincide con los manuales del último
+  push. Motivado porque los manuales se estaban editando activamente en
+  paralelo a la entrada de usuarias beta.
 - **2026-07-11:** v1 probada por Laura (15 preguntas + caso de 3). Fix de
   preguntas compuestas que se respondían solas + formato de corrección.
 - **2026-07-13 (tarde):** migración completa del muestreo de preguntas de
