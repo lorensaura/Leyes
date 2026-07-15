@@ -372,8 +372,7 @@
     <span class="nav-section">Estudio</span>
     <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
     <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
-    <a class="nav-item" href="alternativas.html"><span class="nav-icon">✅</span> Alternativas</a>
-    <a class="nav-item" href="flashcards.html"><span class="nav-icon">🃏</span> Flashcards</a>
+    <a class="nav-item" href="alternativas.html"><span class="nav-icon">🎯</span> Práctica</a>
 
     <span class="nav-section">Con IA</span>
     <a class="nav-item active" href="interrogador.html"><span class="nav-icon">💬</span> Chat IA</a>
@@ -434,7 +433,7 @@
 
       <!-- Input -->
       <div class="input-row" id="input-row">
-        <textarea id="input-mensaje" rows="1" placeholder="Escribe tu respuesta..."></textarea>
+        <textarea id="input-mensaje" rows="1" placeholder="Escribe tu respuesta..." onpaste="return false;" ondrop="return false;"></textarea>
         <button class="btn-primario" id="btn-enviar" onclick="enviarMensaje()">Enviar</button>
       </div>
 

@@ -20,8 +20,9 @@
 - Flujo de la app:
   `index.html` → `app/auth.html` (login Supabase) → `app/dashboard.html` →
   `app/manuales.html` (lector de manuales), `app/alternativas.html`
-  (Evaluación / banco de preguntas), `app/flashcards.html` (Flashcards con
-  repetición espaciada), `app/interrogador.html` (Interrogador IA).
+  (**Práctica**: módulo unificado con 3 ejes de filtro cruzables —Materia /
+  Modelo / Subtipo— que cubre Evaluación, Flashcards, Alternativas y
+  Memorice; `app/flashcards.html` es solo un redirect hacia ahí), `app/interrogador.html` (Interrogador IA).
 - PDFs pre-generados en `app/pdf/` para descarga de un clic (detalle en `docs/pdf.md`).
 - **Supabase ya no es solo login:** Flashcards y el banco de preguntas del
   Interrogador se sirven desde Supabase en producción. Airtable es donde
@@ -30,8 +31,9 @@
 
 ## Archivos clave
 - `app/manuales.html` — lector en línea. Los checkpoints se insertan partiendo el contenido por el marcador `<!-- CP -->` (ver `buildOnlineContent` / `buildCheckpointCard` / `evaluarCheckpoint`).
-- `app/alternativas.html` — banco de preguntas (`const banco = [...]`). Tipos: aplicación, detección de error, justificación, discriminación (alternativas MC).
-- `app/flashcards.html` — Flashcards con calificación y repetición espaciada (consulta Supabase directo desde el navegador). Detalle en `docs/contenido-airtable-supabase.md`.
+- `app/alternativas.html` — módulo de Práctica unificado (refactor 2026-07-14): Evaluación (banco hardcoded `const banco = [...]`, sin cambios), Flashcards (mismo motor de siempre, ahora también filtrable por materia), y dos modelos nuevos servidos desde Supabase — Alternativas (MC puro) y Memorice (memorización textual con ocultamiento progresivo). Detalle completo en `docs/practica.md`.
+- `app/flashcards.html` — redirect a `alternativas.html?modelo=flashcard`, sin lógica propia.
+- `scripts/supabase_schema_practica.sql` — migración del refactor de Práctica (tablas `alternativas`, `memorice_articulos`, `memorice_progreso` + columnas nuevas). **Correr en Supabase antes de que Laura use Alternativas o Memorice.**
 - `app/interrogador.html` + `api/interrogador.js` — Interrogador IA (chat con Claude). Detalle en `docs/interrogador.md`.
 - `01_Responsabilidad_Contractual_Manual.html` y `02_Responsabilidad_Extracontractual_Manual.html` — fuentes de los manuales y de los PDF.
 - `app/pdf/*.pdf` — PDFs generados.
@@ -44,6 +46,7 @@
 - **Hosting:** seguir en **Vercel** por ahora (funciona, es gratis en la escala actual). **A futuro, evaluar migrar a Cloudflare Pages si Vercel empieza a cobrar por tráfico** — con el volumen actual ambos son gratis; migrar solo cuando el ahorro real supere el costo de rehacer la configuración.
 - **Las Flashcards son un formato aparte, no un subproducto de `Preguntas_Evaluacion`.** Tienen que ser cortas (recuperación de memoria, no desarrollo) — se trabajan en su propio flujo.
 - **Airtable para editar, Supabase para servir** (decidido 2026-07-13) — ver `docs/contenido-airtable-supabase.md` para el porqué y el detalle completo.
+- **Práctica unificada en una sola pantalla, no cuatro páginas** (decidido 2026-07-14): los 3 ejes de filtro (Materia/Modelo/Subtipo) tienen que poder cruzarse libremente, lo que solo funciona como un solo estado de filtros. Ver `docs/practica.md` para el detalle completo, incluidas las simplificaciones conscientes (progresión por nivel siempre ascendente por ahora, Precontractual sin contenido) y el hallazgo de que `preguntas_evaluacion` existe en Supabase pero Evaluación no la usa.
 
 ## Roadmap actual (definido 2026-07-10, actualizado 2026-07-13)
 1. ~~Airtable~~ — hecho: base de contenido conectada, luego migrada a Supabase para producción (ver `docs/contenido-airtable-supabase.md`).
@@ -69,3 +72,4 @@ Abre estos archivos solo cuando el tema del mensaje lo requiera:
 - `docs/paywall.md` — plan del paywall (3 capas), pendiente.
 - `docs/gamificacion.md` — idea de gamificación, pendiente, sin priorizar.
 - `docs/pdf.md` — reglas de generación de PDF (Chrome headless/CDP, márgenes).
+- `docs/practica.md` — módulo de Práctica (Evaluación/Flashcards/Alternativas/Memorice): los 3 ejes de filtro, el motor de Memorice, simplificaciones pendientes y el paso de migración SQL antes de usar.

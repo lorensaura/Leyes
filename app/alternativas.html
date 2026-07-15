@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digesto — Evaluación</title>
+  <title>Digesto — Práctica</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
@@ -116,7 +116,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       flex-wrap: wrap;
       gap: 1rem;
     }
@@ -129,12 +129,23 @@
     }
     .page-subtitle { font-size: 0.875rem; color: #7A6E5F; margin-top: 0.3rem; }
 
-    /* FILTROS */
-    .filtros {
+    /* FILTROS — tres ejes: Materia / Modelo / Subtipo */
+    .ejes-filtros { margin-bottom: 1.75rem; }
+    .eje-row {
       display: flex;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 0.6rem;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
+      margin-bottom: 0.6rem;
+    }
+    .eje-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      width: 82px;
+      flex-shrink: 0;
     }
     .filtro-btn {
       padding: 0.45rem 1rem;
@@ -150,6 +161,9 @@
     }
     .filtro-btn:hover { border-color: #111111; color: #111111; }
     .filtro-btn.active { background: #111111; color: #E8D8B8; border-color: #111111; }
+    .eje-row.subtipo .filtro-btn.active { background: #C41E2E; border-color: #C41E2E; }
+    .filtro-btn.disabled { cursor: default; opacity: 0.4; border-style: dashed; }
+    .filtro-btn.disabled:hover { border-color: rgba(17,17,17,0.15); color: #7A6E5F; }
 
     /* ── PROGRESO ── */
     .quiz-progress {
@@ -173,7 +187,7 @@
     }
     .progress-text { font-size: 0.8rem; font-weight: 600; color: #7A6E5F; white-space: nowrap; }
 
-    /* ── TARJETA DE ÍTEM ── */
+    /* ── TARJETA DE ÍTEM (Evaluación / Alternativas / Memorice) ── */
     .item-card {
       background: #E8D8B8;
       border-radius: 12px;
@@ -201,6 +215,7 @@
     .badge-deteccion  { background: rgba(180,100,0,0.12); color: #A05000; }
     .badge-justificacion { background: rgba(30,130,80,0.12); color: #0F6040; }
     .badge-mc         { background: rgba(50,80,180,0.12); color: #283880; }
+    .badge-memorice   { background: rgba(120,60,170,0.12); color: #5A2E8C; }
 
     .badge-materia {
       font-size: 0.7rem;
@@ -242,7 +257,7 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ── STEP 1: RECALL LIBRE ── */
+    /* ── STEP 1: RECALL LIBRE (Evaluación) ── */
     .step-label {
       font-size: 0.72rem;
       font-weight: 700;
@@ -320,7 +335,7 @@
       align-items: center;
     }
 
-    /* ── FEEDBACK DIAGNÓSTICO ── */
+    /* ── FEEDBACK DIAGNÓSTICO (Evaluación) ── */
     .feedback-panel {
       background: #F5EAD4;
       border-radius: 10px;
@@ -376,7 +391,7 @@
 
     .elementos-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1rem;
       margin-bottom: 1.25rem;
     }
@@ -389,7 +404,6 @@
       margin-bottom: 0.6rem;
     }
     .elementos-col.ok h4 { color: #1A7A40; }
-    .elementos-col.missing h4 { color: #C41E2E; }
 
     .elemento-tag {
       display: flex;
@@ -407,7 +421,6 @@
       margin-top: 5px;
     }
     .elementos-col.ok .dot { background: #1A7A40; }
-    .elementos-col.missing .dot { background: #C41E2E; }
 
     .confusion-box {
       background: rgba(196,30,46,0.06);
@@ -432,7 +445,7 @@
       line-height: 1.7;
     }
 
-    /* ── MC SECTION ── */
+    /* ── MC SECTION (compartida: discriminación dentro de Evaluación, y modelo Alternativas) ── */
     .mc-section { margin-top: 1.5rem; }
     .mc-intro {
       font-size: 0.8rem;
@@ -496,7 +509,6 @@
       font-size: 0.85rem;
     }
 
-    /* MC feedback distractor */
     .distractor-feedback {
       background: rgba(17,17,17,0.04);
       border-radius: 7px;
@@ -597,9 +609,130 @@
       line-height: 1.6;
     }
 
-    @media (max-width: 900px) {
-      .elementos-grid { grid-template-columns: 1fr; }
+    .estado-vacio {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #7A6E5F;
+      font-size: 0.9rem;
     }
+    .spinner {
+      width: 26px; height: 26px;
+      margin: 0 auto 1rem;
+      border: 3px solid rgba(17,17,17,0.1); border-top-color: #C41E2E;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── FLASHCARDS (modelo) ── */
+    .fc-tarjeta {
+      background: #FFFFFF;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 16px;
+      min-height: 260px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      max-width: 720px;
+    }
+    .fc-dificultad {
+      position: absolute; top: 1rem; left: 1rem;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 0.2rem 0.6rem; border-radius: 100px;
+    }
+    .fc-dificultad.basica { background: rgba(26,122,64,0.1); color: #1A7A40; }
+    .fc-dificultad.intermedia { background: rgba(196,146,30,0.12); color: #8A6300; }
+    .fc-dificultad.avanzada { background: rgba(196,30,46,0.1); color: #A61825; }
+    .fc-tema { position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem; color: rgba(17,17,17,0.35); max-width: 55%; text-align: right; }
+    .fc-etiqueta { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(17,17,17,0.3); margin-bottom: 0.9rem; }
+    .fc-texto { font-size: 1.05rem; line-height: 1.6; color: #111111; }
+    .fc-texto b { color: #A61825; }
+    .fc-texto .art { font-family: 'SF Mono', Menlo, monospace; font-size: 0.92em; background: rgba(17,17,17,0.06); color: #4A4136; padding: 0.1rem 0.4rem; border-radius: 4px; }
+    .fc-pista { margin-top: 1.5rem; font-size: 0.75rem; color: rgba(17,17,17,0.3); }
+    .fc-controles { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+    .fc-calificar-fila { display: flex; gap: 0.6rem; justify-content: center; margin-top: 1.25rem; flex-wrap: wrap; }
+    .btn-calificar { padding: 0.6rem 1rem; border-radius: 8px; border: 1.5px solid; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.82rem; cursor: pointer; background: #FFFFFF; transition: opacity 0.15s; }
+    .btn-calificar:hover { opacity: 0.85; }
+    .btn-calificar.bien { border-color: #1A7A40; color: #1A7A40; }
+    .btn-calificar.mas_o_menos { border-color: #8A6300; color: #8A6300; }
+    .btn-calificar.poco { border-color: #A61825; color: #A61825; }
+    .fc-barajar { background: none; border: none; color: #7A6E5F; font-family: 'Inter', sans-serif; font-size: 0.78rem; cursor: pointer; text-decoration: underline; margin-top: 1rem; display: block; }
+
+    /* ── MEMORICE (modelo) ── */
+    .mem-fuente { font-size: 0.75rem; color: #7A6E5F; margin-bottom: 1rem; }
+    .mem-articulo-texto {
+      font-size: 1.05rem;
+      line-height: 2.6;
+      color: #111111;
+      margin-bottom: 1.5rem;
+    }
+    .mem-clave-texto {
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #3A3A3A;
+      background: rgba(17,17,17,0.03);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .mem-blank-input {
+      display: inline-block;
+      min-width: 3ch;
+      border: none;
+      border-bottom: 2px solid #7A6E5F;
+      background: transparent;
+      font-family: inherit;
+      font-size: 1rem;
+      color: #111111;
+      padding: 0 0.2rem;
+      outline: none;
+      text-align: center;
+    }
+    .mem-blank-input:focus { border-bottom-color: #C41E2E; }
+    .mem-blank-input.mem-ok { border-bottom-color: #1A7A40; color: #1A7A40; font-weight: 600; }
+    .mem-blank-input.mem-mal { border-bottom-color: #C41E2E; color: #C41E2E; }
+    .mem-correccion {
+      font-size: 0.72rem;
+      color: #1A7A40;
+      font-weight: 700;
+      margin: 0 0.3rem;
+      white-space: nowrap;
+    }
+    .mem-textarea-n4 { min-height: 110px; }
+    .mem-diff-linea { font-size: 1rem; line-height: 2.4; margin-top: 1.25rem; }
+    .mem-diff-ok { color: #111111; }
+    .mem-diff-falta { color: #C41E2E; text-decoration: line-through; margin: 0 0.1rem; }
+    .mem-diff-sobra { color: #A06000; text-decoration: line-through; margin: 0 0.1rem; }
+    .mem-diff-critica { font-weight: 700; text-decoration-thickness: 2px; }
+    .mem-diff-correccion { color: #1A7A40; font-weight: 700; font-size: 0.85em; }
+    .mem-explicacion {
+      background: rgba(17,17,17,0.04);
+      border-radius: 7px;
+      padding: 0.85rem 1rem;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: #3A3A3A;
+      line-height: 1.6;
+    }
+    .mem-explicacion li { margin-bottom: 0.3rem; }
+    .mem-nivel-badge {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem; border-radius: 100px;
+      background: rgba(120,60,170,0.12); color: #5A2E8C;
+    }
+    .mem-resultado-badge { font-size: 0.82rem; font-weight: 600; padding: 0.5rem 0.9rem; border-radius: 7px; margin-top: 1rem; display: inline-block; }
+    .mem-resultado-badge.correcto { background: rgba(26,122,64,0.1); color: #1A7A40; }
+    .mem-resultado-badge.parcial { background: rgba(196,146,30,0.12); color: #8A6300; }
+    .mem-resultado-badge.incorrecto { background: rgba(196,30,46,0.1); color: #A61825; }
+
   </style>
 </head>
 <body>
@@ -610,8 +743,7 @@
     <span class="nav-section">Estudio</span>
     <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
     <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
-    <a class="nav-item active" href="alternativas.html"><span class="nav-icon">✅</span> Evaluación</a>
-    <a class="nav-item" href="flashcards.html"><span class="nav-icon">🃏</span> Flashcards</a>
+    <a class="nav-item active" href="alternativas.html"><span class="nav-icon">🎯</span> Práctica</a>
     <span class="nav-section">Con IA</span>
     <a class="nav-item" href="interrogador.html"><span class="nav-icon">💬</span> Chat IA</a>
     <a class="nav-item" href="#"><span class="nav-icon">🎙️</span> Interrogación oral <span class="nav-badge">Pronto</span></a>
@@ -633,22 +765,23 @@
   <div class="main">
     <div class="page-header">
       <div>
-        <div class="page-title">Evaluación</div>
-        <div class="page-subtitle">Aplica, detecta, justifica — no solo reconoce</div>
+        <div class="page-title">Práctica</div>
+        <div class="page-subtitle" id="page-subtitle">Elige materia, modelo y sube de nivel</div>
       </div>
     </div>
 
-    <div class="filtros">
-      <button class="filtro-btn active" onclick="setFiltro('todos', this)">Todos</button>
-      <button class="filtro-btn" onclick="setFiltro('contractual', this)">Contractual</button>
-      <button class="filtro-btn" onclick="setFiltro('extracontractual', this)">Extracontractual</button>
-      <button class="filtro-btn" onclick="setFiltro('aplicacion', this)">Aplicación</button>
-      <button class="filtro-btn" onclick="setFiltro('deteccion_error', this)">Detección de error</button>
-      <button class="filtro-btn" onclick="setFiltro('justificacion', this)">Justificación</button>
-      <button class="filtro-btn" onclick="setFiltro('discriminacion_mc', this)">Discriminación MC</button>
+    <div class="ejes-filtros">
+      <div class="eje-row rama" id="fila-rama"></div>
+      <div class="eje-row materia" id="fila-materia"></div>
+      <div class="eje-row area" id="fila-area"></div>
+      <div class="eje-row modelo" id="fila-modelo"></div>
+      <div class="eje-row subtipo" id="fila-subtipo"></div>
+      <div class="eje-row metodo" id="fila-metodo"></div>
     </div>
 
-    <div id="quiz-container"></div>
+    <div id="practica-container">
+      <div class="estado-vacio"><div class="spinner"></div>Cargando…</div>
+    </div>
   </div>
 
   <script>
@@ -657,8 +790,11 @@
     const { createClient } = supabase;
     const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    let usuarioId = null;
+
     // ══════════════════════════════════════════════════════════════════
-    // BANCO DE ÍTEMS
+    // BANCO DE ÍTEMS — Evaluación (se mantiene igual, sin cambios de datos:
+    // el spec solo reubica sus subtipos como Eje 3, no toca esta fuente).
     // ══════════════════════════════════════════════════════════════════
     const banco = [
       {
@@ -671,10 +807,10 @@
         enunciado: '¿Responde extracontractualmente la constructora? Analiza cada requisito. ¿Qué efecto tiene la conducta del peatón sobre la indemnización? ¿Coincides con la defensa de la constructora?',
         respuesta_modelo: 'La constructora responde extracontractualmente. Se verifican todos los requisitos del art. 2314: (1) hecho voluntario: omisión de señalizar la zanja; (2) capacidad delictual; (3) imputabilidad: culpa por omisión de un deber de cuidado elemental (no señalizar una zanja nocturna); (4) daño: lesiones del peatón; (5) causalidad: la zanja no señalizada causó la caída. La alegación de la constructora es incorrecta: la distracción del peatón no constituye culpa exclusiva de la víctima porque no fue la causa única del daño. La causa preponderante sigue siendo la omisión de señalizar. Lo que opera es el art. 2330 CC: la indemnización se reduce en proporción a la exposición imprudente de la víctima, pero no se exime totalmente a la constructora. Exención total solo procedería si la culpa de la víctima fuera la causa exclusiva y determinante del daño.',
         elementos_clave: [
-          { texto: 'Recorre los 5 requisitos de la RE uno a uno', keywords: ['requisito', 'hecho', 'culpa', 'daño', 'causalidad', 'capacidad'] },
-          { texto: 'Identifica culpa por omisión y nexo causal', keywords: ['omisión', 'señalizar', 'causalidad', 'nexo'] },
-          { texto: 'Distingue reducción (art. 2330) de exención total', keywords: ['2330', 'reduce', 'reducción', 'no exime', 'no exonera'] },
-          { texto: 'Rechaza la tesis de culpa exclusiva de la víctima', keywords: ['exclusiva', 'no es exclusiva', 'causa única', 'preponderante'] }
+          { texto: 'Recorre los 5 requisitos de la RE uno a uno', keywords: ['requisito', 'hecho', 'culpa', 'daño', 'causalidad', 'capacidad'], pregunta: '¿Repasaste los cinco requisitos del art. 2314 uno por uno, o diste la conclusión sin pasar por cada uno?' },
+          { texto: 'Identifica culpa por omisión y nexo causal', keywords: ['omisión', 'señalizar', 'causalidad', 'nexo'], pregunta: 'La constructora no hizo nada activo, solo omitió señalizar — ¿esa omisión igual cuenta como culpa? ¿Qué la conecta causalmente con la caída del peatón?' },
+          { texto: 'Distingue reducción (art. 2330) de exención total', keywords: ['2330', 'reduce', 'reducción', 'no exime', 'no exonera'], pregunta: 'Si el peatón contribuyó con su propia distracción, ¿eso libera completamente a la constructora, o solo cambia cuánto debe pagar?' },
+          { texto: 'Rechaza la tesis de culpa exclusiva de la víctima', keywords: ['exclusiva', 'no es exclusiva', 'causa única', 'preponderante'], pregunta: '¿La distracción del peatón fue la única causa del daño, o hay otra causa que pesa más?' }
         ],
         articulos_referencia: ['2314', '2329', '2330'],
         objetivo_pedagogico: 'Subsumir hechos y distinguir exoneración total de reducción proporcional'
@@ -689,9 +825,9 @@
         enunciado: 'El alumno comete al menos dos errores jurídicos graves. Identifícalos con precisión, explica por qué están mal y señala la norma correcta.',
         respuesta_modelo: 'Error 1: La culpa de la víctima no siempre exime totalmente. Solo la culpa exclusiva de la víctima, que sea la causa única y determinante del daño, puede eximir totalmente al demandado. Cuando la culpa de la víctima concurre con la culpa del autor (culpa concurrente), opera el art. 2330 CC: la indemnización se reduce en proporción a la exposición imprudente, pero no se elimina. En el caso de la zanja, la distracción del peatón es culpa concurrente, no exclusiva. Error 2: En sede extracontractual, la culpa NO se presume como regla general. La víctima debe probarla (art. 1698 CC). Esto contrasta radicalmente con la sede contractual, donde el art. 1547 inc. 3° presume la culpa del deudor. En RE existen presunciones específicas (arts. 2320 para el hecho ajeno y 2329 para ciertas actividades), pero no es la regla general.',
         elementos_clave: [
-          { texto: 'Detecta que la culpa de la víctima no siempre exime: solo la exclusiva; la concurrente reduce vía art. 2330', keywords: ['exclusiva', '2330', 'reduce', 'concurrente', 'no siempre exime'] },
-          { texto: 'Detecta que en sede extracontractual la culpa NO se presume; la víctima debe probarla', keywords: ['no se presume', 'víctima prueba', 'no presume', '1547', 'diferencia'] },
-          { texto: 'Señala el contraste con el art. 1547 inc. 3° (presunción contractual)', keywords: ['1547', 'contractual', 'contraste', 'diferencia'] }
+          { texto: 'Detecta que la culpa de la víctima no siempre exime: solo la exclusiva; la concurrente reduce vía art. 2330', keywords: ['exclusiva', '2330', 'reduce', 'concurrente', 'no siempre exime'], pregunta: '¿Es cierto que la culpa de la víctima siempre exime totalmente, sin importar si concurre con la del autor del daño?' },
+          { texto: 'Detecta que en sede extracontractual la culpa NO se presume; la víctima debe probarla', keywords: ['no se presume', 'víctima prueba', 'no presume', '1547', 'diferencia'], pregunta: 'El alumno dice que la culpa se presume igual en ambos regímenes — ¿es correcto en sede extracontractual, o ahí la víctima tiene que probarla?' },
+          { texto: 'Señala el contraste con el art. 1547 inc. 3° (presunción contractual)', keywords: ['1547', 'contractual', 'contraste', 'diferencia'], pregunta: '¿En qué se diferencia esto de lo que pasa en un contrato, donde el art. 1547 sí presume la culpa del deudor?' }
         ],
         articulos_referencia: ['2330', '1547', '2329'],
         objetivo_pedagogico: 'Afinar la distinción entre exención y reducción, y entre régimen probatorio contractual y extracontractual'
@@ -702,7 +838,7 @@
         tema: 'Responsabilidad extracontractual',
         subtema: 'Art. 2330 / causas de exención',
         tipo: 'discriminacion_mc',
-        caso: 'En el caso de la constructora y la zanja: la constructora omitió señalizar; el peatón caminaba mirando el teléfono. El peatón demanda indemnización total.',
+        caso: 'Una constructora deja de noche una zanja abierta y sin señalización en la vereda. Un peatón que caminaba mirando su teléfono cae en ella y se lesiona. El peatón demanda a la constructora indemnización total por sus lesiones.',
         enunciado: '¿Qué institución rige el efecto de la distracción del peatón sobre la indemnización?',
         opciones: [
           { letra: 'A', texto: 'Caso fortuito: la distracción es un hecho imprevisible que exime a la constructora', rationale: 'Error clásico: confunde un factor externo del demandante con caso fortuito. El caso fortuito es un hecho imprevisible e irresistible ajeno a ambas partes, no la conducta descuidada de la víctima.' },
@@ -724,10 +860,10 @@
         enunciado: '¿Qué tipo de obligación tiene la clínica respecto de la operación? ¿Sobre quién recae la carga de la prueba de la culpa? Analiza la viabilidad de la defensa de la clínica.',
         respuesta_modelo: 'La clínica tiene una obligación de medios respecto del acto médico: no promete un resultado (que la rodilla quede perfecta), sino que se compromete a actuar con la diligencia de un buen médico. En las obligaciones de medios, el cumplimiento es la diligencia, por lo que Javiera —el acreedor— debe probar la falta de diligencia (art. 1698 CC), no simplemente el resultado insatisfactorio. La presunción del art. 1547 inc. 3° opera plenamente en obligaciones de resultado (basta probar que el resultado no se obtuvo), pero en obligaciones de medios la carga probatoria se acerca al régimen extracontractual: el acreedor prueba la culpa. La defensa de la clínica (que cumplió protocolos) es relevante precisamente porque en obligaciones de medios la diligencia es el centro del debate. Si acredita que actuó conforme a la lex artis, no hay culpa aunque el resultado haya sido malo. Javiera deberá probar la infracción concreta del deber de cuidado.',
         elementos_clave: [
-          { texto: 'Califica la obligación como de medios (no de resultado)', keywords: ['medios', 'obligación de medios', 'no de resultado'] },
-          { texto: 'Concluye que la carga de la prueba recae sobre Javiera (acreedor)', keywords: ['javiera prueba', 'acreedor prueba', 'carga de la prueba', '1698'] },
-          { texto: 'Distingue el régimen probatorio de medios vs. resultado', keywords: ['resultado', 'contrasta', 'diferencia', 'presunción no opera', '1547'] },
-          { texto: 'Aplica el estándar de la lex artis', keywords: ['lex artis', 'diligencia', 'protocolo', 'buen médico', 'cuidado debido'] }
+          { texto: 'Califica la obligación como de medios (no de resultado)', keywords: ['medios', 'obligación de medios', 'no de resultado'], pregunta: '¿La clínica se comprometió a que la rodilla quedara perfecta, o solo a operar con el cuidado debido?' },
+          { texto: 'Concluye que la carga de la prueba recae sobre Javiera (acreedor)', keywords: ['javiera prueba', 'acreedor prueba', 'carga de la prueba', '1698'], pregunta: 'Si es una obligación de medios, ¿quién tiene que demostrar que faltó diligencia — Javiera o la clínica?' },
+          { texto: 'Distingue el régimen probatorio de medios vs. resultado', keywords: ['resultado', 'contrasta', 'diferencia', 'presunción no opera', '1547'], pregunta: '¿Sería distinto si la clínica hubiera prometido un resultado específico? ¿Cambiaría quién prueba qué?' },
+          { texto: 'Aplica el estándar de la lex artis', keywords: ['lex artis', 'diligencia', 'protocolo', 'buen médico', 'cuidado debido'], pregunta: 'Si la clínica dice que siguió todos los protocolos, ¿eso alcanza para exonerarla? ¿Qué estándar se usa para medir si actuó bien?' }
         ],
         articulos_referencia: ['1547', '1698'],
         objetivo_pedagogico: 'Aplicar la distinción de obligaciones de medios y resultado a un caso de responsabilidad médica'
@@ -742,9 +878,9 @@
         enunciado: '¿Por qué la culpa grave "equivale al dolo" en materia civil chilena? Explica el fundamento y dos consecuencias prácticas concretas de esta equivalencia.',
         respuesta_modelo: 'El art. 44 CC establece expresamente que "la culpa o negligencia grave equivale al dolo". El fundamento es que quien actúa con un descuido tan burdo que ni las personas negligentes lo cometerían, manifiesta una indiferencia equivalente a la intención de dañar; el derecho trata esa indiferencia extrema como si fuera intención. Consecuencias prácticas: (1) En cuanto a la extensión del daño (art. 1558): el deudor culpable solo de culpa leve responde de perjuicios previstos; el deudor con culpa grave responde también de perjuicios imprevistos, exactamente igual que si hubiera obrado con dolo. (2) En cuanto a la condonación anticipada: el art. 1465 prohíbe condonar el dolo futuro (la cláusula que lo haga es nula). Como la culpa grave equivale al dolo, tampoco puede condonarse anticipadamente la culpa grave; la cláusula que lo intente es nula.',
         elementos_clave: [
-          { texto: 'Cita el art. 44 CC como fundamento normativo', keywords: ['art. 44', 'artículo 44', 'art 44'] },
-          { texto: 'Explica la extensión del daño: perjuicios imprevistos (art. 1558)', keywords: ['1558', 'imprevistos', 'previstos'] },
-          { texto: 'Explica la condonación anticipada prohibida (art. 1465)', keywords: ['1465', 'condonar', 'condonación', 'futuro', 'nula'] }
+          { texto: 'Cita el art. 44 CC como fundamento normativo', keywords: ['art. 44', 'artículo 44', 'art 44'], pregunta: '¿Qué artículo del Código Civil dice expresamente que la culpa grave se trata igual que el dolo?' },
+          { texto: 'Explica la extensión del daño: perjuicios imprevistos (art. 1558)', keywords: ['1558', 'imprevistos', 'previstos'], pregunta: 'Si alguien actúa con culpa grave, ¿responde solo de los perjuicios previstos, o también de los imprevistos, como si hubiera actuado con dolo?' },
+          { texto: 'Explica la condonación anticipada prohibida (art. 1465)', keywords: ['1465', 'condonar', 'condonación', 'futuro', 'nula'], pregunta: '¿Se puede pactar de antemano en un contrato que uno no responderá por su propia negligencia grave futura?' }
         ],
         articulos_referencia: ['44', '1558', '1465'],
         objetivo_pedagogico: 'Justificar el fundamento y las consecuencias concretas de la equiparación culpa grave-dolo'
@@ -759,10 +895,10 @@
         enunciado: '¿Es correcta la petición del banco? ¿Cuál es la tramitación que corresponde luego de opuestas las excepciones? ¿Puede haber término probatorio?',
         respuesta_modelo: 'La petición del banco es incorrecta. Conforme a los arts. 466 y ss. CPC, opuestas las excepciones dentro de plazo, el tribunal debe dar traslado al ejecutante por 4 días para que responda. Luego, si hay hechos controvertidos susceptibles de prueba, se abre un término probatorio de 10 días. No procede sentencia inmediata de rechazo solo porque el ejecutante lo pida: el tribunal debe pronunciarse sobre el fondo de las excepciones. En este caso, la prescripción y la falta de mérito ejecutivo son excepciones perentorias y requieren que el tribunal las analice. Si las acoge, absuelve al ejecutado; si las rechaza, ordena seguir adelante con la ejecución.',
         elementos_clave: [
-          { texto: 'Rechaza la petición del banco como incorrecta', keywords: ['incorrecta', 'no procede', 'equivocado', 'incorrecto'] },
-          { texto: 'Describe el traslado al ejecutante (4 días)', keywords: ['traslado', '4 días', 'cuatro días'] },
-          { texto: 'Menciona el término probatorio de 10 días si hay hechos a probar', keywords: ['término probatorio', 'probatorio', '10 días', 'diez días'] },
-          { texto: 'Distingue el resultado según si se acogen o rechazan las excepciones', keywords: ['acoge', 'rechaza', 'absuelve', 'seguir adelante'] }
+          { texto: 'Rechaza la petición del banco como incorrecta', keywords: ['incorrecta', 'no procede', 'equivocado', 'incorrecto'], pregunta: '¿El tribunal puede fallar rechazando las excepciones de inmediato, solo porque el banco lo pide?' },
+          { texto: 'Describe el traslado al ejecutante (4 días)', keywords: ['traslado', '4 días', 'cuatro días'], pregunta: 'Después de que Pedro opone las excepciones, ¿qué trámite sigue antes de que el tribunal se pronuncie?' },
+          { texto: 'Menciona el término probatorio de 10 días si hay hechos a probar', keywords: ['término probatorio', 'probatorio', '10 días', 'diez días'], pregunta: 'Si hay hechos controvertidos que requieren prueba, ¿se abre algún plazo especial para eso?' },
+          { texto: 'Distingue el resultado según si se acogen o rechazan las excepciones', keywords: ['acoge', 'rechaza', 'absuelve', 'seguir adelante'], pregunta: '¿Qué pasa si el tribunal acoge las excepciones de Pedro? ¿Y si las rechaza?' }
         ],
         articulos_referencia: ['466 CPC', '467 CPC', '468 CPC'],
         objetivo_pedagogico: 'Aplicar correctamente la tramitación post-excepciones en el juicio ejecutivo'
@@ -786,7 +922,7 @@
         objetivo_pedagogico: 'Discriminar con precisión las consecuencias de cada tipo de casación'
       },
 
-      // ── NUEVOS ÍTEMS: RESPONSABILIDAD CIVIL ───────────────────────
+      // ── ÍTEMS: RESPONSABILIDAD CIVIL ───────────────────────
 
       {
         id: 'rc-just-001',
@@ -798,9 +934,9 @@
         enunciado: 'Menciona y explica tres diferencias de régimen entre la responsabilidad contractual y la extracontractual. ¿Cuál te parece la más relevante en la práctica y por qué?',
         respuesta_modelo: '(1) Prueba de la culpa: en sede contractual la culpa del deudor se presume (art. 1547 inc. 3°); basta al acreedor probar el incumplimiento. En sede extracontractual la víctima debe probar la culpa del autor, salvo presunciones específicas (arts. 2320, 2329). (2) Extensión del daño: en contractual, si hay solo culpa el deudor responde de perjuicios previstos; si hay dolo o culpa grave, también de imprevistos (art. 1558). En extracontractual la reparación es integral (todo el daño directo), sin distinción culpa/dolo. (3) Prescripción: la acción contractual prescribe en 5 años desde que la obligación se hizo exigible (art. 2515); la aquiliana prescribe en 4 años desde la perpetración del acto (art. 2332). La diferencia más relevante en la práctica suele ser la presunción de culpa contractual: en un litigio, esa presunción define quién carga con la prueba y normalmente decide el resultado.',
         elementos_clave: [
-          { texto: 'Señala la presunción de culpa contractual (art. 1547 inc. 3°) vs. prueba por la víctima en extracontractual', keywords: ['1547', 'presume', 'presunción', 'víctima prueba', 'extracontractual prueba'] },
-          { texto: 'Menciona la extensión del daño / previsibilidad (art. 1558) como diferencia', keywords: ['1558', 'previstos', 'imprevistos', 'previsibilidad', 'extensión'] },
-          { texto: 'Señala la diferencia de prescripción (5 años / 4 años)', keywords: ['2515', '2332', '5 años', '4 años', 'prescripción'] }
+          { texto: 'Señala la presunción de culpa contractual (art. 1547 inc. 3°) vs. prueba por la víctima en extracontractual', keywords: ['1547', 'presume', 'presunción', 'víctima prueba', 'extracontractual prueba'], pregunta: 'En un contrato, ¿quién tiene que probar que no hubo culpa? ¿Se mantiene ese mismo reparto si el daño no viene de un contrato?' },
+          { texto: 'Menciona la extensión del daño / previsibilidad (art. 1558) como diferencia', keywords: ['1558', 'previstos', 'imprevistos', 'previsibilidad', 'extensión'], pregunta: '¿La cantidad de perjuicios que se pueden cobrar cambia según haya solo culpa o haya dolo? ¿En qué artículo está eso?' },
+          { texto: 'Señala la diferencia de prescripción (5 años / 4 años)', keywords: ['2515', '2332', '5 años', '4 años', 'prescripción'], pregunta: '¿El plazo para demandar es el mismo en ambos estatutos, o hay una diferencia de un año entre ellos?' }
         ],
         articulos_referencia: ['1547', '1558', '2515', '2332'],
         objetivo_pedagogico: 'Dominar las diferencias de régimen entre los dos estatutos de responsabilidad civil'
@@ -816,10 +952,10 @@
         enunciado: '¿Qué tipo de contrato es este? ¿De qué grado de culpa responde Juan? ¿Juan puede alegar caso fortuito exitosamente? Analiza cada punto.',
         respuesta_modelo: 'El contrato es un comodato (art. 2174 CC): préstamo gratuito de una cosa no fungible. Como el contrato beneficia solo al comodatario (Juan), éste responde hasta de culpa levísima (art. 1547 CC): el estándar es la esmerada diligencia de un hombre juicioso. La culpa del comodatario se presume (art. 1547 inc. 3°): Juan debe probar que empleó la diligencia debida o que el robo fue caso fortuito. Juan probablemente no puede alegar caso fortuito exitosamente: dejar el equipo desatendido en un lugar público es precisamente la falta de la esmerada diligencia exigida. El caso fortuito requiere imprevisibilidad e irresistibilidad; pero el riesgo de robo en un café es razonablemente previsible, y era evitable llevando el equipo o vigilándolo. Juan responde del valor del notebook.',
         elementos_clave: [
-          { texto: 'Califica el contrato como comodato (art. 2174)', keywords: ['comodato', '2174', 'préstamo gratuito'] },
-          { texto: 'Concluye que Juan responde hasta de culpa levísima porque el contrato lo beneficia solo a él', keywords: ['levísima', 'culpa levísima', 'solo al deudor', 'solo a juan', 'beneficia al comodatario'] },
-          { texto: 'Afirma que la culpa se presume (art. 1547 inc. 3°) y es Juan quien debe probar diligencia', keywords: ['1547', 'presume', 'juan prueba', 'deudor prueba'] },
-          { texto: 'Rechaza el caso fortuito: el riesgo de robo era previsible / no cumple requisitos', keywords: ['caso fortuito', 'no procede', 'previsible', 'evitable', 'no exime'] }
+          { texto: 'Califica el contrato como comodato (art. 2174)', keywords: ['comodato', '2174', 'préstamo gratuito'], pregunta: '¿Cómo se llama el contrato en que alguien presta algo gratuitamente para que el otro lo use?' },
+          { texto: 'Concluye que Juan responde hasta de culpa levísima porque el contrato lo beneficia solo a él', keywords: ['levísima', 'culpa levísima', 'solo al deudor', 'solo a juan', 'beneficia al comodatario'], pregunta: 'Como este préstamo solo beneficia a Juan, ¿qué tan cuidadoso tiene que ser con el notebook — el estándar más bajo o el más exigente?' },
+          { texto: 'Afirma que la culpa se presume (art. 1547 inc. 3°) y es Juan quien debe probar diligencia', keywords: ['1547', 'presume', 'juan prueba', 'deudor prueba'], pregunta: 'Si el notebook se pierde, ¿Pedro tiene que probar que Juan fue descuidado, o es Juan quien tiene que probar que fue cuidadoso?' },
+          { texto: 'Rechaza el caso fortuito: el riesgo de robo era previsible / no cumple requisitos', keywords: ['caso fortuito', 'no procede', 'previsible', 'evitable', 'no exime'], pregunta: '¿Dejar el notebook solo en una mesa de café mientras se paga es realmente algo imprevisible e inevitable, como exige el caso fortuito?' }
         ],
         articulos_referencia: ['2174', '1547', '45'],
         objetivo_pedagogico: 'Aplicar la graduación de culpa del art. 1547 a un contrato específico y evaluar el caso fortuito'
@@ -835,9 +971,9 @@
         enunciado: 'El alumno comete dos errores en esta respuesta. Identifícalos con precisión y explica la regla correcta.',
         respuesta_modelo: 'Error 1: El simple incumplimiento no produce mora automáticamente. El art. 1551 exige, como regla general, interpelación judicial (reconvención judicial, art. 1551 N°3). Solo por excepción opera la mora automática: cuando hay plazo estipulado expresamente (N°1, interpelación contractual expresa) o cuando la cosa solo podía darse en cierto tiempo que se dejó pasar (N°2, interpelación tácita). El "simple vencimiento" del plazo produce mora solo si el plazo fue expresamente convenido en el contrato. Error 2: En contratos bilaterales, la mora del deudor presupone que el acreedor haya cumplido o esté llano a cumplir su propia obligación. El art. 1552 consagra la regla "la mora purga la mora": si el vendedor no ha entregado y el comprador tampoco ha pagado, ninguno está en mora respecto del otro. El comprador no puede demandar indemnización si él mismo está incumpliendo.',
         elementos_clave: [
-          { texto: 'Distingue los tres supuestos del art. 1551: solo el N°1 y N°2 producen mora automática; la regla general es la reconvención judicial (N°3)', keywords: ['1551', 'reconvención', 'interpelación', 'judicial', 'no automática', 'regla general'] },
-          { texto: 'Identifica la regla "la mora purga la mora" del art. 1552', keywords: ['1552', 'mora purga', 'purga la mora', 'mutua mora', 'bilateral'] },
-          { texto: 'Concluye que el comprador no puede pedir indemnización si él también incumple', keywords: ['no puede', 'incumple', 'no exige', 'excepción de contrato no cumplido'] }
+          { texto: 'Distingue los tres supuestos del art. 1551: solo el N°1 y N°2 producen mora automática; la regla general es la reconvención judicial (N°3)', keywords: ['1551', 'reconvención', 'interpelación', 'judicial', 'no automática', 'regla general'], pregunta: '¿El solo vencimiento de un plazo pone siempre en mora al deudor, o eso solo pasa en casos excepcionales?' },
+          { texto: 'Identifica la regla "la mora purga la mora" del art. 1552', keywords: ['1552', 'mora purga', 'purga la mora', 'mutua mora', 'bilateral'], pregunta: 'Si ninguna de las dos partes de un contrato bilateral ha cumplido su parte, ¿alguna de ellas está en mora frente a la otra?' },
+          { texto: 'Concluye que el comprador no puede pedir indemnización si él también incumple', keywords: ['no puede', 'incumple', 'no exige', 'excepción de contrato no cumplido'], pregunta: 'Si el comprador tampoco ha pagado el precio, ¿puede igual exigirle indemnización al vendedor por no entregar?' }
         ],
         articulos_referencia: ['1551', '1552'],
         objetivo_pedagogico: 'Distinguir los supuestos de mora del art. 1551 y la excepción del art. 1552 en contratos bilaterales'
@@ -853,10 +989,10 @@
         enunciado: '¿Puede Paula demandar directamente a LogiRed? ¿Qué norma ampara su acción? ¿Tiene LogiRed alguna defensa viable? ¿Puede la empresa recuperar lo que pague?',
         respuesta_modelo: 'Sí, Paula puede demandar directamente a LogiRed. El art. 2320 CC establece la responsabilidad por el hecho ajeno cuando existe una relación de dependencia o cuidado. LogiRed responde por su dependiente (el repartidor) porque: (1) existía relación de trabajo/dependencia; (2) el hecho se cometió en ejercicio de las funciones propias del cargo (horario laboral, moto de la empresa). Respecto de LogiRed opera una presunción de culpa in eligendo (por elegir al trabajador) e in vigilando (por no supervisarlo). La defensa de LogiRed —que el repartidor actuó independientemente— es muy difícil de sostener si el accidente ocurrió en horario laboral con vehículo de la empresa: ello acredita el ejercicio de funciones. La única defensa viable sería probar que con la autoridad y cuidado debidos no pudo impedir el hecho (art. 2320 inc. final), estándar muy alto. LogiRed y el repartidor responden solidariamente (art. 2317). Una vez que LogiRed pague, puede repetir contra el repartidor por lo que éste le adeude (art. 2325), si el repartidor obró con discernimiento.',
         elementos_clave: [
-          { texto: 'Cita el art. 2320 como fundamento de la responsabilidad por hecho ajeno', keywords: ['2320', 'hecho ajeno', 'dependiente', 'relación de dependencia'] },
-          { texto: 'Explica la presunción de culpa in eligendo / in vigilando contra LogiRed', keywords: ['presunción', 'in vigilando', 'in eligendo', 'presume culpa'] },
-          { texto: 'Señala la solidaridad (art. 2317) entre la empresa y el repartidor', keywords: ['2317', 'solidaria', 'solidariamente'] },
-          { texto: 'Menciona la acción de reembolso de la empresa contra el repartidor (art. 2325)', keywords: ['2325', 'repetir', 'reembolso', 'recuperar'] }
+          { texto: 'Cita el art. 2320 como fundamento de la responsabilidad por hecho ajeno', keywords: ['2320', 'hecho ajeno', 'dependiente', 'relación de dependencia'], pregunta: '¿Qué artículo permite demandar directamente a la empresa por el hecho de su dependiente?' },
+          { texto: 'Explica la presunción de culpa in eligendo / in vigilando contra LogiRed', keywords: ['presunción', 'in vigilando', 'in eligendo', 'presume culpa'], pregunta: '¿A Paula le corresponde probar la culpa de LogiRed, o la ley ya se la presume por elegir y no supervisar bien al repartidor?' },
+          { texto: 'Señala la solidaridad (art. 2317) entre la empresa y el repartidor', keywords: ['2317', 'solidaria', 'solidariamente'], pregunta: 'LogiRed y el repartidor responden juntos frente a Paula — ¿cómo se llama ese tipo de responsabilidad compartida?' },
+          { texto: 'Menciona la acción de reembolso de la empresa contra el repartidor (art. 2325)', keywords: ['2325', 'repetir', 'reembolso', 'recuperar'], pregunta: 'Una vez que LogiRed paga la indemnización, ¿ahí termina el asunto, o puede recuperar algo del repartidor después?' }
         ],
         articulos_referencia: ['2320', '2317', '2325'],
         objetivo_pedagogico: 'Aplicar la responsabilidad por hecho ajeno y sus consecuencias procesales y económicas'
@@ -872,10 +1008,10 @@
         enunciado: '¿Procede la demanda de daño moral en sede contractual? ¿Debe la clínica probar su diligencia o es Valentina quien prueba la culpa? Analiza la previsibilidad del daño y la extensión de lo indemnizable.',
         respuesta_modelo: 'Sí, el daño moral procede en sede contractual. La jurisprudencia chilena ha reconocido el daño moral contractual especialmente cuando el contrato compromete la integridad, salud o dignidad de la persona, como los contratos de prestación de servicios de salud. La falla organizativa de la clínica (extraviar exámenes y comunicar un diagnóstico errado) es incumplimiento de su obligación de cuidado, que incluye deber de precisión diagnóstica. En cuanto a la prueba: como la relación es contractual, opera la presunción de culpa del art. 1547 inc. 3°: la clínica debe probar que empleó la diligencia debida; Valentina solo acredita el incumplimiento (el diagnóstico errado) y los perjuicios. Sobre previsibilidad (art. 1558): el daño moral derivado de un diagnóstico errado es perfectamente previsible al tiempo de contratar una prestación de salud, por lo que entra en la extensión indemnizable incluso sin dolo. Lo indemnizable: daño moral (angustia, sufrimiento), y eventualmente daño emergente (gastos de tratamiento psicológico) y lucro cesante si corresponde.',
         elementos_clave: [
-          { texto: 'Afirma que el daño moral procede en sede contractual en contratos que comprometen la persona', keywords: ['daño moral', 'procede', 'contractual', 'dignidad', 'salud'] },
-          { texto: 'Aplica la presunción de culpa del art. 1547: la clínica prueba diligencia', keywords: ['1547', 'presunción', 'clínica prueba', 'presume culpa', 'deudor prueba'] },
-          { texto: 'Analiza la previsibilidad del daño moral (art. 1558): era previsible al contratar un servicio de salud', keywords: ['1558', 'previsible', 'previsibilidad', 'al tiempo de contratar'] },
-          { texto: 'Distingue daño emergente, lucro cesante y daño moral (art. 1556)', keywords: ['1556', 'daño emergente', 'lucro cesante', 'daño moral'] }
+          { texto: 'Afirma que el daño moral procede en sede contractual en contratos que comprometen la persona', keywords: ['daño moral', 'procede', 'contractual', 'dignidad', 'salud'], pregunta: '¿El daño moral se puede reclamar aunque el vínculo con la clínica sea un contrato, o eso solo aplica fuera de los contratos?' },
+          { texto: 'Aplica la presunción de culpa del art. 1547: la clínica prueba diligencia', keywords: ['1547', 'presunción', 'clínica prueba', 'presume culpa', 'deudor prueba'], pregunta: 'Entre Valentina y la clínica, ¿a quién le corresponde demostrar que hubo (o no hubo) diligencia?' },
+          { texto: 'Analiza la previsibilidad del daño moral (art. 1558): era previsible al contratar un servicio de salud', keywords: ['1558', 'previsible', 'previsibilidad', 'al tiempo de contratar'], pregunta: '¿Era previsible, al contratar un servicio de salud, que un error de diagnóstico pudiera causar un daño así?' },
+          { texto: 'Distingue daño emergente, lucro cesante y daño moral (art. 1556)', keywords: ['1556', 'daño emergente', 'lucro cesante', 'daño moral'], pregunta: 'Además del daño moral, ¿los gastos del tratamiento psicológico entran en alguna otra categoría de perjuicio?' }
         ],
         articulos_referencia: ['1547', '1556', '1558'],
         objetivo_pedagogico: 'Aplicar el régimen de la responsabilidad contractual incluyendo el daño moral y la previsibilidad'
@@ -910,9 +1046,9 @@
         enunciado: '¿En cuánto tiempo prescriben respectivamente la acción de responsabilidad contractual y la acción aquiliana extracontractual? ¿Desde cuándo corre cada plazo? Señala los artículos.',
         respuesta_modelo: 'La acción de responsabilidad contractual prescribe en 5 años contados desde que la obligación se hizo exigible (art. 2515 CC). La acción aquiliana extracontractual prescribe en 4 años contados desde la perpetración del acto (art. 2332 CC). Esta diferencia puede ser relevante cuando el demandante espera para demandar: si demanda bajo el estatuto contractual, tiene un año más; pero si el hecho se descubrió mucho después de ocurrido, existe debate sobre si en daños diferidos el plazo del art. 2332 corre desde el hecho o desde que el daño se manifiesta (jurisprudencia mayoritaria cuenta desde el hecho; parte de la doctrina aboga por la manifestación del daño en daños diferidos).',
         elementos_clave: [
-          { texto: 'Señala que la acción contractual prescribe en 5 años (art. 2515)', keywords: ['2515', '5 años', 'cinco años', 'contractual prescribe'] },
-          { texto: 'Señala que la acción extracontractual prescribe en 4 años (art. 2332)', keywords: ['2332', '4 años', 'cuatro años', 'aquiliana prescribe', 'extracontractual prescribe'] },
-          { texto: 'Distingue el dies a quo: exigibilidad (contractual) vs. perpetración del acto (extracontractual)', keywords: ['desde que', 'exigible', 'perpetración', 'dies a quo', 'plazo corre'] }
+          { texto: 'Señala que la acción contractual prescribe en 5 años (art. 2515)', keywords: ['2515', '5 años', 'cinco años', 'contractual prescribe'], pregunta: '¿En cuántos años prescribe la acción cuando el incumplimiento viene de un contrato?' },
+          { texto: 'Señala que la acción extracontractual prescribe en 4 años (art. 2332)', keywords: ['2332', '4 años', 'cuatro años', 'aquiliana prescribe', 'extracontractual prescribe'], pregunta: '¿Y cuando el daño no viene de un contrato, sino de un hecho ilícito? ¿Es el mismo plazo?' },
+          { texto: 'Distingue el dies a quo: exigibilidad (contractual) vs. perpetración del acto (extracontractual)', keywords: ['desde que', 'exigible', 'perpetración', 'dies a quo', 'plazo corre'], pregunta: '¿Los dos plazos empiezan a contarse desde el mismo momento, o cada uno tiene su propio punto de partida?' }
         ],
         articulos_referencia: ['2515', '2332'],
         objetivo_pedagogico: 'Memorizar y aplicar los plazos de prescripción de las acciones civiles'
@@ -928,9 +1064,9 @@
         enunciado: 'El paciente comete un error jurídico fundamental. Identifícalo y explica la doctrina correcta sobre el cúmulo u opción de responsabilidades.',
         respuesta_modelo: 'El paciente está equivocado. La doctrina del cúmulo propiamente tal —acumular las indemnizaciones de ambos estatutos por el mismo daño— está rechazada, ya que implicaría enriquecimiento injusto: no se puede cobrar dos veces por el mismo perjuicio. Lo que puede discutirse es si el paciente tiene derecho a optar entre ambos estatutos, eligiendo el más favorable. La regla tradicional en Chile es que, existiendo contrato, el estatuto aplicable es el contractual. La doctrina moderna discute si la víctima puede optar por el estatuto extracontractual cuando le resulte más conveniente (por ejemplo, si le interesa evitar la presunción de culpa que favorece al médico en sede contractual, o si le interesa la reparación integral sin el límite de previsibilidad). Pero lo que no puede hacer es acumular ambas indemnizaciones por el mismo daño.',
         elementos_clave: [
-          { texto: 'Rechaza el cúmulo propiamente tal (no se pueden sumar ambas indemnizaciones por el mismo daño)', keywords: ['no acumula', 'no puede sumar', 'mismo daño', 'enriquecimiento injusto', 'rechazado'] },
-          { texto: 'Distingue el cúmulo de la opción: puede haber derecho a elegir el estatuto más favorable', keywords: ['opción', 'elegir', 'optar', 'estatuto más favorable'] },
-          { texto: 'Señala que la regla general es que, existiendo contrato, se aplica el estatuto contractual', keywords: ['regla general', 'existiendo contrato', 'estatuto contractual', 'hay contrato'] }
+          { texto: 'Rechaza el cúmulo propiamente tal (no se pueden sumar ambas indemnizaciones por el mismo daño)', keywords: ['no acumula', 'no puede sumar', 'mismo daño', 'enriquecimiento injusto', 'rechazado'], pregunta: 'Si el paciente cobra las dos indemnizaciones por el mismo daño, ¿no estaría cobrando dos veces por lo mismo?' },
+          { texto: 'Distingue el cúmulo de la opción: puede haber derecho a elegir el estatuto más favorable', keywords: ['opción', 'elegir', 'optar', 'estatuto más favorable'], pregunta: 'Aunque no pueda sumar ambas indemnizaciones, ¿podría elegir cuál de los dos estatutos usar, si le conviene más uno que otro?' },
+          { texto: 'Señala que la regla general es que, existiendo contrato, se aplica el estatuto contractual', keywords: ['regla general', 'existiendo contrato', 'estatuto contractual', 'hay contrato'], pregunta: 'Si hay un contrato de por medio entre el paciente y el médico, ¿cuál es el estatuto que se aplica por regla general?' }
         ],
         articulos_referencia: ['1545', '2314'],
         objetivo_pedagogico: 'Distinguir el cúmulo impropio del derecho a optar entre estatutos de responsabilidad'
@@ -938,64 +1074,341 @@
     ];
 
     // ══════════════════════════════════════════════════════════════════
-    // ESTADO
+    // MOTOR DE MEMORICE (ocultamiento progresivo + corrección por palabra)
     // ══════════════════════════════════════════════════════════════════
-    let filtroActivo = 'todos';
+    const ARTICULOS_TOLERADOS = ['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas'];
+    const GRUPOS_EQUIVALENTES = [['por', 'en'], ['de', 'del'], ['a', 'al']];
+    const PALABRAS_FUNCIONALES = new Set([
+      'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas',
+      'de', 'del', 'en', 'por', 'para', 'con', 'a', 'al', 'sin', 'sobre', 'entre', 'hacia', 'hasta', 'desde',
+      'y', 'o', 'u', 'ni', 'que', 'como', 'pero', 'si', 'se', 'su', 'sus', 'lo', 'le', 'les',
+      'es', 'son', 'ha', 'han', 'sea', 'sean',
+    ]);
+
+    // "un/una/uno" quedan afuera a propósito: son casi siempre el artículo
+    // ("una declaración"), no el número, y confundirlos sería peor que el
+    // problema que se quiere resolver. Los demás números casi no se usan
+    // como otra cosa en un texto legal, así que "cinco" y "5" se tratan
+    // como la misma respuesta (es la misma norma, solo cambia cómo se
+    // escribió el número — no debería marcarse como error).
+    const NUMEROS_A_DIGITO = {
+      dos: '2', tres: '3', cuatro: '4', cinco: '5', seis: '6', siete: '7', ocho: '8', nueve: '9', diez: '10',
+      once: '11', doce: '12', trece: '13', catorce: '14', quince: '15',
+      dieciseis: '16', diecisiete: '17', dieciocho: '18', diecinueve: '19', veinte: '20',
+      treinta: '30', cuarenta: '40', cincuenta: '50', sesenta: '60', setenta: '70', ochenta: '80', noventa: '90',
+      cien: '100', ciento: '100', mil: '1000',
+    };
+
+    function normalizarPalabra(w) {
+      const limpia = w.trim().toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[.,;:!?¿¡"'«»()\[\]]/g, '');
+      return NUMEROS_A_DIGITO[limpia] || limpia;
+    }
+    function tokenizar(texto) { return texto.trim().split(/\s+/).filter(Boolean); }
+    function mismoGrupoFuncional(a, b) { return a === b || GRUPOS_EQUIVALENTES.some(g => g.includes(a) && g.includes(b)); }
+    function esCritica(palabraNorm, criticasNorm) { return criticasNorm.has(palabraNorm); }
+    function palabrasEquivalentes(esperada, escrita, criticasNorm) {
+      if (esCritica(esperada, criticasNorm)) return esperada === escrita;
+      return esperada === escrita || mismoGrupoFuncional(esperada, escrita);
+    }
+
+    function compararBlank(esperadoTexto, escritoTexto, palabrasCriticas) {
+      const criticasNorm = new Set((palabrasCriticas || []).map(normalizarPalabra));
+      const esperadas = tokenizar(esperadoTexto).map(normalizarPalabra);
+      const escritas = tokenizar(escritoTexto).map(normalizarPalabra);
+      const esperadasF = esperadas.filter(p => !(ARTICULOS_TOLERADOS.includes(p) && !esCritica(p, criticasNorm)));
+      const escritasF = escritas.filter(p => !ARTICULOS_TOLERADOS.includes(p) || esCritica(p, criticasNorm));
+      if (esperadasF.length !== escritasF.length) return { correcto: false };
+      for (let i = 0; i < esperadasF.length; i++) {
+        if (!palabrasEquivalentes(esperadasF[i], escritasF[i], criticasNorm)) return { correcto: false };
+      }
+      return { correcto: true };
+    }
+
+    function diffCompleto(textoEsperado, textoEscrito, palabrasCriticas) {
+      const criticasNorm = new Set((palabrasCriticas || []).map(normalizarPalabra));
+      const esperadasOriginal = tokenizar(textoEsperado);
+      const escritasOriginal = tokenizar(textoEscrito);
+      const esperadas = esperadasOriginal.map(normalizarPalabra);
+      const escritas = escritasOriginal.map(normalizarPalabra);
+      const n = esperadas.length, m = escritas.length;
+      const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+      for (let i = n - 1; i >= 0; i--) {
+        for (let j = m - 1; j >= 0; j--) {
+          dp[i][j] = palabrasEquivalentes(esperadas[i], escritas[j], criticasNorm)
+            ? dp[i + 1][j + 1] + 1
+            : Math.max(dp[i + 1][j], dp[i][j + 1]);
+        }
+      }
+      const items = [];
+      let i = 0, j = 0, ok = 0, huboError = false;
+      while (i < n && j < m) {
+        if (palabrasEquivalentes(esperadas[i], escritas[j], criticasNorm)) {
+          items.push({ tipo: 'ok', palabra: esperadasOriginal[i] }); ok++; i++; j++;
+        } else if (dp[i + 1][j] >= dp[i][j + 1]) {
+          items.push({ tipo: 'falta', palabra: esperadasOriginal[i], critica: esCritica(esperadas[i], criticasNorm) });
+          huboError = true; i++;
+        } else {
+          items.push({ tipo: 'sobra', palabra: escritasOriginal[j] });
+          huboError = true; j++;
+        }
+      }
+      while (i < n) { items.push({ tipo: 'falta', palabra: esperadasOriginal[i], critica: esCritica(esperadas[i], criticasNorm) }); huboError = true; i++; }
+      while (j < m) { items.push({ tipo: 'sobra', palabra: escritasOriginal[j] }); huboError = true; j++; }
+      return { items, correcto: !huboError, totalEsperadas: n, okCount: ok };
+    }
+
+    function gruposAutomaticos(texto) {
+      const palabras = tokenizar(texto);
+      const semanticas = palabras
+        .map((p, idx) => ({ idx, palabra: p, norm: normalizarPalabra(p) }))
+        .filter(p => !PALABRAS_FUNCIONALES.has(p.norm) && p.norm.length > 0);
+      const ordenadas = [...semanticas].sort((a, b) => b.norm.length - a.norm.length || a.idx - b.idx);
+      const total = ordenadas.length;
+      // N1=30% oculto, N2=60% acumulado, N3=90% acumulado. N4 no usa grupos:
+      // es una sola caja de texto libre, sin ninguna pista de estructura
+      // (ver construirBlanks).
+      const corte = [Math.ceil(total * 0.3), Math.ceil(total * 0.6), Math.ceil(total * 0.9), total];
+      const grupos = [[], [], [], []];
+      ordenadas.forEach((p, i) => {
+        if (i < corte[0]) grupos[0].push(p.palabra);
+        else if (i < corte[1]) grupos[1].push(p.palabra);
+        else if (i < corte[2]) grupos[2].push(p.palabra);
+        else grupos[3].push(p.palabra);
+      });
+      return grupos;
+    }
+
+    function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+    // Marcador con caracteres del área de uso privado Unicode (nunca aparecen
+    // en texto legal real) para no confundirse con números literales del
+    // artículo (ej. "plazo de 10 días"), y coincidencia con límite de palabra
+    // (vía \p{L}, no \w, porque \w no reconoce tildes/ñ) para no matchear un
+    // span corto dentro de una palabra más larga que lo contiene.
+    function construirBlanks(articulo, nivel) {
+      if (nivel >= 4) return { partes: [{ tipo: 'blank_total', esperado: articulo.texto }] };
+      const curado = !!(articulo.prioridad_ocultamiento && articulo.prioridad_ocultamiento.length > 0);
+      const grupos = curado ? articulo.prioridad_ocultamiento : gruposAutomaticos(articulo.texto);
+      const ocultarSpans = [];
+      for (let g = 0; g < nivel && g < grupos.length; g++) {
+        for (const span of grupos[g]) { if (span !== '*') ocultarSpans.push(span); }
+      }
+      ocultarSpans.sort((a, b) => b.length - a.length);
+
+      const ABRE = '', CIERRA = '';
+      let texto = articulo.texto;
+      const encontrados = [];
+      ocultarSpans.forEach((span) => {
+        const patron = new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegExp(span)}(?![\\p{L}\\p{N}])`, 'u');
+        const m = texto.match(patron);
+        if (!m) return;
+        const pos = m.index;
+        texto = texto.slice(0, pos) + ABRE + encontrados.length + CIERRA + texto.slice(pos + span.length);
+        encontrados.push(span);
+      });
+
+      const partes = [];
+      const regex = new RegExp(`${ABRE}(\\d+)${CIERRA}`, 'g');
+      let ultimo = 0, m;
+      while ((m = regex.exec(texto)) !== null) {
+        if (m.index > ultimo) partes.push({ tipo: 'texto', texto: texto.slice(ultimo, m.index) });
+        partes.push({ tipo: 'blank', esperado: encontrados[Number(m[1])] });
+        ultimo = m.index + m[0].length;
+      }
+      if (ultimo < texto.length) partes.push({ tipo: 'texto', texto: texto.slice(ultimo) });
+      return { partes };
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // NORMALIZACIÓN DE MATERIA (tolera distintos formatos ya guardados)
+    // ══════════════════════════════════════════════════════════════════
+    function normalizarMateria(raw) {
+      if (!raw) return 'general';
+      const s = raw.toLowerCase();
+      if (s.includes('precontractual')) return 'precontractual';
+      if (s.includes('extracontractual')) return 'extracontractual';
+      if (s.includes('contractual')) return 'contractual';
+      if (s.includes('procesal')) return 'procesal';
+      return 'general';
+    }
+    function escaparHtmlBase(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+    function sumarDias(dias) { return new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toISOString(); }
+
+    // ══════════════════════════════════════════════════════════════════
+    // ESTADO DE FILTROS (Eje 1 Materia · Eje 2 Modelo · Eje 3 Subtipo)
+    // ══════════════════════════════════════════════════════════════════
+    let ramaActiva = 'civil';
+    let materiaActiva = 'todas'; // materia dentro de Civil (Responsabilidad, Bienes, etc.)
+    let areaActiva = 'todas'; // dentro de Responsabilidad: precontractual/contractual/extracontractual
+    let modeloActivo = 'evaluacion';
+    let subtipoActivo = 'todos';
+
+    // Contenido cargado desde Supabase (Alternativas, Memorice, Flashcards)
+    let datosAlternativas = [];
+    let datosMemoriceArticulos = [];
+    let progresoMemorice = {}; // articulo_id -> {nivel_actual, proxima_revision, historial}
+    let datosFlashcards = [];
+    let progresoFlashcards = {}; // flashcard_id -> {calificacion, proxima_revision}
+
+    const TEMAS_EN_ALCANCE = [
+      'Responsabilidad contractual',
+      'Responsabilidad extracontractual',
+      'Responsabilidad civil'
+    ];
+
+    const MODELOS = [
+      { id: 'evaluacion', label: 'Evaluación' },
+      { id: 'flashcard', label: 'Flashcards' },
+      { id: 'alternativa', label: 'Alternativas' },
+      { id: 'memorice', label: 'Memorice' },
+    ];
+    const RAMAS = [
+      { id: 'civil', label: 'Civil' },
+      { id: 'procesal', label: 'Procesal', disabled: true },
+    ];
+    const MATERIAS_CIVIL = [
+      { id: 'todas', label: 'Todas' },
+      { id: 'responsabilidad', label: 'Responsabilidad' },
+      { id: 'acto_juridico', label: 'Acto Jurídico', disabled: true },
+      { id: 'bienes', label: 'Bienes', disabled: true },
+      { id: 'obligaciones', label: 'Obligaciones', disabled: true },
+      { id: 'contratos', label: 'Contratos', disabled: true },
+      { id: 'familia', label: 'Familia', disabled: true },
+      { id: 'sucesorio', label: 'Sucesorio', disabled: true },
+    ];
+    const AREAS_RESPONSABILIDAD = [
+      { id: 'todas', label: 'Todas' },
+      { id: 'precontractual', label: 'Precontractual' },
+      { id: 'contractual', label: 'Contractual' },
+      { id: 'extracontractual', label: 'Extracontractual' },
+    ];
+    const SUBTIPOS_EVALUACION = [
+      { id: 'todos', label: 'Todos' },
+      { id: 'aplicacion', label: 'Aplicación' },
+      { id: 'deteccion_error', label: 'Detección de error' },
+      { id: 'justificacion', label: 'Justificación' },
+      { id: 'discriminacion_mc', label: 'Discriminación MC' },
+    ];
+
+    function subtemasDisponibles(items) {
+      const set = new Set();
+      items.forEach(it => { if (it.subtema) set.add(it.subtema); });
+      return Array.from(set).sort();
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // RENDER DE FILTROS
+    // ══════════════════════════════════════════════════════════════════
+    function renderFiltros() {
+      document.getElementById('fila-rama').innerHTML =
+        `<span class="eje-label">¿Qué quieres repasar hoy?</span>` +
+        RAMAS.map(r => r.disabled
+          ? `<button class="filtro-btn disabled" disabled title="Próximamente">${r.label}</button>`
+          : `<button class="filtro-btn ${ramaActiva === r.id ? 'active' : ''}" onclick="setRama('${r.id}')">${r.label}</button>`
+        ).join('');
+
+      document.getElementById('fila-materia').innerHTML =
+        `<span class="eje-label">Materia</span>` +
+        MATERIAS_CIVIL.map(m => m.disabled
+          ? `<button class="filtro-btn disabled" disabled title="Próximamente">${m.label}</button>`
+          : `<button class="filtro-btn ${materiaActiva === m.id ? 'active' : ''}" onclick="setMateria('${m.id}')">${m.label}</button>`
+        ).join('');
+
+      const filaArea = document.getElementById('fila-area');
+      if (materiaActiva === 'responsabilidad') {
+        filaArea.innerHTML = `<span class="eje-label">Área</span>` +
+          AREAS_RESPONSABILIDAD.map(a => `<button class="filtro-btn ${areaActiva === a.id ? 'active' : ''}" onclick="setArea('${a.id}')">${a.label}</button>`).join('');
+        filaArea.style.display = '';
+      } else {
+        filaArea.innerHTML = '';
+        filaArea.style.display = 'none';
+      }
+
+      document.getElementById('fila-modelo').innerHTML =
+        `<span class="eje-label">Modelo</span>` +
+        MODELOS.map(m => `<button class="filtro-btn ${modeloActivo === m.id ? 'active' : ''}" onclick="setModelo('${m.id}')">${m.label}</button>`).join('');
+
+      renderFilaSubtipo();
+    }
+
+    function renderFilaSubtipo() {
+      const fila = document.getElementById('fila-subtipo');
+      fila.classList.add('subtipo');
+      if (modeloActivo === 'evaluacion') {
+        fila.innerHTML = `<span class="eje-label">Subtipo</span>` +
+          SUBTIPOS_EVALUACION.map(s => `<button class="filtro-btn ${subtipoActivo === s.id ? 'active' : ''}" onclick="setSubtipo('${s.id}')">${s.label}</button>`).join('');
+        fila.style.display = '';
+      } else if (modeloActivo === 'alternativa' || modeloActivo === 'memorice') {
+        const fuente = modeloActivo === 'alternativa' ? datosAlternativas : datosMemoriceArticulos;
+        const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || normalizarMateria(it.materia) === areaActiva);
+        const subtemas = subtemasDisponibles(filtradasPorMateria);
+        if (subtemas.length === 0) { fila.innerHTML = ''; fila.style.display = 'none'; return; }
+        fila.innerHTML = `<span class="eje-label">Subtipo</span>` +
+          `<button class="filtro-btn ${subtipoActivo === 'todos' ? 'active' : ''}" onclick="setSubtipo('todos')">Todos</button>` +
+          subtemas.map(s => `<button class="filtro-btn ${subtipoActivo === s ? 'active' : ''}" onclick="setSubtipo(${JSON.stringify(s)})">${escaparHtmlBase(s)}</button>`).join('');
+        fila.style.display = '';
+      } else {
+        fila.innerHTML = '';
+        fila.style.display = 'none';
+      }
+
+      const filaMetodo = document.getElementById('fila-metodo');
+      if (modeloActivo === 'memorice') {
+        filaMetodo.innerHTML = `<span class="eje-label">Método</span>` +
+          `<button class="filtro-btn ${metodoMemorice === 'A' ? 'active' : ''}" onclick="setMetodoMemorice('A')">Método A (progresivo)</button>` +
+          `<button class="filtro-btn ${metodoMemorice === 'B' ? 'active' : ''}" onclick="setMetodoMemorice('B')">Método B (cláusulas)</button>`;
+        filaMetodo.style.display = '';
+      } else {
+        filaMetodo.innerHTML = '';
+        filaMetodo.style.display = 'none';
+      }
+    }
+
+    function setRama(r) { ramaActiva = r; materiaActiva = 'todas'; areaActiva = 'todas'; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
+    function setMateria(m) { materiaActiva = m; areaActiva = 'todas'; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
+    function setArea(a) { areaActiva = a; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
+    function setModelo(m) { modeloActivo = m; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
+    function setSubtipo(s) { subtipoActivo = s; renderFiltros(); iniciarSesion(); }
+
+    function iniciarSesion() {
+      if (modeloActivo === 'evaluacion') iniciarEvaluacion();
+      else if (modeloActivo === 'flashcard') iniciarFlashcardsModelo();
+      else if (modeloActivo === 'alternativa') iniciarAlternativasModelo();
+      else if (modeloActivo === 'memorice') iniciarMemoriceModelo();
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // MODELO: EVALUACIÓN (sin cambios de comportamiento; solo el filtro
+    // de materia/subtipo cambia de dónde viene)
+    // ══════════════════════════════════════════════════════════════════
     let itemsFiltrados = [];
     let idxActual = 0;
-    let fase = 'recall';        // recall | evaluado | mc | mc_evaluado | modelo | segunda_pasada
     let creditoTotal = 0;
     let itemsCompletados = 0;
     let seleccionMC = null;
 
-    // ══════════════════════════════════════════════════════════════════
-    // INIT
-    // ══════════════════════════════════════════════════════════════════
-    async function init() {
-      const { data: { user } } = await sb.auth.getUser();
-      if (!user) { window.location.href = 'auth.html'; return; }
-      const name = user.user_metadata?.full_name || user.email.split('@')[0];
-      document.getElementById('user-name').textContent = name;
-      document.getElementById('user-avatar').textContent = name[0].toUpperCase();
-      startSession();
-    }
-
-    function setFiltro(f, btn) {
-      filtroActivo = f;
-      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      idxActual = 0; creditoTotal = 0; itemsCompletados = 0;
-      startSession();
-    }
-
-    function startSession() {
-      // Por ahora el banco se acota a Responsabilidad contractual y extracontractual.
-      // (Se ocultan Procesal y otros temas hasta que estén publicados sus manuales.)
-      const TEMAS_EN_ALCANCE = [
-        'Responsabilidad contractual',
-        'Responsabilidad extracontractual',
-        'Responsabilidad civil' // ítems comparados: distinción de estatutos, prescripción, cúmulo
-      ];
+    function iniciarEvaluacion() {
       itemsFiltrados = banco.filter(item => {
-        if (!TEMAS_EN_ALCANCE.includes(item.tema)) return false; // fuera Procesal y otros
-        if (filtroActivo === 'todos') return true;
-        if (filtroActivo === 'contractual') return item.tema === 'Responsabilidad contractual';
-        if (filtroActivo === 'extracontractual') return item.tema === 'Responsabilidad extracontractual';
-        return item.tipo === filtroActivo; // filtros por tipo de ejercicio
+        if (!TEMAS_EN_ALCANCE.includes(item.tema)) return false;
+        const mat = normalizarMateria(item.tema);
+        if (areaActiva !== 'todas' && mat !== areaActiva) return false;
+        if (subtipoActivo !== 'todos' && item.tipo !== subtipoActivo) return false;
+        return true;
       });
       itemsFiltrados.sort(() => Math.random() - 0.5);
-      idxActual = 0;
-      renderItem();
+      idxActual = 0; creditoTotal = 0; itemsCompletados = 0;
+      renderItemEvaluacion();
     }
 
-    // ══════════════════════════════════════════════════════════════════
-    // RENDER ÍTEM
-    // ══════════════════════════════════════════════════════════════════
-    function renderItem() {
-      if (idxActual >= itemsFiltrados.length) { renderResultados(); return; }
+    function renderItemEvaluacion() {
+      if (itemsFiltrados.length === 0) {
+        document.getElementById('practica-container').innerHTML = `<div class="estado-vacio">No hay ítems de Evaluación para esta combinación de filtros todavía.</div>`;
+        return;
+      }
+      if (idxActual >= itemsFiltrados.length) { renderResultadosEvaluacion(); return; }
       const item = itemsFiltrados[idxActual];
-      fase = 'recall';
-      seleccionMC = null;
 
       const pct = Math.round((idxActual / itemsFiltrados.length) * 100);
       const tipoLabel = { aplicacion: 'Aplicación', deteccion_error: 'Detección de error', justificacion: 'Justificación', discriminacion_mc: 'Discriminación' }[item.tipo];
@@ -1007,42 +1420,26 @@
         discriminacion_mc: 'Primero escribe lo que recuerdas. Luego verás las opciones.'
       }[item.tipo];
 
-      document.getElementById('quiz-container').innerHTML = `
+      document.getElementById('practica-container').innerHTML = `
         <div class="quiz-progress">
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width:${pct}%"></div>
-          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
           <span class="progress-text">${idxActual + 1} / ${itemsFiltrados.length}</span>
         </div>
-
         <div class="item-card">
           <div class="item-meta">
             <span class="badge-tipo ${tipoCss}">${tipoLabel}</span>
             <span class="badge-materia">${item.tema} · ${item.subtema}</span>
             <span class="item-num">${item.id}</span>
           </div>
-
-          ${item.caso ? `
-            <div class="caso-box">
-              <span class="caso-label">Caso</span>
-              ${item.caso}
-            </div>
-          ` : ''}
-
+          ${item.caso ? `<div class="caso-box"><span class="caso-label">Caso</span>${item.caso}</div>` : ''}
           <div class="pregunta-text">${item.enunciado}</div>
-
-          <div class="step-label">
-            <div class="step-num-badge">1</div>
-            Recuperación libre — ${instruccion}
-          </div>
-          <textarea id="recall-text" placeholder="Escribe aquí tu respuesta desde cero…" oninput="updateChar()"></textarea>
+          <div class="step-label"><div class="step-num-badge">1</div>Recuperación libre — ${instruccion}</div>
+          <textarea id="recall-text" placeholder="Escribe aquí tu respuesta desde cero…" oninput="updateChar()" onpaste="return false;" ondrop="return false;"></textarea>
           <div class="char-count"><span id="char-count">0</span> caracteres</div>
-
           <div class="btn-row">
             <button class="btn btn-primary" id="btn-evaluar" onclick="evaluarRespuesta()">Evaluar mi respuesta</button>
             <button class="btn btn-outline" onclick="skipItem()">Saltar ítem</button>
           </div>
-
           <div id="feedback-area"></div>
         </div>
       `;
@@ -1053,25 +1450,16 @@
       document.getElementById('char-count').textContent = txt.value.length;
     }
 
-    // ══════════════════════════════════════════════════════════════════
-    // EVALUACIÓN (rubric-based, sin IA por ahora)
-    // ══════════════════════════════════════════════════════════════════
     function evaluarRespuesta(esSegundaPasada = false) {
       const item = itemsFiltrados[idxActual];
       const texto = (document.getElementById('recall-text')?.value || '').toLowerCase();
-
       if (texto.trim().length < 30) {
         document.getElementById('recall-text').style.borderColor = '#C41E2E';
         setTimeout(() => document.getElementById('recall-text').style.borderColor = '', 1500);
         return;
       }
-
       document.getElementById('btn-evaluar').disabled = true;
 
-      // Los ítems de discriminación (alternativas) no tienen rúbrica de palabras
-      // clave: la recuperación libre es solo práctica y la corrección real ocurre
-      // al elegir la alternativa. Sin esta guarda, item.elementos_clave.forEach
-      // lanzaba un TypeError y no se mostraba ningún feedback.
       if (!item.elementos_clave || item.elementos_clave.length === 0) {
         const cont = item.tipo === 'discriminacion_mc'
           ? `<button class="btn btn-dark" onclick="mostrarMC()">Continuar → Alternativas</button>`
@@ -1087,26 +1475,24 @@
 
       const acertados = [];
       const faltantes = [];
-
       item.elementos_clave.forEach(el => {
         const found = el.keywords.some(kw => texto.includes(kw.toLowerCase()));
-        if (found) acertados.push(el.texto);
-        else faltantes.push(el.texto);
+        if (found) acertados.push(el.texto); else faltantes.push(el);
       });
 
       const credito = acertados.length / item.elementos_clave.length;
       const pct = Math.round(credito * 100);
       const color = credito >= 0.75 ? '#1A7A40' : credito >= 0.4 ? '#A06000' : '#C41E2E';
 
-      let siguiente;
-      if (credito >= 0.75) siguiente = 'avanzar';
-      else if (credito >= 0.35 && !esSegundaPasada) siguiente = 'segunda_pasada';
-      else siguiente = 'ver_modelo';
+      let siguienteAccion;
+      if (credito >= 0.75) siguienteAccion = 'avanzar';
+      else if (credito >= 0.35 && !esSegundaPasada) siguienteAccion = 'segunda_pasada';
+      else siguienteAccion = 'ver_modelo';
 
       let veredicto, feedbackDiag;
       if (credito >= 0.75) {
         veredicto = '✓ Respuesta sólida. Cubriste los elementos esenciales.';
-        feedbackDiag = faltantes.length > 0 ? `Estuviste muy bien. Para completar, considera también: ${faltantes.join('; ')}.` : 'Respuesta completa.';
+        feedbackDiag = faltantes.length > 0 ? `Estuviste muy bien. Para completar, considera también: ${faltantes.map(el => el.texto).join('; ')}.` : 'Respuesta completa.';
       } else if (credito >= 0.35) {
         veredicto = '◐ Respuesta parcial. Captaste la idea general pero faltaron elementos clave.';
         feedbackDiag = `Identificaste correctamente ${acertados.length} de ${item.elementos_clave.length} elementos. Lo que faltó es precisamente lo que más se pregunta en el examen. ${esSegundaPasada ? 'Revisa el modelo abajo.' : 'Tienes una segunda pasada.'}`;
@@ -1123,57 +1509,32 @@
           <div class="feedback-header">
             <div class="credito-bar-wrap">
               <div class="credito-label">Crédito parcial</div>
-              <div class="credito-bar-bg">
-                <div class="credito-bar-fill" style="width:${pct}%; background:${color}"></div>
-              </div>
+              <div class="credito-bar-bg"><div class="credito-bar-fill" style="width:${pct}%; background:${color}"></div></div>
             </div>
             <div class="credito-pct" style="color:${color}">${pct}%</div>
           </div>
-
           <div class="veredicto">${veredicto}</div>
-
           <div class="elementos-grid">
             <div class="elementos-col ok">
               <h4>✓ Presentes</h4>
-              ${acertados.length > 0
-                ? acertados.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('')
-                : '<div class="elemento-tag" style="color:#7A6E5F; font-style:italic">Ninguno detectado</div>'
-              }
-            </div>
-            <div class="elementos-col missing">
-              <h4>✗ Faltaron</h4>
-              ${faltantes.length > 0
-                ? faltantes.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('')
-                : '<div class="elemento-tag" style="color:#1A7A40; font-style:italic">Todo cubierto</div>'
-              }
+              ${acertados.length > 0 ? acertados.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('') : '<div class="elemento-tag" style="color:#7A6E5F; font-style:italic">Ninguno detectado</div>'}
             </div>
           </div>
-
           <div class="feedback-diag">${feedbackDiag}</div>
-
-          ${siguiente === 'segunda_pasada' ? `
+          ${siguienteAccion === 'segunda_pasada' ? `
             <div class="segunda-pasada" style="margin-top:1.25rem;">
               <div class="segunda-title">Segunda pasada</div>
-              <div class="segunda-text">
-                Estuviste cerca. No te doy la respuesta todavía: tienes una oportunidad más.
-                Foco en lo que faltó: <strong>${faltantes.slice(0,2).join(' / ')}</strong>.
-              </div>
-              <textarea id="recall-text-2" style="min-height:90px;" placeholder="Complementa o reescribe tu respuesta…"></textarea>
+              <div class="segunda-text">Estuviste cerca. No te doy la respuesta todavía: tienes una oportunidad más. Sigue pensando: <strong>${escaparHtmlBase(faltantes.map(el => el.pregunta).filter(Boolean).join(' ') || '¿Qué otro elemento le falta a tu respuesta?')}</strong></div>
+              <textarea id="recall-text-2" style="min-height:90px;" placeholder="Complementa o reescribe tu respuesta…" onpaste="return false;" ondrop="return false;"></textarea>
               <div class="btn-row" style="margin-top:0.75rem;">
                 <button class="btn btn-primary" onclick="evaluarSegundaPasada()">Evaluar segunda pasada</button>
                 <button class="btn btn-outline" onclick="mostrarModelo()">Ver respuesta modelo</button>
               </div>
-            </div>
-          ` : `
+            </div>` : `
             <div class="btn-row" style="margin-top:1.25rem;">
-              ${item.tipo === 'discriminacion_mc'
-                ? `<button class="btn btn-dark" onclick="mostrarMC()">Continuar → Alternativa de discriminación</button>`
-                : `<button class="btn btn-dark" onclick="mostrarModelo()">Ver respuesta modelo</button>`
-              }
-            </div>
-          `}
-        </div>
-      `;
+              ${item.tipo === 'discriminacion_mc' ? `<button class="btn btn-dark" onclick="mostrarMC()">Continuar → Alternativa de discriminación</button>` : `<button class="btn btn-dark" onclick="mostrarModelo()">Ver respuesta modelo</button>`}
+            </div>`}
+        </div>`;
 
       document.getElementById('feedback-area').innerHTML = feedbackHTML;
       document.getElementById('feedback-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1183,7 +1544,6 @@
       const txt2 = document.getElementById('recall-text-2')?.value || '';
       const txt1 = document.getElementById('recall-text')?.value || '';
       const combinado = txt1 + ' ' + txt2;
-      // Reemplazar texto para evaluación combinada
       const fakeInput = document.createElement('textarea');
       fakeInput.id = 'recall-text';
       fakeInput.value = combinado;
@@ -1191,37 +1551,24 @@
       evaluarRespuesta(true);
     }
 
-    // ══════════════════════════════════════════════════════════════════
-    // MC
-    // ══════════════════════════════════════════════════════════════════
     function mostrarMC() {
       const item = itemsFiltrados[idxActual];
       const letras = ['A', 'B', 'C', 'D'];
-
       const mcHTML = `
         <div class="mc-section">
-          <div class="step-label">
-            <div class="step-num-badge">2</div>
-            Discriminación — Selecciona la opción correcta y justifica en una línea.
-          </div>
+          <div class="step-label"><div class="step-num-badge">2</div>Discriminación — Selecciona la opción correcta y justifica en una línea.</div>
           <div class="mc-intro">Ahora que ya escribiste tu análisis, elige la alternativa que corresponde.</div>
           <div class="options-grid" id="mc-options">
             ${item.opciones.map((op, i) => `
               <button class="option-btn" id="mc-opt-${i}" onclick="selectMC(${i})">
-                <span class="option-letter">${letras[i]}</span>
-                <span>${op.texto}</span>
-              </button>
-            `).join('')}
+                <span class="option-letter">${letras[i]}</span><span>${op.texto}</span>
+              </button>`).join('')}
           </div>
           <div class="justificacion-label">Justificación (1 línea) — ¿Por qué elegiste esa opción?</div>
-          <textarea id="justificacion-text" class="justificacion" placeholder="Elijo X porque…"></textarea>
-          <div class="btn-row">
-            <button class="btn btn-primary" id="btn-confirmar-mc" onclick="evaluarMC()">Confirmar selección</button>
-          </div>
+          <textarea id="justificacion-text" class="justificacion" placeholder="Elijo X porque…" onpaste="return false;" ondrop="return false;"></textarea>
+          <div class="btn-row"><button class="btn btn-primary" id="btn-confirmar-mc" onclick="evaluarMC()">Confirmar selección</button></div>
           <div id="mc-feedback"></div>
-        </div>
-      `;
-
+        </div>`;
       document.getElementById('feedback-area').insertAdjacentHTML('beforeend', mcHTML);
       document.getElementById('mc-options').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
@@ -1235,102 +1582,667 @@
     function evaluarMC() {
       const item = itemsFiltrados[idxActual];
       if (seleccionMC === null) return;
-
       const btnConfirmar = document.getElementById('btn-confirmar-mc');
-      if (btnConfirmar) {
-        if (btnConfirmar.disabled) return; // evita doble conteo si se reconfirma
-        btnConfirmar.disabled = true;
-      }
-
+      if (btnConfirmar) { if (btnConfirmar.disabled) return; btnConfirmar.disabled = true; }
       const letras = ['A', 'B', 'C', 'D'];
       const correctaIdx = item.opciones.findIndex(op => op.letra === item.correcta);
       const esCorrecta = seleccionMC === correctaIdx;
-
-      // Estos ítems no pasan por la rúbrica de recuperación libre; su crédito se
-      // contabiliza aquí (acierto = 1, error = 0) para que sí cuenten en el puntaje.
       creditoTotal += esCorrecta ? 1 : 0;
       itemsCompletados++;
-
       document.querySelectorAll('.option-btn').forEach((btn, i) => {
         btn.disabled = true;
         if (i === correctaIdx) btn.classList.add(esCorrecta && i === seleccionMC ? 'correct' : 'revealed');
       });
-
       if (!esCorrecta) {
         document.getElementById('mc-opt-' + seleccionMC).classList.remove('revealed');
         document.getElementById('mc-opt-' + seleccionMC).classList.add('wrong');
       }
-
       const opcionElegida = item.opciones[seleccionMC];
       const distractorFeedback = esCorrecta
         ? `<strong>Correcto.</strong> ${item.opciones[correctaIdx].rationale}`
         : `<strong>Incorrecto.</strong> Elegiste ${letras[seleccionMC]}: ${opcionElegida.rationale}. La correcta es ${item.correcta}: ${item.opciones[correctaIdx].rationale}`;
-
       document.getElementById('mc-feedback').innerHTML = `
         <div class="distractor-feedback">${distractorFeedback}</div>
         <div class="btn-row" style="margin-top:1rem;">
-          <button class="btn btn-dark" onclick="siguiente()">
-            ${idxActual < itemsFiltrados.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}
-          </button>
-        </div>
-      `;
+          <button class="btn btn-dark" onclick="siguienteEvaluacion()">${idxActual < itemsFiltrados.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}</button>
+        </div>`;
     }
 
-    // ══════════════════════════════════════════════════════════════════
-    // MODELO
-    // ══════════════════════════════════════════════════════════════════
     function mostrarModelo() {
       const item = itemsFiltrados[idxActual];
       const modeloHTML = `
         <div class="modelo-section">
           <div class="modelo-title">Respuesta orientadora</div>
           <div class="modelo-body">${item.respuesta_modelo || 'La corrección de este ítem se realiza al elegir la alternativa correcta.'}</div>
-          <div class="articulos-ref">
-            ${(item.articulos_referencia || []).map(a => `<span class="art-tag">Art. ${a}</span>`).join('')}
-          </div>
+          <div class="articulos-ref">${(item.articulos_referencia || []).map(a => `<span class="art-tag">Art. ${a}</span>`).join('')}</div>
         </div>
         <div class="btn-row" style="margin-top:1.5rem; max-width:780px;">
-          <button class="btn btn-dark" onclick="siguiente()">
-            ${idxActual < itemsFiltrados.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}
-          </button>
-        </div>
-      `;
+          <button class="btn btn-dark" onclick="siguienteEvaluacion()">${idxActual < itemsFiltrados.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}</button>
+        </div>`;
       document.getElementById('feedback-area').insertAdjacentHTML('beforeend', modeloHTML);
       document.querySelector('.modelo-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    function skipItem() {
-      itemsCompletados++;
-      siguiente();
-    }
+    function skipItem() { itemsCompletados++; siguienteEvaluacion(); }
+    function siguienteEvaluacion() { idxActual++; renderItemEvaluacion(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-    function siguiente() {
-      idxActual++;
-      renderItem();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // ══════════════════════════════════════════════════════════════════
-    // RESULTADOS
-    // ══════════════════════════════════════════════════════════════════
-    function renderResultados() {
+    function renderResultadosEvaluacion() {
       const pct = itemsCompletados > 0 ? Math.round((creditoTotal / itemsCompletados) * 100) : 0;
       const emoji = pct >= 75 ? '🏆' : pct >= 50 ? '💪' : '📚';
       const msg = pct >= 75 ? '¡Buen dominio!' : pct >= 50 ? 'Vas por buen camino' : 'Hay que trabajar más';
-
-      document.getElementById('quiz-container').innerHTML = `
+      document.getElementById('practica-container').innerHTML = `
         <div class="results-card">
           <div class="results-emoji">${emoji}</div>
           <div class="results-title">${msg}</div>
           <div class="results-score">${pct}%</div>
           <div class="results-detail">Crédito promedio sobre ${itemsCompletados} ítems completados</div>
-          <div class="results-items-detail">
-            Aplicación y casos · Detección de error · Justificación · Discriminación
-          </div>
-          <button class="btn btn-primary" onclick="startSession()" style="margin-right:.5rem;">Nueva sesión</button>
+          <div class="results-items-detail">Aplicación y casos · Detección de error · Justificación · Discriminación</div>
+          <button class="btn btn-primary" onclick="iniciarEvaluacion()" style="margin-right:.5rem;">Nueva sesión</button>
           <a href="manuales.html" class="btn btn-outline" style="display:inline-block; margin-top:.5rem;">Repasar manuales</a>
+        </div>`;
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // MODELO: FLASHCARDS (mismo motor de repetición espaciada de siempre,
+    // ahora también filtrable por materia)
+    // ══════════════════════════════════════════════════════════════════
+    let fcFiltradas = [];
+    let fcIndice = 0;
+    let fcVolteada = false;
+    const DIAS_BIEN = 7, DIAS_MAS_O_MENOS = 3;
+
+    function fcEsDebida(t) {
+      const p = progresoFlashcards[t.id];
+      if (!p) return true;
+      if (p.calificacion === 'poco') return true;
+      if (!p.proxima_revision) return true;
+      return new Date(p.proxima_revision) <= new Date();
+    }
+    function fcFormatearRespuesta(texto) {
+      const seguro = escaparHtmlBase(texto);
+      return seguro
+        .replace(/&lt;(\/?)(b|i|em|strong|u)&gt;/g, '<$1$2>')
+        .replace(/&lt;span class='art'&gt;/g, '<span class="art">').replace(/&lt;\/span&gt;/g, '</span>');
+    }
+    function fcShuffle(arr) {
+      const c = arr.slice();
+      for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; }
+      return c;
+    }
+
+    async function iniciarFlashcardsModelo() {
+      document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando flashcards…</div>`;
+      if (datosFlashcards.length === 0) await cargarFlashcards();
+      fcFiltradas = datosFlashcards.filter(t => {
+        if (areaActiva !== 'todas' && normalizarMateria(t.materia) !== areaActiva) return false;
+        return fcEsDebida(t);
+      });
+      fcFiltradas = fcShuffle(fcFiltradas);
+      fcIndice = 0; fcVolteada = false;
+      renderFlashcard();
+    }
+
+    function fcVoltear() { fcVolteada = !fcVolteada; renderFlashcard(); }
+    function fcSiguiente() { if (fcIndice < fcFiltradas.length - 1) { fcIndice++; fcVolteada = false; renderFlashcard(); } }
+    function fcAnterior() { if (fcIndice > 0) { fcIndice--; fcVolteada = false; renderFlashcard(); } }
+    function fcBarajarDeNuevo() { fcFiltradas = fcShuffle(fcFiltradas); fcIndice = 0; fcVolteada = false; renderFlashcard(); }
+
+    async function fcCalificar(valor) {
+      const t = fcFiltradas[fcIndice];
+      if (!t) return;
+      let proxima = null;
+      if (valor === 'bien') proxima = sumarDias(DIAS_BIEN);
+      else if (valor === 'mas_o_menos') proxima = sumarDias(DIAS_MAS_O_MENOS);
+      progresoFlashcards[t.id] = { calificacion: valor, proxima_revision: proxima };
+      fcFiltradas.splice(fcIndice, 1);
+      if (fcIndice >= fcFiltradas.length) fcIndice = Math.max(0, fcFiltradas.length - 1);
+      fcVolteada = false;
+      renderFlashcard();
+      try {
+        await sb.from('flashcard_progreso').upsert(
+          { user_id: usuarioId, flashcard_id: t.id, calificacion: valor, ultima_revision: new Date().toISOString(), proxima_revision: proxima },
+          { onConflict: 'user_id,flashcard_id' }
+        );
+      } catch (e) { /* no bloquea el estudio */ }
+    }
+
+    function renderFlashcard() {
+      const cont = document.getElementById('practica-container');
+      if (fcFiltradas.length === 0) {
+        cont.innerHTML = `<div class="estado-vacio">¡Ya estudiaste todo lo que tocaba por ahora en esta materia! Vuelve más tarde.</div>`;
+        return;
+      }
+      const t = fcFiltradas[fcIndice];
+      const temaHtml = t.tema ? `<div class="fc-tema">${escaparHtmlBase(t.tema)}</div>` : '';
+      const calificarHtml = fcVolteada ? `
+        <div class="fc-calificar-fila">
+          <button class="btn-calificar bien" onclick="fcCalificar('bien')">😊 Me acordaba</button>
+          <button class="btn-calificar mas_o_menos" onclick="fcCalificar('mas_o_menos')">😐 Más o menos</button>
+          <button class="btn-calificar poco" onclick="fcCalificar('poco')">😕 Poco</button>
+        </div>` : '';
+      cont.innerHTML = `
+        <div style="max-width:720px;">
+          <div class="quiz-progress">
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.round((fcIndice / fcFiltradas.length) * 100)}%"></div></div>
+            <span class="progress-text">${fcIndice + 1} / ${fcFiltradas.length}</span>
+          </div>
+          <div class="fc-tarjeta" onclick="fcVoltear()" style="max-width:none;">
+            <div class="fc-dificultad ${t.dificultad}">${{ basica: 'Básica', intermedia: 'Intermedia', avanzada: 'Avanzada' }[t.dificultad] || t.dificultad}</div>
+            ${temaHtml}
+            <div class="fc-etiqueta">${fcVolteada ? 'Respuesta' : 'Pregunta'}</div>
+            <div class="fc-texto">${fcVolteada ? fcFormatearRespuesta(t.respuesta) : escaparHtmlBase(t.pregunta)}</div>
+            <div class="fc-pista">${fcVolteada ? 'Click para ver la pregunta' : 'Click para ver la respuesta'}</div>
+          </div>
+          ${calificarHtml}
+          <div class="fc-controles">
+            <button class="btn-control" style="padding:0.65rem 1.1rem;border-radius:8px;border:1.5px solid rgba(17,17,17,0.12);background:#FFFFFF;font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;cursor:pointer;" onclick="fcAnterior()" ${fcIndice === 0 ? 'disabled' : ''}>← Anterior</button>
+            ${fcVolteada ? '' : `<button class="btn-primario" style="padding:0.65rem 1.4rem;border-radius:8px;border:none;background:#C41E2E;color:#F5EAD4;font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;cursor:pointer;" onclick="fcSiguiente()" ${fcIndice === fcFiltradas.length - 1 ? 'disabled' : ''}>Siguiente →</button>`}
+          </div>
+          <button class="fc-barajar" onclick="fcBarajarDeNuevo()">Barajar de nuevo</button>
         </div>
       `;
+    }
+
+    async function cargarFlashcards() {
+      try {
+        const [{ data: tarjetas, error: e1 }, { data: progreso, error: e2 }] = await Promise.all([
+          sb.from('flashcards').select('id,tema,materia,pregunta,respuesta,dificultad').eq('publicado', true),
+          sb.from('flashcard_progreso').select('flashcard_id,calificacion,proxima_revision').eq('user_id', usuarioId),
+        ]);
+        if (e1) throw e1;
+        if (e2) throw e2;
+        datosFlashcards = tarjetas || [];
+        progresoFlashcards = {};
+        for (const p of progreso || []) progresoFlashcards[p.flashcard_id] = { calificacion: p.calificacion, proxima_revision: p.proxima_revision };
+      } catch (e) {
+        datosFlashcards = [];
+      }
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // MODELO: ALTERNATIVAS (nuevo — MC puro, feedback solo si se falla)
+    // ══════════════════════════════════════════════════════════════════
+    let altFiltradas = [];
+    let altIndice = 0;
+    let altCompletados = 0;
+    let altCorrectas = 0;
+
+    async function iniciarAlternativasModelo() {
+      document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando alternativas…</div>`;
+      if (datosAlternativas.length === 0) await cargarAlternativas();
+      altFiltradas = datosAlternativas.filter(it => {
+        if (areaActiva !== 'todas' && normalizarMateria(it.materia) !== areaActiva) return false;
+        if (subtipoActivo !== 'todos' && it.subtema !== subtipoActivo) return false;
+        return true;
+      });
+      altFiltradas.sort((a, b) => (a.nivel_exigencia || 3) - (b.nivel_exigencia || 3) || Math.random() - 0.5);
+      altIndice = 0; altCompletados = 0; altCorrectas = 0;
+      renderAlternativa();
+    }
+
+    async function cargarAlternativas() {
+      try {
+        const { data, error } = await sb.from('alternativas').select('id,materia,subtema,nivel_exigencia,pregunta,opciones,correcta,retroalimentacion,fuente').eq('publicado', true);
+        if (error) throw error;
+        datosAlternativas = data || [];
+      } catch (e) { datosAlternativas = []; }
+    }
+
+    function renderAlternativa() {
+      const cont = document.getElementById('practica-container');
+      if (altFiltradas.length === 0) {
+        cont.innerHTML = `<div class="estado-vacio">No hay ítems de Alternativas para esta combinación de filtros todavía.</div>`;
+        return;
+      }
+      if (altIndice >= altFiltradas.length) {
+        const pct = altCompletados > 0 ? Math.round((altCorrectas / altCompletados) * 100) : 0;
+        cont.innerHTML = `
+          <div class="results-card">
+            <div class="results-emoji">${pct >= 75 ? '🏆' : pct >= 50 ? '💪' : '📚'}</div>
+            <div class="results-title">Sesión de Alternativas completa</div>
+            <div class="results-score">${pct}%</div>
+            <div class="results-detail">${altCorrectas} de ${altCompletados} correctas</div>
+            <button class="btn btn-primary" onclick="iniciarAlternativasModelo()">Nueva sesión</button>
+          </div>`;
+        return;
+      }
+      const item = altFiltradas[altIndice];
+      const pct = Math.round((altIndice / altFiltradas.length) * 100);
+      cont.innerHTML = `
+        <div class="quiz-progress">
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+          <span class="progress-text">${altIndice + 1} / ${altFiltradas.length}</span>
+        </div>
+        <div class="item-card">
+          <div class="item-meta">
+            <span class="badge-tipo badge-mc">Alternativas</span>
+            <span class="badge-materia">${item.subtema || ''}</span>
+            <span class="item-num">N${item.nivel_exigencia || '-'}</span>
+          </div>
+          <div class="pregunta-text">${escaparHtmlBase(item.pregunta)}</div>
+          <div class="options-grid" id="alt-options">
+            ${item.opciones.map((op, i) => `
+              <button class="option-btn" id="alt-opt-${i}" onclick="seleccionarAlternativa(${i})">
+                <span class="option-letter">${['A','B','C','D'][i]}</span><span>${escaparHtmlBase(op)}</span>
+              </button>`).join('')}
+          </div>
+          <div id="alt-feedback"></div>
+        </div>`;
+    }
+
+    function seleccionarAlternativa(idx) {
+      const item = altFiltradas[altIndice];
+      const botones = document.querySelectorAll('#alt-options .option-btn');
+      if (botones[0].disabled) return; // ya se contestó este ítem
+      botones.forEach(b => b.disabled = true);
+      const esCorrecta = idx === item.correcta;
+      altCompletados++;
+      if (esCorrecta) altCorrectas++;
+
+      botones[idx].classList.add(esCorrecta ? 'selected' : 'wrong');
+      if (!esCorrecta) botones[item.correcta].classList.add('revealed');
+      else botones[idx].classList.add('correct');
+
+      let feedbackHtml = '';
+      if (!esCorrecta) {
+        const letras = ['A', 'B', 'C', 'D'];
+        const razon = (item.retroalimentacion.por_que_no || []).find(r => r.trim().startsWith(letras[idx] + ':'));
+        feedbackHtml = `
+          <div class="distractor-feedback">
+            <strong>La correcta era ${letras[item.correcta]}.</strong> ${escaparHtmlBase(item.retroalimentacion.correcta || '')}
+            ${razon ? `<br><br>${escaparHtmlBase(razon)}` : ''}
+          </div>`;
+      }
+      feedbackHtml += `
+        <div class="btn-row" style="margin-top:1rem;">
+          <button class="btn btn-dark" onclick="siguienteAlternativa()">${altIndice < altFiltradas.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}</button>
+        </div>`;
+      document.getElementById('alt-feedback').innerHTML = feedbackHtml;
+    }
+
+    function siguienteAlternativa() { altIndice++; renderAlternativa(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    // ══════════════════════════════════════════════════════════════════
+    // MODELO: MEMORICE — dos métodos en paralelo (A/B)
+    // ══════════════════════════════════════════════════════════════════
+    let memCola = [];
+    let memIndice = 0;
+    let memCompletados = 0;
+    let metodoMemorice = localStorage.getItem('digesto_metodo_memorice') || 'A';
+    let memTiempoMostrado = null; // para segundos_hasta_evaluar
+    let memPendienteAbandono = null; // {articuloId, metodo, nivel} del item mostrado sin evaluar aún
+
+    function claveProgreso(articuloId, metodo) { return `${articuloId}::${metodo}`; }
+
+    function setMetodoMemorice(m) {
+      metodoMemorice = m;
+      localStorage.setItem('digesto_metodo_memorice', m);
+      registrarAbandonoPendiente();
+      renderFilaSubtipo();
+      iniciarMemoriceModelo();
+    }
+
+    async function iniciarMemoriceModelo() {
+      document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando Memorice…</div>`;
+      if (datosMemoriceArticulos.length === 0) await cargarMemorice();
+      const ahora = new Date();
+      memCola = datosMemoriceArticulos.filter(a => {
+        if (areaActiva !== 'todas' && normalizarMateria(a.materia) !== areaActiva) return false;
+        if (subtipoActivo !== 'todos' && a.subtema !== subtipoActivo) return false;
+        const p = progresoMemorice[claveProgreso(a.id, metodoMemorice)];
+        if (!p || !p.proxima_revision) return true;
+        return new Date(p.proxima_revision) <= ahora;
+      }).map(a => ({ ...a }));
+      memCola.sort(() => Math.random() - 0.5);
+      memIndice = 0; memCompletados = 0;
+      renderMemorice();
+    }
+
+    async function cargarMemorice() {
+      try {
+        const [{ data: articulos, error: e1 }, { data: progreso, error: e2 }] = await Promise.all([
+          sb.from('memorice_articulos').select('id,materia,subtema,articulo,texto,clausulas,prioridad_ocultamiento,palabras_criticas,fuente').eq('publicado', true),
+          sb.from('memorice_progreso').select('articulo_id,metodo,nivel_actual,estado,proxima_revision,historial,aciertos_nivel_max,sesiones_con_acierto').eq('user_id', usuarioId),
+        ]);
+        if (e1) throw e1;
+        if (e2) throw e2;
+        datosMemoriceArticulos = articulos || [];
+        progresoMemorice = {};
+        for (const p of progreso || []) progresoMemorice[claveProgreso(p.articulo_id, p.metodo || 'A')] = p;
+      } catch (e) {
+        datosMemoriceArticulos = [];
+      }
+    }
+
+    // ── Método B: cláusulas y clave de primera letra ─────────────────────
+    function derivarClausulas(articulo) {
+      if (articulo.clausulas && articulo.clausulas.length > 0) return articulo.clausulas;
+      const texto = articulo.texto;
+      if (texto.includes(';')) {
+        const partes = texto.split(';').map(s => s.trim()).filter(Boolean);
+        if (partes.length >= 2) return partes.map((s, i) => i < partes.length - 1 ? s + ';' : s);
+      }
+      const partesIncisos = texto.split(/(?=\d+[°º]\.\s)/).map(s => s.trim()).filter(Boolean);
+      if (partesIncisos.length >= 2) return partesIncisos;
+      return [texto];
+    }
+
+    // Primera letra + un "_" por cada carácter restante de cada palabra.
+    // Se conserva puntuación, espacios y mayúsculas (no se tocan, solo se
+    // reemplazan las letras). Automático, sin curaduría manual.
+    function generarClave(texto) {
+      return texto.replace(/\p{L}+/gu, (palabra) => palabra[0] + '_'.repeat(palabra.length - 1));
+    }
+
+    // nivel máximo siempre es 4 (N4 en A, B4 en B) en ambos métodos.
+    function memSiguienteNivel(articulo, metodo, nivelActual) {
+      if (metodo === 'A') return Math.min(4, nivelActual + 1);
+      const clausulas = derivarClausulas(articulo);
+      if (clausulas.length <= 1 && nivelActual === 1) return 4; // articulo de una sola clausula: Estudio -> clave -> blanco
+      return Math.min(4, nivelActual + 1);
+    }
+    function memNivelAnterior(articulo, metodo, nivelActual) {
+      if (metodo === 'A') return Math.max(1, nivelActual - 1);
+      const clausulas = derivarClausulas(articulo);
+      if (clausulas.length <= 1 && nivelActual === 4) return 1;
+      return Math.max(1, nivelActual - 1);
+    }
+
+    function renderMemorice() {
+      const cont = document.getElementById('practica-container');
+      if (memCola.length === 0) {
+        cont.innerHTML = `<div class="estado-vacio">No hay artículos de Memorice pendientes de repaso hoy en esta combinación de filtros.</div>`;
+        return;
+      }
+      if (memIndice >= memCola.length) {
+        cont.innerHTML = `
+          <div class="results-card">
+            <div class="results-emoji">🏆</div>
+            <div class="results-title">Sesión de Memorice completa</div>
+            <div class="results-detail">${memCompletados} artículos repasados — Método ${metodoMemorice}</div>
+            <button class="btn btn-primary" onclick="iniciarMemoriceModelo()">Nueva sesión</button>
+          </div>`;
+        return;
+      }
+      const articulo = memCola[memIndice];
+      const key = claveProgreso(articulo.id, metodoMemorice);
+      const progresoItem = progresoMemorice[key];
+      const pct = Math.round((memIndice / memCola.length) * 100);
+
+      let cuerpoHtml, botonHtml, faseLabel;
+
+      if (metodoMemorice === 'A') {
+        const nivel = progresoItem && progresoItem.nivel_actual ? progresoItem.nivel_actual : 1;
+        faseLabel = `N${nivel}`;
+        if (nivel >= 4) {
+          cuerpoHtml = `
+            <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
+            <textarea id="mem-textarea" class="mem-textarea-n4" placeholder="Escribe el artículo completo, de memoria…" onpaste="return false;" ondrop="return false;"></textarea>`;
+        } else {
+          const { partes } = construirBlanks(articulo, nivel);
+          let inputIdx = 0;
+          const html = partes.map(p => {
+            if (p.tipo === 'texto') return escaparHtmlBase(p.texto);
+            const w = Math.max(3, p.esperado.length + 1);
+            const htmlBlank = `<input class="mem-blank-input" id="mem-blank-${inputIdx}" data-esperado="${escaparHtmlBase(p.esperado)}" style="width:${w}ch" autocomplete="off" onpaste="return false;" ondrop="return false;" />`;
+            inputIdx++;
+            return htmlBlank;
+          }).join('');
+          cuerpoHtml = `
+            <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
+            <div class="mem-articulo-texto">${html}</div>`;
+        }
+        botonHtml = `<button class="btn btn-primary" id="mem-btn-evaluar" onclick="evaluarMemorice()">Evaluar mi respuesta</button>`;
+      } else {
+        // Método B
+        if (!progresoItem) {
+          faseLabel = 'Estudio';
+          cuerpoHtml = `
+            <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
+            <div class="mem-articulo-texto">${escaparHtmlBase(articulo.texto)}</div>
+            <div class="justificacion-label">Escríbelo una vez, copiándolo (esto ayuda a fijarlo antes de practicar sin apoyo):</div>
+            <textarea id="mem-textarea-estudio" placeholder="Copia el artículo completo…" onpaste="return false;" ondrop="return false;"></textarea>`;
+          botonHtml = `<button class="btn btn-primary" id="mem-btn-evaluar" onclick="continuarEstudioMemorice()">Continuar →</button>`;
+        } else {
+          const nivel = progresoItem.nivel_actual || 1;
+          if (nivel >= 4) {
+            faseLabel = 'B4';
+            cuerpoHtml = `
+              <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
+              <textarea id="mem-textarea" class="mem-textarea-n4" placeholder="Escribe el artículo completo, de memoria, sin ningún apoyo…" onpaste="return false;" ondrop="return false;"></textarea>`;
+          } else {
+            faseLabel = `B${nivel}`;
+            const clausulas = derivarClausulas(articulo);
+            const cantidad = clausulas.length <= 1 ? 1 : Math.min(nivel, clausulas.length);
+            const textoAcumulado = clausulas.slice(0, cantidad).join(' ');
+            const clave = generarClave(textoAcumulado);
+            cuerpoHtml = `
+              <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
+              <div class="mem-clave-texto">${escaparHtmlBase(clave)}</div>
+              <textarea id="mem-textarea-b" placeholder="Reconstruye el texto completo a partir de la clave…" onpaste="return false;" ondrop="return false;"></textarea>`;
+          }
+          botonHtml = `<button class="btn btn-primary" id="mem-btn-evaluar" onclick="evaluarMemorice()">Evaluar mi respuesta</button>`;
+        }
+      }
+
+      cont.innerHTML = `
+        <div class="quiz-progress">
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+          <span class="progress-text">${memIndice + 1} / ${memCola.length}</span>
+        </div>
+        <div class="item-card">
+          <div class="item-meta">
+            <span class="badge-tipo badge-memorice">Memorice · Método ${metodoMemorice}</span>
+            <span class="mem-nivel-badge">${faseLabel}</span>
+            <span class="badge-materia">${articulo.subtema || ''} · Art. ${articulo.articulo}</span>
+          </div>
+          ${cuerpoHtml}
+          <div class="btn-row">${botonHtml}</div>
+          <div id="mem-feedback"></div>
+        </div>`;
+
+      memTiempoMostrado = Date.now();
+      memPendienteAbandono = { articuloId: articulo.id, metodo: metodoMemorice, nivel: progresoItem ? (progresoItem.nivel_actual || 1) : 0 };
+    }
+
+    function continuarEstudioMemorice() {
+      const articulo = memCola[memIndice];
+      const key = claveProgreso(articulo.id, metodoMemorice);
+      progresoMemorice[key] = { nivel_actual: 1, estado: 'parcial', proxima_revision: new Date().toISOString(), historial: [], aciertos_nivel_max: 0, sesiones_con_acierto: [] };
+      memPendienteAbandono = null;
+      renderMemorice();
+    }
+
+    function evaluarMemorice() {
+      const articulo = memCola[memIndice];
+      const key = claveProgreso(articulo.id, metodoMemorice);
+      const progresoItem = progresoMemorice[key] || { nivel_actual: 1, aciertos_nivel_max: 0, sesiones_con_acierto: [] };
+      const nivel = progresoItem.nivel_actual || 1;
+      const segundosHastaEvaluar = memTiempoMostrado ? (Date.now() - memTiempoMostrado) / 1000 : null;
+      document.getElementById('mem-btn-evaluar').disabled = true;
+
+      let resultado; // 'correcto' | 'parcial' | 'incorrecto'
+      let explicaciones = [];
+      let porcentajeAcertado = 0;
+      let erroresCriticas = 0;
+      const esNivelMaximo = nivel >= 4;
+
+      if (esNivelMaximo) {
+        const escrito = document.getElementById('mem-textarea').value;
+        const diff = diffCompleto(articulo.texto, escrito, articulo.palabras_criticas || []);
+        const diffHtml = diff.items.map(it => {
+          if (it.tipo === 'ok') return `<span class="mem-diff-ok">${escaparHtmlBase(it.palabra)}</span>`;
+          if (it.tipo === 'falta') return `<span class="mem-diff-falta ${it.critica ? 'mem-diff-critica' : ''}">${escaparHtmlBase(it.palabra)}</span>`;
+          return `<span class="mem-diff-sobra">${escaparHtmlBase(it.palabra)}</span>`;
+        }).join(' ');
+        document.querySelector('.mem-textarea-n4').outerHTML = `<div class="mem-diff-linea">${diffHtml}</div>`;
+
+        if (diff.correcto) resultado = 'correcto';
+        else if (diff.okCount === 0) resultado = 'incorrecto';
+        else resultado = 'parcial';
+        porcentajeAcertado = diff.totalEsperadas > 0 ? diff.okCount / diff.totalEsperadas : 1;
+        erroresCriticas = diff.items.filter(it => it.tipo === 'falta' && it.critica).length;
+
+        if (!diff.correcto) {
+          diff.items.filter(it => it.tipo === 'falta').forEach(it => {
+            explicaciones.push(`Faltó "<strong>${escaparHtmlBase(it.palabra)}</strong>"${it.critica ? ' — es una palabra clave: cambia el sentido de la regla.' : '.'}`);
+          });
+          diff.items.filter(it => it.tipo === 'sobra').forEach(it => {
+            explicaciones.push(`Sobra "<strong>${escaparHtmlBase(it.palabra)}</strong>" respecto del texto del artículo.`);
+          });
+        }
+      } else if (metodoMemorice === 'A') {
+        const inputs = document.querySelectorAll('.mem-blank-input');
+        let correctos = 0;
+        inputs.forEach(inp => {
+          const esperado = inp.getAttribute('data-esperado');
+          const escrito = inp.value;
+          const r = compararBlank(esperado, escrito, articulo.palabras_criticas || []);
+          inp.classList.add(r.correcto ? 'mem-ok' : 'mem-mal');
+          inp.disabled = true;
+          if (r.correcto) { correctos++; }
+          else {
+            inp.insertAdjacentHTML('afterend', `<span class="mem-correccion">(${escaparHtmlBase(esperado)})</span>`);
+            explicaciones.push(`En vez de "<strong>${escaparHtmlBase(escrito) || '(en blanco)'}</strong>" iba "<strong>${escaparHtmlBase(esperado)}</strong>".`);
+            if ((articulo.palabras_criticas || []).some(c => normalizarPalabra(c) === normalizarPalabra(esperado.split(' ')[0]))) erroresCriticas++;
+          }
+        });
+        porcentajeAcertado = inputs.length > 0 ? correctos / inputs.length : 1;
+        if (correctos === inputs.length) resultado = 'correcto';
+        else if (correctos === 0) resultado = 'incorrecto';
+        else resultado = 'parcial';
+      } else {
+        // Método B, niveles B1-B3: texto libre contra las cláusulas acumuladas
+        const clausulas = derivarClausulas(articulo);
+        const cantidad = clausulas.length <= 1 ? 1 : Math.min(nivel, clausulas.length);
+        const textoEsperado = clausulas.slice(0, cantidad).join(' ');
+        const escrito = document.getElementById('mem-textarea-b').value;
+        const diff = diffCompleto(textoEsperado, escrito, articulo.palabras_criticas || []);
+        const diffHtml = diff.items.map(it => {
+          if (it.tipo === 'ok') return `<span class="mem-diff-ok">${escaparHtmlBase(it.palabra)}</span>`;
+          if (it.tipo === 'falta') return `<span class="mem-diff-falta ${it.critica ? 'mem-diff-critica' : ''}">${escaparHtmlBase(it.palabra)}</span>`;
+          return `<span class="mem-diff-sobra">${escaparHtmlBase(it.palabra)}</span>`;
+        }).join(' ');
+        document.getElementById('mem-textarea-b').outerHTML = `<div class="mem-diff-linea">${diffHtml}</div>`;
+
+        if (diff.correcto) resultado = 'correcto';
+        else if (diff.okCount === 0) resultado = 'incorrecto';
+        else resultado = 'parcial';
+        porcentajeAcertado = diff.totalEsperadas > 0 ? diff.okCount / diff.totalEsperadas : 1;
+        erroresCriticas = diff.items.filter(it => it.tipo === 'falta' && it.critica).length;
+
+        if (!diff.correcto) {
+          diff.items.filter(it => it.tipo === 'falta').forEach(it => {
+            explicaciones.push(`Faltó "<strong>${escaparHtmlBase(it.palabra)}</strong>"${it.critica ? ' — es una palabra clave: cambia el sentido de la regla.' : '.'}`);
+          });
+          diff.items.filter(it => it.tipo === 'sobra').forEach(it => {
+            explicaciones.push(`Sobra "<strong>${escaparHtmlBase(it.palabra)}</strong>" respecto del texto esperado.`);
+          });
+        }
+      }
+
+      // ── Transición de nivel + repetición espaciada (regla de 3 sesiones) ──
+      let nivelNuevo, dias, dominado = false;
+      let aciertosNuevo = progresoItem.aciertos_nivel_max || 0;
+      let sesionesNuevo = progresoItem.sesiones_con_acierto || [];
+
+      if (resultado === 'correcto') {
+        if (esNivelMaximo) {
+          nivelNuevo = 4;
+          const hoy = new Date().toISOString().slice(0, 10);
+          if (!sesionesNuevo.includes(hoy)) sesionesNuevo = [...sesionesNuevo, hoy];
+          aciertosNuevo = sesionesNuevo.length;
+          if (aciertosNuevo >= 3) { dias = 30; dominado = true; }
+          else { dias = 7; }
+        } else {
+          nivelNuevo = memSiguienteNivel(articulo, metodoMemorice, nivel);
+          dias = 7;
+        }
+      } else if (resultado === 'parcial') {
+        nivelNuevo = nivel; dias = 3;
+      } else {
+        nivelNuevo = memNivelAnterior(articulo, metodoMemorice, nivel); dias = 0;
+      }
+
+      guardarProgresoMemorice(articulo.id, metodoMemorice, nivelNuevo, resultado, dias, aciertosNuevo, sesionesNuevo);
+      registrarIntentoMemorice(articulo.id, metodoMemorice, nivel, resultado, porcentajeAcertado, erroresCriticas, segundosHastaEvaluar);
+      memCompletados++;
+      memPendienteAbandono = null;
+
+      if (resultado === 'incorrecto') {
+        memCola.push({ ...articulo }); // se reencola al final de la cola real; no se agrupan intentos del mismo articulo
+      }
+
+      const badgeLabel = {
+        correcto: dominado ? '✓ Dominado (3 sesiones distintas) — próximo repaso en 30 días'
+          : (esNivelMaximo ? `✓ Correcto — ${aciertosNuevo}/3 sesiones para dominarlo` : '✓ Todo correcto — sube de nivel'),
+        parcial: '◐ Parcial — se mantiene en este nivel',
+        incorrecto: '✗ A repasar — baja de nivel y vuelve más tarde en esta sesión',
+      }[resultado];
+
+      document.getElementById('mem-feedback').innerHTML = `
+        <div class="mem-resultado-badge ${resultado}">${badgeLabel}</div>
+        ${explicaciones.length > 0 ? `<div class="mem-explicacion"><ul>${explicaciones.map(e => `<li>${e}</li>`).join('')}</ul></div>` : ''}
+        <div class="btn-row" style="margin-top:1rem;">
+          <button class="btn btn-dark" onclick="siguienteMemorice()">${memIndice < memCola.length - 1 ? 'Siguiente ítem →' : 'Ver resultados →'}</button>
+        </div>`;
+    }
+
+    async function guardarProgresoMemorice(articuloId, metodo, nivelNuevo, estado, dias, aciertosNivelMax, sesionesConAcierto) {
+      const proxima = sumarDias(dias);
+      const key = claveProgreso(articuloId, metodo);
+      const historialPrevio = (progresoMemorice[key] && progresoMemorice[key].historial) || [];
+      const historial = [...historialPrevio, { fecha: new Date().toISOString(), nivel: nivelNuevo, resultado: estado }].slice(-20);
+      progresoMemorice[key] = { nivel_actual: nivelNuevo, estado, proxima_revision: proxima, historial, aciertos_nivel_max: aciertosNivelMax, sesiones_con_acierto: sesionesConAcierto };
+      try {
+        await sb.from('memorice_progreso').upsert(
+          { user_id: usuarioId, articulo_id: articuloId, metodo, nivel_actual: nivelNuevo, estado, ultima_revision: new Date().toISOString(), proxima_revision: proxima, historial, aciertos_nivel_max: aciertosNivelMax, sesiones_con_acierto: sesionesConAcierto },
+          { onConflict: 'user_id,articulo_id,metodo' }
+        );
+      } catch (e) { /* no bloquea el estudio */ }
+    }
+
+    async function registrarIntentoMemorice(articuloId, metodo, nivel, resultado, porcentaje, erroresCriticas, segundos) {
+      try {
+        await sb.from('memorice_intentos').insert({
+          user_id: usuarioId, articulo_id: articuloId, metodo, nivel, resultado,
+          porcentaje_vacios_acertados: porcentaje, errores_en_palabras_criticas: erroresCriticas,
+          segundos_hasta_evaluar: segundos, abandono: false,
+        });
+      } catch (e) { /* la instrumentación nunca debe bloquear el estudio */ }
+    }
+
+    function registrarAbandonoPendiente() {
+      if (!memPendienteAbandono) return;
+      const { articuloId, metodo, nivel } = memPendienteAbandono;
+      memPendienteAbandono = null;
+      sb.from('memorice_intentos').insert({
+        user_id: usuarioId, articulo_id: articuloId, metodo, nivel, resultado: 'incorrecto',
+        errores_en_palabras_criticas: 0, abandono: true,
+      }).then(() => {}, () => {});
+    }
+
+    document.addEventListener('visibilitychange', () => { if (document.hidden) registrarAbandonoPendiente(); });
+    window.addEventListener('beforeunload', () => { registrarAbandonoPendiente(); });
+
+    function siguienteMemorice() { memIndice++; renderMemorice(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    // ══════════════════════════════════════════════════════════════════
+    // INIT
+    // ══════════════════════════════════════════════════════════════════
+    async function init() {
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) { window.location.href = 'auth.html'; return; }
+      usuarioId = user.id;
+      const name = user.user_metadata?.full_name || user.email.split('@')[0];
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+
+      const modeloUrl = new URLSearchParams(window.location.search).get('modelo');
+      if (MODELOS.some(m => m.id === modeloUrl)) modeloActivo = modeloUrl;
+
+      renderFiltros();
+      iniciarSesion();
     }
 
     async function handleLogout() {
