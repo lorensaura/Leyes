@@ -771,6 +771,34 @@
       padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
     }
     .manual-body .ex .title { font-weight: 700; color: #1A7A40; display: block; margin-bottom: 0.25rem; }
+    .manual-body .titulo-bloque { font-weight: 700; display: block; margin-bottom: 0.3rem; }
+    .manual-body .dato-grado {
+      border: 2px dashed #C87028; background: #FFFAF4;
+      padding: 12px 16px; margin: 1rem 0; border-radius: 6px;
+    }
+    .manual-body .dato-grado .titulo-bloque { color: #7B3F00; }
+    .manual-body .jurisprudencia {
+      border: 1px solid #2A2A2A; background: #F5EAD4;
+      padding: 12px 16px; margin: 1rem 0; border-radius: 6px;
+    }
+    .manual-body .jurisprudencia .titulo-bloque {
+      color: #111; text-transform: uppercase; letter-spacing: 0.04em;
+      padding-bottom: 5px; border-bottom: 1px solid #2A2A2A; font-size: 0.82rem;
+    }
+    .manual-body .ejemplo {
+      border-left: 4px solid #4CAF50; background: rgba(76,175,80,0.06);
+      padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .ejemplo .titulo-bloque { color: #1A6B3A; }
+    .manual-body .repaso {
+      border-left: 4px solid #C41E2E; background: #FCF7EC;
+      padding: 12px 16px; margin: 1.5rem 0 0.5rem; border-radius: 0 6px 6px 0;
+      font-size: 0.88rem; color: #5a5043;
+    }
+    .manual-body .repaso .titulo-bloque {
+      color: #C41E2E; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.8rem;
+    }
+    .manual-body .repaso strong { color: #C41E2E; }
     .manual-body .lex {
       background: rgba(17,17,17,0.04); border: 1px solid rgba(17,17,17,0.1);
       border-radius: 6px; padding: 10px 14px; margin: 0.75rem 0;
@@ -1015,15 +1043,19 @@
     const contenidos = {
       'civil_7': {
         titulo: 'Responsabilidad Extracontractual',
-        minutos: 90,
+        minutos: 180,
         sourceFile: '../02_Responsabilidad_Extracontractual_Manual.html',
         pdfFile: 'pdf/Responsabilidad_Extracontractual.pdf', // PDF pre-generado (portada + fuentes + cuadros con color, sin controles)
         extractFrom: null,   // Cargar el archivo completo
         extractUntil: null,
-        cpInsertBefore: ['s2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'], // 8 marcadores → 9 partes → 1 control por sección
+        // Manual reescrito a 25 ejes (2026-07-21): la estructura de anclas cambió de s1..s9 a eje1..eje25,
+        // por lo que los controles de lectura anteriores (atados a s2..s9) ya no calzan. Quedan pendientes
+        // de redactar 25 controles nuevos (uno por eje), con revisión de Laura antes de publicarlos.
+        cpInsertBefore: [],
         _loaded: false,
         html: null,
-        checkpoints: [
+        checkpoints: [],
+        checkpoints_OLD_pendiente_reescribir_25_ejes: [
           {
             id: 're7-cp1',
             label: 'Control 1 · §1',
