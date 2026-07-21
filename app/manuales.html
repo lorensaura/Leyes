@@ -1048,102 +1048,237 @@
         pdfFile: 'pdf/Responsabilidad_Extracontractual.pdf', // PDF pre-generado (portada + fuentes + cuadros con color, sin controles)
         extractFrom: null,   // Cargar el archivo completo
         extractUntil: null,
-        // Manual reescrito a 25 ejes (2026-07-21): la estructura de anclas cambió de s1..s9 a eje1..eje25,
-        // por lo que los controles de lectura anteriores (atados a s2..s9) ya no calzan. Quedan pendientes
-        // de redactar 25 controles nuevos (uno por eje), con revisión de Laura antes de publicarlos.
-        cpInsertBefore: [],
+        cpInsertBefore: ['eje2', 'eje3', 'eje4', 'eje5', 'eje6', 'eje7', 'eje8', 'eje9', 'eje10', 'eje11', 'eje12', 'eje13', 'eje14', 'eje15', 'eje16', 'eje17', 'eje18', 'eje19', 'eje20', 'eje21', 'eje22', 'eje23', 'eje24', 'eje25'], // 24 marcadores → 25 partes → 1 control por eje
         _loaded: false,
         html: null,
-        checkpoints: [],
-        checkpoints_OLD_pendiente_reescribir_25_ejes: [
+        checkpoints: [
           {
             id: 're7-cp1',
-            label: 'Control 1 · §1',
-            subtitulo: 'Concepto y ubicación de la responsabilidad extracontractual',
+            label: 'Control 1 · Eje 1',
+            subtitulo: 'Concepto, regulación y funciones',
             preguntas: [
-              { texto: '¿Qué es la responsabilidad extracontractual y en qué normas del Código Civil se funda? Relacione los arts. 1437, 2284 y 2314.', keywords: ['extracontractual','aquiliana','delito','cuasidelito','1437','2284','2314','fuente','obligación'] },
-              { texto: 'Distinga la responsabilidad originaria o de primer grado de la responsabilidad secundaria o de segundo grado.', keywords: ['originaria','primer grado','secundaria','segundo grado','incumplimiento','deber','indemnizar'] }
+              { texto: '¿Cómo se define la responsabilidad civil extracontractual y en qué normas del Código Civil se funda?', keywords: ['2284', '2314', 'delito', 'cuasidelito', 'indemnizar', 'Alessandri', 'Ducci'] },
+              { texto: '¿Cuáles son las cuatro funciones de la responsabilidad extracontractual?', keywords: ['reparación', 'garantía', 'libertad de actuar', 'prevención', 'punición', 'alterum non laedere'] }
             ]
           },
           {
             id: 're7-cp2',
-            label: 'Control 2 · §2',
-            subtitulo: 'Fundamentos, funciones y evolución histórica',
+            label: 'Control 2 · Eje 2',
+            subtitulo: 'Responsabilidad civil y responsabilidad penal',
             preguntas: [
-              { texto: '¿Cuáles son las cuatro funciones de la responsabilidad extracontractual según Boetsch? ¿Cuál es la principal?', keywords: ['reparación','garantía','libertad','prevención','punitiva','función','Boetsch','principal'] },
-              { texto: 'Explique el principio alterum non laedere y los tres modelos de atribución de responsabilidad (culpa, objetiva, seguro).', keywords: ['alterum non laedere','culpa','objetiva','estricta','seguro','modelo','atribución'] },
-              { texto: 'Describa la evolución desde la Lex Aquilia y el art. 1382 francés hasta el art. 2314, y las tendencias de objetivación.', keywords: ['Lex Aquilia','1382','francés','2314','objetivación','presunciones','daño moral','evolución'] }
+              { texto: '¿Cuáles son las principales diferencias entre la responsabilidad civil y la penal?', keywords: ['tipicidad', '19 N° 3', 'culpa', 'abstracto', 'concreto', 'prescripción', '2332'] },
+              { texto: '¿Qué efectos produce la sentencia penal en sede civil, y por qué la relación no es simétrica?', keywords: ['cosa juzgada', '178', '179', '180', 'absolutoria', 'condenatoria', 'asimetría'] }
             ]
           },
           {
             id: 're7-cp3',
-            label: 'Control 3 · §3',
-            subtitulo: 'Responsabilidad civil frente a la responsabilidad penal',
+            label: 'Control 3 · Eje 3',
+            subtitulo: 'Delimitación de estatutos',
             preguntas: [
-              { texto: '¿Cómo se distingue la responsabilidad civil de la penal en cuanto a tipicidad y al rol del daño? ¿Por qué el art. 2314 consagra su independencia?', keywords: ['penal','civil','tipicidad','daño','2314','independencia','esencial'] },
-              { texto: 'Explique el efecto de la sentencia penal condenatoria y de la absolutoria en sede civil (arts. 178 y 179 CPC).', keywords: ['178','179','CPC','condenatoria','absolutoria','cosa juzgada','sentencia'] }
+              { texto: 'Explique el criterio que distingue la responsabilidad contractual de la extracontractual.', keywords: ['segundo grado', 'primer grado', 'obligación previa', 'incumplimiento', 'deberes de cuidado'] },
+              { texto: '¿Cuáles son los argumentos de Alessandri para sostener que el derecho común es el contractual, y la objeción de Barros?', keywords: ['Alessandri', 'Título XII', 'graduación de culpa', 'Barros', 'indistintamente', 'derecho común'] }
             ]
           },
           {
             id: 're7-cp4',
-            label: 'Control 4 · §4',
-            subtitulo: 'Responsabilidad contractual frente a la extracontractual',
+            label: 'Control 4 · Eje 4',
+            subtitulo: 'Sistemas o modelos de atribución',
             preguntas: [
-              { texto: 'Compare ambos regímenes en prueba de la culpa, prescripción, solidaridad, graduación de la culpa y mora.', keywords: ['prescripción','5 años','4 años','solidaridad','2317','graduación','culpa','mora','prueba'] },
-              { texto: '¿Qué es el cúmulo u opción de responsabilidades y por qué se plantea el problema?', keywords: ['cúmulo','opción','concurrencia','dualidad','unidad','régimen común'] }
+              { texto: 'Distinga la responsabilidad por culpa de la responsabilidad estricta u objetiva.', keywords: ['culpa', 'deber de cuidado', 'estricta', 'objetiva', 'riesgo', 'sin culpa'] },
+              { texto: '¿Qué elementos sistematizan Alessandri, Barros, Rodríguez Grez y Corral, respectivamente?', keywords: ['Alessandri', 'Barros', 'Rodríguez Grez', 'Corral', 'capacidad', 'antijuridicidad', 'causalidad'] }
             ]
           },
           {
             id: 're7-cp5',
-            label: 'Control 5 · §5',
-            subtitulo: 'Requisitos: hecho voluntario, daño, culpa/dolo y causalidad',
+            label: 'Control 5 · Eje 5',
+            subtitulo: 'La capacidad delictual',
             preguntas: [
-              { texto: 'Explique la capacidad delictual del art. 2319: ¿quiénes son incapaces? ¿Qué rol juega el discernimiento y qué ocurre con el ebrio (art. 2318)?', keywords: ['2319','infante','7','16','discernimiento','demente','ebrio','2318','capacidad'] },
-              { texto: '¿Qué requisitos debe cumplir el daño para ser resarcible? ¿En qué consiste la pérdida de una chance?', keywords: ['cierto','directo','legítimo','no reparado','chance','probabilidad','resarcible','daño'] },
-              { texto: 'Explique la evolución del daño moral en Chile y la situación del art. 2331. ¿Cómo definió la doctrina (Domínguez Hidalgo) su concepción?', keywords: ['daño moral','Grez','tramway','1922','Domínguez Hidalgo','objetiva','2331','inaplicabilidad'] },
-              { texto: 'Distinga las teorías de la causalidad: equivalencia de las condiciones, causa adecuada e imputación objetiva. ¿Qué rol cumple el art. 2330?', keywords: ['equivalencia','condiciones','supresión mental','causa adecuada','imputación objetiva','2330','víctima','causalidad'] }
+              { texto: '¿Quiénes son incapaces de delito o cuasidelito civil según el artículo 2319?', keywords: ['2319', 'demente', 'menor de siete', 'discernimiento', 'dieciséis'] },
+              { texto: '¿Qué relación existe hoy entre el discernimiento civil y el discernimiento penal?', keywords: ['discernimiento civil', 'discernimiento penal', 'independizado', '2319 inciso segundo'] }
             ]
           },
           {
             id: 're7-cp6',
-            label: 'Control 6 · §6',
-            subtitulo: 'Presunciones de culpabilidad',
+            label: 'Control 6 · Eje 6',
+            subtitulo: 'El hecho voluntario, caso fortuito y personas jurídicas',
             preguntas: [
-              { texto: 'Explique la presunción por el hecho propio del art. 2329 y su relación con el res ipsa loquitur.', keywords: ['2329','hecho propio','res ipsa loquitur','presunción','choque de trenes'] },
-              { texto: 'Desarrolle la responsabilidad por el hecho ajeno (arts. 2320 a 2322): ¿cuándo es simplemente legal y cuándo agravada (art. 2321)? ¿Cómo se exime el responsable?', keywords: ['2320','2321','2322','hecho ajeno','presunción','padres','amos','criados','reembolso','2325'] },
-              { texto: '¿Cómo opera la responsabilidad por el hecho de las cosas (arts. 2323 a 2328)?', keywords: ['2323','2326','2327','2328','cosas','animal','ruina','edificio'] }
+              { texto: 'Distinga la dimensión material y la dimensión subjetiva del hecho voluntario.', keywords: ['acción', 'omisión', 'voluntariedad', 'material', 'subjetiva'] },
+              { texto: '¿Qué elementos exige el caso fortuito y cómo responden las personas jurídicas?', keywords: ['imprevisibilidad', 'irresistibilidad', '45', 'teoría del órgano', '20.393'] }
             ]
           },
           {
             id: 're7-cp7',
-            label: 'Control 7 · §7',
-            subtitulo: 'Cláusulas modificatorias de responsabilidad',
+            label: 'Control 7 · Eje 7',
+            subtitulo: 'La antijuridicidad y las causales de justificación',
             preguntas: [
-              { texto: '¿Qué son las cláusulas modificatorias de responsabilidad y qué clases existen (exoneratorias, limitativas, agravantes)?', keywords: ['cláusulas','exoneratorias','limitativas','agravantes','modificatorias'] },
-              { texto: '¿Cuáles son los límites a estas cláusulas? Relacione el art. 1465 (condonación del dolo futuro), el art. 12 y la Ley 19.496.', keywords: ['1465','dolo futuro','12','irrenunciables','19.496','consumidor','límites'] }
+              { texto: '¿En qué consiste la discusión sobre la autonomía de la antijuridicidad?', keywords: ['antijuridicidad', 'culpabilidad', 'daño', 'Barros', 'autonomía'] },
+              { texto: 'Enumere las causales de justificación civiles y explique una de ellas.', keywords: ['ejercicio de un derecho', 'consentimiento de la víctima', 'estado de necesidad', 'legítima defensa'] }
             ]
           },
           {
             id: 're7-cp8',
-            label: 'Control 8 · §8',
-            subtitulo: 'Concurrencia o cúmulo de responsabilidades',
+            label: 'Control 8 · Eje 8',
+            subtitulo: 'La culpabilidad: dolo y culpa',
             preguntas: [
-              { texto: 'Distinga "concurrencia" de "cúmulo" (Domínguez Hidalgo) y exponga la tesis mayoritaria de la no opción (Alessandri) con sus excepciones.', keywords: ['concurrencia','cúmulo','Domínguez Hidalgo','no opción','Alessandri','excepciones','mayoritaria'] },
-              { texto: 'Explique la tesis de la opción y la tesis intermedia de Corral.', keywords: ['opción','intermedia','Corral','tesis'] }
+              { texto: '¿Cómo se define el dolo y la culpa en el artículo 44, y qué consecuencias distintas produce la distinción delito/cuasidelito?', keywords: ['44', 'intención de dañar', 'negligencia', 'provecho del dolo ajeno', '1458', '2316'] },
+              { texto: '¿Qué es la culpa infraccional y cómo se aprecia la culpa en sede civil?', keywords: ['culpa infraccional', 'abstracto', 'buen padre de familia', 'previsibilidad'] }
             ]
           },
           {
             id: 're7-cp9',
-            label: 'Control 9 · §9',
-            subtitulo: 'La acción de responsabilidad',
+            label: 'Control 9 · Eje 9',
+            subtitulo: 'Prueba de la culpa y presunción por el hecho propio',
             preguntas: [
-              { texto: '¿Quiénes están legitimados activa y pasivamente? Distinga víctimas directas, por repercusión y herederos (arts. 2315 y 2316), y la solidaridad del art. 2317.', keywords: ['2315','2316','2317','legitimación','directa','repercusión','herederos','solidaridad'] },
-              { texto: '¿En cuánto tiempo prescribe la acción aquiliana y desde cuándo corre? Exponga el debate sobre el dies a quo (art. 2332) y las posiciones de Alessandri y Barros/Abeliuk.', keywords: ['2332','4 años','perpetración','manifestación','dies a quo','Alessandri','Barros','Abeliuk','prescripción'] }
+              { texto: '¿Por qué existe la presunción de culpabilidad del artículo 2329 y qué debe probar la víctima para valerse de ella?', keywords: ['1698', '2329', 'carga de la prueba', 'presunción', 'hecho'] },
+              { texto: '¿Cuáles son las tres presunciones de culpabilidad que reconoce el Código?', keywords: ['hecho propio', '2329', 'hecho ajeno', '2320', 'hecho de las cosas', '2323'] }
+            ]
+          },
+          {
+            id: 're7-cp10',
+            label: 'Control 10 · Eje 10',
+            subtitulo: 'El daño: concepto y requisitos',
+            preguntas: [
+              { texto: '¿Por qué el daño es un requisito indispensable de la responsabilidad extracontractual?', keywords: ['1437', '2314', 'esencial', 'delito frustrado'] },
+              { texto: 'Enumere los requisitos de resarcibilidad del daño.', keywords: ['cierto', 'directo', 'personal', 'significativo', 'legítimo'] }
+            ]
+          },
+          {
+            id: 're7-cp11',
+            label: 'Control 11 · Eje 11',
+            subtitulo: 'Clases de daño (I): el daño patrimonial',
+            preguntas: [
+              { texto: '¿Por qué se aplica el artículo 1556 en sede extracontractual pese a estar ubicado en materia contractual?', keywords: ['1556', 'daño emergente', 'lucro cesante', 'generalidad', '1928'] },
+              { texto: 'Explique el principio de reparación integral y su límite.', keywords: ['reparación integral', '2329', 'enriquecimiento sin causa', '2331'] }
+            ]
+          },
+          {
+            id: 're7-cp12',
+            label: 'Control 12 · Eje 12',
+            subtitulo: 'Clases de daño (II): el daño moral',
+            preguntas: [
+              { texto: '¿Cuál es el origen histórico del daño moral en Chile y cómo se define hoy?', keywords: ['1907', 'jurisprudencial', 'pretium doloris', '2007', 'extrapatrimonial'] },
+              { texto: '¿Qué ocurrió con el artículo 2331 y cuál es su estado actual?', keywords: ['2331', 'inaplicabilidad', 'inconstitucionalidad', '2008', 'Tribunal Constitucional'] }
+            ]
+          },
+          {
+            id: 're7-cp13',
+            label: 'Control 13 · Eje 13',
+            subtitulo: 'La causalidad',
+            preguntas: [
+              { texto: '¿Cuál es la doble función de la causalidad en el juicio de responsabilidad?', keywords: ['requisito', 'límite', 'causalidad'] },
+              { texto: 'Explique la teoría de la equivalencia de las condiciones y el procedimiento de la supresión mental hipotética.', keywords: ['equivalencia de las condiciones', 'condictio sine qua non', 'supresión mental hipotética'] }
+            ]
+          },
+          {
+            id: 're7-cp14',
+            label: 'Control 14 · Eje 14',
+            subtitulo: 'Régimen general y hecho ajeno (art. 2320)',
+            preguntas: [
+              { texto: '¿Sobre qué se funda la responsabilidad por el hecho ajeno del artículo 2320?', keywords: ['2320', 'culpa in vigilando', 'culpa in eligendo', 'doble ilícito'] },
+              { texto: '¿Cómo puede exonerarse el civilmente responsable por el hecho ajeno?', keywords: ['2320 inciso final', 'imposibilidad de impedir el hecho', 'exculpación'] }
+            ]
+          },
+          {
+            id: 're7-cp15',
+            label: 'Control 15 · Eje 15',
+            subtitulo: 'Responsabilidad del empresario',
+            preguntas: [
+              { texto: 'Distinga la vía de responsabilidad por el hecho ajeno del dependiente y la responsabilidad por el hecho propio del empresario.', keywords: ['dependiente', 'órgano', 'hecho ajeno', 'hecho propio', 'empresario'] },
+              { texto: '¿Qué evolución identifica Zelaya en el criterio de dependencia?', keywords: ['Zelaya', 'dependencia jerárquica', 'dependencia funcional', 'control empresarial'] }
+            ]
+          },
+          {
+            id: 're7-cp16',
+            label: 'Control 16 · Eje 16',
+            subtitulo: 'Responsabilidad por el hecho de las cosas',
+            preguntas: [
+              { texto: '¿Cuáles son las tres presunciones específicas por el hecho de las cosas?', keywords: ['animales', 'ruina de edificio', 'cosas que caen o se arrojan'] },
+              { texto: '¿Qué régimen especial introdujo la Ley N.° 21.020 ("Ley Cholito")?', keywords: ['21.020', 'animal fiero', 'Ley Cholito', '2327'] }
+            ]
+          },
+          {
+            id: 're7-cp17',
+            label: 'Control 17 · Eje 17',
+            subtitulo: 'Regímenes legales de responsabilidad objetiva',
+            preguntas: [
+              { texto: '¿En qué consiste la teoría del riesgo y cuáles son sus dos variantes?', keywords: ['riesgo-provecho', 'riesgo-creado', 'teoría del riesgo'] },
+              { texto: 'Mencione tres estatutos legales de responsabilidad estricta y su ámbito.', keywords: ['16.744', '18.290', 'Código Aeronáutico', 'hidrocarburos', 'Seguridad Nuclear'] }
+            ]
+          },
+          {
+            id: 're7-cp18',
+            label: 'Control 18 · Eje 18',
+            subtitulo: 'Responsabilidad del Estado',
+            preguntas: [
+              { texto: '¿Cuáles son los cuatro modelos históricos de responsabilidad patrimonial del Estado?', keywords: ['inmunidad de jurisdicción', 'actos de autoridad', 'actos de gestión', 'falta de servicio', 'responsabilidad estricta'] },
+              { texto: '¿Cuál es el fundamento constitucional y legal actual de la responsabilidad del Estado?', keywords: ['artículos 6', '7', '38', '19 N° 7', '18.575', '18.695'] }
+            ]
+          },
+          {
+            id: 're7-cp19',
+            label: 'Control 19 · Eje 19',
+            subtitulo: 'La acción por daño contingente',
+            preguntas: [
+              { texto: '¿En qué se diferencia la acción del artículo 2333 de la acción indemnizatoria ordinaria?', keywords: ['2333', 'preventiva', 'no reparatoria', 'amenaza de daño'] },
+              { texto: 'Mencione otras instituciones análogas del sistema.', keywords: ['2328 inciso segundo', 'interdictos', 'obra nueva', 'obra ruinosa', '75'] }
+            ]
+          },
+          {
+            id: 're7-cp20',
+            label: 'Control 20 · Eje 20',
+            subtitulo: 'Objeto y extensión de la reparación',
+            preguntas: [
+              { texto: '¿Cuáles son las características de la acción de responsabilidad extracontractual?', keywords: ['personal', 'mueble', 'patrimonial', 'renunciable', 'transigible', 'cedible', 'prescriptible'] },
+              { texto: '¿Por qué se reajusta la indemnización y desde cuándo se deben los intereses?', keywords: ['reajustabilidad', '2329', 'Índice de Precios al Consumidor', 'intereses'] }
+            ]
+          },
+          {
+            id: 're7-cp21',
+            label: 'Control 21 · Eje 21',
+            subtitulo: 'Legitimación activa y pasiva',
+            preguntas: [
+              { texto: 'Distinga los lesionados directos de las víctimas por repercusión.', keywords: ['lesionados directos', 'víctimas por repercusión', 'daño patrimonial', 'daño moral'] },
+              { texto: '¿Existen acciones de clase en el derecho chileno?', keywords: ['acciones colectivas', '19.496', 'acción popular', '2333'] }
+            ]
+          },
+          {
+            id: 're7-cp22',
+            label: 'Control 22 · Eje 22',
+            subtitulo: 'Tribunal, procedimiento y extinción de la acción',
+            preguntas: [
+              { texto: '¿Qué tribunal es competente para conocer de la acción civil derivada de un hecho que es a la vez ilícito civil y penal?', keywords: ['juez civil', 'juez penal', 'elección de la víctima', 'competencia'] },
+              { texto: '¿Desde cuándo corre el plazo de prescripción del artículo 2332 y qué debate existe al respecto?', keywords: ['2332', 'cuatro años', 'perpetración', 'manifestación', 'dies a quo'] }
+            ]
+          },
+          {
+            id: 're7-cp23',
+            label: 'Control 23 · Eje 23',
+            subtitulo: 'Dualidad o unidad de regímenes',
+            preguntas: [
+              { texto: 'Exponga la teoría unitaria y sus críticas frente a la posición dualista.', keywords: ['teoría unitaria', 'indemnización moratoria', 'dualista', '1437', '2284', '2314'] },
+              { texto: '¿Cuál es la posición predominante en Chile?', keywords: ['dualista', 'dos estatutos', 'contractual', 'extracontractual'] }
+            ]
+          },
+          {
+            id: 're7-cp24',
+            label: 'Control 24 · Eje 24',
+            subtitulo: 'Cúmulo o concurso de responsabilidades',
+            preguntas: [
+              { texto: 'Distinga la acumulación de acciones de la opción entre estatutos.', keywords: ['acumulación', 'enriquecimiento sin causa', 'opción', 'cúmulo'] },
+              { texto: '¿Cuál es la posición dominante en Chile sobre el cúmulo?', keywords: ['no acumulación', 'opción', 'Alessandri', 'Corral'] }
+            ]
+          },
+          {
+            id: 're7-cp25',
+            label: 'Control 25 · Eje 25',
+            subtitulo: 'Responsabilidad precontractual, por nulidad y postcontractual',
+            preguntas: [
+              { texto: '¿Por qué estas tres situaciones no encajan en la dualidad ordinaria de estatutos?', keywords: ['proximidad relacional', 'contrato válido', 'vigente'] },
+              { texto: 'Mencione los principales autores y tesis sobre la naturaleza de la responsabilidad precontractual.', keywords: ['Ihering', 'Faggella', 'Saleilles', 'Rosende', 'Alessandri', 'Corral'] }
             ]
           }
         ]
       },
-
       'civil_6': {
         titulo: 'Responsabilidad Contractual',
         minutos: 60,
@@ -1496,7 +1631,7 @@
           </button>
           <button class="modo-btn ${lecturaMode === 'seccion' ? 'active' : ''}"
             onclick="setModoLectura('seccion','${key}','${materiaId}',${idx})">
-            🖨️ Tengo el manual impreso
+            📝 Comprensión lectora
           </button>
           <button class="modo-btn pdf"
             onclick="prepararPDF()">
