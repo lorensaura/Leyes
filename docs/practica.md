@@ -100,8 +100,13 @@ reencola, `total` crece, tal como pide el spec.
   modo mezclado (sería una extensión natural del mismo patrón de
   `*_progreso`, pero no se construyó en este refactor).
 - **Precontractual** no tiene contenido cargado en ninguno de los 4 modelos
-  todavía — el filtro existe y funciona, pero mostrará vacío hasta que se
-  cargue contenido real de esa materia.
+  de Práctica todavía — el filtro existe y funciona, pero mostrará vacío
+  hasta que se cargue contenido real de esa materia. Esto es independiente
+  del **manual** de Precontractual, que sí existe desde el 2026-07-20
+  (`03_Responsabilidad_Precontractual_Manual.html`, ver `CLAUDE.md` →
+  Decisiones tomadas): tener el manual no llena por sí solo Evaluación,
+  Alternativas ni Memorice — esos siguen necesitando preguntas/ítems
+  curados aparte, vía Airtable.
 - Los datos de `alternativas` y `memorice_articulos` **no se sincronizan desde
   Airtable todavía** (a diferencia de `flashcards`/`preguntas_evaluacion`). El
   `id` de cada ítem es su propio id semántico (ej. `ext-alt-001`, `cc-art-1`),

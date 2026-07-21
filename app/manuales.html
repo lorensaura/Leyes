@@ -930,6 +930,7 @@
           'Teoría de las Obligaciones',
           'Responsabilidad Contractual',
           'Responsabilidad Extracontractual',
+          'Responsabilidad Precontractual',
           'Teoría del Contrato',
           'Contratos en particular',
           'Sucesión por causa de muerte',
@@ -1204,6 +1205,113 @@
             ]
           }
         ]
+      },
+
+      'civil_8': {
+        titulo: 'Responsabilidad Precontractual',
+        minutos: 75,
+        sourceFile: '../03_Responsabilidad_Precontractual_Manual.html',
+        pdfFile: 'pdf/Responsabilidad_Precontractual.pdf', // PDF pre-generado (portada + fuentes + cuadros con color, sin controles)
+        extractFrom: null,   // Cargar el archivo completo
+        extractUntil: null,
+        cpInsertBefore: ['eje2', 'eje3', 'eje4', 'eje5', 'eje6', 'eje7', 'eje8', 'eje9', 'eje10'], // 9 marcadores → 10 partes → 1 control por eje
+        _loaded: false,
+        html: null,
+        checkpoints: [
+          {
+            id: 'rp8-cp1',
+            label: 'Control 1 · Eje 1',
+            subtitulo: 'Planteamiento del problema y concepto',
+            preguntas: [
+              { texto: '¿Qué es la responsabilidad precontractual y cuál es el núcleo común de sus definiciones (Saavedra, Picasso, De los Mozos)?', keywords: ['daño','expectativa razonable','confianza','defrauda','Saavedra','Picasso','De los Mozos'] },
+              { texto: '¿Cuáles son las cuatro interrogantes centrales que Orrego identifica para esta materia?', keywords: ['naturaleza jurídica','factor de atribución','momento de inicio','daño indemnizable','Orrego'] }
+            ]
+          },
+          {
+            id: 'rp8-cp2',
+            label: 'Control 2 · Eje 2',
+            subtitulo: 'Evolución doctrinaria: de la tradicional a la moderna',
+            preguntas: [
+              { texto: 'Explique la doctrina de la culpa in contrahendo de Ihering: fundamento, el ejemplo de las libras y los quintales, y las críticas que recibió.', keywords: ['Ihering','culpa in contrahendo','1860','libras','quintales','contractual','romano'] },
+              { texto: '¿En qué se diferencian Faggella y Saleilles de Ihering en cuanto al momento en que puede nacer la responsabilidad y su fundamento?', keywords: ['Faggella','Saleilles','tratos previos','transgresión del acuerdo','equidad comercial','ius revocandi'] },
+              { texto: '¿Cuáles son los tres requisitos comunes que la doctrina moderna extrae de Ihering, Faggella y Saleilles?', keywords: ['acuerdo de negociar','retiro arbitrario','perjuicio'] }
+            ]
+          },
+          {
+            id: 'rp8-cp3',
+            label: 'Control 3 · Eje 3',
+            subtitulo: 'Las etapas del proceso de formación del contrato',
+            preguntas: [
+              { texto: 'Describa las cinco etapas del proceso de formación del contrato y el estatuto de responsabilidad aplicable en cada una.', keywords: ['tratos negociales previos','oferta','cierre de negocio','contrato preparatorio','contrato definitivo','extracontractual','contractual','legal'] },
+              { texto: 'Distinga el cierre de negocio de las arras, y explique las posiciones sobre su naturaleza jurídica (Rosende, Corral, Puelma y Abeliuk).', keywords: ['cierre de negocio','arras','corredor','depositario','cuasicontrato','Rosende','Corral','Puelma','Abeliuk'] }
+            ]
+          },
+          {
+            id: 'rp8-cp4',
+            label: 'Control 4 · Eje 4',
+            subtitulo: 'El interés protegido y el fundamento de la buena fe',
+            preguntas: [
+              { texto: '¿Qué interés jurídicamente protege la responsabilidad precontractual, según Saavedra?', keywords: ['interés protegido','negociaciones inútiles','ocultamiento','nulidad','Saavedra'] },
+              { texto: 'Explique el fundamento de la buena fe según De los Mozos y su recepción en el caso Lavín con Mena.', keywords: ['buena fe','De los Mozos','Castán Tobeñas','Lavín con Mena','Barros Bourie','lealtad'] },
+              { texto: 'Enumere el catálogo de conductas conformes a la buena fe negocial de Saavedra, distinguiendo deberes negativos y positivos.', keywords: ['catálogo','buena fe','deberes negativos','deberes positivos','confidencialidad','ocultar'] }
+            ]
+          },
+          {
+            id: 'rp8-cp5',
+            label: 'Control 5 · Eje 5',
+            subtitulo: 'Naturaleza jurídica de la responsabilidad precontractual',
+            preguntas: [
+              { texto: 'Explique las cinco tesis sobre la naturaleza jurídica de la responsabilidad precontractual y sus principales autores.', keywords: ['naturaleza jurídica','contractual','extracontractual','abuso del derecho','responsabilidad legal','declaración unilateral de voluntad'] },
+              { texto: 'Desarrolle la posición de Alessandri y su distingo según el momento, antes y después de la oferta.', keywords: ['Alessandri','antes de la oferta','después de la oferta','98','100','Código de Comercio'] },
+              { texto: '¿Por qué la tesis extracontractual es hoy mayoritaria en Chile? Explique el aporte de Brebbia y de Saavedra.', keywords: ['extracontractual','mayoritaria','Brebbia','Saavedra','Buenos Aires','Tucumán','culpa cualificada'] }
+            ]
+          },
+          {
+            id: 'rp8-cp6',
+            label: 'Control 6 · Eje 6',
+            subtitulo: 'Determinación de los daños a resarcir',
+            preguntas: [
+              { texto: 'Distinga interés positivo e interés negativo según Ihering.', keywords: ['interés positivo','interés negativo','Ihering','cumplimiento','confianza'] },
+              { texto: 'Explique la posición restrictiva (Faggella, Saleilles, León Hurtado, Rosende) frente al criterio de causalidad adecuada de Brebbia.', keywords: ['daño emergente','lucro cesante','Faggella','Saleilles','León Hurtado','Rosende','Brebbia','causalidad adecuada'] }
+            ]
+          },
+          {
+            id: 'rp8-cp7',
+            label: 'Control 7 · Eje 7',
+            subtitulo: 'Requisitos y aplicación jurisprudencial',
+            preguntas: [
+              { texto: 'Enumere los requisitos de Saavedra y de Celis para que nazca el derecho a la reparación.', keywords: ['Saavedra','Celis','requisitos','conducta antijurídica','gastos','retiro unilateral'] },
+              { texto: 'Relate los hechos, el marco doctrinario y la decisión del caso Lavín con Mena.', keywords: ['Lavín con Mena','Curicó','2024','buena fe','2284','2314','2329','cláusula penal'] }
+            ]
+          },
+          {
+            id: 'rp8-cp8',
+            label: 'Control 8 · Eje 8',
+            subtitulo: 'La responsabilidad de quien causa la nulidad del contrato',
+            preguntas: [
+              { texto: '¿Bajo qué estatuto responde quien causa la nulidad del contrato? Contraste las posiciones de Rodríguez Grez y de Baraona.', keywords: ['nulidad','Rodríguez Grez','responsabilidad legal','Baraona','extracontractual','buena fe','mala fe'] },
+              { texto: '¿Cómo resuelve el derecho chileno, a falta de una norma como el artículo 1056 del Código Civil argentino, la indemnización por nulidad?', keywords: ['1056','argentino','1687','restitución','Boffi'] }
+            ]
+          },
+          {
+            id: 'rp8-cp9',
+            label: 'Control 9 · Eje 9',
+            subtitulo: 'La responsabilidad postcontractual',
+            preguntas: [
+              { texto: 'Explique el ejemplo del trabajador que revela información reservada y las dos tesis sobre su fundamento.', keywords: ['postcontractual','trabajador','confidencialidad','proyección contractual','Corral','extracontractual'] },
+              { texto: '¿Cuál es la salvedad de Corral sobre la conservación forzada del contrato?', keywords: ['Corral','término abusivo','conservación','contractual'] }
+            ]
+          },
+          {
+            id: 'rp8-cp10',
+            label: 'Control 10 · Eje 10',
+            subtitulo: 'Derecho comparado y síntesis general',
+            preguntas: [
+              { texto: 'Compare las técnicas legislativas de Italia, Portugal, el Anteproyecto de Pavía y Alemania.', keywords: ['1337','1338','Italia','227','Portugal','Pavía','BGB','Alemania','buena fe'] },
+              { texto: 'Elabore una síntesis general de toda la materia, recorriendo los diez ejes.', keywords: ['síntesis','buena fe','extracontractual','requisitos','nulidad','postcontractual'] }
+            ]
+          }
+        ]
       }
     };
 
@@ -1299,9 +1407,6 @@
 
         // Remove noise elements
         doc.querySelectorAll('nav, script, style, .cover, .toc').forEach(e => e.remove());
-        // Remove the "Nota para Laura" first warning box
-        const firstWarn = doc.querySelector('.warn');
-        if (firstWarn) firstWarn.remove();
 
         // Extract section range between extractFrom and extractUntil (by h1 id)
         let extracted = '';

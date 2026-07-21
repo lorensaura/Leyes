@@ -7,10 +7,11 @@
 - `app/interrogador.html` (chat, mismo login/sidebar que `manuales.html`) +
   `api/interrogador.js` (función serverless, llama a la API de Claude con
   streaming, sin exponer la llave — mismo patrón que `api/waitlist.js`).
-- **Alcance:** solo Responsabilidad Contractual/Extracontractual (lo
-  publicado hoy), sin el "modo repaso transversal" del prompt original
-  (regla 10) — cubrir todas las materias de Civil en una sola interrogación
-  queda pendiente (ver "Modo transversal" más abajo).
+- **Alcance:** Responsabilidad Contractual, Extracontractual y
+  Precontractual (lo publicado hoy — Precontractual sumada el 2026-07-20),
+  sin el "modo repaso transversal" del prompt original (regla 10) — cubrir
+  todas las materias de Civil en una sola interrogación queda pendiente
+  (ver "Modo transversal" más abajo).
 - **Modelo: Claude Opus 4.8** (Laura eligió priorizar calidad/precisión
   legal por sobre el costo menor de Sonnet 5).
 
@@ -30,18 +31,25 @@ en este orden:
    Python, ya retirado) usando el motor V8 de Chrome — mismo hash SHA-256.
    Para regenerar en desarrollo sin esperar un deploy: `node
    scripts/extraer_contenido_interrogador.js`.
-3. **Artículos del Código Civil relevantes a Responsabilidad** —
-   `api/_interrogador-codigo.js` (Título Preliminar, obligaciones
-   condicionales, cláusula penal, efecto de las obligaciones, delitos y
-   cuasidelitos, prescripción). Curado a mano el 2026-07-13 desde
-   chile.justia.com (BCN no es accesible por fetch simple, es una SPA) —
-   no hay script que lo regenere, es texto fijo. Si el alcance de materias
-   crece, hay que sumar los títulos nuevos a mano ahí.
+3. **Artículos del Código Civil y del Código de Comercio relevantes a
+   Responsabilidad** — `api/_interrogador-codigo.js` (Título Preliminar,
+   obligaciones condicionales, cláusula penal, efecto de las obligaciones
+   —incluida la interpretación de los contratos—, delitos y cuasidelitos,
+   nulidad, prescripción, y desde el 2026-07-20 también arts. 97 a 106 del
+   Código de Comercio sobre formación del consentimiento). Curado a mano el
+   2026-07-13 (ampliado el 2026-07-20) desde chile.justia.com y, para los
+   artículos nuevos, desde leyes-cl.com (BCN y Justia no fueron accesibles
+   por fetch simple en esa fecha) — no hay script que lo regenere, es texto
+   fijo. Si el alcance de materias crece, hay que sumar los títulos nuevos
+   a mano ahí.
 4. **Muestra de preguntas reales** — desde 2026-07-13 esto ya **no** es un
    archivo estático: `api/interrogador.js` consulta **Supabase en vivo**
    (tabla `preguntas_evaluacion`, ver `docs/contenido-airtable-supabase.md`)
    al armar cada respuesta. 40 preguntas por materia (Contractual +
-   Extracontractual), con un orden aleatorio pero **fijo por sesión**
+   Extracontractual + Precontractual desde el 2026-07-20, aunque esta
+   última todavía no tiene preguntas cargadas en Supabase — el bloque
+   queda vacío hasta que Laura cargue contenido de Precontractual vía
+   Airtable), con un orden aleatorio pero **fijo por sesión**
    (semilla derivada del `sessionId` que genera `interrogador.html` con
    `crypto.randomUUID()` al empezar). Esto da rotación real entre sesiones
    distintas sin romper el caché de prompt de Claude a mitad de una misma
@@ -81,10 +89,12 @@ para destacar un artículo.
   grande de contexto se cachea (~5 min) y se comparte entre cualquier
   alumna que pregunte en esa ventana.
 - **Ventana de contexto de Opus 4.8 es de 1.000.000 de tokens** — el system
-  prompt completo (reglas + manuales + código + muestra de 80 preguntas) usa
-  hoy ~165.000 tokens (~16%). Hay margen de sobra (miles de preguntas más)
-  antes de que el contexto sea el problema; el costo de cache-write es la
-  variable real a vigilar si la muestra crece mucho.
+  prompt completo (reglas + los tres manuales + código + muestra de
+  preguntas) usa hoy ~185.000 tokens (~18%) tras sumar Precontractual el
+  2026-07-20 (antes: ~165.000, ~16%, con solo dos manuales). Hay margen de
+  sobra (miles de preguntas más) antes de que el contexto sea el problema;
+  el costo de cache-write es la variable real a vigilar si la muestra
+  crece mucho.
 
 ## Idea de negocio anotada (no construida aún)
 Planes con tope de interrogaciones/tokens por mes + compra de
@@ -114,6 +124,19 @@ Variables de entorno necesarias en Production + Preview:
   (agregada 2026-07-13).
 
 ## Estado actual
+- **2026-07-20:** ampliado el alcance a Responsabilidad Precontractual —
+  nuevo manual `03_Responsabilidad_Precontractual_Manual.html` sumado a
+  `scripts/extraer_contenido_interrogador.js`, artículos 97-106 del Código
+  de Comercio y 1465/1478/1560/1563/1566/1687 del Código Civil agregados a
+  `api/_interrogador-codigo.js`, y `api/_interrogador-prompt.js` actualizado
+  (rol, alcance de la materia, checklist de cobertura, protocolo de
+  interrogación). `MATERIAS_MUESTRA` en `api/interrogador.js` ya incluye
+  "Responsabilidad precontractual", pero esa materia aún no tiene preguntas
+  cargadas en `preguntas_evaluacion` — el bloque de muestra queda vacío
+  hasta que Laura cargue contenido ahí. Falta aún: probar una interrogación
+  real que toque Precontractual antes de darla por completamente validada
+  (ver "Observación abierta" del 2026-07-13 más abajo, que sigue pendiente
+  y es independiente de este cambio).
 - **2026-07-15:** cerrado el riesgo de que el Interrogador corrigiera sobre
   manuales desactualizados. Antes había que acordarse de correr el script de
   extracción a mano tras editar los HTML fuente; ahora `vercel.json` lo corre

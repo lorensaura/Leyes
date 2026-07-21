@@ -13,6 +13,17 @@
 // MATERIA en _interrogador-prompt.js), no el Código completo. Si el
 // Interrogador amplía su materia más adelante, hay que sumar los títulos
 // nuevos acá (no existe script que regenere esto — es curado a mano).
+//
+// 2026-07-20: se agregaron los artículos de Código Civil sobre
+// interpretación de los contratos (1560, 1563, 1566), condonación del
+// dolo futuro (1465), condición potestativa (1478) y efectos de la
+// nulidad (1687), más los artículos 97 a 106 del Código de Comercio
+// (formación del consentimiento), para dar grounding al alcance nuevo de
+// Responsabilidad Precontractual. Fuente de estos: leyes-cl.com (texto
+// vigente), cruzado contra el fragmento citado por Justia en resultados
+// de búsqueda para los arts. 98 y 100 — BCN/Justia no fueron accesibles
+// por fetch simple al momento de la curación (misma limitación que en
+// 2026-07-13, ver arriba).
 
 module.exports = `
 ===== CÓDIGO CIVIL: ARTÍCULOS DE REFERENCIA (RESPONSABILIDAD) =====
@@ -417,4 +428,112 @@ años, y convertida en ordinaria durará solamente otros dos.
 [Nota: el plazo de la acción ejecutiva fue modificado por la Ley
 16.952; si el alumno cita un plazo distinto para la ejecutiva,
 verifícalo antes de corregir.]
+
+LIBRO IV — TÍTULO II: DE LOS ACTOS Y DECLARACIONES DE VOLUNTAD (dolo)
+
+Art. 1465. El pacto de no pedir más en razón de una cuenta aprobada, no
+vale en cuanto al dolo contenido en ella, si no se ha condonado
+expresamente. La condonación del dolo futuro no vale.
+
+LIBRO IV — TÍTULO IV: DE LAS OBLIGACIONES CONDICIONALES (complemento)
+
+Art. 1478. Son nulas las obligaciones contraídas bajo una condición
+potestativa que consista en la mera voluntad de la persona que se
+obliga.
+Si la condición consiste en un hecho voluntario de cualquiera de las
+partes, valdrá.
+
+LIBRO IV — TÍTULO XII: DEL EFECTO DE LAS OBLIGACIONES (interpretación
+de los contratos)
+
+Art. 1560. Conocida claramente la intención de los contratantes, debe
+estarse a ella más que a lo literal de las palabras.
+
+Art. 1563. En aquellos casos en que no apareciere voluntad contraria
+deberá estarse a la interpretación que mejor cuadre con la naturaleza
+del contrato.
+Las cláusulas de uso común se presumen aunque no se expresen.
+
+Art. 1566. No pudiendo aplicarse ninguna de las reglas precedentes de
+interpretación, se interpretarán las cláusulas ambiguas a favor del
+deudor.
+Pero las cláusulas ambiguas que hayan sido extendidas o dictadas por una
+de las partes, sea acreedora o deudora, se interpretarán contra ella,
+siempre que la ambigüedad provenga de la falta de una explicación que
+haya debido darse por ella.
+
+LIBRO IV — TÍTULO XX: DE LA NULIDAD Y LA RESCISIÓN
+
+Art. 1687. La nulidad pronunciada en sentencia que tiene la fuerza de
+cosa juzgada, da a las partes derecho para ser restituidas al mismo
+estado en que se hallarían si no hubiese existido el acto o contrato
+nulo; sin perjuicio de lo prevenido sobre el objeto o causa ilícita.
+En las restituciones mutuas que hayan de hacerse los contratantes en
+virtud de este pronunciamiento, será cada cual responsable de la pérdida
+de las especies o de su deterioro, de los intereses y frutos, y del
+abono de las mejoras necesarias, útiles o voluptuarias, tomándose en
+consideración los casos fortuitos y la posesión de buena o mala fe de
+las partes; todo ello según las reglas generales y sin perjuicio de lo
+dispuesto en el siguiente artículo.
+
+===== CÓDIGO DE COMERCIO: ARTÍCULOS DE REFERENCIA (FORMACIÓN DEL
+CONSENTIMIENTO) =====
+
+LIBRO II — TÍTULO II: DE LAS CONVENCIONES MERCANTILES EN GENERAL
+
+Art. 97. Para que la propuesta verbal de un negocio imponga al
+proponente la respectiva obligación, se requiere que sea aceptada en el
+acto de ser conocida por la persona a quien se dirigiere; y no mediando
+tal aceptación, queda el proponente libre de todo compromiso.
+
+Art. 98. La propuesta hecha por escrito deberá ser aceptada o desechada
+dentro de veinticuatro horas, si la persona a quien se ha dirigido
+residiere en el mismo lugar que el proponente, o a vuelta de correo, si
+estuviere en otro diverso.
+Vencidos los plazos indicados, la propuesta se tendrá por no hecha, aun
+cuando hubiere sido aceptada.
+En caso de aceptación extemporánea, el proponente será obligado, bajo
+responsabilidad de daños y perjuicios, a dar pronto aviso de su
+retractación.
+
+Art. 99. El proponente puede arrepentirse en el tiempo medio entre el
+envío de la propuesta y la aceptación, salvo que al hacerla se hubiere
+comprometido a esperar contestación o a no disponer del objeto del
+contrato, sino después de desechada o de transcurrido un determinado
+plazo.
+El arrepentimiento no se presume.
+
+Art. 100. La retractación tempestiva impone al proponente la obligación
+de indemnizar los gastos que la persona a quien fue encaminada la
+propuesta hubiere hecho, y los daños y perjuicios que hubiere sufrido.
+Sin embargo, el proponente podrá exonerarse de la obligación de
+indemnizar, cumpliendo el contrato propuesto.
+
+Art. 101. Dada la contestación, si en ella se aprobare pura y
+simplemente la propuesta, el contrato queda en el acto perfeccionado y
+produce todos sus efectos legales, a no ser que antes de darse la
+respuesta ocurra la retractación, muerte o incapacidad legal del
+proponente.
+
+Art. 102. La aceptación condicional será considerada como una propuesta.
+
+Art. 103. La aceptación tácita produce los mismos efectos y está sujeta
+a las mismas reglas que la expresa.
+
+Art. 104. Residiendo los interesados en distintos lugares, se entenderá
+celebrado el contrato, para todos sus efectos legales, en el de la
+residencia del que hubiere aceptado la propuesta primitiva o la
+propuesta modificada.
+
+Art. 105. Las ofertas indeterminadas contenidas en circulares,
+catálogos, notas de precios corrientes, prospectos, o en cualquiera otra
+especie de anuncios impresos, no son obligatorias para el que las hace.
+Dirigidos los anuncios a personas determinadas, llevan siempre la
+condición implícita de que al tiempo de la demanda no hayan sido
+enajenados los efectos ofrecidos, de que no hayan sufrido alteración en
+su precio, y de que existan en el domicilio del oferente.
+
+Art. 106. El contrato propuesto por el intermedio de corredor se tendrá
+por perfecto desde el momento en que los interesados aceptaren pura y
+simplemente la propuesta.
 `;

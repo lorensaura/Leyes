@@ -21,7 +21,7 @@ const MODOS_VALIDOS = new Set(['examen', 'practica']);
 const MAX_MENSAJES = 60;
 
 const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
-const MATERIAS_MUESTRA = ['Responsabilidad contractual', 'Responsabilidad extracontractual'];
+const MATERIAS_MUESTRA = ['Responsabilidad contractual', 'Responsabilidad extracontractual', 'Responsabilidad precontractual'];
 const MUESTRA_POR_MATERIA = 40;
 
 // PRNG determinístico (mulberry32): misma sessionId -> misma muestra en todos

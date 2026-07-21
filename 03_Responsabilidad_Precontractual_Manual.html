@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsabilidad Precontractual: Manual de Estudio | Digesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#C41E2E;--accent2:#111111;--light:#E8D8B8;--soft:#F5EAD4;
+    --grey:#7A6E5F;--warn:#8A5A00;--warnbg:#FFF6E5;
+    --green:#1A6B3A;--greenbg:#F4FAF6;--greenborder:#4CAF50;
+    --orange:#7B3F00;--orangebg:#FFFAF4;--orangeborder:#C87028;
+    --juris:#111111;--jurisbg:#F5EAD4;--jurisborder:#2A2A2A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Times New Roman',Times,Georgia,serif;
+    font-size:11pt;
+    color:#111;
+    line-height:1.2;
+    max-width:800px;
+    margin:0 auto;
+    padding:52px 58px 88px;
+    background:#fff;
+    text-align:justify;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+  }
+  h1{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    color:var(--accent2);
+    font-size:1.35rem;
+    margin:3.6rem 0 .7rem;
+    border-bottom:2px solid var(--accent);
+    padding-bottom:.3rem;
+    text-align:left;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    page-break-after:avoid;
+  }
+  h2{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    color:var(--accent);
+    font-size:1.1rem;
+    margin:2.4rem 0 .45rem;
+    text-align:left;
+    page-break-after:avoid;
+  }
+  h3{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    color:#333;
+    font-size:1rem;
+    margin:1.7rem 0 .3rem;
+    text-align:left;
+    page-break-after:avoid;
+  }
+  p{margin:.75rem 0 .75rem;text-align:justify;}
+  ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
+  li{margin:.4rem 0;text-align:justify;}
+  table{
+    border-collapse:collapse;
+    width:100%;
+    margin:1.2rem 0;
+    font-size:10pt;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+  }
+  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;}
+  td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:700;color:var(--accent);white-space:nowrap;}
+
+  /* CALLOUT: doctrinal destacado */
+  .callout{
+    border-left:5px solid var(--accent);
+    background:var(--soft);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .callout .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--accent);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* ADVERTENCIA */
+  .warn{
+    border-left:5px solid var(--warn);
+    background:var(--warnbg);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .warn .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--warn);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* JURISPRUDENCIA: caja completa, letra 10pt */
+  .jurisprudencia{
+    border:1px solid var(--jurisborder);
+    background:var(--jurisbg);
+    padding:10px 14px;
+    margin:1.5rem 0;
+    font-size:12pt;
+    line-height:1.2;
+  }
+  .jurisprudencia .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;
+    color:var(--juris);
+    display:block;
+    margin-bottom:6px;
+    padding-bottom:5px;
+    border-bottom:1px solid var(--jurisborder);
+    font-size:9pt;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    text-align:left;
+  }
+  .jurisprudencia p,.jurisprudencia strong{font-size:12pt;}
+  .jurisprudencia strong{color:#333;}
+
+  /* EJEMPLO: espacio limpio, borde izquierdo sutil */
+  .ejemplo{
+    border-left:4px solid var(--greenborder);
+    background:var(--greenbg);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .ejemplo .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--green);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* DATO DE GRADO: borde entrecortado */
+  .dato-grado{
+    border:2px dashed var(--orangeborder);
+    background:var(--orangebg);
+    padding:12px 16px;
+    margin:1.3rem 0;
+  }
+  .dato-grado .titulo-bloque{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;font-size:10pt;
+    color:var(--orange);display:block;margin-bottom:.3rem;text-align:left;
+  }
+
+  /* REPASO: checkpoint de comprensión lectora (preguntas alojadas en la web) */
+  .repaso{
+    border-left:4px solid var(--accent);
+    background:#FCF7EC;
+    padding:11px 16px;
+    margin:2.4rem 0 .4rem;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:9.5pt;
+    line-height:1.4;
+    color:#5a5043;
+    text-align:left;
+    page-break-inside:avoid;
+  }
+  .repaso .titulo-bloque{
+    font-weight:700;font-size:9pt;color:var(--accent);
+    display:block;margin-bottom:.3rem;
+    text-transform:uppercase;letter-spacing:.04em;
+  }
+  .repaso strong{color:var(--accent);font-weight:700;}
+
+  /* PORTADA: estilo de la plataforma (Bebas Neue + Inter) */
+  .cover{text-align:center;padding:96px 20px 60px;border-bottom:none;margin-bottom:2rem;}
+  .cover .brand{
+    font-family:'Bebas Neue',-apple-system,Arial,sans-serif;
+    display:inline-block;background:var(--accent2);color:var(--light);
+    font-size:1.5rem;letter-spacing:7px;font-weight:400;
+    padding:9px 28px 6px;text-indent:7px;
+  }
+  .cover .doc{
+    font-family:'Bebas Neue',-apple-system,Arial,sans-serif;
+    color:var(--accent2);font-size:4.4rem;font-weight:400;
+    line-height:.92;letter-spacing:1px;margin-top:2.2rem;text-transform:uppercase;
+  }
+  .cover .rule{width:84px;height:4px;background:var(--accent);margin:1.8rem auto 1.5rem;}
+  .cover .sub{
+    font-family:'Inter',-apple-system,Arial,sans-serif;
+    color:var(--accent);font-size:.78rem;font-weight:600;
+    letter-spacing:2.5px;text-transform:uppercase;
+  }
+  .cover .author{
+    font-family:'Inter',-apple-system,Arial,sans-serif;
+    color:var(--accent2);font-size:1.05rem;font-weight:400;margin-top:1.7rem;
+  }
+  .cover .author strong{font-weight:600;}
+  .cover .meta{
+    font-family:'Inter',-apple-system,Arial,sans-serif;
+    color:var(--grey);margin-top:1.3rem;font-size:.8rem;font-weight:300;
+    line-height:1.55;max-width:460px;margin-left:auto;margin-right:auto;
+  }
+  .muted{color:var(--grey);font-style:italic;font-size:10pt;}
+
+  /* ÍNDICE */
+  .toc{
+    background:var(--soft);
+    border:1px solid var(--light);
+    padding:14px 22px;
+    margin-bottom:2rem;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:10pt;
+  }
+  .toc a{color:var(--accent);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  .toc ol{text-align:left;}
+
+  code{background:var(--light);padding:1px 4px;font-size:10pt;}
+
+  @media print{
+    /* Los márgenes reales los aplica printToPDF en TODAS las páginas
+       (no con padding del body, que solo margina la 1.ª y la última). */
+    body{padding:0;margin:0;font-size:11pt;line-height:1.2;}
+    h1{page-break-after:avoid;}
+    h2,h3{page-break-after:avoid;}
+    .callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,.repaso,table,tr,li{page-break-inside:avoid;}
+    /* Portada: centrada vertical y horizontalmente, ocupa su propia página */
+    .cover{
+      page-break-after:always;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      min-height:23cm;box-sizing:border-box;
+      padding:0 20px;margin:0;
+    }
+    /* El índice fluye hacia el contenido (sin dejar media página en blanco) */
+    .toc{page-break-after:auto;margin-bottom:1.4rem;}
+    h1:first-of-type{page-break-before:avoid;}
+  }
+</style>
+</head>
+<body>
+<!-- Recuadros pedagógicos (callout/dato-grado/ejemplo/warn/jurisprudencia) agregados
+     el 2026-07-20 a partir del propio texto de Laura, para calzar con la densidad de
+     Contractual y Extracontractual. Pendientes de su revisión antes de darse por
+     definitivos. -->
+<div class="cover">
+  <div class="brand">DIGESTO</div>
+  <div class="doc">Responsabilidad<br>Precontractual</div>
+  <div class="rule"></div>
+  <div class="sub">Manual de estudio · Nivel examen de grado</div>
+  <div class="author">Elaborado por <strong>Laura Schultz Solano</strong></div>
+  <div class="meta">Síntesis del tratado de Juan Andrés Orrego Acuña, complementada con el desarrollo de Enrique Barros Bourie sobre nulidad y responsabilidad postcontractual, y con jurisprudencia nacional reciente (caso Lavín con Mena, 2024) · Versión Julio 2026</div>
+</div>
+<div class="toc">
+  <strong>Índice</strong>
+  <ol>
+    <li><a href="#eje1">Eje 1. Planteamiento del problema y concepto de responsabilidad precontractual</a></li>
+    <li><a href="#eje2">Eje 2. Evolución doctrinaria: de la doctrina tradicional a la doctrina moderna</a></li>
+    <li><a href="#eje3">Eje 3. Las etapas del proceso de formación del contrato</a></li>
+    <li><a href="#eje4">Eje 4. El interés jurídicamente protegido y el fundamento de la buena fe</a></li>
+    <li><a href="#eje5">Eje 5. Naturaleza jurídica de la responsabilidad precontractual</a></li>
+    <li><a href="#eje6">Eje 6. Determinación de los daños a resarcir</a></li>
+    <li><a href="#eje7">Eje 7. Los requisitos para que nazca el derecho a la reparación y su aplicación jurisprudencial</a></li>
+    <li><a href="#eje8">Eje 8. La responsabilidad de quien causa la nulidad del contrato</a></li>
+    <li><a href="#eje9">Eje 9. La responsabilidad postcontractual</a></li>
+    <li><a href="#eje10">Eje 10. Derecho comparado y síntesis general de la materia</a></li>
+  </ol>
+</div>
+<!-- ============================================================
+     EJE 1: PLANTEAMIENTO DEL PROBLEMA Y CONCEPTO DE RESPONSABILIDAD PRECONTRACTUAL
+     ============================================================ -->
+
+<h1 id="eje1">Eje 1. Planteamiento del problema y concepto de responsabilidad precontractual</h1>
+
+<p>La declaración de voluntad común que llamamos consentimiento (núcleo de todo acto jurídico bilateral) puede formarse de dos maneras distintas. En los contratos de naturaleza preferentemente consensual, que se celebran cotidianamente, el consentimiento surge de la coincidencia instantánea de las voluntades: alguien ofrece, el otro acepta, y el contrato nace sin que medie un proceso previo digno de atención jurídica autónoma. Pero en los contratos que, por su complejidad económica o jurídica, exigen una negociación más o menos prolongada, el consentimiento es más bien la culminación de una serie de actos preparatorios a través de los cuales los interesados expresan y ajustan sus puntos de vista sobre el negocio propuesto, hasta llegar, o no, a un entendimiento completo.</p>
+
+<p>Es en esta segunda hipótesis donde se presenta el problema de la responsabilidad precontractual: durante esa etapa previa al nacimiento del contrato pueden surgir dificultades, desavenencias o rupturas definitivas de las negociaciones, y de ahí la necesidad de estudiar el período previo a la formación del consentimiento, los problemas que en él pueden surgir, y la eventual responsabilidad de quienes en él intervienen cuando el contrato finalmente no llega a concluirse.</p>
+
+<p>El punto de partida obligado es una constatación negativa: el Código Civil chileno no se ocupa de la formación del consentimiento, salvo en lo relativo al contrato de promesa (artículo <span class="art">1554</span>). Ese vacío fue remediado solo parcialmente por el legislador mercantil: el propio Mensaje del Código de Comercio reconoce esta deficiencia de la legislación civil y la intención de llenar tan "sensible vacío", pero las normas que efectivamente lo hacen (los artículos <span class="art">97</span> a <span class="art">106</span> del Código de Comercio) parten todas del supuesto de que ya se ha formulado una oferta. El período precontractual, sin embargo, comienza antes: desde que las partes se ponen en contacto con miras a concretar un negocio jurídico.</p>
+
+<p>Existe, entonces, un tramo entero de la vida negocial (el que precede a la oferta) sobre el cual el legislador chileno guarda silencio casi absoluto, y es precisamente ese tramo, junto con el de la oferta misma, el que ocupa el centro de este eje.</p>
+
+<p>Conviene fijar, desde ya, un vocabulario. Orrego distingue dos grandes etapas dentro del período precontractual: la primera comprende los llamados tratos negociales previos (también denominados tratativas preliminares o, en la literatura francesa, pourparlers); la segunda se inicia con la formulación de una oferta por alguna de las partes, y su estudio pertenece más bien a la teoría general del acto jurídico. Las definiciones de responsabilidad precontractual que la doctrina propone suelen referirse, de manera preferente, a la primera de estas dos fases, y es en ella donde este material centrará su atención, sin abandonar por completo la segunda.</p>
+
+<h2>1.1. El concepto de responsabilidad precontractual</h2>
+
+<p>Las definiciones disponibles convergen en lo esencial, aunque difieren en el énfasis. Saavedra la entiende como "la que puede producirse durante los tratos negociales previos, es decir, en las negociaciones que anteceden a una oferta", una responsabilidad que nace "cuando se causa daño a la persona o bienes de otro en el curso de la formación de un contrato". Picasso, comentando el proyecto argentino de unificación civil y comercial de 1998, la define como "la obligación de resarcir un daño causado por uno de los eventuales futuros contratantes a otro con motivo de las tratativas a la celebración de un contrato".</p>
+
+<p>De los Mozos, situándose desde la óptica de la buena fe, ofrece una formulación más descriptiva: incurre en responsabilidad precontractual "todo aquel que en la fase de los tratos preparatorios de un contrato cree razonablemente que está prácticamente concluido o que se va a concluir, y, en atención a ello, emprende trabajos, realiza gastos o adopta cualquier tipo de disposiciones de los que se deriva un perjuicio, si el contrato no llega definitivamente a celebrarse", en la medida en que esa creencia se apoyó de buena fe en las palabras o los hechos de quien pudo haber sido su contraparte y que, de algún modo, con su comportamiento, creó una apariencia de negocio seguro.</p>
+
+<p>De estas tres definiciones se extrae un núcleo común que conviene explicitar, porque estructura todo el desarrollo posterior: hay siempre un daño (no toda ruptura de negociaciones genera responsabilidad, solo aquella que causa un perjuicio efectivo); hay siempre una expectativa razonable generada en la contraparte (no se protege la mera frustración de haber negociado en vano, sino la confianza que el propio comportamiento del otro contribuyó a crear); y hay siempre una conducta que, de alguna manera, defrauda esa confianza. El tercer elemento (qué tipo de conducta y bajo qué estándar se juzga) es precisamente lo que divide a la doctrina, según se verá en los ejes siguientes.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">Distinción fundamental: qué NO protege la responsabilidad precontractual</span>
+  <p>No hay responsabilidad por el solo hecho de que la negociación no llegue a puerto: la mera frustración de haber negociado en vano no genera nada. Los tres elementos que sí la generan, siempre copulativos, son: un daño efectivo, una expectativa razonable creada por la conducta de la contraparte, y una conducta que defrauda esa expectativa concreta (no una expectativa general de éxito).</p>
+</div>
+
+<h2>1.2. Las cuatro interrogantes centrales de la materia</h2>
+
+<p>Orrego sintetiza el programa completo de la responsabilidad precontractual en cuatro preguntas que conviene memorizar como esquema de examen, porque cada una de ellas da lugar a un eje separado de este material. La primera es determinar la naturaleza de la responsabilidad precontractual: si debe enmarcarse en la responsabilidad contractual, en la extracontractual, si constituye una materia con reglas propias que no puede resolverse aplicando ninguna de las dos responsabilidades civiles tradicionales (configurando entonces un caso de responsabilidad legal), si es una manifestación de la doctrina del abuso del derecho, o si se trata de una hipótesis en que la fuente de las obligaciones que pueden nacer corresponde a una declaración unilateral de voluntad.</p>
+
+<p>La segunda interrogante es determinar cuál es el factor de atribución de responsabilidad aplicable, siendo la culpa y el abuso del derecho los candidatos favoritos de la doctrina. La tercera es determinar cuándo puede decirse propiamente que ha comenzado el período precontractual, y por ende que puede nacer la responsabilidad de esta clase. La cuarta es determinar cuál es el daño indemnizable cuando se origina durante el período previo a la formación del contrato.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: las cuatro preguntas de Orrego, esqueleto de todo el examen</span>
+  <p><strong>(1) Naturaleza:</strong> ¿contractual, extracontractual, legal, abuso del derecho o declaración unilateral de voluntad? (desarrollado en el Eje 5). <strong>(2) Factor de atribución:</strong> ¿culpa o abuso del derecho? (Eje 5). <strong>(3) Momento de inicio:</strong> ¿desde cuándo hay período precontractual? (Eje 3). <strong>(4) Daño indemnizable:</strong> ¿solo daño emergente, o también lucro cesante? (Eje 6). Cada eje de este manual responde, en el fondo, a una de estas cuatro preguntas.</p>
+</div>
+
+<h2>1.3. Las dos grandes etapas del período precontractual</h2>
+
+<p>Conviene cerrar este eje introductorio precisando la arquitectura temporal sobre la que se construye todo el resto del material. Dentro del período precontractual se distinguen, en primer término, los tratos negociales previos o negociaciones preliminares: el período en que las partes se ponen en contacto por primera vez con miras a conversar y analizar, en el terreno de las meras expectativas, las condiciones de un negocio futuro, sin que ese contacto se haya producido todavía en virtud de una oferta. En segundo término, la etapa que se inicia con la formulación de la oferta por una de las partes, momento en que (como se examinará en el Eje 3) cambia radicalmente la naturaleza jurídica de la relación entre los partícipes: de hechos jurídicos sin fuerza obligatoria se pasa a un acto jurídico unilateral con vocación de generar el contrato.</p>
+
+<p>La doctrina tradicional, como se verá en el Eje 2, solo reconocía relevancia jurídica a partir de esta segunda etapa; fue la doctrina moderna, encabezada por Ihering y profundizada por Faggella, la que extendió la posibilidad de responsabilidad hacia la primera, abriendo el debate que ocupa el resto de este material.</p>
+
+<h2>1.4. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir señalando la laguna legal: el Código Civil chileno no regula la formación del consentimiento salvo en materia de promesa, y el Código de Comercio, en sus artículos <span class="art">97</span> a <span class="art">106</span>, solo cubre el tramo posterior a la oferta, dejando sin regulación expresa el más extenso y más disputado: el de los tratos negociales previos. A partir de esa laguna, exponer el concepto de responsabilidad precontractual apoyándose en las definiciones de Saavedra, Picasso y De los Mozos, destacando el núcleo común: daño, confianza razonable generada por la contraparte, conducta que la defrauda. Enseguida, presentar las cuatro interrogantes de Orrego como el programa completo de la materia (naturaleza jurídica, factor de atribución, momento de inicio del período precontractual, daño indemnizable), anunciando que cada una se desarrolla en un eje separado. Cerrar precisando las dos etapas del período precontractual (tratos negociales previos y oferta) y anticipando que la evolución doctrinaria, de la doctrina tradicional a la moderna, consiste precisamente en la progresiva extensión de la responsabilidad desde la segunda etapa hacia la primera, que es el objeto del eje siguiente.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 1: Planteamiento del problema y concepto de responsabilidad precontractual</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 2: EVOLUCIÓN DOCTRINARIA: DE LA DOCTRINA TRADICIONAL A LA DOCTRINA MODERNA
+     ============================================================ -->
+
+<h1 id="eje2">Eje 2. Evolución doctrinaria: de la doctrina tradicional a la doctrina moderna</h1>
+
+<p>La pregunta que organiza este eje es histórica y dogmática a la vez: ¿desde qué momento del proceso de formación de un contrato puede nacer responsabilidad para quien defrauda las expectativas de su contraparte? La respuesta no ha sido siempre la misma. Existió una doctrina tradicional, de corte marcadamente individualista, que negaba toda responsabilidad mientras no existiera oferta; y existió una reacción, encabezada por el jurista alemán Rudolf von Ihering y profundizada por el italiano Gabriel Faggella, que fue progresivamente adelantando el momento a partir del cual la conducta de los negociantes puede comprometer su responsabilidad, hasta llegar a la posición hoy dominante, que reconoce relevancia jurídica a la totalidad del período precontractual. Entender esta evolución es indispensable, porque los distintos autores que se examinarán en los ejes siguientes (sobre naturaleza jurídica, daño indemnizable y requisitos) construyen sus posiciones precisamente a partir de las premisas que aquí se fijan.</p>
+
+<h2>2.1. La doctrina tradicional: las tres fases y el silencio hasta la oferta</h2>
+
+<p>La doctrina tradicional reconoce tres períodos fundamentales en la formación del consentimiento: la fase de los meros hechos sociales, la fase de la oferta, y la fase de la promesa de contrato. Para esta doctrina, todo el período en que las partes se acercan para plantear sus opiniones sobre el futuro contrato carece de relevancia jurídica: se trata de meros hechos sociales, y en aplicación del principio de la autonomía de la voluntad, quienes participan en ellos pueden retirarse en cualquier momento sin adquirir responsabilidad alguna, porque así como libremente iniciaron las tratativas, pueden libremente no continuarlas. Solo cambia esta posición al iniciarse la etapa obligatoria de la relación precontractual, esto es, a partir de la oferta (y aun entonces, la fuerza obligatoria de la oferta sufre numerosas excepciones, considerando la retractación y la caducidad que pueden extinguirla).</p>
+
+<p>En cuanto a la promesa de contrato, la doctrina tradicional la somete a tal cúmulo de formalidades y exigencias (recuérdese el artículo <span class="art">1554</span> del Código Civil chileno) que su utilidad práctica como mecanismo de protección durante el período precontractual experimenta una considerable merma.</p>
+
+<p>Conviene retener un dato de historia dogmática que explica el silencio del Código Civil chileno: hasta mediados del siglo XIX no se admitía responsabilidad civil sino a partir de la tercera de estas etapas, esto es, desde la promesa. Ello explica por qué Andrés Bello y los demás redactores del Código no contemplaron siquiera la eventual responsabilidad a partir de la sola formulación de la oferta: al momento de la codificación, esa posibilidad todavía no había sido teorizada por la doctrina europea.</p>
+
+<h2>2.2. La irrupción de Ihering: la culpa in contrahendo</h2>
+
+<p>Frente a esta concepción rígida, que descartaba toda responsabilidad antes del perfeccionamiento del contrato, surge en 1860 la obra de Ihering "De la culpa in contrahendo o de los daños y perjuicios en las convenciones nulas o que permanecieron imperfectas". Su tesis central es que la diligencia propia del contrato no se exige solamente en las relaciones ya establecidas, sino también en las relaciones contractuales en vías de formación: de ahí la expresión culpa in contrahendo, la culpa que se comete mientras se está contrayendo el contrato.</p>
+
+<p>Boffi Boggero resume los postulados de Ihering en siete puntos que conviene retener como bloque, porque cada uno de ellos será objeto de discusión en los ejes siguientes: primero, la culpa in contrahendo presupone que ya se ha formulado una oferta (las meras tratativas, para Ihering, no originan responsabilidad); segundo, se trata de una responsabilidad de naturaleza contractual; tercero, las diligencias exigidas para ejecutar el contrato son idénticas a las exigibles durante el período formativo; cuarto, la culpa relevante es solo la de quienes actúan en ese período formativo; quinto, la acción para hacerla efectiva se transmite a los herederos; sexto, prescribe de la misma forma en que prescribe la acción derivada de una responsabilidad propiamente contractual; y séptimo, la indemnización comprende tanto el interés positivo como el interés negativo, cuestión que se desarrollará en el Eje 6.</p>
+
+<p>Para fundar su doctrina, Ihering acude a textos romanos recogidos en el Digesto (de Ulpiano y de Modestino) y en las Institutas, referidos a la venta de bienes sagrados, religiosos o públicos: cosas fuera del comercio humano cuya venta era nula, pero respecto de las cuales el comprador engañado disponía de una acción para obtener indemnización del vendedor que había ocultado el vicio.</p>
+
+<p>El ejemplo que Ihering utiliza para ilustrar su propia tesis, y que conviene manejar en el examen porque muestra con claridad el problema que su doctrina viene a resolver, es el de una persona que solicita el envío de cien libras de una mercancía, pero confunde el signo de "libra" con el de "quintal" (equivalente a cuarenta y seis kilos), de modo que recibe una cantidad muy superior a la pedida y debe devolver el excedente. El contrato adolece de nulidad por error esencial, pero ¿quién responde de los gastos de embalaje, flete e impuestos aduaneros ocasionados por el envío erróneo?</p>
+
+<div class="ejemplo">
+  <span class="titulo-bloque">Ejemplo: el caso de las libras y los quintales</span>
+  <p>Alguien pide el envío de cien <em>libras</em> de una mercancía, pero por error escribe <em>quintales</em> (un quintal equivale a 46 kilos aprox.), de modo que recibe una cantidad muy superior a la pedida. El contrato es nulo por error esencial. Ni la acción contractual (no hay contrato válido) ni la acción aquiliana (no hay daño a un objeto exterior en el sentido de la Ley Aquilia) explican quién paga el embalaje, el flete y los impuestos del envío erróneo. Este vacío es, para Ihering, la prueba de que hace falta una tercera vía: la culpa in contrahendo.</p>
+</div>
+
+<p>La doctrina tradicional no tenía respuesta: no cabía la acción contractual, porque el contrato era nulo; tampoco la acción aquiliana, porque el caso no encajaba en los supuestos de la Ley Aquilia. Ihering advierte que semejante vacío pugna con la equidad: la parte que incurrió en el error queda indemne, mientras la parte inocente permanece sin reparación; y encuentra, en los casos romanos que revisa, un elemento común: la culpa se cometió en el período previo a la formación del contrato. De ahí su doctrina.</p>
+
+<p>En cuanto al fundamento legal de esta responsabilidad, Ihering la ubica decididamente en la esfera contractual, descartando expresamente la vía extracontractual: ni la actio de dolo (porque los casos que examina no exigían dolo) ni la actio legis Aquiliae (porque no concurrían sus requisitos de daño material causado a objetos exteriores) podían servir de fundamento dentro del derecho romano.</p>
+
+<p>Frente a la objeción obvia (¿cómo puede haber responsabilidad contractual si el contrato no llegó a nacer o fue anulado?), Ihering responde que la declaración de nulidad no invalida todos los efectos del acto jurídico, sino únicamente los relativos a la ejecución de las obligaciones contractuales: el contrato nulo sigue produciendo otras obligaciones, como la restitución de lo entregado o el pago de indemnizaciones.</p>
+
+<p>Y precisa, en un punto que conviene subrayar porque lo distingue de fundamentaciones posteriores, que la razón de la indemnización no es la buena fe de la parte damnificada (porque la contraparte también pudo haber actuado de buena fe, como ocurrió con quien por simple error escribió "quintales" en lugar de "libras"), sino la culpa en que incurrió esa parte: la violación de la obligación de diligencia que rige no solo el cumplimiento del contrato, sino también las relaciones anteriores a él, desde el momento en que se emite la oferta.</p>
+
+<p>La conclusión de Ihering, en orden a encuadrar la culpa in contrahendo dentro de la responsabilidad contractual, ha sido criticada por dos razones. La primera es que de los propios textos romanos en que se basó se desprende que la responsabilidad debía entenderse extracontractual, precisamente porque el contrato había nacido nulo. La segunda es que en los casos de compraventa de cosas fuera del comercio (res extra commercium) hay dolo y no simple culpa, lo que debilita la analogía. Con todo, debe reconocerse el mérito histórico de Ihering: fue el primero en subrayar la necesidad de indemnizar a quien creyó celebrar un contrato válido y que, por contener este una causal de invalidez, no pudo prosperar. Su tesis tuvo una recepción parcial en el Código Civil alemán de 1900 (BGB), como se examinará en el Eje 10 al tratar el derecho comparado.</p>
+
+<h2>2.3. Faggella: de la oferta hacia los tratos previos</h2>
+
+<p>Gabriel Faggella, en su obra de 1906 "De los períodos precontractuales y de su verdadera y exacta construcción científica", da el paso que Ihering no se atrevió a dar: sitúa el inicio de la posible responsabilidad precontractual antes de la emisión de la oferta, extendiéndola a los tratos negociales previos propiamente tales.</p>
+
+<p>Para construir su doctrina, distingue dos períodos, cada uno con dos momentos. El primer período (el de las tratativas previas) comprende, en un primer momento, la concepción abstracta del negocio por los interesados, y en un segundo momento, la elaboración concreta de una oferta definitiva por alguna de las partes. El segundo período (el que define el negocio) comprende, en su primer momento, el análisis de la oferta por su destinatario hasta la aceptación, y en su segundo momento, el intervalo entre la aceptación y el cumplimiento del contrato.</p>
+
+<p>De estos cuatro momentos, tres pertenecen propiamente a las relaciones precontractuales, y es notable que el primer momento del segundo período (aquel en que el lazo entre las partes se ha estrechado tras el análisis de la oferta) presente, según observa Faggella, un grado de responsabilidad más acentuado que los momentos anteriores, precisamente por la mayor proximidad al contrato.</p>
+
+<p>El aporte más disruptivo de Faggella no es, sin embargo, esta periodización, sino el cambio de fundamento. Para él, el solo hecho de entrar en negociaciones con vistas a la formación de un contrato constituye un hecho colocado bajo la protección del derecho, y aunque las partes conservan siempre la libertad de separarse en cualquier momento (lo que Faggella llama el reconocimiento del ius revocandi), la ruptura intempestiva de las negociaciones, esto es, aquella que no permite que sigan su curso normal hasta la celebración del contrato o hasta su fracaso definitivo por falta de acuerdo, puede generar responsabilidad cuando de ella se sigan daños. Y el fundamento de esa responsabilidad, insiste Faggella, no es la culpa, como sostenía Ihering, sino la violación del acuerdo expreso o tácito que las partes habían concluido para entablar negociaciones. Esta violación puede existir sin dolo ni negligencia: basta una transgresión arbitraria, sin motivo, de las tratativas.</p>
+
+<p>Boffi resume los postulados de Faggella en tres puntos: primero, dentro del período previo al contrato se distinguen los dos períodos ya descritos; segundo, el fundamento de la eventual responsabilidad no es la culpa, sino la transgresión del acuerdo para entablar negociaciones, transgresión que puede ocurrir sin dolo ni culpa; y tercero, la indemnización solo debe cubrir los gastos reales en que incurrió uno de los partícipes, no el lucro cesante (punto que se retomará con detalle en el Eje 6).</p>
+
+<h2>2.4. Saleilles: la equidad comercial como estándar</h2>
+
+<p>Será el jurista francés Raymond Saleilles quien, en 1907, emplee por primera vez la expresión "responsabilidad precontractual". Saleilles funda la obligación de indemnizar de quien se retira arbitrariamente de las negociaciones en haber creado, con su propia voluntad, una seguridad parcial en la contraparte respecto de la efectiva celebración del contrato; la extensión de esa obligación debe buscarse en los usos y la equidad comerciales. Para Saleilles, quienes se ponen en contacto para concluir un contrato tienen, desde el primer momento, la obligación de obrar conforme a la equidad comercial y a la buena fe, y existe retiro intempestivo de las tratativas cuando una de las partes viola esos usos. En este punto, que no es la culpa, sino la infracción de un estándar objetivo de conducta comercial, la que determina las condiciones y extensión del resarcimiento, Saleilles coincide con Faggella, y ambos se apartan de Ihering.</p>
+
+<p>En cuanto a la extensión de los daños, Saleilles distingue: si no llegó a emitirse la oferta, el resarcimiento se limita a los gastos efectivamente producidos por las tratativas; si la oferta fue emitida y el oferente se comprometió a mantenerla dentro de un plazo, revocándola antes de su vencimiento, Saleilles admite en ciertos casos que el aceptante pueda exigir el cumplimiento efectivo de la prestación.</p>
+
+<h2>2.5. La síntesis de la doctrina moderna: tres requisitos comunes</h2>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: Ihering, Faggella y Saleilles en un cuadro</span>
+  <table>
+    <thead><tr><th>Autor</th><th>Momento en que puede nacer</th><th>Fundamento</th><th>Daño resarcible</th></tr></thead>
+    <tbody>
+      <tr><td>Ihering (1860)</td><td>Solo desde la oferta</td><td>Culpa contractual (culpa in contrahendo)</td><td>Interés negativo, sin distinguir con claridad si incluye lucro cesante</td></tr>
+      <tr><td>Faggella (1906)</td><td>Desde los tratos previos (antes de la oferta)</td><td>Transgresión del acuerdo tácito de negociar, sin necesidad de dolo ni culpa</td><td>Solo gastos reales (daño emergente); nunca lucro cesante</td></tr>
+      <tr><td>Saleilles (1907)</td><td>Desde los tratos previos</td><td>Infracción a los usos y la equidad comercial (estándar objetivo)</td><td>Gastos si no hubo oferta; cumplimiento posible si hubo oferta con plazo revocada antes de tiempo</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>De la convergencia entre Ihering, Faggella y Saleilles (pese a sus diferencias de fundamento) la doctrina moderna extrae tres requisitos comunes para que exista responsabilidad precontractual: que haya existido un acuerdo de entablar negociaciones con miras a la celebración de un contrato; que el retiro de las negociaciones por una de las partes sea arbitrario, es decir, que carezca de fundamento jurídico; y que ese retiro haya causado perjuicio a la otra parte. Estos tres requisitos, formulados aquí en su versión más general, reaparecerán, con matices propios de cada autor, en el Eje 7, dedicado específicamente a los requisitos de la responsabilidad precontractual en el derecho chileno.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">Los tres requisitos comunes que sobreviven hasta el Eje 7</span>
+  <p>(1) Acuerdo de entablar negociaciones con miras a un contrato. (2) Retiro arbitrario, es decir, sin fundamento jurídico. (3) Perjuicio causado por ese retiro. Es la primera formulación, la más general, de un catálogo que Saavedra y Celis desarrollarán con mucho más detalle en el Eje 7, y que el propio tribunal aplicó en el caso Lavín con Mena.</p>
+</div>
+
+<h2>2.6. Análisis de la tensión: culpa, ruptura del acuerdo y equidad comercial</h2>
+
+<p>La tensión de este eje no es meramente cronológica (quién vino antes o después), sino conceptual, y conviene formularla con precisión porque es la que después reaparece, transformada, en el debate sobre la naturaleza jurídica de la responsabilidad precontractual (Eje 5).</p>
+
+<p>Ihering necesita anclar su doctrina en la culpa contractual porque, en el marco del derecho romano del que parte, no dispone de otra vía dogmática: ni la actio de dolo ni la actio legis Aquiliae le sirven, y por eso fuerza la calificación contractual pese a que el contrato, en los casos que examina, ha nacido nulo.</p>
+
+<p>Faggella, liberado de esa restricción histórica y escribiendo casi cincuenta años después, puede permitirse abandonar la culpa como fundamento y construir una responsabilidad de naturaleza distinta, apoyada en la sola transgresión de un acuerdo de negociar, sin necesidad de reproche subjetivo alguno: para él basta la arbitrariedad objetiva del retiro.</p>
+
+<p>Saleilles, por su parte, no abandona del todo la idea de una conducta reprochable, pero la objetiva en un estándar externo (los usos y la equidad comerciales) que se aleja tanto de la culpa subjetiva de Ihering como de la pura transgresión contractual de Faggella.</p>
+
+<p>La consecuencia práctica de esta tensión es considerable: quien construye la responsabilidad precontractual sobre la culpa (Ihering) exige indagar el reproche subjetivo del negociante; quien la construye sobre la transgresión del acuerdo de negociar (Faggella) prescinde de ese reproche y atiende solo a la arbitrariedad objetiva de la ruptura; y quien la construye sobre la equidad comercial (Saleilles) sitúa el estándar de conducta en un punto intermedio, externo a la voluntad del negociante pero todavía referido a un parámetro de corrección en el actuar. Esta misma tensión, culpa subjetiva versus estándar objetivo de buena fe, es la que atravesará, con nombres distintos, casi todo el resto de este material.</p>
+
+<h2>2.7. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir exponiendo la doctrina tradicional y sus tres fases (hechos sociales, oferta, promesa), con su regla de irresponsabilidad hasta la oferta y el dato histórico de que Bello codificó bajo esa premisa.</p>
+
+<p>Enseguida, presentar a Ihering como el punto de quiebre: su obra de 1860, la culpa in contrahendo, los siete postulados que resume Boffi, el ejemplo de las libras y los quintales, su fundamento romano y su encuadre contractual, y las dos críticas que recibió.</p>
+
+<p>A continuación, Faggella: su periodización en dos períodos y cuatro momentos, su desplazamiento del fundamento desde la culpa hacia la transgresión del acuerdo de negociar, y su tesis restrictiva sobre el daño (solo gastos reales, no lucro cesante).</p>
+
+<p>Luego, Saleilles: la acuñación de la expresión "responsabilidad precontractual", su estándar de la equidad comercial, y su coincidencia parcial con Faggella en desplazar la culpa.</p>
+
+<p>Cerrar con los tres requisitos comunes que la doctrina moderna extrae de esta evolución (acuerdo de negociar, retiro arbitrario, perjuicio causado) y con la tensión de fondo: culpa subjetiva, transgresión objetiva del acuerdo de negociar, o estándar externo de equidad comercial, tres formas distintas de resolver la misma pregunta sobre qué conducta, exactamente, compromete la responsabilidad de quien negocia.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 2: Evolución doctrinaria: de la doctrina tradicional a la doctrina moderna</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 3: LAS ETAPAS DEL PROCESO DE FORMACIÓN DEL CONTRATO Y EL ESTATUTO DE RESPONSABILIDAD APLICABLE EN CADA UNA
+     ============================================================ -->
+
+<h1 id="eje3">Eje 3. Las etapas del proceso de formación del contrato y el estatuto de responsabilidad aplicable en cada una</h1>
+
+<p>Superada la doctrina tradicional que solo reconocía relevancia jurídica a la oferta y a la promesa, la doctrina moderna reconstruye el proceso de formación del contrato como un itinerario de varias etapas sucesivas, cada una de las cuales presenta un régimen de responsabilidad propio. Estas etapas son los tratos negociales previos o negociaciones preliminares, la oferta, el cierre de negocio, el contrato preparatorio y el contrato definitivo. La utilidad práctica de esta periodización es considerable: no basta con afirmar en abstracto que existe responsabilidad precontractual, sino que es necesario determinar en qué tramo del itinerario se produjo el daño, porque de ello depende el estatuto aplicable: contractual, extracontractual o legal.</p>
+
+<p>Estas etapas carecen de relevancia en los contratos instantáneos, que se perfeccionan en un solo acto; cobran importancia, en cambio, en los contratos de formación progresiva, que no deben confundirse con los contratos de ejecución progresiva: en estos últimos lo que se prolonga en el tiempo es el cumplimiento del contrato ya nacido, mientras que en los primeros lo que se prolonga es el tiempo requerido para que el contrato llegue a nacer.</p>
+
+<div class="warn">
+  <span class="titulo-bloque">Advertencia: no confundir formación progresiva con ejecución progresiva</span>
+  <p>Contrato de <strong>formación</strong> progresiva: lo que se prolonga es el camino hacia que el contrato nazca (tratos, oferta, cierre de negocio, etc.). Contrato de <strong>ejecución</strong> progresiva: el contrato ya nació, y lo que se prolonga es su cumplimiento (arriendo, suministro). Son ejes temporales distintos; el segundo no tiene nada que ver con la responsabilidad precontractual.</p>
+</div>
+
+<h2>3.1. Los tratos negociales previos o negociaciones preliminares</h2>
+
+<p>Rosende define esta etapa como el período en que las partes desarrollan una multiplicidad de conductas tendientes a conocer sus puntos de vista respecto de un negocio que se proyecta, sin que por ello se entiendan quedar obligadas. Saavedra la describe, en términos convergentes, como las propuestas a negociar que anteceden a un contrato, por medio de las cuales los interesados, sin obligarse aún, se comunican recíprocamente su intención de convenir un negocio jurídico y analizan cuál podría ser su contenido, apreciando la conveniencia de formalizarlo. Los tratos suelen iniciarse en el instante en que las partes se ponen en contacto por primera vez, con miras a conversar sobre las condiciones de un negocio futuro; para que se pueda hablar propiamente de tratos, ese contacto no debe haberse producido en virtud de una oferta, porque en esta etapa las partes no persiguen crear obligaciones, sino discutir puntos relativos al contrato cuya celebración se pretende, con el fin inmediato de elaborar una oferta.</p>
+
+<p>En cuanto a su término, la duración de los tratos depende de las circunstancias, y corresponde al juez, en cada caso, ponderar cuándo ha existido realmente ruptura de las tratativas. Con todo, es posible identificar casos típicos de terminación: cuando se materializa la intención que tenían las partes al iniciar los tratos, esto es, cuando se formula la oferta; con mayor razón, cuando se celebra el contrato; cuando una de las partes decide desistirse unilateralmente; y cuando ambas partes, de común acuerdo, estiman conveniente poner término a las conversaciones.</p>
+
+<p>Sobre la naturaleza jurídica de los tratos, la doctrina se divide. Quienes permanecen fieles a la doctrina clásica los califican de meros hechos sociales, sin trascendencia jurídica alguna. La doctrina moderna, mayoritaria, les reconoce en cambio una naturaleza jurídica, aunque discrepa sobre su calificación precisa: algunos hablan de convenciones preliminares, otros los incluyen dentro del concepto genérico de negocios jurídicos preparatorios.</p>
+
+<p>Rosende objeta ambas calificaciones, porque tanto la convención como el negocio jurídico preparatorio entrañan la intención de obligarse, elemento ausente en el período de las tratativas; para él, los actos ejecutados en esta fase son hechos jurídicos: actuaciones voluntarias que no persiguen efectos jurídicos inmediatos, pero cuyo objetivo final se sitúa en la esfera obligatoria y que, en determinadas circunstancias, pueden engendrar obligaciones.</p>
+
+<p>Saavedra, por su parte, subraya que se trata de una relación jurídica especial orientada al perfeccionamiento de un contrato futuro: aunque todavía no exista una relación obligatoria propiamente tal, el solo hecho de ponerse socialmente en contacto crea para ambas partes un deber recíproco de lealtad y de probidad prenegocial, que impone deberes no solo negativos (abstenerse de dañar) sino también positivos, como el de revelar la realidad de las cosas relevantes para el negocio.</p>
+
+<p>Dentro de esta etapa, según su grado de desarrollo, se distinguen a su vez dos momentos: el de las negociaciones propiamente tales, que comprende todo el período anterior a la oferta, en el que las partes discuten e intercambian puntos de vista sin intención de obligarse; y el de la puntualización, una etapa más avanzada en la que las partes dejan constancia, en una minuta o borrador, de los puntos esenciales en los que están de acuerdo, aunque subsistan diferencias en otros aspectos.</p>
+
+<p>El valor jurídico de la puntualización ha sido discutido: mientras el derecho alemán le reconoce eficacia obligatoria en lo relativo a los elementos esenciales acordados, en el derecho chileno la regla es negarle ese valor, porque mal podría ser obligatorio un acuerdo esencialmente precario, sobre todo si se considera que las partes se obligan realmente recién a partir de la oferta.</p>
+
+<p>Así lo confirma la Corte Suprema, en un fallo de 1937, al fallar que una escritura con espacios en blanco que dan testimonio de que no ha habido acuerdo sobre lo que debe estamparse en ellos importa un proyecto de contrato, un contrato en elaboración no redondeado ni concluido en todos sus detalles, que exige para su perfeccionamiento el acuerdo unánime de todos los otorgantes.</p>
+
+<p>Rosende matiza esta regla general: no puede cerrarse completamente la puerta a la trascendencia jurídica de la puntualización, porque es posible que las partes hayan estimado que el contrato se formó ya con ella, si contiene todo lo auténticamente sustancial para el fin propuesto y solo deja al margen aspectos complementarios; así pareció entenderlo la propia Corte Suprema en un fallo de 23 de noviembre de 1970, que reconoció la existencia de un contrato válido ante una escritura pública firmada por las partes que contenía carillas en blanco destinadas a insertar comprobantes de impuestos, contribuciones y de pavimentación.</p>
+
+<p>En cuanto al fundamento de la responsabilidad que puede originarse durante los tratos, es necesario distinguir según si existía o no una convención previa que regulara las tratativas mismas (por ejemplo, un acuerdo sobre los canales de comunicación, el formato de los documentos o los plazos de respuesta). Si existía tal convención, la responsabilidad por su infracción será contractual; si no existía, deberá aplicarse la responsabilidad extracontractual, cuestión que se retomará con mayor detalle en el Eje 5.</p>
+
+<p>Finalmente, Saavedra destaca la importancia práctica de esta etapa por cuatro razones: permite a las partes formarse, con mayor y mejor información, un juicio adecuado sobre la conveniencia de contratar; les permite explorar tranquilamente las mejores condiciones, buscando los acuerdos mínimos que permitan alcanzar el futuro contrato; las protege, según el criterio hoy imperante, mediante el régimen de responsabilidad precontractual; y el intercambio de puntos de vista puede coadyuvar a una mejor interpretación posterior del negocio jurídico efectivamente celebrado, en conexión con el artículo <span class="art">1560</span> del Código Civil, que privilegia la intención de los contratantes por sobre lo literal de las palabras empleadas, e incluso con la segunda hipótesis del artículo <span class="art">1566</span> del mismo Código, sobre interpretación contra el redactor de cláusulas ambiguas.</p>
+
+<h2>3.2. La oferta</h2>
+
+<p>Al emitirse la oferta se produce un cambio fundamental en la naturaleza de las relaciones entre las partes y una ampliación del círculo de intereses jurídicamente protegidos. Mientras las negociaciones preliminares se traducen en hechos jurídicos sin fuerza obligatoria, la oferta constituye ya un acto jurídico unilateral, con el que se inicia la etapa vinculatoria de la gestación del contrato; y los intereses protegidos ya no se limitan al respeto del patrimonio ajeno, sino que se extienden al interés de seguridad en la conclusión del contrato e incluso al interés de cumplimiento de la prestación contractual proyectada.</p>
+
+<p>En cuanto al fundamento de la responsabilidad que puede surgir en esta etapa, la materia se encuentra resuelta en el derecho chileno por los artículos <span class="art">98</span> y <span class="art">100</span> del Código de Comercio. Conforme al artículo <span class="art">98</span>, puede nacer responsabilidad indemnizatoria para el oferente que omitió avisar oportunamente de su revocación al destinatario, si este aceptó extemporáneamente por esa omisión; aquí corresponde aplicar las reglas de la responsabilidad extracontractual, porque no existe vínculo preexistente entre las partes desde el momento en que el oferente se retractó de su propuesta.</p>
+
+<p>Conforme al artículo <span class="art">100</span>, se consagra la responsabilidad de quien se retracta tempestivamente de su oferta (esto es, dentro del plazo en que aún podía hacerlo), cuando el destinatario incurrió en gastos o sufrió perjuicios con ocasión de la oferta; aquí se está, más bien, ante un caso de responsabilidad legal, porque la obligación no nace de la voluntad del oferente, sino que la impone directamente la ley.</p>
+
+<h2>3.3. El cierre de negocio</h2>
+
+<p>Esta figura suele presentarse en contratos que, además del consentimiento, requieren la realización de formalidades adicionales: constituye una etapa intermedia entre la aceptación de la oferta y la conclusión del contrato, en la que las partes suscriben, típicamente ante un corredor de propiedades, un compromiso de suscribir en el futuro la escritura de promesa o de compraventa definitiva, dentro de cierto plazo. Puelma lo define como una estipulación en que las partes se obligan a pagarse recíprocamente una cantidad de dinero si el negocio no se realiza en el plazo convenido y una de ellas está dispuesta a realizarlo.</p>
+
+<p>Abeliuk subraya que el establecimiento de una multa para el caso de que una de las partes no celebre el negocio es elemento esencial para caracterizar el cierre de negocio, y que la suma correspondiente (o los documentos que la representan) debe depositarse en manos de un tercero, típicamente el corredor, para que este la entregue a quien corresponda según se cumpla o no el compromiso; también habría cierre de negocio si las partes simplemente pactaron que una de ellas pagaría a la otra cierta suma si la primera se niega a celebrar el contrato definitivo estando la otra dispuesta a celebrarlo.</p>
+
+<p>Este es un punto que conviene distinguir con cuidado: si una de las partes entrega directamente a la otra una suma en garantía de la celebración o ejecución del contrato, sin la intermediación de un tercero depositario, se está ante arras, no ante un cierre de negocio propiamente tal.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">Distinción fundamental: cierre de negocio vs. arras</span>
+  <p><strong>Cierre de negocio:</strong> la suma queda en poder de un tercero depositario (típicamente el corredor), que la entrega a quien corresponda según se cumpla o no el compromiso. <strong>Arras:</strong> la entrega es directa entre las partes, sin intermediario. El elemento que decide la calificación no es el monto ni el momento, sino la presencia o ausencia de ese tercero depositario.</p>
+</div>
+
+<p>Sobre el fundamento de la responsabilidad que genera su incumplimiento, la doctrina discrepa. Rosende sostiene que habría aquí una responsabilidad cuasicontractual (un hecho voluntario no convencional que produce obligaciones), que se regiría por las reglas de la responsabilidad contractual.</p>
+
+<p>Corral disiente: no parece sencillo visualizar un verdadero cuasicontrato, señala, cuando existe de por medio una convención (la oferta aceptada); por ello, su incumplimiento originará responsabilidad contractual, pero solo si el cierre de negocio es reconocido como válido y eficaz en cuanto convención innominada; si no fuere así, la responsabilidad por la ruptura del cierre de negocio sería extracontractual, por violación del principio general de la buena fe.</p>
+
+<p>Puelma y Abeliuk, por su parte, entienden que se trata derechamente de un contrato innominado, consensual, bilateral y oneroso, perfectamente válido en virtud del principio de la autonomía de la voluntad y consagrado, además, por la costumbre mercantil, que suple el silencio de la ley conforme al artículo <span class="art">4</span>º del Código de Comercio.</p>
+
+<h2>3.4. El contrato preparatorio</h2>
+
+<p>Es aquel mediante el cual las partes estipulan que en el futuro celebrarán otro contrato, que por ahora no pueden concluir o cuya factibilidad es todavía dudosa. Fueyo lo describe como una vinculación nacida de contrato, cuya eficacia, en el querer de las partes, es solo preliminar o previa, porque lo que se intenta es una relación futura y definitiva, ordinariamente entre las mismas partes concertantes: mediante el contrato preparatorio, quienes no pueden obtener de inmediato el resultado económico que esperan quedan jurídicamente vinculados y pueden, mientras tanto, resolver las dificultades legales o financieras pendientes, hasta que, subsanadas estas, puedan celebrar el contrato definitivo.</p>
+
+<p>La doctrina clasifica los contratos preparatorios en generales (entre los que destacan el contrato de promesa del artículo <span class="art">1554</span>, el contrato de opción, el contrato de corretaje o mediación, y el llamado contrato de negociación, destinado precisamente a regular los tratos negociales previos) y especiales (como la cláusula compromisoria, el pacto de preferencia, la compraventa con pacto de retroventa, el contrato de apertura de crédito, o el contrato de suscripción de acciones de una sociedad anónima en formación).</p>
+
+<p>En cuanto al fundamento de la responsabilidad, la regla aquí es simple y no admite mayor discusión: si ya se acordó el contrato preparatorio, la responsabilidad que origine su incumplimiento será contractual, como ocurre con el incumplimiento de un contrato de promesa.</p>
+
+<h2>3.5. El contrato definitivo</h2>
+
+<p>Es aquel que se celebra en cumplimiento de la obligación de hacer generada por el contrato preparatorio: suscribir, dentro de un plazo o al cumplirse una condición, el contrato definitivamente proyectado. Llegados a este punto, el proceso de formación ha concluido, y los incumplimientos que puedan producirse se resuelven íntegramente conforme a las normas de la responsabilidad contractual por infracción del contrato ya perfeccionado, quedando fuera, por definición, del ámbito de la responsabilidad precontractual que ocupa este material.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: las cinco etapas y su estatuto de responsabilidad</span>
+  <table>
+    <thead><tr><th>Etapa</th><th>Estatuto aplicable</th><th>Fundamento</th></tr></thead>
+    <tbody>
+      <tr><td>Tratos negociales previos</td><td>Extracontractual (salvo convención que regule las tratativas)</td><td>No hay vínculo jurídico entre las partes</td></tr>
+      <tr><td>Oferta</td><td>Extracontractual (retractación intempestiva no avisada) o legal (retractación tempestiva con daño)</td><td>Arts. <span class="art">98</span> y <span class="art">100</span> C. de Comercio</td></tr>
+      <tr><td>Cierre de negocio</td><td>Discutido: cuasicontractual (Rosende), contractual condicionado/extracontractual (Corral), contrato innominado (Puelma/Abeliuk)</td><td>No hay acuerdo doctrinario sobre si existe convención</td></tr>
+      <tr><td>Contrato preparatorio</td><td>Contractual, sin discusión</td><td>Ya existe un contrato válidamente celebrado (ej. promesa, art. <span class="art">1554</span>)</td></tr>
+      <tr><td>Contrato definitivo</td><td>Contractual, fuera del ámbito precontractual</td><td>El proceso de formación ya concluyó</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>3.6. Análisis de la tensión: un itinerario de vinculación creciente y de estatutos cambiantes</h2>
+
+<p>La tensión que atraviesa este eje no es una disputa entre autores, sino una dificultad estructural del propio itinerario que se describe: a medida que las partes avanzan por las cinco etapas examinadas, el grado de vinculación jurídica entre ellas crece de manera continua, pero el estatuto de responsabilidad aplicable no crece con la misma continuidad, sino que salta de un régimen a otro en puntos que la propia doctrina discute.</p>
+
+<p>En los tratos negociales previos, el estatuto por defecto es extracontractual, salvo que exista una convención que regule las tratativas mismas. En la oferta, el legislador mercantil chileno zanjó la cuestión con dos soluciones distintas para dos supuestos distintos: extracontractual para la retractación intempestiva no avisada, y legal para la retractación tempestiva que de todos modos causa gastos o perjuicios (una dualidad que, bien mirada, es elocuente: el legislador no encontró una única calificación satisfactoria ni siquiera para una sola etapa del proceso).</p>
+
+<p>En el cierre de negocio, la discusión entre Rosende (cuasicontractual), Corral (contractual condicionado, o extracontractual en subsidio) y Puelma-Abeliuk (contrato innominado) muestra que ni siquiera hay acuerdo sobre si existe o no, propiamente, una convención. Solo a partir del contrato preparatorio la calificación contractual se impone sin discusión, porque ya existe, sin discusión posible, un contrato válidamente celebrado.</p>
+
+<p>La lección que debe extraerse de este itinerario, y que conviene formular expresamente en el examen, es que no existe una "naturaleza jurídica" única de la responsabilidad precontractual aplicable indistintamente a todo el período: la pregunta correcta no es "¿qué estatuto rige la responsabilidad precontractual?", sino "¿en qué etapa exacta del itinerario se produjo el daño, y existía ya, en ese punto, algún vínculo convencional entre las partes?". Esta reformulación de la pregunta, de la etapa abstracta a la etapa concreta, es la que permite ordenar, sin contradicción, las respuestas aparentemente dispersas que la doctrina ofrece.</p>
+
+<h2>3.7. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir explicando por qué la periodización importa: los contratos de formación progresiva (a diferencia de los instantáneos) recorren un itinerario de cinco etapas, y el estatuto de responsabilidad cambia según el tramo en que se produce el daño.</p>
+
+<p>Desarrollar cada etapa con su fundamento de responsabilidad: los tratos negociales previos (concepto de Rosende y Saavedra, momentos de las negociaciones propiamente tales y de la puntualización, discusión sobre su naturaleza jurídica: hecho jurídico para Rosende, relación jurídica especial para Saavedra, y la regla de que el fundamento de la responsabilidad depende de si hubo o no convención reguladora de las tratativas); la oferta (cambio de naturaleza jurídica de la relación, artículos <span class="art">98</span> y <span class="art">100</span> del Código de Comercio, con su doble calificación: extracontractual para la retractación intempestiva no avisada, legal para la tempestiva que causa perjuicio); el cierre de negocio (concepto de Puelma, elemento de la multa según Abeliuk, distinción con las arras, y la tríada de posiciones sobre su fundamento: cuasicontractual de Rosende, contractual condicionado o extracontractual de Corral, contrato innominado de Puelma y Abeliuk); el contrato preparatorio (concepto de Fueyo, clasificación en generales y especiales, responsabilidad siempre contractual); y el contrato definitivo (fuera ya del ámbito precontractual, responsabilidad contractual sin discusión).</p>
+
+<p>Cerrar con la tensión de fondo: la responsabilidad precontractual no tiene una naturaleza jurídica única, sino que esta depende de la etapa exacta en que se produce el daño y de la existencia o no de vínculo convencional en ese punto preciso del itinerario.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 3: Las etapas del proceso de formación del contrato y el estatuto de responsabilidad aplicable en cada una</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 4: EL INTERÉS JURÍDICAMENTE PROTEGIDO Y EL FUNDAMENTO DE LA BUENA FE
+     ============================================================ -->
+
+<h1 id="eje4">Eje 4. El interés jurídicamente protegido y el fundamento de la buena fe</h1>
+
+<p>Si la responsabilidad precontractual protege a quien negocia frente a la conducta desleal de su contraparte, es necesario precisar con exactitud qué es lo que el ordenamiento protege: no puede tratarse del interés en que el contrato efectivamente se celebre, porque durante toda la etapa de las tratativas (y aun después de formulada la oferta) las partes conservan la libertad de no contratar, libertad que es presupuesto mismo de la autonomía privada. El objeto de protección debe ser, entonces, otra cosa: la manera correcta y leal de participar en un proceso de negociación cuyo resultado, en sí mismo, permanece siempre incierto y disponible para ambas partes. Este eje examina en qué consiste exactamente ese interés protegido, y por qué la doctrina converge, casi unánimemente, en identificar su fundamento último con el principio de la buena fe.</p>
+
+<h2>4.1. El interés jurídicamente protegido</h2>
+
+<p>Saavedra formula con precisión el objeto de la protección: el interés jurídicamente protegido está referido al daño sufrido por el partícipe damnificado por haber sido envuelto en negociaciones inútiles, a raíz del retiro intempestivo y arbitrario del otro partícipe, o por el ocultamiento de situaciones que resulten ser, posteriormente, causa de nulidad del contrato resultante.</p>
+
+<p>Nótese que esta formulación cubre dos hipótesis distintas, que conviene no confundir: por un lado, el daño derivado de haber invertido tiempo, esfuerzo y recursos en una negociación que la otra parte abandona sin razón atendible; por otro, el daño derivado de haber contratado válidamente en apariencia, cuando en realidad existía un vicio (conocido o que debió ser conocido por la contraparte) que terminará por acarrear la nulidad del contrato resultante. La primera hipótesis es el núcleo de la responsabilidad precontractual en sentido estricto, examinada en los ejes anteriores; la segunda conecta con la responsabilidad por la nulidad del contrato, que se desarrollará en el Eje 8.</p>
+
+<p>Lo que en ambos casos se protege, entonces, no es el interés en la celebración del contrato, sino el interés en participar de forma correcta y leal en el proceso que conduce a esa eventual celebración. Y ese interés (correspondencia y lealtad en el trato) es, precisamente, lo que la doctrina identifica con la exigencia de buena fe.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">Distinción fundamental: qué protege la responsabilidad precontractual</span>
+  <p>NO protege el interés en que el contrato se celebre (las partes siempre son libres de no contratar). SÍ protege el interés en participar correcta y lealmente en el proceso de negociación. Confundir ambos interés es el error más común al plantear un caso: nadie responde por negarse a contratar, se responde por la forma en que se condujo mientras negociaba.</p>
+</div>
+
+<h2>4.2. La buena fe como fundamento común</h2>
+
+<p>De los Mozos, citando a Castán Tobeñas, formula la idea matriz que preside todo este eje: en la base misma de la formación de todo contrato existe ya, para las partes, un deber de lealtad recíproca y buena fe. Por regla general, la ruptura de los tratos no acarreará ninguna responsabilidad; pero si, llegadas las conversaciones a un punto en que podía razonablemente esperarse la conclusión del contrato, una de las partes se retracta sin motivo justificado, queda obligada a responder ante la otra, por su proceder arbitrario, de los gastos realizados y de las pérdidas patrimoniales sufridas.</p>
+
+<p>Ante el silencio de la ley civil sobre esta materia (silencio que, como se vio en el Eje 1, es la regla también en el derecho chileno), cabe aplicar directamente el principio de la buena fe, por ser este uno de los pilares no solo del derecho de obligaciones, sino de todo el ordenamiento jurídico, y por obligar a las partes a no faltar a él ni contradecirlo durante los tratos previos a la perfección del contrato.</p>
+
+<p>Esta idea reaparece, formulada en términos casi idénticos, en el estado actual de la jurisprudencia chilena. En el caso Lavín con Mena, resuelto por el Segundo Juzgado de Letras de Curicó el 11 de marzo de 2024 (rol C-1461-2022), caso que se desarrollará con mayor detalle en el Eje 7, dedicado a los requisitos de la responsabilidad precontractual, el tribunal, apoyándose en el civilista Enrique Barros Bourie, precisó que aun antes de que exista oferta propiamente tal ya nacen obligaciones emanadas del principio de la buena fe contractual, entre ellas la de negociar de forma leal, correcta y honesta, en atención a las legítimas expectativas de las partes que se reúnen libremente a explorar un negocio.</p>
+
+<p>Citando al profesor Puig Brutau, el fallo recuerda que los contratos no se celebran, salvo en la contratación sometida a fórmulas estandarizadas, con la brevedad de un automatismo impersonal, sino que son el resultado final de una negociación entre las partes, razón por la cual la fase de tratos preliminares reviste una importancia considerable que el derecho no puede ignorar.</p>
+
+<h2>4.3. El catálogo de conductas conformes a la buena fe</h2>
+
+<p>Saavedra ofrece, a modo ejemplar, un catálogo de conductas que no infringen (o que, en sentido positivo, satisfacen) el estándar de buena fe durante la negociación.</p>
+
+<p>Conviene retenerlo porque funciona, en la práctica, como una guía concreta para calificar la conducta de las partes en un caso dado: participar en las negociaciones estando debidamente facultado para ello, cuando se actúa a nombre y en representación de otro; no inducir a la contraparte a contratar mediante informaciones falsas, erróneas, simuladas o incompletas; respetar, para la seguridad de las negociaciones, los acuerdos de confidencialidad adoptados y custodiar diligentemente los documentos entregados; no haber ocultado hechos que pudieran acarrear después la nulidad o la ineficacia de lo acordado; no prolongar deliberadamente las negociaciones para luego contratar con un tercero; no realizar actos disfuncionales que entorpezcan o encarezcan inútilmente las negociaciones; no sustraerse o retirarse arbitraria o injustificadamente de las negociaciones; y no revocar propuestas respecto de las cuales se había prometido que no serían retiradas.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: el catálogo de conductas de buena fe (Saavedra)</span>
+  <p>Deberes <strong>negativos</strong> (no dañar): no inducir con información falsa o incompleta; no ocultar hechos que causen después la nulidad; no retirarse arbitraria o injustificadamente; no revocar propuestas cuya mantención se prometió. Deberes <strong>positivos</strong> (actuar): estar debidamente facultado para negociar en representación de otro; respetar los acuerdos de confidencialidad y custodiar los documentos; no prolongar deliberadamente las negociaciones para contratar con un tercero.</p>
+</div>
+
+<p>Este catálogo cumple una función doble. Por un lado, ilustra en positivo el contenido del deber de buena fe negocial, que de otro modo permanecería como una cláusula abierta de difícil aplicación práctica. Por otro lado (y esto es lo que le da su verdadero valor dogmático) permite advertir que la buena fe negocial no se agota en un deber negativo de no dañar, sino que comprende también deberes positivos: informar, custodiar, no ocultar. Esta doble dimensión, negativa y positiva, es la misma que Saavedra ya había anticipado al describir la naturaleza jurídica de los tratos negociales previos en el Eje 3: el contacto social que se produce al iniciar una negociación genera, para ambas partes, deberes de lealtad y de probidad prenegocial que exceden la mera abstención de dañar.</p>
+
+<h2>4.4. Análisis de la tensión: buena fe como estándar objetivo frente al riesgo de desincentivar la negociación</h2>
+
+<p>La tensión de este eje es de política jurídica antes que dogmática, y conviene formularla con precisión porque explica por qué la doctrina, pese a converger casi unánimemente en la buena fe como fundamento, insiste tanto en mantener acotado su ámbito de aplicación.</p>
+
+<p>Si el estándar de buena fe se aplicara con excesivo rigor, el riesgo es evidente: nadie estaría dispuesto a negociar si cualquier ruptura, por razonable que fuera, pudiera generar responsabilidad. Por eso la doctrina (ya se vio en el Eje 2, a propósito de Faggella y Saleilles) insiste en que la sola ruptura no basta, y exige siempre un elemento adicional de arbitrariedad, intempestividad o transgresión de una confianza específicamente generada, no de la mera circunstancia de haber negociado.</p>
+
+<p>El catálogo de Saavedra puede leerse, en este sentido, como un intento de precisar ese elemento adicional en términos operativos: no basta con retirarse de una negociación (eso es siempre lícito), sino que es necesario haber generado antes, mediante el propio comportamiento, una confianza razonable en la contraparte, y haber defraudado esa confianza específica, no una expectativa general de que la negociación prosperaría.</p>
+
+<p>La buena fe, en definitiva, no protege el interés en contratar, sino el interés en que la confianza efectivamente generada por la conducta de la contraparte, ni más ni menos, no sea defraudada sin motivo justificado. Esta precisión es la que permite conciliar la libertad de no contratar, que es presupuesto de toda negociación, con la protección que el derecho dispensa a quien negoció de buena fe y fue defraudado.</p>
+
+<h2>4.5. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir precisando qué es lo que la responsabilidad precontractual protege: no el interés en la celebración del contrato (que permanece siempre incierto por la libertad de contratar), sino el interés en participar correcta y lealmente en el proceso de negociación, según la fórmula de Saavedra que distingue el daño por negociaciones inútiles del daño por ocultamiento de causales de nulidad.</p>
+
+<p>Enseguida, exponer la buena fe como fundamento común, apoyándose en De los Mozos y Castán Tobeñas, y su recepción concreta en la jurisprudencia chilena reciente: el caso Lavín con Mena, con la cita de Barros Bourie sobre las obligaciones que nacen del principio de la buena fe contractual incluso antes de la oferta.</p>
+
+<p>Desarrollar el catálogo de conductas de Saavedra, destacando su doble dimensión negativa y positiva.</p>
+
+<p>Cerrar con la tensión de fondo: el riesgo de que un estándar de buena fe demasiado exigente desincentive la negociación misma, y la solución doctrinaria (exigir siempre arbitrariedad o transgresión de una confianza específicamente generada, no la mera ruptura) que permite conciliar la libertad de no contratar con la protección de quien negoció de buena fe.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 4: El interés jurídicamente protegido y el fundamento de la buena fe</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 5: NATURALEZA JURÍDICA DE LA RESPONSABILIDAD PRECONTRACTUAL
+     ============================================================ -->
+
+<h1 id="eje5">Eje 5. Naturaleza jurídica de la responsabilidad precontractual</h1>
+
+<p>Esta es, con diferencia, la pregunta que más ha ocupado a la doctrina, y la primera de las cuatro interrogantes centrales anunciadas en el Eje 1. La discusión gira, esencialmente, en torno a si la responsabilidad precontractual debe fundarse en las reglas de la responsabilidad contractual (habiendo culpa, según algunos, o sin necesidad de que exista culpa, según otros), o si, por el contrario, debe fundarse en las reglas de la responsabilidad extracontractual. Pero junto a estas dos grandes corrientes, otros autores han buscado fundamentos distintos: el abuso del derecho, la declaración unilateral de voluntad, o sencillamente la ley. La importancia práctica de esta discusión no es menor, porque de la calificación que se adopte depende, entre otras cosas, el plazo de prescripción de la acción, la carga de la prueba de la culpa, la transmisibilidad de la acción a los herederos, y, como se examinará en el Eje 6, la extensión misma del daño indemnizable.</p>
+
+<h2>5.1. La tesis contractualista: Ihering</h2>
+
+<p>Ya se examinó en el Eje 2 el fundamento de Ihering: para él, la responsabilidad precontractual (que solo podía nacer a partir de la oferta, nunca durante las meras tratativas) se fundaba en la culpa contractual, porque la diligencia exigible durante el período formativo del contrato era idéntica a la exigible en su ejecución. Esta tesis, según se dijo, ha sido criticada porque de los propios textos romanos en que Ihering se apoyó se desprende más bien una responsabilidad extracontractual (el contrato, en esos casos, había nacido nulo) y porque en los casos de compraventa de cosas fuera del comercio hay dolo, no simple culpa. Con todo, la tesis contractualista no desapareció con Ihering: reaparece, matizada, en la posición de Alessandri para el derecho chileno, que se examina a continuación.</p>
+
+<h2>5.2. La posición de Alessandri: un distingo según el momento</h2>
+
+<p>Alessandri, siguiendo en lo esencial a Ihering, sostiene que la responsabilidad precontractual solo puede surgir bajo el supuesto de haberse formulado ya una oferta, apoyándose para ello en los artículos <span class="art">98</span> y <span class="art">100</span> del Código de Comercio. Su posición, sin embargo, no es puramente contractualista, sino que distingue según el momento. Antes de formularse la oferta, la responsabilidad que pueda generarse ha de regirse por las reglas de la responsabilidad extracontractual, porque las negociaciones preliminares no crean entre las partes ningún vínculo jurídico: "la responsabilidad a que puede dar origen la ruptura de las negociaciones preliminares a un contrato, cuando esta ruptura es susceptible de producir responsabilidad, es extracontractual; tales negociaciones no crean entre las partes ningún vínculo jurídico".</p>
+
+<p>Después de emitida la oferta, en cambio, Alessandri sostiene que cabe regular la responsabilidad por las reglas de la responsabilidad contractual (aunque precisa que no es porque haya nacido un contrato, sino porque la ley establece directamente la responsabilidad, y porque, a su juicio, a las obligaciones nacidas directamente de la ley ha de aplicárseles las normas de la responsabilidad contractual, por ser estas, para Alessandri, las normas de derecho común).</p>
+
+<p>Conviene notar, porque suele pasar inadvertido, que para Alessandri, adscribiendo a una doctrina hoy superada, las negociaciones preliminares ni siquiera formaban parte propiamente de la responsabilidad precontractual, que él reservaba exclusivamente para el tramo posterior a la oferta.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">La posición de Alessandri: un distingo, no una regla única</span>
+  <p><strong>Antes de la oferta:</strong> extracontractual, porque no hay vínculo jurídico. <strong>Después de la oferta:</strong> contractual, pero no porque haya nacido un contrato, sino porque la ley impone directamente la responsabilidad (arts. <span class="art">98</span> y <span class="art">100</span> C. de Comercio) y, para Alessandri, las obligaciones legales se rigen por las normas contractuales, por ser estas el derecho común.</p>
+</div>
+
+<h2>5.3. Otros fundamentos minoritarios: el abuso del derecho, la ley, la declaración unilateral de voluntad</h2>
+
+<p>Antes de examinar la posición extracontractual (hoy mayoritaria), conviene revisar tres fundamentos alternativos que la doctrina ha propuesto, porque cada uno de ellos ilumina un aspecto distinto del problema.</p>
+
+<p>Ripert y Josserand plantean que el fundamento de la responsabilidad precontractual debe entenderse desligado de la idea de culpa, y encontrarse en un acto arbitrario que configura "un abuso del derecho de no contratar". Picasso, que adhiere a esta tesis, explica con precisión por qué la culpa resulta, a su juicio, inadecuada como factor de atribución en esta materia: la culpa presupone ilicitud en la conducta, y por lo tanto resulta incompatible con el ejercicio de una facultad que la ley confiere al propio dañador (la facultad de no contratar).</p>
+
+<p>El abuso del derecho, en cambio, presupone precisamente el ejercicio de un derecho por parte del responsable, aun cuando, por ejercerse en contra de los fines tenidos en cuenta por la ley, o excediendo los límites que imponen la buena fe, la moral o las buenas costumbres, dé lugar de todos modos a la reparación del daño.</p>
+
+<p>En otras palabras, los derechos no se ejercen culpable o inculpablemente, sino en forma regular o antifuncional; y cuando la facultad de apartarse de las tratativas (que en principio corresponde a cualquiera de las partes) se ejerce "injustamente", cabe responsabilizar al agente con base en el abuso del derecho, cuestión que Picasso entiende objetiva y no subjetiva, desde el momento en que puede haber abuso del derecho sin culpa.</p>
+
+<p>Esta doctrina, sin embargo, ha sido cuestionada: se le objeta que no explica adecuadamente el funcionamiento de la responsabilidad durante las tratativas, porque en esa etapa las partes no tienen, la una respecto de la otra, ningún derecho propiamente tal, sino que pesa sobre ambas la obligación de observar una conducta diligente; y tampoco explica satisfactoriamente los casos de responsabilidad que pueden surgir tras la muerte o la incapacidad sobreviniente de uno de los negociantes.</p>
+
+<p>Algunos autores han propuesto, simplemente, la ley como fundamento: se afirma que la responsabilidad del oferente que retira su oferta es un caso de responsabilidad legal, porque su obligación no se funda en realidad en la voluntad de quien efectuó la declaración (pues el derecho se la impone incluso contra esa misma voluntad), sino en que es la ley la que quiere que quien recibe una oferta pueda confiar razonablemente en la conclusión de un contrato sobre esa base, si media aceptación.</p>
+
+<p>Esta tesis ha sido criticada, como ocurre en general con todas las que pretenden dar sustento teórico a una institución apoyándose únicamente en la voluntad de la ley, porque en rigor no otorga fundamento jurídico propio a los casos de responsabilidad precontractual, sino que se limita a describir que la ley así lo dispone, sin explicar por qué.</p>
+
+<p>Otros, finalmente, proponen la declaración unilateral de voluntad, que en ciertos casos puede operar como fuente autónoma de obligaciones. En el derecho chileno, esta tesis encuentra un anclaje textual preciso en el artículo <span class="art">99</span> del Código de Comercio, que regula la llamada "oferta que por sí sola obliga": aquella en que el proponente se compromete a esperar el transcurso de un plazo determinado antes de que el destinatario acepte o rechace, absteniéndose durante ese lapso de negociar con terceros.</p>
+
+<p>Boffi adhiere parcialmente a esta doctrina, sosteniendo que el fundamento de la responsabilidad precontractual es doble: la declaración unilateral de voluntad y la responsabilidad aquiliana, según el caso. Si el oferente se comprometió expresamente a mantener su oferta hasta una fecha determinada y la retira antes, se está ante un caso claro de declaración unilateral de voluntad como fuente de obligaciones, sin que quepa aplicar ni la responsabilidad contractual ni la aquiliana.</p>
+
+<p>Si, en cambio, el oferente no asumió ese compromiso expreso, entonces, según Boffi, se está ante la infracción de la obligación general de no dañar al prójimo, que el derecho chileno consagra en el artículo <span class="art">2314</span> del Código Civil, y el fundamento debe buscarse en la responsabilidad aquiliana. El mismo fundamento aquiliano opera, agrega Boffi, cuando la responsabilidad emana de un acto que resulta nulo (no debe olvidarse que el propio Ihering elaboró su doctrina a partir de casos de contratos nulos comentados por los juristas romanos), invocando para el derecho argentino el artículo <span class="art">1056</span> de su Código Civil, conforme al cual los actos anulados, aunque no produzcan los efectos de los actos jurídicos, producen los efectos de los actos ilícitos, cuyas consecuencias deben repararse.</p>
+
+<p>En el derecho chileno no existe una norma idéntica a esa, pero cabe sostener, por una vía distinta, una conclusión equivalente: conforme al artículo <span class="art">1687</span> del Código Civil, quien obtiene la declaración de nulidad tiene derecho a ser restituido al estado anterior a la celebración del contrato, lo que incluye ser resarcido de todos los perjuicios que el acto frustrado le hubiere provocado; y como la declaración de nulidad implica que, en rigor, nunca hubo contrato, esa responsabilidad no puede ser contractual, sino aquiliana. Esta hipótesis, la responsabilidad conectada con la nulidad del contrato, será retomada con mayor profundidad en el Eje 8, incorporando el aporte adicional de Rodríguez Grez y de Baraona sobre el punto.</p>
+
+<h2>5.4. La tesis extracontractual: posición mayoritaria en Chile</h2>
+
+<p>La posición favorable a fundamentar la responsabilidad precontractual en las reglas de la responsabilidad extracontractual ha sido, en Latinoamérica y particularmente en Chile, la mayoritaria. Sus defensores más representativos (Aubry y Rau en Francia; Santos Briz, José Puig Brutau y De los Mozos en España; Brebbia en Argentina) coinciden en el argumento central: puesto que no hay contrato, pues este no llegó a formarse, es necesario recurrir, para indemnizar el daño, a los criterios propios de la responsabilidad extracontractual.</p>
+
+<p>De los Mozos parte del supuesto de que es necesario acreditar que el afectado sufrió un perjuicio y que ese daño fue consecuencia de la culpa, el dolo o la simple mala fe en que incurrió la contraparte de los tratos preparatorios; en caso contrario, la simple ruptura de los tratos es libre y no genera consecuencia alguna.</p>
+
+<p>Cita a de Cossío, quien resume con particular claridad el argumento de fondo: el hecho de ponerse en contacto dos personas a fin de negociar la conclusión de un contrato establece entre ellas una cierta conexión y crea un estado de recíproca confianza que no debe ser defraudado, pues una y otra se deben un mínimo de lealtad en el trato (descripción que, advierte De los Mozos, es en rigor una descripción de la buena fe, pero de una buena fe que no tiene lugar todavía en el ámbito contractual); y cuando culposa o dolosamente se infieren a otro perjuicios con ocasión de un contrato proyectado, o de la nulidad de uno ya perfecto, surge responsabilidad, que nunca podrá ser de carácter contractual, por la sencilla razón de que ninguna vinculación de tal clase ha podido producirse: se está ante un hecho de culpa extracontractual o aquiliana, derivada del hecho ilícito.</p>
+
+<p>De los Mozos concluye con una crítica directa a las tesis contractualistas, que estima "desprestigiadas y totalmente en retroceso": aun cuando practiquen, dice, un "contractualismo light" que ve en el inicio de los tratos un mero "contacto social" del que derivaría la imposición de un comportamiento correcto, una cosa es que los tratos deban desarrollarse conforme al canon de la buena fe, y otra muy distinta que, por el solo hecho de emprenderlos, se derive algún tipo de obligación propiamente contractual; una construcción de esa naturaleza atenta, en última instancia, contra la libertad contractual (principio sistemático común a la cultura jurídica occidental) y además incurre en una contradicción evidente, porque del contrato no pueden surgir obligaciones si el contrato no ha sido concluido.</p>
+
+<p>Brebbia, por su parte, estima que el fundamento de la responsabilidad precontractual, tratándose de aquella que puede nacer durante las tratativas preliminares, es la culpa extracontractual o aquiliana, y precisa, apartándose tanto de Faggella como de Saleilles, que no es la ruptura intempestiva o arbitraria de las negociaciones, ni la violación de los usos impuestos por la equidad comercial, la fuente de la responsabilidad, sino la actividad culposa de una de las partes intervinientes, retomando así, aunque bajo un encuadre extracontractual, la idea de culpa que Ihering había situado en sede contractual.</p>
+
+<div class="ejemplo">
+  <span class="titulo-bloque">Ejemplo: Buenos Aires y Tucumán (Brebbia)</span>
+  <p>A, en Buenos Aires, pide a B, que vive en Tucumán, que viaje para negociar un convenio. B viaja; al llegar, A ni siquiera lo recibe y le avisa que desistió. A debe responder por los daños de B (viaje, estadía), pero no porque haya puesto fin intempestivo a las negociaciones (eso siempre es lícito), sino porque su conducta, en concreto, fue culposa: invitó, generó el gasto previsible, y luego cerró el negocio sin siquiera dar audiencia.</p>
+</div>
+
+<p>Brebbia ilustra su tesis con un ejemplo que conviene retener: si A, residente en Buenos Aires, pide a B, que vive en Tucumán, que baje a la ciudad primeramente citada para negociar un convenio, y a su llegada, sin siquiera acordarle audiencia, le hace saber que ha desistido de su propósito, A debe responder por los daños causados a B (gastos de viaje, estadía, etc.), no porque puso fin intempestivo a las negociaciones, sino porque actuó de forma culposa.</p>
+
+<p>Brebbia destaca, además, dos diferencias entre la culpa precontractual y la culpa aquiliana ordinaria, que conviene distinguir con precisión porque explican por qué, pese a compartir el mismo encuadre extracontractual, la culpa precontractual no se confunde sin más con la culpa por hechos ilícitos entre extraños: primero, una diferencia en los sujetos intervinientes, porque en la responsabilidad precontractual los sujetos activo y pasivo solo pueden ser las personas relacionadas para la concertación del convenio, mientras que en la culpa aquiliana ordinaria pueden ser personas extrañas sin relación previa alguna; y segundo, una diferencia de grado, porque existe un mayor grado de afinamiento en el concepto de culpa precontractual, atendido el especial deber que tienen las partes, durante las negociaciones, de observar una conducta prudente y leal (sin esa buena fe, advierte Brebbia, el tráfico jurídico sufriría graves entorpecimientos o se paralizaría).</p>
+
+<p>Para ilustrar esta diferencia de grado, Brebbia contrasta dos situaciones aparentemente similares: si A invita a B a conversar sobre un negocio en perspectiva, y en cumplimiento de esa invitación B realiza gastos previsibles para A, este debe responder de esos gastos si, antes de reunirse con B, cierra el mismo negocio con otra persona; pero si A simplemente invita a B a viajar para conversar en general, sin entrar todavía en tratativas de un negocio concreto, A no responde civilmente de los gastos del viaje.</p>
+
+<p>El hecho, en ambos casos, es el mismo (una invitación, un desistimiento posterior), pero solo el primero se encuentra dentro de la órbita de las negociaciones preliminares propiamente dichas, y por eso solo él genera responsabilidad.</p>
+
+<p>En cuanto al período posterior a la oferta, Brebbia sostiene que rige el mismo principio de responsabilidad por culpa, aunque con un estándar de diligencia más exigente, dado el mayor estrechamiento de las relaciones que produce la oferta: el llamado ius revocandi (el derecho del oferente a retractarse) no puede entenderse en el sentido de que no deba responder por los daños ocasionados cuando la revocación fue culposa, sino únicamente en el sentido de que no puede obligársele a ejecutar materialmente la prestación ofrecida.</p>
+
+<p>En Chile, Saavedra resume la doctrina hoy mayoritaria: la responsabilidad precontractual existe, mas no se trata de una responsabilidad contractual, porque todavía no hay contrato formado (salvo que, excepcionalmente, exista una convención entre los partícipes que regule la situación); su fundamento debe buscarse en el principio universal, acogido en casi todas las legislaciones, que obliga a obrar con prudencia y corrección sin dañar a los demás, principio que se sustenta a su vez en la buena fe que obliga a ambos interesados durante todo el iter contractual.</p>
+
+<p>Por el solo hecho de ponerse en relación con el fin de negociar la conclusión de un contrato, sostiene Saavedra, se establece entre las partes una conexión que crea un estado de confianza recíproca que no debe ser defraudado; pero se trata, en todo caso, de una responsabilidad que se desliga por completo del contrato proyectado.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: las cinco tesis sobre naturaleza jurídica</span>
+  <table>
+    <thead><tr><th>Tesis</th><th>Autores</th><th>Punto débil</th></tr></thead>
+    <tbody>
+      <tr><td>Contractual (culpa in contrahendo)</td><td>Ihering, Alessandri (solo tras la oferta)</td><td>No puede haber responsabilidad contractual sin contrato</td></tr>
+      <tr><td>Abuso del derecho</td><td>Ripert, Josserand, Picasso</td><td>Durante las tratativas las partes no tienen aún un derecho propiamente tal que ejercer abusivamente</td></tr>
+      <tr><td>Responsabilidad legal</td><td>(minoritaria, aplicada a arts. <span class="art">99</span>-<span class="art">100</span> C. de Comercio)</td><td>No explica por qué la ley lo impone, solo constata que lo hace</td></tr>
+      <tr><td>Declaración unilateral de voluntad</td><td>Boffi (para la oferta que por sí sola obliga, art. <span class="art">99</span> C. de Comercio)</td><td>Solo cubre el caso puntual del oferente que se comprometió a un plazo</td></tr>
+      <tr><td>Extracontractual (mayoritaria en Chile)</td><td>De los Mozos, Brebbia, Saavedra</td><td>Debe explicar por qué la culpa precontractual no es la misma culpa aquiliana ordinaria entre extraños</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>5.5. Análisis de la tensión: cinco fundamentos para un mismo problema</h2>
+
+<p>La tensión de este eje no admite reducirse a una sola dicotomía, porque son cinco, no dos, los fundamentos que la doctrina ha propuesto: la culpa contractual de Ihering y Alessandri (para el tramo posterior a la oferta); el abuso del derecho de Ripert, Josserand y Picasso; la responsabilidad legal, para quienes ven en la sola voluntad de la ley el fundamento suficiente; la declaración unilateral de voluntad de Boffi, aplicable a la oferta que por sí sola obliga; y la culpa extracontractual, hoy mayoritaria, de De los Mozos, Brebbia y Saavedra. Conviene ordenar esta dispersión aparente identificando qué pregunta responde cada uno de estos fundamentos, porque no todos compiten realmente entre sí.</p>
+
+<p>La tesis contractualista de Ihering responde a la pregunta de por qué debe indemnizarse pese a que el contrato no llegó a nacer, y su respuesta, equiparar la diligencia exigible antes y después del contrato, es plausible como intuición, pero fracasa como construcción dogmática, porque no puede haber responsabilidad contractual sin contrato, y forzar esa calificación termina, como reconocen sus propios críticos, en una contradicción.</p>
+
+<p>El abuso del derecho de Picasso responde a una pregunta distinta (por qué el ejercicio de una facultad lícita, como la de no contratar, puede sin embargo generar responsabilidad), y su mérito es evitar la contradicción de la tesis contractualista sin renunciar a explicar por qué se responde incluso sin culpa subjetiva; pero paga el precio de no explicar bien los casos en que, en rigor, ninguna de las partes tenía todavía un "derecho" que ejercer de forma abusiva sobre la otra.</p>
+
+<p>La responsabilidad legal y la declaración unilateral de voluntad no son, en rigor, teorías generales de la responsabilidad precontractual, sino explicaciones puntuales para hipótesis normativas específicas y acotadas (los artículos <span class="art">99</span> y <span class="art">100</span> del Código de Comercio), y por eso no compiten con las teorías generales, sino que las complementan para esos casos particulares.</p>
+
+<p>La tesis extracontractual, finalmente, es la que mejor explica el mayor número de casos, precisamente porque parte de la premisa correcta (no hay contrato, luego no puede haber responsabilidad contractual) sin caer en la necesidad de inventar una nueva categoría (como el abuso del derecho aplicado a una facultad que, en la etapa de las tratativas, ni siquiera constituye todavía un derecho subjetivo pleno); pero su punto débil, que tanto Brebbia como Saavedra se esfuerzan en resolver, es explicar por qué la culpa precontractual, aunque extracontractual en su encuadre general, no es simplemente la misma culpa aquiliana que rige entre extraños, sino una culpa cualificada por el deber especial de lealtad que nace del solo hecho de negociar.</p>
+
+<p>La respuesta de Brebbia (diferencias de sujetos y de grado) y la de Saavedra (el estado de confianza recíproca que el contacto negocial genera) son, en el fondo, dos formas de decir lo mismo: que la responsabilidad precontractual es extracontractual en su estructura general, pero exige, dentro de esa estructura, un estándar de conducta más exigente que el que rige los encuentros ocasionales entre extraños.</p>
+
+<h2>5.6. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir enunciando las cinco corrientes en juego: contractual, extracontractual, abuso del derecho, responsabilidad legal y declaración unilateral de voluntad.</p>
+
+<p>Desarrollar primero la tesis contractualista de Ihering (ya vista en el Eje 2) y su matización por Alessandri, que distingue según el momento: extracontractual antes de la oferta, contractual-legal después.</p>
+
+<p>Exponer luego los tres fundamentos alternativos: el abuso del derecho de Ripert, Josserand y Picasso, con su crítica de que no explica bien la ausencia de un derecho propiamente dicho durante las tratativas; la responsabilidad legal, criticada por no aportar fundamento propio más allá de remitirse a la voluntad de la ley; y la declaración unilateral de voluntad de Boffi, anclada en el artículo <span class="art">99</span> del Código de Comercio, con su combinación con la responsabilidad aquiliana para los demás casos, incluida la conexión con la nulidad del contrato que se desarrollará en el Eje 8.</p>
+
+<p>Desarrollar in extenso la tesis extracontractual mayoritaria: De los Mozos y su crítica al "contractualismo light"; Brebbia, con su ejemplo de Buenos Aires y Tucumán y sus dos diferencias entre culpa precontractual y culpa aquiliana ordinaria (sujetos y grado); y Saavedra, con la síntesis chilena del estado de confianza recíproca desligado del contrato proyectado.</p>
+
+<p>Cerrar con la tensión de fondo: no son dos, sino cinco los fundamentos propuestos, cada uno respondiendo a una pregunta distinta, y la superioridad explicativa de la tesis extracontractual radica en resolver, mejor que las demás, la pregunta de por qué se indemniza sin necesidad de forzar la existencia de un contrato, un derecho abusado o una voluntad unilateral vinculante, al precio de tener que cualificar la culpa aquiliana ordinaria con un estándar de lealtad reforzado, propio de quienes ya no son enteramente extraños entre sí.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 5: Naturaleza jurídica de la responsabilidad precontractual</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 6: DETERMINACIÓN DE LOS DAÑOS A RESARCIR EN LA RESPONSABILIDAD PRECONTRACTUAL
+     ============================================================ -->
+
+<h1 id="eje6">Eje 6. Determinación de los daños a resarcir en la responsabilidad precontractual</h1>
+
+<p>Establecido que existe responsabilidad precontractual y determinado su fundamento (cuestiones examinadas en los Ejes 2 y 5), resta precisar cuál es exactamente el daño que debe repararse. Esta es la cuarta de las interrogantes centrales anunciadas en el Eje 1, y es también la de mayor rendimiento práctico, porque de su respuesta depende cuánto, en definitiva, debe pagar quien resulta responsable. La discusión se organiza tradicionalmente en torno a la distinción, acuñada por Ihering, entre interés positivo e interés negativo, y a la pregunta de cuál de los dos, o si ambos, resulta indemnizable en sede precontractual.</p>
+
+<h2>6.1. La distinción de Ihering: interés positivo e interés negativo</h2>
+
+<p>Ihering sostenía que debía repararse todo el daño producido cuando el contrato no llega a concluirse por la ruptura intempestiva de las negociaciones (bajo el supuesto, propio de su doctrina, de que ya se hubiera formulado la oferta) o cuando, pese a haberse celebrado el contrato, este es declarado nulo, que era precisamente el supuesto de los casos romanos en que se inspiró. Para Ihering, la reparación podía comprender tanto los perjuicios efectivos sufridos por la parte afectada (los gastos inútiles incurridos durante las tratativas) como la pérdida de posteriores ocasiones de negociar, a causa del contrato no concluido; en otras palabras, tanto el daño emergente como, de haberlo, el lucro cesante.</p>
+
+<p>Lo que debe resarcirse, según su formulación, es el interés negativo o de confianza: todo el daño sufrido por quien confió en que el contrato se celebraría, o en que sería válido. Este concepto se distingue nítidamente del interés positivo o de cumplimiento, que Ihering reserva para el daño causado por la inejecución de un contrato efectivamente celebrado y válido (esto es, para el incumplimiento contractual ordinario, ajeno a la materia de este manual).</p>
+
+<p>Puede entenderse, en términos aproximados, que el interés positivo se vincula con el lucro cesante propio del cumplimiento esperado, mientras que el interés negativo se vincula con el daño emergente derivado de haber confiado en vano; pero conviene no forzar demasiado esta equivalencia, porque el propio Ihering, según reconoce la doctrina que lo ha estudiado, no fue del todo claro sobre si su interés negativo comprendía únicamente el daño emergente o también el lucro cesante derivado de las ocasiones perdidas. Para la mayoría de sus intérpretes, el interés negativo de Ihering abarca ambas partidas; para algunos autores, en cambio, se limita al daño emergente.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: Cuadro comparativo: interés positivo vs. interés negativo</span>
+  <table>
+    <thead><tr><th>Aspecto</th><th>Interés positivo (de cumplimiento)</th><th>Interés negativo (de confianza)</th></tr></thead>
+    <tbody>
+      <tr><td>Qué repara</td><td>Lo que se habría obtenido si el contrato se hubiera cumplido</td><td>El daño de haber confiado en la celebración o validez del contrato</td></tr>
+      <tr><td>Presupone</td><td>Un contrato válido y efectivamente incumplido</td><td>Un contrato que nunca nació o que nació nulo</td></tr>
+      <tr><td>Ámbito</td><td>Incumplimiento contractual ordinario (ajeno a este manual)</td><td>Responsabilidad precontractual propiamente tal</td></tr>
+      <tr><td>Partidas típicas</td><td>Lucro cesante del negocio frustrado</td><td>Daño emergente (gastos); lucro cesante solo tras la oferta, según Brebbia</td></tr>
+      <tr><td>Posición dominante en Chile</td><td>No aplica en sede precontractual</td><td>Restrictiva: solo daño emergente (León Hurtado, Rosende)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>6.2. La posición restrictiva: Faggella, Saleilles y la doctrina chilena tradicional</h2>
+
+<p>Faggella es considerablemente más restrictivo que Ihering. Para él, los daños resarcibles a título de responsabilidad precontractual solo comprenden los gastos reales efectuados durante los tratos negociales previos y en la elaboración de la oferta, sin incluir los derivados de las ocasiones contractuales perdidas: acepta, entonces, el daño emergente, pero descarta expresamente el lucro cesante. Esta es también la opinión de Saleilles, coherente con su tesis (examinada en el Eje 2) de que, cuando no ha llegado a emitirse la oferta, el resarcimiento debe limitarse a los gastos efectivamente producidos por las tratativas. Y es, según Orrego, la posición que ha prevalecido en la doctrina chilena tradicional, representada por Avelino León Hurtado y Hugo Rosende Álvarez: solo el daño emergente, nunca el lucro cesante.</p>
+
+<div class="warn">
+  <span class="titulo-bloque">Ojo con el error típico de examen</span>
+  <p>No basta con decir "se indemniza el daño emergente y el lucro cesante" como en la responsabilidad contractual o extracontractual ordinaria. En Chile, la posición tradicional (León Hurtado, Rosende) <strong>excluye siempre</strong> el lucro cesante en sede precontractual. Solo Brebbia lo admite, y únicamente para el daño producido después de formulada la oferta.</p>
+</div>
+
+<h2>6.3. La posición integral con límite causal: Brebbia</h2>
+
+<p>Brebbia adopta una posición intermedia que merece atención especial, porque no se resuelve con una regla única, sino distinguiendo según la etapa en que se produjo el daño. Sostiene, como punto de partida, que el resarcimiento en los casos de responsabilidad precontractual, al igual que en los supuestos de responsabilidad aquiliana en general, debe ser integral: debe comprender tanto el perjuicio efectivamente sufrido como la ganancia frustrada.</p>
+
+<p>Pero inmediatamente matiza esta regla general con un límite que, a su juicio, es el verdadero criterio decisivo: la regla que obliga a reparar el daño emergente y el lucro cesante encuentra su lógica limitación en la relación de causalidad existente entre el hecho generador de responsabilidad y el perjuicio. Apoyándose en las normas del Código Civil argentino sobre consecuencias inmediatas, mediatas y casuales de los hechos, Brebbia distingue dos hipótesis según el momento del daño.</p>
+
+<p>Respecto del daño originado durante la etapa de las tratativas preliminares (antes de la oferta), el damnificado solo puede demandar el reembolso de los gastos ocasionados por las negociaciones, no la ganancia dejada de percibir, porque entre esta última y el hecho culposo no existe, según Brebbia, una relación de causalidad adecuada: la privación de la hipotética ganancia no tiene por causa la ruptura culpable de las tratativas, sino la propia decisión del damnificado de comprometerse en negociaciones con una persona determinada, desechando con ello otras perspectivas que pudieron ofrecerle una seguridad mayor de concluir el contrato. En otras palabras, el lucro cesante derivado de negociaciones alternativas no realizadas es, para Brebbia, una consecuencia demasiado remota y contingente del hecho de la contraparte como para imputársela con el rigor causal que la responsabilidad civil exige.</p>
+
+<p>Respecto del daño ocasionado después de haberse formulado la oferta, en cambio, Brebbia sostiene una solución distinta: en caso de retractación culposa del oferente, el damnificado tiene derecho a reclamar no solo el daño emergente, sino también el lucro cesante, porque entre esa retractación y la ganancia frustrada sí existe, ahora, un nexo de causalidad adecuado. El lucro cesante no es, en este supuesto, más que la consecuencia racional y previsible de la revocación indebida de una oferta ya formulada y aceptada o en curso de aceptación.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">La regla de Brebbia en una frase</span>
+  <p>Antes de la oferta: solo daño emergente (la ganancia frustrada de negociar con otro es demasiado remota para imputarla). Después de la oferta: daño emergente <strong>y</strong> lucro cesante (el vínculo ya es lo bastante estrecho para que la ganancia frustrada sea una consecuencia causalmente adecuada). El criterio no es una regla fija por tipo de daño, sino la causalidad adecuada aplicada según la etapa.</p>
+</div>
+
+<p>La lógica de esta distinción, que conviene explicitar porque es lo que le da consistencia dogmática y no solo pragmática, es la misma que rige la extensión de la culpa examinada en el Eje 5: a medida que las partes avanzan en el itinerario de formación del contrato, el vínculo entre ellas se estrecha, y con él se estrecha también (en el sentido de hacerse más previsible, más "adecuada" en términos causales) la conexión entre la conducta de una y el perjuicio patrimonial completo de la otra, incluido el lucro cesante.</p>
+
+<p>Antes de la oferta, el vínculo es todavía demasiado laxo para que la ganancia frustrada de negociaciones alternativas se considere una consecuencia adecuada de la ruptura; después de la oferta, el estrechamiento del vínculo (ya examinado en el Eje 3, a propósito del cambio de naturaleza jurídica que la oferta produce) hace que esa misma ganancia sí pueda imputarse con el rigor causal exigido.</p>
+
+<h2>6.4. Análisis de la tensión: dos criterios distintos para limitar el resarcimiento</h2>
+
+<p>La tensión de este eje no opone simplemente a quienes admiten el lucro cesante frente a quienes lo excluyen, sino que revela dos estrategias dogmáticas distintas para resolver un mismo problema práctico: cómo evitar que la responsabilidad precontractual se convierta en una vía para obtener, por la puerta trasera, el mismo resultado económico que se habría obtenido de haberse cumplido un contrato que, precisamente, nunca llegó a existir.</p>
+
+<p>Faggella, Saleilles y la doctrina chilena tradicional resuelven este problema con una regla categórica y de fácil aplicación: solo daño emergente, nunca lucro cesante, cualquiera sea la etapa en que se produjo el daño. La ventaja de esta solución es su simplicidad y su previsibilidad; su desventaja es que trata de igual manera situaciones que son, en rigor, distintas: no es lo mismo la ruptura de una conversación exploratoria incipiente que la retractación de una oferta ya aceptada en los hechos.</p>
+
+<p>Brebbia, en cambio, resuelve el mismo problema no con una regla categórica según el tipo de partida indemnizable, sino con el instrumento general de la causalidad adecuada, aplicado de manera diferenciada según la etapa: el resultado práctico converge con la posición restrictiva en la etapa de las tratativas (solo daño emergente), pero diverge radicalmente después de la oferta, donde admite el lucro cesante sin reservas.</p>
+
+<p>La superioridad dogmática de la solución de Brebbia radica en que no necesita postular una regla especial y ad hoc para la responsabilidad precontractual ("nunca lucro cesante"), sino que aplica el mismo criterio general de causalidad adecuada que rige toda la responsabilidad extracontractual, dejando que sea la intensidad del vínculo entre las partes, en cada caso concreto, la que determine hasta dónde llega la cadena de consecuencias imputables.</p>
+
+<p>Esta es, en definitiva, la misma lógica que después reaparecerá, en el terreno de la responsabilidad extracontractual general, al tratar la previsibilidad como límite de la extensión de la reparación: no se trata de excluir categorías enteras de daño por definición, sino de exigir, en cada caso, que el daño reclamado sea una consecuencia suficientemente próxima y previsible de la conducta reprochada.</p>
+
+<h2>6.5. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir con la distinción de Ihering entre interés positivo (daño de incumplimiento, propio de un contrato válidamente celebrado) e interés negativo o de confianza (daño de quien confió en la celebración o validez de un contrato que finalmente no prosperó), precisando la falta de claridad de Ihering sobre si este último comprende solo el daño emergente o también el lucro cesante.</p>
+
+<p>Exponer la posición restrictiva de Faggella, Saleilles y la doctrina chilena tradicional (Avelino León Hurtado y Rosende Álvarez): solo daño emergente, nunca lucro cesante.</p>
+
+<p>Desarrollar en detalle la posición de Brebbia, que exige siempre relación de causalidad adecuada y distingue según la etapa: solo gastos antes de la oferta, porque la ganancia frustrada de negociaciones alternativas no es una consecuencia causalmente adecuada de la ruptura temprana; daño emergente y lucro cesante después de la oferta, porque el estrechamiento del vínculo negocial vuelve previsible y adecuada la ganancia frustrada por la retractación.</p>
+
+<p>Cerrar con la tensión de fondo: la regla categórica de la doctrina restrictiva frente al criterio flexible de causalidad adecuada de Brebbia, dos estrategias distintas para impedir que la responsabilidad precontractual termine otorgando, por una vía indirecta, el mismo resultado económico que habría producido el cumplimiento de un contrato que nunca se perfeccionó.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 6: Determinación de los daños a resarcir en la responsabilidad precontractual</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 7: LOS REQUISITOS PARA QUE NAZCA EL DERECHO A LA REPARACIÓN Y SU APLICACIÓN JURISPRUDENCIAL
+     ============================================================ -->
+
+<h1 id="eje7">Eje 7. Los requisitos para que nazca el derecho a la reparación y su aplicación jurisprudencial</h1>
+
+<p>Los ejes anteriores han fijado el concepto, la evolución doctrinaria, el itinerario de etapas, el fundamento en la buena fe, la naturaleza jurídica y la extensión del daño indemnizable. Corresponde ahora sistematizar todo lo anterior en un catálogo operativo de requisitos: las condiciones concretas que deben concurrir copulativamente para que, en un caso dado, nazca efectivamente el derecho a exigir la reparación. Este eje expone primero las dos sistematizaciones doctrinarias más citadas (la de Saavedra y la de Celis) y desarrolla luego, con el detalle que merece por tratarse de jurisprudencia nacional reciente y directamente aplicable, un caso real fallado por los tribunales chilenos que aplica estos mismos requisitos a un litigio concreto: el caso Lavín con Mena.</p>
+
+<h2>7.1. Los siete requisitos de Saavedra</h2>
+
+<p>Saavedra construye su catálogo a partir de la noción de "ilícito precontractual", que es la fuente del derecho del afectado a pedir el resarcimiento de los perjuicios. Para que ese ilícito se configure, exige la concurrencia de siete requisitos. Primero, debe tratarse de negociaciones tendientes a buscar un acuerdo contractual que aún no se ha perfeccionado, o que, habiéndose perfeccionado, resulta declarado nulo. Segundo, durante tales negociaciones debe ocurrir una conducta antijurídica por parte de uno de los partícipes, a raíz de la cual se frustra injustamente el objetivo de alcanzar una relación contractual estable y lícita.</p>
+
+<p>Tercero, esa conducta antijurídica debe ser reprochable, lo que exige a su vez dos supuestos: que sea imputable a uno de los partícipes de los tratos negociales previos, y que sea dañina para la contraparte. Cuarto, esa conducta antijurídica y reprochable puede emanar de un incumplimiento extraconvencional (que será lo usual) o convencional, si los partícipes reglamentaron previamente los tratos previos mediante lo que la doctrina moderna francesa denomina "contrato de negociación".</p>
+
+<p>Quinto, la configuración de la culpa se produce por la transgresión del principio jurídico de la buena fe con que los partícipes deben actuar durante el curso de los tratos negociales previos (enlazando así directamente con el Eje 4). Sexto, debe existir una relación de causalidad adecuada entre la conducta antijurídica, reprochable, dañina e imputable de uno de los partícipes, y los perjuicios ciertos y efectivos sufridos por el otro.</p>
+
+<p>Séptimo, los sujetos activo y pasivo de la eventual acción de responsabilidad son únicamente los partícipes directos de los tratos negociales previos; los daños que puedan sufrir terceros a causa de esos tratos se rigen, en cambio, por las reglas generales de la responsabilidad extracontractual, no por las específicas de la responsabilidad precontractual.</p>
+
+<h2>7.2. Los cuatro requisitos de Celis</h2>
+
+<p>Celis propone una sistematización más económica, centrada en cuatro elementos, que conviene contrastar con la de Saavedra porque, pese a su formulación más breve, cubre en lo esencial el mismo terreno. Primero, que las conversaciones o tratos previos se hayan efectuado voluntariamente, sin que existiera una obligación que así lo exigiera (requisito que reafirma la libertad de negociar como punto de partida, ya destacado en el Eje 4).</p>
+
+<p>Segundo, que los gastos en que incurrió una de las partes se hayan ocasionado a consecuencia de la conducta desplegada por la otra parte, que después se retira de la negociación; Celis ilustra este requisito con un ejemplo revelador: si una empresa llama a arquitectos para realizar estudios sobre una construcción, sin advertirles previamente que esos estudios no generarán compromiso alguno para la empresa, los gastos en que incurran los arquitectos quedan conectados causalmente con la conducta de quien los convocó.</p>
+
+<p>Tercero, que el tribunal pondere si los gastos incurridos forman o no parte de los riesgos ordinarios del negocio, y si fueron provocados por la contraparte o fueron, en cambio, espontáneos de quien los realizó (un filtro adicional de imputación, cercano a la exigencia de causalidad adecuada que Brebbia exigía en el Eje 6 para el daño precontractual). Cuarto, que una de las partes se retire unilateralmente de las negociaciones.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: tres catálogos de requisitos, un mismo terreno</span>
+  <table>
+    <thead><tr><th>Saavedra</th><th>Celis</th><th>Tribunal, caso Lavín con Mena</th></tr></thead>
+    <tbody>
+      <tr><td>Negociaciones tendientes a un acuerdo no perfeccionado (o nulo)</td><td>Conversaciones voluntarias, sin obligación previa</td><td>Consentimiento en negociar</td></tr>
+      <tr><td>Conducta antijurídica que frustra el objetivo contractual</td><td>Gastos ocasionados por la conducta de la contraparte</td><td>Gastos incurridos con miras al contrato</td></tr>
+      <tr><td>Conducta reprochable e imputable a un partícipe</td><td>Ponderación de riesgos ordinarios del negocio</td><td>Retiro unilateral injustificado</td></tr>
+      <tr><td>Culpa por transgresión de la buena fe</td><td>Retiro unilateral de las negociaciones</td><td>Infracción a la buena fe (culpa o dolo)</td></tr>
+    </tbody>
+  </table>
+  <p>Saavedra agrega, sin equivalente directo en Celis ni en el fallo, dos requisitos propios: causalidad adecuada entre la conducta y el perjuicio, y legitimación limitada a los partícipes directos de los tratos (los daños a terceros se rigen por las reglas generales de la extracontractual, no por estas específicas). Nótese que el catálogo judicial de cuatro elementos condensa, en la práctica, los mismos requisitos que Saavedra y Celis ya habían sistematizado por vía doctrinaria.</p>
+</div>
+
+<h2>7.3. El caso Lavín con Mena: hechos</h2>
+
+<p>El desarrollo jurisprudencial más reciente y completo de estos requisitos en el derecho chileno se encuentra en la sentencia del Segundo Juzgado de Letras de Curicó, de 11 de marzo de 2024, dictada en la causa rol C-1461-2022, caratulada "Lavín con Mena". Los hechos, tal como quedaron establecidos en el proceso, son los siguientes. Julio Lavín Retamal, propietario de un inmueble agrícola y de ciertos derechos de aprovechamiento de aguas en la comuna de San Rafael, provincia de Talca, había otorgado un mandato especial de venta a la sociedad Tattersal Gestión de Activos S.A.</p>
+
+<p>El 25 de mayo de 2022, Marco Antonio Mena Ramos formuló, por escrito y por intermedio de esa misma corredora, una oferta de compra del inmueble y de los derechos de aguas, ofreciendo un precio de $347.820.000, pagadero al contado dentro de un plazo máximo de seis meses contados desde la firma de la promesa de compraventa, con entrega material de la propiedad una vez pagado el precio total.</p>
+
+<p>Como prueba de la seriedad de su oferta, el comprador entregó a la corredora un cheque nominativo y cruzado por $34.782.000 (el diez por ciento del precio ofrecido), que quedaría en poder de esta como multa a beneficio del vendedor en caso de que el comprador incumpliera las obligaciones asumidas en la oferta; el vendedor, por su parte, documentó igualmente una suma equivalente como garantía recíproca de la seriedad de su intención de vender. El 2 de junio de 2022, Lavín aceptó pura y simplemente la oferta, en los mismos términos en que había sido formulada, quedando así perfeccionado el acuerdo sobre las condiciones esenciales del negocio proyectado.</p>
+
+<p>La ejecución de lo acordado, sin embargo, se frustró en los pasos siguientes. El 6 de julio de 2022, se envió al vendedor un borrador de promesa de compraventa que contenía condiciones distintas de las contempladas en la oferta original y ya aceptada: el plazo para la firma de la promesa y del contrato definitivo, y para el pago del precio, se modificó de seis meses a ciento ochenta días hábiles (una extensión encubierta del plazo), se estableció que el pago se verificaría contra la inscripción del inmueble, y se introdujo la calificación de que el nuevo plazo no sería extintivo.</p>
+
+<p>Requerido por intermedio de la corredora para que se ajustara a los términos de la oferta original, el comprador, el 19 de julio de 2022, comunicó a través de la corredora nuevos términos y condiciones, ajenos por completo al compromiso original, lo que el vendedor interpretó, y el tribunal terminó por confirmar, como una retractación de hecho, que dejó la operación sin efecto por el cambio total de las condiciones consignadas en la oferta original ya aceptada.</p>
+
+<p>El vendedor demandó entonces la indemnización de perjuicios bajo el régimen de responsabilidad civil precontractual, solicitando el cobro de la cláusula penal equivalente al diez por ciento del precio pactado, que las partes habían fijado como avaluación anticipada de los perjuicios derivados del incumplimiento.</p>
+
+<p>El demandado, por su parte, alegó que el documento de oferta de compra no mencionaba expresamente los derechos de aprovechamiento de aguas, de modo que no existía acuerdo sobre el precio de estos; que la modalidad de pago pactada exigía la previa inscripción del inmueble libre de gravámenes, prohibiciones y embargos a nombre del comprador; que era condición esencial de la oferta que los títulos de dominio se encontraran ajustados a derecho, lo que a su juicio no ocurría; y que el borrador de promesa remitido el 23 de junio de 2022 había sido redactado por la propia corredora y aprobado por el vendedor, de manera que no le asistía a él responsabilidad precontractual alguna, siendo en realidad el vendedor quien había incumplido sus obligaciones precontractuales.</p>
+
+<h2>7.4. El caso Lavín con Mena: el marco doctrinario que el tribunal aplica</h2>
+
+<p>Antes de entrar al análisis de los hechos probados, la sentencia fija expresamente el marco doctrinario aplicable, en términos que resumen con notable fidelidad todo lo expuesto en los ejes anteriores de este material. El tribunal comienza reconociendo la misma laguna legal señalada en el Eje 1: la formación del consentimiento no fue expresamente tratada en el Código Civil, sin dejar de reconocerse un tratamiento parcial en el Código de Comercio; pero la responsabilidad que surge en la etapa de las tratativas o negociaciones previas a la suscripción del contrato no es, señala la sentencia, una materia ajena al derecho negocial moderno, lo que ha implicado el desarrollo de un sistema de responsabilidad precontractual dentro de la sistemática jurídica nacional, precisamente para llenar ese vacío.</p>
+
+<p>Citando al profesor español Puig Brutau, el fallo recuerda que los contratos no se celebran, salvo en la contratación sometida a fórmulas estandarizadas, con la brevedad de un automatismo impersonal, sino que son el resultado final de una negociación entre las partes, por lo que la fase de tratos preliminares reviste una importancia considerable (cita que ya se examinó en el Eje 4, a propósito del fundamento de la buena fe).</p>
+
+<p>El tribunal concluye, sin mayor discusión, que en el sistema jurídico chileno el régimen aplicable a la responsabilidad precontractual es el de la responsabilidad aquiliana, régimen general aplicable a todos los casos en que no ha tenido lugar todavía el consentimiento de las partes, invocando al efecto los artículos <span class="art">2284</span>, <span class="art">2314</span> y <span class="art">2329</span> del Código Civil (adscribiendo así, sin ambigüedad, a la tesis extracontractual mayoritaria examinada en el Eje 5).</p>
+
+<p>Y precisa que la doctrina y la jurisprudencia reconocen, como supuestos de la responsabilidad precontractual y de la consecuente obligación de indemnizar perjuicios, cuatro elementos: el consentimiento en negociar, que importa el comienzo de las tratativas previas y de la obligación de negociar de buena fe; los gastos incurridos con miras a la celebración del contrato, es decir, que existan daños efectivamente reparables generados por esa actividad; el retiro unilateral injustificado de las negociaciones; y la infracción a la obligación de negociar de buena fe, imputable a culpa o dolo.</p>
+
+<p>Es notable, y conviene subrayarlo como ejercicio de síntesis, que estos cuatro elementos condensen, en una sola enumeración judicial, lo esencial tanto de los siete requisitos de Saavedra como de los cuatro de Celis examinados más arriba, confirmando que, pese a las distintas formulaciones doctrinarias, existe hoy un consenso sustancial sobre el contenido mínimo de la responsabilidad precontractual en el derecho chileno.</p>
+
+<p>El fallo, además, cita directamente al civilista Enrique Barros Bourie (de cuyo Tratado de Responsabilidad Extracontractual transcribe un pasaje sobre el lugar central que ocupa el daño en el juicio de responsabilidad civil, y sobre la función de justicia correctiva que a esta corresponde, ajena al reproche moral propio del derecho penal), en un punto que enlaza este material con el desarrollo más general que el propio Barros hace de la responsabilidad precontractual, la nulidad del contrato y la responsabilidad postcontractual, examinado en los Ejes 8 y 9.</p>
+
+<h2>7.5. El caso Lavín con Mena: la decisión</h2>
+
+<p>Aplicando este marco a los hechos probados, el tribunal concluyó que, conforme a la prueba documental, pericial y confesional rendida, existió entre las partes un acto jurídico consistente en negociaciones preliminares dirigidas a la compraventa del inmueble agrícola y sus derechos de aguas, negociaciones que culminaron en una oferta aceptada pura y simplemente por el demandante en los términos ya descritos.</p>
+
+<p>En cuanto a las alegaciones del demandado, el tribunal las desestimó una por una: respecto de los derechos de aguas, constató que, en rigor, la tratativa no había incluido ese ítem en el precio, de modo que no existía controversia real sobre ese punto; respecto de la notaría en que debía suscribirse la promesa, constató que carecía de carácter vinculante específico, existiendo varias notarías disponibles en la ciudad; respecto de la exigencia de títulos de dominio ajustados a derecho, constató que el demandado había ofrecido rendir prueba sobre el punto y nunca la materializó, por lo que el hecho debía tenerse por no probado; y, sobre todo, respecto del borrador de promesa que introdujo las condiciones distintas, el tribunal estableció, a partir de la prueba rendida, que los cambios incorporados a la oferta original no obedecieron a la autoría de la corredora, sino a instrucciones expresas recibidas del propio demandado, siendo esos cambios los que finalmente impidieron la suscripción del contrato prometido.</p>
+
+<p>En consecuencia, el tribunal concluyó que existió un incumplimiento imputable al demandado, que lo constituyó en mora y que fue la causa determinante de que el contrato no llegara a celebrarse.</p>
+
+<p>El fallo acogió, en consecuencia, la demanda de indemnización de perjuicios por responsabilidad civil precontractual, condenando al demandado al pago de la cláusula penal pactada ($34.782.000, reajustada, con expresa condena en costas), sin necesidad de acreditar el monto exacto del daño sufrido, precisamente porque las propias partes habían avaluado anticipadamente los perjuicios mediante esa cláusula, bajo la concurrencia de los presupuestos que, según razonó el tribunal, efectivamente concurrieron respecto de la actuación del demandado.</p>
+
+<div class="jurisprudencia">
+  <span class="titulo-bloque">Jurisprudencia: Lavín con Mena</span>
+  <p><strong>2º Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022.</strong> El comprador de un inmueble agrícola y sus derechos de aguas aceptó pura y simplemente la oferta de compra formulada por el vendedor. Al redactarse el borrador de la promesa de compraventa, el comprador, por instrucciones propias, no de la corredora que intermediaba, introdujo condiciones distintas de las ya aceptadas (extensión del plazo de pago, condicionamiento del pago a la inscripción del inmueble), lo que frustró la operación. El tribunal, citando a Puig Brutau y a Barros Bourie, calificó la responsabilidad como aquiliana (arts. <span class="art">2284</span>, <span class="art">2314</span> y <span class="art">2329</span> CC) y condenó al comprador al pago de la cláusula penal pactada como avaluación anticipada de perjuicios, por haber incumplido la obligación de negociar de buena fe.</p>
+</div>
+
+<h2>7.6. Análisis de la tensión: de la doctrina abstracta a la prueba concreta</h2>
+
+<p>La tensión que ilustra este caso no es, como en los ejes anteriores, una disputa entre autores sobre el fundamento correcto de la responsabilidad precontractual, sino una tensión de otro orden, propia de la aplicación práctica del derecho: la distancia entre la formulación abstracta de los requisitos (consentimiento en negociar, gastos, retiro injustificado, infracción a la buena fe) y la ardua tarea probatoria de establecer, en un caso concreto, cuál de las partes efectivamente incumplió su deber de negociar lealmente cuando ambas se acusan mutuamente de haber sido la causante de la ruptura.</p>
+
+<p>El caso Lavín con Mena es pedagógicamente valioso precisamente por eso: muestra que el requisito más difícil de acreditar no es, casi nunca, la existencia de una negociación o de gastos incurridos (extremos generalmente indiscutidos), sino la imputabilidad del retiro, esto es, determinar de qué lado provino la conducta que efectivamente frustró el negocio, cuando ambas partes disponen de una narrativa alternativa de los hechos.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">La clave probatoria, no la doctrinaria</span>
+  <p>En la práctica, casi nunca se discute si hubo negociación o si hubo gastos: eso rara vez está en disputa. Lo que decide el caso es la imputabilidad del retiro, es decir, de qué lado provino la conducta que frustró el negocio, cuando ambas partes tienen una versión distinta de los hechos. En Lavín con Mena, la prueba documental y pericial fue la que desplazó la imputabilidad hacia el comprador, no la calificación doctrinaria en sí misma.</p>
+</div>
+
+<p>En este caso, la prueba documental y pericial fue decisiva para establecer que los cambios introducidos en el borrador de promesa (que en apariencia podían atribuirse a la redacción de un tercero, la corredora) obedecían en realidad a instrucciones del propio demandado, lo que desplazó la imputabilidad hacia quien pretendía exonerarse de ella.</p>
+
+<p>Este dato confirma, además, algo ya anticipado en el Eje 4: que el estándar de buena fe negocial no se satisface con la mera apariencia de corrección formal (contar con un intermediario profesional que redacta los documentos), sino que exige examinar la sustancia de las instrucciones y decisiones que, en definitiva, alteraron unilateralmente lo ya acordado.</p>
+
+<h2>7.7. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir exponiendo los siete requisitos de Saavedra y contrastándolos con los cuatro de Celis, destacando que ambas sistematizaciones cubren, con distinto grado de detalle, el mismo terreno: existencia de negociaciones, conducta antijurídica y reprochable, imputabilidad, causalidad adecuada, y perjuicio efectivo.</p>
+
+<p>Desarrollar en profundidad el caso Lavín con Mena como aplicación jurisprudencial reciente de estos requisitos: los hechos (oferta aceptada de compraventa de un inmueble agrícola y derechos de aguas, alteración posterior de las condiciones en el borrador de promesa, retractación de hecho del comprador); el marco doctrinario que el propio tribunal fija, adscribiendo expresamente a la tesis extracontractual (artículos <span class="art">2284</span>, <span class="art">2314</span> y <span class="art">2329</span> del Código Civil) y sintetizando los requisitos en cuatro elementos (consentimiento en negociar, gastos, retiro injustificado, infracción a la buena fe imputable a culpa o dolo), citando además a Barros Bourie; y la decisión, que acogió la demanda al establecer que las modificaciones al borrador de promesa obedecían a instrucciones del propio demandado, condenándolo al pago de la cláusula penal pactada como avaluación anticipada de los perjuicios.</p>
+
+<p>Cerrar con la tensión de fondo: la dificultad real de estos casos no está en la formulación abstracta de los requisitos, sino en la prueba de la imputabilidad cuando ambas partes se atribuyen mutuamente la causa de la ruptura, y la lección que el caso deja es que el estándar de buena fe exige examinar la sustancia de las decisiones negociales, no su apariencia formal.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 7: Los requisitos para que nazca el derecho a la reparación y su aplicación jurisprudencial</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 8: LA RESPONSABILIDAD DE QUIEN CAUSA LA NULIDAD DEL CONTRATO
+     ============================================================ -->
+
+<h1 id="eje8">Eje 8. La responsabilidad de quien causa la nulidad del contrato</h1>
+
+<p>Ya se anticipó, al tratar el interés jurídicamente protegido en el Eje 4, que la responsabilidad precontractual en sentido amplio cubre dos hipótesis distintas: el daño causado por la ruptura injustificada de una negociación que nunca llegó a convertirse en contrato, y el daño conectado con un contrato que sí llegó a celebrarse, pero que resulta después declarado nulo por una causal que una de las partes conocía o debía conocer y que no reveló a la otra.</p>
+
+<p>Este segundo supuesto (la responsabilidad de quien causa, con su conducta, la nulidad del contrato) presenta una dificultad dogmática propia y considerablemente más aguda que la ruptura de negociaciones, porque aquí sí llegó a existir, en apariencia, un contrato: las partes prestaron su consentimiento, creyeron haber contratado válidamente, y solo después, a veces mucho después, se declara que ese consentimiento adolecía de un vicio que impide reconocerle efectos.</p>
+
+<p>La pregunta que organiza este eje es, entonces, bajo qué estatuto se rige la responsabilidad de la parte que, conociendo o debiendo conocer la causa de la invalidez, no la reveló a la otra, exponiéndola a negociar y contratar sobre una base que resultaría, finalmente, jurídicamente inexistente.</p>
+
+<h2>8.1. El origen histórico del problema: Ihering y los textos romanos</h2>
+
+<p>Conviene recordar, porque suele olvidarse, que este supuesto de nulidad no es un desarrollo tardío o marginal de la responsabilidad precontractual, sino su origen histórico mismo: fue examinado en el Eje 2 que Ihering elaboró toda su doctrina de la culpa in contrahendo a partir de textos romanos referidos, precisamente, a la venta de bienes sagrados, religiosos o públicos (cosas fuera del comercio humano cuya venta era nula), en los que se concedía al comprador engañado una acción para obtener indemnización del vendedor que había ocultado el vicio de la cosa vendida.</p>
+
+<p>La dificultad que Ihering intentó resolver es exactamente la misma que ocupa este eje: si el contrato ha nacido nulo, ¿cómo puede indemnizarse a la parte inocente sin recurrir a una responsabilidad contractual que, en sentido estricto, presupone un contrato válido?</p>
+
+<h2>8.2. La dificultad de fondo: ni contrato válido ni completa extrañeza</h2>
+
+<p>La dificultad dogmática que atraviesa todo este eje puede formularse con precisión: entre las partes de un contrato que resulta después anulado existe una relación, un contacto social calificado, que impone deberes de lealtad distintos tanto de los que nacen de un contrato ya celebrado y válido (que dan lugar a responsabilidad contractual en sentido estricto) como de los que impone el mero contacto social general entre extraños, limitado al deber de no dañar la persona o propiedad ajena, que da lugar a responsabilidad extracontractual en su formulación ordinaria.</p>
+
+<p>La nulidad judicialmente declarada, además, pulveriza con efecto retroactivo la existencia misma del contrato (esta es la razón por la que buena parte de la doctrina descarta, casi sin discusión, la aplicación pura y simple de las reglas de la responsabilidad contractual), pero la imputación que se formula al responsable recae sobre hechos anteriores al contrato, aunque estrechamente conectados con las circunstancias mismas de su celebración, lo que impide también tratarlo simplemente como a un extraño cualquiera.</p>
+
+<div class="warn">
+  <span class="titulo-bloque">Trampa típica de examen</span>
+  <p>Que las partes hayan prestado consentimiento y "parezca" que hubo contrato no vuelve esta responsabilidad contractual. La nulidad opera con efecto retroactivo: borra la existencia misma del vínculo. Lo único que queda es una conducta de ocultamiento previa al contrato, estructuralmente igual a la que se analiza en la ruptura de negociaciones del Eje 4. Por eso la doctrina mayoritaria (Baraona) la califica extracontractual, no contractual.</p>
+</div>
+
+<h2>8.3. La posición de Rodríguez Grez: responsabilidad legal</h2>
+
+<p>Rodríguez Grez sostiene que se trata de una responsabilidad de naturaleza legal: la obligación de indemnizar los perjuicios que se siguen de la declaración de nulidad nace directamente de la ley, aunque presupone la concurrencia de culpa o dolo de quien causa el daño, sin que las reglas de la responsabilidad extracontractual resulten aplicables íntegramente a esta hipótesis, en la medida en que solo en algunos casos es posible concebir el derecho indemnizatorio que emana de la nulidad judicialmente declarada.</p>
+
+<p>Rodríguez Grez desarrolla esta tesis, en particular, a propósito de la Ley de Matrimonio Civil, planteando la eventual procedencia de la indemnización de perjuicios por daño moral que puede alegar uno de los ex presuntos cónyuges cuando el matrimonio es declarado nulo.</p>
+
+<p>Así, tratándose de la nulidad del matrimonio, constituirían causales que justifican reclamar esa indemnización, entre otras: el ocultamiento por uno de los cónyuges de un trastorno o anomalía psíquica que, fehacientemente comprobada, impida absolutamente formar la comunidad de vida que el matrimonio implica; el haber hecho creer al otro contrayente que se poseía una cualidad personal que, atendida la naturaleza y los fines del matrimonio, fue determinante para otorgar el consentimiento; el haber empleado la fuerza; o el haber omitido la circunstancia de existir un vínculo matrimonial no disuelto.</p>
+
+<p>Este ejemplo, aunque tomado de un ámbito especial del derecho de familia, ilustra con particular claridad la estructura general del problema: en todos esos casos, uno de los contrayentes conocía, o no podía razonablemente ignorar, una circunstancia que terminaría por invalidar el matrimonio, y la ocultó a su contraparte, quien confió de buena fe en la validez de lo que creía estar celebrando.</p>
+
+<h2>8.4. La posición extracontractual: Baraona y la mayoría de la doctrina nacional</h2>
+
+<p>Frente a la tesis de la responsabilidad legal, varios autores nacionales (entre ellos Baraona) sostienen que la responsabilidad por la nulidad del contrato es, en lo fundamental, de naturaleza extracontractual, aunque con una precisión importante que la distingue de la responsabilidad extracontractual ordinaria: los elementos que configuran la culpa deben analizarse, en cada caso, considerando criterios de buena o mala fe y de expectativas de confianza que se configuran de manera peculiar, distinta de la noción general y abstracta de culpa que rige los encuentros entre extraños.</p>
+
+<p>Salvo por esta peculiaridad en la determinación de la culpa (que exige valorar, específicamente, si la parte que ocultó la causal de nulidad actuó de buena o de mala fe, y qué expectativas de confianza generó en la otra con su conducta), la calificación de esta responsabilidad debe ser, en todo lo demás, extracontractual.</p>
+
+<p>Esta posición es coherente con la tesis extracontractual mayoritaria examinada con detalle en el Eje 5 para la responsabilidad precontractual en sentido estricto, y no es casualidad: ambas hipótesis (la ruptura de negociaciones y la nulidad del contrato) comparten, en definitiva, la misma estructura de fondo, según se explicitará en el análisis de la tensión de este eje.</p>
+
+<h2>8.5. Boffi y el derecho comparado: la responsabilidad aquiliana en el derecho argentino</h2>
+
+<p>Ya se examinó en el Eje 5, a propósito de la declaración unilateral de voluntad como fundamento alternativo, que Boffi Boggero adhiere a una tesis mixta para el derecho argentino, combinando la declaración unilateral de voluntad (para el caso de la oferta que por sí sola obliga) con la responsabilidad aquiliana (para los demás casos, incluida expresamente la nulidad del contrato).</p>
+
+<p>Boffi se apoya en el artículo <span class="art">1056</span> del Código Civil argentino, conforme al cual los actos anulados, aunque no produzcan los efectos de los actos jurídicos, producen sin embargo los efectos de los actos ilícitos, cuyas consecuencias deben repararse; concluye entonces que un acto con pretensiones de jurídico, aunque no llegue a serlo por habérsele aplicado la sanción anulatoria, puede dar lugar a otras sanciones, como la indemnización, en virtud de constituir, además de un acto jurídico frustrado, un acto ilícito: la responsabilidad sería, en consecuencia, aquiliana, lo que presupone la existencia de dolo o culpa.</p>
+
+<p>Boffi advierte, en todo caso, un límite importante que conviene no pasar por alto: en ciertos casos la nulidad de un contrato no hace nacer responsabilidad para ninguna de las partes, como ocurre con el contrato celebrado por dos dementes, en que ninguno de los contratantes se encuentra en condiciones de incurrir en el reproche subjetivo (dolo o culpa) que la responsabilidad aquiliana exige.</p>
+
+<p>En el derecho chileno no existe una norma idéntica al artículo <span class="art">1056</span> argentino, pero cabe sostener, por una vía distinta que conduce a una conclusión equivalente, que también aquí procede la indemnización: conforme al artículo <span class="art">1687</span> del Código Civil, quien obtiene la declaración de nulidad tiene derecho a ser restituido al estado anterior a la celebración del contrato, lo que razonablemente ha de incluir el resarcimiento de todos los perjuicios que el acto frustrado le hubiere provocado a la parte inocente. Y puesto que la declaración de nulidad implica, por definición, que en rigor nunca hubo contrato válido, esa responsabilidad no podría ser contractual, sino aquiliana, confirmando así, por una vía distinta, la misma conclusión extracontractual a la que llegan Baraona y la doctrina mayoritaria.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: tres posiciones sobre la responsabilidad por nulidad</span>
+  <table>
+    <thead><tr><th>Posición</th><th>Autor</th><th>Fundamento</th></tr></thead>
+    <tbody>
+      <tr><td>Responsabilidad legal</td><td>Rodríguez Grez</td><td>Nace directamente de la ley, presupone culpa o dolo (ejemplo: causales de indemnización en nulidad matrimonial)</td></tr>
+      <tr><td>Responsabilidad extracontractual</td><td>Baraona (mayoritaria en Chile)</td><td>Culpa cualificada por buena/mala fe y expectativas de confianza; en lo demás, extracontractual ordinaria</td></tr>
+      <tr><td>Responsabilidad aquiliana (comparado)</td><td>Boffi (derecho argentino)</td><td>Art. 1056 CC argentino: el acto anulado produce efectos de acto ilícito. Equivalente chileno: art. <span class="art">1687</span> CC (restitución al estado anterior)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>8.6. Análisis de la tensión: por qué la nulidad no rompe, sino que confirma, la lógica extracontractual</h2>
+
+<p>La tensión de este eje reproduce, en una variante más aguda, la misma disputa examinada en el Eje 5 sobre la naturaleza jurídica de la responsabilidad precontractual, y conviene explicitar por qué. Podría pensarse, a primera vista, que la existencia de un contrato efectivamente celebrado (aunque después anulado) acerca más este supuesto a la responsabilidad contractual que el de la simple ruptura de negociaciones, en la que ni siquiera llegó a existir un acuerdo completo.</p>
+
+<p>Sin embargo, la doctrina mayoritaria llega a la conclusión inversa, y la razón es dogmáticamente sólida: la nulidad, precisamente por operar con efecto retroactivo, no deja subsistente ningún contrato al cual pueda imputarse responsabilidad contractual; borra, para todos los efectos jurídicos relevantes, la existencia misma del vínculo.</p>
+
+<p>La aparente cercanía contractual del supuesto (hubo, en los hechos, un consentimiento prestado) resulta ser, entonces, engañosa: lo único que realmente queda, una vez declarada la nulidad, es la conducta de quien conocía o debía conocer el vicio y no lo reveló, conducta que es estructuralmente idéntica a la que se examina en la ruptura de negociaciones (el ocultamiento de información relevante, la infracción del deber de lealtad negocial ya examinado en el Eje 4).</p>
+
+<p>La única diferencia relevante entre ambos supuestos, y es la que explica por qué Baraona insiste en la necesidad de valorar la culpa de manera peculiar, es que en la nulidad la conducta reprochada se refiere específicamente al ocultamiento de una causal de invalidez, mientras que en la ruptura de negociaciones se refiere, más ampliamente, a cualquier infracción de la buena fe negocial.</p>
+
+<p>Rodríguez Grez, al calificar esta responsabilidad como legal, aporta una alternativa que evita esa dificultad de calificación pero que paga, como ya se advirtió en el Eje 5 a propósito de la responsabilidad legal en general, el precio de no explicar realmente por qué la ley impone esa obligación, limitándose a constatar que la impone.</p>
+
+<p>La superioridad explicativa de la tesis extracontractual (la de Baraona, Boffi para el derecho argentino, y la que se deriva del artículo <span class="art">1687</span> del Código Civil chileno) radica, en definitiva, en mostrar que la responsabilidad por nulidad del contrato no es una categoría autónoma y distinta de la responsabilidad precontractual en sentido estricto, sino una de sus manifestaciones: ambas comparten el mismo fundamento en la buena fe negocial, el mismo encuadre extracontractual, y la misma necesidad de cualificar la culpa ordinaria con un estándar de lealtad reforzado, propio de quienes, aunque no estén ligados por un contrato válido y vigente, tampoco son enteramente extraños entre sí.</p>
+
+<h2>8.7. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir explicando por qué la nulidad del contrato plantea una dificultad propia dentro de la responsabilidad precontractual: a diferencia de la ruptura de negociaciones, aquí sí llegó a existir, en apariencia, un contrato, lo que genera la tentación (equivocada, según se verá) de acercar el problema a la responsabilidad contractual. Recordar el origen histórico del problema en los textos romanos de Ihering.</p>
+
+<p>Exponer la posición de Rodríguez Grez (responsabilidad legal, ilustrada con el caso de la nulidad matrimonial y sus causales indemnizatorias), y contrastarla con la posición extracontractual de Baraona, que exige valorar la culpa según criterios especiales de buena o mala fe y de expectativas de confianza, sin abandonar por eso el encuadre extracontractual general.</p>
+
+<p>Añadir el aporte comparado de Boffi para el derecho argentino (artículo <span class="art">1056</span> de su Código Civil, con la excepción del contrato celebrado por dementes) y su equivalente funcional en el derecho chileno, construido a partir del artículo <span class="art">1687</span> del Código Civil.</p>
+
+<p>Cerrar con la tensión de fondo: la nulidad, por operar con efecto retroactivo, no deja subsistente ningún vínculo contractual al que pueda imputarse responsabilidad contractual, de modo que lo único que en definitiva queda es una conducta de ocultamiento estructuralmente idéntica a la que se examina en la ruptura de negociaciones, lo que confirma que la responsabilidad por nulidad del contrato es, en último término, una manifestación más de la responsabilidad precontractual en sentido amplio, y no una categoría autónoma.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 8: La responsabilidad de quien causa la nulidad del contrato</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 9: LA RESPONSABILIDAD POSTCONTRACTUAL
+     ============================================================ -->
+
+<h1 id="eje9">Eje 9. La responsabilidad postcontractual</h1>
+
+<p>El último de los supuestos que la doctrina agrupa junto a la responsabilidad precontractual en sentido estricto y a la responsabilidad por nulidad del contrato es, en cierto sentido, su imagen especular: no se trata ya de un daño causado antes de que el contrato exista, ni de un daño conectado con un contrato que resulta inválido, sino de un daño causado después de que un contrato válidamente celebrado ha expirado.</p>
+
+<p>El ejemplo típico, que conviene fijar desde el inicio porque ilustra con precisión el problema, es el del trabajador que, una vez terminado su contrato de trabajo, transfiere a empresas de la competencia información reservada de su antiguo empleador. Entre el trabajador y el empleador ya no existe, al momento del daño, vínculo contractual alguno (el contrato de trabajo ha expirado), pero el daño se produce precisamente con motivo de una relación contractual que existió, y que generó, mientras estuvo vigente, deberes de confidencialidad y lealtad que parecen sobrevivir, al menos en su espíritu, a la extinción del vínculo que los originó.</p>
+
+<div class="ejemplo">
+  <span class="titulo-bloque">Ejemplo: el trabajador que revela información reservada</span>
+  <p>Terminado el contrato de trabajo, el ex trabajador transfiere a la competencia información reservada de su antiguo empleador. Ya no hay contrato vigente entre ellos, pero el daño está conectado con deberes de confidencialidad nacidos durante esa relación ya extinguida. La pregunta: ¿ese deber de lealtad sobrevive a la extinción del contrato que lo originó, y bajo qué régimen se indemniza si sí?</p>
+</div>
+
+<p>La pregunta que organiza este eje es, entonces, bajo qué estatuto se rige la reparación de esos daños postcontractuales.</p>
+
+<h2>9.1. La tesis de la proyección contractual</h2>
+
+<p>Una primera posición sostiene que en estos casos existe una proyección de la responsabilidad contractual, fundada en la existencia de acuerdos tácitos (de secreto, de no concurrencia) que pueden sobrevivir a la extinción del contrato mismo que les dio origen. Esta tesis tiene la ventaja de explicar con naturalidad por qué el contenido de los deberes postcontractuales (confidencialidad, no competencia) suele coincidir exactamente con obligaciones que ya existían, de manera expresa o tácita, durante la vigencia del contrato: si esos deberes ya formaban parte del contenido contractual mientras el contrato estuvo vigente, resulta natural entender que su infracción posterior, aunque el contrato formalmente haya terminado, sigue rigiéndose por las mismas reglas contractuales que los originaron.</p>
+
+<h2>9.2. La tesis extracontractual: la posición de Corral</h2>
+
+<p>Otra posición considera que esta construcción elude una realidad que no puede soslayarse: el contrato ya ha expirado, y no puede, en consecuencia, seguir rigiendo una responsabilidad que se genera con posterioridad a su término. Quien incumple un deber postcontractual no está incumpliendo, en sentido estricto, ninguna obligación contractual actualmente exigible, porque el contrato que pudo haberla contenido ya no existe; está, más bien, causando un daño mediante una conducta que el ordenamiento reprueba con independencia de que haya existido o no un contrato previo.</p>
+
+<p>Esta posición postula, en consecuencia, la aplicación del régimen extracontractual, y es la que sostiene Corral, aunque con una salvedad importante que conviene retener con precisión, porque introduce un matiz que la distingue de una aplicación mecánica del criterio: si la ley sanciona el ejercicio abusivo de la facultad de poner término a un contrato disponiendo, como consecuencia de esa sanción, la conservación del contrato mismo (esto es, si el ordenamiento reacciona ante el término abusivo no simplemente concediendo una indemnización, sino declarando que el contrato, en rigor, no ha llegado a extinguirse), entonces la responsabilidad que de ello se siga será, en cambio, contractual, precisamente porque en tal caso el contrato no ha llegado a extinguirse en los términos que la parte que lo dio por terminado pretendía.</p>
+
+<p>Esta salvedad de Corral es dogmáticamente coherente con el criterio general que preside todo este eje: lo decisivo no es la etiqueta temporal ("antes" o "después" del contrato), sino si, en el momento relevante para juzgar el daño, existe o no un vínculo contractual formalmente vigente; si la sanción legal al término abusivo tiene, precisamente, el efecto de mantener vigente ese vínculo, entonces la responsabilidad correspondiente sigue siendo contractual, no obstante la intención de una de las partes de haberlo dado ya por terminado.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: la salvedad de Corral</span>
+  <p><strong>Regla general:</strong> responsabilidad postcontractual es extracontractual, porque el contrato ya expiró. <strong>Excepción:</strong> si la ley sanciona el término abusivo del contrato disponiendo que este se conserva vigente (no simplemente indemnizando), entonces no hay "postcontrato" en absoluto: el contrato sigue vivo, y la responsabilidad por su infracción sigue siendo contractual.</p>
+</div>
+
+<h2>9.3. Análisis de la tensión: la supervivencia de los deberes de lealtad más allá del contrato</h2>
+
+<p>La tensión de este eje conecta directamente con la que cerró el Eje 8, y conviene explicitar el paralelismo porque es lo que permite entender los tres supuestos (precontractual, por nulidad, y postcontractual) como manifestaciones de un mismo fenómeno de fondo. En la responsabilidad precontractual, el problema consiste en que existe ya una proximidad relacional (la negociación en curso) que impide tratar a las partes como completos extraños, aunque todavía no exista contrato.</p>
+
+<p>En la responsabilidad por nulidad, el problema consiste en que existió un contrato en apariencia, pulverizado después con efecto retroactivo, de modo que tampoco puede tratarse a las partes como extraños plenos, pese a no subsistir vínculo contractual alguno al que imputar responsabilidad.</p>
+
+<p>En la responsabilidad postcontractual, el problema es simétricamente inverso: existió un contrato real y válido, que generó durante su vigencia deberes específicos de lealtad (confidencialidad, no concurrencia), y la pregunta es si esos deberes, o al menos su espíritu, sobreviven a la extinción formal del vínculo que los originó.</p>
+
+<p>En los tres casos, la doctrina chilena tiende a preferir, como solución residual, la calificación extracontractual (extracontractual la responsabilidad precontractual según la posición mayoritaria examinada en el Eje 5; extracontractual, según Baraona, la responsabilidad por la nulidad del contrato examinada en el Eje 8; extracontractual, según Corral, la responsabilidad postcontractual, salvo el caso especial de la conservación forzada del contrato).</p>
+
+<p>Pero esta preferencia uniforme por la calificación extracontractual no resuelve, por sí sola, el problema de fondo, porque el régimen extracontractual está construido, en su formulación general, sobre el supuesto de que las partes son enteramente extrañas entre sí antes del hecho dañoso, supuesto que precisamente estas tres situaciones ponen en entredicho.</p>
+
+<p>De ahí que, en los tres casos, la doctrina se vea obligada a introducir correctivos al estándar general y abstracto de culpa que rige entre extraños: en la responsabilidad precontractual, el criterio no es la sola causación de un daño, sino la violación de la buena fe en el curso de una negociación que las propias partes decidieron entablar; en la responsabilidad por nulidad, Baraona exige valorar la culpa considerando la buena o mala fe y las expectativas de confianza generadas por la relación previa; y en la responsabilidad postcontractual, el fundamento de la reserva de confidencialidad o no concurrencia sigue siendo, aun calificado de extracontractual, un deber de lealtad que solo tiene sentido por haber existido antes un vínculo contractual entre las partes, ya extinguido.</p>
+
+<p>En los tres casos, entonces, la etiqueta extracontractual convive con una modulación del estándar de conducta exigible que reconoce, implícitamente, que estas partes no son del todo extrañas entre sí: la proximidad relacional previa (sea por negociación, por contrato anulado, o por contrato ya extinguido) no desaparece sin dejar rastro en la manera en que se juzga la conducta de quien causó el daño.</p>
+
+<h2>9.4. Síntesis para estructurar la respuesta de examen</h2>
+
+<p>Conviene abrir con el ejemplo del trabajador que revela información reservada tras la terminación de su contrato de trabajo, como ilustración del problema: un daño causado después de la extinción de un vínculo contractual real y válido, pero conectado con deberes de lealtad nacidos durante su vigencia.</p>
+
+<p>Exponer la tesis de la proyección contractual, fundada en acuerdos tácitos de secreto o de no concurrencia que sobrevivirían a la extinción del contrato.</p>
+
+<p>Contrastarla con la tesis extracontractual de Corral, que privilegia la constatación de que el contrato ya expiró, con su salvedad importante para los casos en que la ley sanciona el término abusivo disponiendo la conservación del contrato mismo, caso en el cual la responsabilidad sigue siendo contractual.</p>
+
+<p>Cerrar con la tensión de fondo, común a los tres supuestos examinados en este eje y en el anterior (precontractual, por nulidad, postcontractual): la preferencia doctrinaria uniforme por la calificación extracontractual como solución residual, acompañada siempre de una modulación del estándar ordinario de culpa que reconoce la proximidad relacional previa entre partes que, aunque no estén ligadas por un contrato vigente, tampoco son enteramente extrañas entre sí.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 9: La responsabilidad postcontractual</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+
+<!-- ============================================================
+     EJE 10: LA RESPONSABILIDAD PRECONTRACTUAL EN EL DERECHO COMPARADO Y SÍNTESIS GENERAL DE LA MATERIA
+     ============================================================ -->
+
+<h1 id="eje10">Eje 10. La responsabilidad precontractual en el derecho comparado y síntesis general de la materia</h1>
+
+<p>Cierra este material un examen del tratamiento que otros ordenamientos han dado a la responsabilidad precontractual, útil no solo como cultura jurídica comparada, sino porque permite medir, por contraste, cuánto ha avanzado, o cuánto le falta por avanzar, al derecho chileno en esta materia. La constatación de partida es la misma que abrió el Eje 1: en general, y tal como ocurre con el Código Civil chileno, los códigos extranjeros no suelen referirse expresamente a la responsabilidad precontractual. Pero existen excepciones significativas, que conviene conocer, porque muestran distintas técnicas legislativas para resolver el mismo problema que en Chile ha quedado enteramente entregado a la construcción doctrinaria y jurisprudencial examinada en los ejes anteriores.</p>
+
+<h2>10.1. El Código Civil italiano: la cláusula general de buena fe</h2>
+
+<p>El Código Civil italiano, de 1942, contiene dos disposiciones directamente atinentes a la materia. El artículo <span class="art">1337</span>, bajo el epígrafe "Tratos preparatorios y responsabilidad precontractual", dispone que las partes, en el desarrollo de los tratos preparatorios y en la formación del contrato, deben comportarse según la buena fe: es la técnica de la cláusula general, que no enumera supuestos específicos de responsabilidad, sino que impone un estándar de conducta aplicable a toda la etapa precontractual, dejando a la doctrina y a la jurisprudencia la tarea de precisar su contenido (exactamente la misma tarea que, en ausencia de norma expresa, ha debido asumir la doctrina chilena examinada en los ejes anteriores).</p>
+
+<p>El artículo <span class="art">1338</span>, complementario, regula específicamente el supuesto de la nulidad examinado en el Eje 8: la parte que, conociendo o debiendo conocer la existencia de una causa de invalidez del contrato, no dio noticia de ella a la otra parte, debe resarcir el daño que esta ha sufrido por haber confiado, sin culpa de su parte, en la validez del contrato.</p>
+
+<p>Es notable que el legislador italiano haya optado por regular expresamente, y de manera separada, tanto la cláusula general de buena fe negocial como el supuesto específico de la nulidad, reconociendo así, en el propio texto legal, la distinción que la doctrina chilena ha debido construir por vía interpretativa entre la responsabilidad precontractual en sentido estricto y la responsabilidad por nulidad del contrato.</p>
+
+<h2>10.2. El Código Civil portugués</h2>
+
+<p>El Código Civil portugués, de 1966, sigue una técnica similar en su artículo <span class="art">227</span>, bajo el epígrafe "Culpa en la formación de los contratos": quien negocia con otro para concluir un contrato debe, tanto en los preliminares como en su formación, proceder según las reglas de la buena fe, so pena de responder por los daños que culposamente cause a la otra parte.</p>
+
+<p>La formulación portuguesa, a diferencia de la italiana, no distingue expresamente entre la etapa de las tratativas y la formación misma del contrato, cubriendo ambas bajo un mismo estándar de buena fe y bajo un mismo factor de atribución (la culpa), en una síntesis legislativa que se acerca, en su resultado práctico, a la posición doctrinaria mayoritaria examinada en el Eje 5.</p>
+
+<h2>10.3. El Anteproyecto de Código europeo de contratos</h2>
+
+<p>Aunque no constituye derecho vigente en ningún ordenamiento (lo que exige manejarlo con la prudencia propia de una propuesta académica y no de una norma positiva), el Anteproyecto de Código europeo de contratos, preparado por la Academia de Pavía, merece atención especial porque desarrolla con mayor detalle técnico que los códigos italiano y portugués tanto el estándar general de buena fe como sus consecuencias indemnizatorias precisas.</p>
+
+<p>Su artículo <span class="art">6</span> fija cuatro reglas que conviene examinar en conjunto, porque replican con notable exactitud la estructura de requisitos examinada en el Eje 7: cada una de las partes es libre de emprender tratos con vistas a la conclusión de un contrato, sin que pueda imputársele responsabilidad alguna en caso de que el contrato no llegue a estipularse, salvo que su comportamiento sea contrario a la buena fe (consagración expresa de la libertad de negociar como punto de partida, examinada en el Eje 4); obra en contra de la buena fe la parte que emprende o continúa los tratos sin intención de llegar a la conclusión del contrato; si en el curso de los tratos las partes ya han examinado los elementos esenciales del contrato, previendo su eventual conclusión, aquella que suscite en la otra una confianza razonable respecto de la estipulación del contrato obra en contra de la buena fe desde que interrumpe los tratos sin motivo justificado (esta regla es particularmente relevante porque anticipa, con precisión notable, el criterio de gradación que Brebbia desarrolla en el Eje 6 según la etapa del proceso negocial); y, en los casos anteriores, la parte que ha obrado en contra de la buena fe queda obligada a reparar el daño sufrido por la otra como máximo en la medida de los gastos efectuados en el curso de los tratos, así como de la pérdida de ocasiones similares causada por las conversaciones pendientes (fórmula que, adviértase, adopta expresamente el criterio restrictivo examinado en el Eje 6 al admitir el lucro cesante únicamente en la forma acotada de "ocasiones similares" perdidas, y no como una reparación integral e ilimitada).</p>
+
+<p>El artículo <span class="art">7</span> del mismo Anteproyecto regula, además, un deber de información recíproca durante los tratos: cada parte tiene el deber de informar a la otra sobre cada circunstancia de hecho y de derecho de la cual tenga, o deba tener, conocimiento, y que permita a la otra formarse un juicio sobre la validez del contrato y sobre el interés en concluirlo.</p>
+
+<p>En caso de omisión de información, o de declaración falsa o reticente, si el contrato no llegó a concluirse o si es declarado nulo, la parte que obró en contra de la buena fe responde en la medida ya prevista para el retiro injustificado de los tratos; si el contrato sí llegó a concluirse, queda obligada a restituir la suma o a entregar la indemnización que el juez estime conforme a la equidad, sin perjuicio del derecho de la otra parte a atacar el contrato por error.</p>
+
+<p>Esta disposición conecta directamente con el catálogo de conductas conformes a la buena fe examinado en el Eje 4 (particularmente con el deber de no inducir a la contraparte mediante informaciones falsas, erróneas, simuladas o incompletas), y demuestra que ese catálogo doctrinario, lejos de ser una construcción puramente teórica, encuentra reflejo en propuestas legislativas concretas.</p>
+
+<h2>10.4. El Código Civil alemán</h2>
+
+<p>El Código Civil alemán (BGB) recoge, según se anticipó en el Eje 2, solo una recepción parcial de la doctrina de Ihering, dispersa en varios parágrafos que regulan supuestos específicos antes que un principio general de responsabilidad precontractual. El parágrafo 122 dispone la reparación de daños y perjuicios en los casos de declaraciones de voluntad nulas por falta de seriedad o por error, indemnizando el daño sufrido por haber confiado en la validez del contrato (recepción directa, y bastante fiel, del interés negativo de Ihering examinado en el Eje 6).</p>
+
+<p>El parágrafo 179 regula el caso del contrato celebrado por el falsus procurator, quien carece de poder de representación, cuando la otra parte desconocía esa falta de poder. Y los parágrafos 307 y 309 se refieren al contrato nulo por imposibilidad originaria de la prestación, sea por ser esta contraria a una prohibición legal, sea por ser contraria a las buenas costumbres.</p>
+
+<p>Adviértase que, a diferencia de los códigos italiano y portugués, el legislador alemán no formuló una cláusula general de buena fe negocial aplicable a todo el período precontractual, sino que optó por regular, de manera fragmentaria, ciertos supuestos específicos (la mayoría de ellos, además, vinculados a la nulidad del acto, y no a la ruptura de negociaciones), lo que deja sin cobertura legal expresa buena parte del terreno que la responsabilidad precontractual en sentido amplio, tal como se ha desarrollado en este material, efectivamente cubre.</p>
+
+<div class="dato-grado">
+  <span class="titulo-bloque">Dato de grado: cuatro ordenamientos, dos técnicas</span>
+  <table>
+    <thead><tr><th>Ordenamiento</th><th>Norma</th><th>Técnica</th></tr></thead>
+    <tbody>
+      <tr><td>Italia (1942)</td><td>Arts. <span class="art">1337</span> (buena fe general) y <span class="art">1338</span> (nulidad)</td><td>Cláusula general de buena fe, separada de la nulidad</td></tr>
+      <tr><td>Portugal (1966)</td><td>Art. <span class="art">227</span></td><td>Cláusula general de buena fe, sin distinguir tratos de formación</td></tr>
+      <tr><td>Anteproyecto de Pavía</td><td>Arts. 6 y 7</td><td>Cláusula general de buena fe + gradación según etapa + deber de información</td></tr>
+      <tr><td>Alemania (BGB)</td><td>§§ 122, 179, 307, 309</td><td>Supuestos específicos y fragmentarios, sin cláusula general</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>10.5. Análisis de la tensión: dos técnicas legislativas frente a la construcción doctrinaria chilena</h2>
+
+<p>La comparación entre estos cuatro modelos (italiano, portugués, el Anteproyecto de Pavía, y alemán) revela dos técnicas legislativas claramente diferenciadas para resolver el mismo problema. La primera, representada por Italia y Portugal, y desarrollada con mayor detalle en el Anteproyecto de Pavía, opta por una cláusula general de buena fe negocial, dejando a la doctrina y a la jurisprudencia la tarea de precisar su contenido caso por caso (exactamente la misma tarea que, en Chile, ha debido asumirse por vía enteramente doctrinaria y jurisprudencial, a falta de toda norma legal, ni siquiera general).</p>
+
+<p>La segunda, representada por Alemania, opta por regular supuestos específicos y acotados, sin formular un principio general, lo que tiene la ventaja de la seguridad jurídica en los casos expresamente cubiertos, pero el defecto de dejar sin solución legal expresa los casos no previstos, que deben entonces resolverse, igual que en Chile, por vía de construcción doctrinaria.</p>
+
+<p>Esta comparación permite extraer una conclusión que conviene formular expresamente como cierre de todo el material: el derecho chileno, pese a carecer de toda norma general sobre responsabilidad precontractual (a diferencia de Italia y Portugal) y de las normas específicas del BGB alemán, ha llegado, por la vía doctrinaria y jurisprudencial examinada en los Ejes 2 a 9, a un resultado sustancialmente equivalente al que esos ordenamientos alcanzan por vía legislativa: el reconocimiento de un deber general de buena fe negocial (Eje 4), aplicable durante todo el período precontractual (Eje 3), cuya infracción genera responsabilidad de naturaleza extracontractual (Eje 5), limitada en su extensión según la etapa en que se produce el daño (Eje 6), sujeta a requisitos precisos de imputabilidad y causalidad (Eje 7), y que se extiende, con los matices propios de cada supuesto, tanto a la nulidad del contrato (Eje 8) como a la etapa posterior a su terminación (Eje 9).</p>
+
+<p>La convergencia de resultados, pese a la divergencia de técnicas (cláusula legal expresa en unos ordenamientos, construcción doctrinaria pura en Chile), es quizás la mejor prueba de que la buena fe negocial, más que una específica solución de derecho positivo, expresa una exigencia estructural de todo sistema jurídico que permite la negociación libre de los contratos.</p>
+
+<div class="callout">
+  <span class="titulo-bloque">La conclusión para cerrar el examen</span>
+  <p>Chile no tiene una norma general de responsabilidad precontractual, a diferencia de Italia y Portugal, ni normas específicas como el BGB alemán. Y sin embargo, por vía puramente doctrinaria y jurisprudencial, ha llegado a un resultado equivalente al de esos ordenamientos: un deber general de buena fe negocial, de naturaleza extracontractual, limitado según la etapa del daño. La ausencia de ley no ha significado ausencia de derecho.</p>
+</div>
+
+<h2>10.6. Síntesis general de la materia</h2>
+
+<p>Corresponde cerrar este material con una síntesis que recorra, en su conjunto, la totalidad de lo expuesto en los diez ejes que lo componen, como estructura completa de respuesta para el examen de grado. El punto de partida es la laguna legal del Código Civil chileno, que no regula la formación del consentimiento salvo en materia de promesa (Eje 1), remediada solo parcialmente por el Código de Comercio para el tramo posterior a la oferta.</p>
+
+<p>Sobre esa laguna se construye, primero, la evolución doctrinaria desde la doctrina tradicional (irresponsabilidad hasta la oferta) hacia la doctrina moderna de Ihering, Faggella y Saleilles, que progresivamente extiende la responsabilidad hacia los tratos previos (Eje 2).</p>
+
+<p>Esa extensión se organiza, a su vez, en un itinerario de cinco etapas (tratos negociales previos, oferta, cierre de negocio, contrato preparatorio, contrato definitivo), cada una con su propio estatuto de responsabilidad (Eje 3), fundado en todas ellas, aunque con intensidad creciente, en el principio de la buena fe negocial (Eje 4).</p>
+
+<p>La pregunta por la naturaleza jurídica de esta responsabilidad admite cinco respuestas (contractual, extracontractual, abuso del derecho, responsabilidad legal, declaración unilateral de voluntad), siendo la extracontractual, cualificada por un estándar de lealtad reforzado, la posición hoy mayoritaria en Chile (Eje 5).</p>
+
+<p>El daño indemnizable se debate entre una posición restrictiva, que excluye siempre el lucro cesante, y el criterio de causalidad adecuada de Brebbia, que lo admite solo después de formulada la oferta (Eje 6).</p>
+
+<p>Estos elementos se sistematizan en catálogos de requisitos (los de Saavedra y Celis) cuya aplicación práctica exige, sobre todo, acreditar la imputabilidad del retiro cuando ambas partes se atribuyen mutuamente la ruptura, como ilustra el caso Lavín con Mena (Eje 7).</p>
+
+<p>Finalmente, la misma lógica extracontractual, cualificada por la proximidad relacional previa entre las partes, se extiende a dos supuestos fronterizos: la responsabilidad de quien causa la nulidad del contrato (Eje 8) y la responsabilidad postcontractual (Eje 9), ambos unidos por una misma estructura de fondo, que el derecho comparado (con técnicas legislativas distintas mas resultados convergentes) confirma como una exigencia estructural del derecho de los contratos, y no como una particularidad del sistema chileno.</p>
+
+<div class="repaso">
+  <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+  Has terminado el <strong>Eje 10: La responsabilidad precontractual en el derecho comparado y síntesis general de la materia</strong>. Antes de avanzar, entra a la plataforma <strong>Digesto</strong> y responde las preguntas de <strong>comprensión lectora</strong> de esta sección: te servirán de <em>check-in</em> de lo leído hasta aquí. Si alguna se te resiste, vuelve sobre el apartado antes de seguir.
+</div>
+</body>
+</html>

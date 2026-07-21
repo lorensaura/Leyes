@@ -35,12 +35,13 @@
 - `app/flashcards.html` — redirect a `alternativas.html?modelo=flashcard`, sin lógica propia.
 - `scripts/supabase_schema_practica.sql` — migración del refactor de Práctica (tablas `alternativas`, `memorice_articulos`, `memorice_progreso` + columnas nuevas). **Correr en Supabase antes de que Laura use Alternativas o Memorice.**
 - `app/interrogador.html` + `api/interrogador.js` — Interrogador IA (chat con Claude). Detalle en `docs/interrogador.md`.
-- `01_Responsabilidad_Contractual_Manual.html` y `02_Responsabilidad_Extracontractual_Manual.html` — fuentes de los manuales y de los PDF.
+- `01_Responsabilidad_Contractual_Manual.html`, `02_Responsabilidad_Extracontractual_Manual.html` y `03_Responsabilidad_Precontractual_Manual.html` — fuentes de los manuales y de los PDF.
 - `app/pdf/*.pdf` — PDFs generados.
 - `scripts/sync_airtable_supabase.py` — sincroniza Airtable → Supabase (a pedido, cuando Laura agregue contenido). Ver `docs/contenido-airtable-supabase.md`.
 - `.claude/skills/handoff/` — skill `/handoff` para cortar y retomar sesiones largas.
 
 ## Decisiones tomadas
+- **Manual de Responsabilidad Precontractual construido (2026-07-20)** a partir de un borrador de Laura (10 ejes, en `Apuntes/` — carpeta gitignored y por eso nunca llega a la plataforma sola). Se llevó al mismo formato que Contractual/Extracontractual (`03_Responsabilidad_Precontractual_Manual.html`), se le agregaron ~25 recuadros pedagógicos (callout/dato-grado/jurisprudencia/ejemplo/advertencia) que antes no tenía, se integró en `app/manuales.html` (nuevo tema "Responsabilidad Precontractual", 10 controles de lectura) y en `app/pdf/Responsabilidad_Precontractual.pdf`, y se amplió el grounding del Interrogador IA (ver `docs/interrogador.md`). **Los recuadros nuevos y las preguntas/keywords de los 10 controles de lectura (checkpoints) en `app/manuales.html` son borrador de Claude, no de Laura — quedan pendientes de su revisión antes de darlos por definitivos** (ella pidió expresamente redactarlos así: "dejas el hueco y redactas el dato, yo los reviso"). Nada de esto está desplegado todavía: falta el push (Laura pushea con GitHub Desktop). De paso se corrigió un bug real en `app/manuales.html` que **cambia lo que ven las alumnas en Contractual y Extracontractual, no solo en Precontractual**: el lector online borraba silenciosamente el primer recuadro `.warn` de cualquier manual (código legado de un "Nota para Laura" que ya no existe) — verificado que ahora se ve bien en los tres, pero Laura debería confirmarlo en persona antes de pushear.
 - **Evaluación acotada por ahora a contractual, extracontractual y precontractual** (Procesal y otros temas ocultos hasta que existan sus manuales). Ver `TEMAS_EN_ALCANCE` en `startSession()`.
 - Las preguntas de discriminación (MC) no tienen rúbrica de palabras clave: la recuperación libre es práctica y la corrección real es la selección de la alternativa (se puntúa en `evaluarMC`).
 - **Hosting:** seguir en **Vercel** por ahora (funciona, es gratis en la escala actual). **A futuro, evaluar migrar a Cloudflare Pages si Vercel empieza a cobrar por tráfico** — con el volumen actual ambos son gratis; migrar solo cuando el ahorro real supere el costo de rehacer la configuración.
@@ -52,7 +53,7 @@
 1. ~~Airtable~~ — hecho: base de contenido conectada, luego migrada a Supabase para producción (ver `docs/contenido-airtable-supabase.md`).
 2. ~~Revisar `app/alternativas.html`~~ — hecho.
 3. ~~Flashcards~~ — hecho: página con calificación y repetición espaciada (ver `docs/contenido-airtable-supabase.md`).
-4. **Interrogador con IA** — v1 lista y en producción, ver `docs/interrogador.md` para estado y pendientes. La interrogación oral (voz) queda para después.
+4. **Interrogador con IA** — v1 lista y en producción, alcance ampliado a Contractual + Extracontractual + Precontractual (2026-07-20), ver `docs/interrogador.md` para estado y pendientes. La interrogación oral (voz) queda para después.
 5. **Paywall** — sigue pendiente, después de validar el Interrogador con alumnas reales. Ver `docs/paywall.md`.
 6. **Revisar las demás materias de Civil y Procesal** — en stand by desde 2026-07-10 hasta terminar de validar Responsabilidad. Detalle del flujo en `docs/contenido-airtable-supabase.md`.
 

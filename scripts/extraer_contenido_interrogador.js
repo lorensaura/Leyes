@@ -17,6 +17,7 @@ const ROOT = path.resolve(__dirname, '..');
 const FUENTES = [
   ['Responsabilidad Contractual', path.join(ROOT, '01_Responsabilidad_Contractual_Manual.html')],
   ['Responsabilidad Extracontractual', path.join(ROOT, '02_Responsabilidad_Extracontractual_Manual.html')],
+  ['Responsabilidad Precontractual', path.join(ROOT, '03_Responsabilidad_Precontractual_Manual.html')],
 ];
 
 const SALIDA = path.join(ROOT, 'api', '_interrogador-contenido.js');
