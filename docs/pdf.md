@@ -4,7 +4,10 @@
 > cuando se esté tocando la generación de los PDF de los manuales.
 
 - Se generan con **Chrome headless vía CDP** (Python + `websocket-client`),
-  no con el "imprimir" del navegador.
+  no con el "imprimir" del navegador. El script reutilizable está en
+  `scripts/generar_pdf_manual.py` (uso: `python3 scripts/generar_pdf_manual.py
+  <html> <pdf_salida> "<Título>"`). Correrlo de nuevo cada vez que cambie el
+  contenido de un manual, para que el PDF descargable no quede desactualizado.
 - **Regla de oro:** usar **márgenes reales de `printToPDF`**
   (marginTop/Bottom/Left/Right), NO `padding` del `<body>`. El padding solo
   deja margen en la 1ª/última página y genera una "franja negra" (contenido
