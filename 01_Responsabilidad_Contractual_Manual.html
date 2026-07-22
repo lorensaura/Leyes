@@ -31,13 +31,13 @@
   }
   h1{
     font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;
     color:var(--accent2);
     font-size:1.35rem;
-    margin:3.6rem 0 .7rem;
-    border-bottom:2px solid var(--accent);
-    padding-bottom:.3rem;
-    text-align:left;
+    margin:3.6rem 0 .9rem;
+    text-align:center;
     text-transform:uppercase;
+    text-decoration:underline;
     letter-spacing:.03em;
     page-break-after:avoid;
   }
@@ -47,6 +47,8 @@
     font-size:1.1rem;
     margin:2.4rem 0 .45rem;
     text-align:left;
+    text-transform:uppercase;
+    text-decoration:underline;
     page-break-after:avoid;
   }
   h3{
@@ -55,8 +57,36 @@
     font-size:1rem;
     margin:1.7rem 0 .3rem;
     text-align:left;
+    text-decoration:underline;
     page-break-after:avoid;
   }
+  h4{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:400;
+    color:#222;
+    font-size:1rem;
+    margin:1.3rem 0 .2rem;
+    text-align:left;
+    text-decoration:underline;
+    page-break-after:avoid;
+  }
+  h5{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:400;
+    font-style:italic;
+    color:#333;
+    font-size:1rem;
+    margin:1rem 0 .2rem;
+    text-align:left;
+    page-break-after:avoid;
+  }
+  /* Encabezados de enumeración dentro de un párrafo (requisitos, categorías):
+     .enum-i = numeral romano, único nivel de enumeración → negrita.
+     .enum-a = letra, sub-nivel dentro de una enumeración → subrayado.
+     .enum-c = sub-sub-nivel (c.1, c.2…) → cursiva. */
+  .enum-i{display:block;font-weight:700;margin:.9rem 0 .15rem;}
+  .enum-a{display:block;text-decoration:underline;margin:.7rem 0 .15rem;}
+  .enum-c{display:block;font-style:italic;margin:.6rem 0 .15rem;}
   p{margin:.75rem 0 .75rem;text-align:justify;}
   ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
   li{margin:.4rem 0;text-align:justify;}
@@ -71,6 +101,26 @@
   td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;}
   tr:nth-child(even) td{background:var(--soft);}
   .art{font-weight:700;color:var(--accent);white-space:nowrap;}
+
+  /* ENCABEZADO DE RECUADRO EN DOS LÍNEAS (piloto de reformato 2026-07-22):
+     tipo de recuadro centrado arriba; título/cita específica justificada abajo.
+     Reemplaza el formato "Tipo — título" en una sola línea. */
+  .caja-tipo{
+    display:block;text-align:center;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;font-size:9pt;margin-bottom:4px;
+  }
+  .caja-titulo{
+    display:block;text-align:justify;font-weight:700;font-size:10pt;margin-bottom:.4rem;
+  }
+  .jurisprudencia .caja-titulo{
+    text-transform:uppercase;font-size:9.5pt;margin-bottom:6px;
+    padding-bottom:5px;border-bottom:1px solid var(--jurisborder);
+  }
+  .callout .caja-tipo{color:var(--accent);}
+  .warn .caja-tipo{color:var(--warn);}
+  .jurisprudencia .caja-tipo{color:var(--juris);}
+  .ejemplo .caja-tipo{color:var(--green);}
+  .dato-grado .caja-tipo{color:var(--orange);}
 
   /* CALLOUT — doctrinal destacado */
   .callout{
@@ -180,13 +230,17 @@
   .cover .meta{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--grey);margin-top:1.3rem;font-size:.8rem;font-weight:300;line-height:1.55;max-width:460px;margin-left:auto;margin-right:auto;}
 
   /* ÍNDICE */
-  .toc{background:#FCF9F2;border:1px solid #E3D6BC;padding:18px 26px 20px;margin:2.5rem 0;}
-  .toc strong{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:.6rem;}
-  .toc ol{margin:0;padding-left:1.4rem;}
-  .toc li{margin:.28rem 0;}
-  .toc a{color:#333;text-decoration:none;}
-  .toc a:hover{color:var(--accent);text-decoration:underline;}
-  .toc ol ol{margin:.15rem 0 .35rem;}
+  .toc{
+    background:var(--soft);
+    border:1px solid var(--light);
+    padding:14px 22px;
+    margin-bottom:2rem;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:10pt;
+  }
+  .toc a{color:var(--accent);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  .toc ol{text-align:left;}
 
   @media print{
     body{margin:0;padding:0;max-width:none;font-size:12pt;line-height:1.3;}
@@ -201,8 +255,7 @@
       padding:0 20px;margin:0;
     }
     /* El índice fluye hacia el contenido (sin dejar media página en blanco) */
-    .toc{page-break-after:auto;margin-bottom:1.4rem;}
-    h1:first-of-type{page-break-before:avoid;}
+    .toc{page-break-after:always;margin-bottom:1.4rem;}
   }
 </style>
 </head>
@@ -1352,22 +1405,27 @@
 
 <h1 id="s6">6. Causales de exención de responsabilidad</h1>
 
-<p>Desarrollado a lo largo de las secciones anteriores el régimen del incumplimiento y de sus remedios —cumplimiento forzado, resolución e indemnización de perjuicios—, corresponde ahora examinar el reverso de la moneda: <strong>aquellas circunstancias que liberan al deudor del deber de responder</strong>. La pregunta que articula esta sección es una sola y muy precisa: producido objetivamente el incumplimiento, ¿en qué casos puede el deudor sustraerse a la responsabilidad civil que de él derivaría? Conviene tener presente que no toda causal opera del mismo modo: algunas <em>extinguen</em> la obligación (la pérdida fortuita de la especie debida), otras se limitan a <em>eximir de responsabilidad</em> dejando subsistente el vínculo (el caso fortuito temporal), y otras, en fin, son meras <em>defensas</em> que la doctrina debate y que la jurisprudencia ha recibido con desigual entusiasmo.</p>
+<p>Desarrollado a lo largo de las secciones anteriores el régimen del incumplimiento y de sus remedios (cumplimiento forzado, resolución e indemnización de perjuicios), corresponde ahora examinar el reverso de la moneda: <strong>aquellas circunstancias que liberan al deudor del deber de responder</strong>. La pregunta que articula esta sección es una sola y muy precisa: producido objetivamente el incumplimiento, ¿en qué casos puede el deudor sustraerse a la responsabilidad civil que de él derivaría? Conviene tener presente que no toda causal opera del mismo modo: algunas <em>extinguen</em> la obligación (la pérdida fortuita de la especie debida), otras se limitan a <em>eximir de responsabilidad</em> dejando subsistente el vínculo (el caso fortuito temporal), y otras, en fin, son meras <em>defensas</em> que la doctrina debate y que la jurisprudencia ha recibido con desigual entusiasmo.</p>
 
-<p>Tradicionalmente, la doctrina ha sostenido que <strong>la única causal de exención de responsabilidad sería el caso fortuito o la fuerza mayor</strong>. Adicionalmente, algunos autores agregan la <strong>ausencia de culpa</strong>. Una doctrina más minoritaria suma otras causales como el <strong>estado de necesidad</strong>, el <strong>hecho ajeno</strong>, la <strong>teoría de la imprevisión</strong> y la <strong>frustración del fin del contrato</strong>. Todas ellas se analizarán en este capítulo, advirtiendo desde ya —con <strong>Boetsch</strong>— que estas últimas «han tenido escasa (y en algunos casos nula) acogida por la jurisprudencia nacional».</p>
+<p>Tradicionalmente, la doctrina ha sostenido que <strong>la única causal de exención de responsabilidad sería el caso fortuito o la fuerza mayor</strong>. Adicionalmente, algunos autores agregan la <strong>ausencia de culpa</strong>. Una doctrina más minoritaria suma otras causales como el <strong>estado de necesidad</strong>, el <strong>hecho ajeno</strong>, la <strong>teoría de la imprevisión</strong> y la <strong>frustración del fin del contrato</strong>. Todas ellas se analizarán en este capítulo, advirtiendo desde ya, con <strong>BOETSCH</strong>, que estas últimas «han tenido escasa (y en algunos casos nula) acogida por la jurisprudencia nacional».</p>
 
-<div class="callout"><span class="titulo-bloque">No confundir — eximir de responsabilidad y extinguir la obligación</span><p>Conviene separar dos planos que el examinador suele cruzar. <strong>Eximir de responsabilidad</strong> significa que, pese a no haberse cumplido, el deudor no queda obligado a indemnizar: la prestación primitiva puede subsistir (si el impedimento es transitorio) o haberse extinguido por otra vía. <strong>Extinguir la obligación</strong>, en cambio, es hacer desaparecer el vínculo mismo: es lo que ocurre cuando la especie o cuerpo cierto debido perece por caso fortuito (<span class="art">1670</span>). El caso fortuito, como veremos, puede producir <em>ambos</em> efectos según su carácter sea temporal o permanente; las demás causales, por regla general, sólo operan en el plano de la responsabilidad.</p></div>
+<div class="callout">
+  <span class="caja-tipo">Doctrina</span>
+  <span class="caja-titulo">No confundir: eximir de responsabilidad y extinguir la obligación</span>
+  <p>Conviene separar dos planos que el examinador suele cruzar. <strong>Eximir de responsabilidad</strong> significa que, pese a no haberse cumplido, el deudor no queda obligado a indemnizar: la prestación primitiva puede subsistir (si el impedimento es transitorio) o haberse extinguido por otra vía. <strong>Extinguir la obligación</strong>, en cambio, es hacer desaparecer el vínculo mismo: es lo que ocurre cuando la especie o cuerpo cierto debido perece por caso fortuito (<span class="art">1670</span>). El caso fortuito, como veremos, puede producir <em>ambos</em> efectos según su carácter sea temporal o permanente; las demás causales, por regla general, sólo operan en el plano de la responsabilidad.</p>
+</div>
 
 <h2 id="s6a">6.1. El caso fortuito o la fuerza mayor</h2>
 
-<p>Como consideración preliminar, y siguiendo a <strong>Boetsch</strong>, es necesario advertir que —de acuerdo con cierta doctrina— el Código Civil regula <strong>dos clases de caso fortuito</strong> según sean los efectos que produzca en el cumplimiento:</p>
+<p>Como consideración preliminar, y siguiendo a <strong>BOETSCH</strong>, es necesario advertir que, de acuerdo con cierta doctrina, el Código Civil regula <strong>dos clases de caso fortuito</strong> según sean los efectos que produzca en el cumplimiento:</p>
 
-<ul>
-<li><strong>El caso fortuito permanente</strong>, que opera como <em>modo de extinguir la obligación</em> por pérdida de la cosa que se debe o imposibilidad absoluta de ejecución del hecho debido. Ejemplo: la destrucción de la especie específica que se debía.</li>
-<li><strong>El caso fortuito temporal</strong>, que opera como <em>eximente de responsabilidad</em> y no como modo de extinguir, porque, terminado el caso fortuito, sí debe cumplirse. Ejemplo: se destruye el camino que necesariamente debía tomar el deudor para entregar la cosa debida; en tal caso, no responde por el retraso en el cumplimiento, pero debe entregar la cosa una vez que se haya reparado el camino.</li>
-</ul>
+<p class="enum-i">(i) El caso fortuito permanente.</p>
+<p>Opera como <em>modo de extinguir la obligación</em>, por pérdida de la cosa que se debe o imposibilidad absoluta de ejecución del hecho debido. Ejemplo: la destrucción de la especie específica que se debía.</p>
 
-<p>Esta distinción —que reaparecerá al estudiar los efectos— es la clave de bóveda de toda la institución y explica por qué un mismo concepto puede ser, a la vez, defensa frente a la indemnización y modo de extinción.</p>
+<p class="enum-i">(ii) El caso fortuito temporal.</p>
+<p>Opera como <em>eximente de responsabilidad</em> y no como modo de extinguir, porque, terminado el caso fortuito, sí debe cumplirse. Ejemplo: se destruye el camino que necesariamente debía tomar el deudor para entregar la cosa debida; en tal caso, no responde por el retraso en el cumplimiento, pero debe entregar la cosa una vez que se haya reparado el camino.</p>
+
+<p>Esta distinción, que reaparecerá al estudiar los efectos, es la clave de bóveda de toda la institución y explica por qué un mismo concepto puede ser, a la vez, defensa frente a la indemnización y modo de extinción.</p>
 
 <h3>6.1.1. Concepto</h3>
 
@@ -1375,50 +1433,68 @@
 
 <p>Es generalmente aceptado por la doctrina y la jurisprudencia que, conforme a dicha definición, el caso fortuito se configura como un hecho que debe ser <strong>imprevisible</strong> e <strong>irresistible</strong>, a lo que se agrega además que debe tratarse de un hecho <strong>ajeno al deudor</strong>, cuestión que se desprende del artículo <span class="art">1547</span> inciso segundo del mismo Código. Tenemos, así, los tres requisitos clásicos que el examinador exige enunciar sin vacilación: <em>ajenidad</em>, <em>imprevisibilidad</em> e <em>irresistibilidad</em>.</p>
 
-<div class="jurisprudencia"><span class="titulo-bloque">Jurisprudencia — Corte Suprema (concepto de imprevisto e irresistible)</span><p>La jurisprudencia reciente ha «conceptualizado el hecho imprevisto como aquel que la razón humana no puede determinar si se ha de realizar o no, al tiempo que entiende como hecho irresistible aquel cuyas consecuencias no han sido posible evitar ni eludir por no haber medios para impedirlas». Profundizando esas nociones, se ha resuelto que «la naturaleza imprevista se verifica cuando no resulta posible vislumbrar la existencia del daño con anterioridad a su ocurrencia, es decir, haber adoptado todas las precauciones para que el daño no se produzca y aun así, ser imposible para el agente contrarrestarlo»; por su parte, el carácter irresistible «se refiere a la conducta del agente frente a un suceso en vías de ocurrir, inminente, o ya ocurrido, y consiste en defensas que se oponen al hecho imprevisto tendientes a evitar sus efectos dañosos».</p></div>
+<div class="jurisprudencia">
+  <span class="caja-tipo">Jurisprudencia</span>
+  <span class="caja-titulo">Corte Suprema: concepto de imprevisto e irresistible</span>
+  <p>La jurisprudencia reciente ha «conceptualizado el hecho imprevisto como aquel que la razón humana no puede determinar si se ha de realizar o no, al tiempo que entiende como hecho irresistible aquel cuyas consecuencias no han sido posible evitar ni eludir por no haber medios para impedirlas». Profundizando esas nociones, se ha resuelto que «la naturaleza imprevista se verifica cuando no resulta posible vislumbrar la existencia del daño con anterioridad a su ocurrencia, es decir, haber adoptado todas las precauciones para que el daño no se produzca y aun así, ser imposible para el agente contrarrestarlo»; por su parte, el carácter irresistible «se refiere a la conducta del agente frente a un suceso en vías de ocurrir, inminente, o ya ocurrido, y consiste en defensas que se oponen al hecho imprevisto tendientes a evitar sus efectos dañosos».</p>
+</div>
 
-<p>Por su parte, la doctrina —representada aquí por <strong>Brantt</strong>— afirma que «el hecho será ajeno cuando no constituya un riesgo que según el contrato corresponda al deudor»; es decir, corresponde a un hecho que afecta el cumplimiento de la obligación comprometida por el deudor y que escapa de los medios y recursos materiales o personales que debía utilizar para cumplir dicha obligación. Nótese que la ajenidad no se mide en abstracto, sino <em>en función del contrato</em>: lo decisivo es la distribución de riesgos que el propio negocio supone.</p>
+<p>Por su parte, la doctrina, representada aquí por <strong>BRANTT</strong>, afirma que «el hecho será ajeno cuando no constituya un riesgo que según el contrato corresponda al deudor»; es decir, corresponde a un hecho que afecta el cumplimiento de la obligación comprometida por el deudor y que escapa de los medios y recursos materiales o personales que debía utilizar para cumplir dicha obligación. Nótese que la ajenidad no se mide en abstracto, sino <em>en función del contrato</em>: lo decisivo es la distribución de riesgos que el propio negocio supone.</p>
 
 <h3>6.1.2. Elementos o requisitos del caso fortuito</h3>
 
-<p>Los elementos del caso fortuito son, entonces, que se trate de un hecho <strong>ajeno al deudor, imprevisto e irresistible</strong>. Es importante destacar que la forma de determinar la efectiva imprevisibilidad e irresistibilidad de un hecho se sustenta en un <strong>juicio en abstracto</strong>, por medio del cual se compara la conducta efectiva del agente con un patrón de conducta estándar que sirve como punto de comparación —el buen padre de familia, el hombre razonable—, de forma tal que pueda dilucidarse si una persona razonable, premunida de las mismas capacidades técnicas y enfrentada a las mismas circunstancias externas que el agente, habría podido prever y resistir el hecho que se invoca como caso fortuito.</p>
+<p>Los elementos del caso fortuito son, entonces, que se trate de un hecho <strong>ajeno al deudor, imprevisto e irresistible</strong>. Es importante destacar que la forma de determinar la efectiva imprevisibilidad e irresistibilidad de un hecho se sustenta en un <strong>juicio en abstracto</strong>, por medio del cual se compara la conducta efectiva del agente con un patrón de conducta estándar que sirve como punto de comparación (el buen padre de familia, el hombre razonable), de forma tal que pueda dilucidarse si una persona razonable, premunida de las mismas capacidades técnicas y enfrentada a las mismas circunstancias externas que el agente, habría podido prever y resistir el hecho que se invoca como caso fortuito.</p>
 
 <p>Por su parte, la carga de acreditar que un hecho efectivamente constituye caso fortuito recae en el <strong>deudor</strong> de la obligación: el artículo <span class="art">1547</span> inciso tercero dispone que incumbe «la prueba del caso fortuito al que lo alega».</p>
 
-<h4>a) Hecho ajeno (o inimputable)</h4>
-
-<p>Este requisito —que para ciertos autores consiste en que el hecho sea «inimputable», noción algo más restringida— consiste en que la circunstancia que lo configura se encuentre <strong>fuera del ámbito de riesgos asumidos por el deudor</strong> en el contrato, de forma tal que, si se produce un incumplimiento asociado a tales causas, en palabras de <strong>Brantt</strong>, «el deudor no podrá alegar su exención de responsabilidad. Ello, porque no se trata de un riesgo ajeno a él conforme al contrato, y por lo tanto, no puede configurar un caso fortuito a su respecto».</p>
+<p class="enum-i">(i) Hecho ajeno (o inimputable).</p>
+<p>Este requisito, que para ciertos autores consiste en que el hecho sea «inimputable» (noción algo más restringida), consiste en que la circunstancia que lo configura se encuentre <strong>fuera del ámbito de riesgos asumidos por el deudor</strong> en el contrato, de forma tal que, si se produce un incumplimiento asociado a tales causas, en palabras de <strong>BRANTT</strong>, «el deudor no podrá alegar su exención de responsabilidad. Ello, porque no se trata de un riesgo ajeno a él conforme al contrato, y por lo tanto, no puede configurar un caso fortuito a su respecto».</p>
 
 <p>Se debe tratar, pues, de un hecho ajeno al deudor: no debe provenir de su hecho o culpa, ni del hecho o culpa de las personas por quienes él responde. Así resulta de numerosas disposiciones: artículos <span class="art">934</span>, <span class="art">1547</span> inc. 2.º, <span class="art">1590</span>, <span class="art">1672</span> inc. 1.º, <span class="art">1679</span>, <span class="art">1925</span> inc. 1.º, <span class="art">1926</span> inc. 1.º, <span class="art">2015</span> inc. 3.º, <span class="art">2016</span> inc. 2.º, <span class="art">2178</span> N.º 2, <span class="art">2242</span>, entre otras.</p>
 
-<div class="ejemplo"><span class="titulo-bloque">Ejemplo — el comerciante que vende lo que no tiene (Abeliuk)</span><p>En Francia se ha fallado que un comerciante que vende a plazo mercaderías que él no tiene debe daños e intereses si una fuerza mayor le impide hacerlas venir lo suficientemente rápido como para entregarlas dentro de plazo. No hay caso fortuito por <strong>faltar la inimputabilidad</strong>: es culpable la conducta del deudor de ofrecer mercaderías de que no disponía. <strong>Abeliuk</strong> presenta este ejemplo como un caso de <em>falta de previsión</em>: el vendedor debió prever la dificultad. El impedimento, en rigor, no le era ajeno, sino que provenía de su propia imprudencia al comprometerse.</p></div>
+<div class="ejemplo">
+  <span class="caja-tipo">Ejemplo</span>
+  <span class="caja-titulo">El comerciante que vende lo que no tiene (ABELIUK)</span>
+  <p>En Francia se ha fallado que un comerciante que vende a plazo mercaderías que él no tiene debe daños e intereses si una fuerza mayor le impide hacerlas venir lo suficientemente rápido como para entregarlas dentro de plazo. No hay caso fortuito por <strong>faltar la inimputabilidad</strong>: es culpable la conducta del deudor de ofrecer mercaderías de que no disponía. <strong>ABELIUK</strong> presenta este ejemplo como un caso de <em>falta de previsión</em>: el vendedor debió prever la dificultad. El impedimento, en rigor, no le era ajeno, sino que provenía de su propia imprudencia al comprometerse.</p>
+</div>
 
-<h4>b) Hecho imprevisto</h4>
+<p class="enum-i">(ii) Hecho imprevisto.</p>
+<p>Que el hecho sea imprevisto significa que, dentro de los cálculos ordinarios de un hombre normal, <strong>no era dable esperar su ocurrencia</strong>. <strong>DE LA MAZA</strong> define los acontecimientos imprevistos como aquellos poco frecuentes, que por excepción suelen sobrevenir, y que no han sido tomados en cuenta por las partes al momento de contratar.</p>
 
-<p>Que el hecho sea imprevisto significa que, dentro de los cálculos ordinarios de un hombre normal, <strong>no era dable esperar su ocurrencia</strong>. <strong>De la Maza</strong> define los acontecimientos imprevistos como aquellos poco frecuentes, que por excepción suelen sobrevenir, y que no han sido tomados en cuenta por las partes al momento de contratar.</p>
+<div class="jurisprudencia">
+  <span class="caja-tipo">Jurisprudencia</span>
+  <span class="caja-titulo">Corte Suprema: imprevisibilidad, el caso de la sequía</span>
+  <p>La Corte Suprema ha dicho que «el caso fortuito es imprevisto cuando no hay ninguna razón especial para creer en su realización». De ahí que se haya fallado que «la sequía no constituye en sí misma un caso fortuito, ya que ella es insuficiente para eximirse de responsabilidad si se considera que en períodos de escasez de recursos hídricos, como sucede frecuentemente en nuestro país, es posible la generación a niveles normales de energía hidroeléctrica y aun sustituir el faltante mediante la generación termoeléctrica». El criterio es nítido: un fenómeno <em>recurrente</em> y <em>esperable</em> en nuestra geografía no puede invocarse como imprevisto.</p>
+</div>
 
-<div class="jurisprudencia"><span class="titulo-bloque">Jurisprudencia — Corte Suprema (imprevisibilidad; la sequía)</span><p>La Corte Suprema ha dicho que «el caso fortuito es imprevisto cuando no hay ninguna razón especial para creer en su realización». De ahí que se haya fallado que «la sequía no constituye en sí misma un caso fortuito, ya que ella es insuficiente para eximirse de responsabilidad si se considera que en períodos de escasez de recursos hídricos, como sucede frecuentemente en nuestro país, es posible la generación a niveles normales de energía hidroeléctrica y aun sustituir el faltante mediante la generación termoeléctrica». El criterio es nítido: un fenómeno <em>recurrente</em> y <em>esperable</em> en nuestra geografía no puede invocarse como imprevisto.</p></div>
+<p class="enum-i">(iii) Hecho irresistible.</p>
+<p>Se entiende que un evento resulta irresistible cuando, dispuestos todos los medios razonables para evitar su ocurrencia o sus efectos dañosos, éstos se verifican igualmente. El carácter irresistible redunda en dos perspectivas distintas: que el hecho sea <strong>inevitable</strong> (esto es, que física o jurídicamente no sea posible evitar su ocurrencia) y que sus <strong>consecuencias sean irresistibles</strong> (a saber, que no puedan razonablemente eliminarse o aminorarse por parte del deudor).</p>
 
-<h4>c) Hecho irresistible</h4>
+<div class="jurisprudencia">
+  <span class="caja-tipo">Jurisprudencia</span>
+  <span class="caja-titulo">La diligencia que integra la prestación</span>
+  <p>Se ha resuelto que «el deudor, con la diligencia necesaria, debe superar toda clase de impedimentos u obstáculos, incluso imprevisibles al tiempo de contratar, que incidan en la ejecución de la obligación. Tratándose de estos impedimentos u obstáculos imprevisibles al tiempo del contrato, como ocurre en los supuestos de caso fortuito o fuerza mayor, la diligencia requerida integra la prestación, imponiendo al deudor una actividad que no tuvo cómo prever inicialmente y, consiguientemente, unos costos adicionales. El límite de esta diligencia y de la actividad que se puede esperar del deudor está representado por la <em>irresistibilidad</em> de las consecuencias del impedimento u obstáculo. Este límite permite unir la responsabilidad civil por daños con la exoneración de la misma por caso fortuito o de fuerza mayor (artículos 1547 y 45). El deudor incumplidor responde mientras no pruebe que su incumplimiento tuvo por causa un hecho constitutivo de caso fortuito, que se define concretamente, según sea su diligencia exigible».</p>
+</div>
 
-<p>Se entiende que un evento resulta irresistible cuando, dispuestos todos los medios razonables para evitar su ocurrencia o sus efectos dañosos, éstos se verifican igualmente. El carácter irresistible redunda en dos perspectivas distintas: que el hecho sea <strong>inevitable</strong> —esto es, que física o jurídicamente no sea posible evitar su ocurrencia— y que sus <strong>consecuencias sean irresistibles</strong> —a saber, que no puedan razonablemente eliminarse o aminorarse por parte del deudor—.</p>
-
-<div class="jurisprudencia"><span class="titulo-bloque">Jurisprudencia — la diligencia que «integra la prestación»</span><p>Se ha resuelto que «el deudor, con la diligencia necesaria, debe superar toda clase de impedimentos u obstáculos —incluso imprevisibles al tiempo de contratar— que incidan en la ejecución de la obligación. Tratándose de estos impedimentos u obstáculos imprevisibles al tiempo del contrato, como ocurre en los supuestos de caso fortuito o fuerza mayor, la diligencia requerida integra la prestación, imponiendo al deudor una actividad que no tuvo cómo prever inicialmente y, consiguientemente, unos costos adicionales. El límite de esta diligencia y de la actividad que se puede esperar del deudor está representado por la <em>irresistibilidad</em> de las consecuencias del impedimento u obstáculo. Este límite permite unir la responsabilidad civil por daños con la exoneración de la misma por caso fortuito o de fuerza mayor (artículos 1547 y 45). El deudor incumplidor responde mientras no pruebe que su incumplimiento tuvo por causa un hecho constitutivo de caso fortuito, que se define concretamente, según sea su diligencia exigible».</p></div>
-
-<div class="dato-grado"><span class="titulo-bloque">Dato de grado — los tres requisitos, siempre</span><p>Ante cualquier pregunta sobre caso fortuito, parta enunciando los <strong>tres requisitos</strong>: hecho <strong>ajeno</strong> al deudor (art. 1547 inc. 2.º), <strong>imprevisto</strong> (art. 45) e <strong>irresistible</strong> (art. 45). Agregue de inmediato que la prueba incumbe al que lo alega (art. 1547 inc. 3.º) y que el juicio de previsibilidad/irresistibilidad se hace <em>en abstracto</em> (buen padre de familia). Esa estructura de cuatro trazos —tres requisitos más carga probatoria— vale tantos puntos como el desarrollo posterior.</p></div>
+<div class="dato-grado">
+  <span class="caja-tipo">Dato de grado</span>
+  <span class="caja-titulo">Los tres requisitos, siempre</span>
+  <p>Ante cualquier pregunta sobre caso fortuito, parta enunciando los <strong>tres requisitos</strong>: hecho <strong>ajeno</strong> al deudor (art. 1547 inc. 2.º), <strong>imprevisto</strong> (art. 45) e <strong>irresistible</strong> (art. 45). Agregue de inmediato que la prueba incumbe al que lo alega (art. 1547 inc. 3.º) y que el juicio de previsibilidad/irresistibilidad se hace <em>en abstracto</em> (buen padre de familia). Esa estructura de cuatro trazos (tres requisitos más carga probatoria) vale tantos puntos como el desarrollo posterior.</p>
+</div>
 
 <h3>6.1.3. Efectos del caso fortuito</h3>
 
 <p>El efecto propio del caso fortuito es <strong>liberar de responsabilidad al deudor</strong>. Así lo dice el artículo <span class="art">1547</span> inc. 2.º: «el deudor no es responsable del caso fortuito»; y lo reitera el artículo <span class="art">1558</span> inc. 2.º: «la mora producida por fuerza mayor o caso fortuito no da lugar a indemnización de perjuicios».</p>
 
-<p>En opinión de <strong>Vial</strong>, es necesario advertir que el caso fortuito presenta una <strong>doble naturaleza jurídica</strong>:</p>
+<p>En opinión de <strong>VIAL</strong>, es necesario advertir que el caso fortuito presenta una <strong>doble naturaleza jurídica</strong>:</p>
 
-<ul>
-<li><strong>(i) Como circunstancia que impide imputar la infracción al deudor.</strong> Ello se traduce en la imposibilidad en que se encuentra el acreedor de exigir indemnización de perjuicios. En este evento, si bien el caso fortuito hace imposible cumplir la obligación, <em>no la extingue</em>, porque se supone que el obstáculo es temporal o transitorio y que, una vez que desaparece, la obligación puede cumplirse, sin que el deudor contraiga responsabilidad por el cumplimiento tardío.</li>
-<li><strong>(ii) Como elemento esencial de un modo de extinción</strong> denominado pérdida de la cosa debida o imposibilidad absoluta de ejecución. Aquí, a diferencia del punto anterior, se trata de un caso fortuito de efectos <em>permanentes</em> y no transitorios, por lo que no sólo exime de responsabilidad, sino que además <em>extingue la obligación</em>.</li>
-</ul>
+<p class="enum-i">(i) Como circunstancia que impide imputar la infracción al deudor.</p>
+<p>Ello se traduce en la imposibilidad en que se encuentra el acreedor de exigir indemnización de perjuicios. En este evento, si bien el caso fortuito hace imposible cumplir la obligación, <em>no la extingue</em>, porque se supone que el obstáculo es temporal o transitorio y que, una vez que desaparece, la obligación puede cumplirse, sin que el deudor contraiga responsabilidad por el cumplimiento tardío.</p>
 
-<p>En definitiva, en la responsabilidad contractual el caso fortuito constituye, en primer lugar, un <strong>eximente de responsabilidad</strong>: exime al deudor de su deber de indemnizar los perjuicios surgidos de su incumplimiento (total o parcial) si éste se ha producido por causa del caso fortuito. Así resulta del artículo <span class="art">1547</span> inc. 2.º —«el deudor no es responsable del caso fortuito, a menos que se haya constituido en mora (siendo el caso fortuito de aquellos que no hubieran dañado a la cosa debida, si hubiese sido entregada al acreedor), o que el caso fortuito haya sobrevenido por su culpa»— y del artículo <span class="art">1558</span>.</p>
+<p class="enum-i">(ii) Como elemento esencial de un modo de extinción.</p>
+<p>Se trata del modo denominado pérdida de la cosa debida o imposibilidad absoluta de ejecución. Aquí, a diferencia del punto anterior, se trata de un caso fortuito de efectos <em>permanentes</em> y no transitorios, por lo que no sólo exime de responsabilidad, sino que además <em>extingue la obligación</em>.</p>
+
+<p>En definitiva, en la responsabilidad contractual el caso fortuito constituye, en primer lugar, un <strong>eximente de responsabilidad</strong>: exime al deudor de su deber de indemnizar los perjuicios surgidos de su incumplimiento (total o parcial) si éste se ha producido por causa del caso fortuito. Así resulta del artículo <span class="art">1547</span> inc. 2.º, que dispone que «el deudor no es responsable del caso fortuito, a menos que se haya constituido en mora (siendo el caso fortuito de aquellos que no hubieran dañado a la cosa debida, si hubiese sido entregada al acreedor), o que el caso fortuito haya sobrevenido por su culpa», y del artículo <span class="art">1558</span>.</p>
 
 <p>En segundo término, el caso fortuito constituye una <strong>forma de extinguir</strong> obligaciones de dar una especie o cuerpo cierto, que el Código trata bajo la denominación de «la pérdida de la cosa que se debe». El artículo <span class="art">1670</span> dispone que «cuando el cuerpo cierto que se debe perece, o porque se destruye, o porque deja de estar en el comercio, o porque desaparece y se ignora si existe, se extingue la obligación»; pero dicha extinción tiene lugar únicamente cuando la cosa debida perece por caso fortuito (<span class="art">1672</span>). La ley presume, en todo caso, que la cosa que perece en poder del deudor lo hace por hecho o culpa suya (<span class="art">1671</span>), obligándolo a probar el caso fortuito (<span class="art">1674</span>).</p>
 
@@ -1426,12 +1502,16 @@
 
 <p>El principio de que el caso fortuito exime de responsabilidad reconoce <strong>cuatro excepciones</strong>, en las cuales el deudor responde no obstante el hecho fortuito:</p>
 
-<ul>
-<li><strong>1. Cuando el caso fortuito sobreviene por culpa del deudor.</strong> Así lo señala el artículo <span class="art">1547</span> inc. 2.º, y aplican este principio los artículos <span class="art">1590</span> inc. 1.º (caso fortuito como eximente) y <span class="art">1672</span> inc. 2.º (caso fortuito como modo de extinguir). En verdad, si el hecho proviene de la culpa del deudor, resulta impropio hablar de caso fortuito, pues el hecho le sería imputable.</li>
-<li><strong>2. Cuando sobreviene durante la mora del deudor.</strong> Así lo dice el artículo <span class="art">1547</span> inc. 2.º, y lo reiteran los artículos <span class="art">1590</span> inc. 1.º y <span class="art">1672</span>. Esta excepción <em>no rige</em> si el caso fortuito igualmente hubiere sobrevenido en caso de que el acreedor hubiere tenido en su poder la cosa debida (arts. <span class="art">1547</span> inc. 2.º, <span class="art">1590</span> inc. 1.º y <span class="art">1672</span> inc. 2.º): la mora no agrava la responsabilidad si el daño se habría producido de todos modos.</li>
-<li><strong>3. Cuando se ha convenido que el deudor responda del caso fortuito.</strong> Ello puede establecerse en virtud del principio de la autonomía de la voluntad, según los artículos <span class="art">1547</span> inc. final, <span class="art">1558</span> inc. final y <span class="art">1673</span>.</li>
-<li><strong>4. Cuando la ley pone el caso fortuito de cargo del deudor</strong> (art. <span class="art">1547</span> inc. final). Así ocurre, por ejemplo, respecto del que ha hurtado o robado una cosa (<span class="art">1676</span>). Otro caso es el contemplado para el colono —arrendatario de predio rústico— en el artículo <span class="art">1983</span> inc. 1.º, en cuanto «no tendrá derecho para pedir rebaja del precio o renta, alegando casos fortuitos extraordinarios, que han deteriorado o destruido la cosecha».</li>
-</ul>
+<p class="enum-i">(i) Cuando el caso fortuito sobreviene por culpa del deudor.</p>
+<p>Así lo señala el artículo <span class="art">1547</span> inc. 2.º, y aplican este principio los artículos <span class="art">1590</span> inc. 1.º (caso fortuito como eximente) y <span class="art">1672</span> inc. 2.º (caso fortuito como modo de extinguir). En verdad, si el hecho proviene de la culpa del deudor, resulta impropio hablar de caso fortuito, pues el hecho le sería imputable.</p>
+
+<p class="enum-i">(ii) Cuando sobreviene durante la mora del deudor.</p>
+<p>Así lo dice el artículo <span class="art">1547</span> inc. 2.º, y lo reiteran los artículos <span class="art">1590</span> inc. 1.º y <span class="art">1672</span>. Esta excepción <em>no rige</em> si el caso fortuito igualmente hubiere sobrevenido en caso de que el acreedor hubiere tenido en su poder la cosa debida (arts. <span class="art">1547</span> inc. 2.º, <span class="art">1590</span> inc. 1.º y <span class="art">1672</span> inc. 2.º): la mora no agrava la responsabilidad si el daño se habría producido de todos modos.</p>
+
+<p class="enum-i">(iii) Cuando se ha convenido que el deudor responda del caso fortuito.</p>
+<p>Ello puede establecerse en virtud del principio de la autonomía de la voluntad, según los artículos <span class="art">1547</span> inc. final, <span class="art">1558</span> inc. final y <span class="art">1673</span>.</p>
+<p class="enum-i">(iv) Cuando la ley pone el caso fortuito de cargo del deudor.</p>
+<p>Así ocurre conforme al artículo <span class="art">1547</span> inc. final. Es el caso, por ejemplo, del que ha hurtado o robado una cosa (<span class="art">1676</span>). Otro caso es el contemplado para el colono, arrendatario de predio rústico, en el artículo <span class="art">1983</span> inc. 1.º, en cuanto «no tendrá derecho para pedir rebaja del precio o renta, alegando casos fortuitos extraordinarios, que han deteriorado o destruido la cosecha».</p>
 
 <h3>6.1.5. Prueba del caso fortuito</h3>
 

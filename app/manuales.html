@@ -740,7 +740,11 @@
     }
     .manual-body h2 { font-size: 1.08rem; font-weight: 700; color: #2A2A2A; margin: 1.5rem 0 0.4rem; }
     .manual-body h3 { font-size: 0.95rem; font-weight: 700; color: #3A3A3A; margin: 1.1rem 0 0.25rem; }
-    .manual-body p  { margin: 0.45rem 0; line-height: 1.72; font-size: 0.91rem; color: #2A2A2A; }
+    .manual-body p  {
+      margin: 0.45rem 0; line-height: 1.72; font-size: 0.91rem; color: #2A2A2A;
+      text-align: justify; text-justify: inter-word;
+      hyphens: auto; -webkit-hyphens: auto; -ms-hyphens: auto;
+    }
     .manual-body ul, .manual-body ol { margin: 0.4rem 0 0.8rem; padding-left: 1.4rem; font-size: 0.91rem; }
     .manual-body li { margin: 0.28rem 0; line-height: 1.62; }
     .manual-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.88rem; }

@@ -18,7 +18,12 @@
   que calce con el texto.
 - Portada centrada con `min-height` calculado según el área útil (Letter
   11in − márgenes).
-- Un manual = un PDF con portada centrada, índice que fluye, y
+- **Portada, índice y materia van cada uno en su propia página** (decidido
+  2026-07-22): `.toc{page-break-after:always}` en el `<style>` de cada
+  manual. Antes el índice "fluía" hacia el contenido para no dejar media
+  página en blanco; Laura prefirió separar siempre portada / índice /
+  inicio de la materia, aunque el índice quede corto en su propia página.
+- Un manual = un PDF con portada centrada, índice en página(s) propia(s), y
   encabezado/pie parejos en todas las páginas.
 - Fuentes: `01_Responsabilidad_Contractual_Manual.html` y
   `02_Responsabilidad_Extracontractual_Manual.html` → `app/pdf/*.pdf`.
