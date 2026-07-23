@@ -2781,6 +2781,81 @@
         correcta: 'C',
         articulos_referencia: ['2330'],
         objetivo_pedagogico: 'Aplicar la reducción de la indemnización por concurrencia de culpa de la víctima conforme al art. 2330'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje N (Responsabilidad por el hecho ajeno, art. 2320)
+      {
+        id: 're-aplic-015',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Vínculo de subordinación: mandante-mandatario y quien encarga una obra',
+        tipo: 'aplicacion',
+        caso: 'Una empresa de logística contrata a un transportista independiente, dueño de su propio camión, para que lleve mercadería a distintas ciudades, pagándole por viaje realizado, sin fijarle horario, sin exigirle uniforme, y sin dar instrucciones sobre la ruta o el modo de conducir. El transportista atropella a un peatón durante uno de esos viajes.',
+        enunciado: '¿Responde la empresa de logística por el hecho del transportista, conforme al artículo 2320?',
+        respuesta_modelo: 'No responde, porque falta el requisito del vínculo de subordinación o dependencia que exige el artículo 2320.\n\nLa responsabilidad por el hecho ajeno exige que exista, entre el responsable y el hechor, un vínculo de subordinación real: quien deba responder debe tener autoridad sobre la persona por la cual responde, porque el fundamento de esta responsabilidad es precisamente la falta de vigilancia. No basta la existencia de un contrato entre las partes ni el pago de una remuneración.\n\nEn el caso planteado, el transportista organiza su propio trabajo, es dueño de su camión, no recibe instrucciones sobre la ruta ni el modo de conducir, y no está sujeto a horario ni uniforme de la empresa. Es, en definitiva, un contratista independiente que actúa por su propia cuenta, análogo al caso de quien encarga una obra a una empresa constructora independiente: si un obrero de esa constructora causa un daño, quien encargó la obra no responde, porque no existe entre ellos ningún vínculo de subordinación.',
+        elementos_clave: [
+          { texto: 'Concluye que la empresa de logística no responde por falta de vínculo de subordinación', keywords: ['no responde', 'falta el vínculo', 'subordinación'], pregunta: '¿Responde la empresa de logística por el atropello causado por el transportista?' },
+          { texto: 'Explica que el vínculo de subordinación exige autoridad real sobre el hechor, no solo la existencia de un contrato o pago', keywords: ['autoridad real', 'no basta el contrato', 'no basta la remuneración'], pregunta: '¿Basta con que exista un contrato y un pago para que se configure el vínculo de subordinación?' },
+          { texto: 'Aplica la analogía con el caso de quien encarga una obra a un contratista independiente', keywords: ['contratista independiente', 'analogía', 'propia cuenta'], pregunta: '¿A qué caso análogo del manual se parece esta situación del transportista independiente?' }
+        ],
+        articulos_referencia: ['2320'],
+        objetivo_pedagogico: 'Aplicar el requisito del vínculo de subordinación real para descartar la responsabilidad por el hecho ajeno frente a un contratista independiente'
+      },
+
+      {
+        id: 're-detect-016',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Diferencia entre el régimen del art. 2319 (guardián del incapaz) y el del art. 2320 (tercero civilmente responsable)',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Da igual si el hijo que causa el daño es capaz o incapaz: en ambos casos el padre responde bajo el mismo régimen del artículo 2320, con culpa presumida, y en ambos casos tiene acción de reembolso contra el hijo si logra probar que este tenía bienes propios."',
+        enunciado: 'El alumno pasa por alto una distinción central del sistema. Identifica el error y explica correctamente ambos regímenes.',
+        respuesta_modelo: 'El alumno ignora que la capacidad delictual del hijo determina un régimen completamente distinto, con consecuencias probatorias y de reembolso opuestas.\n\nSi el hijo es incapaz (menor de siete años, o entre siete y dieciséis sin discernimiento), se aplica el artículo 2319, no el 2320: hay un solo responsable, el guardián, cuya responsabilidad es directa por su propio hecho negligente, y esa negligencia debe ser probada por la víctima, sin presunción alguna. Además, no existe acción de reembolso del guardián contra el hijo incapaz, porque este no es responsable frente a nadie.\n\nSi el hijo es capaz, se aplica el artículo 2320: hay dos responsables potenciales, el hijo (hechor) y el padre (guardián), ambos plenamente capaces, y la culpa del padre se presume por el solo hecho de la relación de dependencia. Además, el padre que pagó la indemnización sí tiene, conforme al artículo 2325, una acción de reembolso contra el hijo, siempre que este sea capaz, haya actuado sin orden del padre, y tenga bienes propios.\n\nEl alumno confunde entonces dos regímenes que se activan según un criterio preciso, la capacidad delictual del hijo, y que producen consecuencias opuestas en materia de presunción de culpa y de acción de reembolso.',
+        elementos_clave: [
+          { texto: 'Detecta que el régimen aplicable depende de si el hijo es capaz o incapaz, no es el mismo en ambos casos', keywords: ['depende de la capacidad', 'no es el mismo régimen', 'criterio decisivo'], pregunta: '¿Da igual, para el régimen aplicable, si el hijo es capaz o incapaz?' },
+          { texto: 'Explica que si el hijo es incapaz se aplica el art. 2319 (culpa probada, sin acción de reembolso)', keywords: ['2319', 'incapaz', 'culpa probada', 'sin acción de reembolso'], pregunta: '¿Qué régimen se aplica si el hijo es incapaz, y qué consecuencias tiene?' },
+          { texto: 'Explica que si el hijo es capaz se aplica el art. 2320 (culpa presumida, con acción de reembolso del art. 2325 si se cumplen los requisitos)', keywords: ['2320', 'capaz', 'culpa presumida', '2325', 'acción de reembolso'], pregunta: '¿Qué régimen se aplica si el hijo es capaz, y qué consecuencias tiene?' }
+        ],
+        articulos_referencia: ['2319', '2320', '2325'],
+        objetivo_pedagogico: 'Distinguir el régimen del guardián del incapaz (art. 2319) del régimen del tercero civilmente responsable por hecho ajeno de un capaz (art. 2320)'
+      },
+
+      {
+        id: 're-just-015',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'La gradación entre culpa probada, culpa presumida y presunción de derecho',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Explica la gradación que existe entre los artículos 2319, 2320 y 2321 del Código Civil, y por qué se dice que esta gradación acerca, en la práctica, la responsabilidad por el hecho ajeno a la responsabilidad estricta.',
+        respuesta_modelo: 'Existe una gradación de tres niveles en la exigencia de culpa para hacer responder a quien tiene a otra persona bajo su cuidado. En el primer nivel, el artículo 2319 (guardián del incapaz), la culpa del guardián debe ser probada afirmativamente por la víctima, sin presunción alguna que la respalde: es el régimen menos exigente para el demandado. En el segundo nivel, el artículo 2320 (tercero civilmente responsable de un capaz), la culpa del guardián se presume, y este solo puede exonerarse acreditando que, con la autoridad y cuidado que su calidad le confiere, no habría podido impedir el hecho. En el tercer nivel, el artículo 2321 (padres cuyos hijos delinquen por su mala educación o hábitos viciosos), la presunción se transforma en una presunción de derecho: no admite ninguna prueba en contrario.\n\nFormalmente, el sistema chileno sigue siendo, en el segundo nivel, un régimen de responsabilidad por culpa, no de responsabilidad objetiva. Pero la jurisprudencia ha interpretado la cláusula de exoneración del artículo 2320 con tal rigor, exigiendo una imposibilidad total y absoluta de impedir el hecho, incluso mediante una vigilancia constante y permanente, que en la práctica son extremadamente escasos los casos en que el tercero logra exonerarse exitosamente. Esa exigencia jurisprudencial erosiona en los hechos la distinción formal entre una presunción "simplemente legal" y una responsabilidad objetiva pura: si nadie, o casi nadie, logra jamás rendir la prueba liberatoria, la diferencia se reduce, en la práctica, a una cuestión de terminología. Y en el tercer nivel, el del artículo 2321, esa aproximación deja de ser una tendencia jurisprudencial para convertirse en una decisión legislativa explícita: allí no existe siquiera la apariencia de una prueba liberatoria disponible.',
+        elementos_clave: [
+          { texto: 'Describe los tres niveles de la gradación: culpa probada (2319), culpa presumida rebatible (2320), presunción de derecho (2321)', keywords: ['culpa probada', 'culpa presumida', 'presunción de derecho', 'tres niveles'], pregunta: '¿Cuáles son los tres niveles de exigencia de culpa en este sistema?' },
+          { texto: 'Explica que formalmente el art. 2320 sigue siendo un régimen de culpa, no de responsabilidad objetiva', keywords: ['formalmente', 'sigue siendo culpa', 'no objetiva'], pregunta: '¿Es el artículo 2320, en el papel, un régimen de responsabilidad objetiva?' },
+          { texto: 'Explica que la exigencia jurisprudencial de imposibilidad total erosiona esa distinción formal en la práctica', keywords: ['imposibilidad total', 'erosiona', 'en la práctica'], pregunta: '¿Cómo ha interpretado la jurisprudencia la cláusula de exoneración del art. 2320, y qué efecto práctico tiene eso?' },
+          { texto: 'Concluye que en el art. 2321 la aproximación a la responsabilidad estricta es ya una decisión legislativa explícita, no solo jurisprudencial', keywords: ['2321', 'decisión legislativa', 'no hay prueba liberatoria'], pregunta: '¿Qué diferencia hay entre la aproximación práctica del art. 2320 y la aproximación del art. 2321?' }
+        ],
+        articulos_referencia: ['2319', '2320', '2321'],
+        objetivo_pedagogico: 'Justificar la gradación de tres niveles entre culpa probada, culpa presumida rebatible y presunción de derecho, y su cercanía práctica con la responsabilidad estricta'
+      },
+
+      {
+        id: 're-mc-016',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Requisitos de la acción de regreso del artículo 2325',
+        tipo: 'discriminacion_mc',
+        caso: 'Un jefe de colegio paga la indemnización completa a la víctima de un daño causado por un discípulo capaz, quien actuó por iniciativa propia, sin ninguna orden del jefe del colegio, y quien además es dueño de bienes propios heredados de un familiar.',
+        enunciado: '¿Puede el jefe del colegio ejercer la acción de reembolso del artículo 2325 contra el discípulo?',
+        opciones: [
+          { letra: 'A', texto: 'No, porque el artículo 2325 solo beneficia a los padres, no a los jefes de colegios y escuelas.', rationale: 'Error: el art. 2325 beneficia a toda persona obligada a la reparación de daños causados por quienes dependen de ella, incluidos los jefes de colegios y escuelas.' },
+          { letra: 'B', texto: 'Sí, porque concurren las cuatro circunstancias exigidas: hecho de persona capaz, pago efectivo de la indemnización, ausencia de orden del jefe del colegio, y existencia de bienes del discípulo sobre los cuales hacer efectivo el reembolso.', rationale: 'CORRECTO. El art. 2325 exige exactamente estas cuatro circunstancias, y todas concurren en el caso: discípulo capaz, pago efectivo, ausencia de orden, y bienes propios del discípulo.' },
+          { letra: 'C', texto: 'No, porque la acción de regreso del artículo 2325 nunca procede tratándose de menores de edad, sin importar su capacidad delictual.', rationale: 'Error: lo que exige el art. 2325 es que el hechor sea capaz de delito o cuasidelito conforme al art. 2319, no que sea mayor de edad; un menor entre 7 y 16 años que obró con discernimiento es capaz para estos efectos.' },
+          { letra: 'D', texto: 'No, porque la acción de regreso solo procede si el jefe del colegio no pagó aún la indemnización a la víctima.', rationale: 'Error: es exactamente al revés: el art. 2325 exige que el responsable HAYA pagado efectivamente la indemnización como uno de sus requisitos.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2325'],
+        objetivo_pedagogico: 'Aplicar los cuatro requisitos copulativos de la acción de regreso del art. 2325 contra el subordinado capaz'
       }
     ];
 

@@ -953,3 +953,34 @@ values (
   'Doctrina sobre pluralidad de agentes y causalidad'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (23): Extracontractual, Eje N (Responsabilidad por el hecho ajeno, art. 2320)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-015',
+  'extracontractual',
+  'Presunción de derecho del artículo 2321',
+  4,
+  'Se acredita en juicio que un menor de edad cometió un cuasidelito civil que provino, notoriamente, de la mala educación y los hábitos viciosos que sus padres le permitieron adquirir. ¿Pueden los padres exonerarse probando que, pese a todo, no habrían podido impedir el hecho concreto?',
+  '["Sí, aplicando la misma regla de exoneración del artículo 2320 inciso final", "No, porque el artículo 2321 establece en este caso una presunción de derecho que no admite prueba en contrario", "Sí, pero solo si el hijo ya es mayor de edad al momento del juicio", "No, pero solo si el hecho ocurrió dentro del domicilio familiar"]'::jsonb,
+  1,
+  '{"correcta": "El artículo 2321 emplea la expresión \"siempre\" para declarar responsables a los padres en esta hipótesis, lo que la doctrina y jurisprudencia interpretan como una presunción de derecho: acreditado el origen del ilícito en la mala educación o los hábitos viciosos, ninguna prueba en contrario exonera a los padres mientras el hijo sea menor de edad.", "por_que_no": ["A: esa regla de exoneración rige para el régimen general del art. 2320, pero el art. 2321 la excluye expresamente en esta hipótesis específica.", "C: la edad del hijo AL MOMENTO DEL JUICIO es irrelevante; lo que importa es que fuera menor al tiempo del hecho.", "D: el artículo 2321 no distingue según el lugar donde ocurrió el hecho."]}'::jsonb,
+  'Art. 2321 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2321',
+  'extracontractual',
+  'Presunción de derecho: mala educación o hábitos viciosos',
+  '2321',
+  'Los padres serán siempre responsables de los delitos o cuasidelitos cometidos por sus hijos menores, y que conocidamente provengan de mala educación, o de los hábitos viciosos que les han dejado adquirir.',
+  '[["padres", "siempre responsables"], ["hijos menores"], ["mala educación", "hábitos viciosos"], ["*"]]'::jsonb,
+  array['siempre responsables', 'hijos menores', 'mala educación', 'hábitos viciosos'],
+  'Código Civil, art. 2321'
+)
+on conflict (id) do nothing;
