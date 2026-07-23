@@ -448,3 +448,66 @@ values (
   'Código Civil, art. 45'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE 8: Contractual, Sección G. Los derechos auxiliares del acreedor
+-- ════════════════════════════════════════════════════════════════════════
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-023',
+  'contractual',
+  'Derecho de prenda general',
+  2,
+  'El llamado "derecho de prenda general" del artículo 2465:',
+  '["Es un contrato real de prenda que recae sobre bienes muebles determinados del deudor", "Es una expresión ilustrativa: no hay verdadera prenda, sino que todos los bienes embargables del deudor quedan afectos al cumplimiento", "Solo se aplica a las obligaciones garantizadas con caución real", "No incluye los bienes futuros del deudor, solo los presentes"]'::jsonb,
+  1,
+  '{"correcta": "La nomenclatura es defectuosa: no existe un contrato real de prenda (que exigiría entrega de bienes muebles al acreedor). El nombre se mantiene solo por su valor ilustrativo: recuerda que todos los bienes embargables del deudor, presentes o futuros, quedan afectos al cumplimiento de sus obligaciones.", "por_que_no": ["A: no hay ningún contrato de prenda real involucrado; es una expresión metafórica.", "C: el derecho de prenda general ampara las obligaciones personales, precisamente en contraposición a las garantizadas con cauciones reales.", "D: el art. 2465 expresamente incluye los bienes presentes y futuros del deudor."]}'::jsonb,
+  'Art. 2465 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-024',
+  'contractual',
+  'Prescripción de la acción pauliana',
+  3,
+  'La acción pauliana del artículo 2468 prescribe en:',
+  '["5 años desde que la obligación se hizo exigible", "1 año contado desde la fecha del acto o contrato", "4 años desde que se descubrió el fraude", "10 años, igual que la nulidad absoluta"]'::jsonb,
+  1,
+  '{"correcta": "El art. 2468 N° 3 fija un plazo especial de un año, contado desde la fecha del acto o contrato que se pretende revocar; por ser prescripción de corto tiempo, no se suspende y corre contra toda persona.", "por_que_no": ["A: 5 años es el plazo general de las acciones contractuales, no el de la pauliana.", "C: el plazo no se cuenta desde el descubrimiento del fraude, sino desde la fecha del acto o contrato.", "D: la pauliana no comparte el plazo de la nulidad absoluta; son instituciones distintas."]}'::jsonb,
+  'Art. 2468 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-025',
+  'contractual',
+  'Naturaleza jurídica de la acción pauliana',
+  4,
+  'Según la tesis hoy más aceptada sobre la naturaleza jurídica de la acción pauliana, el acto revocado:',
+  '["Es nulo absolutamente desde su origen", "Es válido entre las partes, pero inoponible al acreedor que obtuvo la revocación, y solo hasta el monto de su crédito", "Se transforma automáticamente en una donación", "Solo puede dejarse sin efecto si el deudor está sometido a un procedimiento concursal"]'::jsonb,
+  1,
+  '{"correcta": "La tesis de la inoponibilidad por fraude (Somarriva, Abeliuk) es la más aceptada: el acto es perfectamente válido entre las partes, pero el acreedor puede desconocerlo y privarlo de efectos respecto de él, y solo hasta el monto de su propio crédito.", "por_que_no": ["A: la tesis de la nulidad relativa (Alessandri) es minoritaria, y se le objeta que el acto no tiene vicio de origen alguno.", "C: no existe tal transformación; el acto conserva su naturaleza original entre las partes.", "D: la acción pauliana civil no requiere que el deudor esté sometido a un procedimiento concursal de liquidación."]}'::jsonb,
+  'Art. 2468 CC (naturaleza jurídica de la acción pauliana)'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2465',
+  'contractual',
+  'Derecho de prenda general',
+  '2465',
+  'Toda obligación personal da al acreedor el derecho de perseguir su ejecución sobre todos los bienes raíces o muebles del deudor, sean presentes o futuros, exceptuándose solamente los no embargables, designados en el artículo 1618.',
+  '[["obligación personal"], ["bienes raíces o muebles", "presentes o futuros"], ["no embargables"], ["*"]]'::jsonb,
+  array['obligación personal', 'presentes o futuros', 'no embargables'],
+  'Código Civil, art. 2465'
+)
+on conflict (id) do nothing;
