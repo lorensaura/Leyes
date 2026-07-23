@@ -321,3 +321,67 @@ values (
   'Código Civil, art. 1558 inciso 1°'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE 6: Contractual, Sección E, parte 2. Daño moral, pérdida de chance,
+-- causalidad, mora, cláusula penal
+-- ════════════════════════════════════════════════════════════════════════
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-017',
+  'contractual',
+  'Acumulación de cláusula penal y obligación principal',
+  4,
+  'Por regla general, ¿puede el acreedor exigir a la vez el cumplimiento de la obligación principal y el pago de la cláusula penal?',
+  '["Sí, siempre, sin ninguna excepción", "No, salvo que la pena se haya estipulado por el simple retardo, o se haya pactado expresamente que su pago no extingue la obligación principal", "Sí, pero solo en los contratos de tracto sucesivo", "No, en ningún caso, ni siquiera pactándolo expresamente"]'::jsonb,
+  1,
+  '{"correcta": "El art. 1537 establece que no se acumulan la obligación principal y la pena, salvo que esta se haya estipulado por el simple retardo (pena moratoria) o que se haya pactado expresamente que su pago no extingue la obligación principal.", "por_que_no": ["A: la regla general es precisamente la no acumulación, no la acumulación irrestricta.", "C: la excepción no está limitada a los contratos de tracto sucesivo.", "D: sí existen excepciones expresamente contempladas por el propio art. 1537."]}'::jsonb,
+  'Art. 1537 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-018',
+  'contractual',
+  'Cláusula penal enorme (art. 1544)',
+  4,
+  'En un contrato conmutativo en que tanto la obligación principal como la pena consisten en una cantidad de dinero determinada, ¿cuál es el tope máximo de la pena, según la interpretación mayoritaria del art. 1544?',
+  '["El triple de la obligación principal", "El doble de la obligación principal, incluyéndose esta en dicho duplo", "Un monto fijado libremente por el juez en cada caso", "No existe tope alguno si las partes lo pactaron expresamente"]'::jsonb,
+  1,
+  '{"correcta": "La doctrina mayoritaria (Alessandri, Somarriva, Abeliuk, Claro Solar, Fueyo) interpreta que la pena no puede superar el doble de la obligación principal, quedando esta incluida en ese duplo: si la deuda es de $10.000.000, la pena máxima es $20.000.000.", "por_que_no": ["A: el triple no corresponde a la interpretación mayoritaria del art. 1544.", "C: el juez no tiene discreción libre en este supuesto específico; el tope del duplo es una regla legal, no un criterio de equidad (ese criterio rige solo para obligaciones de valor inapreciable o indeterminado).", "D: el pacto de las partes no puede dejar sin efecto el límite del art. 1544, que es de orden público e irrenunciable."]}'::jsonb,
+  'Art. 1544 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-019',
+  'contractual',
+  'Pérdida de una chance u oportunidad',
+  4,
+  'La pérdida de una chance u oportunidad, según la jurisprudencia reciente de la Corte Suprema, se indemniza:',
+  '["Por el valor íntegro del beneficio final que se esperaba obtener", "Ponderando el valor del beneficio esperado según la probabilidad que existía de alcanzarlo, en una avaluación restringida", "Solo si el incumplimiento fue doloso", "De la misma manera que el lucro cesante, porque son la misma institución"]'::jsonb,
+  1,
+  '{"correcta": "La Corte Suprema (caso Alpes Chemie con CENABAST) exige una avaluación restringida y prudencial: el monto no puede equivaler al beneficio final esperado, sino que se calcula ponderando ese valor por la probabilidad que la oportunidad tenía de concretarse.", "por_que_no": ["A: eso equivaldría a indemnizar un lucro cesante cierto, que es justamente lo que la pérdida de chance no es, por tratarse de un resultado incierto.", "C: no se exige dolo para que proceda la pérdida de chance; basta el incumplimiento y la pérdida de la oportunidad.", "D: la propia Corte Suprema ha precisado que la pérdida de chance es una especie de daño diversa del lucro cesante, autónoma del resultado final esperado."]}'::jsonb,
+  'CS, Alpes Chemie con CENABAST (2025); Roles 154.662-2020 y 4989-2019'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1551',
+  'contractual',
+  'Interpelación y constitución en mora',
+  '1551',
+  'El deudor está en mora, 1º. Cuando no ha cumplido la obligación dentro del término estipulado, salvo que la ley en casos especiales exija que se requiera al deudor para constituirle en mora; 2º. Cuando la cosa no ha podido ser dada o ejecutada sino dentro de cierto espacio de tiempo, y el deudor lo ha dejado pasar sin darla o ejecutarla; 3º. En los demás casos, cuando el deudor ha sido judicialmente reconvenido por el acreedor.',
+  '[["término estipulado"], ["cierto espacio de tiempo"], ["judicialmente reconvenido"], ["*"]]'::jsonb,
+  array['término estipulado', 'cierto espacio de tiempo', 'judicialmente reconvenido'],
+  'Código Civil, art. 1551'
+)
+on conflict (id) do nothing;
