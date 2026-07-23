@@ -74,3 +74,4 @@ Abre estos archivos solo cuando el tema del mensaje lo requiera:
 - `docs/gamificacion.md` — idea de gamificación, pendiente, sin priorizar.
 - `docs/pdf.md` — reglas de generación de PDF (Chrome headless/CDP, márgenes).
 - `docs/practica.md` — módulo de Práctica (Evaluación/Flashcards/Alternativas/Memorice): los 3 ejes de filtro, el motor de Memorice, simplificaciones pendientes y el paso de migración SQL antes de usar.
+- `docs/prompt-generacion-contenido-practica.md` — prompt maestro para generar contenido nuevo (Evaluación, Alternativas, Memorice, Flashcards) a partir de los manuales, con reglas mecánicas anti-alucinación, esquema/destino exacto de cada modelo, prohibición explícita de alternativas obvias, y una categoría transversal para repasar toda Responsabilidad (Contractual + Extracontractual + Precontractual, las tres con el mismo estatus).
