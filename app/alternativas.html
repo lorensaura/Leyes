@@ -1256,6 +1256,82 @@
         correcta: 'B',
         articulos_referencia: ['1552'],
         objetivo_pedagogico: 'Discriminar entre las distintas causas por las que un incumplimiento puede no generar responsabilidad'
+      },
+
+      // Lote 2026-07: Contractual, Sección 3 (La acción de cumplimiento)
+      {
+        id: 'rc-just-004',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Cumplimiento por equivalencia vs. indemnización de perjuicios',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿En qué se diferencia el cumplimiento por equivalencia (aestimatio rei) de la indemnización de perjuicios? ¿Por qué importa distinguirlos?',
+        respuesta_modelo: 'El cumplimiento por equivalencia tiene lugar cuando, estando vigente la obligación, ya no es posible o útil el cumplimiento en especie: la obligación subsiste, pero varía de objeto, y el deudor debe pagar el valor o precio de la prestación incumplida (arts. 1672, 1486 inciso 1°, 1521 y 438 CPC).\n\nLa indemnización de perjuicios, en cambio, no persigue el valor de la prestación, sino resarcir los daños adicionales que el incumplimiento causó al acreedor: el daño emergente y el lucro cesante del art. 1556, que no se reconducen al valor de lo debido.\n\nLa distinción importa porque el régimen de procedencia es distinto: el cumplimiento por equivalencia no requiere dolo ni culpa del deudor, basta que objetivamente la obligación se haya incumplido; la indemnización de perjuicios sí exige imputabilidad. Por eso, aunque la pérdida de la cosa debida sea fortuita, el deudor puede seguir debiendo el precio de la cosa, sin que ello implique que deba además indemnizar.',
+        elementos_clave: [
+          { texto: 'Explica que el cumplimiento por equivalencia es el valor de la prestación cuando esta ya no puede ejecutarse en especie, y la obligación subsiste con otro objeto', keywords: ['valor de la prestación', 'aestimatio rei', 'subsiste', 'varía de objeto', 'precio de la cosa'], pregunta: '¿Qué significa que la obligación "subsista pero varíe de objeto"?' },
+          { texto: 'Explica que la indemnización de perjuicios repara daños adicionales (daño emergente, lucro cesante), no el valor de lo debido', keywords: ['daño emergente', 'lucro cesante', 'daños adicionales', 'perjuicios ulteriores', '1556'], pregunta: '¿La indemnización de perjuicios busca lo mismo que el cumplimiento por equivalencia, o algo distinto?' },
+          { texto: 'Señala que el cumplimiento por equivalencia no exige culpa (basta el incumplimiento objetivo), mientras la indemnización sí exige imputabilidad', keywords: ['no exige culpa', 'sin exigir dolo', 'objetivamente', 'basta el incumplimiento', 'sí exige imputabilidad'], pregunta: '¿Hace falta probar dolo o culpa del deudor para cobrar el valor de la cosa debida? ¿Y para cobrar la indemnización?' },
+          { texto: 'Cita al menos un artículo que distingue ambos conceptos (1672, 1486, 1521 o 438 CPC)', keywords: ['1672', '1486', '1521', '438', 'cpc'], pregunta: '¿En qué artículo del Código Civil o del Código de Procedimiento Civil se ve reflejada esta distinción?' }
+        ],
+        articulos_referencia: ['1672', '1486', '1521', '438 CPC'],
+        objetivo_pedagogico: 'Distinguir el cumplimiento por equivalencia de la indemnización de perjuicios y precisar por qué el primero no exige imputabilidad'
+      },
+
+      {
+        id: 'rc-aplic-006',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Cumplimiento forzado de obligaciones de hacer (art. 1553)',
+        tipo: 'aplicacion',
+        caso: 'Una empresa contrata a un instalador independiente para montar paneles solares en su bodega dentro de un plazo de 30 días. Constituido en mora, el instalador no realiza el trabajo ni da explicaciones.',
+        enunciado: '¿Qué alternativas tiene la empresa acreedora frente a este incumplimiento? ¿Puede exigir que un tercero haga el trabajo?',
+        respuesta_modelo: 'Al tratarse de una obligación de hacer y estar el instalador constituido en mora, el art. 1553 permite a la empresa elegir, junto con la indemnización moratoria, entre tres alternativas.\n\nPuede pedir que se apremie al instalador para que ejecute el hecho convenido (arresto hasta 15 días y multa, repetibles hasta el cumplimiento).\n\nPuede pedir que se la autorice para hacer ejecutar el montaje por un tercero a expensas del instalador: esto es posible porque instalar paneles solares es una obligación fungible, no intuito personae, que no depende de las condiciones personales de este instalador en particular.\n\nO puede pedir derechamente que el instalador la indemnice de los perjuicios resultantes de la infracción. Cualquiera sea la alternativa elegida, la empresa conserva además el derecho a la indemnización moratoria por el retraso ya ocurrido.',
+        elementos_clave: [
+          { texto: 'Identifica que, constituido en mora el deudor, el acreedor puede elegir entre las tres alternativas del art. 1553', keywords: ['1553', 'tres alternativas', 'a su elección', 'tres cosas'], pregunta: '¿Cuántas opciones tiene el acreedor frente a una obligación de hacer incumplida, y quién elige cuál de ellas usar?' },
+          { texto: 'Explica la opción de hacer ejecutar el hecho por un tercero a expensas del deudor, condicionada a que la obligación sea fungible (no intuito personae)', keywords: ['tercero a expensas', 'fungible', 'no intuito personae', 'expensas del deudor'], pregunta: '¿Se puede pagarle a otro instalador para que haga el trabajo, cargándole el costo al primero? ¿Esto siempre es posible?' },
+          { texto: 'Señala que también puede pedir apremio (arresto/multa) o derechamente la indemnización de perjuicios', keywords: ['apremio', 'arresto', 'multa', 'indemnización de perjuicios'], pregunta: '¿Qué otras dos alternativas, además de contratar a un tercero, tiene la empresa?' },
+          { texto: 'Precisa que la indemnización moratoria se puede acumular a cualquiera de las tres opciones', keywords: ['indemnización moratoria', 'se acumula', 'junto con', 'además de'], pregunta: '¿La empresa pierde el derecho a cobrar por el atraso ya ocurrido, elija la opción que elija?' }
+        ],
+        articulos_referencia: ['1553'],
+        objetivo_pedagogico: 'Aplicar las tres alternativas del art. 1553 frente al incumplimiento de una obligación de hacer'
+      },
+
+      {
+        id: 'rc-detect-004',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Cumplimiento por equivalencia vs. indemnización de perjuicios',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde en su examen de grado lo siguiente: "El cumplimiento por equivalencia es lo mismo que la indemnización de perjuicios, porque en ambos casos el deudor termina pagando una suma de dinero en vez de la prestación original. Por eso, para que proceda el cumplimiento por equivalencia, el acreedor debe probar que el deudor actuó con dolo o culpa, igual que en la indemnización de perjuicios."',
+        enunciado: 'El alumno comete un error jurídico central. Identifícalo y explica la regla correcta.',
+        respuesta_modelo: 'El alumno confunde dos figuras distintas por el solo hecho de que ambas se traducen en dinero.\n\nEl cumplimiento por equivalencia no es lo mismo que la indemnización de perjuicios: el primero es el valor de la prestación misma, cuando la obligación subsiste pero ya no puede ejecutarse en especie; la segunda repara daños adicionales al valor de lo debido (daño emergente, lucro cesante).\n\nPor eso el cumplimiento por equivalencia no exige probar dolo o culpa del deudor: basta que objetivamente la obligación se haya incumplido, tal como lo confirman los arts. 1672, 1486 y 1521 del Código Civil y el art. 438 del CPC.\n\nLa indemnización de perjuicios sí exige imputabilidad. Esa es, precisamente, la diferencia de régimen que el alumno pasa por alto al tratarlas como si fueran una sola figura.',
+        elementos_clave: [
+          { texto: 'Detecta que cumplimiento por equivalencia e indemnización de perjuicios no son lo mismo, aunque ambos se traduzcan en dinero', keywords: ['no son lo mismo', 'son distintos', 'figuras distintas', 'no es igual'], pregunta: '¿El hecho de que ambas figuras terminen en un pago de dinero significa que son la misma institución?' },
+          { texto: 'Señala que el cumplimiento por equivalencia no exige probar dolo o culpa del deudor, basta el incumplimiento objetivo', keywords: ['no exige culpa', 'sin necesidad de dolo', 'basta el incumplimiento', 'objetivamente'], pregunta: '¿Es verdad que hay que probar dolo o culpa para cobrar el valor de la cosa debida?' },
+          { texto: 'Explica que la indemnización sí exige imputabilidad, siendo esa la diferencia de régimen entre ambas figuras', keywords: ['sí exige imputabilidad', 'requiere culpa', 'requiere dolo', 'diferencia de régimen'], pregunta: '¿En cuál de las dos figuras sigue siendo necesario probar dolo o culpa del deudor?' }
+        ],
+        articulos_referencia: ['1672', '1486', '1521'],
+        objetivo_pedagogico: 'Corregir la confusión entre cumplimiento por equivalencia e indemnización de perjuicios'
+      },
+
+      {
+        id: 'rc-mc-003',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Imposibilidad y pérdida de la cosa debida',
+        tipo: 'discriminacion_mc',
+        caso: 'Un vendedor se obliga a entregar un caballo de carrera específico. Antes de la entrega, el caballo muere por una enfermedad repentina e imprevisible, sin que el vendedor haya incurrido en mora ni en descuido alguno.',
+        enunciado: '¿Qué efecto produce esta imposibilidad sobreviniente sobre la obligación de entregar el caballo?',
+        opciones: [
+          { letra: 'A', texto: 'La obligación subsiste, debiendo el vendedor pagar el precio del caballo más la indemnización de perjuicios, conforme al artículo 1672.', rationale: 'Error: el art. 1672 se aplica cuando la pérdida es imputable (culpa o mora del deudor), no cuando es fortuita, como en este caso.' },
+          { letra: 'B', texto: 'La obligación se extingue sin responsabilidad para el vendedor, por tratarse de una pérdida fortuita de la especie debida (arts. 1670 y siguientes).', rationale: 'CORRECTO. La pérdida fortuita de la especie o cuerpo cierto debido, sin culpa ni mora del deudor, extingue la obligación sin responsabilidad ulterior.' },
+          { letra: 'C', texto: 'El comprador puede igualmente exigir la entrega del caballo, porque a lo imposible también se está obligado si así se pactó expresamente.', rationale: 'Error: contradice el principio de que nadie está obligado a lo imposible; ningún pacto puede forzar el cumplimiento de una prestación que ya es físicamente irrealizable.' },
+          { letra: 'D', texto: 'El vendedor queda liberado, pero solo si acredita además que actuó con la diligencia de un buen padre de familia en la crianza del animal.', rationale: 'Error: para que opere la pérdida fortuita basta acreditar el caso fortuito (imprevisible e irresistible); no se exige, adicionalmente, probar diligencia general en el cuidado del animal.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['1670', '1672'],
+        objetivo_pedagogico: 'Discriminar entre la imposibilidad fortuita (que extingue la obligación) y la imputable (que la transforma en precio más indemnización)'
       }
     ];
 
