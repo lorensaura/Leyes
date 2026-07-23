@@ -70,3 +70,14 @@
 | ¿Cómo se avalúa la pérdida de chance? | De forma <strong>restringida</strong>: ponderando el valor del beneficio final esperado por la <strong>probabilidad</strong> que existía de alcanzarlo. | avanzada | civil | Responsabilidad contractual | Pérdida de chance |
 | ¿Cuáles son las tres formas de interpelación del artículo 1551? | <em>(i)</em> Contractual <strong>expresa</strong> (plazo estipulado); <em>(ii)</em> contractual <strong>tácita</strong> (plazo que emana de la naturaleza de la prestación); <em>(iii)</em> <strong>judicial</strong> (reconvención, regla residual). | intermedia | civil | Responsabilidad contractual | Interpelación y mora |
 | ¿Constituye en mora al deudor un retardo debido a caso fortuito? | No. La mora exige que el retardo sea <strong>imputable</strong> al deudor (dolo o culpa); el caso fortuito no constituye en mora. | intermedia | civil | Responsabilidad contractual | Interpelación y mora |
+
+## Lote 7: Contractual, Sección F. Causales de exención de responsabilidad
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuáles son los tres requisitos del caso fortuito? | Que sea un hecho <strong>ajeno</strong> al deudor (art. 1547 inc. 2°), <strong>imprevisto</strong> e <strong>irresistible</strong> (art. 45). | básica | civil | Responsabilidad contractual | Requisitos del caso fortuito |
+| ¿A quién corresponde probar el caso fortuito? | Al <strong>deudor</strong>, que es quien lo alega (<span class="art">artículo 1547</span> inciso 3°). | básica | civil | Responsabilidad contractual | Requisitos del caso fortuito |
+| Nombra dos de las cuatro excepciones en que el caso fortuito no libera de responsabilidad. | Cuando sobreviene por <strong>culpa del deudor</strong>, o durante su <strong>mora</strong> (también: si se pactó que respondería, o si la ley se lo impone). | avanzada | civil | Responsabilidad contractual | Excepciones al caso fortuito |
+| ¿En qué se diferencia el caso fortuito de la teoría de la imprevisión? | El caso fortuito hace <strong>imposible</strong> el cumplimiento; la imprevisión no lo impide, pero lo vuelve <strong>excesivamente oneroso</strong>. | avanzada | civil | Responsabilidad contractual | Caso fortuito vs. imprevisión |
+| ¿Tiene la teoría de la imprevisión una consagración general en Chile? | No. La doctrina mayoritaria la rechaza fundándose en el <span class="art">artículo 1545</span>; la Corte Suprema (2025) reafirmó que no tiene cabida mientras no se modifique el Código Civil. | avanzada | civil | Responsabilidad contractual | Teoría de la imprevisión |
+| ¿Cómo se considera, por regla general, el hecho de un tercero por el cual el deudor no responde civilmente? | Como un <strong>caso fortuito</strong> para el deudor, si reúne los requisitos de imprevisibilidad e irresistibilidad (arts. 1677 y 1590). | intermedia | civil | Responsabilidad contractual | El hecho de un tercero |

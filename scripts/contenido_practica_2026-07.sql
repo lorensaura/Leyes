@@ -385,3 +385,66 @@ values (
   'Código Civil, art. 1551'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE 7: Contractual, Sección F. Causales de exención de responsabilidad
+-- ════════════════════════════════════════════════════════════════════════
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-020',
+  'contractual',
+  'Ausencia de culpa vs. caso fortuito',
+  4,
+  'Sobre si basta la ausencia de culpa o se requiere acreditar el caso fortuito para que el deudor se exonere, la Corte Suprema ha resuelto que:',
+  '["Siempre se requiere acreditar el caso fortuito, sin excepción", "Basta que el deudor acredite que empleó el cuidado a que lo obligaba el contrato, sin necesidad de probar el caso fortuito", "El deudor nunca puede exonerarse, cualquiera sea la prueba que rinda", "Solo se exonera si prueba dolo del acreedor"]'::jsonb,
+  1,
+  '{"correcta": "La Corte Suprema ha resuelto que basta al deudor acreditar que empleó el cuidado a que lo obligaba el contrato, sin que sea necesario probar además el caso fortuito. La doctrina conecta esta postura con las obligaciones de medio, donde probar la diligencia equivale a probar el cumplimiento.", "por_que_no": ["A: esa es la tesis de Claro Solar, pero no la que ha seguido la Corte Suprema según el manual.", "C: el deudor sí puede exonerarse, precisamente probando su diligencia.", "D: el dolo del acreedor no es lo que está en discusión en este debate probatorio."]}'::jsonb,
+  'Sección F del manual (ausencia de culpa)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-021',
+  'contractual',
+  'El hecho de un tercero',
+  3,
+  'Por regla general, ¿cómo se considera para el deudor la intervención de un tercero por el cual no es civilmente responsable?',
+  '["Como un caso fortuito, si reúne los requisitos de imprevisibilidad e irresistibilidad", "Como hecho propio del deudor, que compromete siempre su responsabilidad", "Como una causal de nulidad del contrato", "Como una situación que siempre exige la intervención judicial previa"]'::jsonb,
+  0,
+  '{"correcta": "Conforme al art. 1677 y al inciso final del art. 1590, el hecho de un tercero por el cual el deudor no responde civilmente constituye para él un caso fortuito, siempre que reúna los requisitos propios de este: imprevisibilidad e irresistibilidad.", "por_que_no": ["B: eso es lo que ocurre con el hecho de un tercero por el cual el deudor SÍ es civilmente responsable (art. 1679), justo lo opuesto de este supuesto.", "C: la intervención de un tercero no genera, por sí sola, una causal de nulidad.", "D: no se exige ninguna intervención judicial previa para que el hecho del tercero opere como caso fortuito."]}'::jsonb,
+  'Arts. 1677 y 1590 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-022',
+  'contractual',
+  'Frustración del fin del contrato vs. imprevisión',
+  4,
+  '¿Qué diferencia a la frustración del fin del contrato de la teoría de la imprevisión?',
+  '["En la imprevisión el cumplimiento se vuelve imposible; en la frustración, solo se encarece", "En la imprevisión la prestación sigue interesando pero cuesta demasiado; en la frustración la prestación ya no interesa, aunque pueda ejecutarse sin dificultad", "Son exactamente la misma institución bajo dos nombres distintos", "La frustración del fin solo se aplica a contratos unilaterales, y la imprevisión solo a bilaterales"]'::jsonb,
+  1,
+  '{"correcta": "En la imprevisión la prestación sigue interesando al acreedor, pero su costo se ha vuelto excesivo; en la frustración del fin, la prestación ya no interesa en absoluto, aunque pueda ejecutarse sin ninguna dificultad (el ejemplo escolar es el balcón arrendado para un desfile que se cancela).", "por_que_no": ["A: invierte los conceptos; ninguna de las dos figuras exige imposibilidad del cumplimiento (eso es propio del caso fortuito).", "C: son instituciones distintas, con requisitos y consecuencias propias, aunque emparentadas.", "D: ambas figuras exigen, precisamente, un contrato bilateral y oneroso."]}'::jsonb,
+  'Sección F del manual (frustración del fin del contrato)'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-45',
+  'contractual',
+  'Concepto de caso fortuito o fuerza mayor',
+  '45',
+  'Se llama fuerza mayor o caso fortuito el imprevisto a que no es posible resistir, como un naufragio, un terremoto, el apresamiento de enemigos, los actos de autoridad ejercidos por un funcionario público, etc.',
+  '[["fuerza mayor", "caso fortuito"], ["imprevisto"], ["no es posible resistir"], ["*"]]'::jsonb,
+  array['fuerza mayor', 'caso fortuito', 'imprevisto', 'no es posible resistir'],
+  'Código Civil, art. 45'
+)
+on conflict (id) do nothing;
