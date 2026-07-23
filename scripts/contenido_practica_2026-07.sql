@@ -1083,6 +1083,23 @@ values (
 )
 on conflict (id) do nothing;
 
+-- LOTE 2026-07 (29): Extracontractual, Eje T (Objeto y extensión de la reparación)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-021',
+  'extracontractual',
+  'Efecto reflejo de la reparación en especie',
+  3,
+  'Si el responsable de un daño repara, por su cuenta y antes del juicio, la cosa deteriorada, dejándola en el mismo estado que tenía previamente, ¿qué efecto produce esa reparación en naturaleza sobre una eventual acción indemnizatoria posterior por el mismo concepto?',
+  '["Ninguno: la víctima puede igualmente cobrar el valor íntegro de reparación, como si el arreglo nunca se hubiese hecho", "Disminuye correlativamente el monto de la indemnización debida, en la medida en que corrigió o disminuyó el daño", "Extingue automáticamente cualquier derecho de la víctima a reclamar cualquier otro perjuicio derivado del mismo hecho", "Obliga a la víctima a rechazar la reparación en naturaleza y exigir solo dinero"]'::jsonb,
+  1,
+  '{"correcta": "La restitución en naturaleza produce un efecto reflejo sobre la acción indemnizatoria: en la medida en que corrige o disminuye el daño, disminuye correlativamente el monto de la indemnización en equivalente que aún se debe.", "por_que_no": ["A: cobrar el valor íntegro ignorando la reparación ya realizada puede constituir un ejercicio abusivo de la acción indemnizatoria.", "C: la reparación en naturaleza solo disminuye el daño que corrige; no extingue el derecho a reclamar otros perjuicios distintos (ej. lucro cesante por privación de uso).", "D: la víctima puede aceptar la reparación en naturaleza sin que ello la prive de reclamar lo que esta no cubrió."]}'::jsonb,
+  'Doctrina sobre formas y extensión de la reparación'
+)
+on conflict (id) do nothing;
+
 insert into public.memorice_articulos
   (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
 values (

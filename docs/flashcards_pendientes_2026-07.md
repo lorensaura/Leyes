@@ -314,3 +314,14 @@
 | ¿Qué consecuencia económica tiene ejercer la acción popular del art. 2333? | Quien la ejerce debe ser <strong>indemnizado de las costas</strong> y del valor de su tiempo y diligencia. | avanzada | civil | Responsabilidad extracontractual | Reembolso al accionante popular |
 | ¿Prescribe la acción de daño contingente en cuatro años, como la acción ordinaria? | No. Es <strong>imprescriptible</strong> mientras subsista la amenaza y exista justo motivo para temerla. | avanzada | civil | Responsabilidad extracontractual | Imprescriptibilidad |
 | ¿Por qué existe una "paradoja" en el fundamento de la acción de daño contingente? | Porque si la acción <strong>tiene éxito</strong>, nunca podrá verificarse ex post que la amenaza era realmente seria. | avanzada | civil | Responsabilidad extracontractual | Paradoja de la causalidad hipotética |
+
+## Lote 20: Extracontractual, Eje T. Objeto y extensión de la reparación
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuáles son las dos formas de reparación en materia extracontractual? | La reparación <strong>en especie</strong> (in natura) y la reparación <strong>en equivalente</strong> (generalmente dinero). | básica | civil | Responsabilidad extracontractual | Formas de reparación |
+| ¿Puede la víctima elegir libremente entre reparación en especie y en equivalente? | Sí. No hay <strong>orden de precedencia legal</strong>, salvo que la reparación en especie sea imposible o desproporcionada. | intermedia | civil | Responsabilidad extracontractual | Libre elección de la víctima |
+| ¿Qué efecto produce la reparación en naturaleza ya realizada sobre la indemnización en equivalente? | La <strong>disminuye correlativamente</strong>, en la medida en que corrigió el daño. | avanzada | civil | Responsabilidad extracontractual | Efecto reflejo de la reparación en especie |
+| ¿Cuáles son las tres consecuencias del principio de reparación integral (Alessandri)? | <em>(i)</em> Depende de la extensión del daño, no de la gravedad de la culpa; <em>(ii)</em> comprende todo daño directo; <em>(iii)</em> ni más ni menos que el daño sufrido. | avanzada | civil | Responsabilidad extracontractual | Tres consecuencias (Alessandri) |
+| ¿Desde cuándo corren los reajustes e intereses del daño material, según la práctica jurisprudencial dominante? | Desde la <strong>notificación de la demanda</strong> o desde la <strong>sentencia</strong>, no desde el hecho ilícito. | avanzada | civil | Responsabilidad extracontractual | Cómputo de reajustes (daño material) |
+| ¿Por qué el daño moral no admite el mismo debate sobre retrotraer el reajuste al momento del hecho? | Porque no existe como <strong>cifra determinada</strong> hasta que el juez la fija en la <strong>sentencia</strong>. | avanzada | civil | Responsabilidad extracontractual | Cómputo de reajustes (daño moral) |
