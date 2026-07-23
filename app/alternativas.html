@@ -303,6 +303,13 @@
       text-align: right;
       margin-top: 0.35rem;
     }
+    .recall-hint {
+      font-size: 0.85rem;
+      color: #C41E2E;
+      text-align: right;
+      margin-top: 0.25rem;
+      min-height: 1.1em;
+    }
 
     /* ── BOTONES ── */
     .btn {
@@ -391,7 +398,7 @@
 
     .elementos-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
       margin-bottom: 1.25rem;
     }
@@ -404,6 +411,8 @@
       margin-bottom: 0.6rem;
     }
     .elementos-col.ok h4 { color: #1A7A40; }
+    .elementos-col.faltan h4 { color: #C41E2E; }
+    .elementos-col.faltan .dot { background: #C41E2E; }
 
     .elemento-tag {
       display: flex;
@@ -522,7 +531,8 @@
 
     /* ── RESPUESTA MODELO ── */
     .modelo-section {
-      background: #111111;
+      background: #E8D8B8;
+      border: 3px solid #111111;
       border-radius: 10px;
       padding: 1.5rem;
       margin-top: 1.5rem;
@@ -531,14 +541,16 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 2px;
-      color: #E8D8B8;
+      color: #111111;
       margin-bottom: 1rem;
     }
     .modelo-body {
       font-size: 0.875rem;
-      color: rgba(232,216,184,0.8);
+      color: #2A2A2A;
       line-height: 1.75;
     }
+    .modelo-body p { margin: 0 0 1em 0; }
+    .modelo-body p:last-child { margin-bottom: 0; }
     .articulos-ref {
       display: flex;
       gap: 0.4rem;
@@ -548,8 +560,8 @@
     .art-tag {
       font-size: 0.7rem;
       font-weight: 600;
-      background: rgba(196,30,46,0.2);
-      color: #E8A0A0;
+      background: rgba(196,30,46,0.12);
+      color: #A61825;
       padding: 0.15rem 0.5rem;
       border-radius: 100px;
     }
@@ -697,8 +709,30 @@
       text-align: center;
     }
     .mem-blank-input:focus { border-bottom-color: #C41E2E; }
-    .mem-blank-input.mem-ok { border-bottom-color: #1A7A40; color: #1A7A40; font-weight: 600; }
-    .mem-blank-input.mem-mal { border-bottom-color: #C41E2E; color: #C41E2E; }
+    .mem-blank-input.mem-ok, #mem-articulo-num.mem-ok { border-bottom-color: #1A7A40; color: #1A7A40; font-weight: 600; }
+    .mem-blank-input.mem-mal, #mem-articulo-num.mem-mal { border-bottom-color: #C41E2E; color: #C41E2E; }
+    .mem-articulo-numero {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #4A4032;
+    }
+    .mem-articulo-numero label { font-weight: 600; }
+    #mem-articulo-num {
+      width: 6ch;
+      border: none;
+      border-bottom: 2px solid #7A6E5F;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #111111;
+      padding: 0.1rem 0.3rem;
+      outline: none;
+      text-align: center;
+    }
+    #mem-articulo-num:focus { border-bottom-color: #C41E2E; }
     .mem-correccion {
       font-size: 0.72rem;
       color: #1A7A40;
@@ -805,12 +839,12 @@
         tipo: 'aplicacion',
         caso: 'Una constructora deja de noche una zanja abierta y sin señalización en la vereda. Un peatón que caminaba mirando su teléfono cae y se lesiona. La constructora alega que el peatón tiene culpa exclusiva por no mirar por dónde caminaba.',
         enunciado: '¿Responde extracontractualmente la constructora? Analiza cada requisito. ¿Qué efecto tiene la conducta del peatón sobre la indemnización? ¿Coincides con la defensa de la constructora?',
-        respuesta_modelo: 'La constructora responde extracontractualmente. Se verifican todos los requisitos del art. 2314: (1) hecho voluntario: omisión de señalizar la zanja; (2) capacidad delictual; (3) imputabilidad: culpa por omisión de un deber de cuidado elemental (no señalizar una zanja nocturna); (4) daño: lesiones del peatón; (5) causalidad: la zanja no señalizada causó la caída. La alegación de la constructora es incorrecta: la distracción del peatón no constituye culpa exclusiva de la víctima porque no fue la causa única del daño. La causa preponderante sigue siendo la omisión de señalizar. Lo que opera es el art. 2330 CC: la indemnización se reduce en proporción a la exposición imprudente de la víctima, pero no se exime totalmente a la constructora. Exención total solo procedería si la culpa de la víctima fuera la causa exclusiva y determinante del daño.',
+        respuesta_modelo: 'La constructora responde extracontractualmente. Se verifican todos los requisitos del art. 2314: (1) hecho voluntario: omisión de señalizar la zanja; (2) capacidad delictual; (3) imputabilidad: culpa por omisión de un deber de cuidado elemental (no señalizar una zanja nocturna); (4) daño: lesiones del peatón; (5) causalidad: la zanja no señalizada causó la caída.\n\nLa alegación de la constructora es incorrecta: la distracción del peatón no constituye culpa exclusiva de la víctima porque no fue la causa única del daño. La causa preponderante sigue siendo la omisión de señalizar.\n\nLo que opera es el art. 2330 CC: la indemnización se reduce en proporción a la exposición imprudente de la víctima, pero no se exime totalmente a la constructora. Exención total solo procedería si la culpa de la víctima fuera la causa exclusiva y determinante del daño.',
         elementos_clave: [
           { texto: 'Recorre los 5 requisitos de la RE uno a uno', keywords: ['requisito', 'hecho', 'culpa', 'daño', 'causalidad', 'capacidad'], pregunta: '¿Repasaste los cinco requisitos del art. 2314 uno por uno, o diste la conclusión sin pasar por cada uno?' },
-          { texto: 'Identifica culpa por omisión y nexo causal', keywords: ['omisión', 'señalizar', 'causalidad', 'nexo'], pregunta: 'La constructora no hizo nada activo, solo omitió señalizar — ¿esa omisión igual cuenta como culpa? ¿Qué la conecta causalmente con la caída del peatón?' },
-          { texto: 'Distingue reducción (art. 2330) de exención total', keywords: ['2330', 'reduce', 'reducción', 'no exime', 'no exonera'], pregunta: 'Si el peatón contribuyó con su propia distracción, ¿eso libera completamente a la constructora, o solo cambia cuánto debe pagar?' },
-          { texto: 'Rechaza la tesis de culpa exclusiva de la víctima', keywords: ['exclusiva', 'no es exclusiva', 'causa única', 'preponderante'], pregunta: '¿La distracción del peatón fue la única causa del daño, o hay otra causa que pesa más?' }
+          { texto: 'Identifica culpa por omisión y nexo causal', keywords: ['omisión', 'señalizar', 'causalidad', 'nexo', 'no puso señales', 'falta de señalización', 'conectada con la caída', 'relación de causalidad', 'produjo la caída', 'no señalizó'], pregunta: 'La constructora no hizo nada activo, solo omitió señalizar: ¿esa omisión igual cuenta como culpa? ¿Qué la conecta causalmente con la caída del peatón?' },
+          { texto: 'Distingue reducción (art. 2330) de exención total', keywords: ['2330', 'reduce', 'reducción', 'no exime', 'no exonera', 'disminuye la indemnización', 'baja el monto', 'no la libera del todo'], pregunta: 'Si el peatón contribuyó con su propia distracción, ¿eso libera completamente a la constructora, o solo cambia cuánto debe pagar?' },
+          { texto: 'Rechaza la tesis de culpa exclusiva de la víctima', keywords: ['exclusiva', 'no es exclusiva', 'causa única', 'preponderante', 'no fue la única causa', 'hay otra causa', 'la principal causa es', 'también contribuyó la constructora'], pregunta: '¿La distracción del peatón fue la única causa del daño, o hay otra causa que pesa más?' }
         ],
         articulos_referencia: ['2314', '2329', '2330'],
         objetivo_pedagogico: 'Subsumir hechos y distinguir exoneración total de reducción proporcional'
@@ -858,7 +892,7 @@
         tipo: 'aplicacion',
         caso: 'Javiera contrata a una clínica para una operación de rodilla. La operación resulta en una infección grave que la deja con movilidad reducida. La clínica alega que cumplió todos los protocolos y que la infección fue un riesgo propio de toda cirugía. Javiera demanda indemnización.',
         enunciado: '¿Qué tipo de obligación tiene la clínica respecto de la operación? ¿Sobre quién recae la carga de la prueba de la culpa? Analiza la viabilidad de la defensa de la clínica.',
-        respuesta_modelo: 'La clínica tiene una obligación de medios respecto del acto médico: no promete un resultado (que la rodilla quede perfecta), sino que se compromete a actuar con la diligencia de un buen médico. En las obligaciones de medios, el cumplimiento es la diligencia, por lo que Javiera —el acreedor— debe probar la falta de diligencia (art. 1698 CC), no simplemente el resultado insatisfactorio. La presunción del art. 1547 inc. 3° opera plenamente en obligaciones de resultado (basta probar que el resultado no se obtuvo), pero en obligaciones de medios la carga probatoria se acerca al régimen extracontractual: el acreedor prueba la culpa. La defensa de la clínica (que cumplió protocolos) es relevante precisamente porque en obligaciones de medios la diligencia es el centro del debate. Si acredita que actuó conforme a la lex artis, no hay culpa aunque el resultado haya sido malo. Javiera deberá probar la infracción concreta del deber de cuidado.',
+        respuesta_modelo: 'La clínica tiene una obligación de medios respecto del acto médico: no promete un resultado (que la rodilla quede perfecta), sino que se compromete a actuar con la diligencia de un buen médico.\n\nEn las obligaciones de medios, el cumplimiento es la diligencia, por lo que Javiera, el acreedor, debe probar la falta de diligencia (art. 1698 CC), no simplemente el resultado insatisfactorio.\n\nLa presunción del art. 1547 inc. 3° opera plenamente en obligaciones de resultado (basta probar que el resultado no se obtuvo), pero en obligaciones de medios la carga probatoria se acerca al régimen extracontractual: el acreedor prueba la culpa.\n\nLa defensa de la clínica (que cumplió protocolos) es relevante precisamente porque en obligaciones de medios la diligencia es el centro del debate. Si acredita que actuó conforme a la lex artis, no hay culpa aunque el resultado haya sido malo. Javiera deberá probar la infracción concreta del deber de cuidado.',
         elementos_clave: [
           { texto: 'Califica la obligación como de medios (no de resultado)', keywords: ['medios', 'obligación de medios', 'no de resultado'], pregunta: '¿La clínica se comprometió a que la rodilla quedara perfecta, o solo a operar con el cuidado debido?' },
           { texto: 'Concluye que la carga de la prueba recae sobre Javiera (acreedor)', keywords: ['javiera prueba', 'acreedor prueba', 'carga de la prueba', '1698'], pregunta: 'Si es una obligación de medios, ¿quién tiene que demostrar que faltó diligencia — Javiera o la clínica?' },
@@ -893,7 +927,7 @@
         tipo: 'aplicacion',
         caso: 'El Banco XYZ inicia un juicio ejecutivo contra Pedro basado en un pagaré. Pedro opone dentro de plazo las excepciones de prescripción y de falta de mérito ejecutivo. El banco solicita al tribunal que dicte sentencia de inmediato rechazando las excepciones por ser dilatorias.',
         enunciado: '¿Es correcta la petición del banco? ¿Cuál es la tramitación que corresponde luego de opuestas las excepciones? ¿Puede haber término probatorio?',
-        respuesta_modelo: 'La petición del banco es incorrecta. Conforme a los arts. 466 y ss. CPC, opuestas las excepciones dentro de plazo, el tribunal debe dar traslado al ejecutante por 4 días para que responda. Luego, si hay hechos controvertidos susceptibles de prueba, se abre un término probatorio de 10 días. No procede sentencia inmediata de rechazo solo porque el ejecutante lo pida: el tribunal debe pronunciarse sobre el fondo de las excepciones. En este caso, la prescripción y la falta de mérito ejecutivo son excepciones perentorias y requieren que el tribunal las analice. Si las acoge, absuelve al ejecutado; si las rechaza, ordena seguir adelante con la ejecución.',
+        respuesta_modelo: 'La petición del banco es incorrecta. Conforme a los arts. 466 y ss. CPC, opuestas las excepciones dentro de plazo, el tribunal debe dar traslado al ejecutante por 4 días para que responda.\n\nLuego, si hay hechos controvertidos susceptibles de prueba, se abre un término probatorio de 10 días. No procede sentencia inmediata de rechazo solo porque el ejecutante lo pida: el tribunal debe pronunciarse sobre el fondo de las excepciones.\n\nEn este caso, la prescripción y la falta de mérito ejecutivo son excepciones perentorias y requieren que el tribunal las analice. Si las acoge, absuelve al ejecutado; si las rechaza, ordena seguir adelante con la ejecución.',
         elementos_clave: [
           { texto: 'Rechaza la petición del banco como incorrecta', keywords: ['incorrecta', 'no procede', 'equivocado', 'incorrecto'], pregunta: '¿El tribunal puede fallar rechazando las excepciones de inmediato, solo porque el banco lo pide?' },
           { texto: 'Describe el traslado al ejecutante (4 días)', keywords: ['traslado', '4 días', 'cuatro días'], pregunta: 'Después de que Pedro opone las excepciones, ¿qué trámite sigue antes de que el tribunal se pronuncie?' },
@@ -934,9 +968,9 @@
         enunciado: 'Menciona y explica tres diferencias de régimen entre la responsabilidad contractual y la extracontractual. ¿Cuál te parece la más relevante en la práctica y por qué?',
         respuesta_modelo: '(1) Prueba de la culpa: en sede contractual la culpa del deudor se presume (art. 1547 inc. 3°); basta al acreedor probar el incumplimiento. En sede extracontractual la víctima debe probar la culpa del autor, salvo presunciones específicas (arts. 2320, 2329). (2) Extensión del daño: en contractual, si hay solo culpa el deudor responde de perjuicios previstos; si hay dolo o culpa grave, también de imprevistos (art. 1558). En extracontractual la reparación es integral (todo el daño directo), sin distinción culpa/dolo. (3) Prescripción: la acción contractual prescribe en 5 años desde que la obligación se hizo exigible (art. 2515); la aquiliana prescribe en 4 años desde la perpetración del acto (art. 2332). La diferencia más relevante en la práctica suele ser la presunción de culpa contractual: en un litigio, esa presunción define quién carga con la prueba y normalmente decide el resultado.',
         elementos_clave: [
-          { texto: 'Señala la presunción de culpa contractual (art. 1547 inc. 3°) vs. prueba por la víctima en extracontractual', keywords: ['1547', 'presume', 'presunción', 'víctima prueba', 'extracontractual prueba'], pregunta: 'En un contrato, ¿quién tiene que probar que no hubo culpa? ¿Se mantiene ese mismo reparto si el daño no viene de un contrato?' },
-          { texto: 'Menciona la extensión del daño / previsibilidad (art. 1558) como diferencia', keywords: ['1558', 'previstos', 'imprevistos', 'previsibilidad', 'extensión'], pregunta: '¿La cantidad de perjuicios que se pueden cobrar cambia según haya solo culpa o haya dolo? ¿En qué artículo está eso?' },
-          { texto: 'Señala la diferencia de prescripción (5 años / 4 años)', keywords: ['2515', '2332', '5 años', '4 años', 'prescripción'], pregunta: '¿El plazo para demandar es el mismo en ambos estatutos, o hay una diferencia de un año entre ellos?' }
+          { texto: 'Señala la presunción de culpa contractual (art. 1547 inc. 3°) vs. prueba por la víctima en extracontractual', keywords: ['1547', 'presume', 'presunción', 'víctima prueba', 'extracontractual prueba', 'se da por hecho', 'no necesita probar la culpa', 'al revés en extracontractual'], pregunta: 'En un contrato, ¿quién tiene que probar que no hubo culpa? ¿Se mantiene ese mismo reparto si el daño no viene de un contrato?' },
+          { texto: 'Menciona la extensión del daño / previsibilidad (art. 1558) como diferencia', keywords: ['1558', 'previstos', 'imprevistos', 'previsibilidad', 'extensión', 'dolo o culpa', 'incumple con dolo', 'responde de más perjuicios', 'cantidad de perjuicios', 'monto que se puede cobrar', 'no hay diferencia entre dolo y culpa'], pregunta: '¿La cantidad de perjuicios que se pueden cobrar cambia según haya solo culpa o haya dolo? ¿En qué artículo está eso?' },
+          { texto: 'Señala la diferencia de prescripción (5 años / 4 años)', keywords: ['2515', '2332', '5 años', '4 años', 'prescripción', 'plazo distinto', 'un año más', 'un año de diferencia'], pregunta: '¿El plazo para demandar es el mismo en ambos estatutos, o hay una diferencia de un año entre ellos?' }
         ],
         articulos_referencia: ['1547', '1558', '2515', '2332'],
         objetivo_pedagogico: 'Dominar las diferencias de régimen entre los dos estatutos de responsabilidad civil'
@@ -950,7 +984,7 @@
         tipo: 'aplicacion',
         caso: 'Pedro presta gratuitamente su notebook a Juan para que prepare un trabajo universitario. Juan lo deja sobre la mesa de un café; al levantarse a pagar, alguien lo roba. Pedro demanda el valor del equipo.',
         enunciado: '¿Qué tipo de contrato es este? ¿De qué grado de culpa responde Juan? ¿Juan puede alegar caso fortuito exitosamente? Analiza cada punto.',
-        respuesta_modelo: 'El contrato es un comodato (art. 2174 CC): préstamo gratuito de una cosa no fungible. Como el contrato beneficia solo al comodatario (Juan), éste responde hasta de culpa levísima (art. 1547 CC): el estándar es la esmerada diligencia de un hombre juicioso. La culpa del comodatario se presume (art. 1547 inc. 3°): Juan debe probar que empleó la diligencia debida o que el robo fue caso fortuito. Juan probablemente no puede alegar caso fortuito exitosamente: dejar el equipo desatendido en un lugar público es precisamente la falta de la esmerada diligencia exigida. El caso fortuito requiere imprevisibilidad e irresistibilidad; pero el riesgo de robo en un café es razonablemente previsible, y era evitable llevando el equipo o vigilándolo. Juan responde del valor del notebook.',
+        respuesta_modelo: 'El contrato es un comodato (art. 2174 CC): préstamo gratuito de una cosa no fungible.\n\nComo el contrato beneficia solo al comodatario (Juan), éste responde hasta de culpa levísima (art. 1547 CC): el estándar es la esmerada diligencia de un hombre juicioso.\n\nLa culpa del comodatario se presume (art. 1547 inc. 3°): Juan debe probar que empleó la diligencia debida o que el robo fue caso fortuito.\n\nJuan probablemente no puede alegar caso fortuito exitosamente: dejar el equipo desatendido en un lugar público es precisamente la falta de la esmerada diligencia exigida. El caso fortuito requiere imprevisibilidad e irresistibilidad; pero el riesgo de robo en un café es razonablemente previsible, y era evitable llevando el equipo o vigilándolo. Juan responde del valor del notebook.',
         elementos_clave: [
           { texto: 'Califica el contrato como comodato (art. 2174)', keywords: ['comodato', '2174', 'préstamo gratuito'], pregunta: '¿Cómo se llama el contrato en que alguien presta algo gratuitamente para que el otro lo use?' },
           { texto: 'Concluye que Juan responde hasta de culpa levísima porque el contrato lo beneficia solo a él', keywords: ['levísima', 'culpa levísima', 'solo al deudor', 'solo a juan', 'beneficia al comodatario'], pregunta: 'Como este préstamo solo beneficia a Juan, ¿qué tan cuidadoso tiene que ser con el notebook — el estándar más bajo o el más exigente?' },
@@ -971,9 +1005,9 @@
         enunciado: 'El alumno comete dos errores en esta respuesta. Identifícalos con precisión y explica la regla correcta.',
         respuesta_modelo: 'Error 1: El simple incumplimiento no produce mora automáticamente. El art. 1551 exige, como regla general, interpelación judicial (reconvención judicial, art. 1551 N°3). Solo por excepción opera la mora automática: cuando hay plazo estipulado expresamente (N°1, interpelación contractual expresa) o cuando la cosa solo podía darse en cierto tiempo que se dejó pasar (N°2, interpelación tácita). El "simple vencimiento" del plazo produce mora solo si el plazo fue expresamente convenido en el contrato. Error 2: En contratos bilaterales, la mora del deudor presupone que el acreedor haya cumplido o esté llano a cumplir su propia obligación. El art. 1552 consagra la regla "la mora purga la mora": si el vendedor no ha entregado y el comprador tampoco ha pagado, ninguno está en mora respecto del otro. El comprador no puede demandar indemnización si él mismo está incumpliendo.',
         elementos_clave: [
-          { texto: 'Distingue los tres supuestos del art. 1551: solo el N°1 y N°2 producen mora automática; la regla general es la reconvención judicial (N°3)', keywords: ['1551', 'reconvención', 'interpelación', 'judicial', 'no automática', 'regla general'], pregunta: '¿El solo vencimiento de un plazo pone siempre en mora al deudor, o eso solo pasa en casos excepcionales?' },
-          { texto: 'Identifica la regla "la mora purga la mora" del art. 1552', keywords: ['1552', 'mora purga', 'purga la mora', 'mutua mora', 'bilateral'], pregunta: 'Si ninguna de las dos partes de un contrato bilateral ha cumplido su parte, ¿alguna de ellas está en mora frente a la otra?' },
-          { texto: 'Concluye que el comprador no puede pedir indemnización si él también incumple', keywords: ['no puede', 'incumple', 'no exige', 'excepción de contrato no cumplido'], pregunta: 'Si el comprador tampoco ha pagado el precio, ¿puede igual exigirle indemnización al vendedor por no entregar?' }
+          { texto: 'Distingue los tres supuestos del art. 1551: solo el N°1 y N°2 producen mora automática; la regla general es la reconvención judicial (N°3)', keywords: ['1551', 'reconvención', 'interpelación', 'judicial', 'no automática', 'regla general', 'no es automática', 'hay que demandarlo', 'se requiere demanda', 'reconvenir judicialmente', 'plazo expresamente pactado', 'salvo que se haya pactado plazo'], pregunta: '¿El solo vencimiento de un plazo pone siempre en mora al deudor, o eso solo pasa en casos excepcionales?' },
+          { texto: 'Identifica la regla "la mora purga la mora" del art. 1552', keywords: ['1552', 'mora purga', 'purga la mora', 'mutua mora', 'bilateral', 'ninguno está en mora', 'ninguna de las partes está en mora'], pregunta: 'Si ninguna de las dos partes de un contrato bilateral ha cumplido su parte, ¿alguna de ellas está en mora frente a la otra?' },
+          { texto: 'Concluye que el comprador no puede pedir indemnización si él también incumple', keywords: ['no puede', 'incumple', 'no exige', 'excepción de contrato no cumplido', 'no puede demandar', 'no puede cobrar', 'ambos incumplen', 'ninguno puede exigir', 'también está incumpliendo'], pregunta: 'Si el comprador tampoco ha pagado el precio, ¿puede igual exigirle indemnización al vendedor por no entregar?' }
         ],
         articulos_referencia: ['1551', '1552'],
         objetivo_pedagogico: 'Distinguir los supuestos de mora del art. 1551 y la excepción del art. 1552 en contratos bilaterales'
@@ -987,7 +1021,7 @@
         tipo: 'aplicacion',
         caso: 'Un repartidor de la empresa LogiRed maneja la moto de la empresa en horario laboral y, por no respetar una luz roja, choca a Paula y le causa lesiones graves. Paula demanda a la empresa LogiRed. La empresa alega que el repartidor actuó en forma independiente y que ella no tiene responsabilidad.',
         enunciado: '¿Puede Paula demandar directamente a LogiRed? ¿Qué norma ampara su acción? ¿Tiene LogiRed alguna defensa viable? ¿Puede la empresa recuperar lo que pague?',
-        respuesta_modelo: 'Sí, Paula puede demandar directamente a LogiRed. El art. 2320 CC establece la responsabilidad por el hecho ajeno cuando existe una relación de dependencia o cuidado. LogiRed responde por su dependiente (el repartidor) porque: (1) existía relación de trabajo/dependencia; (2) el hecho se cometió en ejercicio de las funciones propias del cargo (horario laboral, moto de la empresa). Respecto de LogiRed opera una presunción de culpa in eligendo (por elegir al trabajador) e in vigilando (por no supervisarlo). La defensa de LogiRed —que el repartidor actuó independientemente— es muy difícil de sostener si el accidente ocurrió en horario laboral con vehículo de la empresa: ello acredita el ejercicio de funciones. La única defensa viable sería probar que con la autoridad y cuidado debidos no pudo impedir el hecho (art. 2320 inc. final), estándar muy alto. LogiRed y el repartidor responden solidariamente (art. 2317). Una vez que LogiRed pague, puede repetir contra el repartidor por lo que éste le adeude (art. 2325), si el repartidor obró con discernimiento.',
+        respuesta_modelo: 'Sí, Paula puede demandar directamente a LogiRed. El art. 2320 CC establece la responsabilidad por el hecho ajeno cuando existe una relación de dependencia o cuidado. LogiRed responde por su dependiente (el repartidor) porque: (1) existía relación de trabajo/dependencia; (2) el hecho se cometió en ejercicio de las funciones propias del cargo (horario laboral, moto de la empresa).\n\nRespecto de LogiRed opera una presunción de culpa in eligendo (por elegir al trabajador) e in vigilando (por no supervisarlo).\n\nLa defensa de LogiRed, que el repartidor actuó independientemente, es muy difícil de sostener si el accidente ocurrió en horario laboral con vehículo de la empresa: ello acredita el ejercicio de funciones.\n\nLa única defensa viable sería probar que con la autoridad y cuidado debidos no pudo impedir el hecho (art. 2320 inc. final), estándar muy alto.\n\nLogiRed y el repartidor responden solidariamente (art. 2317). Una vez que LogiRed pague, puede repetir contra el repartidor por lo que éste le adeude (art. 2325), si el repartidor obró con discernimiento.',
         elementos_clave: [
           { texto: 'Cita el art. 2320 como fundamento de la responsabilidad por hecho ajeno', keywords: ['2320', 'hecho ajeno', 'dependiente', 'relación de dependencia'], pregunta: '¿Qué artículo permite demandar directamente a la empresa por el hecho de su dependiente?' },
           { texto: 'Explica la presunción de culpa in eligendo / in vigilando contra LogiRed', keywords: ['presunción', 'in vigilando', 'in eligendo', 'presume culpa'], pregunta: '¿A Paula le corresponde probar la culpa de LogiRed, o la ley ya se la presume por elegir y no supervisar bien al repartidor?' },
@@ -1006,7 +1040,7 @@
         tipo: 'aplicacion',
         caso: 'Una clínica, por una falla organizativa, extravía los exámenes de Valentina y le comunica por error un diagnóstico de cáncer inexistente. Valentina vive semanas de angustia, adelgaza y necesita tratamiento psicológico antes de que el error se aclare. Valentina demanda daño moral.',
         enunciado: '¿Procede la demanda de daño moral en sede contractual? ¿Debe la clínica probar su diligencia o es Valentina quien prueba la culpa? Analiza la previsibilidad del daño y la extensión de lo indemnizable.',
-        respuesta_modelo: 'Sí, el daño moral procede en sede contractual. La jurisprudencia chilena ha reconocido el daño moral contractual especialmente cuando el contrato compromete la integridad, salud o dignidad de la persona, como los contratos de prestación de servicios de salud. La falla organizativa de la clínica (extraviar exámenes y comunicar un diagnóstico errado) es incumplimiento de su obligación de cuidado, que incluye deber de precisión diagnóstica. En cuanto a la prueba: como la relación es contractual, opera la presunción de culpa del art. 1547 inc. 3°: la clínica debe probar que empleó la diligencia debida; Valentina solo acredita el incumplimiento (el diagnóstico errado) y los perjuicios. Sobre previsibilidad (art. 1558): el daño moral derivado de un diagnóstico errado es perfectamente previsible al tiempo de contratar una prestación de salud, por lo que entra en la extensión indemnizable incluso sin dolo. Lo indemnizable: daño moral (angustia, sufrimiento), y eventualmente daño emergente (gastos de tratamiento psicológico) y lucro cesante si corresponde.',
+        respuesta_modelo: 'Sí, el daño moral procede en sede contractual. La jurisprudencia chilena ha reconocido el daño moral contractual especialmente cuando el contrato compromete la integridad, salud o dignidad de la persona, como los contratos de prestación de servicios de salud.\n\nLa falla organizativa de la clínica (extraviar exámenes y comunicar un diagnóstico errado) es incumplimiento de su obligación de cuidado, que incluye deber de precisión diagnóstica.\n\nEn cuanto a la prueba: como la relación es contractual, opera la presunción de culpa del art. 1547 inc. 3°: la clínica debe probar que empleó la diligencia debida; Valentina solo acredita el incumplimiento (el diagnóstico errado) y los perjuicios.\n\nSobre previsibilidad (art. 1558): el daño moral derivado de un diagnóstico errado es perfectamente previsible al tiempo de contratar una prestación de salud, por lo que entra en la extensión indemnizable incluso sin dolo.\n\nLo indemnizable: daño moral (angustia, sufrimiento), y eventualmente daño emergente (gastos de tratamiento psicológico) y lucro cesante si corresponde.',
         elementos_clave: [
           { texto: 'Afirma que el daño moral procede en sede contractual en contratos que comprometen la persona', keywords: ['daño moral', 'procede', 'contractual', 'dignidad', 'salud'], pregunta: '¿El daño moral se puede reclamar aunque el vínculo con la clínica sea un contrato, o eso solo aplica fuera de los contratos?' },
           { texto: 'Aplica la presunción de culpa del art. 1547: la clínica prueba diligencia', keywords: ['1547', 'presunción', 'clínica prueba', 'presume culpa', 'deudor prueba'], pregunta: 'Entre Valentina y la clínica, ¿a quién le corresponde demostrar que hubo (o no hubo) diligencia?' },
@@ -1044,7 +1078,7 @@
         tipo: 'justificacion',
         caso: null,
         enunciado: '¿En cuánto tiempo prescriben respectivamente la acción de responsabilidad contractual y la acción aquiliana extracontractual? ¿Desde cuándo corre cada plazo? Señala los artículos.',
-        respuesta_modelo: 'La acción de responsabilidad contractual prescribe en 5 años contados desde que la obligación se hizo exigible (art. 2515 CC). La acción aquiliana extracontractual prescribe en 4 años contados desde la perpetración del acto (art. 2332 CC). Esta diferencia puede ser relevante cuando el demandante espera para demandar: si demanda bajo el estatuto contractual, tiene un año más; pero si el hecho se descubrió mucho después de ocurrido, existe debate sobre si en daños diferidos el plazo del art. 2332 corre desde el hecho o desde que el daño se manifiesta (jurisprudencia mayoritaria cuenta desde el hecho; parte de la doctrina aboga por la manifestación del daño en daños diferidos).',
+        respuesta_modelo: 'La acción de responsabilidad contractual prescribe en 5 años contados desde que la obligación se hizo exigible (art. 2515 CC). La acción aquiliana extracontractual prescribe en 4 años contados desde la perpetración del acto (art. 2332 CC).\n\nEsta diferencia puede ser relevante cuando el demandante espera para demandar: si demanda bajo el estatuto contractual, tiene un año más; pero si el hecho se descubrió mucho después de ocurrido, existe debate sobre si en daños diferidos el plazo del art. 2332 corre desde el hecho o desde que el daño se manifiesta (jurisprudencia mayoritaria cuenta desde el hecho; parte de la doctrina aboga por la manifestación del daño en daños diferidos).',
         elementos_clave: [
           { texto: 'Señala que la acción contractual prescribe en 5 años (art. 2515)', keywords: ['2515', '5 años', 'cinco años', 'contractual prescribe'], pregunta: '¿En cuántos años prescribe la acción cuando el incumplimiento viene de un contrato?' },
           { texto: 'Señala que la acción extracontractual prescribe en 4 años (art. 2332)', keywords: ['2332', '4 años', 'cuatro años', 'aquiliana prescribe', 'extracontractual prescribe'], pregunta: '¿Y cuando el daño no viene de un contrato, sino de un hecho ilícito? ¿Es el mismo plazo?' },
@@ -1062,7 +1096,7 @@
         tipo: 'deteccion_error',
         caso: 'Un médico que opera a su paciente la deja con secuelas graves por mala praxis. El paciente afirma: "Como hay un contrato de prestación de servicios, puedo demandar indemnización bajo ambos estatutos —contractual y extracontractual— a la vez, sumando las indemnizaciones de cada uno. Así obtengo el doble."',
         enunciado: 'El paciente comete un error jurídico fundamental. Identifícalo y explica la doctrina correcta sobre el cúmulo u opción de responsabilidades.',
-        respuesta_modelo: 'El paciente está equivocado. La doctrina del cúmulo propiamente tal —acumular las indemnizaciones de ambos estatutos por el mismo daño— está rechazada, ya que implicaría enriquecimiento injusto: no se puede cobrar dos veces por el mismo perjuicio. Lo que puede discutirse es si el paciente tiene derecho a optar entre ambos estatutos, eligiendo el más favorable. La regla tradicional en Chile es que, existiendo contrato, el estatuto aplicable es el contractual. La doctrina moderna discute si la víctima puede optar por el estatuto extracontractual cuando le resulte más conveniente (por ejemplo, si le interesa evitar la presunción de culpa que favorece al médico en sede contractual, o si le interesa la reparación integral sin el límite de previsibilidad). Pero lo que no puede hacer es acumular ambas indemnizaciones por el mismo daño.',
+        respuesta_modelo: 'El paciente está equivocado. La doctrina del cúmulo propiamente tal (acumular las indemnizaciones de ambos estatutos por el mismo daño) está rechazada, ya que implicaría enriquecimiento injusto: no se puede cobrar dos veces por el mismo perjuicio.\n\nLo que puede discutirse es si el paciente tiene derecho a optar entre ambos estatutos, eligiendo el más favorable. La regla tradicional en Chile es que, existiendo contrato, el estatuto aplicable es el contractual.\n\nLa doctrina moderna discute si la víctima puede optar por el estatuto extracontractual cuando le resulte más conveniente (por ejemplo, si le interesa evitar la presunción de culpa que favorece al médico en sede contractual, o si le interesa la reparación integral sin el límite de previsibilidad). Pero lo que no puede hacer es acumular ambas indemnizaciones por el mismo daño.',
         elementos_clave: [
           { texto: 'Rechaza el cúmulo propiamente tal (no se pueden sumar ambas indemnizaciones por el mismo daño)', keywords: ['no acumula', 'no puede sumar', 'mismo daño', 'enriquecimiento injusto', 'rechazado'], pregunta: 'Si el paciente cobra las dos indemnizaciones por el mismo daño, ¿no estaría cobrando dos veces por lo mismo?' },
           { texto: 'Distingue el cúmulo de la opción: puede haber derecho a elegir el estatuto más favorable', keywords: ['opción', 'elegir', 'optar', 'estatuto más favorable'], pregunta: 'Aunque no pueda sumar ambas indemnizaciones, ¿podría elegir cuál de los dos estatutos usar, si le conviene más uno que otro?' },
@@ -1070,6 +1104,158 @@
         ],
         articulos_referencia: ['1545', '2314'],
         objetivo_pedagogico: 'Distinguir el cúmulo impropio del derecho a optar entre estatutos de responsabilidad'
+      },
+
+      // ── Lote 2026-07: Contractual, Sección 1 (Marco general) ──────────
+      {
+        id: 'rc-aplic-004',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Renuncia anticipada a las acciones del art. 1489',
+        tipo: 'aplicacion',
+        caso: 'Constructora Andes vende en verde un departamento a la señora Ibáñez. El contrato incluye una cláusula en que la compradora renuncia anticipadamente a pedir la resolución del contrato ante cualquier incumplimiento de la vendedora. Constructora Andes no entrega el departamento en la fecha pactada, y se acredita que ocultó deliberadamente, desde antes de firmar el contrato, defectos estructurales graves que ya conocía.',
+        enunciado: '¿Es válida y eficaz, en este caso, la cláusula de renuncia anticipada a la acción resolutoria? Independientemente de su validez, ¿qué otros derechos conserva siempre la compradora frente al incumplimiento?',
+        respuesta_modelo: 'La renuncia anticipada a la acción resolutoria es, en principio, válida: a diferencia de la acción de cumplimiento forzado (irrenunciable), la ley sí permite a las partes renunciar de antemano a pedir la resolución.\n\nPero esa renuncia jamás comprende el incumplimiento doloso, porque equivaldría a condonar el dolo futuro, pacto que adolece de objeto ilícito conforme al artículo 1465.\n\nComo en este caso Constructora Andes actuó dolosamente (ocultó a sabiendas defectos estructurales), la cláusula de renuncia no le impide a la señora Ibáñez pedir igualmente la resolución del contrato.\n\nAdemás, renuncie o no a la acción resolutoria, la compradora conserva siempre, por ser irrenunciable, el derecho a exigir el cumplimiento forzado del contrato y, en cualquier caso, la indemnización de perjuicios.',
+        elementos_clave: [
+          { texto: 'Reconoce que la renuncia anticipada a la acción resolutoria es en principio válida', keywords: ['válida', 'se puede renunciar', 'renuncia procede', 'es posible renunciar', 'sí se puede renunciar', 'válido renunciar', 'lícita la renuncia', 'admite renuncia'], pregunta: '¿La ley permite renunciar de antemano a pedir la resolución de un contrato?' },
+          { texto: 'Señala que esa renuncia nunca comprende el incumplimiento doloso (art. 1465)', keywords: ['dolo', 'doloso', '1465', 'condonar', 'objeto ilícito', 'a sabiendas', 'actuó de mala fe', 'intencional', 'no cubre el dolo'], pregunta: '¿Esa renuncia cubre cualquier tipo de incumplimiento, incluido uno cometido a sabiendas por la vendedora?' },
+          { texto: 'Concluye que, por ser doloso el incumplimiento, la compradora puede igual pedir la resolución pese a la cláusula', keywords: ['puede pedir', 'igual puede', 'no le impide', 'resolución procede', 'sí puede resolver', 'puede resolver el contrato', 'no queda impedida', 'procede igual'], pregunta: 'Dado que el incumplimiento fue doloso, ¿la cláusula de renuncia impide a la compradora pedir la resolución?' },
+          { texto: 'Señala que el derecho a exigir el cumplimiento forzado es irrenunciable, a diferencia de la acción resolutoria', keywords: ['irrenunciable', 'cumplimiento forzado', 'no se puede renunciar', 'no puede renunciar al cumplimiento', 'siempre puede exigir', 'jamás renunciable', 'nunca renunciable'], pregunta: '¿Existe alguna acción del art. 1489 a la que nunca se pueda renunciar anticipadamente?' }
+        ],
+        articulos_referencia: ['1489', '1465'],
+        objetivo_pedagogico: 'Aplicar el límite del dolo a la renuncia anticipada de la acción resolutoria y distinguirla de la irrenunciabilidad del cumplimiento forzado'
+      },
+
+      {
+        id: 'rc-detect-002',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Sistema de remedios del art. 1489',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde en su examen de grado lo siguiente: "El acreedor primero debe intentar el cumplimiento forzado del contrato, porque es su derecho principal; solo si no logra el cumplimiento, puede pasar a pedir la resolución, que es un derecho secundario y subsidiario. Además, puede demandar cumplimiento y resolución conjuntamente en la misma demanda, como pretensiones principales ambas, sin necesidad de plantear una en subsidio de la otra, porque las dos persiguen proteger al mismo acreedor."',
+        enunciado: 'El alumno comete al menos dos errores jurídicos. Identifícalos con precisión y explica la regla correcta según el art. 1489.',
+        respuesta_modelo: 'El alumno comete dos errores.\n\nPrimero, no existe un orden de prelación entre el cumplimiento forzado y la resolución: el art. 1489 da al acreedor el derecho a pedir "a su arbitrio" una u otra, sin que el Código establezca que deba intentarse primero el cumplimiento. La doctrina tradicional que llama al cumplimiento "derecho principal" y a la resolución "derecho secundario" ha sido objetada precisamente porque no considera ese carácter optativo.\n\nSegundo, cumplimiento y resolución son acciones incompatibles entre sí como pretensiones simultáneas: no pueden demandarse conjuntamente como principales ambas, sino solo una en subsidio de la otra.\n\nLo que sí es correcto es que, si el acreedor demanda el cumplimiento y no lo obtiene, conserva la opción de demandar después la resolución (pueden interponerse sucesivamente).',
+        elementos_clave: [
+          { texto: 'Detecta que no existe un orden de prelación: el acreedor elige a su arbitrio, no debe intentar primero el cumplimiento', keywords: ['arbitrio', 'no hay orden', 'no debe intentar primero', 'sin prelación', 'a elección del acreedor', 'puede elegir', 'no hay que intentar primero', 'ninguna prioridad', 'no existe orden'], pregunta: '¿El art. 1489 obliga al acreedor a intentar primero el cumplimiento antes de poder pedir la resolución?' },
+          { texto: 'Detecta que cumplimiento y resolución no pueden demandarse conjuntamente como pretensiones principales, solo una en subsidio de la otra', keywords: ['incompatibles', 'en subsidio', 'no conjuntamente', 'subsidiariamente', 'no se pueden pedir juntas', 'una u otra', 'no ambas a la vez', 'no simultáneamente'], pregunta: '¿Se puede pedir cumplimiento y resolución a la vez, ambas como pretensión principal, en la misma demanda?' },
+          { texto: 'Señala que sí pueden interponerse sucesivamente: demandar cumplimiento y, si no se obtiene, demandar después resolución', keywords: ['sucesivamente', 'después', 'conserva la opción', 'art. 17 cpc', 'puede demandar después', 'no pierde el derecho', 'mantiene la posibilidad', 'demandar la otra'], pregunta: 'Si el acreedor demanda el cumplimiento y no lo consigue, ¿pierde para siempre la posibilidad de pedir la resolución?' }
+        ],
+        articulos_referencia: ['1489'],
+        objetivo_pedagogico: 'Corregir la idea de un orden de prelación entre cumplimiento y resolución, y precisar la regla de compatibilidad de acciones'
+      },
+
+      {
+        id: 'rc-just-002',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Responsabilidad subjetiva y objetivación',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué sostienen BARAONA y PEÑAILILLO que el principal factor de atribución de la responsabilidad contractual es el incumplimiento mismo, y no la culpa del deudor? ¿En qué remedio concreto sigue siendo indispensable la imputabilidad?',
+        respuesta_modelo: 'Para BARAONA y PEÑAILILLO, mientras no sobrevenga una imposibilidad no imputable que extinga la obligación, no hace falta indagar ninguna otra fuente de responsabilidad distinta de la obligación misma: el deudor debe cumplir simplemente porque a eso se obligó.\n\nProducido el incumplimiento, el acreedor puede pedir el cumplimiento forzado o la resolución del contrato sin necesidad de probar dolo o culpa del deudor; a este le basta con demostrar la existencia de la obligación, correspondiendo al deudor probar el pago o la extinción por alguno de los medios del artículo 1567 (confirmado por los artículos 1698 del Código Civil y 438 del Código de Procedimiento Civil).\n\nLa imputabilidad, en cambio, sigue siendo indispensable únicamente para la indemnización de perjuicios: por eso puede haber resolución sin indemnización cuando el incumplimiento se debe a un caso fortuito.',
+        elementos_clave: [
+          { texto: 'Explica que el cumplimiento forzado y la resolución proceden por el solo incumplimiento, sin exigir dolo o culpa del deudor', keywords: ['sin exigir culpa', 'basta el incumplimiento', 'no requiere dolo', 'no necesita probar culpa', 'no hace falta culpa', 'independientemente de la culpa', 'sin importar la culpa'], pregunta: '¿El acreedor necesita probar que el deudor actuó con dolo o culpa para pedir el cumplimiento forzado o la resolución?' },
+          { texto: 'Señala que la imputabilidad solo es indispensable para la indemnización de perjuicios', keywords: ['indemnización', 'solo para indemnizar', 'imputabilidad indemnización', 'únicamente para indemnizar', 'para cobrar perjuicios', 'solo se exige para la indemnización'], pregunta: '¿En cuál de los tres remedios del art. 1489 sigue siendo necesario probar dolo o culpa?' },
+          { texto: 'Explica que al acreedor le basta probar la existencia de la obligación; el deudor prueba el pago o la extinción (arts. 1567, 1698)', keywords: ['1567', '1698', 'prueba el pago', 'carga de la prueba', 'deudor prueba', 'quien debe probar', 'el deudor debe acreditar', 'al deudor le corresponde probar'], pregunta: '¿A quién le corresponde probar qué, cuando el deudor no cumple: al acreedor probar la culpa, o al deudor probar que pagó o que la obligación se extinguió?' },
+          { texto: 'Concluye que puede haber resolución sin indemnización si el incumplimiento se debe a un caso fortuito', keywords: ['caso fortuito', 'resolución sin indemnización', 'sin indemnizar', 'no hay indemnización', 'sin perjuicios', 'fortuito exime', 'sin pagar indemnización'], pregunta: '¿Puede resolverse un contrato sin que además proceda indemnización de perjuicios? ¿En qué hipótesis?' }
+        ],
+        articulos_referencia: ['1489', '1567', '1698'],
+        objetivo_pedagogico: 'Justificar la tesis objetiva de la responsabilidad contractual y precisar en qué remedio sigue exigiéndose imputabilidad'
+      },
+
+      {
+        id: 'rc-mc-001',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Renunciabilidad de las acciones del art. 1489',
+        tipo: 'discriminacion_mc',
+        caso: 'En un contrato de arrendamiento con opción de compra, las partes incluyen una cláusula en la que el arrendatario-comprador renuncia anticipadamente, a la vez, a pedir el cumplimiento forzado del contrato y a pedir su resolución, para el caso de incumplimiento del arrendador-vendedor.',
+        enunciado: '¿Qué efecto produce esta cláusula de doble renuncia anticipada?',
+        opciones: [
+          { letra: 'A', texto: 'Ambas renuncias son válidas y eficaces, porque la autonomía de la voluntad permite a las partes reglamentar libremente los remedios frente al incumplimiento.', rationale: 'Error: ignora que la renuncia a la acción de cumplimiento forzado es ineficaz, precisamente porque equivaldría a una condición meramente potestativa del deudor.' },
+          { letra: 'B', texto: 'Ninguna de las dos renuncias es válida, porque el sistema de remedios del artículo 1489 es enteramente de orden público y no admite ningún pacto en contrario.', rationale: 'Error: sobregeneraliza. La renuncia a la acción resolutoria sí es, en principio, válida; el sistema del art. 1489 no es enteramente irrenunciable.' },
+          { letra: 'C', texto: 'La renuncia a la acción resolutoria es en principio válida, pero la renuncia a la acción de cumplimiento forzado es ineficaz, porque equivaldría a una condición meramente potestativa del deudor ("cumpliré si quiero"), nula conforme al artículo 1478.', rationale: 'CORRECTO. La acción resolutoria admite renuncia anticipada (con el límite del dolo futuro); la acción de cumplimiento forzado es irrenunciable, porque pactar su renuncia equivale a una condición potestativa del deudor, nula según el art. 1478.' },
+          { letra: 'D', texto: 'Ambas renuncias son inválidas solo si el incumplimiento resulta ser doloso; si es meramente culposo, ambas producen pleno efecto.', rationale: 'Error: traslada el límite del dolo (que rige la renuncia a la acción resolutoria) a la renuncia de la acción de cumplimiento, que es ineficaz siempre, cualquiera sea el grado de imputabilidad del incumplimiento futuro.' }
+        ],
+        correcta: 'C',
+        articulos_referencia: ['1478', '1465'],
+        objetivo_pedagogico: 'Discriminar entre la renuncia anticipada a la acción resolutoria (válida, con el límite del dolo) y a la acción de cumplimiento forzado (siempre ineficaz)'
+      },
+
+      // Lote 2026-07: Contractual, Sección 2 (Incumplimiento contractual)
+      {
+        id: 'rc-aplic-005',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Obligaciones de medio y de resultado',
+        tipo: 'aplicacion',
+        caso: 'Una empresa de transporte de carga se compromete a entregar contenedores refrigerados en un plazo de 48 horas. Uno de los camiones sufre una falla mecánica del motor a mitad de camino, por desgaste normal de una pieza, y la carga llega con 30 horas de atraso, echándose a perder parte de la mercadería. La empresa alega que actuó con toda la diligencia posible: realizó mantenciones periódicas y el chofer respetó los protocolos de conducción.',
+        enunciado: '¿Es esta una obligación de medio o de resultado? ¿Basta la diligencia alegada por la empresa para exonerarla de responsabilidad? ¿Qué habría tenido que probar para liberarse?',
+        respuesta_modelo: 'Es una obligación de resultado: el transportista debe entregar la mercadería en destino, no solo intentarlo con diligencia.\n\nEn las obligaciones de resultado la culpa no es un elemento a considerar para el incumplimiento; el deudor únicamente se exonera acreditando un evento de fuerza mayor que le imposibilitó cumplir, sin que baste alegar la mera ausencia de culpa.\n\nLa alegación de la empresa (mantenciones periódicas, protocolos respetados) es, por tanto, insuficiente.\n\nPara liberarse habría tenido que probar, como recordó la Corte Suprema en el fallo de 11 de marzo de 2025 (Rol 217.959-2023, Constructora Pardo y González), un impedimento ajeno a su control, imprevisible e irresistible; y el desgaste normal de una pieza mecánica, precisamente por ser previsible y evitable mediante mantención, no cumple esos requisitos.',
+        elementos_clave: [
+          { texto: 'Califica la obligación de transporte como de resultado, no de medio', keywords: ['de resultado', 'no de medio', 'debe entregar', 'obligación de resultado', 'se compromete a lograr', 'tiene que lograr el resultado'], pregunta: '¿El transportista se obligó solo a hacer todo lo posible, o a lograr efectivamente que la carga llegara?' },
+          { texto: 'Explica que en las obligaciones de resultado la culpa no es relevante para el incumplimiento; solo exonera la fuerza mayor', keywords: ['fuerza mayor', 'no basta la diligencia', 'solo exonera', 'solo se exime con', 'únicamente el caso fortuito', 'la culpa no importa', 'no es relevante la diligencia'], pregunta: '¿Alcanza con que la empresa pruebe que actuó con cuidado, si de todas formas no llegó la carga a tiempo?' },
+          { texto: 'Concluye que la sola diligencia alegada (mantenciones, protocolos) no exonera a la empresa', keywords: ['insuficiente', 'no exonera', 'no basta', 'no la libera', 'no es suficiente', 'no la exime', 'sigue respondiendo'], pregunta: '¿Las mantenciones periódicas que hizo la empresa, por sí solas, la liberan de responsabilidad?' },
+          { texto: 'Señala que la falla mecánica por desgaste normal no cumple los requisitos del caso fortuito (no es imprevisible ni irresistible)', keywords: ['no es imprevisible', 'desgaste normal', 'no cumple los requisitos', 'era previsible', 'pudo evitarse', 'no es caso fortuito', 'no es fuerza mayor'], pregunta: '¿Una falla por desgaste normal de una pieza es imprevisible e irresistible, como exige el caso fortuito?' }
+        ],
+        articulos_referencia: ['1547'],
+        objetivo_pedagogico: 'Aplicar el régimen de exención propio de las obligaciones de resultado, distinguiéndolo del que rige las obligaciones de medio'
+      },
+
+      {
+        id: 'rc-detect-003',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Prueba del incumplimiento y presunción de imputabilidad',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde en su examen de grado lo siguiente: "En un juicio de responsabilidad contractual, es el acreedor quien debe probar que el deudor actuó con culpa o dolo al incumplir, tal como ocurre en materia extracontractual, porque la regla general del art. 1698 exige que quien alega un hecho lo pruebe, y quien alega la culpa es el acreedor que demanda."',
+        enunciado: 'El alumno comete un error jurídico central. Identifícalo y explica la regla correcta de distribución de la carga de la prueba en sede contractual.',
+        respuesta_modelo: 'El alumno confunde la regla contractual con la extracontractual.\n\nEn sede contractual, acreditada la obligación y el incumplimiento, la culpa del deudor se presume (art. 1547 inciso 3°): no es el acreedor quien debe probarla, sino el deudor quien debe probar su diligencia o el caso fortuito.\n\nEl art. 1698 solo exige al acreedor acreditar la existencia de la obligación; es el deudor quien, alegando el pago o cualquier otro modo de extinguirla, debe probar esa extinción.\n\nEn sede extracontractual la regla es la inversa: por regla general es la víctima quien debe probar la culpa del autor del daño, salvo las presunciones especiales de los artículos 2320 y siguientes. Esta inversión de la carga probatoria es, precisamente, una de las principales ventajas prácticas de demandar por la vía contractual.',
+        elementos_clave: [
+          { texto: 'Detecta que en sede contractual la culpa del deudor se presume; no la prueba el acreedor', keywords: ['se presume', 'no prueba el acreedor', 'presunción de culpa', 'presunción legal', 'se da por hecho', 'no necesita probarla el acreedor', 'no tiene que probar la culpa'], pregunta: '¿Es el acreedor quien tiene que demostrar que el deudor actuó con culpa, o la culpa ya se presume en su contra?' },
+          { texto: 'Señala que es el deudor quien debe probar su diligencia o el caso fortuito (art. 1547 inciso 3°)', keywords: ['1547', 'deudor prueba', 'diligencia', 'caso fortuito', 'el deudor debe probar', 'demuestra que fue diligente', 'acredita su diligencia'], pregunta: '¿Quién tiene que probar que actuó diligentemente, o que hubo caso fortuito: el acreedor o el deudor?' },
+          { texto: 'Distingue esta regla de la extracontractual, donde la víctima debe probar la culpa del autor (salvo presunciones especiales)', keywords: ['extracontractual', 'víctima prueba', '2320', 'inversa', 'la víctima debe probar', 'al revés', 'regla contraria', 'es distinto en extracontractual'], pregunta: '¿Esta misma regla de presunción rige también en sede extracontractual, o ahí es distinto?' },
+          { texto: 'Precisa que el art. 1698 exige al acreedor probar solo la existencia de la obligación, no el incumplimiento culpable', keywords: ['1698', 'existencia de la obligación', 'no el incumplimiento', 'solo la existencia', 'basta acreditar que existe', 'únicamente la obligación'], pregunta: '¿Qué es exactamente lo que el art. 1698 pone de cargo del acreedor: la existencia de la obligación, o que hubo culpa en el incumplimiento?' }
+        ],
+        articulos_referencia: ['1698', '1547'],
+        objetivo_pedagogico: 'Corregir la confusión entre la presunción de culpa contractual y la regla probatoria extracontractual'
+      },
+
+      {
+        id: 'rc-just-003',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Debate sobre obligaciones de medio y de resultado',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué se dice que la distinción entre obligaciones de medio y de resultado es una clasificación debatida? Señala al menos dos ejes de discusión doctrinal, y explica cuál es, pese al debate, su utilidad práctica.',
+        respuesta_modelo: 'La distinción es debatida por dos razones.\n\nPrimero, no hay consenso sobre qué determina el carácter de la obligación: mientras algunos autores lo hacen depender de la descripción legal o contractual, otros sostienen que en rigor todas las obligaciones son de medio (lo que siempre permitiría alegar la ausencia de culpa como exoneración), y en el extremo opuesto hay quienes afirman que toda obligación es de resultado.\n\nSegundo, entre quienes sí aceptan la clasificación, se discute su alcance: algunos sostienen que solo puede predicarse de las obligaciones de hacer, mientras otros la extienden también a las de dar e incluso a las de no hacer.\n\nPese a este debate, la utilidad práctica de la distinción es, sobre todo, probatoria y de exención: define qué debe acreditar el deudor para liberarse de responsabilidad.',
+        elementos_clave: [
+          { texto: 'Explica la primera discusión: si el carácter depende de la ley o el contrato, o si en realidad todas las obligaciones son de medio o todas de resultado', keywords: ['todas de medio', 'todas de resultado', 'depende de la ley', 'depende del contrato', 'no hay consenso', 'discrepancia doctrinal', 'unos autores sostienen', 'otros sostienen que todas'], pregunta: '¿Todos los autores coinciden en que hay obligaciones de medio y obligaciones de resultado, o algunos sostienen que en realidad todas son de un solo tipo?' },
+          { texto: 'Explica la segunda discusión: si la distinción aplica solo a obligaciones de hacer, o también a las de dar e incluso a las de no hacer', keywords: ['obligaciones de hacer', 'obligaciones de dar', 'obligaciones de no hacer', 'alcance de la distinción', 'solo se aplica a', 'se extiende también a', 'otros la extienden'], pregunta: '¿La distinción medio/resultado se discute solo para las obligaciones de hacer, o también para las de dar y las de no hacer?' },
+          { texto: 'Señala que, pese al debate, la utilidad práctica de la distinción es probatoria: define qué debe acreditar el deudor para exonerarse', keywords: ['probatoria', 'qué debe acreditar', 'utilidad práctica', 'sirve para', 'efecto práctico', 'qué debe probar el deudor', 'define qué se exige'], pregunta: 'Aunque la clasificación se discuta en abstracto, ¿para qué sirve en la práctica de un juicio?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Justificar por qué la distinción medio/resultado es doctrinalmente debatida y precisar su utilidad probatoria pese a ello'
+      },
+
+      {
+        id: 'rc-mc-002',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Casos en que el incumplimiento no genera responsabilidad',
+        tipo: 'discriminacion_mc',
+        caso: 'Una empresa de catering no presta el servicio contratado para un evento, porque el cliente, sin previo aviso, decidió unilateralmente cancelar el evento y así se lo comunicó por escrito a la empresa, liberándola expresamente de toda obligación.',
+        enunciado: '¿Bajo cuál de los siguientes supuestos generales de exclusión de responsabilidad por incumplimiento encaja este caso?',
+        opciones: [
+          { letra: 'A', texto: 'Causal de exención de responsabilidad, como el caso fortuito, porque la cancelación fue un hecho imprevisible para la empresa de catering.', rationale: 'Error: confunde con el caso fortuito, que exige un hecho ajeno a la voluntad de las partes; aquí se trata, en cambio, de la propia voluntad del acreedor de liberar al deudor.' },
+          { letra: 'B', texto: 'Acuerdo con el acreedor: el cliente (acreedor) aceptó el incumplimiento y liberó expresamente al deudor, por lo que no hay responsabilidad ulterior.', rationale: 'CORRECTO. El deudor deja de cumplir por un acuerdo con el acreedor, que acepta el incumplimiento; por eso no genera responsabilidad para la empresa de catering.' },
+          { letra: 'C', texto: 'Incumplimiento recíproco del acreedor (excepción de contrato no cumplido, art. 1552), porque el cliente tampoco cumplió su obligación de recibir el servicio.', rationale: 'Error: la excepción de contrato no cumplido exige que el propio acreedor haya incumplido una obligación suya (por ejemplo, no pagar el precio), no que simplemente haya cancelado el evento liberando al deudor.' },
+          { letra: 'D', texto: 'Modo de extinguir liberatorio como la prescripción, porque transcurrió tiempo entre la contratación y la fecha del evento.', rationale: 'Error: no hay ningún plazo de prescripción involucrado; se trata simplemente de la voluntad expresa y actual del acreedor de liberar al deudor, no del transcurso del tiempo.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['1552'],
+        objetivo_pedagogico: 'Discriminar entre las distintas causas por las que un incumplimiento puede no generar responsabilidad'
       }
     ];
 
@@ -1104,6 +1290,40 @@
         .normalize('NFD').replace(/[̀-ͯ]/g, '')
         .replace(/[.,;:!?¿¡"'«»()\[\]]/g, '');
       return NUMEROS_A_DIGITO[limpia] || limpia;
+    }
+    // Quita tildes y diacríticos para comparar texto libre sin que una alumna
+    // pierda crédito solo por escribir "presuncion" en vez de "presunción",
+    // o "aplico" en vez de "aplicó". Usado por el matching de keywords de
+    // Evaluación (recuperación libre), no por el motor de Memorice, que ya
+    // tiene su propia normalización más estricta en normalizarPalabra.
+    function quitarTildes(s) {
+      return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+    // Las respuestas modelo deben leerse como una lista de puntos, uno bajo
+    // el otro, no como un párrafo corrido. Esta función arma esos párrafos
+    // de dos maneras: (a) el texto ya puede traer saltos dobles ("\n\n")
+    // marcados a mano en el punto exacto donde empieza cada idea nueva
+    // (convención para contenido nuevo); (b) si además queda algún marcador
+    // de enumeración ("(1)", "(i)", "Error 1:") dentro de un mismo párrafo,
+    // también se separa ahí. Cada párrafo resultante se envuelve en <p>.
+    function formatearListasRespuesta(texto) {
+      if (!texto) return texto;
+      const marcador = /\(\d{1,2}\)|\([ivxIVX]{1,4}\)|Error \d+:/g;
+      const conMarcadores = texto.replace(marcador, (match, offset) => offset === 0 ? match : '\n\n' + match);
+      return conMarcadores.split(/\n\n+/).map(p => p.trim()).filter(Boolean).map(p => `<p>${p}</p>`).join('');
+    }
+    // Normaliza el número de artículo para comparar lo que la alumna escribe
+    // (ej. "1547 inciso 3", "Art. 1547 inc. 3°") contra el campo `articulo`
+    // guardado (ej. "1547 inc. 3°"): sin tildes, sin símbolos de grado ni
+    // puntuación, "inciso" tratado igual que "inc".
+    function normalizarNumeroArticulo(s) {
+      return (s || '').trim().toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/\binciso\b/g, 'inc')
+        .replace(/\bart\.?\b/g, '')
+        .replace(/[°ºª.,]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
     function tokenizar(texto) { return texto.trim().split(/\s+/).filter(Boolean); }
     function mismoGrupoFuncional(a, b) { return a === b || GRUPOS_EQUIVALENTES.some(g => g.includes(a) && g.includes(b)); }
@@ -1437,6 +1657,7 @@
           <div class="step-label"><div class="step-num-badge">1</div>Recuperación libre — ${instruccion}</div>
           <textarea id="recall-text" placeholder="Escribe aquí tu respuesta desde cero…" oninput="updateChar()" onpaste="return false;" ondrop="return false;"></textarea>
           <div class="char-count"><span id="char-count">0</span> caracteres</div>
+          <div id="recall-hint" class="recall-hint"></div>
           <div class="btn-row">
             <button class="btn btn-primary" id="btn-evaluar" onclick="evaluarRespuesta()">Evaluar mi respuesta</button>
             <button class="btn btn-outline" onclick="skipItem()">Saltar ítem</button>
@@ -1453,12 +1674,16 @@
 
     function evaluarRespuesta(esSegundaPasada = false) {
       const item = itemsFiltrados[idxActual];
-      const texto = (document.getElementById('recall-text')?.value || '').toLowerCase();
+      const texto = quitarTildes((document.getElementById('recall-text')?.value || '').toLowerCase());
       if (texto.trim().length < 30) {
         document.getElementById('recall-text').style.borderColor = '#C41E2E';
         setTimeout(() => document.getElementById('recall-text').style.borderColor = '', 1500);
+        const hint = document.getElementById('recall-hint');
+        if (hint) hint.textContent = 'Escribe al menos 30 caracteres antes de evaluar tu respuesta.';
         return;
       }
+      const hintPrevio = document.getElementById('recall-hint');
+      if (hintPrevio) hintPrevio.textContent = '';
       document.getElementById('btn-evaluar').disabled = true;
 
       if (!item.elementos_clave || item.elementos_clave.length === 0) {
@@ -1477,7 +1702,7 @@
       const acertados = [];
       const faltantes = [];
       item.elementos_clave.forEach(el => {
-        const found = el.keywords.some(kw => texto.includes(kw.toLowerCase()));
+        const found = el.keywords.some(kw => texto.includes(quitarTildes(kw.toLowerCase())));
         if (found) acertados.push(el.texto); else faltantes.push(el);
       });
 
@@ -1493,10 +1718,10 @@
       let veredicto, feedbackDiag;
       if (credito >= 0.75) {
         veredicto = '✓ Respuesta sólida. Cubriste los elementos esenciales.';
-        feedbackDiag = faltantes.length > 0 ? `Estuviste muy bien. Para completar, considera también: ${faltantes.map(el => el.texto).join('; ')}.` : 'Respuesta completa.';
+        feedbackDiag = faltantes.length > 0 ? 'Buen trabajo. Esto es lo único que te faltó:' : 'Respuesta completa.';
       } else if (credito >= 0.35) {
         veredicto = '◐ Respuesta parcial. Captaste la idea general pero faltaron elementos clave.';
-        feedbackDiag = `Identificaste correctamente ${acertados.length} de ${item.elementos_clave.length} elementos. Lo que faltó es precisamente lo que más se pregunta en el examen. ${esSegundaPasada ? 'Revisa el modelo abajo.' : 'Tienes una segunda pasada.'}`;
+        feedbackDiag = `Identificaste correctamente ${acertados.length} de ${item.elementos_clave.length} elementos. ${esSegundaPasada ? 'Revisa el modelo abajo.' : 'Tienes una segunda pasada.'}`;
       } else {
         veredicto = '✗ Respuesta insuficiente. Hay que trabajar este punto.';
         feedbackDiag = `Solo cubriste ${acertados.length} de ${item.elementos_clave.length} elementos. Revisa el manual de ${item.tema} antes de continuar.`;
@@ -1520,12 +1745,17 @@
               <h4>✓ Presentes</h4>
               ${acertados.length > 0 ? acertados.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('') : '<div class="elemento-tag" style="color:#7A6E5F; font-style:italic">Ninguno detectado</div>'}
             </div>
+            ${siguienteAccion !== 'segunda_pasada' && faltantes.length > 0 ? `
+            <div class="elementos-col faltan">
+              <h4>✗ Faltantes</h4>
+              ${faltantes.map(el => `<div class="elemento-tag"><div class="dot"></div><span>${el.texto}</span></div>`).join('')}
+            </div>` : ''}
           </div>
           <div class="feedback-diag">${feedbackDiag}</div>
           ${siguienteAccion === 'segunda_pasada' ? `
             <div class="segunda-pasada" style="margin-top:1.25rem;">
               <div class="segunda-title">Segunda pasada</div>
-              <div class="segunda-text">Estuviste cerca. No te doy la respuesta todavía: tienes una oportunidad más. Sigue pensando: <strong>${escaparHtmlBase(faltantes.map(el => el.pregunta).filter(Boolean).join(' ') || '¿Qué otro elemento le falta a tu respuesta?')}</strong></div>
+              <div class="segunda-text">Casi, intenta de nuevo: <strong>${escaparHtmlBase(faltantes.map(el => el.pregunta).filter(Boolean).join(' ') || '¿Qué otro elemento le falta a tu respuesta?')}</strong></div>
               <textarea id="recall-text-2" style="min-height:90px;" placeholder="Complementa o reescribe tu respuesta…" onpaste="return false;" ondrop="return false;"></textarea>
               <div class="btn-row" style="margin-top:0.75rem;">
                 <button class="btn btn-primary" onclick="evaluarSegundaPasada()">Evaluar segunda pasada</button>
@@ -1614,7 +1844,7 @@
       const modeloHTML = `
         <div class="modelo-section">
           <div class="modelo-title">Respuesta orientadora</div>
-          <div class="modelo-body">${item.respuesta_modelo || 'La corrección de este ítem se realiza al elegir la alternativa correcta.'}</div>
+          <div class="modelo-body">${formatearListasRespuesta(item.respuesta_modelo) || 'La corrección de este ítem se realiza al elegir la alternativa correcta.'}</div>
           <div class="articulos-ref">${(item.articulos_referencia || []).map(a => `<span class="art-tag">Art. ${a}</span>`).join('')}</div>
         </div>
         <div class="btn-row" style="margin-top:1.5rem; max-width:780px;">
@@ -2035,7 +2265,11 @@
           <div class="item-meta">
             <span class="badge-tipo badge-memorice">Memorice · Método ${metodoMemorice}</span>
             <span class="mem-nivel-badge">${faseLabel}</span>
-            <span class="badge-materia">${articulo.subtema || ''} · Art. ${articulo.articulo}</span>
+            <span class="badge-materia">${articulo.subtema || ''}</span>
+          </div>
+          <div class="mem-articulo-numero">
+            <label for="mem-articulo-num">N° de artículo:</label>
+            <input type="text" id="mem-articulo-num" placeholder="Ej: 1489" autocomplete="off" onpaste="return false;" ondrop="return false;" />
           </div>
           ${cuerpoHtml}
           <div class="btn-row">${botonHtml}</div>
@@ -2061,6 +2295,11 @@
       const nivel = progresoItem.nivel_actual || 1;
       const segundosHastaEvaluar = memTiempoMostrado ? (Date.now() - memTiempoMostrado) / 1000 : null;
       document.getElementById('mem-btn-evaluar').disabled = true;
+
+      const inputNumero = document.getElementById('mem-articulo-num');
+      const numeroEscrito = inputNumero ? inputNumero.value : '';
+      const numeroCorrecto = normalizarNumeroArticulo(numeroEscrito) === normalizarNumeroArticulo(articulo.articulo);
+      if (inputNumero) { inputNumero.disabled = true; inputNumero.classList.add(numeroCorrecto ? 'mem-ok' : 'mem-mal'); }
 
       let resultado; // 'correcto' | 'parcial' | 'incorrecto'
       let explicaciones = [];
@@ -2140,6 +2379,14 @@
             explicaciones.push(`Sobra "<strong>${escaparHtmlBase(it.palabra)}</strong>" respecto del texto esperado.`);
           });
         }
+      }
+
+      // El número de artículo es parte de lo que hay que memorizar, no un
+      // dato regalado: si se escribe mal, nunca se cuenta como "correcto"
+      // completo, aunque el texto esté perfecto (se degrada a "parcial").
+      if (!numeroCorrecto) {
+        explicaciones.unshift(`El número de artículo no era correcto: escribiste "<strong>${escaparHtmlBase(numeroEscrito) || '(en blanco)'}</strong>", era el <strong>art. ${escaparHtmlBase(articulo.articulo)}</strong>.`);
+        if (resultado === 'correcto') resultado = 'parcial';
       }
 
       // ── Transición de nivel + repetición espaciada (regla de 3 sesiones) ──
