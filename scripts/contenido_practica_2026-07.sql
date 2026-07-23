@@ -257,3 +257,67 @@ values (
   'Código Civil, art. 1552'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE 5: Contractual, Sección E, parte 1. La indemnización de perjuicios
+-- (concepto, autonomía, imputabilidad, daño)
+-- ════════════════════════════════════════════════════════════════════════
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-014',
+  'contractual',
+  'Acumulabilidad de la indemnización compensatoria',
+  3,
+  'La indemnización compensatoria, por reemplazar a la prestación no cumplida, ¿puede acumularse con el cumplimiento en naturaleza de la misma obligación?',
+  '["Sí, siempre, porque son remedios independientes", "No, porque implicaría un doble pago y un enriquecimiento sin causa", "Solo si el deudor lo consiente expresamente en el mismo juicio", "Solo en las obligaciones de dar, no en las de hacer"]'::jsonb,
+  1,
+  '{"correcta": "La indemnización compensatoria reemplaza a la prestación no cumplida; acumularla con el cumplimiento en naturaleza de la misma obligación significaría que el acreedor reciba a la vez la cosa debida y su equivalente en dinero, un doble pago que importa enriquecimiento sin causa.", "por_que_no": ["A: precisamente por su función sustitutiva, no son acumulables entre sí.", "C: la regla no depende del consentimiento del deudor en el juicio; es una prohibición general.", "D: la regla de no acumulación rige para toda obligación, sea de dar o de hacer."]}'::jsonb,
+  'Sección E del manual (indemnización compensatoria y moratoria)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-015',
+  'contractual',
+  'Graduación de la culpa según utilidad del contrato',
+  2,
+  'En un contrato que beneficia únicamente al deudor (como el comodato para el comodatario), el deudor responde de:',
+  '["Culpa grave", "Culpa leve", "Culpa levísima", "Ningún grado de culpa, por tratarse de un préstamo gratuito"]'::jsonb,
+  2,
+  '{"correcta": "El art. 1547 inciso 1° hace responder de culpa levísima al deudor en los contratos que por su naturaleza son útiles solo a él: recibiendo todo el provecho, se le exige la máxima diligencia.", "por_que_no": ["A: la culpa grave es el estándar para los contratos que benefician solo al acreedor (ej. depósito), lo contrario de este caso.", "B: la culpa leve es la regla general en los contratos de beneficio recíproco, no en los que benefician solo al deudor.", "D: la gratuidad no elimina la responsabilidad; solo puede modular el estándar de diligencia exigido, que aquí es, además, el más alto."]}'::jsonb,
+  'Art. 1547 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-016',
+  'contractual',
+  'Daño directo e indirecto (art. 1558)',
+  3,
+  'Conforme al artículo 1558 del Código Civil, los perjuicios indirectos:',
+  '["Se indemnizan siempre que el incumplimiento sea doloso", "Nunca se indemnizan, ni siquiera mediando dolo", "Se indemnizan solo si fueron previstos al contratar", "Se indemnizan únicamente en las obligaciones de dinero"]'::jsonb,
+  1,
+  '{"correcta": "El art. 1558 traza una frontera infranqueable: los perjuicios indirectos no se indemnizan nunca, ni siquiera mediando dolo. El dolo extiende la responsabilidad de los perjuicios previstos a los imprevistos, pero jamás a los indirectos.", "por_que_no": ["A: ni siquiera el dolo hace indemnizables los perjuicios indirectos.", "C: la distinción previsto/imprevisto opera solo dentro de los perjuicios directos; los indirectos quedan excluidos de raíz.", "D: la exclusión de los perjuicios indirectos es una regla general, no limitada a las obligaciones de dinero."]}'::jsonb,
+  'Art. 1558 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1558-1',
+  'contractual',
+  'Extensión del daño: perjuicios previstos e imprevistos',
+  '1558 inc. 1°',
+  'Si no se puede imputar dolo al deudor, sólo es responsable de los perjuicios que se previeron o pudieron preverse al tiempo del contrato; pero si hay dolo, es responsable de todos los perjuicios que fueron una consecuencia inmediata o directa de no haberse cumplido la obligación o de haberse demorado su cumplimiento.',
+  '[["no se puede imputar dolo"], ["se previeron", "pudieron preverse"], ["consecuencia inmediata", "o directa"], ["*"]]'::jsonb,
+  array['dolo', 'previeron', 'pudieron preverse', 'inmediata', 'directa'],
+  'Código Civil, art. 1558 inciso 1°'
+)
+on conflict (id) do nothing;
