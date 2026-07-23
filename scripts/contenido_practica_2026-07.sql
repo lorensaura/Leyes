@@ -809,3 +809,34 @@ values (
   'Arts. 1458 inc. 2°, 2316 inc. 2° CC'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (18): Extracontractual, Eje I (Prueba de la culpa y presunción del art. 2329)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-010',
+  'extracontractual',
+  'Interpretación amplia del art. 2329 (Alessandri)',
+  4,
+  '¿Cuál de los siguientes NO es uno de los cuatro argumentos con que se sostiene la interpretación amplia del artículo 2329 (que establece una presunción general de culpabilidad y no una mera repetición del art. 2314)?',
+  '["Argumento exegético: la ubicación de la norma como regla de clausura del sistema de presunciones", "Argumento textual: la expresión \"daño que pueda imputarse\" a negligencia", "Argumento de experiencia: la máxima res ipsa loquitur", "Argumento de que la responsabilidad extracontractual es siempre de derecho estricto y no admite presunciones"]'::jsonb,
+  3,
+  '{"correcta": "Los cuatro argumentos son: exegético (ubicación como regla de clausura), textual (\"daño que pueda imputarse\"), de experiencia (res ipsa loquitur) y de justicia correctiva (único camino práctico en procesos complejos). La idea de que la responsabilidad extracontractual sea \"de derecho estricto\" corresponde, en cambio, al carácter excepcional de la responsabilidad ESTRICTA U OBJETIVA (Eje 4), no a las presunciones de culpa.", "por_que_no": ["A, B y C: estos sí son tres de los cuatro argumentos reales que sostienen la interpretación amplia de Alessandri."]}'::jsonb,
+  'Art. 2329 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2329',
+  'extracontractual',
+  'Presunción de culpabilidad por el hecho propio',
+  '2329',
+  'Por regla general todo daño que pueda imputarse a malicia o negligencia de otra persona, debe ser reparado por ésta.',
+  '[["por regla general", "todo daño"], ["que pueda imputarse", "malicia o negligencia"], ["debe ser reparado"], ["*"]]'::jsonb,
+  array['por regla general', 'que pueda imputarse', 'malicia o negligencia', 'reparado'],
+  'Código Civil, art. 2329'
+)
+on conflict (id) do nothing;
