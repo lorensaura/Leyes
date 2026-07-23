@@ -871,3 +871,34 @@ values (
   'Código Civil, art. 2317'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (20): Extracontractual, Eje K (Clases de daño I: el daño patrimonial)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-012',
+  'extracontractual',
+  'Excepciones a la determinación en concreto del daño patrimonial',
+  3,
+  'Según el artículo 1559 del Código Civil, ¿cómo se determina el daño por la mora en el pago de una obligación de dinero?',
+  '["Mediante prueba concreta de las oportunidades de negocio perdidas por el acreedor", "Mediante los intereses convencionales o, en su defecto, los legales, sin necesidad de justificar otros perjuicios", "Mediante una estimación prudencial del daño moral sufrido por el acreedor", "Mediante el valor de reposición del dinero adeudado, más el costo de oportunidad probado por peritos"]'::jsonb,
+  1,
+  '{"correcta": "El art. 1559 estandariza el daño por la mora en obligaciones de dinero: se deben los intereses convencionales (si son superiores al legal) o los legales, y el acreedor no necesita justificar perjuicios adicionales para cobrarlos; basta el hecho del retardo.", "por_que_no": ["A: precisamente lo que evita el art. 1559 es exigir esa prueba concreta, para ahorrar costos de litigación e incertidumbre.", "C: la norma no se refiere al daño moral, sino al daño patrimonial por la mora en obligaciones dinerarias.", "D: no se exige prueba pericial de costo de oportunidad; el monto está estandarizado por la tasa de interés."]}'::jsonb,
+  'Art. 1559 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1559-num1-2',
+  'extracontractual',
+  'Determinación estandarizada del daño por mora en obligaciones de dinero',
+  '1559 (N° 1 y 2)',
+  'Se siguen debiendo los intereses convencionales, si se ha pactado un interés superior al legal, o empiezan a deberse los intereses legales, en el caso contrario. El acreedor no tiene necesidad de justificar perjuicios cuando sólo cobra intereses; basta el hecho del retardo.',
+  '[["intereses convencionales", "interés superior al legal"], ["intereses legales"], ["no tiene necesidad de justificar perjuicios", "basta el hecho del retardo"], ["*"]]'::jsonb,
+  array['intereses convencionales', 'intereses legales', 'no necesita justificar perjuicios', 'basta el retardo'],
+  'Código Civil, art. 1559 N° 1 y 2'
+)
+on conflict (id) do nothing;

@@ -2557,6 +2557,81 @@
         correcta: 'C',
         articulos_referencia: [],
         objetivo_pedagogico: 'Identificar los requisitos reales de resarcibilidad del daño y descartar un falso requisito de origen contractual ajeno a la lógica extracontractual'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje K (Clases de daño I: el daño patrimonial)
+      {
+        id: 're-aplic-012',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Daño emergente vs. lucro cesante según la gestión de la privación del bien',
+        tipo: 'aplicacion',
+        caso: 'Una vendedora ambulante de comida usa un carro especial para trabajar en la vía pública. Un tercero, al estacionar negligentemente, choca y destruye el carro. Mientras se fabrica uno nuevo (proceso que toma tres semanas), la vendedora decide no arrendar un carro de reemplazo y simplemente deja de trabajar durante ese período.',
+        enunciado: '¿Bajo qué categoría de daño patrimonial se indemniza la pérdida de ingresos de esas tres semanas sin trabajar? ¿Cambiaría la calificación si, en cambio, hubiera arrendado un carro sustituto pagando de su bolsillo?',
+        respuesta_modelo: 'La pérdida de ingresos durante las tres semanas sin trabajar se indemniza como lucro cesante: es la pérdida del incremento neto que habría experimentado su patrimonio de no haber ocurrido el hecho, esto es, las ganancias que dejó de percibir por no poder ejercer su actividad.\n\nSi, en cambio, hubiera arrendado un carro sustituto pagando de su bolsillo, ese desembolso se calificaría como daño emergente: un gasto real y efectivo en que debió incurrir a causa del accidente, no una ganancia dejada de percibir.\n\nSe trata, en ambos casos, del mismo perjuicio económico de fondo (la imposibilidad de trabajar con normalidad durante la reparación), pero la calificación como daño emergente o lucro cesante depende de la forma concreta en que la víctima gestionó esa privación temporal del bien, no de una diferencia sustancial entre ambas categorías. En cualquiera de los dos escenarios, el perjuicio es igualmente indemnizable.',
+        elementos_clave: [
+          { texto: 'Califica la pérdida de ingresos por no trabajar como lucro cesante', keywords: ['lucro cesante', 'pérdida de ingresos', 'dejó de percibir'], pregunta: '¿Cómo se llama la categoría de daño que corresponde a la pérdida de ingresos por no poder trabajar?' },
+          { texto: 'Explica que si hubiera arrendado un carro sustituto, ese gasto sería daño emergente', keywords: ['daño emergente', 'gasto real y efectivo', 'arriendo'], pregunta: '¿Cómo se calificaría el gasto de arrendar un carro sustituto?' },
+          { texto: 'Concluye que la calificación depende de cómo la víctima gestionó la privación, no de una diferencia sustancial entre las categorías', keywords: ['depende de la gestión', 'mismo perjuicio de fondo', 'no sustancial'], pregunta: '¿Por qué un mismo perjuicio económico de fondo puede calificarse de dos maneras distintas?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar la distinción entre daño emergente y lucro cesante según la forma en que la víctima gestiona la privación temporal de un bien'
+      },
+
+      {
+        id: 're-detect-013',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Concepto abstracto vs. concepto concreto de daño patrimonial',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Si la víctima de un choque tenía contratado un seguro de daños propios que le cubrió íntegramente la reparación de su vehículo, entonces no sufrió, en definitiva, ninguna disminución neta de su patrimonio, y por eso no puede exigir nada al conductor negligente que causó el choque: su patrimonio, comparado antes y después del hecho (una vez pagado el seguro), es exactamente el mismo."',
+        enunciado: 'El alumno aplica un concepto de daño patrimonial que la doctrina chilena ha abandonado. Identifica cuál es, y explica por qué su conclusión es incorrecta.',
+        respuesta_modelo: 'El alumno aplica el concepto abstracto de daño patrimonial, de origen en la doctrina alemana del siglo XIX, que compara el valor total del patrimonio de la víctima antes y después del hecho, como una universalidad contable. Bajo ese concepto, en efecto, el seguro que cubrió íntegramente el daño dejaría la comparación patrimonial en cero.\n\nEste concepto ha sido abandonado precisamente porque produce ese resultado, que la doctrina considera inaceptable: nada justifica que un seguro contratado y pagado por la propia víctima ceda en beneficio del tercero que causó negligentemente el accidente. El seguro es un beneficio ajeno al hecho ilícito, que la propia víctima adquirió y pagó, y no hay razón de justicia correctiva para que ese beneficio libere al responsable de su obligación de indemnizar.\n\nPor eso prevalece en Chile el concepto concreto de daño: la indemnización se determina sumando partidas específicas de daño emergente y lucro cesante, cada una individualizada según su propio mérito probatorio, con independencia de que existan beneficios ajenos al hecho (como un seguro propio) que reduzcan el detrimento neto final de la víctima. El conductor negligente sigue debiendo la indemnización, sin perjuicio de que la aseguradora que ya pagó pueda subrogarse en los derechos de la víctima para repetir en su contra.',
+        elementos_clave: [
+          { texto: 'Detecta que el alumno aplica el concepto abstracto de daño patrimonial (comparación contable total del patrimonio)', keywords: ['concepto abstracto', 'comparación contable', 'universalidad'], pregunta: '¿Qué concepto de daño patrimonial aplica el alumno, sin decirlo expresamente?' },
+          { texto: 'Explica por qué ese concepto se abandonó: permite que un seguro propio beneficie indebidamente al responsable', keywords: ['seguro propio', 'beneficie al responsable', 'abandonado'], pregunta: '¿Cuál es el problema central que llevó a abandonar el concepto abstracto de daño?' },
+          { texto: 'Concluye que prevalece el concepto concreto (suma de partidas de daño emergente y lucro cesante), que sí permite exigir la indemnización al conductor', keywords: ['concepto concreto', 'partidas específicas', 'sí puede exigir'], pregunta: '¿Qué concepto de daño rige en Chile, y qué consecuencia tiene para este caso?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Corregir la aplicación del concepto abstracto de daño patrimonial, mostrando por qué prevalece el concepto concreto en el derecho chileno'
+      },
+
+      {
+        id: 're-just-012',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'El principio de reparación integral y su límite',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Explica en qué consiste el principio de reparación integral del daño patrimonial, sus dos consecuencias y su límite.',
+        respuesta_modelo: 'El principio de reparación integral, extraído de los artículos 2314, 2329 y 2331 del Código Civil, establece que todo daño debe ser reparado, y reparado en toda su extensión. La Corte Suprema lo formuló señalando que la reparación tiene por objeto restituir al demandante a la misma situación en que se encontraría de no haber sido víctima del hecho del demandado.\n\nDe este principio se siguen dos consecuencias. La primera es que debe repararse el total de los daños sufridos, sin fraccionamientos arbitrarios. La segunda, más importante, es que la extensión de la reparación no depende del grado de culpa del responsable: quien incurre en una negligencia levísima que causa un daño enorme queda obligado, en principio, a la misma reparación íntegra que si hubiera actuado con la mayor imprudencia. La medida de la indemnización es el daño, no el reproche.\n\nEl límite del principio opera por una vía distinta: la reparación no puede convertirse en fuente de enriquecimiento para quien la recibe. La jurisprudencia lo ha declarado expresamente respecto del daño emergente y, en particular, respecto del lucro cesante, que debe calcularse con cuidado para no transformarse en ocasión de ganancia para su beneficiario. La fórmula que mejor resume el principio es que la reparación debe ser todo el daño y nada más que el daño: la primera parte exige indemnizar íntegramente; la segunda supone el abandono de toda finalidad punitiva, porque el monto reparatorio no debiera exceder la medida del daño efectivamente causado.',
+        elementos_clave: [
+          { texto: 'Define el principio de reparación integral y su fundamento normativo (arts. 2314, 2329, 2331)', keywords: ['reparación integral', '2314', '2329', 'restituir a la misma situación'], pregunta: '¿En qué consiste el principio de reparación integral y en qué normas se funda?' },
+          { texto: 'Explica la primera consecuencia: debe repararse el total del daño', keywords: ['total del daño', 'toda su extensión'], pregunta: '¿Cuál es la primera consecuencia del principio de reparación integral?' },
+          { texto: 'Explica la segunda consecuencia: la extensión de la reparación no depende del grado de culpa del responsable', keywords: ['no depende del grado de culpa', 'negligencia levísima', 'misma reparación íntegra'], pregunta: '¿Varía el monto de la indemnización según qué tan grave fue la negligencia del responsable?' },
+          { texto: 'Explica el límite: la reparación no puede ser fuente de enriquecimiento para la víctima ("todo el daño y nada más que el daño")', keywords: ['no puede ser enriquecimiento', 'todo el daño y nada más', 'abandono de finalidad punitiva'], pregunta: '¿Cuál es el límite de la reparación integral?' }
+        ],
+        articulos_referencia: ['2314', '2329', '2331'],
+        objetivo_pedagogico: 'Exponer el principio de reparación integral, sus dos consecuencias y su límite frente al enriquecimiento de la víctima'
+      },
+
+      {
+        id: 're-mc-013',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'El daño patrimonial puro en el derecho chileno vs. comparado',
+        tipo: 'discriminacion_mc',
+        caso: 'Un comerciante pierde clientela y ve caer sus ventas a consecuencia de una campaña de publicidad engañosa realizada por un competidor, sin que exista ninguna cosa corporal suya que haya sido destruida o deteriorada.',
+        enunciado: '¿Qué régimen de responsabilidad se aplica en Chile a este "daño patrimonial puro", y en qué se diferencia del tratamiento que recibe en el derecho alemán?',
+        opciones: [
+          { letra: 'A', texto: 'En Chile no es indemnizable, porque la responsabilidad extracontractual exige siempre la lesión de una cosa corporal o de la persona.', rationale: 'Error: el daño patrimonial puro sí es indemnizable en Chile; no se exige lesión de una cosa corporal, basta el detrimento del valor económico de la actividad.' },
+          { letra: 'B', texto: 'En Chile se rige por las mismas reglas generales que cualquier otro daño patrimonial, sin requisitos adicionales; en Alemania, en cambio, se exige un estándar más exigente, como que el demandado haya actuado contra las buenas costumbres.', rationale: 'CORRECTO. El derecho chileno, siguiendo la tradición francesa y española, no impone requisitos de ilicitud cualificada al daño patrimonial puro; en Alemania, en cambio, se exige un estándar más exigente que la culpa ordinaria, precisamente por la dificultad de distinguir la competencia lícita de la desleal.' },
+          { letra: 'C', texto: 'En ambos países se exige el mismo estándar reforzado de conducta contraria a las buenas costumbres para este tipo de daño.', rationale: 'Error: el estándar reforzado es una particularidad del derecho alemán; Chile no lo exige, y aplica las reglas generales de la culpa.' },
+          { letra: 'D', texto: 'En Chile este daño solo es indemnizable si existe una ley especial que expresamente lo autorice, como en materia de propiedad intelectual.', rationale: 'Error: no se requiere ley especial; el daño patrimonial puro se rige por las reglas generales de la responsabilidad extracontractual (arts. 2314, 2329), sin necesidad de un estatuto particular.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2314', '2329'],
+        objetivo_pedagogico: 'Discriminar el tratamiento del daño patrimonial puro en el derecho chileno (sin requisitos especiales) frente al derecho comparado (Alemania, con estándar reforzado)'
       }
     ];
 
