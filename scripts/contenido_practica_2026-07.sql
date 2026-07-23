@@ -194,3 +194,66 @@ values (
   'Código Civil, art. 1553'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE 4: Contractual, Sección D. La resolución por incumplimiento
+-- ════════════════════════════════════════════════════════════════════════
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-011',
+  'contractual',
+  'Prescripción de la acción resolutoria',
+  3,
+  'La acción resolutoria emanada de la condición resolutoria tácita prescribe, por regla general, en:',
+  '["10 años, igual que la nulidad absoluta", "5 años, contados desde que la obligación se hace exigible", "4 años, siempre, sea cual sea el contrato", "2 años, plazo especial de las acciones patrimoniales"]'::jsonb,
+  1,
+  '{"correcta": "Por regla general, la acción resolutoria prescribe en 5 años contados desde que la obligación se hace exigible (arts. 2514 y 2515 CC). El plazo de 4 años solo rige para el pacto comisorio de la compraventa por no pago del precio (art. 1880), contado además desde una fecha distinta: la del contrato.", "por_que_no": ["A: 10 años es el plazo de la nulidad absoluta, una institución distinta con su propio régimen.", "C: 4 años es la regla especial del pacto comisorio de la compraventa, no la regla general de la acción resolutoria.", "D: no existe un plazo de 2 años para esta acción."]}'::jsonb,
+  'Arts. 2514 y 2515 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-012',
+  'contractual',
+  'Características de la acción resolutoria',
+  2,
+  'Que la acción resolutoria sea personal significa que:',
+  '["Solo puede demandarla el propio contratante, nunca sus herederos o cesionarios", "Solo puede dirigirse contra quien celebró el contrato, no contra terceros adquirentes", "Solo procede en contratos de carácter personalísimo (intuito personae)", "No puede renunciarse anticipadamente"]'::jsonb,
+  1,
+  '{"correcta": "La acción resolutoria deriva del contrato, y los contratos generan derechos personales (art. 578 CC): por eso solo puede entablarse contra quien celebró el contrato, no contra terceros, sin perjuicio de que existan otras acciones (reivindicatoria o restitutoria) contra estos según los arts. 1490 y 1491.", "por_que_no": ["A: la acción sí es transferible y transmisible; pueden deducirla herederos y cesionarios del acreedor.", "C: nada tiene que ver con que el contrato sea intuito personae; se refiere al tipo de derecho (personal, no real) del que emana la acción.", "D: la acción resolutoria sí es renunciable, por ser de contenido patrimonial (art. 1487 en relación con el art. 12)."]}'::jsonb,
+  'Art. 578 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-013',
+  'contractual',
+  'Alcance general del pacto comisorio',
+  3,
+  '¿Puede convenirse un pacto comisorio en un contrato distinto de la compraventa, o por el incumplimiento de una obligación distinta del pago del precio?',
+  '["No, el pacto comisorio solo existe en la compraventa por no pago del precio, por su ubicación en el Código", "Sí, la doctrina hoy reconoce que el pacto comisorio tiene alcance general, en virtud de la autonomía de la voluntad", "Solo en contratos bilaterales de tracto sucesivo, nunca en contratos de ejecución instantánea", "Solo si el contrato lo remite expresamente a las reglas de la compraventa"]'::jsonb,
+  1,
+  '{"correcta": "Pese a su ubicación sistemática a propósito de la compraventa, la doctrina es hoy conteste en que el pacto comisorio tiene alcance general: puede establecerse en cualquier contrato, incluso unilateral, y por el incumplimiento de cualquier obligación, en virtud de la autonomía de la voluntad.", "por_que_no": ["A: su ubicación en el Código responde a una razón histórica (la lex commissoria romana), no a una limitación sustantiva de su alcance.", "C: no existe tal restricción a los contratos de tracto sucesivo.", "D: no se requiere ninguna remisión expresa a las reglas de la compraventa para pactarlo en otro contrato."]}'::jsonb,
+  'Sección D del manual (pacto comisorio)'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1552',
+  'contractual',
+  'Excepción de contrato no cumplido (la mora purga la mora)',
+  '1552',
+  'En los contratos bilaterales ninguno de los contratantes está en mora dejando de cumplir lo pactado, mientras el otro no lo cumple por su parte, o no se allana a cumplirlo en la forma y tiempo debidos.',
+  '[["contratos bilaterales"], ["ninguno", "está en mora"], ["no lo cumple", "no se allana"], ["*"]]'::jsonb,
+  array['bilaterales', 'mora', 'no lo cumple', 'se allana'],
+  'Código Civil, art. 1552'
+)
+on conflict (id) do nothing;

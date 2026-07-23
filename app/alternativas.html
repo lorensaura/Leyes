@@ -541,7 +541,7 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 2px;
-      color: #111111;
+      color: #C41E2E;
       margin-bottom: 1rem;
     }
     .modelo-body {
@@ -1332,6 +1332,82 @@
         correcta: 'B',
         articulos_referencia: ['1670', '1672'],
         objetivo_pedagogico: 'Discriminar entre la imposibilidad fortuita (que extingue la obligación) y la imputable (que la transforma en precio más indemnización)'
+      },
+
+      // Lote 2026-07: Contractual, Sección 4 (La resolución por incumplimiento)
+      {
+        id: 'rc-aplic-007',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Incumplimiento resolutorio: gravedad exigida',
+        tipo: 'aplicacion',
+        caso: 'En un contrato de compraventa de una parcela agrícola, el vendedor se obliga, además de entregar el predio, a instalar un cerco perimetral y a limpiar dos canales de riego menores antes de la entrega. El vendedor entrega la parcela en la fecha pactada y en las condiciones esenciales acordadas, pero omite limpiar uno de los dos canales menores, una obligación accesoria de escasa relevancia económica frente al conjunto del contrato. El comprador demanda la resolución del contrato completo.',
+        enunciado: '¿Es procedente pedir la resolución total del contrato por este incumplimiento? ¿Qué exige la doctrina y jurisprudencia dominantes para que un incumplimiento sea resolutorio?',
+        respuesta_modelo: 'No es procedente. Aunque el art. 1489 no distingue expresamente, la doctrina dominante (Claro Solar, Abeliuk) y la jurisprudencia, desde el fallo clásico de la Corte de Apelaciones de Talca de 1920, exigen que el incumplimiento tenga cierta entidad o gravedad, que afecte los fines prácticos del contrato, para que proceda la resolución.\n\nLa omisión de limpiar un canal menor es una obligación accesoria de escasa influencia en el fin práctico perseguido (adquirir la parcela para su explotación agrícola), por lo que no franquea la resolución del contrato completo.\n\nEl fundamento de esta exigencia es la equidad, la buena fe (art. 1546) y la proscripción del abuso del derecho: resolver por una insignificancia dejaría sin efecto todo el contrato por una infracción que no compromete su fin esencial.',
+        elementos_clave: [
+          { texto: 'Concluye que la resolución total no procede por un incumplimiento de escasa entidad', keywords: ['no procede', 'no es procedente', 'no franquea', 'no basta'], pregunta: '¿Cualquier incumplimiento, por mínimo que sea, permite pedir la resolución completa del contrato?' },
+          { texto: 'Cita el fallo de la Corte de Apelaciones de Talca de 1920 como precedente de la exigencia de gravedad', keywords: ['talca', '1920', 'corte de apelaciones', 'fallo clásico'], pregunta: '¿Qué fallo histórico estableció la exigencia de un incumplimiento grave para la resolución?' },
+          { texto: 'Explica que el fundamento de exigir gravedad es la equidad, la buena fe (art. 1546) y la proscripción del abuso del derecho', keywords: ['equidad', 'buena fe', '1546', 'abuso del derecho'], pregunta: '¿Por qué no basta cualquier incumplimiento para resolver? ¿Qué principios lo justifican?' },
+          { texto: 'Distingue entre obligaciones principales y accesorias/secundarias para efectos de la resolución', keywords: ['obligación principal', 'obligación accesoria', 'secundaria', 'obligación esencial'], pregunta: '¿Es lo mismo incumplir la obligación de entregar el predio que incumplir una obligación accesoria como limpiar un canal menor?' }
+        ],
+        articulos_referencia: ['1489', '1546'],
+        objetivo_pedagogico: 'Aplicar la exigencia jurisprudencial de gravedad del incumplimiento como presupuesto de la resolución'
+      },
+
+      {
+        id: 'rc-detect-005',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Resolución, nulidad y resciliación',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde en su examen de grado lo siguiente: "Un contrato de compraventa queda sin efecto porque el comprador no pagó el precio a tiempo. Esto es un caso de nulidad del contrato, ya que el contrato deja de producir sus efectos por un vicio sobreviniente. Además, como la nulidad y la resolución son la misma institución bajo distintos nombres, ambas prescriben en el mismo plazo de 10 años."',
+        enunciado: 'El alumno comete al menos dos errores jurídicos. Identifícalos con precisión y explica la distinción correcta.',
+        respuesta_modelo: 'El alumno confunde dos instituciones que dejan sin efecto un contrato por razones completamente distintas.\n\nLa nulidad supone un vicio de origen: el contrato nace con un defecto en alguno de sus requisitos de validez. La resolución, en cambio, presupone un contrato perfectamente válido; es un hecho posterior, el incumplimiento, el que permite dejarlo sin efecto. El no pago del precio no es un vicio del contrato, sino su incumplimiento, por lo que aquí corresponde hablar de resolución, no de nulidad.\n\nTampoco comparten el mismo plazo de prescripción: la nulidad absoluta prescribe en 10 años, mientras que la acción resolutoria prescribe, por regla general, en 5 años (o en 4 años si se trata del pacto comisorio de la compraventa por no pago del precio, conforme al artículo 1880). No son la misma institución, y sus plazos, su ámbito de aplicación y sus efectos respecto de terceros difieren.',
+        elementos_clave: [
+          { texto: 'Detecta que la resolución no es nulidad: la nulidad supone un vicio de origen, mientras que en la resolución el contrato es válido y es el incumplimiento (hecho posterior) lo que permite dejarlo sin efecto', keywords: ['vicio de origen', 'contrato válido', 'hecho posterior', 'no es un vicio'], pregunta: '¿El no pago del precio es un defecto que existía desde que se celebró el contrato, o algo que ocurrió después?' },
+          { texto: 'Señala que no comparten el mismo plazo de prescripción: la nulidad absoluta prescribe en 10 años, la acción resolutoria por regla general en 5 (o 4 en el pacto comisorio de compraventa)', keywords: ['10 años', '5 años', '4 años', 'distintos plazos', 'no es el mismo plazo'], pregunta: '¿La nulidad absoluta y la acción resolutoria prescriben en el mismo número de años?' },
+          { texto: 'Explica que, a diferencia de la nulidad, la resolución solo procede en contratos bilaterales y sus efectos respecto de terceros son más atenuados', keywords: ['contratos bilaterales', 'efectos respecto de terceros', 'más atenuados'], pregunta: '¿Procede la resolución en cualquier tipo de acto o contrato, igual que la nulidad?' }
+        ],
+        articulos_referencia: ['1689', '2515'],
+        objetivo_pedagogico: 'Corregir la confusión entre resolución y nulidad, precisando sus diferencias de fundamento, plazo y ámbito de aplicación'
+      },
+
+      {
+        id: 'rc-just-005',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Pacto comisorio: simple/calificado, típico/atípico',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Explica las diferencias entre el pacto comisorio simple y el calificado, y entre el típico y el atípico, en cuanto a si requieren o no sentencia judicial para que opere la resolución.',
+        respuesta_modelo: 'El pacto comisorio simple no es más que la condición resolutoria tácita expresada por las partes: sus efectos son idénticos a los de esta, y por lo mismo requiere siempre sentencia judicial. El pacto comisorio calificado, en cambio, es el acuerdo de dejar sin efecto el contrato de inmediato, por el solo hecho del incumplimiento (cláusula ipso facto).\n\nEl pacto comisorio típico es el regulado en los artículos 1877 a 1880, accesorio a la compraventa, por el no pago del precio. Aun en su modalidad calificada, tampoco opera de pleno derecho: el artículo 1879 permite al comprador enervar la acción pagando hasta 24 horas después de la notificación judicial de la demanda, lo que demuestra que la resolución sigue exigiendo sentencia.\n\nEl pacto comisorio atípico es el convenido para contratos distintos de la compraventa, o en esta por una obligación distinta del pago del precio. En su modalidad calificada, la doctrina hoy dominante (Abeliuk, Ramos) estima que sí opera de pleno derecho, porque no rige aquí la norma excepcional del artículo 1879, restringida a la compraventa por no pago del precio, sino un pacto creado en virtud de la autonomía de la voluntad, que debe interpretarse según la intención de los contratantes.',
+        elementos_clave: [
+          { texto: 'Define el pacto comisorio simple como la condición resolutoria tácita expresada, cuyos efectos siempre requieren sentencia judicial', keywords: ['condición resolutoria tácita expresada', 'requiere sentencia', 'mismos efectos'], pregunta: '¿Qué es, en el fondo, un pacto comisorio simple? ¿Necesita sentencia judicial para que opere la resolución?' },
+          { texto: 'Define el pacto comisorio calificado como el acuerdo de dejar sin efecto el contrato de inmediato por el solo incumplimiento', keywords: ['de inmediato', 'ipso facto', 'sin necesidad de juicio'], pregunta: '¿Qué busca una cláusula que dice que el contrato se resolverá "ipso facto" ante el incumplimiento?' },
+          { texto: 'Explica que el pacto comisorio típico y calificado (art. 1879) tampoco opera de pleno derecho: el comprador puede enervarlo pagando dentro de 24 horas desde la notificación de la demanda', keywords: ['1879', '24 horas', 'enervar', 'no opera de pleno derecho'], pregunta: '¿El pacto comisorio calificado de la compraventa, pese a su nombre "ipso facto", realmente opera sin ningún juicio?' },
+          { texto: 'Explica que el pacto comisorio atípico y calificado sí opera de pleno derecho, según la doctrina hoy dominante, porque no rige la norma excepcional del art. 1879', keywords: ['atípico', 'opera de pleno derecho', 'no rige el 1879', 'autonomía de la voluntad'], pregunta: '¿Qué pasa si la cláusula ipso facto se pacta en un contrato distinto de la compraventa? ¿Se aplica igual la regla de las 24 horas?' }
+        ],
+        articulos_referencia: ['1877', '1878', '1879'],
+        objetivo_pedagogico: 'Distinguir los cuatro supuestos de pacto comisorio (simple/calificado, típico/atípico) y precisar en cuáles opera de pleno derecho'
+      },
+
+      {
+        id: 'rc-mc-004',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Enervar la acción resolutoria mediante el pago',
+        tipo: 'discriminacion_mc',
+        caso: 'Un arrendador demanda la resolución (terminación) de un contrato de arrendamiento de local comercial por no pago de rentas, fundándose en la condición resolutoria tácita del art. 1489 (el contrato no tiene pacto comisorio ni cláusula de terminación inmediata). Notificada la demanda, y ya iniciada la etapa probatoria del juicio, el arrendatario paga íntegramente las rentas adeudadas y opone la excepción de pago, invocando el artículo 310 del Código de Procedimiento Civil.',
+        enunciado: 'Conforme a la doctrina moderna, adoptada por la Corte Suprema en su fallo de 25 de mayo de 2011, ¿es válido este pago para enervar la acción resolutoria?',
+        opciones: [
+          { letra: 'A', texto: 'Sí, porque el artículo 310 del CPC permite oponer la excepción de pago en cualquier estado del juicio, lo que autoriza al arrendatario a pagar en cualquier momento hasta la sentencia.', rationale: 'Error: confunde "oponer la excepción de pago" con "poder pagar" en cualquier momento. El art. 310 CPC es una norma procesal sobre la oportunidad para oponer una excepción ya nacida, no una autorización sustantiva para pagar después de notificada la demanda.' },
+          { letra: 'B', texto: 'No, porque el artículo 310 del CPC solo regula la oportunidad para oponer la excepción de pago si este ya se había efectuado antes de la demanda; no faculta al deudor incumplidor a pagar después para neutralizarla.', rationale: 'CORRECTO. Como precisó la Corte Suprema, lo que el art. 310 dispone es que la excepción de pago puede oponerse en cualquier estado del juicio, no que se pueda pagar en cualquier estado del juicio.' },
+          { letra: 'C', texto: 'Sí, porque en todo pacto comisorio calificado el comprador siempre puede enervar la acción pagando dentro de las 24 horas siguientes a la notificación.', rationale: 'Error: aplica por error la regla especial del art. 1879 (pacto comisorio calificado en la compraventa) a un caso de condición resolutoria tácita en un arrendamiento, que no tiene pacto comisorio alguno.' },
+          { letra: 'D', texto: 'No, porque las acciones resolutorias, a diferencia de las de cumplimiento, no admiten enervarse nunca mediante el pago, ni siquiera antes de la notificación de la demanda.', rationale: 'Error: contradice el propio art. 310 CPC, que sí permite oponer la excepción de pago si este se efectuó válidamente antes de la demanda.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['1489', '310 CPC'],
+        objetivo_pedagogico: 'Discriminar entre oponer la excepción de pago ya efectuado y pretender pagar después de notificada la demanda para enervar la acción resolutoria'
       }
     ];
 
