@@ -1046,3 +1046,20 @@ values (
   'Código Civil, art. 2326'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (26): Extracontractual, Eje Q (Regímenes legales de responsabilidad objetiva)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-018',
+  'extracontractual',
+  'Fundamentos de la responsabilidad estricta: riesgo-provecho y riesgo-creado',
+  3,
+  '¿Cuál es la única excusa que admite la responsabilidad estricta del propietario de un vehículo motorizado bajo la Ley de Tránsito?',
+  '["Probar que él personalmente conduce siempre con extremo cuidado", "Probar que el vehículo le fue tomado sin su conocimiento o autorización", "Probar que el conductor tenía más experiencia de manejo que el propietario", "Probar que el vehículo contaba con revisión técnica al día"]'::jsonb,
+  1,
+  '{"correcta": "La única excusa que la ley admite es que el vehículo le fue tomado al propietario sin su conocimiento o autorización, circunstancia que la ley asimila a un caso de fuerza mayor.", "por_que_no": ["A: al ser responsabilidad estricta, la diligencia personal del propietario es irrelevante.", "C: la experiencia relativa del conductor no es una excusa contemplada por la ley.", "D: la revisión técnica no exonera al propietario de esta responsabilidad estricta específica."]}'::jsonb,
+  'Ley N° 18.290, de Tránsito'
+)
+on conflict (id) do nothing;
