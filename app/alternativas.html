@@ -2707,6 +2707,80 @@
         correcta: 'B',
         articulos_referencia: ['2331'],
         objetivo_pedagogico: 'Exponer con precisión el estado de tensión jurisprudencial sobre el artículo 2331 y la indemnización del daño moral por imputaciones injuriosas'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje M (La causalidad)
+      {
+        id: 're-aplic-014',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Imputación objetiva: el riesgo general de la vida vs. el riesgo creado',
+        tipo: 'aplicacion',
+        caso: 'Un peatón es atropellado levemente por un conductor negligente y debe acudir a un centro de salud para una curación menor. Mientras espera en la sala de espera, se contagia de una gripe estacional que circulaba entre otros pacientes, sin que el accidente hubiera debilitado en nada sus defensas frente a ese virus.',
+        enunciado: '¿Responde el conductor negligente por los gastos médicos asociados al contagio de la gripe? Aplica el criterio de Barros sobre imputación objetiva.',
+        respuesta_modelo: 'No responde por esos gastos. Siguiendo el criterio de Barros sobre imputación objetiva, existe en toda vida en sociedad un nivel de riesgo general que no puede evitarse, como el de contagiarse de una enfermedad común al estar en un espacio con otras personas; mantenerse dentro de ese riesgo general de la vida no puede considerarse causa de un resultado dañoso.\n\nEl contagio de la gripe no tiene por causa adecuada el accidente de tránsito: el conductor no creó ni aumentó el riesgo de contagio viral, que existía con independencia de su conducta negligente y que el peatón habría enfrentado en cualquier otro lugar público. El accidente solo explica, en un sentido puramente causal-empírico (equivalencia de condiciones), por qué el peatón estaba en ese centro de salud en ese momento preciso; pero esa conexión empírica no basta para la imputación jurídica del daño.\n\nEste caso es estructuralmente análogo al ejemplo de Barros sobre la persona atropellada que se contagia de influenza en el hospital sin que el accidente hubiera aumentado su disposición a contraerla: en ambos casos, el resultado dañoso pertenece al riesgo general de la vida, y no al riesgo específico creado por el hecho del demandado.',
+        elementos_clave: [
+          { texto: 'Concluye que el conductor no responde por el contagio de la gripe', keywords: ['no responde', 'no es imputable'], pregunta: '¿Debe el conductor indemnizar los gastos del contagio de gripe?' },
+          { texto: 'Explica el criterio del riesgo general de la vida (Barros/Roxin): lo que pertenece al riesgo general no es imputable al demandado', keywords: ['riesgo general de la vida', 'no puede evitarse', 'no puede considerarse causa'], pregunta: '¿Qué criterio de Barros permite descartar la responsabilidad en este caso?' },
+          { texto: 'Distingue la conexión puramente empírica (el accidente lo llevó al hospital) de la imputación jurídica normativa (que exige que el riesgo haya sido creado o aumentado por el demandado)', keywords: ['conexión empírica', 'no basta', 'riesgo creado o aumentado'], pregunta: '¿Por qué no basta que el accidente haya sido la razón empírica de que el peatón estuviera en el hospital?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar el criterio del riesgo general de la vida de la teoría de la imputación objetiva a un caso análogo al ejemplo de Barros sobre el contagio hospitalario'
+      },
+
+      {
+        id: 're-detect-015',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Crítica a la equivalencia de las condiciones: causalidad acumulativa',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "La teoría de la equivalencia de las condiciones, con su test de supresión mental hipotética, es la mejor herramienta para resolver todos los casos de causalidad, sin excepción, porque basta con preguntarse si el resultado se habría producido igual sin el hecho del demandado."',
+        enunciado: 'El alumno ignora una de las tres críticas severas que la doctrina formula a esta teoría. Identifica el problema de la causalidad acumulativa y explica por qué desmiente la afirmación del alumno.',
+        respuesta_modelo: 'El alumno pasa por alto la crítica de la causalidad acumulativa, que muestra que el test de supresión mental hipotética falla precisamente en los casos donde dos causas independientes concurren y cada una, por sí sola, habría bastado para producir el resultado.\n\nEl ejemplo clásico es el del padre que dispara y mata al asesino de su hijo el mismo día en que este iba a ser fusilado por un pelotón de ejecución. Si se suprime mentalmente el disparo del padre, el resultado (la muerte del asesino) de todos modos se habría producido por obra del pelotón; y si se suprime mentalmente el fusilamiento, el resultado igual se habría producido por el disparo del padre. Aplicado con rigor, el test de supresión mental hipotética concluiría que ninguno de los dos factores es "condición" del resultado, porque en ambos casos el resultado se habría producido de todos modos por obra del otro factor, lo que produce una conclusión absurda de impunidad para ambos.\n\nPor eso la afirmación del alumno es incorrecta: la teoría de la equivalencia de las condiciones no resuelve bien todos los casos; falla estructuralmente frente a la causalidad acumulativa, y esa es una de las razones por las que la doctrina recurre a teorías correctivas (causa adecuada, imputación objetiva) para complementarla.',
+        elementos_clave: [
+          { texto: 'Identifica la crítica de la causalidad acumulativa como la que el alumno ignora', keywords: ['causalidad acumulativa', 'dos causas independientes', 'cada una habría bastado'], pregunta: '¿Qué crítica específica a la equivalencia de las condiciones pasa por alto el alumno?' },
+          { texto: 'Explica el ejemplo del padre que mata al asesino de su hijo el mismo día del fusilamiento', keywords: ['padre', 'asesino de su hijo', 'pelotón de ejecución'], pregunta: '¿Qué ejemplo clásico ilustra el problema de la causalidad acumulativa?' },
+          { texto: 'Explica que el test de supresión mental hipotética, aplicado con rigor, exoneraría absurdamente a ambos causantes', keywords: ['exoneraría a ambos', 'conclusión absurda', 'ninguno sería condición'], pregunta: '¿Qué resultado absurdo produce aplicar rigurosamente la supresión mental hipotética en este ejemplo?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Corregir la sobrevaloración de la teoría de la equivalencia de las condiciones, exponiendo su falla estructural frente a la causalidad acumulativa'
+      },
+
+      {
+        id: 're-just-014',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'La síntesis de lo empírico y lo normativo en la causalidad (Barros/Corral)',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Explica por qué la doctrina nacional contemporánea rechaza tanto una causalidad puramente empírica (equivalencia de las condiciones) como resolver el problema recurriendo únicamente a teorías normativas, y opta en cambio por combinar ambas dimensiones.',
+        respuesta_modelo: 'La teoría de la equivalencia de las condiciones tiene la virtud de la honestidad empírica: describe la causalidad tal como opera en el mundo físico, sin introducir juicios de valor, y mantiene una separación analítica nítida entre causalidad y culpabilidad. El precio de esa honestidad es una extensión desmesurada de la responsabilidad potencial (en el límite, alcanzaría a los padres del homicida) y resultados absurdos en los casos de causalidad acumulativa.\n\nLas teorías correctivas (causa adecuada, relevancia jurídica, imputación objetiva) nacen para resolver ese problema de sobreextensión, y lo consiguen, pero pagando un precio distinto: todas reintroducen, bajo una u otra forma, un elemento de previsibilidad o valoración normativa que pertenece, en rigor, al juicio de culpabilidad. Preguntar si el daño era una consecuencia verosímil del hecho, según un observador objetivo, es estructuralmente idéntico a preguntar si el daño era previsible para un hombre prudente. Si la causalidad exige ya, en su propia determinación, un juicio sobre lo previsible, la distinción entre causalidad y culpabilidad corre el riesgo de reducirse a una cuestión de qué momento del análisis se privilegia.\n\nBarros y Corral optan por asumir abiertamente este costo conceptual, en lugar de negarlo: aceptan que la causalidad jurídicamente relevante no puede prescindir de un componente normativo (imputación objetiva, ámbito de protección de la norma, razonable proximidad del daño directo), reconociendo que la previsibilidad reaparece, cumpliendo funciones distintas, en más de un punto del análisis: primero para calificar la culpa, después para decidir qué consecuencias cuentan como daño directo, y también en sede de causalidad, para decidir si el hecho del demandado puede considerarse la causa jurídicamente relevante. Esta síntesis evita los resultados absurdos de la equivalencia pura, a cambio de renunciar a la pureza analítica de mantener la causalidad como un juicio exclusivamente empírico.',
+        elementos_clave: [
+          { texto: 'Explica la virtud y el precio de la equivalencia de las condiciones (honestidad empírica vs. extensión desmesurada)', keywords: ['honestidad empírica', 'extensión desmesurada', 'causalidad acumulativa'], pregunta: '¿Cuál es la virtud de la equivalencia de las condiciones, y cuál su precio?' },
+          { texto: 'Explica el precio de las teorías correctivas: reintroducen un juicio de previsibilidad propio de la culpabilidad', keywords: ['teorías correctivas', 'previsibilidad', 'propio de la culpabilidad'], pregunta: '¿Qué le cuesta a las teorías correctivas (causa adecuada, imputación objetiva) resolver el problema de la sobreextensión?' },
+          { texto: 'Concluye que Barros y Corral asumen abiertamente ese costo conceptual, aceptando que la previsibilidad atraviesa varios requisitos de la responsabilidad', keywords: ['Barros', 'Corral', 'asumen el costo', 'atraviesa varios requisitos'], pregunta: '¿Qué posición adoptan Barros y Corral frente a esta tensión?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Justificar la opción de la doctrina nacional por una causalidad que combina elementos empíricos y normativos, pese al costo conceptual que ello supone'
+      },
+
+      {
+        id: 're-mc-015',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Concurrencia de culpa de la víctima (art. 2330)',
+        tipo: 'discriminacion_mc',
+        caso: 'Un peatón cruza la calzada fuera del paso peatonal, a mitad de cuadra, sin mirar el tráfico. Un conductor que circulaba a exceso de velocidad no logra frenar a tiempo y lo atropella, causándole lesiones graves.',
+        enunciado: '¿Cómo debe resolverse la responsabilidad del conductor conforme al artículo 2330 del Código Civil?',
+        opciones: [
+          { letra: 'A', texto: 'El conductor no responde en absoluto, porque el peatón contribuyó a su propio daño al cruzar imprudentemente fuera del paso peatonal.', rationale: 'Error: esa solución solo procede cuando la culpa de la víctima es la ÚNICA causa del daño; aquí también hubo negligencia del conductor (exceso de velocidad), por lo que existe un verdadero concurso de culpas.' },
+          { letra: 'B', texto: 'El conductor responde por el total del daño, porque la culpa de la víctima es irrelevante en materia extracontractual.', rationale: 'Error: el artículo 2330 dispone expresamente que la apreciación del daño está sujeta a reducción si la víctima se expuso a él imprudentemente.' },
+          { letra: 'C', texto: 'Existe un concurso de culpas: la indemnización debe reducirse conforme al artículo 2330, ponderando la intensidad relativa de las culpas y de las contribuciones causales de ambas partes.', rationale: 'CORRECTO. Al concurrir negligencia de ambas partes (exceso de velocidad del conductor, imprudencia del peatón al cruzar fuera del paso), se aplica la reducción del art. 2330, evaluada prudencialmente según la intensidad relativa de culpas y aportes causales.' },
+          { letra: 'D', texto: 'La reducción del artículo 2330 solo puede aplicarse si el peatón tenía capacidad delictual plena y patrimonio propio para responder.', rationale: 'Error: la exigencia de capacidad delictual de la víctima es una cuestión discutida y distinta; no es un requisito de aplicación automática ligado al patrimonio de la víctima.' }
+        ],
+        correcta: 'C',
+        articulos_referencia: ['2330'],
+        objetivo_pedagogico: 'Aplicar la reducción de la indemnización por concurrencia de culpa de la víctima conforme al art. 2330'
       }
     ];
 

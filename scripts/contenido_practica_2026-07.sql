@@ -933,3 +933,23 @@ values (
   'Código Civil, art. 2331'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (22): Extracontractual, Eje M (La causalidad)
+-- Nota: los artículos centrales de este eje (2317, 2320, 2325, 2330) ya están
+-- cubiertos en scripts/supabase_seed_memorice_cc_responsabilidad.sql; no se
+-- duplica Memorice en este lote.
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-014',
+  'extracontractual',
+  'Pluralidad de agentes: hechos distintos vs. causa difusa',
+  4,
+  'Dos fábricas distintas, sin ningún acuerdo ni coordinación entre sí, vierten independientemente residuos tóxicos al mismo río, cada una en una cantidad que por sí sola ya habría bastado para contaminar el agua y causar el daño a los regantes aguas abajo. ¿Cómo se distribuye la responsabilidad entre ambas?',
+  '["Solidariamente, aplicando literalmente el artículo 2317, porque ambas causaron el mismo daño", "En proporción a la participación de cada una, porque no se trata de un solo delito o cuasidelito sino de ilícitos separados que igualmente deben responder en conjunto, sin exceder el monto total del daño", "Ninguna responde, porque al ser cada vertido por sí solo suficiente para causar el daño, no puede probarse cuál de los dos fue la causa real", "Debe sortearse aleatoriamente cuál de las dos fábricas asume el total de la indemnización"]'::jsonb,
+  1,
+  '{"correcta": "Cuando existen varios responsables por hechos distintos, cada uno causa necesaria y suficiente del daño, no se aplica literalmente el art. 2317 (pensado para un mismo hecho), pero como ninguno puede beneficiarse de que el otro también causó el daño ni la víctima puede cobrar más del total de su perjuicio, se divide la responsabilidad en proporción a la participación de cada autor, produciendo un efecto práctico análogo a la solidaridad.", "por_que_no": ["A: el art. 2317 supone un mismo hecho ilícito cometido por dos o más personas; aquí hay dos hechos independientes.", "C: esta hipótesis (causalidad acumulativa con causas conocidas) es distinta de la causa difusa (causante desconocido entre varios candidatos); aquí sí se sabe que ambas fábricas contribuyeron.", "D: la ley no contempla el sorteo como mecanismo de distribución de responsabilidad."]}'::jsonb,
+  'Doctrina sobre pluralidad de agentes y causalidad'
+)
+on conflict (id) do nothing;
