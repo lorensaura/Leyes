@@ -303,3 +303,14 @@
 | ¿Qué exige en la práctica la jurisprudencia para la responsabilidad por error judicial (<span class="art">art. 19 N° 7 letra i</span>)? | Algo asimilable a <strong>culpa grave</strong> del órgano jurisdiccional, no cualquier error de apreciación. | avanzada | civil | Responsabilidad extracontractual | Error judicial |
 | ¿Cuál es la objeción principal a la doctrina de la responsabilidad estricta pura del Estado? | Transformaría al Estado en un <strong>seguro social universal</strong> frente a cualquier daño de su actividad. | avanzada | civil | Responsabilidad extracontractual | Objeción a la responsabilidad estricta pura |
 | ¿Existe inmunidad de jurisdicción del Estado en Chile hoy? | No, está <strong>descartada</strong>: el Estado y las municipalidades son patrimonialmente responsables. | básica | civil | Responsabilidad extracontractual | Descarte de la inmunidad de jurisdicción |
+
+## Lote 19: Extracontractual, Eje S. La acción por daño contingente (art. 2333)
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué es el "daño contingente" del <span class="art">artículo 2333</span>? | Un daño que <strong>aún no ha ocurrido</strong> pero amenaza con producirse por imprudencia o negligencia de alguien. | básica | civil | Responsabilidad extracontractual | Concepto de daño contingente |
+| ¿Basta cualquier riesgo teórico para ejercer la acción del art. 2333? | No. Se exige que la amenaza sea <strong>más que probable</strong>, no un simple riesgo general de la vida en común. | avanzada | civil | Responsabilidad extracontractual | Estándar de amenaza calificada |
+| ¿A quién corresponde la acción si la amenaza recae sobre personas indeterminadas? | Se concede una <strong>acción popular</strong>: cualquier persona puede ejercerla. | intermedia | civil | Responsabilidad extracontractual | Acción popular |
+| ¿Qué consecuencia económica tiene ejercer la acción popular del art. 2333? | Quien la ejerce debe ser <strong>indemnizado de las costas</strong> y del valor de su tiempo y diligencia. | avanzada | civil | Responsabilidad extracontractual | Reembolso al accionante popular |
+| ¿Prescribe la acción de daño contingente en cuatro años, como la acción ordinaria? | No. Es <strong>imprescriptible</strong> mientras subsista la amenaza y exista justo motivo para temerla. | avanzada | civil | Responsabilidad extracontractual | Imprescriptibilidad |
+| ¿Por qué existe una "paradoja" en el fundamento de la acción de daño contingente? | Porque si la acción <strong>tiene éxito</strong>, nunca podrá verificarse ex post que la amenaza era realmente seria. | avanzada | civil | Responsabilidad extracontractual | Paradoja de la causalidad hipotética |

@@ -1066,6 +1066,37 @@ on conflict (id) do nothing;
 
 -- LOTE 2026-07 (27): Extracontractual, Eje R (Responsabilidad del Estado)
 
+-- LOTE 2026-07 (28): Extracontractual, Eje S (Acción por daño contingente, art. 2333)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-020',
+  'extracontractual',
+  'Legitimación activa: acción individual vs. acción popular',
+  3,
+  'Según el artículo 2333 del Código Civil, ¿a quién corresponde la acción de daño contingente cuando la amenaza recae sobre personas indeterminadas?',
+  '["Solo al Estado, a través del Consejo de Defensa Fiscal", "Se concede una acción popular: cualquier persona puede ejercerla", "Solo a quien primero haya sufrido un daño similar por la misma causa", "A nadie, porque la acción de daño contingente solo procede respecto de personas determinadas"]'::jsonb,
+  1,
+  '{"correcta": "El art. 2333 concede acción popular en todos los casos de daño contingente que amenace a personas indeterminadas; solo cuando la amenaza recae sobre personas determinadas, la acción se restringe a estas.", "por_que_no": ["A: la acción popular del art. 2333 no está reservada al Estado; puede ejercerla cualquier persona.", "C: no se exige haber sufrido un daño previo similar; la acción es precisamente preventiva.", "D: es exactamente al revés: la acción popular procede cuando la amenaza recae sobre personas INdeterminadas."]}'::jsonb,
+  'Art. 2333 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2333',
+  'extracontractual',
+  'Acción por daño contingente: legitimación activa',
+  '2333',
+  'Por regla general, se concede acción popular en todos los casos de daño contingente que por imprudencia o negligencia de alguien amenace a personas indeterminadas; pero si el daño amenazare solamente a personas determinadas, sólo alguna de éstas podrá intentar la acción.',
+  '[["daño contingente", "amenace a personas indeterminadas"], ["acción popular"], ["personas determinadas", "sólo alguna de éstas"], ["*"]]'::jsonb,
+  array['daño contingente', 'acción popular', 'personas indeterminadas', 'personas determinadas'],
+  'Código Civil, art. 2333'
+)
+on conflict (id) do nothing;
+
 insert into public.alternativas
   (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
 values (

@@ -3152,6 +3152,80 @@
         correcta: 'B',
         articulos_referencia: [],
         objetivo_pedagogico: 'Aplicar el estándar exigente que la jurisprudencia ha desarrollado para la responsabilidad por error judicial del art. 19 N° 7 letra i) de la Constitución'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje S (La acción por daño contingente, art. 2333)
+      {
+        id: 're-aplic-020',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Legitimación activa: acción individual vs. acción popular',
+        tipo: 'aplicacion',
+        caso: 'Una empresa constructora deja, por negligencia, un enorme hoyo sin cerco ni señalización en plena vereda de una calle muy transitada del centro de una ciudad, de modo que cualquier persona que pase por ahí de noche corre un riesgo serio de caer.',
+        enunciado: '¿Quién está legitimado para ejercer la acción de daño contingente del artículo 2333 en este caso, y qué consecuencia económica tiene su ejercicio?',
+        respuesta_modelo: 'Como la amenaza no recae sobre personas determinadas, sino sobre cualquiera que transite por esa vereda, se trata de una amenaza a personas indeterminadas. Conforme al artículo 2333, en estos casos se concede una acción popular: cualquier persona, no solo quienes ya hayan estado a punto de caer, puede ejercer la acción, aunque no haya sufrido ni esté personalmente expuesta a un riesgo diferenciado del resto de la comunidad.\n\nEsto se distingue de la hipótesis en que la amenaza recae solamente sobre personas determinadas (por ejemplo, un árbol que amenaza caer específicamente sobre la casa de un vecino identificado), caso en el cual solo esa persona determinada puede intentar la acción.\n\nEl ejercicio de la acción popular trae además una consecuencia económica particular: quien la ejerce debe ser indemnizado de todas las costas de la acción, además del valor del tiempo y la diligencia empleados en ella, sumas que el juez aprecia discrecionalmente y que debe solventar el demandado (la empresa constructora).',
+        elementos_clave: [
+          { texto: 'Identifica que se trata de una amenaza a personas indeterminadas y que por tanto procede la acción popular', keywords: ['personas indeterminadas', 'acción popular', 'cualquier persona'], pregunta: '¿Qué tipo de acción procede cuando la amenaza recae sobre cualquiera que transite por el lugar?' },
+          { texto: 'Distingue este caso de la hipótesis de personas determinadas, donde solo esa persona puede accionar', keywords: ['personas determinadas', 'solo esa persona', 'distinto'], pregunta: '¿En qué se diferenciaría este caso de uno en que la amenaza recae sobre un vecino identificado?' },
+          { texto: 'Explica la consecuencia económica: quien ejerce la acción popular debe ser indemnizado de costas y del valor de su tiempo y diligencia', keywords: ['indemnizado de las costas', 'valor del tiempo', 'diligencia empleada'], pregunta: '¿Qué consecuencia económica especial tiene el ejercicio de la acción popular?' }
+        ],
+        articulos_referencia: ['2333'],
+        objetivo_pedagogico: 'Aplicar la distinción entre acción individual y acción popular según la determinación o indeterminación de los amenazados por el daño contingente'
+      },
+
+      {
+        id: 're-detect-021',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Amenaza "más que probable" vs. riesgo general de la vida',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Cualquier persona puede ejercer la acción de daño contingente del artículo 2333 frente a cualquier actividad que en teoría podría llegar a causar un daño algún día, porque la norma habla de daño \'contingente\', es decir, de algo que puede o no llegar a ocurrir, sin exigir mayor probabilidad que esa."',
+        enunciado: 'El alumno interpreta demasiado laxamente el estándar de amenaza exigido por el artículo 2333. Identifica el error y explica el estándar correcto.',
+        respuesta_modelo: 'El alumno confunde la definición general de "contingente" (que puede o no ocurrir) con el estándar de probabilidad que efectivamente exige la acción del artículo 2333 para proceder.\n\nNo basta que el daño sea meramente hipotético o posible: es necesario que su ocurrencia sea más que probable, sin que baste tampoco la existencia de un mero riesgo o de una situación de peligro general y abstracto. Un árbol sano en un patio privado sin acceso público, que en teoría podría caer algún día por un temporal extraordinario, no habilita la acción: eso es un riesgo general de la vida en común, no una amenaza seria e inminente.\n\nLa razón de exigir este estándar calificado es evitar convertir la acción preventiva en una vía para intervenir judicialmente cualquier actividad que alguien considere, de buena fe pero sin fundamento suficiente, potencialmente riesgosa. Por eso la ley exige, además, que la amenaza provenga de una negligencia o un dolo actuales y verificables del demandado, y no de la sola existencia abstracta de un riesgo.',
+        elementos_clave: [
+          { texto: 'Detecta que "contingente" (puede o no ocurrir) no es lo mismo que el estándar de "más que probable" exigido por la norma', keywords: ['más que probable', 'no basta que sea posible', 'estándar calificado'], pregunta: '¿Basta que un daño sea meramente posible ("contingente" en sentido amplio) para que proceda la acción del art. 2333?' },
+          { texto: 'Aplica el ejemplo del árbol sano en patio privado (riesgo general de la vida, no amenaza seria)', keywords: ['árbol sano', 'riesgo general de la vida', 'no procede'], pregunta: '¿Qué ejemplo ilustra un caso en que NO procede la acción, pese a existir algún riesgo teórico?' },
+          { texto: 'Explica la razón de exigir este estándar: evitar que la acción preventiva se use para intervenir cualquier actividad considerada riesgosa sin fundamento suficiente', keywords: ['evitar convertir', 'sin fundamento suficiente', 'negligencia actual y verificable'], pregunta: '¿Por qué la ley exige un estándar de amenaza calificado y no cualquier riesgo teórico?' }
+        ],
+        articulos_referencia: ['2333'],
+        objetivo_pedagogico: 'Corregir la confusión entre el concepto amplio de "daño contingente" y el estándar calificado de amenaza "más que probable" exigido para accionar'
+      },
+
+      {
+        id: 're-just-020',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'La paradoja de la causalidad hipotética en el daño contingente',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Explica la "paradoja estructural" que existe en el fundamento de la acción de daño contingente, y por qué la ley exige, como contrapartida, una amenaza calificada y una negligencia o dolo actuales.',
+        respuesta_modelo: 'Todo el sistema de responsabilidad civil ordinaria está construido sobre un ejercicio retrospectivo: se pregunta qué causó un daño que ya ocurrió, comparando lo efectivamente sucedido con lo que habría sucedido de no mediar el hecho del demandado. La responsabilidad por daño contingente exige, en cambio, un ejercicio inverso: como el daño no se ha producido todavía, la causalidad debe proyectarse hacia un resultado que, por definición, es todavía incierto, preguntándose si, de llegar a producirse el daño, este coincidiría con la relación causal que existiría entre la conducta negligente y el resultado.\n\nAquí aparece la paradoja: cuanto más exitosa sea la acción preventiva, menos evidencia quedará jamás de que la amenaza era, en efecto, seria y no meramente especulativa, porque el daño que habría permitido verificarla ex post nunca llegará a producirse. Si el juez ordena apuntalar el árbol y el árbol nunca cae, nunca podrá comprobarse con certeza retrospectiva que efectivamente habría caído y dañado a alguien.\n\nEsto exige a los tribunales un ejercicio de calificación necesariamente más especulativo que el que realizan en sede de responsabilidad ordinaria. Por eso la ley exige, como contrapartida, una amenaza calificada (más que probable, no meramente posible) y fundada en una negligencia o un dolo actuales y verificables, y no cualquier situación de riesgo abstracto: sin esa exigencia calificada, la acción preventiva se convertiría en una vía para intervenir judicialmente cualquier actividad que alguien considere, de buena fe pero sin fundamento suficiente, potencialmente riesgosa.',
+        elementos_clave: [
+          { texto: 'Explica la naturaleza retrospectiva de la causalidad ordinaria frente a la naturaleza prospectiva/hipotética de la causalidad en el daño contingente', keywords: ['retrospectivo', 'prospectiva', 'hipotética', 'resultado incierto'], pregunta: '¿En qué se diferencia el ejercicio causal de la responsabilidad ordinaria del que exige el daño contingente?' },
+          { texto: 'Formula la paradoja: el éxito de la acción preventiva impide verificar ex post que la amenaza era realmente seria', keywords: ['paradoja', 'éxito de la acción', 'nunca podrá verificarse'], pregunta: '¿En qué consiste la paradoja estructural de esta institución?' },
+          { texto: 'Explica por qué la ley exige, como contrapartida, una amenaza calificada y una negligencia/dolo actuales y verificables', keywords: ['amenaza calificada', 'negligencia actual', 'evitar intervención judicial de cualquier riesgo'], pregunta: '¿Por qué la ley exige un estándar tan exigente para esta acción preventiva?' }
+        ],
+        articulos_referencia: ['2333'],
+        objetivo_pedagogico: 'Justificar la exigencia de un estándar calificado de amenaza y culpa actual, a partir de la paradoja estructural de la causalidad hipotética en el daño contingente'
+      },
+
+      {
+        id: 're-mc-021',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Prescripción de la acción de daño contingente',
+        tipo: 'discriminacion_mc',
+        caso: 'Un vecino observa que, desde hace ocho años, un muro medianero se encuentra visiblemente agrietado y amenaza con desplomarse sobre su patio en cualquier momento. Recién ahora decide ejercer la acción del artículo 2333 contra el dueño del muro.',
+        enunciado: '¿Puede el dueño del muro oponer la prescripción, alegando que han transcurrido más de cuatro años desde que la amenaza se hizo evidente?',
+        opciones: [
+          { letra: 'A', texto: 'Sí, porque se aplica el plazo general de cuatro años de prescripción de la acción de responsabilidad extracontractual, contado desde que la amenaza se hizo evidente.', rationale: 'Error: esa regla general presupone que el daño ya se ha producido, hipótesis ajena a la responsabilidad por daño contingente, donde el daño aún no ha ocurrido.' },
+          { letra: 'B', texto: 'No, porque la acción dirigida a precaver un daño es imprescriptible mientras exista justo motivo para temerlo; mientras subsista la amenaza, permanece abierta la posibilidad de accionar.', rationale: 'CORRECTO. No se aplica la regla de prescripción de la acción de responsabilidad ordinaria (que presupone un daño ya ocurrido); rige en cambio la regla de imprescriptibilidad de la acción para precaver un daño mientras exista justo motivo para temerlo.' },
+          { letra: 'C', texto: 'Sí, porque toda acción civil en Chile prescribe en un plazo máximo de diez años, sin excepciones.', rationale: 'Error: la acción de daño contingente es una excepción expresamente reconocida a las reglas generales de prescripción mientras subsista la amenaza.' },
+          { letra: 'D', texto: 'No, pero solo porque el vecino es menor de edad; de ser mayor, sí operaría la prescripción de cuatro años.', rationale: 'Error: la imprescriptibilidad de esta acción no depende de la edad del demandante, sino de la subsistencia de la amenaza y el justo motivo para temerla.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2333'],
+        objetivo_pedagogico: 'Aplicar la regla especial de imprescriptibilidad de la acción de daño contingente mientras subsista la amenaza'
       }
     ];
 
