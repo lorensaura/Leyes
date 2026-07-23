@@ -761,3 +761,34 @@ values (
   'Código Civil, art. 545'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (16): Extracontractual, Eje G (Antijuridicidad y causales de justificación)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-008',
+  'extracontractual',
+  'Requisitos del estado de necesidad',
+  3,
+  '¿Cuáles son los dos requisitos copulativos del estado de necesidad como causal de justificación en materia extracontractual?',
+  '["Que el peligro no tenga origen en la acción culpable de quien lo alega, y que no existan medios menos dañinos para evitarlo", "Que la agresión sea actual e ilegítima, y que la defensa sea proporcionada", "Que exista un vínculo obligatorio previo entre las partes, y que se pruebe la culpa del demandado", "Que el daño sea imprevisible e irresistible"]'::jsonb,
+  0,
+  '{"correcta": "El estado de necesidad exige que el peligro que se busca evitar no tenga origen en la propia culpa de quien lo invoca, y que no existieran medios inocuos o menos dañinos disponibles para evitar el daño.", "por_que_no": ["B: esos son los requisitos de la legítima defensa, una causal distinta.", "C: esos criterios no corresponden al estado de necesidad, que es una causal de justificación, no un problema de delimitación de estatutos.", "D: esos son los elementos del caso fortuito, que se distingue del estado de necesidad precisamente en que el daño sí puede resistirse, aunque a costa de un mal propio."]}'::jsonb,
+  'Doctrina y jurisprudencia (sin regulación civil expresa)'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1465',
+  'extracontractual',
+  'Límite al consentimiento de la víctima: condonación del dolo futuro',
+  '1465',
+  'El pacto de no pedir más en razón de una cuenta aprobada, no vale en cuanto al dolo contenido en ella, si no se ha condonado expresamente. La condonación del dolo futuro no vale.',
+  '[["pacto de no pedir más", "cuenta aprobada"], ["dolo contenido", "condonado expresamente"], ["condonación del dolo futuro no vale"], ["*"]]'::jsonb,
+  array['cuenta aprobada', 'condonado expresamente', 'dolo futuro no vale'],
+  'Código Civil, art. 1465'
+)
+on conflict (id) do nothing;

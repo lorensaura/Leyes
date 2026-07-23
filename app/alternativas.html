@@ -2257,6 +2257,81 @@
         correcta: 'B',
         articulos_referencia: ['2320', '545'],
         objetivo_pedagogico: 'Discriminar la responsabilidad directa de la persona jurídica por el hecho de sus órganos frente a la responsabilidad por el hecho ajeno del art. 2320'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje G (Antijuridicidad y causales de justificación)
+      {
+        id: 're-aplic-008',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Estado de necesidad: requisito de ausencia de medios menos dañinos',
+        tipo: 'aplicacion',
+        caso: 'Un guardia de seguridad, al ver que se aproxima una turba violenta hacia una bodega, decide romper el vidrio de un vehículo estacionado en la calle para esconder dentro mercadería valiosa de un tercero, sin siquiera intentar primero pedir ayuda a los vecinos o buscar otro escondite disponible y menos dañino a pocos metros.',
+        enunciado: '¿Puede el guardia invocar el estado de necesidad para exonerarse de la indemnización por el vidrio roto?',
+        respuesta_modelo: 'No puede invocarlo, porque falta uno de los dos requisitos copulativos del estado de necesidad: que no existan medios inocuos o menos dañinos para evitar el daño.\n\nEl estado de necesidad exige, en primer lugar, que el peligro no tenga su origen en una acción culpable de quien lo alega (aquí no hay problema: la turba es ajena al guardia). Pero exige, además, que no hayan existido alternativas menos dañinas. Si existía otro escondite disponible a pocos metros, o la posibilidad de pedir ayuda a los vecinos sin necesidad de romper el vidrio, entonces el guardia no obró como lo habría hecho el hombre prudente, que opta por el medio menos dañino disponible.\n\nEsto es exactamente lo que resolvió la jurisprudencia en el caso de los cajones de cerveza arrojados al mar: el Fisco fue declarado responsable porque no se acreditó que ese fuera el medio necesario y único para impedir su apropiación por los huelguistas. El estado de necesidad no es una licencia para dañar apenas exista un peligro; exige que no hubiera alternativa menos dañosa.',
+        elementos_clave: [
+          { texto: 'Concluye que no puede invocar el estado de necesidad, porque existían medios menos dañinos disponibles', keywords: ['no puede invocar', 'medios menos dañinos', 'existían alternativas'], pregunta: '¿Puede el guardia exonerarse invocando el estado de necesidad?' },
+          { texto: 'Identifica el requisito faltante: ausencia de medios inocuos o menos dañinos', keywords: ['ausencia de medios', 'menos dañinos', 'requisito'], pregunta: '¿Cuál de los dos requisitos del estado de necesidad falla en este caso?' },
+          { texto: 'Cita o aplica el criterio del caso jurisprudencial de los cajones de cerveza (no se acreditó que fuera el medio necesario y único)', keywords: ['cajones de cerveza', 'medio necesario y único', 'no se acreditó'], pregunta: '¿Qué caso jurisprudencial ilustra exactamente esta misma situación?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar el requisito de ausencia de medios menos dañinos del estado de necesidad, distinguiéndolo del requisito de origen no culpable del peligro'
+      },
+
+      {
+        id: 're-detect-009',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Límites de la legítima defensa: proporcionalidad y actualidad',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Como la víctima de un asalto actuó en legítima defensa al reducir a golpes al asaltante que la amenazaba con un cuchillo, toda la violencia ejercida por la víctima está justificada y no genera responsabilidad civil alguna, incluyendo los golpes adicionales que le propinó una vez que el asaltante ya estaba desarmado y en el suelo."',
+        enunciado: 'El alumno extiende indebidamente el efecto justificante de la legítima defensa. Señala el error e identifica el requisito que falla.',
+        respuesta_modelo: 'El alumno pasa por alto que la legítima defensa exige que la agresión sea actual, y que la defensa sea necesaria y proporcionada a esa agresión, requisitos que dejan de cumplirse una vez que el atacante ha sido reducido y desarmado.\n\nMientras el asaltante amenazaba con el cuchillo, la agresión era actual e ilegítima, y la reacción de la víctima para reducirlo era necesaria y proporcionada: esa parte de la conducta está justificada.\n\nPero una vez que el asaltante quedó desarmado y en el suelo, la agresión cesó. Los golpes adicionales que la víctima le propina en ese momento ya no responden a una necesidad de defensa, sino a un ánimo de castigo: es venganza, no defensa. La legítima defensa justifica repeler el ataque mientras dura; no autoriza a castigar a quien ya no ataca. Por esos golpes adicionales, la víctima original del asalto puede a su vez incurrir en responsabilidad civil frente al asaltante.',
+        elementos_clave: [
+          { texto: 'Detecta que la legítima defensa exige que la agresión sea actual, y que cesa una vez reducido y desarmado el atacante', keywords: ['agresión actual', 'cesó', 'ya no está atacando'], pregunta: '¿Sigue siendo "actual" la agresión una vez que el asaltante está desarmado y en el suelo?' },
+          { texto: 'Distingue la parte justificada (reducir al asaltante armado) de la no justificada (golpes adicionales tras el cese de la agresión)', keywords: ['parte justificada', 'golpes adicionales', 'no justificada'], pregunta: '¿Qué parte de la conducta de la víctima está justificada, y cuál no?' },
+          { texto: 'Concluye que los golpes adicionales son venganza, no defensa, y pueden generar responsabilidad civil', keywords: ['venganza', 'no defensa', 'responsabilidad civil'], pregunta: '¿Cómo se califican los golpes propinados después de que el asaltante ya no representaba peligro?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Corregir la extensión indebida de la legítima defensa más allá del cese de la agresión actual'
+      },
+
+      {
+        id: 're-just-008',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Consecuencias de la disputa sobre la autonomía de la antijuridicidad',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Se dice que la disputa sobre si la antijuridicidad es un elemento autónomo de la responsabilidad "no es inocua", y que el mejor ejemplo de ello es la discusión sobre el abuso del derecho. Explica por qué.',
+        respuesta_modelo: 'A primera vista, la disputa sobre la autonomía de la antijuridicidad parece un problema de mera arquitectura: quien mata en legítima defensa no responde, sostenga uno que faltó la antijuridicidad (Rodríguez Grez, Corral) o que faltó la culpa (Barros). El resultado práctico es idéntico.\n\nPero la disputa deja de ser inocua en el terreno del abuso del derecho. Si la antijuridicidad es autónoma y consiste en la contradicción con el ordenamiento, entonces quien obra dentro de los límites externos de su derecho jamás es antijurídico, por perversa que sea su intención. Rodríguez Grez extrae esa conclusión con total coherencia, y por eso debe negar la existencia misma del "abuso del derecho": lo que llamamos así seria, para él, una mera apariencia jurídica, un obrar de facto y no de iure, porque quien verdaderamente ejerce su derecho, cualquiera sea su ánimo, no incurre en responsabilidad.\n\nAlessandri, en el extremo opuesto, reduce el abuso a una culpa cometida en el ejercicio del derecho. Esa solución es más intuitiva, pero paga un precio que Barros denuncia: si cualquier ejercicio negligente configurara abuso, el derecho subjetivo quedaría desprovisto de sus características esenciales, y un derecho que solo puede ejercerse con la máxima diligencia hacia los intereses ajenos deja de ser un derecho para convertirse en una carga.\n\nLa solución de Barros es superior porque exige, para el abuso, una calificación especial de la culpa: el acto debe ser contrario a la buena fe o a las buenas costumbres. Esta fórmula conserva la figura del abuso (contra Rodríguez Grez) sin disolver el derecho subjetivo en un deber genérico de máximo cuidado (contra Alessandri). La discusión sobre la autonomía de la antijuridicidad, entonces, no cambia el resultado en los casos fáciles (legítima defensa), pero sí determina qué construcción dogmática puede sostener coherentemente la figura del abuso del derecho.',
+        elementos_clave: [
+          { texto: 'Explica que la disputa parece inocua en casos fáciles (legítima defensa), donde el resultado es idéntico bajo ambas tesis', keywords: ['legítima defensa', 'resultado idéntico', 'parece inocua'], pregunta: '¿En qué caso la disputa sobre la antijuridicidad no cambia el resultado práctico?' },
+          { texto: 'Explica que Rodríguez Grez, siendo coherente con la autonomía de la antijuridicidad, debe negar la figura del abuso del derecho (la trata como "apariencia jurídica")', keywords: ['Rodríguez Grez', 'niega la figura', 'apariencia jurídica', 'de facto'], pregunta: '¿Qué consecuencia extrema extrae Rodríguez Grez de su premisa sobre la antijuridicidad autónoma?' },
+          { texto: 'Explica el riesgo de la posición de Alessandri (vaciar el derecho subjetivo si cualquier negligencia configura abuso)', keywords: ['Alessandri', 'vaciar el derecho', 'carga', 'máxima diligencia'], pregunta: '¿Qué problema tiene reducir el abuso del derecho a una simple culpa, como hace Alessandri?' },
+          { texto: 'Concluye que la solución de Barros (calificación especial: contrario a la buena fe) es superior porque concilia ambas preocupaciones', keywords: ['Barros', 'buena fe', 'calificación especial', 'concilia'], pregunta: '¿Por qué es preferible la solución de Barros?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Justificar por qué la disputa sobre la autonomía de la antijuridicidad tiene consecuencias prácticas en la construcción dogmática del abuso del derecho'
+      },
+
+      {
+        id: 're-mc-009',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Consentimiento de la víctima: renuncia de un derecho vs. aceptación de un riesgo',
+        tipo: 'discriminacion_mc',
+        caso: 'Una persona se ofrece voluntariamente como piloto de pruebas de un nuevo modelo de avión experimental, siendo debidamente informada de la intensidad y probabilidad del riesgo de accidente, incluido el riesgo de muerte.',
+        enunciado: '¿Es válida esta autorización de la víctima, pese a recaer sobre un bien indisponible como la vida?',
+        opciones: [
+          { letra: 'A', texto: 'No, porque el artículo 12 del Código Civil prohíbe absolutamente cualquier disposición sobre la propia vida, sea que se trate de una renuncia o de la aceptación de un riesgo.', rationale: 'Error: la prohibición de disponer de bienes indisponibles rige para la renuncia de un derecho, no para la simple aceptación de un riesgo razonable e informado.' },
+          { letra: 'B', texto: 'Sí, porque se trata de la aceptación de un riesgo razonable e informado, y no de una renuncia a un derecho; el principio de autonomía no exige a la víctima el mismo nivel de cuidado respecto de sí misma que respecto de terceros.', rationale: 'CORRECTO. La distinción decisiva es entre renunciar a un derecho y aceptar un riesgo. Aceptar un riesgo razonable, aun sobre bienes indisponibles como la vida, es válido si medió información suficiente sobre su intensidad y probabilidad.' },
+          { letra: 'C', texto: 'No, porque toda autorización que verse sobre la integridad física o la vida configura condonación del dolo futuro, prohibida por el artículo 1465 del Código Civil.', rationale: 'Error: la condonación del dolo futuro es un límite distinto, aplicable a la renuncia de responsabilidad por conductas dolosas; no se confunde con la aceptación informada de un riesgo inherente a una actividad.' },
+          { letra: 'D', texto: 'Sí, pero solo porque el piloto de pruebas recibe una remuneración por asumir el riesgo, lo que convierte la relación en contractual.', rationale: 'Error: la validez de la autorización no depende de la existencia de una remuneración, sino de que se trate de la aceptación de un riesgo razonable e informado; además, la convención sobre responsabilidad no transforma el régimen extracontractual en contractual, salvo que exista una obligación previa incumplida.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['12', '1461', '1465'],
+        objetivo_pedagogico: 'Discriminar entre la renuncia de un derecho indisponible (inválida) y la aceptación informada de un riesgo razonable (válida) como causal de justificación'
       }
     ];
 
