@@ -792,3 +792,20 @@ values (
   'Código Civil, art. 1465'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (17): Extracontractual, Eje H (Culpabilidad: dolo y culpa)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-009',
+  'extracontractual',
+  'Acción restitutoria contra el tercero beneficiado del dolo ajeno',
+  3,
+  'Conforme a los artículos 1458 inciso segundo y 2316 inciso segundo del Código Civil, ¿hasta qué monto responde quien, sin ser autor ni cómplice, se ha beneficiado del dolo ajeno?',
+  '["Hasta el monto de todo el daño causado a la víctima, igual que el autor del dolo", "Únicamente hasta la concurrencia de lo que valga el provecho que efectivamente obtuvo", "No responde en caso alguno, salvo que haya sido cómplice del delito", "Hasta el monto que el juez determine equitativamente, sin relación con el provecho obtenido"]'::jsonb,
+  1,
+  '{"correcta": "El art. 2316 inciso segundo limita la responsabilidad del tercero beneficiado del dolo ajeno, sin ser cómplice, a la concurrencia de lo que valga el provecho obtenido: es una acción restitutoria, no indemnizatoria.", "por_que_no": ["A: esa es la extensión de la responsabilidad del autor del dolo, no la del tercero beneficiado, que responde solo hasta su provecho.", "C: precisamente porque se benefició del dolo ajeno a sabiendas, la ley habilita esta acción restitutoria en su contra.", "D: el monto no queda a la equidad judicial discrecional, sino que está fijado por la ley como el valor del provecho obtenido."]}'::jsonb,
+  'Arts. 1458 inc. 2°, 2316 inc. 2° CC'
+)
+on conflict (id) do nothing;
