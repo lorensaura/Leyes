@@ -172,14 +172,27 @@ reescribe los distractores.
 
 ### 1. Proceso de trabajo
 
-1. Recorre el manual **eje por eje**, en orden, sin saltarte ninguno.
-2. Para cada eje, evalúa qué modelos de práctica tienen contenido
-   razonable para extraer de él (no todos los ejes rinden para los
-   cuatro modelos: ver la guía de la sección 2).
-3. Genera los ítems siguiendo el proceso de tres pasos de la sección 0.
-4. Al terminar un lote (por eje, o por materia completa, según lo que
-   te haya pedido Laura), entrega el reporte de auto-auditoría de la
-   sección 6 antes que el contenido mismo.
+**Por tandas, nunca el manual completo de una sola pasada.** Trabaja en
+lotes de aproximadamente 10 páginas (equivalente en el PDF) o 1-2 ejes,
+lo que sea más natural según dónde caigan los cortes de eje. Termina de
+generar, auditar y entregar un lote completo antes de abrir el siguiente
+tramo del manual. Esto es una regla de precisión, no de comodidad: leer
+de a poco reduce el riesgo de mezclar detalles de un eje con otro o de
+"completar de memoria" un punto que ya se salió de la ventana de lectura
+reciente.
+
+1. Abre solo el tramo del manual que corresponde a este lote (no el
+   documento entero).
+2. Recorre ese tramo **eje por eje**, en orden, sin saltarte ninguno.
+3. Para cada eje del tramo, evalúa qué modelos de práctica tienen
+   contenido razonable para extraer de él (no todos los ejes rinden para
+   los cuatro modelos: ver la guía de la sección 2).
+4. Genera los ítems siguiendo el proceso de tres pasos de la sección 0,
+   citando solo con lo que está a la vista en este tramo.
+5. Al terminar el lote, entrega el reporte de auto-auditoría de la
+   sección 6 (acotado a este lote) antes que el contenido mismo.
+6. Recién ahí abre el siguiente tramo. No acumules varios tramos en
+   memoria "para ir más rápido".
 
 ### 2. Qué extraer de cada eje, por modelo
 

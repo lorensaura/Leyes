@@ -575,3 +575,34 @@ values (
   'Código Civil, art. 1546'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (10): Extracontractual, Eje A (Concepto, regulación y funciones)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-002',
+  'extracontractual',
+  'Fuentes de las obligaciones: el hecho ilícito',
+  2,
+  'Según el artículo 1437 del Código Civil, ¿cuál es la fuente de la obligación de indemnizar que nace de un delito o cuasidelito civil?',
+  '["Un hecho que ha inferido injuria o daño a otra persona", "El concurso real de las voluntades de dos o más personas", "Un hecho voluntario de la persona que se obliga, como en los cuasicontratos", "La disposición expresa de la ley, como entre padres e hijos"]'::jsonb,
+  0,
+  '{"correcta": "El artículo 1437 enumera cuatro fuentes de las obligaciones; el delito y el cuasidelito quedan comprendidos en \"un hecho que ha inferido injuria o daño a otra persona\", que es la fuente propia de la responsabilidad extracontractual.", "por_que_no": ["B: esa es la fuente contractual (contratos o convenciones), no la extracontractual.", "C: esa es la fuente de los cuasicontratos, figura distinta del cuasidelito.", "D: esa es la fuente legal, ajena al hecho ilícito."]}'::jsonb,
+  'Art. 1437 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1437',
+  'extracontractual',
+  'Fuentes de las obligaciones',
+  '1437',
+  'Las obligaciones nacen, ya del concurso real de las voluntades de dos o más personas, como los contratos o convenciones; ya de un hecho voluntario de la persona que se obliga, como en la aceptación de una herencia o legado y en todos los cuasicontratos; ya a consecuencia de un hecho que ha inferido injuria o daño a otra persona, como en los delitos y cuasidelitos; ya por disposición de la ley, como entre los padres y los hijos sujetos a patria potestad.',
+  '[["concurso real de las voluntades", "contratos o convenciones"], ["hecho voluntario", "cuasicontratos"], ["injuria o daño", "delitos y cuasidelitos"], ["disposición de la ley", "patria potestad"], ["*"]]'::jsonb,
+  array['concurso real de las voluntades', 'hecho voluntario', 'cuasicontratos', 'injuria o daño', 'delitos y cuasidelitos', 'disposición de la ley'],
+  'Código Civil, art. 1437'
+)
+on conflict (id) do nothing;
