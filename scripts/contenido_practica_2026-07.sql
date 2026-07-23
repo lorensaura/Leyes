@@ -902,3 +902,34 @@ values (
   'Código Civil, art. 1559 N° 1 y 2'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (21): Extracontractual, Eje L (Clases de daño II: el daño moral)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-013',
+  'extracontractual',
+  'Los cinco argumentos para admitir la resarcibilidad del daño moral',
+  3,
+  '¿Cuál de los siguientes NO es uno de los cinco argumentos con que la doctrina y jurisprudencia justificaron la resarcibilidad del daño moral pese al silencio del Código Civil?',
+  '["Que no toda indemnización debe ser pecuniaria (cabe la reparación en especie, como la publicación de la sentencia)", "Que los artículos 2314 y 2329 están redactados en términos amplios, sin distinguir clases de daño", "Que la legislación posterior al Código (Constitución, leyes especiales) menciona expresamente el daño moral", "Que el artículo 1556 define expresamente el daño moral como una tercera categoría junto al daño emergente y el lucro cesante"]'::jsonb,
+  3,
+  '{"correcta": "El artículo 1556 NO menciona el daño moral; se refiere únicamente al daño emergente y al lucro cesante, lo que confirma precisamente que el daño moral es una construcción jurisprudencial posterior al Código, no una categoría reconocida en él.", "por_que_no": ["A, B y C: estos sí son tres de los cinco argumentos reales (reparación en especie; amplitud de los arts. 2314/2329; legislación posterior que sí lo menciona expresamente)."]}'::jsonb,
+  'Doctrina y jurisprudencia sobre resarcibilidad del daño moral'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2331',
+  'extracontractual',
+  'Imputaciones injuriosas contra el honor o el crédito',
+  '2331',
+  'Las imputaciones injuriosas contra el honor o el crédito de una persona no dan derecho para demandar una indemnización pecuniaria, a menos de probarse daño emergente o lucro cesante, que pueda apreciarse en dinero; pero ni aun entonces tendrá lugar la indemnización pecuniaria, si se probare la verdad de la imputación.',
+  '[["imputaciones injuriosas", "honor o el crédito"], ["no dan derecho", "indemnización pecuniaria"], ["a menos de probarse daño emergente o lucro cesante"], ["se probare la verdad de la imputación"], ["*"]]'::jsonb,
+  array['imputaciones injuriosas', 'honor o el crédito', 'daño emergente o lucro cesante', 'verdad de la imputación'],
+  'Código Civil, art. 2331'
+)
+on conflict (id) do nothing;
