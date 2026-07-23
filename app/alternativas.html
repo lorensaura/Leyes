@@ -2182,6 +2182,81 @@
         correcta: 'B',
         articulos_referencia: ['2319'],
         objetivo_pedagogico: 'Aplicar correctamente las dos reglas de capacidad del art. 2319 (infantes vs. menores de 7 a 16 años) a un caso de un niño de nueve años'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje F (Hecho voluntario, caso fortuito y personas jurídicas)
+      {
+        id: 're-aplic-007',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Caso fortuito: exclusión de la causalidad pese a la culpa (tesis de Barros)',
+        tipo: 'aplicacion',
+        caso: 'Un ciclista que circula respetando todas las normas de tránsito sufre, sin ningún antecedente previo, un síncope repentino e imprevisible, pierde el control de su bicicleta y se desvía hacia la vereda, invadiendo la senda peatonal y lesionando a un transeúnte que caminaba por ella.',
+        enunciado: '¿Responde el ciclista de los daños causados al peatón? Explica conforme a la tesis de Barros sobre la ubicación dogmática del caso fortuito.',
+        respuesta_modelo: 'No responde. El síncope repentino e imprevisible constituye caso fortuito, conforme al artículo 45 del Código Civil: es un hecho imprevisto (no había antecedentes que permitieran anticiparlo) e irresistible (el ciclista no pudo evitarlo ni controlar la bicicleta una vez ocurrido).\n\nSegún Barros, la función propia del caso fortuito en materia extracontractual no es excluir la culpa (que aquí, de hecho, ni siquiera existe, pues el ciclista no infringió ninguna norma), sino excluir la atribución causal del daño. Aunque hubiera existido alguna infracción menor de tránsito, el punto decisivo sería el mismo: el evento determinante del daño no fue la conducta del ciclista, sino el síncope, un hecho externo a su control.\n\nEsto conecta con la idea de que, al igual que la culpa, el caso fortuito se determina en concreto pero se juzga en abstracto: se pregunta si un hombre prudente en la misma situación (sin antecedentes cardíacos conocidos) habría podido prever y resistir el episodio. Como la respuesta es negativa, el daño no es atribuible a la conducta del ciclista, y este no responde.',
+        elementos_clave: [
+          { texto: 'Concluye que el ciclista no responde, porque el síncope constituye caso fortuito (art. 45)', keywords: ['no responde', 'caso fortuito', '45'], pregunta: '¿Responde el ciclista por los daños causados al peatón?' },
+          { texto: 'Explica, siguiendo a Barros, que la función del caso fortuito es excluir la atribución causal del daño, no solo la culpa', keywords: ['Barros', 'atribución causal', 'no solo la culpa', 'sede de causalidad'], pregunta: '¿Cuál es, según Barros, la verdadera función del caso fortuito en materia extracontractual?' },
+          { texto: 'Aplica el estándar del hombre prudente (juzgado en abstracto) para evaluar la imprevisibilidad del síncope', keywords: ['hombre prudente', 'en abstracto', 'sin antecedentes'], pregunta: '¿Con qué estándar se mide si el síncope era o no previsible?' }
+        ],
+        articulos_referencia: ['45'],
+        objetivo_pedagogico: 'Aplicar la tesis de Barros sobre el caso fortuito como excluyente de la atribución causal, no solo de la culpa'
+      },
+
+      {
+        id: 're-detect-008',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Incapacidad permanente vs. falta transitoria de voluntariedad',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Una persona que causa daño mientras camina dormida (sonambulismo) debe ser tratada exactamente igual que un demente: ambos son incapaces conforme al artículo 2319, y por tanto responderá de los daños quien la tenga a su cargo, si pudiere imputársele negligencia."',
+        enunciado: 'El alumno asimila incorrectamente dos figuras que Corral distingue con cuidado. Identifica el error y explica la diferencia correcta.',
+        respuesta_modelo: 'El alumno confunde la incapacidad (que es una causal permanente, referida a la aptitud general de la persona) con la falta transitoria de voluntariedad del acto concreto.\n\nCorral objeta, con razón, que los estados transitorios de pérdida del uso de razón, como el sonambulismo o la hipnosis, no deben asimilarse a la demencia. La demencia es causal de incapacidad y califica a la persona de modo permanente. El sonambulismo, en cambio, es una causal de exoneración por falta de voluntariedad del acto concreto: la persona sigue siendo plenamente capaz, pero en ese episodio particular no obró con voluntad.\n\nLa consecuencia práctica es distinta en cada caso. Si se tratara a la persona como incapaz, se abriría la puerta a la responsabilidad de un eventual guardián, conforme al artículo 2319 inciso primero. Pero como se la trata como capaz que obró sin voluntad en el caso concreto, lo que falta no es la aptitud del sujeto, sino la existencia misma de una acción imputable: no hay hecho voluntario, y por tanto no hay responsabilidad de nadie, ni del sonámbulo ni de un guardián, porque no existe la figura del guardián de un capaz.',
+        elementos_clave: [
+          { texto: 'Detecta que la incapacidad (permanente) y la falta transitoria de voluntariedad son categorías distintas', keywords: ['permanente', 'transitoria', 'categorías distintas', 'no es lo mismo'], pregunta: '¿Es lo mismo la incapacidad del demente que la falta de voluntad de quien actúa sonámbulo?' },
+          { texto: 'Explica que Corral distingue: la demencia es incapacidad; el sonambulismo es falta de voluntariedad del acto concreto', keywords: ['Corral', 'demencia', 'incapacidad', 'falta de voluntariedad'], pregunta: '¿Cómo distingue Corral estas dos figuras?' },
+          { texto: 'Concluye que, al no ser incapaz, no hay guardián que responda por el sonámbulo: simplemente no hay hecho voluntario ni responsabilidad de nadie', keywords: ['no hay guardián', 'no hay responsabilidad de nadie', 'falta el hecho voluntario'], pregunta: '¿Responde algún guardián por los daños causados por el sonámbulo?' }
+        ],
+        articulos_referencia: ['2319'],
+        objetivo_pedagogico: 'Distinguir la incapacidad permanente (demencia) de la falta transitoria de voluntariedad (sonambulismo, hipnosis)'
+      },
+
+      {
+        id: 're-just-007',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Superioridad explicativa de la tesis de Barros sobre el caso fortuito',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Explica por qué la tesis de Barros, que ubica el caso fortuito en sede de causalidad, tiene mayor poder explicativo que las tesis que lo ubican en la voluntariedad (Corral) o entre las eximentes de responsabilidad (Alessandri).',
+        respuesta_modelo: 'La tesis que ubica el caso fortuito en la voluntariedad (Corral) explica bien los casos de hechos puramente naturales, como un terremoto: allí, efectivamente, no hay voluntad humana alguna a la cual reconducir el daño. Pero esta explicación resulta insuficiente frente a los casos más interesantes, en que sí hubo conducta voluntaria y hasta culpable, y sin embargo el agente no responde: el automovilista que cruza la línea continua para esquivar a un peatón obró voluntariamente, con plena conciencia, e infringió una norma de tránsito. Su exoneración no puede explicarse por falta de voluntad, porque voluntad hubo.\n\nLa tesis de Alessandri, que agrupa el caso fortuito entre las "eximentes" junto a la culpa de la víctima y el hecho de un tercero, acierta en los efectos pero yerra en la sistematización: agrupa bajo un mismo rótulo instituciones que operan sobre elementos distintos de la responsabilidad, sin explicar por qué producen ese efecto común.\n\nLa tesis de Barros, que sitúa el caso fortuito en sede de causalidad, explica todos los casos, incluidos aquellos en que hay culpa del agente y, sin embargo, no responde: el daño no le es causalmente atribuible, porque la causa determinante fue el hecho externo (el peatón, el síncope), no la infracción. Esta construcción es también la que mejor explica por qué la fuerza mayor conserva eficacia exoneratoria en los regímenes de responsabilidad estricta, donde el juicio de culpa está excluido por definición: si el caso fortuito operara únicamente excluyendo la culpa, sería inoperante en esos regímenes; si opera excluyendo la causalidad, sigue funcionando incluso allí.',
+        elementos_clave: [
+          { texto: 'Explica los límites de la tesis de Corral (voluntariedad): no explica el caso en que hubo conducta voluntaria y culpable y aun así no hay responsabilidad', keywords: ['Corral', 'voluntariedad', 'insuficiente', 'línea continua'], pregunta: '¿Por qué la tesis de la voluntariedad no explica bien el caso del automovilista que cruza la línea continua para esquivar a un peatón?' },
+          { texto: 'Explica el error de sistematización de la tesis de Alessandri (agrupa causales que operan sobre elementos distintos)', keywords: ['Alessandri', 'eximentes', 'agrupa', 'elementos distintos'], pregunta: '¿Qué crítica se le hace a la clasificación de Alessandri?' },
+          { texto: 'Explica que la tesis de Barros (causalidad) explica todos los casos, incluido el de culpa sin atribución causal', keywords: ['Barros', 'causalidad', 'explica todos los casos', 'no es causalmente atribuible'], pregunta: '¿Por qué la tesis de Barros tiene mayor poder explicativo?' },
+          { texto: 'Señala que la tesis de Barros explica también por qué el caso fortuito exonera en regímenes de responsabilidad estricta (donde no hay juicio de culpa)', keywords: ['responsabilidad estricta', 'no hay juicio de culpa', 'sigue funcionando'], pregunta: '¿Por qué es importante que la tesis de Barros funcione también en los regímenes de responsabilidad estricta?' }
+        ],
+        articulos_referencia: ['45'],
+        objetivo_pedagogico: 'Justificar la superioridad explicativa de la tesis de Barros sobre la ubicación dogmática del caso fortuito'
+      },
+
+      {
+        id: 're-mc-008',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Teoría del órgano vs. responsabilidad por el hecho ajeno',
+        tipo: 'discriminacion_mc',
+        caso: 'El gerente general de una sociedad anónima, actuando en ejercicio de sus funciones y dentro de sus facultades de representación, celebra una negociación fraudulenta que causa daño a un tercero.',
+        enunciado: '¿Bajo qué régimen responde la sociedad por este hecho, y puede exonerarse probando que no pudo impedirlo?',
+        opciones: [
+          { letra: 'A', texto: 'Responde por el hecho ajeno del artículo 2320, y puede exonerarse probando que con la autoridad y cuidado que le eran exigibles no pudo impedir el hecho.', rationale: 'Error: si el gerente actúa como órgano de la sociedad, su acto es el acto de la propia sociedad (hecho propio), no un hecho ajeno del que ésta responda indirectamente.' },
+          { letra: 'B', texto: 'Responde por el hecho propio, porque el acto del gerente en ejercicio de sus funciones es el acto de la propia persona jurídica (teoría del órgano), y no puede exonerarse alegando que no pudo impedir su propia conducta.', rationale: 'CORRECTO. El gerente, dotado de poder autónomo y permanente de decisión, es órgano de la sociedad; su acto es el acto de la persona jurídica misma. Por tratarse de hecho propio, no cabe la excusa de no haber podido impedirlo.' },
+          { letra: 'C', texto: 'No responde en ningún caso, porque las personas jurídicas no tienen voluntad real y no pueden cometer hechos ilícitos.', rationale: 'Error: en Chile la responsabilidad civil de las personas jurídicas está zanjada, reconocida expresamente (art. 58 CPP) y fundada en las reglas generales del Título XXXV, más allá de la objeción teórica de la ficción.' },
+          { letra: 'D', texto: 'Responde únicamente en sede penal, conforme a la Ley Nº 20.393, y jamás en sede civil.', rationale: 'Error: la responsabilidad civil de la persona jurídica no depende de que el hecho sea también un ilícito penal; se rige por las reglas generales del Título XXXV del Libro IV del Código Civil.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2320', '545'],
+        objetivo_pedagogico: 'Discriminar la responsabilidad directa de la persona jurídica por el hecho de sus órganos frente a la responsabilidad por el hecho ajeno del art. 2320'
       }
     ];
 

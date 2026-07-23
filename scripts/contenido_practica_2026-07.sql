@@ -730,3 +730,34 @@ values (
   'Código Civil, art. 2319'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (15): Extracontractual, Eje F (Hecho voluntario, caso fortuito y personas jurídicas)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-007',
+  'extracontractual',
+  'Elementos del caso fortuito',
+  3,
+  '¿Cuáles son los tres elementos del caso fortuito o fuerza mayor, conforme a la doctrina y jurisprudencia chilenas?',
+  '["Irresistibilidad, imprevisibilidad y exterioridad", "Culpa, daño y causalidad", "Dolo, negligencia e imprudencia", "Capacidad, voluntariedad y antijuridicidad"]'::jsonb,
+  0,
+  '{"correcta": "Los tres elementos son la irresistibilidad (medida en función del deber de diligencia), la imprevisibilidad (concepto normativo: el caso fortuito comienza donde cesa el deber de previsión) y la exterioridad (el hecho debe ser ajeno al ámbito de control del agente).", "por_que_no": ["B: esos son elementos del régimen general de responsabilidad por culpa, no del caso fortuito.", "C: esas son formas de imputación subjetiva (culpabilidad), ajenas a la definición de fuerza mayor.", "D: esos son elementos generales de la responsabilidad, no los que definen específicamente al caso fortuito."]}'::jsonb,
+  'Art. 45 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-545',
+  'extracontractual',
+  'Persona jurídica: concepto',
+  '545',
+  'Se llama persona jurídica una persona ficticia, capaz de ejercer derechos y contraer obligaciones civiles, y de ser representada judicial y extrajudicialmente.',
+  '[["persona ficticia"], ["capaz de ejercer derechos", "contraer obligaciones civiles"], ["representada judicial y extrajudicialmente"], ["*"]]'::jsonb,
+  array['persona ficticia', 'ejercer derechos', 'obligaciones civiles', 'representada'],
+  'Código Civil, art. 545'
+)
+on conflict (id) do nothing;
