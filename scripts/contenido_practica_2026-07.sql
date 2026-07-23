@@ -984,3 +984,34 @@ values (
   'Código Civil, art. 2321'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (24): Extracontractual, Eje O (Responsabilidad del empresario)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-016',
+  'extracontractual',
+  'Culpa difusa y responsabilidad por el hecho propio de la organización',
+  4,
+  'Un paciente sufre un daño en un hospital a consecuencia de un defecto genuinamente organizacional (protocolos de seguridad mal diseñados), sin que sea posible identificar a un dependiente individual negligente. ¿Bajo qué construcción dogmática puede fundarse la responsabilidad del hospital, y qué ventaja tiene esa vía para la víctima?',
+  '["Responsabilidad por el hecho ajeno del artículo 2320, porque siempre debe identificarse a un dependiente concreto", "Responsabilidad directa por el hecho propio de la organización, con la ventaja de que no existe excusa de \"no haber podido impedir el hecho\", porque el defecto organizacional es precisamente el hecho propio que se reprocha", "Ninguna responsabilidad es posible, porque sin identificar a un dependiente concreto no puede probarse ningún ilícito", "Responsabilidad estricta u objetiva, porque los hospitales siempre responden sin necesidad de culpa alguna en el derecho chileno"]'::jsonb,
+  1,
+  '{"correcta": "Cuando el daño se atribuye a un defecto de la organización en su conjunto y no a un dependiente individualizable, se construye una responsabilidad directa por el hecho propio de la persona jurídica, análoga a la presunción del art. 2329. Su ventaja para la víctima es que no existe la excusa de imposibilidad de impedir el hecho, porque la organización deficiente ES el hecho propio reprochado.", "por_que_no": ["A: la responsabilidad por el hecho ajeno exige justamente poder identificar un ilícito de un tercero individualizado; aquí no es posible.", "C: la doctrina y jurisprudencia sí aceptan fundar la responsabilidad en la culpa difusa u organizacional, sin necesidad de individualizar a un dependiente.", "D: el derecho chileno no consagra responsabilidad estricta general para los hospitales; se trata de una responsabilidad por culpa (aunque de prueba facilitada por la culpa difusa)."]}'::jsonb,
+  'Doctrina sobre responsabilidad por el hecho propio de la organización empresarial'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2322',
+  'extracontractual',
+  'Responsabilidad de los amos por sus criados o dependientes',
+  '2322',
+  'Los amos responderán de la conducta de sus criados o sirvientes, en el ejercicio de sus respectivas funciones; y esto aunque el hecho de que se trate no se haya ejecutado a su vista. Pero no responderán de lo que hayan hecho sus criados o sirvientes en el ejercicio de sus respectivas funciones, si se probare que las han ejercido de un modo impropio que los amos no tenían medio de prever o impedir, empleando el cuidado ordinario, y la autoridad competente.',
+  '[["amos", "criados o sirvientes"], ["ejercicio de sus respectivas funciones"], ["no se haya ejecutado a su vista"], ["modo impropio", "no tenían medio de prever o impedir"], ["*"]]'::jsonb,
+  array['amos', 'criados o sirvientes', 'ejercicio', 'modo impropio', 'no pudieron prever'],
+  'Código Civil, art. 2322'
+)
+on conflict (id) do nothing;
