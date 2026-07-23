@@ -2482,6 +2482,81 @@
         correcta: 'B',
         articulos_referencia: ['2329', '2323', '2320'],
         objetivo_pedagogico: 'Discriminar entre los tres grupos de presunciones de culpabilidad del Código Civil según el origen del daño'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje J (El daño: concepto y requisitos de resarcibilidad)
+      {
+        id: 're-aplic-011',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Pérdida de una oportunidad (chance) como daño autónomo',
+        tipo: 'aplicacion',
+        caso: 'Un postulante a una beca de estudios en el extranjero es indebidamente excluido del proceso de selección por un error administrativo de la institución que la otorga, antes de que su postulación fuera siquiera evaluada por el comité. De los quince postulantes que sí fueron evaluados, la beca se otorgó a uno solo, y la evidencia pericial muestra que, por sus antecedentes académicos, el postulante excluido se encontraba entre los cinco candidatos con posibilidades reales de obtenerla.',
+        enunciado: '¿Puede el postulante demandar la indemnización del valor íntegro de la beca que no obtuvo? Si no, ¿qué puede reclamar?',
+        respuesta_modelo: 'No puede demandar el valor íntegro de la beca, porque no existe certeza de que la hubiera obtenido de haber sido evaluado: nunca puede saberse, corregido el vicio, si habría resultado efectivamente ganador entre los candidatos con posibilidades reales.\n\nLo que sí puede reclamar es la pérdida de la oportunidad o chance: un daño autónomo, distinto del daño emergente, el lucro cesante y el daño moral, que se configura cuando la conducta ilícita del demandado priva a la víctima de la posibilidad, seria pero nunca cierta, de obtener un beneficio. Lo efectivamente cierto aquí no es que habría ganado la beca, sino que fue privado de figurar entre los candidatos con opciones reales de obtenerla.\n\nSiguiendo el criterio de la Corte Suprema en el caso de la licitación pública de 2025, la indemnización no debe fijarse en el monto total del beneficio esperado (el valor completo de la beca), sino avaluarse prudencialmente en una fracción de ese monto, correspondiente a la probabilidad real que tenía de resultar ganador, considerando que se encontraba entre los cinco candidatos con opciones reales de los quince evaluados.',
+        elementos_clave: [
+          { texto: 'Concluye que no puede demandar el valor íntegro de la beca, por falta de certeza sobre si la habría obtenido', keywords: ['no puede', 'valor íntegro', 'no hay certeza'], pregunta: '¿Puede el postulante reclamar el valor completo de la beca que no obtuvo?' },
+          { texto: 'Identifica la figura de la pérdida de una oportunidad o chance como daño autónomo', keywords: ['pérdida de una oportunidad', 'chance', 'daño autónomo'], pregunta: '¿Qué categoría de daño describe mejor esta situación?' },
+          { texto: 'Aplica el criterio de avaluación prudencial en una fracción del beneficio, proporcional a la probabilidad real de haber ganado', keywords: ['fracción', 'proporcional', 'probabilidad real', 'avaluación prudencial'], pregunta: '¿Cómo debe cuantificarse la indemnización por la pérdida de la chance?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar la figura de la pérdida de una oportunidad como daño autónomo, distinguiéndola de la indemnización del beneficio esperado en su totalidad'
+      },
+
+      {
+        id: 're-detect-012',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Daño eventual vs. pérdida de chance: dos problemas distintos',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "La pérdida de una oportunidad es simplemente un caso de daño eventual: como no hay certeza de que la víctima hubiera obtenido el beneficio esperado, el daño es puramente hipotético y, por tanto, no resulta indemnizable, exactamente igual que ocurre con las ganancias esperadas de una carrera profesional recién iniciada."',
+        enunciado: 'El alumno confunde dos categorías que el manual distingue cuidadosamente. Identifica el error y explica en qué se diferencian.',
+        respuesta_modelo: 'El alumno confunde el daño eventual con la pérdida de una oportunidad, tratándolos como si fueran la misma figura y llegando, por eso, a la conclusión errónea de que la chance nunca es indemnizable.\n\nEn el daño eventual, la incertidumbre recae sobre si el perjuicio mismo llegará alguna vez a producirse: es el caso de las ganancias esperadas de una carrera profesional recién iniciada, donde no hay ninguna certeza de que esa carrera fuera a generar ingresos determinados. Ese daño, en efecto, no es indemnizable.\n\nEn la pérdida de una oportunidad, en cambio, el daño final ya se ha producido con certeza (el paciente murió, el litigante perdió el pleito, el postulante no obtuvo la beca), y lo que resulta incierto es si ese resultado es atribuible causalmente al hecho del demandado o a otra causa. No es, entonces, un problema de certidumbre del daño, sino un problema de prueba de la relación causal bajo condiciones de incertidumbre. Por eso el derecho no lo trata como un daño eventual inexistente, sino que lo indemniza como un daño autónomo: no se repara el resultado final esperado, sino el valor de la oportunidad perdida, ponderado según la probabilidad seria que existía de obtenerlo.',
+        elementos_clave: [
+          { texto: 'Detecta que el alumno confunde el daño eventual con la pérdida de chance, tratándolos como la misma figura', keywords: ['confunde', 'no son lo mismo', 'categorías distintas'], pregunta: '¿Son el daño eventual y la pérdida de chance la misma figura jurídica?' },
+          { texto: 'Explica que en el daño eventual la incertidumbre recae sobre si el perjuicio llegará a producirse', keywords: ['daño eventual', 'si el perjuicio llegará', 'incertidumbre sobre la existencia'], pregunta: '¿Sobre qué recae la incertidumbre en el daño eventual?' },
+          { texto: 'Explica que en la pérdida de chance el daño final ya ocurrió, y la incertidumbre recae sobre la relación causal', keywords: ['ya se ha producido', 'relación causal', 'atribuible causalmente'], pregunta: '¿Sobre qué recae la incertidumbre en la pérdida de una oportunidad?' },
+          { texto: 'Concluye que la pérdida de chance sí es indemnizable, como daño autónomo ponderado por probabilidad', keywords: ['sí es indemnizable', 'daño autónomo', 'ponderado por probabilidad'], pregunta: '¿Es indemnizable, entonces, la pérdida de una oportunidad?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Distinguir el daño eventual (incertidumbre sobre la existencia del perjuicio) de la pérdida de chance (incertidumbre sobre la causalidad de un daño ya producido)'
+      },
+
+      {
+        id: 're-just-011',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'El debate sobre la previsibilidad del daño extracontractual',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Se indemnizan en sede extracontractual los daños imprevisibles, o solo los previsibles? Expón ambas posiciones y explica qué está en juego en el fondo de la disputa.',
+        respuesta_modelo: 'La doctrina tradicional (Alessandri) sostiene que se indemnizan tanto los daños previstos como los imprevistos. Su argumento es que el artículo 1558 del Código Civil, que distingue perjuicios previstos e imprevistos, pertenece al título de los efectos de las obligaciones contractuales, donde las partes pudieron negociar y asignarse recíprocamente los riesgos al momento de contratar. En el ilícito civil no existe ese momento de negociación previa entre víctima y autor del daño, de modo que trasladar mecánicamente esa distinción contractual carecería de fundamento; el mandato del artículo 2329 de reparar "todo daño" debe leerse, entonces, en su sentido más amplio, sin distinguir previsibilidad.\n\nLa posición contraria no discute que el artículo 1558 sea, en cuanto tal, inaplicable a la responsabilidad extracontractual, pero sostiene algo más radical: que la previsibilidad ingresa al juicio de responsabilidad extracontractual no por la vía de una norma sobre extensión de la reparación, sino por la vía de la culpa misma. Si actuar culpablemente consiste en no prever lo que un hombre prudente habría previsto, carece de sentido imputar, a título de responsabilidad por culpa, consecuencias que ni el agente ni el hombre prudente puesto en su lugar habrían podido anticipar en absoluto.\n\nLo que está en juego no es una cuestión de técnica de imputación, sino el alcance mismo del reproche que la culpa extracontractual formula. Si se acepta que la previsibilidad es interna al juicio de culpabilidad, la responsabilidad por negligencia queda naturalmente acotada a lo que el reproche de imprudencia puede razonablemente abarcar. Si se la rechaza, la responsabilidad por culpa se acerca, en su extensión reparatoria, a una responsabilidad por el resultado, indiferente a lo que el agente pudo o no anticipar, lo que entra en tensión con la propia estructura de un régimen que se dice fundado en la negligencia y no en el mero acaecimiento del daño.',
+        elementos_clave: [
+          { texto: 'Expone la posición de Alessandri: se indemnizan previstos e imprevistos, porque el art. 1558 es una norma contractual ajena al ilícito civil', keywords: ['Alessandri', 'previstos e imprevistos', 'artículo 1558', 'ajena al ilícito civil'], pregunta: '¿Cuál es la posición tradicional y en qué se funda?' },
+          { texto: 'Expone la posición contraria: la previsibilidad ingresa por la vía de la culpa misma, no por una norma sobre extensión de la reparación', keywords: ['por la vía de la culpa', 'no por una norma', 'estructuralmente inseparable'], pregunta: '¿Cómo entra la previsibilidad al juicio extracontractual, según la posición contraria a Alessandri?' },
+          { texto: 'Explica qué está en juego: si la responsabilidad por culpa se acota a lo previsible, o se acerca a una responsabilidad por el resultado', keywords: ['se acota a lo previsible', 'responsabilidad por el resultado', 'alcance del reproche'], pregunta: '¿Qué está realmente en juego en el fondo de esta disputa?' }
+        ],
+        articulos_referencia: ['1558', '2329'],
+        objetivo_pedagogico: 'Exponer y contextualizar el debate sobre la previsibilidad del daño en sede extracontractual y su relación con el juicio de culpabilidad'
+      },
+
+      {
+        id: 're-mc-012',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Los siete requisitos de resarcibilidad del daño',
+        tipo: 'discriminacion_mc',
+        caso: 'Un estudiante enumera los requisitos de resarcibilidad del daño en materia extracontractual.',
+        enunciado: '¿Cuál de las siguientes NO es una exigencia de resarcibilidad del daño según la doctrina y jurisprudencia nacionales?',
+        opciones: [
+          { letra: 'A', texto: 'Que el daño lesione un derecho o un interés legítimo.', rationale: 'Error: sí es uno de los siete requisitos de resarcibilidad reconocidos.' },
+          { letra: 'B', texto: 'Que el daño haya sido personalmente sufrido por quien reclama la indemnización.', rationale: 'Error: sí es uno de los siete requisitos; de él se sigue el problema del daño por rebote o repercusión.' },
+          { letra: 'C', texto: 'Que el daño haya sido expresamente previsto por las partes en un acuerdo previo a su producción.', rationale: 'CORRECTO. Este no es un requisito de resarcibilidad: en materia extracontractual no existe, por regla general, un vínculo previo entre víctima y autor del daño, y la reparación no depende de que las partes hayan anticipado y pactado el perjuicio, a diferencia de lo que podría sugerir una lógica contractual.' },
+          { letra: 'D', texto: 'Que el daño sea cierto, esto es, real y efectivo, aunque sea futuro.', rationale: 'Error: sí es uno de los siete requisitos; de él se derivan las categorías de daño eventual, daño futuro y pérdida de chance.' }
+        ],
+        correcta: 'C',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Identificar los requisitos reales de resarcibilidad del daño y descartar un falso requisito de origen contractual ajeno a la lógica extracontractual'
       }
     ];
 

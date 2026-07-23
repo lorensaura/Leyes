@@ -840,3 +840,34 @@ values (
   'Código Civil, art. 2329'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (19): Extracontractual, Eje J (El daño: concepto y requisitos de resarcibilidad)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-011',
+  'extracontractual',
+  'Pérdida de una oportunidad (chance) como daño autónomo',
+  4,
+  'Conforme al criterio aplicado por la Corte Suprema en 2025 respecto de la pérdida de una oportunidad (chance), ¿cómo debe avaluarse la indemnización cuando la víctima fue indebidamente excluida de un proceso competitivo (licitación, concurso, selección)?',
+  '["En el monto total del beneficio que se habría obtenido de resultar ganador", "En una fracción del beneficio esperado, proporcional a la probabilidad real que tenía de resultar ganador", "En cero, porque al no haber certeza de que hubiera ganado, el daño es puramente eventual y no indemnizable", "En un monto fijo determinado por la ley, igual para todos los casos de pérdida de oportunidad"]'::jsonb,
+  1,
+  '{"correcta": "La pérdida de una chance se avalúa prudencialmente en una fracción del beneficio esperado, correspondiente a la probabilidad real que la víctima tenía de obtenerlo, y no en el monto total del beneficio ni en cero.", "por_que_no": ["A: indemnizar el total supondría dar por cierto un resultado que en realidad es incierto (que habría ganado).", "C: la pérdida de chance no es un daño eventual; el daño final ya ocurrió con certeza, y lo incierto es la relación causal, lo que sí la hace indemnizable como daño autónomo.", "D: no existe un monto fijo legal; la avaluación es prudencial y depende de la probabilidad real acreditada en cada caso."]}'::jsonb,
+  'Doctrina y jurisprudencia (CS, sentencia de reemplazo de 6 de enero de 2025)'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2317',
+  'extracontractual',
+  'Solidaridad entre coautores de un delito o cuasidelito',
+  '2317',
+  'Si un delito o cuasidelito ha sido cometido por dos o más personas, cada una de ellas será solidariamente responsable de todo el perjuicio procedente del mismo delito o cuasidelito, salvas las excepciones de los artículos 2323 y 2328. Todo fraude o dolo cometido por dos o más personas produce la acción solidaria del precedente inciso.',
+  '[["dos o más personas"], ["solidariamente responsable"], ["todo el perjuicio"], ["fraude o dolo", "acción solidaria"], ["*"]]'::jsonb,
+  array['solidariamente responsable', 'dos o más personas', 'todo el perjuicio', 'fraude o dolo'],
+  'Código Civil, art. 2317'
+)
+on conflict (id) do nothing;
