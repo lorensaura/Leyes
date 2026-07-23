@@ -637,3 +637,34 @@ values (
   'Código Civil, art. 2332'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (12): Extracontractual, Eje C (Delimitación de estatutos)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-004',
+  'extracontractual',
+  'Acción indemnizatoria vs. acción restitutoria',
+  3,
+  'Según el artículo 2290 del Código Civil, ¿qué puede exigir el agente oficioso (gestor de negocios ajenos) al interesado cuando el negocio ha sido bien administrado?',
+  '["El reembolso de las expensas útiles o necesarias, sin derecho a salario ni a lucro cesante", "La indemnización íntegra del daño patrimonial, incluido el lucro cesante, igual que en sede extracontractual", "Una remuneración equivalente al valor de mercado de sus servicios", "Nada, porque la agencia oficiosa no genera ninguna obligación para el interesado"]'::jsonb,
+  0,
+  '{"correcta": "El art. 2290 dispone que el interesado debe reembolsar las expensas útiles o necesarias, pero no está obligado a pagar salario alguno; la acción del gestor es restitutoria, no indemnizatoria, por lo que no incluye el lucro cesante.", "por_que_no": ["B: esa es la lógica de la acción indemnizatoria extracontractual, ajena al cuasicontrato de agencia oficiosa.", "C: el art. 2290 excluye expresamente el pago de salario o remuneración.", "D: la agencia oficiosa sí genera obligaciones para el interesado, aunque limitadas al reembolso de gastos."]}'::jsonb,
+  'Art. 2290 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2290',
+  'extracontractual',
+  'Agencia oficiosa: límite de la acción restitutoria',
+  '2290',
+  'Si el negocio ha sido bien administrado, cumplirá el interesado las obligaciones que el gerente ha contraído en la gestión y le reembolsará las expensas útiles o necesarias. El interesado no es obligado a pagar salario alguno al gerente.',
+  '[["negocio ha sido bien administrado"], ["reembolsará", "expensas útiles o necesarias"], ["no es obligado a pagar salario"], ["*"]]'::jsonb,
+  array['bien administrado', 'expensas útiles o necesarias', 'no pagar salario', 'gerente'],
+  'Código Civil, art. 2290'
+)
+on conflict (id) do nothing;

@@ -1939,6 +1939,100 @@
         correcta: 'B',
         articulos_referencia: ['179 CPC'],
         objetivo_pedagogico: 'Aplicar la primera causal taxativa del art. 179 CPC (inexistencia del hecho) a un caso de incendio'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje C (Delimitación de estatutos)
+      {
+        id: 're-aplic-004',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Acción indemnizatoria vs. acción restitutoria (agencia oficiosa)',
+        tipo: 'aplicacion',
+        caso: 'Mientras el dueño de una casa está de viaje, un vecino ve que se incendia la cocina y contrata de urgencia a bomberos particulares, pagando $300.000, además de perder una tarde completa de trabajo independiente que le habría reportado $150.000.',
+        enunciado: '¿Qué puede reclamar el vecino al dueño de la casa? ¿Puede incluir el lucro cesante de $150.000?',
+        respuesta_modelo: 'El vecino actuó como agente oficioso (gestor de negocios ajenos), un cuasicontrato. Conforme al artículo 2290 del Código Civil, si el negocio fue bien administrado, el interesado debe reembolsar al gerente las expensas útiles o necesarias, pero no está obligado a pagarle salario alguno.\n\nPor eso, el vecino solo puede exigir la restitución de los $300.000 pagados a los bomberos, que constituyen un gasto necesario. No puede exigir, en cambio, los $150.000 de lucro cesante por el tiempo que dedicó a resolver el problema.\n\nLa razón de fondo es que la acción cuasicontractual es restitutoria, no indemnizatoria: se mide por el costo incurrido en beneficio ajeno, no por el daño sufrido por el gestor. El lucro cesante es una partida propia del daño patrimonial, que aquí simplemente no se indemniza porque no hay ningún hecho ilícito del dueño de la casa que dé lugar a una acción de responsabilidad.',
+        elementos_clave: [
+          { texto: 'Identifica la figura como agencia oficiosa/gestión de negocios ajenos (cuasicontrato)', keywords: ['agencia oficiosa', 'gestión de negocios', 'cuasicontrato'], pregunta: '¿Qué figura jurídica describe la situación del vecino que actúa sin mandato?' },
+          { texto: 'Concluye, con base en el art. 2290, que solo puede reclamar los $300.000 de expensas útiles o necesarias', keywords: ['2290', 'expensas útiles o necesarias', 'solo los 300.000', 'reembolso'], pregunta: '¿Qué puede exigir efectivamente el vecino conforme al artículo 2290?' },
+          { texto: 'Concluye que NO puede reclamar el lucro cesante de $150.000, porque la acción cuasicontractual es restitutoria y no indemnizatoria', keywords: ['no puede reclamar', 'lucro cesante', 'restitutoria', 'no indemnizatoria'], pregunta: '¿Puede el vecino sumar a su reclamo los $150.000 que dejó de ganar esa tarde?' }
+        ],
+        articulos_referencia: ['2290'],
+        objetivo_pedagogico: 'Aplicar la distinción entre acción restitutoria (cuasicontractual) e indemnizatoria (extracontractual) a un caso de agencia oficiosa'
+      },
+
+      {
+        id: 're-detect-005',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Criterio de delimitación contractual/extracontractual',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Para saber si un caso se rige por la responsabilidad contractual o por la extracontractual, lo primero que hay que preguntarse es si hubo culpa o dolo del demandado; solo si hay culpa o dolo estamos ante un caso de responsabilidad, sea contractual o extracontractual."',
+        enunciado: 'El alumno identifica mal cuál es el criterio decisivo para delimitar ambos estatutos. Señala el error y expón el criterio correcto.',
+        respuesta_modelo: 'El alumno confunde el requisito de imputación subjetiva (culpa o dolo), que es común a ambos estatutos y no permite diferenciarlos, con el criterio que efectivamente decide cuál de los dos se aplica.\n\nEl criterio de delimitación no es "¿hubo culpa?" ni "¿hubo daño?", sino una pregunta distinta: ¿existía entre las partes una obligación previa cuyo incumplimiento sea el antecedente del daño? Si la hay, se está en el terreno contractual (una obligación de "segundo grado" que presupone y sanciona el incumplimiento de la obligación primera); si no la hay, se está en el terreno extracontractual (una obligación originaria, cuyo antecedente son los deberes generales de cuidado que rigen entre extraños).\n\nLa Corte Suprema, en fallo de 3 de julio de 1951, confirma este criterio: la culpa contractual se produce por el incumplimiento o retardo del deudor de una obligación que nace del contrato, del cuasicontrato o de la ley; la extracontractual no supone nexo alguno previo entre las partes, porque se genera por hechos de personas extrañas entre sí.',
+        elementos_clave: [
+          { texto: 'Detecta que "hubo culpa o dolo" no es el criterio de delimitación, porque es un requisito común a ambos estatutos', keywords: ['no es el criterio', 'común a ambos', 'no distingue'], pregunta: '¿La presencia de culpa o dolo permite distinguir si un caso es contractual o extracontractual?' },
+          { texto: 'Formula el criterio correcto: si existía o no una obligación previa entre las partes cuyo incumplimiento sea el antecedente del daño', keywords: ['obligación previa', 'antecedente del daño', 'segundo grado', 'primer grado'], pregunta: '¿Cuál es entonces la pregunta que sí decide el estatuto aplicable?' },
+          { texto: 'Cita o alude al criterio jurisprudencial (CS 1951) sobre la culpa contractual como incumplimiento de obligación previa', keywords: ['1951', 'incumplimiento o retardo', 'nace del contrato'], pregunta: '¿Qué dijo la Corte Suprema en 1951 sobre este criterio?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Corregir la confusión entre el requisito de imputación subjetiva (común a ambos estatutos) y el criterio estructural que los delimita'
+      },
+
+      {
+        id: 're-just-004',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'El derecho común de la responsabilidad civil',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Expón la discusión sobre cuál estatuto constituye el "derecho común" de la responsabilidad civil, aplicable supletoriamente a las obligaciones de fuente legal. Presenta la tesis de Alessandri, la tesis contraria y tu conclusión.',
+        respuesta_modelo: 'El Código regula dos estatutos de responsabilidad (contractual y extracontractual) pero no dice cuál opera supletoriamente frente a hipótesis que no encajan limpiamente en ninguno, como el incumplimiento de obligaciones de fuente legal.\n\nAlessandri sostiene que el derecho común es el contractual, con tres argumentos: (1) es el único régimen regulado genéricamente, en los artículos 1545 y siguientes; (2) el Título XII del Libro IV se titula "Del efecto de las obligaciones", expresión que las involucra a todas sin distinguir su fuente; y (3) varias normas gradúan la culpa (leve, levísima) a propósito de obligaciones legales o cuasicontractuales (artículos 391, 427, 2288, 2308), y la graduación tripartita del artículo 44 sería una institución propiamente contractual.\n\nLa tesis contraria replica en varios frentes: el Título XII presupone una estipulación previa entre partes, lo que no ocurre en las obligaciones extracontractuales; el artículo 2284 agrupa las obligaciones que se contraen sin convención (legales, cuasicontractuales y delictuales), sugiriendo que comparten naturaleza y se distinguen de las contractuales; y, sobre todo, la inmensa mayoría de los deberes de cuidado del tráfico no dan lugar a relaciones obligatorias previas, de modo que en la práctica el régimen común es el extracontractual. Barros añade una objeción que ataca la premisa misma de Alessandri: si algunas normas del Título XII (como el artículo 1556 sobre daño emergente y lucro cesante) se aplican indistintamente a ambos estatutos, el título no es exclusivamente contractual, y el argumento del epígrafe se derrumba.\n\nMi conclusión es que el criterio decisivo no es la fuente de la obligación, sino su estructura: lo que importa no es de dónde nace la obligación, sino si existe o no una obligación personal de primer grado entre las partes cuyo incumplimiento sea el antecedente del daño. Por eso Barros puede sostener, sin incoherencia, que la obligación legal de alimentos se acerca al estatuto contractual (hay un vínculo personal directo), mientras que la obligación legal de los directores frente a los accionistas permanece en el extracontractual (el vínculo del director es con la sociedad, solo mediatamente con el accionista).',
+        elementos_clave: [
+          { texto: 'Plantea la laguna: el Código no dice cuál estatuto es supletorio para obligaciones de fuente legal', keywords: ['laguna', 'no establece', 'supletorio', 'obligaciones legales'], pregunta: '¿Cuál es el problema que este eje busca resolver?' },
+          { texto: 'Expone los tres argumentos de Alessandri (ubicación normativa, epígrafe del Título XII, graduación de la culpa en obligaciones legales/cuasicontractuales)', keywords: ['Alessandri', 'Título XII', 'del efecto de las obligaciones', 'graduación de la culpa'], pregunta: '¿Cuáles son los tres argumentos con que Alessandri sostiene que el derecho común es el contractual?' },
+          { texto: 'Expone la réplica (el art. 2284 agrupa obligaciones no convencionales; la objeción de Barros sobre normas comunes a ambos estatutos)', keywords: ['2284', 'obligaciones no convencionales', 'Barros', 'normas comunes a ambos'], pregunta: '¿Cómo se le responde a Alessandri?' },
+          { texto: 'Concluye con el criterio estructural (obligación de primer grado entre las partes) y lo aplica a los ejemplos de alimentos y directores de sociedad anónima', keywords: ['criterio estructural', 'primer grado', 'alimentos', 'directores', 'accionistas'], pregunta: '¿Cuál es el criterio que permite resolver la aparente incoherencia en la zona gris de las obligaciones legales?' }
+        ],
+        articulos_referencia: ['1545', '2284', '1556', '44'],
+        objetivo_pedagogico: 'Exponer y tomar posición fundada en el debate sobre el derecho común de la responsabilidad civil'
+      },
+
+      {
+        id: 're-mc-005',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Aplicaciones del criterio de delimitación',
+        tipo: 'discriminacion_mc',
+        caso: 'Un contrato de compraventa de un inmueble es declarado nulo por falta de un requisito de forma. Una de las partes reclama la indemnización de los perjuicios que le causó haber confiado en la validez del contrato.',
+        enunciado: '¿Bajo qué estatuto de responsabilidad se rige esta indemnización?',
+        opciones: [
+          { letra: 'A', texto: 'Responsabilidad contractual, porque las partes habían celebrado un contrato y ese es el origen del daño.', rationale: 'Error: si el contrato es nulo, no hubo válidamente una obligación de primer grado que incumplir; mal puede haber entonces responsabilidad de segundo grado.' },
+          { letra: 'B', texto: 'Responsabilidad extracontractual, porque la nulidad no tiene su origen en un incumplimiento contractual, sino en la ineficacia del contrato mismo.', rationale: 'CORRECTO. Si el contrato es nulo, no existió obligación de primer grado válida que incumplir, de modo que la indemnización de los perjuicios causados con motivo de la nulidad se rige por la responsabilidad extracontractual.' },
+          { letra: 'C', texto: 'Responsabilidad cuasicontractual, porque se trata de restituir lo que las partes se dieron en virtud del contrato nulo.', rationale: 'Error: aquí se pregunta por la indemnización de perjuicios (más allá de las restituciones mutuas propias de la nulidad), la cual se rige por la responsabilidad extracontractual, no por un cuasicontrato.' },
+          { letra: 'D', texto: 'No existe acción posible, porque la declaración de nulidad extingue toda posibilidad de reclamar perjuicios.', rationale: 'Error: la nulidad no impide reclamar los perjuicios causados con motivo de ella; solo determina que el estatuto aplicable sea el extracontractual, no el contractual.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar el criterio estructural de delimitación al caso de indemnización por nulidad del contrato'
+      },
+
+      {
+        id: 'transv-just-001',
+        materia: 'transversal',
+        tema: 'Responsabilidad civil',
+        subtema: 'Delimitación entre los tres estatutos de responsabilidad',
+        tipo: 'justificacion',
+        caso: 'Una persona sufre un daño en tres situaciones distintas: (1) durante la ejecución de un contrato de transporte ya perfeccionado; (2) durante las tratativas preliminares de un contrato que finalmente nunca se celebra; (3) en un choque con un desconocido, sin vínculo previo alguno entre ambos.',
+        enunciado: 'Para cada una de las tres situaciones, indica qué estatuto de responsabilidad civil resulta aplicable (contractual, precontractual o extracontractual) y explica el criterio común que permite distinguirlos.',
+        respuesta_modelo: 'El criterio común a los tres estatutos es siempre el mismo: preguntar si existía entre las partes una obligación o un deber de conducta previo, y de qué naturaleza, cuyo incumplimiento sea el antecedente del daño.\n\nEn la primera situación, existe un contrato de transporte ya perfeccionado: hay una obligación de primer grado (transportar al pasajero sano y salvo) cuyo incumplimiento genera una obligación de segundo grado, de indemnizar. Se aplica el estatuto contractual.\n\nEn la segunda situación, no hay contrato (nunca se celebró), pero tampoco se trata de dos extraños: existe una relación de negociación, gobernada por deberes de buena fe precontractual (informarse recíprocamente, no romper las tratativas de mala fe). Se aplica el estatuto precontractual, que en el derecho chileno se construye, a falta de regulación orgánica propia, con apoyo en la buena fe y, según la posición que se adopte, con reglas propias o por remisión a la extracontractual.\n\nEn la tercera situación no existe ningún vínculo previo entre las partes: son extraños entre sí, y el antecedente del daño es la sola infracción de los deberes generales de cuidado que rigen los encuentros espontáneos (el alterum non laedere). Se aplica el estatuto extracontractual, que es el régimen residual y general: rige siempre que no exista un vínculo obligatorio o de negociación previo entre las partes.',
+        elementos_clave: [
+          { texto: 'Formula el criterio común: preguntar si existía un vínculo previo (obligación o deber de conducta) entre las partes, y de qué naturaleza', keywords: ['vínculo previo', 'criterio común', 'obligación o deber'], pregunta: '¿Qué pregunta permite decidir, en los tres casos, cuál estatuto se aplica?' },
+          { texto: 'Aplica el estatuto contractual al primer caso (contrato ya perfeccionado, obligación de segundo grado)', keywords: ['contrato perfeccionado', 'segundo grado', 'estatuto contractual'], pregunta: '¿Por qué el primer caso se rige por la responsabilidad contractual?' },
+          { texto: 'Aplica el estatuto precontractual al segundo caso (tratativas, deberes de buena fe, sin contrato celebrado)', keywords: ['precontractual', 'tratativas', 'buena fe', 'no se celebró'], pregunta: '¿Qué estatuto rige el daño ocurrido durante negociaciones que nunca terminaron en contrato?' },
+          { texto: 'Aplica el estatuto extracontractual al tercer caso (sin vínculo previo alguno, deberes generales de cuidado)', keywords: ['sin vínculo previo', 'extraños', 'deberes generales de cuidado', 'extracontractual'], pregunta: '¿Qué estatuto rige el choque entre dos desconocidos sin ningún vínculo previo?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar transversalmente el criterio estructural de delimitación a los tres estatutos de responsabilidad civil (contractual, precontractual, extracontractual)'
       }
     ];
 
