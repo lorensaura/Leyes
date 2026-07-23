@@ -2930,6 +2930,80 @@
         correcta: 'B',
         articulos_referencia: ['2320', '2322'],
         objetivo_pedagogico: 'Discriminar las diferencias textuales entre los arts. 2320 inciso 4° y 2322, y su aplicación conjunta en la práctica jurisprudencial'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje P (Responsabilidad por el hecho de las cosas)
+      {
+        id: 're-aplic-017',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Ley N° 21.020: mascota común vs. animal potencialmente peligroso',
+        tipo: 'aplicacion',
+        caso: 'El perro doméstico de una familia, que nunca fue calificado como "potencialmente peligroso" conforme a la Ley N° 21.020, se escapa del patio por un descuido y muerde a un vecino que pasaba por la vereda.',
+        enunciado: '¿Debe la víctima probar la negligencia de la familia, o responde esta "siempre", sin posibilidad de excusa, por aplicación literal del artículo 13 de la Ley N° 21.020?',
+        respuesta_modelo: 'La familia no responde "siempre" y sin excusa posible: pese a la expresión "siempre" del artículo 13 de la Ley N° 21.020, la conclusión correcta es que la ley no introdujo una responsabilidad objetiva general para toda mascota.\n\nLa historia de la ley muestra que la moción original sí establecía una responsabilidad "de manera objetiva", pero esa fórmula fue cambiada durante la tramitación, sin que conste una explicación clara del cambio a la expresión "responderá siempre". Un argumento sistemático confirma esta lectura: si el artículo 13 ya estableciera una responsabilidad estricta general, carecería de sentido el artículo 6 de la misma ley, que remite a la mascota calificada de "potencialmente peligrosa" al régimen del animal fiero (responsabilidad estricta del art. 2327 CC); esa remisión sería superflua si todas las mascotas ya respondieran siempre y sin excusa.\n\nComo el perro de la familia no fue calificado de potencialmente peligroso, se aplica la presunción simplemente legal del artículo 2326 del Código Civil (o el estándar de "medidas necesarias" de la propia ley N° 21.020, que presupone un juicio sobre el cuidado debido): la familia puede exonerarse probando que ni ella ni su dependiente incurrieron en culpa respecto de la soltura del animal.',
+        elementos_clave: [
+          { texto: 'Concluye que la familia NO responde de manera estricta y sin excusa, pese a la expresión "siempre" de la ley', keywords: ['no responde de manera estricta', 'sí puede excusarse', 'no es objetiva'], pregunta: '¿Responde la familia sin ninguna posibilidad de excusa, solo por la palabra "siempre" del art. 13?' },
+          { texto: 'Explica el argumento histórico-legislativo (la moción original decía "objetiva", se cambió sin explicación)', keywords: ['moción original', 'objetiva', 'sin explicación'], pregunta: '¿Qué muestra la historia legislativa de la Ley N° 21.020 sobre la intención de establecer responsabilidad objetiva?' },
+          { texto: 'Explica el argumento sistemático: el art. 6 (remisión al animal fiero para mascotas peligrosas) sería superfluo si todas las mascotas ya respondieran objetivamente', keywords: ['artículo 6', 'potencialmente peligrosa', 'sería superflua'], pregunta: '¿Qué argumento sistemático confirma que no toda mascota responde objetivamente?' }
+        ],
+        articulos_referencia: ['2326', '2327'],
+        objetivo_pedagogico: 'Aplicar correctamente el alcance de la Ley N° 21.020, distinguiendo la mascota común (presunción de culpa) del animal potencialmente peligroso (responsabilidad estricta)'
+      },
+
+      {
+        id: 're-detect-018',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'La excusa causal (no de diligencia) del artículo 2328',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Si una maceta cae del quinto piso de un edificio y no puede determinarse de cuál departamento cayó exactamente, cada uno de los propietarios de ese piso puede exonerarse de responsabilidad probando que él personalmente aseguró bien sus propias macetas y actuó con la diligencia de un buen padre de familia."',
+        enunciado: 'El alumno describe mal la única excusa que admite el artículo 2328 del Código Civil. Identifica el error y explica cuál es la excusa correcta.',
+        respuesta_modelo: 'El alumno confunde una excusa de diligencia (propia de las presunciones de culpa ordinarias) con la excusa que efectivamente admite el artículo 2328, que es de naturaleza estrictamente causal.\n\nEl artículo 2328 no permite exonerarse probando que se actuó con el cuidado de un buen padre de familia respecto del objeto que cayó. La única vía de exculpación consiste en probar que la caída se debió, con exclusividad, a la culpa o mala intención de una persona identificada: en la práctica, señalar el lugar preciso (el departamento específico) desde el cual cayó el objeto.\n\nPor eso, aunque cada propietario pruebe individualmente que sus propias macetas estaban firmemente aseguradas, esa prueba no lo exonera, porque no dice nada sobre quién causó efectivamente el daño; todos siguen respondiendo y dividiendo la indemnización, salvo que se identifique con exclusividad el departamento preciso desde el cual cayó el objeto. Esta estructura, una excusa formulada en términos causales y no de diligencia, es lo que ha llevado a Barros a sostener que el artículo 2328 es, en su estructura real, una responsabilidad estricta.',
+        elementos_clave: [
+          { texto: 'Detecta que el alumno propone una excusa de diligencia que el artículo 2328 no admite', keywords: ['no admite diligencia', 'excusa incorrecta'], pregunta: '¿Permite el artículo 2328 exonerarse probando la propia diligencia respecto del objeto?' },
+          { texto: 'Explica que la única excusa válida es causal: identificar con exclusividad el lugar/persona de donde cayó el objeto', keywords: ['excusa causal', 'lugar preciso', 'exclusividad', 'departamento 502'], pregunta: '¿Cuál es la única excusa que efectivamente admite el artículo 2328?' },
+          { texto: 'Relaciona esto con la tesis de Barros de que el art. 2328 es, en su estructura real, una responsabilidad estricta', keywords: ['Barros', 'responsabilidad estricta', 'estructura real'], pregunta: '¿Qué consecuencia dogmática extrae Barros de esta estructura causal de la excusa?' }
+        ],
+        articulos_referencia: ['2328'],
+        objetivo_pedagogico: 'Corregir la confusión entre una excusa de diligencia y la excusa estrictamente causal que admite el artículo 2328'
+      },
+
+      {
+        id: 're-just-017',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'La disputa sobre la verdadera naturaleza del artículo 2328',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué sostiene Barros que el artículo 2328 es, en su estructura real, una responsabilidad estricta y no una presunción de culpa? ¿Qué le responden Alessandri y Corral?',
+        respuesta_modelo: 'Barros observa que la única excusa que admite el artículo 2328 opera enteramente en el plano de la causalidad (quién causó el daño) y no en el plano de la culpa (si el demandado actuó o no con el cuidado debido). Quien habita la parte del edificio desde la que pudo haber caído el objeto no puede liberarse acreditando que actuó con el cuidado de un buen padre de familia respecto de ese objeto: solo puede liberarse demostrando que, en los hechos, no fue él quien lo dejó caer.\n\nDe esta observación, Barros concluye que, pese a describirse tradicionalmente como una presunción de culpabilidad, la responsabilidad del artículo 2328 es, en su estructura real, una responsabilidad estricta: no existe ninguna prueba de diligencia que sirva de excusa suficiente, porque la única defensa disponible es de naturaleza causal.\n\nAlessandri y, en el mismo sentido, Corral, sostienen en cambio que se trata simplemente de una presunción de culpa, aunque de difícil desvirtuación práctica, sin que ello altere su naturaleza dogmática como culpa presumida.\n\nLo que está en juego, más allá de la etiqueta, es la misma cuestión que atraviesa transversalmente el sistema chileno de presunciones: la distancia entre la culpa presumida y la responsabilidad estricta se reduce, en no pocos casos, a una cuestión de terminología antes que de sustancia práctica. El artículo 2328 es el ejemplo más nítido, porque en él esa aproximación está en el texto mismo de la norma, sin necesidad de ningún desarrollo jurisprudencial adicional que la produzca (a diferencia de los artículos 2320 y 2329, donde la aproximación resulta de una interpretación jurisprudencial particularmente estricta de una excusa que, en el papel, sí admite la prueba de diligencia).',
+        elementos_clave: [
+          { texto: 'Explica el argumento de Barros: la excusa del art. 2328 opera en el plano causal, no en el de la culpa/diligencia', keywords: ['Barros', 'plano causal', 'no en el de la culpa'], pregunta: '¿Cuál es el argumento central de Barros para sostener que el art. 2328 es responsabilidad estricta?' },
+          { texto: 'Expone la posición contraria de Alessandri y Corral (sigue siendo culpa presumida, de difícil desvirtuación)', keywords: ['Alessandri', 'Corral', 'culpa presumida', 'difícil desvirtuación'], pregunta: '¿Qué responden Alessandri y Corral a la tesis de Barros?' },
+          { texto: 'Concluye que la diferencia entre culpa presumida y responsabilidad estricta es, en este caso, más terminológica que sustancial, y que en el art. 2328 esa aproximación está en el propio texto de la norma', keywords: ['terminológica', 'en el propio texto', 'sin desarrollo jurisprudencial adicional'], pregunta: '¿Qué hace del artículo 2328 "el ejemplo más nítido" de esta tensión en todo el sistema?' }
+        ],
+        articulos_referencia: ['2328'],
+        objetivo_pedagogico: 'Exponer la disputa entre Barros y Alessandri/Corral sobre la verdadera naturaleza jurídica del artículo 2328'
+      },
+
+      {
+        id: 're-mc-018',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Presunción de culpa (art. 2326) vs. responsabilidad estricta (art. 2327)',
+        tipo: 'discriminacion_mc',
+        caso: 'Un caballo de tiro, que presta servicio de guarda y transporte en un predio rural, se suelta por un descuido del dependiente encargado de vigilarlo y causa daños a un vecino. En un caso distinto, un puma mantenido como mascota exótica sin ninguna utilidad de guarda o servicio escapa de su jaula y causa daños similares.',
+        enunciado: '¿Bajo qué régimen responde el dueño en cada uno de los dos casos?',
+        opciones: [
+          { letra: 'A', texto: 'En ambos casos rige la responsabilidad estricta del artículo 2327, porque cualquier animal que cause daño queda sujeto a ese régimen.', rationale: 'Error: el artículo 2327 se reserva exclusivamente para animales fieros de los que no se reporta utilidad para la guarda o servicio de un predio; el caballo de tiro no encaja en esa categoría.' },
+          { letra: 'B', texto: 'El caballo se rige por la presunción de culpa del artículo 2326 (el dueño puede exonerarse probando ausencia de culpa suya o de su dependiente); el puma se rige por la responsabilidad estricta del artículo 2327 (no admite excusa de diligencia).', rationale: 'CORRECTO. El caballo de tiro reporta utilidad de guarda o servicio, por lo que se aplica la presunción simplemente legal del art. 2326; el puma es un animal fiero sin utilidad de guarda o servicio, por lo que se aplica la responsabilidad estricta del art. 2327.' },
+          { letra: 'C', texto: 'En ambos casos rige la presunción de culpa del artículo 2326, porque ningún animal doméstico o exótico está sujeto a responsabilidad estricta en Chile.', rationale: 'Error: el artículo 2327 sí consagra una responsabilidad estricta específica para los animales fieros sin utilidad de guarda o servicio, como el puma del ejemplo.' },
+          { letra: 'D', texto: 'El régimen aplicable depende exclusivamente de si el animal está o no registrado conforme a la Ley N° 21.020, con independencia de su especie o utilidad.', rationale: 'Error: la calificación de fiero y sin utilidad de guarda o servicio del art. 2327 es la que determina el régimen aplicable, no el registro bajo la Ley N° 21.020, que regula específicamente mascotas y animales de compañía.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2326', '2327'],
+        objetivo_pedagogico: 'Discriminar entre la presunción de culpa del art. 2326 (animales domésticos útiles) y la responsabilidad estricta del art. 2327 (animales fieros sin utilidad)'
       }
     ];
 

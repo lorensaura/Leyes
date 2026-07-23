@@ -1015,3 +1015,34 @@ values (
   'Código Civil, art. 2322'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (25): Extracontractual, Eje P (Hecho de las cosas: animales, ruina, cosas que caen)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-017',
+  'extracontractual',
+  'Naturaleza de la excusa del artículo 2328',
+  4,
+  '¿Por qué sostiene Barros que la responsabilidad del artículo 2328 (cosa que cae o se arroja) es, en su estructura real, una responsabilidad estricta y no una simple presunción de culpa?',
+  '["Porque la norma no admite ninguna excusa en absoluto, ni siquiera identificando al causante", "Porque la única excusa que la norma admite opera en el plano causal (identificar con exclusividad quién causó la caída), y no permite una prueba de diligencia respecto del cuidado del objeto", "Porque el artículo 2328 exige culpa grave del demandado, un estándar más exigente que en las demás presunciones", "Porque la norma fue derogada tácitamente por la Ley N° 21.020 sobre tenencia responsable de mascotas"]'::jsonb,
+  1,
+  '{"correcta": "Barros observa que la excusa del art. 2328 no permite probar la propia diligencia respecto del objeto; solo permite identificar, con exclusividad, quién causó la caída. Al operar la excusa en el plano de la causalidad y no en el de la culpa, la norma se comporta, en su estructura real, como una responsabilidad estricta.", "por_que_no": ["A: sí existe una excusa (identificar al causante exclusivo), solo que no es una excusa de diligencia.", "C: el artículo 2328 no exige un grado de culpa distinto; el punto de Barros es que no exige culpa alguna en su excusa, sino causalidad.", "D: el artículo 2328 no ha sido derogado; regula una hipótesis distinta (cosas que caen de edificios) de la que regula la Ley N° 21.020 (animales)."]}'::jsonb,
+  'Art. 2328 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2326',
+  'extracontractual',
+  'Presunción de culpa del dueño de un animal',
+  '2326',
+  'El dueño de un animal es responsable de los daños causados por el mismo animal, aun después que se haya soltado o extraviado; salvo que la soltura, extravío o daño no pueda imputarse a culpa del dueño o del dependiente encargado de la guarda o servicio del animal.',
+  '[["dueño de un animal", "responsable"], ["soltado o extraviado"], ["no pueda imputarse a culpa"], ["*"]]'::jsonb,
+  array['dueño de un animal', 'soltado o extraviado', 'no pueda imputarse a culpa'],
+  'Código Civil, art. 2326'
+)
+on conflict (id) do nothing;
