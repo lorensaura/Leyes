@@ -1712,6 +1712,82 @@
         correcta: 'B',
         articulos_referencia: ['2468', '44'],
         objetivo_pedagogico: 'Precisar que el fraude pauliano exige solo conocimiento del mal estado de los negocios, no la intención de dañar propia del dolo'
+      },
+
+      // Lote 2026-07: Contractual, Sección H (Cláusulas que modifican la responsabilidad)
+      {
+        id: 'rc-aplic-012',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Cláusula de tope indemnizatorio',
+        tipo: 'aplicacion',
+        caso: 'Una empresa de logística celebra un contrato de transporte de mercadería con una fábrica, pactando una cláusula según la cual, en caso de pérdida o daño de la carga, la responsabilidad de la empresa de logística "no excederá en ningún caso de 50 UF por evento, independientemente del valor real de la mercadería transportada". Durante un traslado, por negligencia leve de un conductor, se pierde un cargamento cuyo valor real asciende a 300 UF.',
+        enunciado: '¿Es válida esta cláusula de tope indemnizatorio? ¿Qué límite tendría si el conductor hubiera actuado con dolo o culpa grave?',
+        respuesta_modelo: 'Sí es válida, en principio: las cláusulas de tope indemnizatorio no quedan restringidas a los casos que la ley menciona expresamente, sino que se extienden a otras materias, como fijar un límite cuantitativo a la indemnización, cualquiera sea la magnitud real del perjuicio.\n\nComo el conductor actuó con culpa leve, la empresa de logística solo debe pagar hasta las 50 UF pactadas, aunque el daño real sea mayor.\n\nSin embargo, esta cláusula tiene un límite infranqueable: no podría aplicarse si el incumplimiento se debiera a dolo o culpa grave del conductor, porque equivaldría a condonar de antemano el dolo futuro (o la culpa grave, que el artículo 44 equipara al dolo), lo que adolece de objeto ilícito y es nulo de nulidad absoluta conforme al artículo 1465.\n\nEn ese caso, la fábrica podría reclamar la indemnización íntegra del daño real, sin sujeción al tope de 50 UF.',
+        elementos_clave: [
+          { texto: 'Reconoce que la cláusula de tope indemnizatorio es en principio válida, aunque no esté prevista expresamente por la ley para este contrato', keywords: ['es válida', 'en principio válida', 'tope indemnizatorio procede'], pregunta: '¿Es necesario que la ley prevea expresamente esta clase de contrato para que las partes puedan fijar un tope a la indemnización?' },
+          { texto: 'Concluye que, siendo culpa leve, la empresa de logística solo responde hasta el tope de 50 UF pactado', keywords: ['solo hasta las 50', 'límite pactado', 'tope de 50'], pregunta: '¿Cuánto debe pagar la empresa de logística si el conductor solo actuó con culpa leve?' },
+          { texto: 'Señala que el tope no puede aplicarse si el incumplimiento se debe a dolo o culpa grave, por equivaler a una condonación anticipada del dolo (art. 1465)', keywords: ['dolo', 'culpa grave', '1465', 'condonación anticipada', 'no aplica el tope'], pregunta: '¿Puede el tope de 50 UF proteger a la empresa si el conductor actuó dolosamente o con culpa grave?' },
+          { texto: 'Explica que, en tal caso, la fábrica podría reclamar la indemnización íntegra del daño real', keywords: ['indemnización íntegra', 'las 300 uf completas', 'sin sujeción al tope'], pregunta: '¿Qué podría cobrar la fábrica si se prueba que el conductor actuó con dolo?' }
+        ],
+        articulos_referencia: ['1465', '44'],
+        objetivo_pedagogico: 'Aplicar la validez y el límite infranqueable de una cláusula de tope indemnizatorio'
+      },
+
+      {
+        id: 'rc-just-010',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Interpretación de las cláusulas modificatorias',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué se sostiene que la alteración convencional del régimen legal de responsabilidad no se presume y debe interpretarse restrictivamente? ¿Qué principio cumple una función central en esta interpretación?',
+        respuesta_modelo: 'El régimen legal de los artículos 1547 y siguientes constituye el derecho común, la regla supletoria que se aplica a falta de pacto en contrario. Solo puede alterarse mediante una estipulación expresa, especial y explícita, conforme lo confirman los incisos finales de los artículos 1547 y 1558, y el artículo 1673. De ahí que, en la duda sobre si las partes quisieron o no apartarse del régimen legal, deba estarse por la subsistencia de este: la alteración no se presume.\n\nEstas cláusulas se interpretan, además, restrictivamente, porque la responsabilidad del deudor incumplidor es el principio general del sistema, y las cláusulas que la limitan o suprimen son, por definición, excepcionales; conforme al artículo 1563, las excepciones son de derecho estricto.\n\nEl principio de la buena fe, consagrado en el artículo 1546, cumple una función central en esta interpretación: una función integradora, que incorpora al contrato deberes no expresados, y una función interpretativa, que fija el sentido de lo expresado. Este principio impide que una cláusula redactada en términos absolutos libere al deudor de toda diligencia y burle la legítima expectativa del acreedor.',
+        elementos_clave: [
+          { texto: 'Explica que el régimen legal es la regla supletoria y solo se altera mediante estipulación expresa, especial y explícita', keywords: ['regla supletoria', 'estipulación expresa', 'especial y explícita'], pregunta: '¿Basta una cláusula ambigua para entender alterado el régimen legal de responsabilidad, o se requiere algo más?' },
+          { texto: 'Señala que, en la duda sobre si las partes quisieron apartarse del régimen legal, debe estarse por su subsistencia', keywords: ['en la duda', 'subsistencia del régimen legal', 'no se presume la alteración'], pregunta: '¿Qué ocurre si no queda claro si las partes quisieron o no modificar las reglas legales de responsabilidad?' },
+          { texto: 'Explica que estas cláusulas se interpretan restrictivamente porque la responsabilidad es la regla general y las cláusulas que la limitan son excepcionales', keywords: ['interpretación restrictiva', 'regla general', 'excepcional', '1563'], pregunta: '¿Por qué se dice que estas cláusulas deben interpretarse de manera restrictiva y no amplia?' },
+          { texto: 'Señala que el principio de la buena fe (art. 1546) cumple una función integradora e interpretativa central en esta materia', keywords: ['buena fe', '1546', 'función integradora', 'función interpretativa'], pregunta: '¿Qué principio del Código cumple el papel más importante al interpretar una cláusula modificatoria ambigua?' }
+        ],
+        articulos_referencia: ['1547', '1546', '1563'],
+        objetivo_pedagogico: 'Justificar por qué las cláusulas modificatorias de la responsabilidad no se presumen y deben interpretarse restrictivamente conforme a la buena fe'
+      },
+
+      {
+        id: 'rc-detect-010',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'Condonación del dolo pasado vs. futuro (art. 1465)',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde en su examen de grado lo siguiente: "El artículo 1465 establece que nunca puede condonarse el dolo, ni pasado ni futuro, porque el dolo es siempre de orden público y no admite ningún tipo de renuncia por parte del acreedor, cualquiera sea el momento en que se haya cometido."',
+        enunciado: 'El alumno comete un error jurídico central. Identifícalo y explica la regla correcta.',
+        respuesta_modelo: 'El alumno confunde las dos hipótesis que el artículo 1465 trata de manera diametralmente opuesta.\n\nEl dolo ya acaecido, esto es, pasado o presente, sí puede condonarse, siempre que la condonación sea expresa y el acreedor tenga conocimiento del dolo que perdona. Esto tiene aplicación general en los finiquitos: el acreedor puede renunciar a perseguir un dolo ya consumado, aunque esa renuncia no se presume ni se infiere de fórmulas genéricas.\n\nLo que el artículo 1465 prohíbe, en su segunda parte, es únicamente la condonación del dolo futuro: admitir que un contratante quede de antemano liberado de las consecuencias de su propio dolo equivaldría a autorizarlo a no cumplir cuando le pluguiere. Esta es la hipótesis de orden público, sancionada con objeto ilícito y nulidad absoluta; la condonación del dolo pasado, en cambio, es perfectamente válida si es expresa y con conocimiento.',
+        elementos_clave: [
+          { texto: 'Detecta que el art. 1465 sí permite condonar el dolo ya acaecido (pasado), siempre que la condonación sea expresa y con conocimiento del acreedor', keywords: ['dolo pasado', 'sí puede condonarse', 'expresa', 'con conocimiento'], pregunta: '¿Puede un acreedor perdonar un dolo que el deudor ya cometió, con conocimiento de causa?' },
+          { texto: 'Señala que lo que el art. 1465 prohíbe es únicamente la condonación del dolo futuro, no del ya cometido', keywords: ['dolo futuro', 'únicamente prohíbe', 'no del ya cometido'], pregunta: '¿Cuál de las dos hipótesis, dolo pasado o dolo futuro, es la que el art. 1465 realmente prohíbe condonar?' },
+          { texto: 'Explica que esta distinción tiene aplicación práctica en los finiquitos, donde el acreedor puede renunciar a un dolo ya consumado, pero esa renuncia no se presume', keywords: ['finiquitos', 'no se presume', 'renuncia específica'], pregunta: '¿En qué situación práctica cobra importancia la posibilidad de condonar el dolo ya acaecido?' }
+        ],
+        articulos_referencia: ['1465'],
+        objetivo_pedagogico: 'Corregir la confusión entre la condonación válida del dolo pasado y la prohibición de condonar el dolo futuro'
+      },
+
+      {
+        id: 'rc-mc-009',
+        materia: 'civil',
+        tema: 'Responsabilidad contractual',
+        subtema: 'La cláusula "no admitirá interpretación"',
+        tipo: 'discriminacion_mc',
+        caso: 'Un contrato de arrendamiento de maquinaria industrial incluye una cláusula que señala expresamente: "Este contrato no admitirá interpretación alguna; deberá estarse exclusivamente a su tenor literal en cualquier controversia futura." Surge después una disputa sobre el alcance de una obligación de mantenimiento redactada en términos ambiguos.',
+        enunciado: '¿Es eficaz esta cláusula para impedir que el juez interprete el contrato?',
+        opciones: [
+          { letra: 'A', texto: 'Sí, porque la autonomía de la voluntad permite a las partes excluir cualquier ejercicio interpretativo sobre lo pactado.', rationale: 'Error: ignora que las reglas de interpretación de los artículos 1560 y siguientes, y muy señaladamente la buena fe del artículo 1546, pertenecen al orden público contractual y no pueden derogarse por la voluntad de las partes.' },
+          { letra: 'B', texto: 'No, porque todo contrato, por claro que parezca, siempre debe ser interpretado, y las reglas de interpretación del Código, en particular la buena fe del artículo 1546, pertenecen al orden público contractual y no pueden derogarse por la voluntad de las partes.', rationale: 'CORRECTO. La interpretación es una operación lógica previa e inevitable a toda aplicación del contrato; una cláusula que pretenda excluirla choca contra normas indisponibles y debe tenerse por no escrita en cuanto persigue ese efecto.' },
+          { letra: 'C', texto: 'Sí, pero solo si ambas partes cuentan con asesoría legal al momento de celebrar el contrato.', rationale: 'Error: la asesoría legal de las partes no habilita a derogar normas de orden público como las reglas de interpretación contractual; el criterio no depende de si hubo o no asesoría.' },
+          { letra: 'D', texto: 'No, porque las cláusulas de este tipo adolecen de objeto ilícito y son nulas de nulidad absoluta, igual que la condonación del dolo futuro.', rationale: 'Error: el manual la califica de ineficaz o tenida por no escrita en cuanto a ese efecto puntual, sin asimilarla a una hipótesis de objeto ilícito y nulidad absoluta como la condonación anticipada del dolo.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['1546', '1560'],
+        objetivo_pedagogico: 'Precisar que las reglas de interpretación contractual y la buena fe son de orden público y no pueden excluirse convencionalmente'
       }
     ];
 

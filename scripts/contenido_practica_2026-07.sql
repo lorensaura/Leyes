@@ -511,3 +511,67 @@ values (
   'Código Civil, art. 2465'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE 9: Contractual, Sección H. Cláusulas que modifican la responsabilidad
+-- (última sección del manual de Contractual)
+-- ════════════════════════════════════════════════════════════════════════
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-026',
+  'contractual',
+  'Cláusulas que agravan la responsabilidad',
+  3,
+  '¿Cuál de las siguientes es una cláusula que agrava la responsabilidad del deudor?',
+  '["Rebajar el grado de culpa del que ordinariamente respondería", "Que el deudor responda incluso del caso fortuito", "Fijar un tope cuantitativo a la indemnización", "Limitar la responsabilidad solo a los perjuicios directos previstos"]'::jsonb,
+  1,
+  '{"correcta": "Las partes pueden estipular que el deudor responda incluso del caso fortuito, asumiendo un riesgo que ordinariamente lo liberaría (arts. 1547 y 1673); esta es una típica cláusula agravatoria.", "por_que_no": ["A: rebajar el grado de culpa es una cláusula que atenúa, no agrava, la responsabilidad.", "C: el tope indemnizatorio es la forma más característica de cláusula atenuante.", "D: limitar la responsabilidad a los perjuicios previstos también es una atenuación, no una agravación."]}'::jsonb,
+  'Arts. 1547 y 1673 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-027',
+  'contractual',
+  'Cláusula "todo daño" y su límite frente al dolo',
+  4,
+  'Una cláusula que estipula que el deudor "responderá de todo daño" opera como una agravante que:',
+  '["Puede extenderse válidamente incluso a exonerar al deudor de su propio dolo futuro", "Amplía la responsabilidad dentro del campo de la culpa, sin poder invadir el terreno reservado al dolo y a la culpa grave", "Solo tiene efecto si el incumplimiento proviene de caso fortuito", "Convierte automáticamente cualquier incumplimiento culposo en doloso"]'::jsonb,
+  1,
+  '{"correcta": "La cláusula de todo daño opera, respecto del deudor que no actúa con dolo, como una agravante que lo obliga a soportar también perjuicios imprevistos; pero el dolo y la culpa grave rompen la proporcionalidad del régimen y no pueden ser objeto de agravación ni de exoneración por esta vía.", "por_que_no": ["A: es justamente lo contrario; el dolo futuro nunca puede condonarse ni manipularse mediante estas cláusulas.", "C: la cláusula opera precisamente para incumplimientos imputables a culpa, no para el caso fortuito, que de todas formas exime.", "D: la cláusula no cambia la naturaleza del incumplimiento; solo amplía qué perjuicios se indemnizan dentro del campo de la culpa."]}'::jsonb,
+  'Arts. 1558 y 1465 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'rc-alt-028',
+  'contractual',
+  'Cláusula que excluye los daños indirectos',
+  4,
+  'Según Boetsch, ¿por qué la cláusula que excluye los "daños indirectos" resulta, en gran medida, inocua o redundante en el derecho chileno?',
+  '["Porque los daños indirectos ya están excluidos de la indemnización por el propio artículo 1558, al faltarles el requisito de la causalidad directa", "Porque los daños indirectos no existen como categoría en ningún ordenamiento jurídico", "Porque toda cláusula de este tipo es nula por objeto ilícito", "Porque los daños indirectos solo se aplican a los contratos de tracto sucesivo"]'::jsonb,
+  0,
+  '{"correcta": "El daño indirecto, al no ser consecuencia directa e inmediata del incumplimiento, de suyo no se indemniza en el sistema chileno por faltarle el requisito de la causalidad exigido por el art. 1558. Excluir lo que ya está excluido es, en este plano, redundante.", "por_que_no": ["B: la categoría sí existe, proviene del Common Law, aunque es indeterminada en su precisión.", "C: Boetsch no la califica de nula por objeto ilícito, sino de inocua o redundante, salvo que se reconduzca a una cláusula penal.", "D: no existe tal restricción a los contratos de tracto sucesivo."]}'::jsonb,
+  'Art. 1558 CC (Sección H del manual)'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1546',
+  'contractual',
+  'Buena fe contractual',
+  '1546',
+  'Los contratos deben ejecutarse de buena fe, y por consiguiente obligan no sólo a lo que en ellos se expresa, sino a todas las cosas que emanan precisamente de la naturaleza de la obligación, o que por la ley o la costumbre pertenecen a ella.',
+  '[["buena fe"], ["no sólo a lo que en ellos se expresa"], ["naturaleza de la obligación", "ley o la costumbre"], ["*"]]'::jsonb,
+  array['buena fe', 'naturaleza de la obligación'],
+  'Código Civil, art. 1546'
+)
+on conflict (id) do nothing;
