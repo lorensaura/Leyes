@@ -668,3 +668,34 @@ values (
   'Código Civil, art. 2290'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (13): Extracontractual, Eje D (Sistemas o modelos de atribución)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-005',
+  'extracontractual',
+  'Responsabilidad estricta: carácter excepcional y de derecho estricto',
+  3,
+  '¿Cuál de las siguientes afirmaciones describe correctamente el carácter de la responsabilidad estricta u objetiva en el derecho chileno?',
+  '["Es un régimen especial, de fuente exclusivamente legal, que no admite aplicación analógica a actividades igualmente riesgosas", "Es el régimen general del derecho chileno, aplicable a toda actividad riesgosa aunque no exista ley que lo establezca", "Es un régimen que el juez puede aplicar por analogía cuando estime que una actividad es peligrosa", "Es un régimen que sustituyó por completo a la responsabilidad por culpa desde la dictación del Código Civil"]'::jsonb,
+  0,
+  '{"correcta": "La responsabilidad estricta es un régimen especial y de derecho estricto: opera solo respecto de los ámbitos que el legislador definió previamente, y no admite extensión analógica.", "por_que_no": ["B: el régimen general y supletorio en Chile es la responsabilidad por culpa (arts. 2284, 2314, 2329), no la estricta.", "C: precisamente lo que caracteriza a este régimen es que NO admite aplicación analógica.", "D: la responsabilidad estricta coexiste con la de culpa mediante estatutos legales especiales; no la sustituyó."]}'::jsonb,
+  'Arts. 2327, 2328 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2327',
+  'extracontractual',
+  'Responsabilidad estricta: animal fiero',
+  '2327',
+  'El daño causado por un animal fiero, de que no se reporta utilidad para la guarda o servicio de un predio, será siempre imputable al que lo tenga, y si alegare que no le fue posible evitar el daño, no será oído.',
+  '[["animal fiero"], ["no se reporta utilidad", "guarda o servicio de un predio"], ["será siempre imputable"], ["no será oído"], ["*"]]'::jsonb,
+  array['animal fiero', 'siempre imputable', 'no será oído'],
+  'Código Civil, art. 2327'
+)
+on conflict (id) do nothing;
