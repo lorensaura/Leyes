@@ -1063,3 +1063,20 @@ values (
   'Ley N° 18.290, de Tránsito'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (27): Extracontractual, Eje R (Responsabilidad del Estado)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-019',
+  'extracontractual',
+  'Falta de servicio: naturaleza objetiva pero no estricta pura',
+  4,
+  '¿Exige la falta de servicio, como fundamento de la responsabilidad del Estado, individualizar al funcionario concreto cuya negligencia la origina?',
+  '["Sí, siempre debe identificarse al funcionario específico responsable, igual que en la responsabilidad por el hecho ajeno entre particulares", "No, basta calificar si el servicio, atendidas sus circunstancias, debió funcionar de un modo distinto al que efectivamente tuvo, sin dejar de exigir por ello un juicio normativo", "No, y por eso la falta de servicio es un régimen de responsabilidad estricta pura que prescinde de todo juicio normativo", "Sí, porque de lo contrario no podría acreditarse ninguna relación de causalidad"]'::jsonb,
+  1,
+  '{"correcta": "La falta de servicio no exige individualizar al funcionario, pero sí exige un juicio normativo: si el servicio, atendidas sus circunstancias concretas, debió funcionar de un modo distinto. Esto la distingue tanto de la responsabilidad por el hecho ajeno (que si exige identificar el ilícito de un dependiente) como de la responsabilidad estricta pura (que prescinde de todo juicio normativo).", "por_que_no": ["A: precisamente lo que caracteriza a la falta de servicio es que NO exige esa individualización.", "C: la ausencia de individualización no equivale a ausencia de juicio normativo; la falta de servicio conserva ese juicio, a diferencia de la responsabilidad estricta pura.", "D: la relación de causalidad se puede acreditar sin identificar a un funcionario específico, evaluando el funcionamiento del servicio en su conjunto."]}'::jsonb,
+  'Doctrina y jurisprudencia sobre responsabilidad del Estado (falta de servicio)'
+)
+on conflict (id) do nothing;

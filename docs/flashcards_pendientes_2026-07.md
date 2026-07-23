@@ -293,3 +293,13 @@
 | ¿Cuál es la verdadera diferencia entre culpa y responsabilidad estricta, más allá de que ambas tengan elementos objetivos? | El <strong>injusto de la conducta</strong> (culpa) vs. el <strong>injusto de que la víctima soporte el riesgo</strong> (estricta). | avanzada | civil | Responsabilidad extracontractual | Injusto de la conducta vs. injusto del resultado |
 | ¿Cuáles son los cuatro grupos de casos que justifican la responsabilidad estricta? | <em>(i)</em> Actividades peligrosas; <em>(ii)</em> responsabilidad vicaria; <em>(iii)</em> asimetría estratégica; <em>(iv)</em> bienes valiosos o vulnerables. | avanzada | civil | Responsabilidad extracontractual | Los cuatro grupos de casos |
 | ¿Por qué la responsabilidad por culpa puede ser el régimen general y la estricta no? | Porque la culpa cubre <strong>cualquier actividad</strong>; el riesgo solo tiene sentido para actividades <strong>específicamente calificadas</strong> de riesgosas. | avanzada | civil | Responsabilidad extracontractual | Por qué la culpa es el régimen general |
+
+## Lote 18: Extracontractual, Eje R. Responsabilidad del Estado
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Exige la "falta de servicio" identificar a un funcionario específico negligente? | No. Se limita a calificar si el <strong>servicio en su conjunto</strong> debió funcionar de un modo distinto. | avanzada | civil | Responsabilidad extracontractual | Falta de servicio |
+| ¿Es la falta de servicio un régimen de responsabilidad estricta pura? | No. Conserva un <strong>juicio normativo</strong> (comparación con el estándar razonable de la función pública), aunque marcadamente objetivo. | avanzada | civil | Responsabilidad extracontractual | Falta de servicio vs. estricta pura |
+| ¿Qué exige en la práctica la jurisprudencia para la responsabilidad por error judicial (<span class="art">art. 19 N° 7 letra i</span>)? | Algo asimilable a <strong>culpa grave</strong> del órgano jurisdiccional, no cualquier error de apreciación. | avanzada | civil | Responsabilidad extracontractual | Error judicial |
+| ¿Cuál es la objeción principal a la doctrina de la responsabilidad estricta pura del Estado? | Transformaría al Estado en un <strong>seguro social universal</strong> frente a cualquier daño de su actividad. | avanzada | civil | Responsabilidad extracontractual | Objeción a la responsabilidad estricta pura |
+| ¿Existe inmunidad de jurisdicción del Estado en Chile hoy? | No, está <strong>descartada</strong>: el Estado y las municipalidades son patrimonialmente responsables. | básica | civil | Responsabilidad extracontractual | Descarte de la inmunidad de jurisdicción |
