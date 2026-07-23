@@ -1864,6 +1864,81 @@
         correcta: 'B',
         articulos_referencia: ['2314'],
         objetivo_pedagogico: 'Aplicar la distinción de Barros entre obligación indemnizatoria de primer grado (extracontractual) y de segundo grado (contractual)'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje B (Responsabilidad civil y penal)
+      {
+        id: 're-aplic-003',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Efectos de la sentencia penal condenatoria en sede civil',
+        tipo: 'aplicacion',
+        caso: 'Un conductor es condenado en sede penal por el cuasidelito de lesiones menos graves tras chocar a un peatón. En el juicio civil posterior, la víctima invoca esa condena para acreditar el hecho, la culpa y la participación del conductor, y además reclama el lucro cesante de seis meses sin trabajar, sin rendir ninguna prueba adicional sobre ese punto.',
+        enunciado: '¿Basta la sentencia penal condenatoria para que el tribunal civil dé por acreditado también el lucro cesante reclamado? Fundamenta conforme al artículo 178 del CPC.',
+        respuesta_modelo: 'No basta. Conforme al artículo 178 del Código de Procedimiento Civil, la sentencia penal condenatoria puede hacerse valer en el juicio civil, de modo que la víctima queda dispensada de probar nuevamente el hecho, la culpa y la participación del conductor.\n\nSin embargo, ese efecto tiene un límite objetivo importante: la condena penal no acredita el daño. La responsabilidad civil requiere que el daño exista y sea probado por quien lo alega, con independencia de que el hecho ilícito ya esté establecido.\n\nPor eso, si la víctima reclama lucro cesante, debe probarlo con medios idóneos (liquidaciones de sueldo, licencias médicas, certificados laborales), porque el proceso penal no tuvo por objeto acreditar esa partida. Si no rinde esa prueba, el tribunal civil acogerá la acción en cuanto al hecho ilícito, pero rechazará o reducirá la indemnización por falta de prueba del daño reclamado.',
+        elementos_clave: [
+          { texto: 'Concluye que la condena penal no basta para acreditar el lucro cesante', keywords: ['no basta', 'no acredita el daño', 'límite objetivo'], pregunta: '¿La condena penal exime a la víctima de probar el monto de sus perjuicios?' },
+          { texto: 'Explica que el art. 178 CPC dispensa de probar el hecho, la culpa y la participación, pero no el daño', keywords: ['178', 'hecho', 'culpa', 'participación', 'no el daño'], pregunta: '¿Qué es exactamente lo que la sentencia penal condenatoria acredita en sede civil?' },
+          { texto: 'Señala que la víctima debe probar el lucro cesante con medios idóneos (liquidaciones, licencias, certificados)', keywords: ['debe probarlo', 'liquidaciones de sueldo', 'licencias médicas', 'certificados laborales'], pregunta: '¿Con qué medios de prueba debería la víctima acreditar el lucro cesante reclamado?' }
+        ],
+        articulos_referencia: ['178 CPC'],
+        objetivo_pedagogico: 'Aplicar el límite objetivo del efecto de la condena penal en sede civil: acredita el hecho y la culpa, no el daño'
+      },
+
+      {
+        id: 're-detect-004',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Efecto de las sentencias absolutorias penales (art. 179 CPC)',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno de Derecho responde: "Si el imputado es absuelto en el juicio penal porque el tribunal tuvo dudas sobre si realmente cometió el hecho, esa absolución produce siempre cosa juzgada en materia civil, porque el artículo 179 del Código de Procedimiento Civil establece que toda absolución impide un juicio civil posterior por los mismos hechos."',
+        enunciado: 'El alumno comete un error central de interpretación del artículo 179. Identifícalo y explica la regla correcta.',
+        respuesta_modelo: 'El alumno confunde la absolución por duda o insuficiencia probatoria con la absolución por inexistencia del hecho, y además trata como regla general lo que la ley concibe como una excepción taxativa.\n\nEl artículo 179 del Código de Procedimiento Civil no dispone que "toda absolución" produzca cosa juzgada civil; por el contrario, establece que las sentencias absolutorias sólo producen ese efecto cuando se fundan en alguna de tres circunstancias taxativas: la no existencia del delito o cuasidelito, la ausencia de toda relación entre el hecho y el acusado, o la ausencia de todo indicio en su contra. Fuera de esos casos, no hay cosa juzgada.\n\nEl punto que el alumno pasa por alto es precisamente el que distingue la insuficiencia probatoria de la inexistencia del hecho: si se absuelve porque la prueba no alcanzó el estándar penal (más allá de toda duda razonable), eso no equivale a declarar que el hecho no existió, y por tanto no hay cosa juzgada civil. La víctima puede demandar en sede civil y tendrá éxito si logra probar la culpa con el estándar civil, más bajo que el penal.',
+        elementos_clave: [
+          { texto: 'Detecta que el art. 179 no da efecto de cosa juzgada a "toda absolución", sino solo a tres causales taxativas', keywords: ['taxativas', 'tres circunstancias', 'no toda absolución', 'excepción'], pregunta: '¿El artículo 179 hace equivaler cualquier absolución penal a cosa juzgada civil?' },
+          { texto: 'Distingue la absolución por insuficiencia probatoria/duda razonable de la absolución por inexistencia del hecho', keywords: ['insuficiencia probatoria', 'duda razonable', 'inexistencia del hecho', 'no es lo mismo'], pregunta: '¿Es lo mismo absolver porque no hay pruebas suficientes que absolver porque el hecho nunca existió?' },
+          { texto: 'Concluye que, si la absolución fue por duda razonable, la víctima puede demandar civilmente y ganar con el estándar civil (más bajo)', keywords: ['puede demandar', 'estándar civil más bajo', 'puede tener éxito'], pregunta: '¿Qué puede hacer la víctima si la absolución penal se debió a que la prueba no alcanzó el estándar penal?' }
+        ],
+        articulos_referencia: ['179 CPC'],
+        objetivo_pedagogico: 'Corregir la confusión entre insuficiencia probatoria e inexistencia del hecho al aplicar las causales taxativas del art. 179 CPC'
+      },
+
+      {
+        id: 're-just-003',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Asimetría del principio de independencia civil/penal',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Se dice que la responsabilidad civil y la penal son "independientes", pero que esa independencia "no es simétrica". Explica en qué consiste la asimetría y por qué se justifica.',
+        respuesta_modelo: 'La independencia significa que puede existir una responsabilidad sin la otra: hay responsabilidad penal sin responsabilidad civil cuando el hecho ilícito no causa daño, y hay responsabilidad civil sin responsabilidad penal cuando el hecho dañoso no está tipificado como delito. El artículo 2314 del Código Civil consagra esta coexistencia posible.\n\nLa asimetría aparece en el plano procesal, no en el sustantivo: la sentencia penal puede producir efectos en el juicio civil (artículos 178 a 180 del CPC), pero la sentencia civil jamás produce cosa juzgada en materia penal.\n\nEsta asimetría se justifica porque la responsabilidad penal está sujeta a exigencias sustancialmente más estrictas que la civil: tipicidad, dolo o culpa apreciados en concreto, y un estándar probatorio de convicción más allá de toda duda razonable. Quien fue condenado penalmente superó, necesariamente, un umbral más exigente que el civil, de modo que lo acreditado en sede penal basta a fortiori para lo civil. En cambio, quien fue absuelto penalmente no ha demostrado nada respecto del umbral civil, más bajo: pudo no probarse el delito y, sin embargo, sí probarse la culpa civil.\n\nEs útil, para expresar esto con precisión, distinguir entre independencia sustantiva (cada estatuto tiene sus propios requisitos) y dependencia procesal unilateral (en el plano de la prueba, lo civil queda vinculado por lo penal, pero no a la inversa).',
+        elementos_clave: [
+          { texto: 'Define la independencia: puede existir una responsabilidad sin la otra (art. 2314)', keywords: ['puede existir sin', '2314', 'coexistencia posible'], pregunta: '¿Qué significa que ambas responsabilidades sean "independientes"?' },
+          { texto: 'Ubica la asimetría en el plano procesal: la sentencia penal influye en la civil, pero no al revés', keywords: ['plano procesal', 'no a la inversa', '178 a 180', 'nunca produce cosa juzgada penal'], pregunta: '¿En qué plano se produce la asimetría entre ambos estatutos: en los requisitos sustantivos, o en otro?' },
+          { texto: 'Justifica la asimetría por la mayor exigencia sustantiva y probatoria de lo penal (tipicidad, culpa en concreto, más allá de toda duda razonable)', keywords: ['mayor exigencia', 'tipicidad', 'más allá de toda duda razonable', 'a fortiori'], pregunta: '¿Por qué la condena penal "basta y sobra" para lo civil, pero la absolución penal no prueba nada en lo civil?' },
+          { texto: 'Formula la distinción entre independencia sustantiva y dependencia procesal unilateral', keywords: ['independencia sustantiva', 'dependencia procesal', 'unilateral'], pregunta: '¿Cómo se puede formular esta idea de manera precisa, en una sola frase?' }
+        ],
+        articulos_referencia: ['2314', '178 CPC', '179 CPC', '180 CPC'],
+        objetivo_pedagogico: 'Explicar y justificar la asimetría procesal del principio de independencia entre responsabilidad civil y penal'
+      },
+
+      {
+        id: 're-mc-004',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Causales taxativas del artículo 179 CPC',
+        tipo: 'discriminacion_mc',
+        caso: 'En un proceso penal por incendio, se determina y se declara expresamente en la sentencia que el fuego se originó por la intervención de un tercero ajeno al acusado, quien es absuelto. La compañía de seguros del acusado invoca esa sentencia en el juicio civil posterior para impedir que se le demande.',
+        enunciado: '¿Produce esta sentencia absolutoria cosa juzgada en el juicio civil posterior?',
+        opciones: [
+          { letra: 'A', texto: 'No, porque las sentencias absolutorias nunca producen cosa juzgada en materia civil, sin excepción alguna.', rationale: 'Error: el art. 179 CPC sí contempla excepciones taxativas en las que la absolución produce cosa juzgada civil.' },
+          { letra: 'B', texto: 'Sí, porque la sentencia se funda en la inexistencia del hecho respecto del acusado (el incendio se originó por un tercero), lo que encuadra en la primera causal taxativa del artículo 179 del CPC.', rationale: 'CORRECTO. La causal de "no existencia del delito o cuasidelito" incluye la inexistencia material del hecho atribuido al acusado; al declararse expresamente que el incendio se debió a un tercero, la causal se configura y hay cosa juzgada civil.' },
+          { letra: 'C', texto: 'No, porque el estándar probatorio penal es distinto del civil, de modo que ninguna sentencia penal puede vincular a un tribunal civil respecto de los hechos.', rationale: 'Error: precisamente las causales taxativas del art. 179 son la excepción en que sí vincula, cuando declaran la inexistencia material del hecho.' },
+          { letra: 'D', texto: 'Sí, porque toda sentencia absolutoria beneficia automáticamente a cualquier tercero interesado, sin necesidad de que haya sido parte del proceso penal.', rationale: 'Error: salvo la causal de ausencia de indicios, el efecto de las otras dos causales del art. 179 no depende de haber sido parte, pero la razón correcta es la inexistencia del hecho, no un beneficio automático "para cualquier tercero" per se.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['179 CPC'],
+        objetivo_pedagogico: 'Aplicar la primera causal taxativa del art. 179 CPC (inexistencia del hecho) a un caso de incendio'
       }
     ];
 

@@ -606,3 +606,34 @@ values (
   'Código Civil, art. 1437'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (11): Extracontractual, Eje B (Responsabilidad civil y penal)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-003',
+  'extracontractual',
+  'Efectos de la sentencia penal en sede civil',
+  3,
+  'Según el artículo 179 del Código de Procedimiento Civil, ¿en cuál de los siguientes casos NO produce cosa juzgada civil la sentencia absolutoria penal?',
+  '["Cuando la absolución se funda en que el hecho perseguido nunca ocurrió", "Cuando la absolución se funda en que no existe indicio alguno contra el acusado", "Cuando la absolución se funda en que la prueba rendida no alcanzó el estándar de duda razonable exigido en materia penal", "Cuando la sentencia declara expresamente que no existe relación alguna entre el hecho y el acusado"]'::jsonb,
+  2,
+  '{"correcta": "La insuficiencia probatoria (no se alcanzó el estándar penal de duda razonable) no es una de las tres causales taxativas del art. 179 CPC; por tanto, esa absolución no produce cosa juzgada civil y la víctima puede demandar con el estándar civil, más bajo.", "por_que_no": ["A: es la primera causal taxativa (inexistencia del hecho), sí produce cosa juzgada civil.", "B: es la tercera causal taxativa, sí produce cosa juzgada civil (con efecto relativo a quienes fueron parte).", "D: es la segunda causal taxativa, sí produce cosa juzgada civil."]}'::jsonb,
+  'Art. 179 CPC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2332',
+  'extracontractual',
+  'Prescripción de la acción de responsabilidad extracontractual',
+  '2332',
+  'Las acciones que concede este título por daño o dolo, prescriben en cuatro años contados desde la perpetración del acto.',
+  '[["daño o dolo"], ["cuatro años"], ["perpetración del acto"], ["*"]]'::jsonb,
+  array['daño o dolo', 'cuatro años', 'perpetración del acto'],
+  'Código Civil, art. 2332'
+)
+on conflict (id) do nothing;
