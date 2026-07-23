@@ -699,3 +699,34 @@ values (
   'Código Civil, art. 2327'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (14): Extracontractual, Eje E (La capacidad delictual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-006',
+  'extracontractual',
+  'Capacidad delictual: las dos reglas del art. 2319',
+  2,
+  'Conforme al artículo 2319 del Código Civil, ¿cuál es la diferencia entre la incapacidad del infante (menor de siete años) y la del menor entre siete y dieciséis años?',
+  '["La del infante es absoluta y de pleno derecho; la del mayor de siete y menor de dieciséis depende de la apreciación judicial del discernimiento", "Ambas son absolutas y de pleno derecho, sin excepción alguna", "Ambas dependen igualmente de la apreciación judicial del discernimiento", "La del infante depende del discernimiento; la del mayor de siete es absoluta de pleno derecho"]'::jsonb,
+  0,
+  '{"correcta": "El inciso primero del art. 2319 declara incapaces de pleno derecho a los menores de siete años, sin admitir prueba en contrario. El inciso segundo deja a la prudencia del juez determinar si el mayor de siete y menor de dieciséis obró con discernimiento.", "por_que_no": ["B: la incapacidad del mayor de siete y menor de dieciséis no es absoluta; depende de la apreciación judicial.", "C: la incapacidad del infante es de pleno derecho, no depende de apreciación judicial alguna.", "D: es exactamente al revés: el infante es incapaz de pleno derecho; el mayor de siete depende del discernimiento."]}'::jsonb,
+  'Art. 2319 CC'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2319',
+  'extracontractual',
+  'Capacidad delictual: incapaces y responsabilidad del guardián',
+  '2319',
+  'No son capaces de delito o cuasidelito los menores de siete años ni los dementes; pero serán responsables de los daños causados por ellos las personas a cuyo cargo estén, si pudiere imputárseles negligencia. Queda a la prudencia del juez determinar si el menor de dieciséis años ha cometido el delito o cuasidelito sin discernimiento; y en este caso se seguirá la regla del inciso anterior.',
+  '[["menores de siete años", "dementes"], ["responsables", "personas a cuyo cargo estén", "imputárseles negligencia"], ["prudencia del juez", "menor de dieciséis años", "sin discernimiento"], ["*"]]'::jsonb,
+  array['menores de siete años', 'dementes', 'negligencia', 'prudencia del juez', 'discernimiento'],
+  'Código Civil, art. 2319'
+)
+on conflict (id) do nothing;
