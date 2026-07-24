@@ -1128,3 +1128,79 @@ values (
   'Doctrina y jurisprudencia sobre responsabilidad del Estado (falta de servicio)'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (30): Extracontractual, Eje U (Legitimación activa y pasiva)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-022',
+  'extracontractual',
+  'Legitimación del mero tenedor',
+  4,
+  'Un arrendatario (mero tenedor) sufre un daño en el bien que tiene en arriendo por el hecho de un tercero. ¿En qué caso está legitimado para demandar, a título personal, la indemnización por ese daño?',
+  '["Nunca, porque el mero tenedor carece de todo derecho sobre la cosa y solo el dueño puede accionar", "Siempre, en las mismas condiciones que el dueño, porque basta con detentar materialmente la cosa", "Solo respecto del perjuicio que el daño irroga a su propio derecho personal sobre la cosa (por ejemplo, el perjuicio a su crédito de arrendatario), no respecto del valor de la cosa misma", "Solo si actúa como representante legal del dueño, mediante mandato expreso"]'::jsonb,
+  2,
+  '{"correcta": "El mero tenedor carece de derechos reales sobre la cosa y no puede reclamar su valor a título personal, salvo en ausencia del dueño (y entonces actúa en su nombre). Pero sí está legitimado, por derecho propio, para reclamar el perjuicio que el daño irroga a un derecho personal suyo, como el crédito del arrendatario.", "por_que_no": ["A: puede accionar en ausencia del dueño (en su nombre) y, por derecho propio, respecto del perjuicio a su propio crédito.", "B: el mero tenedor no tiene sobre la cosa el mismo derecho que el dueño; su legitimación por derecho propio es más acotada.", "D: no necesita mandato para reclamar, a título personal, el perjuicio a su propio derecho."]}'::jsonb,
+  'Doctrina sobre legitimación activa en responsabilidad extracontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-023',
+  'extracontractual',
+  'Cesión del derecho a la indemnización ya devengada',
+  4,
+  '¿Puede cederse entre vivos el derecho a exigir una indemnización de perjuicios ya devengada, tratándose de daño moral?',
+  '["No, porque el daño moral es personalísimo y su reparación solo puede reclamarla la víctima o sus herederos", "Sí, porque la indemnización ya devengada tiene siempre carácter patrimonial y no existe norma que prohíba su cesión, aunque el daño que le dio origen sea moral", "Solo si el cesionario es también heredero de la víctima", "No, salvo que medie autorización judicial previa"]'::jsonb,
+  1,
+  '{"correcta": "El derecho a pedir la indemnización de perjuicios ya devengados puede ser objeto de cesión entre vivos, incluso tratándose de daño moral, porque la indemnización tiene siempre un carácter patrimonial y no existe norma que prohíba su transferencia.", "por_que_no": ["A: lo personalísimo es el daño moral en sí, no el crédito indemnizatorio ya devengado, que es patrimonial y transferible.", "C: no se exige ninguna calidad de heredero en el cesionario.", "D: no se exige autorización judicial para ceder un crédito indemnizatorio ya devengado."]}'::jsonb,
+  'Doctrina sobre legitimación activa por derecho derivado (cesión)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-024',
+  'extracontractual',
+  'Solidaridad del art. 2317: mismo hecho ilícito',
+  4,
+  'Un peatón es atropellado sucesivamente por dos vehículos distintos, conducidos por personas sin relación entre sí, en dos hechos separados. ¿Responden ambos conductores solidariamente por el total del daño conforme al artículo 2317?',
+  '["Sí, porque el artículo 2317 establece solidaridad cada vez que dos o más personas causan daño a una misma víctima", "No, porque el artículo 2317 exige que dos o más personas hayan participado, como autores o cómplices, en un mismo delito o cuasidelito; tratándose de hechos ilícitos distintos, no hay solidaridad sino división proporcional", "Sí, pero solo si ambos conductores actuaron con dolo", "No, porque la solidaridad del artículo 2317 solo opera entre coautores de daños a las cosas, nunca de daños a las personas"]'::jsonb,
+  1,
+  '{"correcta": "El artículo 2317 exige que dos o más personas hayan participado, como autores o cómplices, en un mismo delito o cuasidelito. Si se trata de hechos ilícitos distintos, aunque afecten a la misma víctima, no hay solidaridad, sino la división proporcional entre los responsables.", "por_que_no": ["A: la solidaridad no opera por la sola coincidencia de la víctima, sino por la participación conjunta en un mismo hecho ilícito.", "C: el artículo 2317 no distingue según el grado de culpabilidad de cada conductor para la solidaridad; lo decisivo es si el hecho es uno solo o varios distintos.", "D: la solidaridad del artículo 2317 no está limitada a daños a las cosas."]}'::jsonb,
+  'Doctrina sobre legitimación pasiva y solidaridad (art. 2317)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-025',
+  'extracontractual',
+  'Medida de la acción del art. 2316 inciso 2°',
+  3,
+  'Quien recibe un provecho de $2.000.000 derivado de un dolo ajeno del cual no fue cómplice, dolo que causó a la víctima un daño de $20.000.000, ¿hasta qué monto puede ser condenado conforme al artículo 2316 inciso segundo?',
+  '["Hasta $20.000.000, el total del daño sufrido por la víctima, igual que el autor del dolo", "Hasta $2.000.000, el monto del provecho que efectivamente recibió, y no más", "Hasta la mitad del daño sufrido por la víctima, por aplicación de las reglas de división proporcional", "No puede ser condenado a nada, porque no participó en el dolo"]'::jsonb,
+  1,
+  '{"correcta": "Quien recibe provecho del dolo ajeno sin ser cómplice en él solo está obligado hasta la concurrencia de lo que valga ese provecho: aquí, $2.000.000, sin que el mayor daño sufrido por la víctima aumente su obligación.", "por_que_no": ["A: esa medida corresponde al autor del dolo, no a quien solo se benefició de él sin ser cómplice.", "C: el artículo 2316 inciso segundo no aplica una fracción del daño, sino el monto exacto del provecho recibido.", "D: sí responde, aunque de forma limitada al provecho recibido; no queda exento de toda obligación."]}'::jsonb,
+  'Doctrina sobre la acción restitutoria del art. 2316 inciso 2°'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-2316',
+  'extracontractual',
+  'Legitimación pasiva: el autor y el que recibe provecho del dolo ajeno',
+  '2316',
+  'Es obligado a la indemnización el que hizo el daño, y sus herederos. El que recibe provecho del dolo ajeno, sin ser cómplice en él, sólo es obligado hasta concurrencia de lo que valga el provecho.',
+  '[["provecho del dolo ajeno", "sin ser cómplice"], ["hasta concurrencia"], ["*"]]'::jsonb,
+  array['provecho', 'sin ser cómplice', 'hasta concurrencia', 'herederos'],
+  'Código Civil, art. 2316'
+)
+on conflict (id) do nothing;

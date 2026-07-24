@@ -3300,6 +3300,80 @@
         correcta: 'B',
         articulos_referencia: [],
         objetivo_pedagogico: 'Calificar la publicación de la sentencia como reparación en especie y aplicar la libre elección de la víctima entre las formas de reparación'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje U (Legitimación activa y pasiva)
+      {
+        id: 're-aplic-022',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Mero tenedor: perjuicio a un derecho personal propio (arrendatario)',
+        tipo: 'aplicacion',
+        caso: 'Comercial Ríos Ltda. arrienda una camioneta de reparto a Transportes Andes, dueña del vehículo. Mientras la camioneta está estacionada frente a la bodega, un tercero la impacta con su vehículo y la deja inutilizada durante dos meses de reparación. Transportes Andes, como dueña, demanda al tercero el costo de la reparación. Comercial Ríos Ltda., como arrendataria y mera tenedora del vehículo, demanda por separado los ingresos que dejó de percibir durante esos dos meses por no poder usar la camioneta para sus repartos.',
+        enunciado: '¿Está legitimada Comercial Ríos Ltda., como mera tenedora del vehículo, para demandar ese segundo perjuicio a título personal?',
+        respuesta_modelo: 'Sí está legitimada, pero por una razón distinta de la que legitima a la dueña. El mero tenedor carece de derechos reales sobre la cosa y, por eso, no puede reclamar a título personal el valor de la cosa misma en caso de pérdida o deterioro; ese reclamo corresponde a Transportes Andes como dueña.\n\nSin embargo, el mero tenedor sí está legitimado, a título personal, para reclamar el perjuicio que el daño irroga a un derecho personal propio que ejerce sobre la cosa, como ocurre precisamente con el arrendatario respecto del perjuicio que sufre su crédito. Los ingresos que Comercial Ríos dejó de percibir durante la reparación no son el valor de la camioneta (eso lo reclama la dueña), sino el perjuicio a su propio derecho de arrendataria a usar la cosa arrendada. Por eso, su demanda por esos ingresos dejados de percibir es un reclamo por derecho propio, no una sustitución de la dueña, y está legitimada para ejercerlo.',
+        elementos_clave: [
+          { texto: 'Distingue que el mero tenedor no puede reclamar a título personal el valor de la cosa misma, reclamo que corresponde a la dueña', keywords: ['no puede reclamar el valor', 'corresponde a la dueña', 'carece de derechos reales'], pregunta: '¿Puede Comercial Ríos, como mera tenedora, cobrar el valor de la camioneta igual que la dueña?' },
+          { texto: 'Identifica que el mero tenedor sí puede reclamar, a título personal, el perjuicio a su propio derecho personal sobre la cosa (su crédito de arrendataria)', keywords: ['derecho personal propio', 'crédito', 'arrendataria', 'a título personal'], pregunta: '¿Existe algún perjuicio que el mero tenedor sí pueda reclamar por derecho propio?' },
+          { texto: 'Concluye que los ingresos dejados de percibir son ese perjuicio propio (a su crédito de arrendataria), no una sustitución de la dueña', keywords: ['ingresos dejados de percibir', 'perjuicio propio', 'no sustituye a la dueña'], pregunta: '¿Qué es, exactamente, lo que Comercial Ríos está reclamando con esos ingresos no percibidos?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar la legitimación del mero tenedor por derecho propio respecto del perjuicio a su propio derecho personal, distinguiéndola de la legitimación del dueño'
+      },
+
+      {
+        id: 're-detect-023',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Víctima indirecta: excepción del daño moral por lesiones graves',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno responde: "Tratándose de daño moral por repercusión, la regla es siempre la misma: solo puede demandar quien tiene un parentesco cercano con la víctima directa, y esa regla no admite ninguna excepción, sea que la víctima directa haya muerto o solo haya sufrido lesiones."',
+        enunciado: 'El alumno comete un error. Identifícalo y explica la regla correcta.',
+        respuesta_modelo: 'El alumno acierta en describir la regla general, pero se equivoca al negar que admita excepciones. La regla general en efecto restringe la acción por daño moral por repercusión a los casos de muerte de la víctima directa, exigiendo un parentesco cercano con ella.\n\nSin embargo, excepcionalmente se concede acción por daño moral por repercusión también en casos de lesiones, cuando estas son de tal entidad que imponen, en los hechos, una obligación de cuidado que afecta la calidad de vida de la víctima indirecta, como ocurre con el pariente que debe hacerse cargo de la invalidez sobreviniente de la víctima directa. No basta, entonces, cualquier lesión de la víctima directa para que su pariente reclame daño moral propio: la excepción exige que la lesión sea de una gravedad tal que imponga esa carga de cuidado sobre quien reclama.',
+        elementos_clave: [
+          { texto: 'Confirma que la regla general restringe la acción por daño moral por repercusión a los casos de muerte, con parentesco cercano', keywords: ['regla general', 'casos de muerte', 'parentesco cercano'], pregunta: '¿Cuál es la regla general para reclamar daño moral por repercusión?' },
+          { texto: 'Identifica la excepción: lesiones de tal entidad que imponen una obligación de cuidado sobre la víctima indirecta', keywords: ['excepción', 'lesiones', 'obligación de cuidado', 'entidad'], pregunta: '¿Existe alguna excepción a esa regla cuando la víctima directa no muere, sino que solo sufre lesiones?' },
+          { texto: 'Da el criterio concreto de la excepción: invalidez sobreviniente que obliga al pariente a hacerse cargo de su cuidado', keywords: ['invalidez sobreviniente', 'hacerse cargo', 'calidad de vida'], pregunta: '¿Cualquier lesión activa la excepción, o se requiere algo más grave?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Distinguir la regla general de legitimación por daño moral indirecto (muerte, parentesco cercano) de su excepción por lesiones de entidad suficiente'
+      },
+
+      {
+        id: 're-just-022',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Fundamento restitutorio de la acción del art. 2316 inciso 2° vs. la acción indemnizatoria del art. 2314',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué la acción contra quien recibe provecho del dolo ajeno se mide por el provecho recibido y no por el daño sufrido por la víctima, a diferencia de la acción indemnizatoria general del artículo 2314?',
+        respuesta_modelo: 'La diferencia de medida responde a una diferencia de fundamento entre ambas acciones. La acción indemnizatoria del artículo 2314 repara un daño causado por la conducta culpable o dolosa de quien responde, y por eso se mide por la extensión de ese daño, con independencia de cuánto se haya beneficiado el responsable de su propio ilícito.\n\nLa acción restitutoria del artículo 2316 inciso segundo, en cambio, no supone ningún reproche a la conducta de quien la soporta: el tercero beneficiado no cometió el dolo ni fue cómplice de él. Lo que esta acción corrige es un desplazamiento patrimonial injustificado, un provecho que, de conocerse su origen doloso, el derecho no puede permitir que se conserve.\n\nMedir esta obligación por el daño sufrido por la víctima, y no por el provecho efectivamente recibido, sería incoherente con ese fundamento, porque obligaría a quien nada hizo culpablemente a responder de un perjuicio que puede exceder, largamente, el beneficio que él mismo obtuvo. El límite cuantitativo del artículo 2316 inciso segundo preserva así la coherencia del sistema: asegura que nadie responda, a título de mero beneficiario, más allá de lo que efectivamente recibió, reservando la responsabilidad íntegra por el daño para quienes tuvieron parte directa en su causación.',
+        elementos_clave: [
+          { texto: 'Explica que la acción indemnizatoria repara un daño causado por conducta culpable o dolosa, y se mide por la extensión de ese daño', keywords: ['indemnizatoria', 'conducta culpable', 'extensión del daño'], pregunta: '¿Cómo se mide la acción indemnizatoria del artículo 2314 y por qué?' },
+          { texto: 'Explica que la acción restitutoria no supone reproche a la conducta del tercero y corrige un desplazamiento patrimonial injustificado', keywords: ['restitutoria', 'no supone reproche', 'desplazamiento patrimonial', 'sin causa'], pregunta: '¿Qué reprocha, si acaso algo, la acción del artículo 2316 inciso segundo a quien recibió el provecho?' },
+          { texto: 'Concluye que medir por el daño sería incoherente, porque obligaría a quien no actuó culpablemente a responder más allá de su provecho', keywords: ['incoherente', 'más allá del provecho', 'nada hizo culpablemente'], pregunta: '¿Qué pasaría si se midiera esta acción por el daño de la víctima en vez de por el provecho recibido?' }
+        ],
+        articulos_referencia: ['2316', '2314'],
+        objetivo_pedagogico: 'Justificar, a partir de la diferencia de fundamento, por qué la acción del art. 2316 inciso 2° se mide por el provecho y no por el daño'
+      },
+
+      {
+        id: 're-mc-023',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Autor, cómplice, encubridor y beneficiario del dolo ajeno: regímenes distintos',
+        tipo: 'discriminacion_mc',
+        caso: 'En una estafa cometida por Pérez, Soto colabora activamente ayudando a falsificar los documentos (cómplice). Rivas, notario, se percata de que los documentos son falsos pero calla porque sabe que, si la operación se concreta, cobrará una comisión notarial mayor a la habitual; no participó en absoluto en idear ni ejecutar el engaño. Bravo, un tercero completamente ajeno a la maquinación, termina adquiriendo de buena fe uno de los bienes objeto de la estafa, pagando por él un precio justo, sin saber nada del dolo.',
+        enunciado: '¿Cuál de las siguientes describe correctamente el régimen de responsabilidad de cada uno frente a la víctima de la estafa?',
+        opciones: [
+          { letra: 'A', texto: 'Soto responde igual que Pérez (autor); Rivas, por ser un mero encubridor, no responde de nada; Bravo responde hasta el monto de lo que pagó por el bien.', rationale: 'Error: es correcto que Soto (cómplice) responde igual que el autor, pero Rivas no queda exento solo por ser encubridor: responde al menos hasta el provecho que su silencio le reportó, o como autor si buscó aprovecharse de él. Bravo, que pagó un precio justo de buena fe, no recibió un provecho del dolo y no responde conforme a esta regla.' },
+          { letra: 'B', texto: 'Soto responde igual que Pérez, por ser cómplice; Rivas, encubridor que calló buscando aprovecharse de la comisión que el engaño le reportaría, responde como autor por el total; Bravo, ajeno al dolo y sin haber recibido un provecho derivado de él (pagó un precio justo), no responde conforme a esta regla.', rationale: 'CORRECTO. El cómplice responde igual que el autor. El encubridor queda sujeto a la obligación limitada al provecho recibido, salvo que su reticencia a advertir el dolo, conociéndolo, buscara precisamente aprovecharse de sus efectos, caso en el cual pasa a responder como autor por el total. La acción del art. 2316 inciso segundo exige, además, haber recibido un provecho del dolo, provecho que no existe respecto de quien pagó un precio justo de buena fe.' },
+          { letra: 'C', texto: 'Los tres, Soto, Rivas y Bravo, responden únicamente hasta el monto del provecho que cada uno obtuvo, por aplicación uniforme del artículo 2316 inciso segundo.', rationale: 'Error: Soto es cómplice, no un mero beneficiario del dolo ajeno, y por eso responde igual que el autor por el total del daño, no solo hasta la concurrencia de un provecho.' },
+          { letra: 'D', texto: 'Ninguno de los tres responde, porque solo el autor material, Pérez, puede ser demandado por la víctima.', rationale: 'Error: tanto el cómplice como, en ciertos casos, el encubridor, son legitimados pasivos junto al autor; la responsabilidad no se agota en quien ejecutó materialmente el hecho.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: ['2316'],
+        objetivo_pedagogico: 'Distinguir los regímenes de responsabilidad del autor, el cómplice, el encubridor y el beneficiario del dolo ajeno conforme al art. 2316'
       }
     ];
 
