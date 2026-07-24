@@ -2275,3 +2275,50 @@ values (
   'Síntesis comparada sobre la responsabilidad precontractual en el derecho chileno y extranjero'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (45): Preguntas transversales (Contractual / Extracontractual / Precontractual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'transv-alt-001',
+  'transversal',
+  'Diferencias reales entre responsabilidad contractual y extracontractual',
+  3,
+  '¿Cuál de las siguientes afirmaciones describe correctamente una diferencia real entre la responsabilidad contractual y la extracontractual?',
+  '["En materia contractual la culpa se presume (art. 1547 inc. 3°); en materia extracontractual, en principio, la víctima debe probarla", "En materia contractual jamás se indemniza el daño moral; en extracontractual siempre se indemniza sin discusión", "El plazo de prescripción es de cuatro años en ambos estatutos, contado siempre desde el mismo momento", "La solidaridad entre varios responsables solo existe en materia extracontractual, nunca en materia contractual"]'::jsonb,
+  0,
+  '{"correcta": "En materia contractual el incumplimiento hace presumir la culpa del deudor (art. 1547 inciso 3°); en materia extracontractual, en principio, corresponde a la víctima probar la culpa del demandado.", "por_que_no": ["B: hoy se acepta también la reparación del daño moral en sede contractual, aunque el punto fue tradicionalmente más discutido que en sede extracontractual.", "C: el plazo contractual es de largo tiempo desde que la obligación se hizo exigible; el extracontractual es de cuatro años desde la perpetración del hecho ilícito.", "D: la doctrina extiende la solidaridad también al incumplimiento contractual ejecutado con dolo o culpa grave por dos o más deudores."]}'::jsonb,
+  'Comparación transversal entre responsabilidad contractual y extracontractual (Eje W de Extracontractual)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'transv-alt-002',
+  'transversal',
+  'Cúmulo de responsabilidades: rechazo de la opción como regla general',
+  4,
+  '¿Puede la víctima, en principio, optar libremente entre el estatuto contractual y el extracontractual cuando un mismo hecho reúne, a la vez, los caracteres de ambos?',
+  '["No, la posición dominante en Chile rechaza esa opción, salvo excepciones reconocidas (pacto expreso de las partes, o infracción contractual que constituya a la vez delito penal típico)", "Sí, sin ninguna restricción, porque la víctima siempre puede elegir el estatuto que más le convenga", "Solo si el monto reclamado supera una cifra determinada por ley", "Nunca, ni siquiera si las partes lo pactaron expresamente en el contrato"]'::jsonb,
+  0,
+  '{"correcta": "La doctrina y la jurisprudencia nacionales rechazan tradicionalmente que la víctima pueda optar entre estatutos, fundándose en la fuerza obligatoria del contrato (art. 1545) y el carácter especial de la responsabilidad contractual; se reconocen, sin embargo, excepciones puntuales (pacto expreso, o delito penal típico).", "por_que_no": ["B: la posición dominante es de rechazo, no de libre elección.", "C: no existe un umbral de monto que habilite la opción.", "D: el pacto expreso de las partes es, precisamente, una de las excepciones reconocidas por Alessandri."]}'::jsonb,
+  'Comparación transversal: cúmulo de responsabilidades (Eje X de Extracontractual)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'transv-alt-003',
+  'transversal',
+  'Naturaleza de la responsabilidad por ruptura de negociaciones preliminares',
+  3,
+  'Según la doctrina mayoritaria, ¿qué estatuto rige la responsabilidad derivada de la ruptura injustificada de negociaciones preliminares a un contrato que nunca llegó a celebrarse?',
+  '["El estatuto extracontractual", "El estatuto contractual, porque las tratativas ya generan un vínculo asimilable a un contrato", "El estatuto legal, en todos los casos sin excepción", "Ninguno; la ruptura de negociaciones nunca genera responsabilidad en el derecho chileno"]'::jsonb,
+  0,
+  '{"correcta": "La posición mayoritaria en Chile (De los Mozos, Brebbia, Saavedra) sostiene que la responsabilidad precontractual, en sentido estricto, es de naturaleza extracontractual: no hay contrato, luego no puede haber responsabilidad contractual.", "por_que_no": ["B: las tratativas no crean, por sí mismas, un vínculo contractual; por eso se descarta esta calificación.", "C: la calificación legal es minoritaria y se aplica solo a hipótesis normativas específicas y acotadas (arts. 99 y 100 C. de Comercio).", "D: sí puede generar responsabilidad, cuando concurren los requisitos examinados (daño, expectativa razonable, conducta que la defrauda)."]}'::jsonb,
+  'Comparación transversal: naturaleza de la responsabilidad precontractual (Eje 5 de Precontractual) y su conexión con Extracontractual (Eje Y)'
+)
+on conflict (id) do nothing;

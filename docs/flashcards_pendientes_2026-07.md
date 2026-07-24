@@ -490,3 +490,12 @@
 | Según el art. 6 del Anteproyecto de Pavía, ¿hasta qué monto se repara el daño? | <strong>Gastos</strong> del curso de los tratos y pérdida de <strong>ocasiones similares</strong>, no reparación integral. | avanzada | civil | Responsabilidad precontractual | Límite del Anteproyecto de Pavía |
 | ¿Qué conclusión extrae el manual de la comparación con estos ordenamientos? | Que Chile llegó, por vía <strong>doctrinaria</strong>, a un resultado equivalente al de esos sistemas legislados. | avanzada | civil | Responsabilidad precontractual | Conclusión comparada |
 | ¿Qué frase resume esa conclusión? | "La <strong>ausencia de ley</strong> no ha significado ausencia de derecho." | avanzada | civil | Responsabilidad precontractual | La frase de cierre |
+
+## Lote transversal: Contractual / Extracontractual / Precontractual
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿En qué estatuto se presume la culpa del deudor: contractual o extracontractual? | <strong>Contractual</strong> (art. 1547 inc. 3°); en extracontractual, la víctima debe probarla en principio. | intermedia | civil | Responsabilidad civil | Prueba de la culpa entre estatutos |
+| ¿Puede la víctima acumular indemnizaciones de ambos estatutos por el mismo daño? | No; se rechaza por <strong>enriquecimiento sin causa</strong>. | intermedia | civil | Responsabilidad civil | Rechazo de la acumulación |
+| ¿Qué estatuto rige, según la doctrina mayoritaria, la ruptura de negociaciones preliminares a un contrato? | El <strong>extracontractual</strong>. | intermedia | civil | Responsabilidad civil | Naturaleza de la responsabilidad precontractual |
+| Dentro del itinerario de formación de un contrato, ¿qué estatuto rige el contrato ya definitivamente celebrado? | El <strong>contractual</strong>, sin discusión, fuera del ámbito precontractual. | avanzada | civil | Responsabilidad civil | El contrato definitivo ya celebrado |

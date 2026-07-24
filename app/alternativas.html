@@ -4417,6 +4417,63 @@
         correcta: 'B',
         articulos_referencia: [],
         objetivo_pedagogico: 'Distinguir el ámbito de aplicación de los artículos 1337 (cláusula general de buena fe) y 1338 (nulidad) del Código Civil italiano'
+      },
+
+      // Lote 2026-07: Preguntas transversales (Contractual / Extracontractual / Precontractual)
+      {
+        id: 'transv-just-002',
+        materia: 'transversal',
+        tema: 'Responsabilidad civil',
+        subtema: 'Comparación estructural: prueba de la culpa y necesidad de mora entre estatutos',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: 'Compara el régimen de prueba de la culpa y el régimen de necesidad de mora entre la responsabilidad contractual y la extracontractual. ¿En qué difieren, y qué explica esa diferencia?',
+        respuesta_modelo: 'En materia de prueba de la culpa, el incumplimiento contractual hace presumir la culpa del deudor (art. 1547 inciso tercero), correspondiéndole a él acreditar que actuó con la diligencia debida; en la responsabilidad extracontractual, en cambio, corresponde en principio a la víctima probar la culpa del demandado. En cuanto a la necesidad de mora, la responsabilidad contractual la exige como presupuesto (arts. 1551 y 1557), mientras que la obligación extracontractual de indemnizar nace directamente con el hecho ilícito dañoso, sin que sea necesario constituir en mora a nadie.\n\nAmbas diferencias, aunque parecen reglas técnicas dispersas, se explican por una misma distinción estructural: la presencia o ausencia de una obligación previa entre las partes. Solo puede presumirse el incumplimiento de algo previamente pactado, cuyos términos las partes definieron; y solo puede constituirse en mora a quien debía una prestación determinada y no la cumplió. Quien nada debía a la víctima, porque no existía vínculo previo alguno entre ambos, no puede estar en mora de nada, y por la misma razón no hay una obligación previa cuyo incumplimiento pueda presumirse: su obligación de indemnizar nace directamente del hecho dañoso.',
+        elementos_clave: [
+          { texto: 'Identifica que difieren en la prueba de la culpa: se presume en materia contractual (art. 1547), la prueba corresponde a la víctima en materia extracontractual', keywords: ['se presume', '1547', 'víctima prueba', 'extracontractual'], pregunta: '¿Quién debe probar la culpa en cada uno de los dos estatutos?' },
+          { texto: 'Identifica que difieren en la necesidad de mora: se exige en materia contractual (arts. 1551 y 1557), no se exige en materia extracontractual', keywords: ['mora', '1551', '1557', 'nace directamente', 'sin mora'], pregunta: '¿Es necesario constituir en mora al responsable en ambos estatutos, o solo en uno de ellos?' },
+          { texto: 'Explica que ambas diferencias se reconducen a la misma distinción estructural: la presencia o ausencia de una obligación previa entre las partes', keywords: ['distinción estructural', 'obligación previa', 'presencia o ausencia'], pregunta: '¿Qué explica, en el fondo, estas dos diferencias de régimen entre ambos estatutos?' }
+        ],
+        articulos_referencia: ['1547', '1551', '1557'],
+        objetivo_pedagogico: 'Comparar transversalmente la prueba de la culpa y la necesidad de mora entre los estatutos contractual y extracontractual, reconduciéndolas a su distinción estructural común'
+      },
+
+      {
+        id: 'transv-mc-001',
+        materia: 'transversal',
+        tema: 'Responsabilidad civil',
+        subtema: 'Cúmulo de responsabilidades: elección entre estatutos',
+        tipo: 'discriminacion_mc',
+        caso: 'Un pasajero contrata un servicio de transporte compartido hacia el aeropuerto. Durante el trayecto, por una frenada brusca e imprudente del conductor, el pasajero sufre una fractura y, además, un fuerte episodio de ansiedad que requiere tratamiento posterior. El pasajero quiere demandar eligiendo el estatuto de responsabilidad que más le convenga.',
+        enunciado: '¿Puede el pasajero optar libremente entre el estatuto contractual y el extracontractual, y qué ventaja o desventaja práctica tiene cada uno para él?',
+        opciones: [
+          { letra: 'A', texto: 'Sí, puede elegir libremente, sin ninguna restricción doctrinaria, porque el cúmulo de responsabilidades siempre se admite sin excepciones en Chile.', rationale: 'Error: la posición dominante en Chile rechaza la opción entre estatutos, salvo las excepciones que la doctrina reconoce (pacto expreso de las partes, o que la infracción constituya a la vez un delito o cuasidelito penal típico).' },
+          { letra: 'B', texto: 'En principio no, porque la posición dominante rechaza la opción cuando existe contrato; de fundar su demanda en el estatuto contractual, se beneficia de la presunción de culpa del transportista, pero enfrenta mayor resistencia para el daño moral; de fundarla en el extracontractual, debería probar él mismo la culpa del conductor, pero el daño moral procede sin controversia.', rationale: 'CORRECTO. Si demanda conforme al contrato de transporte, se beneficia de la presunción de culpa por la obligación de seguridad, sin necesidad de acreditar la imprudencia del conductor, pero enfrenta mayor resistencia para obtener daño moral; si funda su demanda en las reglas extracontractuales, deberá probar la culpa del conductor, pero el daño moral procede sin controversia.' },
+          { letra: 'C', texto: 'Debe optar necesariamente por el estatuto extracontractual, porque el daño moral solo se indemniza fuera de los contratos.', rationale: 'Error: hoy se acepta también la reparación del daño moral en sede contractual, aunque el punto fue tradicionalmente más discutido que en sede extracontractual.' },
+          { letra: 'D', texto: 'Puede acumular ambas indemnizaciones, cobrando el doble por el mismo daño, ya que ambos estatutos resultan en principio aplicables.', rationale: 'Error: la acumulación (cobrar dos veces por el mismo daño) se rechaza sin mayor controversia, porque importaría un enriquecimiento sin causa de la víctima.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar transversalmente la doctrina del cúmulo de responsabilidades a un caso de transporte de pasajeros con daño físico y moral'
+      },
+
+      {
+        id: 'transv-aplic-001',
+        materia: 'transversal',
+        tema: 'Responsabilidad civil',
+        subtema: 'El itinerario de formación del contrato y su estatuto cambiante',
+        tipo: 'aplicacion',
+        caso: 'Dos empresas negocian, durante meses, la compraventa de una flota de camiones. Primero conversan informalmente sobre precios referenciales, sin ningún documento de por medio. Luego, una de ellas envía una propuesta formal por escrito, con precio, cantidad y plazo de aceptación. Aceptada esa propuesta, firman ante un corredor un documento comprometiéndose a suscribir la compraventa definitiva dentro de 30 días, dejando cada una un cheque en poder del corredor como garantía recíproca. Finalmente, celebran la compraventa definitiva.',
+        enunciado: 'Para cada una de las cuatro etapas descritas, indica qué estatuto de responsabilidad se aplicaría si el negocio se frustrara justo en ese punto, aplicando el criterio de que la responsabilidad precontractual no tiene una naturaleza jurídica única, sino que depende de la etapa exacta del itinerario.',
+        respuesta_modelo: 'En la primera etapa (tratos negociales previos, sin documento), correspondería el estatuto extracontractual, porque las negociaciones preliminares no crean entre las partes ningún vínculo jurídico.\n\nEn la segunda etapa (oferta formal), corresponde aplicar los artículos 98 y 100 del Código de Comercio: si la retractación fuera intempestiva y no avisada, el régimen sería extracontractual; si fuera tempestiva pero causara gastos o perjuicios, el régimen sería legal.\n\nEn la tercera etapa (cierre de negocio ante el corredor, con garantía recíproca), el estatuto está discutido: cuasicontractual para Rosende, contractual condicionado o extracontractual en subsidio para Corral, o contrato innominado para Puelma y Abeliuk, porque ni siquiera hay acuerdo doctrinario sobre si existe una convención en este punto.\n\nEn la cuarta etapa, ya con el contrato definitivo celebrado, el estatuto es contractual, sin discusión, porque el proceso de formación ya concluyó y cualquier incumplimiento posterior queda, por definición, fuera del ámbito de la responsabilidad precontractual.',
+        elementos_clave: [
+          { texto: 'Aplica el régimen extracontractual a la etapa de tratos previos, por no existir vínculo jurídico', keywords: ['tratos previos', 'extracontractual', 'sin vínculo jurídico'], pregunta: '¿Qué estatuto rige si el negocio se frustra durante las conversaciones informales?' },
+          { texto: 'Aplica el régimen de la oferta según los arts. 98 y 100 del Código de Comercio (extracontractual o legal, según la tempestividad)', keywords: ['artículo 98', 'artículo 100', 'tempestiva', 'intempestiva'], pregunta: '¿Qué régimen aplica si el negocio se frustra ya formulada la propuesta formal?' },
+          { texto: 'Identifica que el cierre de negocio es un punto discutido entre tres posiciones doctrinarias distintas', keywords: ['cierre de negocio', 'discutido', 'Rosende', 'Corral', 'Puelma'], pregunta: '¿Existe acuerdo doctrinario sobre el estatuto aplicable al cierre de negocio ante el corredor?' },
+          { texto: 'Aplica el régimen contractual sin discusión al contrato ya definitivamente celebrado', keywords: ['contractual', 'sin discusión', 'contrato definitivo'], pregunta: '¿Qué estatuto rige, sin discusión, una vez celebrado el contrato definitivo?' }
+        ],
+        articulos_referencia: ['98', '100'],
+        objetivo_pedagogico: 'Aplicar transversalmente el itinerario de formación del contrato y su estatuto cambiante, integrando el marco del Eje 3 de Precontractual con el Código de Comercio'
       }
     ];
 
