@@ -425,3 +425,14 @@
 | Da un ejemplo de deber <strong>negativo</strong> del catálogo de Saavedra. | No <strong>ocultar</strong> hechos causantes de nulidad; no inducir con información falsa o incompleta. | avanzada | civil | Responsabilidad precontractual | Deberes negativos (Saavedra) |
 | Da un ejemplo de deber <strong>positivo</strong> del catálogo de Saavedra. | Respetar los acuerdos de <strong>confidencialidad</strong> y custodiar diligentemente los documentos. | avanzada | civil | Responsabilidad precontractual | Deberes positivos (Saavedra) |
 | ¿Qué elemento adicional exige siempre la doctrina, más allá de la sola ruptura, para que nazca responsabilidad? | <strong>Arbitrariedad</strong> o transgresión de una confianza específicamente generada. | avanzada | civil | Responsabilidad precontractual | El elemento adicional exigido |
+
+## Lote 5: Precontractual, Eje E. Naturaleza jurídica de la responsabilidad precontractual
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuáles son las cinco tesis sobre la naturaleza jurídica de la responsabilidad precontractual? | Contractual, <strong>abuso del derecho</strong>, responsabilidad legal, declaración unilateral de voluntad, y <strong>extracontractual</strong> (mayoritaria). | avanzada | civil | Responsabilidad precontractual | Las cinco tesis |
+| Para ALESSANDRI, ¿qué régimen rige antes de la oferta, y cuál después? | <strong>Extracontractual</strong> antes; <strong>contractual</strong> (por disposición legal) después. | avanzada | civil | Responsabilidad precontractual | Posición de Alessandri |
+| ¿Cuál es el punto débil de la tesis del abuso del derecho como fundamento? | No explica que, durante las tratativas, las partes no tienen todavía un <strong>derecho propiamente tal</strong> que ejercer. | avanzada | civil | Responsabilidad precontractual | Punto débil del abuso del derecho |
+| ¿Qué regula el art. 99 del Código de Comercio? | La oferta que <strong>"por sí sola obliga"</strong>, si el proponente se comprometió a esperar o a no disponer del objeto por un plazo. | avanzada | civil | Responsabilidad precontractual | Art. 99: oferta que por sí sola obliga |
+| ¿Cuál es la tesis mayoritaria en Chile sobre la naturaleza de la responsabilidad precontractual? | La <strong>extracontractual</strong> (De los Mozos, Brebbia, Saavedra). | intermedia | civil | Responsabilidad precontractual | Tesis mayoritaria |
+| Según Brebbia, ¿en qué se diferencia la culpa precontractual de la culpa aquiliana ordinaria? | En los <strong>sujetos</strong> (solo quienes negocian) y en el <strong>grado</strong> (mayor exigencia de lealtad). | avanzada | civil | Responsabilidad precontractual | Diferencias de Brebbia |

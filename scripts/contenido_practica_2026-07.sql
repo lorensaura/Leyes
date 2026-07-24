@@ -1815,3 +1815,94 @@ values (
   'Doctrina sobre el límite de la buena fe negocial frente al riesgo de desincentivar la negociación'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (39): Precontractual, Eje E (Naturaleza jurídica de la responsabilidad precontractual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-020',
+  'precontractual',
+  'Alessandri: régimen antes de la oferta',
+  4,
+  'Para ALESSANDRI, ¿bajo qué régimen se rige la responsabilidad por la ruptura de negociaciones preliminares, antes de formularse la oferta?',
+  '["Contractual, porque ya existe un vínculo negocial suficiente", "Extracontractual, porque las negociaciones preliminares no crean entre las partes ningún vínculo jurídico", "Legal, en los mismos términos que rigen después de la oferta", "Ninguno; Alessandri niega que pueda existir responsabilidad alguna antes de la oferta"]'::jsonb,
+  1,
+  '{"correcta": "Alessandri sostiene que la responsabilidad a que puede dar origen la ruptura de las negociaciones preliminares, cuando es susceptible de generar responsabilidad, es extracontractual, porque tales negociaciones no crean entre las partes ningún vínculo jurídico.", "por_que_no": ["A: Alessandri niega expresamente que exista, en esta etapa, un vínculo contractual.", "C: la calificación legal, para Alessandri, corresponde al tramo posterior a la oferta, no al anterior.", "D: Alessandri sí admite que pueda existir responsabilidad antes de la oferta, solo que de naturaleza extracontractual."]}'::jsonb,
+  'Doctrina de Alessandri sobre la naturaleza jurídica de la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-021',
+  'precontractual',
+  'Crítica a la tesis del abuso del derecho',
+  4,
+  '¿Cuál es la principal crítica que recibe la tesis del abuso del derecho (Ripert, Josserand, Picasso) como fundamento de la responsabilidad precontractual durante las tratativas preliminares?',
+  '["Que exige siempre la existencia de dolo, lo que la haría demasiado restrictiva", "Que durante esa etapa las partes no tienen todavía, la una respecto de la otra, ningún derecho propiamente tal que ejercer de forma abusiva", "Que solo se aplica a los contratos mercantiles, no a los civiles", "Que contradice expresamente el texto del artículo 1545 del Código Civil"]'::jsonb,
+  1,
+  '{"correcta": "Se objeta a esta tesis que no explica adecuadamente el funcionamiento de la responsabilidad durante las tratativas, porque en esa etapa las partes no tienen, la una respecto de la otra, ningún derecho propiamente tal, sino que pesa sobre ambas la obligación de observar una conducta diligente.", "por_que_no": ["A: Picasso concibe el abuso del derecho como objetivo, no como exigencia de dolo.", "C: la crítica no se limita a la materia mercantil.", "D: la crítica no se funda en una contradicción textual con el art. 1545."]}'::jsonb,
+  'Crítica doctrinal a la tesis del abuso del derecho en la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-022',
+  'precontractual',
+  'Requisito de la oferta que por sí sola obliga (art. 99 C. de Comercio)',
+  4,
+  '¿Qué exige el artículo 99 del Código de Comercio para que el proponente no pueda arrepentirse libremente de su oferta en el tiempo intermedio entre su envío y la aceptación?',
+  '["Que el destinatario haya comenzado ya a ejecutar el contrato propuesto", "Que el proponente se haya comprometido, al hacer la propuesta, a esperar contestación o a no disponer del objeto del contrato hasta transcurrido un plazo determinado", "Que la propuesta conste en escritura pública", "Que hayan transcurrido, como mínimo, treinta días desde el envío de la propuesta"]'::jsonb,
+  1,
+  '{"correcta": "El artículo 99 dispone que el proponente puede arrepentirse en el tiempo medio entre el envío de la propuesta y la aceptación, salvo que al hacerla se hubiere comprometido a esperar contestación o a no disponer del objeto del contrato, sino después de desechada o de transcurrido un determinado plazo.", "por_que_no": ["A: el artículo no exige que el destinatario haya comenzado a ejecutar nada; basta el compromiso expreso del proponente.", "C: no se exige escritura pública para este compromiso.", "D: no existe ese plazo mínimo fijo de treinta días en la norma."]}'::jsonb,
+  'Código de Comercio, art. 99'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-023',
+  'precontractual',
+  'Las dos diferencias de Brebbia entre culpa precontractual y culpa aquiliana ordinaria',
+  4,
+  'Según BREBBIA, ¿cuáles son las dos diferencias que existen entre la culpa precontractual y la culpa aquiliana ordinaria, pese a compartir el mismo encuadre extracontractual?',
+  '["Una diferencia de sujetos (solo quienes negocian, no extraños) y una diferencia de grado (mayor exigencia de conducta prudente y leal)", "Una diferencia de plazo de prescripción y una diferencia de tribunal competente", "Una diferencia de monto máximo indemnizable y una diferencia de carga de la prueba", "No existe ninguna diferencia real entre ambas; Brebbia las equipara completamente"]'::jsonb,
+  0,
+  '{"correcta": "Brebbia destaca una diferencia en los sujetos (en la responsabilidad precontractual, solo pueden ser las personas relacionadas para la concertación del convenio) y una diferencia de grado (mayor afinamiento del concepto de culpa, por el especial deber de conducta prudente y leal durante las negociaciones).", "por_que_no": ["B: Brebbia no funda la distinción en el plazo de prescripción ni en el tribunal competente.", "C: tampoco la funda en el monto máximo ni en la carga de la prueba.", "D: Brebbia sí reconoce diferencias reales, pese a mantener el mismo encuadre extracontractual general."]}'::jsonb,
+  'Doctrina de Brebbia sobre la culpa precontractual dentro del encuadre extracontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-024',
+  'precontractual',
+  'Crítica a la responsabilidad legal como fundamento',
+  3,
+  '¿Cuál es la principal crítica que recibe la tesis de la responsabilidad legal como fundamento de la responsabilidad precontractual?',
+  '["Que carece de todo anclaje textual en el derecho chileno", "Que no aporta un fundamento jurídico propio, sino que se limita a describir que la ley así lo dispone, sin explicar por qué", "Que solo se aplica a los contratos de consumo", "Que contradice la doctrina de la buena fe negocial"]'::jsonb,
+  1,
+  '{"correcta": "Esta tesis ha sido criticada porque, en rigor, no otorga fundamento jurídico propio a los casos de responsabilidad precontractual, sino que se limita a describir que la ley así lo dispone, sin explicar por qué.", "por_que_no": ["A: sí tiene anclaje textual, en los arts. 98 y 100 del Código de Comercio.", "C: no se limita a los contratos de consumo.", "D: no hay contradicción directa con la buena fe negocial; son cuestiones distintas."]}'::jsonb,
+  'Crítica doctrinal a la tesis de la responsabilidad legal'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'ccom-art-99',
+  'precontractual',
+  'La oferta que por sí sola obliga',
+  '99',
+  'El proponente puede arrepentirse en el tiempo medio entre el envío de la propuesta y la aceptación, salvo que al hacerla se hubiere comprometido a esperar contestación o a no disponer del objeto del contrato, sino después de desechada o de transcurrido un determinado plazo. El arrepentimiento no se presume.',
+  '[["comprometido a esperar contestación", "no disponer del objeto"], ["transcurrido un determinado plazo"], ["el arrepentimiento no se presume"], ["*"]]'::jsonb,
+  array['arrepentirse', 'comprometido a esperar', 'no disponer del objeto', 'transcurrido un determinado plazo', 'no se presume'],
+  'Código de Comercio, art. 99'
+)
+on conflict (id) do nothing;
