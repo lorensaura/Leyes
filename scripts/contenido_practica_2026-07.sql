@@ -1556,3 +1556,80 @@ values (
   'Código Civil, art. 1554'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (36): Precontractual, Eje B (Evolución doctrinaria: de la doctrina tradicional a la doctrina moderna)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-005',
+  'precontractual',
+  'Las tres fases de la doctrina tradicional',
+  2,
+  '¿Cuáles son las tres fases que la doctrina tradicional reconoce en la formación del consentimiento?',
+  '["Los meros hechos sociales, la oferta, y la promesa de contrato", "La negociación, la aceptación, y la ejecución del contrato", "La oferta, la contraoferta, y la aceptación", "La capacidad, el objeto lícito, y la causa lícita"]'::jsonb,
+  0,
+  '{"correcta": "La doctrina tradicional reconoce tres períodos: la fase de los meros hechos sociales, la fase de la oferta, y la fase de la promesa de contrato.", "por_que_no": ["B: esas etapas no corresponden a la periodización de la doctrina tradicional sobre este punto.", "C: la contraoferta no es una de las tres fases de esta periodización.", "D: esos son requisitos del acto jurídico en general, no las fases de este debate."]}'::jsonb,
+  'Doctrina tradicional sobre la formación del consentimiento'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-006',
+  'precontractual',
+  'Obra y año de la doctrina de Ihering',
+  2,
+  '¿En qué año y en qué obra expuso IHERING su doctrina de la culpa in contrahendo?',
+  '["En 1907, en \"Responsabilidad precontractual\"", "En 1860, en \"De la culpa in contrahendo o de los daños y perjuicios en las convenciones nulas o que permanecieron imperfectas\"", "En 1906, en \"De los períodos precontractuales y de su verdadera y exacta construcción científica\"", "En 1900, en el Código Civil alemán (BGB)"]'::jsonb,
+  1,
+  '{"correcta": "Ihering expuso su doctrina en 1860, en la obra De la culpa in contrahendo o de los daños y perjuicios en las convenciones nulas o que permanecieron imperfectas.", "por_que_no": ["A: 1907 y ese título corresponden a Saleilles, quien acuñó la expresión responsabilidad precontractual.", "C: esa obra y año corresponden a Faggella.", "D: el BGB de 1900 recogió parcialmente la tesis de Ihering, pero no es la obra en que él la expuso."]}'::jsonb,
+  'Doctrina de Ihering sobre la culpa in contrahendo'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-007',
+  'precontractual',
+  'La culpa in contrahendo presupone oferta (Ihering)',
+  3,
+  'Para IHERING, ¿presupone la culpa in contrahendo que ya se ha formulado una oferta?',
+  '["Sí; las meras tratativas, para él, no originan responsabilidad", "No; para él, la responsabilidad nace desde el primer contacto entre las partes", "Solo si el contrato prometido es solemne", "No; Ihering nunca exigió ningún momento de inicio determinado"]'::jsonb,
+  0,
+  '{"correcta": "Para Ihering, la culpa in contrahendo presupone que ya se ha formulado una oferta; las meras tratativas no originan responsabilidad bajo su doctrina. Fue Faggella quien extendió el análisis hacia los tratos negociales previos.", "por_que_no": ["B: esa extensión hacia el primer contacto es, precisamente, el aporte posterior de Faggella, no la posición de Ihering.", "C: la exigencia de oferta previa no depende de si el contrato es solemne o no.", "D: Ihering sí fija un momento de inicio preciso: la formulación de la oferta."]}'::jsonb,
+  'Doctrina de Ihering sobre la culpa in contrahendo'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-008',
+  'precontractual',
+  'El fundamento de Faggella: transgresión del acuerdo de negociar',
+  4,
+  'Para FAGGELLA, ¿cuál es el fundamento de la responsabilidad por ruptura de las negociaciones?',
+  '["La culpa, en los mismos términos que sostenía Ihering", "La violación del acuerdo expreso o tácito que las partes concluyeron para entablar negociaciones, transgresión que puede existir sin dolo ni culpa", "La infracción de los usos y la equidad comercial, exclusivamente", "La sola existencia de un daño, sin necesidad de ningún otro elemento"]'::jsonb,
+  1,
+  '{"correcta": "Para Faggella, el fundamento no es la culpa, como sostenía Ihering, sino la violación del acuerdo expreso o tácito que las partes habían concluido para entablar negociaciones; esta violación puede existir sin dolo ni negligencia, bastando una transgresión arbitraria y sin motivo de las tratativas.", "por_que_no": ["A: Faggella se aparta expresamente de la culpa como fundamento; ese es el criterio de Ihering.", "C: la equidad comercial como estándar corresponde a Saleilles, no a Faggella.", "D: Faggella exige, además del daño, la transgresión del acuerdo de negociar; el daño solo no basta."]}'::jsonb,
+  'Doctrina de Faggella sobre el fundamento de la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-009',
+  'precontractual',
+  'Origen de la expresión "responsabilidad precontractual"',
+  2,
+  '¿Quién empleó por primera vez la expresión "responsabilidad precontractual", y en qué año?',
+  '["Ihering, en 1860", "Faggella, en 1906", "Saleilles, en 1907", "Rosende, en el siglo XX en Chile"]'::jsonb,
+  2,
+  '{"correcta": "Será el jurista francés Raymond Saleilles quien, en 1907, emplee por primera vez la expresión responsabilidad precontractual.", "por_que_no": ["A: Ihering, en 1860, habló de culpa in contrahendo, no de responsabilidad precontractual.", "B: Faggella, en 1906, extendió el período relevante, pero no acuñó esa expresión específica.", "D: Rosende es un autor chileno posterior, que sintetiza los requisitos de esta responsabilidad en el sistema local, no quien acuñó la expresión."]}'::jsonb,
+  'Doctrina de Saleilles sobre responsabilidad precontractual'
+)
+on conflict (id) do nothing;

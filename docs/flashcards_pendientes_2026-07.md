@@ -392,3 +392,14 @@
 | ¿Basta la mera frustración de una negociación para generar responsabilidad precontractual? | No. La sola frustración de haber negociado en vano <strong>no genera nada</strong>. | básica | civil | Responsabilidad precontractual | Qué NO protege la responsabilidad precontractual |
 | Según ORREGO, ¿en cuántas etapas se divide el período precontractual? | En <strong>dos</strong>: los tratos negociales previos (antes de la oferta) y la etapa que se inicia con la oferta. | intermedia | civil | Responsabilidad precontractual | Las dos etapas del período precontractual |
 | ¿Cuáles son las cuatro interrogantes centrales de Orrego sobre esta materia? | Naturaleza jurídica, factor de atribución, momento de inicio del período, y <strong>daño indemnizable</strong>. | avanzada | civil | Responsabilidad precontractual | Las cuatro interrogantes de Orrego |
+
+## Lote 2: Precontractual, Eje B. Evolución doctrinaria: de la doctrina tradicional a la doctrina moderna
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué tres fases reconoce la doctrina tradicional en la formación del consentimiento? | Los <strong>meros hechos sociales</strong>, la <strong>oferta</strong>, y la <strong>promesa</strong> de contrato. | intermedia | civil | Responsabilidad precontractual | Las tres fases de la doctrina tradicional |
+| ¿En qué año y obra expuso IHERING su doctrina de la culpa in contrahendo? | En <strong>1860</strong>, en "De la culpa in contrahendo...". | avanzada | civil | Responsabilidad precontractual | Obra de Ihering |
+| Para Ihering, ¿cuál es el fundamento de la culpa in contrahendo? | La <strong>culpa</strong>: la violación del deber de diligencia exigible también durante la formación del contrato. | avanzada | civil | Responsabilidad precontractual | Fundamento de Ihering |
+| ¿Qué aporte disruptivo hace FAGGELLA respecto de Ihering? | Extiende el inicio de la responsabilidad a los <strong>tratos negociales previos</strong>, antes de la oferta. | avanzada | civil | Responsabilidad precontractual | Aporte de Faggella |
+| Para Faggella, ¿cuál es el fundamento de la responsabilidad? | La <strong>violación del acuerdo</strong> (expreso o tácito) para entablar negociaciones, no la culpa. | avanzada | civil | Responsabilidad precontractual | Fundamento de Faggella |
+| ¿Quién acuñó la expresión "responsabilidad precontractual", y en qué año? | <strong>Saleilles</strong>, en <strong>1907</strong>. | intermedia | civil | Responsabilidad precontractual | Origen de la expresión |
