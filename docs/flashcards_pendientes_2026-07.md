@@ -403,3 +403,14 @@
 | ¿Qué aporte disruptivo hace FAGGELLA respecto de Ihering? | Extiende el inicio de la responsabilidad a los <strong>tratos negociales previos</strong>, antes de la oferta. | avanzada | civil | Responsabilidad precontractual | Aporte de Faggella |
 | Para Faggella, ¿cuál es el fundamento de la responsabilidad? | La <strong>violación del acuerdo</strong> (expreso o tácito) para entablar negociaciones, no la culpa. | avanzada | civil | Responsabilidad precontractual | Fundamento de Faggella |
 | ¿Quién acuñó la expresión "responsabilidad precontractual", y en qué año? | <strong>Saleilles</strong>, en <strong>1907</strong>. | intermedia | civil | Responsabilidad precontractual | Origen de la expresión |
+
+## Lote 3: Precontractual, Eje C. Las etapas del proceso de formación del contrato y el estatuto de responsabilidad aplicable en cada una
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuáles son las cinco etapas del itinerario de formación del contrato? | Tratos negociales previos, <strong>oferta</strong>, <strong>cierre de negocio</strong>, contrato preparatorio y contrato definitivo. | avanzada | civil | Responsabilidad precontractual | Las cinco etapas del itinerario |
+| ¿Qué distingue un contrato de formación progresiva de uno de ejecución progresiva? | En el de formación progresiva se prolonga el camino para que el contrato <strong>nazca</strong>; en el de ejecución progresiva, lo que se prolonga es su <strong>cumplimiento</strong>. | avanzada | civil | Responsabilidad precontractual | Formación vs. ejecución progresiva |
+| ¿Qué régimen rige la retractación tempestiva de la oferta que causa gastos o perjuicios (art. 100 C. de Comercio)? | Responsabilidad <strong>legal</strong>: la obligación de indemnizar la impone directamente la ley. | avanzada | civil | Responsabilidad precontractual | Retractación tempestiva (art. 100) |
+| ¿Qué distingue el cierre de negocio de las arras? | La presencia de un <strong>tercero depositario</strong> (el corredor); en las arras, la entrega es directa entre las partes. | avanzada | civil | Responsabilidad precontractual | Cierre de negocio vs. arras |
+| ¿Qué estatuto rige el incumplimiento de un contrato preparatorio (ej. la promesa)? | <strong>Contractual</strong>, sin discusión, porque ya existe un contrato válidamente celebrado. | intermedia | civil | Responsabilidad precontractual | Estatuto del contrato preparatorio |
+| ¿Cuál es la pregunta correcta frente a un daño precontractual, en vez de preguntar qué estatuto rige "en abstracto"? | En qué <strong>etapa exacta</strong> del itinerario se produjo el daño, y si existía ya un vínculo convencional. | avanzada | civil | Responsabilidad precontractual | La pregunta correcta: la etapa concreta |

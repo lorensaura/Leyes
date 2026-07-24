@@ -1633,3 +1633,108 @@ values (
   'Doctrina de Saleilles sobre responsabilidad precontractual'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (37): Precontractual, Eje C (Las etapas del proceso de formación del contrato y el estatuto de responsabilidad aplicable en cada una)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-010',
+  'precontractual',
+  'Cierre de negocio vs. arras: el tercero depositario',
+  3,
+  '¿Qué elemento decide si una suma de dinero entregada para asegurar la seriedad de un futuro contrato configura arras o cierre de negocio?',
+  '["El monto de la suma entregada", "La presencia o ausencia de un tercero depositario que retiene la suma hasta que se cumpla o no el compromiso", "El momento del día en que se realiza la entrega", "El tipo de contrato definitivo que se proyecta celebrar"]'::jsonb,
+  1,
+  '{"correcta": "El elemento que decide la calificación no es el monto ni el momento, sino la presencia o ausencia de un tercero depositario, típicamente el corredor: si el dinero queda en su poder, hay cierre de negocio; si se entrega directamente entre las partes, hay arras.", "por_que_no": ["A: el monto de la suma no es el criterio distintivo entre ambas figuras.", "C: el momento de la entrega tampoco decide la calificación.", "D: la naturaleza del contrato definitivo proyectado no es lo que distingue arras de cierre de negocio."]}'::jsonb,
+  'Doctrina sobre el cierre de negocio y su distinción con las arras'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-011',
+  'precontractual',
+  'Estatuto del contrato preparatorio',
+  2,
+  '¿Cuál es el estatuto de responsabilidad aplicable al incumplimiento de un contrato preparatorio (por ejemplo, una promesa), según la periodización examinada?',
+  '["Contractual, sin discusión, porque ya existe un contrato válidamente celebrado", "Extracontractual, porque el contrato definitivo todavía no se ha celebrado", "Legal, en los mismos términos que la retractación tempestiva de la oferta", "Discutido entre responsabilidad cuasicontractual, contractual condicionada y contrato innominado"]'::jsonb,
+  0,
+  '{"correcta": "En cuanto al fundamento de la responsabilidad del contrato preparatorio, la regla es simple y no admite mayor discusión: si ya se acordó el contrato preparatorio, la responsabilidad que origine su incumplimiento será contractual, como ocurre con el incumplimiento de una promesa.", "por_que_no": ["B: el contrato preparatorio ya es, en sí mismo, un contrato válidamente celebrado; no es necesario que el contrato definitivo se celebre para que su incumplimiento sea contractual.", "C: la calificación legal corresponde a la retractación tempestiva de la oferta (art. 100 C. de Comercio), no al contrato preparatorio.", "D: esa discusión tripartita corresponde al cierre de negocio, no al contrato preparatorio, cuyo estatuto no se discute."]}'::jsonb,
+  'Doctrina sobre el contrato preparatorio y su estatuto de responsabilidad'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-012',
+  'precontractual',
+  'Retractación intempestiva no avisada (art. 98 C. de Comercio)',
+  4,
+  'Si el oferente se retracta de su propuesta y no avisa oportunamente de esa retractación al destinatario, quien por ello acepta extemporáneamente, ¿qué régimen de responsabilidad resulta aplicable conforme al artículo 98 del Código de Comercio?',
+  '["Responsabilidad extracontractual, porque no existe vínculo preexistente entre las partes desde que el oferente se retractó", "Responsabilidad contractual, porque la oferta aceptada forma un contrato perfecto", "Responsabilidad legal, en los mismos términos que la retractación tempestiva del art. 100", "Ninguna responsabilidad, porque la propuesta se tiene simplemente por no hecha"]'::jsonb,
+  0,
+  '{"correcta": "Conforme al art. 98, puede nacer responsabilidad indemnizatoria para el oferente que omitió avisar oportunamente de su retractación, si el destinatario aceptó extemporáneamente por esa omisión; aquí corresponde aplicar las reglas de la responsabilidad extracontractual, porque no existe vínculo preexistente entre las partes desde que el oferente se retractó.", "por_que_no": ["B: la aceptación extemporánea no forma contrato; la propuesta se tiene por no hecha una vez vencido el plazo.", "C: la calificación legal corresponde al supuesto distinto del art. 100 (retractación tempestiva con perjuicio), no a este.", "D: aunque la propuesta se tenga por no hecha para efectos contractuales, sí puede nacer responsabilidad indemnizatoria por la omisión del aviso oportuno."]}'::jsonb,
+  'Código de Comercio, art. 98'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-013',
+  'precontractual',
+  'Valor jurídico de la puntualización en el derecho chileno',
+  4,
+  '¿Reconoce el derecho chileno, como regla general, valor obligatorio a la puntualización (la minuta o borrador en que las partes dejan constancia de los puntos esenciales acordados, sin haber cerrado todavía el negocio)?',
+  '["Sí, con el mismo valor obligatorio que reconoce el derecho alemán", "No; la regla es negarle ese valor, porque las partes se obligan realmente recién a partir de la oferta", "Sí, pero solo si la puntualización consta en escritura pública", "No, y tampoco se le reconoce ningún valor ni siquiera como antecedente interpretativo"]'::jsonb,
+  1,
+  '{"correcta": "El valor jurídico de la puntualización ha sido discutido: mientras el derecho alemán le reconoce eficacia obligatoria respecto de los elementos esenciales acordados, en el derecho chileno la regla es negarle ese valor, porque mal podría ser obligatorio un acuerdo esencialmente precario.", "por_que_no": ["A: esa es la solución del derecho alemán, expresamente contrastada con la chilena, que es distinta.", "C: la forma de escritura pública no es lo que determina, en la regla chilena, el reconocimiento de valor obligatorio a la puntualización.", "D: la puntualización sí puede tener relevancia, por ejemplo como antecedente interpretativo del contrato finalmente celebrado."]}'::jsonb,
+  'Doctrina sobre la puntualización dentro de los tratos negociales previos'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-014',
+  'precontractual',
+  'La pregunta correcta: la etapa concreta, no el estatuto abstracto',
+  5,
+  'Según la tensión de fondo examinada en este eje, ¿cuál es la pregunta correcta que debe formularse frente a un daño ocurrido durante el proceso de formación de un contrato, en vez de preguntar en abstracto "qué estatuto rige la responsabilidad precontractual"?',
+  '["Si el demandante actuó de buena o mala fe durante toda la negociación", "En qué etapa exacta del itinerario se produjo el daño, y si existía ya, en ese punto, algún vínculo convencional entre las partes", "Si el contrato finalmente llegó o no a celebrarse", "Cuál de las partes tiene mayor poder de negociación en la relación"]'::jsonb,
+  1,
+  '{"correcta": "La pregunta correcta no es \"qué estatuto rige la responsabilidad precontractual\", en abstracto, sino \"en qué etapa exacta del itinerario se produjo el daño, y existía ya, en ese punto, algún vínculo convencional entre las partes\". Esta reformulación permite ordenar sin contradicción las respuestas dispersas que ofrece la doctrina.", "por_que_no": ["A: la buena o mala fe es relevante en ciertos ejes (como la responsabilidad por nulidad), pero no es la pregunta estructural que resuelve la elección de estatuto en este itinerario.", "C: el contrato puede no llegar a celebrarse en varias etapas distintas, con estatutos distintos; esa sola pregunta no basta.", "D: el poder de negociación de cada parte no es el criterio que determina el estatuto aplicable."]}'::jsonb,
+  'Síntesis sobre la ausencia de una naturaleza jurídica única de la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'ccom-art-98',
+  'precontractual',
+  'Retractación no avisada y aceptación extemporánea',
+  '98',
+  'La propuesta hecha por escrito deberá ser aceptada o desechada dentro de veinticuatro horas, si la persona a quien se ha dirigido residiere en el mismo lugar que el proponente, o a vuelta de correo, si estuviere en otro diverso. Vencidos los plazos indicados, la propuesta se tendrá por no hecha, aun cuando hubiere sido aceptada. En caso de aceptación extemporánea, el proponente será obligado, bajo responsabilidad de daños y perjuicios, a dar pronto aviso de su retractación.',
+  '[["veinticuatro horas", "vuelta de correo"], ["se tendrá por no hecha"], ["responsabilidad de daños y perjuicios", "pronto aviso"], ["*"]]'::jsonb,
+  array['veinticuatro horas', 'vuelta de correo', 'se tendrá por no hecha', 'aceptación extemporánea', 'responsabilidad de daños y perjuicios'],
+  'Código de Comercio, art. 98'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'ccom-art-100',
+  'precontractual',
+  'Retractación tempestiva de la oferta',
+  '100',
+  'La retractación tempestiva impone al proponente la obligación de indemnizar los gastos que la persona a quien fue encaminada la propuesta hubiere hecho, y los daños y perjuicios que hubiere sufrido. Sin embargo, el proponente podrá exonerarse de la obligación de indemnizar, cumpliendo el contrato propuesto.',
+  '[["indemnizar los gastos", "daños y perjuicios"], ["exonerarse", "cumpliendo el contrato propuesto"], ["*"]]'::jsonb,
+  array['retractación tempestiva', 'indemnizar los gastos', 'daños y perjuicios', 'exonerarse', 'cumpliendo el contrato propuesto'],
+  'Código de Comercio, art. 100'
+)
+on conflict (id) do nothing;
