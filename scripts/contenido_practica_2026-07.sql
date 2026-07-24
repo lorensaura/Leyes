@@ -1480,3 +1480,79 @@ values (
   'Doctrina de Corral sobre responsabilidad postcontractual'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (35): Precontractual, Eje A (Planteamiento del problema y concepto de responsabilidad precontractual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-001',
+  'precontractual',
+  'Vacío legal en la formación del consentimiento',
+  2,
+  '¿Regula el Código Civil chileno, como regla general, la formación del consentimiento durante la etapa previa a la celebración de un contrato?',
+  '["Sí, de manera exhaustiva, en un título especial dedicado a la materia", "No, salvo en lo relativo al contrato de promesa (art. 1554); existe un vacío legal en lo demás", "Sí, pero solo tratándose de contratos mercantiles", "No, y tampoco existe ninguna norma que se ocupe siquiera de la etapa de la oferta"]'::jsonb,
+  1,
+  '{"correcta": "El Código Civil chileno no se ocupa de la formación del consentimiento, salvo en lo relativo al contrato de promesa (art. 1554). Ese vacío fue remediado solo parcialmente por el legislador mercantil.", "por_que_no": ["A: no existe esa regulación exhaustiva en el Código Civil.", "C: la referencia expresa que sí existe (art. 1554) es de aplicación general, no exclusiva de la materia mercantil.", "D: sí existe una regulación parcial de la etapa de la oferta, en los arts. 97 a 106 del Código de Comercio."]}'::jsonb,
+  'Código Civil, art. 1554; vacío legal en la formación del consentimiento'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-002',
+  'precontractual',
+  'Regulación mercantil parcial del período precontractual',
+  3,
+  '¿Qué artículos del Código de Comercio regulan, parcialmente, el período precontractual, y desde qué momento parten?',
+  '["Los artículos 97 a 106, partiendo del supuesto de que ya existe una oferta formulada", "Los artículos 1 a 10, que regulan los tratos negociales previos desde el primer contacto entre las partes", "Los artículos 97 a 106, que regulan exclusivamente los tratos negociales previos a la oferta", "No existe ninguna norma en el Código de Comercio sobre esta materia"]'::jsonb,
+  0,
+  '{"correcta": "Los artículos 97 a 106 del Código de Comercio remedian solo parcialmente el vacío del Código Civil, partiendo todos del supuesto de que ya se ha formulado una oferta; el tramo anterior, los tratos negociales previos, queda sin regulación expresa.", "por_que_no": ["B: esos no son los artículos ni la materia que regulan los arts. 1 a 10 del Código de Comercio.", "C: esos artículos parten precisamente de que ya existe oferta; no regulan la etapa previa a ella.", "D: sí existe esa norma parcial en el Código de Comercio."]}'::jsonb,
+  'Código de Comercio, arts. 97 a 106'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-003',
+  'precontractual',
+  'Los tres elementos copulativos de la responsabilidad precontractual',
+  3,
+  '¿Cuáles son los tres elementos que, copulativamente, generan responsabilidad precontractual según el núcleo común de las definiciones examinadas?',
+  '["Un daño efectivo, una expectativa razonable creada por la conducta de la contraparte, y una conducta que defrauda esa expectativa concreta", "La existencia de un contrato de promesa, un plazo vencido, y la mala fe de una de las partes", "Un daño moral, dolo probado, y la ausencia de toda negociación previa", "La sola frustración de la negociación, sin necesidad de ningún otro requisito"]'::jsonb,
+  0,
+  '{"correcta": "El núcleo común de las definiciones examinadas exige siempre un daño efectivo, una expectativa razonable generada por la conducta de la contraparte, y una conducta que defrauda esa expectativa concreta.", "por_que_no": ["B: la responsabilidad precontractual no presupone un contrato de promesa; de hecho, la promesa se rige por reglas distintas.", "C: no se exige específicamente daño moral ni dolo probado como estándar único.", "D: la sola frustración de la negociación, sin más, no genera responsabilidad."]}'::jsonb,
+  'Doctrina sobre el concepto de responsabilidad precontractual (Saavedra, Picasso, De los Mozos)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-004',
+  'precontractual',
+  'Las dos etapas del período precontractual (Orrego)',
+  3,
+  'Según ORREGO, ¿en cuántas etapas se divide el período precontractual, y cuáles son?',
+  '["En dos: los tratos negociales previos (antes de la oferta) y la etapa que se inicia con la oferta", "En tres: la oferta, la aceptación y la celebración del contrato prometido", "En una sola etapa indivisible, que comienza con la oferta", "En dos: la etapa contractual y la etapa extracontractual"]'::jsonb,
+  0,
+  '{"correcta": "Orrego distingue dos grandes etapas: los tratos negociales previos o negociaciones preliminares (antes de que exista una oferta), y la etapa que se inicia con la formulación de la oferta por alguna de las partes.", "por_que_no": ["B: esas son etapas de la formación del consentimiento en general, no la división que propone Orrego para el período precontractual.", "C: Orrego sí distingue dos etapas, no una sola.", "D: esa distinción corresponde a los estatutos de responsabilidad civil, no a las etapas del período precontractual."]}'::jsonb,
+  'Doctrina de Orrego sobre las etapas del período precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1554',
+  'precontractual',
+  'El contrato de promesa y sus cuatro requisitos',
+  '1554',
+  'La promesa de celebrar un contrato no produce obligación alguna; salvo que concurran las circunstancias siguientes: 1a. Que la promesa conste por escrito; 2a. Que el contrato prometido no sea de aquellos que las leyes declaran ineficaces; 3a. Que la promesa contenga un plazo o condición que fije la época de la celebración del contrato; 4a. Que en ella se especifique de tal manera el contrato prometido, que sólo falten para que sea perfecto, la tradición de la cosa, o las solemnidades que las leyes prescriban.',
+  '[["conste por escrito"], ["plazo o condición"], ["solo falten", "tradición de la cosa", "solemnidades"], ["*"]]'::jsonb,
+  array['conste por escrito', 'plazo o condición', 'solo falten', 'tradición de la cosa', 'solemnidades'],
+  'Código Civil, art. 1554'
+)
+on conflict (id) do nothing;

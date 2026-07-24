@@ -381,3 +381,14 @@
 | ¿Qué naturaleza tiene la responsabilidad por incumplimiento de un contrato de promesa? | <strong>Contractual</strong>, porque la promesa es en sí misma un contrato. | intermedia | civil | Responsabilidad extracontractual | Naturaleza de la promesa |
 | ¿Qué calificación prefiere la doctrina chilena, de modo uniforme, para las tres situaciones de este eje? | La <strong>extracontractual</strong>, como solución residual. | avanzada | civil | Responsabilidad extracontractual | Preferencia extracontractual uniforme |
 | ¿Por qué esa calificación extracontractual no resuelve el problema por sí sola? | Porque obliga a introducir <strong>correctivos</strong> al estándar abstracto de culpa (buena fe, confianza, lealtad). | avanzada | civil | Responsabilidad extracontractual | Correctivos al estándar de culpa |
+
+## Lote 1: Precontractual, Eje A. Planteamiento del problema y concepto de responsabilidad precontractual
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Regula el Código Civil chileno la formación del consentimiento, como regla general? | No, salvo en materia de <strong>promesa</strong> (art. 1554); existe un vacío legal. | intermedia | civil | Responsabilidad precontractual | Vacío legal en la formación del consentimiento |
+| ¿Qué artículos del Código de Comercio regulan parcialmente el período precontractual? | Los <strong>artículos 97 a 106</strong>, partiendo del supuesto de que ya existe una oferta. | avanzada | civil | Responsabilidad precontractual | Regulación mercantil parcial |
+| ¿Cuáles son los tres elementos copulativos que generan responsabilidad precontractual? | <em>(i)</em> Daño efectivo; <em>(ii)</em> expectativa razonable creada por la contraparte; <em>(iii)</em> conducta que la defrauda. | avanzada | civil | Responsabilidad precontractual | Los tres elementos copulativos |
+| ¿Basta la mera frustración de una negociación para generar responsabilidad precontractual? | No. La sola frustración de haber negociado en vano <strong>no genera nada</strong>. | básica | civil | Responsabilidad precontractual | Qué NO protege la responsabilidad precontractual |
+| Según ORREGO, ¿en cuántas etapas se divide el período precontractual? | En <strong>dos</strong>: los tratos negociales previos (antes de la oferta) y la etapa que se inicia con la oferta. | intermedia | civil | Responsabilidad precontractual | Las dos etapas del período precontractual |
+| ¿Cuáles son las cuatro interrogantes centrales de Orrego sobre esta materia? | Naturaleza jurídica, factor de atribución, momento de inicio del período, y <strong>daño indemnizable</strong>. | avanzada | civil | Responsabilidad precontractual | Las cuatro interrogantes de Orrego |
