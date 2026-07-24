@@ -4044,6 +4044,81 @@
         correcta: 'B',
         articulos_referencia: ['99', '2314'],
         objetivo_pedagogico: 'Aplicar el doble fundamento de Boffi (declaración unilateral de voluntad vs. responsabilidad aquiliana) según exista o no compromiso expreso de plazo en la oferta'
+      },
+
+      // Lote 2026-07: Precontractual, Eje F (Determinación de los daños a resarcir en la responsabilidad precontractual)
+      {
+        id: 'pre-aplic-006',
+        materia: 'civil',
+        tema: 'Responsabilidad precontractual',
+        subtema: 'La causalidad adecuada de Brebbia según la etapa del daño',
+        tipo: 'aplicacion',
+        caso: 'Una boutique de indumentaria conversa informalmente con un diseñador italiano sobre representar en Chile su nueva colección, y contrata a un consultor de moda para evaluar el mercado local, gastando tres millones de pesos. El diseñador corta el contacto sin explicación. Meses después, en un proceso completamente distinto, ese mismo diseñador formula una oferta formal de representación exclusiva a otra boutique chilena, que está en curso de aceptarla, tras haber rechazado, por eso, una oferta de un diseñador competidor. El diseñador italiano se retracta de esa segunda oferta sabiendo que la boutique había rechazado esa otra alternativa confiando en la suya.',
+        enunciado: 'Aplicando el criterio de BREBBIA, ¿qué puede cobrar cada una de las dos boutiques?',
+        respuesta_modelo: 'La primera boutique, cuyo daño se produjo durante los tratos previos, antes de cualquier oferta, solo puede cobrar el reembolso de los gastos del consultor de moda, es decir, el daño emergente. La ganancia que habría obtenido representando la colección es demasiado remota para imputarla: bien pudo perseguir la misma oportunidad con otro diseñador, de modo que no existe, según Brebbia, una relación de causalidad adecuada entre esa ganancia frustrada y la ruptura de unas tratativas todavía tempranas.\n\nLa segunda boutique, en cambio, puede cobrar no solo el daño emergente, sino también el lucro cesante, esto es, la ganancia que la representación exclusiva le habría reportado. Aquí ya existía una oferta formal, en curso de aceptación, y el diseñador sabía que la boutique había rechazado, por confiar en esa oferta, una alternativa de un competidor. El vínculo entre las partes ya era, en este punto, lo bastante estrecho como para que esa ganancia frustrada sea una consecuencia causalmente adecuada de la retractación.',
+        elementos_clave: [
+          { texto: 'Identifica que la primera boutique solo puede cobrar el daño emergente (el gasto del consultor), por estar en la etapa de tratos previos', keywords: ['solo daño emergente', 'tratos previos', 'gastos del consultor'], pregunta: '¿Qué puede cobrar la primera boutique, la de los tratos informales?' },
+          { texto: 'Explica por qué esa ganancia frustrada es demasiado remota (pudo negociar la misma oportunidad con otro diseñador)', keywords: ['demasiado remota', 'pudo negociar con otro', 'no hay causalidad adecuada'], pregunta: '¿Por qué la ganancia de representar la colección no es indemnizable para la primera boutique?' },
+          { texto: 'Identifica que la segunda boutique puede cobrar, además, el lucro cesante, por existir ya oferta formal en curso de aceptación', keywords: ['lucro cesante', 'oferta formal', 'en curso de aceptación'], pregunta: '¿Qué puede cobrar, además del daño emergente, la segunda boutique?' },
+          { texto: 'Explica que el vínculo ya era lo bastante estrecho para que esa ganancia sea una consecuencia causalmente adecuada', keywords: ['vínculo estrecho', 'causalmente adecuada', 'consecuencia previsible'], pregunta: '¿Por qué, en el segundo caso, sí existe relación de causalidad adecuada respecto de la ganancia frustrada?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar el criterio de causalidad adecuada de Brebbia, distinguiendo el daño indemnizable antes y después de la oferta'
+      },
+
+      {
+        id: 'pre-detect-006',
+        materia: 'civil',
+        tema: 'Responsabilidad precontractual',
+        subtema: 'La exclusión tradicional del lucro cesante en sede precontractual',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno responde: "En Chile, la responsabilidad precontractual repara siempre tanto el daño emergente como el lucro cesante, exactamente igual que la responsabilidad contractual y extracontractual ordinarias."',
+        enunciado: 'El alumno comete el error típico de examen en esta materia. Identifícalo y explica la regla correcta.',
+        respuesta_modelo: 'El alumno traslada, sin más, la regla ordinaria de daño emergente y lucro cesante a un ámbito donde no rige de la misma manera. En Chile, la posición tradicional, representada por Avelino León Hurtado y Hugo Rosende Álvarez, excluye siempre el lucro cesante en sede precontractual, cualquiera sea la etapa en que se produjo el daño: solo se indemniza el daño emergente, los gastos efectivamente incurridos.\n\nSolo Brebbia admite el lucro cesante, y únicamente para el daño producido después de formulada la oferta, cuando existe ya una relación de causalidad adecuada entre la retractación culposa y la ganancia frustrada. Antes de la oferta, incluso para Brebbia, el resarcimiento se limita al daño emergente. Afirmar, entonces, que siempre se repara el daño emergente y el lucro cesante en sede precontractual es exactamente el error que el manual advierte como típico de examen.',
+        elementos_clave: [
+          { texto: 'Identifica que la posición tradicional chilena (León Hurtado, Rosende) excluye siempre el lucro cesante en sede precontractual', keywords: ['excluye siempre', 'León Hurtado', 'Rosende', 'solo daño emergente'], pregunta: '¿Admite la posición tradicional chilena el lucro cesante en sede precontractual?' },
+          { texto: 'Precisa que solo Brebbia lo admite, y únicamente para el daño posterior a la oferta', keywords: ['Brebbia', 'solo después de la oferta', 'única excepción'], pregunta: '¿Existe alguna posición doctrinal que sí admita el lucro cesante, y bajo qué condición?' },
+          { texto: 'Concluye que no puede trasladarse sin más la regla ordinaria de daño emergente y lucro cesante a la sede precontractual', keywords: ['no se traslada sin más', 'regla ordinaria distinta'], pregunta: '¿Por qué es un error afirmar que en sede precontractual siempre se indemniza igual que en la responsabilidad ordinaria?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Corregir el error típico de trasladar sin más la regla de daño emergente y lucro cesante de la responsabilidad ordinaria a la sede precontractual'
+      },
+
+      {
+        id: 'pre-just-006',
+        materia: 'civil',
+        tema: 'Responsabilidad precontractual',
+        subtema: 'La distinción de Ihering entre interés positivo e interés negativo',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿En qué consiste la distinción de Ihering entre interés positivo e interés negativo, y por qué no está del todo claro si el interés negativo de Ihering comprende también el lucro cesante?',
+        respuesta_modelo: 'El interés positivo o de cumplimiento es el que Ihering reserva para el daño causado por la inejecución de un contrato efectivamente celebrado y válido, esto es, para el incumplimiento contractual ordinario, ajeno a la responsabilidad precontractual. El interés negativo o de confianza, en cambio, es todo el daño sufrido por quien confió en que el contrato se celebraría, o en que sería válido, y es este el que resulta relevante en sede precontractual.\n\nRespecto de este último, Ihering sostenía que la reparación podía comprender tanto los perjuicios efectivos (los gastos inútiles incurridos durante las tratativas) como la pérdida de posteriores ocasiones de negociar a causa del contrato no concluido, esto es, tanto el daño emergente como, de haberlo, el lucro cesante. Sin embargo, la doctrina que ha estudiado a Ihering reconoce que él no fue del todo claro sobre el punto: para la mayoría de sus intérpretes, el interés negativo abarca ambas partidas, pero para algunos autores se limita únicamente al daño emergente. Por eso conviene no forzar demasiado la equivalencia aproximada entre interés positivo/lucro cesante e interés negativo/daño emergente: la distinción de Ihering es, en su origen, más ambigua de lo que esa equivalencia sugiere.',
+        elementos_clave: [
+          { texto: 'Explica que el interés positivo corresponde al daño de incumplimiento de un contrato válido, ajeno a la responsabilidad precontractual', keywords: ['interés positivo', 'cumplimiento', 'contrato válido', 'ajeno a este manual'], pregunta: '¿A qué se refiere el interés positivo o de cumplimiento?' },
+          { texto: 'Explica que el interés negativo es el daño de haber confiado en la celebración o validez de un contrato que no prosperó', keywords: ['interés negativo', 'confianza', 'no se celebró o fue nulo'], pregunta: '¿A qué se refiere el interés negativo o de confianza, relevante en este eje?' },
+          { texto: 'Señala que no está claro si el interés negativo de Ihering comprende solo el daño emergente o también el lucro cesante', keywords: ['no fue del todo claro', 'algunos autores lo limitan al daño emergente', 'mayoría lo extiende a ambas partidas'], pregunta: '¿Es unánime la doctrina sobre si el interés negativo de Ihering incluye el lucro cesante?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Exponer la distinción de Ihering entre interés positivo e interés negativo y precisar la ambigüedad histórica sobre el alcance de este último'
+      },
+
+      {
+        id: 'pre-mc-006',
+        materia: 'civil',
+        tema: 'Responsabilidad precontractual',
+        subtema: 'Regla categórica (Faggella/Saleilles) vs. causalidad adecuada (Brebbia) tras la oferta',
+        tipo: 'discriminacion_mc',
+        caso: 'Un proveedor de maquinaria agrícola formula una oferta formal a un agricultor, comprometiéndose expresamente a mantenerla por 15 días. Al día 10, sabiendo que el agricultor ya había rechazado una oferta de un proveedor competidor confiando en la suya, el proveedor se retracta sin motivo justificado. El agricultor demanda tanto el reembolso de los gastos incurridos como la ganancia que habría obtenido operando la maquinaria durante la temporada de cosecha.',
+        enunciado: '¿Qué posición doctrinal permitiría al agricultor cobrar, además de los gastos, la ganancia frustrada, y cuál se lo impediría categóricamente?',
+        opciones: [
+          { letra: 'A', texto: 'FAGGELLA y SALEILLES lo permitirían, porque para ellos el lucro cesante siempre procede tras la oferta; BREBBIA lo excluiría siempre.', rationale: 'Error: la posición está invertida. Faggella, Saleilles y la doctrina chilena tradicional excluyen categóricamente el lucro cesante, cualquiera sea la etapa; es Brebbia quien lo admite tras la oferta.' },
+          { letra: 'B', texto: 'BREBBIA lo permitiría, porque el daño se produjo después de formulada la oferta y existe ya una relación de causalidad adecuada entre la retractación y la ganancia frustrada; FAGGELLA, SALEILLES y la doctrina chilena tradicional lo excluirían categóricamente, cualquiera sea la etapa.', rationale: 'CORRECTO. Para Brebbia, tras la oferta, la retractación culposa hace indemnizable también el lucro cesante, por existir ya un nexo de causalidad adecuado. Faggella, Saleilles y la doctrina tradicional chilena (León Hurtado, Rosende) excluyen siempre el lucro cesante, sin distinguir etapas.' },
+          { letra: 'C', texto: 'Ambas posiciones permitirían cobrar la ganancia frustrada, porque toda la doctrina converge en admitir el lucro cesante tras la oferta.', rationale: 'Error: no existe esa convergencia; Faggella, Saleilles y la doctrina chilena tradicional lo excluyen categóricamente, cualquiera sea la etapa del daño.' },
+          { letra: 'D', texto: 'Ninguna posición lo permitiría, porque el lucro cesante nunca es indemnizable en materia de responsabilidad precontractual.', rationale: 'Error: Brebbia sí lo admite expresamente para el daño producido después de formulada la oferta, cuando existe un nexo causal adecuado.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Distinguir la regla categórica de exclusión del lucro cesante (Faggella, Saleilles, doctrina chilena tradicional) del criterio de causalidad adecuada de Brebbia tras la oferta'
       }
     ];
 

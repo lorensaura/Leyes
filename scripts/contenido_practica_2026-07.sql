@@ -1906,3 +1906,80 @@ values (
   'Código de Comercio, art. 99'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (40): Precontractual, Eje F (Determinación de los daños a resarcir en la responsabilidad precontractual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-025',
+  'precontractual',
+  'El interés negativo o de confianza (Ihering)',
+  3,
+  '¿Qué es el interés negativo o de confianza, según la distinción de IHERING?',
+  '["La ganancia que se habría obtenido si el contrato se hubiera cumplido", "El daño sufrido por quien confió en que el contrato se celebraría, o en que sería válido", "El daño moral derivado exclusivamente de la ruptura de una negociación", "El mismo concepto que el interés positivo, con distinto nombre"]'::jsonb,
+  1,
+  '{"correcta": "El interés negativo o de confianza es todo el daño sufrido por quien confió en que el contrato se celebraría, o en que sería válido; se distingue del interés positivo o de cumplimiento, que Ihering reserva para el incumplimiento de un contrato efectivamente celebrado y válido.", "por_que_no": ["A: esa es la definición del interés positivo, no del negativo.", "C: el interés negativo no se limita al daño moral; puede comprender daño emergente y, según la interpretación, lucro cesante.", "D: son conceptos expresamente distintos en la formulación de Ihering."]}'::jsonb,
+  'Doctrina de Ihering sobre interés positivo e interés negativo'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-026',
+  'precontractual',
+  'Posición tradicional chilena sobre el lucro cesante',
+  3,
+  '¿Cuál es la posición tradicional de la doctrina chilena (LEÓN HURTADO, ROSENDE) sobre el lucro cesante en sede precontractual?',
+  '["Se indemniza siempre, en las mismas condiciones que en la responsabilidad contractual ordinaria", "Se excluye siempre, cualquiera sea la etapa; solo se indemniza el daño emergente", "Se indemniza solo si el contrato llegó a celebrarse y después fue declarado nulo", "Se indemniza únicamente si hay dolo probado del responsable"]'::jsonb,
+  1,
+  '{"correcta": "Según Orrego, la posición que ha prevalecido en la doctrina chilena tradicional, representada por León Hurtado y Rosende Álvarez, es que solo se indemniza el daño emergente, nunca el lucro cesante, cualquiera sea la etapa.", "por_que_no": ["A: precisamente se aparta de la regla ordinaria, que sí incluye el lucro cesante.", "C: la exclusión del lucro cesante no depende de si el contrato llegó a celebrarse y luego se anuló.", "D: la exigencia de dolo no es el criterio que determina, para esta posición, la exclusión del lucro cesante."]}'::jsonb,
+  'Doctrina chilena tradicional (León Hurtado, Rosende) sobre daño indemnizable en sede precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-027',
+  'precontractual',
+  'Brebbia: daño antes de la oferta',
+  4,
+  'Según BREBBIA, ¿qué se indemniza respecto del daño producido antes de formulada la oferta, durante los tratos negociales previos?',
+  '["Solo el reembolso de los gastos ocasionados por las negociaciones, no la ganancia dejada de percibir", "El daño emergente y también el lucro cesante, en las mismas condiciones que después de la oferta", "Solo el lucro cesante, no los gastos incurridos", "Nada; antes de la oferta no existe responsabilidad alguna para Brebbia"]'::jsonb,
+  0,
+  '{"correcta": "Respecto del daño originado durante los tratos negociales previos, el damnificado solo puede demandar el reembolso de los gastos ocasionados por las negociaciones, porque entre la ganancia dejada de percibir y el hecho culposo no existe, según Brebbia, una relación de causalidad adecuada.", "por_que_no": ["B: esa regla (daño emergente y lucro cesante) rige recién después de la oferta, no antes.", "C: los gastos (daño emergente) sí son indemnizables antes de la oferta; lo que se excluye es el lucro cesante.", "D: Brebbia sí admite responsabilidad antes de la oferta, aunque limitada al daño emergente."]}'::jsonb,
+  'Doctrina de Brebbia sobre el daño indemnizable antes de la oferta'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-028',
+  'precontractual',
+  'Brebbia: daño después de la oferta',
+  4,
+  'Según BREBBIA, ¿qué se indemniza respecto del daño producido después de formulada la oferta, en caso de retractación culposa del oferente?',
+  '["Solo el daño emergente, igual que antes de la oferta", "El daño emergente y también el lucro cesante", "Solo el lucro cesante, excluyendo los gastos ya incurridos", "Nada, porque el oferente conserva siempre el derecho absoluto a retractarse"]'::jsonb,
+  1,
+  '{"correcta": "Respecto del daño ocasionado después de formulada la oferta, en caso de retractación culposa, el damnificado tiene derecho a reclamar no solo el daño emergente, sino también el lucro cesante, porque entre esa retractación y la ganancia frustrada sí existe un nexo de causalidad adecuado.", "por_que_no": ["A: precisamente después de la oferta la regla cambia respecto de la etapa anterior.", "C: el lucro cesante se suma al daño emergente; no lo reemplaza.", "D: el ius revocandi no excluye la responsabilidad por retractación culposa; solo impide obligar al cumplimiento forzado de la prestación."]}'::jsonb,
+  'Doctrina de Brebbia sobre el daño indemnizable después de la oferta'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-029',
+  'precontractual',
+  'El criterio de causalidad adecuada de Brebbia',
+  4,
+  '¿Qué criterio usa BREBBIA para decidir si el lucro cesante es o no indemnizable en un caso concreto, en vez de aplicar una regla fija según el tipo de partida?',
+  '["La relación de causalidad adecuada entre el hecho generador de responsabilidad y el perjuicio reclamado", "El monto total del daño emergente ya acreditado", "La buena o mala fe subjetiva del oferente al momento de retractarse", "El tiempo transcurrido desde el inicio de las negociaciones, expresado en días"]'::jsonb,
+  0,
+  '{"correcta": "Brebbia matiza la regla de reparación integral con un límite: la relación de causalidad adecuada entre el hecho generador de responsabilidad y el perjuicio, aplicada de manera diferenciada según la etapa en que se produjo el daño.", "por_que_no": ["B: el monto del daño emergente no es, por sí mismo, el criterio que decide la procedencia del lucro cesante.", "C: el criterio de Brebbia no pasa por la buena o mala fe subjetiva, sino por la causalidad adecuada.", "D: no existe un umbral de días que determine, por sí solo, la procedencia del lucro cesante en este criterio."]}'::jsonb,
+  'Doctrina de Brebbia sobre causalidad adecuada en la responsabilidad precontractual'
+)
+on conflict (id) do nothing;

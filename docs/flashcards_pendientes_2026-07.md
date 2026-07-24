@@ -436,3 +436,14 @@
 | ¿Qué regula el art. 99 del Código de Comercio? | La oferta que <strong>"por sí sola obliga"</strong>, si el proponente se comprometió a esperar o a no disponer del objeto por un plazo. | avanzada | civil | Responsabilidad precontractual | Art. 99: oferta que por sí sola obliga |
 | ¿Cuál es la tesis mayoritaria en Chile sobre la naturaleza de la responsabilidad precontractual? | La <strong>extracontractual</strong> (De los Mozos, Brebbia, Saavedra). | intermedia | civil | Responsabilidad precontractual | Tesis mayoritaria |
 | Según Brebbia, ¿en qué se diferencia la culpa precontractual de la culpa aquiliana ordinaria? | En los <strong>sujetos</strong> (solo quienes negocian) y en el <strong>grado</strong> (mayor exigencia de lealtad). | avanzada | civil | Responsabilidad precontractual | Diferencias de Brebbia |
+
+## Lote 6: Precontractual, Eje F. Determinación de los daños a resarcir en la responsabilidad precontractual
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué distingue Ihering entre interés positivo e interés negativo? | El positivo repara el <strong>cumplimiento</strong> esperado; el negativo, el daño de haber <strong>confiado</strong> en un contrato que no se celebró o fue nulo. | avanzada | civil | Responsabilidad precontractual | Interés positivo vs. negativo (Ihering) |
+| ¿Cuál es la posición tradicional en Chile (León Hurtado, Rosende) sobre el lucro cesante precontractual? | Se <strong>excluye siempre</strong>; solo se indemniza el daño emergente. | avanzada | civil | Responsabilidad precontractual | Exclusión tradicional del lucro cesante |
+| Según Brebbia, ¿qué se indemniza antes de la oferta? | Solo el <strong>daño emergente</strong> (los gastos de la negociación). | avanzada | civil | Responsabilidad precontractual | Brebbia: antes de la oferta |
+| Según Brebbia, ¿qué se indemniza después de la oferta, en caso de retractación culposa? | <strong>Daño emergente y lucro cesante</strong>. | avanzada | civil | Responsabilidad precontractual | Brebbia: después de la oferta |
+| ¿Qué criterio usa Brebbia para decidir la extensión del daño, en vez de una regla categórica? | La <strong>causalidad adecuada</strong> entre el hecho y el perjuicio. | avanzada | civil | Responsabilidad precontractual | Criterio de causalidad adecuada |
+| ¿Qué error típico de examen advierte el manual sobre esta materia? | No basta decir "daño emergente y lucro cesante" como en la responsabilidad ordinaria; aquí se <strong>excluye</strong> el lucro cesante como regla. | avanzada | civil | Responsabilidad precontractual | Error típico de examen |
