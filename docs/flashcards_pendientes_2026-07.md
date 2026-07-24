@@ -337,3 +337,14 @@
 | ¿Reconoce el derecho chileno una acción de clase general, como el common law? | No. Solo la <strong>acumulación de acciones</strong> de un mismo hecho, salvo la excepción sectorial del derecho del consumidor. | intermedia | civil | Responsabilidad extracontractual | Ausencia de acción de clase general |
 | ¿Cómo se mide la obligación de quien recibe provecho del dolo ajeno sin ser cómplice (art. 2316 inc. 2°)? | Por el <strong>provecho recibido</strong>, y no por el daño sufrido por la víctima. | avanzada | civil | Responsabilidad extracontractual | Medida de la acción del art. 2316 inc. 2° |
 | ¿Responde el encubridor siempre igual que el mero beneficiario del dolo ajeno? | No. Si su reticencia buscaba <strong>aprovecharse</strong> del dolo conociéndolo, responde <strong>como autor</strong> por el total. | avanzada | civil | Responsabilidad extracontractual | Régimen del encubridor |
+
+## Lote 22: Extracontractual, Eje V. Tribunal, procedimiento y extinción de la acción (art. 2332)
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué tribunal es competente si el hecho reviste a la vez carácter civil y penal? | A elección de la víctima, el juzgado <strong>civil</strong> o el <strong>penal</strong> que conoce el delito o cuasidelito. | intermedia | civil | Responsabilidad extracontractual | Tribunal competente |
+| ¿Es válida la renuncia a la reparación una vez producido el daño? | Sí, porque recae sobre un <strong>crédito patrimonial</strong> ya devengado, plenamente disponible. | intermedia | civil | Responsabilidad extracontractual | Renuncia posterior al daño |
+| ¿Es una "renuncia" la autorización que la víctima presta antes del hecho dañoso? | No. Es una <strong>causal de justificación</strong> (consentimiento de la víctima): no puede renunciarse a una acción que aún no existe. | avanzada | civil | Responsabilidad extracontractual | Autorización anticipada |
+| ¿Puede transigirse sobre la acción civil que nace de un delito? | Sí, <strong>sin perjuicio</strong> de la acción criminal. | básica | civil | Responsabilidad extracontractual | Transacción |
+| ¿Cuál es el plazo de prescripción de la acción del art. 2332? | <strong>Cuatro años</strong>, contados desde la perpetración del acto. | básica | civil | Responsabilidad extracontractual | Prescripción (art. 2332) |
+| ¿Se suspende ese plazo en favor de los incapaces? | No; por ser una prescripción de <strong>corto tiempo especial</strong>, no se suspende conforme a las reglas generales. | avanzada | civil | Responsabilidad extracontractual | Suspensión del plazo del art. 2332 |

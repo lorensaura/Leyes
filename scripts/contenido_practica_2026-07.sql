@@ -1204,3 +1204,65 @@ values (
   'Código Civil, art. 2316'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (31): Extracontractual, Eje V (Tribunal, procedimiento y extinción de la acción, art. 2332)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-026',
+  'extracontractual',
+  'Transacción sobre la acción civil de un delito',
+  2,
+  '¿Puede la transacción recaer sobre la acción civil que nace de un delito?',
+  '["Sí, sin perjuicio de la acción criminal", "No, la transacción está prohibida en materia de responsabilidad extracontractual", "Solo si media autorización judicial previa", "Solo respecto de daños materiales, nunca de daño moral"]'::jsonb,
+  0,
+  '{"correcta": "El Código Civil admite expresamente que la transacción puede recaer sobre la acción civil que nace de un delito, sin perjuicio de la acción criminal, porque su objeto es un crédito patrimonial ya devengado.", "por_que_no": ["B: la transacción está expresamente admitida, no prohibida.", "C: no se exige autorización judicial para transigir sobre la indemnización ya devengada.", "D: no existe esa limitación; la transacción puede comprender tanto daño material como moral, en tanto crédito patrimonial ya nacido."]}'::jsonb,
+  'Código Civil, disposiciones sobre transacción y extinción de la responsabilidad extracontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-027',
+  'extracontractual',
+  'Plazo de prescripción del art. 2332',
+  2,
+  '¿Cuál es el plazo de prescripción de la acción indemnizatoria por delitos y cuasidelitos civiles conforme al artículo 2332?',
+  '["Un año, contado desde que se tuvo conocimiento del daño", "Cuatro años, contados desde la perpetración del acto", "Cinco años, contados desde la celebración del hecho", "Dos años, igual que la prescripción de corto tiempo general"]'::jsonb,
+  1,
+  '{"correcta": "El artículo 2332 establece un plazo especial de prescripción de cuatro años, contado desde la perpetración del acto, para las acciones que concede el título de los delitos y cuasidelitos por daño o dolo.", "por_que_no": ["A: no es un año ni corre desde el conocimiento del daño, sino desde la perpetración del acto.", "C: cinco años es el plazo especial de responsabilidad del constructor por ruina de un edificio, no la regla general del art. 2332.", "D: la prescripción de corto tiempo general del Código Civil no es de dos años; además, el art. 2332 es un plazo especial distinto."]}'::jsonb,
+  'Código Civil, art. 2332'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-028',
+  'extracontractual',
+  'Suspensión del plazo de prescripción del art. 2332',
+  4,
+  '¿Se suspende el plazo de prescripción de cuatro años del artículo 2332 en favor de las personas enumeradas en las reglas generales de suspensión (incapaces)?',
+  '["Sí, se aplican sin excepción las reglas generales de suspensión", "No, por tratarse de una prescripción de corto tiempo de carácter especial, no se suspende en favor de esas personas", "Se suspende solo respecto de los menores de edad, no de los dementes", "Se suspende únicamente si la víctima estuvo imposibilitada de conocer el daño"]'::jsonb,
+  1,
+  '{"correcta": "Se ha sostenido tradicionalmente que, tratándose de una prescripción de corto tiempo de carácter especial, el plazo del art. 2332 no se suspende en favor de las personas enumeradas en las reglas generales sobre prescripción.", "por_que_no": ["A: precisamente por su carácter especial y de corto tiempo, no se aplican sin más esas reglas generales de suspensión.", "C: la exclusión no distingue entre menores y dementes; se sostiene respecto de todas las personas enumeradas en las reglas generales.", "D: no existe esa causal específica de suspensión para el plazo del art. 2332."]}'::jsonb,
+  'Doctrina sobre prescripción de corto tiempo especial (art. 2332)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-029',
+  'extracontractual',
+  'Improcedencia de la reserva de perjuicios en materia extracontractual',
+  4,
+  'En un juicio por delito o cuasidelito civil, ¿puede el tribunal reservar para la ejecución del fallo, o para un juicio diverso, lo relativo a la especie y monto de los perjuicios?',
+  '["Sí, es la regla general en todo juicio indemnizatorio", "No; la jurisprudencia ha entendido que esa reserva no resulta aplicable en materia extracontractual, debiendo establecerse todos esos factores dentro de un solo juicio", "Sí, pero solo si ambas partes lo consienten expresamente", "No, salvo que se trate exclusivamente de daño moral"]'::jsonb,
+  1,
+  '{"correcta": "La jurisprudencia ha entendido que, en materia extracontractual, no resulta aplicable la norma que permite reservar para la ejecución del fallo, o para un juicio diverso, lo relativo a la especie y monto de los perjuicios: en los delitos y cuasidelitos civiles, todos estos factores deben quedar establecidos dentro de un solo juicio.", "por_que_no": ["A: es exactamente lo contrario de la regla aplicable en materia extracontractual.", "C: no se trata de una facultad disponible para las partes, sino de una regla sobre cómo debe tramitarse el juicio indemnizatorio.", "D: la regla no distingue según la clase de daño; rige tanto para el daño material como el moral."]}'::jsonb,
+  'Jurisprudencia sobre tramitación del juicio indemnizatorio extracontractual'
+)
+on conflict (id) do nothing;

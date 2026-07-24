@@ -3374,6 +3374,80 @@
         correcta: 'B',
         articulos_referencia: ['2316'],
         objetivo_pedagogico: 'Distinguir los regímenes de responsabilidad del autor, el cómplice, el encubridor y el beneficiario del dolo ajeno conforme al art. 2316'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje V (Tribunal, procedimiento y extinción de la acción, art. 2332)
+      {
+        id: 're-aplic-023',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Prescripción de daños diferidos: el debate sobre la "perpetración del acto" (art. 2332)',
+        tipo: 'aplicacion',
+        caso: 'En 2016, un ingeniero calcula erróneamente la resistencia de las vigas de una bodega industrial. La estructura se mantiene aparentemente estable durante años, hasta que en 2022 colapsa bajo una carga normal para ese tipo de bodegas, dañando la propiedad vecina. El dueño de la propiedad vecina demanda al ingeniero en 2023.',
+        enunciado: '¿Ha prescrito la acción de responsabilidad extracontractual contra el ingeniero conforme al artículo 2332?',
+        respuesta_modelo: 'La respuesta depende de cómo se entienda la expresión "perpetración del acto" que emplea el artículo 2332 para fijar el inicio del plazo de cuatro años, cuestión que la jurisprudencia no ha resuelto de manera uniforme.\n\nSi se entiende que ese plazo corre desde la sola conducta del hechor, con independencia de cuándo se manifieste el daño, el cómputo comenzaría en 2016 y la acción habría prescrito en 2020, es decir, dos años antes de que el edificio colapsara (2022) y tres antes de que se presentara la demanda (2023). Este resultado es lógicamente incoherente: no puede prescribir una acción que, a falta de daño, todavía no había nacido, de modo que la acción habría prescrito antes de existir.\n\nSi, en cambio, se entiende que la "perpetración del acto" se refiere al hecho ilícito completo (la conducta culpable sumada al daño que ella causa), el plazo recién comienza a correr en 2022, cuando el colapso se produce y el daño se manifiesta. Bajo esta lectura, la demanda de 2023 se presenta dentro de los cuatro años y la acción no ha prescrito. Esta segunda lectura es la que evita el resultado absurdo de una acción prescrita antes de nacer, aunque la jurisprudencia se ha dividido entre ambas.',
+        elementos_clave: [
+          { texto: 'Identifica que, bajo la lectura literal (sola conducta, desde 2016), la acción habría prescrito en 2020, antes de que el daño se manifestara', keywords: ['2020', 'sola conducta', 'antes del daño', 'prescrito antes'], pregunta: '¿Qué pasaría si el plazo de cuatro años corriera desde 2016, año del cálculo erróneo?' },
+          { texto: 'Señala que ese resultado es lógicamente incoherente, porque una acción no puede prescribir antes de haber nacido, a falta de daño', keywords: ['incoherente', 'antes de nacer', 'no ha nacido', 'sin daño no hay acción'], pregunta: '¿Qué problema lógico genera hacer correr el plazo desde la sola conducta, antes de que exista daño alguno?' },
+          { texto: 'Concluye que, bajo la lectura que identifica "perpetración del acto" con el hecho ilícito completo, el plazo corre desde 2022 y la demanda de 2023 no ha prescrito', keywords: ['desde 2022', 'hecho ilícito completo', 'no ha prescrito', 'dentro de los cuatro años'], pregunta: '¿Qué lectura evita que la acción prescriba antes de que el daño se manifieste?' }
+        ],
+        articulos_referencia: ['2332'],
+        objetivo_pedagogico: 'Aplicar el debate sobre el cómputo del plazo de prescripción del art. 2332 a un caso de daño diferido en el tiempo'
+      },
+
+      {
+        id: 're-detect-024',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Renuncia anticipada vs. renuncia posterior al daño',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno responde: "La renuncia a la acción de responsabilidad extracontractual es siempre válida, sea que se preste antes o después de producido el daño, porque en ambos casos la víctima simplemente dispone de un derecho patrimonial que le pertenece."',
+        enunciado: 'El alumno comete un error conceptual central. Identifícalo y explica la distinción correcta.',
+        respuesta_modelo: 'El alumno acierta respecto de la renuncia posterior al daño ya producido: esa renuncia es un acto de disposición válido, porque recae sobre un crédito patrimonial, la indemnización ya devengada, plenamente disponible por su titular.\n\nSe equivoca, en cambio, al calificar del mismo modo la autorización que la víctima presta antes de que ocurra el hecho dañoso. Esa autorización anticipada no constituye una renuncia a una acción todavía inexistente, porque mal podría renunciarse a algo que aún no ha nacido. Constituye, técnicamente, una causal de justificación: el consentimiento de la víctima, prestado antes del daño, impide que la conducta del demandado se califique de ilícita, y por eso mismo excluye que llegue a nacer una acción que renunciar.\n\nLa distinción no es una sutileza terminológica: la autorización anticipada compromete la disposición de bienes de la personalidad (la vida, la integridad física), cuya indisponibilidad limita severamente sus efectos, mientras que la renuncia posterior recae sobre un crédito patrimonial plenamente disponible. Por eso, si la autorización anticipada pretende condonar el dolo o la culpa grave futuros, no tiene ningún valor, en la misma línea que el artículo 1465 del Código Civil declara sin valor la condonación del dolo futuro en materia contractual.',
+        elementos_clave: [
+          { texto: 'Confirma que la renuncia posterior al daño es válida por recaer sobre un crédito patrimonial ya devengado', keywords: ['renuncia posterior', 'crédito patrimonial', 'ya devengado', 'válida'], pregunta: '¿Es correcta la afirmación del alumno respecto de la renuncia posterior al daño?' },
+          { texto: 'Explica que la autorización anticipada no es una renuncia, sino una causal de justificación, porque no puede renunciarse a una acción inexistente', keywords: ['no es una renuncia', 'causal de justificación', 'acción inexistente', 'consentimiento de la víctima'], pregunta: '¿Por qué la autorización prestada antes del daño no puede calificarse, técnicamente, de renuncia?' },
+          { texto: 'Señala que la autorización anticipada que condona dolo o culpa grave futuros carece de valor, en paralelo con el art. 1465', keywords: ['condona el dolo futuro', 'sin valor', 'artículo 1465', 'orden público'], pregunta: '¿Qué ocurre si esa autorización anticipada pretende cubrir el dolo o la culpa grave futuros de quien causará el daño?' }
+        ],
+        articulos_referencia: ['1465'],
+        objetivo_pedagogico: 'Distinguir la renuncia posterior al daño (válida, objeto patrimonial) de la autorización anticipada (causal de justificación, objeto de la personalidad)'
+      },
+
+      {
+        id: 're-just-023',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Por qué la renuncia posterior y la transacción son válidas, pero no la autorización anticipada',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué la renuncia a la reparación una vez producido el daño, y la transacción sobre esa misma indemnización, son plenamente válidas, mientras que la autorización que la víctima presta antes de que el daño ocurra no produce el mismo efecto liberatorio como renuncia?',
+        respuesta_modelo: 'La diferencia radica en el objeto sobre el que recae cada acto. La renuncia posterior al daño y la transacción recaen exclusivamente sobre un crédito de contenido patrimonial, la indemnización ya devengada, plenamente disponible por su titular conforme a las reglas generales sobre renunciabilidad de los derechos.\n\nLa autorización anticipada, en cambio, compromete la disposición de bienes de la personalidad, como la vida o la integridad física, cuya indisponibilidad limita severamente los efectos que el ordenamiento está dispuesto a reconocerle. Por eso no puede operar como una renuncia propiamente tal, sino que se reconduce a una causal de justificación distinta (el consentimiento de la víctima), y por eso mismo, si pretende condonar de antemano el dolo o la culpa grave futuros, no es más eficaz que la condonación del dolo futuro que el artículo 1465 del Código Civil declara sin valor en materia contractual: en ambos casos se trataría de autorizar de antemano la comisión de un ilícito, lo que el orden público no tolera.',
+        elementos_clave: [
+          { texto: 'Explica que la renuncia posterior y la transacción recaen sobre un crédito patrimonial ya devengado, plenamente disponible', keywords: ['crédito patrimonial', 'ya devengado', 'plenamente disponible'], pregunta: '¿Sobre qué tipo de objeto recaen la renuncia posterior al daño y la transacción?' },
+          { texto: 'Explica que la autorización anticipada compromete bienes de la personalidad, indisponibles, y por eso no es una renuncia', keywords: ['bienes de la personalidad', 'indisponibilidad', 'no es una renuncia'], pregunta: '¿Sobre qué tipo de objeto recae, en cambio, la autorización que se presta antes del daño?' },
+          { texto: 'Concluye que la condonación anticipada de dolo o culpa grave futuros no tiene valor, en la misma línea del art. 1465 en materia contractual', keywords: ['condonación', 'dolo futuro', 'artículo 1465', 'orden público', 'sin valor'], pregunta: '¿Qué ocurre si esa autorización anticipada pretende cubrir el dolo o la culpa grave futuros?' }
+        ],
+        articulos_referencia: ['1465'],
+        objetivo_pedagogico: 'Justificar, a partir de la diferencia de objeto, por qué la renuncia posterior y la transacción son válidas y la autorización anticipada no'
+      },
+
+      {
+        id: 're-mc-024',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Tribunal competente según el carácter civil o penal del hecho',
+        tipo: 'discriminacion_mc',
+        caso: 'Tres situaciones distintas llegan a una abogada: (1) un choque de vehículos con lesiones que configura, a la vez, un cuasidelito civil de daños y un cuasidelito penal de lesiones; (2) una filtración de agua entre vecinos que causa daños materiales puros, sin ninguna connotación penal; (3) un delito de injurias, de acción penal privada, en el que la víctima decide ejercer únicamente la acción civil indemnizatoria.',
+        enunciado: '¿Qué tribunal es competente para conocer de la indemnización en cada uno de los tres casos?',
+        opciones: [
+          { letra: 'A', texto: 'En los tres casos, únicamente el juez civil, porque la acción indemnizatoria es siempre de naturaleza civil.', rationale: 'Error: en el primer caso, cuando el hecho reviste a la vez carácter civil y penal, la víctima puede elegir entre el juzgado civil y el que conoce del delito o cuasidelito penal; no es competencia exclusiva del juez civil.' },
+          { letra: 'B', texto: 'En el primer caso, a elección de la víctima, el juzgado civil o el penal que conoce del cuasidelito; en el segundo, únicamente el juez civil, por carecer de sanción penal; en el tercero, al ejercerse solo la acción civil, se entiende renunciada la acción penal privada.', rationale: 'CORRECTO. La regla general concede a la víctima la elección de tribunal cuando el hecho tiene ambos caracteres; si carece de sanción penal, solo es competente el juez civil; y si se ejerce solamente la acción civil respecto de un delito de acción penal privada, se entiende por ello renunciada la acción penal.' },
+          { letra: 'C', texto: 'En los tres casos es competente exclusivamente el tribunal penal, porque todo hecho ilícito con potencial connotación penal debe tramitarse ante ese juzgado.', rationale: 'Error: el segundo caso carece por completo de sanción penal, de modo que no existe juzgado penal competente que elegir; y en el tercero la víctima optó, precisamente, por la vía civil.' },
+          { letra: 'D', texto: 'En los tres casos la víctima debe ejercer conjuntamente la acción civil y la penal ante el mismo tribunal, sin poder optar por una sola.', rationale: 'Error: la ley concede a la víctima la posibilidad de elegir el tribunal, y en el caso de la acción penal privada, incluso la de ejercer solo la acción civil, sin obligarla a acumular ambas.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar la regla de competencia entre tribunal civil y penal según el carácter civil, penal o mixto del hecho ilícito'
       }
     ];
 
