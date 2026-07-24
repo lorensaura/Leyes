@@ -2213,3 +2213,65 @@ values (
   'Doctrina de Corral sobre el criterio decisivo para calificar la responsabilidad postcontractual'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (44): Precontractual, Eje J (La responsabilidad precontractual en el derecho comparado y síntesis general de la materia)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-044',
+  'precontractual',
+  'La técnica de cláusula general (Italia y Portugal)',
+  3,
+  '¿Qué técnica legislativa siguen los códigos civiles italiano (1942) y portugués (1966) para regular la responsabilidad precontractual?',
+  '["Una cláusula general de buena fe negocial aplicable a todo el período de los tratos y la formación del contrato", "Un catálogo cerrado y taxativo de veinte causales específicas de responsabilidad", "La remisión íntegra a las reglas de la responsabilidad contractual ordinaria, sin ninguna norma especial", "El silencio legal total, igual que el Código Civil chileno"]'::jsonb,
+  0,
+  '{"correcta": "Ambos códigos optan por la técnica de la cláusula general de buena fe: el art. 1337 italiano y el art. 227 portugués imponen un estándar de conducta aplicable a toda la etapa precontractual, dejando a la doctrina y la jurisprudencia precisar su contenido caso por caso.", "por_que_no": ["B: no se trata de un catálogo cerrado de causales específicas, sino de una cláusula general.", "C: ambos códigos sí contienen normas especiales sobre esta materia.", "D: a diferencia del Código Civil chileno, estos códigos sí regulan expresamente la materia."]}'::jsonb,
+  'Derecho comparado: Código Civil italiano (art. 1337) y portugués (art. 227)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-045',
+  'precontractual',
+  'La técnica fragmentaria del BGB alemán',
+  3,
+  '¿Qué técnica legislativa sigue, en cambio, el Código Civil alemán (BGB) para regular esta materia?',
+  '["La misma cláusula general de buena fe que Italia y Portugal", "Regular supuestos específicos y fragmentarios (parágrafos 122, 179, 307 y 309), sin formular una cláusula general de buena fe", "El silencio legal absoluto, igual que el Código Civil chileno", "Una remisión expresa a la doctrina de Ihering como fuente subsidiaria de derecho"]'::jsonb,
+  1,
+  '{"correcta": "El legislador alemán no formuló una cláusula general de buena fe negocial, sino que optó por regular, de manera fragmentaria, ciertos supuestos específicos (parágrafos 122, 179, 307 y 309), la mayoría de ellos vinculados a la nulidad del acto.", "por_que_no": ["A: esa es la técnica italiana y portuguesa, expresamente distinta de la alemana.", "C: el BGB sí contiene normas expresas sobre supuestos específicos, a diferencia del silencio del Código Civil chileno.", "D: el BGB no remite expresamente a la doctrina de Ihering como fuente de derecho."]}'::jsonb,
+  'Derecho comparado: Código Civil alemán (BGB), parágrafos 122, 179, 307 y 309'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-046',
+  'precontractual',
+  'El límite de la reparación en el Anteproyecto de Pavía',
+  4,
+  'Según el artículo 6 del Anteproyecto de Código europeo de contratos (Academia de Pavía), ¿hasta qué monto queda obligada a reparar la parte que obró en contra de la buena fe al interrumpir los tratos sin motivo justificado?',
+  '["Hasta el total del beneficio que habría obtenido del contrato si este se hubiera celebrado", "Como máximo, los gastos efectuados en el curso de los tratos y la pérdida de ocasiones similares causada por las conversaciones pendientes", "Una suma fija equivalente al diez por ciento del valor estimado del contrato", "Sin límite alguno, aplicando el principio de reparación integral sin matices"]'::jsonb,
+  1,
+  '{"correcta": "La parte que ha obrado en contra de la buena fe queda obligada a reparar el daño sufrido por la otra como máximo en la medida de los gastos efectuados en el curso de los tratos, así como de la pérdida de ocasiones similares causada por las conversaciones pendientes.", "por_que_no": ["A: el Anteproyecto no concede el beneficio total del contrato frustrado, que corresponde al interés positivo, ajeno a esta responsabilidad.", "C: no existe esa suma fija predeterminada.", "D: precisamente se fija un límite máximo (gastos y ocasiones similares perdidas), no una reparación integral sin matices."]}'::jsonb,
+  'Anteproyecto de Código europeo de contratos, art. 6 (Academia de Pavía)'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-047',
+  'precontractual',
+  'La conclusión comparada: convergencia pese a la divergencia de técnicas',
+  4,
+  '¿Cuál es la conclusión que el manual extrae de la comparación entre el derecho chileno y estos ordenamientos extranjeros (Italia, Portugal, Pavía, Alemania)?',
+  '["Que el derecho chileno está considerablemente atrasado y no ofrece ninguna protección real frente a estos ordenamientos", "Que, pese a carecer de una norma general o de normas específicas, Chile ha llegado por vía doctrinaria y jurisprudencial a un resultado sustancialmente equivalente al de esos ordenamientos", "Que el derecho chileno debería derogar toda su construcción doctrinaria y adoptar directamente el Código Civil italiano", "Que la responsabilidad precontractual es una institución exclusiva del derecho europeo, inexistente en Chile"]'::jsonb,
+  1,
+  '{"correcta": "El derecho chileno, pese a carecer de toda norma general sobre responsabilidad precontractual y de las normas específicas del BGB alemán, ha llegado, por la vía doctrinaria y jurisprudencial, a un resultado sustancialmente equivalente al que esos ordenamientos alcanzan por vía legislativa.", "por_que_no": ["A: la conclusión no es de atraso o desprotección, sino de equivalencia de resultados por una vía distinta.", "C: el manual no propone abandonar la construcción doctrinaria chilena ni adoptar un código extranjero.", "D: la responsabilidad precontractual existe y se ha desarrollado ampliamente en el derecho chileno, como muestran los nueve ejes anteriores."]}'::jsonb,
+  'Síntesis comparada sobre la responsabilidad precontractual en el derecho chileno y extranjero'
+)
+on conflict (id) do nothing;

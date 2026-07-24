@@ -479,3 +479,14 @@
 | Según Corral, ¿qué régimen rige la responsabilidad postcontractual como regla general? | El <strong>extracontractual</strong>, porque el contrato ya expiró. | intermedia | civil | Responsabilidad precontractual | Regla general de Corral |
 | ¿Cuál es la salvedad de Corral a su propia regla? | Si la ley sanciona el término abusivo disponiendo la <strong>conservación del contrato</strong>, la responsabilidad sigue siendo contractual. | avanzada | civil | Responsabilidad precontractual | Salvedad de Corral |
 | ¿Qué tienen en común los tres supuestos (precontractual, nulidad, postcontractual)? | Una <strong>proximidad relacional previa</strong> que impide tratar a las partes como extraños plenos. | avanzada | civil | Responsabilidad precontractual | El paralelismo de los tres supuestos |
+
+## Lote 10: Precontractual, Eje J. La responsabilidad precontractual en el derecho comparado y síntesis general de la materia
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué técnica siguen los códigos italiano (1942) y portugués (1966)? | Una <strong>cláusula general</strong> de buena fe negocial. | intermedia | civil | Responsabilidad precontractual | Técnica de cláusula general |
+| ¿Qué regula el art. 1338 del Código Civil italiano? | El supuesto específico de quien <strong>oculta una causa de invalidez</strong> del contrato. | avanzada | civil | Responsabilidad precontractual | Art. 1338 italiano: nulidad |
+| ¿Qué técnica sigue el BGB alemán? | Supuestos <strong>específicos y fragmentarios</strong>, sin cláusula general de buena fe. | avanzada | civil | Responsabilidad precontractual | Técnica fragmentaria del BGB |
+| Según el art. 6 del Anteproyecto de Pavía, ¿hasta qué monto se repara el daño? | <strong>Gastos</strong> del curso de los tratos y pérdida de <strong>ocasiones similares</strong>, no reparación integral. | avanzada | civil | Responsabilidad precontractual | Límite del Anteproyecto de Pavía |
+| ¿Qué conclusión extrae el manual de la comparación con estos ordenamientos? | Que Chile llegó, por vía <strong>doctrinaria</strong>, a un resultado equivalente al de esos sistemas legislados. | avanzada | civil | Responsabilidad precontractual | Conclusión comparada |
+| ¿Qué frase resume esa conclusión? | "La <strong>ausencia de ley</strong> no ha significado ausencia de derecho." | avanzada | civil | Responsabilidad precontractual | La frase de cierre |
