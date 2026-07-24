@@ -458,3 +458,14 @@
 | ¿Bajo qué régimen calificó el tribunal la responsabilidad en Lavín con Mena? | <strong>Aquiliana/extracontractual</strong> (arts. 2284, 2314, 2329 CC). | avanzada | civil | Responsabilidad precontractual | Calificación en Lavín con Mena |
 | En Lavín con Mena, ¿qué fue lo decisivo para condenar al comprador? | Que los cambios en el borrador de promesa obedecían a <strong>instrucciones suyas</strong>, no de la corredora. | avanzada | civil | Responsabilidad precontractual | El hecho decisivo probatorio |
 | Según el manual, ¿cuál es la dificultad real en estos casos, más que la doctrina abstracta? | La prueba de la <strong>imputabilidad del retiro</strong>, cuando ambas partes se acusan mutuamente. | avanzada | civil | Responsabilidad precontractual | La dificultad probatoria real |
+
+## Lote 8: Precontractual, Eje H. La responsabilidad de quien causa la nulidad del contrato
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| Según RODRÍGUEZ GREZ, ¿qué naturaleza tiene la responsabilidad por nulidad del contrato? | <strong>Legal</strong>: nace de la ley, presupone culpa o dolo. | avanzada | civil | Responsabilidad precontractual | Responsabilidad legal (Rodríguez Grez) |
+| Según BARAONA (mayoritaria), ¿qué naturaleza tiene esta responsabilidad? | <strong>Extracontractual</strong>, con valoración especial de la culpa (buena/mala fe). | avanzada | civil | Responsabilidad precontractual | Responsabilidad extracontractual (Baraona) |
+| ¿Por qué la nulidad no permite calificar esta responsabilidad como contractual, pese a que sí existió un contrato? | Porque opera con <strong>efecto retroactivo</strong> y pulveriza la existencia misma del contrato. | avanzada | civil | Responsabilidad precontractual | Por qué no es contractual |
+| ¿A qué da derecho la nulidad declarada por sentencia firme, según el art. 1687? | A ser <strong>restituidas al mismo estado</strong> en que se hallarían si no hubiese existido el acto o contrato nulo. | avanzada | civil | Responsabilidad precontractual | Art. 1687: efecto restitutorio |
+| Según BOFFI, ¿en qué caso la nulidad no genera responsabilidad para ninguna parte? | Cuando ninguna puede incurrir en <strong>dolo o culpa</strong> (ej. contrato entre dos dementes). | avanzada | civil | Responsabilidad precontractual | Límite de Boffi |
+| ¿Cuál es la única diferencia relevante entre la responsabilidad por nulidad y la ruptura de negociaciones? | En la nulidad, el ocultamiento es de una <strong>causal de invalidez</strong>; en la ruptura, de cualquier infracción a la buena fe. | avanzada | civil | Responsabilidad precontractual | La única diferencia relevante |

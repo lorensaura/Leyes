@@ -2060,3 +2060,94 @@ values (
   'Caso Lavín con Mena, 2° Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (42): Precontractual, Eje H (La responsabilidad de quien causa la nulidad del contrato)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-035',
+  'precontractual',
+  'La responsabilidad legal de Rodríguez Grez',
+  4,
+  'Según RODRÍGUEZ GREZ, ¿de qué naturaleza es la responsabilidad de quien causa la nulidad del contrato?',
+  '["Contractual, porque hubo un consentimiento efectivamente prestado", "Legal: nace directamente de la ley, aunque presupone culpa o dolo de quien causa el daño", "Extracontractual pura, sin ninguna particularidad respecto de la responsabilidad aquiliana ordinaria", "No existe responsabilidad alguna una vez declarada la nulidad"]'::jsonb,
+  1,
+  '{"correcta": "Rodríguez Grez sostiene que se trata de una responsabilidad de naturaleza legal: la obligación de indemnizar los perjuicios que se siguen de la declaración de nulidad nace directamente de la ley, aunque presupone la concurrencia de culpa o dolo de quien causa el daño.", "por_que_no": ["A: Rodríguez Grez no sostiene la tesis contractual.", "C: la tesis extracontractual pura, con matices, corresponde a Baraona, no a Rodríguez Grez.", "D: Rodríguez Grez sostiene expresamente que sí puede nacer responsabilidad."]}'::jsonb,
+  'Doctrina de Rodríguez Grez sobre la responsabilidad legal por nulidad del contrato'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-036',
+  'precontractual',
+  'La particularidad de la culpa según Baraona',
+  4,
+  'Según BARAONA, ¿cuál es la particularidad de la culpa en la responsabilidad por nulidad del contrato, dentro de su encuadre extracontractual general?',
+  '["Debe valorarse considerando criterios de buena o mala fe y expectativas de confianza, no el estándar general y abstracto ordinario", "Debe presumirse siempre, sin admitir prueba en contrario", "Debe descartarse por completo, porque esta responsabilidad no exige culpa", "Debe medirse exclusivamente por el monto del daño causado, sin ninguna otra consideración"]'::jsonb,
+  0,
+  '{"correcta": "Los elementos que configuran la culpa deben analizarse, en cada caso, considerando criterios de buena o mala fe y de expectativas de confianza que se configuran de manera peculiar, distinta de la noción general y abstracta de culpa que rige los encuentros entre extraños.", "por_que_no": ["B: Baraona no presume la culpa sin más; exige una valoración específica según buena o mala fe.", "C: Baraona sí exige culpa, con esta valoración especial, no la descarta.", "D: la medida del daño no reemplaza esta valoración especial de la culpa."]}'::jsonb,
+  'Doctrina de Baraona sobre la responsabilidad extracontractual por nulidad del contrato'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-037',
+  'precontractual',
+  'Por qué la nulidad impide la calificación contractual',
+  4,
+  '¿Por qué la nulidad, pese a que en apariencia sí existió un contrato entre las partes, no permite calificar como contractual la responsabilidad de quien la causó?',
+  '["Porque la nulidad opera con efecto retroactivo y pulveriza la existencia misma del contrato", "Porque los contratos nulos nunca fueron firmados por las partes", "Porque la responsabilidad contractual exige siempre la intervención de un notario", "Porque la nulidad solo puede declararse antes de que el contrato produzca cualquier efecto"]'::jsonb,
+  0,
+  '{"correcta": "La nulidad judicialmente declarada pulveriza, con efecto retroactivo, la existencia misma del contrato, por lo que no queda ningún vínculo contractual al que pueda imputarse esta responsabilidad.", "por_que_no": ["B: en la hipótesis de este eje, las partes sí prestaron su consentimiento; el problema no es la falta de firma, sino el efecto retroactivo de la nulidad.", "C: la intervención notarial no es lo que determina esta calificación.", "D: la nulidad puede declararse después de que el contrato produjo efectos aparentes durante un tiempo, como en el ejemplo del inmueble."]}'::jsonb,
+  'Doctrina sobre el efecto retroactivo de la nulidad y su impacto en la calificación de la responsabilidad'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-038',
+  'precontractual',
+  'El efecto restitutorio de la nulidad (art. 1687)',
+  3,
+  'Conforme al artículo 1687 del Código Civil, ¿a qué tienen derecho las partes una vez declarada la nulidad por sentencia que tiene la fuerza de cosa juzgada?',
+  '["A exigir el cumplimiento forzado del contrato declarado nulo", "A ser restituidas al mismo estado en que se hallarían si no hubiese existido el acto o contrato nulo", "A una indemnización fija equivalente al precio pactado, sin excepción", "A nada, porque la nulidad extingue toda pretensión entre las partes"]'::jsonb,
+  1,
+  '{"correcta": "La nulidad pronunciada en sentencia que tiene la fuerza de cosa juzgada da a las partes derecho para ser restituidas al mismo estado en que se hallarían si no hubiese existido el acto o contrato nulo, sin perjuicio de lo prevenido sobre el objeto o causa ilícita.", "por_que_no": ["A: no tiene sentido exigir el cumplimiento de un contrato que la sentencia declaró nulo.", "C: no se trata de una suma fija equivalente al precio, sino de la restitución al estado anterior, con las reglas de restituciones mutuas.", "D: la nulidad sí genera derechos y obligaciones de restitución entre las partes."]}'::jsonb,
+  'Código Civil, art. 1687'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-039',
+  'precontractual',
+  'El límite de Boffi: el contrato celebrado por dementes',
+  5,
+  'Según BOFFI, ¿en qué caso la nulidad de un contrato no genera responsabilidad para ninguna de las partes?',
+  '["Cuando el contrato fue celebrado por escrito privado, sin escritura pública", "Cuando ninguna de las partes puede incurrir en el reproche subjetivo de dolo o culpa que la responsabilidad aquiliana exige, como en el contrato celebrado por dos dementes", "Cuando el contrato se anula por lesión enorme", "Cuando la nulidad es relativa y no absoluta"]'::jsonb,
+  1,
+  '{"correcta": "Boffi advierte que en ciertos casos la nulidad de un contrato no hace nacer responsabilidad para ninguna de las partes, como ocurre con el contrato celebrado por dos dementes, en que ninguno de los contratantes se encuentra en condiciones de incurrir en el reproche subjetivo que la responsabilidad aquiliana exige.", "por_que_no": ["A: la forma escrita o no del contrato no es el criterio que señala Boffi.", "C: la lesión enorme no es la hipótesis que Boffi utiliza para este límite.", "D: la distinción entre nulidad absoluta y relativa no es, por sí sola, el criterio de Boffi."]}'::jsonb,
+  'Doctrina de Boffi sobre el límite de la responsabilidad aquiliana por nulidad del contrato'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1687',
+  'precontractual',
+  'Efecto restitutorio de la nulidad',
+  '1687',
+  'La nulidad pronunciada en sentencia que tiene la fuerza de cosa juzgada, da a las partes derecho para ser restituidas al mismo estado en que se hallarían si no hubiese existido el acto o contrato nulo; sin perjuicio de lo prevenido sobre el objeto o causa ilícita. En las restituciones mutuas que hayan de hacerse los contratantes en virtud de este pronunciamiento, será cada cual responsable de la pérdida de las especies o de su deterioro, de los intereses y frutos, y del abono de las mejoras necesarias, útiles o voluptuarias, tomándose en consideración los casos fortuitos y la posesión de buena o mala fe de las partes.',
+  '[["mismo estado", "si no hubiese existido"], ["objeto o causa ilícita"], ["buena o mala fe de las partes"], ["*"]]'::jsonb,
+  array['fuerza de cosa juzgada', 'mismo estado', 'objeto o causa ilícita', 'restituciones mutuas', 'buena o mala fe'],
+  'Código Civil, art. 1687'
+)
+on conflict (id) do nothing;
