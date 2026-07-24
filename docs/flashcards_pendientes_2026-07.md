@@ -469,3 +469,13 @@
 | ¿A qué da derecho la nulidad declarada por sentencia firme, según el art. 1687? | A ser <strong>restituidas al mismo estado</strong> en que se hallarían si no hubiese existido el acto o contrato nulo. | avanzada | civil | Responsabilidad precontractual | Art. 1687: efecto restitutorio |
 | Según BOFFI, ¿en qué caso la nulidad no genera responsabilidad para ninguna parte? | Cuando ninguna puede incurrir en <strong>dolo o culpa</strong> (ej. contrato entre dos dementes). | avanzada | civil | Responsabilidad precontractual | Límite de Boffi |
 | ¿Cuál es la única diferencia relevante entre la responsabilidad por nulidad y la ruptura de negociaciones? | En la nulidad, el ocultamiento es de una <strong>causal de invalidez</strong>; en la ruptura, de cualquier infracción a la buena fe. | avanzada | civil | Responsabilidad precontractual | La única diferencia relevante |
+
+## Lote 9: Precontractual, Eje I. La responsabilidad postcontractual
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuál es el ejemplo típico de responsabilidad postcontractual? | El trabajador que, tras terminar su contrato, revela <strong>información reservada</strong> de su antiguo empleador. | intermedia | civil | Responsabilidad precontractual | Ejemplo típico |
+| ¿Qué sostiene la tesis de la proyección contractual? | Que sobreviven <strong>acuerdos tácitos</strong> (secreto, no concurrencia) que se rigen por las reglas contractuales. | avanzada | civil | Responsabilidad precontractual | Tesis de la proyección contractual |
+| Según Corral, ¿qué régimen rige la responsabilidad postcontractual como regla general? | El <strong>extracontractual</strong>, porque el contrato ya expiró. | intermedia | civil | Responsabilidad precontractual | Regla general de Corral |
+| ¿Cuál es la salvedad de Corral a su propia regla? | Si la ley sanciona el término abusivo disponiendo la <strong>conservación del contrato</strong>, la responsabilidad sigue siendo contractual. | avanzada | civil | Responsabilidad precontractual | Salvedad de Corral |
+| ¿Qué tienen en común los tres supuestos (precontractual, nulidad, postcontractual)? | Una <strong>proximidad relacional previa</strong> que impide tratar a las partes como extraños plenos. | avanzada | civil | Responsabilidad precontractual | El paralelismo de los tres supuestos |

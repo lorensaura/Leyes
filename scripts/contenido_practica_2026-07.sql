@@ -2151,3 +2151,65 @@ values (
   'Código Civil, art. 1687'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (43): Precontractual, Eje I (La responsabilidad postcontractual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-040',
+  'precontractual',
+  'La tesis de la proyección contractual',
+  3,
+  '¿Qué sostiene la tesis de la proyección contractual sobre la responsabilidad postcontractual?',
+  '["Que nunca puede existir responsabilidad alguna una vez terminado el contrato", "Que existen acuerdos tácitos (de secreto, de no concurrencia) que sobreviven a la extinción del contrato que les dio origen, rigiéndose por las reglas contractuales", "Que toda responsabilidad postcontractual es, sin excepción, de naturaleza legal", "Que la responsabilidad postcontractual se rige siempre por las reglas del enriquecimiento sin causa"]'::jsonb,
+  1,
+  '{"correcta": "Esta tesis sostiene que existe una proyección de la responsabilidad contractual, fundada en la existencia de acuerdos tácitos de secreto o de no concurrencia que pueden sobrevivir a la extinción del contrato mismo que les dio origen.", "por_que_no": ["A: esta tesis afirma precisamente lo contrario, que sí puede existir responsabilidad, de naturaleza contractual.", "C: la calificación legal no es la que sostiene esta tesis.", "D: el enriquecimiento sin causa no es el fundamento de esta tesis."]}'::jsonb,
+  'Doctrina de la proyección contractual en la responsabilidad postcontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-041',
+  'precontractual',
+  'Corral: régimen extracontractual como regla general',
+  4,
+  'Según CORRAL, ¿por qué la responsabilidad postcontractual debe regirse, como regla general, por el estatuto extracontractual?',
+  '["Porque el contrato ya expiró y no puede seguir rigiendo una responsabilidad que se genera con posterioridad a su término", "Porque los deberes de confidencialidad nunca tienen valor jurídico en el derecho chileno", "Porque las partes de un contrato terminado pasan a ser, para todo efecto, completos extraños entre sí", "Porque la ley siempre sanciona el término de un contrato disponiendo su conservación"]'::jsonb,
+  0,
+  '{"correcta": "Corral sostiene que el contrato ya ha expirado, y no puede, en consecuencia, seguir rigiendo una responsabilidad que se genera con posterioridad a su término; quien incumple un deber postcontractual no está incumpliendo, en sentido estricto, ninguna obligación contractual actualmente exigible.", "por_que_no": ["B: los deberes de confidencialidad sí tienen relevancia jurídica; la discusión es sobre su calificación, no sobre su existencia.", "C: precisamente el manual advierte que estas partes no son del todo extrañas entre sí, pese a la calificación extracontractual.", "D: esa consecuencia (conservación del contrato) es la excepción, no la regla general."]}'::jsonb,
+  'Doctrina de Corral sobre la responsabilidad postcontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-042',
+  'precontractual',
+  'La salvedad de Corral: conservación forzada del contrato',
+  4,
+  '¿Cuál es la salvedad que CORRAL introduce a su propia regla general sobre la responsabilidad postcontractual?',
+  '["Que la responsabilidad siempre es contractual si el contrato duró más de un año", "Que si la ley sanciona el término abusivo del contrato disponiendo su conservación, la responsabilidad sigue siendo contractual, porque el contrato no ha llegado a extinguirse", "Que la responsabilidad siempre es extracontractual, sin excepción alguna", "Que la salvedad solo aplica a los contratos de trabajo, nunca a otros contratos"]'::jsonb,
+  1,
+  '{"correcta": "Si la ley sanciona el ejercicio abusivo de la facultad de poner término a un contrato disponiendo, como consecuencia, la conservación del contrato mismo, la responsabilidad que de ello se siga será contractual, porque el contrato no ha llegado a extinguirse en los términos que la parte que lo dio por terminado pretendía.", "por_que_no": ["A: la duración del contrato no es el criterio de esta salvedad.", "C: Corral sí reconoce esta excepción expresa a su regla general.", "D: la salvedad no se limita a los contratos de trabajo; depende de si la ley aplicable dispone la conservación del contrato."]}'::jsonb,
+  'Doctrina de Corral sobre la salvedad de la conservación forzada del contrato'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-043',
+  'precontractual',
+  'El criterio decisivo: vínculo contractual vigente, no la etiqueta temporal',
+  5,
+  '¿Cuál es el criterio decisivo, según Corral, para calificar esta responsabilidad, más allá de la sola etiqueta temporal de "antes" o "después" del contrato?',
+  '["Si, en el momento relevante para juzgar el daño, existe o no un vínculo contractual formalmente vigente", "Cuántos años han transcurrido desde la celebración original del contrato", "Si el contrato fue celebrado por escritura pública o por instrumento privado", "Si las partes son o no de la misma nacionalidad"]'::jsonb,
+  0,
+  '{"correcta": "Lo decisivo no es la etiqueta temporal (antes o después del contrato), sino si, en el momento relevante para juzgar el daño, existe o no un vínculo contractual formalmente vigente; si la sanción legal al término abusivo mantiene vigente ese vínculo, la responsabilidad sigue siendo contractual.", "por_que_no": ["B: el tiempo transcurrido desde la celebración original no es, por sí solo, el criterio decisivo.", "C: la forma del contrato no es el criterio que determina esta calificación.", "D: la nacionalidad de las partes no interviene en este criterio."]}'::jsonb,
+  'Doctrina de Corral sobre el criterio decisivo para calificar la responsabilidad postcontractual'
+)
+on conflict (id) do nothing;
