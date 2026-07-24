@@ -447,3 +447,14 @@
 | Según Brebbia, ¿qué se indemniza después de la oferta, en caso de retractación culposa? | <strong>Daño emergente y lucro cesante</strong>. | avanzada | civil | Responsabilidad precontractual | Brebbia: después de la oferta |
 | ¿Qué criterio usa Brebbia para decidir la extensión del daño, en vez de una regla categórica? | La <strong>causalidad adecuada</strong> entre el hecho y el perjuicio. | avanzada | civil | Responsabilidad precontractual | Criterio de causalidad adecuada |
 | ¿Qué error típico de examen advierte el manual sobre esta materia? | No basta decir "daño emergente y lucro cesante" como en la responsabilidad ordinaria; aquí se <strong>excluye</strong> el lucro cesante como regla. | avanzada | civil | Responsabilidad precontractual | Error típico de examen |
+
+## Lote 7: Precontractual, Eje G. Los requisitos para que nazca el derecho a la reparación y su aplicación jurisprudencial
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuántos requisitos exige SAAVEDRA para el "ilícito precontractual"? | <strong>Siete</strong>. | intermedia | civil | Responsabilidad precontractual | Los siete requisitos de Saavedra |
+| ¿Cuáles son los cuatro requisitos de CELIS? | Negociación <strong>voluntaria</strong>; gastos <strong>causados por la contraparte</strong>; ponderación de riesgos ordinarios; <strong>retiro unilateral</strong>. | avanzada | civil | Responsabilidad precontractual | Los cuatro requisitos de Celis |
+| ¿Cuáles son los cuatro elementos que el tribunal sintetizó en el caso Lavín con Mena? | Consentimiento en negociar, <strong>gastos</strong>, retiro unilateral injustificado, infracción a la <strong>buena fe</strong>. | avanzada | civil | Responsabilidad precontractual | Los cuatro elementos judiciales (Lavín con Mena) |
+| ¿Bajo qué régimen calificó el tribunal la responsabilidad en Lavín con Mena? | <strong>Aquiliana/extracontractual</strong> (arts. 2284, 2314, 2329 CC). | avanzada | civil | Responsabilidad precontractual | Calificación en Lavín con Mena |
+| En Lavín con Mena, ¿qué fue lo decisivo para condenar al comprador? | Que los cambios en el borrador de promesa obedecían a <strong>instrucciones suyas</strong>, no de la corredora. | avanzada | civil | Responsabilidad precontractual | El hecho decisivo probatorio |
+| Según el manual, ¿cuál es la dificultad real en estos casos, más que la doctrina abstracta? | La prueba de la <strong>imputabilidad del retiro</strong>, cuando ambas partes se acusan mutuamente. | avanzada | civil | Responsabilidad precontractual | La dificultad probatoria real |

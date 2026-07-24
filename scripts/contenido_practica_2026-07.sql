@@ -1983,3 +1983,80 @@ values (
   'Doctrina de Brebbia sobre causalidad adecuada en la responsabilidad precontractual'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (41): Precontractual, Eje G (Los requisitos para que nazca el derecho a la reparación y su aplicación jurisprudencial)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-030',
+  'precontractual',
+  'Los siete requisitos de Saavedra',
+  3,
+  '¿Cuántos requisitos exige SAAVEDRA para que se configure el "ilícito precontractual"?',
+  '["Cuatro", "Cinco", "Siete", "Nueve"]'::jsonb,
+  2,
+  '{"correcta": "Saavedra exige la concurrencia de siete requisitos para que se configure el ilícito precontractual, fuente del derecho a pedir el resarcimiento de los perjuicios.", "por_que_no": ["A: cuatro es el número de requisitos que propone Celis, no Saavedra.", "B: cinco no corresponde a ninguno de los dos catálogos examinados.", "D: nueve corresponde, en otro eje distinto, al número de diferencias entre los estatutos contractual y extracontractual (Eje 23 de Extracontractual), no a este catálogo."]}'::jsonb,
+  'Doctrina de Saavedra sobre los requisitos de la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-031',
+  'precontractual',
+  'Los cuatro requisitos de Celis',
+  2,
+  '¿Cuántos elementos sintetiza CELIS en su catálogo de requisitos para la responsabilidad precontractual?',
+  '["Tres", "Cuatro", "Seis", "Siete"]'::jsonb,
+  1,
+  '{"correcta": "Celis propone una sistematización más económica, centrada en cuatro elementos, que cubre en lo esencial el mismo terreno que los siete requisitos de Saavedra.", "por_que_no": ["A: tres no corresponde al número de elementos de Celis.", "C: seis no corresponde a ninguno de los catálogos examinados.", "D: siete es el número de requisitos de Saavedra, no de Celis."]}'::jsonb,
+  'Doctrina de Celis sobre los requisitos de la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-032',
+  'precontractual',
+  'Legitimación limitada a los partícipes directos (Saavedra)',
+  4,
+  'Según SAAVEDRA, ¿quiénes son los únicos sujetos activo y pasivo legitimados en la acción de responsabilidad precontractual?',
+  '["Cualquier persona que resulte afectada por la ruptura de una negociación ajena", "Únicamente los partícipes directos de los tratos negociales previos", "Solo los partícipes directos, más sus herederos, sin excepción", "Los partícipes directos y cualquier tercero que haya financiado la negociación"]'::jsonb,
+  1,
+  '{"correcta": "Los sujetos activo y pasivo de la eventual acción de responsabilidad son únicamente los partícipes directos de los tratos negociales previos; los daños que puedan sufrir terceros a causa de esos tratos se rigen por las reglas generales de la responsabilidad extracontractual, no por las específicas de la precontractual.", "por_que_no": ["A: un tercero ajeno a la negociación no está legitimado bajo estas reglas específicas.", "C: la transmisibilidad a los herederos no forma parte de este séptimo requisito de Saavedra.", "D: un tercero financista no queda comprendido por esta legitimación específica."]}'::jsonb,
+  'Doctrina de Saavedra sobre legitimación en la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-033',
+  'precontractual',
+  'Artículos invocados en Lavín con Mena',
+  4,
+  'En el caso Lavín con Mena (2° Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022), ¿bajo qué artículos del Código Civil calificó el tribunal la responsabilidad como aquiliana?',
+  '["Artículos 1437, 1545 y 1556", "Artículos 2284, 2314 y 2329", "Artículos 1551, 1552 y 1553", "Artículos 44, 45 y 2330"]'::jsonb,
+  1,
+  '{"correcta": "El tribunal invocó los artículos 2284, 2314 y 2329 del Código Civil para concluir que el régimen aplicable a la responsabilidad precontractual es el de la responsabilidad aquiliana.", "por_que_no": ["A: esos artículos (fuentes de las obligaciones, fuerza obligatoria del contrato, perjuicios previstos) no son los invocados por el fallo para esta calificación.", "C: esos artículos regulan la mora contractual, materia distinta de la invocada en el fallo.", "D: esos artículos regulan la graduación de la culpa y el caso fortuito, no la calificación aquiliana de este fallo."]}'::jsonb,
+  'Caso Lavín con Mena, 2° Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-034',
+  'precontractual',
+  'La condena en Lavín con Mena: la cláusula penal pactada',
+  4,
+  'En Lavín con Mena, ¿a qué fue condenado el comprador, y por qué no fue necesario acreditar el monto exacto del daño sufrido por el vendedor?',
+  '["Al pago de una indemnización fijada discrecionalmente por el juez, porque no existía ningún acuerdo previo sobre el monto", "Al pago de la cláusula penal pactada (el 10% del precio), porque las propias partes habían avaluado anticipadamente los perjuicios mediante esa cláusula", "A la restitución del inmueble, porque la promesa se tuvo por no celebrada", "A una indemnización equivalente al total del precio de venta, por incumplimiento total"]'::jsonb,
+  1,
+  '{"correcta": "El fallo condenó al pago de la cláusula penal pactada ($34.782.000, reajustada), sin necesidad de acreditar el monto exacto del daño, precisamente porque las propias partes habían avaluado anticipadamente los perjuicios mediante esa cláusula.", "por_que_no": ["A: no fue una fijación discrecional del juez; existía una cláusula penal ya pactada por las partes.", "C: no se discutía la restitución del inmueble, que nunca llegó a transferirse.", "D: la condena no equivalió al precio total, sino al monto de la cláusula penal pactada (el 10%)."]}'::jsonb,
+  'Caso Lavín con Mena, 2° Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022'
+)
+on conflict (id) do nothing;
