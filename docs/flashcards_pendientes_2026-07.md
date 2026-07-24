@@ -414,3 +414,14 @@
 | ¿Qué distingue el cierre de negocio de las arras? | La presencia de un <strong>tercero depositario</strong> (el corredor); en las arras, la entrega es directa entre las partes. | avanzada | civil | Responsabilidad precontractual | Cierre de negocio vs. arras |
 | ¿Qué estatuto rige el incumplimiento de un contrato preparatorio (ej. la promesa)? | <strong>Contractual</strong>, sin discusión, porque ya existe un contrato válidamente celebrado. | intermedia | civil | Responsabilidad precontractual | Estatuto del contrato preparatorio |
 | ¿Cuál es la pregunta correcta frente a un daño precontractual, en vez de preguntar qué estatuto rige "en abstracto"? | En qué <strong>etapa exacta</strong> del itinerario se produjo el daño, y si existía ya un vínculo convencional. | avanzada | civil | Responsabilidad precontractual | La pregunta correcta: la etapa concreta |
+
+## Lote 4: Precontractual, Eje D. El interés jurídicamente protegido y el fundamento de la buena fe
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Protege la responsabilidad precontractual el interés en que el contrato se celebre? | No; protege el interés en participar <strong>correcta y lealmente</strong> en el proceso de negociación. | intermedia | civil | Responsabilidad precontractual | Qué protege la responsabilidad precontractual |
+| Según Saavedra, ¿cuáles son las dos hipótesis del interés protegido? | Negociaciones <strong>inútiles</strong> por retiro intempestivo, y <strong>ocultamiento</strong> de causales de nulidad del contrato resultante. | avanzada | civil | Responsabilidad precontractual | Las dos hipótesis de Saavedra |
+| ¿Qué caso reciente de la jurisprudencia chilena reconoce obligaciones de buena fe incluso antes de la oferta? | El caso <strong>Lavín con Mena</strong> (2024). | avanzada | civil | Responsabilidad precontractual | Caso Lavín con Mena |
+| Da un ejemplo de deber <strong>negativo</strong> del catálogo de Saavedra. | No <strong>ocultar</strong> hechos causantes de nulidad; no inducir con información falsa o incompleta. | avanzada | civil | Responsabilidad precontractual | Deberes negativos (Saavedra) |
+| Da un ejemplo de deber <strong>positivo</strong> del catálogo de Saavedra. | Respetar los acuerdos de <strong>confidencialidad</strong> y custodiar diligentemente los documentos. | avanzada | civil | Responsabilidad precontractual | Deberes positivos (Saavedra) |
+| ¿Qué elemento adicional exige siempre la doctrina, más allá de la sola ruptura, para que nazca responsabilidad? | <strong>Arbitrariedad</strong> o transgresión de una confianza específicamente generada. | avanzada | civil | Responsabilidad precontractual | El elemento adicional exigido |

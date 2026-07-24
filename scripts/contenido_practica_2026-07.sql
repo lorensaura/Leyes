@@ -1738,3 +1738,80 @@ values (
   'Código de Comercio, art. 100'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (38): Precontractual, Eje D (El interés jurídicamente protegido y el fundamento de la buena fe)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-015',
+  'precontractual',
+  'Qué protege la responsabilidad precontractual',
+  3,
+  '¿Protege la responsabilidad precontractual el interés en que el contrato efectivamente llegue a celebrarse?',
+  '["Sí, siempre que las negociaciones hayan avanzado lo suficiente", "No; las partes conservan siempre la libertad de no contratar; se protege el interés en participar correcta y lealmente en el proceso de negociación", "Sí, pero solo si existió una oferta formal de por medio", "No, y tampoco se protege ningún otro interés durante la negociación"]'::jsonb,
+  1,
+  '{"correcta": "No puede tratarse del interés en que el contrato efectivamente se celebre, porque las partes conservan siempre la libertad de no contratar. El objeto de protección es la manera correcta y leal de participar en un proceso de negociación cuyo resultado permanece siempre incierto.", "por_que_no": ["A: ni siquiera un avance considerable de las negociaciones elimina la libertad de no contratar.", "C: la existencia de una oferta formal no cambia qué interés se protege, aunque sí puede cambiar el estatuto aplicable (Eje 3).", "D: sí se protege un interés concreto: la lealtad y corrección en el proceso de negociación."]}'::jsonb,
+  'Doctrina sobre el interés jurídicamente protegido en la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-016',
+  'precontractual',
+  'Las dos hipótesis del interés protegido (Saavedra)',
+  4,
+  'Según SAAVEDRA, ¿cuáles son las dos hipótesis distintas que cubre el interés jurídicamente protegido por la responsabilidad precontractual?',
+  '["El daño por haber sido envuelto en negociaciones inútiles por un retiro intempestivo, y el daño por el ocultamiento de situaciones causantes de la nulidad del contrato resultante", "El daño emergente y el lucro cesante, únicamente", "El daño moral y el daño patrimonial, sin ninguna otra distinción", "El daño contractual y el daño extracontractual"]'::jsonb,
+  0,
+  '{"correcta": "Saavedra cubre dos hipótesis: el daño sufrido por haber sido envuelto en negociaciones inútiles a raíz del retiro intempestivo y arbitrario de la contraparte, y el daño derivado del ocultamiento de situaciones que resulten ser, después, causa de nulidad del contrato resultante.", "por_que_no": ["B: esa distinción corresponde al daño indemnizable (Eje 6), no a las dos hipótesis del interés protegido.", "C: la distinción moral/patrimonial no es la que formula Saavedra en este punto.", "D: esa distinción de estatutos no es la formulación de Saavedra sobre el interés protegido."]}'::jsonb,
+  'Doctrina de Saavedra sobre el interés jurídicamente protegido'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-017',
+  'precontractual',
+  'El caso Lavín con Mena (2024)',
+  3,
+  'En el caso Lavín con Mena (Segundo Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022), ¿desde qué momento reconoció el tribunal que nacen obligaciones derivadas del principio de la buena fe contractual?',
+  '["Solo desde que se celebra el contrato definitivo", "Aun antes de que exista oferta propiamente tal", "Solo desde que se formula una oferta formal por escrito", "Solo desde que se celebra un contrato de promesa"]'::jsonb,
+  1,
+  '{"correcta": "El tribunal, apoyándose en Enrique Barros Bourie, precisó que aun antes de que exista oferta propiamente tal ya nacen obligaciones emanadas del principio de la buena fe contractual, entre ellas la de negociar de forma leal, correcta y honesta.", "por_que_no": ["A: el fallo reconoce estas obligaciones antes, no recién con el contrato definitivo.", "C: el fallo las reconoce incluso antes de la oferta, no solo desde ella.", "D: la promesa es una etapa muy posterior; el fallo se refiere a un momento anterior incluso a la oferta."]}'::jsonb,
+  'Caso Lavín con Mena, 2° Juzgado de Letras de Curicó, 11 de marzo de 2024, rol C-1461-2022'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-018',
+  'precontractual',
+  'Deberes negativos del catálogo de Saavedra',
+  4,
+  'Según el catálogo de Saavedra, ¿de qué tipo es el deber de "no ocultar hechos que pudieran acarrear después la nulidad o la ineficacia de lo acordado"?',
+  '["Un deber negativo (de no dañar)", "Un deber positivo (de actuar)", "No es parte del catálogo de Saavedra", "Un deber exclusivo del contrato preparatorio, no de los tratos previos"]'::jsonb,
+  0,
+  '{"correcta": "Dentro del catálogo de Saavedra, no ocultar hechos que pudieran acarrear después la nulidad o la ineficacia de lo acordado se clasifica como un deber negativo, de no dañar, junto con no inducir con información falsa, no retirarse arbitrariamente y no revocar propuestas cuya mantención se prometió.", "por_que_no": ["B: ese deber se agrupa entre los negativos, no los positivos, en la clasificación del propio catálogo.", "C: sí forma parte expresa del catálogo de Saavedra.", "D: el catálogo rige durante los tratos negociales previos en general, no solo respecto del contrato preparatorio."]}'::jsonb,
+  'Catálogo de conductas de buena fe negocial de Saavedra'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'pre-alt-019',
+  'precontractual',
+  'El elemento adicional exigido más allá de la sola ruptura',
+  4,
+  '¿Qué elemento adicional exige siempre la doctrina, además de la sola ruptura de la negociación, para que nazca responsabilidad precontractual por infracción de la buena fe?',
+  '["Arbitrariedad, intempestividad o transgresión de una confianza específicamente generada por la conducta de la contraparte", "Que exista siempre un contrato de promesa ya firmado entre las partes", "Que el monto del daño supere un mínimo legal predeterminado", "Que la negociación haya durado, como mínimo, seis meses"]'::jsonb,
+  0,
+  '{"correcta": "La doctrina exige siempre un elemento adicional de arbitrariedad, intempestividad o transgresión de una confianza específicamente generada, no de la mera circunstancia de haber negociado, precisamente para no desincentivar la negociación misma.", "por_que_no": ["B: no se exige la existencia de una promesa; de hecho, esta responsabilidad opera precisamente cuando no hay contrato alguno todavía.", "C: no existe un umbral mínimo de daño predeterminado en esta doctrina.", "D: no existe un plazo mínimo de duración de la negociación como requisito."]}'::jsonb,
+  'Doctrina sobre el límite de la buena fe negocial frente al riesgo de desincentivar la negociación'
+)
+on conflict (id) do nothing;
