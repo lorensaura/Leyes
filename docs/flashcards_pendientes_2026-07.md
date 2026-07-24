@@ -359,3 +359,14 @@
 | ¿Es admisible pactar de antemano una cláusula penal para un daño extracontractual futuro frente a un tercero? | No; equivaldría a una <strong>condonación anticipada</strong> del dolo o la culpa grave futuros. | avanzada | civil | Responsabilidad extracontractual | Improcedencia de la cláusula penal extracontractual |
 | ¿Qué fuentes de las obligaciones opone el art. 1437 como distintas? | El <strong>contrato</strong> y el <strong>hecho que ha inferido injuria o daño</strong>. | básica | civil | Responsabilidad extracontractual | Fuentes de las obligaciones (art. 1437) |
 | Según el manual, ¿a qué se reconducen la mayoría de las nueve diferencias entre ambos estatutos? | A una sola <strong>distinción estructural</strong>: la presencia o ausencia de una obligación previa entre las partes. | avanzada | civil | Responsabilidad extracontractual | Distinción estructural única |
+
+## Lote 24: Extracontractual, Eje X. Cúmulo o concurso de responsabilidades
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué es la "acumulación" dentro del problema del cúmulo de responsabilidades? | Que la víctima cobre <strong>dos indemnizaciones</strong> por el mismo daño; se rechaza por enriquecimiento sin causa. | intermedia | civil | Responsabilidad extracontractual | Acumulación (rechazada) |
+| ¿Qué es la "opción" dentro del cúmulo de responsabilidades? | Que la víctima <strong>elija</strong> el estatuto más favorable cuando ambos son, en principio, aplicables al mismo hecho. | intermedia | civil | Responsabilidad extracontractual | Opción entre estatutos |
+| ¿Cuál es la posición dominante en Chile sobre la opción entre estatutos? | Se <strong>rechaza</strong>, por la fuerza obligatoria del contrato (art. 1545) y el carácter especial del estatuto contractual. | avanzada | civil | Responsabilidad extracontractual | Posición dominante: rechazo |
+| ¿Cuáles son las dos excepciones que reconoce ALESSANDRI a esa regla? | El <strong>pacto expreso</strong> de las partes, y la infracción contractual que constituye a la vez un <strong>delito penal típico</strong>. | avanzada | civil | Responsabilidad extracontractual | Excepciones de Alessandri |
+| ¿Qué propone CORRAL como criterio más amplio? | Que el cúmulo procede si el daño sería igualmente indemnizable extracontractualmente, salvo que la <strong>distribución contractual de riesgos</strong> someta el caso al contrato. | avanzada | civil | Responsabilidad extracontractual | Criterio amplio de Corral |
+| ¿Pueden acumularse en un mismo juicio la acción contractual (de las partes) y la extracontractual (de un tercero ajeno) por un mismo hecho? | Sí, sin inconveniente, porque ambas emanan <strong>directa e inmediatamente</strong> de ese mismo hecho. | avanzada | civil | Responsabilidad extracontractual | Acumulación procesal con terceros |

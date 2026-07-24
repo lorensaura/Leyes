@@ -1342,3 +1342,79 @@ values (
   'Código Civil, art. 44'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (33): Extracontractual, Eje X (Cúmulo o concurso de responsabilidades)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-034',
+  'extracontractual',
+  'Acumulación: doble indemnización rechazada',
+  2,
+  '¿Puede la víctima acumular ambas indemnizaciones, la contractual y la extracontractual, por un mismo daño, cobrando efectivamente dos veces?',
+  '["Sí, siempre que ambos estatutos resulten en principio aplicables al mismo hecho", "No, porque ello se traduciría en un enriquecimiento sin causa de la víctima, indemnizada dos veces por un mismo perjuicio", "Sí, pero solo hasta el monto del daño moral", "No, salvo que las partes lo hayan pactado expresamente"]'::jsonb,
+  1,
+  '{"correcta": "La responsabilidad contractual no puede acumularse a la extracontractual, porque ello se traduciría en un enriquecimiento sin causa de la víctima, que resultaría indemnizada dos veces por un mismo perjuicio.", "por_que_no": ["A: la aplicabilidad alternativa de ambos estatutos es precisamente el problema de la opción, distinto del problema de la acumulación, que se rechaza sin mayor controversia.", "C: la prohibición de acumular no distingue entre daño moral y patrimonial.", "D: la acumulación (cobrar dos veces por el mismo daño) no se admite ni siquiera por pacto expreso, a diferencia de la opción entre estatutos."]}'::jsonb,
+  'Doctrina sobre el cúmulo de responsabilidades: la cuestión de la acumulación'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-035',
+  'extracontractual',
+  'Posición dominante sobre la opción entre estatutos',
+  3,
+  '¿Cuál es la posición dominante en Chile respecto de si la víctima puede optar por el estatuto de responsabilidad que le resulte más provechoso, cuando un mismo hecho reúne los caracteres de ambos?',
+  '["Se rechaza la opción, fundada en la fuerza obligatoria del contrato (art. 1545) y en el carácter especial de la responsabilidad contractual frente al carácter residual de la extracontractual", "Se acepta la opción sin restricciones, porque la víctima siempre puede elegir el estatuto que más le convenga", "Se acepta la opción solo si el juez la autoriza expresamente en cada caso", "Se rechaza la opción de forma absoluta, sin reconocerse ninguna excepción"]'::jsonb,
+  0,
+  '{"correcta": "La doctrina y la jurisprudencia nacionales se han manifestado tradicionalmente en contra de reconocer a la víctima esta opción, fundándose en la fuerza obligatoria del contrato (art. 1545) y en el carácter de especialidad de la responsabilidad contractual frente al carácter residual de la extracontractual.", "por_que_no": ["B: la posición dominante es precisamente de rechazo, no de aceptación sin restricciones.", "C: no se exige autorización judicial caso a caso; la regla general opera sin ese trámite.", "D: sí se reconocen excepciones (Alessandri, Corral), de modo que el rechazo no es absoluto."]}'::jsonb,
+  'Doctrina sobre la posición dominante frente al cúmulo de responsabilidades'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-036',
+  'extracontractual',
+  'Acumulación procesal cuando un tercero es ajeno al contrato',
+  4,
+  'Un mismo hecho genera responsabilidad contractual respecto de las partes de un contrato, y responsabilidad extracontractual respecto de un tercero ajeno a él. ¿Pueden acumularse procesalmente, en un mismo juicio, la acción contractual de las partes y la acción extracontractual del tercero?',
+  '["No, porque cada acción debe tramitarse en un juicio separado según su propio estatuto", "Sí, sin inconveniente, porque unas y otras emanan directa e inmediatamente de un mismo hecho", "Solo si el tercero renuncia previamente a su acción extracontractual", "No, salvo que el tercero también sea parte del contrato"]'::jsonb,
+  1,
+  '{"correcta": "En esta hipótesis no existe inconveniente alguno para admitir la acumulación procesal de ambas acciones en un mismo juicio, porque unas y otras emanan directa e inmediatamente de un mismo hecho, cumpliéndose el requisito general que la ley procesal exige para la acumulación de acciones.", "por_que_no": ["A: precisamente por emanar del mismo hecho, no hay obstáculo para tramitarlas juntas.", "C: no se exige esa renuncia; ambas acciones pueden coexistir en el mismo juicio.", "D: el tercero, por definición, es ajeno al contrato; eso no impide la acumulación procesal, sino que explica por qué no hay riesgo de doble indemnización de un mismo perjuicio."]}'::jsonb,
+  'Doctrina sobre ejercicio conjunto de acciones en el cúmulo de responsabilidades'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-037',
+  'extracontractual',
+  'Límite al criterio amplio de Corral',
+  5,
+  'Según el criterio de CORRAL, que admite el cúmulo cada vez que el daño sería igualmente indemnizable con prescindencia del contrato, ¿en qué caso no será admisible el cúmulo pese a que el hecho sea, en principio, independientemente ilícito?',
+  '["Cuando el hecho sea penalmente sancionable", "Cuando el sometimiento a la distribución contractual de riesgos emane de la naturaleza misma del contrato o resulte impuesto por la buena fe, o cuando las partes lo hayan pactado expresamente", "Cuando la víctima sea una persona jurídica y no una persona natural", "Cuando el contrato no conste por escrito"]'::jsonb,
+  1,
+  '{"correcta": "Corral reconoce un límite a su propio criterio amplio: el cúmulo no será admisible, y deberá aplicarse íntegramente el régimen contractual, cuando las partes lo hayan pactado expresamente, o cuando, a falta de pacto, el sometimiento a la distribución de riesgos del contrato emane de su propia naturaleza o resulte impuesto por la buena fe.", "por_que_no": ["A: que el hecho sea penalmente sancionable es, precisamente, uno de los supuestos en que Corral SÍ admite el cúmulo, no un límite a él.", "C: el criterio no distingue según la naturaleza jurídica o natural de la víctima.", "D: la forma escrita o no del contrato no es el criterio que determina este límite."]}'::jsonb,
+  'Doctrina de Corral sobre el criterio amplio del cúmulo de responsabilidades y su límite'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-1545',
+  'extracontractual',
+  'Fuerza obligatoria del contrato, fundamento del rechazo a la opción entre estatutos',
+  '1545',
+  'Todo contrato legalmente celebrado es una ley para los contratantes, y no puede ser invalidado sino por su consentimiento mutuo o por causas legales.',
+  '[["ley para los contratantes"], ["consentimiento mutuo", "causas legales"], ["*"]]'::jsonb,
+  array['ley para los contratantes', 'consentimiento mutuo', 'causas legales'],
+  'Código Civil, art. 1545'
+)
+on conflict (id) do nothing;

@@ -3523,6 +3523,80 @@
         correcta: 'B',
         articulos_referencia: [],
         objetivo_pedagogico: 'Aplicar la improcedencia de la avaluación anticipada de perjuicios (cláusula penal) frente a un daño extracontractual futuro e indeterminado'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje X (Cúmulo o concurso de responsabilidades)
+      {
+        id: 're-aplic-025',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Excepción de Alessandri: pacto expreso de opción entre estatutos',
+        tipo: 'aplicacion',
+        caso: 'Un contrato de arrendamiento de vehículos incluye una cláusula que dispone expresamente: "En caso de daños derivados de desperfectos del vehículo arrendado, el arrendatario podrá optar por hacer valer las reglas de la responsabilidad contractual o las de la responsabilidad extracontractual, según le resulte más conveniente." Ocurre un accidente por un desperfecto mecánico no informado, y el arrendatario, invocando esa cláusula, decide demandar conforme a las reglas extracontractuales, buscando cobrar daño moral sin las discusiones que históricamente acompañan a su procedencia en sede contractual.',
+        enunciado: '¿Es válida la opción que el arrendatario pretende ejercer, invocando la cláusula pactada en el contrato?',
+        respuesta_modelo: 'Sí, es válida. La regla general en Chile rechaza que la víctima pueda optar libremente entre el estatuto contractual y el extracontractual cuando ambos resultan, en principio, aplicables a un mismo hecho, precisamente porque ello desconocería la fuerza obligatoria del contrato del artículo 1545.\n\nSin embargo, Alessandri reconoce dos excepciones a esa regla general, y la primera de ellas es exactamente esta: cuando las propias partes han convenido la opción. Nada hay de excepcional en permitirlo, porque si las partes pueden modificar a su arbitrio las normas legales meramente supletorias que rigen su contrato, con mayor razón pueden convenir la aplicación de una u otra solución extracontractual en particular, o conceder derechamente al acreedor la posibilidad de optar entre ambos estatutos.\n\nComo el contrato de arrendamiento contiene precisamente ese pacto expreso, el arrendatario puede válidamente ejercer la opción y demandar conforme a las reglas extracontractuales.',
+        elementos_clave: [
+          { texto: 'Identifica que la regla general rechaza la opción entre estatutos, fundada en la fuerza obligatoria del contrato (art. 1545)', keywords: ['regla general', 'rechaza la opción', '1545', 'fuerza obligatoria'], pregunta: '¿Cuál es la regla general en Chile sobre la posibilidad de optar entre el estatuto contractual y el extracontractual?' },
+          { texto: 'Identifica que el pacto expreso de las partes es precisamente una de las excepciones que reconoce Alessandri', keywords: ['pacto expreso', 'excepción', 'Alessandri', 'convenido la opción'], pregunta: '¿Existe alguna excepción a esa regla general cuando las partes mismas pactaron la opción?' },
+          { texto: 'Concluye que, existiendo esa cláusula, la opción del arrendatario es válida', keywords: ['es válida', 'puede ejercer la opción', 'demandar extracontractualmente'], pregunta: '¿Puede entonces el arrendatario demandar conforme a las reglas extracontractuales en este caso concreto?' }
+        ],
+        articulos_referencia: ['1545'],
+        objetivo_pedagogico: 'Aplicar la excepción de pacto expreso reconocida por Alessandri a la regla general de rechazo de la opción entre estatutos'
+      },
+
+      {
+        id: 're-detect-026',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Las dos preguntas distintas agrupadas bajo "cúmulo de responsabilidades"',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno responde: "El cúmulo de responsabilidades consiste en que la víctima, ante un mismo daño causado por un hecho que reúne caracteres contractuales y extracontractuales, puede cobrar dos indemnizaciones distintas, una conforme a cada estatuto, sumándolas entre sí para obtener una reparación mayor."',
+        enunciado: 'El alumno confunde dos cuestiones distintas que la doctrina agrupa bajo el mismo nombre. Identifica el error y explica la distinción correcta.',
+        respuesta_modelo: 'El alumno describe la acumulación, no la verdadera cuestión discutida bajo el nombre de cúmulo. La acumulación consistiría, en efecto, en que la víctima exigiera una doble indemnización, una conforme a las reglas contractuales y otra conforme a las extracontractuales, por el mismo daño. Pero esta primera cuestión plantea en realidad pocas dificultades: la responsabilidad contractual no puede acumularse a la extracontractual, porque ello se traduciría en un enriquecimiento sin causa de la víctima, indemnizada dos veces por un mismo perjuicio.\n\nLa cuestión verdaderamente controvertida, y a la que en la práctica se refiere la discusión sobre el cúmulo, es distinta: consiste en determinar si la víctima puede optar por el estatuto de responsabilidad que le resulte más provechoso, cuando ambos resultan en principio aplicables de manera alternativa a un mismo hecho, no en sumar ambas indemnizaciones, sino en elegir una sola, la más conveniente.',
+        elementos_clave: [
+          { texto: 'Identifica que el alumno describe la acumulación (doble indemnización), no la verdadera cuestión discutida', keywords: ['acumulación', 'doble indemnización', 'no es la cuestión discutida'], pregunta: '¿Qué describe exactamente el alumno: la acumulación o la opción?' },
+          { texto: 'Explica que la acumulación se rechaza sin mayor controversia, porque importaría un enriquecimiento sin causa', keywords: ['enriquecimiento sin causa', 'se rechaza', 'indemnizada dos veces'], pregunta: '¿Por qué la acumulación (cobrar dos veces) no es admisible?' },
+          { texto: 'Explica que la verdadera cuestión discutida es la opción: elegir un solo estatuto, el más conveniente, no sumar ambos', keywords: ['opción', 'elegir un solo estatuto', 'más provechoso', 'alternativamente aplicables'], pregunta: '¿En qué consiste, entonces, la cuestión que realmente discute la doctrina bajo el nombre de cúmulo?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Distinguir la acumulación (rechazada, doble indemnización) de la opción entre estatutos (la cuestión realmente controvertida)'
+      },
+
+      {
+        id: 're-just-025',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'La tensión entre la fuerza obligatoria del contrato y el deber general de no dañar',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Qué tensión de fondo explica la disputa sobre la procedencia del cúmulo de responsabilidades, y cómo concilia esa tensión el criterio de CORRAL?',
+        respuesta_modelo: 'La disputa expresa una tensión entre dos principios igualmente legítimos: la fuerza obligatoria del contrato, que vincula a las partes con la intensidad de la ley y que estas emplearon para sustituir, dentro de su relación recíproca, los deberes generales de cuidado por una distribución específica de riesgos y obligaciones; y el deber general de no dañar a los demás, que subsiste como trasfondo de cualquier relación humana, incluida la contractual, y que no desaparece por el solo hecho de que las partes hayan, además, celebrado un contrato entre sí.\n\nLa posición que rechaza la opción privilegia el primer principio: permitir que una parte eluda la distribución de riesgos pactada, acogiéndose al estatuto extracontractual más favorable, vaciaría de contenido práctico lo pactado. La posición que admite el concurso en ciertos casos reconoce, en cambio, que no todo lo ocurrido entre partes contratantes queda necesariamente absorbido por el contrato.\n\nEl criterio de CORRAL concilia ambos principios sin adoptar una tercera posición autónoma: reconoce la primacía del contrato allí donde este efectivamente distribuyó el riesgo del daño de que se trata, pero no la extiende a daños que exceden por completo lo que las partes pudieron razonablemente entender comprendido en esa distribución. La pregunta relevante no es entonces si existe un contrato entre las partes, sino si ese contrato efectivamente regula, expresa o tácitamente, el riesgo del daño concreto que se reclama.',
+        elementos_clave: [
+          { texto: 'Identifica los dos principios en tensión: la fuerza obligatoria del contrato y el deber general de no dañar', keywords: ['fuerza obligatoria del contrato', 'deber general de no dañar', 'dos principios'], pregunta: '¿Cuáles son los dos principios que la disputa sobre el cúmulo pone en tensión?' },
+          { texto: 'Explica que la posición que rechaza la opción privilegia la fuerza obligatoria del contrato, para no vaciarlo de contenido práctico', keywords: ['rechaza la opción', 'vaciaría de contenido', 'distribución de riesgos pactada'], pregunta: '¿Qué principio privilegia la posición que rechaza la opción, y por qué?' },
+          { texto: 'Explica que el criterio de Corral concilia ambos principios preguntando si el contrato efectivamente regula el riesgo del daño concreto reclamado', keywords: ['Corral', 'concilia', 'regula el riesgo concreto', 'no si existe un contrato sino si lo regula'], pregunta: '¿Qué pregunta propone formular el criterio de Corral, en vez de preguntar simplemente si existe un contrato?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Justificar la disputa sobre el cúmulo a partir de la tensión entre fuerza obligatoria del contrato y deber general de no dañar, y explicar el criterio conciliador de Corral'
+      },
+
+      {
+        id: 're-mc-026',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Excepción de Alessandri: infracción contractual que constituye a la vez delito penal típico',
+        tipo: 'discriminacion_mc',
+        caso: 'Un cirujano opera a un paciente bajo los efectos del alcohol, con una negligencia tan grave que los hechos configuran, además, el delito penal de lesiones graves gravísimas. El paciente, junto con querellarse criminalmente, quiere además demandar civilmente conforme a las reglas extracontractuales, para cobrar el daño moral sin las discusiones que históricamente han acompañado su procedencia en sede contractual. El contrato de prestación de servicios médicos no contiene ninguna cláusula sobre esta materia.',
+        enunciado: 'Conforme al criterio de ALESSANDRI, ¿puede el paciente optar por el estatuto extracontractual en este caso, pese a existir un contrato de prestación de servicios médicos de por medio y sin que exista pacto expreso al respecto?',
+        opciones: [
+          { letra: 'A', texto: 'No, porque la existencia de un contrato absorbe siempre cualquier hecho posterior entre las partes, sea cual sea su gravedad.', rationale: 'Error: precisamente por la excepción que aquí se configura, no toda infracción contractual queda absorbida sin más por el contrato.' },
+          { letra: 'B', texto: 'Sí, porque la infracción contractual constituye a la vez un delito penal típico, una de las dos hipótesis excepcionales que Alessandri reconoce para admitir la opción entre estatutos, junto con el pacto expreso de las partes.', rationale: 'CORRECTO. Alessandri identifica dos hipótesis excepcionales a la regla general de rechazo de la opción: el pacto expreso de las partes, y que la infracción contractual constituya a la vez un delito o cuasidelito penal típico, como ocurre aquí con las lesiones graves gravísimas.' },
+          { letra: 'C', texto: 'Sí, pero únicamente porque las partes lo pactaron expresamente en el contrato de prestación de servicios médicos.', rationale: 'Error: en este caso no existe pacto expreso; la excepción aplicable es distinta, la del delito o cuasidelito penal típico.' },
+          { letra: 'D', texto: 'No, porque el cúmulo de responsabilidades nunca admite excepciones en el derecho chileno.', rationale: 'Error: la doctrina, con Alessandri a la cabeza, reconoce explícitamente excepciones a la regla general de rechazo.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar la excepción de Alessandri sobre infracción contractual que constituye a la vez delito penal típico'
       }
     ];
 
