@@ -1418,3 +1418,65 @@ values (
   'Código Civil, art. 1545'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (34): Extracontractual, Eje Y (Responsabilidad precontractual, por nulidad y postcontractual)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-038',
+  'extracontractual',
+  'Desistimiento unilateral de una negociación',
+  2,
+  '¿Existe responsabilidad por el solo desistimiento unilateral de una negociación, según la doctrina tradicional?',
+  '["Sí, siempre que la otra parte haya sufrido algún daño", "No, porque constituye el ejercicio legítimo del derecho a desistirse de un contrato eventual, aunque de ello se sigan daños para la otra parte", "Sí, pero solo si la negociación duró más de seis meses", "No, salvo que exista un contrato de promesa ya firmado"]'::jsonb,
+  1,
+  '{"correcta": "La doctrina tradicional sostiene que no existe responsabilidad por el desistimiento unilateral de la negociación, porque este constituye el ejercicio legítimo del derecho a desistirse de un contrato eventual, aunque de ese desistimiento se sigan daños para la otra parte.", "por_que_no": ["A: el solo daño no basta; la doctrina tradicional lo considera, en principio, un ejercicio legítimo de un derecho.", "C: no existe ese criterio de duración mínima en la regla general.", "D: si existe promesa, el régimen aplicable es directamente el contractual, no el de la negociación preliminar."]}'::jsonb,
+  'Doctrina tradicional sobre la etapa de negociación preliminar'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-039',
+  'extracontractual',
+  'Los tres requisitos de Rosende',
+  4,
+  '¿Cuáles son los tres requisitos que ROSENDE exige, en el sistema chileno, para que nazca responsabilidad precontractual?',
+  '["Buena fe, capacidad y objeto lícito", "Consentimiento en entrar en las tratativas preliminares, gastos efectuados en vías del contrato proyectado, y un retiro unilateral de las negociaciones contrario a la buena fe", "Oferta, aceptación y plazo de vigencia de la oferta", "Culpa grave, dolo y daño moral"]'::jsonb,
+  1,
+  '{"correcta": "Rosende sintetiza tres requisitos: que exista consentimiento en entrar en las tratativas preliminares, que se hayan efectuado gastos por alguna de las partes en vías del contrato proyectado, y que exista un retiro unilateral de las negociaciones contrario a la buena fe.", "por_que_no": ["A: esos son elementos de la formación del consentimiento y de los requisitos del acto jurídico, no los requisitos de Rosende.", "C: esos son elementos de la oferta, no los requisitos para la responsabilidad precontractual.", "D: la responsabilidad precontractual no exige culpa grave ni dolo como estándar único, ni se limita al daño moral."]}'::jsonb,
+  'Doctrina de Rosende sobre responsabilidad precontractual en el derecho chileno'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-040',
+  'extracontractual',
+  'Naturaleza de la responsabilidad por incumplimiento de la promesa',
+  3,
+  '¿Qué naturaleza tiene la responsabilidad que se sigue del incumplimiento de un contrato de promesa?',
+  '["Precontractual, porque el contrato definitivo todavía no se ha celebrado", "Contractual, porque la promesa es en sí misma un contrato que cumple con sus propios requisitos legales", "Extracontractual, porque las partes de una promesa siguen siendo jurídicamente extrañas entre sí", "Legal, en los mismos términos que la responsabilidad por nulidad según Rodríguez Grez"]'::jsonb,
+  1,
+  '{"correcta": "El contrato de promesa es, en sí mismo, un contrato, según sus propios requisitos legales; por eso, la responsabilidad que se sigue de su incumplimiento es netamente contractual y no se rige por las reglas de la responsabilidad precontractual.", "por_que_no": ["A: la promesa no es una simple negociación previa, sino un contrato ya celebrado.", "C: la promesa genera un vínculo contractual entre las partes; no son jurídicamente extrañas entre sí.", "D: la calificación de responsabilidad legal corresponde, para Rodríguez Grez, a la responsabilidad por nulidad, no a la de la promesa."]}'::jsonb,
+  'Doctrina sobre el contrato de promesa y la responsabilidad precontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-041',
+  'extracontractual',
+  'Régimen aplicable a la responsabilidad postcontractual (Corral)',
+  4,
+  'Frente a los daños causados por hechos posteriores a la expiración de un contrato (responsabilidad postcontractual), ¿qué régimen prefiere CORRAL, y cuál es la excepción que él mismo reconoce?',
+  '["El régimen contractual siempre, sin excepciones", "El régimen extracontractual como regla general, salvo que la ley sancione el ejercicio abusivo de la terminación del contrato disponiendo la conservación del mismo, caso en que la responsabilidad será contractual", "El régimen extracontractual siempre, sin ninguna excepción posible", "El régimen que las partes hayan pactado expresamente para el período posterior a la expiración del contrato"]'::jsonb,
+  1,
+  '{"correcta": "Corral se inclina por el régimen extracontractual como regla general para la responsabilidad postcontractual, con una salvedad: si la ley sanciona el ejercicio abusivo de la facultad de poner término a un contrato disponiendo, como consecuencia, la conservación del contrato mismo, la responsabilidad será contractual, porque el contrato no ha llegado a extinguirse en los términos pretendidos.", "por_que_no": ["A: Corral no sostiene el régimen contractual como regla general, sino como excepción acotada.", "C: sí reconoce una excepción expresa, la de la conservación forzada del contrato.", "D: el criterio de Corral no depende de un pacto expreso de las partes sobre el período posterior a la expiración."]}'::jsonb,
+  'Doctrina de Corral sobre responsabilidad postcontractual'
+)
+on conflict (id) do nothing;

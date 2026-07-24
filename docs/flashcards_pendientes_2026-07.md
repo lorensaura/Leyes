@@ -370,3 +370,14 @@
 | ¿Cuáles son las dos excepciones que reconoce ALESSANDRI a esa regla? | El <strong>pacto expreso</strong> de las partes, y la infracción contractual que constituye a la vez un <strong>delito penal típico</strong>. | avanzada | civil | Responsabilidad extracontractual | Excepciones de Alessandri |
 | ¿Qué propone CORRAL como criterio más amplio? | Que el cúmulo procede si el daño sería igualmente indemnizable extracontractualmente, salvo que la <strong>distribución contractual de riesgos</strong> someta el caso al contrato. | avanzada | civil | Responsabilidad extracontractual | Criterio amplio de Corral |
 | ¿Pueden acumularse en un mismo juicio la acción contractual (de las partes) y la extracontractual (de un tercero ajeno) por un mismo hecho? | Sí, sin inconveniente, porque ambas emanan <strong>directa e inmediatamente</strong> de ese mismo hecho. | avanzada | civil | Responsabilidad extracontractual | Acumulación procesal con terceros |
+
+## Lote 25: Extracontractual, Eje Y. Responsabilidad precontractual, por nulidad y postcontractual
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Qué tres situaciones no encajan en la dualidad ordinaria de estatutos, según este eje? | La responsabilidad <strong>precontractual</strong>, la responsabilidad por <strong>nulidad</strong> del contrato, y la responsabilidad <strong>postcontractual</strong>. | intermedia | civil | Responsabilidad extracontractual | Las tres zonas grises |
+| ¿Existe responsabilidad por el solo desistimiento de una negociación, según la doctrina tradicional? | No; es el ejercicio <strong>legítimo</strong> del derecho a desistirse de un contrato eventual. | intermedia | civil | Responsabilidad extracontractual | Desistimiento de la negociación |
+| ¿Cuáles son los tres requisitos de ROSENDE para la responsabilidad precontractual? | <em>(i)</em> Consentimiento en negociar; <em>(ii)</em> gastos en vías del contrato proyectado; <em>(iii)</em> retiro unilateral contrario a la buena fe. | avanzada | civil | Responsabilidad extracontractual | Los tres requisitos de Rosende |
+| ¿Qué naturaleza tiene la responsabilidad por incumplimiento de un contrato de promesa? | <strong>Contractual</strong>, porque la promesa es en sí misma un contrato. | intermedia | civil | Responsabilidad extracontractual | Naturaleza de la promesa |
+| ¿Qué calificación prefiere la doctrina chilena, de modo uniforme, para las tres situaciones de este eje? | La <strong>extracontractual</strong>, como solución residual. | avanzada | civil | Responsabilidad extracontractual | Preferencia extracontractual uniforme |
+| ¿Por qué esa calificación extracontractual no resuelve el problema por sí sola? | Porque obliga a introducir <strong>correctivos</strong> al estándar abstracto de culpa (buena fe, confianza, lealtad). | avanzada | civil | Responsabilidad extracontractual | Correctivos al estándar de culpa |
