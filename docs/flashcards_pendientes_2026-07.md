@@ -348,3 +348,14 @@
 | ¿Puede transigirse sobre la acción civil que nace de un delito? | Sí, <strong>sin perjuicio</strong> de la acción criminal. | básica | civil | Responsabilidad extracontractual | Transacción |
 | ¿Cuál es el plazo de prescripción de la acción del art. 2332? | <strong>Cuatro años</strong>, contados desde la perpetración del acto. | básica | civil | Responsabilidad extracontractual | Prescripción (art. 2332) |
 | ¿Se suspende ese plazo en favor de los incapaces? | No; por ser una prescripción de <strong>corto tiempo especial</strong>, no se suspende conforme a las reglas generales. | avanzada | civil | Responsabilidad extracontractual | Suspensión del plazo del art. 2332 |
+
+## Lote 23: Extracontractual, Eje W. Dualidad o unidad de regímenes; diferencias entre estatutos
+
+| pregunta | respuesta | dificultad | materia | tema | subtema |
+|---|---|---|---|---|---|
+| ¿Cuáles son los tres grados de culpa que distingue el art. 44? | <strong>Culpa grave</strong>, <strong>culpa leve</strong> y <strong>culpa levísima</strong>. | básica | civil | Responsabilidad extracontractual | Los tres grados de culpa (art. 44) |
+| ¿En qué estatuto se presume la culpa del deudor por el solo incumplimiento? | En el <strong>contractual</strong> (art. 1547 inc. 3°); en el extracontractual, en principio, la víctima debe probarla. | intermedia | civil | Responsabilidad extracontractual | Prueba de la culpa: contractual vs. extracontractual |
+| ¿Es necesaria la mora para que proceda la indemnización extracontractual? | No. Nace <strong>directamente</strong> con el hecho ilícito, sin necesidad de constituir en mora a nadie. | intermedia | civil | Responsabilidad extracontractual | Necesidad de mora: contractual vs. extracontractual |
+| ¿Es admisible pactar de antemano una cláusula penal para un daño extracontractual futuro frente a un tercero? | No; equivaldría a una <strong>condonación anticipada</strong> del dolo o la culpa grave futuros. | avanzada | civil | Responsabilidad extracontractual | Improcedencia de la cláusula penal extracontractual |
+| ¿Qué fuentes de las obligaciones opone el art. 1437 como distintas? | El <strong>contrato</strong> y el <strong>hecho que ha inferido injuria o daño</strong>. | básica | civil | Responsabilidad extracontractual | Fuentes de las obligaciones (art. 1437) |
+| Según el manual, ¿a qué se reconducen la mayoría de las nueve diferencias entre ambos estatutos? | A una sola <strong>distinción estructural</strong>: la presencia o ausencia de una obligación previa entre las partes. | avanzada | civil | Responsabilidad extracontractual | Distinción estructural única |

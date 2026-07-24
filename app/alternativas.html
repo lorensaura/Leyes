@@ -3448,6 +3448,81 @@
         correcta: 'B',
         articulos_referencia: [],
         objetivo_pedagogico: 'Aplicar la regla de competencia entre tribunal civil y penal según el carácter civil, penal o mixto del hecho ilícito'
+      },
+
+      // Lote 2026-07: Extracontractual, Eje W (Dualidad o unidad de regímenes; diferencias entre estatutos)
+      {
+        id: 're-aplic-024',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Prueba de la culpa y necesidad de mora: contractual vs. extracontractual',
+        tipo: 'aplicacion',
+        caso: 'Catering Doña Inés se compromete por contrato a entregar la torta de una boda a las 16:00 horas del día del evento. La entrega recién a las 21:00, cuando la recepción ya había terminado, y la torta llega arruinada por el calor tras tantas horas en la furgoneta. Ese mismo día, mientras se dirigía a otra entrega, el conductor de Catering Doña Inés choca por descuido el vehículo de un desconocido que no tiene ninguna relación contractual con la empresa.',
+        enunciado: 'Para cada una de las dos víctimas, los novios y el dueño del vehículo chocado, indica quién debe probar la culpa y si es necesario constituir en mora a la empresa para que proceda la indemnización.',
+        respuesta_modelo: 'Respecto de los novios, rige el estatuto contractual: el incumplimiento (la entrega tardía) hace presumir la culpa de Catering Doña Inés conforme al artículo 1547 inciso tercero, de modo que basta con que los novios acrediten el atraso; es la empresa quien debe probar que actuó con la diligencia debida si quiere exonerarse. Además, se requiere que la empresa esté constituida en mora, conforme a los artículos 1551 y 1557, para que la indemnización sea procedente.\n\nRespecto del dueño del vehículo chocado, rige en cambio el estatuto extracontractual: no existía vínculo previo alguno entre él y Catering Doña Inés, por lo que es él quien debe probar la culpa del conductor. La obligación de indemnizar nace directamente del choque, sin que sea necesario constituir en mora a nadie, precisamente porque no existía una obligación previa respecto de la cual pudiera estarse en mora.',
+        elementos_clave: [
+          { texto: 'Identifica que, respecto de los novios, la culpa se presume (art. 1547 inc. 3°) y la empresa debe probar su diligencia', keywords: ['1547', 'se presume', 'novios no prueban', 'empresa prueba diligencia'], pregunta: '¿Quién debe probar la culpa de Catering Doña Inés frente a los novios?' },
+          { texto: 'Identifica que, respecto de los novios, se requiere mora (arts. 1551 y 1557) para que proceda la indemnización', keywords: ['mora', '1551', '1557', 'constituida en mora'], pregunta: '¿Basta el solo atraso para que los novios cobren indemnización, o se requiere algo más?' },
+          { texto: 'Identifica que, respecto del dueño del vehículo, es él quien debe probar la culpa del conductor', keywords: ['dueño prueba', 'víctima prueba', 'extracontractual'], pregunta: '¿Quién debe probar la culpa del conductor frente al dueño del vehículo chocado?' },
+          { texto: 'Identifica que la obligación extracontractual nace directamente del choque, sin necesidad de mora, por no existir obligación previa', keywords: ['nace directamente', 'sin mora', 'no existía obligación previa'], pregunta: '¿Es necesario constituir en mora al conductor para que el dueño del vehículo cobre indemnización?' }
+        ],
+        articulos_referencia: ['1547', '1551', '1557'],
+        objetivo_pedagogico: 'Aplicar, a un mismo hecho con dos víctimas, las diferencias de prueba de la culpa y necesidad de mora entre el estatuto contractual y el extracontractual'
+      },
+
+      {
+        id: 're-detect-025',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'No todas las diferencias entre estatutos se reconducen a la distinción estructural',
+        tipo: 'deteccion_error',
+        caso: 'Un alumno responde: "Las nueve diferencias entre la responsabilidad contractual y la extracontractual son igualmente reconducibles a la única distinción de la presencia o ausencia de una obligación previa entre las partes; ninguna de ellas es una decisión legislativa autónoma que escape a esa explicación."',
+        enunciado: 'El alumno exagera el alcance de la tesis reconductiva. Identifica el error y precisa qué diferencias sí se explican por esa distinción estructural y cuáles no.',
+        respuesta_modelo: 'El alumno tiene razón en que la mayoría de las diferencias, la exigencia de mora, la graduación de la culpa según a quién beneficia el contrato, la procedencia de la cláusula penal y los plazos de prescripción, se reconducen efectivamente a la distinción estructural entre la presencia y la ausencia de una obligación previa entre las partes.\n\nPero se equivoca al extender esa reconducción a todas las diferencias sin excepción. Quedan algunas que no se derivan con la misma nitidez de esa distinción única y que podrían calificarse de decisiones legislativas más autónomas: la extensión de las incapacidades (sensiblemente más amplias en materia contractual que en materia delictual civil), el tratamiento de los perjuicios imprevistos (que solo se indemnizan en materia contractual mediando convención expresa, dolo o culpa grave), y los efectos agravados del dolo contractual (que en materia extracontractual, en cambio, no producen por regla general efectos distintos de los de la culpa). Afirmar que las nueve diferencias se explican por igual por esa única distinción es, entonces, exagerar el alcance real de la tesis reconductiva.',
+        elementos_clave: [
+          { texto: 'Confirma que la mayoría de las diferencias (mora, graduación de la culpa, cláusula penal, prescripción) sí se reconducen a la distinción estructural', keywords: ['mora', 'graduación de la culpa', 'cláusula penal', 'prescripción', 'se reconducen'], pregunta: '¿Qué diferencias sí se explican por la presencia o ausencia de una obligación previa?' },
+          { texto: 'Identifica que la extensión de las incapacidades no se deriva con la misma nitidez de esa distinción', keywords: ['incapacidades', 'no se deriva', 'decisión legislativa autónoma'], pregunta: '¿La diferencia en la extensión de las incapacidades se explica igual de bien por esa distinción estructural?' },
+          { texto: 'Identifica que el tratamiento de los perjuicios imprevistos y los efectos agravados del dolo contractual tampoco se reconducen con nitidez a esa distinción', keywords: ['perjuicios imprevistos', 'efectos agravados del dolo', 'decisiones más autónomas'], pregunta: '¿Qué otras dos diferencias quedan fuera de esa reconducción?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Precisar el alcance real de la tesis reconductiva, distinguiendo las diferencias que se explican por la distinción estructural de las que constituyen decisiones legislativas más autónomas'
+      },
+
+      {
+        id: 're-just-024',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Por qué la mayoría de las nueve diferencias se reconducen a una sola distinción estructural',
+        tipo: 'justificacion',
+        caso: null,
+        enunciado: '¿Por qué puede sostenerse que la mayoría de las diferencias entre la responsabilidad contractual y la extracontractual no son sino manifestaciones de una misma distinción estructural, y en qué consiste esa distinción?',
+        respuesta_modelo: 'La distinción estructural común es la presencia o ausencia de una obligación previa entre las partes. La exigencia de mora en materia contractual, y su ausencia en materia extracontractual, es la consecuencia más directa de esa distinción: solo puede constituirse en mora a quien debía cumplir una prestación determinada y no lo hizo; quien nada debía a la víctima, porque no existía vínculo previo alguno, no puede estar en mora de nada, y por eso su obligación de indemnizar nace directamente del hecho dañoso.\n\nLa graduación de la culpa según a quién beneficia el contrato refleja, igualmente, la existencia de una relación previa cuyos términos las partes pudieron negociar; en ausencia de esa relación, no hay parámetro contractual al cual referir la graduación, y por eso la responsabilidad extracontractual debe apoyarse en un estándar general y abstracto. La procedencia de la cláusula penal responde a la misma lógica: solo puede avaluarse anticipadamente un perjuicio cuya fuente, el incumplimiento de una obligación ya determinada, las partes conocen de antemano; nadie puede pactar de antemano la avaluación de un daño causado por un hecho ilícito futuro e indeterminado. Y la diferencia en los plazos de prescripción también se explica así: la obligación contractual existe desde antes de su incumplimiento, y por eso su plazo corre desde que se hizo exigible; la obligación extracontractual no existe hasta que el hecho ilícito la genera, y por eso su plazo solo puede correr desde ese mismo hecho.\n\nEste es, precisamente, el mejor argumento contra la tesis unitaria: no se trata de nueve reglas dispersas, sino de las consecuencias sistemáticas de una única diferencia de fondo entre responder por incumplir lo que se prometió y responder por dañar a quien nada se debía.',
+        elementos_clave: [
+          { texto: 'Identifica la distinción estructural común: la presencia o ausencia de una obligación previa entre las partes', keywords: ['obligación previa', 'presencia o ausencia', 'vínculo previo'], pregunta: '¿Cuál es la distinción estructural única a la que se reconducen la mayoría de las diferencias?' },
+          { texto: 'Explica cómo esa distinción explica la exigencia de mora y la graduación de la culpa según a quién beneficia el contrato', keywords: ['mora', 'graduación de la culpa', 'quién beneficia el contrato'], pregunta: '¿Cómo se relaciona la exigencia de mora, o la graduación de la culpa, con esa distinción estructural?' },
+          { texto: 'Explica que esta reconducción es el mejor argumento contra la tesis unitaria', keywords: ['tesis unitaria', 'mejor argumento', 'consecuencias sistemáticas'], pregunta: '¿Por qué esta reconducción refuerza, precisamente, la tesis dualista y no la unitaria?' }
+        ],
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Justificar la reconducción de la mayoría de las diferencias entre ambos estatutos a la distinción estructural de la presencia o ausencia de obligación previa'
+      },
+
+      {
+        id: 're-mc-025',
+        materia: 'civil',
+        tema: 'Responsabilidad extracontractual',
+        subtema: 'Improcedencia de la cláusula penal frente a un daño extracontractual futuro',
+        tipo: 'discriminacion_mc',
+        caso: 'Dos empresas negocian un contrato de transporte de carga. Antes de firmarlo, pactan una cláusula que fija de antemano una indemnización de $5.000.000 para cualquier daño que el transportista cause a la carga por incumplimiento del contrato, sin necesidad de probar el monto real de los perjuicios. En el mismo documento, quieren además pactar que, si el camión del transportista choca por descuido a un tercero completamente ajeno al contrato, la empresa transportista solo deberá indemnizar a ese tercero hasta el mismo monto de $5.000.000, cualquiera sea el daño real sufrido.',
+        enunciado: '¿Es válida esta segunda cláusula, que fija anticipadamente el monto indemnizatorio frente al tercero extracontractual?',
+        opciones: [
+          { letra: 'A', texto: 'Sí, porque ambas cláusulas responden a la misma lógica de avaluación anticipada de perjuicios propia de la cláusula penal.', rationale: 'Error: la procedencia de la cláusula penal responde a que las partes conocen de antemano la fuente del perjuicio, el incumplimiento de una obligación ya determinada; nadie puede pactar de antemano la avaluación de un daño causado por un hecho ilícito futuro e indeterminado frente a un tercero.' },
+          { letra: 'B', texto: 'No, porque esa estipulación equivaldría, tratándose de un daño extracontractual, a una condonación anticipada del dolo o la culpa grave futuros, y además el tercero no es parte del contrato que pretende limitar su derecho.', rationale: 'CORRECTO. Nadie puede pactar de antemano la avaluación de un daño causado por un hecho ilícito futuro e indeterminado; ese pacto anticipado se asimila a la condonación del dolo o la culpa grave futuros, inadmisible, y el tercero, ajeno al contrato, no puede ver limitado su derecho por un pacto entre otras dos partes.' },
+          { letra: 'C', texto: 'Sí, pero solo si el tercero acepta expresamente la cláusula antes de sufrir el daño.', rationale: 'Error: el tercero no es parte del contrato ni puede quedar limitado por un pacto entre otras dos partes; y aunque llegara a aceptarla, seguiría siendo una autorización anticipada asimilable a la condonación de dolo o culpa grave futuros.' },
+          { letra: 'D', texto: 'No, porque las cláusulas penales están prohibidas en general en el derecho chileno.', rationale: 'Error: la cláusula penal sí es válida en materia contractual entre las partes del contrato; el problema específico aquí es extenderla a un tercero y a un hecho extracontractual futuro.' }
+        ],
+        correcta: 'B',
+        articulos_referencia: [],
+        objetivo_pedagogico: 'Aplicar la improcedencia de la avaluación anticipada de perjuicios (cláusula penal) frente a un daño extracontractual futuro e indeterminado'
       }
     ];
 

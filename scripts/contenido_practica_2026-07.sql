@@ -1266,3 +1266,79 @@ values (
   'Jurisprudencia sobre tramitación del juicio indemnizatorio extracontractual'
 )
 on conflict (id) do nothing;
+
+-- LOTE 2026-07 (32): Extracontractual, Eje W (Dualidad o unidad de regímenes; diferencias entre estatutos)
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-030',
+  'extracontractual',
+  'Prueba de la culpa: contractual vs. extracontractual',
+  3,
+  '¿En cuál de los dos estatutos se presume la culpa del deudor por el solo incumplimiento?',
+  '["En el extracontractual, correspondiendo al demandado probar su propia diligencia", "En el contractual (art. 1547 inciso tercero), correspondiendo al deudor acreditar que actuó con la diligencia debida", "En ambos estatutos por igual, sin diferencia alguna", "En ninguno de los dos: la culpa siempre debe ser probada por quien la alega"]'::jsonb,
+  1,
+  '{"correcta": "En materia contractual, el incumplimiento hace presumir la culpa del deudor conforme al art. 1547 inciso tercero, correspondiéndole a él acreditar que actuó con la diligencia debida. En materia extracontractual, en cambio, corresponde en principio a la víctima probar la culpa del demandado.", "por_que_no": ["A: es exactamente al revés; en materia extracontractual, en principio, es la víctima quien debe probar la culpa.", "C: existe justamente esta diferencia entre ambos estatutos.", "D: en materia contractual la culpa se presume; no siempre debe probarla quien la alega."]}'::jsonb,
+  'Código Civil, art. 1547 inciso 3°; diferencias entre estatutos'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-031',
+  'extracontractual',
+  'Necesidad de mora: contractual vs. extracontractual',
+  3,
+  '¿Es necesario constituir en mora al responsable para que proceda la indemnización en materia extracontractual?',
+  '["Sí, exactamente igual que en materia contractual", "No; la obligación de indemnizar nace directamente con el hecho ilícito dañoso, sin necesidad de constituir en mora a nadie", "Solo si el daño es de carácter patrimonial, no si es daño moral", "Sí, pero únicamente cuando el hecho ilícito también tiene sanción penal"]'::jsonb,
+  1,
+  '{"correcta": "La obligación extracontractual de indemnizar nace directamente con el hecho ilícito dañoso, sin que sea necesario constituir en mora a nadie, a diferencia de la responsabilidad contractual, que exige la mora como presupuesto (arts. 1551 y 1557).", "por_que_no": ["A: es precisamente una de las diferencias entre ambos estatutos; en materia contractual sí se exige mora.", "C: la regla no distingue según la clase de daño.", "D: la regla no depende de si el hecho tiene, además, sanción penal."]}'::jsonb,
+  'Doctrina sobre diferencias entre responsabilidad contractual y extracontractual'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-032',
+  'extracontractual',
+  'Diferencias que no se reconducen a la distinción estructural',
+  5,
+  'De las siguientes diferencias entre el estatuto contractual y el extracontractual, ¿cuál de ellas NO se deriva, según el manual, con la misma nitidez de la distinción estructural (presencia o ausencia de una obligación previa entre las partes)?',
+  '["La exigencia de mora en materia contractual y su ausencia en materia extracontractual", "La graduación de la culpa según a quién beneficia el contrato", "La extensión de las incapacidades, sensiblemente más amplia en materia contractual", "La procedencia de la cláusula penal solo en materia contractual"]'::jsonb,
+  2,
+  '{"correcta": "La extensión de las incapacidades, junto con el tratamiento de los perjuicios imprevistos y los efectos agravados del dolo contractual, no se derivan con la misma nitidez de la distinción estructural, y pueden calificarse de decisiones legislativas más autónomas.", "por_que_no": ["A: la mora sí se reconduce directamente a esa distinción: solo puede estar en mora quien debía una prestación previa determinada.", "B: la graduación de la culpa según a quién beneficia el contrato también se reconduce a la existencia de una relación previa negociada.", "D: la procedencia de la cláusula penal también se explica por la existencia de una obligación previa cuya fuente las partes conocen de antemano."]}'::jsonb,
+  'Doctrina sobre la reconducción de las diferencias entre estatutos a una distinción estructural única'
+)
+on conflict (id) do nothing;
+
+insert into public.alternativas
+  (id, materia, subtema, nivel_exigencia, pregunta, opciones, correcta, retroalimentacion, fuente)
+values (
+  'ext-alt-033',
+  'extracontractual',
+  'Fuentes de las obligaciones según el art. 1437',
+  2,
+  '¿Qué fuentes de las obligaciones opone el artículo 1437 del Código Civil como distintas entre sí?',
+  '["El contrato y el hecho que ha inferido injuria o daño", "La ley y la voluntad unilateral, únicamente", "El cuasicontrato y el delito, exclusivamente", "La convención y la sentencia judicial"]'::jsonb,
+  0,
+  '{"correcta": "El artículo 1437 opone como fuentes distintas de las obligaciones el contrato y el hecho que ha inferido injuria o daño, respaldo textual central de la tesis dualista de la responsabilidad civil.", "por_que_no": ["B: la ley y la voluntad unilateral no son la oposición que establece este artículo.", "C: el cuasicontrato y el delito no son, en este artículo, las fuentes contrapuestas.", "D: la convención y la sentencia judicial no son las fuentes que opone el art. 1437."]}'::jsonb,
+  'Código Civil, art. 1437'
+)
+on conflict (id) do nothing;
+
+insert into public.memorice_articulos
+  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
+values (
+  'cc-art-44',
+  'extracontractual',
+  'Los tres grados de culpa y el dolo',
+  '44',
+  'La ley distingue tres especies de culpa o descuido. Culpa grave, negligencia grave, culpa lata, es la que consiste en no manejar los negocios ajenos con aquella diligencia que aun las personas negligentes y de poca prudencia suelen emplear en sus negocios propios. Esta culpa en materias civiles equivale al dolo. Culpa leve, descuido leve, descuido ligero, es la falta de aquella diligencia y cuidado que los hombres emplean ordinariamente en sus negocios propios. Culpa o descuido, sin otra calificación, significa culpa o descuido leve. Esta especie de culpa se opone a la diligencia o cuidado ordinario o mediano. El que debe administrar un negocio como un buen padre de familia es responsable de esta especie de culpa. Culpa o descuido levísimo es la falta de aquella esmerada diligencia que un hombre juicioso emplea en la administración de sus negocios importantes. Esta especie de culpa se opone a la suma diligencia o cuidado. El dolo consiste en la intención positiva de inferir injuria a la persona o propiedad de otro.',
+  '[["equivale al dolo"], ["buen padre de familia"], ["intención positiva de inferir injuria"], ["*"]]'::jsonb,
+  array['culpa grave', 'culpa leve', 'culpa levísima', 'equivale al dolo', 'buen padre de familia', 'intención positiva de inferir injuria'],
+  'Código Civil, art. 44'
+)
+on conflict (id) do nothing;
