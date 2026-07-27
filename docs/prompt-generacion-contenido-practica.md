@@ -181,17 +181,32 @@ de a poco reduce el riesgo de mezclar detalles de un eje con otro o de
 "completar de memoria" un punto que ya se salió de la ventana de lectura
 reciente.
 
-1. Abre solo el tramo del manual que corresponde a este lote (no el
+1. **Antes de abrir el manual, revisa qué ya existe para ese tramo** en
+   los cuatro destinos, filtrado por materia y, si se puede, por
+   subtema/eje: el `banco` hardcoded de Evaluación en
+   `app/alternativas.html`, la tabla `alternativas` en Supabase (súmale
+   cualquier SQL de un lote anterior que ya se haya redactado aunque
+   todavía no se haya corrido, para no repetir dentro de lotes pendientes
+   de cargar), `memorice_articulos`, y la tabla `Flashcards` en Airtable
+   (base `Digesto`). Anota, aunque sea mentalmente, qué subtemas,
+   artículos y "puntos de derecho" ya están cubiertos — es una lista
+   negra para no repetir, no una fuente de inspiración para parafrasear.
+   Si no tienes acceso directo a Supabase/Airtable en la sesión, pide el
+   export o revisa el SQL/handoff del lote anterior antes de seguir.
+2. Abre solo el tramo del manual que corresponde a este lote (no el
    documento entero).
-2. Recorre ese tramo **eje por eje**, en orden, sin saltarte ninguno.
-3. Para cada eje del tramo, evalúa qué modelos de práctica tienen
+3. Recorre ese tramo **eje por eje**, en orden, sin saltarte ninguno.
+4. Para cada eje del tramo, evalúa qué modelos de práctica tienen
    contenido razonable para extraer de él (no todos los ejes rinden para
    los cuatro modelos: ver la guía de la sección 2).
-4. Genera los ítems siguiendo el proceso de tres pasos de la sección 0,
-   citando solo con lo que está a la vista en este tramo.
-5. Al terminar el lote, entrega el reporte de auto-auditoría de la
+5. Genera los ítems siguiendo el proceso de tres pasos de la sección 0,
+   citando solo con lo que está a la vista en este tramo, y evitando
+   repetir un punto de derecho ya cubierto por el paso 1 (aunque sea con
+   otro caso o redacción: el criterio es el punto de derecho evaluado, no
+   la redacción literal).
+6. Al terminar el lote, entrega el reporte de auto-auditoría de la
    sección 6 (acotado a este lote) antes que el contenido mismo.
-6. Recién ahí abre el siguiente tramo. No acumules varios tramos en
+7. Recién ahí abre el siguiente tramo. No acumules varios tramos en
    memoria "para ir más rápido".
 
 ### 2. Qué extraer de cada eje, por modelo
@@ -428,6 +443,11 @@ verifica:
       común, solo por conocimiento jurídico específico del punto tratado.
 - [ ] Ningún caso o dato reutiliza literalmente un recuadro `.ejemplo`
       del manual palabra por palabra.
+- [ ] Ningún ítem nuevo repite, con otro caso o redacción, un punto de
+      derecho que ya está cubierto en el banco existente para ese eje
+      (revisado en el paso 1 de la sección 1) — incluye repeticiones
+      **entre modelos distintos** (ej. una Alternativa que solo reformula
+      una Flashcard ya existente sobre el mismo punto).
 - [ ] (Transversales) Cada mitad de una comparación entre materias tiene
       su propia cita de respaldo textual, y la conclusión comparativa no
       agrega nada que esas citas no digan por sí solas.
