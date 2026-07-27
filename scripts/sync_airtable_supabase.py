@@ -4,9 +4,23 @@ Sincroniza Airtable -> Supabase para Flashcards y Preguntas_Evaluacion.
 
 Airtable sigue siendo donde Laura edita el contenido (varias bases: la
 original "Digesto" para Flashcards/Temas, y una base por materia para
-Preguntas_Evaluacion/Elementos_Clave/Opciones_MC). Este script copia lo
-publicado hacia las tablas de Supabase (flashcards, preguntas_evaluacion),
-que son las que la app consulta en producción — no se editan a mano ahí.
+Preguntas_Evaluacion). Este script copia lo publicado hacia las tablas de
+Supabase (flashcards, preguntas_evaluacion), que son las que la app
+consulta en producción — no se editan a mano ahí.
+
+Elementos_Clave y Opciones_MC (2026-07-27) dejaron de ser tablas
+separadas vinculadas por link -- consumían más de 700 registros del cupo
+de 1.000 por base del plan Free de Airtable. Ahora viven como campos de
+texto en la misma fila de Preguntas_Evaluacion (`elementos_clave_texto`,
+`opciones_texto`), uno por línea. Formato:
+  elementos_clave_texto: "texto :: keywords" (o "texto :: keywords ::
+    pregunta_socratica" si esa 3a parte existe), una línea por elemento.
+  opciones_texto: "A) texto || rationale", una línea por opción A-D; la
+    rationale de la correcta empieza con "CORRECTO." (convención ya usada
+    en todo el contenido existente, no hace falta una columna aparte).
+Ver parsear_elementos_clave/parsear_opciones abajo. El esquema de
+Supabase no cambió: preguntas_evaluacion.elementos_clave sigue siendo un
+array de solo texto (compatibilidad con api/interrogador.js).
 
 Alternativas y Memorice (tabla `alternativas`/`memorice_articulos`) NO
 pasan por Airtable (decidido 2026-07-27): Laura las redacta directo como
@@ -22,6 +36,7 @@ Requiere AIRTABLE_TOKEN y SUPABASE_SECRET_KEY en .env (o el entorno).
 
 import json
 import os
+import re
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -130,35 +145,44 @@ def sync_flashcards(airtable_token, supabase_key):
     print(f"Flashcards: {n} sincronizadas")
 
 
+def parsear_elementos_clave(texto):
+    if not texto:
+        return []
+    elementos = []
+    for linea in texto.splitlines():
+        linea = linea.strip()
+        if not linea:
+            continue
+        elementos.append(linea.split(" :: ", 1)[0].strip())
+    return elementos
+
+
+def parsear_opciones(texto):
+    if not texto:
+        return []
+    opciones = []
+    for linea in texto.splitlines():
+        linea = linea.strip()
+        m = re.match(r"^([A-D])\)\s*(.*?)\s*\|\|\s*(.*)$", linea)
+        if not m:
+            continue
+        letra, opcion_texto, rationale = m.groups()
+        opciones.append({"letra": letra, "texto": opcion_texto, "rationale": rationale})
+    return sorted(opciones, key=lambda o: o["letra"])
+
+
 def sync_preguntas(airtable_token, supabase_key):
     total = 0
     for materia, base in PREGUNTAS_BASES.items():
         preguntas = airtable_fetch_all(airtable_token, base, "Preguntas_Evaluacion")
-        elementos = airtable_fetch_all(airtable_token, base, "Elementos_Clave")
-        opciones = airtable_fetch_all(airtable_token, base, "Opciones_MC")
-
-        texto_elemento = {e["id"]: e["fields"].get("texto", "") for e in elementos}
-
-        opciones_por_pregunta = {}
-        for o in opciones:
-            fields = o["fields"]
-            for pid in fields.get("pregunta", []):
-                opciones_por_pregunta.setdefault(pid, []).append({
-                    "letra": fields.get("letra", "?"),
-                    "texto": fields.get("texto", ""),
-                    "rationale": fields.get("rationale", ""),
-                })
 
         filas = []
         for p in preguntas:
             fields = p["fields"]
             if not fields.get("publicado"):
                 continue
-            elementos_ids = fields.get("Elementos_Clave", [])
-            elementos_texto = [texto_elemento[eid] for eid in elementos_ids if eid in texto_elemento]
-            opciones_pregunta = sorted(
-                opciones_por_pregunta.get(p["id"], []), key=lambda o: o["letra"]
-            )
+            elementos_texto = parsear_elementos_clave(fields.get("elementos_clave_texto", ""))
+            opciones_pregunta = parsear_opciones(fields.get("opciones_texto", ""))
             filas.append({
                 "airtable_id": p["id"],
                 "materia": fields.get("materia", ""),
