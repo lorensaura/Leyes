@@ -112,47 +112,18 @@ funciona `as Word`) → luego `textutil`; `.numbers` → AppleScript vía
 Numbers.app (`export doc to POSIX file outPath as CSV`, genera una carpeta
 con un CSV por hoja); `.pdf` → Read tool directo.
 
-## Alternativas: pendiente de crear la base en Airtable (2026-07-27)
-Hasta ahora `alternativas` (Supabase) solo se cargaba a mano con un script
-SQL (sin pasar por Airtable) — ver `docs/practica.md`. Se decidió llevarla
-al mismo patrón que Flashcards (Airtable para editar, Supabase para
-servir): **una sola base nueva "Alternativas"**, con las tres materias
-juntas distinguidas por su propio campo `materia`, separada de
-`PREGUNTAS_BASES` para no competir por su cupo (esas tres bases ya están al
-40-53% del límite de 1.000 registros del plan Free de Airtable: 429/1.000
-Contractual, 533/1.000 Extracontractual, 401/1.000 Precontractual — dato
-verificado el 2026-07-27). No se justifican tres bases separadas por
-materia como en Preguntas_Evaluacion: el volumen esperado de Alternativas
-(~30-50 ítems por materia, ver `docs/prompt-generacion-contenido-practica.md`
-sección 5) es una fracción mínima de 1.000, así que una sola base alcanza
-de sobra y es más simple de mantener para Laura (un solo lugar, mismo
-patrón que ya conoce de Flashcards).
-
-`scripts/sync_airtable_supabase.py` ya tiene `sync_alternativas()` y
-`ALTERNATIVAS_BASE` esperando el ID de esta base (hoy en `None`, se salta
-sin fallar). **Falta que Laura cree la base** con una tabla `Alternativas`
-con estos campos:
-
-| Campo | Tipo | Notas |
-|---|---|---|
-| `pregunta` | texto largo | el enunciado |
-| `opcion_a` / `opcion_b` / `opcion_c` / `opcion_d` | texto largo | las 4 alternativas |
-| `correcta` | selección única: A/B/C/D | cuál es la correcta |
-| `por_que_correcta` | texto largo | retroalimentación si acierta |
-| `por_que_no_a` / `por_que_no_b` / `por_que_no_c` / `por_que_no_d` | texto largo | retroalimentación si falla esa opción — **dejar vacío el de la letra correcta** |
-| `materia` | selección única: contractual/extracontractual/precontractual/transversal | distingue la materia dentro de la misma base |
-| `subtema` | texto corto | para el Eje 3 de Práctica |
-| `nivel_exigencia` | número (1–5) | opcional, default 3 si se deja vacío |
-| `fuente` | texto corto | ej. "Art. 2314 CC" |
-| `publicado` | casilla | igual que en Preguntas_Evaluacion — controla qué se sincroniza |
-
-A diferencia de `preguntas_evaluacion` (que usa una columna `airtable_id`
-separada), `alternativas.id` ya es de tipo texto libre, así que el sync usa
-directo el id del registro de Airtable como `id` en Supabase — no hace falta
-migrar el esquema de la tabla.
-
-Una vez creada la base: pegar su ID en `ALTERNATIVAS_BASE` (en
-`scripts/sync_airtable_supabase.py`) y correr el sync normal.
+## Alternativas y Memorice: se quedan solo en Supabase, sin Airtable (decidido 2026-07-27)
+Se evaluó llevar Alternativas al mismo patrón que Flashcards/Preguntas_Evaluacion
+(Airtable para editar, Supabase para servir), incluso con el diseño ya
+resuelto (una sola base para las tres materias, para no competir por el
+cupo de 1.000 registros de las bases de Preguntas_Evaluacion, que ya están
+al 40-53% de uso). Laura prefirió no hacerlo: son ítems más simples
+("modo pasta", no tienen que quedar perfectos a la primera como
+Preguntas_Evaluacion), así que sigue siendo más rápido que ella redacte el
+SQL directo y lo corra en el SQL Editor de Supabase — agregar un paso de
+edición en Airtable sería más fricción, no menos. `scripts/sync_airtable_supabase.py`
+no toca `alternativas` ni `memorice_articulos`; el formato del INSERT está
+en `docs/prompt-generacion-contenido-practica.md`, sección 3.
 
 ## El banco de preguntas de examen real ya se usa como grounding del Interrogador IA
 Las 328 preguntas en la tabla Supabase `preguntas_evaluacion` (55
