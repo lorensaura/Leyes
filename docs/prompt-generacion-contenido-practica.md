@@ -182,14 +182,27 @@ de a poco reduce el riesgo de mezclar detalles de un eje con otro o de
 reciente.
 
 1. **Antes de abrir el manual, revisa qué ya existe para ese tramo** en
-   los cuatro destinos, filtrado por materia y, si se puede, por
-   subtema/eje: el `banco` hardcoded de Evaluación en
-   `app/alternativas.html`, la tabla `alternativas` en Supabase (súmale
-   cualquier SQL de un lote anterior que ya se haya redactado aunque
-   todavía no se haya corrido, para no repetir dentro de lotes pendientes
-   de cargar), `memorice_articulos`, y la tabla `Flashcards` en Airtable
-   (base `Digesto`). Anota, aunque sea mentalmente, qué subtemas,
-   artículos y "puntos de derecho" ya están cubiertos — es una lista
+   los **cinco** destinos, filtrado por materia y, si se puede, por
+   subtema/eje:
+   - el `banco` hardcoded de Evaluación en `app/alternativas.html` (lo
+     único que la app sirve hoy para Evaluación);
+   - la tabla Supabase `preguntas_evaluacion` — **ojo, es un banco
+     aparte, no un espejo del anterior**: viene de bancos de preguntas de
+     examen previos a este proyecto (ej. apuntes Boetsch Gillet para
+     Extracontractual) cargados directo en Supabase antes de que existiera
+     el flujo Airtable→sync, y hoy no la consulta la app, pero igual
+     cuenta como "ya hecho" (a julio 2026: 55 contractual, 154
+     extracontractual, 119 precontractual — consultable con
+     `select=tipo,tema_texto` vía la REST API de Supabase, usando
+     `SUPABASE_SECRET_KEY` de `.env`);
+   - la tabla `alternativas` en Supabase (súmale cualquier SQL de un lote
+     anterior que ya se haya redactado aunque todavía no se haya corrido,
+     para no repetir dentro de lotes pendientes de cargar);
+   - `memorice_articulos`;
+   - la tabla `Flashcards` en Airtable (base `Digesto`).
+
+   Anota, aunque sea mentalmente, qué subtemas, artículos y "puntos de
+   derecho" ya están cubiertos en cualquiera de los cinco — es una lista
    negra para no repetir, no una fuente de inspiración para parafrasear.
    Si no tienes acceso directo a Supabase/Airtable en la sesión, pide el
    export o revisa el SQL/handoff del lote anterior antes de seguir.
