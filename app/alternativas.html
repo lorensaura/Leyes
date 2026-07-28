@@ -164,6 +164,19 @@
     .eje-row.subtipo .filtro-btn.active { background: #C41E2E; border-color: #C41E2E; }
     .filtro-btn.disabled { cursor: default; opacity: 0.4; border-style: dashed; }
     .filtro-btn.disabled:hover { border-color: rgba(17,17,17,0.15); color: #7A6E5F; }
+    .filtro-select {
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #111111;
+      max-width: 100%;
+    }
+    .filtro-select:hover { border-color: #111111; }
 
     /* ── PROGRESO ── */
     .quiz-progress {
@@ -4681,6 +4694,7 @@
       return raw.split(',').map(s => normalizarMateria(s.trim())).includes(area);
     }
     function escaparHtmlBase(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+    function escaparAtributoHtml(t) { return escaparHtmlBase(t).replace(/"/g, '&quot;'); }
     function sumarDias(dias) { return new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toISOString(); }
 
     // ══════════════════════════════════════════════════════════════════
@@ -4793,9 +4807,15 @@
         const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || perteneceAArea(it.materia, areaActiva));
         const subtemas = subtemasDisponibles(filtradasPorMateria);
         if (subtemas.length === 0) { fila.innerHTML = ''; fila.style.display = 'none'; return; }
+        // Alternativas/Memorice traen un subtema casi único por ítem (a diferencia
+        // de Evaluación, que tiene 4 subtipos fijos): con más de una decena de
+        // ítems la fila de chips se vuelve inmanejable, así que acá se usa un
+        // desplegable en vez de un chip por subtema.
         fila.innerHTML = `<span class="eje-label">Subtipo</span>` +
-          `<button class="filtro-btn ${subtipoActivo === 'todos' ? 'active' : ''}" onclick="setSubtipo('todos')">Todos</button>` +
-          subtemas.map(s => `<button class="filtro-btn ${subtipoActivo === s ? 'active' : ''}" onclick="setSubtipo(${JSON.stringify(s)})">${escaparHtmlBase(s)}</button>`).join('');
+          `<select class="filtro-select" onchange="setSubtipo(this.value)">` +
+          `<option value="todos"${subtipoActivo === 'todos' ? ' selected' : ''}>Todos</option>` +
+          subtemas.map(s => `<option value="${escaparAtributoHtml(s)}"${subtipoActivo === s ? ' selected' : ''}>${escaparHtmlBase(s)}</option>`).join('') +
+          `</select>`;
         fila.style.display = '';
       } else {
         fila.innerHTML = '';

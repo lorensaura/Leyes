@@ -2218,7 +2218,7 @@ on conflict (id) do nothing;
 -- Cruzan materia: contractual + extracontractual (o general + extracontractual)
 update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Los tres grados de culpa y el dolo' where id = 'cc-art-44';
 update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Límite al consentimiento de la víctima: condonación del dolo futuro' where id = 'cc-art-1465';
-update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Fuerza obligatoria del contrato', fuente = 'Código Civil, art. 1545 — fundamento del rechazo al cúmulo u opción entre estatutos de responsabilidad' where id = 'cc-art-1545';
+update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Fuerza obligatoria del contrato', fuente = 'Código Civil, art. 1545, fundamento del rechazo al cúmulo u opción entre estatutos de responsabilidad' where id = 'cc-art-1545';
 update public.memorice_articulos set materia = 'general,extracontractual', subtema = 'Prescripción de la acción de responsabilidad extracontractual' where id = 'cc-art-2332';
 
 -- Misma materia, se actualiza solo la etiqueta del subtema
