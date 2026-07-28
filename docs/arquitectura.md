@@ -33,10 +33,13 @@ que cambia de motor de render según el Modelo elegido. Detalle completo en
 - `app/manuales.html` — lector en línea. Los checkpoints se insertan
   partiendo el contenido por el marcador `<!-- CP -->` (ver
   `buildOnlineContent` / `buildCheckpointCard` / `evaluarCheckpoint`).
-- `app/alternativas.html` — módulo de Práctica unificado. Evaluación usa un
-  banco hardcodeado (`const banco = [...]`); Flashcards, Alternativas y
-  Memorice se sirven desde Supabase. Detalle en `docs/practica.md` y
-  `docs/creacion-de-contenido.md`.
+- `app/alternativas.html` — módulo de Práctica unificado. Los 4 modelos
+  (Evaluación, Flashcards, Alternativas, Memorice) se sirven desde
+  Supabase. Evaluación migró desde un banco hardcodeado (`const banco`) a
+  Airtable/Supabase el 2026-07-28; solo quedan sueltos en el código 4
+  ítems transversales (`const bancoTransversal`) que no encajan en el
+  modelo de una base de Airtable por materia. Detalle en `docs/practica.md`
+  y `docs/creacion-de-contenido.md`.
 - `app/flashcards.html` — redirect a `alternativas.html?modelo=flashcard`,
   sin lógica propia.
 - `scripts/supabase_schema_practica.sql` — migración del refactor de
@@ -51,8 +54,8 @@ que cambia de motor de render según el Modelo elegido. Detalle completo en
   formato y las convenciones de edición.
 - `app/pdf/*.pdf` — PDFs generados (reglas de generación en `docs/pdf.md`).
 - `scripts/sync_airtable_supabase.py` — sincroniza Airtable → Supabase
-  (Flashcards, Preguntas_Evaluacion). Detalle completo, esquema de tablas
-  y credenciales en `docs/contenido-airtable-supabase.md`.
+  (Flashcards, Preguntas_Evaluacion, Evaluación). Detalle completo, esquema
+  de tablas y credenciales en `docs/contenido-airtable-supabase.md`.
 - `.claude/skills/handoff/` — skill `/handoff` para cortar y retomar
   sesiones largas. Escribe siempre a `.claude/handoff/ESTADO_ACTUAL.md`
   (un solo archivo vivo, se sobrescribe cada vez — no se acumulan
@@ -61,7 +64,8 @@ que cambia de motor de render según el Modelo elegido. Detalle completo en
   de Práctica materia por materia. Ver `docs/creacion-de-contenido.md`.
 
 ## Supabase / Airtable
-Airtable es donde Laura edita (Flashcards, Preguntas_Evaluacion); Supabase
+Airtable es donde Laura edita (Flashcards, Preguntas_Evaluacion, Evaluación
+desde 2026-07-28); Supabase
 es lo que la app consulta en producción. Esquema completo de tablas,
 bases de Airtable y el mecanismo de sincronización: **ver
 `docs/contenido-airtable-supabase.md`** (no se duplica aquí porque es

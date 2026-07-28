@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 """
-Sincroniza Airtable -> Supabase para Flashcards y Preguntas_Evaluacion.
+Sincroniza Airtable -> Supabase para Flashcards, Preguntas_Evaluacion y Evaluación.
 
 Airtable sigue siendo donde Laura edita el contenido (varias bases: la
 original "Digesto" para Flashcards/Temas, y una base por materia para
-Preguntas_Evaluacion). Este script copia lo publicado hacia las tablas de
-Supabase (flashcards, preguntas_evaluacion), que son las que la app
-consulta en producción — no se editan a mano ahí.
+Preguntas_Evaluacion y, desde 2026-07-28, para Evaluación). Este script
+copia lo publicado hacia las tablas de Supabase (flashcards,
+preguntas_evaluacion, evaluacion_practica), que son las que la app
+consulta en producción, no se editan a mano ahí.
+
+Evaluación (Aplicación/Detección de error/Justificación/Discriminación MC,
+2026-07-28): antes vivía hardcodeada en `const banco` de
+app/alternativas.html, sin poder editarse sin tocar código. Se migró a
+Airtable (una tabla por tipo en cada base de materia) y de ahí a la tabla
+nueva `evaluacion_practica` en Supabase. Es distinta de Preguntas_Evaluacion,
+que sigue siendo el banco de examen real usado como grounding del
+Interrogador IA, no se tocan entre sí.
 
 Elementos_Clave y Opciones_MC (2026-07-27) dejaron de ser tablas
 separadas vinculadas por link -- consumían más de 700 registros del cupo
@@ -224,10 +233,99 @@ def sync_preguntas(airtable_token, supabase_key):
     print(f"Total preguntas: {total}")
 
 
+TABLAS_EVALUACION = {
+    "Aplicación": "aplicacion",
+    "Detección de error": "deteccion_error",
+    "Justificación": "justificacion",
+    "Discriminación MC": "discriminacion_mc",
+}
+
+
+def _fila_evaluacion_texto(record, materia, tipo):
+    fields = record["fields"]
+    elementos = fields.get("elementos_clave") or "[]"
+    try:
+        elementos_clave = json.loads(elementos)
+    except (TypeError, json.JSONDecodeError):
+        elementos_clave = []
+    return {
+        "airtable_id": record["id"],
+        "codigo": fields.get("id"),
+        "materia": materia,
+        "tipo": tipo,
+        "tema": None,
+        "subtema": fields.get("subtema"),
+        "caso": fields.get("caso"),
+        "enunciado": fields.get("enunciado", ""),
+        "respuesta_modelo": fields.get("respuesta_modelo"),
+        "elementos_clave": elementos_clave,
+        "opciones": [],
+        "correcta": None,
+        "articulos_referencia": fields.get("articulos_referencia"),
+        "objetivo_pedagogico": fields.get("objetivo_pedagogico"),
+        "publicado": True,
+    }
+
+
+def _fila_evaluacion_mc(record, materia):
+    fields = record["fields"]
+    opciones = [
+        {
+            "letra": letra,
+            "texto": fields.get(f"opcion_{letra.lower()}", ""),
+            "rationale": fields.get(f"rationale_{letra.lower()}", ""),
+        }
+        for letra in ("A", "B", "C", "D")
+    ]
+    return {
+        "airtable_id": record["id"],
+        "codigo": fields.get("id"),
+        "materia": materia,
+        "tipo": "discriminacion_mc",
+        "tema": None,
+        "subtema": fields.get("subtema"),
+        "caso": fields.get("caso"),
+        "enunciado": fields.get("enunciado", ""),
+        "respuesta_modelo": None,
+        "elementos_clave": [],
+        "opciones": opciones,
+        "correcta": fields.get("correcta"),
+        "articulos_referencia": fields.get("articulos_referencia"),
+        "objetivo_pedagogico": fields.get("objetivo_pedagogico"),
+        "publicado": True,
+    }
+
+
+def sync_evaluacion(airtable_token, supabase_key):
+    # Evaluación (Aplicación/Detección de error/Justificación/Discriminación MC),
+    # migrada 2026-07-28 desde el banco hardcodeado de app/alternativas.html hacia
+    # una tabla por tipo en cada base de materia. Distinta de Preguntas_Evaluacion
+    # (banco de examen real, grounding del Interrogador IA, no se toca acá).
+    total = 0
+    for materia, base in PREGUNTAS_BASES.items():
+        filas = []
+        for tabla, tipo in TABLAS_EVALUACION.items():
+            registros = airtable_fetch_all(airtable_token, base, tabla)
+            for r in registros:
+                if not r["fields"].get("publicado"):
+                    continue
+                if tipo == "discriminacion_mc":
+                    filas.append(_fila_evaluacion_mc(r, materia))
+                else:
+                    filas.append(_fila_evaluacion_texto(r, materia, tipo))
+
+        n = supabase_upsert(supabase_key, "evaluacion_practica", filas)
+        print(f"{materia}: {n} items de Evaluación sincronizados")
+        total += n
+
+    print(f"Total Evaluación: {total}")
+
+
 def main():
     airtable_token, supabase_key = cargar_env()
     sync_flashcards(airtable_token, supabase_key)
     sync_preguntas(airtable_token, supabase_key)
+    sync_evaluacion(airtable_token, supabase_key)
     print("Listo.")
 
 

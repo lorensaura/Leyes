@@ -12,53 +12,58 @@
 
 | Modelo | Dónde vive | Se edita vía |
 |---|---|---|
-| Evaluación | Hardcodeado en `const banco` de `app/alternativas.html` | **Directo en código.** No se toca vía Airtable ni Supabase — la tabla `preguntas_evaluacion` existe pero la app no la lee (ver más abajo). |
+| Evaluación | Tabla `evaluacion_practica` en Supabase | Airtable (una base por materia, tablas `Aplicación`/`Detección de error`/`Justificación`/`Discriminación MC`) → `scripts/sync_airtable_supabase.py` → Supabase. |
 | Alternativas | Tabla `alternativas` en Supabase | SQL directo (Laura lo corre en el SQL Editor). No pasa por Airtable. |
 | Memorice | Tabla `memorice_articulos` en Supabase | SQL directo. El artículo y su texto verbatim los manda **Laura**, nunca se generan ni verifican solos. |
 | Flashcards | Tabla `flashcards` en Supabase | Airtable (base `Digesto`, tabla `Flashcards`) → `scripts/sync_airtable_supabase.py` → Supabase. |
 
-**Por qué Evaluación no se toca (confirmado 2026-07-28, tras un intento fallido):**
-en una sesión se probó crear tablas nuevas en Airtable (Aplicación /
-Detección de error / Justificación / Discriminación MC, una por materia)
-para poder editar Evaluación desde ahí. A mitad de generar contenido para
-Extracontractual se descubrió que **el banco hardcodeado ya tenía los 25
-ejes cubiertos** (105 ítems, ids `re-*`), así que el contenido nuevo
-generado esa sesión (16 ítems de Evaluación) quedó duplicado y huérfano —
-las tablas nuevas de Airtable no tienen ningún script que las sincronice a
-ningún lado. **Antes de generar Evaluación para cualquier materia, verificar
-primero el `const banco` de `app/alternativas.html`** (buscar
-`tema: 'Responsabilidad {materia}'`) — es casi seguro que ya exista.
+**Migrado el 2026-07-28:** Evaluación vivía hardcodeada en `const banco` de
+`app/alternativas.html` (195 ítems entre las 3 materias). Se migró a
+Airtable, en las mismas 4 tablas por tipo que un intento anterior (2026-07-28
+por la mañana) había dejado con 16 ítems huérfanos y redundantes con el
+banco: se compararon punto por punto, se borraron los 9 que repetían un
+punto de derecho ya cubierto y se sumaron los 7 que aportaban algo nuevo.
+`const banco` ya no existe en el código; el motor de Evaluación en
+`app/alternativas.html` carga de `evaluacion_practica` vía `cargarEvaluacion()`,
+igual que Flashcards/Alternativas/Memorice.
 
-**Pendiente sin decidir:** qué hacer con esas tablas de Airtable y esos 16
-ítems huérfanos (quedaron en `Digesto Extracontractual`, tablas
-`Aplicación`/`Detección de error`/`Justificación`/`Discriminación MC`) —
-opciones: migrar los 105 ítems reales del banco hacia ahí (para que Laura
-pueda por fin editar Evaluación sin tocar código), o borrar las tablas y
-descartar la idea. **Laura decide.**
+**Quedan sueltos en el código 4 ítems transversales** (`const bancoTransversal`
+en `app/alternativas.html`, materia "civil" general en vez de una de las 3
+materias): no encajan en el modelo de una base de Airtable por materia,
+mismo tipo de caso que las preguntas `materia = 'transversal'` de
+Alternativas (ver `docs/practica.md`). Se ven solo bajo el filtro "Todas".
+
+**preguntas_evaluacion es una tabla distinta**, el banco de examen real
+usado como grounding del Interrogador IA (ver `docs/interrogador.md`), no
+se toca ni se mezcla con `evaluacion_practica`.
 
 ## Antes de generar nada: revisar las 5 fuentes existentes
 
-1. El `const banco` hardcodeado en `app/alternativas.html` (Evaluación).
+1. La tabla Supabase `evaluacion_practica` (Evaluación) o, para editar,
+   las 4 tablas de Airtable por materia (`Aplicación`/`Detección de
+   error`/`Justificación`/`Discriminación MC`).
 2. La tabla Supabase `preguntas_evaluacion` (banco de examen real, distinto
-   del anterior — se usa como grounding del Interrogador IA, ver
+   del anterior, se usa como grounding del Interrogador IA, ver
    `docs/interrogador.md`).
 3. La tabla Supabase `alternativas`.
 4. La tabla Supabase `memorice_articulos`.
 5. Flashcards en Airtable.
 
 Esto ya es un paso obligatorio del prompt maestro (sección 1) y del skill
-`generar-practica` — no generar sin haber contado qué existe ya para esa
+`generar-practica`, no generar sin haber contado qué existe ya para esa
 materia y ese eje.
 
-## Pendiente crítico de contenido ya escrito (encontrado 2026-07-28)
+## Contenido de `contenido_practica_2026-07.sql` (ya cargado)
 
-`scripts/contenido_practica_2026-07.sql` tiene **117 Alternativas + 32
-Memorice** ya redactadas y auditadas (2026-07-24), cubriendo Contractual,
-Extracontractual y Precontractual — **nunca se corrió en Supabase**. Antes
-de generar contenido nuevo de Alternativas/Memorice para cualquiera de
-esas tres materias, correr primero este script (Laura, en el SQL Editor),
-o se corre el riesgo real de volver a duplicar preguntas ya escritas sobre
-el mismo punto legal.
+`scripts/contenido_practica_2026-07.sql` tiene 117 Alternativas + 23
+Memorice (Contractual, Extracontractual y Precontractual). Este doc decía
+"nunca se corrió en Supabase" desde que se encontró el 2026-07-28 por la
+mañana; se verificó el 2026-07-28 por la tarde comparando los 140 ids del
+archivo contra Supabase y **ya está cargado completo**. Antes de generar
+contenido nuevo de Alternativas/Memorice para cualquiera de esas tres
+materias, sigue valiendo el paso de revisar qué existe ya (ver "Antes de
+generar nada" abajo) para no duplicar preguntas sobre el mismo punto
+legal, pero no hace falta correr este script de nuevo.
 
 ## Manuales
 - `01_Responsabilidad_Contractual_Manual.html`,
@@ -86,9 +91,10 @@ el mismo punto legal.
 - Cero guiones largos (—) en ningún campo generado (manuales, preguntas,
   flashcards, SQL). Ya causó un fix manual una vez (art. 1545 en
   `fuente`).
-- Evaluación acotada hoy a Contractual, Extracontractual y Precontractual
-  (`TEMAS_EN_ALCANCE` en `startSession()`); Procesal y el resto de Civil
-  quedan ocultos hasta que existan sus manuales.
+- Evaluación acotada hoy a Contractual, Extracontractual y Precontractual:
+  son las únicas 3 bases de Airtable con tablas de Evaluación, así que
+  Procesal y el resto de Civil quedan ocultos hasta que existan sus
+  manuales y su base correspondiente.
 - Las preguntas de discriminación MC no llevan rúbrica de palabras clave:
   la corrección real es la alternativa elegida (`evaluarMC`).
 - Un artículo de Memorice puede pertenecer a más de una materia en una
