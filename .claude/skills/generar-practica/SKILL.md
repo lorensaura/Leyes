@@ -62,15 +62,16 @@ reglas, las orquesta**. Léelo antes de generar el primer lote de la sesión.
 - **Cero guiones largos (—) en ningún campo**, incluido `fuente`. Ya pasó
   una vez (art. 1545) y hubo que corregirlo en Supabase directo con un
   `PATCH` a la REST API.
-- **Memorice solo para artículos vigentes.** Antes de dar un artículo por
-  "listo para memorizar" porque el manual lo cita literal, confirmá que no
-  esté derogado (pasó con el art. 2210 CC, derogado por la Ley 18.010 en
-  1981 — el manual lo citaba a propósito como contraste histórico, no
-  como regla vigente). Verificá el texto contra
-  `Apuntes/Codigo Civil Chileno.pdf` para Código Civil; para Código de
-  Comercio no hay copia local, usá `leychile.cl` (si no carga por ser una
-  página dinámica, `leyes-cl.com` es un mirror aceptable pero avisale a
-  Laura que confirme esos puntualmente contra la fuente oficial).
+- **Memorice: Laura decide el artículo y manda ella el texto legal
+  (confirmado 2026-07-28).** No es un modelo que se genere solo: no salgas
+  a buscar ni a proponer qué artículo memorizar, ni a verificar el texto
+  vos mismo contra `Apuntes/Codigo Civil Chileno.pdf` o `leychile.cl`. Eso
+  contradice lo que decía esta sección antes (y lo que sigue diciendo
+  `docs/prompt-generacion-contenido-practica.md`, sección 0, punto de
+  Memorice) — ese proceso ya se usó en lotes anteriores (incluido
+  `scripts/memorice_literales_2026-07-28.sql`), pero el criterio actual es
+  este: pedile a Laura el artículo y el texto verbatim, y trabajá solo a
+  partir de lo que ella entregue.
 
 ## Verificación antes de correr nada
 

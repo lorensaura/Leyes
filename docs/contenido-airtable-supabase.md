@@ -26,10 +26,30 @@ contenido en Airtable, y se corre el script.
     transversal (`docs/interrogador.md`).
   - `Banco_Preguntas_Crudo` (staging para preguntas históricas sin
     clasificar — campo `promovido` marca cuándo pasaron al esquema rico).
-- **`Digesto Contractual`** (`appxeVxAE53yIqRPa`) — 55 preguntas, solo
-  Responsabilidad contractual.
-- **`Digesto Extracontractual`** (`appz8ePbArPV9cbE3`) — 154 preguntas.
-- **`Digesto Precontractual`** (`appeZI0TkAC3uaeVW`) — 19 preguntas.
+- **`Digesto Contractual`** (`appxeVxAE53yIqRPa`), **`Digesto
+  Extracontractual`** (`appz8ePbArPV9cbE3`) y **`Digesto Precontractual`**
+  (`appeZI0TkAC3uaeVW`) — una base por materia. Cada una tiene, con el
+  mismo esquema en las tres:
+  - `Temas`: un registro por eje del manual (`nombre` = "N. Nombre del
+    eje", `numero`, `materia` como texto, ej. "Responsabilidad
+    extracontractual"). Los campos de link inverso (`Flashcards`,
+    `Preguntas_Evaluacion`) muestran, sin configuración adicional, qué
+    ítems cubren cada tema — sirve para ver a simple vista qué ejes están
+    menos preguntados.
+  - `Preguntas_Evaluacion`: 55 (Contractual) / 154 (Extracontractual) / 19
+    (Precontractual) a julio 2026.
+  - `Flashcards`: **confirmado 2026-07-28 que existe en las tres bases**,
+    con esquema propio (`id` y `tipo` como texto libre, sin usar en la
+    práctica; `tema` como link a `Temas`, no texto libre; `dificultad`
+    como `basica`/`intermedia`/`avanzada`, **sin tilde en "basica"**;
+    `pregunta`, `respuesta`, `publicado`). Esta tabla **no tiene columnas
+    `materia` ni `subtema`** — es distinta al esquema de la tabla
+    Flashcards de la base "Digesto" original (ver abajo). A julio 2026
+    solo `Digesto Extracontractual` tiene contenido propio ahí.
+  - `Digesto Extracontractual` tiene además cuatro tablas sueltas
+    ("Aplicación", "Detección de error", "Justificación", "Discriminación
+    MC") que parecen un diseño anterior abandonado a favor de
+    `Preguntas_Evaluacion` con un campo `tipo` — no se usan, no tocar.
 
 **Por qué se separaron (2026-07-13):** Laura quería más organización visual
 (encontrar la materia más fácil) además del límite de 1.000 registros por
@@ -79,13 +99,26 @@ Esquema completo en `scripts/supabase_schema.sql` (correrlo de nuevo con
 
 ## Sincronización Airtable → Supabase
 `python3 scripts/sync_airtable_supabase.py` — trae `Flashcards`+`Temas` de
-la base `Digesto`, y `Preguntas_Evaluacion`+`Elementos_Clave`+`Opciones_MC`
-de las 3 bases de materia, y hace upsert en Supabase por `airtable_id`.
-**Correrlo cuando Laura avise que agregó o cambió contenido en Airtable**
-— no es automático, no hay cron. Requiere `AIRTABLE_TOKEN` (scopes
-`data.records:read` + `data.records:write` — el write no se usa en este
-script en particular, pero el token ya tiene ambos por el trabajo de
-migración) y `SUPABASE_SECRET_KEY` en `.env`.
+la base `Digesto`, **y también de `Flashcards`+`Temas` de las 3 bases de
+materia** (fix 2026-07-28, ver abajo), y `Preguntas_Evaluacion`+
+`Elementos_Clave`+`Opciones_MC` de las 3 bases de materia, y hace upsert
+en Supabase por `airtable_id`. **Correrlo cuando Laura avise que agregó o
+cambió contenido en Airtable** — no es automático, no hay cron. Requiere
+`AIRTABLE_TOKEN` (scopes `data.records:read` + `data.records:write` — el
+write no se usa en este script en particular, pero el token ya tiene
+ambos por el trabajo de migración) y `SUPABASE_SECRET_KEY` en `.env`.
+
+**Bug corregido 2026-07-28:** `sync_flashcards()` solo leía la tabla
+`Flashcards` de la base `Digesto` original. Nunca recorría las 3 bases de
+materia para Flashcards (a diferencia de `sync_preguntas()`, que sí lo
+hacía para Preguntas_Evaluacion desde siempre). Esto significaba que
+cualquier Flashcard cargada en `Digesto Extracontractual` (o las otras dos
+bases de materia), aunque estuviera marcada `publicado = true`, **nunca
+llegaba a Supabase ni a la app** — se descubrió con las 15 Flashcards que
+ya existían ahí para Extracontractual, cargadas en algún momento pero
+nunca sincronizadas. Corregido extendiendo `sync_flashcards()` para que
+también recorra `PREGUNTAS_BASES` (mismo diccionario que ya usaba
+`sync_preguntas()`), igual que se hace para Preguntas_Evaluacion.
 
 ## Flashcards: calificación y repetición espaciada (agregado 2026-07-13)
 Al voltear una tarjeta en `app/flashcards.html` aparecen 3 botones:
@@ -148,6 +181,29 @@ el 2026-07-20 — no hay que construir nada nuevo, solo repetir el patrón:
 3. Sumar el manual de esa materia a `scripts/extraer_contenido_interrogador.js`
    y los artículos de código relevantes a `api/_interrogador-codigo.js` (ver
    `docs/interrogador.md`, "Grounding").
+
+## Estado de los scripts de esquema SQL
+`scripts/supabase_schema.sql`, `scripts/supabase_schema_practica.sql`,
+`scripts/supabase_schema_practica_metodo_b.sql` y
+`scripts/memorice_literales_2026-07-28.sql` ya están corridos en Supabase
+— no hace falta volver a correrlos salvo que se agregue una columna nueva.
+
+## Bases nuevas creadas 2026-07-28 (estado, para no recrearlas)
+- **`DIGESTO ROADMAP`** — base de gestión de Laura (tareas, progreso web,
+  ideas). Tiene la tabla `PENDIENTE - Civil` con 56 filas de seguimiento
+  (una por eje de REC/REX/REP) para trackear qué contenido de Práctica
+  falta por eje — se tickea `Estado Completado` a medida que se cierra
+  cada uno.
+- **`Digesto Extracontractual`** — se le agregaron 4 tablas nuevas
+  (`Aplicación`, `Detección de error`, `Justificación`, `Discriminación
+  MC`) en un intento de llevar Evaluación a Airtable que resultó
+  redundante con el `banco` hardcodeado ya existente — ver
+  `docs/creacion-de-contenido.md` para el estado y la decisión pendiente.
+- Quedaron **8 bases sueltas sin usar** (`REX - Alternativas`, `REX -
+  Justificación`, `REX - Detección de Error`, `REX - Memorice`, `REX -
+  Aplicación`, `REC - Alternativas`, `REC - Flashcards`, `REC - Memorice`),
+  de un diseño anterior (una base por tipo) que se descartó a favor de una
+  base por materia. Laura las va a borrar a mano.
 
 ## Pendiente / no construido
 - Materias más allá de Contractual/Extracontractual/Precontractual (Acto

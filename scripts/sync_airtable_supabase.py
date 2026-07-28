@@ -114,8 +114,8 @@ def supabase_upsert(secret_key, tabla, filas, on_conflict="airtable_id", lote=20
     return total
 
 
-def sync_flashcards(airtable_token, supabase_key):
-    temas = airtable_fetch_all(airtable_token, FLASHCARDS_BASE, "Temas")
+def _leer_flashcards_de_base(airtable_token, base, materia_default):
+    temas = airtable_fetch_all(airtable_token, base, "Temas")
     info_tema = {}
     for t in temas:
         info_tema[t["id"]] = {
@@ -123,7 +123,7 @@ def sync_flashcards(airtable_token, supabase_key):
             "nombre": t["fields"].get("nombre"),
         }
 
-    flashcards = airtable_fetch_all(airtable_token, FLASHCARDS_BASE, "Flashcards")
+    flashcards = airtable_fetch_all(airtable_token, base, "Flashcards")
     filas = []
     for f in flashcards:
         fields = f["fields"]
@@ -133,13 +133,31 @@ def sync_flashcards(airtable_token, supabase_key):
         info = info_tema.get(tema_ids[0]) if tema_ids else None
         filas.append({
             "airtable_id": f["id"],
-            "materia": (info or {}).get("materia") or "Responsabilidad contractual",
+            "materia": (info or {}).get("materia") or materia_default,
             "tema": (info or {}).get("nombre"),
             "pregunta": fields.get("pregunta", ""),
             "respuesta": fields.get("respuesta", ""),
             "dificultad": fields.get("dificultad", "basica"),
             "publicado": True,
         })
+    return filas
+
+
+def sync_flashcards(airtable_token, supabase_key):
+    # Base "Digesto" original (Flashcards de Contractual cargadas ahí antes
+    # de que existiera el patrón de una base por materia).
+    filas = _leer_flashcards_de_base(airtable_token, FLASHCARDS_BASE, "Responsabilidad contractual")
+
+    # Bases por materia (Digesto Contractual/Extracontractual/Precontractual):
+    # cada una tiene su propia tabla Flashcards con el mismo esquema
+    # (tema como link a Temas, dificultad "basica"/"intermedia"/"avanzada"
+    # sin tilde). Antes de este fix, esta tabla nunca se leía y cualquier
+    # Flashcard cargada ahí, aunque marcada publicado=true, nunca llegaba
+    # a Supabase (hallazgo 2026-07-28, ver docs/contenido-airtable-supabase.md).
+    for materia, base in PREGUNTAS_BASES.items():
+        if base == FLASHCARDS_BASE:
+            continue
+        filas.extend(_leer_flashcards_de_base(airtable_token, base, materia))
 
     n = supabase_upsert(supabase_key, "flashcards", filas)
     print(f"Flashcards: {n} sincronizadas")

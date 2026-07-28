@@ -19,10 +19,25 @@ la conversación de hoy.
 
 ## Dónde escribirlo
 
-Escribe el documento en `.claude/handoff/handoff-YYYYMMDD.md` (fecha de hoy,
-zona horaria de Chile). Esa carpeta está en `.gitignore` a propósito: es un
-snapshot del momento, no un historial que valga la pena versionar. Si ya
-existe un handoff de hoy, sobrescríbelo — no acumules varios el mismo día.
+Escribe siempre en el mismo archivo: `.claude/handoff/ESTADO_ACTUAL.md`.
+**Sobrescríbelo entero cada vez** — no crees un archivo nuevo por fecha ni
+dejes versiones anteriores dando vueltas. Es un snapshot del momento
+presente, no un historial: la sesión anterior no importa una vez que este
+archivo se actualiza. Esa carpeta está en `.gitignore` a propósito.
+
+Si por algún motivo tenés que consultar un handoff viejo (de antes de este
+cambio, con fecha en el nombre), está en `.claude/handoff/archivo/` — pero
+no escribas ahí, es solo lectura histórica.
+
+**Antes de sobrescribir, leé el archivo tal como está.** Si ya describe un
+hilo de trabajo distinto al tuyo (otra sesión, otra tarea, que no terminó
+— ej. dice "esperando aviso de Laura" o algo que vos no tocaste), **no lo
+borres**: dejalo como una sección `## Hilo N — <tema>` separada y agregá
+la tuya al lado, con su propio Dónde estamos/Qué se hizo/Qué sigue. Recién
+fusioná o eliminá un hilo cuando quede claro que ya se cerró (ej. Laura lo
+confirma, o el propio hilo dice que terminó). Esto pasó de verdad una vez
+(2026-07-28, dos sesiones en paralelo se pisaron el archivo) — no asumas
+que sos la única sesión activa en este repo.
 
 ## Qué incluir
 
