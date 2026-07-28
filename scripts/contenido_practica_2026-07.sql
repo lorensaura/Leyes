@@ -244,20 +244,6 @@ values (
 )
 on conflict (id) do nothing;
 
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-1552',
-  'contractual',
-  'Excepción de contrato no cumplido (la mora purga la mora)',
-  '1552',
-  'En los contratos bilaterales ninguno de los contratantes está en mora dejando de cumplir lo pactado, mientras el otro no lo cumple por su parte, o no se allana a cumplirlo en la forma y tiempo debidos.',
-  '[["contratos bilaterales"], ["ninguno", "está en mora"], ["no lo cumple", "no se allana"], ["*"]]'::jsonb,
-  array['bilaterales', 'mora', 'no lo cumple', 'se allana'],
-  'Código Civil, art. 1552'
-)
-on conflict (id) do nothing;
-
 -- ════════════════════════════════════════════════════════════════════════
 -- LOTE 5: Contractual, Sección E, parte 1. La indemnización de perjuicios
 -- (concepto, autonomía, imputabilidad, daño)
@@ -372,20 +358,6 @@ values (
 )
 on conflict (id) do nothing;
 
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-1551',
-  'contractual',
-  'Interpelación y constitución en mora',
-  '1551',
-  'El deudor está en mora, 1º. Cuando no ha cumplido la obligación dentro del término estipulado, salvo que la ley en casos especiales exija que se requiera al deudor para constituirle en mora; 2º. Cuando la cosa no ha podido ser dada o ejecutada sino dentro de cierto espacio de tiempo, y el deudor lo ha dejado pasar sin darla o ejecutarla; 3º. En los demás casos, cuando el deudor ha sido judicialmente reconvenido por el acreedor.',
-  '[["término estipulado"], ["cierto espacio de tiempo"], ["judicialmente reconvenido"], ["*"]]'::jsonb,
-  array['término estipulado', 'cierto espacio de tiempo', 'judicialmente reconvenido'],
-  'Código Civil, art. 1551'
-)
-on conflict (id) do nothing;
-
 -- ════════════════════════════════════════════════════════════════════════
 -- LOTE 7: Contractual, Sección F. Causales de exención de responsabilidad
 -- ════════════════════════════════════════════════════════════════════════
@@ -432,20 +404,6 @@ values (
   1,
   '{"correcta": "En la imprevisión la prestación sigue interesando al acreedor, pero su costo se ha vuelto excesivo; en la frustración del fin, la prestación ya no interesa en absoluto, aunque pueda ejecutarse sin ninguna dificultad (el ejemplo escolar es el balcón arrendado para un desfile que se cancela).", "por_que_no": ["A: invierte los conceptos; ninguna de las dos figuras exige imposibilidad del cumplimiento (eso es propio del caso fortuito).", "C: son instituciones distintas, con requisitos y consecuencias propias, aunque emparentadas.", "D: ambas figuras exigen, precisamente, un contrato bilateral y oneroso."]}'::jsonb,
   'Sección F del manual (frustración del fin del contrato)'
-)
-on conflict (id) do nothing;
-
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-45',
-  'contractual',
-  'Concepto de caso fortuito o fuerza mayor',
-  '45',
-  'Se llama fuerza mayor o caso fortuito el imprevisto a que no es posible resistir, como un naufragio, un terremoto, el apresamiento de enemigos, los actos de autoridad ejercidos por un funcionario público, etc.',
-  '[["fuerza mayor", "caso fortuito"], ["imprevisto"], ["no es posible resistir"], ["*"]]'::jsonb,
-  array['fuerza mayor', 'caso fortuito', 'imprevisto', 'no es posible resistir'],
-  'Código Civil, art. 45'
 )
 on conflict (id) do nothing;
 
@@ -624,20 +582,6 @@ values (
 )
 on conflict (id) do nothing;
 
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-2332',
-  'extracontractual',
-  'Prescripción de la acción de responsabilidad extracontractual',
-  '2332',
-  'Las acciones que concede este título por daño o dolo, prescriben en cuatro años contados desde la perpetración del acto.',
-  '[["daño o dolo"], ["cuatro años"], ["perpetración del acto"], ["*"]]'::jsonb,
-  array['daño o dolo', 'cuatro años', 'perpetración del acto'],
-  'Código Civil, art. 2332'
-)
-on conflict (id) do nothing;
-
 -- LOTE 2026-07 (12): Extracontractual, Eje C (Delimitación de estatutos)
 
 insert into public.alternativas
@@ -779,20 +723,6 @@ values (
 )
 on conflict (id) do nothing;
 
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-1465',
-  'extracontractual',
-  'Límite al consentimiento de la víctima: condonación del dolo futuro',
-  '1465',
-  'El pacto de no pedir más en razón de una cuenta aprobada, no vale en cuanto al dolo contenido en ella, si no se ha condonado expresamente. La condonación del dolo futuro no vale.',
-  '[["pacto de no pedir más", "cuenta aprobada"], ["dolo contenido", "condonado expresamente"], ["condonación del dolo futuro no vale"], ["*"]]'::jsonb,
-  array['cuenta aprobada', 'condonado expresamente', 'dolo futuro no vale'],
-  'Código Civil, art. 1465'
-)
-on conflict (id) do nothing;
-
 -- LOTE 2026-07 (17): Extracontractual, Eje H (Culpabilidad: dolo y culpa)
 
 insert into public.alternativas
@@ -827,20 +757,6 @@ values (
 )
 on conflict (id) do nothing;
 
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-2329',
-  'extracontractual',
-  'Presunción de culpabilidad por el hecho propio',
-  '2329',
-  'Por regla general todo daño que pueda imputarse a malicia o negligencia de otra persona, debe ser reparado por ésta.',
-  '[["por regla general", "todo daño"], ["que pueda imputarse", "malicia o negligencia"], ["debe ser reparado"], ["*"]]'::jsonb,
-  array['por regla general', 'que pueda imputarse', 'malicia o negligencia', 'reparado'],
-  'Código Civil, art. 2329'
-)
-on conflict (id) do nothing;
-
 -- LOTE 2026-07 (19): Extracontractual, Eje J (El daño: concepto y requisitos de resarcibilidad)
 
 insert into public.alternativas
@@ -855,20 +771,6 @@ values (
   1,
   '{"correcta": "La pérdida de una chance se avalúa prudencialmente en una fracción del beneficio esperado, correspondiente a la probabilidad real que la víctima tenía de obtenerlo, y no en el monto total del beneficio ni en cero.", "por_que_no": ["A: indemnizar el total supondría dar por cierto un resultado que en realidad es incierto (que habría ganado).", "C: la pérdida de chance no es un daño eventual; el daño final ya ocurrió con certeza, y lo incierto es la relación causal, lo que sí la hace indemnizable como daño autónomo.", "D: no existe un monto fijo legal; la avaluación es prudencial y depende de la probabilidad real acreditada en cada caso."]}'::jsonb,
   'Doctrina y jurisprudencia (CS, sentencia de reemplazo de 6 de enero de 2025)'
-)
-on conflict (id) do nothing;
-
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-2317',
-  'extracontractual',
-  'Solidaridad entre coautores de un delito o cuasidelito',
-  '2317',
-  'Si un delito o cuasidelito ha sido cometido por dos o más personas, cada una de ellas será solidariamente responsable de todo el perjuicio procedente del mismo delito o cuasidelito, salvas las excepciones de los artículos 2323 y 2328. Todo fraude o dolo cometido por dos o más personas produce la acción solidaria del precedente inciso.',
-  '[["dos o más personas"], ["solidariamente responsable"], ["todo el perjuicio"], ["fraude o dolo", "acción solidaria"], ["*"]]'::jsonb,
-  array['solidariamente responsable', 'dos o más personas', 'todo el perjuicio', 'fraude o dolo'],
-  'Código Civil, art. 2317'
 )
 on conflict (id) do nothing;
 
@@ -1329,20 +1231,6 @@ values (
 )
 on conflict (id) do nothing;
 
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-44',
-  'extracontractual',
-  'Los tres grados de culpa y el dolo',
-  '44',
-  'La ley distingue tres especies de culpa o descuido. Culpa grave, negligencia grave, culpa lata, es la que consiste en no manejar los negocios ajenos con aquella diligencia que aun las personas negligentes y de poca prudencia suelen emplear en sus negocios propios. Esta culpa en materias civiles equivale al dolo. Culpa leve, descuido leve, descuido ligero, es la falta de aquella diligencia y cuidado que los hombres emplean ordinariamente en sus negocios propios. Culpa o descuido, sin otra calificación, significa culpa o descuido leve. Esta especie de culpa se opone a la diligencia o cuidado ordinario o mediano. El que debe administrar un negocio como un buen padre de familia es responsable de esta especie de culpa. Culpa o descuido levísimo es la falta de aquella esmerada diligencia que un hombre juicioso emplea en la administración de sus negocios importantes. Esta especie de culpa se opone a la suma diligencia o cuidado. El dolo consiste en la intención positiva de inferir injuria a la persona o propiedad de otro.',
-  '[["equivale al dolo"], ["buen padre de familia"], ["intención positiva de inferir injuria"], ["*"]]'::jsonb,
-  array['culpa grave', 'culpa leve', 'culpa levísima', 'equivale al dolo', 'buen padre de familia', 'intención positiva de inferir injuria'],
-  'Código Civil, art. 44'
-)
-on conflict (id) do nothing;
-
 -- LOTE 2026-07 (33): Extracontractual, Eje X (Cúmulo o concurso de responsabilidades)
 
 insert into public.alternativas
@@ -1402,20 +1290,6 @@ values (
   1,
   '{"correcta": "Corral reconoce un límite a su propio criterio amplio: el cúmulo no será admisible, y deberá aplicarse íntegramente el régimen contractual, cuando las partes lo hayan pactado expresamente, o cuando, a falta de pacto, el sometimiento a la distribución de riesgos del contrato emane de su propia naturaleza o resulte impuesto por la buena fe.", "por_que_no": ["A: que el hecho sea penalmente sancionable es, precisamente, uno de los supuestos en que Corral SÍ admite el cúmulo, no un límite a él.", "C: el criterio no distingue según la naturaleza jurídica o natural de la víctima.", "D: la forma escrita o no del contrato no es el criterio que determina este límite."]}'::jsonb,
   'Doctrina de Corral sobre el criterio amplio del cúmulo de responsabilidades y su límite'
-)
-on conflict (id) do nothing;
-
-insert into public.memorice_articulos
-  (id, materia, subtema, articulo, texto, prioridad_ocultamiento, palabras_criticas, fuente)
-values (
-  'cc-art-1545',
-  'extracontractual',
-  'Fuerza obligatoria del contrato, fundamento del rechazo a la opción entre estatutos',
-  '1545',
-  'Todo contrato legalmente celebrado es una ley para los contratantes, y no puede ser invalidado sino por su consentimiento mutuo o por causas legales.',
-  '[["ley para los contratantes"], ["consentimiento mutuo", "causas legales"], ["*"]]'::jsonb,
-  array['ley para los contratantes', 'consentimiento mutuo', 'causas legales'],
-  'Código Civil, art. 1545'
 )
 on conflict (id) do nothing;
 
@@ -2322,3 +2196,34 @@ values (
   'Comparación transversal: naturaleza de la responsabilidad precontractual (Eje 5 de Precontractual) y su conexión con Extracontractual (Eje Y)'
 )
 on conflict (id) do nothing;
+
+-- ════════════════════════════════════════════════════════════════════════
+-- LOTE: actualizaciones a fichas de Memorice ya existentes (2026-07-28)
+--
+-- Al redactar el lote anterior se propusieron 9 artículos que ya estaban
+-- cargados con otro subtema (mismo id, así que el INSERT original de esas
+-- 9 filas se sacó de este archivo: quedaba como no-op por el
+-- "on conflict (id) do nothing"). En vez de duplicar la fila, se decidió:
+--
+--   - 4 artículos son relevantes en más de una materia (44, 1465, 1545,
+--     2332): quedan en UNA sola fila con las dos materias separadas por
+--     coma. El filtro de app/alternativas.html (perteneceAArea) ya
+--     entiende ese formato: aparecen en cada área individual y una sola
+--     vez en "Todas".
+--   - 5 artículos son el mismo eje y la misma materia, solo con una
+--     redacción de subtema más precisa (45, 1551, 1552, 2317, 2329): se
+--     actualiza el subtema, sin duplicar fila.
+-- ════════════════════════════════════════════════════════════════════════
+
+-- Cruzan materia: contractual + extracontractual (o general + extracontractual)
+update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Los tres grados de culpa y el dolo' where id = 'cc-art-44';
+update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Límite al consentimiento de la víctima: condonación del dolo futuro' where id = 'cc-art-1465';
+update public.memorice_articulos set materia = 'contractual,extracontractual', subtema = 'Fuerza obligatoria del contrato', fuente = 'Código Civil, art. 1545 — fundamento del rechazo al cúmulo u opción entre estatutos de responsabilidad' where id = 'cc-art-1545';
+update public.memorice_articulos set materia = 'general,extracontractual', subtema = 'Prescripción de la acción de responsabilidad extracontractual' where id = 'cc-art-2332';
+
+-- Misma materia, se actualiza solo la etiqueta del subtema
+update public.memorice_articulos set subtema = 'Concepto de caso fortuito o fuerza mayor' where id = 'cc-art-45';
+update public.memorice_articulos set subtema = 'Interpelación y constitución en mora' where id = 'cc-art-1551';
+update public.memorice_articulos set subtema = 'Excepción de contrato no cumplido (la mora purga la mora)' where id = 'cc-art-1552';
+update public.memorice_articulos set subtema = 'Solidaridad entre coautores de un delito o cuasidelito' where id = 'cc-art-2317';
+update public.memorice_articulos set subtema = 'Presunción de culpabilidad por el hecho propio' where id = 'cc-art-2329';

@@ -4671,6 +4671,15 @@
       if (s.includes('procesal')) return 'procesal';
       return 'general';
     }
+    // Un mismo artículo puede ser relevante en más de una materia (ej. los
+    // grados de culpa del art. 44 sirven tanto a Contractual como a
+    // Extracontractual). Esas filas guardan varias materias separadas por
+    // coma en una sola fila ('contractual,extracontractual'), para que
+    // aparezcan en cada filtro individual pero solo una vez en "Todas".
+    function perteneceAArea(raw, area) {
+      if (!raw) return area === 'general';
+      return raw.split(',').map(s => normalizarMateria(s.trim())).includes(area);
+    }
     function escaparHtmlBase(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
     function sumarDias(dias) { return new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toISOString(); }
 
@@ -4781,7 +4790,7 @@
         fila.style.display = '';
       } else if (modeloActivo === 'alternativa' || modeloActivo === 'memorice') {
         const fuente = modeloActivo === 'alternativa' ? datosAlternativas : datosMemoriceArticulos;
-        const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || normalizarMateria(it.materia) === areaActiva);
+        const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || perteneceAArea(it.materia, areaActiva));
         const subtemas = subtemasDisponibles(filtradasPorMateria);
         if (subtemas.length === 0) { fila.innerHTML = ''; fila.style.display = 'none'; return; }
         fila.innerHTML = `<span class="eje-label">Subtipo</span>` +
@@ -5123,7 +5132,7 @@
       document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando flashcards…</div>`;
       if (datosFlashcards.length === 0) await cargarFlashcards();
       fcFiltradas = datosFlashcards.filter(t => {
-        if (areaActiva !== 'todas' && normalizarMateria(t.materia) !== areaActiva) return false;
+        if (areaActiva !== 'todas' && !perteneceAArea(t.materia, areaActiva)) return false;
         return fcEsDebida(t);
       });
       fcFiltradas = fcShuffle(fcFiltradas);
@@ -5220,7 +5229,7 @@
       document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando alternativas…</div>`;
       if (datosAlternativas.length === 0) await cargarAlternativas();
       altFiltradas = datosAlternativas.filter(it => {
-        if (areaActiva !== 'todas' && normalizarMateria(it.materia) !== areaActiva) return false;
+        if (areaActiva !== 'todas' && !perteneceAArea(it.materia, areaActiva)) return false;
         if (subtipoActivo !== 'todos' && it.subtema !== subtipoActivo) return false;
         return true;
       });
@@ -5336,7 +5345,7 @@
       if (datosMemoriceArticulos.length === 0) await cargarMemorice();
       const ahora = new Date();
       memCola = datosMemoriceArticulos.filter(a => {
-        if (areaActiva !== 'todas' && normalizarMateria(a.materia) !== areaActiva) return false;
+        if (areaActiva !== 'todas' && !perteneceAArea(a.materia, areaActiva)) return false;
         if (subtipoActivo !== 'todos' && a.subtema !== subtipoActivo) return false;
         const p = progresoMemorice[claveProgreso(a.id, metodoMemorice)];
         if (!p || !p.proxima_revision) return true;

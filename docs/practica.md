@@ -221,6 +221,54 @@ el progreso de Memorice no se puede guardar — el código las degrada a un
 estado vacío en vez de romperse, pero no van a funcionar hasta correr la
 migración.
 
+## Addendum: un artículo puede pertenecer a más de una materia — 2026-07-28
+
+Al preparar de correr `scripts/contenido_practica_2026-07.sql` se encontró
+que 9 de los 32 artículos nuevos de `memorice_articulos` reusaban el `id`
+(código-art-número) de un artículo ya cargado en otra materia (ej. el
+art. 44 sobre grados de culpa sirve tanto a Contractual como a
+Extracontractual). Como `id` es la clave única de toda la tabla sin
+distinguir materia, esas 9 filas se habrían perdido en silencio por el
+`on conflict (id) do nothing` — ningún error, solo contenido invisible.
+
+**Se descartó duplicar la fila con un id distinto** (la primera solución
+que se había aprobado) porque eso hace que el mismo artículo aparezca
+**dos veces** al filtrar Área = "Todas" (Responsabilidad completa) —
+exactamente el problema que se quería evitar.
+
+**Solución adoptada:** una sola fila puede tener más de una materia,
+separadas por coma en el mismo campo de texto (`materia =
+'contractual,extracontractual'`). No hizo falta migrar el esquema (la
+columna sigue siendo `text`). Se agregó `perteneceAArea(raw, area)` en
+`app/alternativas.html`, que separa por coma y revisa si el área elegida
+está en la lista, en vez de la comparación exacta anterior
+(`normalizarMateria(it.materia) === areaActiva`). Se actualizaron los 4
+puntos que filtraban por materia (Alternativas, Memorice, Flashcards y el
+cálculo de subtemas disponibles) para usar esta función en vez de la
+comparación exacta — sigue siendo compatible con filas de una sola
+materia (el caso de siempre).
+
+De los 9 casos encontrados, solo 4 eran realmente artículos que cruzan de
+materia (44, 1465, 1545, 2332) y se resolvieron así; los otros 5 (45,
+1551, 1552, 2317, 2329) eran la misma materia con una redacción de
+subtema distinta para el mismo artículo — ahí solo se actualizó la
+etiqueta, sin tocar `materia`.
+
+**Convención para contenido futuro:** el `subtema` de una fila
+multi-materia debe quedar corto y neutral (es un chip de filtro, se ve
+igual desde cualquiera de sus materias). Si hace falta explicar por qué
+el artículo cruza de materia (ej. "es el fundamento del rechazo al
+cúmulo de responsabilidades"), esa nota va en `fuente`, que se muestra
+siempre junto al texto memorizado, no en el subtema.
+
+**Pendiente, sin decidir todavía:** varias de las preguntas nuevas de
+`alternativas` (lote 2026-07) llevan `materia = 'transversal'`, que hoy
+normaliza a `'general'` y por lo tanto solo es visible bajo Área =
+"Todas", nunca bajo un área específica. Con `perteneceAArea` ya
+disponible, extenderlas a `'contractual,extracontractual,precontractual'`
+es un cambio de una línea por ítem si Laura decide que deberían
+aparecer también al filtrar una sola área.
+
 ## Verificación hecha
 Motor de Memorice probado con 15 casos unitarios (Chrome headless vía CDP,
 sin dependencias de Node) antes de integrarlo a la UI. La página completa se

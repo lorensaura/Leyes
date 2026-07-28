@@ -390,6 +390,21 @@ tolerancia al practicar (ver regla de corrección en `docs/practica.md`);
 elige las que cambian el sentido normativo si se alteran (verbos
 rectores, cifras, plazos), no cualquier palabra del artículo.
 
+**El `id` es la clave única de toda la tabla, sin importar la materia.**
+Si un artículo ya está cargado (ej. `cc-art-44` en `contractual`) y es
+también relevante para otra materia (ej. `extracontractual`), **no
+insertes una segunda fila con el mismo id** — el `on conflict (id) do
+nothing` la ignora en silencio y el ítem se pierde sin ningún error. En
+vez de eso, guarda las dos materias separadas por coma en la fila
+existente (`materia = 'contractual,extracontractual'`): el filtro de
+`app/alternativas.html` (función `perteneceAArea`) ya entiende ese
+formato y muestra el artículo en cada área por separado y una sola vez
+en "Todas". El `subtema` de esa fila debe quedar corto y neutral para
+las dos materias (es un chip de filtro, no una explicación); si hace
+falta anotar por qué el artículo cruza de materia, ese detalle va en
+`fuente`, que se muestra siempre junto al texto memorizado (ver
+addendum 2026-07-28 en `docs/practica.md`).
+
 #### Flashcards
 Se editan en Airtable (base `Digesto`, tabla `Flashcards`), **no** en
 código ni en Supabase directo — el flujo real es Airtable → 
@@ -461,6 +476,11 @@ verifica:
       (revisado en el paso 1 de la sección 1) — incluye repeticiones
       **entre modelos distintos** (ej. una Alternativa que solo reformula
       una Flashcard ya existente sobre el mismo punto).
+- [ ] (Memorice) Ningún artículo nuevo reusa el `id` de uno ya cargado en
+      otra materia sin fusionarlo: si el mismo artículo sirve a dos
+      materias, es una sola fila con `materia` separada por coma, no una
+      segunda fila con el mismo id (se perdería en silencio por el
+      `on conflict (id) do nothing`).
 - [ ] (Transversales) Cada mitad de una comparación entre materias tiene
       su propia cita de respaldo textual, y la conclusión comparativa no
       agrega nada que esas citas no digan por sí solas.
