@@ -206,25 +206,22 @@ el propio uso —no el diseño— decida cuál retiene mejor sin generar abandon
   dominio, tasa de abandono, tiempo por artículo) están como consultas SQL
   listas en `scripts/consultas_analitica_memorice_ab.sql` — no hay panel
   visual; no vale la pena hasta que haya semanas de uso real acumulado.
-- **Migración pendiente:** correr `scripts/supabase_schema_practica_metodo_b.sql`
-  en Supabase (agrega `clausulas` a `memorice_articulos`, `metodo` +
-  `aciertos_nivel_max` + `sesiones_con_acierto` a `memorice_progreso` con
-  nueva clave única, y crea `memorice_intentos`).
+- **Migración `scripts/supabase_schema_practica_metodo_b.sql` corrida (confirmado 2026-07-28).**
+  Agrega `clausulas` a `memorice_articulos`, `metodo` + `aciertos_nivel_max` +
+  `sesiones_con_acierto` a `memorice_progreso` con nueva clave única, y crea
+  `memorice_intentos`.
 
 ## Antes de que Laura empiece a usarlo
-**Correr `scripts/supabase_schema_practica.sql` en el SQL Editor de Supabase**
-(agrega columnas a `flashcards`/`preguntas_evaluacion` y crea `alternativas`,
-`memorice_articulos`, `memorice_progreso`, con un par de ítems de ejemplo
-reales para poder probar cada modelo). Si se despliega el código sin correr
-antes esta migración, las pestañas de Alternativas y Memorice se ven vacías y
-el progreso de Memorice no se puede guardar — el código las degrada a un
-estado vacío en vez de romperse, pero no van a funcionar hasta correr la
-migración.
+**`scripts/supabase_schema_practica.sql` corrido en el SQL Editor de Supabase
+(confirmado 2026-07-28).** Agrega columnas a `flashcards`/`preguntas_evaluacion`
+y crea `alternativas`, `memorice_articulos`, `memorice_progreso`, con un par de
+ítems de ejemplo reales para poder probar cada modelo.
 
 ## Addendum: un artículo puede pertenecer a más de una materia — 2026-07-28
 
-Al preparar de correr `scripts/contenido_practica_2026-07.sql` se encontró
-que 9 de los 32 artículos nuevos de `memorice_articulos` reusaban el `id`
+Al preparar de correr `scripts/contenido_practica_2026-07.sql` (**corrido y
+confirmado en Supabase el 2026-07-28**) se encontró que 9 de los 32 artículos
+nuevos de `memorice_articulos` reusaban el `id`
 (código-art-número) de un artículo ya cargado en otra materia (ej. el
 art. 44 sobre grados de culpa sirve tanto a Contractual como a
 Extracontractual). Como `id` es la clave única de toda la tabla sin
