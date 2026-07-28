@@ -21,6 +21,7 @@ import sys
 import tempfile
 import time
 import urllib.request
+import fitz
 import websocket
 
 CHROME_CANDIDATES = [
@@ -109,14 +110,29 @@ def main():
 
             time.sleep(3)  # dejar asentar las fuentes web (Bebas Neue/Inter)
 
+            # El encabezado (DIGESTO + título + "Examen de grado") no va en la
+            # portada (decidido 2026-07-28, ver nota de Laura sobre el PDF).
+            # Chrome sanitiza cualquier <script> dentro de headerTemplate, así
+            # que no hay forma de ocultarlo condicionalmente por página dentro
+            # de un solo printToPDF: se generan dos versiones completas (una
+            # sin encabezado, otra con) y se combinan tomando la página 1 de
+            # la primera y el resto de la segunda. Los márgenes son idénticos
+            # en ambas, así que la paginación no cambia entre una y otra.
             header_template = f'''
-            <div style="width:100%; font-family:Arial,Helvetica,sans-serif; font-size:8px;
-                        padding:0 68px; box-sizing:border-box; color:#111; line-height:1.5;">
-              <div style="color:#C41E2E; font-weight:700; letter-spacing:3px;">DIGESTO</div>
-              <div>{title}</div>
-              <div style="color:#555;">Laura Schultz Solano · Examen de grado</div>
+            <div style="width:100%; font-family:Arial,Helvetica,sans-serif;
+                        font-size:8px; padding:0 68px 5px 68px; box-sizing:border-box; color:#111;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div style="color:#C41E2E; font-weight:700; letter-spacing:3px;">DIGESTO</div>
+                <div style="text-align:right; line-height:1.5;">
+                  <div>{title}</div>
+                  <div style="color:#555;">Examen de grado</div>
+                </div>
+              </div>
+              <div style="border-bottom:1px solid #ccc; margin-top:3px;"></div>
             </div>
             '''
+
+            blank_header_template = '<div></div>'
 
             footer_template = '''
             <div style="width:100%; font-family:Arial,Helvetica,sans-serif; font-size:8px;
@@ -125,26 +141,40 @@ def main():
             </div>
             '''
 
-            result = send("Page.printToPDF", {
-                "printBackground": True,
-                "preferCSSPageSize": False,
-                "paperWidth": 8.5,
-                "paperHeight": 11,
-                "marginTop": 0.95,
-                "marginBottom": 0.95,
-                "marginLeft": 0.95,
-                "marginRight": 0.95,
-                "displayHeaderFooter": True,
-                "headerTemplate": header_template,
-                "footerTemplate": footer_template,
-                "transferMode": "ReturnAsBase64",
-            })
+            def print_pdf(header_tpl):
+                result = send("Page.printToPDF", {
+                    "printBackground": True,
+                    "preferCSSPageSize": False,
+                    "paperWidth": 8.5,
+                    "paperHeight": 11,
+                    "marginTop": 0.95,
+                    "marginBottom": 0.95,
+                    "marginLeft": 0.95,
+                    "marginRight": 0.95,
+                    "displayHeaderFooter": True,
+                    "headerTemplate": header_tpl,
+                    "footerTemplate": footer_template,
+                    "transferMode": "ReturnAsBase64",
+                })
+                return base64.b64decode(result["result"]["data"])
 
-            data = result["result"]["data"]
-            with open(pdf_path, "wb") as f:
-                f.write(base64.b64decode(data))
+            pdf_sin_encabezado = print_pdf(blank_header_template)
+            pdf_con_encabezado = print_pdf(header_template)
 
             ws.close()
+
+            doc_portada = fitz.open(stream=pdf_sin_encabezado, filetype="pdf")
+            doc_resto = fitz.open(stream=pdf_con_encabezado, filetype="pdf")
+
+            final = fitz.open()
+            final.insert_pdf(doc_portada, from_page=0, to_page=0)
+            if doc_resto.page_count > 1:
+                final.insert_pdf(doc_resto, from_page=1, to_page=doc_resto.page_count - 1)
+            final.save(pdf_path)
+            final.close()
+            doc_portada.close()
+            doc_resto.close()
+
             print(f"OK: {pdf_path}")
         finally:
             proc.terminate()
