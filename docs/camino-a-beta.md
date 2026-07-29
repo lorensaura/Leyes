@@ -6,6 +6,36 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Última actualización: 2026-07-28.
 
+## ⚠️ Urgente: revisar esto primero al retomar
+
+**Sprawl de tablas en Airtable, detectado por Laura el 2026-07-28 (noche),
+tras migrar Evaluación.** Cada una de las 3 bases por materia (Digesto
+Contractual/Extracontractual/Precontractual) quedó con estructura
+repetida para el mismo tipo de contenido:
+
+- **`Opciones_MC`** (0 / 8 / 80 registros en Contractual/Extracontractual/
+  Precontractual): tabla vinculada vieja, ligada a `Preguntas_Evaluacion`.
+  Dejó de usarse el 2026-07-27 cuando esa info se aplanó a un campo de
+  texto (`opciones_texto`) en la misma fila de `Preguntas_Evaluacion`; el
+  script de sync ya no la lee. Sigue existiendo y ocupando cupo.
+- **`Elementos_Clave`** (118 / 305 / 192 registros, 615 en total): mismo
+  caso que `Opciones_MC` pero para `elementos_clave_texto`. Verificado
+  que un registro real solo repite lo que ya está aplanado en el campo de
+  texto, no aporta nada que no esté ya en `Preguntas_Evaluacion`.
+- **Tres representaciones de "MC" por base**: la nueva tabla `Discriminación
+  MC` (para Evaluación/Práctica, migrada hoy), la vieja `Opciones_MC` (para
+  `Preguntas_Evaluacion`, en desuso), y las propias filas `tipo =
+  discriminacion_mc` dentro de `Preguntas_Evaluacion`. Conceptualmente es
+  la misma clase de contenido en tres lugares con propósitos distintos
+  (Práctica vs. grounding del Interrogador), lo que genera confusión al
+  navegar Airtable aunque cada uno cumpla una función real y distinta.
+
+**Qué falta:** decidir con Laura si `Elementos_Clave` y `Opciones_MC` se
+borran (ya no las lee nada), y si conviene renombrar las tablas para que
+la distinción de propósito (Práctica vs. Interrogador) se entienda sin
+tener que leer este doc. No se tocó nada todavía, es diagnóstico, no
+ejecución.
+
 ## Hecho
 
 - **Los 3 manuales publicados** (Contractual, Extracontractual,
