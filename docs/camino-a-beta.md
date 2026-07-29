@@ -4,37 +4,9 @@
 > está hecho, qué falta hacer y qué falta decidir antes de invitar
 > alumnas beta. Se actualiza in place cada sesión (no se acumula una
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
-> no se deja duplicado. Última actualización: 2026-07-28.
-
-## ⚠️ Urgente: revisar esto primero al retomar
-
-**Sprawl de tablas en Airtable, detectado por Laura el 2026-07-28 (noche),
-tras migrar Evaluación.** Cada una de las 3 bases por materia (Digesto
-Contractual/Extracontractual/Precontractual) quedó con estructura
-repetida para el mismo tipo de contenido:
-
-- **`Opciones_MC`** (0 / 8 / 80 registros en Contractual/Extracontractual/
-  Precontractual): tabla vinculada vieja, ligada a `Preguntas_Evaluacion`.
-  Dejó de usarse el 2026-07-27 cuando esa info se aplanó a un campo de
-  texto (`opciones_texto`) en la misma fila de `Preguntas_Evaluacion`; el
-  script de sync ya no la lee. Sigue existiendo y ocupando cupo.
-- **`Elementos_Clave`** (118 / 305 / 192 registros, 615 en total): mismo
-  caso que `Opciones_MC` pero para `elementos_clave_texto`. Verificado
-  que un registro real solo repite lo que ya está aplanado en el campo de
-  texto, no aporta nada que no esté ya en `Preguntas_Evaluacion`.
-- **Tres representaciones de "MC" por base**: la nueva tabla `Discriminación
-  MC` (para Evaluación/Práctica, migrada hoy), la vieja `Opciones_MC` (para
-  `Preguntas_Evaluacion`, en desuso), y las propias filas `tipo =
-  discriminacion_mc` dentro de `Preguntas_Evaluacion`. Conceptualmente es
-  la misma clase de contenido en tres lugares con propósitos distintos
-  (Práctica vs. grounding del Interrogador), lo que genera confusión al
-  navegar Airtable aunque cada uno cumpla una función real y distinta.
-
-**Qué falta:** decidir con Laura si `Elementos_Clave` y `Opciones_MC` se
-borran (ya no las lee nada), y si conviene renombrar las tablas para que
-la distinción de propósito (Práctica vs. Interrogador) se entienda sin
-tener que leer este doc. No se tocó nada todavía, es diagnóstico, no
-ejecución.
+> no se deja duplicado. Los ítems ya resueltos se borran del todo (no
+> se dejan tachados) apenas se cierran — quedan igual en el historial
+> de git si hace falta recuperarlos. Última actualización: 2026-07-29.
 
 ## Hecho
 
@@ -43,8 +15,8 @@ ejecución.
   definido (jerarquía A/1/1.1/a)/(i), recuadros pedagógicos, sin guiones
   largos).
 - **Contenido migrado de Airtable a Supabase** para producción
-  (Flashcards, Preguntas_Evaluacion). Airtable sigue siendo donde Laura
-  edita, Supabase es lo que sirve la app.
+  (Flashcards, Preguntas_Evaluacion, Evaluación). Airtable sigue siendo
+  donde Laura edita, Supabase es lo que sirve la app.
 - **Módulo Práctica unificado** (`app/alternativas.html`): Evaluación,
   Flashcards, Alternativas y Memorice en una sola pantalla, con
   repetición espaciada en Flashcards.
@@ -52,47 +24,26 @@ ejecución.
   `api/interrogador.js`), alcance Contractual + Extracontractual +
   Precontractual. Grounding de 4 bloques (reglas, manuales completos,
   artículos de código, muestra real de preguntas), se regenera solo en
-  cada deploy, no depende de que alguien se acuerde de correrlo a mano.
+  cada deploy.
 - **Login con Supabase** funcionando.
-- **158 Flashcards de Extracontractual** generadas y publicadas
-  (2026-07-28), con el bug de `sync_flashcards()` que no las traía desde
-  las bases por materia ya corregido.
-- **Cruce completo de `docs/flashcards_pendientes_2026-07.md` para
-  Extracontractual** (2026-07-28): qué era redundante y qué no, con las
-  46 candidatas nuevas ya redactadas en el esquema real de Airtable en
-  `docs/flashcards_pendientes_2026-07_listo-airtable-extracontractual.md`,
-  listas para pegar.
-- 3 SQL de Práctica/Memorice corridos y confirmados en Supabase
-  (`supabase_schema_practica.sql`, `supabase_schema_practica_metodo_b.sql`,
-  `memorice_literales_2026-07-28.sql`).
-- Caso Lavín con Mena (Eje G de Precontractual) verificado como fallo
-  real, no alucinación.
-- **`scripts/contenido_practica_2026-07.sql` ya corrido en Supabase**
-  (117 Alternativas + 23 Memorice, Contractual + Extracontractual +
-  Precontractual). Este doc decía "nunca cargado" hasta 2026-07-28
-  (tarde); se verificó hoy comparando los 140 ids del archivo contra
-  Supabase y los 140 ya están. Era información desactualizada, no un
-  pendiente real.
-- **Las 46 flashcards nuevas de Extracontractual, subidas y sincronizadas**
-  (2026-07-28): 204 Flashcards en total en Airtable y Supabase.
-- **Evaluación migrada de código a Airtable/Supabase** (2026-07-28): los
-  195 ítems que vivían hardcodeados en `const banco` de
-  `app/alternativas.html` (Aplicación/Detección de error/Justificación/
-  Discriminación MC, Contractual + Extracontractual + Precontractual)
-  se subieron a Airtable (una base por materia, mismo patrón que
-  Flashcards) y de ahí a la tabla nueva `evaluacion_practica` en Supabase
-  (196 ítems: se sumaron 2 más de Contractual que estaban sueltos con otro
-  prefijo de id). De paso se resolvieron los 16 ítems huérfanos que un
-  intento anterior había dejado en 4 tablas de Airtable sin usar: 9 se
-  borraron por repetir un punto de derecho ya cubierto, 7 se sumaron al
-  banco real por aportar algo nuevo. `const banco` ya no existe en el
-  código; `app/alternativas.html` carga Evaluación desde Supabase igual
-  que los otros 3 modelos. Verificado en Chrome headless (sin errores de
-  consola, filtrado por materia funcionando, las 4 categorías renderizando
-  bien) y confirmado en Supabase (196 filas, RLS activo). Quedan sueltos
-  en el código solo 4 ítems transversales (`const bancoTransversal`),
-  mismo tipo de caso que las preguntas transversales de Alternativas (ver
-  "por determinar" abajo).
+- **Evaluación migrada de código a Airtable/Supabase**: las 4 tablas por
+  materia (Aplicación/Detección de error/Justificación/Discriminación
+  MC) sincronizan a `evaluacion_practica`. `app/alternativas.html` ya no
+  usa el `const banco` hardcoded.
+- **Estructura de Airtable por materia entendida y saneada** (ver skill
+  `.claude/skills/generar-evaluacion/SKILL.md` sección 0 y memoria
+  `project_arquitectura_airtable_por_materia`): `Preguntas_Evaluacion`
+  (banco de examen real, grounding del Interrogador) es distinto de las
+  4 tablas de Evaluación (contenido real de Práctica). Las tablas viejas
+  `Opciones_MC`/`Elementos_Clave` (diseño anterior, ya no las lee nada)
+  se borraron en las 3 bases (verificado 2026-07-29 vía Airtable API:
+  Precontractual, la última que faltaba, ya no las tiene).
+- **Flashcards y Evaluación con volumen y proceso mejorado** (skill
+  `generar-evaluacion`): tabla de cobertura tema×modelo, chequeo
+  obligatorio de sesgo de posición en Discriminación MC/Alternativas, y
+  reuso de `Preguntas_Evaluacion` como fuente cuando ya tiene contenido
+  completo (34 ítems de Discriminación MC migrados así, con `codigo`
+  prefijo `hist-`).
 
 ## Pendiente antes de invitar alumnas beta (ya está claro qué hacer)
 
@@ -116,83 +67,34 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
 
-- ~~53 preguntas nuevas de Contractual~~ — hecho (2026-07-29): revisadas y
-  aprobadas por Laura, subidas a Airtable (base Digesto Contractual,
-  linkeadas a su eje) y sincronizadas a Supabase. Los 21 ejes quedaron en
-  su techo real de material verificable contra el manual (detalle en
-  `docs/preguntas_pendientes_ejes_debiles_contractual_2026-07.md`).
-  Precontractual ya estaba parejo en los 10 ejes, sin necesitar refuerzo.
 - **Normalizar el campo `materia` de las 53 preguntas nuevas de
-  Contractual** (2026-07-29): quedaron con `materia = "Responsabilidad
-  contractual"`, mientras las 344 preguntas viejas de `Preguntas_Evaluacion`
-  tienen ahí `"civil"` (genérico). No afecta nada hoy, el Interrogador
-  filtra por `tema_texto`, no por `materia`, y ese campo sí quedó bien en
-  las 53. Es solo inconsistencia de datos, cosmética, pendiente de que
-  Laura decida si vale la pena normalizarla.
-- ~~Aviso falso de "225 Flashcards sin sincronizar"~~ — resuelto
-  (2026-07-29): la tabla Flashcards de "Digesto Contractual" resultó ser
-  literalmente la misma tabla de Airtable que la de la base "Digesto"
-  original (mismo id interno de tabla, verificado), no una copia — Laura
-  decidió no tocar esos registros por el riesgo de borrar en los dos
-  lados a la vez. En cambio se corrigió `scripts/sync_airtable_supabase.py`
-  (`sync_flashcards`) para deduplicar por `airtable_id` antes de contar,
-  así el aviso ya no se dispara por este caso. Verificado: el sync ahora
-  imprime "488 sincronizadas" sin aviso.
-
+  Contractual**: quedaron con `materia = "Responsabilidad contractual"`,
+  mientras las preguntas viejas de `Preguntas_Evaluacion` tienen ahí
+  `"civil"` (genérico). No afecta nada hoy (el Interrogador filtra por
+  `tema_texto`, no por `materia`), es cosmético, pendiente de que Laura
+  decida si vale la pena.
 - **Correr `scripts/supabase_schema_tema_link.sql` en el SQL Editor de
-  Supabase** (2026-07-29): agrega la columna `tema` a
-  `preguntas_evaluacion`. Sin esto, la próxima vez que se corra
-  `scripts/sync_airtable_supabase.py` va a fallar al sincronizar
-  Preguntas_Evaluacion (la columna nueva que manda el script todavía no
-  existe en la tabla).
-- **Linkear a `Temas` el contenido viejo sin linkear** (medido
-  2026-07-29): Preguntas_Evaluacion de Contractual (0/55) y Precontractual
-  (0/119), y las 4 tablas de Evaluación en las 3 materias (0/196 en
-  total). No urgente, se va completando materia por materia al revisar
-  cada eje. Detalle en `docs/contenido-airtable-supabase.md`.
-- ~~Cargar el catálogo de `Temas` de Precontractual en Airtable~~ — hecho
-  (2026-07-29): 10 Temas (A-J, tomados del manual) creados en `Digesto
-  Precontractual`. De paso se movieron ahí las 59 Flashcards de
-  Precontractual que vivían sueltas en la base `Digesto` original
-  (encontradas al hacer el estudio de cobertura, ver
-  `docs/contenido-airtable-supabase.md`). Ya sincronizado a Supabase y
-  verificado sin duplicados (225 Contractual + 204 Extracontractual + 59
-  Precontractual = 488). Preguntas_Evaluacion/Evaluación de Precontractual
-  siguen sin linkear a estos Temas, ver punto de arriba.
-
-- ~~Cruzar los 10 lotes de Precontractual de
-  `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado~~ — hecho
-  (2026-07-29): las 59 filas del archivo (Ejes A-J) ya están, sin
-  excepción, publicadas en Airtable (`Digesto Precontractual`, tabla
-  `Flashcards`), coincidencia exacta pregunta por pregunta. No queda
-  ninguna candidata nueva que redactar desde esta fuente para
-  Precontractual; para profundizar más ese contenido haría falta volver
-  al manual directo, no a este archivo.
+  Supabase**: agrega la columna `tema` a `preguntas_evaluacion`. Sin
+  esto, la próxima corrida de `scripts/sync_airtable_supabase.py` va a
+  fallar al sincronizar Preguntas_Evaluacion.
+- **Linkear a `Temas` el contenido viejo sin linkear**: Preguntas_Evaluacion
+  de Contractual y Precontractual, y las 4 tablas de Evaluación en las 3
+  materias. No urgente, se va completando materia por materia. Detalle
+  en `docs/contenido-airtable-supabase.md`.
 - **Cruzar los 9 lotes de Contractual** (+ el lote transversal) de
   `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado, mismo
   proceso que se hizo con Extracontractual y Precontractual, todavía sin
   tocar.
 - **Generar Flashcards de Contractual**: la tabla ya existe en Airtable
   con el mismo esquema que Extracontractual/Precontractual, está vacía.
-  (Precontractual ya no aplica acá: sus 59 Flashcards ya están cargadas,
-  ver punto de arriba.)
 - **37 Flashcards nuevas de Precontractual generadas desde el manual, a
-  su techo real** (2026-07-29, `docs/flashcards_nuevas_2026-07-29_precontractual.md`),
-  después de agotar `docs/flashcards_pendientes_2026-07.md` como fuente:
-  mapeo de instituciones por eje, tabla de cobertura y auditoría de
-  redundancia contra las 59 Flashcards + 47 Alternativas + 40 Evaluación
-  ya publicadas. Dos rondas: la primera (24) más conservadora, la
-  segunda (13 más) agotando cada eje hasta el límite real, descartando a
-  propósito la fragmentación expositiva sin peso jurídico distinto (el
-  detalle completo de los postulados de Boffi, los §§ del BGB, fechas y
-  montos del caso Lavín con Mena). El Eje I (postcontractual) quedó sin
-  candidatas nuevas en ninguna ronda, a su techo real. De paso quedó
-  anotado un fraseo ambiguo en dos Flashcards ya publicadas del Eje D
-  ("da un ejemplo de deber... distinto de...", que no funciona con el
-  orden aleatorio de las tarjetas). **Pendiente de revisión de Laura
-  antes de subir a Airtable** (base `Digesto Precontractual`, tabla
-  `Flashcards`), y de
-  correr el sync después.
+  su techo real** (`docs/flashcards_nuevas_2026-07-29_precontractual.md`),
+  después de agotar `docs/flashcards_pendientes_2026-07.md` como fuente.
+  De paso quedó anotado un fraseo ambiguo en dos Flashcards ya
+  publicadas del Eje D ("da un ejemplo de deber... distinto de...", no
+  funciona con el orden aleatorio de las tarjetas). **Pendiente de
+  revisión de Laura antes de subir a Airtable** (base `Digesto
+  Precontractual`, tabla `Flashcards`), y de correr el sync después.
 - **Jurisprudencia del manual de Extracontractual** (verificar fallos
   citados): Laura lo está preparando, todavía no lo mandó.
 - **Artículos de Memorice de Extracontractual**: Laura decide cuáles y
@@ -204,33 +106,23 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 - **Verificar contra leychile.cl directo** (hoy solo verificados contra
   un espejo, leyes-cl.com) los 2 artículos de Código de Comercio en
   `scripts/memorice_literales_2026-07-28.sql`.
-- ~~Cargar preguntas de Precontractual en `preguntas_evaluacion`
-  (Supabase) para que el Interrogador tenga muestra real de esa
-  materia~~ — esto ya decía "pendiente" desactualizado: verificado
-  2026-07-29, hay 119 filas publicadas con `tema_texto = 'Responsabilidad
-  precontractual'` y `MATERIAS_MUESTRA` en `api/interrogador.js` ya la
-  incluye. No era un hueco real.
 - **Probar una interrogación real que toque Precontractual** antes de
   darlo por completamente validado.
-- ~~Sesgo de posición en Discriminación MC (la opción correcta caía casi
-  siempre en B)~~ — corregido (2026-07-29): al revisar las 40 preguntas
-  de Evaluación de Precontractual se detectó que, en los 49 ítems de
-  Discriminación MC de las **tres** materias, la respuesta correcta
-  nunca estaba en A ni en D (90% en B, el resto en C). Se reordenaron
-  las 4 opciones y sus rationale en Airtable (tabla `Discriminación MC`
-  de las 3 bases), se corrió el sync, y se verificó en Supabase:
-  distribución final 13/12/12/12 entre A-D, sin perder el contenido
-  (verificado que el marcador "CORRECTO" del rationale sigue alineado
-  con el campo `correcta` en los 49 ítems). El mismo tipo de sesgo,
-  más leve, existe en Alternativas (en Precontractual, la opción D
-  nunca es correcta en 47 ítems) — **detectado, no corregido todavía**,
-  pendiente de que Laura decida si vale la pena arreglarlo igual.
-- **Sigue pendiente terminar de revisar el resto del contenido de
-  Evaluación de Precontractual** (más allá del sesgo de posición ya
-  corregido): Laura pidió revisar Justificación, Detección de error,
-  Aplicación y Discriminación MC; el contenido en sí (citas, atribuciones,
-  jurisprudencia) ya se auditó y no se encontraron errores, pero la
-  revisión se pausó para priorizar este fix. Retomar cuando ella lo pida.
+- **Terminar de revisar el contenido de Evaluación de Precontractual**
+  (Justificación, Detección de error, Aplicación, Discriminación MC):
+  las 40 preguntas originales ya se auditaron (citas, atribuciones,
+  jurisprudencia) sin errores encontrados. Las 34 preguntas `hist-` de
+  Discriminación MC (2026-07-29) también se auditaron contra los 3
+  manuales (Rol de fallos, artículos citados, atribuciones doctrinales)
+  sin errores encontrados. Retomar la revisión completa del resto
+  (Justificación/Detección de error/Aplicación) cuando Laura lo pida.
+- **Sugerencia sin ejecutar, para después del beta:** renombrar la
+  tabla `Preguntas_Evaluacion` (en las 4 bases de Airtable) a algo como
+  `Banco_Interrogador`, porque el nombre choca con el modelo
+  "Evaluación" de Práctica. Si Laura lo hace desde Airtable directo,
+  avisar en la sesión para actualizar en el mismo momento la referencia
+  literal `"Preguntas_Evaluacion"` en `scripts/sync_airtable_supabase.py`
+  — si no, el próximo sync falla.
 - **Confirmar con otra interrogación real** si la IA está siendo dura o
   inconsistente calificando (observación abierta de Laura, sin
   confirmar todavía). No tocar la rúbrica hasta que ella lo confirme.
@@ -242,9 +134,8 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   `origin/worktree-pdf-header-fix`): nombre de Laura afuera del
   encabezado, "DIGESTO" a la izquierda, título + "Examen de grado" a la
   derecha, sin encabezado en la portada. A propósito no fusionado
-  todavía (2026-07-29): Laura quiere juntar más fixes de PDF antes de
-  fusionar y regenerar los 3 PDF una sola vez, para no gastar tokens
-  regenerándolos varias veces. No tocar hasta que ella lo pida.
+  todavía: Laura quiere juntar más fixes de PDF antes de fusionar y
+  regenerar los 3 PDF una sola vez. No tocar hasta que ella lo pida.
 
 ## Por determinar: decisiones de Laura, no son solo "hacer"
 
@@ -272,6 +163,11 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   (Acto Jurídico, Bienes, Familia, Sucesorio, Procesal, Penal,
   Constitucional, Administrativo): en stand by hasta terminar de validar
   Responsabilidad.
+- **Cobertura completa de los 4 tipos de Evaluación + Flashcards +
+  Alternativas en todos los temas/subtemas, con volumen bastante mayor
+  al de julio 2026**: meta explícita de Laura, para después del
+  lanzamiento beta. Ver `.claude/skills/generar-evaluacion/SKILL.md`
+  sección 5.
 - Gamificación (`docs/gamificacion.md`): idea sin priorizar.
 - El gotcha de que `scripts/sync_airtable_supabase.py` nunca borra en
   Supabase lo que se borra en Airtable: documentado, no corregido, no

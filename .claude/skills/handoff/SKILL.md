@@ -17,6 +17,41 @@ la conversación de hoy.
 - Hay que dejarle el trabajo a otra sesión o a otro agente.
 - Laura dice "handoff", "resume dónde quedamos" o algo similar.
 
+## Antes de escribir: verificar, no solo resumir
+
+Agregado el 2026-07-29, después de una sesión donde una memoria vieja
+(`project_arquitectura_airtable_por_materia`, con info de un día antes)
+generó horas de malentendidos reales con Laura sobre la estructura de
+Airtable — un handoff más prolijo no lo hubiera evitado, porque el dato
+ya estaba escrito y se leyó como cierto sin chequear.
+
+Antes de anotar en este documento cualquier hecho estructural (nombre o
+ID de una tabla/base, cuántos registros tiene algo, qué campo lee tal
+script), si ese dato viene de memoria o de una sesión anterior en vez de
+haberlo verificado en esta misma sesión contra la fuente real (Airtable
+API, Supabase API, o el código), **verificalo ahora, no lo copies tal
+cual**. Si resulta estar desactualizado:
+
+- Corregilo ya, en el mismo momento — no lo dejes anotado como "revisar
+  después". Un dato corregido ahora es gratis; un dato falso repetido en
+  el próximo handoff es el mismo problema de nuevo.
+- Si el error venía de un archivo de memoria (`memory/*.md`) o de un doc
+  de `docs/`, arreglá ese archivo también, no solo lo que vas a escribir
+  en `ESTADO_ACTUAL.md` — si no, la próxima sesión hereda el mismo error
+  aunque el handoff de hoy esté bien.
+
+## Podar `docs/camino-a-beta.md` como parte del handoff
+
+`docs/camino-a-beta.md` es lo que Laura relee para ubicarse — no solo
+este handoff. Si se acumularon ítems tachados (`~~resuelto~~`) durante la
+sesión, **borralos del archivo antes de terminar**, no los dejes tachados
+"por las dudas": ya quedan en el historial de git si hace falta
+recuperarlos, y un archivo largo con la mitad tachada es exactamente lo
+que hace que Laura pierda el hilo de qué falta de verdad. El propio
+encabezado del doc ya pide esto ("no acumules una entrada nueva por
+sesión, corrige la que ya existe") — este paso lo vuelve explícito para
+que no se salte por apuro al cerrar.
+
 ## Dónde escribirlo
 
 Escribe siempre en el mismo archivo: `.claude/handoff/ESTADO_ACTUAL.md`.
