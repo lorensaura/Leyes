@@ -116,13 +116,83 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
 
-- **Cruzar los 9 lotes de Contractual y los 10 de Precontractual (+ el
-  lote transversal)** de `docs/flashcards_pendientes_2026-07.md` contra
-  lo ya publicado, mismo proceso que se hizo hoy con Extracontractual,
-  todavía sin tocar.
-- **Generar Flashcards de Contractual y Precontractual**: las tablas ya
-  existen en Airtable con el mismo esquema que Extracontractual, están
-  vacías.
+- ~~53 preguntas nuevas de Contractual~~ — hecho (2026-07-29): revisadas y
+  aprobadas por Laura, subidas a Airtable (base Digesto Contractual,
+  linkeadas a su eje) y sincronizadas a Supabase. Los 21 ejes quedaron en
+  su techo real de material verificable contra el manual (detalle en
+  `docs/preguntas_pendientes_ejes_debiles_contractual_2026-07.md`).
+  Precontractual ya estaba parejo en los 10 ejes, sin necesitar refuerzo.
+- **Normalizar el campo `materia` de las 53 preguntas nuevas de
+  Contractual** (2026-07-29): quedaron con `materia = "Responsabilidad
+  contractual"`, mientras las 344 preguntas viejas de `Preguntas_Evaluacion`
+  tienen ahí `"civil"` (genérico). No afecta nada hoy, el Interrogador
+  filtra por `tema_texto`, no por `materia`, y ese campo sí quedó bien en
+  las 53. Es solo inconsistencia de datos, cosmética, pendiente de que
+  Laura decida si vale la pena normalizarla.
+- ~~Aviso falso de "225 Flashcards sin sincronizar"~~ — resuelto
+  (2026-07-29): la tabla Flashcards de "Digesto Contractual" resultó ser
+  literalmente la misma tabla de Airtable que la de la base "Digesto"
+  original (mismo id interno de tabla, verificado), no una copia — Laura
+  decidió no tocar esos registros por el riesgo de borrar en los dos
+  lados a la vez. En cambio se corrigió `scripts/sync_airtable_supabase.py`
+  (`sync_flashcards`) para deduplicar por `airtable_id` antes de contar,
+  así el aviso ya no se dispara por este caso. Verificado: el sync ahora
+  imprime "488 sincronizadas" sin aviso.
+
+- **Correr `scripts/supabase_schema_tema_link.sql` en el SQL Editor de
+  Supabase** (2026-07-29): agrega la columna `tema` a
+  `preguntas_evaluacion`. Sin esto, la próxima vez que se corra
+  `scripts/sync_airtable_supabase.py` va a fallar al sincronizar
+  Preguntas_Evaluacion (la columna nueva que manda el script todavía no
+  existe en la tabla).
+- **Linkear a `Temas` el contenido viejo sin linkear** (medido
+  2026-07-29): Preguntas_Evaluacion de Contractual (0/55) y Precontractual
+  (0/119), y las 4 tablas de Evaluación en las 3 materias (0/196 en
+  total). No urgente, se va completando materia por materia al revisar
+  cada eje. Detalle en `docs/contenido-airtable-supabase.md`.
+- ~~Cargar el catálogo de `Temas` de Precontractual en Airtable~~ — hecho
+  (2026-07-29): 10 Temas (A-J, tomados del manual) creados en `Digesto
+  Precontractual`. De paso se movieron ahí las 59 Flashcards de
+  Precontractual que vivían sueltas en la base `Digesto` original
+  (encontradas al hacer el estudio de cobertura, ver
+  `docs/contenido-airtable-supabase.md`). Ya sincronizado a Supabase y
+  verificado sin duplicados (225 Contractual + 204 Extracontractual + 59
+  Precontractual = 488). Preguntas_Evaluacion/Evaluación de Precontractual
+  siguen sin linkear a estos Temas, ver punto de arriba.
+
+- ~~Cruzar los 10 lotes de Precontractual de
+  `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado~~ — hecho
+  (2026-07-29): las 59 filas del archivo (Ejes A-J) ya están, sin
+  excepción, publicadas en Airtable (`Digesto Precontractual`, tabla
+  `Flashcards`), coincidencia exacta pregunta por pregunta. No queda
+  ninguna candidata nueva que redactar desde esta fuente para
+  Precontractual; para profundizar más ese contenido haría falta volver
+  al manual directo, no a este archivo.
+- **Cruzar los 9 lotes de Contractual** (+ el lote transversal) de
+  `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado, mismo
+  proceso que se hizo con Extracontractual y Precontractual, todavía sin
+  tocar.
+- **Generar Flashcards de Contractual**: la tabla ya existe en Airtable
+  con el mismo esquema que Extracontractual/Precontractual, está vacía.
+  (Precontractual ya no aplica acá: sus 59 Flashcards ya están cargadas,
+  ver punto de arriba.)
+- **37 Flashcards nuevas de Precontractual generadas desde el manual, a
+  su techo real** (2026-07-29, `docs/flashcards_nuevas_2026-07-29_precontractual.md`),
+  después de agotar `docs/flashcards_pendientes_2026-07.md` como fuente:
+  mapeo de instituciones por eje, tabla de cobertura y auditoría de
+  redundancia contra las 59 Flashcards + 47 Alternativas + 40 Evaluación
+  ya publicadas. Dos rondas: la primera (24) más conservadora, la
+  segunda (13 más) agotando cada eje hasta el límite real, descartando a
+  propósito la fragmentación expositiva sin peso jurídico distinto (el
+  detalle completo de los postulados de Boffi, los §§ del BGB, fechas y
+  montos del caso Lavín con Mena). El Eje I (postcontractual) quedó sin
+  candidatas nuevas en ninguna ronda, a su techo real. De paso quedó
+  anotado un fraseo ambiguo en dos Flashcards ya publicadas del Eje D
+  ("da un ejemplo de deber... distinto de...", que no funciona con el
+  orden aleatorio de las tarjetas). **Pendiente de revisión de Laura
+  antes de subir a Airtable** (base `Digesto Precontractual`, tabla
+  `Flashcards`), y de
+  correr el sync después.
 - **Jurisprudencia del manual de Extracontractual** (verificar fallos
   citados): Laura lo está preparando, todavía no lo mandó.
 - **Artículos de Memorice de Extracontractual**: Laura decide cuáles y
@@ -134,23 +204,47 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 - **Verificar contra leychile.cl directo** (hoy solo verificados contra
   un espejo, leyes-cl.com) los 2 artículos de Código de Comercio en
   `scripts/memorice_literales_2026-07-28.sql`.
-- **Cargar preguntas de Precontractual en `preguntas_evaluacion`
-  (Supabase)** para que el Interrogador tenga muestra real de esa
-  materia. Hoy el bloque de muestra queda vacío para Precontractual.
+- ~~Cargar preguntas de Precontractual en `preguntas_evaluacion`
+  (Supabase) para que el Interrogador tenga muestra real de esa
+  materia~~ — esto ya decía "pendiente" desactualizado: verificado
+  2026-07-29, hay 119 filas publicadas con `tema_texto = 'Responsabilidad
+  precontractual'` y `MATERIAS_MUESTRA` en `api/interrogador.js` ya la
+  incluye. No era un hueco real.
 - **Probar una interrogación real que toque Precontractual** antes de
   darlo por completamente validado.
+- ~~Sesgo de posición en Discriminación MC (la opción correcta caía casi
+  siempre en B)~~ — corregido (2026-07-29): al revisar las 40 preguntas
+  de Evaluación de Precontractual se detectó que, en los 49 ítems de
+  Discriminación MC de las **tres** materias, la respuesta correcta
+  nunca estaba en A ni en D (90% en B, el resto en C). Se reordenaron
+  las 4 opciones y sus rationale en Airtable (tabla `Discriminación MC`
+  de las 3 bases), se corrió el sync, y se verificó en Supabase:
+  distribución final 13/12/12/12 entre A-D, sin perder el contenido
+  (verificado que el marcador "CORRECTO" del rationale sigue alineado
+  con el campo `correcta` en los 49 ítems). El mismo tipo de sesgo,
+  más leve, existe en Alternativas (en Precontractual, la opción D
+  nunca es correcta en 47 ítems) — **detectado, no corregido todavía**,
+  pendiente de que Laura decida si vale la pena arreglarlo igual.
+- **Sigue pendiente terminar de revisar el resto del contenido de
+  Evaluación de Precontractual** (más allá del sesgo de posición ya
+  corregido): Laura pidió revisar Justificación, Detección de error,
+  Aplicación y Discriminación MC; el contenido en sí (citas, atribuciones,
+  jurisprudencia) ya se auditó y no se encontraron errores, pero la
+  revisión se pausó para priorizar este fix. Retomar cuando ella lo pida.
 - **Confirmar con otra interrogación real** si la IA está siendo dura o
   inconsistente calificando (observación abierta de Laura, sin
   confirmar todavía). No tocar la rúbrica hasta que ella lo confirme.
 - **Borrar a mano las 8 bases de Airtable sueltas sin usar** (`REX -
   Alternativas`, `REX - Justificación`, etc.), de un diseño anterior
   descartado.
-- **Commitear y pushear la migración de Evaluación** (2026-07-28):
-  `app/alternativas.html`, `scripts/sync_airtable_supabase.py` y
-  `scripts/supabase_schema_evaluacion.sql` quedaron modificados/nuevos sin
-  commitear. Laura los pushea con GitHub Desktop.
-- **Limpiar `.claude/worktrees/sharded-soaring-cook/`**: worktree
-  suelto de una sesión anterior, nunca se cerró.
+- **Fusionar a `main` el arreglo de encabezado de los PDF** (worktree
+  `.claude/worktrees/pdf-header-fix`, commit `863e8bc`, ya pusheado a
+  `origin/worktree-pdf-header-fix`): nombre de Laura afuera del
+  encabezado, "DIGESTO" a la izquierda, título + "Examen de grado" a la
+  derecha, sin encabezado en la portada. A propósito no fusionado
+  todavía (2026-07-29): Laura quiere juntar más fixes de PDF antes de
+  fusionar y regenerar los 3 PDF una sola vez, para no gastar tokens
+  regenerándolos varias veces. No tocar hasta que ella lo pida.
 
 ## Por determinar: decisiones de Laura, no son solo "hacer"
 

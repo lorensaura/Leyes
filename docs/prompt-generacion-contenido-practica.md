@@ -170,6 +170,81 @@ formulación. Si al terminar de escribir las 4 opciones una persona sin
 formación jurídica podría adivinar la correcta por eliminación obvia,
 reescribe los distractores.
 
+### 0.3 Control de redundancia (obligatorio, define desde 2026-07-29)
+
+Esta sección manda sobre cualquier chequeo de redundancia más suelto que
+aparezca más abajo en este doc (secciones 1 y 6): si hay conflicto, esta
+versión es la vigente.
+
+**Regla de redundancia.** Dos preguntas son redundantes si evalúan **el
+mismo elemento jurídico específico** (el mismo requisito, la misma
+distinción doctrinal, el mismo efecto), aunque cambien el enunciado o el
+punto de vista. **No** son redundantes si testean: (a) un elemento
+distinto de la misma institución; (b) la misma institución pero desde una
+controversia doctrinal distinta; (c) la conexión de esa institución con
+otra materia que el caso o el eje también activa; (d) la aplicación al
+caso concreto vs. la regla general en abstracto.
+
+**La regla se aplica dentro de cada tipo de pregunta, no entre tipos.**
+Dos preguntas del mismo tipo (ambas Justificación, ambas Discriminación
+MC, etc.) que evalúan el mismo elemento jurídico específico son
+redundantes, elimina una. El mismo elemento jurídico repetido **en
+tipos distintos** (ej. una Flashcard y una Aplicación que parten del
+mismo punto) no es redundante por defecto: es refuerzo intencional, cada
+tipo mide una habilidad distinta (Flashcard fija el concepto, Aplicación
+testea transferencia al caso, Justificación testea fundamentación,
+Detección de error testea capacidad de identificar un razonamiento
+viciado, Discriminación MC testea reconocimiento entre distractores
+plausibles). Solo cuenta como redundante entre tipos distintos si además
+comparten prácticamente el mismo enunciado o el mismo ángulo de
+evaluación.
+
+**Proceso, en este orden exacto, antes de redactar el set final:**
+
+1. **Mapeo de instituciones/puntos de derecho activados.** Antes de
+   redactar ninguna pregunta, lista todas las instituciones jurídicas que
+   el caso (para Interrogador) o el eje/tramo del manual (para Práctica)
+   activa efectivamente por sus hechos o por su contenido, no las que
+   "podrían" tocarse en abstracto. Para cada una, indica brevemente por
+   qué el caso o el eje la activa. No fuerces conexiones artificiales.
+2. **Tabla de cobertura (obligatoria, previa a las preguntas finales).**
+   Arma esta tabla intermedia antes de redactar en formato final:
+
+   | # | Institución/subtema | Elemento jurídico específico evaluado | Ángulo (regla general / excepción / distinción doctrinal / aplicación al caso / conexión interdisciplinar) | Tipo de pregunta |
+   |---|---|---|---|---|
+
+   Es tu herramienta de auditoría, no el output final, pero se genera
+   siempre como paso intermedio.
+3. **Cuota por subtema.** Para cada institución del paso 1, evalúa
+   cuántos elementos jurídicos genuinamente distintos admite (columna
+   "elemento jurídico específico" de la tabla). No generes más preguntas
+   que elementos distintos identificados. Si una institución es acotada y
+   ya cubriste sus elementos distintivos, pasa a la siguiente en vez de
+   seguir generando variaciones de enunciado sobre el mismo punto.
+   **Si al llegar a este paso no encuentras material suficiente en el
+   manual para una pregunta más sin ser redundante: no la generes, y
+   avísale a Laura explícitamente que ese eje/institución llegó a su
+   techo con el material disponible** (no lo completes igual "para
+   cumplir el número", ver sección 0 sobre alucinación).
+4. **Redacción final.** Los cinco tipos de este proyecto son Aplicación,
+   Detección de error, Justificación, Discriminación MC (Evaluación) y
+   Alternativas (MC puro), más Flashcards y Memorice como modelos aparte,
+   según el esquema de la sección 3.
+5. **Auditoría de redundancia (obligatoria, con la lista completa a la
+   vista, después de redactar, no durante).** Revisa cada par de
+   preguntas del **mismo tipo** que pertenezca a la misma institución.
+   Para cada par, verifica explícitamente contra la regla de arriba que
+   no evalúan el mismo elemento jurídico específico. Si dos preguntas
+   testean lo mismo con distinto enunciado: elimina una y reemplázala por
+   una que cubra una arista distinta (otro elemento, otra controversia
+   doctrinal, otra institución conexa activada), nunca por otra variación
+   de la misma.
+
+**Entrega siempre, en este orden:** (1) instituciones/puntos activados y
+por qué, (2) tabla de cobertura, (3) preguntas finales en formato Digesto,
+(4) nota breve de auditoría de redundancia (qué pares se revisaron y, si
+se reemplazó alguna pregunta, cuál y por qué).
+
 ### 1. Proceso de trabajo
 
 **Por tandas, nunca el manual completo de una sola pasada.** Trabaja en

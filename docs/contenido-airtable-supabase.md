@@ -59,12 +59,17 @@ lo que no correspondía a su materia (ver historial de git para el script
 de limpieza si hace falta repetir el proceso con una materia nueva).
 
 **Esquema de `Preguntas_Evaluacion`** (igual en las 4 bases): `materia`
-(genérico, ej. "civil"), `tema_texto` (específico, ej. "Responsabilidad
-contractual" — este es el que se usa para filtrar), `subtema`, `tipo`
+(genérico, ej. "civil"), `tema` (link a `Temas`, el eje concreto del
+manual), `tema_texto` (específico, ej. "Responsabilidad contractual" — este
+es el que se usa para filtrar), `subtema`, `tipo`
 (aplicación/detección_error/justificación/discriminación_mc), `enunciado`,
 `respuesta_modelo`, `articulos_referencia`, `objetivo_pedagogico`, `fuente`,
 `publicado`, más los links a `Elementos_Clave` (texto + keywords) y
 `Opciones_MC` (letra/texto/rationale, solo para discriminación_mc).
+
+**El campo `tema` (link a `Temas`) existe en `Preguntas_Evaluacion` y en las
+4 tablas de Evaluación desde siempre, pero recién se usa** (ver "Estado del
+linkeo a `Temas`" más abajo).
 
 **Campo `publicado`** (checkbox): controla qué se sirve a la app sin tocar
 código. Hoy Contractual/Extracontractual en `sí`.
@@ -119,6 +124,61 @@ ya existían ahí para Extracontractual, cargadas en algún momento pero
 nunca sincronizadas. Corregido extendiendo `sync_flashcards()` para que
 también recorra `PREGUNTAS_BASES` (mismo diccionario que ya usaba
 `sync_preguntas()`), igual que se hace para Preguntas_Evaluacion.
+
+**Reconciliación agregada 2026-07-29:** cada `sync_*()` compara, antes de
+subir nada, cuántas filas hay ya en Supabase contra cuántas hay publicadas
+en Airtable, e imprime un aviso si Supabase tenía menos. Se agregó después
+de encontrar 225 Flashcards de "Digesto Contractual" cargadas en Airtable
+que nunca habían llegado a sincronizarse (nadie lo notó hasta que se
+contó a mano el 2026-07-29) — el mismo tipo de pérdida silenciosa que el
+bug de arriba, pero en una base distinta. Con este aviso, correr el script
+avisa solo si algo se está quedando afuera, sin tener que contar a mano.
+
+## Estado del linkeo a `Temas` (agregado 2026-07-29)
+
+Cada base de materia tiene una tabla `Temas` (un registro por eje del
+manual) y un campo de link `tema` en `Flashcards`, `Preguntas_Evaluacion` y
+las 4 tablas de Evaluación (`Aplicación`/`Detección de error`/
+`Justificación`/`Discriminación MC`) que apunta a ella. El campo **ya
+existía en las 6 tablas**, pero `scripts/sync_airtable_supabase.py` solo lo
+leía para Flashcards; para Preguntas_Evaluacion usaba en cambio `tema_texto`
+(texto libre, sin relación con `Temas`) y para Evaluación mandaba `tema =
+null` siempre, a propósito. Corregido: ahora las 6 tablas resuelven el
+mismo link (`_leer_temas`/`_resolver_tema` en el script) y lo mandan a
+Supabase (`preguntas_evaluacion.tema`, columna nueva —
+`scripts/supabase_schema_tema_link.sql`, correrla una vez en Supabase antes
+de volver a sincronizar Preguntas_Evaluacion — y `evaluacion_practica.tema`,
+que ya existía en el esquema pero nunca se llenaba).
+
+**Cuánto está linkeado hoy (medido 2026-07-29, antes del fix):**
+
+| Tabla | Contractual | Extracontractual | Precontractual |
+|---|---|---|---|
+| Flashcards | 225/225 | 204/204 | 0/0 (sin contenido) |
+| Preguntas_Evaluacion | 0/55 | 170/170 | 0/119 |
+| Evaluación (4 tablas) | 0/43 | 0/113 | 0/40 |
+
+Extracontractual ya tiene el 100% de `Preguntas_Evaluacion` linkeado (así
+se debe hacer de acá en adelante en las 3 materias). Lo demás quedó sin
+linkear porque el campo nunca se usó al cargar ese contenido, no porque
+falte crear nada — se completa materia por materia, al revisar cada eje, no
+hace falta un lote aparte solo para esto.
+
+**Precontractual ya tiene su catálogo de `Temas` (agregado 2026-07-29):**
+10 ejes (A-J), tomados de `03_Responsabilidad_Precontractual_Manual.html`.
+Antes estaba vacío, lo que además hizo que 59 Flashcards de Precontractual
+quedaran "sueltas" en la base `Digesto` original en vez de en `Digesto
+Precontractual` (ligadas ahí a un catálogo de Temas paralelo que existía
+solo en esa base original, sin que nadie lo supiera hasta este estudio).
+Se movieron esas 59 Flashcards a `Digesto Precontractual`, enlazadas al
+catálogo nuevo, y se limpiaron en Supabase las filas duplicadas que había
+dejado la migración (quedó en 488 Flashcards totales: 225 Contractual +
+204 Extracontractual + 59 Precontractual). Preguntas_Evaluacion y
+Evaluación de Precontractual todavía no están linkeadas a este catálogo
+(pendiente, ver `docs/creacion-de-contenido.md`).
+
+Ver la regla permanente sobre cargar contenido nuevo ya linkeado en
+`docs/creacion-de-contenido.md`.
 
 ## Flashcards: calificación y repetición espaciada (agregado 2026-07-13)
 Al voltear una tarjeta en `app/flashcards.html` aparecen 3 botones:

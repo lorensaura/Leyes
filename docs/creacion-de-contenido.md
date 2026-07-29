@@ -88,6 +88,23 @@ legal, pero no hace falta correr este script de nuevo.
   primer lugar de un manual, es una regresión de este mismo bug.
 
 ## Reglas permanentes
+- **Toda fila nueva de Flashcards, Preguntas_Evaluacion o Evaluación
+  (Aplicación/Detección de error/Justificación/Discriminación MC) se
+  linkea a su `Tema` (eje del manual) en Airtable antes de marcarla
+  `publicado`.** El campo `tema` (link a la tabla `Temas` de esa base) ya
+  existe en las 6 tablas, no hay que crear nada — solo llenarlo. Si el
+  eje todavía no tiene fila en `Temas`, crearla primero ahí (ya no pasa
+  con Precontractual, que tiene su catálogo completo A-J desde
+  2026-07-29). Esto es lo que permite ver de
+  un vistazo, en Airtable, cuántas preguntas tiene cada eje (evita
+  duplicar sobre el mismo punto) y que ninguna quede huérfana. Detalle y
+  estado del linkeo por materia en `docs/contenido-airtable-supabase.md`
+  ("Estado del linkeo a Temas").
+- **Alternativas y Memorice** (no pasan por Airtable, se cargan por SQL
+  directo) no tienen este link estructurado — usan `subtema` como texto
+  libre. Para que sigan siendo cruzables a simple vista contra el resto,
+  el `subtema` debe nombrar el mismo punto que el eje del manual al que
+  corresponde (no una etiqueta libre inventada).
 - Cero guiones largos (—) en ningún campo generado (manuales, preguntas,
   flashcards, SQL). Ya causó un fix manual una vez (art. 1545 en
   `fuente`).
