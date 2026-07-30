@@ -53,6 +53,14 @@ Esto ya es un paso obligatorio del prompt maestro (sección 1) y del skill
 `generar-practica`, no generar sin haber contado qué existe ya para esa
 materia y ese eje.
 
+**Extracontractual ya tiene esa cuenta hecha (Fase 1, 2026-07-30):**
+`docs/cobertura_subtema_rex_2026-07-30.md` trae la tabla de los 25 ejes ×
+6 columnas (Aplicación/Detección de error/Justificación/Discriminación
+MC/Flashcards/Alternativas) contada contra Supabase/Airtable en vivo, más
+el cruce con `docs/preguntas_pendientes_ejes_debiles_2026-07.md` (qué de
+ese borrador de 2026-07-27 sigue sin subir). Ábrelo antes de generar
+contenido nuevo de Extracontractual para no recontar desde cero.
+
 ## Contenido de `contenido_practica_2026-07.sql` (ya cargado)
 
 `scripts/contenido_practica_2026-07.sql` tiene 117 Alternativas + 23

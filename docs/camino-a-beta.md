@@ -6,7 +6,7 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Los ítems ya resueltos se borran del todo (no
 > se dejan tachados) apenas se cierran — quedan igual en el historial
-> de git si hace falta recuperarlos. Última actualización: 2026-07-29.
+> de git si hace falta recuperarlos. Última actualización: 2026-07-30.
 
 ## Hecho
 
@@ -78,9 +78,34 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   esto, la próxima corrida de `scripts/sync_airtable_supabase.py` va a
   fallar al sincronizar Preguntas_Evaluacion.
 - **Linkear a `Temas` el contenido viejo sin linkear**: Preguntas_Evaluacion
-  de Contractual y Precontractual, y las 4 tablas de Evaluación en las 3
-  materias. No urgente, se va completando materia por materia. Detalle
-  en `docs/contenido-airtable-supabase.md`.
+  de Contractual y Precontractual, y las 4 tablas de Evaluación en
+  Contractual y Precontractual (Extracontractual ya se hizo el
+  2026-07-30, ver debajo). No urgente, se va completando materia por
+  materia. Detalle en `docs/contenido-airtable-supabase.md`.
+- **Plan "llevar Evaluación a su techo por tema/subtema" (REX → REC →
+  REP). Extracontractual: Fase 0, Fase 1 y el refuerzo de ejes 15/21
+  cerrados (2026-07-30).** Fase 0: los 119 ítems de `evaluacion_practica`
+  quedaron clasificados y linkeados a los 25 ejes reales de `Temas`
+  (matching automático + revisión manual, aprobado por Laura). Fase 1:
+  tabla de cobertura completa (Evaluación + Flashcards + Alternativas) en
+  `docs/cobertura_subtema_rex_2026-07-30.md`, que detectó que el borrador
+  de 2026-07-27 (`docs/preguntas_pendientes_ejes_debiles_2026-07.md`)
+  seguía teniendo 10 ítems sin subir para los ejes 15 y 21 (los otros 3
+  ejes del mismo borrador, 11/18/25, ya estaban cubiertos por contenido
+  subido por separado). Laura revisó y aprobó 9 de esos 10 (los 5 de eje
+  15 y 4 de los 5 de eje 21) el 2026-07-30; se subieron a Airtable
+  (`re-just-028` a `re-just-032`, `re-aplic-028`/`029`, `re-detect-030`,
+  `re-mc-031`) y se corrió el sync — Evaluación de Extracontractual pasó
+  de 119 a 128 ítems. Extracontractual ya no tiene ejes de Evaluación con
+  1 solo ítem. La novena, "Discriminación MC — legitimación pasiva del
+  autor" de eje 21 (ambigüedad real entre las opciones C y D, ambas
+  defendibles como "no comprendida en la solidaridad del art. 2317"),
+  **Laura la descartó (2026-07-30)**: eje 21 quedó con 4 ítems nuevos, no
+  5. Solo el **eje 1** sigue sin contenido nuevo de Evaluación (1
+  ítem, pero con 11 Flashcards que conviene revisar antes de escribir
+  algo redundante). Sigue Contractual y Precontractual, todavía sin
+  Fase 0.
+  Sigue Contractual y Precontractual, todavía sin Fase 0.
 - **Cruzar los 9 lotes de Contractual** (+ el lote transversal) de
   `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado, mismo
   proceso que se hizo con Extracontractual y Precontractual, todavía sin

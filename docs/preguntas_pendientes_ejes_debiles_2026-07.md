@@ -13,6 +13,50 @@
 > `respuesta_modelo`, `articulos_referencia`, `objetivo_pedagogico`,
 > `elementos_clave_texto` y `opciones_texto` (si aplica) — mismos campos que
 > ya usa `Preguntas_Evaluacion` en Airtable.
+>
+> **Corrección 2026-07-30 (ver `docs/cobertura_subtema_rex_2026-07-30.md`,
+> Fase 1):** la nota de arriba ("nada de esto está en Airtable ni en
+> Supabase") sigue siendo literalmente cierta — nada de este archivo se
+> subió tal cual. Pero para los ejes 11, 18 y 25, alguien redactó el
+> 2026-07-28 (un día después de este borrador) contenido **independiente**
+> sobre los mismos subtemas, con hechos y `caso` distintos a los de acá
+> (mismo `codigo` prefijo `re-`, no `hist-`) — probablemente sin ver este
+> archivo. Efecto práctico: los ítems de este borrador para 11, 18 y 25 son
+> hoy redundantes (mismo ángulo doctrinal ya cubierto en vivo, aunque con
+> otro caso) y no conviene subirlos tal cual. **Los ejes 15 y 21 son
+> distintos: el solape con lo vivo es parcial.** De eje 15 solo el ítem 6
+> ("hecho propio de la organización") se solapa parcialmente con el único
+> ítem vivo; de eje 21 solo el ítem 1 ("mero tenedor vs. dueño") se solapa
+> parcialmente con el único ítem vivo. **Los ítems 1-5 de eje 15 no tienen
+> contraparte en Evaluación, y tampoco en Alternativas** (eje 15 solo
+> tiene un ítem de Alternativas, `ext-alt-016`, y ese cae sobre el ítem 6,
+> no sobre 1-5) **— huecos reales.** De eje 21, los ítems 2-6 no tienen
+> contraparte en Evaluación,
+> pero 4 de los 5 (ítems 2, 3, 4 y 6) ya tienen un ítem de Alternativas
+> sobre el mismo ángulo (columna distinta, ver el doc de Fase 1) — el
+> hueco ahí es de Evaluación específicamente, no de contenido cero. Solo
+> el ítem 5 ("legitimación pasiva del autor") no tiene contraparte en
+> ninguna columna. Pendientes de revisión de Laura antes de subir
+> (probablemente conviene reescribirles el `caso` con hechos propios,
+> siguiendo el mismo criterio
+> que se usó el 2026-07-28 para los otros ejes, en vez de copiar el texto
+> de acá literal).
+>
+> **Cierre 2026-07-30:** Laura revisó y aprobó el contenido de eje 15
+> (ítems 1-5) y de eje 21 (ítems 2, 3, 4 y 6). Se subieron tal cual
+> (sin reescribir el `caso`, a diferencia de lo sugerido arriba) a
+> Airtable con los códigos `re-just-028` a `re-just-032`,
+> `re-aplic-028`/`re-aplic-029`, `re-detect-030` y `re-mc-031`, y ya están
+> sincronizados en `evaluacion_practica` (`publicado = true`). **Los
+> ítems 1-5 de eje 15 y 2-6 de eje 21 de este archivo ya no representan
+> un hueco** — ver `docs/camino-a-beta.md`. Queda sin resolver el **ítem
+> 5 de eje 21** ("Discriminación MC — legitimación pasiva del autor"):
+> tenía una ambigüedad real entre las opciones C y D (ambas son
+> defendibles como "no comprendida en la solidaridad del art. 2317", por
+> razones distintas). **Laura decidió descartarla (2026-07-30): no se
+> sube.** Eje 21 queda con 4 ítems nuevos, no 5. El resto de este archivo (ejes 11,
+> 18, 25) sigue siendo contenido redundante con lo ya subido el
+> 2026-07-28, no usar como fuente.
 
 ---
 

@@ -150,19 +150,22 @@ Supabase (`preguntas_evaluacion.tema`, columna nueva —
 de volver a sincronizar Preguntas_Evaluacion — y `evaluacion_practica.tema`,
 que ya existía en el esquema pero nunca se llenaba).
 
-**Cuánto está linkeado hoy (medido 2026-07-29, antes del fix):**
+**Cuánto está linkeado hoy (medido 2026-07-30, Evaluación Extracontractual actualizada tras el backfill de Fase 0):**
 
 | Tabla | Contractual | Extracontractual | Precontractual |
 |---|---|---|---|
 | Flashcards | 225/225 | 204/204 | 0/0 (sin contenido) |
 | Preguntas_Evaluacion | 0/55 | 170/170 | 0/119 |
-| Evaluación (4 tablas) | 0/43 | 0/113 | 0/40 |
+| Evaluación (4 tablas) | 0/51 | **119/119** | 0/60 |
 
-Extracontractual ya tiene el 100% de `Preguntas_Evaluacion` linkeado (así
-se debe hacer de acá en adelante en las 3 materias). Lo demás quedó sin
-linkear porque el campo nunca se usó al cargar ese contenido, no porque
-falte crear nada — se completa materia por materia, al revisar cada eje, no
-hace falta un lote aparte solo para esto.
+Extracontractual ya tiene el 100% de `Preguntas_Evaluacion` y de
+Evaluación (4 tablas) linkeado. La clasificación de Evaluación se hizo
+2026-07-30: matching automático por palabras clave/artículo + revisión
+manual de los casos ambiguos (ver el plan "llevar Evaluación a su techo",
+Fase 0), no arrastrada de `Preguntas_Evaluacion`. Contractual y
+Precontractual quedan pendientes del mismo diagnóstico (13/21 y 10/10
+ejes sin link respectivamente, según ese mismo plan) — se completa
+materia por materia, no hace falta un lote aparte solo para esto.
 
 **Precontractual ya tiene su catálogo de `Temas` (agregado 2026-07-29):**
 10 ejes (A-J), tomados de `03_Responsabilidad_Precontractual_Manual.html`.
