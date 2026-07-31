@@ -302,7 +302,8 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   todos sus subtemas cubiertos en los 4 tipos de Evaluación. **3 ejes
   cerrados hasta ahora, ya subidos a Airtable y sincronizados a
   Supabase** (vía `scripts/aplicar_correcciones_pendientes.py`, acciones
-  `subir-eje5`/`subir-eje3`/`subir-eje7`):
+  `subir-eje5`/`subir-eje3`/`subir-eje7`). **Revisión de fondo de estos 3
+  ejes: hecha, Laura confirmó que están bien (2026-07-31).**
   - Eje 5 (0→4): "el hecho del deudor" como tercera modalidad de
     imputación (arts. 2187/1678).
   - Eje 3 (1→5): "cumplimiento imperfecto y retardo simultáneos" (arts.
@@ -311,9 +312,16 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   - Eje 7 (1→4): "el dolo no se presume" (art. 1459), "límite del art.
     1558 a los perjuicios indirectos", "el dolo se aprecia en concreto,
     sin grados".
+  **2 ejes más subidos y sincronizados, todavía sin la revisión de fondo
+  de Laura**:
+  - Eje 4 (2→5): obligación de medio (ejemplo médico, ausencia de culpa
+    exonera), regímenes de exención distintos medio/resultado, aplicación
+    del régimen de resultado a un caso de fuerza mayor.
+  - Eje 9 (2→4): "la mora purga la mora" (art. 1552), efecto de la mora
+    sobre el riesgo del caso fortuito (arts. 1547/1672).
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 4, 6, 8, 9, 10, 12, 13, 14, 15, 16, 17,
+  Laura decida desarrollarlos), y 6, 8, 10, 12, 13, 14, 15, 16, 17,
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).

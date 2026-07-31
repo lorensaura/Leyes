@@ -502,6 +502,96 @@ def subir_eje7(token):
     return subir_lote(token, "7. El dolo contractual", EJE7_EVALUACION)
 
 
+EJE4_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-016",
+        "subtema": "Obligación de medio: la ausencia de culpa exonera (ejemplo médico)",
+        "caso": "Un médico trata a un paciente con una enfermedad grave, siguiendo el protocolo clínico vigente y con toda la diligencia exigible, pero el paciente fallece. La familia demanda al médico por incumplimiento contractual, alegando que \"no logró curar\" al paciente.",
+        "enunciado": "¿Es la obligación del médico de medio o de resultado? ¿Basta que el médico haya actuado con diligencia, aunque el paciente no se curara, para exonerarlo?",
+        "respuesta_modelo": "Es una obligación de medio: el médico se compromete a poner la diligencia y los conocimientos necesarios para tratar de curar al paciente, sin garantizar la curación misma. En las obligaciones de medio, la diligencia cumple una función integradora de la prestación, de modo que si, pese a haberse actuado diligentemente, no se alcanza el resultado esperado (la curación), no se configura responsabilidad: la ausencia de culpa es, en sí misma, una causal de exención. Como el médico siguió el protocolo clínico vigente y actuó con la diligencia exigible, queda exonerado, aunque el paciente haya fallecido: no basta con el resultado adverso, hace falta que ese resultado se deba a una falta de diligencia del médico.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno reconoce que en las obligaciones de medio, a diferencia de las de resultado, la sola ausencia de culpa exonera al deudor.",
+        "elementos_clave": [
+            {"texto": "Identifica la obligación del médico como de medio, no de resultado", "keywords": ["obligación de medio", "no garantiza el resultado"], "pregunta": "¿Qué tipo de obligación tiene el médico?"},
+            {"texto": "Explica que en obligaciones de medio la ausencia de culpa es, por sí sola, causal de exención", "keywords": ["ausencia de culpa exonera", "función integradora"], "pregunta": "¿Basta la sola diligencia para exonerar en este tipo de obligación?"},
+            {"texto": "Concluye que el médico queda exonerado pese al resultado adverso, porque actuó diligentemente", "keywords": ["exonerado", "resultado adverso no basta"], "pregunta": "¿Queda entonces exonerado el médico?"},
+        ],
+    }],
+    "deteccion": [{
+        "id": "rc-detect-013",
+        "subtema": "Regímenes de exención distintos: obligaciones de medio vs. de resultado",
+        "caso": "Un alumno responde: \"Da lo mismo si la obligación es de medio o de resultado: en ambos casos, el deudor se exonera con solo probar que actuó con la diligencia debida, sin necesidad de acreditar un caso fortuito.\"",
+        "enunciado": "Identifica el error del alumno y explica la regla correcta.",
+        "respuesta_modelo": "El alumno confunde el régimen de exención de ambos tipos de obligación. En las obligaciones de medio, en efecto, la sola ausencia de culpa exonera al deudor. Pero en las obligaciones de resultado ocurre lo contrario: la culpa no es un elemento a considerar para determinar el incumplimiento, y el deudor únicamente se exonera acreditando un evento de fuerza mayor que le imposibilitó ejecutar la obligación debida; no basta con probar que actuó diligentemente, sin más. Por eso \"da lo mismo\" es incorrecto: el régimen de exención depende justamente de qué tipo de obligación es.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue los regímenes de exención distintos entre obligaciones de medio (basta ausencia de culpa) y de resultado (exige fuerza mayor).",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno confunde los regímenes de exención de ambos tipos de obligación", "keywords": ["confunde regímenes", "no da lo mismo"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Explica que en obligaciones de medio basta la ausencia de culpa para exonerar", "keywords": ["obligaciones de medio", "ausencia de culpa"], "pregunta": "¿Qué régimen rige en las obligaciones de medio?"},
+            {"texto": "Explica que en obligaciones de resultado se exige acreditar fuerza mayor, no basta la diligencia", "keywords": ["obligaciones de resultado", "exige fuerza mayor"], "pregunta": "¿Y en las de resultado?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-013",
+        "subtema": "Obligación de resultado: exige fuerza mayor, no basta la diligencia",
+        "caso": "Un contratista se compromete a construir una piscina y entregarla terminada en 60 días. A los 40 días, un temporal de lluvias sin precedentes en la zona, declarado zona de catástrofe, inunda la obra y destruye buena parte de lo avanzado, retrasando la entrega 3 meses más.",
+        "enunciado": "¿Bajo qué régimen de exención puede liberarse el contratista, considerando que su obligación es de resultado?",
+        "opciones": {
+            "a": ("Le basta probar que actuó con toda la diligencia posible durante la construcción",
+                  "Error: en las obligaciones de resultado, como la del contratista, la sola ausencia de culpa no exonera; se exige acreditar un evento de fuerza mayor que haya imposibilitado la ejecución."),
+            "b": ("Debe acreditar que el temporal constituyó un evento de fuerza mayor que le imposibilitó ejecutar la obligación",
+                  "CORRECTO. En las obligaciones de resultado, el deudor solo se exonera acreditando un evento de fuerza mayor (como este temporal sin precedentes, declarado zona de catástrofe) que le imposibilitó cumplir; la diligencia por sí sola no basta."),
+            "c": ("No puede exonerarse en ningún caso, porque las obligaciones de resultado no admiten ninguna causal de exención",
+                  "Error: las obligaciones de resultado sí admiten exención, pero únicamente por fuerza mayor, no por cualquier causal; el temporal descrito calza en esa hipótesis."),
+            "d": ("Le basta con que el retraso no le sea imputable, sin necesidad de calificarlo como fuerza mayor",
+                  "Error: no basta la sola ausencia de imputabilidad genérica; en las obligaciones de resultado específicamente se exige acreditar fuerza mayor, un estándar más exigente que la mera ausencia de culpa."),
+        },
+        "correcta": "B",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente el régimen de exención de las obligaciones de resultado (exige fuerza mayor, no basta diligencia) a un caso concreto.",
+    }],
+}
+
+
+def subir_eje4(token):
+    return subir_lote(token, "4. Obligaciones de medios y de resultado", EJE4_EVALUACION)
+
+
+EJE9_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-017",
+        "subtema": "\"La mora purga la mora\" (art. 1552) en los contratos bilaterales",
+        "caso": "En un contrato de compraventa, el comprador debía pagar el precio el día 1 de cada mes y el vendedor debía entregar la mercadería el día 5. Llegado el día 10, ni el comprador pagó ni el vendedor entregó nada. El comprador demanda al vendedor exigiéndole la indemnización de perjuicios moratorios, alegando que el vendedor está en mora desde el día 5.",
+        "enunciado": "¿Está el vendedor en mora, tal como alega el comprador? Fundamenta.",
+        "respuesta_modelo": "No está en mora, o al menos el comprador no puede constituirlo válidamente en mora mientras él mismo tampoco haya cumplido ni esté llano a cumplir. En los contratos bilaterales rige la regla del art. 1552: ninguno de los contratantes está en mora dejando de cumplir lo pactado mientras el otro no cumple por su parte, ni se allana a cumplirlo. Es la excepción de contrato no cumplido proyectada sobre la mora: \"la mora purga la mora\", la mora de uno neutraliza la del otro. Como el comprador tampoco pagó el precio en la fecha pactada (el día 1) ni acredita estar llano a hacerlo, no puede constituir en mora al vendedor ni cobrarle indemnización moratoria.",
+        "articulos_referencia": "1552",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente la regla \"la mora purga la mora\" (art. 1552) para determinar que un contratante que tampoco ha cumplido no puede constituir en mora a la contraparte.",
+        "elementos_clave": [
+            {"texto": "Identifica que rige la regla del art. 1552 en los contratos bilaterales", "keywords": ["art. 1552", "contratos bilaterales"], "pregunta": "¿Qué norma rige la mora en los contratos bilaterales?"},
+            {"texto": "Explica la regla \"la mora purga la mora\": ninguno está en mora mientras el otro tampoco cumple ni está llano a cumplir", "keywords": ["mora purga la mora", "ninguno en mora"], "pregunta": "¿Qué dice esa regla?"},
+            {"texto": "Concluye que el comprador, al no haber pagado tampoco, no puede constituir en mora al vendedor", "keywords": ["comprador tampoco cumplió", "no puede constituir en mora"], "pregunta": "¿Puede entonces el comprador cobrar la indemnización?"},
+        ],
+    }],
+    "justificacion": [{
+        "id": "rc-just-014",
+        "subtema": "Efecto de la mora sobre el riesgo del caso fortuito (arts. 1547, 1672)",
+        "enunciado": "¿Por qué se dice que la mora \"traslada al deudor el riesgo de la cosa\"? Explica este efecto y su excepción.",
+        "respuesta_modelo": "Porque, conforme a los artículos 1547 inciso 2° y 1672 inciso 2°, el deudor que está en mora responde incluso del caso fortuito que sobreviene estando en mora, cuando por regla general el caso fortuito lo exoneraría. Esto traslada al deudor moroso el riesgo de la pérdida de la cosa: si antes de la mora esa pérdida fortuita lo habría liberado, estando en mora la soporta él. La excepción es que el deudor puede liberarse igual si prueba que la cosa habría perecido lo mismo en poder del acreedor de haberse cumplido oportunamente: en tal caso, la mora no fue la causa real de la pérdida, y no sería justo hacerlo responder por un daño que de todos modos habría ocurrido.",
+        "articulos_referencia": "1547, 1672",
+        "objetivo_pedagogico": "Evaluar si el alumno explica el efecto de la mora sobre el riesgo del caso fortuito y su excepción (perecimiento igual en poder del acreedor).",
+        "elementos_clave": [
+            {"texto": "Explica que el deudor moroso responde incluso del caso fortuito sobrevenido durante la mora", "keywords": ["responde del caso fortuito", "deudor moroso"], "pregunta": "¿Qué ocurre con el caso fortuito sobrevenido durante la mora?"},
+            {"texto": "Cita los arts. 1547 inc. 2° y 1672 inc. 2°", "keywords": ["art. 1547 inc. 2", "art. 1672 inc. 2"], "pregunta": "¿Qué normas regulan esto?"},
+            {"texto": "Explica la excepción: se libera si prueba que la cosa habría perecido igual en poder del acreedor", "keywords": ["excepción", "habría perecido igual", "en poder del acreedor"], "pregunta": "¿Hay alguna forma de que el deudor moroso igual se libere?"},
+        ],
+    }],
+}
+
+
+def subir_eje9(token):
+    return subir_lote(token, "9. La mora", EJE9_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -615,6 +705,10 @@ def main():
         subir_eje3(token)
     elif accion == "subir-eje7":
         subir_eje7(token)
+    elif accion == "subir-eje4":
+        subir_eje4(token)
+    elif accion == "subir-eje9":
+        subir_eje9(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":
