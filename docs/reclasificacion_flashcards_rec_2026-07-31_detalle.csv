@@ -1,0 +1,226 @@
+id,airtable_id,tema_actual,tema_real,seccion_manual,nota
+1,rec0H2WFx6nDYJizf,6,6,E.4.2,
+2,rec0MnaYwmhui0Grn,6,8,E.4.2 (recuadro presuncion culpa),tema es si la culpa grave se presume igual que la leve; el foco es la carga de la prueba
+3,rec10qqPNcWKENjjm,6,7,E.4.1(d),"dolo se aprecia in concreto, regla propia del dolo"
+4,rec11ROMnLsC1gzsK,6,8,E.4.2 / art. 1547 inc.3,"exoneracion por prueba de diligencia, carga de la prueba"
+5,rec12Pit6ZYHrqjqq,6,6,E.4.2 / art. 44,
+6,rec1lMHpENcDz54Tx,6,6,E.4.2 / E.4 intro,concepto de imputabilidad por culpa
+7,rec2IUXOZOqNvgOWl,6,6,E.4.2 / art. 1547 inc.1,
+8,rec2WMafMP1Owbsmv,6,6,E.4.2 / art. 1547 inc.1,
+9,rec2bodlYIQCyImUF,6,8,art. 1547 inc.3,"por que la culpa se presume, carga de la prueba"
+10,rec3McCoWrc3lecnQ,6,6,E.4.2,
+11,rec3rnVdVVCJ27dd8,6,6,E.4.2 / art. 44,
+12,rec45OOhNsou4MNtB,6,6,E.4.2 / art. 1547 inc.1,
+13,rec4GCU5V8z3iWJPQ,6,8,F.1.5 (prueba caso fortuito) / art. 1671,"caso limite: presuncion de culpa al perecer la cosa en poder del deudor (1671) mas culpa levisima comodato; se prioriza la carga de la prueba, ver caso especial"
+14,rec4P2HsHzAVyQOyO,6,20,H.2.5 / art. 1465,limite a clausulas que atenuan responsabilidad
+15,rec4Wc9fEddcDRsOm,6,6,E.4.2 / art. 44,
+16,rec4dMaf1Voor50lE,6,6,E.4.2,
+17,rec4xydlQNt2M1VJG,6,8,jurisprudencia sobre prueba de culpa grave,carga de la prueba de la culpa grave
+18,rec4yZDYAGmtvCsYL,1,1,A.3 (excepciones al efecto relativo),"companero de las ids 21, 47 y 199, mismo cluster de las tres excepciones al efecto relativo"
+19,rec5BIPIkz2w6QwTE,6,4,B.3,"prueba de la diligencia en obligaciones de medio, conecta con extracontractual"
+20,rec5xhMrmrWlH99zs,1,1,A (marco general),efecto relativo/absoluto del contrato
+21,rec5yBDqVNfLWknts,1,1,A.3 (excepciones al efecto relativo),"companero de las ids 18, 47 y 199, mismo cluster de las tres excepciones al efecto relativo"
+22,rec6JBCPEnQZa9zjg,6,6,E.4.2,
+23,rec6Z4QPgVH0FSg06,6,6,E.4.2 / art. 1547,
+24,rec6mrbIY4xD6EPL3,6,8,E.4.2 (recuadro presuncion culpa),"si la culpa grave se presume, carga de la prueba"
+25,rec6q6s5CfW3lnHkv,6,6,E.4.2,
+26,rec77RcUpRYSTI7BW,6,6,E.4.2,
+27,rec7BjWUQJzzSL7H5,6,6,E.4.2 / art. 1329,
+28,rec7RT73pSecPfu4z,6,4,B.3,
+29,rec7Xjrf7xYDsCw0y,6,8,E.4.2 (recuadro presuncion culpa),debate sobre si se presume la culpa grave
+30,rec7epqZJmKYGvWis,1,1,A.3,efecto del contrato vs efecto de la obligacion
+31,rec8enJc4OQhVrZzC,6,20,H.2.5 / art. 1465,limite a las clausulas exonerativas
+32,rec8kjoK6kp4tZiFN,6,6,E.4.2 / art. 1547 inc.1,
+33,rec90fYCbIiBoB9lB,6,6,E.4.2,
+34,rec9BdCDMydlbmLRs,6,6,E.4.2 / art. 1547,
+35,recA8hfppLyk2JWSg,6,6,E.4.2 / art. 1547 inc.1,
+36,recAWoQbbMQqIiF9T,6,4,B.3,
+37,recAtAKTEdmOiaWFI,6,6,E.4.2 / art. 44,
+38,recBYx3BYCQAi0EwR,6,6,E.4.2 (jerarquia de reglas),
+39,recBbfSVcxLb7mVJx,6,4,B.3 / art. 1547 inc.3,consecuencia probatoria de la distincion medio/resultado
+40,recC1vcx3zq30dL36,6,20,H.2.5 / art. 1465,"renuncia anticipada de culpa grave, limite a clausulas modificatorias"
+41,recC9MCNk5ZuQHnA6,6,6,E.4.2,
+42,recCViEqPjUdpogF0,6,20,H.1 / art. 1547 inc. final,"caracter supletorio del regimen legal, base de la modificacion convencional"
+43,recCXFlt6tLjmGLmI,6,6,"E.4.2 (graduacion, contraste con extracontractual)",
+44,recD6d9CkxHFRnBz1,6,6,E.4.2 / art. 2178,
+45,recDD897sF6Xe9xFJ,6,6,E.4.2 / art. 44,
+46,recDhhoZBLUzPwcsf,6,6,E.4.2 / art. 1547,
+47,recDo0l7Tb3AdqzeC,1,1,A.3,excepciones al efecto relativo del contrato
+48,recDrKgRszy92s61N,6,20,H.1 / art. 2222,clausula que agrava la responsabilidad del depositario
+49,recE5FgtSpPQnSuuH,6,6,E.4.2 / art. 44,
+50,recEAU8k5Gzf429aV,6,6,E.4.2 / art. 1547,
+51,recEPIng75AkFbTvU,6,6,E.4.2,
+52,recF0o9Lse7E7p4Xc,6,8,E.4.2 / B.4,facilidad probatoria por la presuncion de culpa
+53,recF5TnjeLwiViPoE,6,4,B.3 / art. 1547 inc.3 / art. 1698,consecuencia probatoria medio/resultado
+54,recF9rZ0PLYhIKxPo,6,4,B.3 / art. 1547 inc.3 / art. 1698,consecuencia probatoria medio/resultado
+55,recFHWtkl7VRE6o94,1,1,A.3 / A.4,sistema de remedios frente al incumplimiento
+56,recFRMawzroSaHlkX,6,6,"E.4.2 (graduacion, contraste)",
+57,recFtbXAXXBWYoaur,6,6,E.4.2 / art. 44,
+58,recGNrmqR5tPp8z9T,6,6,E.4.2,
+59,recGodXmacurM4sDk,6,6,E.4.2 / art. 1547,
+60,recGtHWurc2dJL2T1,1,1,A.3,efecto relativo del contrato
+61,recH9qXbxUJnhTG9A,6,6,E.4.2 (jerarquia de reglas),
+62,recHL0LkCKSCgUzDT,6,6,E.4.2 / art. 44,
+63,recHT8UVangz1i4x1,6,7,E.4.1(d),"regla propia del dolo, apreciacion in concreto"
+64,recHoyauv89hdz4vN,6,9,E.7 intro / art. 1557,mora y obligaciones de no hacer
+65,recHr2LXWHI8KY4MQ,1,1,A.3,ubicacion del titulo XII
+66,recHrmdq5jFR2Wdjs,6,9,E.7 intro / art. 1557,
+67,recHx0CE80P7TIXeT,6,4,B.3 / art. 1698,consecuencia probatoria medio/resultado
+68,recI08CLw7vFNWwu2,6,4,B.3 / art. 1547 inc.3 / art. 1698,consecuencia probatoria medio/resultado/extracontractual
+69,recId6uUtt9QxnJoy,6,6,E.4.2 (jerarquia de reglas),
+70,recIkndA8LyoyHHYs,6,6,E.4.2 (jerarquia de reglas),
+71,recIlHt8mKI0W3eco,6,20,H.1 / art. 1547 inc. final,"base legal de la facultad de pactar, fundamento de clausulas modificatorias"
+72,recJ7y5JnWwQg2jQJ,6,6,E.4.2 / art. 1547,
+73,recJJOyODQAHZSNef,6,1,A.2,"estatutos de responsabilidad, regla general"
+74,recK5IQok3Lq8myQx,6,8,E.4.2 (recuadro presuncion) / B.4,
+75,recKqFh6KJEPFc8kw,6,8,art. 1698 / art. 2158,"ejemplo comparado de carga de la prueba, mandato no desarrollado en el manual"
+76,recKrbNSQD0qAKwyY,6,8,E.4.2 (recuadro presuncion culpa),debate presuncion de culpa grave
+77,recKts5BUgzOz86ow,6,6,E.4.2 / art. 2179,
+78,recL655Mlfxjv98fY,6,6,E.4.2 (jerarquia de reglas),
+79,recL76BzZpbhRcebi,6,8,E.4.2 (recuadro presuncion culpa) / B.4,
+80,recLiJ3Jq3kmDk5uA,6,6,E.4.2 / art. 2288,ejemplo de toda culpa = levisima
+81,recMN0c7USiZophAh,6,8,E.4.2 (recuadro presuncion culpa) / art. 1671,
+82,recMlNe60rwpWjSXb,6,6,E.4.2 / art. 1547,
+83,recMukQvL2BTCQiSE,6,6,E.4.2 / art. 2222,
+84,recNAwWBTc3KKqdLv,6,6,E.4.2,
+85,recNCZ9E6u8uYo2ke,6,6,E.4.2 / arts. 1748 y 1771,
+86,recNZuKSytqaZGCkI,6,20,H.1 / art. 1547 inc. final,clausula que agrava el grado de culpa
+87,recO8rzsc8UHYQWlm,1,1,A.3,
+88,recOAA3KdlxmGH4IH,6,6,E.4.2 / art. 44,
+89,recOvRo96AYwJNaKl,6,6,E.4.2 / art. 44 (jurisprudencia),
+90,recP1fTOe6kBRZSr7,6,8,art. 1698 / art. 2158,"ejemplo comparado, mandato"
+91,recPQaXH5v7whckna,6,6,"E.4.2 / arts. 758, 787, 818",
+92,recPvBGkv0asRWXzG,6,6,E.4.2 (jerarquia de reglas),
+93,recQvE2TeuEqC4TZa,6,6,E.4.2 / art. 2239,
+94,recRZO4tZVgzpJOUv,6,8,E.4.1(a)/(b) vs E.4.2,"comparacion dolo/culpa grave, foco en la prueba"
+95,recS5efY6Mw4KH1Mb,6,6,E.4.2 / art. 44,
+96,recS80gYcpSxv80It,6,6,E.4.2 / art. 1547,
+97,recSX6wEvPilzCOAI,6,6,E.4.2 / art. 44,
+98,recSg1P7X1hONW1Pc,6,8,art. 1547 inc.3,
+99,recSlZSvHX3nCveNt,6,20,H.1 / art. 1547 inc. final / art. 1558,clausula que agrava responsabilidad
+100,recSxvaLGKyLLtzxe,6,6,E.4.2 / art. 44,
+101,recSyEAvd8pEUbFol,6,1,A.2,"estatutos de responsabilidad, doctrina minoritaria"
+102,recSygqa5EqnmlpEQ,6,6,E.4.2 (ejemplos culpa leve),
+103,recTlYEoshNrj46ez,1,1,A.1,concepto de responsabilidad contractual
+104,recTrCiT74DhQj96L,1,1,A (marco general),
+105,recURRO4Sls74hEG0,6,6,"E.4.2 (comparacion, aparte doctrinal)","comparacion solidaria/conjunta, aparte no desarrollado con seccion propia"
+106,recVS4RYSWEJwVDUq,6,6,E.4.2 / art. 787,
+107,recVYjB174tp3ObeH,6,6,E.4.2 / art. 2222,
+108,recWFT9p12LxCghXb,6,20,H.1 / arts. 1547 y 1558 inc. final,base legal de la modificacion convencional
+109,recX1spp0ikvG7yvN,6,6,E.4.2 / art. 44,
+110,recX6DtJhxTTL1o1E,6,6,E.4.2 (comparacion con extracontractual),
+111,recX9g1A3AaZ8AYJ0,1,1,A.3/A.4,"sistema de remedios, doctrina moderna"
+112,recXhXtFYDO3p1ikm,6,6,E.4.2 / art. 2239,
+113,recY6IgMCJ0KBGuQN,1,1,A.3,
+114,recYMWCjbu0nY8pnZ,6,9,E.7 intro (comparacion con delictual),
+115,recYQ55sVfa1u5lPr,1,1,A.3,
+116,recYYtONCpRMpUtuV,6,6,E.4.2 / art. 1547 inc.1,
+117,recYad1anTBJbTWgy,6,4,B.3 / art. 1698,consecuencia probatoria de obligaciones de medio
+118,recYizV88KEtKQgqP,6,20,H.1 (estipulacion prevalece sobre regla supletoria),caso concreto de clausula que fija un grado de culpa distinto
+119,recYv9R7Px7iojRgj,6,20,H.2.5 / art. 1465,
+120,recZ1yb4rh1TfbzQE,1,1,A.3,
+121,recZFpjhbXHY7wFM5,1,18,F.6 / art. 1545,conexion entre fuerza obligatoria e imprevision
+122,recZKuRN8xhzgFvgk,6,6,E.4.2 / art. 2308,
+123,recZWEWjmkYmrtbER,6,17,F.5 / art. 1679,"hecho ajeno del dependiente, eximente"
+124,recZXDsKyVrnUSDdX,6,6,E.4.2 (jerarquia de reglas),
+125,recZZ4P3cJZNKxwA5,6,10,F.1.5 / art. 1547 inc.3,prueba del caso fortuito
+126,recZff0F66XS7brMy,6,8,E.4.2 (recuadro presuncion culpa),
+127,recZnHM47lbIgGqHn,1,1,A.3,
+128,reca8XhqqVHR2VSTg,6,6,E.4.2 / art. 44,
+129,recaNLPyA1ajJr9ow,6,6,E.4.2 / art. 1547 inc.1,
+130,recaXyMPsghBBzV8q,6,4,B.3 / art. 1547 inc.3,consecuencia probatoria de obligacion de resultado
+131,recaYlNSzNmfNM9wq,1,1,A.5,"objetivacion, incumplimiento como llave del sistema"
+132,recaf2KukhGj5R3Um,6,6,E.4.2,
+133,recahS1t47qWVhmQV,6,9,E.7 intro / art. 1557,
+134,recamQgubYHsCoZGU,6,6,E.4.2 (ejemplos culpa leve),
+135,recaxNp7U90B78cZ1,1,1,A.2 / art. 1437,
+136,recaznD2vU8s0B8PL,6,4,B.3 / art. 1547 inc.3,consecuencia probatoria de obligacion de resultado
+137,recbKZrs37dOeUjGh,6,6,E.4.2 / art. 1558,alcance de la equivalencia culpa grave-dolo en los perjuicios
+138,recbgZNIV92fkhGWV,6,6,E.4.2,
+139,recboRfHH7tPQaebg,6,6,E.4.2 / art. 44,
+140,reccSwBcWnmTAi0NL,6,1,A.2,argumento de Meza Barros sobre estatuto de derecho comun
+141,reccWjzGSatG2An7n,6,6,E.4.2 / art. 44,
+142,reccbVHXWhIy9mq8n,6,6,E.4.2 / arts. 2222 y 2178,
+143,reccf3dJiHK1fEhXw,6,6,E.4.2,
+144,reccyoVu2w1oI0CKP,6,9,E.7.5 / art. 1827,"mora del acreedor, tambien relevante para eje 17"
+145,recd9esL3WJbXyG0i,6,8,E.4.2 (recuadro presuncion culpa),
+146,recdEBj7az3p1GdKW,6,8,E.4.2 (recuadro presuncion culpa),
+147,recdQaua35oiG2nFU,6,6,E.4.2 / art. 2239,
+148,recdmwsxOHsBcHzvA,6,17,F.5 / art. 1679,
+149,recdoTvuMzH9xYmQZ,6,6,"E.4.2 (comparacion, aparte doctrinal) / arts. 1511 y 1526",
+150,recdvvSdRBWSU9Q4k,6,7,E.4.1 / art. 44,
+151,rece4ZKtwz7esIvqU,6,6,E.4.2 / art. 44,
+152,rece7aBhAjDT7IzRc,6,6,E.4.2 (jerarquia de reglas),
+153,receCGNRHOjZy9TUN,6,6,E.4.2 (ejemplos toda culpa),
+154,receRt0BH6pGApxzY,1,1,A.3,
+155,recfAJRGysOeywWAc,6,1,A.2,doctrina minoritaria Barros
+156,recfQMtmc5E3Jfo7T,6,6,E.4.2,
+157,recfQVO9mCRy0qEO5,6,6,E.4.2 (comparacion con extracontractual),
+158,recfa2kCvdfw1nX3C,6,6,E.4.2 / art. 2178,
+159,recfi92dhc5xaOA6y,6,8,art. 1547 inc.3,
+160,recgBlIYRx0Vw7jIR,6,6,E.4.2 / art. 44,
+161,recgCZOBrtBHY3q9g,6,8,art. 1547 inc.3,
+162,recgZTfO8fVp0tncb,6,6,E.4.2 / art. 44,
+163,rechQTANdky1tRH3P,6,6,E.4.2 (comparacion con extracontractual),
+164,reciCOkvtntX1UGar,1,1,A.3 / H.2.2 / art. 1546,"buena fe integradora, tambien relevante para eje 20"
+165,reciLknW4yd92aS3c,6,6,"E.4.2 (comparacion, teoria unitaria)",
+166,recixwM535JvzhJl0,6,6,E.4.2 / art. 2308,
+167,recj4E6By7xwU8DW1,6,6,E.4.2 / art. 2288,
+168,recjPcQeg6HUCaEMJ,6,1,A.2,
+169,recjjFKSPWRCZt57N,6,17,F.5 / arts. 1590 y 1677,
+170,recjq9arAlKUqQ4qH,6,6,E.4.2,
+171,recjzh6aFXLU6OWVt,6,6,E.4.2 / art. 2288,
+172,reckSGFpOQQ2LFrgC,1,1,A.3 / art. 1545,
+173,reckSn1sFQn1QqarV,6,4,B.3 / art. 1547 inc.3,consecuencia probatoria de obligacion de resultado
+174,reckeJ9ecMkBlcYBQ,6,6,E.4.2 / art. 44,
+175,reckmK4w4QHViyuwi,6,8,art. 1671,
+176,reckwSEGM8o1E5vnG,6,8,E.4.2 (recuadro presuncion culpa),
+177,reckzPIoYzCVdG2z0,1,1,A.3,
+178,reclO9GImZZ7bLNty,6,6,E.4.2 / art. 1547 inc.1,
+179,reclUbBumAC3i5sum,6,6,E.4.2 / art. 2288,
+180,reclVMHsMCPnwVzSu,6,6,E.4.2 / art. 44,
+181,recm0pzKEU84o769p,6,6,E.4.2 / art. 44,
+182,recm3SoKbDQTUND4x,6,6,E.4.2 / art. 2129,
+183,recm6xCrNf1LFL4eG,1,1,A.3 / art. 1546,
+184,recnEIpDfuBJDoOjy,6,6,E.4.2 / art. 1547,
+185,recoOHXFjDIIKH3Po,6,6,E.4.2,
+186,recoTBACJa3VZZrCh,6,6,E.4.2 / art. 44,
+187,recoXbgynhGrtSvyE,6,6,E.4.2 / art. 2222,
+188,recoYXJcWiIRysAWE,6,8,art. 1698 vs art. 1547 inc.3,
+189,recovwyE3hR2ZHzLF,6,8,art. 2158,
+190,recpAN97IMtxn6Ay6,6,6,"E.4.2 / arts. 758, 787, 818",
+191,recpS06g25Hc5up27,6,6,E.4.2 / art. 1547 inc.1,
+192,recpac3xnsQoObt2n,6,20,H.2.5 / art. 1465,
+193,recpeMZxt62MN9xzn,6,6,E.4.2 (jerarquia de reglas),
+194,recpgop4A3lX1W1i6,6,8,art. 1547 inc.3 / art. 1698,
+195,recphjlzXoBPuLblg,6,8,art. 1547 inc.3,
+196,recqZxDhXebFRb1RB,6,6,E.4.2 / art. 758,
+197,recr16qXPz0RwZ0QC,6,6,"E.4.2 (comparacion) / arts. 1511, 1526, 2317",
+198,recrBsEyw7uxnDGGQ,6,6,E.4.2 / art. 2178,
+199,recrzYHzk9aux9oLY,1,1,A.3 / art. 1902,
+200,recsmyV39qJHY1030,6,6,E.4.2 / art. 1558,
+201,recsxgfCnxs3EhRaf,6,6,E.4.2 / art. 256,
+202,rectQ5YA48p6rEzd6,6,8,art. 1547 inc.3,
+203,recumk39kakdMG1t1,6,6,E.4.2 / art. 2288,
+204,recvMHVBeXcgtEhn9,6,4,B.3 / art. 1698,consecuencia probatoria de obligacion de medios
+205,recviVfrtfX23aydC,6,20,H.1 / art. 1547,
+206,recwF30qOAJiM5Q8g,6,6,E.4.2 / art. 427,
+207,recwPMN6Da4gibIpN,6,6,E.4.2,
+208,recwd1o3dpv1LK7ie,6,20,H.2.5 / art. 1465,
+209,recwej98DWq8Jp0GQ,6,6,E.4.2 / art. 2317 inc.2,"alcance de culpa grave = dolo, solidaridad"
+210,recwsjzNWUz4zfsPm,6,17,F.5 / arts. 1590 y 1677,
+211,recx1TtCYRrSEgrWN,6,6,E.4.2 / art. 44,
+212,recx3cIIngoNgC6ZH,6,4,B.3 / art. 1698,
+213,recx6YHbDXMKeIckI,6,20,H.1 / art. 2222 inc.1,
+214,recxLHqmPj6BiuUEU,6,6,E.4.2 / art. 1547,
+215,recxMLE3B8fBGIwAo,6,4,B.3 / art. 1547 inc.3,
+216,recxpanC155hYNodd,6,8,E.4.2 (recuadro presuncion culpa),
+217,recxxwfv4RF0NGtF5,6,6,E.4.2 / art. 44,
+218,recyIvWS1UZv6W6Bb,6,8,art. 1671,
+219,recymIycmfnSJ6twj,6,8,E.4.2 (recuadro presuncion culpa),
+220,recynCL2ORGkEgPXP,6,6,E.4.2 / art. 2317 inc.2,
+221,reczAOiKhywPTvWlg,6,1,A.2,
+222,reczGjX2FM8vJoFlo,6,6,E.4.2 / art. 1547,
+223,reczOefS24zQqOAR1,6,6,E.4.2 / art. 2179,
+224,reczivDYmyrxAfjU8,6,6,E.4.2 / art. 2288,
+225,reczlz7SPCWK04u6K,6,9,E.7.5 / art. 1827,
