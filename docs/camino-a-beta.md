@@ -218,6 +218,15 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   API de Airtable, no copiados del índice, para no romper el próximo
   sync. Precontractual queda con cobertura de Evaluación en los 10 ejes
   (ninguno en cero) una vez corridos esos 59 `UPDATE`.
+- **Fase 1 de Precontractual (REP) hecha (2026-07-31)**, vía agente en
+  background: `docs/cobertura_subtema_rep_2026-07-31.md`. **Buena
+  noticia, a diferencia de Contractual: Precontractual llega parejísima,
+  sin ejes en cero ni concentración anómala** — 9 de los 10 ejes en 6
+  ítems de Evaluación (solo B en 5, por `hist-pre-mc-015` sin resolver),
+  las 59 Flashcards repartidas 5-6 por eje, las 47 Alternativas en 4-5
+  por eje. **No hay ejes débiles que ameriten generar contenido nuevo acá
+  por ahora.** Con esto, REX, REC y REP quedan con Fase 0 y Fase 1
+  completas.
 
 ## SQL pendientes de correr en Supabase, todos juntos (orden importa)
 
