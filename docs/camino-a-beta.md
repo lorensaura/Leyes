@@ -185,10 +185,39 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 - **Contractual: 9/51 ítems de Evaluación ya estaban linkeados a `Temas`
   antes de la Fase 0 de arriba** (incluida la fila corrupta, que contaba
   como "linkeada" sin ser contenido real). Con la Fase 0 ya hecha, quedan
-  48/51 reales (2 se van a Extracontractual). Precontractual sigue en
-  0/60, sin empezar. Ver `docs/contenido-airtable-supabase.md` para la
-  tabla actualizada (pendiente de refrescar con estos números después de
-  correr los `UPDATE`).
+  48/51 reales (2 se van a Extracontractual). Ver
+  `docs/contenido-airtable-supabase.md` para la tabla actualizada
+  (pendiente de refrescar con estos números después de correr los
+  `UPDATE`).
+- **Fase 1 de Contractual (REC) hecha (2026-07-31)**, vía agente en
+  background: `docs/cobertura_subtema_rec_2026-07-31.md` (tabla de los 21
+  ejes × Aplic/DetE/Just/DiscMC/Flashcards/Alternativas). **Hallazgo
+  grave: las 225 Flashcards de Contractual están concentradas en solo 2
+  de los 21 ejes** (200 en eje 6 "La culpa contractual y su graduación",
+  25 en eje 1), los otros 19 ejes en cero — verificado que es así de
+  verdad en Airtable (no un bug de sync). Dentro del bucket del eje 6,
+  una revisión por palabra clave encontró que **~30 de esas 200 tarjetas
+  (15%) parecen ser en realidad de eje 4 (obligaciones de medio/resultado)
+  u 8 (presunción de culpa)**, con los IDs exactos listados en el doc —
+  hipótesis con evidencia, no reclasificado todavía. Laura decide si
+  amerita una pasada de reetiquetado y si conviene generar Flashcards
+  nuevas para los 19 ejes en cero. Confirma además que los ejes 5 y 13
+  del hallazgo de la Fase 0 son huecos reales de contenido (no
+  estructurales como 2/11/21).
+- **Fase 0 de Precontractual (REP) hecha (2026-07-31)**, vía agente en
+  background: `docs/fase0_rep_clasificacion_2026-07-31.md`. De 60 ítems
+  de Evaluación (todos partían sin eje), 59 quedaron clasificados con
+  confianza (statements en ese doc, en la lista consolidada de abajo).
+  Solo `hist-pre-mc-015` ("recepción de Ihering en el BGB alemán") queda
+  sin resolver, genuinamente partido entre el eje B y el eje J, con la
+  evidencia de ambos lados expuesta en el doc para que Laura decida. A
+  diferencia de Contractual, acá **el manual sí calza 1:1 con el catálogo
+  de 10 ejes (A-J) de Airtable** — pero ojo, el índice del manual usa
+  títulos acortados para 3 ejes (C, F, J) que no coinciden con el título
+  real ni con Airtable; los `UPDATE` se generaron por script contra la
+  API de Airtable, no copiados del índice, para no romper el próximo
+  sync. Precontractual queda con cobertura de Evaluación en los 10 ejes
+  (ninguno en cero) una vez corridos esos 59 `UPDATE`.
 
 ## SQL pendientes de correr en Supabase, todos juntos (orden importa)
 
@@ -229,12 +258,17 @@ que alguien también mueva el registro ahí (borrarlo de la tabla de
 Contractual en Airtable y recrearlo en la de Extracontractual, linkeado
 al eje correcto). Detalle en ese mismo doc.
 
-**5. Alternativa redundante de Extracontractual**:
+**5. Los 59 de la Fase 0 de Precontractual**: statements completos en
+`docs/fase0_rep_clasificacion_2026-07-31.md` (sección final del doc), no
+repetidos acá. `hist-pre-mc-015` no tiene statement, queda pendiente de
+que Laura decida entre eje B o J (ver ese doc).
+
+**6. Alternativa redundante de Extracontractual**:
 ```sql
 delete from public.alternativas where id = 'ext-alt-002';
 ```
 
-**6. Solo si Laura decide borrar la fila corrupta en vez de investigarla**:
+**7. Solo si Laura decide borrar la fila corrupta en vez de investigarla**:
 ```sql
 delete from public.evaluacion_practica where codigo = 'rc-detect-001';
 ```
