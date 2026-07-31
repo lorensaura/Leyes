@@ -689,6 +689,28 @@ def subir_eje10(token):
     return subir_lote(token, "10. El caso fortuito o fuerza mayor", EJE10_EVALUACION)
 
 
+EJE12_EVALUACION_EXTRA = {
+    "deteccion": [{
+        "id": "rc-detect-020",
+        "subtema": "Daño futuro cierto (lucro cesante) vs. daño eventual (art. 1698)",
+        "caso": "Un alumno responde: \"El daño futuro nunca es indemnizable, porque solo se indemniza el daño ya producido y cierto al momento de la demanda; el lucro cesante, al ser un daño que todavía no ocurre, siempre queda excluido de la indemnización.\"",
+        "enunciado": "Identifica el error del alumno y explica la regla correcta sobre el daño futuro.",
+        "respuesta_modelo": "El alumno confunde daño futuro con daño eventual. El requisito es que el daño sea cierto, no que ya se haya producido: la certidumbre se refiere a la existencia del daño, no a si ya ocurrió. Un daño futuro puede ser cierto, como la pérdida de ganancias que con seguridad se habrían obtenido, y por tanto es indemnizable; lo que no se indemniza es el daño meramente posible o eventual, aquel cuya producción es incierta. El lucro cesante es, precisamente, el ejemplo típico de un daño futuro cierto: no ha ocurrido todavía, pero existe certeza suficiente de que habría ocurrido de no mediar el incumplimiento, por lo que sí es indemnizable.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue daño futuro (indemnizable si es cierto) de daño eventual (no indemnizable), sin confundir \"futuro\" con \"incierto\".",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno confunde daño futuro con daño eventual", "keywords": ["confunde futuro con eventual"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Explica que la certidumbre se refiere a la existencia del daño, no a si ya se produjo", "keywords": ["certidumbre", "existencia no producción"], "pregunta": "¿A qué se refiere el requisito de que el daño sea cierto?"},
+            {"texto": "Concluye que el lucro cesante es el ejemplo típico de daño futuro cierto, indemnizable", "keywords": ["lucro cesante", "daño futuro cierto"], "pregunta": "¿Es indemnizable el lucro cesante entonces?"},
+        ],
+    }],
+}
+
+
+def subir_eje12_extra(token):
+    return subir_lote(token, "12. Los perjuicios indemnizables", EJE12_EVALUACION_EXTRA)
+
+
 EJE12_EVALUACION = {
     "aplicacion": [{
         "id": "rc-aplic-018",
@@ -796,6 +818,41 @@ EJE13_EVALUACION = {
 
 def subir_eje13(token):
     return subir_lote(token, "13. Avaluación de perjuicios y cláusula penal", EJE13_EVALUACION)
+
+
+EJE14_EVALUACION_EXTRA = {
+    "justificacion": [{
+        "id": "rc-just-019",
+        "subtema": "Por qué la acción de cumplimiento no exige daño ni culpa/dolo (art. 1698)",
+        "enunciado": "¿Por qué la acción de cumplimiento forzado no exige acreditar daño ni necesariamente culpa o dolo del deudor, a diferencia de la acción de indemnización de perjuicios?",
+        "respuesta_modelo": "Porque los presupuestos de procedencia de la acción de cumplimiento son solamente dos: que exista una obligación exigible y que la misma se haya incumplido. La imputación puede realizarse en forma objetiva: basta que el acreedor acredite la existencia de la obligación (art. 1698), correspondiendo al deudor la carga de probar su extinción. No se exige daño porque la acción de cumplimiento no busca reparar un perjuicio, sino obtener lo que ya se debía desde un principio: el acreedor solo pide que se le dé lo que el contrato le prometió, no una compensación por algo distinto. Y no se exige culpa ni dolo porque la responsabilidad por incumplimiento (que sí los exige) es un remedio distinto, pensado para cuando además del incumplimiento hay un daño que reparar; la acción de cumplimiento, en cambio, se limita a hacer valer el derecho de crédito tal como nació, sin necesidad de indagar en la conducta interna del deudor.",
+        "articulos_referencia": "1698",
+        "objetivo_pedagogico": "Evaluar si el alumno explica por qué los presupuestos de la acción de cumplimiento (obligación exigible + incumplimiento) son más livianos que los de la indemnización de perjuicios.",
+        "elementos_clave": [
+            {"texto": "Identifica los dos únicos presupuestos: obligación exigible e incumplimiento", "keywords": ["dos presupuestos", "obligación exigible", "incumplimiento"], "pregunta": "¿Qué presupuestos exige la acción de cumplimiento?"},
+            {"texto": "Explica que no se exige daño porque no busca reparar un perjuicio sino obtener lo ya debido", "keywords": ["no exige daño", "obtener lo debido"], "pregunta": "¿Por qué no hace falta probar daño?"},
+            {"texto": "Explica que no se exige culpa ni dolo porque esos son propios de la indemnización, un remedio distinto", "keywords": ["no exige culpa ni dolo", "remedio distinto"], "pregunta": "¿Y por qué no hace falta probar culpa o dolo?"},
+        ],
+    }],
+    "deteccion": [{
+        "id": "rc-detect-021",
+        "subtema": "Imposibilidad (límite real de la acción de cumplimiento) vs. mera onerosidad sobreviniente",
+        "caso": "Un alumno responde: \"Si cumplir la obligación se ha vuelto mucho más caro o difícil para el deudor por circunstancias sobrevinientes, aunque todavía sea físicamente posible, el acreedor ya no puede exigir el cumplimiento forzado, porque la ley reconoce ahí un límite de imposibilidad.\"",
+        "enunciado": "Identifica el error del alumno y explica correctamente el límite de la imposibilidad a la acción de cumplimiento.",
+        "respuesta_modelo": "El alumno confunde la imposibilidad (física o jurídica) con la mera onerosidad o dificultad sobreviniente. El límite de la acción de cumplimiento es la imposibilidad de la prestación: física, cuando la naturaleza del objeto (una especie o cuerpo cierto) se destruye o pierde, o jurídica, cuando una norma prohíbe cumplir o media una orden de autoridad competente. A lo imposible nadie está obligado, pero que cumplir se haya vuelto más caro o difícil no es lo mismo que ser imposible: la prestación sigue siendo física y jurídicamente realizable, solo que a un costo mayor. Esa situación distinta, en todo caso, es el terreno propio de la teoría de la imprevisión, no de la imposibilidad, y en Chile no está reconocida con carácter general.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue la imposibilidad (física o jurídica, límite real de la acción de cumplimiento) de la mera onerosidad sobreviniente (terreno de la imprevisión, no de la imposibilidad).",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno confunde imposibilidad con mera onerosidad o dificultad", "keywords": ["confunde imposibilidad con onerosidad"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Explica que la imposibilidad es física (destrucción del objeto) o jurídica (prohibición legal u orden de autoridad)", "keywords": ["imposibilidad física", "imposibilidad jurídica"], "pregunta": "¿Qué tipos de imposibilidad reconoce el manual?"},
+            {"texto": "Señala que la mayor onerosidad es terreno de la imprevisión, no de la imposibilidad", "keywords": ["terreno de la imprevisión", "no imposibilidad"], "pregunta": "¿Dónde encaja entonces el caso de la mera onerosidad?"},
+        ],
+    }],
+}
+
+
+def subir_eje14_extra(token):
+    return subir_lote(token, "14. El cumplimiento forzado", EJE14_EVALUACION_EXTRA)
 
 
 EJE14_EVALUACION = {
@@ -946,6 +1003,28 @@ def subir_eje18(token):
     return subir_lote(token, "18. Imprevisión y frustración del fin del contrato", EJE18_EVALUACION)
 
 
+EJE20_EVALUACION = {
+    "deteccion": [{
+        "id": "rc-detect-019",
+        "subtema": "El límite infranqueable de las cláusulas exonerativas: nunca dolo ni culpa grave (arts. 1465, 44)",
+        "caso": "Un alumno responde: \"Las partes en un contrato pueden pactar válidamente una cláusula que exonere completamente al deudor de toda responsabilidad, incluso si actúa con dolo o con culpa grave, porque la autonomía de la voluntad permite a las partes distribuir libremente los riesgos del contrato como mejor les parezca.\"",
+        "enunciado": "Identifica el error del alumno y explica el límite correcto a la libertad de atenuar la responsabilidad.",
+        "respuesta_modelo": "El alumno pasa por alto un límite categórico a la libertad de las partes. Nunca podrá convenirse que se exima al deudor de responsabilidad por dolo, pues ello equivaldría a condonar el dolo futuro, prohibido expresamente por el art. 1465 (la condonación del dolo futuro no vale). Y por la misma razón, tampoco puede eximirse al deudor de la culpa lata o grave, porque el art. 44 dispone que esta, en materias civiles, equivale al dolo. De modo que la irresponsabilidad pactada solo puede referirse válidamente a la culpa leve y levísima, o a responder de menos perjuicios, pero jamás al dolo ni a la culpa grave. Una cláusula de exoneración total e indiscriminada, además, degeneraría en una condición meramente potestativa del deudor (\"cumpliré solo si quiero\"), nula conforme al art. 1478.",
+        "articulos_referencia": "1465, 44, 1478",
+        "objetivo_pedagogico": "Evaluar si el alumno conoce el límite infranqueable a las cláusulas exonerativas: nunca puede pactarse exención de responsabilidad por dolo ni por culpa grave.",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno pasa por alto el límite del dolo y la culpa grave", "keywords": ["límite infranqueable", "dolo y culpa grave"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Cita el art. 1465 (condonación del dolo futuro no vale)", "keywords": ["art. 1465", "condonación dolo futuro no vale"], "pregunta": "¿Qué norma prohíbe exonerar del dolo?"},
+            {"texto": "Explica que por el art. 44 la culpa grave equivale al dolo, extendiendo la prohibición", "keywords": ["art. 44", "culpa grave equivale al dolo"], "pregunta": "¿Por qué la prohibición se extiende también a la culpa grave?"},
+        ],
+    }],
+}
+
+
+def subir_eje20(token):
+    return subir_lote(token, "20. Cláusulas modificatorias de responsabilidad", EJE20_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -1081,6 +1160,12 @@ def main():
         subir_eje16(token)
     elif accion == "subir-eje18":
         subir_eje18(token)
+    elif accion == "subir-eje20":
+        subir_eje20(token)
+    elif accion == "subir-eje12-extra":
+        subir_eje12_extra(token)
+    elif accion == "subir-eje14-extra":
+        subir_eje14_extra(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":

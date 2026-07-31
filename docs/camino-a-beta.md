@@ -351,11 +351,18 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   - Eje 18 (3→4): el "par" del art. 2003 (regla 1ª rechaza el
     encarecimiento de insumos como riesgo ordinario, regla 2ª acepta la
     revisión por vicio oculto del suelo).
-  Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
-  propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos). Los ejes 15, 19 y 20 ya tienen los 4
-  tipos representados (15 y 19 completos desde antes; 20 le falta
-  Detección de error).
+  - Eje 20 (4→5): el límite infranqueable de las cláusulas exonerativas,
+    nunca dolo ni culpa grave (arts. 1465/44/1478).
+  - Eje 12 (+1) y eje 14 (+2): últimos huecos de tipo cerrados (daño
+    futuro cierto vs. eventual; por qué el cumplimiento no exige daño ni
+    culpa/dolo; imposibilidad vs. mera onerosidad sobreviniente).
+  **Verificado en vivo (2026-08-01): los 18 ejes reales de Contractual
+  (todos salvo 2 y 21, sin sección propia en el manual) tienen
+  representados los 4 tipos de Evaluación, sin ningún hueco — el
+  objetivo mínimo que pidió Laura está cumplido.** Sigue pendiente
+  decidir sobre 2 y 21, y llevar cada eje a un volumen mayor (varios
+  subtemas por tipo) si Laura lo
+  pide explícitamente, siguiendo el mismo proceso de lotes chicos.
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).
