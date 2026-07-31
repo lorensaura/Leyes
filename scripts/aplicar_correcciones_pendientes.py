@@ -689,6 +689,47 @@ def subir_eje10(token):
     return subir_lote(token, "10. El caso fortuito o fuerza mayor", EJE10_EVALUACION)
 
 
+EJE12_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-018",
+        "subtema": "Daño directo vs. indirecto en una cadena causal (art. 1558, ejemplo de las vacas de Pothier)",
+        "caso": "Un agricultor compra semillas que el vendedor sabía que estaban en mal estado. Las semillas, al sembrarse, no germinan y arruinan la cosecha de ese año (el agricultor pierde lo que habría cosechado). Sin ingresos por la cosecha perdida, el agricultor no puede pagar el arriendo del campo, y el dueño del campo lo desaloja judicialmente, quedando sin domicilio ni actividad por varios meses.",
+        "enunciado": "¿Qué parte de estos perjuicios puede cobrar el agricultor al vendedor de las semillas, conforme al art. 1558?",
+        "respuesta_modelo": "Puede cobrar el daño directo: la pérdida de la cosecha que las semillas defectuosas no permitieron obtener, consecuencia inmediata y necesaria del incumplimiento. No puede cobrar, en cambio, el desalojo ni sus consecuencias posteriores (quedar sin domicilio ni actividad): esos perjuicios son daño indirecto, porque entre la venta de las semillas defectuosas y el desalojo se interponen otras causas independientes (la falta de pago del arriendo, la decisión del dueño del campo de desalojarlo), igual que en el ejemplo clásico de las vacas de Pothier, donde el comerciante que vendió una vaca enferma responde de los animales contagiados (daño directo) pero no de la ruina financiera final del comprador, encadenada pero remota. El artículo 1558 excluye los daños indirectos de la indemnización, incluso si hubiera mediado dolo del vendedor.",
+        "articulos_referencia": "1558",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica la distinción entre daño directo e indirecto (art. 1558) a un caso nuevo con estructura de cadena causal, similar al ejemplo clásico de las vacas de Pothier.",
+        "elementos_clave": [
+            {"texto": "Identifica la pérdida de la cosecha como daño directo, consecuencia inmediata del incumplimiento", "keywords": ["daño directo", "pérdida de cosecha"], "pregunta": "¿Qué perjuicio es daño directo en este caso?"},
+            {"texto": "Identifica el desalojo y sus consecuencias como daño indirecto, por interponerse otras causas", "keywords": ["daño indirecto", "otras causas se interponen"], "pregunta": "¿Y el desalojo, qué tipo de daño es?"},
+            {"texto": "Concluye que el art. 1558 excluye los daños indirectos, incluso con dolo", "keywords": ["art. 1558", "excluye indirectos", "incluso con dolo"], "pregunta": "¿Se puede cobrar el daño indirecto aunque hubiera dolo del vendedor?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-015",
+        "subtema": "Requisito de que el daño no esté ya reparado (compensatio lucri cum damno, subrogación del asegurador)",
+        "caso": "Una empresa de transporte pierde en un incendio la mercadería que debía entregar a un cliente, incumpliendo el contrato de transporte. El cliente ya cobró el seguro de mercadería que había contratado por su cuenta, cubriendo el valor total de lo perdido, y además demanda a la empresa de transporte por el mismo monto.",
+        "enunciado": "¿Puede el cliente cobrar la indemnización completa a la empresa de transporte, además de lo ya percibido del seguro?",
+        "opciones": {
+            "a": ("Sí, porque el seguro y la indemnización contractual son fuentes independientes y pueden acumularse sin límite",
+                  "Error: el daño no puede ser indemnizado dos veces por el mismo hecho; el requisito de que el daño no esté ya reparado impide la doble reparación, sin perjuicio de la subrogación del asegurador."),
+            "b": ("No, porque el daño ya fue reparado por el seguro, y uno de los requisitos del daño indemnizable es que no esté ya reparado o indemnizado; corresponde, en todo caso, la subrogación del asegurador",
+                  "CORRECTO. Uno de los requisitos del daño indemnizable es que no haya sido ya satisfecho por otra vía; si el seguro ya cubrió el daño, no puede pretenderse doble reparación, sin perjuicio de que el asegurador se subrogue en los derechos del cliente contra la empresa de transporte."),
+            "c": ("No, porque el contrato de seguro extingue por completo cualquier responsabilidad de la empresa de transporte frente al cliente",
+                  "Error: el seguro no extingue la responsabilidad del deudor incumplidor; lo que ocurre es que el asegurador que ya pagó se subroga en la acción del cliente contra la empresa, no que la empresa quede liberada sin más."),
+            "d": ("Sí, siempre que el cliente pruebe que el monto del seguro fue insuficiente para cubrir todo el perjuicio",
+                  "Error: la pregunta plantea que el seguro cubrió el valor total de lo perdido, no un monto insuficiente; en ese supuesto no hay perjuicio adicional que cobrar directamente al cliente."),
+        },
+        "correcta": "B",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno reconoce el requisito de que el daño no esté ya reparado (compensatio lucri cum damno) y la figura de la subrogación del asegurador.",
+    }],
+}
+
+
+def subir_eje12(token):
+    return subir_lote(token, "12. Los perjuicios indemnizables", EJE12_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -812,6 +853,8 @@ def main():
         subir_eje8(token)
     elif accion == "subir-eje10":
         subir_eje10(token)
+    elif accion == "subir-eje12":
+        subir_eje12(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":

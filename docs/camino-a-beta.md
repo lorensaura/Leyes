@@ -328,9 +328,13 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   - Eje 10 (3→5): imprevisibilidad y fenómenos recurrentes (jurisprudencia
     de la sequía); ajenidad como riesgo asumido por el propio deudor al
     contratar (ejemplo de Abeliuk, el comerciante que vende lo que no tiene).
+  - Eje 12 (5→7): daño directo vs. indirecto en una cadena causal (art.
+    1558, ejemplo clásico de las vacas de Pothier); requisito de que el
+    daño no esté ya reparado (*compensatio lucri cum damno*, subrogación
+    del asegurador).
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 12, 13, 14, 15, 16, 17,
+  Laura decida desarrollarlos), y 13, 14, 15, 16, 17,
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).
