@@ -592,6 +592,68 @@ def subir_eje9(token):
     return subir_lote(token, "9. La mora", EJE9_EVALUACION)
 
 
+EJE6_EVALUACION = {
+    "deteccion": [{
+        "id": "rc-detect-014",
+        "subtema": "Las cuatro fuentes jerárquicas para determinar el grado de culpa",
+        "caso": "Un alumno responde: \"El artículo 1547 siempre determina de qué culpa responde el deudor en un contrato, independientemente de lo que hayan pactado las partes o de lo que digan otras normas del Código, porque es la regla general en materia de responsabilidad contractual.\"",
+        "enunciado": "Identifica el error del alumno y explica el orden correcto para determinar el grado de culpa.",
+        "respuesta_modelo": "El alumno se equivoca al tratar el art. 1547 como la primera y única fuente. En realidad, el grado de culpa de que responde el deudor se determina siguiendo un orden de prelación de cuatro fuentes: primero, lo que las partes hayan estipulado; segundo, las leyes especiales, de haberlas; tercero, las normas del Código Civil propias de cada contrato (por ejemplo, culpa levísima en el comodato, art. 2178, o culpa grave en el depósito, art. 2222); y solo a falta de las tres anteriores, en cuarto y último lugar, opera supletoriamente el art. 1547, que distribuye la culpa según a quién beneficia el contrato. El art. 1547 no es, entonces, la regla que siempre se aplica: es la norma general y supletoria, que cede ante la estipulación de las partes, las leyes especiales y las normas propias de cada contrato.",
+        "articulos_referencia": "1547, 2178, 2222",
+        "objetivo_pedagogico": "Evaluar si el alumno conoce el orden jerárquico de las cuatro fuentes para determinar el grado de culpa, y no trata el art. 1547 como la única o primera fuente.",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno trata erróneamente al art. 1547 como la única/primera fuente", "keywords": ["error", "art. 1547 no es la única fuente"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Enumera el orden correcto: estipulación de las partes, leyes especiales, normas del Código propias del contrato, y supletoriamente el art. 1547", "keywords": ["orden jerárquico", "cuatro fuentes"], "pregunta": "¿Cuál es el orden correcto para determinar el grado de culpa?"},
+            {"texto": "Explica que el art. 1547 es la norma general y supletoria, no la primera", "keywords": ["general y supletoria", "cede ante las demás"], "pregunta": "¿Qué lugar ocupa entonces el art. 1547?"},
+        ],
+    }],
+}
+
+
+def subir_eje6(token):
+    return subir_lote(token, "6. La culpa contractual y su graduación", EJE6_EVALUACION)
+
+
+EJE8_EVALUACION = {
+    "justificacion": [{
+        "id": "rc-just-015",
+        "subtema": "La presunción de culpa contractual como ventaja frente a la vía extracontractual",
+        "enunciado": "¿Por qué se dice que la presunción de culpa del art. 1547 inc. 3° es \"una de las principales ventajas de demandar por la vía contractual\"? Contrasta con la regla en materia extracontractual.",
+        "respuesta_modelo": "Porque invierte la carga de la prueba a favor del acreedor. En sede contractual, acreditada la existencia de la obligación y el incumplimiento, la culpa del deudor se presume: es él quien debe probar que empleó la diligencia debida o que medió caso fortuito para liberarse, conforme al art. 1547 inc. 3°. En sede extracontractual, en cambio, la regla general es la inversa: es la víctima quien debe probar la culpa del autor del daño, salvo las presunciones específicas de los arts. 2320 y siguientes. Para un acreedor, litigar por la vía contractual es entonces más ventajoso en términos probatorios: le basta acreditar la obligación y el incumplimiento, sin tener que indagar ni probar qué pasó internamente en la conducta del deudor, carga que recae sobre este último.",
+        "articulos_referencia": "1547, 2320",
+        "objetivo_pedagogico": "Evaluar si el alumno explica la inversión de la carga de la prueba en materia contractual (presunción de culpa) y la contrasta correctamente con la regla general extracontractual.",
+        "elementos_clave": [
+            {"texto": "Explica que en sede contractual, acreditados obligación e incumplimiento, la culpa del deudor se presume", "keywords": ["presunción de culpa", "contractual"], "pregunta": "¿Qué se presume en materia contractual?"},
+            {"texto": "Contrasta con la regla extracontractual: la víctima debe probar la culpa del autor (salvo presunciones específicas)", "keywords": ["extracontractual", "víctima prueba"], "pregunta": "¿Cómo es la regla en materia extracontractual?"},
+            {"texto": "Concluye que esto es una ventaja probatoria para el acreedor que demanda por vía contractual", "keywords": ["ventaja probatoria", "acreedor"], "pregunta": "¿Por qué es esto una ventaja?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-014",
+        "subtema": "Carga de la prueba del caso fortuito (jurisprudencia: Constructora Pardo y González, 2025)",
+        "caso": "En un juicio por incumplimiento de un contrato de construcción, el constructor demandado invoca caso fortuito para excusar el retraso en la obra, pero no rinde ninguna prueba sobre las circunstancias del hecho que alega. El dueño de la obra, por su parte, tampoco presenta prueba sobre la culpa del constructor.",
+        "enunciado": "Conforme al criterio de la Corte Suprema en el caso \"Constructora Pardo y González\" (11 de marzo de 2025, Rol N° 217.959-2023), ¿a quién corresponde la carga de la prueba en esta situación, y qué debería resolver el tribunal?",
+        "opciones": {
+            "a": ("Al dueño de la obra, porque es quien demanda y debe probar la culpa del constructor, igual que en materia extracontractual",
+                  "Error: en materia contractual la culpa se presume (art. 1547 inc. 3°); no es el acreedor quien debe probarla, sino el deudor quien debe probar su diligencia o el caso fortuito."),
+            "b": ("Al constructor, porque invocó el caso fortuito y no rindió la prueba de sus requisitos (impedimento ajeno, imprevisible e irresistible), por lo que su alegación debe rechazarse",
+                  "CORRECTO. Conforme al art. 1547 inc. 3° y al criterio de la Corte Suprema en Constructora Pardo y González, quien invoca el caso fortuito debe probarlo; al no rendir esa prueba, la alegación se rechaza y el constructor queda responsable."),
+            "c": ("A ninguno de los dos, porque al no haber prueba de ninguna parte el tribunal debe absolver al constructor por falta de prueba del incumplimiento",
+                  "Error: el incumplimiento (retraso en la obra) no está en discusión; lo que falta de prueba es la causal de exención invocada por el constructor, cuya carga es suya, no del demandante."),
+            "d": ("Al dueño de la obra, porque debe acreditar tanto el incumplimiento como la ausencia de caso fortuito para que proceda la indemnización",
+                  "Error: el acreedor no debe probar la ausencia de caso fortuito; es el deudor quien, si quiere exonerarse invocándolo, debe probar su concurrencia."),
+        },
+        "correcta": "B",
+        "articulos_referencia": "1547",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente la presunción de culpa contractual y la carga de la prueba del caso fortuito, con apoyo en la jurisprudencia real citada en el manual.",
+    }],
+}
+
+
+def subir_eje8(token):
+    return subir_lote(token, "8. Presunción de culpa y carga de la prueba", EJE8_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -709,6 +771,10 @@ def main():
         subir_eje4(token)
     elif accion == "subir-eje9":
         subir_eje9(token)
+    elif accion == "subir-eje6":
+        subir_eje6(token)
+    elif accion == "subir-eje8":
+        subir_eje8(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":
