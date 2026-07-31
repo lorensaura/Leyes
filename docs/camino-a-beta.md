@@ -298,6 +298,20 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   `docs/flashcards_nuevas_2026-07-31_contractual_eje5.md`, pendientes de
   revisión de Laura y de subir a Airtable (base `Digesto Contractual`,
   tabla `Flashcards`).
+- **Plan "llevar Evaluación a su techo" en Contractual, a pedido
+  explícito de Laura (2026-07-31)**: quiere los 20 ejes con todos sus
+  subtemas cubiertos en los 4 tipos de Evaluación. Primer lote hecho:
+  4 ítems nuevos para el eje 5 (1 por tipo, subtema "el hecho del deudor
+  como tercera modalidad de imputación", arts. 2187/1678), en
+  `docs/evaluacion_nueva_2026-07-31_contractual_eje5.md`, pendiente de
+  revisión antes de subir a Airtable. Eje 5 pasa de 0 a 4 en Evaluación.
+  Sigue eje por eje, 1-2 por lote (mismo límite de siempre), sin
+  bloquearse por la reclasificación de Flashcards en curso (son tablas
+  independientes). Quedan por tocar: 2 y 21 (sin sección propia en el
+  manual, ver hallazgo de Fase 1), y 3, 4, 6, 7, 8, 9, 10, 12, 13, 14,
+  15, 16, 17, 18, 19, 20 con distinto grado de cobertura ya existente
+  (ver `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por
+  eje antes de este lote).
 - **Eje 11 ("La teoría de los riesgos") borrado (2026-07-31)**: Laura
   decidió que no es un eje real (el manual no le dedica sección propia).
   Se borró el registro de la tabla `Temas` de Airtable (`Digesto
