@@ -284,6 +284,37 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   `docs/flashcards_pendientes_2026-07.md` contra esas 225 ya publicadas,
   para ver qué de ese borrador es redundante y qué sigue siendo un hueco
   real, mismo proceso que se hizo con Extracontractual y Precontractual.
+- **5 Flashcards nuevas de Contractual para el eje 5** (hueco cero en las
+  tres columnas, sin riesgo de redundancia), generadas 2026-07-31:
+  `docs/flashcards_nuevas_2026-07-31_contractual_eje5.md`, pendientes de
+  revisión de Laura y de subir a Airtable (base `Digesto Contractual`,
+  tabla `Flashcards`).
+- **Eje 11 ("La teoría de los riesgos") borrado (2026-07-31)**: Laura
+  decidió que no es un eje real (el manual no le dedica sección propia).
+  Se borró el registro de la tabla `Temas` de Airtable (`Digesto
+  Contractual`, confirmado que no había nada linkeado a él antes de
+  borrar). El catálogo de Contractual queda en **20 ejes**, no 21.
+- **Reclasificación completa de las 225 Flashcards de Contractual, en
+  curso (agente en background, 2026-07-31)**: a pedido de Laura, no
+  basta el muestreo del hallazgo 1 de `docs/cobertura_subtema_rec_2026-07-31.md`
+  (~30 de 200 tarjetas del eje 6 que parecían de eje 4/8) — hace falta
+  reclasificar las 225 una por una contra el manual y, con eso resuelto,
+  determinar cuántas tarjetas nuevas hacen falta de verdad por eje (no
+  asumir que los ejes en cero siguen en cero). Resultado esperado en
+  `docs/reclasificacion_flashcards_rec_2026-07-31.md`. **Generar más
+  Flashcards nuevas para Contractual queda en pausa hasta tener este
+  resultado**, para no duplicar contenido que ya existe mal etiquetado.
+- **Hallazgo (2026-07-31): existe un borrador de 2026-07-29 completamente
+  olvidado, nunca subido ni revisado**, `docs/preguntas_pendientes_ejes_debiles_contractual_2026-07.md`
+  (1240 líneas), con preguntas ya redactadas para los ejes débiles de
+  Contractual — pero para `Preguntas_Evaluacion` (el banco del
+  Interrogador), no para Evaluación de Práctica ni para Flashcards. Viene
+  acompañado de `docs/estudio_cobertura_rec_rep_2026-07.md`, que además
+  ya había detectado hace 2 días la misma anomalía de `rc-aplic-002` que
+  la Fase 0 de hoy volvió a encontrar por separado, y anota 5 ítems con
+  el mismo `id` repetido entre `Preguntas_Evaluacion` y Evaluación
+  (posible duplicado, sin revisar). Nada de esto se tocó hoy — queda
+  pendiente que Laura decida si retomar ese borrador del Interrogador.
 - **37 Flashcards nuevas de Precontractual generadas desde el manual, a
   su techo real** (`docs/flashcards_nuevas_2026-07-29_precontractual.md`),
   después de agotar `docs/flashcards_pendientes_2026-07.md` como fuente.

@@ -1,5 +1,13 @@
 # Fase 1 REC: tabla de cobertura por tema/subtema (2026-07-31)
 
+> **Actualización posterior (mismo día):** Laura decidió que el eje 11
+> ("La teoría de los riesgos") no es un eje real y se borró de la tabla
+> `Temas` de Airtable. El catálogo real quedó en 20 ejes, no 21. La tabla
+> de abajo todavía muestra el eje 11 (con 0 en todo, como se documentó
+> acá), tal como estaba el catálogo al momento de escribir este doc — no
+> se reescribió retroactivamente. Ver `docs/camino-a-beta.md` para el
+> estado actual.
+
 > Fase 1 del plan "llevar Evaluación a su techo por tema/subtema" (REX → REC
 > → REP, ver `docs/camino-a-beta.md`), después de la Fase 0 de Contractual
 > (`docs/fase0_rec_clasificacion_2026-07-31.md`). **Importante, a diferencia

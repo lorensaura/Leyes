@@ -1,5 +1,11 @@
 # Fase 0 REC: clasificación por eje de Evaluación de Contractual (2026-07-31)
 
+> **Actualización posterior (mismo día):** Laura decidió que el eje 11
+> ("La teoría de los riesgos") no es un eje real y se borró de la tabla
+> `Temas` de Airtable. El catálogo real quedó en 20 ejes, no 21. Ningún
+> ítem de este doc se clasificó ahí, así que no cambia ninguno de los 40
+> `UPDATE` de más abajo. Ver `docs/camino-a-beta.md` para el estado actual.
+
 > Fase 0 del plan "llevar Evaluación a su techo por tema/subtema" (REX → REC
 > → REP, ver `docs/camino-a-beta.md`), análoga a la que ya se hizo para
 > Extracontractual el 2026-07-30 (`docs/cobertura_subtema_rex_2026-07-30.md`).
