@@ -170,6 +170,41 @@ formulación. Si al terminar de escribir las 4 opciones una persona sin
 formación jurídica podría adivinar la correcta por eliminación obvia,
 reescribe los distractores.
 
+### 0.25 Preguntas "menciona/explica N de M posibles" (M > N): usar `minimo_elementos`
+
+Hallazgo del 2026-07-31: si un ítem de Justificación (o Aplicación con
+recuerdo libre) pide "menciona/explica N [diferencias/requisitos/
+consecuencias]" y el manual en realidad ofrece **más de N** opciones
+válidas (ej. "nueve diferencias" o "seis diferencias" en un recuadro, y
+el enunciado solo pide tres o cuatro), la calificación de la app
+(`app/alternativas.html`) evalúa contra `elementos_clave` como una lista
+fija: si redactás el ítem con solo N `elementos_clave` (los N que se te
+ocurrieron al escribirlo) y una alumna responde con N elementos
+distintos, igualmente correctos, la app la califica mal porque ninguno
+de sus keywords coincide con los que vos elegiste. No es un bug de la
+alumna, es del ítem.
+
+**Regla:** antes de dar por terminado un ítem así, contá cuántas opciones
+válidas ofrece realmente el manual (no solo las N que usaste en la
+`respuesta_modelo`).
+- Si el manual **cierra la enumeración exactamente en N** (ej. "Primero...
+  Segundo..." con solo dos puntos posibles, o una asimilación que el
+  manual describe con exactamente dos consecuencias), no hay problema:
+  `elementos_clave` con esos N es correcto tal cual, la app debe exigir
+  el total.
+- Si el manual ofrece **M > N** opciones (ej. un recuadro que enumera
+  "seis diferencias" pero el enunciado solo pide cuatro), incluí las M
+  completas en `elementos_clave` y agregá el campo `minimo_elementos: N`
+  a la fila. La app entonces da crédito completo con cualquier N
+  elementos correctos de los M, sin importar cuáles eligió la alumna.
+  Si `minimo_elementos` no está presente, la app sigue exigiendo el
+  100% de `elementos_clave` (comportamiento de siempre, no lo agregues
+  si no corresponde).
+
+Antes de aplicar esta regla, correr una vez
+`scripts/supabase_schema_minimo_elementos.sql` en Supabase (agrega la
+columna, no existía).
+
 ### 0.3 Control de redundancia (obligatorio, define desde 2026-07-29)
 
 Esta sección manda sobre cualquier chequeo de redundancia más suelto que

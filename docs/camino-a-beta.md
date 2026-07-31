@@ -6,7 +6,7 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Los ítems ya resueltos se borran del todo (no
 > se dejan tachados) apenas se cierran — quedan igual en el historial
-> de git si hace falta recuperarlos. Última actualización: 2026-07-30.
+> de git si hace falta recuperarlos. Última actualización: 2026-07-31.
 
 ## Hecho
 
@@ -120,15 +120,8 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
      (culpabilidad); `re-aplic-011` y `re-detect-012` (pérdida de chance)
      están en eje 11 y deberían estar en eje 10 (el manual desarrolla la
      chance como parte del requisito de que el daño sea "cierto", líneas
-     1195-1257). El `UPDATE` directo fue bloqueado por el modo auto de
-     Claude Code (escritura en producción); statements para el SQL Editor
-     de Supabase:
-     ```sql
-     update public.evaluacion_practica set tema = '5. La capacidad delictual' where codigo = 're-detect-008';
-     update public.evaluacion_practica set tema = '8. La culpabilidad: dolo y culpa' where codigo = 're-detect-010';
-     update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-aplic-011';
-     update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-detect-012';
-     ```
+     1195-1257). Statements en la lista consolidada de SQL más abajo
+     (punto 2), no repetidos acá.
   2. `ext-alt-029` ("reserva de perjuicios"): no aparece esa frase en el
      manual (es jurisprudencia sobre tramitación, no doctrina del
      apunte), pero temáticamente encaja en el eje 22 (Tribunal,
@@ -144,38 +137,110 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
      semana (esas fueron sobre el manual, no sobre estos 12 ítems
      nuevos). Falta que Laura decida si los lee ella o si pide una
      auditoría de Claude contra el manual, como se hizo con los `hist-`.
-- **Hallazgo nuevo (2026-07-31): fila corrupta y publicada en producción,
+- **Hallazgo 2026-07-31: fila corrupta y publicada en producción,
   `rc-detect-001`** (Contractual, tipo Detección de error). Todos sus
   campos (`caso`, `enunciado`, `respuesta_modelo`, `subtema`,
   `articulos_referencia`, `objetivo_pedagogico`, y el propio `tema`)
   contienen literalmente el texto `"rc-detect-001"` en vez de contenido
   real, y `publicado = true` — una alumna que practique Detección de
-  error en Contractual puede toparse con esto hoy mismo. No se tocó (el
-  `UPDATE`/`DELETE` está bloqueado por el modo auto de Claude Code sobre
-  producción); Laura decide si se borra o si el contenido real se perdió
-  en algún punto de la sincronización y hay que regenerarlo. Statement
-  para borrarlo si se decide eso:
-  ```sql
-  delete from public.evaluacion_practica where codigo = 'rc-detect-001';
-  ```
-- **Contractual ya tiene arranque de Fase 0, no 0/51 como decía este doc
-  hasta ahora**: 9 de sus 51 ítems de Evaluación ya están linkeados a
-  `Temas` (incluida la fila corrupta de arriba, que cuenta como "linkeada"
-  aunque no sea contenido real). Falta clasificar los otros 42.
-  Precontractual sigue en 0/60, sin empezar. Ver
-  `docs/contenido-airtable-supabase.md` para la tabla actualizada.
-- **Borrar `ext-alt-002` de la tabla `alternativas` en Supabase**
-  (redundante con `ext-alt-033`, mismo elemento jurídico: el art. 1437
-  como fuente de la obligación; Laura pidió eliminar la redundante y se
-  decidió conservar `ext-alt-033`, ver
-  `docs/preguntas_pendientes_eje1_2026-07-30.md`). El `DELETE` directo
-  fue bloqueado por el modo auto de Claude Code al ser una acción
-  destructiva sobre producción; además Alternativas ya se maneja por SQL
-  directo, no por Airtable, así que corre a Laura, no a Claude. Statement
-  exacto para el SQL Editor de Supabase:
-  ```sql
-  delete from public.alternativas where id = 'ext-alt-002';
-  ```
+  error en Contractual puede toparse con esto hoy mismo. **El eje
+  fantasma que este mismo bug había creado en la tabla `Temas` de
+  Airtable ya lo borró Laura (2026-07-31).** Falta todavía borrar la fila
+  en sí de `evaluacion_practica` en Supabase (statement en la lista
+  consolidada más abajo) o investigar si el contenido real se perdió en
+  algún punto de la sincronización y hay que regenerarlo.
+- **Fase 0 de Contractual (REC) hecha (2026-07-31)**, vía agente en
+  background: `docs/fase0_rec_clasificacion_2026-07-31.md`. De 42 ítems
+  sin eje, 40 quedaron clasificados con confianza (statements en ese
+  doc). Los otros 2 resultaron no ser de materia Contractual: `rc-aplic-002`
+  y `rc-just-001` se mueven a Extracontractual (ver la lista consolidada
+  más abajo y `docs/fix_justificacion_menciona_n_de_m_2026-07-31.md`).
+  Hallazgo aparte: el manual de Contractual no está organizado en ejes
+  planos como el de Extracontractual (son 8 secciones A-H con
+  sub-numeración que reinicia en cada una); el catálogo real de 21 ejes
+  vive en la tabla `Temas` de Airtable, no en los títulos del manual. 3 de
+  esos 21 ejes (2 "El pago", 11 "La teoría de los riesgos", 21
+  "Prescripción de las acciones") no tienen ninguna sección propia en el
+  manual actual, así que no es solo un hueco de contenido de Evaluación
+  por escribir (no hay ni sección del manual que las respalde). Queda para
+  cuando Laura revise el manual de Contractual: decidir si esos 3 temas
+  necesitan su propia sección nueva, o si estará bien que sigan viviendo
+  mencionados de paso dentro de sus vecinos (ej. el pago dentro de la
+  acción de cumplimiento).
+- **Bug de calificación real, encontrado por Laura practicando
+  (2026-07-31): preguntas "menciona N de M posibles" (M > N) calificaban
+  mal.** Si una pregunta de Justificación pide, por ejemplo, "menciona 3
+  diferencias" pero el manual ofrece 9 válidas, y el ítem solo tenía
+  `elementos_clave` para las 3 que se le ocurrieron a quien lo redactó,
+  una alumna que nombrara 3 diferencias distintas y correctas quedaba
+  calificada mal. **Arreglado:** `app/alternativas.html` ahora soporta un
+  campo `minimo_elementos` (retrocompatible, no afecta ítems que no lo
+  tengan). Regla nueva agregada a
+  `docs/prompt-generacion-contenido-practica.md` sección 0.25 para
+  content nuevo. Detalle completo, y los 2 ítems ya corregidos con este
+  mecanismo (`rc-just-001`, que además se recategoriza a Extracontractual,
+  y `rc-just-009`, que se queda en Contractual) en
+  `docs/fix_justificacion_menciona_n_de_m_2026-07-31.md`. Statements en
+  la lista consolidada de abajo.
+- **Contractual: 9/51 ítems de Evaluación ya estaban linkeados a `Temas`
+  antes de la Fase 0 de arriba** (incluida la fila corrupta, que contaba
+  como "linkeada" sin ser contenido real). Con la Fase 0 ya hecha, quedan
+  48/51 reales (2 se van a Extracontractual). Precontractual sigue en
+  0/60, sin empezar. Ver `docs/contenido-airtable-supabase.md` para la
+  tabla actualizada (pendiente de refrescar con estos números después de
+  correr los `UPDATE`).
+
+## SQL pendientes de correr en Supabase, todos juntos (orden importa)
+
+Acumulado de varios hallazgos de esta sesión (2026-07-31). Todos
+bloqueados para Claude por el modo auto de Claude Code (escritura en
+producción); Laura los corre en el SQL Editor de Supabase, en este
+orden:
+
+**1. Primero, el cambio de esquema** (agrega la columna que necesitan los
+statements de más abajo):
+```sql
+alter table public.evaluacion_practica
+  add column if not exists minimo_elementos integer;
+```
+(= `scripts/supabase_schema_minimo_elementos.sql`)
+
+**2. Los 4 ítems de Extracontractual mal clasificados de eje** (detalle
+arriba en el punto de REX):
+```sql
+update public.evaluacion_practica set tema = '5. La capacidad delictual' where codigo = 're-detect-008';
+update public.evaluacion_practica set tema = '8. La culpabilidad: dolo y culpa' where codigo = 're-detect-010';
+update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-aplic-011';
+update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-detect-012';
+```
+
+**3. Los 40 de la Fase 0 de Contractual**: statements completos en
+`docs/fase0_rec_clasificacion_2026-07-31.md` (sección final del doc), no
+repetidos acá para no duplicar.
+
+**4. Los 2 ítems que se mueven de Contractual a Extracontractual + el
+arreglo del bug de calificación**: statements completos en
+`docs/fix_justificacion_menciona_n_de_m_2026-07-31.md` (`rc-aplic-002`,
+`rc-just-001`, `rc-just-009`). **Ojo:** mover `materia` en Supabase no es
+el arreglo definitivo para los primeros dos — el registro original sigue
+en la base `Digesto Contractual` de Airtable, y el próximo
+`sync_airtable_supabase.py` lo va a volver a poner en Contractual salvo
+que alguien también mueva el registro ahí (borrarlo de la tabla de
+Contractual en Airtable y recrearlo en la de Extracontractual, linkeado
+al eje correcto). Detalle en ese mismo doc.
+
+**5. Alternativa redundante de Extracontractual**:
+```sql
+delete from public.alternativas where id = 'ext-alt-002';
+```
+
+**6. Solo si Laura decide borrar la fila corrupta en vez de investigarla**:
+```sql
+delete from public.evaluacion_practica where codigo = 'rc-detect-001';
+```
+
+## Pendiente: contenido y tareas sueltas (continuación)
+
 - **Cruzar los 9 lotes de Contractual** (+ el lote transversal) de
   `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado, mismo
   proceso que se hizo con Extracontractual y Precontractual, todavía sin

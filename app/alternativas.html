@@ -1405,7 +1405,13 @@ const bancoTransversal = [
         if (found) acertados.push(el.texto); else faltantes.push(el);
       });
 
-      const credito = acertados.length / item.elementos_clave.length;
+      // minimo_elementos: para preguntas tipo "menciona N de M posibles" (M > N),
+      // donde cualquier N elementos correctos de la lista cuentan como respuesta
+      // completa. Si el campo no está presente, se exige el total (comportamiento
+      // de siempre, retrocompatible).
+      const elementosRequeridos = item.minimo_elementos || item.elementos_clave.length;
+      const acertadosEfectivos = Math.min(acertados.length, elementosRequeridos);
+      const credito = acertadosEfectivos / elementosRequeridos;
       const pct = Math.round(credito * 100);
       const color = credito >= 0.75 ? '#1A7A40' : credito >= 0.4 ? '#A06000' : '#C41E2E';
 
@@ -1420,10 +1426,10 @@ const bancoTransversal = [
         feedbackDiag = faltantes.length > 0 ? 'Buen trabajo. Esto es lo único que te faltó:' : 'Respuesta completa.';
       } else if (credito >= 0.35) {
         veredicto = '◐ Respuesta parcial. Captaste la idea general pero faltaron elementos clave.';
-        feedbackDiag = `Identificaste correctamente ${acertados.length} de ${item.elementos_clave.length} elementos. ${esSegundaPasada ? 'Revisa el modelo abajo.' : 'Tienes una segunda pasada.'}`;
+        feedbackDiag = `Identificaste correctamente ${acertadosEfectivos} de ${elementosRequeridos} elementos requeridos. ${esSegundaPasada ? 'Revisa el modelo abajo.' : 'Tienes una segunda pasada.'}`;
       } else {
         veredicto = '✗ Respuesta insuficiente. Hay que trabajar este punto.';
-        feedbackDiag = `Solo cubriste ${acertados.length} de ${item.elementos_clave.length} elementos. Revisa el manual de ${item.materia} antes de continuar.`;
+        feedbackDiag = `Solo cubriste ${acertadosEfectivos} de ${elementosRequeridos} elementos requeridos. Revisa el manual de ${item.materia} antes de continuar.`;
       }
 
       creditoTotal += credito;
