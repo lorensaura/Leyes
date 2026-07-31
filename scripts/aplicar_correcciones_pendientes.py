@@ -924,6 +924,28 @@ def subir_eje16(token):
     return subir_lote(token, "16. La autonomía de la acción indemnizatoria", EJE16_EVALUACION)
 
 
+EJE18_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-023",
+        "subtema": "El \"par\" del art. 2003: aceptación (regla 2ª, vicio oculto del suelo) vs. rechazo (regla 1ª, encarecimiento de insumos) de la imprevisión",
+        "caso": "Un contratista se obliga a construir un edificio por un precio único prefijado. Durante la obra, el precio internacional del acero sube abruptamente por una crisis en el mercado mundial, encareciendo notoriamente los materiales. Además, al excavar los cimientos, el contratista descubre un vicio oculto del suelo (una napa subterránea no detectable con los estudios previos habituales) que exige obras adicionales de contención no previstas.",
+        "enunciado": "¿Puede el contratista pedir aumento del precio por el alza del acero? ¿Y por el vicio oculto del suelo? Fundamenta con el art. 2003.",
+        "respuesta_modelo": "Por el alza del precio del acero, no puede pedir aumento: el artículo 2003 regla 1ª rechaza expresamente esta posibilidad, disponiendo que el empresario no podrá pedir aumento de precio a pretexto de haber encarecido los jornales o los materiales; es un riesgo ordinario del mercado que el contratista debe soportar. Por el vicio oculto del suelo, en cambio, sí puede: el artículo 2003 regla 2ª acepta la revisión en este caso específico, autorizando al empresario a hacerse autorizar por el dueño para los costos que ocasionen circunstancias desconocidas como un vicio oculto del suelo, y si el dueño se niega, a recurrir al juez para que decida si el recargo debía o no preverse y fije el aumento de precio correspondiente. El contraste es deliberado: lo imprevisible y oculto (el vicio del suelo) se revisa; el riesgo ordinario del mercado (el precio de los materiales) lo soporta el empresario.",
+        "articulos_referencia": "2003",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue, dentro del mismo artículo 2003, la regla que rechaza la imprevisión (encarecimiento de insumos, riesgo ordinario) de la que la acepta (vicio oculto del suelo, circunstancia imprevisible).",
+        "elementos_clave": [
+            {"texto": "Explica que por el alza del acero no procede aumento, conforme a la regla 1ª del art. 2003", "keywords": ["regla 1ª", "no procede aumento", "riesgo ordinario"], "pregunta": "¿Puede pedir aumento de precio por el encarecimiento del acero?"},
+            {"texto": "Explica que por el vicio oculto del suelo sí procede la revisión, conforme a la regla 2ª del art. 2003", "keywords": ["regla 2ª", "sí procede", "vicio oculto"], "pregunta": "¿Y por el vicio oculto del suelo?"},
+            {"texto": "Identifica el contraste deliberado entre lo imprevisible/oculto y el riesgo ordinario del mercado", "keywords": ["contraste deliberado", "imprevisible vs riesgo ordinario"], "pregunta": "¿Qué idea general explica por qué el art. 2003 trata distinto ambos casos?"},
+        ],
+    }],
+}
+
+
+def subir_eje18(token):
+    return subir_lote(token, "18. Imprevisión y frustración del fin del contrato", EJE18_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -1057,6 +1079,8 @@ def main():
         subir_eje17(token)
     elif accion == "subir-eje16":
         subir_eje16(token)
+    elif accion == "subir-eje18":
+        subir_eje18(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":

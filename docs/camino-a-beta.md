@@ -348,9 +348,14 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
     sucesivo (tercera excepción de Boetsch); cumplimiento imperfecto no
     resolutorio, recibir la cosa no implica renunciar a la indemnización
     (art. 1590 inc. 2°, segunda excepción de Boetsch).
+  - Eje 18 (3→4): el "par" del art. 2003 (regla 1ª rechaza el
+    encarecimiento de insumos como riesgo ordinario, regla 2ª acepta la
+    revisión por vicio oculto del suelo).
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 15,
+  Laura decida desarrollarlos). Los ejes 15, 19 y 20 ya tienen los 4
+  tipos representados (15 y 19 completos desde antes; 20 le falta
+  Detección de error).
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).
