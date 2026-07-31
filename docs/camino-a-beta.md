@@ -101,11 +101,27 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   autor" de eje 21 (ambigüedad real entre las opciones C y D, ambas
   defendibles como "no comprendida en la solidaridad del art. 2317"),
   **Laura la descartó (2026-07-30)**: eje 21 quedó con 4 ítems nuevos, no
-  5. Solo el **eje 1** sigue sin contenido nuevo de Evaluación (1
-  ítem, pero con 11 Flashcards que conviene revisar antes de escribir
-  algo redundante). Sigue Contractual y Precontractual, todavía sin
+  5. Para el **eje 1**, Laura pidió subir directo (2026-07-30) los 3
+  ítems del borrador (`docs/preguntas_pendientes_eje1_2026-07-30.md`):
+  ya están en Airtable y sincronizados (`re-aplic-030`, `re-detect-031`,
+  `re-mc-032`, linkeados a `Temas` → eje 1). Extracontractual pasó de 128
+  a 131 ítems de Evaluación. **Ojo: la revisión de fondo del contenido
+  jurídico (citas, atribuciones, redacción) sigue pendiente** — subir a
+  Airtable no la reemplazó, solo se saltó el paso previo de que Laura lo
+  leyera antes de subir. Sigue Contractual y Precontractual, todavía sin
   Fase 0.
-  Sigue Contractual y Precontractual, todavía sin Fase 0.
+- **Borrar `ext-alt-002` de la tabla `alternativas` en Supabase**
+  (redundante con `ext-alt-033`, mismo elemento jurídico: el art. 1437
+  como fuente de la obligación; Laura pidió eliminar la redundante y se
+  decidió conservar `ext-alt-033`, ver
+  `docs/preguntas_pendientes_eje1_2026-07-30.md`). El `DELETE` directo
+  fue bloqueado por el modo auto de Claude Code al ser una acción
+  destructiva sobre producción; además Alternativas ya se maneja por SQL
+  directo, no por Airtable, así que corre a Laura, no a Claude. Statement
+  exacto para el SQL Editor de Supabase:
+  ```sql
+  delete from public.alternativas where id = 'ext-alt-002';
+  ```
 - **Cruzar los 9 lotes de Contractual** (+ el lote transversal) de
   `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado, mismo
   proceso que se hizo con Extracontractual y Precontractual, todavía sin

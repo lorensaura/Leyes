@@ -201,13 +201,21 @@ vivo — la tabla maestra de arriba lo sigue contando en 11, como está hoy en
 Supabase. Se anota acá para que alguien decida si mover el link a `Temas`
 de ese ítem a eje 10.
 
-## Qué sigue (no ejecutado en esta sesión, decisión de Laura)
+## Qué sigue (decisión de Laura)
 
-1. Laura revisa los 10 ítems pendientes de subir para eje 15 (ítems 1-5) y
-   eje 21 (ítems 2-6) en `docs/preguntas_pendientes_ejes_debiles_2026-07.md`.
-2. Recién generar contenido nuevo para el eje 1 (el único de los tres sin
-   borrador), mirando primero las 11 Flashcards ya publicadas para no
-   repetir el mismo ángulo.
+Eje 15 y eje 21 quedaron cerrados el 2026-07-30 (9 de los 10 ítems
+pendientes aprobados y subidos, 1 descartado por ambigüedad real, ver
+`docs/camino-a-beta.md`).
+
+1. Eje 1 cerrado 2026-07-30: los 3 ítems (Aplicación, Detección de error,
+   Discriminación MC) de `docs/preguntas_pendientes_eje1_2026-07-30.md`
+   ya están en Airtable y sincronizados. Extracontractual queda en
+   131 ítems de Evaluación. Pendiente la revisión de fondo del
+   contenido por Laura (no reemplazada por la subida).
+2. `ext-alt-002`/`ext-alt-033` (redundantes entre sí, ambos sobre el
+   art. 1437): se conserva `ext-alt-033`, falta que Laura borre
+   `ext-alt-002` en el SQL Editor de Supabase (statement en
+   `docs/camino-a-beta.md`).
 3. Revisar la posible mala clasificación de "Incapacidad permanente vs.
    falta transitoria de voluntariedad" (hoy en eje 18, Estado) y ubicar
    `ext-alt-029` ("reserva de perjuicios") en su eje real.

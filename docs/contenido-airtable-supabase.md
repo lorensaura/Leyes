@@ -156,7 +156,7 @@ que ya existía en el esquema pero nunca se llenaba).
 |---|---|---|---|
 | Flashcards | 225/225 | 204/204 | 0/0 (sin contenido) |
 | Preguntas_Evaluacion | 0/55 | 170/170 | 0/119 |
-| Evaluación (4 tablas) | 0/51 | **119/119** | 0/60 |
+| Evaluación (4 tablas) | 0/51 | **131/131** | 0/60 |
 
 Extracontractual ya tiene el 100% de `Preguntas_Evaluacion` y de
 Evaluación (4 tablas) linkeado. La clasificación de Evaluación se hizo

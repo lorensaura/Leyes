@@ -29,12 +29,6 @@ acá, ver `docs/camino-a-beta.md`, la lista viva de hecho / pendiente /
 por determinar. Ábrelo al empezar una sesión si no está claro por dónde
 seguir.
 
-**⚠️ Al retomar la próxima sesión, leer primero la sección "Urgente" de
-`docs/camino-a-beta.md`**: hay tablas duplicadas en Airtable
-(`Opciones_MC`/`Elementos_Clave` vs. las tablas nuevas de Evaluación)
-detectadas el 2026-07-28 que Laura quiere revisar antes de seguir con
-cualquier otro pendiente.
-
 ## Git / deploy
 - Laura **pushea con GitHub Desktop** (ahí tiene sus credenciales). Desde el terminal el push directo puede fallar por credenciales.
 - Commits en **español, imperativos** (ej: "Arreglar…", "Agregar…"). **NO commitear** `.claude/settings.local.json`.
