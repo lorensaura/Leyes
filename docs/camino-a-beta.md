@@ -73,10 +73,6 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   `"civil"` (genérico). No afecta nada hoy (el Interrogador filtra por
   `tema_texto`, no por `materia`), es cosmético, pendiente de que Laura
   decida si vale la pena.
-- **Correr `scripts/supabase_schema_tema_link.sql` en el SQL Editor de
-  Supabase**: agrega la columna `tema` a `preguntas_evaluacion`. Sin
-  esto, la próxima corrida de `scripts/sync_airtable_supabase.py` va a
-  fallar al sincronizar Preguntas_Evaluacion.
 - **Linkear a `Temas` el contenido viejo sin linkear**: Preguntas_Evaluacion
   de Contractual y Precontractual, y las 4 tablas de Evaluación en
   Contractual y Precontractual (Extracontractual ya se hizo el
@@ -108,8 +104,66 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   a 131 ítems de Evaluación. **Ojo: la revisión de fondo del contenido
   jurídico (citas, atribuciones, redacción) sigue pendiente** — subir a
   Airtable no la reemplazó, solo se saltó el paso previo de que Laura lo
-  leyera antes de subir. Sigue Contractual y Precontractual, todavía sin
-  Fase 0.
+  leyera antes de subir.
+  **REX queda así con Fase 0 y Fase 1 cerradas (2026-07-31): no existe una
+  "Fase 2" definida en ningún doc — el plan solo tenía esas dos fases.
+  "Llevar Evaluación a su techo" en los 25 ejes (no solo cerrar los 3 que
+  tenían 1 solo ítem) es la meta post-beta de la sección 5 del skill
+  `generar-evaluacion`, no algo para ejecutar ahora salvo que Laura lo
+  pida explícitamente con volumen.** Quedan 3 cosas sueltas de REX antes
+  de pasar a Contractual/Precontractual:
+  1. **4 ítems mal clasificados de eje, detectados el 2026-07-30 y
+     confirmados el 2026-07-31 contra el manual**: `re-detect-008`
+     (sonambulismo/demencia, art. 2319) está en eje 18 y debería estar en
+     eje 5 (capacidad delictual); `re-detect-010` (crítica de Barros al
+     término "subjetiva") está en eje 25 y debería estar en eje 8
+     (culpabilidad); `re-aplic-011` y `re-detect-012` (pérdida de chance)
+     están en eje 11 y deberían estar en eje 10 (el manual desarrolla la
+     chance como parte del requisito de que el daño sea "cierto", líneas
+     1195-1257). El `UPDATE` directo fue bloqueado por el modo auto de
+     Claude Code (escritura en producción); statements para el SQL Editor
+     de Supabase:
+     ```sql
+     update public.evaluacion_practica set tema = '5. La capacidad delictual' where codigo = 're-detect-008';
+     update public.evaluacion_practica set tema = '8. La culpabilidad: dolo y culpa' where codigo = 're-detect-010';
+     update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-aplic-011';
+     update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-detect-012';
+     ```
+  2. `ext-alt-029` ("reserva de perjuicios"): no aparece esa frase en el
+     manual (es jurisprudencia sobre tramitación, no doctrina del
+     apunte), pero temáticamente encaja en el eje 22 (Tribunal,
+     procedimiento y extinción de la acción). Alternativas no tiene
+     columna `tema` en Supabase, así que esto es solo una corrección de
+     clasificación en `docs/cobertura_subtema_rex_2026-07-30.md`, no un
+     `UPDATE`.
+  3. **Revisión de fondo pendiente de los 12 ítems subidos el
+     2026-07-30** (los 9 de ejes 15/21 + los 3 de eje 1): nadie los leyó
+     todavía contra el manual (citas, atribuciones, redacción), a
+     diferencia de los `hist-` que sí se auditaron. Distinto de la
+     revisión de jurisprudencia y de artículos que Laura ya hizo esta
+     semana (esas fueron sobre el manual, no sobre estos 12 ítems
+     nuevos). Falta que Laura decida si los lee ella o si pide una
+     auditoría de Claude contra el manual, como se hizo con los `hist-`.
+- **Hallazgo nuevo (2026-07-31): fila corrupta y publicada en producción,
+  `rc-detect-001`** (Contractual, tipo Detección de error). Todos sus
+  campos (`caso`, `enunciado`, `respuesta_modelo`, `subtema`,
+  `articulos_referencia`, `objetivo_pedagogico`, y el propio `tema`)
+  contienen literalmente el texto `"rc-detect-001"` en vez de contenido
+  real, y `publicado = true` — una alumna que practique Detección de
+  error en Contractual puede toparse con esto hoy mismo. No se tocó (el
+  `UPDATE`/`DELETE` está bloqueado por el modo auto de Claude Code sobre
+  producción); Laura decide si se borra o si el contenido real se perdió
+  en algún punto de la sincronización y hay que regenerarlo. Statement
+  para borrarlo si se decide eso:
+  ```sql
+  delete from public.evaluacion_practica where codigo = 'rc-detect-001';
+  ```
+- **Contractual ya tiene arranque de Fase 0, no 0/51 como decía este doc
+  hasta ahora**: 9 de sus 51 ítems de Evaluación ya están linkeados a
+  `Temas` (incluida la fila corrupta de arriba, que cuenta como "linkeada"
+  aunque no sea contenido real). Falta clasificar los otros 42.
+  Precontractual sigue en 0/60, sin empezar. Ver
+  `docs/contenido-airtable-supabase.md` para la tabla actualizada.
 - **Borrar `ext-alt-002` de la tabla `alternativas` en Supabase**
   (redundante con `ext-alt-033`, mismo elemento jurídico: el art. 1437
   como fuente de la obligación; Laura pidió eliminar la redundante y se
@@ -136,10 +190,11 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   funciona con el orden aleatorio de las tarjetas). **Pendiente de
   revisión de Laura antes de subir a Airtable** (base `Digesto
   Precontractual`, tabla `Flashcards`), y de correr el sync después.
-- **Jurisprudencia del manual de Extracontractual** (verificar fallos
-  citados): Laura lo está preparando, todavía no lo mandó.
-- **Artículos de Memorice de Extracontractual**: Laura decide cuáles y
-  manda el texto legal, todavía no llegó.
+- **Artículos de Memorice de las 3 materias de Responsabilidad**: Laura
+  ya revisó y tiene anotados los artículos que quiere (2026-07-31), pero
+  todavía no mandó el texto legal en sí. Cuando lo mande, cargar siguiendo
+  `feedback_memorice_texto_lo_manda_laura` (el texto lo decide y envía
+  ella, no se sale a verificar el artículo por cuenta propia).
 - **Manual de Precontractual**: los recuadros pedagógicos y las
   preguntas/keywords de los checkpoints de `app/manuales.html` son
   borrador de Claude, todavía sin la revisión de Laura (ella pidió ese

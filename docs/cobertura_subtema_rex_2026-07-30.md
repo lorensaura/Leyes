@@ -21,7 +21,7 @@ sin eje asignado, no se adivinó.
 
 | Eje | Aplic | DetE | Just | DiscMC | **Total Eval** | Flash | Altern |
 |---|---|---|---|---|---|---|---|
-| 1. Concepto, regulación y funciones | 0 | 0 | 1 | 0 | **1** | 11 | 2 |
+| 1. Concepto, regulación y funciones | 1 | 1 | 1 | 1 | **4** | 11 | 2 |
 | 2. Responsabilidad civil y penal | 2 | 0 | 1 | 6 | **9** | 12 | 1 |
 | 3. Delimitación de estatutos | 0 | 1 | 1 | 3 | **5** | 9 | 1 |
 | 4. Sistemas o modelos de atribución | 1 | 1 | 1 | 4 | **7** | 8 | 2 |
@@ -35,30 +35,26 @@ sin eje asignado, no se adivinó.
 | 12. Clases de daño (II): daño moral | 1 | 2 | 1 | 1 | **5** | 7 | 1 |
 | 13. La causalidad | 0 | 1 | 1 | 0 | **2** | 8 | 1 |
 | 14. Hecho ajeno, régimen general (art. 2320) | 3 | 2 | 4 | 5 | **14** | 8 | 1 |
-| 15. Responsabilidad del empresario | 0 | 0 | 1 | 0 | **1** | 7 | 1 |
+| 15. Responsabilidad del empresario | 1 | 1 | 3 | 1 | **6** | 7 | 1 |
 | 16. Hecho de las cosas | 1 | 1 | 1 | 0 | **3** | 7 | 1 |
 | 17. Regímenes legales de responsabilidad objetiva | 1 | 1 | 0 | 0 | **2** | 8 | 0 |
 | 18. Responsabilidad del Estado | 1 | 2 | 1 | 0 | **4** | 9 | 1 |
 | 19. Acción por daño contingente (art. 2333) | 1 | 1 | 2 | 1 | **5** | 8 | 0 |
 | 20. Objeto y extensión de la reparación | 3 | 2 | 4 | 4 | **13** | 9 | 1 |
-| 21. Legitimación activa y pasiva | 1 | 0 | 0 | 0 | **1** | 7 | 5 |
+| 21. Legitimación activa y pasiva | 2 | 0 | 3 | 0 | **5** | 7 | 5 |
 | 22. Tribunal, procedimiento, prescripción (art. 2332) | 1 | 1 | 0 | 0 | **2** | 7 | 3 |
 | 23. Dualidad o unidad de regímenes | 1 | 1 | 2 | 3 | **7** | 8 | 3 |
 | 24. Cúmulo o concurso de responsabilidades | 1 | 2 | 1 | 0 | **4** | 7 | 3 |
 | 25. Precontractual, nulidad y postcontractual | 2 | 2 | 1 | 1 | **6** | 8 | 4 |
 
-Totales: 119 Evaluación, 204 Flashcards, 41 Alternativas (40 clasificadas +
-1 sin ubicar).
+Totales: 131 Evaluación, 204 Flashcards, 41 Alternativas (40 clasificadas +
+1 sin ubicar). Tabla recontada en vivo contra Supabase el 2026-07-31.
 
-**Los tres ejes más débiles son 1, 15 y 21 (1 ítem de Evaluación cada
-uno)**, tal como quedó anotado en `docs/camino-a-beta.md` al cerrar la Fase
-0. Pero esto es débil **solo en Evaluación**: el eje 1 tiene 11 Flashcards
-(el número más alto de toda la tabla) que ya cubren buena parte de lo que
-trae el manual en ese eje (las cuatro funciones, si el Código define la
-responsabilidad, daños punitivos, función primordial). Generar contenido
-nuevo de Evaluación para el eje 1 sin mirar esas Flashcards corre el riesgo
-de redactar preguntas que solo repiten lo que ya está en Flashcards con
-otro formato.
+**Los ejes 1, 15 y 21 (los tres más débiles al cerrar la Fase 0, con 1
+ítem de Evaluación cada uno) quedaron cerrados el 2026-07-30**: eje 1 en
+4 ítems, eje 15 en 6, eje 21 en 5. Los ejes con menos ítems de Evaluación
+hoy son el 6, 13, 17 y 22 (2 cada uno) — no se tocan en esta ronda, no
+hay ningún hallazgo que los marque como urgentes todavía.
 
 ## Hallazgo que cambia el plan: hay contenido ya redactado para 15 y 21, sin subir
 
@@ -153,19 +149,21 @@ ningún borrador ni contraparte viva parcial**: ahí sí hace falta generar
 contenido nuevo desde cero, con la salvedad de arriba sobre las 11
 Flashcards ya existentes.
 
-**Dos errores de clasificación de eje, sin corregir, solo anotados:**
-"Incapacidad permanente vs. falta transitoria de voluntariedad" (eje 18,
-Estado) y "Error de llamar 'subjetiva' a la responsabilidad por culpa"
-(eje 25, precontractual) no encajan temáticamente en el eje donde están
-etiquetados hoy — el primero suena a capacidad delictual o hecho
-voluntario, el segundo a culpabilidad (eje 8). Los dos tienen
-`actualizado_en: 2026-07-28T20:47:13`, idéntico al resto del lote nuevo
-de esa fecha, y su `tema` ya venía asignado desde que se crearon, no
-desde un backfill posterior — **son un error de etiquetado de esa sesión
-del 2026-07-28, no de la Fase 0** (la Fase 0, del 2026-07-30, solo
-backfilleó el link de contenido histórico que antes tenía `tema = null`;
-nunca tocó estos dos ítems). Revisar cuando se toquen esos ejes, no
-re-auditar la Fase 0 buscando este bug ahí.
+**Dos errores de clasificación de eje, confirmados el 2026-07-31 contra el
+manual, corrección pendiente:** "Incapacidad permanente vs. falta
+transitoria de voluntariedad" (`re-detect-008`, hoy eje 18) trata el caso
+del sonambulismo/demencia del art. 2319 y corresponde al **eje 5**
+(capacidad delictual); "Error de llamar 'subjetiva' a la responsabilidad
+por culpa" (`re-detect-010`, hoy eje 25) es la crítica de Barros al
+término "subjetiva" para la culpa civil y corresponde al **eje 8**
+(culpabilidad). Los dos tienen `actualizado_en: 2026-07-28T20:47:13`,
+idéntico al resto del lote nuevo de esa fecha, y su `tema` ya venía
+asignado desde que se crearon, no desde un backfill posterior — **son un
+error de etiquetado de esa sesión del 2026-07-28, no de la Fase 0** (la
+Fase 0, del 2026-07-30, solo backfilleó el link de contenido histórico
+que antes tenía `tema = null`; nunca tocó estos dos ítems). Statements de
+corrección en `docs/camino-a-beta.md`, pendientes de que Laura los corra
+en el SQL Editor (bloqueados por el modo auto de Claude Code).
 
 ## Nota lateral: Alternativas de Extracontractual ya cubre parcialmente 15 y 21
 
@@ -185,37 +183,50 @@ No cambia la recomendación (igual conviene subir los ítems 1-5 de eje 15 y
 con Alternativas), pero vale la pena que quien suba el lote lo tenga
 presente para no duplicar el mismo ángulo tres veces.
 
-## Desacuerdo sin resolver: "pérdida de una chance", ¿eje 10 u 11?
+## Resuelto: "pérdida de una chance" va en eje 10, no en eje 11
 
 El ítem vivo de Evaluación "Pérdida de una oportunidad (chance) como daño
-autónomo" está etiquetado como eje 11 (daño patrimonial) en
-`evaluacion_practica`. Pero el texto del manual que desarrolla esa figura
-(líneas 1195-1197 de `02_Responsabilidad_Extracontractual_Manual.html`,
-"pérdida de una oportunidad o chance... categoría intermedia... daño
-autónomo") está dentro de la sección del **eje 10** (El daño: concepto y
-requisitos de resarcibilidad, líneas 1165-1269), no de la del eje 11
-(1270-1356). Este ítem también es del lote nuevo del 2026-07-28 (no de la
-Fase 0): es una etiqueta de eje puesta al redactarlo, no un resultado del
-matching automático de la Fase 0. Este doc no corrigió el eje del ítem
-vivo — la tabla maestra de arriba lo sigue contando en 11, como está hoy en
-Supabase. Se anota acá para que alguien decida si mover el link a `Temas`
-de ese ítem a eje 10.
+autónomo" (`re-aplic-011`) y su contraparte de Detección de error
+(`re-detect-012`, "Daño eventual vs. pérdida de chance") estaban
+etiquetados como eje 11 (daño patrimonial). El texto del manual que
+desarrolla esa figura (líneas 1195-1257 de
+`02_Responsabilidad_Extracontractual_Manual.html`, incluida la línea 1257
+que la ubica expresamente dentro del requisito de que el daño sea
+"cierto") está dentro de la sección del **eje 10** (El daño: concepto y
+requisitos de resarcibilidad), no de la del eje 11. Ambos ítems son del
+lote nuevo del 2026-07-28 (no de la Fase 0), etiquetados así al
+redactarlos. Statements de corrección en `docs/camino-a-beta.md`, todavía
+sin correr (bloqueados por el modo auto de Claude Code, corre a Laura en
+el SQL Editor). La tabla maestra de arriba sigue contando estos dos
+ítems en eje 11 hasta que se corra el `UPDATE`.
 
 ## Qué sigue (decisión de Laura)
 
-Eje 15 y eje 21 quedaron cerrados el 2026-07-30 (9 de los 10 ítems
-pendientes aprobados y subidos, 1 descartado por ambigüedad real, ver
-`docs/camino-a-beta.md`).
+Eje 15, eje 21 y eje 1 quedaron cerrados el 2026-07-30 (ver
+`docs/camino-a-beta.md`). Fase 0 y Fase 1 de REX quedan cerradas con
+esto: no hay una "Fase 2" definida, la cobertura al techo real de los 25
+ejes es meta post-beta (sección 5 del skill `generar-evaluacion`).
 
-1. Eje 1 cerrado 2026-07-30: los 3 ítems (Aplicación, Detección de error,
-   Discriminación MC) de `docs/preguntas_pendientes_eje1_2026-07-30.md`
-   ya están en Airtable y sincronizados. Extracontractual queda en
-   131 ítems de Evaluación. Pendiente la revisión de fondo del
-   contenido por Laura (no reemplazada por la subida).
-2. `ext-alt-002`/`ext-alt-033` (redundantes entre sí, ambos sobre el
+Quedan 3 cosas sueltas, todas anotadas en detalle en
+`docs/camino-a-beta.md` (sección de tareas sueltas):
+
+1. `ext-alt-002`/`ext-alt-033` (redundantes entre sí, ambos sobre el
    art. 1437): se conserva `ext-alt-033`, falta que Laura borre
-   `ext-alt-002` en el SQL Editor de Supabase (statement en
-   `docs/camino-a-beta.md`).
-3. Revisar la posible mala clasificación de "Incapacidad permanente vs.
-   falta transitoria de voluntariedad" (hoy en eje 18, Estado) y ubicar
-   `ext-alt-029` ("reserva de perjuicios") en su eje real.
+   `ext-alt-002` en el SQL Editor de Supabase.
+2. 4 ítems mal clasificados de eje, confirmados contra el manual el
+   2026-07-31: "Incapacidad permanente vs. falta transitoria de
+   voluntariedad" (`re-detect-008`, hoy en eje 18) va en **eje 5**
+   (capacidad delictual); "Error de llamar 'subjetiva' a la
+   responsabilidad por culpa" (`re-detect-010`, hoy en eje 25) va en
+   **eje 8** (culpabilidad); y la "pérdida de una chance" (`re-aplic-011`
+   y `re-detect-012`, hoy en eje 11) va en **eje 10** (el manual la trata
+   como parte del requisito de que el daño sea cierto, líneas 1195-1257
+   del manual, no como una clase de daño patrimonial). Los `UPDATE`
+   quedaron bloqueados por el modo auto de Claude Code; statements en
+   `docs/camino-a-beta.md`.
+3. `ext-alt-029` ("reserva de perjuicios"): no aparece esa frase en el
+   manual porque es jurisprudencia sobre tramitación procesal, no
+   doctrina del apunte, pero temáticamente corresponde al **eje 22**
+   (Tribunal, procedimiento y extinción de la acción). Como Alternativas
+   no tiene columna `tema` en Supabase, esto queda como clasificación
+   solo en este doc, no como escritura en la base.

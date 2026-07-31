@@ -150,22 +150,31 @@ Supabase (`preguntas_evaluacion.tema`, columna nueva —
 de volver a sincronizar Preguntas_Evaluacion — y `evaluacion_practica.tema`,
 que ya existía en el esquema pero nunca se llenaba).
 
-**Cuánto está linkeado hoy (medido 2026-07-30, Evaluación Extracontractual actualizada tras el backfill de Fase 0):**
+**Cuánto está linkeado hoy (medido 2026-07-31 contra Supabase en vivo):**
 
 | Tabla | Contractual | Extracontractual | Precontractual |
 |---|---|---|---|
 | Flashcards | 225/225 | 204/204 | 0/0 (sin contenido) |
-| Preguntas_Evaluacion | 0/55 | 170/170 | 0/119 |
-| Evaluación (4 tablas) | 0/51 | **131/131** | 0/60 |
+| Preguntas_Evaluacion | 53/53 | 170/170 | 0/119 |
+| Evaluación (4 tablas) | 9/51 | **131/131** | 0/60 |
 
 Extracontractual ya tiene el 100% de `Preguntas_Evaluacion` y de
 Evaluación (4 tablas) linkeado. La clasificación de Evaluación se hizo
 2026-07-30: matching automático por palabras clave/artículo + revisión
 manual de los casos ambiguos (ver el plan "llevar Evaluación a su techo",
-Fase 0), no arrastrada de `Preguntas_Evaluacion`. Contractual y
-Precontractual quedan pendientes del mismo diagnóstico (13/21 y 10/10
-ejes sin link respectivamente, según ese mismo plan) — se completa
-materia por materia, no hace falta un lote aparte solo para esto.
+Fase 0), no arrastrada de `Preguntas_Evaluacion`.
+
+Contractual ya tiene el 100% de `Preguntas_Evaluacion` linkeado (la fila
+de arriba decía 0/55 hasta el 2026-07-30; en algún sync posterior quedó
+resuelto, sin que nadie lo anotara acá). En Evaluación (4 tablas),
+Contractual tiene 9 de 51 ítems ya con `tema`, pero **una de esas 9 es
+`rc-detect-001`, una fila corrupta y publicada** (todos sus campos,
+incluido `tema`, contienen literalmente el texto `"rc-detect-001"` en
+vez de contenido real) — ver el hallazgo en `docs/camino-a-beta.md`.
+Sin contar esa fila, Contractual tiene 8 ítems reales ya clasificados y
+42 pendientes. Precontractual sigue en 0/119 y 0/60, sin empezar
+ninguna de las dos — se completa materia por materia, no hace falta un
+lote aparte solo para esto.
 
 **Precontractual ya tiene su catálogo de `Temas` (agregado 2026-07-29):**
 10 ejes (A-J), tomados de `03_Responsabilidad_Precontractual_Manual.html`.
