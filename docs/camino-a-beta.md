@@ -325,9 +325,12 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
     la vía extracontractual; carga de la prueba del caso fortuito con
     apoyo en jurisprudencia real ya citada en el manual (CS 2025,
     *Constructora Pardo y González*, Rol 217.959-2023).
+  - Eje 10 (3→5): imprevisibilidad y fenómenos recurrentes (jurisprudencia
+    de la sequía); ajenidad como riesgo asumido por el propio deudor al
+    contratar (ejemplo de Abeliuk, el comerciante que vende lo que no tiene).
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 10, 12, 13, 14, 15, 16, 17,
+  Laura decida desarrollarlos), y 12, 13, 14, 15, 16, 17,
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).

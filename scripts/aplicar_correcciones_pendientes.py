@@ -654,6 +654,41 @@ def subir_eje8(token):
     return subir_lote(token, "8. Presunción de culpa y carga de la prueba", EJE8_EVALUACION)
 
 
+EJE10_EVALUACION = {
+    "deteccion": [{
+        "id": "rc-detect-015",
+        "subtema": "Imprevisibilidad del caso fortuito: fenómenos recurrentes (jurisprudencia de la sequía)",
+        "caso": "Un alumno responde: \"Una empresa generadora de energía hidroeléctrica que no puede cumplir su contrato de suministro por una sequía puede siempre invocar caso fortuito, porque la sequía es un fenómeno natural ajeno a la voluntad de la empresa.\"",
+        "enunciado": "Identifica el error del alumno, apoyándote en el criterio de la jurisprudencia.",
+        "respuesta_modelo": "El alumno pasa por alto el requisito de imprevisibilidad. La Corte Suprema ha resuelto que la sequía no constituye en sí misma un caso fortuito, porque en períodos de escasez de recursos hídricos, frecuentes en nuestro país, es posible generar energía a niveles normales mediante otras vías (por ejemplo, sustituyendo con generación termoeléctrica). Un fenómeno recurrente y esperable en nuestra geografía no puede invocarse como imprevisto: falta el segundo de los tres requisitos clásicos del caso fortuito (ajenidad, imprevisibilidad e irresistibilidad). Que la sequía sea, en un sentido amplio, ajena a la voluntad de la empresa no basta: también debe ser imprevista, y un fenómeno que se repite periódicamente en el país no lo es.",
+        "articulos_referencia": "45",
+        "objetivo_pedagogico": "Evaluar si el alumno reconoce que la sola ajenidad de un hecho no basta para configurar caso fortuito, aplicando el criterio jurisprudencial sobre la sequía como fenómeno recurrente y no imprevisible.",
+        "elementos_clave": [
+            {"texto": "Identifica que al alumno le falta el requisito de imprevisibilidad, no le basta con la ajenidad", "keywords": ["imprevisibilidad", "no basta ajenidad"], "pregunta": "¿Qué requisito del caso fortuito pasa por alto el alumno?"},
+            {"texto": "Cita el criterio jurisprudencial: la sequía no es caso fortuito por ser un fenómeno recurrente y esperable en el país", "keywords": ["sequía no es caso fortuito", "recurrente", "esperable"], "pregunta": "¿Qué ha dicho la jurisprudencia sobre la sequía específicamente?"},
+            {"texto": "Explica que existen alternativas (generación termoeléctrica) que hacían evitable el incumplimiento", "keywords": ["generación termoeléctrica", "alternativas"], "pregunta": "¿Por qué la Corte descarta la sequía como caso fortuito en ese fallo?"},
+        ],
+    }],
+    "justificacion": [{
+        "id": "rc-just-016",
+        "subtema": "Ajenidad del caso fortuito: el riesgo asumido por el propio deudor al contratar (ejemplo de Abeliuk)",
+        "enunciado": "¿Por qué el ejemplo de ABELIUK del comerciante que vende mercadería que no tiene, y que luego no puede entregar por una fuerza mayor que le impide conseguirla, no constituye caso fortuito? Explica qué requisito falla y por qué.",
+        "respuesta_modelo": "Falla el requisito de ajenidad (o inimputabilidad). El hecho ajeno exige que la circunstancia que impide el cumplimiento se encuentre fuera del ámbito de riesgos asumidos por el deudor en el contrato. En este ejemplo, el comerciante se comprometió a entregar mercadería que ni siquiera tenía disponible, contando con poder conseguirla a tiempo; el impedimento posterior (la fuerza mayor que le impidió traerla) no es, en rigor, ajeno a él, porque el riesgo de no poder conseguir a tiempo lo que prometió sin tenerlo ya es un riesgo que él mismo generó al comprometerse en esas condiciones. Como explica Abeliuk, es un caso de falta de previsión: el vendedor debió prever esa dificultad antes de obligarse. Por eso, aunque el evento final (la fuerza mayor) sea en sí mismo imprevisible e irresistible, el conjunto de la situación no configura caso fortuito, porque el origen del riesgo está en la propia conducta imprudente del deudor al contratar.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno explica por qué la ajenidad no se mide en abstracto sino en función del contrato y los riesgos que el propio deudor asumió al obligarse.",
+        "elementos_clave": [
+            {"texto": "Identifica que falla el requisito de ajenidad (inimputabilidad)", "keywords": ["ajenidad", "inimputabilidad"], "pregunta": "¿Qué requisito del caso fortuito falla en este ejemplo?"},
+            {"texto": "Explica que el riesgo de no conseguir la mercadería ya era un riesgo asumido por el comerciante al comprometerse sin tenerla", "keywords": ["riesgo asumido", "sin tenerla", "se comprometió"], "pregunta": "¿Por qué el impedimento no le es ajeno al comerciante?"},
+            {"texto": "Señala que es un caso de falta de previsión: el vendedor debió prever esa dificultad antes de obligarse", "keywords": ["falta de previsión", "debió prever", "antes de obligarse"], "pregunta": "¿Cómo califica Abeliuk este caso?"},
+        ],
+    }],
+}
+
+
+def subir_eje10(token):
+    return subir_lote(token, "10. El caso fortuito o fuerza mayor", EJE10_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -775,6 +810,8 @@ def main():
         subir_eje6(token)
     elif accion == "subir-eje8":
         subir_eje8(token)
+    elif accion == "subir-eje10":
+        subir_eje10(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":
