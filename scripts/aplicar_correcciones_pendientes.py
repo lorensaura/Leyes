@@ -311,22 +311,26 @@ EJE5_FLASHCARDS = [
 ]
 
 
-def subir_eje5(token):
-    print("=== Subiendo contenido nuevo del eje 5 ===")
+def subir_lote(token, tema_nombre, evaluacion_por_tipo, flashcards=None):
+    """Sube un lote nuevo de contenido (Evaluacion + opcionalmente Flashcards)
+    para un eje de Contractual. evaluacion_por_tipo: dict tipo -> lista de
+    items (mismo formato que EJE5_EVALUACION). flashcards: lista de dicts
+    pregunta/respuesta/dificultad (mismo formato que EJE5_FLASHCARDS)."""
+    print(f"=== Subiendo lote nuevo: {tema_nombre} ===")
     nombre_a_id = temas_nombre_a_id(token, CONTRACTUAL_BASE)
-    tema_eje5 = nombre_a_id.get("5. Requisitos de la indemnización de perjuicios")
-    if not tema_eje5:
-        raise SystemExit("No se encontro el eje 5 en el catalogo de Temas")
+    tema_id = nombre_a_id.get(tema_nombre)
+    if not tema_id:
+        raise SystemExit(f"No se encontro '{tema_nombre}' en el catalogo de Temas")
 
     total_ok = 0
 
-    for tipo, items in EJE5_EVALUACION.items():
+    for tipo, items in evaluacion_por_tipo.items():
         tabla = TABLAS_EVALUACION[tipo]
         registros = []
         for item in items:
             fields = {
                 "id": item["id"],
-                "tema": [tema_eje5],
+                "tema": [tema_id],
                 "subtema": item["subtema"],
                 "articulos_referencia": item["articulos_referencia"],
                 "objetivo_pedagogico": item["objetivo_pedagogico"],
@@ -348,22 +352,154 @@ def subir_eje5(token):
         print(f"  {tabla}: {len(creados)} creados, {len(fallidos)} fallidos")
         total_ok += len(creados)
 
-    fc_registros = [
-        {
-            "tema": [tema_eje5],
-            "pregunta": fc["pregunta"],
-            "respuesta": fc["respuesta"],
-            "dificultad": fc["dificultad"],
-            "publicado": True,
-        }
-        for fc in EJE5_FLASHCARDS
-    ]
-    creados, fallidos = airtable_post_lote(token, CONTRACTUAL_BASE, "Flashcards", fc_registros)
-    print(f"  Flashcards: {len(creados)} creados, {len(fallidos)} fallidos")
-    total_ok += len(creados)
+    if flashcards:
+        fc_registros = [
+            {
+                "tema": [tema_id],
+                "pregunta": fc["pregunta"],
+                "respuesta": fc["respuesta"],
+                "dificultad": fc["dificultad"],
+                "publicado": True,
+            }
+            for fc in flashcards
+        ]
+        creados, fallidos = airtable_post_lote(token, CONTRACTUAL_BASE, "Flashcards", fc_registros)
+        print(f"  Flashcards: {len(creados)} creados, {len(fallidos)} fallidos")
+        total_ok += len(creados)
 
     print(f"Total creado: {total_ok}")
     return total_ok
+
+
+def subir_eje5(token):
+    return subir_lote(
+        token,
+        "5. Requisitos de la indemnización de perjuicios",
+        EJE5_EVALUACION,
+        EJE5_FLASHCARDS,
+    )
+
+
+EJE3_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-014",
+        "subtema": "Incumplimiento imperfecto y retardo simultáneos, aceptados por el acreedor (arts. 1556, 1591)",
+        "caso": "Un taller mecánico se compromete a reparar el motor de un auto y entregarlo el lunes. Lo entrega el miércoles (dos días de atraso) y, además, sin haber cambiado un filtro que también estaba incluido en la reparación pactada. El dueño del auto, sin decir nada, recibe el auto y paga el precio acordado.",
+        "enunciado": "¿Qué tipo(s) de incumplimiento hay en este caso, y qué efecto tiene que el dueño haya recibido el auto sin objetar nada?",
+        "respuesta_modelo": "Hay dos formas de incumplimiento a la vez: retardo (la entrega debía ser el lunes y fue el miércoles) y cumplimiento imperfecto (no se cambió el filtro pactado), ambos incumplimientos parciales según el art. 1556. Como el acreedor no está obligado a recibir un pago que no sea íntegro (art. 1591), si hubiera rechazado la entrega en esas condiciones, habría incumplimiento total. Pero al recibir el auto y pagar sin objetar, el dueño acepta el cumplimiento imperfecto y tardío: la deuda subsiste reducida (correspondiente al filtro no cambiado), y el taller queda expuesto a la indemnización moratoria por el atraso, sin que el incumplimiento se convierta en total.",
+        "articulos_referencia": "1556, 1591",
+        "objetivo_pedagogico": "Evaluar si el alumno reconoce que un mismo caso puede combinar retardo y cumplimiento imperfecto, y si aplica correctamente la regla del art. 1591 sobre el efecto de que el acreedor acepte, en vez de rechazar, un pago no íntegro.",
+        "elementos_clave": [
+            {"texto": "Identifica el retardo (entrega el miércoles en vez del lunes)", "keywords": ["retardo", "dos días de atraso", "art. 1556"], "pregunta": "¿Qué forma de incumplimiento hay por la fecha de entrega?"},
+            {"texto": "Identifica el cumplimiento imperfecto (el filtro no cambiado)", "keywords": ["cumplimiento imperfecto", "incumplimiento parcial", "filtro"], "pregunta": "¿Qué otra forma de incumplimiento hay, además del retardo?"},
+            {"texto": "Explica que al recibir sin objetar, el dueño acepta el pago imperfecto y tardío en vez de rechazarlo, por lo que la deuda subsiste reducida y no se convierte en incumplimiento total", "keywords": ["acepta el pago", "no rechaza", "subsiste reducida", "no es total", "art. 1591"], "pregunta": "¿Qué efecto tiene que el dueño haya recibido el auto sin decir nada?"},
+        ],
+    }],
+    "deteccion": [{
+        "id": "rc-detect-012",
+        "subtema": "El incumplimiento es un concepto objetivo, distinto de la imputabilidad",
+        "caso": "Un alumno responde: \"El incumplimiento contractual es, por definición, un concepto subjetivo: solo hay incumplimiento cuando el deudor actuó con dolo o culpa. Si el deudor no cumplió por un simple error de cálculo sin mala intención, no hay incumplimiento, sino un problema distinto.\"",
+        "enunciado": "Identifica el error del alumno y explica la naturaleza real del concepto de incumplimiento.",
+        "respuesta_modelo": "El alumno confunde el incumplimiento con la imputabilidad. El incumplimiento (que no se pague íntegra y oportunamente lo debido, art. 1556) es un concepto de carácter objetivo: basta que el pago no se haya verificado en los términos pactados, sin que importe si el deudor actuó con dolo, con culpa o sin ninguno de los dos. Que el incumplimiento provenga de un obrar doloso o negligente del deudor es una cuestión distinta, la imputabilidad, que recién se examina después de constatado el incumplimiento, y que es la que abre la puerta a la indemnización de perjuicios (junto con el daño), no al incumplimiento mismo.",
+        "articulos_referencia": "1556",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue el incumplimiento (objetivo, basta el hecho del no pago íntegro y oportuno) de la imputabilidad (dolo o culpa del deudor), que son requisitos distintos y sucesivos.",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno confunde incumplimiento con imputabilidad", "keywords": ["confunde incumplimiento", "imputabilidad"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Explica que el incumplimiento es un concepto objetivo: basta que el pago no se haya verificado íntegra y oportunamente", "keywords": ["concepto objetivo", "no importa dolo ni culpa", "art. 1556"], "pregunta": "¿Qué hace falta para que exista incumplimiento?"},
+            {"texto": "Explica que la imputabilidad es una cuestión distinta y posterior, necesaria solo para la indemnización de perjuicios", "keywords": ["imputabilidad distinta", "cuestión posterior", "indemnización de perjuicios"], "pregunta": "¿Para qué hace falta entonces el dolo o la culpa?"},
+        ],
+    }],
+    "justificacion": [{
+        "id": "rc-just-012",
+        "subtema": "El incumplimiento como concepto objetivo y su separación de la imputabilidad",
+        "enunciado": "¿Por qué se dice que el incumplimiento contractual es un concepto \"de carácter objetivo\"? ¿Qué consecuencia práctica tiene separar el incumplimiento de la imputabilidad del deudor?",
+        "respuesta_modelo": "Es objetivo porque basta con verificar, mirando el contenido de la obligación, si hubo pago íntegro y oportuno o no: no se necesita indagar en la conducta interna del deudor. El artículo 1556 describe el incumplimiento en tres hipótesis (no cumplir, cumplir imperfectamente, retardar el cumplimiento) sin exigir ningún elemento de dolo o culpa. La consecuencia práctica de separar incumplimiento de imputabilidad es que el incumplimiento por sí solo ya habilita al acreedor a pedir el cumplimiento forzado o la resolución (art. 1489); solo si además se quiere la indemnización de perjuicios hace falta acreditar, adicionalmente, que el incumplimiento es imputable al deudor (dolo o culpa) y que causó un daño.",
+        "articulos_referencia": "1556, 1489",
+        "objetivo_pedagogico": "Evaluar si el alumno explica por qué el incumplimiento es un concepto objetivo y distingue qué remedios habilita por sí solo frente a los que exigen además imputabilidad.",
+        "elementos_clave": [
+            {"texto": "Explica que el incumplimiento se verifica objetivamente, sin indagar en la conducta interna del deudor", "keywords": ["objetivo", "sin indagar conducta", "sin dolo ni culpa"], "pregunta": "¿Por qué el incumplimiento es un concepto objetivo?"},
+            {"texto": "Cita el art. 1556 y sus tres hipótesis sin elemento subjetivo", "keywords": ["art. 1556", "tres hipótesis", "no cumplir, imperfecto, retardo"], "pregunta": "¿Qué norma lo describe y cómo?"},
+            {"texto": "Explica que el incumplimiento por sí solo habilita cumplimiento forzado y resolución, mientras que la indemnización exige además imputabilidad y daño", "keywords": ["cumplimiento forzado", "resolución", "indemnización exige más", "imputabilidad y daño"], "pregunta": "¿Qué consecuencia práctica tiene esta separación?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-011",
+        "subtema": "Cumplimiento imperfecto vs. incumplimiento total vs. retardo (art. 1556)",
+        "caso": "Un taller de costura se obliga a confeccionar un vestido de novia para el 10 de agosto. Lo entrega el 10 de agosto, pero con la talla equivocada, que la novia no puede usar sin arreglos adicionales.",
+        "enunciado": "¿Qué tipo de incumplimiento hay, según la clasificación del art. 1556?",
+        "opciones": {
+            "a": ("Incumplimiento total, porque el vestido entregado no sirve para el uso que la novia necesitaba",
+                  "Error: hay ejecución de la obligación (se confeccionó y entregó un vestido), no una ausencia total de cumplimiento; el defecto de talla es un problema de integridad de la prestación, no de inexistencia total de ella."),
+            "b": ("Cumplimiento imperfecto, un incumplimiento parcial, porque la obligación se ejecutó pero no en forma íntegra",
+                  "CORRECTO. El vestido se confeccionó y entregó a tiempo, pero con un defecto (la talla) que impide su uso sin ajustes: eso es cumplir la obligación, pero no íntegramente, la hipótesis del cumplimiento imperfecto del art. 1556."),
+            "c": ("Retardo, porque la entrega tardía es lo único que compromete al taller",
+                  "Error: la entrega se hizo en la fecha pactada (10 de agosto); no hay retardo, el problema es la calidad/talla de lo entregado, no la oportunidad de la entrega."),
+            "d": ("No hay incumplimiento, porque el vestido efectivamente se confeccionó y entregó en la fecha pactada",
+                  "Error: que se haya entregado algo en la fecha pactada no basta; el pago debe ser íntegro (identidad e integridad), y un vestido de talla equivocada no cumple ese estándar, por lo que sigue habiendo incumplimiento (parcial)."),
+        },
+        "correcta": "B",
+        "articulos_referencia": "1556",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue cumplimiento imperfecto de incumplimiento total y de retardo, en un caso donde la entrega es oportuna pero defectuosa.",
+    }],
+}
+
+
+def subir_eje3(token):
+    return subir_lote(token, "3. El incumplimiento: noción objetiva", EJE3_EVALUACION)
+
+
+EJE7_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-015",
+        "subtema": "El dolo contractual no se presume; debe probarse (art. 1459)",
+        "caso": "En un contrato de arriendo de un local comercial, el arrendatario deja de pagar tres meses de renta. El arrendador demanda alegando que el arrendatario dejó de pagar dolosamente, con el propósito deliberado de perjudicarlo, pero en el juicio solo logra acreditar el hecho del no pago, sin aportar ninguna prueba sobre la intención del arrendatario.",
+        "enunciado": "¿Puede el arrendador obtener que se califique el incumplimiento como doloso, con los efectos que eso trae? Fundamenta.",
+        "respuesta_modelo": "No puede, mientras no pruebe el dolo. El dolo no se presume, salvo en los casos especialmente previstos por la ley; en los demás, debe probarse (art. 1459). El arrendador, que es quien alega que el incumplimiento fue doloso, soporta la carga de acreditarlo, y no basta con probar el solo hecho del no pago (el incumplimiento objetivo), que en todo caso hace presumir la culpa del arrendatario (art. 1547 inc. 3°), pero no el dolo. Mientras el arrendador no acredite la intención o al menos la conciencia de perjudicarlo, el incumplimiento se calificará como culpable, no doloso, con las consecuencias más benignas que eso trae para el arrendatario (perjuicios solo previstos, posibilidad de condonación anticipada de la culpa).",
+        "articulos_referencia": "1459, 1547",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente la regla de que el dolo no se presume (a diferencia de la culpa) y debe ser probado por quien lo alega.",
+        "elementos_clave": [
+            {"texto": "Identifica que el dolo no se presume y debe probarse por quien lo alega (el arrendador)", "keywords": ["dolo no se presume", "debe probarse", "art. 1459"], "pregunta": "¿Quién debe probar el dolo y qué regla lo exige?"},
+            {"texto": "Señala que el solo incumplimiento objetivo no basta para probar dolo, aunque sí hace presumir la culpa", "keywords": ["incumplimiento no prueba dolo", "presunción de culpa distinta"], "pregunta": "¿Basta con probar el no pago para tener por acreditado el dolo?"},
+            {"texto": "Concluye que sin esa prueba, el incumplimiento se califica como culpable, no doloso, con efectos más benignos", "keywords": ["se califica culpable", "efectos más benignos"], "pregunta": "¿Cómo se califica entonces el incumplimiento?"},
+        ],
+    }],
+    "justificacion": [{
+        "id": "rc-just-013",
+        "subtema": "Por qué el dolo agrava la responsabilidad pero no hasta los perjuicios indirectos (art. 1558)",
+        "enunciado": "¿Por qué el dolo agrava la responsabilidad del deudor extendiéndola a los perjuicios imprevistos, pero el art. 1558 traza un límite que ni el dolo traspasa? Explica cuál es ese límite y por qué existe.",
+        "respuesta_modelo": "Si el incumplimiento es culpable, el deudor solo responde de los perjuicios directos previstos (los que se previeron o pudieron preverse al tiempo del contrato). El dolo agrava esa responsabilidad extendiéndola también a los perjuicios directos imprevistos, porque quien incumple deliberadamente pierde la protección que la previsibilidad ordinariamente concede al deudor de buena fe. Sin embargo, el art. 1558 traza una frontera infranqueable: en ningún caso, ni siquiera mediando dolo, se responde de los perjuicios indirectos. El límite existe porque la extensión de la responsabilidad, aun agravada por el dolo, sigue exigiendo una relación causal directa entre el incumplimiento y el perjuicio; los perjuicios indirectos rompen esa cadena causal directa, y ni la gravedad de la conducta del deudor puede suplir esa falta de conexión causal inmediata.",
+        "articulos_referencia": "1558",
+        "objetivo_pedagogico": "Evaluar si el alumno explica la extensión que el dolo agrega a la responsabilidad (previstos → también imprevistos) y por qué existe igual un límite (los indirectos) que ni el dolo traspasa.",
+        "elementos_clave": [
+            {"texto": "Explica que si hay solo culpa, el deudor responde de perjuicios directos previstos únicamente", "keywords": ["perjuicios previstos", "solo culpa"], "pregunta": "¿De qué perjuicios responde el deudor si solo hay culpa?"},
+            {"texto": "Explica que el dolo extiende la responsabilidad a los perjuicios directos imprevistos", "keywords": ["dolo extiende", "imprevistos"], "pregunta": "¿Qué agrega el dolo a esa responsabilidad?"},
+            {"texto": "Explica que ni el dolo lleva a responder de los perjuicios indirectos, por faltar relación causal directa", "keywords": ["nunca indirectos", "límite infranqueable", "relación causal directa"], "pregunta": "¿Hay algún límite que ni el dolo traspasa?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-012",
+        "subtema": "El dolo se aprecia en concreto y no admite grados, a diferencia de la culpa",
+        "caso": "En un contrato de suministro, el proveedor deja intencionalmente de entregar la mercadería para vendérsela a otro cliente que pagaba más. Al ser demandado, argumenta ante el tribunal: \"Sí hubo intención de incumplir, pero fue un dolo menor, casi como una culpa levísima, porque nunca quise arruinar a la contraparte, solo aprovechar una mejor oferta.\"",
+        "enunciado": "¿Es jurídicamente sostenible pedir que se gradúe el dolo del proveedor como \"menor\", asimilándolo a un grado de culpa?",
+        "opciones": {
+            "a": ("Sí, porque el dolo admite grados igual que la culpa, y el juez debe medir su intensidad caso a caso",
+                  "Error: a diferencia de la culpa, que se aprecia en abstracto y admite tres grados (grave, leve, levísima), el dolo se aprecia en concreto y no admite grados: o hay intención (o representación consciente) de dañar, o no la hay."),
+            "b": ("No, porque el dolo se aprecia en concreto, atendiendo a la intención o representación efectiva del deudor, y no admite graduación alguna",
+                  "CORRECTO. El dolo se valora en concreto según la intención o representación efectiva del deudor incumplidor; no existen grados de dolo, a diferencia de la culpa, que se aprecia en abstracto conforme a un modelo ideal de conducta y admite tres grados."),
+            "c": ("No, porque el dolo siempre equivale a la culpa grave, así que corresponde aplicar directamente el estándar de la culpa grave",
+                  "Error: la equivalencia es en sentido inverso y solo para un efecto puntual (art. 44: la culpa grave equivale al dolo, no al revés); no significa que el dolo se mida con la escala de graduación de la culpa."),
+            "d": ("Sí, porque el artículo 1547 gradúa la responsabilidad del deudor según el grado de dolo con que actuó, igual que gradúa la culpa",
+                  "Error: el art. 1547 gradúa la culpa según a quién beneficia el contrato (levísima/leve/grave); no contiene ninguna graduación del dolo, que se aprecia en concreto y sin grados."),
+        },
+        "correcta": "B",
+        "articulos_referencia": "44, 1547",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue que el dolo se aprecia en concreto y no admite grados, evitando la confusión inversa con la equivalencia del art. 44.",
+    }],
+}
+
+
+def subir_eje7(token):
+    return subir_lote(token, "7. El dolo contractual", EJE7_EVALUACION)
 
 
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
@@ -475,6 +611,10 @@ def main():
         relink_flashcards(token)
     elif accion == "subir-eje5":
         subir_eje5(token)
+    elif accion == "subir-eje3":
+        subir_eje3(token)
+    elif accion == "subir-eje7":
+        subir_eje7(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":
