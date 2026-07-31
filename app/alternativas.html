@@ -1598,7 +1598,7 @@ const bancoTransversal = [
       const seguro = escaparHtmlBase(texto);
       return seguro
         .replace(/&lt;(\/?)(b|i|em|strong|u)&gt;/g, '<$1$2>')
-        .replace(/&lt;span class='art'&gt;/g, '<span class="art">').replace(/&lt;\/span&gt;/g, '</span>');
+        .replace(/&lt;span class=["']art["']&gt;/g, '<span class="art">').replace(/&lt;\/span&gt;/g, '</span>');
     }
     function fcShuffle(arr) {
       const c = arr.slice();
@@ -1666,7 +1666,7 @@ const bancoTransversal = [
             <div class="fc-dificultad ${t.dificultad}">${{ basica: 'Básica', intermedia: 'Intermedia', avanzada: 'Avanzada' }[t.dificultad] || t.dificultad}</div>
             ${temaHtml}
             <div class="fc-etiqueta">${fcVolteada ? 'Respuesta' : 'Pregunta'}</div>
-            <div class="fc-texto">${fcVolteada ? fcFormatearRespuesta(t.respuesta) : escaparHtmlBase(t.pregunta)}</div>
+            <div class="fc-texto">${fcVolteada ? fcFormatearRespuesta(t.respuesta) : fcFormatearRespuesta(t.pregunta)}</div>
             <div class="fc-pista">${fcVolteada ? 'Click para ver la pregunta' : 'Click para ver la respuesta'}</div>
           </div>
           ${calificarHtml}
