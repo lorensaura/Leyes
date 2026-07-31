@@ -839,6 +839,55 @@ def subir_eje14(token):
     return subir_lote(token, "14. El cumplimiento forzado", EJE14_EVALUACION)
 
 
+EJE17_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-021",
+        "subtema": "El estado de necesidad como eximente discutida (ejemplo del capitán del barco)",
+        "caso": "Durante el transporte de mercadería inflamable en un camión, el conductor detecta que un neumático se está sobrecalentando peligrosamente cerca de la carga inflamable. Para evitar una posible explosión que pondría en riesgo su vida y la de otros conductores en la carretera, decide detenerse y arrojar parte de la carga al costado del camino, pudiendo haber seguido conduciendo con cuidado sin que fuera estrictamente imposible continuar.",
+        "enunciado": "Si el dueño de la mercadería demanda al transportista por el incumplimiento (no entregó toda la carga), ¿puede el transportista invocar el estado de necesidad para exonerarse? ¿Qué discute la doctrina sobre esto?",
+        "respuesta_modelo": "El transportista puede intentar invocar el estado de necesidad: pudiendo cumplir (no había una imposibilidad insuperable, a diferencia del caso fortuito), optó por no hacerlo para evitar un mal mayor (una posible explosión que pondría en riesgo vidas humanas), igual que el ejemplo clásico de Fueyo del capitán que arroja mercadería al mar para salvar el barco en peligro de naufragar. Sin embargo, la doctrina no es unánime sobre si esto exonera de responsabilidad: ABELIUK sostiene que para quedar exento debe configurarse una verdadera fuerza mayor, y que no hay disposición legal que reconozca el estado de necesidad como eximente autónomo; la tendencia moderna, en cambio, entiende que el estado de necesidad legitima el hecho y lo vuelve lícito, liberando al deudor. Además, esta causal ha tenido escasa o nula acogida en la jurisprudencia nacional, a diferencia del caso fortuito propiamente tal.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno identifica el estado de necesidad como eximente discutida, distinguiéndola del caso fortuito (aquí sí había posibilidad de cumplir), y si conoce el estado de la discusión doctrinal.",
+        "elementos_clave": [
+            {"texto": "Identifica que hay estado de necesidad, no caso fortuito, porque sí era posible cumplir pero se optó por sacrificar la prestación", "keywords": ["estado de necesidad", "sí era posible cumplir"], "pregunta": "¿Es esto caso fortuito o estado de necesidad? ¿Por qué?"},
+            {"texto": "Cita la postura de Abeliuk que exige fuerza mayor y niega el estado de necesidad como eximente autónomo", "keywords": ["Abeliuk", "exige fuerza mayor"], "pregunta": "¿Qué opina Abeliuk sobre si esto exonera?"},
+            {"texto": "Señala que la tendencia moderna sí acepta el estado de necesidad, pero que tiene escasa acogida jurisprudencial", "keywords": ["tendencia moderna", "escasa acogida jurisprudencial"], "pregunta": "¿Cuál es la tendencia doctrinal más reciente, y cómo la ha recibido la jurisprudencia?"},
+        ],
+    }],
+    "justificacion": [{
+        "id": "rc-just-018",
+        "subtema": "Los efectos del hecho o culpa del acreedor como eximente (mora accipiendi)",
+        "enunciado": "¿Por qué se dice que el hecho o culpa del acreedor (mora accipiendi) opera como una causal de exención, total o parcial, de la responsabilidad del deudor? Explica sus tres efectos principales.",
+        "respuesta_modelo": "Porque sería contrario a toda lógica hacer responsable al deudor por un incumplimiento o deterioro que obedece al propio hecho o culpa del acreedor, especialmente a su negativa o tardanza en recibir la prestación. De varias disposiciones del Código (arts. 1548, 1680, 1827) la doctrina extrae tres efectos: primero, atenúa la responsabilidad del deudor, que pasa a responder solo de dolo o culpa grave, ya no de culpa leve o levísima; segundo, lo libera de los gastos de conservación y custodia de la cosa mientras el acreedor no la recibe; y tercero, según la opinión mayoritaria, traslada al acreedor el riesgo de la pérdida fortuita de la cosa. Estos tres efectos muestran que el hecho o culpa del acreedor no es una simple defensa procesal, sino una genuina causal de exención que reconfigura la posición del deudor frente al riesgo del contrato.",
+        "articulos_referencia": "1548, 1680, 1827",
+        "objetivo_pedagogico": "Evaluar si el alumno explica los tres efectos del hecho o culpa del acreedor (mora accipiendi) como eximente de responsabilidad del deudor.",
+        "elementos_clave": [
+            {"texto": "Explica que sería ilógico hacer responsable al deudor por un incumplimiento causado por la negativa o tardanza del acreedor en recibir", "keywords": ["ilógico", "negativa o tardanza del acreedor"], "pregunta": "¿Por qué se justifica esta eximente?"},
+            {"texto": "Señala el primer efecto: atenúa la responsabilidad del deudor a solo dolo o culpa grave", "keywords": ["atenúa responsabilidad", "dolo o culpa grave"], "pregunta": "¿Cuál es el primer efecto de la mora del acreedor?"},
+            {"texto": "Señala los otros dos efectos: libera de gastos de conservación y traslada al acreedor el riesgo de la pérdida fortuita", "keywords": ["libera de gastos", "traslada el riesgo"], "pregunta": "¿Qué otros dos efectos produce?"},
+        ],
+    }],
+    "deteccion": [{
+        "id": "rc-detect-017",
+        "subtema": "El hecho del auxiliar o dependiente del deudor no es caso fortuito para este (art. 1679)",
+        "caso": "Un alumno responde: \"Si el camarero de un restaurante derrama accidentalmente comida sobre la ropa de un cliente durante un evento contratado, el restaurante (deudor de la obligación de servicio) puede invocar caso fortuito, porque el hecho fue del camarero, un tercero, y no del restaurante mismo.\"",
+        "enunciado": "Identifica el error del alumno y explica la regla correcta.",
+        "respuesta_modelo": "El alumno confunde al auxiliar o dependiente del deudor con un tercero extraño cuyo hecho constituiría caso fortuito. La regla es la contraria: el hecho del tercero por el cual el deudor es civilmente responsable se considera hecho suyo (art. 1679: \"en el hecho o culpa del deudor se comprende el hecho o culpa de las personas por quienes fuere responsable\"). El camarero es un dependiente del restaurante, del que este se vale para cumplir su obligación de servicio; su hecho no es, para el restaurante, un caso fortuito, sino hecho propio que compromete su responsabilidad. Solo si el tercero fuera ajeno a la organización del deudor, y su intervención reuniera los requisitos del caso fortuito (imprevisibilidad e irresistibilidad), podría el deudor invocarlo como eximente.",
+        "articulos_referencia": "1679",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue entre el hecho de un tercero ajeno (que puede ser caso fortuito) y el hecho de un auxiliar o dependiente del deudor (que se considera hecho propio, no exonera).",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno confunde al dependiente del deudor con un tercero ajeno", "keywords": ["confunde dependiente con tercero ajeno"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Cita el art. 1679: el hecho del dependiente se considera hecho propio del deudor", "keywords": ["art. 1679", "hecho propio"], "pregunta": "¿Qué dice el art. 1679 sobre esto?"},
+            {"texto": "Explica que solo un tercero verdaderamente ajeno, con los requisitos del caso fortuito, exoneraría", "keywords": ["tercero ajeno", "requisitos del caso fortuito"], "pregunta": "¿En qué caso sí podría invocarse el hecho de un tercero como eximente?"},
+        ],
+    }],
+}
+
+
+def subir_eje17(token):
+    return subir_lote(token, "17. Las eximentes de responsabilidad", EJE17_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -968,6 +1017,8 @@ def main():
         subir_eje13(token)
     elif accion == "subir-eje14":
         subir_eje14(token)
+    elif accion == "subir-eje17":
+        subir_eje17(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":

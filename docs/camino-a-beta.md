@@ -340,9 +340,13 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   - Eje 14 (1→3): cumplimiento forzado de obligaciones de no hacer, las
     tres hipótesis del art. 1555 según sea posible o necesaria la
     destrucción de lo hecho.
+  - Eje 17 (1→4): estado de necesidad como eximente discutida (ejemplo
+    del capitán del barco de Fueyo); los tres efectos del hecho o culpa
+    del acreedor (mora accipiendi, arts. 1548/1680/1827); el hecho del
+    auxiliar o dependiente del deudor no es caso fortuito (art. 1679).
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 15, 16, 17,
+  Laura decida desarrollarlos), y 15, 16,
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).
