@@ -888,6 +888,42 @@ def subir_eje17(token):
     return subir_lote(token, "17. Las eximentes de responsabilidad", EJE17_EVALUACION)
 
 
+EJE16_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-022",
+        "subtema": "Autonomía de la indemnización en contratos de tracto sucesivo (tercera excepción de Boetsch)",
+        "caso": "Una empresa de catering contrata a un proveedor para que le suministre mensualmente cierta cantidad de insumos durante un año. Durante el tercer mes, el proveedor no entrega nada de lo pactado para ese mes, aunque cumple con normalidad los meses siguientes. La empresa de catering, que ya suplió esa falta con otro proveedor de emergencia para no perder clientes, no tiene ningún interés en resolver el contrato completo (los demás meses funcionan bien) ni en exigir el cumplimiento tardío de lo que correspondía al tercer mes (ya no lo necesita).",
+        "enunciado": "¿Puede la empresa de catering demandar directamente la indemnización de los perjuicios del incumplimiento del tercer mes, sin pedir la resolución del contrato completo ni el cumplimiento tardío?",
+        "respuesta_modelo": "Sí puede. Se trata de un contrato de tracto sucesivo (suministro periódico), y conforme a la tercera excepción que reconoce Boetsch a la regla de no autonomía, el incumplimiento de una prestación ya devengada e irrecuperable (el suministro del tercer mes, que el tiempo ya hizo pasar) solo puede repararse mediante indemnización: ni el cumplimiento en naturaleza (ya no tiene sentido, el mes ya pasó) ni la resolución del contrato completo (que además perjudicaría a la empresa, que sí quiere mantener el resto del contrato) restituyen el interés lesionado. La indemnización es, en este caso, el único remedio idóneo, y puede demandarse de forma autónoma, sin necesidad de acompañarla de cumplimiento ni resolución.",
+        "articulos_referencia": "",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica la tercera excepción de Boetsch (contratos de tracto sucesivo) a un caso de suministro periódico con incumplimiento de una prestación ya devengada.",
+        "elementos_clave": [
+            {"texto": "Identifica que se trata de un contrato de tracto sucesivo", "keywords": ["tracto sucesivo", "suministro periódico"], "pregunta": "¿Qué tipo de contrato es este?"},
+            {"texto": "Explica que la prestación del tercer mes ya está devengada e irrecuperable, sin sentido pedir cumplimiento ni resolución", "keywords": ["prestación devengada", "irrecuperable"], "pregunta": "¿Por qué no sirven el cumplimiento ni la resolución acá?"},
+            {"texto": "Concluye que la indemnización es el único remedio idóneo y puede demandarse autónomamente", "keywords": ["único remedio idóneo", "autónoma"], "pregunta": "¿Qué puede hacer entonces la empresa de catering?"},
+        ],
+    }],
+    "deteccion": [{
+        "id": "rc-detect-018",
+        "subtema": "Cumplimiento imperfecto no resolutorio: recibir la cosa no implica renunciar a la indemnización (art. 1590 inc. 2°)",
+        "caso": "Un alumno responde: \"El acreedor que recibe una cosa con deterioros, en vez de rechazarla, nunca puede después demandar la indemnización de esos deterioros de forma independiente: al aceptar la cosa, renuncia a cualquier reclamo posterior, salvo que pida la resolución del contrato.\"",
+        "enunciado": "Identifica el error del alumno y explica la regla correcta.",
+        "respuesta_modelo": "El alumno se equivoca: recibir la cosa con deterioros no implica renunciar a reclamar por ellos. El artículo 1590 inciso 2° autoriza expresamente al acreedor, cuando el deudor entrega la cosa con deterioros o de modo imperfecto, a recibirla y exigir además que se le indemnicen los deterioros. Esta es, precisamente, la segunda excepción que reconoce Boetsch a la regla de no autonomía de la indemnización compensatoria: aquí la indemnización se demanda sin resolución y sin cumplimiento adicional, porque el acreedor ya recibió la prestación, aunque defectuosa. Lejos de renunciar a su derecho, el acreedor que opta por quedarse con la cosa imperfecta conserva la posibilidad de exigir, de forma autónoma, la indemnización de los deterioros.",
+        "articulos_referencia": "1590",
+        "objetivo_pedagogico": "Evaluar si el alumno conoce la excepción del art. 1590 inc. 2° (cumplimiento imperfecto no resolutorio) como caso de indemnización autónoma.",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno se equivoca al decir que recibir la cosa implica renunciar al reclamo", "keywords": ["no implica renuncia"], "pregunta": "¿Cuál es el error del alumno?"},
+            {"texto": "Cita el art. 1590 inc. 2° que autoriza recibir la cosa y exigir la indemnización de los deterioros", "keywords": ["art. 1590 inc. 2°", "recibir y exigir indemnización"], "pregunta": "¿Qué norma regula esta situación?"},
+            {"texto": "Explica que esta es la segunda excepción de Boetsch, indemnización sin resolución ni cumplimiento adicional", "keywords": ["segunda excepción de Boetsch", "sin resolución ni cumplimiento"], "pregunta": "¿Cómo se clasifica esta excepción dentro del esquema de Boetsch?"},
+        ],
+    }],
+}
+
+
+def subir_eje16(token):
+    return subir_lote(token, "16. La autonomía de la acción indemnizatoria", EJE16_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -1019,6 +1055,8 @@ def main():
         subir_eje14(token)
     elif accion == "subir-eje17":
         subir_eje17(token)
+    elif accion == "subir-eje16":
+        subir_eje16(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":
