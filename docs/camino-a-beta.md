@@ -399,6 +399,21 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   Hallazgo pendiente sin tocar: **10 de los 20 ejes reales siguen en cero
   tarjetas** (2, 3, 5, 12, 13, 14, 15, 16, 19, 21) — ver plan de
   generación de contenido nuevo más abajo.
+  **Incidente y arreglo (2026-08-01): las 50 borradas habían "revivido"
+  como 50 fantasmas en Supabase con id nuevo.** Causa: `borrar_redundantes_eje6`
+  borra primero la fila vieja en Supabase y después el registro en
+  Airtable; si un `sync_airtable_supabase.py` corría en esa ventana (pasó,
+  por los syncs de las subidas de eje 3/7/4/9/etc. que siguieron), el
+  registro todavía existía en Airtable en ese instante y el sync lo volvía
+  a insertar en Supabase con id nuevo — Airtable quedaba limpio pero
+  Supabase se autorregeneraba con esas 50 filas huérfanas (eje 6 mostraba
+  119, no 69). Se detectó comparando el universo completo de
+  `airtable_id` de Airtable contra Supabase (180 vs. 230, la diferencia
+  exacta eran las 50 fantasma) y se borraron directo en Supabase. Confirmado:
+  Contractual queda en **180 Flashcards** en ambos lados, eje 6 en 69.
+  **Gotcha para la próxima vez que se borre algo así**: borrar primero en
+  Airtable, esperar, recién después borrar en Supabase — o no correr
+  syncs mientras una tanda de borrados está en curso.
 - **Hallazgo (2026-07-31): existe un borrador de 2026-07-29 completamente
   olvidado, nunca subido ni revisado**, `docs/preguntas_pendientes_ejes_debiles_contractual_2026-07.md`
   (1240 líneas), con preguntas ya redactadas para los ejes débiles de
