@@ -798,6 +798,47 @@ def subir_eje13(token):
     return subir_lote(token, "13. Avaluación de perjuicios y cláusula penal", EJE13_EVALUACION)
 
 
+EJE14_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-020",
+        "subtema": "Cumplimiento forzado de obligaciones de no hacer: destrucción necesaria (art. 1555)",
+        "caso": "En un contrato de arrendamiento de un local comercial, el arrendatario se obliga a no instalar ningún letrero luminoso en la fachada, para no romper la estética uniforme del edificio exigida por el reglamento de copropiedad. El arrendatario instala igualmente un letrero luminoso de gran tamaño, que la administración del edificio exige retirar por infringir el reglamento.",
+        "enunciado": "¿Qué puede exigir el arrendador al arrendatario, conforme al art. 1555?",
+        "respuesta_modelo": "Como lo hecho (instalar el letrero) puede destruirse (retirarse) y esa destrucción es necesaria para el objeto que se tuvo en mira al contratar (mantener la estética uniforme exigida por el reglamento de copropiedad), el arrendador tiene derecho a pedir la destrucción de lo hecho, esto es, el retiro del letrero, y a que se le autorice para hacerlo retirar por un tercero a expensas del arrendatario, si este no se allana voluntariamente (art. 1555 inc. 2°). Como observa Abeliuk, si el deudor no se allana, la obligación de no hacer se transforma, por su infracción, en una de hacer (deshacer lo hecho), aplicándose las normas de ejecución de las obligaciones de hacer (art. 544 CPC). Además, el arrendador queda de todos modos indemne: puede reclamar también los perjuicios moratorios que la instalación del letrero le hubiere causado mientras estuvo instalado.",
+        "articulos_referencia": "1555",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente la primera hipótesis del art. 1555 (destrucción necesaria) a un caso de obligación de no hacer infringida.",
+        "elementos_clave": [
+            {"texto": "Identifica que lo hecho puede destruirse y esa destrucción es necesaria para el fin del contrato", "keywords": ["puede destruirse", "destrucción necesaria"], "pregunta": "¿Puede pedirse la destrucción de lo hecho en este caso?"},
+            {"texto": "Explica que el arrendador puede pedir la destrucción o hacerla ejecutar por un tercero a expensas del deudor", "keywords": ["destrucción por tercero", "expensas del deudor"], "pregunta": "¿Cómo se ejecuta esa destrucción si el arrendatario no colabora?"},
+            {"texto": "Señala que el arrendador además queda indemne, pudiendo cobrar los perjuicios moratorios", "keywords": ["queda indemne", "perjuicios moratorios"], "pregunta": "¿Puede el arrendador cobrar algo más además de la destrucción?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-017",
+        "subtema": "Las tres hipótesis del art. 1555 según sea posible o necesaria la destrucción",
+        "caso": "Un cantante se obliga contractualmente a presentarse exclusivamente en un teatro determinado durante toda la temporada, comprometiéndose a no actuar en ningún otro escenario de la ciudad durante ese período. Pese a ello, se presenta en otro teatro de la misma ciudad.",
+        "enunciado": "¿Qué puede pedir el teatro contratante frente a este incumplimiento de una obligación de no hacer?",
+        "opciones": {
+            "a": ("La destrucción de lo hecho, autorizándose a un tercero a \"deshacer\" la presentación ya realizada, a expensas del cantante",
+                  "Error: no es posible destruir o deshacer una presentación ya realizada; esta hipótesis (art. 1555 inc. 2) solo aplica cuando lo hecho es materialmente destructible, como una obra o construcción, no un hecho consumado e irrepetible."),
+            "b": ("Que el cantante cumpla por un modo equivalente, ya que el mismo fin puede obtenerse por otros medios",
+                  "Error: esta hipótesis (art. 1555 inc. 3) aplica cuando existe un modo equivalente para lograr el mismo fin sin destruir lo hecho; aquí no hay ningún modo equivalente que remedie que el cantante ya se presentó en otro escenario."),
+            "c": ("Únicamente la indemnización de perjuicios, porque no es posible destruir o deshacer lo ya hecho",
+                  "CORRECTO. Al no ser posible destruir o deshacer la presentación ya realizada (art. 1555 inc. 1), al teatro contratante no le queda otro remedio que pedir la indemnización de los perjuicios que esa presentación en otro escenario le haya causado."),
+            "d": ("El cumplimiento forzado de la obligación de no hacer mediante apremio personal al cantante, igual que en las obligaciones de hacer",
+                  "Error: el apremio personal (art. 1553 N° 1, arresto y multa) es un remedio propio de las obligaciones de hacer incumplidas, no de las de no hacer; además, aquí el hecho ya se consumó y es irreversible."),
+        },
+        "correcta": "C",
+        "articulos_referencia": "1555",
+        "objetivo_pedagogico": "Evaluar si el alumno distingue las tres hipótesis del art. 1555 (destrucción necesaria, modo equivalente, imposibilidad de deshacer) y aplica correctamente la tercera a un hecho consumado e irrepetible.",
+    }],
+}
+
+
+def subir_eje14(token):
+    return subir_lote(token, "14. El cumplimiento forzado", EJE14_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -925,6 +966,8 @@ def main():
         subir_eje12(token)
     elif accion == "subir-eje13":
         subir_eje13(token)
+    elif accion == "subir-eje14":
+        subir_eje14(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":

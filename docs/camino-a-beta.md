@@ -337,9 +337,12 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
     penal no requiere prueba de perjuicios (art. 1542); por qué no se
     acumulan pena e indemnización ordinaria (art. 1543); derecho
     alternativo del acreedor tras la mora, principal o pena (art. 1537).
+  - Eje 14 (1→3): cumplimiento forzado de obligaciones de no hacer, las
+    tres hipótesis del art. 1555 según sea posible o necesaria la
+    destrucción de lo hecho.
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 14, 15, 16, 17,
+  Laura decida desarrollarlos), y 15, 16, 17,
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).
