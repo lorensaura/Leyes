@@ -236,13 +236,15 @@ update public.evaluacion_practica set tema = '4. Obligaciones de medios y de res
 update public.evaluacion_practica set tema = '19. Los derechos auxiliares del acreedor' where codigo = 'rc-just-009';
 ```
 
-Si Laura decide asignar `rc-just-001` al eje 1 pese a la debilidad
-señalada arriba, el statement sería:
-
-```sql
--- opcional, solo si Laura aprueba la clasificación débil de rc-just-001:
-update public.evaluacion_practica set tema = '1. Efecto de las obligaciones y sistema de remedios' where codigo = 'rc-just-001';
-```
+**Obsoleto, no correr:** este doc originalmente dejaba acá un statement
+opcional para clasificar `rc-just-001` en el eje 1 de Contractual (la
+"hipótesis más probable, sin forzar" de la sección de arriba, antes de
+que Laura revisara el hallazgo). Laura decidió (2026-07-31) que
+`rc-just-001` no es Contractual: se mueve entero a Extracontractual, eje
+23, con `elementos_clave` expandidos (ver sección de arriba y
+`docs/fix_justificacion_menciona_n_de_m_2026-07-31.md`). Si alguien
+corriera aquel statement viejo después del `UPDATE` real, revertiría el
+ítem a Contractual sobre un eje débil — no correrlo.
 
 ## Resumen final
 

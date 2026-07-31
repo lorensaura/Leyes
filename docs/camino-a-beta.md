@@ -241,12 +241,15 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
 
 ## Pendiente: contenido y tareas sueltas (continuación)
 
-- **Cruzar los 9 lotes de Contractual** (+ el lote transversal) de
-  `docs/flashcards_pendientes_2026-07.md` contra lo ya publicado, mismo
-  proceso que se hizo con Extracontractual y Precontractual, todavía sin
-  tocar.
-- **Generar Flashcards de Contractual**: la tabla ya existe en Airtable
-  con el mismo esquema que Extracontractual/Precontractual, está vacía.
+- **Corregido 2026-07-31: Contractual ya tiene 225 Flashcards publicadas
+  y 100% linkeadas a `Temas`** (verificado en vivo contra Supabase; este
+  doc decía "está vacía" y `docs/contenido-airtable-supabase.md` decía
+  "0/0" para Precontractual, ambos desactualizados — Precontractual
+  también tiene ya 59 publicadas y linkeadas). Sigue pendiente **cruzar
+  los 9 lotes de Contractual** (+ el lote transversal) de
+  `docs/flashcards_pendientes_2026-07.md` contra esas 225 ya publicadas,
+  para ver qué de ese borrador es redundante y qué sigue siendo un hueco
+  real, mismo proceso que se hizo con Extracontractual y Precontractual.
 - **37 Flashcards nuevas de Precontractual generadas desde el manual, a
   su techo real** (`docs/flashcards_nuevas_2026-07-29_precontractual.md`),
   después de agotar `docs/flashcards_pendientes_2026-07.md` como fuente.
@@ -264,6 +267,9 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   preguntas/keywords de los checkpoints de `app/manuales.html` son
   borrador de Claude, todavía sin la revisión de Laura (ella pidió ese
   orden a propósito).
+- **Pedido de Laura (2026-07-31) para cuando se retomen los 3 manuales:**
+  agregar los subtemas (nivel 2, "N.M") al índice de cada uno, hoy solo
+  lista los ejes. Detalle en memoria `feedback_formato_manuales_digesto`.
 - **Verificar contra leychile.cl directo** (hoy solo verificados contra
   un espejo, leyes-cl.com) los 2 artículos de Código de Comercio en
   `scripts/memorice_literales_2026-07-28.sql`.

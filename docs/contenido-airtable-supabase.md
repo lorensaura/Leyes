@@ -150,11 +150,14 @@ Supabase (`preguntas_evaluacion.tema`, columna nueva —
 de volver a sincronizar Preguntas_Evaluacion — y `evaluacion_practica.tema`,
 que ya existía en el esquema pero nunca se llenaba).
 
-**Cuánto está linkeado hoy (medido 2026-07-31 contra Supabase en vivo):**
+**Cuánto está linkeado hoy (medido 2026-07-31 contra Supabase en vivo,
+ANTES de correr los `UPDATE` pendientes de la Fase 0 de Contractual —
+ver `docs/camino-a-beta.md`, esta fila de Contractual va a subir a
+48/51 una vez corridos):**
 
 | Tabla | Contractual | Extracontractual | Precontractual |
 |---|---|---|---|
-| Flashcards | 225/225 | 204/204 | 0/0 (sin contenido) |
+| Flashcards | 225/225 | 204/204 | 59/59 |
 | Preguntas_Evaluacion | 53/53 | 170/170 | 0/119 |
 | Evaluación (4 tablas) | 9/51 | **131/131** | 0/60 |
 
