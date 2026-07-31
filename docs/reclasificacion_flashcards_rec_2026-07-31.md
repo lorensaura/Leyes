@@ -414,3 +414,27 @@ update public.flashcards set tema = '9. La mora' where id = 225;
   (`Digesto Contractual` → `Flashcards` → `Temas`).
 - Detalle completo id → eje real:
   `docs/reclasificacion_flashcards_rec_2026-07-31_detalle.csv`.
+
+## Actualización 2026-07-31 (mismo día): aplicado y corregido
+
+Los 82 relinks se aplicaron en Airtable (no solo en Supabase) vía
+`scripts/aplicar_correcciones_pendientes.py relink-flashcards`, así que
+sobreviven el próximo sync.
+
+**Los 63 candidatas a borrar de este documento se reauditaron contra el
+texto exacto de la sección 0.3 de `docs/prompt-generacion-contenido-practica.md`
+antes de borrar nada, a pedido de Laura.** La primera pasada tenía un
+patrón sistemático de falso positivo: en varios clusters se recomendaba
+borrar la única tarjeta de **regla abstracta** de un hecho, dejando solo
+la de **caso concreto** — la sección 0.3 dice explícitamente que
+"aplicación al caso concreto vs. regla general en abstracto" no es
+redundancia. También se encontró un caso de pérdida de contenido real
+(la tarjeta 134, único lugar que menciona al albacea del art. 1299, se
+iba a borrar por "solaparse" con una lista que en realidad no lo
+incluye).
+
+Se restauraron 13 ids de las 63 (clusters 3, 7, 9, 10, 11, 12, 13, 18,
+19, 21, 22). **Lista final aprobada y ejecutada: 50 ids** (no 63), tanto
+en Airtable como en Supabase (`scripts/aplicar_correcciones_pendientes.py borrar-redundantes-eje6`).
+**Eje 6 quedó en 69 tarjetas reales, no 56.** Verificado en vivo contra
+Supabase el 2026-07-31.

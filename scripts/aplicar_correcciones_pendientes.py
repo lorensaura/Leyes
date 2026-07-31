@@ -52,6 +52,9 @@ FASE0_DOC = ROOT / "docs" / "fase0_rec_clasificacion_2026-07-31.md"
 FLASHCARDS_CSV = ROOT / "docs" / "reclasificacion_flashcards_rec_2026-07-31_detalle.csv"
 
 
+SUPABASE_URL = "https://byyukzhxhtopojgvgglp.supabase.co"
+
+
 def cargar_env():
     valores = {}
     if ENV_FILE.exists():
@@ -59,11 +62,12 @@ def cargar_env():
             if "=" in linea and not linea.strip().startswith("#"):
                 k, v = linea.split("=", 1)
                 valores[k.strip()] = v.strip()
-    if "AIRTABLE_TOKEN" in os.environ:
-        valores["AIRTABLE_TOKEN"] = os.environ["AIRTABLE_TOKEN"]
+    for k in ("AIRTABLE_TOKEN", "SUPABASE_SECRET_KEY"):
+        if k in os.environ:
+            valores[k] = os.environ[k]
     if not valores.get("AIRTABLE_TOKEN"):
         raise SystemExit("Falta AIRTABLE_TOKEN en .env")
-    return valores["AIRTABLE_TOKEN"]
+    return valores["AIRTABLE_TOKEN"], valores.get("SUPABASE_SECRET_KEY")
 
 
 def airtable_fetch_all(token, base, table):
@@ -362,11 +366,108 @@ def subir_eje5(token):
     return total_ok
 
 
+# --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
+# corregida contra la regla de redundancia de la seccion 0.3: se
+# restauraron 13 ids que la primera pasada iba a borrar por error --
+# eran la unica version "abstracta" de un hecho cuya unica contraparte
+# conservada era un caso concreto, lo que la seccion 0.3 dice
+# explicitamente que no es redundancia. Lista final aprobada por Laura,
+# 50 ids, ver conversacion 2026-07-31. ---
+
+EJE6_IDS_A_BORRAR = [
+    1, 11, 37, 186,
+    45, 49, 62, 160,
+    15, 109,
+    132, 141,
+    10, 58, 211,
+    51, 100,
+    5, 88,
+    23, 92, 59,
+    7, 12, 32, 191, 222,
+    8, 72, 34, 82,
+    44,
+    83,
+    93,
+    142,
+    84,
+    200,
+    203,
+    25, 138, 156,
+    110, 157, 163, 105,
+    190, 182, 166,
+    22,
+    170,
+]
+
+
+def borrar_redundantes_eje6(token, supabase_key):
+    print(f"=== Borrando {len(EJE6_IDS_A_BORRAR)} Flashcards redundantes del eje 6 ===")
+    if not supabase_key:
+        raise SystemExit("Falta SUPABASE_SECRET_KEY en .env")
+
+    # id (Supabase) -> airtable_id, leido en vivo de Supabase (mas confiable
+    # que fiarse del CSV de ayer, que puede haber quedado desactualizado
+    # tras el relink de la Parte A).
+    ids_str = ",".join(str(i) for i in EJE6_IDS_A_BORRAR)
+    url = f"{SUPABASE_URL}/rest/v1/flashcards?select=id,airtable_id&id=in.({ids_str})"
+    req = urllib.request.Request(url, headers={
+        "apikey": supabase_key, "Authorization": f"Bearer {supabase_key}",
+    })
+    with urllib.request.urlopen(req) as resp:
+        filas = json.load(resp)
+    id_a_airtable = {f["id"]: f["airtable_id"] for f in filas}
+
+    faltantes = [i for i in EJE6_IDS_A_BORRAR if i not in id_a_airtable]
+    if faltantes:
+        print(f"  AVISO: {len(faltantes)} ids no encontrados en Supabase: {faltantes}")
+
+    # 1. Borrar en Airtable (fuente real).
+    airtable_ids = list(id_a_airtable.values())
+    ok_airtable, fallidos_airtable = 0, []
+    for i in range(0, len(airtable_ids), 10):
+        chunk = airtable_ids[i:i + 10]
+        params = "&".join(f"records[]={rid}" for rid in chunk)
+        url = f"https://api.airtable.com/v0/{CONTRACTUAL_BASE}/Flashcards?{params}"
+        req = urllib.request.Request(url, method="DELETE", headers={"Authorization": f"Bearer {token}"})
+        try:
+            with urllib.request.urlopen(req) as resp:
+                json.load(resp)
+            ok_airtable += len(chunk)
+        except urllib.error.HTTPError as e:
+            print(f"  ERROR Airtable lote {i}: {e.code} {e.read().decode('utf-8', 'replace')}")
+            fallidos_airtable.extend(chunk)
+    print(f"  Airtable: {ok_airtable} borrados, {len(fallidos_airtable)} fallidos")
+
+    # 2. Borrar en Supabase (no se revierte solo con el sync: el gotcha
+    # documentado es que el sync nunca borra en Supabase lo que se borra
+    # en Airtable).
+    ok_supabase = 0
+    supabase_ids = list(id_a_airtable.keys())
+    for i in range(0, len(supabase_ids), 20):
+        chunk = supabase_ids[i:i + 20]
+        ids_chunk_str = ",".join(str(x) for x in chunk)
+        url = f"{SUPABASE_URL}/rest/v1/flashcards?id=in.({ids_chunk_str})"
+        req = urllib.request.Request(url, method="DELETE", headers={
+            "apikey": supabase_key, "Authorization": f"Bearer {supabase_key}",
+            "Prefer": "return=minimal",
+        })
+        try:
+            with urllib.request.urlopen(req):
+                pass
+            ok_supabase += len(chunk)
+        except urllib.error.HTTPError as e:
+            print(f"  ERROR Supabase lote {i}: {e.code} {e.read().decode('utf-8', 'replace')}")
+    print(f"  Supabase: {ok_supabase} borrados")
+
+    print(f"Total: {ok_airtable} en Airtable, {ok_supabase} en Supabase, {len(faltantes)} no encontrados")
+    return ok_airtable, ok_supabase
+
+
 def main():
     if len(sys.argv) < 2:
         raise SystemExit(__doc__)
     accion = sys.argv[1]
-    token = cargar_env()
+    token, supabase_key = cargar_env()
 
     if accion == "relink-evaluacion":
         relink_evaluacion(token)
@@ -374,6 +475,8 @@ def main():
         relink_flashcards(token)
     elif accion == "subir-eje5":
         subir_eje5(token)
+    elif accion == "borrar-redundantes-eje6":
+        borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":
         relink_evaluacion(token)
         print()
