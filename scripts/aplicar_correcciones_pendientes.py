@@ -730,6 +730,74 @@ def subir_eje12(token):
     return subir_lote(token, "12. Los perjuicios indemnizables", EJE12_EVALUACION)
 
 
+EJE13_EVALUACION = {
+    "aplicacion": [{
+        "id": "rc-aplic-019",
+        "subtema": "Avaluación legal de perjuicios en obligaciones de dinero (art. 1559)",
+        "caso": "Pedro le presta a Juan $5.000.000 sin fijar interés alguno en el contrato. Juan debía devolver el dinero el 1 de marzo, pero no lo hace. Pedro demanda exigiendo, además del capital, una indemnización por el atraso, sin haber sufrido ningún perjuicio concreto que pueda acreditar más allá del simple no pago oportuno.",
+        "enunciado": "¿Puede Pedro cobrar algo por el atraso, aunque no pruebe haber sufrido un perjuicio concreto? ¿Qué régimen se aplica y cuánto puede cobrar?",
+        "respuesta_modelo": "Sí puede cobrar. Al tratarse de una obligación de dinero sin pacto de intereses, se aplica la avaluación legal del art. 1559: los perjuicios moratorios se presumen (regla 2ª), de modo que Pedro no necesita probar ningún perjuicio concreto, basta el retardo. Como nada se pactó para la mora, corresponden los intereses legales (que en Chile equivalen al interés corriente, art. 19 Ley 18.010), devengados desde que Juan quedó en mora. Esta es una excepción a la regla general de que el daño debe probarse (art. 1698): en las obligaciones de dinero, el solo retardo basta para que se devenguen los intereses.",
+        "articulos_referencia": "1559",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente la avaluación legal del art. 1559 (perjuicios presumidos, intereses legales) a una obligación de dinero sin pacto de intereses.",
+        "elementos_clave": [
+            {"texto": "Identifica que se aplica la avaluación legal del art. 1559 por tratarse de una obligación de dinero", "keywords": ["avaluación legal", "art. 1559", "obligación de dinero"], "pregunta": "¿Qué régimen de avaluación se aplica en este caso?"},
+            {"texto": "Explica que los perjuicios moratorios se presumen, no requieren prueba", "keywords": ["perjuicios se presumen", "no requiere prueba"], "pregunta": "¿Necesita Pedro probar un perjuicio concreto?"},
+            {"texto": "Concluye que corresponden los intereses legales (equivalentes al corriente) por no haberse pactado nada", "keywords": ["intereses legales", "interés corriente"], "pregunta": "¿Cuánto puede cobrar entonces?"},
+        ],
+    }],
+    "deteccion": [{
+        "id": "rc-detect-016",
+        "subtema": "La cláusula penal no requiere prueba de perjuicios (función de avaluación anticipada)",
+        "caso": "Un alumno responde: \"Aunque exista una cláusula penal válidamente pactada, el acreedor igual debe probar que sufrió un perjuicio real y su monto, porque de lo contrario sería un enriquecimiento sin causa cobrar la pena sin daño efectivo.\"",
+        "enunciado": "Identifica el error del alumno y explica la regla correcta.",
+        "respuesta_modelo": "El alumno desconoce la función primaria de la cláusula penal: la avaluación anticipada de los perjuicios. Precisamente porque las partes ya liquidaron por adelantado el daño al pactar la pena, acreditados la obligación y el incumplimiento, el juez debe condenar al pago de la pena sin que el acreedor pruebe perjuicio alguno (art. 1542), y sin que el deudor pueda alegar que el incumplimiento no le causó daño o le causó uno menor. Esa es, justamente, la gran ventaja probatoria de la cláusula penal frente a la avaluación judicial ordinaria, que sí exige probar la existencia y el monto de los perjuicios. No hay enriquecimiento sin causa: la causa es el contrato mismo, en el que el deudor aceptó libremente esa avaluación anticipada al obligarse.",
+        "articulos_referencia": "1542",
+        "objetivo_pedagogico": "Evaluar si el alumno reconoce que la cláusula penal exime al acreedor de probar perjuicios, por su función de avaluación anticipada.",
+        "elementos_clave": [
+            {"texto": "Identifica que el alumno desconoce la función de avaluación anticipada de la cláusula penal", "keywords": ["avaluación anticipada", "función primaria"], "pregunta": "¿Qué función de la cláusula penal desconoce el alumno?"},
+            {"texto": "Explica que basta acreditar obligación e incumplimiento, sin probar perjuicio alguno (art. 1542)", "keywords": ["sin probar perjuicio", "art. 1542"], "pregunta": "¿Qué debe acreditar el acreedor para cobrar la pena?"},
+            {"texto": "Explica que esta es la ventaja probatoria de la cláusula penal frente a la avaluación judicial", "keywords": ["ventaja probatoria", "frente a avaluación judicial"], "pregunta": "¿Por qué es esto una ventaja para el acreedor?"},
+        ],
+    }],
+    "justificacion": [{
+        "id": "rc-just-017",
+        "subtema": "Por qué no se acumulan la cláusula penal y la indemnización ordinaria (art. 1543)",
+        "enunciado": "¿Por qué el acreedor no puede exigir conjuntamente la cláusula penal y la indemnización ordinaria de perjuicios, salvo pacto expreso? ¿Qué opción tiene entonces si los daños reales superan la pena pactada?",
+        "respuesta_modelo": "Porque ambas vías cumplen la misma función: reparar el mismo daño derivado del incumplimiento. Permitir que el acreedor cobre las dos a la vez importaría hacerlo cobrar dos veces por un mismo perjuicio, un doble pago no justificado (art. 1543). Por eso el acreedor debe optar entre la pena, con la ventaja de no probar perjuicios pero con el riesgo de que su monto sea inferior al daño real, o la indemnización ordinaria, probando los perjuicios efectivos, que pueden ser mayores. Esto revela que la cláusula penal es una garantía para el acreedor, pero no limita la responsabilidad del deudor: si los daños reales superan la pena, el acreedor puede desentenderse de ella y demandar derechamente la indemnización ordinaria, para obtener la reparación completa del daño efectivamente sufrido.",
+        "articulos_referencia": "1543",
+        "objetivo_pedagogico": "Evaluar si el alumno explica por qué la cláusula penal y la indemnización ordinaria son alternativas, no acumulables, y qué opción le conviene al acreedor según el caso.",
+        "elementos_clave": [
+            {"texto": "Explica que ambas vías reparan el mismo daño, y acumularlas sería un doble pago", "keywords": ["mismo daño", "doble pago", "art. 1543"], "pregunta": "¿Por qué no se pueden acumular?"},
+            {"texto": "Señala que el acreedor debe optar entre pena (sin probar perjuicio) o indemnización ordinaria (probando perjuicio real)", "keywords": ["debe optar", "sin probar", "probando"], "pregunta": "¿Qué opciones tiene entonces el acreedor?"},
+            {"texto": "Explica que si el daño real supera la pena, el acreedor puede desentenderse de ella y cobrar la indemnización ordinaria", "keywords": ["daño supera la pena", "indemnización ordinaria"], "pregunta": "¿Qué le conviene hacer si el daño real es mayor que la pena?"},
+        ],
+    }],
+    "discriminacion_mc": [{
+        "id": "rc-mc-016",
+        "subtema": "Derecho alternativo del acreedor tras la mora: exigir la obligación principal o la pena (art. 1537)",
+        "caso": "Un contratista se obliga a construir una bodega, con una cláusula penal de $10.000.000 para el caso de incumplimiento. Vencido el plazo sin que la obra esté terminada, el contratista queda constituido en mora.",
+        "enunciado": "¿Qué puede hacer el dueño de la obra frente al contratista moroso?",
+        "opciones": {
+            "a": ("Debe exigir primero el cumplimiento forzado de la obligación principal, y solo si eso fracasa, cobrar la pena",
+                  "Error: el art. 1537 no exige ese orden; constituido el deudor en mora, el acreedor adquiere un derecho alternativo, puede optar directamente por una u otra, sin necesidad de intentar primero el cumplimiento."),
+            "b": ("Puede demandar, a su arbitrio, la obligación principal o la pena, pero no ambas a la vez salvo pacto expreso",
+                  "CORRECTO. Constituido en mora el deudor, el acreedor adquiere un derecho alternativo (art. 1537): puede optar por demandar la obligación principal o la pena, pero no acumular ambas, salvo que se haya pactado expresamente que el pago de la pena no extingue la obligación principal."),
+            "c": ("Solo puede cobrar la pena, porque una vez pactada cláusula penal, ya no puede exigirse el cumplimiento de la obligación principal",
+                  "Error: el pacto de la cláusula penal no elimina la posibilidad de exigir el cumplimiento; el acreedor conserva la opción entre ambas vías, la pena es una alternativa, no un reemplazo forzoso."),
+            "d": ("Puede exigir ambas cosas simultáneamente, porque la pena es independiente de la obligación principal y no requiere ninguna coordinación con ella",
+                  "Error: por regla general no se acumulan la obligación principal y la pena (art. 1537), salvo las excepciones expresas de pena moratoria o pacto de no extinción."),
+        },
+        "correcta": "B",
+        "articulos_referencia": "1537",
+        "objetivo_pedagogico": "Evaluar si el alumno aplica correctamente el derecho alternativo del acreedor (art. 1537) entre exigir la obligación principal o la pena, una vez constituido el deudor en mora.",
+    }],
+}
+
+
+def subir_eje13(token):
+    return subir_lote(token, "13. Avaluación de perjuicios y cláusula penal", EJE13_EVALUACION)
+
+
 # --- Borrado de Flashcards redundantes del eje 6 (auditoria 2026-07-31,
 # corregida contra la regla de redundancia de la seccion 0.3: se
 # restauraron 13 ids que la primera pasada iba a borrar por error --
@@ -855,6 +923,8 @@ def main():
         subir_eje10(token)
     elif accion == "subir-eje12":
         subir_eje12(token)
+    elif accion == "subir-eje13":
+        subir_eje13(token)
     elif accion == "borrar-redundantes-eje6":
         borrar_redundantes_eje6(token, supabase_key)
     elif accion == "todo":

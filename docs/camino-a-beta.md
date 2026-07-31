@@ -332,9 +332,14 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
     1558, ejemplo clásico de las vacas de Pothier); requisito de que el
     daño no esté ya reparado (*compensatio lucri cum damno*, subrogación
     del asegurador).
+  - Eje 13 (0→4): estaba completamente vacío. Avaluación legal en
+    obligaciones de dinero (art. 1559, perjuicios presumidos); la cláusula
+    penal no requiere prueba de perjuicios (art. 1542); por qué no se
+    acumulan pena e indemnización ordinaria (art. 1543); derecho
+    alternativo del acreedor tras la mora, principal o pena (art. 1537).
   Sigue eje por eje, 1-2 por lote. Quedan por tocar: 2 y 21 (sin sección
   propia en el manual, ver hallazgo de Fase 1, no priorizar salvo que
-  Laura decida desarrollarlos), y 13, 14, 15, 16, 17,
+  Laura decida desarrollarlos), y 14, 15, 16, 17,
   18, 19, 20 con distinto grado de cobertura ya existente (ver
   `docs/cobertura_subtema_rec_2026-07-31.md` para el detalle por eje
   antes de este plan).
