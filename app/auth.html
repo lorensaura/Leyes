@@ -414,6 +414,20 @@
       goToVerify(email);
     }
 
+    // ── Pide el código de registro pasando por la lista blanca del
+    // servidor (api/auth-registro.js) en vez de llamar a Supabase
+    // directo — así el registro queda cerrado a solo los correos que
+    // Laura autorizó (ver scripts/supabase_schema_alumnas_autorizadas.sql).
+    async function pedirCodigoDeRegistro(email, name) {
+      const resp = await fetch('/api/auth-registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name, emailRedirectTo: EMAIL_REDIRECT_TO }),
+      });
+      const cuerpo = await resp.json().catch(() => ({}));
+      return { ok: resp.ok, error: cuerpo.error };
+    }
+
     // ── Register: pide el código y crea la cuenta ─────
     async function handleRegister() {
       const name  = document.getElementById('register-name').value.trim();
@@ -432,20 +446,22 @@
       btn.disabled = true;
       btn.textContent = 'Enviando...';
 
-      const { error } = await sb.auth.signInWithOtp({
-        email,
-        options: {
-          shouldCreateUser: true,
-          data: { full_name: name },
-          emailRedirectTo: EMAIL_REDIRECT_TO
-        }
-      });
+      let resultado;
+      try {
+        resultado = await pedirCodigoDeRegistro(email, name);
+      } catch (e) {
+        btn.disabled = false;
+        btn.textContent = 'Enviar código';
+        errEl.textContent = 'No se pudo enviar el código. Intenta de nuevo.';
+        errEl.style.display = 'block';
+        return;
+      }
 
       btn.disabled = false;
       btn.textContent = 'Enviar código';
 
-      if (error) {
-        errEl.textContent = error.message;
+      if (!resultado.ok) {
+        errEl.textContent = resultado.error || 'No se pudo enviar el código.';
         errEl.style.display = 'block';
         return;
       }
@@ -509,15 +525,25 @@
 
       if (!pendingEmail) { showForm('login'); return; }
 
-      const { error } = await sb.auth.signInWithOtp({
-        email: pendingEmail,
-        options: pendingName
-          ? { shouldCreateUser: true, data: { full_name: pendingName }, emailRedirectTo: EMAIL_REDIRECT_TO }
-          : { shouldCreateUser: false, emailRedirectTo: EMAIL_REDIRECT_TO }
-      });
+      let resultado;
+      if (pendingName) {
+        // Venía de "Registrarse": pasa de nuevo por la lista blanca.
+        try {
+          resultado = await pedirCodigoDeRegistro(pendingEmail, pendingName);
+        } catch (e) {
+          resultado = { ok: false, error: 'No se pudo enviar el código. Intenta de nuevo.' };
+        }
+      } else {
+        // Venía de "Ingresar": cuenta ya existente, sin pasar por la lista blanca.
+        const { error } = await sb.auth.signInWithOtp({
+          email: pendingEmail,
+          options: { shouldCreateUser: false, emailRedirectTo: EMAIL_REDIRECT_TO }
+        });
+        resultado = { ok: !error, error: error && error.message };
+      }
 
-      if (error) {
-        errEl.textContent = error.message;
+      if (!resultado.ok) {
+        errEl.textContent = resultado.error || 'No se pudo enviar el código.';
         errEl.style.display = 'block';
       } else {
         infoEl.textContent = 'Código reenviado. Revisa tu correo (y spam).';
