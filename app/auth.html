@@ -326,14 +326,14 @@
       <!-- VERIFICAR CÓDIGO -->
       <div class="form-section" id="form-verify">
         <div class="form-title">Revisa tu correo</div>
-        <div class="form-subtitle" id="verify-subtitle">Te enviamos un código de 6 dígitos.</div>
+        <div class="form-subtitle" id="verify-subtitle">Te enviamos un código de 8 dígitos.</div>
 
         <div class="error-msg" id="verify-error"></div>
         <div class="info-msg" id="verify-info"></div>
 
         <div class="field">
           <label>Código</label>
-          <input type="text" class="otp-input" id="verify-code" placeholder="000000" inputmode="numeric" maxlength="6" />
+          <input type="text" class="otp-input" id="verify-code" placeholder="00000000" inputmode="numeric" maxlength="20" />
         </div>
         <button class="btn-submit" id="verify-btn" onclick="handleVerify()">Confirmar</button>
         <div style="text-align:right; margin-top:0.75rem;">
@@ -458,7 +458,7 @@
     // ── Mostrar la pantalla de código ──────────────────
     function goToVerify(email) {
       document.getElementById('verify-subtitle').textContent =
-        'Te enviamos un código de 6 dígitos a ' + email + '.';
+        'Te enviamos un código de 8 dígitos a ' + email + '.';
       document.getElementById('verify-code').value = '';
       document.getElementById('verify-error').style.display = 'none';
       document.getElementById('verify-info').style.display = 'none';
@@ -468,7 +468,7 @@
 
     // ── Confirmar código ───────────────────────────────
     async function handleVerify() {
-      const code  = document.getElementById('verify-code').value.trim();
+      const code  = document.getElementById('verify-code').value.replace(/\D/g, '');
       const btn   = document.getElementById('verify-btn');
       const errEl = document.getElementById('verify-error');
 
