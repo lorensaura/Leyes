@@ -17,6 +17,19 @@
       display: flex;
     }
 
+    .marca-agua {
+      position: fixed;
+      bottom: 10px;
+      right: 16px;
+      font-size: 0.72rem;
+      font-family: monospace;
+      color: rgba(17, 17, 17, 0.16);
+      pointer-events: none;
+      user-select: none;
+      z-index: 9999;
+      transform: rotate(-6deg);
+    }
+
     /* ── SIDEBAR ── */
     .sidebar {
       width: 240px;
@@ -276,6 +289,19 @@
       border-bottom-right-radius: 3px;
     }
 
+    .btn-reportar {
+      align-self: flex-start;
+      margin: -0.5rem 0 0.4rem 0.2rem;
+      background: none;
+      border: none;
+      color: #7A6E5F;
+      font-size: 0.74rem;
+      cursor: pointer;
+      padding: 0.15rem 0.3rem;
+    }
+    .btn-reportar:hover { color: #A61825; text-decoration: underline; }
+    .btn-reportar:disabled { cursor: default; text-decoration: none; opacity: 0.7; }
+
     /* ── TABLA DE EVALUACIÓN ── */
     .burbuja.ia table {
       width: 100%;
@@ -365,6 +391,11 @@
 </head>
 <body>
 
+  <!-- Marca de agua: correo de la sesión activa, para desincentivar compartir
+       capturas o grabaciones del chat. No protege los PDF de los manuales
+       (eso es otro hueco, ver docs/camino-a-beta.md). -->
+  <div class="marca-agua" id="marca-agua"></div>
+
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <a href="dashboard.html" class="sidebar-logo">Digesto<span>.</span></a>
@@ -450,6 +481,7 @@
     let historial = [];
     let enviando = false;
     let sessionId = null;
+    let usuarioId = null;
 
     function elegirModo(el, modo) {
       document.querySelectorAll('.modo-opcion').forEach((o) => o.classList.remove('active'));
@@ -552,6 +584,33 @@
       return div;
     }
 
+    async function reportarRespuesta(boton, texto) {
+      boton.disabled = true;
+      boton.textContent = 'Reportando…';
+      try {
+        const { error } = await sb.from('respuestas_reportadas').insert({
+          user_id: usuarioId,
+          session_id: sessionId,
+          modo: modoElegido,
+          respuesta: texto,
+        });
+        if (error) throw error;
+        boton.textContent = 'Reportado ✓';
+      } catch (e) {
+        boton.textContent = 'No se pudo reportar, intenta de nuevo';
+        boton.disabled = false;
+      }
+    }
+
+    function agregarBotonReportar(burbuja, texto) {
+      const boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'btn-reportar';
+      boton.textContent = '⚑ Marcar como incorrecta';
+      boton.addEventListener('click', () => reportarRespuesta(boton, texto));
+      burbuja.insertAdjacentElement('afterend', boton);
+    }
+
     function mostrarError(msg) {
       const banner = document.getElementById('error-banner');
       banner.textContent = msg;
@@ -616,9 +675,15 @@
       let textoAcumulado = '';
 
       try {
+        const { data: { session } } = await sb.auth.getSession();
+        if (!session) { window.location.href = 'auth.html'; return; }
+
         const resp = await fetch('/api/interrogador', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${session.access_token}`,
+          },
           body: JSON.stringify({ modo: modoElegido, messages: historial, sessionId }),
         });
 
@@ -628,7 +693,9 @@
             const data = await resp.json();
             if (data && data.error) detalle = data.error;
           } catch (e) { /* sin detalle */ }
-          throw new Error(detalle);
+          const error = new Error(detalle);
+          error.status = resp.status;
+          throw error;
         }
 
         const reader = resp.body.getReader();
@@ -672,12 +739,28 @@
 
         if (textoAcumulado) {
           historial.push({ role: 'assistant', content: textoAcumulado });
+          if (burbujaIA) agregarBotonReportar(burbujaIA, textoAcumulado);
+          scrollAbajo();
         } else if (!huboError) {
           mostrarError('La IA no devolvió respuesta. Intenta de nuevo.');
         }
       } catch (err) {
         if (indicador.parentNode) indicador.remove();
         mostrarError(err.message || 'Ocurrió un error de conexión. Intenta de nuevo.');
+        if (err.status === 429) {
+          // Se acabó el cupo diario: volvemos a la pantalla inicial en vez de
+          // dejar el chat a medias — así el próximo intento vuelve a mandar un
+          // historial de largo 1, que es lo único que el servidor descuenta del
+          // tope (evita que reintentar "gaste" cupo de más o lo saltee).
+          historial = [];
+          document.getElementById('mensajes').innerHTML = '';
+          document.getElementById('mensajes').style.display = 'none';
+          document.getElementById('input-row').style.display = 'none';
+          document.getElementById('aviso-sesion').style.display = 'none';
+          document.getElementById('modo-badge').style.display = 'none';
+          document.getElementById('intro-card').style.display = 'block';
+          document.getElementById('btn-comenzar').disabled = true;
+        }
       } finally {
         fijarEnviando(false);
         document.getElementById('input-mensaje').focus();
@@ -701,10 +784,12 @@
     async function init() {
       const { data: { user } } = await sb.auth.getUser();
       if (!user) { window.location.href = 'auth.html'; return; }
+      usuarioId = user.id;
 
       const name = user.user_metadata?.full_name || user.email.split('@')[0];
       document.getElementById('user-name').textContent = name;
       document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+      document.getElementById('marca-agua').textContent = user.email;
     }
 
     async function handleLogout() {

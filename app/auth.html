@@ -249,6 +249,21 @@
 
     .back-link:hover { color: #111111; }
 
+    .otp-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      border-radius: 6px;
+      font-size: 1.4rem;
+      letter-spacing: 0.5rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      outline: none;
+    }
+    .otp-input:focus { border-color: #C41E2E; }
+
     @media (max-width: 768px) {
       .left-panel { display: none; }
     }
@@ -277,7 +292,7 @@
       <!-- LOGIN -->
       <div class="form-section active" id="form-login">
         <div class="form-title">Bienvenido de vuelta</div>
-        <div class="form-subtitle">Ingresa tu correo y contraseña</div>
+        <div class="form-subtitle">Ingresa tu correo y te enviamos un código de acceso</div>
 
         <div class="error-msg" id="login-error"></div>
 
@@ -285,14 +300,7 @@
           <label>Correo</label>
           <input type="email" id="login-email" placeholder="tu@correo.com" />
         </div>
-        <div class="field">
-          <label>Contraseña</label>
-          <input type="password" id="login-password" placeholder="••••••••" />
-        </div>
-        <div style="text-align:right;">
-          <button type="button" class="forgot-link" onclick="showForm('recover')">¿Olvidaste tu contraseña?</button>
-        </div>
-        <button class="btn-submit" id="login-btn" onclick="handleLogin()">Entrar</button>
+        <button class="btn-submit" id="login-btn" onclick="handleLogin()">Enviar código</button>
         <a href="../index.html" class="back-link">← Volver al inicio</a>
       </div>
 
@@ -311,47 +319,27 @@
           <label>Correo</label>
           <input type="email" id="register-email" placeholder="tu@correo.com" />
         </div>
-        <div class="field">
-          <label>Contraseña</label>
-          <input type="password" id="register-password" placeholder="Mínimo 8 caracteres" />
-        </div>
-        <button class="btn-submit" id="register-btn" onclick="handleRegister()">Crear cuenta</button>
+        <button class="btn-submit" id="register-btn" onclick="handleRegister()">Enviar código</button>
         <a href="../index.html" class="back-link">← Volver al inicio</a>
       </div>
 
-      <!-- RECUPERAR CONTRASEÑA -->
-      <div class="form-section" id="form-recover">
-        <div class="form-title">Recuperar contraseña</div>
-        <div class="form-subtitle">Te enviaremos un enlace a tu correo para crear una nueva contraseña.</div>
+      <!-- VERIFICAR CÓDIGO -->
+      <div class="form-section" id="form-verify">
+        <div class="form-title">Revisa tu correo</div>
+        <div class="form-subtitle" id="verify-subtitle">Te enviamos un código de 6 dígitos.</div>
 
-        <div class="error-msg" id="recover-error"></div>
-        <div class="info-msg" id="recover-info"></div>
+        <div class="error-msg" id="verify-error"></div>
+        <div class="info-msg" id="verify-info"></div>
 
         <div class="field">
-          <label>Correo</label>
-          <input type="email" id="recover-email" placeholder="tu@correo.com" />
+          <label>Código</label>
+          <input type="text" class="otp-input" id="verify-code" placeholder="000000" inputmode="numeric" maxlength="6" />
         </div>
-        <button class="btn-submit" id="recover-btn" onclick="handleRecover()">Enviar enlace</button>
+        <button class="btn-submit" id="verify-btn" onclick="handleVerify()">Confirmar</button>
+        <div style="text-align:right; margin-top:0.75rem;">
+          <button type="button" class="forgot-link" id="verify-resend" onclick="handleResend()">Reenviar código</button>
+        </div>
         <button type="button" class="back-link" style="background:none;border:none;cursor:pointer;width:100%;" onclick="showForm('login')">← Volver a ingresar</button>
-      </div>
-
-      <!-- NUEVA CONTRASEÑA -->
-      <div class="form-section" id="form-newpassword">
-        <div class="form-title">Nueva contraseña</div>
-        <div class="form-subtitle">Ingresa tu nueva contraseña para continuar.</div>
-
-        <div class="error-msg" id="newpassword-error"></div>
-        <div class="info-msg" id="newpassword-info"></div>
-
-        <div class="field">
-          <label>Nueva contraseña</label>
-          <input type="password" id="newpassword-password" placeholder="Mínimo 8 caracteres" />
-        </div>
-        <div class="field">
-          <label>Repite la contraseña</label>
-          <input type="password" id="newpassword-confirm" placeholder="Repite la contraseña" />
-        </div>
-        <button class="btn-submit" id="newpassword-btn" onclick="handleNewPassword()">Guardar contraseña</button>
       </div>
 
     </div>
@@ -363,6 +351,17 @@
     const SUPABASE_KEY  = 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq';
     const { createClient } = supabase;
     const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+    const EMAIL_REDIRECT_TO = window.location.origin + window.location.pathname;
+
+    // ── Si ya hay sesión (o el enlace del correo la acaba de crear),
+    // entrar directo — cubre a quien vuelve a auth.html logueada y a
+    // quien hizo clic en el enlace del correo en vez de tipear el código.
+    sb.auth.getSession().then(({ data }) => {
+      if (data.session) window.location.href = 'dashboard.html';
+    });
+    sb.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_IN') window.location.href = 'dashboard.html';
+    });
 
     // ── Navegación entre formularios ──────────────────
     function showForm(name) {
@@ -373,72 +372,17 @@
       if (tab) tab.classList.add('active');
     }
 
-    // ── Login ─────────────────────────────────────────
+    // ── Estado del código pendiente de verificar ──────
+    let pendingEmail = '';
+    let pendingName  = '';
+
+    // ── Login: pide el código (no crea cuenta nueva) ──
     async function handleLogin() {
-      const email    = document.getElementById('login-email').value.trim();
-      const password = document.getElementById('login-password').value;
-      const btn      = document.getElementById('login-btn');
-      const errEl    = document.getElementById('login-error');
+      const email = document.getElementById('login-email').value.trim();
+      const btn   = document.getElementById('login-btn');
+      const errEl = document.getElementById('login-error');
 
       errEl.style.display = 'none';
-      btn.disabled = true;
-      btn.textContent = 'Ingresando...';
-
-      const { error } = await sb.auth.signInWithPassword({ email, password });
-
-      if (error) {
-        errEl.textContent = 'Correo o contraseña incorrectos.';
-        errEl.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Entrar';
-      } else {
-        window.location.href = 'dashboard.html';
-      }
-    }
-
-    // ── Register ──────────────────────────────────────
-    async function handleRegister() {
-      const name     = document.getElementById('register-name').value.trim();
-      const email    = document.getElementById('register-email').value.trim();
-      const password = document.getElementById('register-password').value;
-      const btn      = document.getElementById('register-btn');
-      const errEl    = document.getElementById('register-error');
-
-      errEl.style.display = 'none';
-
-      if (!name || !email || password.length < 8) {
-        errEl.textContent = 'Completa todos los campos. La contraseña debe tener al menos 8 caracteres.';
-        errEl.style.display = 'block';
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = 'Creando cuenta...';
-
-      const { error } = await sb.auth.signUp({
-        email, password,
-        options: { data: { full_name: name } }
-      });
-
-      if (error) {
-        errEl.textContent = error.message;
-        errEl.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Crear cuenta';
-      } else {
-        window.location.href = 'dashboard.html';
-      }
-    }
-
-    // ── Recuperar contraseña (enviar enlace) ──────────
-    async function handleRecover() {
-      const email  = document.getElementById('recover-email').value.trim();
-      const btn    = document.getElementById('recover-btn');
-      const errEl  = document.getElementById('recover-error');
-      const infoEl = document.getElementById('recover-info');
-
-      errEl.style.display  = 'none';
-      infoEl.style.display = 'none';
 
       if (!email) {
         errEl.textContent = 'Ingresa tu correo.';
@@ -449,57 +393,135 @@
       btn.disabled = true;
       btn.textContent = 'Enviando...';
 
-      const redirectTo = window.location.origin + window.location.pathname;
-      const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo });
-
-      if (error) {
-        errEl.textContent = error.message;
-        errEl.style.display = 'block';
-      } else {
-        infoEl.textContent = 'Listo. Te enviamos un correo con el enlace para restablecer tu contraseña. Revisa tu bandeja de entrada (y la carpeta de spam).';
-        infoEl.style.display = 'block';
-      }
+      const { error } = await sb.auth.signInWithOtp({
+        email,
+        options: { shouldCreateUser: false, emailRedirectTo: EMAIL_REDIRECT_TO }
+      });
 
       btn.disabled = false;
-      btn.textContent = 'Enviar enlace';
-    }
+      btn.textContent = 'Enviar código';
 
-    // ── Guardar nueva contraseña ──────────────────────
-    async function handleNewPassword() {
-      const pw      = document.getElementById('newpassword-password').value;
-      const confirm = document.getElementById('newpassword-confirm').value;
-      const btn     = document.getElementById('newpassword-btn');
-      const errEl   = document.getElementById('newpassword-error');
-      const infoEl  = document.getElementById('newpassword-info');
-
-      errEl.style.display  = 'none';
-      infoEl.style.display = 'none';
-
-      if (pw.length < 8) {
-        errEl.textContent = 'La contraseña debe tener al menos 8 caracteres.';
+      if (error) {
+        errEl.textContent = /signup/i.test(error.message)
+          ? 'No encontramos una cuenta con ese correo. Usa la pestaña "Registrarse".'
+          : error.message;
         errEl.style.display = 'block';
         return;
       }
-      if (pw !== confirm) {
-        errEl.textContent = 'Las contraseñas no coinciden.';
+
+      pendingEmail = email;
+      pendingName  = '';
+      goToVerify(email);
+    }
+
+    // ── Register: pide el código y crea la cuenta ─────
+    async function handleRegister() {
+      const name  = document.getElementById('register-name').value.trim();
+      const email = document.getElementById('register-email').value.trim();
+      const btn   = document.getElementById('register-btn');
+      const errEl = document.getElementById('register-error');
+
+      errEl.style.display = 'none';
+
+      if (!name || !email) {
+        errEl.textContent = 'Completa tu nombre y correo.';
         errEl.style.display = 'block';
         return;
       }
 
       btn.disabled = true;
-      btn.textContent = 'Guardando...';
+      btn.textContent = 'Enviando...';
 
-      const { error } = await sb.auth.updateUser({ password: pw });
+      const { error } = await sb.auth.signInWithOtp({
+        email,
+        options: {
+          shouldCreateUser: true,
+          data: { full_name: name },
+          emailRedirectTo: EMAIL_REDIRECT_TO
+        }
+      });
+
+      btn.disabled = false;
+      btn.textContent = 'Enviar código';
 
       if (error) {
         errEl.textContent = error.message;
         errEl.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Guardar contraseña';
+        return;
+      }
+
+      pendingEmail = email;
+      pendingName  = name;
+      goToVerify(email);
+    }
+
+    // ── Mostrar la pantalla de código ──────────────────
+    function goToVerify(email) {
+      document.getElementById('verify-subtitle').textContent =
+        'Te enviamos un código de 6 dígitos a ' + email + '.';
+      document.getElementById('verify-code').value = '';
+      document.getElementById('verify-error').style.display = 'none';
+      document.getElementById('verify-info').style.display = 'none';
+      showForm('verify');
+      document.getElementById('verify-code').focus();
+    }
+
+    // ── Confirmar código ───────────────────────────────
+    async function handleVerify() {
+      const code  = document.getElementById('verify-code').value.trim();
+      const btn   = document.getElementById('verify-btn');
+      const errEl = document.getElementById('verify-error');
+
+      errEl.style.display = 'none';
+
+      if (!pendingEmail) { showForm('login'); return; }
+      if (!code) {
+        errEl.textContent = 'Ingresa el código que te llegó por correo.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Confirmando...';
+
+      const { error } = await sb.auth.verifyOtp({
+        email: pendingEmail, token: code, type: 'email'
+      });
+
+      btn.disabled = false;
+      btn.textContent = 'Confirmar';
+
+      if (error) {
+        errEl.textContent = 'Código incorrecto o vencido. Puedes reenviarlo.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      window.location.href = 'dashboard.html';
+    }
+
+    // ── Reenviar código ────────────────────────────────
+    async function handleResend() {
+      const errEl  = document.getElementById('verify-error');
+      const infoEl = document.getElementById('verify-info');
+      errEl.style.display  = 'none';
+      infoEl.style.display = 'none';
+
+      if (!pendingEmail) { showForm('login'); return; }
+
+      const { error } = await sb.auth.signInWithOtp({
+        email: pendingEmail,
+        options: pendingName
+          ? { shouldCreateUser: true, data: { full_name: pendingName }, emailRedirectTo: EMAIL_REDIRECT_TO }
+          : { shouldCreateUser: false, emailRedirectTo: EMAIL_REDIRECT_TO }
+      });
+
+      if (error) {
+        errEl.textContent = error.message;
+        errEl.style.display = 'block';
       } else {
-        infoEl.textContent = 'Contraseña actualizada. Entrando...';
+        infoEl.textContent = 'Código reenviado. Revisa tu correo (y spam).';
         infoEl.style.display = 'block';
-        setTimeout(() => { window.location.href = 'dashboard.html'; }, 1200);
       }
     }
 
@@ -507,21 +529,10 @@
     document.addEventListener('keydown', e => {
       if (e.key !== 'Enter') return;
       const active = document.querySelector('.form-section.active').id;
-      if      (active === 'form-login')       handleLogin();
-      else if (active === 'form-register')    handleRegister();
-      else if (active === 'form-recover')     handleRecover();
-      else if (active === 'form-newpassword') handleNewPassword();
+      if      (active === 'form-login')    handleLogin();
+      else if (active === 'form-register') handleRegister();
+      else if (active === 'form-verify')   handleVerify();
     });
-
-    // ── Regreso desde el enlace de recuperación ───────
-    // Cuando el usuario abre el enlace del correo, Supabase detecta el
-    // token y dispara PASSWORD_RECOVERY: mostramos el formulario de nueva clave.
-    sb.auth.onAuthStateChange((event) => {
-      if (event === 'PASSWORD_RECOVERY') showForm('newpassword');
-    });
-    if (window.location.hash.includes('type=recovery')) {
-      showForm('newpassword');
-    }
   </script>
 
 </body>

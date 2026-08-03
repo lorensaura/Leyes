@@ -19,6 +19,16 @@ const CONTENIDO_CODIGO = require('./_interrogador-codigo.js');
 
 const MODOS_VALIDOS = new Set(['examen', 'practica']);
 const MAX_MENSAJES = 60;
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+// Tope diario de interrogaciones completas por alumna, durante la beta.
+// Se cuenta por sessionId (no por mensaje ni por confiar en el cliente):
+// ver chequearYRegistrarSesion. Un sessionId ya registrado HOY nunca vuelve
+// a descontar cupo (es la misma interrogación continuando); uno nuevo sí, y
+// solo pasa si todavía queda cupo — sin importar qué mande el cliente en
+// `messages`, así que reintentar o armar el request a mano no lo saltea.
+const DIARIO_LIMITE = 2;
+const MENSAJE_TOPE_DIARIO =
+  'Has alcanzado tu límite de interrogaciones diarias de la Beta. Se repondrán mañana a las 00:00 hrs.';
 
 const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
 const MATERIAS_MUESTRA = ['Responsabilidad contractual', 'Responsabilidad extracontractual', 'Responsabilidad precontractual'];
@@ -81,6 +91,72 @@ function formatearPregunta(p) {
   return partes.join('\n');
 }
 
+// Verifica el JWT de Supabase que manda el cliente contra el propio Supabase
+// (endpoint GoTrue /auth/v1/user). Sin esto, cualquiera que conociera esta
+// URL podía llamar al Interrogador sin haber iniciado sesión.
+async function verificarUsuario(accessToken) {
+  if (!accessToken) return null;
+  const resp = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+    headers: {
+      apikey: process.env.SUPABASE_SECRET_KEY,
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  if (!resp.ok) return null;
+  const usuario = await resp.json();
+  return usuario && usuario.id ? usuario : null;
+}
+
+// Chequea y registra el tope diario de interrogaciones de una alumna, a
+// partir del sessionId (no del largo de `messages`, que manda el cliente y
+// por lo tanto no es confiable). Ver scripts/supabase_schema_interrogaciones_diarias.sql
+// para el porqué del diseño. Las escrituras las hace este servidor con
+// SUPABASE_SECRET_KEY, que se salta RLS a propósito — la alumna solo puede
+// leer sus propias filas.
+async function chequearYRegistrarSesion(userId, sessionId) {
+  const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
+  const headers = {
+    apikey: process.env.SUPABASE_SECRET_KEY,
+    Authorization: `Bearer ${process.env.SUPABASE_SECRET_KEY}`,
+    'Content-Type': 'application/json',
+  };
+
+  const yaRegistradaResp = await fetch(
+    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&session_id=eq.${sessionId}&fecha=eq.${hoy}&select=id`,
+    { headers }
+  );
+  if (!yaRegistradaResp.ok) {
+    throw new Error(`Supabase respondió ${yaRegistradaResp.status} al chequear la sesión`);
+  }
+  if ((await yaRegistradaResp.json()).length > 0) {
+    // Esta interrogación ya estaba contada hoy: es un turno más de la misma, no una nueva.
+    return true;
+  }
+
+  const contadorResp = await fetch(
+    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&fecha=eq.${hoy}&select=id`,
+    { headers }
+  );
+  if (!contadorResp.ok) {
+    throw new Error(`Supabase respondió ${contadorResp.status} al contar el tope diario`);
+  }
+  if ((await contadorResp.json()).length >= DIARIO_LIMITE) {
+    return false;
+  }
+
+  const insertResp = await fetch(`${SUPABASE_URL}/rest/v1/interrogaciones_diarias`, {
+    method: 'POST',
+    headers: { ...headers, Prefer: 'return=minimal' },
+    body: JSON.stringify({ user_id: userId, session_id: sessionId, fecha: hoy }),
+  });
+  // 409 = ya la insertó una petición en paralelo (misma alumna, dos pestañas a la vez);
+  // en ese caso ya quedó contada, así que se deja pasar igual.
+  if (!insertResp.ok && insertResp.status !== 409) {
+    throw new Error(`Supabase respondió ${insertResp.status} al registrar la interrogación`);
+  }
+  return true;
+}
+
 async function obtenerMuestraPreguntas(sessionId) {
   const filtro = MATERIAS_MUESTRA.map((m) => `"${m}"`).join(',');
   const params = new URLSearchParams({
@@ -119,6 +195,14 @@ module.exports = async (req, res) => {
     return;
   }
 
+  const authHeader = req.headers.authorization || '';
+  const accessToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+  const usuario = await verificarUsuario(accessToken);
+  if (!usuario) {
+    res.status(401).json({ error: 'Tenés que iniciar sesión para usar el Interrogador' });
+    return;
+  }
+
   const { messages, modo, sessionId } = req.body || {};
 
   if (!Array.isArray(messages) || messages.length === 0) {
@@ -138,6 +222,23 @@ module.exports = async (req, res) => {
   );
   if (!mensajesValidos) {
     res.status(400).json({ error: 'Formato de mensaje inválido' });
+    return;
+  }
+  if (typeof sessionId !== 'string' || !UUID_RE.test(sessionId)) {
+    res.status(400).json({ error: 'Falta identificar la interrogación' });
+    return;
+  }
+
+  let hayCupo;
+  try {
+    hayCupo = await chequearYRegistrarSesion(usuario.id, sessionId);
+  } catch (e) {
+    console.error('Error chequeando el tope diario:', e);
+    res.status(502).json({ error: 'No se pudo verificar tu cupo diario en este momento' });
+    return;
+  }
+  if (!hayCupo) {
+    res.status(429).json({ error: MENSAJE_TOPE_DIARIO });
     return;
   }
 
