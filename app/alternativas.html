@@ -444,6 +444,19 @@
     }
     .elementos-col.ok .dot { background: #1A7A40; }
 
+    .btn-reportar {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: #7A6E5F;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .btn-reportar:hover { color: #111111; }
+    .btn-reportar:disabled { cursor: default; text-decoration: none; opacity: 0.7; }
+
     .confusion-box {
       background: rgba(196,30,46,0.06);
       border: 1px solid rgba(196,30,46,0.15);
@@ -1469,6 +1482,7 @@ const bancoTransversal = [
             </div>` : ''}
           </div>
           <div class="feedback-diag">${feedbackDiag}</div>
+          <button class="btn-reportar" id="btn-reportar-calificacion" onclick="reportarCalificacion()">¿Calificación incorrecta? Repórtala</button>
           ${siguienteAccion === 'segunda_pasada' ? `
             <div class="segunda-pasada" style="margin-top:1.25rem;">
               <div class="segunda-title">Segunda pasada</div>
@@ -1486,6 +1500,29 @@ const bancoTransversal = [
 
       document.getElementById('feedback-area').innerHTML = feedbackHTML;
       document.getElementById('feedback-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    async function reportarCalificacion() {
+      const btn = document.getElementById('btn-reportar-calificacion');
+      if (!btn || btn.disabled || !ultimaEvaluacion) return;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      try {
+        const { error } = await sb.from('evaluacion_reportes').insert({
+          user_id: usuarioId,
+          evaluacion_codigo: ultimaEvaluacion.codigo,
+          respuesta_alumna: ultimaEvaluacion.respuestaAlumna,
+          elementos_clave_snapshot: ultimaEvaluacion.elementosClave,
+          elementos_acertados: ultimaEvaluacion.acertados,
+          credito_obtenido: ultimaEvaluacion.credito,
+        });
+        if (error) throw error;
+        btn.textContent = 'Reportado, gracias ✓';
+      } catch (e) {
+        console.error('Error reportando calificación:', e);
+        btn.textContent = 'No se pudo enviar, intenta de nuevo';
+        btn.disabled = false;
+      }
     }
 
     function evaluarSegundaPasada() {

@@ -6,7 +6,7 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Los ítems ya resueltos se borran del todo (no
 > se dejan tachados) apenas se cierran — quedan igual en el historial
-> de git si hace falta recuperarlos. Última actualización: 2026-07-31.
+> de git si hace falta recuperarlos. Última actualización: 2026-08-04.
 
 ## Hecho
 
@@ -44,6 +44,16 @@
   reuso de `Preguntas_Evaluacion` como fuente cuando ya tiene contenido
   completo (34 ítems de Discriminación MC migrados así, con `codigo`
   prefijo `hist-`).
+- **Paywall, Capa 1** (2026-08-04): lista blanca en Supabase
+  (`alumnas_autorizadas`, Laura la administra a mano desde Table Editor)
+  + registro cerrado en dos capas: `api/auth-registro.js` chequea la
+  lista antes de mandar el OTP, y `hook_verificar_lista_blanca`
+  (`scripts/supabase_schema_hook_lista_blanca.sql`) corre dentro de
+  Supabase mismo en "Before User Created" para que un bypass directo a
+  la API de Supabase (saltándose `auth-registro.js`) también quede
+  bloqueado. Probado en producción: bypass directo → 403, registro
+  normal con correo autorizado → sigue funcionando. Detalle en
+  `docs/paywall.md`.
 
 ## Pendiente antes de invitar alumnas beta (ya está claro qué hacer)
 
@@ -52,9 +62,6 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 
 - **Landing page (`index.html`)**: cambiarla antes de invitar alumnas.
   Pendiente desde 2026-07-15.
-- **Paywall, Capa 1** (la rápida, la que hace falta para beta): lista
-  blanca en Supabase (solo correos aprobados entran) + cerrar el registro
-  abierto. Hoy cualquiera puede crear cuenta.
 - **Ojo con esto: la Capa 1 sola no cierra el contenido.** Hoy los PDF
   de los manuales (`digesto.cl/app/pdf/...`) son archivos públicos que
   abren sin login; compartir ese link se salta el paywall entero, lista
@@ -67,6 +74,17 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
 
+- **"Reportar calificación mal hecha" en Evaluación, empezado 2026-08-04,
+  a medio camino:** la corrección de Evaluación es por keywords en JS
+  (`evaluarRespuesta()`, `app/alternativas.html`), sin LLM, así que no
+  entiende sinónimos ni paráfrasis. La idea es un botón para que la
+  alumna marque un caso puntual mal calificado y Laura después amplíe
+  `elementos_clave` en Airtable. Hoy: `scripts/supabase_schema_evaluacion_reportes.sql`
+  (tabla `evaluacion_reportes`, mismo patrón de RLS que
+  `respuestas_reportadas` del Interrogador) escrito pero **todavía sin
+  correr en Supabase**; en `alternativas.html` solo se guarda el
+  contexto (`ultimaEvaluacion`) de la última corrección, **falta el botón
+  en la UI y que ese botón inserte de verdad en Supabase**.
 - **Normalizar el campo `materia` de las 53 preguntas nuevas de
   Contractual**: quedaron con `materia = "Responsabilidad contractual"`,
   mientras las preguntas viejas de `Preguntas_Evaluacion` tienen ahí
