@@ -19,6 +19,26 @@ const CONTENIDO_CODIGO = require('./_interrogador-codigo.js');
 
 const MODOS_VALIDOS = new Set(['examen', 'practica']);
 const MAX_MENSAJES = 60;
+// Configuración de modelo por modo (ver docs/interrogador.md). Examen: Opus,
+// más caro pero es la corrección final que más le importa a la alumna que
+// esté bien calibrada. Práctica: Sonnet 5, corrección breve tras cada
+// respuesta -- thinking desactivado a propósito para que los 500 tokens
+// vayan enteros a la respuesta visible, no a pensar internamente (con
+// thinking activo, max_tokens se reparte entre pensar y responder, y a 500
+// tokens el riesgo de que la respuesta visible salga cortada es real).
+const CONFIG_MODO = {
+  examen: {
+    model: 'claude-opus-4-8',
+    max_tokens: 2048,
+    thinking: { type: 'adaptive' },
+    effort: 'medium',
+  },
+  practica: {
+    model: 'claude-sonnet-5',
+    max_tokens: 500,
+    thinking: { type: 'disabled' },
+  },
+};
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 // Tope diario de interrogaciones completas por alumna, durante la beta.
 // Se cuenta por sessionId (no por mensaje ni por confiar en el cliente):
@@ -251,6 +271,8 @@ module.exports = async (req, res) => {
     return;
   }
 
+  const config = CONFIG_MODO[modo] || CONFIG_MODO.examen;
+
   let anthropicRes;
   try {
     anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
@@ -261,16 +283,20 @@ module.exports = async (req, res) => {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-opus-4-8',
-        max_tokens: 2048,
+        model: config.model,
+        max_tokens: config.max_tokens,
         stream: true,
-        thinking: { type: 'adaptive' },
-        output_config: { effort: 'medium' },
+        thinking: config.thinking,
+        ...(config.effort ? { output_config: { effort: config.effort } } : {}),
         system: [
           { type: 'text', text: PROMPT_EXAMINADOR },
           { type: 'text', text: CONTENIDO_MANUALES },
           { type: 'text', text: CONTENIDO_CODIGO },
-          { type: 'text', text: muestraPreguntas, cache_control: { type: 'ephemeral' } },
+          // ttl 1h (no el default de 5 min): las respuestas de examen son de
+          // análisis completo, tardan minutos en escribirse -- con 5 min el
+          // caché caduca entre preguntas y se vuelve a pagar el precio
+          // completo de este bloque en cada turno.
+          { type: 'text', text: muestraPreguntas, cache_control: { type: 'ephemeral', ttl: '1h' } },
         ],
         messages,
       }),
