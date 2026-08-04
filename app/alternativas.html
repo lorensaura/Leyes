@@ -1285,6 +1285,10 @@ const bancoTransversal = [
     let itemsFiltrados = [];
     let idxActual = 0;
     let creditoTotal = 0;
+    // Contexto de la última corrección mostrada, para el botón de
+    // "reportar calificación" (evaluacion_reportes) -- se recalcula en
+    // cada evaluarRespuesta(), no persiste entre preguntas.
+    let ultimaEvaluacion = null;
     let itemsCompletados = 0;
     let seleccionMC = null;
 
@@ -1315,7 +1319,7 @@ const bancoTransversal = [
     async function cargarEvaluacion() {
       try {
         const { data, error } = await sb.from('evaluacion_practica')
-          .select('codigo,materia,tipo,subtema,caso,enunciado,respuesta_modelo,elementos_clave,opciones,correcta,articulos_referencia,objetivo_pedagogico')
+          .select('codigo,materia,tipo,subtema,caso,enunciado,respuesta_modelo,elementos_clave,minimo_elementos,opciones,correcta,articulos_referencia,objetivo_pedagogico')
           .eq('publicado', true);
         if (error) throw error;
         datosEvaluacion = data || [];
@@ -1434,6 +1438,14 @@ const bancoTransversal = [
 
       creditoTotal += credito;
       itemsCompletados++;
+
+      ultimaEvaluacion = {
+        codigo: item.codigo,
+        elementosClave: item.elementos_clave,
+        acertados,
+        credito,
+        respuestaAlumna: document.getElementById('recall-text')?.value || '',
+      };
 
       const feedbackHTML = `
         <div class="feedback-panel">
