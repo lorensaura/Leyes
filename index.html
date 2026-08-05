@@ -199,13 +199,52 @@
       flex-wrap: wrap;
     }
 
+    .hero-credibility {
+      font-size: 0.85rem;
+      color: #7A6E5F;
+      margin-top: 2rem;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    .hero-credibility strong { color: #111111; }
+
     .hero-note {
       font-size: 0.85rem;
       color: #7A6E5F;
-      margin-top: 3.5rem;
+      margin-top: 1.25rem;
       padding-top: 2rem;
       border-top: 1px solid rgba(17,17,17,0.12);
       max-width: 480px;
+    }
+
+    .hero-visual {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      right: 6%;
+      transform: translateY(-50%);
+      width: 30%;
+      min-width: 260px;
+      aspect-ratio: 4 / 5;
+      border: 1.5px dashed rgba(232,216,184,0.25);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .hero-visual span {
+      font-family: 'Inter', monospace;
+      font-size: 0.75rem;
+      color: rgba(232,216,184,0.5);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-visual { display: none; }
     }
 
     /* ── MATERIAS BANNER ── */
@@ -371,6 +410,19 @@
       margin-top: 0.75rem;
     }
 
+    .badge-updated {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(17,17,17,0.06);
+      color: #7A6E5F;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-top: 0.75rem;
+    }
+
     /* ── HOW IT WORKS ── */
     .steps {
       display: grid;
@@ -411,6 +463,207 @@
       line-height: 1.65;
     }
 
+    /* ── SOBRE EL EXAMEN (sin publicar, ver comentario en el HTML) ── */
+    .exam-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .exam-item h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      color: #C41E2E;
+      margin-bottom: 0.5rem;
+    }
+
+    .exam-item p {
+      font-size: 0.9rem;
+      color: #7A6E5F;
+      line-height: 1.65;
+    }
+
+    /* ── PRECIOS ── */
+    .pricing-section {
+      background: #111111;
+      padding: 6rem 5%;
+    }
+
+    .pricing-section .section-header h2 { color: #F5EAD4; }
+    .pricing-section .section-header p  { color: rgba(245,234,212,0.5); }
+
+    .pricing-badge {
+      display: block;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      margin: -2.5rem auto 2.5rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2.25rem;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .price-card:hover { transform: translateY(-3px); }
+
+    .price-card.featured {
+      background: #E8D8B8;
+      border-color: transparent;
+    }
+
+    .price-card.featured .price-name    { color: #C41E2E; }
+    .price-card.featured .price-amount  { color: #111111; }
+    .price-card.featured .price-period  { color: #7A6E5F; }
+    .price-card.featured .price-feature { color: #111111; }
+    .price-card.featured .price-divider { border-color: rgba(17,17,17,0.1); }
+
+    .price-featured-badge {
+      position: absolute;
+      top: -0.75rem;
+      right: 1.5rem;
+      background: #C41E2E;
+      color: #F5EAD4;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    .price-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #C41E2E;
+      margin-bottom: 1.25rem;
+    }
+
+    .price-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      letter-spacing: 1px;
+      color: #F5EAD4;
+      line-height: 1;
+    }
+
+    .price-period {
+      font-size: 0.8rem;
+      color: rgba(245,234,212,0.4);
+      margin-top: 0.4rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .price-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 1.5rem;
+    }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: rgba(245,234,212,0.65);
+    }
+
+    .price-feature::before {
+      content: '✓';
+      color: #C41E2E;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pricing-section .btn-outline {
+      color: #F5EAD4;
+      border-color: rgba(245,234,212,0.3);
+    }
+
+    .pricing-section .btn-outline:hover {
+      background: rgba(245,234,212,0.08);
+    }
+
+    .pricing-disclaimer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(245,234,212,0.35);
+      margin-top: 2.5rem;
+    }
+
+    /* ── QUIÉN ESTÁ DETRÁS ── */
+    .detras-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #F5EAD4;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 10px;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #7A6E5F;
+      line-height: 1.7;
+    }
+
+    .detras-box strong { color: #111111; }
+
+    /* ── FAQ ── */
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .faq-item {
+      background: #F5EAD4;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .faq-item h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+      color: #111111;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #7A6E5F;
+      line-height: 1.6;
+    }
+
     /* ── CTA FINAL / CONTACTO ── */
     .cta-section {
       background: #DCCCA5;
@@ -433,6 +686,114 @@
       font-size: 1rem;
       max-width: 460px;
       margin: 0 auto 2.5rem;
+    }
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contacto-info h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      letter-spacing: 1.5px;
+      color: #111111;
+      margin-bottom: 1rem;
+      line-height: 1.05;
+    }
+
+    .contacto-info p {
+      color: #7A6E5F;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 420px;
+    }
+
+    .contacto-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .btn-whatsapp {
+      background: #2E7D5B;
+      color: #F5EAD4;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-whatsapp:hover { background: #266B4E; }
+
+    .contacto-email {
+      font-size: 0.85rem;
+      color: #7A6E5F;
+    }
+
+    .contacto-email a { color: #111111; }
+
+    .contact-form {
+      background: #F5EAD4;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #111111;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      background: #FBF6EA;
+      color: #111111;
+      outline: none;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: #C41E2E; }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 90;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #2E7D5B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.06); }
+
+    @media (max-width: 768px) {
+      .contacto-grid { grid-template-columns: 1fr; }
     }
 
     /* ── FOOTER ── */
@@ -485,6 +846,7 @@
     <ul class="nav-links">
       <li><a href="#features">Qué incluye</a></li>
       <li><a href="#how">Cómo funciona</a></li>
+      <li><a href="#pricing">Precios</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="nav-cta">
@@ -499,10 +861,14 @@
       <h1>Prepara tu examen de grado con <em>manuales, práctica e IA</em></h1>
       <p>Digesto es una plataforma de estudio para el examen de grado de Derecho en Chile: manuales con ejemplos que fusionan código, doctrina y jurisprudencia, práctica diaria y un interrogador con inteligencia artificial que te toma examen como si fuera la comisión.</p>
       <div class="hero-actions">
-        <a href="app/auth.html" class="btn btn-red">Ingresar</a>
-        <a href="#contacto" class="btn btn-outline">Escríbenos</a>
+        <a href="app/auth.html" class="btn btn-red">Prueba 1 día gratis</a>
+        <a href="app/auth.html" class="btn btn-outline">Ingresar</a>
       </div>
+      <p class="hero-credibility"><strong>Creado por abogados de la Pontificia Universidad Católica de Chile</strong>, con experiencia interrogando alumnos en el examen de grado.</p>
       <p class="hero-note">Hoy la plataforma cubre Responsabilidad Civil (Contractual, Extracontractual y Precontractual). El resto de Civil y todo Procesal están en camino.</p>
+    </div>
+    <div class="hero-visual">
+      <span>captura del producto:<br />manual + interrogador con IA<br />(próximamente)</span>
     </div>
   </section>
 
@@ -545,6 +911,7 @@
         <div class="feature-icon">📖</div>
         <div class="feature-title">Manuales de estudio</div>
         <div class="feature-desc">Contenido estructurado por materia y tema, con ejemplos y casos que fusionan código, doctrina y jurisprudencia real, organizado para estudiar de forma eficiente.</div>
+        <span class="badge-updated">Actualizado julio 2026</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✅</div>
@@ -608,11 +975,144 @@
     </div>
   </section>
 
+  <!--
+  SOBRE EL EXAMEN: sección armada, sin publicar todavía.
+  Falta que Laura mande el contenido real de Formato / Duración / Qué se
+  evalúa. Cuando lo tengamos, se descomenta este bloque completo (y se
+  puede agregar a los links del nav si se quiere).
+
+  <section class="section" id="examen" style="background:#E8D8B8;">
+    <div class="section-header">
+      <div class="section-tag">Sobre el examen</div>
+      <h2>Qué es el examen de grado y cómo se evalúa</h2>
+      <p>[PENDIENTE: párrafo introductorio, lo manda Laura]</p>
+    </div>
+    <div class="exam-grid">
+      <div class="exam-item">
+        <h3>Formato</h3>
+        <p>[PENDIENTE: contenido real]</p>
+      </div>
+      <div class="exam-item">
+        <h3>Duración</h3>
+        <p>[PENDIENTE: contenido real]</p>
+      </div>
+      <div class="exam-item">
+        <h3>Qué se evalúa</h3>
+        <p>[PENDIENTE: contenido real]</p>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- PRECIOS -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">
+      <div class="section-tag">Precios</div>
+      <h2>Elige tu plan</h2>
+      <p>Pago mensual, semestral o anual. Todos los planes incluyen acceso completo a la plataforma.</p>
+    </div>
+    <span class="pricing-badge">✓ 1 día de prueba gratis en cualquier plan</span>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Mensual</div>
+        <div class="price-amount">Por definir</div>
+        <div class="price-period">facturado cada mes</div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li class="price-feature">Manuales de estudio completos</li>
+          <li class="price-feature">Módulo de Práctica completo</li>
+          <li class="price-feature">Interrogador con IA</li>
+        </ul>
+        <a href="app/auth.html" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Empezar</a>
+      </div>
+
+      <div class="price-card featured">
+        <span class="price-featured-badge">Más elegido</span>
+        <div class="price-name">Semestral</div>
+        <div class="price-amount">Por definir</div>
+        <div class="price-period">facturado cada 6 meses</div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li class="price-feature">Manuales de estudio completos</li>
+          <li class="price-feature">Módulo de Práctica completo</li>
+          <li class="price-feature">Interrogador con IA</li>
+        </ul>
+        <a href="app/auth.html" class="btn btn-red" style="width:100%; text-align:center; display:block;">Empezar</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Anual</div>
+        <div class="price-amount">Por definir</div>
+        <div class="price-period">facturado una vez al año</div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li class="price-feature">Manuales de estudio completos</li>
+          <li class="price-feature">Módulo de Práctica completo</li>
+          <li class="price-feature">Interrogador con IA</li>
+        </ul>
+        <a href="app/auth.html" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Empezar</a>
+      </div>
+    </div>
+    <p class="pricing-disclaimer">Precios de referencia, pendientes de definir.</p>
+  </section>
+
+  <!-- QUIÉN ESTÁ DETRÁS -->
+  <section class="section" style="background:#F5EAD4;">
+    <div class="section-header">
+      <div class="section-tag">Quién está detrás</div>
+      <h2>Creado por abogados</h2>
+    </div>
+    <div class="detras-box">
+      <p><strong>Digesto está creado por abogados de la Pontificia Universidad Católica de Chile</strong>, con experiencia interrogando alumnos en el examen de grado. El contenido y las interrogaciones de la IA están diseñados para que la práctica se sienta lo más parecida posible al día real.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="background:#E8D8B8;">
+    <div class="section-header">
+      <div class="section-tag">Preguntas frecuentes</div>
+      <h2>Antes de empezar</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>¿Qué materias cubre Digesto hoy?</h3>
+        <p>Responsabilidad Civil: Contractual, Extracontractual y Precontractual. El resto de Derecho Civil y todo Derecho Procesal están en camino.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Se actualiza el contenido?</h3>
+        <p>Sí. Los manuales se revisan y actualizan a medida que cambia la normativa y la jurisprudencia relevante.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section class="cta-section" id="contacto">
-    <h2>¿Quieres más información?</h2>
-    <p>Escríbenos y te contamos cómo entrar a Digesto.</p>
-    <a href="mailto:admin@digesto.cl" class="btn btn-dark">admin@digesto.cl</a>
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <h2>¿Quieres más información?</h2>
+        <p>Escríbenos y te contamos cómo entrar a Digesto.</p>
+        <div class="contacto-actions">
+          <a href="https://wa.me/56962166997" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 Escríbenos por WhatsApp</a>
+          <span class="contacto-email">o escribe directo a <a href="mailto:admin@digesto.cl">admin@digesto.cl</a></span>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div>
+          <label for="cf-nombre">Nombre</label>
+          <input type="text" id="cf-nombre" required />
+        </div>
+        <div>
+          <label for="cf-correo">Correo</label>
+          <input type="email" id="cf-correo" required />
+        </div>
+        <div>
+          <label for="cf-mensaje">Mensaje</label>
+          <textarea id="cf-mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-red" id="cf-submit">Enviar mensaje</button>
+        <p id="cf-status" style="font-size:0.85rem; display:none;"></p>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -620,6 +1120,9 @@
     <div class="footer-logo">Digesto<span>.</span></div>
     <p>© 2026 Digesto · Preparación para el examen de grado · Chile</p>
   </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/56962166997" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">💬</a>
 
   <script>
     const sections = document.querySelectorAll('section[id]');
@@ -632,6 +1135,43 @@
       navLinks.forEach(a => {
         a.style.color = a.getAttribute('href') === '#' + current ? '#111111' : '';
       });
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nombre  = document.getElementById('cf-nombre').value.trim();
+      const correo  = document.getElementById('cf-correo').value.trim();
+      const mensaje = document.getElementById('cf-mensaje').value.trim();
+      const btn     = document.getElementById('cf-submit');
+      const status  = document.getElementById('cf-status');
+
+      if (!nombre || !correo.includes('@') || !mensaje) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+      status.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/contacto', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre, correo, mensaje })
+        });
+        if (!res.ok) throw new Error('Error contacto');
+
+        document.getElementById('contact-form').reset();
+        status.textContent = '✓ Mensaje enviado. Te respondemos pronto.';
+        status.style.color = '#111111';
+        status.style.display = 'block';
+        btn.textContent = 'Enviar mensaje';
+        btn.disabled = false;
+      } catch (err) {
+        status.textContent = 'Hubo un error. Escríbenos directo a admin@digesto.cl.';
+        status.style.color = '#C41E2E';
+        status.style.display = 'block';
+        btn.textContent = 'Enviar mensaje';
+        btn.disabled = false;
+      }
     });
   </script>
 
