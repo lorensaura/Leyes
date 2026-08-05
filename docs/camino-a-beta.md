@@ -74,17 +74,54 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
 
-- **"Reportar calificación mal hecha" en Evaluación, empezado 2026-08-04,
-  a medio camino:** la corrección de Evaluación es por keywords en JS
+- **"Reportar calificación mal hecha" en Evaluación — HECHO (2026-08-04)
+  y en producción.** La corrección de Evaluación es por keywords en JS
   (`evaluarRespuesta()`, `app/alternativas.html`), sin LLM, así que no
-  entiende sinónimos ni paráfrasis. La idea es un botón para que la
-  alumna marque un caso puntual mal calificado y Laura después amplíe
-  `elementos_clave` en Airtable. Hoy: `scripts/supabase_schema_evaluacion_reportes.sql`
-  (tabla `evaluacion_reportes`, mismo patrón de RLS que
-  `respuestas_reportadas` del Interrogador) escrito pero **todavía sin
-  correr en Supabase**; en `alternativas.html` solo se guarda el
-  contexto (`ultimaEvaluacion`) de la última corrección, **falta el botón
-  en la UI y que ese botón inserte de verdad en Supabase**.
+  entiende sinónimos ni paráfrasis. Botón en el panel de feedback que
+  inserta en `evaluacion_reportes` (tabla ya corrida en Supabase) el
+  contexto de la corrección. Verificado en Chrome headless.
+- **`evaluacion_practica.minimo_elementos` (columna + los 63 `UPDATE` de
+  clasificación de eje pendientes desde julio) — corridos el 2026-08-04.**
+  Verificado en vivo: los 4 ítems mal clasificados de REX, los 59 de
+  Fase 0 de Precontractual (queda solo `hist-pre-mc-015` sin eje, a
+  propósito — Laura no decidió aún entre eje B o J) y `rc-just-001`
+  (movido a Extracontractual, 9 diferencias + `minimo_elementos: 3`, y
+  ya reflejado también en Airtable, no solo en Supabase) quedaron bien.
+  **`ext-alt-002` sí se borró. `rc-detect-001` (la fila corrupta de
+  Contractual) también borrada, recién (2026-08-04): confirmado que el
+  registro original en Airtable ya no existía (Laura lo había borrado el
+  2026-07-31 junto con el eje fantasma), así que el borrado en Supabase
+  cierra el hallazgo del todo, no queda nada suelto en Airtable.**
+- **4 candidatos de "N de M posibles" revisados y descartados
+  (2026-08-04)**: `cont-just-001`, `pre-aplic-001`, `rc-aplic-010`,
+  `re-just-012`. Los cuatro resultaron ser como `rc-just-011`: el
+  enunciado pide un número puntual de elementos, pero ese número es un
+  conjunto cerrado y taxativo según el manual (verificado línea por
+  línea contra `01_...Contractual...html` y
+  `02_...Extracontractual...html`), no una selección entre varias
+  opciones válidas intercambiables. Detalle por ítem:
+  - `cont-just-001` (culpa grave = dolo): pide "el fundamento y dos
+    consecuencias"; el manual solo reconoce esas dos consecuencias
+    (arts. 1558 y 1465), no hay una tercera.
+  - `pre-aplic-001` (elementos copulativos de resp. precontractual): los
+    4 ítems de la pauta son hechos puntuales del caso concreto, no
+    alternativas intercambiables.
+  - `re-just-012` (reparación integral): pide "dos consecuencias y su
+    límite"; el manual da exactamente esas dos consecuencias y ese
+    límite como contenido canónico, conjunto cerrado.
+  - `rc-aplic-010` (caso fortuito): pide "los tres requisitos", la pauta
+    tiene 4 (los 3 + carga de la prueba), pero el manual mismo instruye
+    agregar la carga de la prueba como cuarto elemento obligatorio
+    (recuadro pedagógico, "estructura de cuatro trazos"). Además,
+    `evaluarRespuesta()` ya da crédito proporcional sin
+    `minimo_elementos`, así que cubrir 3 de 4 ya alcanza el 75% del
+    umbral de "avanzar".
+  **Ninguno de los 4 recibió `minimo_elementos`.** Laura confirmó dejarlo
+  así. No queda ningún candidato de esta tanda sin resolver.
+  **Nota (2026-08-04):** las 43 preguntas nuevas de Evaluación de
+  Contractual generadas en la tanda de Fases A-D (ver más abajo) ya están
+  aprobadas, `publicado` en Airtable, y sincronizadas en Supabase (SQL
+  corrido por Laura).
 - **Normalizar el campo `materia` de las 53 preguntas nuevas de
   Contractual**: quedaron con `materia = "Responsabilidad contractual"`,
   mientras las preguntas viejas de `Preguntas_Evaluacion` tienen ahí
@@ -246,59 +283,14 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   por ahora.** Con esto, REX, REC y REP quedan con Fase 0 y Fase 1
   completas.
 
-## SQL pendientes de correr en Supabase, todos juntos (orden importa)
+## SQL urgente pendiente de correr en Supabase
 
-Acumulado de varios hallazgos de esta sesión (2026-07-31). Todos
-bloqueados para Claude por el modo auto de Claude Code (escritura en
-producción); Laura los corre en el SQL Editor de Supabase, en este
-orden:
-
-**1. Primero, el cambio de esquema** (agrega la columna que necesitan los
-statements de más abajo):
-```sql
-alter table public.evaluacion_practica
-  add column if not exists minimo_elementos integer;
-```
-(= `scripts/supabase_schema_minimo_elementos.sql`)
-
-**2. Los 4 ítems de Extracontractual mal clasificados de eje** (detalle
-arriba en el punto de REX):
-```sql
-update public.evaluacion_practica set tema = '5. La capacidad delictual' where codigo = 're-detect-008';
-update public.evaluacion_practica set tema = '8. La culpabilidad: dolo y culpa' where codigo = 're-detect-010';
-update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-aplic-011';
-update public.evaluacion_practica set tema = '10. El daño: concepto y requisitos de resarcibilidad' where codigo = 're-detect-012';
-```
-
-**3. Los 40 de la Fase 0 de Contractual**: statements completos en
-`docs/fase0_rec_clasificacion_2026-07-31.md` (sección final del doc), no
-repetidos acá para no duplicar.
-
-**4. Los 2 ítems que se mueven de Contractual a Extracontractual + el
-arreglo del bug de calificación**: statements completos en
-`docs/fix_justificacion_menciona_n_de_m_2026-07-31.md` (`rc-aplic-002`,
-`rc-just-001`, `rc-just-009`). **Ojo:** mover `materia` en Supabase no es
-el arreglo definitivo para los primeros dos — el registro original sigue
-en la base `Digesto Contractual` de Airtable, y el próximo
-`sync_airtable_supabase.py` lo va a volver a poner en Contractual salvo
-que alguien también mueva el registro ahí (borrarlo de la tabla de
-Contractual en Airtable y recrearlo en la de Extracontractual, linkeado
-al eje correcto). Detalle en ese mismo doc.
-
-**5. Los 59 de la Fase 0 de Precontractual**: statements completos en
-`docs/fase0_rep_clasificacion_2026-07-31.md` (sección final del doc), no
-repetidos acá. `hist-pre-mc-015` no tiene statement, queda pendiente de
-que Laura decida entre eje B o J (ver ese doc).
-
-**6. Alternativa redundante de Extracontractual**:
-```sql
-delete from public.alternativas where id = 'ext-alt-002';
-```
-
-**7. Solo si Laura decide borrar la fila corrupta en vez de investigarla**:
-```sql
-delete from public.evaluacion_practica where codigo = 'rc-detect-001';
-```
+Toda la tanda de julio (columna `minimo_elementos`, los 4 de REX, los 40
+de Fase 0 Contractual, `rc-aplic-002`/`rc-just-001`/`rc-just-009`, los 59
+de Fase 0 Precontractual, `ext-alt-002`, y la fila corrupta
+`rc-detect-001`) **ya se corrió y se verificó en vivo, la última pieza
+(`rc-detect-001`) recién el 2026-08-04.** No queda ningún SQL pendiente
+de esta tanda.
 
 ## Pendiente: contenido y tareas sueltas (continuación)
 
@@ -315,6 +307,197 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   tres columnas, sin riesgo de redundancia): ya subidas y sincronizadas
   (`docs/flashcards_nuevas_2026-07-31_contractual_eje5.md` queda como
   borrador de referencia, el contenido real ya está en Airtable/Supabase).
+- **Fases A-D del mismo proceso, ahora aplicadas a Evaluación (2026-08-04),
+  a pedido explícito de Laura**: llevar los 18 ejes reales de Contractual
+  (todos salvo 2 y 21) a techo real en las 4 tablas de Evaluación
+  (Aplicación, Detección de error, Justificación, Discriminación MC), no
+  solo el mínimo de 1 ítem por tipo ya cerrado el 2026-08-01. Se generaron
+  y subieron directo a Airtable Contractual (vía API) **43 ítems nuevos**,
+  cubriendo 17 de los 18 ejes (eje 10, caso fortuito, se dejó sin tocar
+  por ya tener cobertura sólida: 5 ítems, incluidos los 3 requisitos, las
+  excepciones y la carga de la prueba). Evaluación de Contractual pasa de
+  87 a 130 preguntas en Airtable. Verificado sin redundancia contra lo
+  existente (por artículo citado e institución jurídica, no solo por
+  eje); un caso real de solape potencial (el debate Claro Solar/Abeliuk
+  sobre "ausencia de culpa vs. caso fortuito" encaja tanto en eje 8 como
+  en eje 17 según cómo se lea el manual) se resolvió asignándolo solo a
+  eje 8 y evitando repetirlo en eje 17. **Chequeo de sesgo de posición en
+  Discriminación MC corrido y corregido**: los primeros 4 ítems nuevos
+  quedaron por error todos con la correcta en B (se detectó y se
+  redistribuyeron antes de seguir); el resto de la tanda se repartió
+  deliberadamente en A/C/D, sin agregar ninguna más a B (que ya venía
+  sobrecargada de antes: bajó de 52% a 38% del total). Todo quedó con
+  `publicado` sin marcar en Airtable, pendiente de la revisión de Laura
+  antes de subir a Supabase (mismo flujo que Flashcards: ella revisa,
+  aprueba, y se corre el sync).
+- **Mismo proceso (Fases A-D) aplicado a Extracontractual (REX), 2026-08-04,
+  a pedido explícito de Laura, inmediatamente después de Contractual.**
+  Flashcards: **no hizo falta Parte D**, los 25 ejes de REX ya estaban
+  parejos (7-12 tarjetas cada uno, sin ceros), a diferencia de Contractual.
+  Evaluación: se auditó en vivo contra Supabase y se encontraron **15
+  celdas en cero** (un tipo completo sin representar) repartidas en 11
+  ejes: eje 2 (detE), eje 3 (aplic), eje 6 (detE+discMC), eje 10 (just),
+  eje 11 (just), eje 13 (aplic+discMC), eje 16 (discMC), eje 17
+  (just+discMC), eje 18 (discMC), eje 21 (detE+discMC), eje 22
+  (just+discMC). Se generaron y subieron **16 ítems nuevos** directo a
+  Airtable Extracontractual (vía API), cerrando las 15 celdas (una celda,
+  eje 6 discMC, quedó con 1 ítem que además ayudó a balancear el sesgo de
+  posición). Evaluación de Extracontractual pasa de 133 a 147 preguntas
+  en Airtable. Sesgo de posición en Discriminación MC verificado antes y
+  después: quedó muy parejo (A 12, B 10, C 12, D 11 sobre 45 totales).
+  **Laura aprobó, marcó `publicado` en Airtable las 43 de Contractual y
+  las 16 de REX, y corrió el SQL de sync a Supabase (2026-08-04) —
+  ambas materias quedaron con la Evaluación nueva viva en la app**
+  (Contractual 130, Extracontractual 149 en `evaluacion_practica`).
+  **No se hizo la segunda pasada de volumen extra que sí se hizo en
+  Contractual** (llevar cada eje bien más allá del mínimo) — **pendiente
+  explícito**: Laura quiere retomarlo para REX cuando lo pida.
+- **Segunda pasada de volumen extra en REX, iniciada (2026-08-05), lote 1
+  de 2 ítems, pendiente de revisión de Laura.** Antes de generar nada se
+  recontó Evaluación de REX en vivo contra Supabase (149 ítems, no 131
+  como decía `docs/cobertura_subtema_rex_2026-07-30.md`, que quedó
+  desactualizado por la tanda Fases A-D del 2026-08-04 y no se volvió a
+  tocar): esa recontada encontró **dos huecos reales que ninguna tanda
+  anterior había cerrado**, distintos de los que cerraron las Fases A-D.
+  Eje 5 (capacidad delictual) tenía 0 ítems de Justificación (aplic 1,
+  detE 2, discMC 1); eje 24 (cúmulo o concurso de responsabilidades)
+  tenía 0 de Discriminación MC (aplic 1, detE 2, just 1). Se verificó
+  además, contra los datos en vivo, que los 4 ítems mal clasificados de
+  eje que `docs/cobertura_subtema_rex_2026-07-30.md` daba como
+  "pendientes de que Laura corra el SQL" **ya estaban corregidos**
+  (`re-detect-008` en eje 5, `re-detect-010` en eje 8, `re-aplic-011` y
+  `re-detect-012` en eje 10) — ese SQL sí se corrió, el doc de cobertura
+  simplemente nunca se actualizó para reflejarlo.
+  - **`re-just-037`** (eje 5): por qué la responsabilidad del guardián
+    del incapaz (art. 2319 inc. 1°) es por hecho propio y no por hecho
+    ajeno del art. 2320, con las dos diferencias de régimen que se
+    siguen (quiénes son capaces, y quién prueba la negligencia).
+  - **`re-mc-040`** (eje 24): caso de un cirujano cuya negligencia es a
+    la vez incumplimiento contractual y cuasidelito penal (lesiones
+    graves), aplicando la segunda excepción de ALESSANDRI al rechazo
+    general del cúmulo (distractor D confunde esta excepción con la
+    del pacto expreso, ya cubierta por `re-aplic-025`). Correcta en B;
+    la distribución de Discriminación MC en REX queda A12/B11/C12/D11
+    una vez sincronizado, sin sesgo de posición.
+  Ambos creados directo en Airtable (base `Digesto Extracontractual`,
+  `appz8ePbArPV9cbE3`) con `publicado` sin marcar, verificados contra el
+  manual (líneas 639-736 y 2302-2362 de
+  `02_Responsabilidad_Extracontractual_Manual.html`) y sin redundancia
+  con el contenido vivo del mismo eje. **Falta que Laura los revise,
+  marque `publicado` en Airtable y corra el sync.**
+  **Lote 2 (mismo día), ejes 1 y 6, también sin publicar:**
+  - Eje 1: **`re-aplic-033`** (rechazo de la función punitiva, caso de
+    un choque intencional donde se pide indemnización superior al daño
+    para "sancionar" la conducta) y **`re-detect-035`** (error de
+    alumno que confunde el principio de tipicidad penal con el sistema
+    civil de cláusulas generales). Eje 1 pasa de 4 a 6 ítems (aplic 2,
+    detE 2, just 1, discMC 1).
+  - Eje 6: **`re-aplic-034`** (exterioridad del caso fortuito, caso de
+    un ciclista que colisiona por esquivar a un peatón imprudente) y
+    **`re-just-038`** (por qué expandir la noción de órgano agrava, y
+    no beneficia, la responsabilidad de la persona jurídica, arts.
+    2320/545). Eje 6 pasa de 4 a 6 ítems (aplic 2, detE 1, just 2,
+    discMC 1).
+  Ninguno de los 4 es Discriminación MC, así que no alteran la
+  distribución de sesgo de posición reportada arriba. Verificados
+  contra el manual (líneas 327-389 y 736-815) y sin redundancia con el
+  contenido vivo de cada eje. **Igual que el lote 1, pendientes de
+  revisión de Laura antes de publicar.**
+  **Lote 3 (mismo día), ejes 7 y 11, también sin publicar:**
+  - Eje 7 (antijuridicidad y causales de justificación, el eje más largo
+    del manual): **`re-mc-041`** (abuso del derecho, caso de un
+    arrendador que litiga vejatoriamente, distractores construidos
+    sobre las posiciones de RODRÍGUEZ GREZ, ALESSANDRI/DUCCI y BARROS;
+    correcta en C) y **`re-aplic-035`** (aceptación de riesgo deportivo
+    en un vuelo de parapente, distingue el riesgo aceptado de la propia
+    negligencia del prestador por falta de mantención). El eje tenía
+    abuso del derecho completamente sin cubrir pese a ser uno de los
+    puntos más ricos del manual; eje 7 pasa de 4 a 6 ítems (aplic 2,
+    detE 1, just 1, discMC 2).
+  - Eje 11 (daño patrimonial): **`re-detect-036`** (excepción del art.
+    1559: el daño por mora en el pago de dinero se mide solo por
+    intereses corrientes, caso de un abogado que pretende cobrar una
+    utilidad específica mayor) y **`re-aplic-036`** (prueba del daño
+    emergente futuro y la renta periódica como modalidad de pago, caso
+    de una víctima parapléjica). Eje 11 pasa de 4 a 6 ítems (aplic 2,
+    detE 2, just 1, discMC 1).
+  Distribución de Discriminación MC de REX tras los 2 ítems nuevos de
+  este tipo (`re-mc-040`, `re-mc-041`), todavía sin publicar: A12/B11/
+  C13/D11, sigue sin sesgo relevante. Verificados contra el manual
+  (líneas 821-923 y 1270-1347) y sin redundancia con el contenido vivo
+  de cada eje. **Mismo estado que los lotes 1 y 2: pendientes de
+  revisión de Laura antes de publicar.**
+  **Lote 4 (mismo día), ejes 13 y 16, también sin publicar:**
+  - Eje 13 (la causalidad): **`re-aplic-037`** (pluralidad de agentes
+    por hechos distintos, dos fábricas que vierten residuos tóxicos de
+    forma independiente al mismo río, cada vertido individualmente
+    suficiente para el daño, división proporcional en vez de
+    solidaridad literal del art. 2317) y **`re-just-039`** (por qué se
+    extiende por analogía la presunción del art. 2329 a la prueba de la
+    causalidad, no solo de la culpa). Eje 13 pasa de 4 a 6 ítems (aplic
+    2, detE 1, just 2, discMC 1).
+  - Eje 16 (hecho de las cosas: animales, ruina, objetos que caen):
+    **`re-aplic-038`** (art. 934, querella de obra ruinosa notificada,
+    caso de un muro que cae por un sismo, distingue caída por mal
+    estado de caída por caso fortuito) y **`re-detect-037`** (art. 2324
+    en relación al art. 2003 regla 3ª, error de alumno que ignora la
+    responsabilidad especial del constructor por vicios de
+    construcción). Ruina de edificio estaba completamente sin cubrir
+    hasta ahora (los 4 ítems previos del eje eran todos sobre animales
+    o sobre el art. 2328). Eje 16 pasa de 4 a 6 ítems (aplic 2, detE 2,
+    just 1, discMC 1).
+  Ningún ítem de este lote es Discriminación MC, no altera la
+  distribución de sesgo de posición. Verificados contra el manual
+  (líneas 1460-1564 y 1744-1821) y sin redundancia con el contenido
+  vivo de cada eje. **Mismo estado que los lotes anteriores: pendientes
+  de revisión de Laura antes de publicar.**
+  **Lote 5 (mismo día), ejes 17, 18 y 22, también sin publicar. Con este
+  lote se cierran los 9 ejes que quedaban en el mínimo: la segunda
+  pasada de volumen extra de REX queda completa.**
+  - Eje 17 (regímenes de responsabilidad objetiva): **`re-aplic-039`**
+    (Ley N° 16.744, accidente in itinere, la negligencia inexcusable
+    del trabajador no excluye la cobertura del seguro) y
+    **`re-mc-042`** (régimen especial de plaguicidas, responsabilidad
+    estricta incluso por daños accidentales; correcta en B). El
+    catálogo completo de regímenes especiales (trabajo, tránsito,
+    aeronáutica, plaguicidas, hidrocarburos, energía nuclear, minería)
+    solo tenía cubierto tránsito hasta ahora. Eje 17 pasa de 4 a 6
+    (aplic 2, detE 1, just 1, discMC 2).
+  - Eje 18 (responsabilidad del Estado): **`re-detect-038`**
+    (responsabilidad vicaria del Estado por sus órganos, un alumno
+    confunde el régimen con la excusa del art. 2320 inciso final, que
+    no le aplica) y **`re-aplic-040`** (error judicial, exige algo
+    asimilable a culpa grave, no basta que prueba posterior revele el
+    error). Eje 18 pasa de 4 a 6 (aplic 2, detE 2, just 1, discMC 1).
+  - Eje 22 (tribunal, procedimiento, extinción de la acción):
+    **`re-detect-039`** (art. 2332 es prescripción de corto tiempo
+    especial, no se suspende en favor de incapaces, a diferencia de las
+    de largo tiempo) y **`re-aplic-041`** (improcedencia de reservar la
+    especie y monto de los perjuicios para la ejecución del fallo o un
+    juicio posterior). Eje 22 pasa de 4 a 6 (aplic 2, detE 2, just 1,
+    discMC 1).
+  Distribución final de Discriminación MC de REX tras toda la pasada
+  (3 ítems nuevos de este tipo: `re-mc-040`, `re-mc-041`, `re-mc-042`,
+  todos sin publicar): A12/B12/C13/D11, sin sesgo relevante. Verificados
+  contra el manual (líneas 1827-1892, 1898-1959 y 2178-2239) y sin
+  redundancia con el contenido vivo de cada eje.
+  **Resumen de toda la pasada de REX (2026-08-05):** los 2 huecos reales
+  del lote 1 (eje 5 sin Justificación, eje 24 sin Discriminación MC) más
+  los 9 ejes que estaban en el mínimo parejo (1, 6, 7, 11, 13, 16, 17,
+  18, 22), cada uno llevado de 4 a 6 ítems. Total: **20 ítems nuevos**.
+  **Laura revisó y aprobó el lote completo, se marcó `publicado` en las
+  4 tablas de Airtable y se corrió el sync: Evaluación de REX queda en
+  167 en Supabase (verificado en vivo, los 20 códigos nuevos confirmados
+  uno por uno).** Los 25 ejes de REX quedan con al menos 4 ítems de
+  Evaluación, y ninguno queda ya en el mínimo absoluto de 1-1-1-1: los
+  ejes que ya tenían más profundidad de antes (2, 9, 12, 14, 15, 19, 20,
+  21, 23, 25) no se tocaron en esta pasada, quedan como candidatos para
+  seguir profundizando si Laura lo pide.
+  **De paso (2026-08-05): corregido un bug de copy en `app/alternativas.html`
+  línea 1354** — la instrucción de Aplicación decía "antes de ver
+  cualquier opción", frase que solo tiene sentido para Discriminación MC
+  (la única que muestra alternativas después); ahora dice "Escribe tu
+  análisis completo, con los artículos relevantes."
 - **Plan "llevar Evaluación a su techo" en Contractual, a pedido
   explícito de Laura (2026-07-31), en curso**: quiere los 20 ejes con
   todos sus subtemas cubiertos en los 4 tipos de Evaluación. **3 ejes
@@ -417,6 +600,18 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   Hallazgo pendiente sin tocar: **10 de los 20 ejes reales siguen en cero
   tarjetas** (2, 3, 5, 12, 13, 14, 15, 16, 19, 21) — ver plan de
   generación de contenido nuevo más abajo.
+  **Parte D del plan, cerrada (2026-08-04): 46 Flashcards nuevas
+  generadas y subidas directo a Airtable Contractual
+  (`appxeVxAE53yIqRPa`) para los 7 ejes que quedaban en cero y sí tienen
+  sección propia en el manual (3, 12, 13, 14, 15, 16, 19; 6 o 7 tarjetas
+  cada uno).** Verificado sin redundancia contra las 180 ya existentes
+  (chequeo por artículo citado y por institución jurídica, no solo por
+  eje). Laura las revisó y aprobó; quedaron marcadas `publicado` en
+  Airtable y el SQL de sync a Supabase ya se corrió (2026-08-04): Contractual
+  queda en **226 Flashcards** en ambos lados, Airtable y Supabase. **Eje
+  2 y 21: decisión de Laura (2026-08-04)
+  de no tocarlos** (no tienen sección propia en el manual y no se les va
+  a crear una) — cerrado, no es un pendiente.
   **Incidente y arreglo (2026-08-01): las 50 borradas habían "revivido"
   como 50 fantasmas en Supabase con id nuevo.** Causa: `borrar_redundantes_eje6`
   borra primero la fila vieja en Supabase y después el registro en
@@ -506,8 +701,6 @@ delete from public.evaluacion_practica where codigo = 'rc-detect-001';
   por ítem si la respuesta es sí; para Evaluación haría falta además subir
   esos 4 ítems a Airtable en alguna de las 3 bases o decidir otra forma de
   guardarlos.
-- **Cuándo activar la Capa 1 del paywall** (lista blanca + cierre de
-  registro): depende de cuándo Laura quiera empezar a invitar alumnas.
 - **Si el hueco de los PDF públicos (ver arriba) es aceptable para el
   beta inicial** o si hace falta adelantar algo de la Capa 2 antes de
   invitar alumnas, aunque el plan original la ponga después.
