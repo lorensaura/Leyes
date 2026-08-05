@@ -6,7 +6,7 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Los ítems ya resueltos se borran del todo (no
 > se dejan tachados) apenas se cierran — quedan igual en el historial
-> de git si hace falta recuperarlos. Última actualización: 2026-08-04.
+> de git si hace falta recuperarlos. Última actualización: 2026-08-05.
 
 ## Hecho
 
@@ -84,6 +84,18 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   decisión consciente, no un descuido si aparece.
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
+
+- **Hallazgo (2026-08-05): no existe tabla que guarde las respuestas de
+  Alternativas/Evaluación por alumna.** Solo Memorice
+  (`memorice_intentos`/`memorice_progreso`) y Flashcards
+  (`flashcard_progreso`) tienen persistencia de intentos por usuaria;
+  `evaluacion_practica` y `alternativas` solo se leen, nunca se escribe
+  un registro de "esto respondió esta alumna y le fue bien/mal". Por eso
+  las tarjetas "preguntas respondidas" y "% acierto hoy" del dashboard
+  (`app/dashboard.html`) quedan en "sin datos" en vez de mostrar un
+  número real. Laura decidió (2026-08-05) dejarlo pendiente por ahora en
+  vez de construir la tabla ya mismo — retomar como tarea aparte cuando
+  lo pida.
 
 - **"Reportar calificación mal hecha" en Evaluación — HECHO (2026-08-04)
   y en producción.** La corrección de Evaluación es por keywords en JS
@@ -800,6 +812,11 @@ de esta tanda.
   original, aunque ver la nota de arriba sobre el hueco de los PDF.
 - Modo transversal del Interrogador (todas las materias de Civil en una
   sola sesión) y la interrogación oral (voz): quedan para después.
+- **Justinián como persona unificadora** (interrogación oral + Chat IA +
+  ayuda inline "¿no entendiste?" en Evaluación + chat nuevo de dudas
+  generales que dirige al manual): idea definida por Laura el 2026-08-05,
+  detalle completo en `docs/interrogador.md` sección "Justinián: persona
+  unificadora". Nada de esto construido aún, queda para sesión dedicada.
 - Materias más allá de Contractual/Extracontractual/Precontractual
   (Acto Jurídico, Bienes, Familia, Sucesorio, Procesal, Penal,
   Constitucional, Administrativo): en stand by hasta terminar de validar

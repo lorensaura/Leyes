@@ -190,6 +190,36 @@ para destacar un artículo.
   interrogación completa de punta a punta con el cambio nuevo -- la
   próxima interrogación real de prueba debería incluir esa medición.
 
+## Justinián: persona unificadora (idea, 2026-08-05, no construida)
+Laura quiere que "Justinián" sea el presentador/tutor de Digesto detrás de
+todos los puntos de contacto con IA de la plataforma, no un chatbot
+suelto. Cuatro piezas, dos ya existentes y dos nuevas:
+1. **Interrogación oral (voz)** — ya anotada como pendiente en el
+   roadmap, sigue en pie.
+2. **Chat IA actual** (`app/interrogador.html` + `api/interrogador.js`,
+   v1 en producción) — el examinador que ya interroga y corrige.
+3. **NUEVO: ayuda inline en Evaluación** — un botón "¿no entendiste?" al
+   lado de donde la alumna responde una pregunta en
+   `app/alternativas.html`, que explica esa pregunta o respuesta puntual
+   cuando la corrección automática no le hizo sentido.
+4. **NUEVO: chat de dudas generales sobre una materia** — a diferencia
+   del Interrogador (que examina) y del punto 3 (que explica una
+   pregunta puntual), este responde dudas abiertas de la alumna, pero
+   **no debe limitarse a responder**: tiene que dirigirla a la sección
+   exacta del manual donde ese tema está desarrollado (grounding
+   parecido al del Interrogador — probablemente reusable el mecanismo de
+   router + chunks de `_interrogador-chunks.js`/`_interrogador-indice.js`
+   de la sección "Grounding" arriba, pero apuntando a un system prompt
+   distinto, no de examen).
+
+**Sin construir todavía.** Falta definir antes de empezar: si 3 y 4 usan
+el mismo endpoint que `api/interrogador.js` con un modo distinto o uno
+nuevo, cómo se referencia la sección del manual desde la respuesta (link
+directo a `manuales.html` con anchor, o solo el nombre del título), y el
+alcance de materias (¿las mismas 3 de Responsabilidad, o desde el
+principio pensado para crecer con el roadmap?). Queda para una sesión
+dedicada, no para tocar de paso.
+
 ## Idea de negocio anotada (no construida aún)
 Planes con tope de interrogaciones/tokens por mes + compra de
 "interrogaciones extra" sueltas, diseñado para que el plan Pro de Digesto
