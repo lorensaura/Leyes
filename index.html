@@ -46,6 +46,9 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2rem;
       letter-spacing: 3px;
@@ -53,6 +56,12 @@
     }
 
     .logo span { color: #C41E2E; }
+
+    .logo-icon {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
 
     .nav-links {
       display: flex;
@@ -159,22 +168,6 @@
       max-width: 640px;
       position: relative;
       z-index: 1;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(196, 30, 46, 0.12);
-      border: 1px solid rgba(196, 30, 46, 0.3);
-      color: #C41E2E;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
     }
 
     .hero h1 {
@@ -488,7 +481,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">Digesto<span>.</span></div>
+    <div class="logo"><img src="assets/logo-icon.png" alt="" class="logo-icon" />Digesto<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#features">Qué incluye</a></li>
       <li><a href="#how">Cómo funciona</a></li>
@@ -503,9 +496,8 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="badge">📚 Examen de grado · Chile</div>
       <h1>Prepara tu examen de grado con <em>manuales, práctica e IA</em></h1>
-      <p>Digesto es la plataforma de estudio de Laura Schultz Solano para el examen de grado de Derecho en Chile: manuales que fusionan código, doctrina y jurisprudencia, práctica diaria y un interrogador con inteligencia artificial que te toma examen como si fuera la comisión.</p>
+      <p>Digesto es una plataforma de estudio para el examen de grado de Derecho en Chile: manuales con ejemplos que fusionan código, doctrina y jurisprudencia, práctica diaria y un interrogador con inteligencia artificial que te toma examen como si fuera la comisión.</p>
       <div class="hero-actions">
         <a href="app/auth.html" class="btn btn-red">Ingresar</a>
         <a href="#contacto" class="btn btn-outline">Escríbenos</a>
@@ -552,7 +544,7 @@
       <div class="feature-card">
         <div class="feature-icon">📖</div>
         <div class="feature-title">Manuales de estudio</div>
-        <div class="feature-desc">Contenido estructurado por materia y tema, que fusiona código, doctrina y jurisprudencia real, organizado para estudiar de forma eficiente.</div>
+        <div class="feature-desc">Contenido estructurado por materia y tema, con ejemplos y casos que fusionan código, doctrina y jurisprudencia real, organizado para estudiar de forma eficiente.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✅</div>
