@@ -155,7 +155,7 @@
     }
 
     .page-header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .page-title {
@@ -172,10 +172,58 @@
       margin-top: 0.35rem;
     }
 
+    /* ── RESUME BANNER ── */
+    .resume-banner {
+      border: 2px solid #C41E2E;
+      border-radius: 10px;
+      background: #E8D8B8;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .resume-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      margin-bottom: 0.5rem;
+    }
+
+    .resume-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 0.3rem;
+    }
+
+    .resume-desc {
+      font-size: 0.85rem;
+      color: #7A6E5F;
+    }
+
+    .btn-resume {
+      flex-shrink: 0;
+      padding: 0.8rem 1.75rem;
+      border-radius: 7px;
+      background: #C41E2E;
+      color: #F5EAD4;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .btn-resume:hover { background: #E02535; }
+
     /* ── STATS CARDS ── */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: minmax(180px, 260px) 1fr;
       gap: 1.25rem;
       margin-bottom: 2.5rem;
     }
@@ -206,13 +254,42 @@
       margin-top: 0.2rem;
     }
 
-    .stat-card-num-empty {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
+    .stat-empty-card {
+      border: 1px dashed #B0A898;
+      border-radius: 10px;
+      background: #F5EAD4;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .stat-empty-title {
       font-weight: 600;
-      letter-spacing: normal;
+      font-size: 0.92rem;
+      color: #111111;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-empty-desc {
+      font-size: 0.8rem;
       color: #7A6E5F;
     }
+
+    .btn-outline-red {
+      flex-shrink: 0;
+      padding: 0.6rem 1.1rem;
+      border-radius: 7px;
+      border: 1px solid #C41E2E;
+      color: #C41E2E;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .btn-outline-red:hover { background: rgba(196,30,46,0.08); }
 
     /* ── MODULES GRID ── */
     .section-title {
@@ -325,6 +402,203 @@
       padding: 0.15rem 0.5rem;
       border-radius: 100px;
     }
+
+    /* ── TU PROGRESO ── */
+    .progreso-card {
+      background: #E8D8B8;
+      border: 1px solid rgba(17,17,17,0.06);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+    }
+
+    .progreso-total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .progreso-total-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #7A6E5F;
+      margin-bottom: 0.35rem;
+    }
+
+    .progreso-total-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      color: #111111;
+    }
+
+    .progreso-total-bar {
+      flex: 1;
+      max-width: 420px;
+      height: 10px;
+      background: rgba(17,17,17,0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progreso-total-bar-fill {
+      height: 100%;
+      background: #C41E2E;
+      border-radius: 5px;
+    }
+
+    .progreso-area {
+      margin-bottom: 1.25rem;
+    }
+
+    .progreso-area:last-child { margin-bottom: 0; }
+
+    .progreso-area-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .progreso-area-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111111;
+    }
+
+    .progreso-area-pct {
+      font-size: 0.82rem;
+      color: #7A6E5F;
+    }
+
+    .progreso-area-bar {
+      height: 8px;
+      background: rgba(17,17,17,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+    }
+
+    .progreso-area-bar-fill {
+      height: 100%;
+      background: #C41E2E;
+      border-radius: 4px;
+    }
+
+    .progreso-subtag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0 0 0.6rem 1.1rem;
+    }
+
+    .progreso-en-curso {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #C41E2E;
+      background: rgba(196,30,46,0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 100px;
+    }
+
+    .progreso-subtag-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #7A6E5F;
+    }
+
+    .progreso-subtemas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-left: 1.1rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(17,17,17,0.08);
+    }
+
+    .progreso-subtema-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .progreso-subtema-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #111111;
+    }
+
+    .progreso-subtema-detail {
+      font-size: 0.76rem;
+      color: #7A6E5F;
+    }
+
+    .progreso-subtema-bar {
+      height: 6px;
+      background: rgba(17,17,17,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progreso-subtema-bar-fill {
+      height: 100%;
+      background: #C41E2E;
+      border-radius: 3px;
+    }
+
+    .progreso-nota {
+      margin: 0.75rem 0 0 1.1rem;
+      font-size: 0.76rem;
+      color: #9A8F7E;
+    }
+
+    .progreso-disclaimer {
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      color: #7A6E5F;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      body { flex-direction: column; }
+
+      .sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto;
+      }
+
+      .main {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 1.75rem 1.25rem;
+      }
+
+      .resume-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-resume { width: 100%; text-align: center; }
+
+      .stats-grid { grid-template-columns: 1fr; }
+
+      .stat-empty-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-outline-red { width: 100%; text-align: center; }
+
+      .progreso-total {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .progreso-total-bar { max-width: 100%; width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -343,10 +617,17 @@
     <a class="nav-item" href="alternativas.html">
       <span class="nav-icon">🎯</span> Práctica
     </a>
+    <a class="nav-item" href="#progreso">
+      <span class="nav-icon">📊</span> Progreso
+    </a>
 
     <span class="nav-section">Con IA</span>
     <a class="nav-item" href="interrogador.html">
       <span class="nav-icon">💬</span> Chat IA
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">🏛️</span> Justiniano
+      <span class="nav-badge">Pronto</span>
     </a>
     <a class="nav-item" href="#">
       <span class="nav-icon">🎙️</span> Interrogación oral
@@ -379,6 +660,16 @@
       <div class="page-subtitle">Esto es lo que tienes pendiente hoy.</div>
     </div>
 
+    <!-- Banner de inicio rápido -->
+    <div class="resume-banner">
+      <div>
+        <div class="resume-eyebrow">Para empezar</div>
+        <div class="resume-title">Practica tu primera pregunta</div>
+        <div class="resume-desc">Elige una materia y responde preguntas de alternativa, detección de error, justificación o memorice.</div>
+      </div>
+      <a class="btn-resume" href="alternativas.html">Ir a Práctica</a>
+    </div>
+
     <!-- Stats -->
     <div class="stats-grid">
       <div class="stat-card">
@@ -386,20 +677,12 @@
         <div class="stat-card-num" id="days-count">0</div>
         <div class="stat-card-label">días en Digesto</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-card-icon">✅</div>
-        <div class="stat-card-num stat-card-num-empty">Sin datos</div>
-        <div class="stat-card-label">preguntas respondidas</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-icon">🎯</div>
-        <div class="stat-card-num stat-card-num-empty">Sin datos</div>
-        <div class="stat-card-label">% acierto hoy</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-icon">🏆</div>
-        <div class="stat-card-num stat-card-num-empty">Sin datos</div>
-        <div class="stat-card-label">posición en liga</div>
+      <div class="stat-empty-card">
+        <div>
+          <div class="stat-empty-title">Aún no tienes actividad esta semana</div>
+          <div class="stat-empty-desc">Responde tu primera pregunta para ver aciertos, racha y posición en la liga.</div>
+        </div>
+        <a class="btn-outline-red" href="alternativas.html">Ir a Práctica</a>
       </div>
     </div>
 
@@ -423,10 +706,10 @@
 
       <a class="module-card" href="alternativas.html">
         <div class="module-header">
-          <div class="module-icon">✅</div>
+          <div class="module-icon">🎯</div>
         </div>
-        <div class="module-title">Preguntas de alternativa</div>
-        <div class="module-desc">Practica con preguntas de selección múltiple por materia.</div>
+        <div class="module-title">Práctica</div>
+        <div class="module-desc">Alternativa, detección de error, justificación, flashcards y memorice, por materia.</div>
         <div class="module-progress">
           <div class="progress-bar-bg">
             <div class="progress-bar-fill" style="width: 0%"></div>
@@ -445,11 +728,11 @@
 
       <div class="module-card locked">
         <div class="module-header">
-          <div class="module-icon">🃏</div>
+          <div class="module-icon">🏛️</div>
           <span class="badge-soon">Próximamente</span>
         </div>
-        <div class="module-title">Flashcards</div>
-        <div class="module-desc">Repaso inteligente con notificaciones a tu hora.</div>
+        <div class="module-title">Justiniano</div>
+        <div class="module-desc">Tu tutor con IA: resuelve tus dudas de una materia y te lleva directo a la parte del manual que la explica.</div>
       </div>
 
       <div class="module-card locked">
@@ -458,18 +741,68 @@
           <span class="badge-soon">Próximamente</span>
         </div>
         <div class="module-title">Interrogación oral con IA</div>
-        <div class="module-desc">Simula el examen frente a una IA que te evalúa en tiempo real.</div>
+        <div class="module-desc">Simula el examen frente a una IA que te evalúa en tiempo real, de viva voz.</div>
       </div>
 
-      <div class="module-card locked">
-        <div class="module-header">
-          <div class="module-icon">🏛️</div>
-          <span class="badge-soon">Próximamente</span>
+    </div>
+
+    <!-- Tu progreso -->
+    <div class="section-title" id="progreso">Tu progreso</div>
+    <div class="progreso-card">
+      <div class="progreso-total">
+        <div>
+          <div class="progreso-total-label">Avance total del temario</div>
+          <div class="progreso-total-num">0%</div>
         </div>
-        <div class="module-title">Justinián</div>
-        <div class="module-desc">Tu tutor con IA: resuelve tus dudas de una materia y te lleva directo a la parte del manual que la explica.</div>
+        <div class="progreso-total-bar"><div class="progreso-total-bar-fill" style="width: 0%"></div></div>
       </div>
 
+      <div class="progreso-area">
+        <div class="progreso-area-header">
+          <span class="progreso-area-name">Civil</span>
+          <span class="progreso-area-pct">0%</span>
+        </div>
+        <div class="progreso-area-bar"><div class="progreso-area-bar-fill" style="width: 0%"></div></div>
+
+        <div class="progreso-subtag">
+          <span class="progreso-en-curso">En curso</span>
+          <span class="progreso-subtag-label">Responsabilidad</span>
+        </div>
+        <div class="progreso-subtemas">
+          <div>
+            <div class="progreso-subtema-header">
+              <span class="progreso-subtema-name">Resp. Contractual</span>
+              <span class="progreso-subtema-detail">Manuales 0% · Práctica 0%</span>
+            </div>
+            <div class="progreso-subtema-bar"><div class="progreso-subtema-bar-fill" style="width: 0%"></div></div>
+          </div>
+          <div>
+            <div class="progreso-subtema-header">
+              <span class="progreso-subtema-name">Resp. Extracontractual</span>
+              <span class="progreso-subtema-detail">Manuales 0% · Práctica 0%</span>
+            </div>
+            <div class="progreso-subtema-bar"><div class="progreso-subtema-bar-fill" style="width: 0%"></div></div>
+          </div>
+          <div>
+            <div class="progreso-subtema-header">
+              <span class="progreso-subtema-name">Resp. Precontractual</span>
+              <span class="progreso-subtema-detail">Manuales 0% · Práctica 0%</span>
+            </div>
+            <div class="progreso-subtema-bar"><div class="progreso-subtema-bar-fill" style="width: 0%"></div></div>
+          </div>
+        </div>
+        <div class="progreso-nota">Acto Jurídico, Bienes, Contratos, Familia y Sucesorio · próximamente</div>
+      </div>
+
+      <div class="progreso-area">
+        <div class="progreso-area-header">
+          <span class="progreso-area-name">Procesal</span>
+          <span class="progreso-area-pct">Próximamente</span>
+        </div>
+        <div class="progreso-area-bar"><div class="progreso-area-bar-fill" style="width: 0%"></div></div>
+      </div>
+
+      <div class="progreso-disclaimer">Vista de referencia. Se calculará a partir de los manuales leídos y las preguntas de práctica respondidas por materia.</div>
     </div>
 
   </main>
