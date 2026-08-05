@@ -61,14 +61,36 @@ solo puede sumar.
 - Si el router marca `no_estoy_seguro: true`: se carga el manual COMPLETO
   de la `materia_respaldo` que indicó (más barato que los 3, sin el riesgo
   de una selección angosta mal elegida).
-- Probado el 2026-08-05 con 5 casos reales armados a mano (arranque de
+- **El cierre (evaluación final) es el turno más importante para la
+  alumna y el que más necesita grounding amplio** -- corrige y cita texto
+  de TODA la sesión (los 11 ítems del checklist), no de un subtema
+  puntual, así que ahí NO conviene fraccionar. Dos capas, no solo una:
+  1. El router puede marcar `es_cierre: true` si por el número de turno y
+     la conversación reciente le parece probable que el examinador esté
+     por cerrar (probado el 2026-08-05: con un anuncio explícito de
+     síntesis lo detecta bien; sin anuncio explícito, no siempre -- ver
+     capa 2).
+  2. **Respaldo mecánico, sin depender del router:** a partir de
+     `UMBRAL_MENSAJES_CIERRE_FORZADO` (40 mensajes) TODOS los turnos que
+     siguen cargan los 3 manuales completos directo, sin siquiera llamar
+     al router. El protocolo apunta a ~15-20 preguntas núcleo + caso antes
+     de cerrar (típicamente ~30-38 mensajes), así que a los 40 ya casi
+     seguro se está cerca del cierre -- pagar el costo completo en esos
+     pocos turnos finales (el mismo que pagaba CADA turno antes de
+     fraccionar) es un precio bajo frente al riesgo de una corrección
+     final mal fundada.
+- Probado el 2026-08-05 con 7 casos reales armados a mano (arranque de
   sesión, culpa contractual, doctrina precontractual, hecho ajeno con
-  artículo puntual, caso práctico ambiguo con varios institutos a la vez):
-  el router acertó las secciones relevantes en los 5 casos y ninguno gatilló
-  `no_estoy_seguro` -- ni siquiera el caso ambiguo, donde en cambio devolvió
-  una selección amplia y razonable cruzando las 3 materias. Costo de esos 5
-  llamados de prueba: ~71.000 tokens de entrada (con caché) + ~750 de
-  salida, centavos de dólar.
+  artículo puntual, caso práctico ambiguo con varios institutos a la vez,
+  y dos variantes de cierre inminente): el router acertó las secciones
+  relevantes en los 7 casos y ninguno gatilló `no_estoy_seguro` -- ni
+  siquiera el caso ambiguo, donde en cambio devolvió una selección amplia y
+  razonable cruzando las 3 materias. De los dos casos de cierre, detectó
+  bien `es_cierre` cuando hubo un anuncio explícito de síntesis, pero no en
+  el caso sin anuncio -- de ahí la segunda capa mecánica descrita arriba
+  (`UMBRAL_MENSAJES_CIERRE_FORZADO`), que no depende del router. Costo de
+  esos 7 llamados de prueba: bajo cien mil tokens de entrada en total (con
+  caché) + menos de 1.100 de salida, centavos de dólar.
 
 El texto que ve la IA principal en el bloque de manual ya no dice "manual
 íntegro": el prompt (`api/_interrogador-prompt.js`) fue ajustado para
@@ -212,19 +234,44 @@ Variables de entorno necesarias en Production + Preview:
   "Grounding" arriba): los 3 manuales completos dejaron de mandarse en
   cada llamada; ahora un router chico (Haiku 4.5) elige 2-8 secciones
   relevantes por turno, con respaldo automático a manual completo (por
-  materia o los 3) si el router falla o no está seguro. Verificado:
-  el troceo de los 3 manuales en 269 secciones corrió de punta a punta
-  (269 secciones, sin IDs duplicados ni vacíos, spot-check contra el HTML
-  fuente); la lógica de selección/respaldo se probó con los 3 caminos
-  (router ok, router falla, router inseguro) simulando las llamadas a
-  Anthropic, sin gastar plata real; el router se probó además con 5
-  llamadas reales baratas (arranque de sesión, culpa contractual, doctrina
-  precontractual, hecho ajeno con artículo puntual, caso práctico
-  ambiguo) y acertó las secciones relevantes en los 5 casos. **Falta
-  todavía:** correr una interrogación real completa de punta a punta
-  (gasto real, con Laura) para confirmar que la calidad de la corrección
-  no bajó al recibir extractos en vez del manual entero, y medir el costo
-  real de una sesión completa con el cambio nuevo.
+  materia o los 3) si el router falla, no está seguro, o el turno es
+  (o puede ser) el cierre. Verificado:
+  - El troceo de los 3 manuales en 269 secciones corrió de punta a punta
+    (269 secciones, sin IDs duplicados ni vacíos, spot-check contra el
+    HTML fuente).
+  - La lógica de selección/respaldo se probó con los 5 caminos (router ok,
+    router falla, router inseguro, cierre marcado por el router, cierre
+    forzado mecánicamente por largo de conversación) simulando las
+    llamadas a Anthropic, sin gastar plata real.
+  - El router se probó con 7 llamadas reales baratas: arranque de sesión,
+    culpa contractual, doctrina precontractual, hecho ajeno con artículo
+    puntual, caso práctico ambiguo, cierre inminente sin anuncio explícito
+    y cierre con anuncio explícito de síntesis. Acertó las secciones
+    relevantes en los 7 casos; detectó bien el cierre cuando hubo un
+    anuncio explícito, pero NO lo detectó en el caso sin anuncio (turno 34
+    de una sesión larga, caso recién resuelto) -- por eso existe la
+    segunda capa mecánica (`UMBRAL_MENSAJES_CIERRE_FORZADO`), que no
+    depende de que el router acierte.
+  - La red de seguridad por palabra clave se revisó y corrigió tras
+    detectar que palabras genéricas (que se repiten en decenas de
+    títulos, ej. "responsabilidad", "contractual", o el cierre repetido
+    "síntesis para estructurar la respuesta de examen") diluían la
+    selección con secciones irrelevantes elegidas por orden de aparición
+    más que por relevancia real -- ahora exige 2 palabras clave distintas
+    y no genéricas, solo contra el título de sección (no el de capítulo),
+    y separa en dos tiers (número de artículo, más preciso, primero;
+    palabra clave después) para que un match genérico nunca le gane el
+    lugar a uno preciso si hay que recortar por el tope. Ojo: el tier por
+    número de artículo solo matchea cuando ese número aparece LITERAL en el
+    título de la sección (ej. "hecho ajeno (art. 2320)") -- eso es la
+    minoría de los 269 títulos, así que no es una red que cubra cualquier
+    artículo que la alumna cite; la selección real recae sobre todo en el
+    router (que en los 7 casos probados sí acertó incluso citas sin ese
+    respaldo, ej. "art. 1551" de la mora). **Falta
+    todavía:** correr una interrogación real completa de punta a punta
+    (gasto real, con Laura) para confirmar que la calidad de la corrección
+    no bajó al recibir extractos en vez del manual entero, y medir el
+    costo real de una sesión completa con el cambio nuevo.
 - **2026-07-20:** ampliado el alcance a Responsabilidad Precontractual —
   nuevo manual `03_Responsabilidad_Precontractual_Manual.html` sumado a
   `scripts/extraer_contenido_interrogador.js`, artículos 97-106 del Código

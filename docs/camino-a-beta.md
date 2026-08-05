@@ -60,8 +60,19 @@
 Esto es lo que ya quedó definido como condición previa a mandar la app a
 las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta`):
 
-- **Landing page (`index.html`)**: cambiarla antes de invitar alumnas.
-  Pendiente desde 2026-07-15.
+- **Landing page (`index.html`)**: reescrita en 3 pasadas el 2026-08-05
+  (commits `17c44e4`, `f0dfbe7`, `03ff37f`), en un worktree aparte
+  (`worktree-landing-page-mejora`) que corrió en paralelo a la sesión de
+  REX de ese mismo día, ya fusionado a `main` localmente (Laura todavía
+  no lo pushea a GitHub). Verificada visualmente en Chrome headless
+  (desktop y mobile) y confirmada por Laura ("ok perfecto") en el chat.
+  Contenido tomado del análisis de mejoras que Laura mandó (hecho con
+  Claude Design), pero con la paleta y tipografía reales de Digesto, no
+  las de ese mockup. Pendientes puntuales de esta landing en el handoff
+  de hoy (`.claude/handoff/ESTADO_ACTUAL.md`, Hilo 2): columnas
+  Nombre/Mensaje en Airtable para que funcione el formulario de
+  contacto, contenido real de la sección "Sobre el examen", precios
+  reales en vez de "Por definir", y el push a GitHub.
 - **Ojo con esto: la Capa 1 sola no cierra el contenido.** Hoy los PDF
   de los manuales (`digesto.cl/app/pdf/...`) son archivos públicos que
   abren sin login; compartir ese link se salta el paywall entero, lista
@@ -498,6 +509,83 @@ de esta tanda.
   cualquier opción", frase que solo tiene sentido para Discriminación MC
   (la única que muestra alternativas después); ahora dice "Escribe tu
   análisis completo, con los artículos relevantes."
+- **Lote 6 de la segunda pasada de REX (2026-08-05), ejes 12 y 19,
+  sin publicar (pendiente de revisión de Laura):** primer lote de la
+  continuación pedida por Laura después de aprobar y sincronizar el
+  lote anterior. Se eligieron los ejes 12, 19 y 25 como siguientes
+  candidatos por ser los más débiles entre los que ya tenían más que el
+  mínimo (5 ítems cada uno); este lote cubre 12 y 19, queda 25
+  pendiente.
+  - Eje 12 (daño moral): **`re-mc-043`** (wrongful birth, acogido por la
+    jurisprudencia chilena, vs. wrongful life, rechazado siguiendo a
+    CORRAL por razones de dignidad de la persona; correcta en B) y
+    **`re-aplic-042`** (naturaleza objetiva del daño moral, caso de un
+    paciente en estado vegetativo, ilustrado con el caso real de las
+    hijas recién nacidas indemnizadas por la muerte de su padre pese a
+    no tener conciencia de la pérdida). Eje 12 pasa de 5 a 7 ítems.
+  - Eje 19 (acción por daño contingente, art. 2333): **`re-aplic-043`**
+    (causalidad hipotética, caso de un balcón a punto de desprenderse)
+    y **`re-detect-040`** (legitimación pasiva no se limita al dueño de
+    la cosa, sino a quien tiene el deber de suprimir la amenaza,
+    incluidas las personas a cuyo cargo esté conforme al art. 2319).
+    Eje 19 pasa de 5 a 7 ítems.
+  Distribución de Discriminación MC de REX tras los 4 ítems nuevos de
+  este tipo agregados en toda la sesión (`re-mc-040` a `re-mc-043`):
+  A12/B13/C13/D11 sobre 49 totales. Sigue sin sesgo grave, pero B y C ya
+  quedan levemente por delante de A y D — si se agregan más ítems de
+  Discriminación MC en la próxima sesión, conviene priorizar la
+  correcta en A o D para no acumular la tendencia. Verificados contra el
+  manual (líneas 1357-1454 y 1965-2022) y sin redundancia con el
+  contenido vivo de cada eje.
+- **Lote 7 de la segunda pasada de REX (2026-08-05), eje 25, sin
+  publicar (pendiente de revisión de Laura). Con este lote se cierran
+  los tres ejes débiles (12, 19, 25) que quedaban entre los que ya
+  tenían más que el mínimo.**
+  - **`re-mc-044`** (responsabilidad postcontractual, la excepción que
+    CORRAL reconoce cuando la ley sanciona el término abusivo del
+    contrato disponiendo su conservación forzada, caso de un despido
+    injustificado con reincorporación obligatoria; correcta puesta en A
+    a propósito, para compensar el leve adelanto de B/C) y
+    **`re-detect-041`** (naturaleza de la responsabilidad
+    precontractual, un alumno invierte la posición mayoritaria
+    chilena, extracontractual, atribuyéndole a la doctrina la tesis
+    minoritaria de Ihering). Eje 25 pasa de 5 a 7 ítems.
+  Distribución final de Discriminación MC de REX tras los 5 ítems
+  nuevos de este tipo agregados en toda la sesión (`re-mc-040` a
+  `re-mc-044`): **A13/B13/C13/D11 sobre 50 totales**, pareja, D queda
+  apenas un poco más baja pero sin sesgo relevante. Verificado contra el
+  manual (líneas 2363-2422) y sin redundancia con el contenido vivo del
+  eje.
+  **Con este lote, los tres ejes que quedaban por debajo del resto
+  entre los ya profundizados (12, 19, 25) quedan igualados en 7 ítems
+  cada uno.** Quedan sin tocar en esta ronda los ejes que ya tenían aún
+  más profundidad de antes (2, 9, 14, 15, 20, 21, 23), candidatos si
+  Laura quiere seguir llevando REX más allá.
+  **Lotes 6 y 7 (eje 12, 19, 25, 6 ítems en total, no 8 como se dijo al
+  cerrar la sesión anterior, error de suma) revisados y publicados
+  (2026-08-05), a pedido de Laura ("revísalas y públicalas cuando
+  puedas"): esta vez la revisión la hizo Claude, no Laura** (auditoría
+  de citas de artículos, atribuciones doctrinales, jurisprudencia y
+  cero guiones largos/guillemets contra el manual, sin hallazgos).
+  `publicado` marcado en las 4 tablas de Airtable y sync corrido:
+  Evaluación de REX queda en **173** en Supabase (verificado en el
+  output del sync). Con esto, los 26 ítems nuevos de toda la pasada
+  (20 del lote 1-5 + 6 del lote 6-7) quedan publicados y en producción.
+  **Pausado acá a pedido de Laura (2026-08-05), no cerrado: todavía
+  queda trabajo real por hacer y REX se puede seguir ampliando.**
+  Concretamente, cuando se retome:
+  - Los 7 ejes que ya tenían más profundidad de antes de esta pasada
+    (2, 9, 14, 15, 20, 21, 23) nunca se tocaron; podrían llevarse al
+    mismo nivel que el resto (7-8 ítems) o más.
+  - Los 22 ejes que sí se tocaron (todos salvo esos 7) quedaron en 6-7
+    ítems cada uno, un techo modesto, no el techo real del apunte:
+    "llevar Evaluación a su techo" (sección 5 del skill
+    `generar-evaluacion`) sigue siendo la meta post-beta, con volumen
+    bastante mayor al actual.
+  - Mismo proceso que ya está probado (tabla de cobertura viva contra
+    Supabase, lotes chicos de 1-2 ejes, chequeo de sesgo de posición,
+    auto-auditoría antes de publicar) — no hace falta rediseñarlo,
+    solo retomarlo cuando Laura lo pida.
 - **Plan "llevar Evaluación a su techo" en Contractual, a pedido
   explícito de Laura (2026-07-31), en curso**: quiere los 20 ejes con
   todos sus subtemas cubiertos en los 4 tipos de Evaluación. **3 ejes
