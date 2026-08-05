@@ -16,22 +16,71 @@
   legal por sobre el costo menor de Sonnet 5).
 
 ## Grounding (de qué se agarra la IA para no inventar)
-El `system` que se manda a Claude en `api/interrogador.js` tiene 4 bloques,
-en este orden:
+
+### Fraccionamiento por turno (2026-08-05)
+Hasta el 2026-08-04, el `system` de la llamada principal mandaba los 3
+manuales COMPLETOS en cada turno (~279.000 tokens medidos, no los ~185.000
+estimados antes de contar de verdad — ver "Costos"). Eso ya no pasa: ahora,
+antes de la llamada principal, corre una llamada chica y barata a
+`claude-haiku-4-5-20251001` (el "router", en `elegirContenidoDelTurno` de
+`api/interrogador.js`) que decide qué SECCIONES puntuales de los manuales
+cargar para el turno que sigue, en vez del manual entero. Motivación:
+bajar costo ya (aunque los ~279K tokens no eran un problema de LÍMITE de
+contexto, con Opus a 1M de ventana) y, sobre todo, dejar la arquitectura
+lista para cuando se sumen más materias del roadmap (Civil completo,
+Procesal, etc.), donde cargar todos los manuales enteros dejaría de ser
+viable. Reemplaza la idea de "modo transversal" que estaba anotada acá
+como pendiente (ver esa sección más abajo, ya cerrada).
+
+Piezas nuevas, generadas por el mismo `scripts/extraer_contenido_interrogador.js`
+que ya regenera `_interrogador-contenido.js` en cada deploy:
+- `api/_interrogador-chunks.js`: los 3 manuales trozados en **269
+  secciones** (por cada título/subtítulo real de los manuales en su HTML
+  fuente -- no hay que curar nada a mano, se detecta solo).
+- `api/_interrogador-indice.js`: índice liviano (solo materia + títulos +
+  id de cada sección, sin el cuerpo) que recibe el router para decidir.
+
+Curado a mano (no generado): `api/_interrogador-checklist-anclas.js`
+(conecta el checklist de subtemas (a)-(k) del prompt con palabras clave por
+materia) y `api/_interrogador-router-prompt.js` (las instrucciones del
+router).
+
+El router recibe el índice completo + el checklist de anclas + los
+últimos ~6 mensajes de la conversación real, y devuelve (vía `tool_use`
+forzado) entre 2 y 8 IDs de sección relevantes para el turno que sigue,
+más los ítems del checklist en juego. En paralelo corre una red de
+seguridad sin LLM (`redDeSeguridadPorPalabraClave`): si la alumna mencionó
+un artículo puntual o una palabra clave de algún título del índice, esa
+sección se agrega igual, la haya elegido el router o no -- nunca resta,
+solo puede sumar.
+
+**Respaldo de seguridad (prioridad #1: nunca corregir "a ciegas"):**
+- Si el router falla (red, timeout, JSON inválido): se cae a los 3
+  manuales completos -- el comportamiento de antes del 2026-08-05, nunca
+  peor.
+- Si el router marca `no_estoy_seguro: true`: se carga el manual COMPLETO
+  de la `materia_respaldo` que indicó (más barato que los 3, sin el riesgo
+  de una selección angosta mal elegida).
+- Probado el 2026-08-05 con 5 casos reales armados a mano (arranque de
+  sesión, culpa contractual, doctrina precontractual, hecho ajeno con
+  artículo puntual, caso práctico ambiguo con varios institutos a la vez):
+  el router acertó las secciones relevantes en los 5 casos y ninguno gatilló
+  `no_estoy_seguro` -- ni siquiera el caso ambiguo, donde en cambio devolvió
+  una selección amplia y razonable cruzando las 3 materias. Costo de esos 5
+  llamados de prueba: ~71.000 tokens de entrada (con caché) + ~750 de
+  salida, centavos de dólar.
+
+El texto que ve la IA principal en el bloque de manual ya no dice "manual
+íntegro": el prompt (`api/_interrogador-prompt.js`) fue ajustado para
+avisarle que son EXTRACTOS elegidos automáticamente, y para reforzar (regla
+9 y "TEXTOS DE REFERENCIA") que si necesita un pasaje que no está en el
+extracto de ESE turno, no lo invente -- que lo diga, igual que ya hacía con
+el Código Civil.
+
+### Los 4 bloques del `system` de la llamada principal, en orden
 1. **Reglas del examinador** — `api/_interrogador-prompt.js` (adaptado de
    `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
-2. **Los dos manuales completos** — `api/_interrogador-contenido.js`,
-   generado por `scripts/extraer_contenido_interrogador.js` a partir de los
-   HTML fuente (`01_..._Manual.html`, `02_..._Manual.html`). **Se regenera
-   solo en cada deploy de Vercel** (`buildCommand` en `vercel.json` corre el
-   script antes de publicar) — no depende de que alguien se acuerde de
-   correrlo a mano; es imposible desplegar con el contenido desfasado
-   respecto de los manuales fuente. Verificado el 2026-07-15 comparando
-   byte a byte contra la versión anterior (generada con el script viejo en
-   Python, ya retirado) usando el motor V8 de Chrome — mismo hash SHA-256.
-   Para regenerar en desarrollo sin esperar un deploy: `node
-   scripts/extraer_contenido_interrogador.js`.
-3. **Artículos del Código Civil y del Código de Comercio relevantes a
+2. **Artículos del Código Civil y del Código de Comercio relevantes a
    Responsabilidad** — `api/_interrogador-codigo.js` (Título Preliminar,
    obligaciones condicionales, cláusula penal, efecto de las obligaciones
    —incluida la interpretación de los contratos—, delitos y cuasidelitos,
@@ -42,7 +91,7 @@ en este orden:
    por fetch simple en esa fecha) — no hay script que lo regenere, es texto
    fijo. Si el alcance de materias crece, hay que sumar los títulos nuevos
    a mano ahí.
-4. **Muestra de preguntas reales** — desde 2026-07-13 esto ya **no** es un
+3. **Muestra de preguntas reales** — desde 2026-07-13 esto ya **no** es un
    archivo estático: `api/interrogador.js` consulta **Supabase en vivo**
    (tabla `preguntas_evaluacion`, ver `docs/contenido-airtable-supabase.md`)
    al armar cada respuesta. 40 preguntas por materia (Contractual +
@@ -56,9 +105,22 @@ en este orden:
    interrogación (el bloque de muestra es idéntico en todos los mensajes de
    una sesión, así que el caché de Anthropic sigue funcionando turno a
    turno).
+4. **Extractos del manual para este turno** — el resultado de
+   `elegirContenidoDelTurno` (ver arriba). Es el único bloque que cambia de
+   turno a turno; por eso va SIN `cache_control` -- pero como ahora es
+   chico (unos pocos miles de tokens, no ~279K), pagarlo fresco en cada
+   turno sale igual o más barato que antes.
 
-El único bloque con `cache_control` es el último (la muestra) — cachea todo
-el prefijo (reglas + manuales + código + muestra) de una vez.
+El bloque 3 (muestra) sigue siendo el único con `cache_control` -- cachea
+todo el prefijo (reglas + código + muestra) de una vez. Ese prefijo ahora
+pesa ~8-14K tokens en vez de ~279K, así que además de más barato, el
+caché se escribe más rápido cuando expira (cada 1h de inactividad).
+
+El router (`api/interrogador.js`) tiene su propio `system` separado
+(prompt del router + checklist de anclas + índice), también con
+`cache_control` en el último bloque (el índice, ~12.500 tokens) y el mismo
+ttl de 1h -- se comparte entre todas las llamadas al router de cualquier
+alumna dentro de esa ventana, igual que hoy pasa con el bloque principal.
 
 ## Convención de marcado (para el chat, no para markdown estándar)
 `app/interrogador.html` traduce esta convención a HTML real en pantalla:
@@ -85,16 +147,26 @@ para destacar un artículo.
 
 ## Costos
 - Costo real por interrogación completa con Opus 4.8: aprox. **$0.50–$2 USD
-  aislada**, pero mucho menos por alumna en la práctica porque el bloque
-  grande de contexto se cachea (~5 min) y se comparte entre cualquier
-  alumna que pregunte en esa ventana.
-- **Ventana de contexto de Opus 4.8 es de 1.000.000 de tokens** — el system
-  prompt completo (reglas + los tres manuales + código + muestra de
-  preguntas) usa hoy ~185.000 tokens (~18%) tras sumar Precontractual el
-  2026-07-20 (antes: ~165.000, ~16%, con solo dos manuales). Hay margen de
-  sobra (miles de preguntas más) antes de que el contexto sea el problema;
-  el costo de cache-write es la variable real a vigilar si la muestra
-  crece mucho.
+  aislada** (cifra de antes del fraccionamiento del 2026-08-05, todavía no
+  vuelta a medir de punta a punta con el cambio nuevo -- debería bajar,
+  ver abajo). Se comparte entre cualquier alumna que pregunte en la misma
+  ventana de caché (1h).
+- **Antes del fraccionamiento (hasta 2026-08-04):** el system prompt
+  completo (reglas + los tres manuales + código + muestra) medía
+  ~279.000 tokens SOLO en manuales (medido de verdad al generar el
+  troceo el 2026-08-05 -- la cifra de ~185.000 que estaba anotada acá
+  antes era una subestimación de cuando aún no se medía con precisión).
+  Con la ventana de 1.000.000 de tokens de Opus 4.8 nunca fue un problema
+  de LÍMITE, pero sí de costo de cache-write en cada ventana nueva.
+- **Desde el fraccionamiento (2026-08-05):** el prefijo cacheado de la
+  llamada principal (reglas + código + muestra) bajó a **~8-14K tokens**;
+  el bloque de extractos por turno agrega otros ~2-16K tokens frescos
+  (tope duro de 8 secciones). Se suma una llamada chica a Haiku 4.5 por
+  turno (el "router"): ~5-14K tokens de entrada (mayormente cacheados,
+  el índice pesa ~12.500 tokens) + ~150-300 de salida, un par de segundos
+  de latencia. Aún no se volvió a medir el costo total de una
+  interrogación completa de punta a punta con el cambio nuevo -- la
+  próxima interrogación real de prueba debería incluir esa medición.
 
 ## Idea de negocio anotada (no construida aún)
 Planes con tope de interrogaciones/tokens por mes + compra de
@@ -103,18 +175,30 @@ salga más barato que comprar sueltas — encaja como parte de la Capa 3 del
 paywall (ver `docs/paywall.md`). Implica agregar conteo de uso por usuaria
 en Supabase (tabla nueva, tipo `interrogaciones_uso`, todavía no existe).
 
-## Modo transversal (todas las materias de Civil, PENDIENTE)
-Cuando existan manuales de más materias, cargar TODOS los manuales
-completos en cada sesión dejaría de ser barato (cada manual ronda los
-~67.000 tokens; 8-10 materias ya son ~600-700K tokens solo en manuales).
-Dos caminos, del más simple al más elaborado:
-1. La alumna elige el alcance de la sesión (2-4 materias), no "todo Civil"
-   por defecto — mismo patrón de hoy, parametrizado.
-2. Grounding en dos niveles: un resumen acotado por materia siempre
-   presente (~5-10K tokens c/u) + el manual completo de la materia que se
-   está preguntando en ESE momento, inyectado recién ahí vía el mensaje de
-   sistema "a mitad de conversación" que soporta Opus 4.8 (no rompe el
-   caché de lo ya cargado).
+## Modo transversal (todas las materias de Civil) -- resuelto por el fraccionamiento
+Esta sección quedó anotada como pendiente hasta el 2026-08-04: la
+preocupación era que cargar TODOS los manuales completos en cada sesión,
+cuando existan manuales de más materias, dejaría de ser barato (8-10
+materias completas ya son ~600-700K tokens solo en manuales). El
+fraccionamiento por turno (ver "Grounding" arriba) resuelve esto de raíz:
+como ya no se cargan manuales completos sino solo las secciones relevantes
+al turno, el costo por turno no crece linealmente con la cantidad de
+materias -- crece con la cantidad de SECCIONES nuevas que se sumen al
+índice, que el router de todos modos filtra a 2-8 por turno. Cuando se
+sumen manuales de otras materias (Bienes, Familia, Sucesorio, Procesal,
+etc.), alcanza con: 1) correr el mismo script de extracción sobre esos
+HTML, 2) sumar sus entradas al checklist de anclas si hace falta, sin
+tener que rediseñar el mecanismo.
+
+(La idea original de "mensaje de sistema a mitad de conversación", que
+estaba anotada acá como camino posible, no se terminó necesitando: la API
+de Claude no tiene un servidor con memoria de sesión -- cada request manda
+el array `system` completo de nuevo, se pueda o no cachear. El
+router+chunks aprovecha justo eso: arma un `system` distinto en cada
+turno (bloques estables cacheados + el bloque de extractos, fresco),
+sin depender de ninguna función especial de un modelo en particular, así
+que funciona igual en modo examen (Opus 4.8) y en modo práctica
+(Sonnet 5).)
 
 ## Requisitos de configuración (Vercel)
 Variables de entorno necesarias en Production + Preview:
@@ -124,6 +208,23 @@ Variables de entorno necesarias en Production + Preview:
   (agregada 2026-07-13).
 
 ## Estado actual
+- **2026-08-05:** implementado el fraccionamiento por turno (ver
+  "Grounding" arriba): los 3 manuales completos dejaron de mandarse en
+  cada llamada; ahora un router chico (Haiku 4.5) elige 2-8 secciones
+  relevantes por turno, con respaldo automático a manual completo (por
+  materia o los 3) si el router falla o no está seguro. Verificado:
+  el troceo de los 3 manuales en 269 secciones corrió de punta a punta
+  (269 secciones, sin IDs duplicados ni vacíos, spot-check contra el HTML
+  fuente); la lógica de selección/respaldo se probó con los 3 caminos
+  (router ok, router falla, router inseguro) simulando las llamadas a
+  Anthropic, sin gastar plata real; el router se probó además con 5
+  llamadas reales baratas (arranque de sesión, culpa contractual, doctrina
+  precontractual, hecho ajeno con artículo puntual, caso práctico
+  ambiguo) y acertó las secciones relevantes en los 5 casos. **Falta
+  todavía:** correr una interrogación real completa de punta a punta
+  (gasto real, con Laura) para confirmar que la calidad de la corrección
+  no bajó al recibir extractos en vez del manual entero, y medir el costo
+  real de una sesión completa con el cambio nuevo.
 - **2026-07-20:** ampliado el alcance a Responsabilidad Precontractual —
   nuevo manual `03_Responsabilidad_Precontractual_Manual.html` sumado a
   `scripts/extraer_contenido_interrogador.js`, artículos 97-106 del Código

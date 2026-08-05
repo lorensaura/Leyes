@@ -1,7 +1,8 @@
 // Función serverless de Vercel: el Interrogador IA de Responsabilidad Civil.
 // Recibe el historial de la conversación desde app/interrogador.html, arma
-// el system prompt (reglas del examinador + contenido de los manuales, ver
-// api/_interrogador-prompt.js y api/_interrogador-contenido.js) y llama a
+// el system prompt (reglas del examinador + Código Civil/Comercio + muestra
+// de preguntas + extractos de manual elegidos para este turno, ver
+// api/_interrogador-prompt.js y elegirContenidoDelTurno más abajo) y llama a
 // la API de Claude. La llave de Anthropic vive solo acá (variable de entorno
 // ANTHROPIC_API_KEY en Vercel), nunca en el HTML servido al navegador.
 //
@@ -14,8 +15,12 @@
 //   {"type":"done"}                  → la respuesta terminó bien
 
 const PROMPT_EXAMINADOR = require('./_interrogador-prompt.js');
-const CONTENIDO_MANUALES = require('./_interrogador-contenido.js');
+const PROMPT_ROUTER = require('./_interrogador-router-prompt.js');
+const CONTENIDO_MANUALES = require('./_interrogador-contenido.js'); // { completo, porMateria } -- respaldo de seguridad, ver elegirContenidoDelTurno
 const CONTENIDO_CODIGO = require('./_interrogador-codigo.js');
+const CHUNKS_MANUALES = require('./_interrogador-chunks.js'); // { [id]: texto de la sección }
+const INDICE_MANUALES = require('./_interrogador-indice.js'); // [{ id, materia, h1, h2 }]
+const CHECKLIST_ANCLAS = require('./_interrogador-checklist-anclas.js');
 
 const MODOS_VALIDOS = new Set(['examen', 'practica']);
 const MAX_MENSAJES = 60;
@@ -39,6 +44,219 @@ const CONFIG_MODO = {
     thinking: { type: 'disabled' },
   },
 };
+// Fraccionamiento por turno (ver docs/interrogador.md, "Grounding"): en vez
+// de mandarle a la IA principal los 3 manuales completos en cada turno, una
+// llamada chica y barata a un modelo rápido ("router") decide qué secciones
+// cargar para el turno que sigue. Si esa llamada falla o no está segura,
+// se cae a un respaldo (manual completo de una materia, o los 3 completos)
+// -- nunca se corrige "sin manual" a la vista. Ver elegirContenidoDelTurno.
+const ROUTER_MODELO = 'claude-haiku-4-5-20251001';
+const ROUTER_MAX_CHUNKS = 8;
+const ROUTER_TIMEOUT_MS = 10000;
+const ROUTER_TOOL = {
+  name: 'seleccionar_contenido',
+  description: 'Elige qué secciones del manual cargar como contexto para el turno que el examinador está por generar.',
+  input_schema: {
+    type: 'object',
+    properties: {
+      chunk_ids: {
+        type: 'array',
+        items: { type: 'string' },
+        description: 'IDs del índice (entre 2 y 8), por orden de relevancia, para el turno que sigue.',
+      },
+      checklist_items_en_juego: {
+        type: 'array',
+        items: { type: 'string', enum: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'] },
+        description: 'Ítems del checklist (a-k) que este turno pone en juego.',
+      },
+      no_estoy_seguro: {
+        type: 'boolean',
+        description: 'true si no hay confianza suficiente para acotar a secciones puntuales.',
+      },
+      materia_respaldo: {
+        type: 'string',
+        enum: ['contractual', 'extracontractual', 'precontractual'],
+        description: 'Materia más probable del turno actual, para el respaldo si no_estoy_seguro es true.',
+      },
+    },
+    required: ['chunk_ids', 'checklist_items_en_juego', 'no_estoy_seguro', 'materia_respaldo'],
+  },
+};
+
+// Índice y checklist como texto compacto, calculados una sola vez (no
+// dependen de la sesión) -- se los manda el router en su propio mensaje de
+// sistema, cacheados igual que hoy se cachea el bloque de manuales.
+function construirIndiceTexto(indice) {
+  const porMateria = new Map();
+  for (const entrada of indice) {
+    if (!porMateria.has(entrada.materia)) porMateria.set(entrada.materia, []);
+    porMateria.get(entrada.materia).push(entrada);
+  }
+  const bloques = [];
+  for (const [materia, entradas] of porMateria) {
+    const lineas = entradas.map((e) => `[${e.id}] ${e.h1} > ${e.h2}`);
+    bloques.push(`===== ÍNDICE: ${materia.toUpperCase()} =====\n${lineas.join('\n')}`);
+  }
+  return bloques.join('\n\n');
+}
+
+function construirAnclasTexto(anclas) {
+  const lineas = anclas.map((a) => `(${a.item}) ${a.descripcion} -- pistas: ${a.pistas.join(', ')}`);
+  return `===== CHECKLIST DE SUBTEMAS (a-k) =====\n${lineas.join('\n')}`;
+}
+
+const INDICE_TEXTO = construirIndiceTexto(INDICE_MANUALES);
+const ANCLAS_TEXTO = construirAnclasTexto(CHECKLIST_ANCLAS);
+const INDICE_POR_ID = new Map(INDICE_MANUALES.map((e) => [e.id, e]));
+
+// Recorta el historial a los últimos `n` mensajes para la llamada del
+// router (no hace falta la conversación completa para saber de qué se está
+// hablando ahora) y descarta mensajes iniciales sueltos de "assistant" que
+// pudieran quedar a mitad del recorte -- la API de Claude exige que
+// `messages` empiece con "user".
+function mensajesRecientesParaRouter(messages, n = 6) {
+  let recorte = messages.slice(-n);
+  while (recorte.length && recorte[0].role !== 'user') recorte = recorte.slice(1);
+  return recorte.length ? recorte : messages.slice(-1);
+}
+
+async function llamarRouter(messages) {
+  const controlador = new AbortController();
+  const timeout = setTimeout(() => controlador.abort(), ROUTER_TIMEOUT_MS);
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      signal: controlador.signal,
+      body: JSON.stringify({
+        model: ROUTER_MODELO,
+        max_tokens: 600,
+        thinking: { type: 'disabled' },
+        tools: [ROUTER_TOOL],
+        tool_choice: { type: 'tool', name: ROUTER_TOOL.name },
+        system: [
+          { type: 'text', text: PROMPT_ROUTER },
+          { type: 'text', text: ANCLAS_TEXTO },
+          { type: 'text', text: INDICE_TEXTO, cache_control: { type: 'ephemeral', ttl: '1h' } },
+        ],
+        messages: mensajesRecientesParaRouter(messages),
+      }),
+    });
+    if (!resp.ok) {
+      throw new Error(`El router respondió ${resp.status}: ${await resp.text()}`);
+    }
+    const data = await resp.json();
+    const bloqueTool = (data.content || []).find((b) => b.type === 'tool_use');
+    if (!bloqueTool || !bloqueTool.input) {
+      throw new Error('El router no devolvió una selección de contenido válida');
+    }
+    return bloqueTool.input;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+// Red de seguridad determinística, sin LLM, que corre en paralelo al
+// router: si la alumna mencionó un artículo puntual o una palabra clave de
+// algún título del índice, esa sección se agrega igual, la haya elegido el
+// router o no. Nunca reduce la selección del router, solo puede ampliarla.
+function normalizarTexto(texto) {
+  return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function extraerNumerosDeArticulo(texto) {
+  const numeros = new Set();
+  const re = /art(?:í|i)culos?\.?\s*([0-9][0-9,\sy a]*[0-9]|[0-9]+)/gi;
+  let m;
+  while ((m = re.exec(texto)) !== null) {
+    for (const token of m[1].split(/[^0-9]+/)) {
+      if (token) numeros.add(token);
+    }
+  }
+  return numeros;
+}
+
+function redDeSeguridadPorPalabraClave(messages) {
+  const textoReciente = messages
+    .slice(-2)
+    .map((m) => m.content || '')
+    .join('\n');
+  const normalReciente = normalizarTexto(textoReciente);
+  const numeros = extraerNumerosDeArticulo(textoReciente);
+  const ids = [];
+  for (const entrada of INDICE_MANUALES) {
+    const tituloNormal = normalizarTexto(`${entrada.h1} ${entrada.h2}`);
+    let coincide = false;
+    for (const n of numeros) {
+      if (new RegExp(`\\bart\\w*\\.?\\s*${n}\\b`).test(tituloNormal)) {
+        coincide = true;
+        break;
+      }
+    }
+    if (!coincide) {
+      const palabrasClave = tituloNormal.split(/[^a-z0-9]+/).filter((p) => p.length >= 8);
+      coincide = palabrasClave.some((p) => normalReciente.includes(p));
+    }
+    if (coincide) ids.push(entrada.id);
+  }
+  return ids;
+}
+
+function construirBloqueExtractos(ids) {
+  const partes = ids
+    .map((id) => INDICE_POR_ID.get(id))
+    .filter(Boolean)
+    .map((entrada) => `----- ${entrada.materia} > ${entrada.h1} > ${entrada.h2} -----\n${CHUNKS_MANUALES[entrada.id]}`);
+  return (
+    '===== EXTRACTOS DEL MANUAL PARA ESTE TURNO =====\n' +
+    '(Selección automática de secciones relevantes -- NO es el manual íntegro. ' +
+    'Si necesitas un pasaje que no aparece acá, no lo inventes: dilo con naturalidad ' +
+    'y sigue con lo que sí puedes verificar.)\n\n' +
+    partes.join('\n\n')
+  );
+}
+
+function textoRespaldoPorMateria(materiaSlug) {
+  const texto = CONTENIDO_MANUALES.porMateria[materiaSlug];
+  if (!texto) return CONTENIDO_MANUALES.completo;
+  return (
+    `===== MANUAL COMPLETO (respaldo -- el router no estaba seguro del subtema exacto): ${materiaSlug.toUpperCase()} =====\n\n` +
+    texto
+  );
+}
+
+// Punto de entrada: decide qué bloque de manual va en el system prompt de
+// la llamada principal de este turno. Nunca lanza -- cualquier falla cae a
+// los 3 manuales completos (el comportamiento de hoy), nunca a "sin
+// manual".
+async function elegirContenidoDelTurno(messages) {
+  try {
+    const eleccion = await llamarRouter(messages);
+    const idsDelRouter = Array.isArray(eleccion.chunk_ids)
+      ? eleccion.chunk_ids.filter((id) => INDICE_POR_ID.has(id))
+      : [];
+    const idsRedDeSeguridad = redDeSeguridadPorPalabraClave(messages);
+
+    const idsFinal = [];
+    for (const id of [...idsDelRouter, ...idsRedDeSeguridad]) {
+      if (!idsFinal.includes(id)) idsFinal.push(id);
+      if (idsFinal.length >= ROUTER_MAX_CHUNKS) break;
+    }
+
+    if (eleccion.no_estoy_seguro || idsFinal.length === 0) {
+      return textoRespaldoPorMateria(eleccion.materia_respaldo);
+    }
+    return construirBloqueExtractos(idsFinal);
+  } catch (e) {
+    console.error('Fraccionamiento del turno falló, cae a los 3 manuales completos:', e);
+    return CONTENIDO_MANUALES.completo;
+  }
+}
+
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 // Tope diario de interrogaciones completas por alumna, durante la beta.
 // Se cuenta por sessionId (no por mensaje ni por confiar en el cliente):
@@ -271,6 +489,9 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // Fraccionamiento por turno: nunca lanza, ver elegirContenidoDelTurno.
+  const contenidoDelTurno = await elegirContenidoDelTurno(messages);
+
   const config = CONFIG_MODO[modo] || CONFIG_MODO.examen;
 
   let anthropicRes;
@@ -290,13 +511,18 @@ module.exports = async (req, res) => {
         ...(config.effort ? { output_config: { effort: config.effort } } : {}),
         system: [
           { type: 'text', text: PROMPT_EXAMINADOR },
-          { type: 'text', text: CONTENIDO_MANUALES },
           { type: 'text', text: CONTENIDO_CODIGO },
           // ttl 1h (no el default de 5 min): las respuestas de examen son de
           // análisis completo, tardan minutos en escribirse -- con 5 min el
           // caché caduca entre preguntas y se vuelve a pagar el precio
-          // completo de este bloque en cada turno.
+          // completo de este bloque en cada turno. Este es el ÚLTIMO bloque
+          // cacheado (cachea todo el prefijo: reglas + código + muestra) --
+          // el bloque de extractos que sigue cambia turno a turno, así que
+          // va sin cache_control, pero como ahora es chico (unos pocos
+          // miles de tokens, no los ~185K de los 3 manuales enteros) pagarlo
+          // fresco en cada turno sale igual o más barato que antes.
           { type: 'text', text: muestraPreguntas, cache_control: { type: 'ephemeral', ttl: '1h' } },
+          { type: 'text', text: contenidoDelTurno },
         ],
         messages,
       }),
