@@ -94,6 +94,23 @@
   Verificado en Chrome headless (stub de Supabase, los 3 puntos de
   calificación escriben/borran con los campos correctos, cero excepciones
   de JS) antes de correr el SQL, y contra la API real después.
+- **Cuaderno de errores: reintentar la pregunta ahí mismo (2026-08-06),
+  hecho.** Antes "Repaso de errores" solo mostraba el enunciado fallido, sin
+  forma de volver a responderlo. Cada tarjeta de error tiene ahora un botón
+  "Reintentar pregunta" (`reintentarError()` en `app/alternativas.html`):
+  como `practica_errores` solo guarda el enunciado (no opciones ni
+  elementos_clave), busca el ítem completo en `evaluacion_practica` o
+  `alternativas` según el `origen`, y lo muestra en el mismo motor de
+  Evaluación/Alternativas de siempre, acotado a ese único ítem. Al terminar,
+  en vez de seguir a una sesión nueva, vuelve al cuaderno de errores
+  (`volverAlCuadernoDeErrores()`) recargando la lista real desde Supabase, así
+  que si acertó el ítem desaparece solo (mismo mecanismo autolimpiable de
+  `limpiarError`/`registrarError` que ya usan Evaluación y Alternativas, no
+  se duplicó lógica). Verificado en Chrome headless (stub de Supabase vía
+  CDP): reintento de un ítem de Evaluación con respuesta correcta dispara el
+  `delete` correcto y el ítem sale de la lista al volver; reintento de un
+  ítem de Alternativas con respuesta incorrecta dispara el `upsert` correcto
+  y el ítem se queda; cero excepciones de JS en ambos flujos.
 
 ## Pendiente antes de invitar alumnas beta (ya está claro qué hacer)
 
@@ -155,12 +172,6 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   un ancla de una sola página, no una ruta. Falta decidir cómo
   reconectarlo (¿un ítem "Progreso" que apunte a `dashboard.html#progreso`
   desde cualquier página?) e implementarlo.
-- **Cuaderno de errores: falta poder reintentar la pregunta, no solo
-  verla** (pedido de Laura 2026-08-06, "quiero antes del beta"). Hoy
-  "Repaso de errores" en Práctica solo muestra la pregunta fallida y su
-  corrección; Laura quiere volver a responderla ahí mismo para ver si ya
-  se la aprendió, en vez de solo leer el error. Revisar
-  `iniciarErroresModelo()`/`renderErrores()` en `app/alternativas.html`.
 
 ## Funcionalidades nuevas decididas (2026-08-06), listas para construir de a poco
 
