@@ -9,34 +9,55 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      /* Tokens del rediseño de Práctica (handoff Claude Design, 2026-08-06).
+         Fondo/superficie son los nuevos tonos aprobados; el rojo de marca y la
+         tipografía se mantienen los reales del sitio (ver docs/interrogador.md
+         no aplica acá — decisión documentada en el plan de esta sesión). */
+      --d-bg: #f1e9d4;
+      --d-surface: #e9dfc2;
+      --d-card: #efe6cd;
+      --d-text: #211c14;
+      --d-sidebar: #161310;
+      --d-accent: #C41E2E;
+      --d-accent-hover: #E02535;
+      --d-accent-tint: #f6dde1;
+      --d-muted: #7a715e;
+      --d-divider: #d9cca4;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #F5EAD4;
-      color: #111111;
+      background: var(--d-surface);
+      color: var(--d-text);
       min-height: 100vh;
       display: flex;
+      padding: 20px;
     }
 
     /* ── SIDEBAR ── */
     .sidebar {
-      width: 240px;
-      background: #111111;
-      min-height: 100vh;
+      width: 220px;
+      background: var(--d-sidebar);
+      min-height: calc(100vh - 40px);
       display: flex;
       flex-direction: column;
-      padding: 2rem 1.5rem;
+      padding: 1.75rem 1.25rem;
       position: fixed;
-      top: 0; left: 0; bottom: 0;
+      top: 20px; left: 20px; bottom: 20px;
+      border-radius: 20px 0 0 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+      z-index: 30;
     }
     .sidebar-logo {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       letter-spacing: 3px;
-      color: #E8D8B8;
-      margin-bottom: 3rem;
+      color: #e8e3d6;
+      margin-bottom: 2.5rem;
       text-decoration: none;
     }
-    .sidebar-logo span { color: #C41E2E; }
+    .sidebar-logo span { color: var(--d-accent); }
     .nav-section {
       font-size: 0.65rem;
       font-weight: 600;
@@ -51,7 +72,7 @@
       align-items: center;
       gap: 0.75rem;
       padding: 0.65rem 0.85rem;
-      border-radius: 7px;
+      border-radius: 10px;
       text-decoration: none;
       font-size: 0.875rem;
       font-weight: 500;
@@ -59,18 +80,26 @@
       transition: all 0.15s;
       margin-bottom: 0.2rem;
     }
-    .nav-item:hover { background: rgba(232,216,184,0.06); color: #E8D8B8; }
-    .nav-item.active { background: rgba(196,30,46,0.15); color: #E8D8B8; }
-    .nav-item.active .nav-icon { color: #C41E2E; }
+    .nav-item:hover { background: rgba(232,216,184,0.06); color: #e8e3d6; }
+    .nav-item.active { background: var(--d-accent); color: #fff; font-weight: 600; }
     .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
     .nav-badge {
       margin-left: auto;
       font-size: 0.65rem;
       background: rgba(196,30,46,0.2);
-      color: #C41E2E;
+      color: var(--d-accent);
       padding: 0.1rem 0.45rem;
       border-radius: 100px;
       font-weight: 600;
+    }
+    .nav-badge-count {
+      margin-left: auto;
+      font-size: 0.65rem;
+      background: var(--d-accent);
+      color: #fff;
+      padding: 0.15rem 0.5rem;
+      border-radius: 100px;
+      font-weight: 700;
     }
     .sidebar-footer {
       margin-top: auto;
@@ -80,15 +109,15 @@
     .user-info { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
     .user-avatar {
       width: 36px; height: 36px;
-      background: #C41E2E;
+      background: var(--d-accent);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.1rem;
-      color: #F5EAD4;
+      color: #fff;
       flex-shrink: 0;
     }
-    .user-name { font-size: 0.82rem; font-weight: 600; color: #E8D8B8; }
+    .user-name { font-size: 0.82rem; font-weight: 600; color: #e8e3d6; }
     .user-plan { font-size: 0.72rem; color: rgba(232,216,184,0.4); }
     .btn-logout {
       width: 100%;
@@ -102,7 +131,11 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: #C41E2E; }
+    .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: var(--d-accent); }
+
+    /* ── TOPBAR MÓVIL + DRAWER (oculto en desktop) ── */
+    .mobile-topbar { display: none; }
+    .sidebar-scrim { display: none; }
 
     /* ── MAIN ── */
     .main {
@@ -110,6 +143,10 @@
       flex: 1;
       padding: 2.5rem 3rem;
       max-width: calc(100% - 240px);
+      background: var(--d-bg);
+      border-radius: 0 20px 20px 0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+      min-height: calc(100vh - 40px);
     }
 
     .page-header {
@@ -124,61 +161,77 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.5rem;
       letter-spacing: 2px;
-      color: #111111;
+      color: var(--d-text);
       line-height: 1;
     }
-    .page-subtitle { font-size: 0.875rem; color: #7A6E5F; margin-top: 0.3rem; }
+    .page-subtitle { font-size: 0.875rem; color: var(--d-muted); margin-top: 0.3rem; }
 
-    /* FILTROS — tres ejes: Materia / Modelo / Subtipo */
-    .ejes-filtros { margin-bottom: 1.75rem; }
-    .eje-row {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.6rem;
+    /* FILTROS — "¿Qué repasar?" (pills) + grid de dropdowns */
+    .ejes-filtros { padding-bottom: 1.5rem; border-bottom: 1px solid var(--d-divider); margin-bottom: 1.25rem; }
+    .eje-row.rama { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.1rem; }
+    .eje-row.rama .eje-label {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--d-muted);
     }
-    .eje-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #7A6E5F;
-      width: 82px;
-      flex-shrink: 0;
-    }
+    .eje-row.rama .chips-wrap { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .filtro-btn {
-      padding: 0.45rem 1rem;
-      border-radius: 100px;
-      border: 1.5px solid rgba(17,17,17,0.15);
-      background: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--d-divider);
+      background: var(--d-card);
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       font-family: 'Inter', sans-serif;
       cursor: pointer;
-      color: #7A6E5F;
+      color: var(--d-text);
       transition: all 0.15s;
     }
-    .filtro-btn:hover { border-color: #111111; color: #111111; }
-    .filtro-btn.active { background: #111111; color: #E8D8B8; border-color: #111111; }
-    .eje-row.subtipo .filtro-btn.active { background: #C41E2E; border-color: #C41E2E; }
+    .filtro-btn:hover { border-color: var(--d-sidebar); }
+    .filtro-btn.active { background: var(--d-sidebar); color: #fff; border-color: var(--d-sidebar); }
     .filtro-btn.disabled { cursor: default; opacity: 0.4; border-style: dashed; }
-    .filtro-btn.disabled:hover { border-color: rgba(17,17,17,0.15); color: #7A6E5F; }
-    .filtro-select {
-      padding: 0.45rem 1rem;
-      border-radius: 100px;
-      border: 1.5px solid rgba(17,17,17,0.15);
-      background: transparent;
-      font-size: 0.8rem;
-      font-weight: 500;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      color: #111111;
-      max-width: 100%;
-    }
-    .filtro-select:hover { border-color: #111111; }
+    .filtro-btn.disabled:hover { border-color: var(--d-divider); }
 
-    /* ── PROGRESO ── */
+    .ejes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .filtro-dd { position: relative; }
+    .filtro-dd-label {
+      display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--d-muted); margin-bottom: 0.4rem;
+    }
+    .filtro-dd-btn {
+      width: 100%; height: 40px; padding: 0.4rem 0.75rem;
+      font: inherit; font-size: 0.85rem; font-family: 'Inter', sans-serif;
+      background: var(--d-card); border: 1px solid var(--d-divider); color: var(--d-text);
+      border-radius: 10px; text-align: left;
+      display: flex; align-items: center; justify-content: space-between; cursor: pointer;
+    }
+    .filtro-dd-btn:hover { border-color: var(--d-accent); }
+    .filtro-dd-menu {
+      position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
+      background: var(--d-card); border: 1px solid var(--d-divider); border-radius: 10px;
+      margin-top: 0.25rem; box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      max-height: 240px; overflow-y: auto;
+    }
+    .filtro-dd-opt {
+      padding: 0.7rem 0.9rem; font-size: 0.85rem; cursor: pointer; color: var(--d-text);
+    }
+    .filtro-dd-opt:hover { background: rgba(17,17,17,0.04); }
+    .filtro-dd-opt.active { background: var(--d-accent-tint); color: var(--d-accent); font-weight: 600; }
+    .filtro-dd-opt.disabled { opacity: 0.4; cursor: default; }
+    .filtro-dd-opt.disabled:hover { background: none; }
+    .subtema-toggle {
+      background: none; border: none; padding: 0; margin-top: 0.4rem;
+      font-size: 0.75rem; color: var(--d-accent); cursor: pointer; font-family: 'Inter', sans-serif;
+    }
+    .subtema-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    /* ── ESTADO: racha / cobertura de materia (mock, ver renderStatusRow) ── */
+    .status-row { display: flex; align-items: center; gap: 1.25rem; margin: 1.25rem 0 1.5rem; }
+    .status-streak { display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; font-weight: 600; color: var(--d-text); white-space: nowrap; }
+    .status-bar-bg { flex: 1; height: 4px; background: var(--d-divider); border-radius: 999px; overflow: hidden; }
+    .status-bar-fill { height: 100%; background: var(--d-accent); border-radius: 999px; }
+    .status-pct { font-size: 0.75rem; color: var(--d-muted); white-space: nowrap; }
+
+    /* ── PROGRESO (de sesión, dentro de la tarjeta de ítem) ── */
     .quiz-progress {
       display: flex;
       align-items: center;
@@ -188,22 +241,22 @@
     .progress-bar-bg {
       flex: 1;
       height: 5px;
-      background: rgba(17,17,17,0.08);
+      background: var(--d-divider);
       border-radius: 100px;
       overflow: hidden;
     }
     .progress-bar-fill {
       height: 100%;
-      background: #C41E2E;
+      background: var(--d-accent);
       border-radius: 100px;
       transition: width 0.5s ease;
     }
-    .progress-text { font-size: 0.8rem; font-weight: 600; color: #7A6E5F; white-space: nowrap; }
+    .progress-text { font-size: 0.8rem; font-weight: 600; color: var(--d-muted); white-space: nowrap; }
 
     /* ── TARJETA DE ÍTEM (Evaluación / Alternativas / Memorice) ── */
     .item-card {
-      background: #E8D8B8;
-      border-radius: 12px;
+      background: var(--d-card);
+      border-radius: 16px;
       padding: 2rem;
       max-width: 780px;
       margin-bottom: 1.25rem;
@@ -233,19 +286,19 @@
     .badge-materia {
       font-size: 0.7rem;
       font-weight: 600;
-      color: #7A6E5F;
+      color: var(--d-muted);
     }
 
     .item-num {
       margin-left: auto;
       font-size: 0.75rem;
-      color: #7A6E5F;
+      color: var(--d-muted);
     }
 
     .caso-box {
-      background: #F5EAD4;
-      border-left: 3px solid #C41E2E;
-      border-radius: 0 8px 8px 0;
+      background: var(--d-accent-tint);
+      border-left: 3px solid var(--d-accent);
+      border-radius: 0 12px 12px 0;
       padding: 1rem 1.25rem;
       margin-bottom: 1.5rem;
       font-size: 0.9rem;
@@ -257,7 +310,7 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #C41E2E;
+      color: var(--d-accent);
       display: block;
       margin-bottom: 0.4rem;
     }
@@ -265,7 +318,7 @@
     .pregunta-text {
       font-size: 1rem;
       font-weight: 600;
-      color: #111111;
+      color: var(--d-text);
       line-height: 1.55;
       margin-bottom: 1.5rem;
     }
@@ -276,7 +329,7 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #7A6E5F;
+      color: var(--d-muted);
       margin-bottom: 0.6rem;
       display: flex;
       align-items: center;
@@ -284,8 +337,8 @@
     }
     .step-num-badge {
       width: 20px; height: 20px;
-      background: #111111;
-      color: #E8D8B8;
+      background: var(--d-sidebar);
+      color: #e8e3d6;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 0.65rem;
@@ -296,38 +349,43 @@
       width: 100%;
       min-height: 130px;
       padding: 0.9rem 1rem;
-      border: 1.5px solid rgba(17,17,17,0.15);
-      border-radius: 8px;
+      border: 1.5px solid var(--d-divider);
+      border-radius: 12px;
       font-size: 0.9rem;
       font-family: 'Inter', sans-serif;
       line-height: 1.65;
-      background: #F5EAD4;
-      color: #111111;
+      background: var(--d-bg);
+      color: var(--d-text);
       resize: vertical;
       outline: none;
       transition: border-color 0.2s;
     }
-    textarea:focus { border-color: #C41E2E; }
+    textarea:focus { border-color: var(--d-accent); }
     textarea::placeholder { color: #B0A898; }
 
     .char-count {
       font-size: 0.72rem;
-      color: #7A6E5F;
+      color: var(--d-muted);
       text-align: right;
       margin-top: 0.35rem;
     }
     .recall-hint {
       font-size: 0.85rem;
-      color: #C41E2E;
+      color: var(--d-accent);
       text-align: right;
       margin-top: 0.25rem;
       min-height: 1.1em;
+    }
+    .enter-hint {
+      font-size: 0.75rem;
+      color: var(--d-muted);
+      white-space: nowrap;
     }
 
     /* ── BOTONES ── */
     .btn {
       padding: 0.8rem 1.5rem;
-      border-radius: 7px;
+      border-radius: 999px;
       font-size: 0.88rem;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
@@ -335,14 +393,14 @@
       border: none;
       transition: all 0.2s;
     }
-    .btn-primary { background: #C41E2E; color: #F5EAD4; }
-    .btn-primary:hover { background: #E02535; }
-    .btn-dark { background: #111111; color: #E8D8B8; }
+    .btn-primary { background: var(--d-accent); color: #fff; }
+    .btn-primary:hover { background: var(--d-accent-hover); }
+    .btn-dark { background: var(--d-sidebar); color: #e8e3d6; }
     .btn-dark:hover { background: #2A2A2A; }
     .btn-outline {
       background: transparent;
-      color: #111111;
-      border: 1.5px solid rgba(17,17,17,0.2);
+      color: var(--d-text);
+      border: 1.5px solid var(--d-divider);
     }
     .btn-outline:hover { background: rgba(17,17,17,0.05); }
     .btn:disabled { opacity: 0.5; cursor: default; }
@@ -357,11 +415,11 @@
 
     /* ── FEEDBACK DIAGNÓSTICO (Evaluación) ── */
     .feedback-panel {
-      background: #F5EAD4;
-      border-radius: 10px;
+      background: var(--d-bg);
+      border-radius: 12px;
       padding: 1.5rem;
       margin-top: 1.5rem;
-      border: 1px solid rgba(17,17,17,0.08);
+      border: 1px solid var(--d-divider);
     }
 
     .feedback-header {
@@ -500,20 +558,20 @@
       align-items: flex-start;
       gap: 0.85rem;
       padding: 0.9rem 1rem;
-      border-radius: 8px;
-      border: 1.5px solid rgba(17,17,17,0.12);
-      background: #F5EAD4;
+      border-radius: 12px;
+      border: 1.5px solid var(--d-divider);
+      background: var(--d-bg);
       cursor: pointer;
       font-size: 0.875rem;
       font-family: 'Inter', sans-serif;
-      color: #111111;
+      color: var(--d-text);
       text-align: left;
       transition: all 0.15s;
       line-height: 1.5;
     }
-    .option-btn:hover:not(:disabled) { border-color: #111111; background: #EDE0C8; }
+    .option-btn:hover:not(:disabled) { border-color: var(--d-sidebar); background: #EDE0C8; }
     .option-btn:disabled { cursor: default; }
-    .option-btn.selected { border-color: #111111; background: #E0D0B0; }
+    .option-btn.selected { border-color: var(--d-sidebar); background: #E0D0B0; }
     .option-btn.correct { background: rgba(34,139,34,0.07); border-color: #228B22; }
     .option-btn.wrong { background: rgba(196,30,46,0.07); border-color: #C41E2E; }
     .option-btn.revealed { background: rgba(34,139,34,0.04); border-color: rgba(34,139,34,0.25); }
@@ -557,9 +615,9 @@
 
     /* ── RESPUESTA MODELO ── */
     .modelo-section {
-      background: #E8D8B8;
-      border: 3px solid #111111;
-      border-radius: 10px;
+      background: var(--d-card);
+      border: 3px solid var(--d-sidebar);
+      border-radius: 12px;
       padding: 1.5rem;
       margin-top: 1.5rem;
     }
@@ -617,8 +675,8 @@
 
     /* ── RESULTADOS ── */
     .results-card {
-      background: #E8D8B8;
-      border-radius: 14px;
+      background: var(--d-card);
+      border-radius: 16px;
       padding: 3rem 2rem;
       text-align: center;
       max-width: 520px;
@@ -793,22 +851,76 @@
     .mem-resultado-badge.parcial { background: rgba(196,146,30,0.12); color: #8A6300; }
     .mem-resultado-badge.incorrecto { background: rgba(196,30,46,0.1); color: #A61825; }
 
+    /* ── RESPONSIVE: topbar + menú hamburguesa off-canvas ── */
+    @media (max-width: 880px) {
+      body { padding: 0; display: block; }
+
+      .mobile-topbar {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0.85rem 1.1rem; background: var(--d-sidebar);
+        position: fixed; top: 0; left: 0; right: 0; z-index: 20; height: 56px;
+      }
+      .mobile-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 2px; color: #fff; }
+      .mobile-logo span { color: var(--d-accent); }
+      .hamburger-btn {
+        width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+        background: transparent; border: none; cursor: pointer; padding: 0; gap: 5px; flex-direction: column;
+      }
+      .hamburger-btn span { display: block; width: 22px; height: 2px; background: #e8e3d6; margin: 2.5px 0; }
+      .mobile-avatar {
+        width: 34px; height: 34px; border-radius: 50%; background: #33302a;
+        display: flex; align-items: center; justify-content: center; color: #e8e3d6; font-size: 0.8rem; font-weight: 600;
+      }
+
+      .sidebar {
+        top: 0; left: 0; bottom: 0; width: 280px; border-radius: 0;
+        transform: translateX(-100%); transition: transform 0.25s ease; z-index: 30;
+      }
+      body.menu-open .sidebar { transform: translateX(0); }
+      .sidebar .nav-item { min-height: 44px; }
+
+      .sidebar-scrim {
+        display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 25;
+        opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+      }
+      .sidebar-scrim.open { opacity: 1; pointer-events: auto; }
+
+      .main {
+        margin-left: 0; max-width: 100%; border-radius: 0; box-shadow: none;
+        min-height: 100vh; padding: calc(56px + 1.5rem) 1.1rem 2rem;
+      }
+
+      .ejes-grid { grid-template-columns: 1fr; }
+      .filtro-dd-btn { height: 48px; }
+      .btn-row .btn { width: 100%; }
+      .btn-row .enter-hint { width: 100%; text-align: center; order: 3; }
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- SIDEBAR -->
+  <!-- TOPBAR MÓVIL (solo visible bajo 880px) -->
+  <header class="mobile-topbar">
+    <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-logo">DIGESTO<span>.</span></div>
+    <div class="mobile-avatar" id="mobile-avatar">?</div>
+  </header>
+  <div class="sidebar-scrim" id="sidebar-scrim" onclick="toggleMenu()"></div>
+
+  <!-- SIDEBAR (también sirve de drawer off-canvas en móvil) -->
   <aside class="sidebar">
     <a href="dashboard.html" class="sidebar-logo">Digesto<span>.</span></a>
     <span class="nav-section">Estudio</span>
     <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
     <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
     <a class="nav-item active" href="alternativas.html"><span class="nav-icon">🎯</span> Práctica</a>
+    <!-- Repaso de errores: sin pantalla destino todavía (ver handoff de diseño). href="#" intencional. -->
+    <a class="nav-item" href="#"><span class="nav-icon">🔁</span> Repaso de errores <span class="nav-badge-count" id="badge-errores">0</span></a>
     <span class="nav-section">Con IA</span>
-    <a class="nav-item" href="interrogador.html"><span class="nav-icon">💬</span> Chat IA</a>
-    <a class="nav-item" href="#"><span class="nav-icon">🎙️</span> Interrogación oral <span class="nav-badge">Pronto</span></a>
-    <span class="nav-section">Comunidad</span>
-    <a class="nav-item" href="#"><span class="nav-icon">🏆</span> Liga <span class="nav-badge">Pronto</span></a>
+    <a class="nav-item" href="interrogador.html"><span class="nav-icon">💬</span> JustinIAno</a>
     <div class="sidebar-footer">
       <div class="user-info">
         <div class="user-avatar" id="user-avatar">?</div>
@@ -832,12 +944,10 @@
 
     <div class="ejes-filtros">
       <div class="eje-row rama" id="fila-rama"></div>
-      <div class="eje-row materia" id="fila-materia"></div>
-      <div class="eje-row area" id="fila-area"></div>
-      <div class="eje-row modelo" id="fila-modelo"></div>
-      <div class="eje-row subtipo" id="fila-subtipo"></div>
-      <div class="eje-row metodo" id="fila-metodo"></div>
+      <div class="ejes-grid" id="ejes-grid"></div>
     </div>
+
+    <div class="status-row" id="status-row"></div>
 
     <div id="practica-container">
       <div class="estado-vacio"><div class="spinner"></div>Cargando…</div>
@@ -1155,6 +1265,8 @@ const bancoTransversal = [
     let areaActiva = 'todas'; // dentro de Responsabilidad: precontractual/contractual/extracontractual
     let modeloActivo = 'evaluacion';
     let subtipoActivo = 'todos';
+    let openDropdown = null; // 'materia' | 'area' | 'modelo' | 'subtipo' | 'metodo' | null — un solo dropdown abierto a la vez
+    let subtemaAbierto = false; // fila de chips de subtema (Alternativas/Memorice), colapsada por defecto
 
     // Contenido cargado desde Supabase (Evaluación, Alternativas, Memorice, Flashcards)
     let datosEvaluacion = [];
@@ -1197,6 +1309,15 @@ const bancoTransversal = [
       { id: 'justificacion', label: 'Justificación' },
       { id: 'discriminacion_mc', label: 'Discriminación MC' },
     ];
+    const METODOS_MEMORICE = [
+      { id: 'A', label: 'Método A (progresivo)' },
+      { id: 'B', label: 'Método B (cláusulas)' },
+    ];
+
+    // MOCK: valores fijos pendientes de conectar a datos reales de progreso
+    // (racha de sesiones seguidas, % de cobertura de la materia activa, conteo
+    // de "Repaso de errores"). Ver handoff de diseño del rediseño de Práctica.
+    const MOCK_STATS = { streak: 5, coveragePct: 18, errorCount: 3 };
 
     function subtemasDisponibles(items) {
       const set = new Set();
@@ -1205,84 +1326,119 @@ const bancoTransversal = [
     }
 
     // ══════════════════════════════════════════════════════════════════
-    // RENDER DE FILTROS
+    // RENDER DE FILTROS — grid de dropdowns + "¿Qué repasar?" en pills
     // ══════════════════════════════════════════════════════════════════
+    function escaparParaJsString(s) { return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
+
+    // Pinta un dropdown custom: botón con el valor actual + lista de opciones
+    // absoluta (solo un dropdown abierto a la vez, vía openDropdown/toggleDropdown).
+    function ddCell(key, labelTxt, options, current, onSelectFn, extraHtml) {
+      const open = openDropdown === key;
+      const currentOpt = options.find(o => o.id === current);
+      const currentLabel = currentOpt ? currentOpt.label : current;
+      const opts = options.map(o => {
+        if (o.disabled) return `<div class="filtro-dd-opt disabled" title="Próximamente">${escaparHtmlBase(o.label)}</div>`;
+        const idJs = escaparAtributoHtml(escaparParaJsString(o.id));
+        return `<div class="filtro-dd-opt${o.id === current ? ' active' : ''}" onclick="${onSelectFn}('${idJs}')">${escaparHtmlBase(o.label)}</div>`;
+      }).join('');
+      return `<div class="filtro-dd">
+        <label class="filtro-dd-label">${labelTxt}</label>
+        <button type="button" class="filtro-dd-btn" onclick="toggleDropdown('${key}')">${escaparHtmlBase(currentLabel)}<span>▾</span></button>
+        ${open ? `<div class="filtro-dd-menu">${opts}</div>` : ''}
+        ${extraHtml || ''}
+      </div>`;
+    }
+
+    function toggleDropdown(key) { openDropdown = (openDropdown === key) ? null : key; renderFiltros(); }
+    function toggleSubtemaRow() { subtemaAbierto = !subtemaAbierto; renderFiltros(); }
+
+    // Cierra cualquier dropdown abierto al hacer clic afuera de él.
+    document.addEventListener('click', e => {
+      if (openDropdown && !e.target.closest('.filtro-dd')) { openDropdown = null; renderFiltros(); }
+    });
+
+    // Subtemas de Alternativas/Memorice: no son una lista fija (a diferencia de
+    // los 4 subtipos de Evaluación), vienen de los datos ya cargados. Se
+    // muestran como link colapsable + chips bajo Área, no como dropdown.
+    function subtemasDelModeloActivo() {
+      if (!(modeloActivo === 'alternativa' || modeloActivo === 'memorice')) return [];
+      const fuente = modeloActivo === 'alternativa' ? datosAlternativas : datosMemoriceArticulos;
+      const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || perteneceAArea(it.materia, areaActiva));
+      return subtemasDisponibles(filtradasPorMateria);
+    }
+
+    function subtemaExtraMarkup() {
+      const subtemas = subtemasDelModeloActivo();
+      if (subtemas.length === 0) return '';
+      const label = subtemaAbierto ? '– Ocultar subtema' : '+ Filtrar por subtema';
+      return `<button type="button" class="subtema-toggle" onclick="toggleSubtemaRow()">${label}</button>`;
+    }
+
+    function subtemaRowMarkup() {
+      if (!subtemaAbierto) return '';
+      const subtemas = subtemasDelModeloActivo();
+      if (subtemas.length === 0) return '';
+      const opciones = [{ id: 'todos', label: 'Todos' }, ...subtemas.map(s => ({ id: s, label: s }))];
+      return `<div class="subtema-row">` +
+        opciones.map(o => {
+          const idJs = escaparAtributoHtml(escaparParaJsString(o.id));
+          return `<button class="filtro-btn ${subtipoActivo === o.id ? 'active' : ''}" onclick="setSubtipo('${idJs}')">${escaparHtmlBase(o.label)}</button>`;
+        }).join('') +
+      `</div>`;
+    }
+
     function renderFiltros() {
       document.getElementById('fila-rama').innerHTML =
-        `<span class="eje-label">¿Qué quieres repasar hoy?</span>` +
+        `<span class="eje-label">¿Qué repasar?</span>` +
+        `<div class="chips-wrap">` +
         RAMAS.map(r => r.disabled
           ? `<button class="filtro-btn disabled" disabled title="Próximamente">${r.label}</button>`
           : `<button class="filtro-btn ${ramaActiva === r.id ? 'active' : ''}" onclick="setRama('${r.id}')">${r.label}</button>`
-        ).join('');
+        ).join('') +
+        `</div>`;
 
-      document.getElementById('fila-materia').innerHTML =
-        `<span class="eje-label">Materia</span>` +
-        MATERIAS_CIVIL.map(m => m.disabled
-          ? `<button class="filtro-btn disabled" disabled title="Próximamente">${m.label}</button>`
-          : `<button class="filtro-btn ${materiaActiva === m.id ? 'active' : ''}" onclick="setMateria('${m.id}')">${m.label}</button>`
-        ).join('');
+      const cells = [];
+      cells.push(ddCell('materia', 'Materia', MATERIAS_CIVIL, materiaActiva, 'setMateria'));
 
-      const filaArea = document.getElementById('fila-area');
       if (materiaActiva === 'responsabilidad') {
-        filaArea.innerHTML = `<span class="eje-label">Área</span>` +
-          AREAS_RESPONSABILIDAD.map(a => `<button class="filtro-btn ${areaActiva === a.id ? 'active' : ''}" onclick="setArea('${a.id}')">${a.label}</button>`).join('');
-        filaArea.style.display = '';
-      } else {
-        filaArea.innerHTML = '';
-        filaArea.style.display = 'none';
+        cells.push(ddCell('area', 'Área', AREAS_RESPONSABILIDAD, areaActiva, 'setArea', subtemaExtraMarkup()));
       }
 
-      document.getElementById('fila-modelo').innerHTML =
-        `<span class="eje-label">Modelo</span>` +
-        MODELOS.map(m => `<button class="filtro-btn ${modeloActivo === m.id ? 'active' : ''}" onclick="setModelo('${m.id}')">${m.label}</button>`).join('');
+      cells.push(ddCell('modelo', 'Modelo', MODELOS, modeloActivo, 'setModelo'));
 
-      renderFilaSubtipo();
-    }
-
-    function renderFilaSubtipo() {
-      const fila = document.getElementById('fila-subtipo');
-      fila.classList.add('subtipo');
       if (modeloActivo === 'evaluacion') {
-        fila.innerHTML = `<span class="eje-label">Subtipo</span>` +
-          SUBTIPOS_EVALUACION.map(s => `<button class="filtro-btn ${subtipoActivo === s.id ? 'active' : ''}" onclick="setSubtipo('${s.id}')">${s.label}</button>`).join('');
-        fila.style.display = '';
-      } else if (modeloActivo === 'alternativa' || modeloActivo === 'memorice') {
-        const fuente = modeloActivo === 'alternativa' ? datosAlternativas : datosMemoriceArticulos;
-        const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || perteneceAArea(it.materia, areaActiva));
-        const subtemas = subtemasDisponibles(filtradasPorMateria);
-        if (subtemas.length === 0) { fila.innerHTML = ''; fila.style.display = 'none'; return; }
-        // Alternativas/Memorice traen un subtema casi único por ítem (a diferencia
-        // de Evaluación, que tiene 4 subtipos fijos): con más de una decena de
-        // ítems la fila de chips se vuelve inmanejable, así que acá se usa un
-        // desplegable en vez de un chip por subtema.
-        fila.innerHTML = `<span class="eje-label">Subtipo</span>` +
-          `<select class="filtro-select" onchange="setSubtipo(this.value)">` +
-          `<option value="todos"${subtipoActivo === 'todos' ? ' selected' : ''}>Todos</option>` +
-          subtemas.map(s => `<option value="${escaparAtributoHtml(s)}"${subtipoActivo === s ? ' selected' : ''}>${escaparHtmlBase(s)}</option>`).join('') +
-          `</select>`;
-        fila.style.display = '';
-      } else {
-        fila.innerHTML = '';
-        fila.style.display = 'none';
+        cells.push(ddCell('subtipo', 'Subtipo', SUBTIPOS_EVALUACION, subtipoActivo, 'setSubtipo'));
+      } else if (modeloActivo === 'memorice') {
+        cells.push(ddCell('metodo', 'Método', METODOS_MEMORICE, metodoMemorice, 'setMetodoMemorice'));
       }
 
-      const filaMetodo = document.getElementById('fila-metodo');
-      if (modeloActivo === 'memorice') {
-        filaMetodo.innerHTML = `<span class="eje-label">Método</span>` +
-          `<button class="filtro-btn ${metodoMemorice === 'A' ? 'active' : ''}" onclick="setMetodoMemorice('A')">Método A (progresivo)</button>` +
-          `<button class="filtro-btn ${metodoMemorice === 'B' ? 'active' : ''}" onclick="setMetodoMemorice('B')">Método B (cláusulas)</button>`;
-        filaMetodo.style.display = '';
-      } else {
-        filaMetodo.innerHTML = '';
-        filaMetodo.style.display = 'none';
-      }
+      cells.push(subtemaRowMarkup());
+
+      document.getElementById('ejes-grid').innerHTML = cells.join('');
     }
 
-    function setRama(r) { ramaActiva = r; materiaActiva = 'todas'; areaActiva = 'todas'; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
-    function setMateria(m) { materiaActiva = m; areaActiva = 'todas'; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
-    function setArea(a) { areaActiva = a; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
-    function setModelo(m) { modeloActivo = m; subtipoActivo = 'todos'; renderFiltros(); iniciarSesion(); }
-    function setSubtipo(s) { subtipoActivo = s; renderFiltros(); iniciarSesion(); }
+    function renderStatusRow() {
+      document.getElementById('status-row').innerHTML = `
+        <div class="status-streak">🔥 ${MOCK_STATS.streak} seguidas</div>
+        <div class="status-bar-bg"><div class="status-bar-fill" style="width:${MOCK_STATS.coveragePct}%"></div></div>
+        <div class="status-pct">${MOCK_STATS.coveragePct}% de la materia</div>
+      `;
+      const badge = document.getElementById('badge-errores');
+      if (badge) badge.textContent = MOCK_STATS.errorCount;
+    }
+
+    function toggleMenu() {
+      document.body.classList.toggle('menu-open');
+      document.getElementById('sidebar-scrim').classList.toggle('open');
+      const btn = document.querySelector('.hamburger-btn');
+      if (btn) btn.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
+    }
+
+    function setRama(r) { ramaActiva = r; materiaActiva = 'todas'; areaActiva = 'todas'; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setMateria(m) { materiaActiva = m; areaActiva = 'todas'; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setArea(a) { areaActiva = a; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setModelo(m) { modeloActivo = m; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setSubtipo(s) { subtipoActivo = s; openDropdown = null; renderFiltros(); iniciarSesion(); }
 
     function iniciarSesion() {
       if (modeloActivo === 'evaluacion') iniciarEvaluacion();
@@ -1377,10 +1533,15 @@ const bancoTransversal = [
           <div class="btn-row">
             <button class="btn btn-primary" id="btn-evaluar" onclick="evaluarRespuesta()">Evaluar mi respuesta</button>
             <button class="btn btn-outline" onclick="skipItem()">Saltar ítem</button>
+            <span class="enter-hint">Enter para evaluar</span>
           </div>
           <div id="feedback-area"></div>
         </div>
       `;
+
+      document.getElementById('recall-text').addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); evaluarRespuesta(); }
+      });
     }
 
     function updateChar() {
@@ -1863,7 +2024,8 @@ const bancoTransversal = [
       metodoMemorice = m;
       localStorage.setItem('digesto_metodo_memorice', m);
       registrarAbandonoPendiente();
-      renderFilaSubtipo();
+      openDropdown = null;
+      renderFiltros();
       iniciarMemoriceModelo();
     }
 
@@ -2239,11 +2401,13 @@ const bancoTransversal = [
       const name = user.user_metadata?.full_name || user.email.split('@')[0];
       document.getElementById('user-name').textContent = name;
       document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+      document.getElementById('mobile-avatar').textContent = name[0].toUpperCase();
 
       const modeloUrl = new URLSearchParams(window.location.search).get('modelo');
       if (MODELOS.some(m => m.id === modeloUrl)) modeloActivo = modeloUrl;
 
       renderFiltros();
+      renderStatusRow();
       iniciarSesion();
     }
 
