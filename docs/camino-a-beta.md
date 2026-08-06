@@ -116,13 +116,17 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
      se evalúa.
   2. **Precios siguen en "Por definir"** en las 3 tarjetas de la sección
      Precios.
-  **Formulario de contacto: arreglado (2026-08-06).** El endpoint
-  (`api/contacto.js`) y el formulario ya estaban bien armados; solo le
-  faltaban las columnas "Nombre" y "Mensaje" en la tabla `WAITLIST` de
-  Airtable (`appjP6jK8Jbm5uaeG` / `tblXj3d2lcufAD0KX`, la misma que usa
-  el waitlist). Se crearon vía API de Airtable, no hizo falta tocar
-  código. Falta solo que alguien lo pruebe end-to-end desde la landing
-  en producción para confirmar visualmente.
+  **Formulario de contacto: arreglado y confirmado en producción
+  (2026-08-06).** Estaba roto (502): el campo `Fuente` de la tabla
+  `WAITLIST` (`appjP6jK8Jbm5uaeG` / `tblXj3d2lcufAD0KX`) es de selección
+  única y solo tenía las opciones `Hero` y `CTA Final` (las que usa
+  `api/waitlist.js`); `api/contacto.js` manda `Fuente: "Contacto"`, que
+  no existía como opción y Airtable lo rechazaba. Laura agregó la opción
+  "Contacto" al campo desde Airtable (Edit field). Probado de nuevo
+  end-to-end contra `https://digesto.cl/api/contacto`: 200 OK, la fila
+  llegó completa (Nombre, Email, Mensaje, Fecha, Fuente=Contacto) y se
+  borró la fila de prueba después de confirmar. Cerrado, no queda nada
+  pendiente acá.
 - **Ojo con esto: la Capa 1 sola no cierra el contenido.** Hoy los PDF
   de los manuales (`digesto.cl/app/pdf/...`) son archivos públicos que
   abren sin login; compartir ese link se salta el paywall entero, lista
@@ -132,6 +136,31 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   inicial con alumnas de confianza. Que quede claro: si se activa solo la
   Capa 1, los manuales siguen siendo copiables por link directo, es una
   decisión consciente, no un descuido si aparece.
+- **Orden de trabajo pedido por Laura (2026-08-06): 1. probar el
+  formulario de contacto end-to-end en producción, 2. correo
+  `admin@digesto.cl`.** El resto del backlog (abajo) queda para después
+  del beta. Laura siente que ya está casi lista para lanzar.
+- **Revisar que el formato sea igual en los 3 manuales publicados**
+  (Contractual, Extracontractual, Precontractual): pedido de Laura
+  (2026-08-06), sospecha que no son iguales entre sí. Contradice lo que
+  decía este doc en "Hecho" arriba ("formato definido" en los 3) — hay
+  que confirmarlo mirándolos de verdad, no asumir. Ver también memoria
+  `feedback_formato_manuales_digesto`.
+- **Reconectar el link "Progreso" con el indicador de progreso real del
+  dashboard** (pedido de Laura 2026-08-06, "ojalá antes del beta"). Se
+  perdió al unificar el menú lateral en `app/nav.js`/`app/nav.css`
+  (2026-08-06): antes `dashboard.html` tenía un ítem de sidebar
+  `href="#progreso"` que bajaba directo a la sección "Tu progreso"; el
+  menú global compartido entre las 4 páginas no tiene ese link porque es
+  un ancla de una sola página, no una ruta. Falta decidir cómo
+  reconectarlo (¿un ítem "Progreso" que apunte a `dashboard.html#progreso`
+  desde cualquier página?) e implementarlo.
+- **Cuaderno de errores: falta poder reintentar la pregunta, no solo
+  verla** (pedido de Laura 2026-08-06, "quiero antes del beta"). Hoy
+  "Repaso de errores" en Práctica solo muestra la pregunta fallida y su
+  corrección; Laura quiere volver a responderla ahí mismo para ver si ya
+  se la aprendió, en vez de solo leer el error. Revisar
+  `iniciarErroresModelo()`/`renderErrores()` en `app/alternativas.html`.
 
 ## Funcionalidades nuevas decididas (2026-08-06), listas para construir de a poco
 
@@ -903,6 +932,28 @@ de esta tanda.
 
 ## Fuera de alcance del beta a propósito (no es urgente, no confundir con pendiente)
 
+- **Botones de "Modo lectura" en Manuales, poco claros.** Al rediseñar
+  `app/manuales.html` (2026-08-06, menú global + acordeón de materias)
+  quedaron dos controles parecidos en el header del manual: el selector
+  existente "📖 Leer online / 📝 Comprensión lectora / ⬇️ Descargar PDF"
+  (elige el modo de estudio) y el nuevo "⛶ Modo lectura" (entra a
+  pantalla completa). Laura pidió dejarlo así por ahora y revisar el
+  naming después del beta, no ahora.
+- **Panel de revisión de `evaluacion_reportes` (post beta, pedido de
+  Laura 2026-08-06).** Hoy cuando una alumna marca "¿Calificación
+  incorrecta? Repórtala" en Evaluación, el reporte se guarda en Supabase
+  (tabla `evaluacion_reportes`: respuesta de la alumna, snapshot de la
+  pauta, elementos acertados, crédito) pero **no hay ninguna pantalla
+  para verlos** — hoy toca entrar directo a Supabase Table Editor
+  (confirmado vacía la tabla el 2026-08-06, cero reportes todavía).
+  Laura quiere, para después del beta, una vista propia que le permita
+  tener buena visibilidad de qué preguntas fallaron y por qué, para
+  ajustar `elementos_clave`/`keywords` en Airtable. Definir recién cuando
+  haya volumen real de alumnas usando la app (con la tabla vacía no hay
+  nada que diseñar todavía). Mismo problema aplica en principio a
+  `respuestas_reportadas` (el equivalente del Interrogador, ver
+  `scripts/supabase_schema_respuestas_reportadas.sql`) por si conviene
+  resolver ambos juntos.
 - Paywall Capas 2 (PDFs privados con URL firmada) y 3 (pasarela de pago):
   van después de la Capa 1, no bloquean el beta inicial según el plan
   original, aunque ver la nota de arriba sobre el hueco de los PDF.
