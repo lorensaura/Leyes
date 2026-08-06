@@ -508,6 +508,35 @@
     .btn-reportar:hover { color: #111111; }
     .btn-reportar:disabled { cursor: default; text-decoration: none; opacity: 0.7; }
 
+    /* ── CUADERNO DE ERRORES ── */
+    .errores-list { display: flex; flex-direction: column; gap: 1rem; }
+    .error-card {
+      background: var(--d-bg);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--d-divider);
+    }
+    .error-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      gap: 0.75rem;
+    }
+    .badge-origen {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #C41E2E;
+      background: rgba(196,30,46,0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+    }
+    .error-card-fecha { font-size: 0.75rem; color: #7A6E5F; white-space: nowrap; }
+    .error-card-subtema { font-size: 0.78rem; font-weight: 600; color: #7A6E5F; margin-bottom: 0.4rem; }
+    .error-card-enunciado { font-size: 0.9rem; line-height: 1.5; color: #2A2A2A; }
+
     .confusion-box {
       background: rgba(196,30,46,0.06);
       border: 1px solid rgba(196,30,46,0.15);
@@ -910,8 +939,7 @@
     <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
     <a class="nav-item" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
     <a class="nav-item active" href="alternativas.html"><span class="nav-icon">🎯</span> Práctica</a>
-    <!-- Repaso de errores: sin pantalla destino todavía (ver handoff de diseño). href="#" intencional. -->
-    <a class="nav-item" href="#"><span class="nav-icon">🔁</span> Repaso de errores <span class="nav-badge-count" id="badge-errores">0</span></a>
+    <a class="nav-item" href="#" onclick="setModelo('errores'); return false;"><span class="nav-icon">🔁</span> Repaso de errores <span class="nav-badge-count" id="badge-errores">0</span></a>
     <span class="nav-section">Con IA</span>
     <a class="nav-item" href="interrogador.html"><span class="nav-icon">💬</span> JustinIAno</a>
     <div class="sidebar-footer">
@@ -1274,6 +1302,7 @@ const bancoTransversal = [
       { id: 'flashcard', label: 'Flashcards' },
       { id: 'alternativa', label: 'Alternativas' },
       { id: 'memorice', label: 'Memorice' },
+      { id: 'errores', label: 'Errores' },
     ];
     const RAMAS = [
       { id: 'civil', label: 'Civil' },
@@ -1308,9 +1337,11 @@ const bancoTransversal = [
     ];
 
     // MOCK: valores fijos pendientes de conectar a datos reales de progreso
-    // (racha de sesiones seguidas, % de cobertura de la materia activa, conteo
-    // de "Repaso de errores"). Ver handoff de diseño del rediseño de Práctica.
-    const MOCK_STATS = { streak: 5, coveragePct: 18, errorCount: 3 };
+    // (racha de sesiones seguidas, % de cobertura de la materia activa). Ver
+    // handoff de diseño del rediseño de Práctica. El conteo de "Repaso de
+    // errores" (antes acá, mock) ya se conecta a datos reales de
+    // practica_errores -- ver actualizarBadgeErrores().
+    const MOCK_STATS = { streak: 5, coveragePct: 18 };
 
     function subtemasDisponibles(items) {
       const set = new Set();
@@ -1416,8 +1447,6 @@ const bancoTransversal = [
         <div class="status-bar-bg"><div class="status-bar-fill" style="width:${MOCK_STATS.coveragePct}%"></div></div>
         <div class="status-pct">${MOCK_STATS.coveragePct}% de la materia</div>
       `;
-      const badge = document.getElementById('badge-errores');
-      if (badge) badge.textContent = MOCK_STATS.errorCount;
     }
 
     function toggleMenu() {
@@ -1438,6 +1467,90 @@ const bancoTransversal = [
       else if (modeloActivo === 'flashcard') iniciarFlashcardsModelo();
       else if (modeloActivo === 'alternativa') iniciarAlternativasModelo();
       else if (modeloActivo === 'memorice') iniciarMemoriceModelo();
+      else if (modeloActivo === 'errores') iniciarErroresModelo();
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // CUADERNO DE ERRORES — registro de fallos de Evaluación/Alternativas
+    // (practica_errores en Supabase). Autolimpiable: registrarError hace
+    // upsert (falla la misma pregunta dos veces => actualiza fecha, no
+    // duplica); limpiarError se llama cuando la vuelve a responder bien.
+    // La instrumentación nunca debe bloquear el estudio (mismo criterio que
+    // memorice_intentos) -- errores de red acá se tragan en silencio.
+    // ══════════════════════════════════════════════════════════════════
+    let erroresCargados = [];
+
+    async function registrarError(origen, itemId, materia, subtema, tipo, enunciado) {
+      try {
+        await sb.from('practica_errores').upsert(
+          { user_id: usuarioId, origen, item_id: itemId, materia, subtema, tipo, enunciado, actualizado_en: new Date().toISOString() },
+          { onConflict: 'user_id,origen,item_id' }
+        );
+        actualizarBadgeErrores();
+      } catch (e) { /* la instrumentación nunca debe bloquear el estudio */ }
+    }
+
+    async function limpiarError(origen, itemId) {
+      try {
+        await sb.from('practica_errores').delete().eq('user_id', usuarioId).eq('origen', origen).eq('item_id', itemId);
+        actualizarBadgeErrores();
+      } catch (e) { /* la instrumentación nunca debe bloquear el estudio */ }
+    }
+
+    async function actualizarBadgeErrores() {
+      try {
+        const { count } = await sb.from('practica_errores').select('id', { count: 'exact', head: true }).eq('user_id', usuarioId);
+        const badge = document.getElementById('badge-errores');
+        if (badge) badge.textContent = count ?? 0;
+      } catch (e) { /* no bloquea */ }
+    }
+
+    async function iniciarErroresModelo() {
+      document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando cuaderno de errores…</div>`;
+      await cargarErrores();
+      renderErrores();
+    }
+
+    async function cargarErrores() {
+      try {
+        const { data, error } = await sb.from('practica_errores')
+          .select('id,origen,item_id,materia,subtema,tipo,enunciado,actualizado_en')
+          .eq('user_id', usuarioId)
+          .order('actualizado_en', { ascending: false });
+        if (error) throw error;
+        erroresCargados = data || [];
+      } catch (e) { erroresCargados = []; }
+    }
+
+    const TIPO_LABEL_ERRORES = { aplicacion: 'Aplicación', deteccion_error: 'Detección de error', justificacion: 'Justificación', discriminacion_mc: 'Discriminación MC' };
+
+    function renderErrores() {
+      const cont = document.getElementById('practica-container');
+      const filtrados = erroresCargados.filter(e => areaActiva === 'todas' || perteneceAArea(e.materia, areaActiva));
+      if (filtrados.length === 0) {
+        cont.innerHTML = `<div class="estado-vacio">Sin pendientes por ahora — cuando falles una pregunta de Evaluación o Alternativas, aparece acá para repasar antes del examen.</div>`;
+        return;
+      }
+      cont.innerHTML = `<div class="errores-list">` + filtrados.map(e => `
+        <div class="error-card">
+          <div class="error-card-head">
+            <span class="badge-origen">${e.origen === 'evaluacion' ? 'Evaluación' : 'Alternativas'}${e.tipo ? ' · ' + escaparHtmlBase(TIPO_LABEL_ERRORES[e.tipo] || e.tipo) : ''}</span>
+            <span class="error-card-fecha">${new Date(e.actualizado_en).toLocaleDateString('es-CL')}</span>
+          </div>
+          <div class="error-card-subtema">${escaparHtmlBase(e.subtema || e.materia || '')}</div>
+          <div class="error-card-enunciado">${escaparHtmlBase(e.enunciado || '')}</div>
+          <button class="btn-reportar" onclick="marcarErrorRepasado(${e.id})">Ya lo repasé, sacar de la lista</button>
+        </div>
+      `).join('') + `</div>`;
+    }
+
+    async function marcarErrorRepasado(id) {
+      try {
+        await sb.from('practica_errores').delete().eq('id', id).eq('user_id', usuarioId);
+        erroresCargados = erroresCargados.filter(e => e.id !== id);
+        renderErrores();
+        actualizarBadgeErrores();
+      } catch (e) { /* no bloquea */ }
     }
 
     // ══════════════════════════════════════════════════════════════════
@@ -1591,6 +1704,13 @@ const bancoTransversal = [
       else if (credito >= 0.35 && !esSegundaPasada) siguienteAccion = 'segunda_pasada';
       else siguienteAccion = 'ver_modelo';
 
+      // Cuaderno de errores: solo se registra en un veredicto final (no en
+      // "segunda_pasada", que todavía le da otra oportunidad a la alumna).
+      if (siguienteAccion !== 'segunda_pasada') {
+        if (siguienteAccion === 'avanzar') limpiarError('evaluacion', item.codigo);
+        else registrarError('evaluacion', item.codigo, item.materia, item.subtema, item.tipo, item.enunciado);
+      }
+
       let veredicto, feedbackDiag;
       if (credito >= 0.75) {
         veredicto = '✓ Respuesta sólida. Cubriste los elementos esenciales.';
@@ -1728,6 +1848,8 @@ const bancoTransversal = [
       const esCorrecta = seleccionMC === correctaIdx;
       creditoTotal += esCorrecta ? 1 : 0;
       itemsCompletados++;
+      if (esCorrecta) limpiarError('evaluacion', item.codigo);
+      else registrarError('evaluacion', item.codigo, item.materia, item.subtema, item.tipo, item.enunciado);
       document.querySelectorAll('.option-btn').forEach((btn, i) => {
         btn.disabled = true;
         if (i === correctaIdx) btn.classList.add(esCorrecta && i === seleccionMC ? 'correct' : 'revealed');
@@ -1976,7 +2098,8 @@ const bancoTransversal = [
       botones.forEach(b => b.disabled = true);
       const esCorrecta = idx === item.correcta;
       altCompletados++;
-      if (esCorrecta) altCorrectas++;
+      if (esCorrecta) { altCorrectas++; limpiarError('alternativas', item.id); }
+      else registrarError('alternativas', item.id, item.materia, item.subtema, null, item.pregunta);
 
       botones[idx].classList.add(esCorrecta ? 'selected' : 'wrong');
       if (!esCorrecta) botones[item.correcta].classList.add('revealed');
@@ -2395,6 +2518,7 @@ const bancoTransversal = [
       document.getElementById('user-name').textContent = name;
       document.getElementById('user-avatar').textContent = name[0].toUpperCase();
       document.getElementById('mobile-avatar').textContent = name[0].toUpperCase();
+      actualizarBadgeErrores();
 
       const modeloUrl = new URLSearchParams(window.location.search).get('modelo');
       if (MODELOS.some(m => m.id === modeloUrl)) modeloActivo = modeloUrl;

@@ -6,7 +6,7 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Los ítems ya resueltos se borran del todo (no
 > se dejan tachados) apenas se cierran — quedan igual en el historial
-> de git si hace falta recuperarlos. Última actualización: 2026-08-05.
+> de git si hace falta recuperarlos. Última actualización: 2026-08-06.
 
 ## Hecho
 
@@ -54,6 +54,46 @@
   bloqueado. Probado en producción: bypass directo → 403, registro
   normal con correo autorizado → sigue funcionando. Detalle en
   `docs/paywall.md`.
+- **Dashboard de Inicio y panel de Práctica rediseñados** (2026-08-05,
+  commits `a2a10f4`, `ab30be6`): banner de inicio, progreso, tarjeta de
+  Justiniano (bloqueada, "próximamente") y Chat IA sumados a "Continuar
+  estudiando"; nuevo grid de filtros y menú móvil en Práctica. De paso
+  se corrigió que las tarjetas "preguntas respondidas" / "% acierto hoy"
+  / "posición en liga" mostraban 0 o guion como si fueran datos reales:
+  ahora dicen honestamente "Sin datos" (no se construyó la tabla de
+  persistencia que falta, ver más abajo, solo se dejó de simular un dato
+  que no existe).
+- **Interrogador actualizado (2026-08-06, commit `1323d86`)**: cambios en
+  el prompt, el router y el checklist de anclas, más ajustes en
+  `app/interrogador.html`. `docs/interrogador.md` ya quedó al día en el
+  mismo commit, no hace falta resumirlo acá.
+- **Paleta de Práctica alineada con el dashboard de Inicio (2026-08-06,
+  commit `2ecfa07`, pusheado)**: el sidebar de `app/alternativas.html`
+  había quedado como tarjeta flotante con esquinas redondeadas y una
+  paleta propia (tonos del handoff de Claude Design del rediseño de
+  Práctica), distinta del sidebar negro a todo el borde que usa
+  `app/dashboard.html`. Se igualaron los tokens de color y la forma del
+  sidebar (sin padding exterior, sin bordes redondeados, mismo ancho) a
+  los reales del dashboard. Verificado visualmente con Chrome headless
+  (stub de Supabase para saltar el login). Cierra la inconsistencia
+  visual entre Inicio y Práctica que quedaba pendiente desde el rediseño
+  de Práctica del día anterior.
+- **Cuaderno de errores (2026-08-06), completo y confirmado en producción.**
+  Laura pidió adelantarlo del backlog para tenerlo antes del beta. Alcance:
+  Alternativas y Evaluación (recuperación libre + Discriminación MC); la
+  detección de imprecisión conceptual vía IA en el Interrogador sigue
+  post-beta. Tabla nueva `practica_errores` en Supabase (RLS, cada alumna
+  ve solo lo suyo) creada por Laura vía `scripts/supabase_schema_practica_errores.sql`
+  y confirmada viva (200 OK contra la API real, 2026-08-06). En
+  `app/alternativas.html`: "Errores" es un Modelo más (Eje 2), reutiliza
+  el filtro de Materia existente; el nav-item "Repaso de errores" de la
+  barra lateral (antes `href="#"` muerto con contador mock, que Laura
+  ya había notado) ahora abre esa vista con el contador real.
+  Autolimpiable: falla una pregunta → se guarda; la responde bien después
+  → se borra sola; también hay botón "Ya lo repasé" para sacarla a mano.
+  Verificado en Chrome headless (stub de Supabase, los 3 puntos de
+  calificación escriben/borran con los campos correctos, cero excepciones
+  de JS) antes de correr el SQL, y contra la API real después.
 
 ## Pendiente antes de invitar alumnas beta (ya está claro qué hacer)
 
@@ -63,16 +103,26 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
 - **Landing page (`index.html`)**: reescrita en 3 pasadas el 2026-08-05
   (commits `17c44e4`, `f0dfbe7`, `03ff37f`), en un worktree aparte
   (`worktree-landing-page-mejora`) que corrió en paralelo a la sesión de
-  REX de ese mismo día, ya fusionado a `main` localmente (Laura todavía
-  no lo pushea a GitHub). Verificada visualmente en Chrome headless
-  (desktop y mobile) y confirmada por Laura ("ok perfecto") en el chat.
-  Contenido tomado del análisis de mejoras que Laura mandó (hecho con
-  Claude Design), pero con la paleta y tipografía reales de Digesto, no
-  las de ese mockup. Pendientes puntuales de esta landing en el handoff
-  de hoy (`.claude/handoff/ESTADO_ACTUAL.md`, Hilo 2): columnas
-  Nombre/Mensaje en Airtable para que funcione el formulario de
-  contacto, contenido real de la sección "Sobre el examen", precios
-  reales en vez de "Por definir", y el push a GitHub.
+  REX de ese mismo día. **Ya está fusionada y pusheada a GitHub**
+  (verificado 2026-08-06: `main` local está al día con `origin/main`).
+  Verificada visualmente en Chrome headless (desktop y mobile) y
+  confirmada por Laura ("ok perfecto") en el chat. Contenido tomado del
+  análisis de mejoras que Laura mandó (hecho con Claude Design), pero
+  con la paleta y tipografía reales de Digesto, no las de ese mockup.
+  Quedan 2 cosas puntuales sin resolver, verificadas en vivo contra el
+  archivo el 2026-08-06:
+  1. **Sección "Sobre el examen" sigue comentada** (nunca se publicó):
+     falta que Laura mande el contenido real de Formato / Duración / Qué
+     se evalúa.
+  2. **Precios siguen en "Por definir"** en las 3 tarjetas de la sección
+     Precios.
+  **Formulario de contacto: arreglado (2026-08-06).** El endpoint
+  (`api/contacto.js`) y el formulario ya estaban bien armados; solo le
+  faltaban las columnas "Nombre" y "Mensaje" en la tabla `WAITLIST` de
+  Airtable (`appjP6jK8Jbm5uaeG` / `tblXj3d2lcufAD0KX`, la misma que usa
+  el waitlist). Se crearon vía API de Airtable, no hizo falta tocar
+  código. Falta solo que alguien lo pruebe end-to-end desde la landing
+  en producción para confirmar visualmente.
 - **Ojo con esto: la Capa 1 sola no cierra el contenido.** Hoy los PDF
   de los manuales (`digesto.cl/app/pdf/...`) son archivos públicos que
   abren sin login; compartir ese link se salta el paywall entero, lista
@@ -82,6 +132,33 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   inicial con alumnas de confianza. Que quede claro: si se activa solo la
   Capa 1, los manuales siguen siendo copiables por link directo, es una
   decisión consciente, no un descuido si aparece.
+
+## Funcionalidades nuevas decididas (2026-08-06), listas para construir de a poco
+
+Laura pidió tratar esto como backlog: no se construye todo junto, se retoma
+un ítem por sesión cuando ella lo pida.
+
+- **Correo `admin@digesto.cl`**: hoy el dominio no tiene ningún correo
+  configurado (sin registros MX). Recomendado: Google Workspace (~US$7/mes),
+  porque Laura necesita poder **responder** desde esa dirección, no solo
+  recibir (una redirección gratis tipo ImprovMX no alcanza para eso). Falta
+  que Laura cree la cuenta de Workspace (necesita su método de pago); una
+  vez creada, agregar los registros DNS que entrega Google en el panel de
+  Vercel (Laura lo puede hacer sola siguiendo la guía, o darme acceso a
+  Vercel para que lo haga yo).
+- **Cuaderno de errores: adelantado y construido (2026-08-06), ver
+  "Pendiente antes de invitar alumnas beta" más arriba.** Laura pidió
+  tenerlo listo antes del beta, dejó de ser backlog. La detección de
+  imprecisión conceptual vía IA en el Interrogador (parte 4 de la idea
+  original) sigue pospuesta para después del beta.
+- **JUSTINIANO, chat de dudas de materia (idea nueva, 2026-08-06, ojo con la
+  ortografía: JUSTINIANO, no Justinián)**: un chat lateral (no el Chat IA de
+  dudas generales) para resolver una duda puntual sobre una pregunta sin
+  salir del flujo de Práctica. Diseño de Laura: **una sola materia a la vez**
+  (así el contexto queda acotado) — Haiku 4.5 barato busca los fragmentos del
+  manual relevantes a la duda puntual (mismo patrón de "router" que ya usa el
+  Interrogador), y Sonnet 5 arma la respuesta con esos fragmentos. Nada
+  construido todavía.
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
 
@@ -95,7 +172,11 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   (`app/dashboard.html`) quedan en "sin datos" en vez de mostrar un
   número real. Laura decidió (2026-08-05) dejarlo pendiente por ahora en
   vez de construir la tabla ya mismo — retomar como tarea aparte cuando
-  lo pida.
+  lo pida. **Ojo, esto sigue sin resolver pese al cuaderno de errores
+  del 2026-08-06**: `practica_errores` solo guarda las preguntas que
+  falló (para el repaso), no cada intento con su resultado -- no sirve
+  como fuente para "preguntas respondidas" ni "% acierto hoy", que
+  necesitan el universo completo de intentos, no solo los fallidos.
 
 - **"Reportar calificación mal hecha" en Evaluación — HECHO (2026-08-04)
   y en producción.** La corrección de Evaluación es por keywords en JS
@@ -812,10 +893,10 @@ de esta tanda.
   original, aunque ver la nota de arriba sobre el hueco de los PDF.
 - Modo transversal del Interrogador (todas las materias de Civil en una
   sola sesión) y la interrogación oral (voz): quedan para después.
-- **Justinián como persona unificadora** (interrogación oral + Chat IA +
+- **Justiniano como persona unificadora** (interrogación oral + Chat IA +
   ayuda inline "¿no entendiste?" en Evaluación + chat nuevo de dudas
   generales que dirige al manual): idea definida por Laura el 2026-08-05,
-  detalle completo en `docs/interrogador.md` sección "Justinián: persona
+  detalle completo en `docs/interrogador.md` sección "Justiniano: persona
   unificadora". Nada de esto construido aún, queda para sesión dedicada.
 - Materias más allá de Contractual/Extracontractual/Precontractual
   (Acto Jurídico, Bienes, Familia, Sucesorio, Procesal, Penal,

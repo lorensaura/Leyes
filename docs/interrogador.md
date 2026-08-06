@@ -260,8 +260,8 @@ para destacar un artículo.
   interrogación completa de punta a punta con el cambio nuevo -- la
   próxima interrogación real de prueba debería incluir esa medición.
 
-## Justinián: persona unificadora (idea, 2026-08-05, no construida)
-Laura quiere que "Justinián" sea el presentador/tutor de Digesto detrás de
+## Justiniano: persona unificadora (idea, 2026-08-05, no construida)
+Laura quiere que "Justiniano" sea el presentador/tutor de Digesto detrás de
 todos los puntos de contacto con IA de la plataforma, no un chatbot
 suelto. Cuatro piezas, dos ya existentes y dos nuevas:
 1. **Interrogación oral (voz)** — ya anotada como pendiente en el
