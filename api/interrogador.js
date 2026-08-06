@@ -487,9 +487,16 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 // a descontar cupo (es la misma interrogación continuando); uno nuevo sí, y
 // solo pasa si todavía queda cupo — sin importar qué mande el cliente en
 // `messages`, así que reintentar o armar el request a mano no lo saltea.
+// Regla (pedida por Laura, 2026-08-07): 2 interrogaciones al día en total,
+// de las cuales como máximo 1 puede ser examen (el modo caro, en Opus). Así
+// nunca se gastan las 2 en examen el mismo día, y siempre queda al menos
+// una vía (práctica) disponible.
 const DIARIO_LIMITE = 2;
+const DIARIO_LIMITE_EXAMEN = 1;
 const MENSAJE_TOPE_DIARIO =
   'Has alcanzado tu límite de interrogaciones diarias de la Beta. Se repondrán mañana a las 00:00 hrs.';
+const MENSAJE_TOPE_EXAMEN =
+  'Ya hiciste tu examen de hoy. Todavía te queda una interrogación de práctica disponible. Se repondrán mañana a las 00:00 hrs.';
 
 const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
 const MATERIAS_MUESTRA = Object.values(ETIQUETA_POR_MATERIA);
@@ -574,7 +581,9 @@ async function verificarUsuario(accessToken) {
 // para el porqué del diseño. Las escrituras las hace este servidor con
 // SUPABASE_SECRET_KEY, que se salta RLS a propósito — la alumna solo puede
 // leer sus propias filas.
-async function chequearYRegistrarSesion(userId, sessionId) {
+// Retorna { ok: true } si hay cupo (y ya deja la sesión registrada), o
+// { ok: false, motivo: 'total' | 'examen' } si no.
+async function chequearYRegistrarSesion(userId, sessionId, modo) {
   const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
   const headers = {
     apikey: process.env.SUPABASE_SECRET_KEY,
@@ -591,31 +600,35 @@ async function chequearYRegistrarSesion(userId, sessionId) {
   }
   if ((await yaRegistradaResp.json()).length > 0) {
     // Esta interrogación ya estaba contada hoy: es un turno más de la misma, no una nueva.
-    return true;
+    return { ok: true };
   }
 
   const contadorResp = await fetch(
-    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&fecha=eq.${hoy}&select=id`,
+    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&fecha=eq.${hoy}&select=modo`,
     { headers }
   );
   if (!contadorResp.ok) {
     throw new Error(`Supabase respondió ${contadorResp.status} al contar el tope diario`);
   }
-  if ((await contadorResp.json()).length >= DIARIO_LIMITE) {
-    return false;
+  const filasHoy = await contadorResp.json();
+  if (filasHoy.length >= DIARIO_LIMITE) {
+    return { ok: false, motivo: 'total' };
+  }
+  if (modo === 'examen' && filasHoy.filter((f) => f.modo === 'examen').length >= DIARIO_LIMITE_EXAMEN) {
+    return { ok: false, motivo: 'examen' };
   }
 
   const insertResp = await fetch(`${SUPABASE_URL}/rest/v1/interrogaciones_diarias`, {
     method: 'POST',
     headers: { ...headers, Prefer: 'return=minimal' },
-    body: JSON.stringify({ user_id: userId, session_id: sessionId, fecha: hoy }),
+    body: JSON.stringify({ user_id: userId, session_id: sessionId, fecha: hoy, modo }),
   });
   // 409 = ya la insertó una petición en paralelo (misma alumna, dos pestañas a la vez);
   // en ese caso ya quedó contada, así que se deja pasar igual.
   if (!insertResp.ok && insertResp.status !== 409) {
     throw new Error(`Supabase respondió ${insertResp.status} al registrar la interrogación`);
   }
-  return true;
+  return { ok: true };
 }
 
 async function obtenerMuestraPreguntas(sessionId, materiaSesion) {
@@ -705,16 +718,21 @@ module.exports = async (req, res) => {
     return;
   }
 
-  let hayCupo;
+  // Clientes viejos que todavía no mandan `modo` cuentan como examen, mismo
+  // default que usa CONFIG_MODO más abajo.
+  const modoSesion = MODOS_VALIDOS.has(modo) ? modo : 'examen';
+
+  let resultadoCupo;
   try {
-    hayCupo = await chequearYRegistrarSesion(usuario.id, sessionId);
+    resultadoCupo = await chequearYRegistrarSesion(usuario.id, sessionId, modoSesion);
   } catch (e) {
     console.error('Error chequeando el tope diario:', e);
     res.status(502).json({ error: 'No se pudo verificar tu cupo diario en este momento' });
     return;
   }
-  if (!hayCupo) {
-    res.status(429).json({ error: MENSAJE_TOPE_DIARIO });
+  if (!resultadoCupo.ok) {
+    const mensaje = resultadoCupo.motivo === 'examen' ? MENSAJE_TOPE_EXAMEN : MENSAJE_TOPE_DIARIO;
+    res.status(429).json({ error: mensaje });
     return;
   }
 
