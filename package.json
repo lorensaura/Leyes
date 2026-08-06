@@ -3,5 +3,9 @@
   "private": true,
   "scripts": {
     "build": "node scripts/extraer_contenido_interrogador.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
+    "pdf-parse": "^1.1.1"
   }
 }
