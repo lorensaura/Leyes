@@ -1,0 +1,182 @@
+/* ── NAV GLOBAL (topbar + drawer) ──────────────────────────────────
+   Compartido por dashboard.html, manuales.html, alternativas.html e
+   interrogador.html. Reemplaza el sidebar fijo por una barra superior
+   con menú hamburguesa, siempre visible en todos los anchos. */
+
+.app-topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  z-index: 40;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: #F5EAD4;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.hamburger-btn:hover { background: rgba(232,216,184,0.08); }
+
+.app-topbar-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: #F5EAD4;
+  text-decoration: none;
+}
+
+.app-topbar-logo span { color: #C41E2E; }
+
+.app-menu-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 45;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.app-menu-scrim.open { opacity: 1; pointer-events: auto; }
+
+.app-drawer {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 270px;
+  background: #111111;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 50;
+}
+
+.app-drawer.open { transform: translateX(0); }
+
+.drawer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  color: #E8D8B8;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.drawer-logo span { color: #C41E2E; }
+
+.app-drawer .nav-section {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232,216,184,0.3);
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.app-drawer .nav-section:first-of-type { margin-top: 0; }
+
+.app-drawer .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(232,216,184,0.55);
+  transition: all 0.15s;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.app-drawer .nav-item:hover { background: rgba(232,216,184,0.06); color: #E8D8B8; }
+.app-drawer .nav-item.active { background: rgba(196,30,46,0.15); color: #E8D8B8; }
+.app-drawer .nav-item.active .nav-icon { color: #C41E2E; }
+
+.app-drawer .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+.app-drawer .nav-badge {
+  margin-left: auto;
+  font-size: 0.65rem;
+  background: rgba(196,30,46,0.2);
+  color: #C41E2E;
+  padding: 0.1rem 0.45rem;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.app-drawer .nav-badge-count {
+  margin-left: auto;
+  font-size: 0.65rem;
+  background: #C41E2E;
+  color: #F5EAD4;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  font-weight: 700;
+}
+
+.app-drawer .nav-badge-count:empty,
+.app-drawer .nav-badge-count[data-zero="true"] { display: none; }
+
+.app-drawer .sidebar-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(232,216,184,0.08);
+}
+
+.app-drawer .user-info { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+
+.app-drawer .user-avatar {
+  width: 36px; height: 36px;
+  background: #C41E2E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: #F5EAD4;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.app-drawer .user-name { font-size: 0.82rem; font-weight: 600; color: #E8D8B8; }
+.app-drawer .user-plan { font-size: 0.72rem; color: rgba(232,216,184,0.4); }
+
+.app-drawer .btn-logout {
+  width: 100%;
+  padding: 0.55rem;
+  background: transparent;
+  border: 1px solid rgba(232,216,184,0.12);
+  border-radius: 6px;
+  color: rgba(232,216,184,0.4);
+  font-size: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.app-drawer .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: #C41E2E; }
+
+/* El resto de cada página empuja su contenido debajo del topbar fijo */
+.app-content-offset { padding-top: 56px; }
+
+@media (max-width: 480px) {
+  .app-drawer { width: 82vw; max-width: 300px; }
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digesto — Manuales</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="nav.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
@@ -15,128 +16,21 @@
       background: #F5EAD4;
       color: #111111;
       min-height: 100vh;
-      display: flex;
     }
-
-    /* ── SIDEBAR ── */
-    .sidebar {
-      width: 240px;
-      background: #111111;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1.5rem;
-      position: fixed;
-      top: 0; left: 0; bottom: 0;
-    }
-
-    .sidebar-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 3px;
-      color: #E8D8B8;
-      margin-bottom: 3rem;
-      text-decoration: none;
-    }
-
-    .sidebar-logo span { color: #C41E2E; }
-
-    .nav-section {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(232,216,184,0.3);
-      margin-bottom: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.65rem 0.85rem;
-      border-radius: 7px;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: rgba(232,216,184,0.55);
-      transition: all 0.15s;
-      margin-bottom: 0.2rem;
-    }
-
-    .nav-item:hover { background: rgba(232,216,184,0.06); color: #E8D8B8; }
-    .nav-item.active { background: rgba(196,30,46,0.15); color: #E8D8B8; }
-    .nav-item.active .nav-icon { color: #C41E2E; }
-
-    .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
-
-    .nav-badge {
-      margin-left: auto;
-      font-size: 0.65rem;
-      background: rgba(196,30,46,0.2);
-      color: #C41E2E;
-      padding: 0.1rem 0.45rem;
-      border-radius: 100px;
-      font-weight: 600;
-    }
-
-    .sidebar-footer {
-      margin-top: auto;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(232,216,184,0.08);
-    }
-
-    .user-info {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .user-avatar {
-      width: 36px; height: 36px;
-      background: #C41E2E;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      color: #F5EAD4;
-      flex-shrink: 0;
-    }
-
-    .user-name { font-size: 0.82rem; font-weight: 600; color: #E8D8B8; }
-    .user-plan { font-size: 0.72rem; color: rgba(232,216,184,0.4); }
-
-    .btn-logout {
-      width: 100%;
-      padding: 0.55rem;
-      background: transparent;
-      border: 1px solid rgba(232,216,184,0.12);
-      border-radius: 6px;
-      color: rgba(232,216,184,0.4);
-      font-size: 0.8rem;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-logout:hover { border-color: rgba(196,30,46,0.3); color: #C41E2E; }
 
     /* ── MAIN ── */
     .main {
-      margin-left: 240px;
-      flex: 1;
       display: flex;
-      height: 100vh;
+      height: calc(100vh - 56px);
+      margin-top: 56px;
       overflow: hidden;
     }
 
-    /* ── PANEL MATERIAS ── */
+    .main.reading .materias-panel { display: none; }
+
+    /* ── PANEL MATERIAS (acordeón) ── */
     .materias-panel {
-      width: 260px;
+      width: 300px;
       background: #E8D8B8;
       border-right: 1px solid rgba(17,17,17,0.08);
       display: flex;
@@ -163,95 +57,82 @@
       margin-top: 0.2rem;
     }
 
-    .materia-group { padding: 1rem 1rem 0; }
+    .materias-list { padding: 1rem 1.1rem 1.5rem; }
 
-    .materia-group-title {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #7A6E5F;
-      padding: 0.5rem 0.5rem 0.4rem;
-    }
+    .materia-block { margin-bottom: 0.6rem; }
 
-    .materia-item {
+    .materia-header {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      padding: 0.6rem 0.75rem;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #7A6E5F;
-      transition: all 0.15s;
-      margin-bottom: 0.1rem;
-    }
-
-    .materia-item:hover { background: rgba(17,17,17,0.05); color: #111111; }
-
-    .materia-item.active {
+      justify-content: space-between;
       background: #111111;
       color: #E8D8B8;
+      padding: 0.75rem 0.85rem;
+      border-radius: 9px 9px 0 0;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: border-radius 0.15s;
     }
 
-    .materia-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      flex-shrink: 0;
+    .materia-header:not(.open) { border-radius: 9px; }
+
+    .materia-arrow {
+      font-size: 0.7rem;
+      color: #E8D8B8;
+      transition: transform 0.2s;
     }
 
-    .materia-item.active .materia-dot { background: #C41E2E; }
+    .materia-header.open .materia-arrow { transform: rotate(180deg); }
 
-    /* ── PANEL TEMAS ── */
-    .temas-panel {
-      width: 240px;
+    .materia-body {
+      display: none;
       background: #F5EAD4;
-      border-right: 1px solid rgba(17,17,17,0.08);
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-      flex-shrink: 0;
+      border: 1px solid #DCCCA5;
+      border-top: none;
+      border-radius: 0 0 9px 9px;
+      padding: 0.45rem;
     }
 
-    .temas-header {
-      padding: 1.75rem 1.5rem 1rem;
-      border-bottom: 1px solid rgba(17,17,17,0.08);
-      position: sticky;
-      top: 0;
-      background: #F5EAD4;
-    }
-
-    .temas-materia {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
-      letter-spacing: 1.5px;
-      color: #111111;
-    }
-
-    .temas-list { padding: 0.75rem; }
+    .materia-body.open { display: block; }
 
     .tema-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.65rem 0.75rem;
+      padding: 0.6rem 0.7rem;
       border-radius: 7px;
       cursor: pointer;
       font-size: 0.82rem;
-      color: #7A6E5F;
+      color: #111111;
+      background: #FFFFFF;
       transition: all 0.15s;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.25rem;
       gap: 0.5rem;
     }
 
-    .tema-item:hover { background: rgba(17,17,17,0.05); color: #111111; }
+    .tema-item:last-child { margin-bottom: 0; }
+
+    .tema-item:hover { background: rgba(17,17,17,0.06); }
 
     .tema-item.active {
-      background: rgba(196,30,46,0.1);
-      color: #111111;
-      font-weight: 600;
+      background: #C41E2E;
+      color: #F5EAD4;
+    }
+
+    .tema-item.proximamente {
+      background: transparent;
+      color: #7A6E5F;
+    }
+
+    .tema-item.proximamente:hover { background: rgba(17,17,17,0.04); }
+
+    .tema-proximamente-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #A06000;
+      flex-shrink: 0;
     }
 
     .tema-check {
@@ -265,10 +146,18 @@
       font-size: 0.6rem;
     }
 
+    .tema-item.active .tema-check { border-color: rgba(245,234,212,0.6); }
+
     .tema-check.done {
       background: #C41E2E;
       border-color: #C41E2E;
       color: white;
+    }
+
+    .tema-item.active .tema-check.done {
+      background: #F5EAD4;
+      border-color: #F5EAD4;
+      color: #C41E2E;
     }
 
     /* ── CONTENIDO ── */
@@ -282,6 +171,20 @@
       margin-bottom: 2rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .content-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .content-title-inline {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
     }
 
     .content-breadcrumb {
@@ -304,6 +207,62 @@
       font-size: 0.78rem;
       color: #7A6E5F;
       margin-top: 0.5rem;
+    }
+
+    .btn-back-reading {
+      background: none;
+      border: none;
+      color: #111111;
+      font-size: 1.15rem;
+      cursor: pointer;
+      padding: 0 0.6rem 0 0;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .btn-reading-toggle {
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #111111;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-reading-toggle:hover { background: #111111; color: #E8D8B8; }
+
+    /* ── MODO LECTURA (pantalla completa) ── */
+    .main.reading .content-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 2rem;
+    }
+
+    .main.reading .content-panel > * {
+      width: 100%;
+      max-width: 860px;
+    }
+
+    .main.reading .content-title { font-size: 1.7rem; }
+
+    .main.reading .manual-body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 880px) {
+      .main { flex-direction: column; height: auto; overflow: visible; }
+      .materias-panel { width: 100%; max-height: 50vh; }
+      .content-panel { padding: 1.75rem 1.25rem; }
+      .main.reading .content-panel { padding: 1.75rem 1.25rem 2.5rem; }
+      .content-title { font-size: 1.7rem; }
     }
 
     /* Contenido del manual */
@@ -692,12 +651,13 @@
 
     /* ── PRINT CSS ── */
     @media print {
-      .sidebar, .materias-panel, .temas-panel, .reading-modes,
+      .app-topbar, .app-drawer, .app-menu-scrim, .materias-panel, .reading-modes,
+      .btn-reading-toggle, .btn-back-reading,
       .content-nav, .btn-mark-done, .cp-btn-row,
       .cp-textarea, .cp-feedback, .psp-btn-row { display: none !important; }
 
       body { background: white !important; font-size: 11pt; }
-      .main { margin-left: 0 !important; max-width: 100% !important; padding: 0 !important; }
+      .main { margin-top: 0 !important; height: auto !important; padding: 0 !important; }
       .content-panel { padding: 0.5cm 1cm !important; overflow: visible !important; box-shadow: none !important; border-radius: 0 !important; }
       .checkpoint-card {
         background: #f5f5f5 !important;
@@ -854,80 +814,20 @@
 </head>
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <a href="dashboard.html" class="sidebar-logo">Digesto<span>.</span></a>
-
-    <span class="nav-section">Estudio</span>
-    <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span> Inicio</a>
-    <a class="nav-item active" href="manuales.html"><span class="nav-icon">📖</span> Manuales</a>
-    <a class="nav-item" href="alternativas.html"><span class="nav-icon">🎯</span> Práctica</a>
-
-    <span class="nav-section">Con IA</span>
-    <a class="nav-item" href="interrogador.html"><span class="nav-icon">💬</span> Chat IA</a>
-    <a class="nav-item" href="#"><span class="nav-icon">🎙️</span> Interrogación oral <span class="nav-badge">Pronto</span></a>
-
-    <span class="nav-section">Comunidad</span>
-    <a class="nav-item" href="#"><span class="nav-icon">🏆</span> Liga <span class="nav-badge">Pronto</span></a>
-
-    <div class="sidebar-footer">
-      <div class="user-info">
-        <div class="user-avatar" id="user-avatar">?</div>
-        <div>
-          <div class="user-name" id="user-name">...</div>
-          <div class="user-plan">Plan Esencial</div>
-        </div>
-      </div>
-      <button class="btn-logout" onclick="handleLogout()">Cerrar sesión</button>
-    </div>
-  </aside>
+  <!-- NAV -->
+  <div id="app-nav" data-active="manuales"></div>
+  <script src="nav.js"></script>
 
   <!-- MAIN -->
-  <div class="main">
+  <div class="main" id="main">
 
-    <!-- Panel materias -->
+    <!-- Panel materias: acordeón, se llena con JS -->
     <div class="materias-panel">
       <div class="panel-header">
         <div class="panel-title">Manuales</div>
         <div class="panel-subtitle">Selecciona una materia</div>
       </div>
-
-      <div class="materia-group">
-        <div class="materia-group-title">Obligatorias</div>
-        <div class="materia-item active" onclick="selectMateria(this, 'civil')">
-          <div class="materia-dot"></div> Derecho Civil
-        </div>
-        <div class="materia-item" onclick="selectMateria(this, 'procesal')">
-          <div class="materia-dot"></div> Derecho Procesal Civil
-        </div>
-      </div>
-
-      <div class="materia-group">
-        <div class="materia-group-title">Cédula</div>
-        <div class="materia-item" onclick="selectMateria(this, 'penal')">
-          <div class="materia-dot"></div> Derecho Penal
-        </div>
-        <div class="materia-item" onclick="selectMateria(this, 'administrativo')">
-          <div class="materia-dot"></div> Derecho Administrativo
-        </div>
-        <div class="materia-item" onclick="selectMateria(this, 'comercial')">
-          <div class="materia-dot"></div> Derecho Comercial
-        </div>
-        <div class="materia-item" onclick="selectMateria(this, 'canonico')">
-          <div class="materia-dot"></div> Derecho Canónico
-        </div>
-        <div class="materia-item" onclick="selectMateria(this, 'historia')">
-          <div class="materia-dot"></div> Historia del Derecho
-        </div>
-      </div>
-    </div>
-
-    <!-- Panel temas -->
-    <div class="temas-panel" id="temas-panel">
-      <div class="temas-header">
-        <div class="temas-materia" id="temas-materia-title">Derecho Civil</div>
-      </div>
-      <div class="temas-list" id="temas-list">
+      <div class="materias-list" id="materias-list">
         <!-- Se llena con JS -->
       </div>
     </div>
@@ -1487,11 +1387,12 @@
     };
 
     // ── Estado ──────────────────────────────────────────────────────
-    let materiaActiva = 'civil';
     let temaActivo = null;
     let completados = JSON.parse(localStorage.getItem('temas_completados') || '{}');
     let lecturaMode = 'online';    // 'online' | 'seccion' | 'pdf'
     let cpSeccionActiva = {};      // { key: cpIdx } — qué sección está activa en modo impresión
+    let accordionOpen = { civil: true }; // qué materias están desplegadas en el acordeón
+    let readingMode = false;       // modo lectura a pantalla completa (oculta el acordeón)
 
     // ── Init ────────────────────────────────────────────────────────
     async function init() {
@@ -1502,32 +1403,52 @@
       document.getElementById('user-name').textContent = name;
       document.getElementById('user-avatar').textContent = name[0].toUpperCase();
 
-      renderTemas('civil');
+      renderMaterias();
     }
 
-    function selectMateria(el, id) {
-      document.querySelectorAll('.materia-item').forEach(i => i.classList.remove('active'));
-      el.classList.add('active');
-      materiaActiva = id;
-      renderTemas(id);
-      showEmpty();
+    // ── Acordeón de materias ───────────────────────────────────────
+    function renderMaterias() {
+      document.getElementById('materias-list').innerHTML =
+        Object.keys(materias).map(id => renderMateriaBlock(id)).join('');
     }
 
-    function renderTemas(id) {
+    function renderMateriaBlock(id) {
       const m = materias[id];
-      document.getElementById('temas-materia-title').textContent = m.nombre;
+      const open = !!accordionOpen[id];
+      return `
+        <div class="materia-block">
+          <div class="materia-header ${open ? 'open' : ''}" onclick="toggleAccordion('${id}')">
+            <span>${m.nombre}</span>
+            <span class="materia-arrow">▾</span>
+          </div>
+          <div class="materia-body ${open ? 'open' : ''}" id="temas-${id}">
+            ${renderTemaItems(id)}
+          </div>
+        </div>
+      `;
+    }
 
-      const list = document.getElementById('temas-list');
-      list.innerHTML = m.temas.map((t, i) => {
+    function renderTemaItems(id) {
+      const m = materias[id];
+      return m.temas.map((t, i) => {
         const key = id + '_' + i;
         const done = completados[key];
+        const locked = !contenidos[key];
         return `
-          <div class="tema-item ${temaActivo === key ? 'active' : ''}" onclick="selectTema('${id}', ${i}, this)">
+          <div class="tema-item ${temaActivo === key ? 'active' : ''} ${locked ? 'proximamente' : ''}" onclick="selectTema('${id}', ${i}, this)">
             <span>${t}</span>
-            <div class="tema-check ${done ? 'done' : ''}">${done ? '✓' : ''}</div>
+            ${locked
+              ? '<span class="tema-proximamente-tag">PRÓXIMAMENTE</span>'
+              : `<div class="tema-check ${done ? 'done' : ''}">${done ? '✓' : ''}</div>`
+            }
           </div>
         `;
       }).join('');
+    }
+
+    function toggleAccordion(id) {
+      accordionOpen[id] = !accordionOpen[id];
+      renderMaterias();
     }
 
     async function selectTema(materiaId, idx, el) {
@@ -1663,10 +1584,24 @@
         }
       }
 
+      const btnReading = `
+        <button class="btn-reading-toggle" onclick="toggleReadingMode('${key}','${materiaId}',${idx})">
+          ${readingMode ? '↙ Salir de pantalla completa' : '⛶ Modo lectura'}
+        </button>
+      `;
+
       document.getElementById('content-panel').innerHTML = `
         <div class="content-header">
-          <div class="content-breadcrumb">${materia} <span>›</span> ${tema}</div>
-          <div class="content-title">${contenido.titulo}</div>
+          <div class="content-title-row">
+            <div class="content-title-inline">
+              ${readingMode ? `<button class="btn-back-reading" onclick="toggleReadingMode('${key}','${materiaId}',${idx})" aria-label="Salir de modo lectura">←</button>` : ''}
+              <div>
+                <div class="content-breadcrumb">${materia} <span>›</span> ${tema}</div>
+                <div class="content-title">${contenido.titulo}</div>
+              </div>
+            </div>
+            ${btnReading}
+          </div>
           <div class="content-meta">⏱ ${contenido.minutos} min de lectura</div>
           ${modoSelector}
           <button class="btn-mark-done ${done ? 'done' : ''}" onclick="toggleDone('${key}', '${materiaId}', ${idx})" id="btn-done">
@@ -1677,11 +1612,11 @@
         ${lecturaMode !== 'seccion' ? `
         <div class="content-nav">
           ${prevIdx !== null
-            ? `<button class="btn-nav" onclick="selectTema('${materiaId}', ${prevIdx}, document.querySelectorAll('.tema-item')[${prevIdx}])">← Tema anterior</button>`
+            ? `<button class="btn-nav" onclick="selectTema('${materiaId}', ${prevIdx}, document.querySelectorAll('#temas-${materiaId} .tema-item')[${prevIdx}])">← Tema anterior</button>`
             : '<div></div>'
           }
           ${nextIdx !== null
-            ? `<button class="btn-nav primary" onclick="selectTema('${materiaId}', ${nextIdx}, document.querySelectorAll('.tema-item')[${nextIdx}])">Siguiente tema →</button>`
+            ? `<button class="btn-nav primary" onclick="selectTema('${materiaId}', ${nextIdx}, document.querySelectorAll('#temas-${materiaId} .tema-item')[${nextIdx}])">Siguiente tema →</button>`
             : '<div></div>'
           }
         </div>` : ''}
@@ -1896,6 +1831,15 @@
       }
     }
 
+    // ── Pantalla completa (oculta el acordeón, agranda el texto) ──────
+    function toggleReadingMode(key, materiaId, idx) {
+      readingMode = !readingMode;
+      document.getElementById('main').classList.toggle('reading', readingMode);
+      const m = materias[materiaId];
+      renderContenido(m.nombre, m.temas[idx], contenidos[key], key, materiaId, idx);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     // ── Cambiar modo de lectura ───────────────────────────────────────
     function setModoLectura(modo, key, materiaId, idx) {
       lecturaMode = modo;
@@ -1903,7 +1847,7 @@
       const tema = m.temas[idx];
       const contenido = contenidos[key];
       renderContenido(m.nombre, tema, contenido, key, materiaId, idx);
-      document.querySelectorAll('.tema-item')[idx].classList.add('active');
+      document.querySelectorAll('#temas-' + materiaId + ' .tema-item')[idx].classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1942,17 +1886,6 @@
       `;
     }
 
-    function showEmpty() {
-      temaActivo = null;
-      document.getElementById('content-panel').innerHTML = `
-        <div class="empty-state">
-          <div class="emoji">📖</div>
-          <h3>Selecciona un tema</h3>
-          <p>Elige un tema de la lista para comenzar a estudiar.</p>
-        </div>
-      `;
-    }
-
     function toggleDone(key, materiaId, idx) {
       completados[key] = !completados[key];
       localStorage.setItem('temas_completados', JSON.stringify(completados));
@@ -1964,8 +1897,8 @@
         btn.classList.remove('done');
         btn.textContent = '○ Marcar como leído';
       }
-      renderTemas(materiaId);
-      document.querySelectorAll('.tema-item')[idx].classList.add('active');
+      document.getElementById('temas-' + materiaId).innerHTML = renderTemaItems(materiaId);
+      document.querySelectorAll('#temas-' + materiaId + ' .tema-item')[idx].classList.add('active');
     }
 
     async function handleLogout() {
