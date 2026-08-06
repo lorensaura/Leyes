@@ -199,6 +199,14 @@ un ítem por sesión cuando ella lo pida.
   manual relevantes a la duda puntual (mismo patrón de "router" que ya usa el
   Interrogador), y Sonnet 5 arma la respuesta con esos fragmentos. Nada
   construido todavía.
+- **Cuaderno de errores: agrupar por tipo (Aplicación/Detección de
+  error/Justificación/Discriminación MC)** (pedido de Laura, 2026-08-06, al
+  aprobar "Reintentar pregunta"). Hoy `renderErrores()` en
+  `app/alternativas.html` pinta una lista plana ordenada por fecha; a medida
+  que se acumulen más errores, Laura quiere poder repasar todos los de un
+  mismo tipo de corrido en vez de ir saltando entre tipos. Nada construido
+  todavía, retomar cuando ella lo pida (probablemente cuando el cuaderno ya
+  tenga volumen real para notar la diferencia).
 
 ## Pendiente: contenido y tareas sueltas (ya identificado, falta ejecutar)
 
