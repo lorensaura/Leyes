@@ -89,6 +89,8 @@ async function fetchQuestionsForEje(baseId, tableName, ejeNumber, temasMap) {
   }).map(r => ({ ...r, _table: tableName }));
 }
 
+const tableFieldTypes = {}; // tableName -> 'multipleSelects' | 'singleSelect' | other
+
 async function preflightCheckFields(baseId, tableName) {
   const url = `https://api.airtable.com/v0/meta/bases/${baseId}/tables`;
   const res = await fetch(url, { headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` } });
@@ -109,15 +111,23 @@ async function preflightCheckFields(baseId, tableName) {
     console.error(`     Créalos manualmente en Airtable antes de correr esto (Airtable no los crea via API).`);
     return false;
   }
+  const statusField = table.fields.find(f => f.name === STATUS_FIELD);
+  tableFieldTypes[tableName] = statusField?.type || 'unknown';
   return true;
 }
 
 async function updateRecord(baseId, tableName, recordId, status, notes) {
   const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}/${recordId}`;
+  const fieldType = tableFieldTypes[tableName];
+  // multipleSelects wants an array; singleSelect (and most others) want a plain string.
+  const statusValue = fieldType === 'multipleSelects' ? [status] : status;
   const res = await fetch(url, {
     method: 'PATCH',
     headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ fields: { [STATUS_FIELD]: [status], [NOTES_FIELD]: notes } }),
+    body: JSON.stringify({
+      fields: { [STATUS_FIELD]: statusValue, [NOTES_FIELD]: notes },
+      typecast: true,
+    }),
   });
   if (!res.ok) {
     const body = await res.text();
