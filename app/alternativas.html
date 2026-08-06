@@ -282,12 +282,6 @@
       color: var(--d-muted);
     }
 
-    .item-num {
-      margin-left: auto;
-      font-size: 0.75rem;
-      color: var(--d-muted);
-    }
-
     .caso-box {
       background: var(--d-accent-tint);
       border-left: 3px solid var(--d-accent);
@@ -1628,7 +1622,6 @@ const bancoTransversal = [
           <div class="item-meta">
             <span class="badge-tipo ${tipoCss}">${tipoLabel}</span>
             <span class="badge-materia">${item.materia} · ${item.subtema}</span>
-            <span class="item-num">${item.codigo}</span>
           </div>
           ${item.caso ? `<div class="caso-box"><span class="caso-label">Caso</span>${item.caso}</div>` : ''}
           <div class="pregunta-text">${item.enunciado}</div>

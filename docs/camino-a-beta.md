@@ -178,6 +178,21 @@ un ítem por sesión cuando ella lo pida.
   como fuente para "preguntas respondidas" ni "% acierto hoy", que
   necesitan el universo completo de intentos, no solo los fallidos.
 
+- **Pedido de Laura, 2026-08-06, revisando el cuaderno de errores en vivo:**
+  1. **HECHO.** Sacar el código interno del ítem (ej. `rc-aplic-014`) de
+     la tarjeta de pregunta de Evaluación — no le sirve de nada a la
+     alumna, era ruido. Se sacó el `<span class="item-num">` y su CSS en
+     `app/alternativas.html` (`renderItemEvaluacion`). El código sigue
+     existiendo internamente (`item.codigo`), solo dejó de mostrarse.
+  2. **Pendiente: conectar la "racha" real** (`status-streak` en la fila
+     de estado de Práctica, hoy `MOCK_STATS.streak` fijo en 5) al número
+     real de preguntas respondidas bien. Es el mismo hueco que el punto
+     de arriba: hace falta la tabla de intentos completos (no solo
+     fallidos) para saber cuántas respondió y con qué resultado — no se
+     puede resolver solo con `practica_errores`. Cuando se retome, definir
+     con Laura qué cuenta como "racha" (¿aciertos seguidos sin fallar?
+     ¿días seguidos con actividad?) antes de diseñar la tabla.
+
 - **"Reportar calificación mal hecha" en Evaluación — HECHO (2026-08-04)
   y en producción.** La corrección de Evaluación es por keywords en JS
   (`evaluarRespuesta()`, `app/alternativas.html`), sin LLM, así que no
