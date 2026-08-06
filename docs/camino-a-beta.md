@@ -91,11 +91,14 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   (`flashcard_progreso`) tienen persistencia de intentos por usuaria;
   `evaluacion_practica` y `alternativas` solo se leen, nunca se escribe
   un registro de "esto respondió esta alumna y le fue bien/mal". Por eso
-  las tarjetas "preguntas respondidas" y "% acierto hoy" del dashboard
-  (`app/dashboard.html`) quedan en "sin datos" en vez de mostrar un
-  número real. Laura decidió (2026-08-05) dejarlo pendiente por ahora en
-  vez de construir la tabla ya mismo — retomar como tarea aparte cuando
-  lo pida.
+  el dashboard (`app/dashboard.html`) muestra una sola tarjeta
+  consolidada de "Aún no tienes actividad esta semana" (rediseño del
+  05/08) en vez de números reales de preguntas respondidas, % acierto o
+  posición en liga; la sección "Tu progreso" (agregada 05/08) también
+  queda en 0% por el mismo motivo, marcada como vista de referencia.
+  Laura decidió (2026-08-05) dejarlo pendiente por ahora en vez de
+  construir la tabla ya mismo — retomar como tarea aparte cuando lo
+  pida.
 
 - **"Reportar calificación mal hecha" en Evaluación — HECHO (2026-08-04)
   y en producción.** La corrección de Evaluación es por keywords en JS
