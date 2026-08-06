@@ -223,6 +223,39 @@
     .modo-opcion .modo-nombre { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.2rem; }
     .modo-opcion .modo-desc { font-size: 0.76rem; color: #7A6E5F; line-height: 1.4; }
 
+    .selector-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #7A6E5F;
+      margin-bottom: 0.4rem;
+    }
+
+    .materia-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .filtro-btn {
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #7A6E5F;
+      transition: all 0.15s;
+    }
+
+    .filtro-btn:hover { border-color: #111111; color: #111111; }
+    .filtro-btn.active { background: #111111; color: #E8D8B8; border-color: #111111; }
+    .filtro-btn:disabled { cursor: default; opacity: 0.6; }
+
     .btn-primario {
       padding: 0.75rem 1.5rem;
       background: #C41E2E;
@@ -440,10 +473,16 @@
         <h2>Responsabilidad civil</h2>
         <p>
           Una comisión te interrogará como en el examen de grado: preguntas, repreguntas y un caso
-          práctico sobre responsabilidad contractual y extracontractual. Al final recibes tu nota
-          (escala 1-7) con rúbrica y plan de estudio. Esta sesión no queda guardada — si cierras o
-          recargas la página, se pierde.
+          práctico. Al final recibes tu nota (escala 1-7) con rúbrica y plan de estudio. Esta
+          sesión no queda guardada — si cierras o recargas la página, se pierde.
         </p>
+        <div class="selector-label">Materia</div>
+        <div class="materia-selector" id="materia-selector">
+          <button type="button" class="filtro-btn active" data-materia="contractual" onclick="elegirMateria(this, 'contractual')">Contractual</button>
+          <button type="button" class="filtro-btn" data-materia="extracontractual" onclick="elegirMateria(this, 'extracontractual')">Extracontractual</button>
+          <button type="button" class="filtro-btn" data-materia="precontractual" onclick="elegirMateria(this, 'precontractual')">Precontractual</button>
+          <button type="button" class="filtro-btn" data-materia="todas" onclick="elegirMateria(this, 'todas')">Todas (modo transversal)</button>
+        </div>
         <div class="modo-selector">
           <div class="modo-opcion active" data-modo="examen" onclick="elegirModo(this, 'examen')">
             <div class="modo-nombre">Modo examen</div>
@@ -453,6 +492,12 @@
             <div class="modo-nombre">Modo práctica</div>
             <div class="modo-desc">Corrección breve después de cada respuesta, para ir estudiando sobre la marcha.</div>
           </div>
+        </div>
+        <div class="selector-label">Duración</div>
+        <div class="materia-selector" id="duracion-selector">
+          <button type="button" class="filtro-btn" data-duracion="5" onclick="elegirDuracion(this, 5)">5 minutos</button>
+          <button type="button" class="filtro-btn" data-duracion="15" onclick="elegirDuracion(this, 15)">15 minutos</button>
+          <button type="button" class="filtro-btn active" data-duracion="30" onclick="elegirDuracion(this, 30)">30 minutos</button>
         </div>
         <button class="btn-primario" id="btn-comenzar" onclick="comenzarInterrogacion()">Comenzar interrogación</button>
       </div>
@@ -478,6 +523,12 @@
     const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
     let modoElegido = 'examen';
+    // 'contractual' | 'extracontractual' | 'precontractual' | 'todas'. Por
+    // defecto una sola materia (más barato) -- "todas" queda disponible
+    // para el modo transversal, pensado para usarse 1-2 veces por semana,
+    // no en cada sesión.
+    let materiaElegida = 'contractual';
+    let duracionElegida = 30;
     let historial = [];
     let enviando = false;
     let sessionId = null;
@@ -487,6 +538,18 @@
       document.querySelectorAll('.modo-opcion').forEach((o) => o.classList.remove('active'));
       el.classList.add('active');
       modoElegido = modo;
+    }
+
+    function elegirMateria(el, materia) {
+      document.querySelectorAll('#materia-selector .filtro-btn').forEach((b) => b.classList.remove('active'));
+      el.classList.add('active');
+      materiaElegida = materia;
+    }
+
+    function elegirDuracion(el, duracion) {
+      document.querySelectorAll('#duracion-selector .filtro-btn').forEach((b) => b.classList.remove('active'));
+      el.classList.add('active');
+      duracionElegida = duracion;
     }
 
     function escaparHtml(texto) {
@@ -627,13 +690,25 @@
       document.getElementById('input-mensaje').disabled = estado;
     }
 
+    const NOMBRE_MATERIA = {
+      contractual: 'Responsabilidad contractual',
+      extracontractual: 'Responsabilidad extracontractual',
+      precontractual: 'Responsabilidad precontractual',
+      todas: 'todas las materias (contractual, extracontractual y precontractual)',
+    };
+
     async function comenzarInterrogacion() {
       document.getElementById('btn-comenzar').disabled = true;
+      // La materia y la duración no cambian a mitad de sesión (rompería el
+      // caché y el prompt ya generado) -- se congelan los chips al arrancar.
+      document.querySelectorAll('#materia-selector .filtro-btn').forEach((b) => (b.disabled = true));
+      document.querySelectorAll('#duracion-selector .filtro-btn').forEach((b) => (b.disabled = true));
       ocultarError();
 
       sessionId = crypto.randomUUID();
       const modoLabel = modoElegido === 'examen' ? 'examen' : 'práctica';
-      historial = [{ role: 'user', content: `Modo: ${modoLabel}. Comencemos la interrogación.` }];
+      const materiaLabel = NOMBRE_MATERIA[materiaElegida];
+      historial = [{ role: 'user', content: `Modo: ${modoLabel}. Materia: ${materiaLabel}. Duración: ${duracionElegida} minutos. Comencemos la interrogación.` }];
 
       document.getElementById('intro-card').style.display = 'none';
       document.getElementById('mensajes').style.display = 'flex';
@@ -684,7 +759,7 @@
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${session.access_token}`,
           },
-          body: JSON.stringify({ modo: modoElegido, messages: historial, sessionId }),
+          body: JSON.stringify({ modo: modoElegido, materia: materiaElegida, duracionMinutos: duracionElegida, messages: historial, sessionId }),
         });
 
         if (!resp.ok || !resp.body) {
