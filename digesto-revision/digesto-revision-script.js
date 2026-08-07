@@ -218,10 +218,23 @@ sin jurisprudencia inventada, enunciado claro, nivel grado, consistencia interna
 
 IMPORTANTE sobre el eje: algunas preguntas pueden estar etiquetadas con un eje que no
 corresponde a su contenido real (un problema de clasificación en Airtable, no de fondo).
-NO marques [REVISAR] solo porque el contenido no coincide con el Eje ${ejeChunk.letter}.
+NO marques [REVISAR] solo porque el contenido no coincide con el Eje ${ejeChunk.letter}
+PERO sí pertenece a responsabilidad contractual/extracontractual/precontractual en general.
 Evalúa el contenido de la pregunta con tu propio conocimiento del derecho civil chileno
-en ese caso. Marca [REVISAR] únicamente cuando haya un error real: doctrina incorrecta,
-artículo mal citado, jurisprudencia inventada, ambigüedad genuina, o nivel inapropiado.
+en ese caso.
+
+IMPORTANTE sobre el alcance de la materia: SÍ marca [REVISAR] cuando la pregunta trata
+una materia que NO pertenece a este apunte en absoluto — por ejemplo, temas de teoría
+general del contrato (efecto relativo de los contratos, interpretación contractual y
+buena fe, formación del consentimiento, requisitos de existencia y validez del acto
+jurídico) NO son responsabilidad contractual/extracontractual/precontractual, aunque
+compartan vocabulario similar. En esos casos usa notes para indicar específicamente que
+la materia corresponde a otra área (ej. "Corresponde a teoría general del contrato, no a
+responsabilidad — efecto relativo del contrato").
+
+Marca [REVISAR] cuando haya: doctrina incorrecta, artículo mal citado, jurisprudencia
+inventada, ambigüedad genuina, nivel inapropiado, O materia fuera del alcance de este
+apunte según lo anterior.
 
 Responde ÚNICAMENTE un array JSON, un objeto por pregunta, en este formato exacto:
 [{"id": "<record id>", "status": "VERIFICADO"}, {"id": "<record id>", "status": "REVISAR", "notes": "<problema específico, breve>"}]
