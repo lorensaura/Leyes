@@ -6,6 +6,9 @@
 // (Justificación, detección de error, aplicación, discriminación MC,
 // Preguntas_Evaluación, Flashcards). Claude returns one verdict per question
 // in a single response, instead of re-sending the manual per question.
+//
+// UPDATED: Now skips questions that already have Revision_status set,
+// so re-runs don't waste API calls on already-validated questions.
 
 const path = require('path');
 const Anthropic = require('@anthropic-ai/sdk');
@@ -87,6 +90,16 @@ async function buildIdToEjeMap(baseId, temasMap, ejes) {
   }
   return map;
 }
+
+function hasStatus(question) {
+  // Returns true if the question already has a Revision_status value set.
+  const status = question.fields[STATUS_FIELD];
+  if (Array.isArray(status)) {
+    return status.length > 0; // multi-select with at least one value
+  }
+  return !!status; // single-select or plain value
+}
+
 async function fetchQuestionsForEje(baseId, tableName, matchNumero, temasMap, idToEjeMap) {
   let records = [];
   let offset;
@@ -266,7 +279,7 @@ Sin texto fuera del JSON.`;
 }
 
 async function main() {
-  console.log('🚀 Digesto — revisión por eje (Sonnet 5)\n');
+  console.log('🚀 Digesto — revisión por eje (Sonnet 5) — CON SKIP DE YA REVISADAS\n');
 
   const manualPath = path.join(process.env.HOME, 'Desktop/DERECHO LIBRE/Derecho Libre/app/pdf');
   const manualsByBase = await loadManualsByBase(manualPath);
@@ -307,6 +320,7 @@ async function main() {
     }
 
     let totalVerificado = 0, totalRevisar = 0;
+    let totalSkipped = 0; // Track how many we skipped
     const matchedIds = new Set(); // track which records got matched to *some* eje
 
     for (let ejeIndex = 0; ejeIndex < ejes.length; ejeIndex++) {
@@ -319,15 +333,27 @@ async function main() {
         const matches = await fetchQuestionsForEje(baseId, type, n => n === ejeNumber, temasMap, idToEjeMap);
         ejeQuestions.push(...matches);
       }
-      ejeQuestions.forEach(q => matchedIds.add(`${q._table}:${q.id}`));
-      if (ejeQuestions.length === 0) {
-        console.log(`     (sin preguntas asociadas a este eje — revisa el mapeo Tema↔eje si esperabas encontrar algo)`);
+
+      // FILTER: Skip questions that already have Revision_status set
+      const questionsToReview = ejeQuestions.filter(q => !hasStatus(q));
+      const skippedInThisEje = ejeQuestions.length - questionsToReview.length;
+      totalSkipped += skippedInThisEje;
+
+      questionsToReview.forEach(q => matchedIds.add(`${q._table}:${q.id}`));
+      ejeQuestions.forEach(q => matchedIds.add(`${q._table}:${q.id}`)); // Mark all as matched, even skipped
+
+      if (questionsToReview.length === 0) {
+        if (skippedInThisEje > 0) {
+          console.log(`     ${ejeQuestions.length} preguntas — todas ya revisadas, saltando`);
+        } else {
+          console.log(`     (sin preguntas asociadas a este eje — revisa el mapeo Tema↔eje si esperabas encontrar algo)`);
+        }
         continue;
       }
-      console.log(`     ${ejeQuestions.length} preguntas encontradas`);
+      console.log(`     ${questionsToReview.length} preguntas a revisar (${skippedInThisEje} ya revisadas, saltadas)`);
 
-      for (let i = 0; i < ejeQuestions.length; i += BATCH_SIZE) {
-        const batch = ejeQuestions.slice(i, i + BATCH_SIZE);
+      for (let i = 0; i < questionsToReview.length; i += BATCH_SIZE) {
+        const batch = questionsToReview.slice(i, i + BATCH_SIZE);
         console.log(`     Enviando lote ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} preguntas) a Claude...`);
         const results = await reviseBatch(eje, batch);
         console.log(`     Respuesta recibida, actualizando Airtable...`);
@@ -356,12 +382,20 @@ async function main() {
         const matches = await fetchQuestionsForEje(baseId, type, n => n > ejes.length, temasMap, idToEjeMap);
         extraQuestions.push(...matches);
       }
+
+      // FILTER: Skip already-reviewed in extra pass too
+      const extraToReview = extraQuestions.filter(q => !hasStatus(q));
+      const skippedExtra = extraQuestions.length - extraToReview.length;
+      totalSkipped += skippedExtra;
+
+      extraToReview.forEach(q => matchedIds.add(`${q._table}:${q.id}`));
       extraQuestions.forEach(q => matchedIds.add(`${q._table}:${q.id}`));
-      if (extraQuestions.length > 0) {
-        console.log(`     ${extraQuestions.length} preguntas encontradas (usando el manual completo como contexto)`);
+
+      if (extraToReview.length > 0) {
+        console.log(`     ${extraToReview.length} preguntas a revisar${skippedExtra > 0 ? ` (${skippedExtra} ya revisadas, saltadas)` : ''} (usando el manual completo como contexto)`);
         const fullManualChunk = { letter: '*', title: 'Manual completo', content: manualText };
-        for (let i = 0; i < extraQuestions.length; i += BATCH_SIZE) {
-          const batch = extraQuestions.slice(i, i + BATCH_SIZE);
+        for (let i = 0; i < extraToReview.length; i += BATCH_SIZE) {
+          const batch = extraToReview.slice(i, i + BATCH_SIZE);
           console.log(`     Enviando lote ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} preguntas) a Claude...`);
           const results = await reviseBatch(fullManualChunk, batch);
           console.log(`     Respuesta recibida, actualizando Airtable...`);
@@ -374,6 +408,8 @@ async function main() {
           }
           await new Promise(res => setTimeout(res, 300));
         }
+      } else if (skippedExtra > 0) {
+        console.log(`     ${extraQuestions.length} preguntas — todas ya revisadas, saltando`);
       }
     }
 
@@ -400,11 +436,17 @@ async function main() {
       const unmatched = records.filter(r => !matchedIds.has(`${type}:${r.id}`));
       leftovers.push(...unmatched.map(r => ({ ...r, _table: type })));
     }
-    if (leftovers.length > 0) {
-      console.log(`     ${leftovers.length} preguntas sin resolver — revisando con el manual completo como contexto`);
+
+    // FILTER: Skip already-reviewed in catch-all too
+    const leftoversToReview = leftovers.filter(q => !hasStatus(q));
+    const skippedCatchAll = leftovers.length - leftoversToReview.length;
+    totalSkipped += skippedCatchAll;
+
+    if (leftoversToReview.length > 0) {
+      console.log(`     ${leftoversToReview.length} preguntas sin resolver${skippedCatchAll > 0 ? ` (${skippedCatchAll} ya revisadas, saltadas)` : ''} — revisando con el manual completo como contexto`);
       const fullManualChunk = { letter: '*', title: 'Manual completo', content: manualText };
-      for (let i = 0; i < leftovers.length; i += BATCH_SIZE) {
-        const batch = leftovers.slice(i, i + BATCH_SIZE);
+      for (let i = 0; i < leftoversToReview.length; i += BATCH_SIZE) {
+        const batch = leftoversToReview.slice(i, i + BATCH_SIZE);
         console.log(`     Enviando lote ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} preguntas) a Claude...`);
         const results = await reviseBatch(fullManualChunk, batch);
         console.log(`     Respuesta recibida, actualizando Airtable...`);
@@ -420,9 +462,14 @@ async function main() {
       }
       console.log(`  📊 Resumen final ${baseName}: ✅ ${totalVerificado} verificadas · ⚠️ ${totalRevisar} a revisar`);
     } else {
-      console.log(`     Ninguna — cobertura completa.`);
+      if (skippedCatchAll > 0) {
+        console.log(`     Ninguna sin resolver (${skippedCatchAll} ya revisadas en el pase final).`);
+      } else {
+        console.log(`     Ninguna — cobertura completa.`);
+      }
     }
 
+    console.log(`\n  ⏭️  Total saltadas (ya revisadas): ${totalSkipped} preguntas`);
   }
 
   console.log('\n✨ Listo. Filtra Airtable por "Revisar" para ver qué necesita tu revisión manual.');
