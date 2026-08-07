@@ -214,6 +214,78 @@ El router (`api/interrogador.js`) tiene su propio `system` separado
 ttl de 1h -- se comparte entre todas las llamadas al router de cualquier
 alumna dentro de esa ventana, igual que hoy pasa con el bloque principal.
 
+## Memoria entre sesiones (2026-08-07)
+Hasta acá, cada interrogación empezaba de cero: si una alumna practicaba la
+misma materia dos días seguidos, la comisión no sabía qué le había
+preguntado antes ni cómo le había ido, así que fácilmente le repetía las
+mismas preguntas. Motivación: con 3 alumnas beta arrancando el 2026-08-08 y
+un tope de 2 interrogaciones al día, era importante que practicar seguido
+sirviera de verdad -- no dar siempre la misma vuelta.
+
+**Alcance: solo sesiones de una sola materia** (contractual, extracontractual
+o precontractual). Una sesión "todas las materias" mezcla las tres en la
+misma conversación, así que no hay una sola memoria a la que atribuirle esa
+transcripción -- queda fuera por ahora (`MEMORIA_MATERIAS` en
+`api/interrogador.js`).
+
+**Dos piezas, ver `scripts/supabase_schema_interrogador_memoria.sql`:**
+1. `interrogaciones_diarias` (la misma tabla del tope diario) suma
+   `materia` e `historial` (jsonb): la transcripción completa de esa
+   sesión. Se actualiza turno a turno, después de generar cada respuesta
+   (`guardarHistorialSesion`) -- así, si la alumna cierra la pestaña a
+   mitad de la interrogación, lo conversado hasta ese punto queda guardado
+   igual, sin depender de que la sesión termine con el cierre normal. Este
+   fue el motivo de diseñarlo así y no marcando el fin de sesión desde el
+   cliente (detectar el cierre por regex en el HTML no es confiable: el
+   propio router del fraccionamiento por turno, arriba, ya falló en
+   detectar `es_cierre` en un caso real sin anuncio explícito -- por eso
+   existe el respaldo mecánico por umbral de mensajes).
+2. `interrogador_memoria`, tabla nueva: una fila por (alumna, materia) con
+   un resumen compacto (no la transcripción completa) de los temas ya
+   cubiertos y cómo le fue en cada uno.
+
+**Cuándo se recalcula el resumen:** solo en el primer turno de una sesión
+nueva (`messages.length === 1`), nunca en cada turno -- es una llamada a
+Haiku 4.5, no vale la pena pagarla siempre. `actualizarMemoriaSiHaySesionesNuevas`
+busca sesiones de `interrogaciones_diarias` de la misma alumna y materia,
+distintas de la sesión actual, con `historial` ya guardado y que empezaron
+después de la última actualización de la memoria (o todas, si todavía no
+hay memoria) -- las funde con el resumen anterior en un resumen nuevo
+(`generarResumenActualizado`, Haiku 4.5, sin streaming, tope 700 tokens de
+salida) y lo guarda (upsert por `user_id, materia`). Así el tamaño del
+resumen no crece sin límite con la cantidad de sesiones: cada fold lo
+vuelve a comprimir a como máximo ~350 palabras.
+
+**Dónde va en el prompt: nunca en el prefijo cacheado.** El bloque de
+memoria (`construirBloqueMemoria`) se agrega DESPUÉS del bloque 3 (la
+muestra, que es el último con `cache_control`, ver arriba) y junto al
+bloque 4 (extractos del turno), ambos sin `cache_control`. Es información
+de UNA alumna puntual, así que meterla en el prefijo cacheado (compartido
+entre todas las alumnas que elijan la misma materia dentro de la ventana de
+1h) volvería ese prefijo distinto por alumna y rompería el ahorro que da
+compartirlo. El costo de mandarlo fresco en cada turno es bajo: 300-500
+tokens típicos.
+
+**El prompt del examinador** (`api/_interrogador-prompt.js`, sección
+"MEMORIA DE SESIONES ANTERIORES") instruye, de forma genérica y sin datos
+de ninguna alumna en particular (por eso esa instrucción sí puede ir en el
+bloque 1, que es parte del prefijo cacheado): no repetir preguntas ni casos
+ya hechos, priorizar temas donde el resumen marca que le fue mal, y seguir
+tocando (sin sobre-dedicarle tiempo) los temas que ya domina.
+
+**Verificado (2026-08-07) con fetch mockeado**, mismo patrón que la
+simulación del tope diario: sin memoria previa no se inyecta bloque ni se
+llama a Haiku; con memoria existente el bloque se inyecta después del
+bloque cacheado y sin `cache_control` propio; en un turno que no es el
+primero de la sesión nunca se intenta el fold; con una sesión previa sin
+foldear sí se llama a Haiku y el turno usa el resumen recién actualizado
+(no el viejo); en modo "todas las materias" ni siquiera se consulta la
+tabla. **Falta todavía:** una interrogación real (gasto real, con Laura) en
+dos sesiones seguidas de la misma materia para confirmar en vivo que la
+comisión de verdad varía las preguntas y prioriza los temas débiles -- la
+simulación solo confirma que los datos correctos llegan al prompt, no que
+el modelo los use bien.
+
 ## Convención de marcado (para el chat, no para markdown estándar)
 `app/interrogador.html` traduce esta convención a HTML real en pantalla:
 - `~~tachado~~` → lo que el alumno dijo MAL (rojo).

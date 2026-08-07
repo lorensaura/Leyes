@@ -583,8 +583,11 @@ async function verificarUsuario(accessToken) {
 // leer sus propias filas.
 // Retorna { ok: true } si hay cupo (y ya deja la sesión registrada), o
 // { ok: false, motivo: 'total' | 'examen' } si no.
-async function chequearYRegistrarSesion(userId, sessionId, modo) {
-  const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
+function fechaSantiagoHoy() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
+}
+
+async function chequearYRegistrarSesion(userId, sessionId, modo, hoy) {
   const headers = {
     apikey: process.env.SUPABASE_SECRET_KEY,
     Authorization: `Bearer ${process.env.SUPABASE_SECRET_KEY}`,
@@ -664,6 +667,181 @@ async function obtenerMuestraPreguntas(sessionId, materiaSesion) {
   return bloques.join('\n\n\n');
 }
 
+// Memoria entre sesiones (ver docs/interrogador.md, "Memoria entre
+// sesiones", y scripts/supabase_schema_interrogador_memoria.sql).
+// Solo para sesiones de una sola materia -- una sesión "todas" mezcla las
+// tres, así que no se puede atribuir limpiamente a una memoria puntual.
+const MEMORIA_MATERIAS = new Set(['contractual', 'extracontractual', 'precontractual']);
+
+// Guarda la transcripción completa de la sesión (llamada tras generar cada
+// respuesta, ver el handler). Turno a turno, no solo al final -- así, si la
+// alumna cierra la pestaña a mitad de la interrogación, lo conversado hasta
+// ese punto queda guardado igual. Nunca lanza: si falla, la interrogación
+// sigue, solo no queda ese turno guardado para la memoria futura.
+async function guardarHistorialSesion(userId, sessionId, fecha, materiaSesion, mensajesCompletos) {
+  const headers = {
+    apikey: process.env.SUPABASE_SECRET_KEY,
+    Authorization: `Bearer ${process.env.SUPABASE_SECRET_KEY}`,
+    'Content-Type': 'application/json',
+  };
+  try {
+    const resp = await fetch(
+      `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&session_id=eq.${sessionId}&fecha=eq.${fecha}`,
+      {
+        method: 'PATCH',
+        headers: { ...headers, Prefer: 'return=minimal' },
+        body: JSON.stringify({ materia: materiaSesion, historial: mensajesCompletos }),
+      }
+    );
+    if (!resp.ok) {
+      console.error('No se pudo guardar el historial de la sesión (memoria del Interrogador):', resp.status, await resp.text());
+    }
+  } catch (e) {
+    console.error('Error guardando el historial de la sesión (memoria del Interrogador):', e);
+  }
+}
+
+async function obtenerMemoria(userId, materiaSesion) {
+  if (!MEMORIA_MATERIAS.has(materiaSesion)) return null;
+  const headers = {
+    apikey: process.env.SUPABASE_SECRET_KEY,
+    Authorization: `Bearer ${process.env.SUPABASE_SECRET_KEY}`,
+  };
+  const resp = await fetch(
+    `${SUPABASE_URL}/rest/v1/interrogador_memoria?user_id=eq.${userId}&materia=eq.${materiaSesion}&select=resumen,actualizado_en`,
+    { headers }
+  );
+  if (!resp.ok) return null;
+  const filas = await resp.json();
+  return filas[0] || null;
+}
+
+function formatearHistorialParaResumen(mensajes) {
+  if (!Array.isArray(mensajes)) return '';
+  return mensajes.map((m) => `${m.role === 'user' ? 'ALUMNA' : 'COMISIÓN'}: ${m.content}`).join('\n');
+}
+
+const PROMPT_RESUMEN_MEMORIA = `Mantenés un resumen compacto (máximo 350 palabras) del progreso de una
+alumna de Derecho chilena en el Interrogador IA, para una materia puntual de
+Responsabilidad civil. Te dan el resumen anterior (puede venir vacío, si es
+la primera vez) y una o más transcripciones nuevas de sesiones de
+interrogación (alumna y comisión examinadora).
+
+Devolvé el resumen ACTUALIZADO, fusionando lo anterior con lo nuevo:
+- Qué temas y subtemas ya se interrogaron (no hace falta el detalle de cada
+  pregunta puntual, alcanza con el tema o instituto jurídico).
+- Cómo le fue en cada uno: bien, regular o débil, con el motivo breve si
+  corresponde (ej. "no distingue caso fortuito de ausencia de culpa").
+- Si un tema aparece en varias sesiones con resultados distintos, quedate
+  con la evaluación más reciente.
+
+Reglas: español de Chile, sin guiones largos, texto plano organizado en
+párrafos o líneas simples, nada de relleno (si no hay nada que decir de un
+tema, no lo menciones). Respondé SOLO con el resumen actualizado, sin
+introducción ni despedida.`;
+
+async function generarResumenActualizado(materiaSesion, resumenAnterior, textoSesiones) {
+  const entrada =
+    (resumenAnterior
+      ? `RESUMEN ANTERIOR (materia: ${materiaSesion}):\n${resumenAnterior}\n\n`
+      : 'RESUMEN ANTERIOR: (ninguno, primera vez que se resume esta materia)\n\n') +
+    `TRANSCRIPCIONES NUEVAS A INCORPORAR:\n${textoSesiones}`;
+
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': process.env.ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: ROUTER_MODELO,
+      max_tokens: 700,
+      thinking: { type: 'disabled' },
+      system: PROMPT_RESUMEN_MEMORIA,
+      messages: [{ role: 'user', content: entrada }],
+    }),
+  });
+  if (!resp.ok) {
+    throw new Error(`El resumen de memoria respondió ${resp.status}: ${await resp.text()}`);
+  }
+  const data = await resp.json();
+  const bloque = (data.content || []).find((b) => b.type === 'text');
+  if (!bloque || !bloque.text) {
+    throw new Error('El resumen de memoria no devolvió texto');
+  }
+  return bloque.text.trim();
+}
+
+// Solo se llama al primer turno de una sesión nueva (messages.length === 1
+// en el handler) -- el fold es una llamada a Haiku, no vale la pena pagarla
+// en cada turno. Busca sesiones de `interrogaciones_diarias` de la misma
+// alumna y materia, distintas de la sesión actual, que hayan empezado
+// después de la última actualización de la memoria (o todas, si todavía no
+// hay memoria) y con `historial` ya guardado -- y las funde en el resumen.
+async function actualizarMemoriaSiHaySesionesNuevas(userId, materiaSesion, sessionId, memoriaActual) {
+  const headers = {
+    apikey: process.env.SUPABASE_SECRET_KEY,
+    Authorization: `Bearer ${process.env.SUPABASE_SECRET_KEY}`,
+    'Content-Type': 'application/json',
+  };
+  const desde = memoriaActual?.actualizado_en || '1970-01-01T00:00:00Z';
+  const params = new URLSearchParams({
+    user_id: `eq.${userId}`,
+    materia: `eq.${materiaSesion}`,
+    session_id: `neq.${sessionId}`,
+    historial: 'not.is.null',
+    creado_en: `gt.${desde}`,
+    select: 'historial,creado_en',
+    order: 'creado_en.asc',
+    limit: '5',
+  });
+
+  let sesiones;
+  try {
+    const resp = await fetch(`${SUPABASE_URL}/rest/v1/interrogaciones_diarias?${params}`, { headers });
+    if (!resp.ok) return memoriaActual;
+    sesiones = await resp.json();
+  } catch (e) {
+    console.error('No se pudo buscar sesiones nuevas para la memoria del Interrogador:', e);
+    return memoriaActual;
+  }
+  if (!sesiones || sesiones.length === 0) return memoriaActual;
+
+  const textoSesiones = sesiones
+    .map((s, i) => `--- Sesión ${i + 1} (${s.creado_en}) ---\n${formatearHistorialParaResumen(s.historial)}`)
+    .join('\n\n');
+
+  let resumenNuevo;
+  try {
+    resumenNuevo = await generarResumenActualizado(materiaSesion, memoriaActual?.resumen || '', textoSesiones);
+  } catch (e) {
+    console.error('No se pudo generar el resumen de memoria del Interrogador:', e);
+    return memoriaActual;
+  }
+
+  const actualizadoEn = new Date().toISOString();
+  try {
+    const resp = await fetch(`${SUPABASE_URL}/rest/v1/interrogador_memoria?on_conflict=user_id,materia`, {
+      method: 'POST',
+      headers: { ...headers, Prefer: 'resolution=merge-duplicates,return=minimal' },
+      body: JSON.stringify({ user_id: userId, materia: materiaSesion, resumen: resumenNuevo, actualizado_en: actualizadoEn }),
+    });
+    if (!resp.ok) {
+      console.error('No se pudo guardar el resumen actualizado de memoria del Interrogador:', resp.status, await resp.text());
+    }
+  } catch (e) {
+    console.error('Error guardando el resumen actualizado de memoria del Interrogador:', e);
+  }
+
+  return { resumen: resumenNuevo, actualizado_en: actualizadoEn };
+}
+
+function construirBloqueMemoria(resumen) {
+  if (!resumen) return null;
+  return `===== MEMORIA DE SESIONES ANTERIORES (esta alumna, esta materia) =====\n${resumen}`;
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Método no permitido' });
@@ -722,9 +900,11 @@ module.exports = async (req, res) => {
   // default que usa CONFIG_MODO más abajo.
   const modoSesion = MODOS_VALIDOS.has(modo) ? modo : 'examen';
 
+  const hoy = fechaSantiagoHoy();
+
   let resultadoCupo;
   try {
-    resultadoCupo = await chequearYRegistrarSesion(usuario.id, sessionId, modoSesion);
+    resultadoCupo = await chequearYRegistrarSesion(usuario.id, sessionId, modoSesion, hoy);
   } catch (e) {
     console.error('Error chequeando el tope diario:', e);
     res.status(502).json({ error: 'No se pudo verificar tu cupo diario en este momento' });
@@ -744,6 +924,22 @@ module.exports = async (req, res) => {
     res.status(502).json({ error: 'No se pudo preparar la interrogación en este momento' });
     return;
   }
+
+  // Memoria entre sesiones (ver docs/interrogador.md): nunca bloquea la
+  // interrogación si falla, simplemente no hay bloque de memoria ese turno.
+  // El fold (llamada a Haiku que actualiza el resumen) solo se intenta en
+  // el primer turno de la sesión -- no vale la pena pagarlo en cada uno.
+  let memoria = null;
+  try {
+    memoria = await obtenerMemoria(usuario.id, materiaSesion);
+    if (messages.length === 1) {
+      memoria = await actualizarMemoriaSiHaySesionesNuevas(usuario.id, materiaSesion, sessionId, memoria);
+    }
+  } catch (e) {
+    console.error('Error con la memoria del Interrogador (se sigue sin ella):', e);
+    memoria = null;
+  }
+  const bloqueMemoria = construirBloqueMemoria(memoria?.resumen);
 
   // Fraccionamiento por turno: nunca lanza, ver elegirContenidoDelTurno.
   const contenidoDelTurno = await elegirContenidoDelTurno(messages, materiaSesion, duracionSesion);
@@ -778,6 +974,12 @@ module.exports = async (req, res) => {
           // miles de tokens, no los ~279K de los 3 manuales enteros) pagarlo
           // fresco en cada turno sale igual o más barato que antes.
           { type: 'text', text: muestraPreguntas, cache_control: { type: 'ephemeral', ttl: '1h' } },
+          // Memoria y extractos del turno van SIN cache_control, a
+          // propósito: son datos de ESTA alumna puntual (la memoria) o de
+          // ESTE turno (los extractos), así que no pueden ir en el prefijo
+          // cacheado de arriba, que se comparte entre todas las alumnas que
+          // elijan la misma materia dentro de la ventana de 1h.
+          ...(bloqueMemoria ? [{ type: 'text', text: bloqueMemoria }] : []),
           { type: 'text', text: contenidoDelTurno },
         ],
         messages,
@@ -808,6 +1010,11 @@ module.exports = async (req, res) => {
   const reader = anthropicRes.body.getReader();
   const decoder = new TextDecoder();
   let buffer = '';
+  // Se acumula para guardar el turno completo al final (ver
+  // guardarHistorialSesion) -- así la memoria entre sesiones también
+  // incluye lo que respondió la comisión, no solo lo que escribió la
+  // alumna.
+  let respuestaCompleta = '';
 
   try {
     while (true) {
@@ -831,6 +1038,7 @@ module.exports = async (req, res) => {
         }
 
         if (evento.type === 'content_block_delta' && evento.delta?.type === 'text_delta') {
+          respuestaCompleta += evento.delta.text;
           res.write(JSON.stringify({ type: 'delta', text: evento.delta.text }) + '\n');
         } else if (evento.type === 'error') {
           res.write(JSON.stringify({ type: 'error', message: 'La IA se interrumpió. Intenta de nuevo.' }) + '\n');
@@ -842,6 +1050,17 @@ module.exports = async (req, res) => {
   } catch (e) {
     console.error('Error leyendo el stream:', e);
     res.write(JSON.stringify({ type: 'error', message: 'Se cortó la conexión con la IA.' }) + '\n');
+  }
+
+  // Guarda el turno (mensajes hasta ahora + la respuesta que se acaba de
+  // generar) para la memoria entre sesiones. Va después de escribir la
+  // respuesta al navegador -- la alumna ya vio su respuesta aunque esto
+  // demore o falle.
+  if (respuestaCompleta) {
+    await guardarHistorialSesion(usuario.id, sessionId, hoy, materiaSesion, [
+      ...messages,
+      { role: 'assistant', content: respuestaCompleta },
+    ]);
   }
 
   res.end();
