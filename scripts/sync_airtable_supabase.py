@@ -134,6 +134,25 @@ def avisar_si_faltaban(tabla, antes, total_airtable):
               f"Airtable publicado suma {total_airtable} ({total_airtable - antes} sin sincronizar hasta ahora)")
 
 
+# Campo Revision_status (Flashcards, Preguntas_Evaluacion, y las 4 tablas de
+# Evaluación en las bases de materia): mientras Laura no lo marque "Verificado",
+# el item no sube a Supabase aunque este "publicado", para que las alumnas beta
+# no vean contenido que todavia no paso su revision (pedido 2026-08-07). No
+# alcanza con saltarlo al subir -- si un item que YA estaba en Supabase se
+# marca "Revisar" despues (o se despublica), el script tiene que sacarlo de
+# Supabase activamente (ver supabase_delete), porque el upsert nunca borra
+# solo por dejar de mandar una fila.
+NECESITA_REVISION = {"Revisar", "Verificar"}
+
+
+def necesita_revision(fields):
+    return fields.get("Revision_status") in NECESITA_REVISION
+
+
+def necesita_borrado(fields):
+    return not fields.get("publicado") or necesita_revision(fields)
+
+
 def supabase_upsert(secret_key, tabla, filas, on_conflict="airtable_id", lote=200):
     total = 0
     for i in range(0, len(filas), lote):
@@ -159,6 +178,25 @@ def supabase_upsert(secret_key, tabla, filas, on_conflict="airtable_id", lote=20
     return total
 
 
+def supabase_delete(secret_key, tabla, airtable_ids, lote=100):
+    total = 0
+    for i in range(0, len(airtable_ids), lote):
+        chunk = airtable_ids[i:i + lote]
+        if not chunk:
+            continue
+        filtro = ",".join(chunk)
+        url = f"{SUPABASE_URL}/rest/v1/{tabla}?airtable_id=in.({filtro})"
+        req = urllib.request.Request(url, method="DELETE", headers={
+            "apikey": secret_key,
+            "Authorization": f"Bearer {secret_key}",
+            "Prefer": "return=representation",
+        })
+        with urllib.request.urlopen(req) as resp:
+            borrados = json.load(resp)
+        total += len(borrados)
+    return total
+
+
 def _leer_temas(airtable_token, base):
     temas = airtable_fetch_all(airtable_token, base, "Temas")
     info_tema = {}
@@ -181,29 +219,31 @@ def _leer_flashcards_de_base(airtable_token, base, materia_default):
     info_tema = _leer_temas(airtable_token, base)
 
     flashcards = airtable_fetch_all(airtable_token, base, "Flashcards")
-    filas = []
+    candidatos = []
     for f in flashcards:
         fields = f["fields"]
-        if not fields.get("publicado"):
-            continue
         tema_ids = fields.get("tema", [])
         info = info_tema.get(tema_ids[0]) if tema_ids else None
-        filas.append({
+        candidatos.append({
             "airtable_id": f["id"],
-            "materia": (info or {}).get("materia") or materia_default,
-            "tema": (info or {}).get("nombre"),
-            "pregunta": fields.get("pregunta", ""),
-            "respuesta": fields.get("respuesta", ""),
-            "dificultad": fields.get("dificultad", "basica"),
-            "publicado": True,
+            "fields": fields,
+            "fila": {
+                "airtable_id": f["id"],
+                "materia": (info or {}).get("materia") or materia_default,
+                "tema": (info or {}).get("nombre"),
+                "pregunta": fields.get("pregunta", ""),
+                "respuesta": fields.get("respuesta", ""),
+                "dificultad": fields.get("dificultad", "basica"),
+                "publicado": True,
+            },
         })
-    return filas
+    return candidatos
 
 
 def sync_flashcards(airtable_token, supabase_key):
     # Base "Digesto" original (Flashcards de Contractual cargadas ahí antes
     # de que existiera el patrón de una base por materia).
-    filas = _leer_flashcards_de_base(airtable_token, FLASHCARDS_BASE, "Responsabilidad contractual")
+    candidatos = _leer_flashcards_de_base(airtable_token, FLASHCARDS_BASE, "Responsabilidad contractual")
 
     # Bases por materia (Digesto Contractual/Extracontractual/Precontractual):
     # cada una tiene su propia tabla Flashcards con el mismo esquema
@@ -214,22 +254,35 @@ def sync_flashcards(airtable_token, supabase_key):
     for materia, base in PREGUNTAS_BASES.items():
         if base == FLASHCARDS_BASE:
             continue
-        filas.extend(_leer_flashcards_de_base(airtable_token, base, materia))
+        candidatos.extend(_leer_flashcards_de_base(airtable_token, base, materia))
 
     # La tabla Flashcards de "Digesto Contractual" comparte el mismo id
-    # interno de tabla de Airtable que la Flashcards de la base "Digesto"
-    # original (225 registros, verificado 2026-07-29): no son dos copias,
-    # es la misma tabla vista desde dos bases. El bucle de arriba la lee
-    # dos veces, generando filas repetidas con el mismo airtable_id. Se
-    # deduplican aca (quedandonos con la ultima lectura, son identicas)
-    # para que el conteo de "sincronizadas" y el aviso de reconciliacion
-    # reflejen lo que realmente queda en Supabase, no una suma inflada.
-    filas_por_id = {f["airtable_id"]: f for f in filas}
-    filas = list(filas_por_id.values())
+    # interno de registro de Airtable que la Flashcards de la base "Digesto"
+    # original (225 registros, verificado 2026-07-29) -- pero ojo, NO
+    # comparten todos los campos: `publicado` y `Revision_status` resultaron
+    # ser independientes entre las dos copias (verificado 2026-08-07, caso
+    # real de las 5 flashcards de "efecto relativo del contrato": desmarcar
+    # `publicado` en una base no lo desmarcaba en la otra). El bucle de
+    # arriba lee el registro dos veces con valores de campo potencialmente
+    # distintos; acá se deduplica por id quedándonos con la última lectura
+    # (la de la base de materia, que es la que Laura suele editar), y desde
+    # ese único candidato por id se decide si sube o se borra -- así nunca
+    # queda un id en las dos listas ni se decide con datos mezclados de las
+    # dos bases.
+    candidatos_por_id = {c["airtable_id"]: c for c in candidatos}
+
+    filas = []
+    malos_ids = []
+    for c in candidatos_por_id.values():
+        if necesita_borrado(c["fields"]):
+            malos_ids.append(c["airtable_id"])
+        else:
+            filas.append(c["fila"])
 
     antes = supabase_count(supabase_key, "flashcards")
     n = supabase_upsert(supabase_key, "flashcards", filas)
-    print(f"Flashcards: {n} sincronizadas")
+    borradas = supabase_delete(supabase_key, "flashcards", malos_ids)
+    print(f"Flashcards: {n} sincronizadas, {borradas} borradas (no publicado / Revisar)")
     avisar_si_faltaban("flashcards", antes, len(filas))
 
 
@@ -268,9 +321,11 @@ def sync_preguntas(airtable_token, supabase_key):
         preguntas = airtable_fetch_all(airtable_token, base, "Preguntas_Evaluacion")
 
         filas = []
+        malos_ids = []
         for p in preguntas:
             fields = p["fields"]
-            if not fields.get("publicado"):
+            if necesita_borrado(fields):
+                malos_ids.append(p["id"])
                 continue
             elementos_texto = parsear_elementos_clave(fields.get("elementos_clave_texto", ""))
             opciones_pregunta = parsear_opciones(fields.get("opciones_texto", ""))
@@ -292,7 +347,8 @@ def sync_preguntas(airtable_token, supabase_key):
             })
 
         n = supabase_upsert(supabase_key, "preguntas_evaluacion", filas)
-        print(f"{materia}: {n} preguntas sincronizadas")
+        borradas = supabase_delete(supabase_key, "preguntas_evaluacion", malos_ids)
+        print(f"{materia}: {n} preguntas sincronizadas, {borradas} borradas (no publicado / Revisar)")
         total += n
         total_airtable += len(filas)
 
@@ -374,10 +430,12 @@ def sync_evaluacion(airtable_token, supabase_key):
     for materia, base in PREGUNTAS_BASES.items():
         info_tema = _leer_temas(airtable_token, base)
         filas = []
+        malos_ids = []
         for tabla, tipo in TABLAS_EVALUACION.items():
             registros = airtable_fetch_all(airtable_token, base, tabla)
             for r in registros:
-                if not r["fields"].get("publicado"):
+                if necesita_borrado(r["fields"]):
+                    malos_ids.append(r["id"])
                     continue
                 tema_nombre = _resolver_tema(r["fields"], info_tema)
                 if tipo == "discriminacion_mc":
@@ -386,7 +444,8 @@ def sync_evaluacion(airtable_token, supabase_key):
                     filas.append(_fila_evaluacion_texto(r, materia, tipo, tema_nombre))
 
         n = supabase_upsert(supabase_key, "evaluacion_practica", filas)
-        print(f"{materia}: {n} items de Evaluación sincronizados")
+        borradas = supabase_delete(supabase_key, "evaluacion_practica", malos_ids)
+        print(f"{materia}: {n} items de Evaluación sincronizados, {borradas} borrados (no publicado / Revisar)")
         total += n
         total_airtable += len(filas)
 
