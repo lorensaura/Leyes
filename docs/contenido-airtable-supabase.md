@@ -134,17 +134,37 @@ contó a mano el 2026-07-29) — el mismo tipo de pérdida silenciosa que el
 bug de arriba, pero en una base distinta. Con este aviso, correr el script
 avisa solo si algo se está quedando afuera, sin tener que contar a mano.
 
-**Filtro por `Revision_status` (agregado 2026-08-07):** además de `publicado`,
-el script ahora exige que `Revision_status` sea `"Verificado"` (o esté vacío,
-en materias donde Laura todavía no empezó a usar esa columna) para subir un
-item a Supabase. Si dice `"Revisar"` (o `"Verificar"`, variante que existe
-como opción en la tabla `Aplicación` de Extracontractual), el item se salta
-aunque esté `publicado`. Se agregó cuando Laura pidió sacar de Supabase 19
-items de Contractual que había marcado `Revisar` en su revisión en curso,
-antes de que las alumnas beta los vieran. Ver `necesita_revision()` en
-`scripts/sync_airtable_supabase.py`. Solo Contractual usa esta columna por
-ahora; en Extracontractual y Precontractual está vacía en todos los
-registros porque la revisión ahí todavía no empieza.
+**Filtro por `Revision_status`, con borrado activo (agregado 2026-08-07):**
+además de `publicado`, el script ahora exige que `Revision_status` sea
+`"Verificado"` (o esté vacío, en materias donde Laura todavía no empezó a
+usar esa columna) para que un item viva en Supabase. Si dice `"Revisar"` (o
+`"Verificar"`, variante que existe como opción en la tabla `Aplicación` de
+Extracontractual) o `publicado` está apagado, el item **no solo se salta al
+subir: si ya estaba en Supabase de una sincronización anterior, el script lo
+borra de ahí en esta misma corrida** (`supabase_delete()`, filtrado por
+`airtable_id`). Antes del 2026-08-07 el script solo hacía `upsert` y nunca
+borraba nada — desmarcar `publicado` o pasar algo a `Revisar` **no** lo
+sacaba de Supabase por sí solo, había que borrarlo a mano; con este cambio
+ya no hace falta, correr el script alcanza. Ver `necesita_borrado()` y
+`necesita_revision()` en `scripts/sync_airtable_supabase.py`.
+
+Se agregó cuando Laura pidió sacar de Supabase 19 items de Contractual que
+había marcado `Revisar` en su revisión en curso, antes de que las alumnas
+beta los vieran, y luego notó que el primer intento (solo "saltar al subir")
+no alcanzaba: si algo ya publicado se marcaba `Revisar` después, se quedaba
+viviendo en Supabase igual. Solo Contractual usa esta columna por ahora; en
+Extracontractual y Precontractual está vacía en todos los registros porque
+la revisión ahí todavía no empieza.
+
+Ojo con un detalle real que este cambio expuso: la tabla `Flashcards` de
+"Digesto Contractual" comparte el mismo `airtable_id` de registro que la de
+la base "Digesto" original (son records sincronizados de Airtable), **pero
+`publicado`/`Revision_status` resultaron ser campos independientes entre
+las dos copias** (verificado con un caso real: desmarcar `publicado` en una
+base no lo desmarcaba en la otra). `sync_flashcards()` lee las dos bases y
+se queda con el último valor leído por registro (la base de materia, que es
+la que Laura suele editar) antes de decidir si algo sube o se borra, para no
+mezclar datos de las dos vistas del mismo registro.
 
 ## Estado del linkeo a `Temas` (agregado 2026-07-29)
 
