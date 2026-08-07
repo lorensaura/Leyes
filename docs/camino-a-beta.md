@@ -169,19 +169,19 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   ver "Hecho" arriba): **falta que Laura agregue los 3 correos ahí desde
   el Table Editor.** Sin eso, aunque se registren, quedan rechazadas.
 - **Tope diario del Interrogador cambiado a "2 interrogaciones al día en
-  total, máximo 1 examen" (pedido explícito de Laura, 2026-08-07).**
-  Antes el tope de 2 (`DIARIO_LIMITE` en `api/interrogador.js`) no
-  distinguía modo, así que una alumna podía gastar las 2 en modo examen
-  (Opus, el caro) el mismo día. Implementado y verificado (simulación de
-  los 9 casos posibles con `fetch` mockeado, sin tocar Supabase real) en
-  la rama `worktree-limite-examen-practica`, commit `cd53bfa`. **No
-  mergeado a `main` todavía** (quedó pendiente la confirmación de Laura).
-  Dos pasos antes de que sirva en producción: (1) correr
-  `scripts/supabase_schema_interrogaciones_diarias_modo.sql` en el SQL
-  Editor de Supabase (agrega la columna `modo` que hoy no existe en
-  `interrogaciones_diarias`) — **si el código se despliega sin correr
-  este SQL antes, el Interrogador se rompe**; (2) mergear la rama a
-  `main` y pushear (Laura, vía GitHub Desktop).
+  total, máximo 1 examen" (pedido explícito de Laura, 2026-08-07). Cerrado
+  del todo (2026-08-07).** Antes el tope de 2 (`DIARIO_LIMITE` en
+  `api/interrogador.js`) no distinguía modo, así que una alumna podía
+  gastar las 2 en modo examen (Opus, el caro) el mismo día. Implementado y
+  verificado (simulación de los 9 casos posibles con `fetch` mockeado, sin
+  tocar Supabase real) en la rama `worktree-limite-examen-practica`,
+  commit `cd53bfa`. **Ya mergeado a `main` y pusheado** (`7b32d7b`,
+  confirmado en `origin/main`). El SQL
+  `scripts/supabase_schema_interrogaciones_diarias_modo.sql` (agrega la
+  columna `modo` a `interrogaciones_diarias`) **ya se corrió** (Laura,
+  2026-08-07) y se confirmó en vivo contra la API pública de Supabase
+  (`select=modo` resuelve 200, no 400 de columna inexistente). El
+  Interrogador queda operativo con el tope nuevo, nada pendiente acá.
 - **Reconectar el link "Progreso" con el indicador de progreso real del
   dashboard** (pedido de Laura 2026-08-06, "ojalá antes del beta"). Se
   perdió al unificar el menú lateral en `app/nav.js`/`app/nav.css`

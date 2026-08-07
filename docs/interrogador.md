@@ -330,19 +330,31 @@ Variables de entorno necesarias en Production + Preview:
   (agregada 2026-07-13).
 
 ## Estado actual
+- **2026-08-07:** primera prueba real de la "REGLA DE ORO" (ver entrada
+  2026-08-06 abajo): Laura corrió una interrogación de modo EXAMEN, 5
+  minutos, y la IA NO se respondió sola en ningún turno. **No concluyente
+  todavía**, por dos motivos: (1) la duración de 5 minutos no incluye
+  caso práctico aparte (`DURACION_CONFIG[5]` en
+  `api/_interrogador-prompt.js`), que es justo el punto que se sospechaba
+  de mayor riesgo; (2) modo examen (Opus 4.8 + thinking) y modo práctica
+  (Sonnet 5, sin thinking) son configuraciones de modelo distintas
+  (`CONFIG_MODO` en `api/interrogador.js`) -- que no falle en examen no
+  dice nada de práctica. **Pendiente:** repetir con modo práctica, 15 o 30
+  minutos (para que entre el caso práctico). Con el tope diario nuevo (ver
+  `docs/camino-a-beta.md`), la siguiente interrogación de Laura en el día
+  ya tiene que ser modo práctica de todos modos (agotó su cupo de examen
+  del día).
 - **2026-08-06:** agregado el selector de duración (ver "Selector de
   duración" arriba). Además, Laura reportó probando en vivo que la IA se
   respondía sola su propia pregunta (no esperaba la respuesta de la
   alumna) en aproximadamente la mitad de los turnos -- reforzada la regla
   en `api/_interrogador-prompt.js` (nueva regla 0, "REGLA DE ORO", al
   inicio de REGLAS DE INTERROGACIÓN) con lenguaje más contundente y un
-  ejemplo explícito de la falla. **No verificado todavía con una
-  interrogación real** si esto bajó la tasa de fallo -- pendiente que
-  Laura lo note al seguir probando; si sigue pasando seguido, el problema
-  puede no ser solo de instrucción y conviene revisar si conviene acotar
-  con `stop_sequences` o revisar si es un patrón específico del caso
-  práctico (guiar la resolución tiende a que el modelo la resuelva él
-  mismo).
+  ejemplo explícito de la falla. Si tras la prueba completa (ver entrada
+  2026-08-07 arriba) sigue pasando seguido, el problema puede no ser solo
+  de instrucción y conviene revisar si conviene acotar con
+  `stop_sequences` o revisar si es un patrón específico del caso práctico
+  (guiar la resolución tiende a que el modelo la resuelva él mismo).
 - **2026-08-05 (tarde):** agregado el selector de materia (ver "Selector de
   materia" arriba) y revisado el respaldo del cierre tras feedback de
   Laura: el manual completo no se elimina (se necesita para el cierre de
