@@ -57,7 +57,37 @@ async function fetchTemasMap(baseId) {
   return map;
 }
 
-async function fetchQuestionsForEje(baseId, tableName, ejeNumber, temasMap) {
+async function buildIdToEjeMap(baseId, temasMap, ejes) {
+  // Preguntas_Evaluacion's own 'tema' link is unpopulated, but its 'id' field
+  // reuses the exact same IDs as the other 5 tables — so borrow their
+  // already-resolved eje via that shared id instead of guessing.
+  const map = {};
+  const sourceTypes = QUESTION_TYPES.filter(t => t !== 'Preguntas_Evaluacion');
+  for (const type of sourceTypes) {
+    let records = [];
+    let offset;
+    do {
+      const url = new URL(`https://api.airtable.com/v0/${baseId}/${encodeURIComponent(type)}`);
+      url.searchParams.set('pageSize', '100');
+      if (offset) url.searchParams.set('offset', offset);
+      const res = await fetch(url, { headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` } });
+      if (!res.ok) continue;
+      const data = await res.json();
+      records.push(...data.records);
+      offset = data.offset;
+    } while (offset);
+
+    for (const r of records) {
+      const linked = r.fields.tema;
+      const idField = r.fields.id;
+      if (!idField || !Array.isArray(linked) || linked.length === 0) continue;
+      const numero = temasMap[linked[0]];
+      if (numero !== undefined) map[idField] = Number(numero);
+    }
+  }
+  return map;
+}
+async function fetchQuestionsForEje(baseId, tableName, matchNumero, temasMap, idToEjeMap) {
   let records = [];
   let offset;
   do {
@@ -74,19 +104,24 @@ async function fetchQuestionsForEje(baseId, tableName, ejeNumber, temasMap) {
     offset = data.offset;
   } while (offset);
 
-  return records.filter(r => {
-    // Preferred path: resolve the linked 'tema' record through Temas.numero.
+  function resolveNumero(r) {
     const linked = r.fields.tema;
     if (Array.isArray(linked) && linked.length > 0) {
       const numero = temasMap[linked[0]];
-      if (numero !== undefined) return Number(numero) === ejeNumber;
+      if (numero !== undefined) return Number(numero);
     }
-    // Fallback: some tables (e.g. Preguntas_Evaluacion) may use a plain
-    // tema_texto field with a leading number instead of a link.
     const temaTexto = (r.fields.tema_texto || '').toString().trim();
-    if (temaTexto) return new RegExp(`^${ejeNumber}\\.`).test(temaTexto);
-    return false;
-  }).map(r => ({ ...r, _table: tableName }));
+    const m = temaTexto.match(/^(\d+)\./);
+    if (m) return Number(m[1]);
+    if (idToEjeMap && r.fields.id && idToEjeMap[r.fields.id] !== undefined) {
+      return idToEjeMap[r.fields.id];
+    }
+    return null;
+  }
+
+  return records
+    .map(r => ({ ...r, _table: tableName, _numero: resolveNumero(r) }))
+    .filter(r => r._numero !== null && matchNumero(r._numero));
 }
 
 const tableFieldTypes = {}; // tableName -> 'multipleSelects' | 'singleSelect' | other
@@ -181,6 +216,13 @@ ${questionsBlock}
 Para cada pregunta, verifica: doctrina correcta según el manual, artículos bien citados,
 sin jurisprudencia inventada, enunciado claro, nivel grado, consistencia interna.
 
+IMPORTANTE sobre el eje: algunas preguntas pueden estar etiquetadas con un eje que no
+corresponde a su contenido real (un problema de clasificación en Airtable, no de fondo).
+NO marques [REVISAR] solo porque el contenido no coincide con el Eje ${ejeChunk.letter}.
+Evalúa el contenido de la pregunta con tu propio conocimiento del derecho civil chileno
+en ese caso. Marca [REVISAR] únicamente cuando haya un error real: doctrina incorrecta,
+artículo mal citado, jurisprudencia inventada, ambigüedad genuina, o nivel inapropiado.
+
 Responde ÚNICAMENTE un array JSON, un objeto por pregunta, en este formato exacto:
 [{"id": "<record id>", "status": "VERIFICADO"}, {"id": "<record id>", "status": "REVISAR", "notes": "<problema específico, breve>"}]
 
@@ -238,6 +280,9 @@ async function main() {
     const temasMap = await fetchTemasMap(baseId);
     console.log(`  📋 Temas cargados: ${Object.keys(temasMap).length} registros con número.`);
 
+    const idToEjeMap = await buildIdToEjeMap(baseId, temasMap, ejes);
+    console.log(`  🔗 Mapa id→eje (para Preguntas_Evaluacion) construido: ${Object.keys(idToEjeMap).length} ids.`);
+
     let allFieldsOk = true;
     for (const type of QUESTION_TYPES) {
       const ok = await preflightCheckFields(baseId, type);
@@ -249,6 +294,7 @@ async function main() {
     }
 
     let totalVerificado = 0, totalRevisar = 0;
+    const matchedIds = new Set(); // track which records got matched to *some* eje
 
     for (let ejeIndex = 0; ejeIndex < ejes.length; ejeIndex++) {
       const eje = ejes[ejeIndex];
@@ -257,9 +303,10 @@ async function main() {
 
       let ejeQuestions = [];
       for (const type of QUESTION_TYPES) {
-        const matches = await fetchQuestionsForEje(baseId, type, ejeNumber, temasMap);
+        const matches = await fetchQuestionsForEje(baseId, type, n => n === ejeNumber, temasMap, idToEjeMap);
         ejeQuestions.push(...matches);
       }
+      ejeQuestions.forEach(q => matchedIds.add(`${q._table}:${q.id}`));
       if (ejeQuestions.length === 0) {
         console.log(`     (sin preguntas asociadas a este eje — revisa el mapeo Tema↔eje si esperabas encontrar algo)`);
         continue;
@@ -285,7 +332,84 @@ async function main() {
       }
     }
 
+    // Extra pass: Temas whose numero exceeds the manual's detected chapter
+    // count (e.g. Contractual has 20 temas but only 8 manual chapters) have
+    // no safe fragment to use — give them the full manual instead of guessing.
+    const maxNumero = Math.max(0, ...Object.values(temasMap).map(Number));
+    if (maxNumero > ejes.length) {
+      console.log(`\n  Temas ${ejes.length + 1}–${maxNumero} (fuera de los ${ejes.length} capítulos detectados en el manual):`);
+      let extraQuestions = [];
+      for (const type of QUESTION_TYPES) {
+        const matches = await fetchQuestionsForEje(baseId, type, n => n > ejes.length, temasMap, idToEjeMap);
+        extraQuestions.push(...matches);
+      }
+      extraQuestions.forEach(q => matchedIds.add(`${q._table}:${q.id}`));
+      if (extraQuestions.length > 0) {
+        console.log(`     ${extraQuestions.length} preguntas encontradas (usando el manual completo como contexto)`);
+        const fullManualChunk = { letter: '*', title: 'Manual completo', content: manualText };
+        for (let i = 0; i < extraQuestions.length; i += BATCH_SIZE) {
+          const batch = extraQuestions.slice(i, i + BATCH_SIZE);
+          console.log(`     Enviando lote ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} preguntas) a Claude...`);
+          const results = await reviseBatch(fullManualChunk, batch);
+          console.log(`     Respuesta recibida, actualizando Airtable...`);
+          for (const r of results) {
+            const q = batch.find(b => b.id === r.id);
+            if (!q) continue;
+            const status = r.status === 'VERIFICADO' ? STATUS_VALUE_OK : STATUS_VALUE_FLAG;
+            await updateRecord(baseId, q._table, q.id, status, r.notes || '');
+            if (status === STATUS_VALUE_OK) totalVerificado++; else totalRevisar++;
+          }
+          await new Promise(res => setTimeout(res, 300));
+        }
+      }
+    }
+
     console.log(`\n  📊 Resumen ${baseName}: ✅ ${totalVerificado} verificadas · ⚠️ ${totalRevisar} a revisar`);
+
+    // Final catch-all: anything still unmatched by this point (no tema link,
+    // no tema_texto, no id match elsewhere) gets reviewed anyway using the
+    // full manual — guarantees no question is silently skipped.
+    console.log(`\n  🧹 Buscando preguntas aún sin resolver (pase final)...`);
+    let leftovers = [];
+    for (const type of QUESTION_TYPES) {
+      let records = [];
+      let offset;
+      do {
+        const url = new URL(`https://api.airtable.com/v0/${baseId}/${encodeURIComponent(type)}`);
+        url.searchParams.set('pageSize', '100');
+        if (offset) url.searchParams.set('offset', offset);
+        const res = await fetch(url, { headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` } });
+        if (!res.ok) continue;
+        const data = await res.json();
+        records.push(...data.records);
+        offset = data.offset;
+      } while (offset);
+      const unmatched = records.filter(r => !matchedIds.has(`${type}:${r.id}`));
+      leftovers.push(...unmatched.map(r => ({ ...r, _table: type })));
+    }
+    if (leftovers.length > 0) {
+      console.log(`     ${leftovers.length} preguntas sin resolver — revisando con el manual completo como contexto`);
+      const fullManualChunk = { letter: '*', title: 'Manual completo', content: manualText };
+      for (let i = 0; i < leftovers.length; i += BATCH_SIZE) {
+        const batch = leftovers.slice(i, i + BATCH_SIZE);
+        console.log(`     Enviando lote ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} preguntas) a Claude...`);
+        const results = await reviseBatch(fullManualChunk, batch);
+        console.log(`     Respuesta recibida, actualizando Airtable...`);
+        for (const r of results) {
+          const q = batch.find(b => b.id === r.id);
+          if (!q) continue;
+          const status = r.status === 'VERIFICADO' ? STATUS_VALUE_OK : STATUS_VALUE_FLAG;
+          await updateRecord(baseId, q._table, q.id, status, r.notes || '');
+          matchedIds.add(`${q._table}:${q.id}`);
+          if (status === STATUS_VALUE_OK) totalVerificado++; else totalRevisar++;
+        }
+        await new Promise(res => setTimeout(res, 300));
+      }
+      console.log(`  📊 Resumen final ${baseName}: ✅ ${totalVerificado} verificadas · ⚠️ ${totalRevisar} a revisar`);
+    } else {
+      console.log(`     Ninguna — cobertura completa.`);
+    }
+
   }
 
   console.log('\n✨ Listo. Filtra Airtable por "Revisar" para ver qué necesita tu revisión manual.');
