@@ -134,6 +134,17 @@ def avisar_si_faltaban(tabla, antes, total_airtable):
               f"Airtable publicado suma {total_airtable} ({total_airtable - antes} sin sincronizar hasta ahora)")
 
 
+# Campo Revision_status (Flashcards, Preguntas_Evaluacion, y las 4 tablas de
+# Evaluación en las bases de materia): mientras Laura no lo marque "Verificado",
+# el item no sube a Supabase aunque este "publicado", para que las alumnas beta
+# no vean contenido que todavia no paso su revision (pedido 2026-08-07).
+NECESITA_REVISION = {"Revisar", "Verificar"}
+
+
+def necesita_revision(fields):
+    return fields.get("Revision_status") in NECESITA_REVISION
+
+
 def supabase_upsert(secret_key, tabla, filas, on_conflict="airtable_id", lote=200):
     total = 0
     for i in range(0, len(filas), lote):
@@ -184,7 +195,7 @@ def _leer_flashcards_de_base(airtable_token, base, materia_default):
     filas = []
     for f in flashcards:
         fields = f["fields"]
-        if not fields.get("publicado"):
+        if not fields.get("publicado") or necesita_revision(fields):
             continue
         tema_ids = fields.get("tema", [])
         info = info_tema.get(tema_ids[0]) if tema_ids else None
@@ -270,7 +281,7 @@ def sync_preguntas(airtable_token, supabase_key):
         filas = []
         for p in preguntas:
             fields = p["fields"]
-            if not fields.get("publicado"):
+            if not fields.get("publicado") or necesita_revision(fields):
                 continue
             elementos_texto = parsear_elementos_clave(fields.get("elementos_clave_texto", ""))
             opciones_pregunta = parsear_opciones(fields.get("opciones_texto", ""))
@@ -377,7 +388,7 @@ def sync_evaluacion(airtable_token, supabase_key):
         for tabla, tipo in TABLAS_EVALUACION.items():
             registros = airtable_fetch_all(airtable_token, base, tabla)
             for r in registros:
-                if not r["fields"].get("publicado"):
+                if not r["fields"].get("publicado") or necesita_revision(r["fields"]):
                     continue
                 tema_nombre = _resolver_tema(r["fields"], info_tema)
                 if tipo == "discriminacion_mc":

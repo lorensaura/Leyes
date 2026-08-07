@@ -134,6 +134,18 @@ contó a mano el 2026-07-29) — el mismo tipo de pérdida silenciosa que el
 bug de arriba, pero en una base distinta. Con este aviso, correr el script
 avisa solo si algo se está quedando afuera, sin tener que contar a mano.
 
+**Filtro por `Revision_status` (agregado 2026-08-07):** además de `publicado`,
+el script ahora exige que `Revision_status` sea `"Verificado"` (o esté vacío,
+en materias donde Laura todavía no empezó a usar esa columna) para subir un
+item a Supabase. Si dice `"Revisar"` (o `"Verificar"`, variante que existe
+como opción en la tabla `Aplicación` de Extracontractual), el item se salta
+aunque esté `publicado`. Se agregó cuando Laura pidió sacar de Supabase 19
+items de Contractual que había marcado `Revisar` en su revisión en curso,
+antes de que las alumnas beta los vieran. Ver `necesita_revision()` en
+`scripts/sync_airtable_supabase.py`. Solo Contractual usa esta columna por
+ahora; en Extracontractual y Precontractual está vacía en todos los
+registros porque la revisión ahí todavía no empieza.
+
 ## Estado del linkeo a `Temas` (agregado 2026-07-29)
 
 Cada base de materia tiene una tabla `Temas` (un registro por eje del
