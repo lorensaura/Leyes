@@ -402,6 +402,10 @@ Variables de entorno necesarias en Production + Preview:
   (agregada 2026-07-13).
 
 ## Estado actual
+- **2026-08-07 (tarde):** construida la memoria entre sesiones (ver sección
+  "Memoria entre sesiones" arriba). Verificado con `fetch` mockeado, no con
+  gasto real todavía. Rama `worktree-limite-examen-practica`, commit
+  `4d80743`, pendiente de mergear -- ver `docs/camino-a-beta.md`.
 - **2026-08-07:** primera prueba real de la "REGLA DE ORO" (ver entrada
   2026-08-06 abajo): Laura corrió una interrogación de modo EXAMEN, 5
   minutos, y la IA NO se respondió sola en ningún turno. **No concluyente

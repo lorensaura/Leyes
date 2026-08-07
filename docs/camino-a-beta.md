@@ -182,6 +182,24 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   2026-08-07) y se confirmó en vivo contra la API pública de Supabase
   (`select=modo` resuelve 200, no 400 de columna inexistente). El
   Interrogador queda operativo con el tope nuevo, nada pendiente acá.
+- **Memoria entre sesiones del Interrogador (2026-08-07), construida en la
+  misma rama `worktree-limite-examen-practica`, commit `4d80743`, pendiente
+  de mergear.** Laura pidió esto al ver que con el tope de 2 interrogaciones
+  al día, una alumna que practicara la misma materia seguido corría el
+  riesgo de que la comisión le repitiera siempre las mismas preguntas. Ahora
+  cada sesión guarda su transcripción turno a turno (sobrevive aunque la
+  alumna cierre la pestaña a mitad de camino) y, al empezar una sesión
+  nueva de la misma materia, un resumen compacto por alumna se actualiza
+  con una llamada barata a Haiku y se inyecta en el prompt del examinador
+  para que no repita preguntas ya hechas y priorice los temas donde le fue
+  mal. Alcance: solo sesiones de una sola materia (no "todas"). Detalle
+  completo en `docs/interrogador.md`, sección "Memoria entre sesiones".
+  **Verificado con `fetch` mockeado (16 chequeos), no con una interrogación
+  real todavía.** Dos pasos antes de que sirva en producción: (1) correr
+  `scripts/supabase_schema_interrogador_memoria.sql` en el SQL Editor de
+  Supabase (agrega columnas a `interrogaciones_diarias` y crea la tabla
+  `interrogador_memoria`); (2) mergear la rama a `main` y pushear (Laura,
+  vía GitHub Desktop).
 - **Reconectar el link "Progreso" con el indicador de progreso real del
   dashboard** (pedido de Laura 2026-08-06, "ojalá antes del beta"). Se
   perdió al unificar el menú lateral en `app/nav.js`/`app/nav.css`
