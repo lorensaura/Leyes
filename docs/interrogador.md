@@ -273,18 +273,39 @@ bloque 1, que es parte del prefijo cacheado): no repetir preguntas ni casos
 ya hechos, priorizar temas donde el resumen marca que le fue mal, y seguir
 tocando (sin sobre-dedicarle tiempo) los temas que ya domina.
 
+**Bug real encontrado y corregido antes de mergear:** la primera versión
+guardaba el watermark del fold (`interrogador_memoria.actualizado_en`)
+como `new Date()` en vez del `creado_en` real de las sesiones foldeadas.
+Como la sesión ACTUAL ya había quedado registrada (con su propio
+`creado_en`, un poco antes) por `chequearYRegistrarSesion` más arriba en
+el mismo request, ese "ahora" siempre quedaba más nuevo que ella -- la
+próxima vez que se foldeara, esa sesión hubiera quedado excluida para
+siempre (`creado_en=gt.${watermark}` la deja afuera) y la memoria se
+hubiera congelado después del primer fold sin volver a crecer nunca más.
+Corregido: `actualizadoEn` ahora es el `creado_en` MÁS NUEVO de las
+sesiones que efectivamente se acaban de foldear
+(`actualizarMemoriaSiHaySesionesNuevas` en `api/interrogador.js`).
+
 **Verificado (2026-08-07) con fetch mockeado**, mismo patrón que la
-simulación del tope diario: sin memoria previa no se inyecta bloque ni se
-llama a Haiku; con memoria existente el bloque se inyecta después del
-bloque cacheado y sin `cache_control` propio; en un turno que no es el
-primero de la sesión nunca se intenta el fold; con una sesión previa sin
-foldear sí se llama a Haiku y el turno usa el resumen recién actualizado
-(no el viejo); en modo "todas las materias" ni siquiera se consulta la
-tabla. **Falta todavía:** una interrogación real (gasto real, con Laura) en
-dos sesiones seguidas de la misma materia para confirmar en vivo que la
-comisión de verdad varía las preguntas y prioriza los temas débiles -- la
-simulación solo confirma que los datos correctos llegan al prompt, no que
-el modelo los use bien.
+simulación del tope diario, con una "base de datos" en memoria de verdad
+(no fixtures fijas) para que el filtro `creado_en=gt.` se ejerza tal cual
+lo hace Supabase -- ahí fue donde apareció el bug del watermark de
+arriba, invisible con fixtures que no aplicaban el filtro. 15 chequeos:
+sin memoria previa no se inyecta bloque ni se llama a Haiku; con memoria
+existente el bloque se inyecta después del bloque cacheado y sin
+`cache_control` propio; en un turno que no es el primero de la sesión
+nunca se intenta el fold; con una sesión previa sin foldear sí se llama a
+Haiku y el turno usa el resumen recién actualizado; en modo "todas las
+materias" ni siquiera se consulta la tabla; y el caso puntual del
+watermark (una sesión más nueva que el último fold sigue apareciendo en
+el próximo, nunca queda excluida). Confirmado que el test detecta la
+regresión: revertir el fix a mano hace fallar el chequeo del watermark,
+no silenciosamente pasar. **Falta todavía:** una interrogación real
+(gasto real, con Laura) en dos sesiones seguidas de la misma materia para
+confirmar en vivo que la comisión de verdad varía las preguntas y
+prioriza los temas débiles -- la simulación solo confirma que los datos
+correctos llegan al prompt y se acumulan bien entre sesiones, no que el
+modelo los use bien.
 
 ## Convención de marcado (para el chat, no para markdown estándar)
 `app/interrogador.html` traduce esta convención a HTML real en pantalla:

@@ -747,30 +747,40 @@ async function generarResumenActualizado(materiaSesion, resumenAnterior, textoSe
       : 'RESUMEN ANTERIOR: (ninguno, primera vez que se resume esta materia)\n\n') +
     `TRANSCRIPCIONES NUEVAS A INCORPORAR:\n${textoSesiones}`;
 
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': process.env.ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: ROUTER_MODELO,
-      max_tokens: 700,
-      thinking: { type: 'disabled' },
-      system: PROMPT_RESUMEN_MEMORIA,
-      messages: [{ role: 'user', content: entrada }],
-    }),
-  });
-  if (!resp.ok) {
-    throw new Error(`El resumen de memoria respondió ${resp.status}: ${await resp.text()}`);
+  // Mismo patrón de AbortController que llamarRouter -- esta llamada corre
+  // en el primer turno, antes de la llamada principal: si Anthropic se
+  // cuelga, no puede dejar colgado el "Comenzar" de la alumna.
+  const controlador = new AbortController();
+  const timeout = setTimeout(() => controlador.abort(), ROUTER_TIMEOUT_MS);
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      signal: controlador.signal,
+      body: JSON.stringify({
+        model: ROUTER_MODELO,
+        max_tokens: 700,
+        thinking: { type: 'disabled' },
+        system: PROMPT_RESUMEN_MEMORIA,
+        messages: [{ role: 'user', content: entrada }],
+      }),
+    });
+    if (!resp.ok) {
+      throw new Error(`El resumen de memoria respondió ${resp.status}: ${await resp.text()}`);
+    }
+    const data = await resp.json();
+    const bloque = (data.content || []).find((b) => b.type === 'text');
+    if (!bloque || !bloque.text) {
+      throw new Error('El resumen de memoria no devolvió texto');
+    }
+    return bloque.text.trim();
+  } finally {
+    clearTimeout(timeout);
   }
-  const data = await resp.json();
-  const bloque = (data.content || []).find((b) => b.type === 'text');
-  if (!bloque || !bloque.text) {
-    throw new Error('El resumen de memoria no devolvió texto');
-  }
-  return bloque.text.trim();
 }
 
 // Solo se llama al primer turno de una sesión nueva (messages.length === 1
@@ -820,7 +830,15 @@ async function actualizarMemoriaSiHaySesionesNuevas(userId, materiaSesion, sessi
     return memoriaActual;
   }
 
-  const actualizadoEn = new Date().toISOString();
+  // OJO: el watermark tiene que ser el `creado_en` más nuevo de las
+  // sesiones que se acaban de foldear, NUNCA `new Date()`. La sesión
+  // ACTUAL ya quedó registrada en `interrogaciones_diarias` (con su propio
+  // `creado_en`, unos segundos antes de este fold) por
+  // `chequearYRegistrarSesion` más arriba en el handler -- si el watermark
+  // fuera "ahora", la próxima vez que se folde quedaría excluida para
+  // siempre (su `creado_en` es anterior a este "ahora"), y la memoria se
+  // congelaría después del primer fold sin volver a crecer nunca.
+  const actualizadoEn = sesiones.reduce((max, s) => (s.creado_en > max ? s.creado_en : max), sesiones[0].creado_en);
   try {
     const resp = await fetch(`${SUPABASE_URL}/rest/v1/interrogador_memoria?on_conflict=user_id,materia`, {
       method: 'POST',
