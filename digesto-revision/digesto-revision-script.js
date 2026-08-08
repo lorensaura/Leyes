@@ -223,34 +223,36 @@ async function reviseBatch(ejeChunk, questions) {
 === MANUAL DE ESTUDIO — EJE ${ejeChunk.letter}: ${ejeChunk.title} ===
 ${ejeChunk.content}
 
-=== PREGUNTAS A VALIDAR CONTRA ESTE EJE ===
+=== PREGUNTAS A VALIDAR ===
 ${questionsBlock}
 
-Para cada pregunta, verifica: doctrina correcta según el manual, artículos bien citados,
-sin jurisprudencia inventada, enunciado claro, nivel grado, consistencia interna.
+Para CADA PREGUNTA, revisa EXACTAMENTE ESTO:
 
-IMPORTANTE sobre el eje: algunas preguntas pueden estar etiquetadas con un eje que no
-corresponde a su contenido real (un problema de clasificación en Airtable, no de fondo).
-NO marques [REVISAR] solo porque el contenido no coincide con el Eje ${ejeChunk.letter}
-PERO sí pertenece a responsabilidad contractual/extracontractual/precontractual en general.
-Evalúa el contenido de la pregunta con tu propio conocimiento del derecho civil chileno
-en ese caso.
+1. **¿Condice con el apunte?**
+   - ¿La doctrina que menciona la pregunta está en el manual y es correcta?
+   - ¿Los artículos del Código Civil citados están bien referenciados?
+   - ¿El nivel es apropiado para examen de grado?
 
-IMPORTANTE sobre el alcance de la materia: SÍ marca [REVISAR] cuando la pregunta trata
-una materia que NO pertenece a este apunte en absoluto — por ejemplo, temas de teoría
-general del contrato (efecto relativo de los contratos, interpretación contractual y
-buena fe, formación del consentimiento, requisitos de existencia y validez del acto
-jurídico) NO son responsabilidad contractual/extracontractual/precontractual, aunque
-compartan vocabulario similar. En esos casos usa notes para indicar específicamente que
-la materia corresponde a otra área (ej. "Corresponde a teoría general del contrato, no a
-responsabilidad — efecto relativo del contrato").
+2. **¿Hay alucinaciones?**
+   - ¿Hay jurisprudencia inventada (casos falsos, cortes que no existen)?
+   - ¿Hay citas a doctrinarios o textos que no existen?
+   - ¿Hay artículos mal numerados o de códigos que no corresponden?
 
-Marca [REVISAR] cuando haya: doctrina incorrecta, artículo mal citado, jurisprudencia
-inventada, ambigüedad genuina, nivel inapropiado, O materia fuera del alcance de este
-apunte según lo anterior.
+3. **¿Es el alcance correcto?**
+   - ¿La pregunta trata responsabilidad civil (contractual, extracontractual, precontractual)?
+   - ¿O pertenece a otra área completamente distinta del derecho (ej. teoría general del contrato, derecho procesal, derecho internacional)?
+   - Nota: pequeños errores de clasificación interna (pregunta de Eje A clasificada en Eje C) NO importan si es responsabilidad en general.
 
-Responde ÚNICAMENTE un array JSON, un objeto por pregunta, en este formato exacto:
-[{"id": "<record id>", "status": "VERIFICADO"}, {"id": "<record id>", "status": "REVISAR", "notes": "<problema específico, breve>"}]
+Marca [REVISAR] SOLO si hay:
+- Doctrina INCORRECTA o que contradice el manual
+- Alucinaciones (citas falsas, casos inventados)
+- Materia fuera del alcance (NO es responsabilidad civil)
+- Ambigüedad o nivel inapropiado para grado
+
+Si todo está correcto y es responsabilidad civil: [VERIFICADO] (sin notas).
+
+Responde ÚNICAMENTE un array JSON:
+[{"id": "<record id>", "status": "VERIFICADO"}, {"id": "<record id>", "status": "REVISAR", "notes": "<qué está mal, breve>"}]
 
 Sin texto fuera del JSON.`;
 
