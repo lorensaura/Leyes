@@ -228,14 +228,19 @@ un ítem por sesión cuando ella lo pida.
   tenerlo listo antes del beta, dejó de ser backlog. La detección de
   imprecisión conceptual vía IA en el Interrogador (parte 4 de la idea
   original) sigue pospuesta para después del beta.
-- **JUSTINIANO, chat de dudas de materia (idea nueva, 2026-08-06, ojo con la
-  ortografía: JUSTINIANO, no Justinián)**: un chat lateral (no el Chat IA de
-  dudas generales) para resolver una duda puntual sobre una pregunta sin
-  salir del flujo de Práctica. Diseño de Laura: **una sola materia a la vez**
-  (así el contexto queda acotado) — Haiku 4.5 barato busca los fragmentos del
-  manual relevantes a la duda puntual (mismo patrón de "router" que ya usa el
-  Interrogador), y Sonnet 5 arma la respuesta con esos fragmentos. Nada
-  construido todavía.
+- **JustinIAno, chat de dudas de materia: construido (2026-08-08)**, ver
+  `docs/interrogador.md` sección "Justiniano: persona unificadora" para el
+  detalle completo. Ojo con la ortografía usada en código y docs:
+  **JustinIAno**. Es un chat lateral en `app/alternativas.html` (no el Chat
+  IA de dudas generales) para resolver una duda puntual sin salir del flujo
+  de Práctica. Diseño de Laura: **una sola materia a la vez** (así el
+  contexto queda acotado). La idea original apuntaba a reusar el router de
+  Haiku 4.5 del Interrogador, pero terminó construido con búsqueda vectorial
+  real (embeddings de Voyage AI + pgvector en Supabase) en vez de eso.
+  **Falta que Laura cargue tarjeta en Voyage** (decidió esperar a validar
+  que todo funciona antes de invitar alumnas beta -- sin tarjeta el límite
+  de velocidad de Voyage es bajo, pero no afecta el uso normal de la app,
+  solo correr de nuevo el script de embeddings si cambian los manuales).
 - **Cuaderno de errores: agrupar por tipo (Aplicación/Detección de
   error/Justificación/Discriminación MC)** (pedido de Laura, 2026-08-06, al
   aprobar "Reintentar pregunta"). Hoy `renderErrores()` en

@@ -92,3 +92,75 @@ create policy "flashcard_progreso: cada usuaria actualiza solo lo suyo"
   to authenticated
   using (auth.uid() = user_id)
   with check (auth.uid() = user_id);
+
+-- ============================================================
+-- JustinIAno: chat de dudas por materia dentro de Práctica (docs/interrogador.md,
+-- sección "Justiniano: persona unificadora"). Búsqueda vectorial sobre las secciones
+-- de los manuales -- embeddings generados con Voyage AI (voyage-3, 1024 dim).
+-- ============================================================
+
+create extension if not exists vector;
+
+-- Una fila por sección de manual. El id es el mismo que genera
+-- scripts/extraer_contenido_interrogador.js ("<materia-slug>-<letra>-<numero>",
+-- ej. "extracontractual-L-6"). scripts/generar_embeddings_justiniano.js recarga
+-- completa cada materia (delete + insert, no upsert-only): si el manual cambia,
+-- los ids pueden reordenarse, y un upsert dejaría filas viejas huérfanas sin que
+-- nadie lo note.
+create table if not exists public.justiniano_secciones (
+  id text primary key,
+  materia text not null,           -- slug: 'contractual' | 'extracontractual' | 'precontractual'
+  h1 text not null,
+  h2 text not null,
+  texto text not null,
+  embedding vector(1024) not null,
+  actualizado_en timestamptz not null default now()
+);
+
+create index if not exists idx_justiniano_secciones_materia
+  on public.justiniano_secciones (materia);
+
+-- Índice de similitud (HNSW, distancia coseno -- la que recomienda Voyage para sus embeddings).
+create index if not exists idx_justiniano_secciones_embedding
+  on public.justiniano_secciones
+  using hnsw (embedding vector_cosine_ops);
+
+-- Búsqueda por similitud filtrada por materia DENTRO de la función -- nunca como
+-- post-filtro en JS, para que una pregunta de una materia no pueda terminar
+-- comparándose contra las secciones de las otras dos (mismo principio que
+-- INDICE_POR_MATERIA en api/interrogador.js).
+create or replace function public.match_justiniano_secciones(
+  query_embedding vector(1024),
+  materia_filtro text,
+  match_count int default 6
+)
+returns table (
+  id text,
+  h1 text,
+  h2 text,
+  texto text,
+  similarity float
+)
+language sql stable
+as $$
+  select
+    s.id,
+    s.h1,
+    s.h2,
+    s.texto,
+    1 - (s.embedding <=> query_embedding) as similarity
+  from public.justiniano_secciones s
+  where s.materia = materia_filtro
+  order by s.embedding <=> query_embedding
+  limit match_count;
+$$;
+
+-- RLS: solo lectura para usuarias con sesión. La tabla la llena
+-- scripts/generar_embeddings_justiniano.js con la llave secreta (se salta RLS,
+-- mismo patrón que preguntas_evaluacion) -- nadie escribe desde el navegador.
+alter table public.justiniano_secciones enable row level security;
+
+create policy "justiniano_secciones: lectura para usuarias con sesión"
+  on public.justiniano_secciones for select
+  to authenticated
+  using (true);

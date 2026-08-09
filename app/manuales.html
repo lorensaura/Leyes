@@ -1404,6 +1404,38 @@
       document.getElementById('user-avatar').textContent = name[0].toUpperCase();
 
       renderMaterias();
+      await aplicarDeepLink();
+    }
+
+    // ── Deep link desde JustinIAno (?materia=extracontractual#extracontractual-B-3) ──
+    // El slug de materia coincide con el que usa scripts/extraer_contenido_interrogador.js
+    // (y con el que arman los ids de ancla en scripts/agregar_anclas_manuales.js).
+    const DEEP_LINK_MATERIA_KEY = {
+      contractual: ['civil', 6],
+      extracontractual: ['civil', 7],
+      precontractual: ['civil', 8],
+    };
+
+    async function aplicarDeepLink() {
+      const params = new URLSearchParams(window.location.search);
+      const materiaSlug = params.get('materia');
+      const anclaId = window.location.hash ? window.location.hash.slice(1) : null;
+      const destino = DEEP_LINK_MATERIA_KEY[materiaSlug];
+      if (!destino) return;
+
+      const [materiaId, idx] = destino;
+      accordionOpen[materiaId] = true;
+      renderMaterias();
+
+      const el = document.querySelector(`[data-key="${materiaId}_${idx}"]`);
+      await selectTema(materiaId, idx, el);
+
+      // renderContenido() (llamado al final de selectTema) ya insertó el HTML
+      // del manual -- incluidas las anclas -- de forma síncrona en el DOM.
+      if (anclaId) {
+        const destinoEl = document.getElementById(anclaId);
+        if (destinoEl) destinoEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     // ── Acordeón de materias ───────────────────────────────────────
@@ -1435,7 +1467,7 @@
         const done = completados[key];
         const locked = !contenidos[key];
         return `
-          <div class="tema-item ${temaActivo === key ? 'active' : ''} ${locked ? 'proximamente' : ''}" onclick="selectTema('${id}', ${i}, this)">
+          <div class="tema-item ${temaActivo === key ? 'active' : ''} ${locked ? 'proximamente' : ''}" data-key="${key}" onclick="selectTema('${id}', ${i}, this)">
             <span>${t}</span>
             ${locked
               ? '<span class="tema-proximamente-tag">PRÓXIMAMENTE</span>'
@@ -1453,7 +1485,7 @@
 
     async function selectTema(materiaId, idx, el) {
       document.querySelectorAll('.tema-item').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
+      if (el) el.classList.add('active');
 
       const key = materiaId + '_' + idx;
       temaActivo = key;

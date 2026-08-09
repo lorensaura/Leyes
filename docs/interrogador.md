@@ -353,7 +353,7 @@ para destacar un artículo.
   interrogación completa de punta a punta con el cambio nuevo -- la
   próxima interrogación real de prueba debería incluir esa medición.
 
-## Justiniano: persona unificadora (idea, 2026-08-05, no construida)
+## Justiniano: persona unificadora (idea, 2026-08-05)
 Laura quiere que "Justiniano" sea el presentador/tutor de Digesto detrás de
 todos los puntos de contacto con IA de la plataforma, no un chatbot
 suelto. Cuatro piezas, dos ya existentes y dos nuevas:
@@ -361,27 +361,90 @@ suelto. Cuatro piezas, dos ya existentes y dos nuevas:
    roadmap, sigue en pie.
 2. **Chat IA actual** (`app/interrogador.html` + `api/interrogador.js`,
    v1 en producción) — el examinador que ya interroga y corrige.
-3. **NUEVO: ayuda inline en Evaluación** — un botón "¿no entendiste?" al
-   lado de donde la alumna responde una pregunta en
+3. **NUEVO, sin construir todavía: ayuda inline en Evaluación** — un botón
+   "¿no entendiste?" al lado de donde la alumna responde una pregunta en
    `app/alternativas.html`, que explica esa pregunta o respuesta puntual
    cuando la corrección automática no le hizo sentido.
-4. **NUEVO: chat de dudas generales sobre una materia** — a diferencia
-   del Interrogador (que examina) y del punto 3 (que explica una
-   pregunta puntual), este responde dudas abiertas de la alumna, pero
-   **no debe limitarse a responder**: tiene que dirigirla a la sección
-   exacta del manual donde ese tema está desarrollado (grounding
-   parecido al del Interrogador — probablemente reusable el mecanismo de
-   router + chunks de `_interrogador-chunks.js`/`_interrogador-indice.js`
-   de la sección "Grounding" arriba, pero apuntando a un system prompt
-   distinto, no de examen).
+4. **NUEVO, construido 2026-08-08: JustinIAno, chat de dudas por
+   materia** — a diferencia del Interrogador (que examina) y del punto 3
+   (que explica una pregunta puntual), este responde dudas abiertas de la
+   alumna sobre UNA materia a la vez, dentro del flujo de Práctica, y
+   siempre señala la sección exacta del manual de donde sacó la
+   respuesta. Ver detalle abajo.
 
-**Sin construir todavía.** Falta definir antes de empezar: si 3 y 4 usan
-el mismo endpoint que `api/interrogador.js` con un modo distinto o uno
-nuevo, cómo se referencia la sección del manual desde la respuesta (link
-directo a `manuales.html` con anchor, o solo el nombre del título), y el
-alcance de materias (¿las mismas 3 de Responsabilidad, o desde el
-principio pensado para crecer con el roadmap?). Queda para una sesión
-dedicada, no para tocar de paso.
+### JustinIAno: cómo quedó construido (2026-08-08)
+
+**No reusa el router del Interrogador** (la idea original de "probablemente
+reusable el mecanismo de router + chunks" no se siguió) — usa **búsqueda
+vectorial real** en vez de una IA chica que lee el índice de títulos:
+
+- **Embeddings**: Voyage AI, modelo `voyage-3` (1024 dimensiones). Laura
+  probó primero `voyage-law-2` (especializado en texto legal) pero pidió
+  cambiar a `voyage-3` -- en una prueba de calidad con preguntas reales de
+  Extracontractual ambos modelos rindieron prácticamente igual (la sección
+  correcta apareció siempre en el top-3, aunque a veces la sección
+  introductoria del capítulo empataba o ganaba en similitud -- por eso se
+  retrae top-6, no top-1, y se deja que Sonnet 5 elija la relevante de
+  verdad).
+- **`scripts/generar_embeddings_justiniano.js`**: genera el embedding de
+  cada una de las 269 secciones (mismas que usa el Interrogador, de
+  `api/_interrogador-chunks.js`/`_interrogador-indice.js`) y las guarda en
+  Supabase. Reemplaza (delete + insert) toda la materia en cada corrida, no
+  hace upsert-only -- si el manual cambia, los ids de sección pueden
+  reordenarse y un upsert dejaría filas viejas huérfanas. Sin tarjeta
+  cargada en la cuenta de Voyage, el límite es 3 solicitudes/minuto y
+  10.000 tokens/minuto -- el script arma los lotes por presupuesto de
+  tokens (no por cantidad fija de secciones) y reintenta solo tanto los 429
+  de Voyage como los cortes de red transitorios que aparecieron varias
+  veces en la corrida real. Correr de nuevo cuando cambien los manuales:
+  primero `node scripts/extraer_contenido_interrogador.js`, después este
+  script (opcionalmente con el slug de una sola materia como argumento).
+  **Laura decidió no cargar tarjeta en Voyage todavía** -- lo hará antes de
+  invitar alumnas beta, una vez validado que todo funciona.
+- **Supabase**: tabla `justiniano_secciones` (`id`, `materia`, `h1`, `h2`,
+  `texto`, `embedding vector(1024)`) + función `match_justiniano_secciones`
+  que filtra por materia **dentro de la consulta SQL**, no como post-filtro
+  en JS -- así una pregunta de una materia no puede terminar comparándose
+  contra las secciones de las otras dos (mismo principio que
+  `INDICE_POR_MATERIA` en el Interrogador). Esquema completo en
+  `scripts/supabase_schema.sql`.
+- **`api/justiniano.js`**: endpoint nuevo y separado de
+  `api/interrogador.js` (no un modo nuevo del mismo archivo) -- embebe la
+  pregunta de la alumna (`input_type: "query"`, tiene que ser el mismo
+  modelo que usó el script de embeddings), busca las 6 secciones más
+  parecidas dentro de la materia, arma la respuesta con Sonnet 5 (thinking
+  desactivado, `max_tokens: 1536`), y transmite todo como streaming NDJSON
+  igual que el Interrogador. Antes del texto manda un evento
+  `{"type":"secciones","items":[...]}` con las secciones usadas.
+- **Referencia a la sección exacta**: se agregaron anclas invisibles
+  (`<span id="...">`) a los 3 manuales fuente
+  (`scripts/agregar_anclas_manuales.js`, idempotente), con el MISMO id que
+  usa Supabase, delante de cada h1/h2 -- nunca tocando los ids `s1`/`eje1`
+  que ya usa `app/manuales.html` para insertar los checkpoints. Se agregó
+  también deep-linking a `manuales.html` (`?materia=slug#id` abre la
+  materia correcta y baja directo a la sección) -- no existía antes. Los
+  links de JustinIAno abren en pestaña nueva.
+- **Alcance de materias**: solo las 3 de Responsabilidad ya publicadas por
+  ahora, pero pensado para crecer -- el slug de materia es el mismo que ya
+  usa todo el pipeline del Interrogador, así que sumar una materia nueva
+  cuando exista su manual es correr los mismos 2-3 scripts, no rediseñar
+  nada.
+- **UI**: chat lateral en `app/alternativas.html` (no una página aparte),
+  visible solo cuando la alumna tiene una materia específica de
+  Responsabilidad elegida en el filtro de Área -- si está en "Todas" o en
+  otra materia de Civil, muestra un mensaje pidiendo elegir una. Cambiar de
+  materia reinicia la conversación.
+- **Verificado con Chrome headless** (perfil aislado, `--user-data-dir`
+  descartable -- usar el perfil real de Chrome mezcla extensiones y
+  confunde los targets de depuración entre corridas) que el flujo completo
+  funciona de punta a punta: selección de materia, pregunta real, búsqueda
+  en Supabase, respuesta de Sonnet 5 citando la sección correcta, y los
+  links a `manuales.html` abriendo en el punto exacto.
+
+**Sigue pendiente**: el punto 3 (ayuda inline en Evaluación) no se tocó.
+Tampoco hay tope de uso diario para JustinIAno (a diferencia del
+Interrogador) ni se guarda historial entre sesiones -- no se pidió,
+retomar si hace falta.
 
 ## Idea de negocio anotada (no construida aún)
 Planes con tope de interrogaciones/tokens por mes + compra de
