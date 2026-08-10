@@ -219,8 +219,8 @@ Hasta acá, cada interrogación empezaba de cero: si una alumna practicaba la
 misma materia dos días seguidos, la comisión no sabía qué le había
 preguntado antes ni cómo le había ido, así que fácilmente le repetía las
 mismas preguntas. Motivación: con 3 alumnas beta arrancando el 2026-08-08 y
-un tope de 2 interrogaciones al día, era importante que practicar seguido
-sirviera de verdad -- no dar siempre la misma vuelta.
+un tope semanal acotado (ver más abajo), era importante que practicar
+seguido sirviera de verdad -- no dar siempre la misma vuelta.
 
 **Alcance: solo sesiones de una sola materia** (contractual, extracontractual
 o precontractual). Una sesión "todas las materias" mezcla las tres en la
@@ -229,7 +229,8 @@ transcripción -- queda fuera por ahora (`MEMORIA_MATERIAS` en
 `api/interrogador.js`).
 
 **Dos piezas, ver `scripts/supabase_schema_interrogador_memoria.sql`:**
-1. `interrogaciones_diarias` (la misma tabla del tope diario) suma
+1. `interrogaciones_diarias` (la misma tabla del tope de interrogaciones,
+   semanal desde el 2026-08-10) suma
    `materia` e `historial` (jsonb): la transcripción completa de esa
    sesión. Se actualiza turno a turno, después de generar cada respuesta
    (`guardarHistorialSesion`) -- así, si la alumna cierra la pestaña a
@@ -448,10 +449,21 @@ vectorial real** en vez de una IA chica que lee el índice de títulos:
   en Supabase, respuesta de Sonnet 5 citando la sección correcta, y los
   links a `manuales.html` abriendo en el punto exacto.
 
+**Tope diario (2026-08-10)**: 50 preguntas por día por alumna
+(`DIARIO_LIMITE` en `api/justiniano.js`), a diferencia del Interrogador que
+descuenta por interrogación completa (con `session_id`) -- acá cada
+pregunta es su propia fila en `justiniano_uso_diario`, sin deduplicar nada
+(no hace falta: no hay noción de "sesión", cada pregunta ya es una
+interacción suelta). Se chequea y registra ANTES de llamar a Voyage/Sonnet,
+mismo orden que usa `chequearYRegistrarSesion` en el Interrogador. Al
+llegar al tope, el servidor devuelve 429 con un mensaje que ya maneja
+`app/justiniano.html` (mismo manejo genérico de errores que el resto de la
+página). Esquema: `scripts/supabase_schema_justiniano_uso_diario.sql`
+(pendiente de correr en Supabase, ver `docs/camino-a-beta.md`).
+
 **Sigue pendiente**: el punto 3 (ayuda inline en Evaluación) no se tocó.
-Tampoco hay tope de uso diario para JustinIAno (a diferencia del
-Interrogador) ni se guarda historial entre sesiones -- no se pidió,
-retomar si hace falta.
+Tampoco se guarda historial entre sesiones -- no se pidió, retomar si hace
+falta.
 
 ## Idea de negocio anotada (no construida aún)
 Planes con tope de interrogaciones/tokens por mes + compra de

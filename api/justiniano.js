@@ -17,6 +17,8 @@
 //   {"type":"error","message":"..."}             → algo falló (se corta ahí)
 //   {"type":"done"}                              → la respuesta terminó bien
 
+const { registrarUsoIA } = require('./_uso_ia.js');
+
 const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
 const VOYAGE_URL = 'https://api.voyageai.com/v1/embeddings';
 // Tiene que ser EXACTAMENTE el mismo modelo que scripts/generar_embeddings_justiniano.js
@@ -29,6 +31,13 @@ const MATERIAS_VALIDAS = new Set(['contractual', 'extracontractual', 'precontrac
 const MAX_MENSAJES_HISTORIAL = 20;
 const MAX_LARGO_PREGUNTA = 2000;
 const SECCIONES_A_TRAER = 6;
+
+// Tope diario de preguntas a JustinIAno (Laura, 2026-08-10, decidido junto con
+// el rediseño de la UI a página propia -- ver scripts/supabase_schema_justiniano_uso_diario.sql
+// para el porqué del diseño de la tabla). A diferencia del Interrogador, acá
+// cada pregunta es una interacción suelta: no hay session_id que deduplicar.
+const DIARIO_LIMITE = 50;
+const MENSAJE_TOPE_DIARIO = 'Ya usaste tus 50 preguntas de hoy con JustinIAno. Mañana se renueva el cupo.';
 
 const SISTEMA_JUSTINIANO = `Sos JustinIAno, el asistente de dudas de Digesto (plataforma de estudio para el examen de grado de Derecho en Chile). Tu trabajo es responder UNA duda puntual de una alumna sobre una materia específica, dentro del flujo de Práctica -- no sos un examinador, no corregís respuestas, no evaluás.
 
@@ -59,6 +68,44 @@ async function verificarUsuario(accessToken) {
   if (!resp.ok) return null;
   const usuario = await resp.json();
   return usuario && usuario.id ? usuario : null;
+}
+
+function fechaSantiagoHoy() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
+}
+
+// Cuenta las preguntas ya registradas hoy y, si hay cupo, deja registrada
+// esta interacción antes de gastar en Voyage/Anthropic. No hay session_id que
+// deduplicar (a diferencia del Interrogador) -- cada pregunta es su propia
+// fila. Ver scripts/supabase_schema_justiniano_uso_diario.sql.
+async function chequearYRegistrarInteraccion(userId, hoy) {
+  const headers = {
+    apikey: process.env.SUPABASE_SECRET_KEY,
+    Authorization: `Bearer ${process.env.SUPABASE_SECRET_KEY}`,
+    'Content-Type': 'application/json',
+  };
+
+  const contadorResp = await fetch(
+    `${SUPABASE_URL}/rest/v1/justiniano_uso_diario?user_id=eq.${userId}&fecha=eq.${hoy}&select=id`,
+    { headers }
+  );
+  if (!contadorResp.ok) {
+    throw new Error(`Supabase respondió ${contadorResp.status} al contar el tope diario`);
+  }
+  const filasHoy = await contadorResp.json();
+  if (filasHoy.length >= DIARIO_LIMITE) {
+    return { ok: false };
+  }
+
+  const insertResp = await fetch(`${SUPABASE_URL}/rest/v1/justiniano_uso_diario`, {
+    method: 'POST',
+    headers: { ...headers, Prefer: 'return=minimal' },
+    body: JSON.stringify({ user_id: userId, fecha: hoy }),
+  });
+  if (!insertResp.ok) {
+    throw new Error(`Supabase respondió ${insertResp.status} al registrar la interacción`);
+  }
+  return { ok: true };
 }
 
 async function embeberPregunta(pregunta) {
@@ -131,6 +178,19 @@ module.exports = async (req, res) => {
     return;
   }
 
+  let resultadoCupo;
+  try {
+    resultadoCupo = await chequearYRegistrarInteraccion(usuario.id, fechaSantiagoHoy());
+  } catch (e) {
+    console.error('Error chequeando el tope diario de JustinIAno:', e);
+    res.status(502).json({ error: 'No se pudo verificar tu cupo diario en este momento' });
+    return;
+  }
+  if (!resultadoCupo.ok) {
+    res.status(429).json({ error: MENSAJE_TOPE_DIARIO });
+    return;
+  }
+
   let secciones;
   try {
     const embedding = await embeberPregunta(pregunta);
@@ -196,6 +256,10 @@ module.exports = async (req, res) => {
   const reader = anthropicRes.body.getReader();
   const decoder = new TextDecoder();
   let buffer = '';
+  // Uso real de esta llamada (ver api/_uso_ia.js) -- input_tokens y los
+  // cache_* vienen completos en message_start; output_tokens se va
+  // actualizando en cada message_delta, el último valor es el definitivo.
+  const usoTurno = { input_tokens: 0, output_tokens: 0, cache_creation_input_tokens: 0, cache_read_input_tokens: 0 };
 
   try {
     while (true) {
@@ -220,6 +284,10 @@ module.exports = async (req, res) => {
 
         if (evento.type === 'content_block_delta' && evento.delta?.type === 'text_delta') {
           res.write(JSON.stringify({ type: 'delta', text: evento.delta.text }) + '\n');
+        } else if (evento.type === 'message_start' && evento.message?.usage) {
+          Object.assign(usoTurno, evento.message.usage);
+        } else if (evento.type === 'message_delta' && typeof evento.usage?.output_tokens === 'number') {
+          usoTurno.output_tokens = evento.usage.output_tokens;
         } else if (evento.type === 'error') {
           res.write(JSON.stringify({ type: 'error', message: 'La IA se interrumpió. Intenta de nuevo.' }) + '\n');
           console.error('Error en el stream de Anthropic (JustinIAno):', evento.error);
@@ -231,6 +299,18 @@ module.exports = async (req, res) => {
     console.error('Error leyendo el stream (JustinIAno):', e);
     res.write(JSON.stringify({ type: 'error', message: 'Se cortó la conexión con la IA.' }) + '\n');
   }
+
+  // Registro de uso/costo real (ver api/_uso_ia.js) -- ttlCache '5m' porque
+  // el bloque del sistema más arriba usa cache_control sin ttl explícito
+  // (el default de Anthropic es 5 minutos).
+  await registrarUsoIA({
+    userId: usuario.id,
+    feature: 'justiniano',
+    modo: materia,
+    modelo: 'claude-sonnet-5',
+    usage: usoTurno,
+    ttlCache: '5m',
+  });
 
   res.end();
 };

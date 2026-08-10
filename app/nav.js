@@ -85,4 +85,61 @@
       }).catch(function () { /* silencioso: badge no crítico */ });
     } catch (e) { /* silencioso */ }
   })();
+
+  // Tiempo en la página durante la beta (ver
+  // scripts/supabase_schema_tiempo_en_pagina.sql y docs/camino-a-beta.md):
+  // cliente propio, independiente del `sb` de cada página. Manda un
+  // "segmento" (segundos desde el último envío) cada vez que la pestaña se
+  // oculta o se cierra, y reinicia el reloj -- así una alumna que deja la
+  // pestaña abierta en segundo plano por horas no infla el número, y una
+  // que va y viene entre pestañas suma bien el tiempo real que estuvo acá.
+  (function medirTiempoEnPagina() {
+    if (typeof supabase === 'undefined') return;
+    var inicioSegmento = Date.now();
+    var pagina = (location.pathname.split('/').pop() || 'index').replace(/\.html$/, '');
+    var userId = null;
+    var accessToken = null;
+
+    var medSb;
+    try {
+      medSb = supabase.createClient(
+        'https://byyukzhxhtopojgvgglp.supabase.co',
+        'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq'
+      );
+    } catch (e) {
+      return;
+    }
+    medSb.auth.getSession().then(function (res) {
+      var session = res && res.data && res.data.session;
+      if (session) {
+        userId = session.user.id;
+        accessToken = session.access_token;
+      }
+    }).catch(function () { /* silencioso: sin sesión, no hay nada que medir */ });
+
+    function enviarSegmento() {
+      if (!userId || !accessToken) return;
+      var ahora = Date.now();
+      var segundos = Math.round((ahora - inicioSegmento) / 1000);
+      inicioSegmento = ahora;
+      if (segundos < 3) return; // rebotes muy cortos no aportan nada
+      try {
+        fetch('https://byyukzhxhtopojgvgglp.supabase.co/rest/v1/tiempo_en_pagina', {
+          method: 'POST',
+          keepalive: true,
+          headers: {
+            apikey: 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq',
+            Authorization: 'Bearer ' + accessToken,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user_id: userId, pagina: pagina, segundos: segundos }),
+        }).catch(function () { /* silencioso: no crítico */ });
+      } catch (e) { /* silencioso */ }
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) enviarSegmento();
+    });
+    window.addEventListener('pagehide', enviarSegmento);
+  })();
 })();

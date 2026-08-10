@@ -168,20 +168,24 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   lista blanca en Supabase (`alumnas_autorizadas`, Capa 1 del paywall,
   ver "Hecho" arriba): **falta que Laura agregue los 3 correos ahí desde
   el Table Editor.** Sin eso, aunque se registren, quedan rechazadas.
-- **Tope diario del Interrogador cambiado a "2 interrogaciones al día en
-  total, máximo 1 examen" (pedido explícito de Laura, 2026-08-07). Cerrado
-  del todo (2026-08-07).** Antes el tope de 2 (`DIARIO_LIMITE` en
-  `api/interrogador.js`) no distinguía modo, así que una alumna podía
-  gastar las 2 en modo examen (Opus, el caro) el mismo día. Implementado y
-  verificado (simulación de los 9 casos posibles con `fetch` mockeado, sin
-  tocar Supabase real) en la rama `worktree-limite-examen-practica`,
-  commit `cd53bfa`. **Ya mergeado a `main` y pusheado** (`7b32d7b`,
-  confirmado en `origin/main`). El SQL
-  `scripts/supabase_schema_interrogaciones_diarias_modo.sql` (agrega la
-  columna `modo` a `interrogaciones_diarias`) **ya se corrió** (Laura,
-  2026-08-07) y se confirmó en vivo contra la API pública de Supabase
-  (`select=modo` resuelve 200, no 400 de columna inexistente). El
-  Interrogador queda operativo con el tope nuevo, nada pendiente acá.
+- **Tope del Interrogador: 2 interrogaciones de práctica Y 1 de examen POR
+  SEMANA, cada modo con su propio cupo independiente (pedido explícito de
+  Laura, actualizado 2026-08-10 -- de diario a semanal el mismo día).**
+  Historial del tope: originalmente 2 por día en total sin distinguir modo;
+  el 2026-08-07 pasó a "2 en total, máximo 1 examen" por día (pool
+  compartido); más tarde el 2026-08-10 se separó en dos cupos
+  independientes por día; y horas después, mismo día, Laura pidió que la
+  ventana fuera semanal en vez de diaria. Quedó así: `SEMANAL_LIMITE_PRACTICA`
+  (2) y `SEMANAL_LIMITE_EXAMEN` (1) en `api/interrogador.js`, semana que
+  arranca el lunes (hora Chile, `inicioSemanaSantiago()`). Una alumna beta
+  puede usar las 2 de práctica Y la de examen la misma semana, hasta 3
+  interrogaciones semanales en total. La tabla se sigue llamando
+  `interrogaciones_diarias` (no se renombró, cada fila sigue siendo una
+  interrogación con su fecha real, solo cambió la ventana con la que se
+  cuenta el cupo) y el SQL que agrega la columna `modo`
+  (`scripts/supabase_schema_interrogaciones_diarias_modo.sql`) ya se corrió
+  (Laura, 2026-08-07) -- no hace falta correr nada nuevo para este cambio,
+  es solo lógica en el servidor.
 - **Memoria entre sesiones del Interrogador (2026-08-07), construida en la
   misma rama `worktree-limite-examen-practica`, commit `4d80743`, pendiente
   de mergear.** Laura pidió esto al ver que con el tope de 2 interrogaciones
@@ -246,6 +250,55 @@ un ítem por sesión cuando ella lo pida.
   bloqueada ("Próximamente") a propósito -- por ahora el único punto de
   entrada es el menú hamburguesa, decidir si se desbloquea ahí también más
   adelante.
+- **PENDIENTE ANTES DEL BETA: correr 3 scripts SQL en Supabase** (2026-08-10),
+  ninguno se corrió todavía -- el código ya asume que las tres tablas
+  existen, así que sin correrlos las funciones de abajo van a fallar en
+  producción. Todos van desde Supabase → Database → SQL Editor → New query →
+  pegar → Run, uno por uno:
+  1. `scripts/supabase_schema_justiniano_uso_diario.sql` -- tope de 50
+     preguntas por día por alumna en JustinIAno. Sin esto, cada pregunta
+     falla con "No se pudo verificar tu cupo diario en este momento".
+  2. `scripts/supabase_schema_uso_ia_beta.sql` -- registro de costo real
+     (USD) y tokens de cada respuesta del Interrogador y de JustinIAno, ver
+     "Registro de uso durante la beta" más abajo. Sin esto, cada respuesta
+     de la IA sigue funcionando igual (el registro falla en silencio y solo
+     queda un error en los logs de Vercel), pero no queda nada guardado.
+  3. `scripts/supabase_schema_tiempo_en_pagina.sql` -- cuánto tiempo pasa
+     cada alumna en la app, ver el mismo apartado más abajo. Sin esto, cada
+     inserción desde el navegador falla en silencio (no rompe nada visible
+     para la alumna), pero tampoco queda nada guardado.
+- **Registro de uso durante la beta (costo real + preguntas + tiempo en la
+  página), construido 2026-08-10, pedido de Laura para poder cruzar cuánto
+  gastó y cuánto usó cada alumna con qué tan en serio tomar su feedback.**
+  Tres piezas:
+  1. **Costo y preguntas**: `api/_uso_ia.js` (compartido) calcula el costo
+     en USD de cada respuesta real de Anthropic (a partir del `usage` que
+     devuelve el streaming: tokens de entrada, salida, caché escrito y
+     caché leído, con el precio de cada modelo) y `api/interrogador.js` /
+     `api/justiniano.js` lo llaman después de cada respuesta, guardando una
+     fila en `uso_ia_beta` (user_id, feature, modo/materia, modelo, tokens,
+     costo_usd). **Alcance:** solo la llamada PRINCIPAL de cada turno (la
+     que genera la respuesta que ve la alumna) -- no las llamadas chicas
+     internas (el router de Haiku 4.5 del Interrogador, el resumen de
+     memoria), que por diseño son baratas y no cambian el orden de magnitud
+     del gasto real. Contar filas de esta tabla por alumna ya da
+     directamente "cuántas preguntas usó".
+  2. **Tiempo en la página**: `app/nav.js` (se carga en todas las páginas
+     con menú) mide el tiempo desde que la pestaña está visible hasta que
+     se oculta o se cierra, y manda ese "segmento" a `tiempo_en_pagina`
+     (user_id, pagina, segundos) directo desde el navegador con `fetch`
+     `keepalive`, sin pasar por ningún servidor propio. Se reinicia el
+     reloj en cada envío, así una alumna que deja la pestaña abierta en
+     segundo plano por horas no infla el número.
+  3. **Ambas tablas tienen RLS activado**: cada alumna solo puede leer sus
+     propias filas (o insertar las suyas, en el caso de `tiempo_en_pagina`).
+     Laura consulta todo desde el SQL Editor de Supabase, que no está
+     sujeto a RLS -- las consultas de ejemplo (gasto por alumna, minutos
+     por alumna y página) están comentadas al final de cada script SQL.
+  Verificado con Chrome headless: el registro de uso compila y calcula
+  costos razonables para tokens de prueba, y la medición de tiempo en
+  página manda el POST correcto (con el token de la alumna) al ocultar la
+  pestaña.
 - **Cuaderno de errores: agrupar por tipo (Aplicación/Detección de
   error/Justificación/Discriminación MC)** (pedido de Laura, 2026-08-06, al
   aprobar "Reintentar pregunta"). Hoy `renderErrores()` en

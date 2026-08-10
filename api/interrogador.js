@@ -21,6 +21,7 @@ const CONTENIDO_CODIGO = require('./_interrogador-codigo.js');
 const CHUNKS_MANUALES = require('./_interrogador-chunks.js'); // { [id]: texto de la sección }
 const INDICE_MANUALES = require('./_interrogador-indice.js'); // [{ id, materia, h1, h2 }]
 const CHECKLIST_ANCLAS = require('./_interrogador-checklist-anclas.js');
+const { registrarUsoIA } = require('./_uso_ia.js');
 
 const MODOS_VALIDOS = new Set(['examen', 'practica']);
 // La alumna elige interrogarse sobre una sola materia (más barato: el
@@ -481,22 +482,27 @@ async function elegirContenidoDelTurno(messages, materiaSesion, duracionMinutos)
 }
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-// Tope diario de interrogaciones completas por alumna, durante la beta.
+// Tope SEMANAL de interrogaciones completas por alumna, durante la beta
+// (cambiado de diario a semanal el 2026-08-10, pedido explícito de Laura).
 // Se cuenta por sessionId (no por mensaje ni por confiar en el cliente):
-// ver chequearYRegistrarSesion. Un sessionId ya registrado HOY nunca vuelve
-// a descontar cupo (es la misma interrogación continuando); uno nuevo sí, y
-// solo pasa si todavía queda cupo — sin importar qué mande el cliente en
-// `messages`, así que reintentar o armar el request a mano no lo saltea.
-// Regla (pedida por Laura, 2026-08-07): 2 interrogaciones al día en total,
-// de las cuales como máximo 1 puede ser examen (el modo caro, en Opus). Así
-// nunca se gastan las 2 en examen el mismo día, y siempre queda al menos
-// una vía (práctica) disponible.
-const DIARIO_LIMITE = 2;
-const DIARIO_LIMITE_EXAMEN = 1;
-const MENSAJE_TOPE_DIARIO =
-  'Has alcanzado tu límite de interrogaciones diarias de la Beta. Se repondrán mañana a las 00:00 hrs.';
+// ver chequearYRegistrarSesion. Un sessionId ya registrado vuelve a contar
+// como la misma interrogación continuando (no descuenta cupo de nuevo); uno
+// nuevo sí, y solo pasa si todavía queda cupo esta semana — sin importar qué
+// mande el cliente en `messages`, así que reintentar o armar el request a
+// mano no lo saltea.
+// La semana arranca el lunes (hora Chile) y cada modo tiene su propio cupo
+// independiente -- una alumna beta puede usar las 2 de práctica Y la de
+// examen la misma semana, hasta 3 interrogaciones semanales en total.
+// La tabla se sigue llamando `interrogaciones_diarias` (no vale la pena
+// renombrarla solo por el cambio de ventana de tiempo -- cada fila sigue
+// siendo una interrogación con su fecha real, lo único que cambió es cómo
+// se cuenta el cupo).
+const SEMANAL_LIMITE_PRACTICA = 2;
+const SEMANAL_LIMITE_EXAMEN = 1;
+const MENSAJE_TOPE_PRACTICA =
+  'Ya usaste tus interrogaciones de práctica de esta semana. Se repondrán el próximo lunes.';
 const MENSAJE_TOPE_EXAMEN =
-  'Ya hiciste tu examen de hoy. Todavía te queda una interrogación de práctica disponible. Se repondrán mañana a las 00:00 hrs.';
+  'Ya hiciste tu examen de esta semana. Se repondrá el próximo lunes.';
 
 const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
 const MATERIAS_MUESTRA = Object.values(ETIQUETA_POR_MATERIA);
@@ -575,16 +581,31 @@ async function verificarUsuario(accessToken) {
   return usuario && usuario.id ? usuario : null;
 }
 
-// Chequea y registra el tope diario de interrogaciones de una alumna, a
+// Chequea y registra el tope SEMANAL de interrogaciones de una alumna, a
 // partir del sessionId (no del largo de `messages`, que manda el cliente y
 // por lo tanto no es confiable). Ver scripts/supabase_schema_interrogaciones_diarias.sql
-// para el porqué del diseño. Las escrituras las hace este servidor con
-// SUPABASE_SECRET_KEY, que se salta RLS a propósito — la alumna solo puede
-// leer sus propias filas.
+// para el porqué del diseño de la tabla. Las escrituras las hace este
+// servidor con SUPABASE_SECRET_KEY, que se salta RLS a propósito — la
+// alumna solo puede leer sus propias filas.
 // Retorna { ok: true } si hay cupo (y ya deja la sesión registrada), o
-// { ok: false, motivo: 'total' | 'examen' } si no.
+// { ok: false, motivo: 'practica' | 'examen' } si no -- cada modo tiene su
+// propio cupo independiente (ver SEMANAL_LIMITE_PRACTICA / SEMANAL_LIMITE_EXAMEN).
 function fechaSantiagoHoy() {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
+}
+
+// Lunes de la semana en curso (hora Chile), como 'YYYY-MM-DD'. Se calcula
+// con Date.UTC a partir de los componentes de la fecha (no con el reloj del
+// servidor) para no arrastrar el desfase de zona horaria del proceso de
+// Vercel -- ya tenemos el día correcto en Santiago desde fechaSantiagoHoy(),
+// acá solo hace falta la aritmética de "restar hasta el lunes".
+function inicioSemanaSantiago(hoyStr) {
+  const [anio, mes, dia] = hoyStr.split('-').map(Number);
+  const fecha = new Date(Date.UTC(anio, mes - 1, dia));
+  const diaSemana = fecha.getUTCDay(); // 0=domingo .. 6=sábado
+  const offsetALunes = diaSemana === 0 ? 6 : diaSemana - 1;
+  fecha.setUTCDate(fecha.getUTCDate() - offsetALunes);
+  return fecha.toISOString().slice(0, 10);
 }
 
 async function chequearYRegistrarSesion(userId, sessionId, modo, hoy) {
@@ -595,30 +616,32 @@ async function chequearYRegistrarSesion(userId, sessionId, modo, hoy) {
   };
 
   const yaRegistradaResp = await fetch(
-    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&session_id=eq.${sessionId}&fecha=eq.${hoy}&select=id`,
+    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&session_id=eq.${sessionId}&select=id`,
     { headers }
   );
   if (!yaRegistradaResp.ok) {
     throw new Error(`Supabase respondió ${yaRegistradaResp.status} al chequear la sesión`);
   }
   if ((await yaRegistradaResp.json()).length > 0) {
-    // Esta interrogación ya estaba contada hoy: es un turno más de la misma, no una nueva.
+    // Esta interrogación ya estaba contada: es un turno más de la misma, no una nueva.
     return { ok: true };
   }
 
+  const inicioSemana = inicioSemanaSantiago(hoy);
   const contadorResp = await fetch(
-    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&fecha=eq.${hoy}&select=modo`,
+    `${SUPABASE_URL}/rest/v1/interrogaciones_diarias?user_id=eq.${userId}&fecha=gte.${inicioSemana}&select=modo`,
     { headers }
   );
   if (!contadorResp.ok) {
-    throw new Error(`Supabase respondió ${contadorResp.status} al contar el tope diario`);
+    throw new Error(`Supabase respondió ${contadorResp.status} al contar el tope semanal`);
   }
-  const filasHoy = await contadorResp.json();
-  if (filasHoy.length >= DIARIO_LIMITE) {
-    return { ok: false, motivo: 'total' };
-  }
-  if (modo === 'examen' && filasHoy.filter((f) => f.modo === 'examen').length >= DIARIO_LIMITE_EXAMEN) {
-    return { ok: false, motivo: 'examen' };
+  const filasSemana = await contadorResp.json();
+  if (modo === 'examen') {
+    if (filasSemana.filter((f) => f.modo === 'examen').length >= SEMANAL_LIMITE_EXAMEN) {
+      return { ok: false, motivo: 'examen' };
+    }
+  } else if (filasSemana.filter((f) => f.modo === 'practica').length >= SEMANAL_LIMITE_PRACTICA) {
+    return { ok: false, motivo: 'practica' };
   }
 
   const insertResp = await fetch(`${SUPABASE_URL}/rest/v1/interrogaciones_diarias`, {
@@ -924,12 +947,12 @@ module.exports = async (req, res) => {
   try {
     resultadoCupo = await chequearYRegistrarSesion(usuario.id, sessionId, modoSesion, hoy);
   } catch (e) {
-    console.error('Error chequeando el tope diario:', e);
-    res.status(502).json({ error: 'No se pudo verificar tu cupo diario en este momento' });
+    console.error('Error chequeando el tope semanal:', e);
+    res.status(502).json({ error: 'No se pudo verificar tu cupo de esta semana en este momento' });
     return;
   }
   if (!resultadoCupo.ok) {
-    const mensaje = resultadoCupo.motivo === 'examen' ? MENSAJE_TOPE_EXAMEN : MENSAJE_TOPE_DIARIO;
+    const mensaje = resultadoCupo.motivo === 'examen' ? MENSAJE_TOPE_EXAMEN : MENSAJE_TOPE_PRACTICA;
     res.status(429).json({ error: mensaje });
     return;
   }
@@ -1033,6 +1056,10 @@ module.exports = async (req, res) => {
   // incluye lo que respondió la comisión, no solo lo que escribió la
   // alumna.
   let respuestaCompleta = '';
+  // Uso real de esta llamada (ver api/_uso_ia.js) -- input_tokens y los
+  // cache_* vienen completos en message_start; output_tokens se va
+  // actualizando en cada message_delta, el último valor es el definitivo.
+  const usoTurno = { input_tokens: 0, output_tokens: 0, cache_creation_input_tokens: 0, cache_read_input_tokens: 0 };
 
   try {
     while (true) {
@@ -1058,6 +1085,10 @@ module.exports = async (req, res) => {
         if (evento.type === 'content_block_delta' && evento.delta?.type === 'text_delta') {
           respuestaCompleta += evento.delta.text;
           res.write(JSON.stringify({ type: 'delta', text: evento.delta.text }) + '\n');
+        } else if (evento.type === 'message_start' && evento.message?.usage) {
+          Object.assign(usoTurno, evento.message.usage);
+        } else if (evento.type === 'message_delta' && typeof evento.usage?.output_tokens === 'number') {
+          usoTurno.output_tokens = evento.usage.output_tokens;
         } else if (evento.type === 'error') {
           res.write(JSON.stringify({ type: 'error', message: 'La IA se interrumpió. Intenta de nuevo.' }) + '\n');
           console.error('Error en el stream de Anthropic:', evento.error);
@@ -1080,6 +1111,18 @@ module.exports = async (req, res) => {
       { role: 'assistant', content: respuestaCompleta },
     ]);
   }
+
+  // Registro de uso/costo real (ver api/_uso_ia.js) -- ttlCache '1h' porque
+  // el bloque de la muestra de preguntas más arriba usa cache_control con
+  // ttl: '1h'.
+  await registrarUsoIA({
+    userId: usuario.id,
+    feature: 'interrogador',
+    modo: modoSesion,
+    modelo: config.model,
+    usage: usoTurno,
+    ttlCache: '1h',
+  });
 
   res.end();
 };
