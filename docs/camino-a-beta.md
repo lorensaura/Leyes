@@ -228,19 +228,24 @@ un ítem por sesión cuando ella lo pida.
   tenerlo listo antes del beta, dejó de ser backlog. La detección de
   imprecisión conceptual vía IA en el Interrogador (parte 4 de la idea
   original) sigue pospuesta para después del beta.
-- **JustinIAno, chat de dudas de materia: construido (2026-08-08)**, ver
-  `docs/interrogador.md` sección "Justiniano: persona unificadora" para el
-  detalle completo. Ojo con la ortografía usada en código y docs:
-  **JustinIAno**. Es un chat lateral en `app/alternativas.html` (no el Chat
-  IA de dudas generales) para resolver una duda puntual sin salir del flujo
-  de Práctica. Diseño de Laura: **una sola materia a la vez** (así el
-  contexto queda acotado). La idea original apuntaba a reusar el router de
-  Haiku 4.5 del Interrogador, pero terminó construido con búsqueda vectorial
-  real (embeddings de Voyage AI + pgvector en Supabase) en vez de eso.
-  **Falta que Laura cargue tarjeta en Voyage** (decidió esperar a validar
-  que todo funciona antes de invitar alumnas beta -- sin tarjeta el límite
-  de velocidad de Voyage es bajo, pero no afecta el uso normal de la app,
-  solo correr de nuevo el script de embeddings si cambian los manuales).
+- **JustinIAno, chat de dudas de materia: construido (2026-08-08), UI
+  rehecha como página propia (2026-08-10)**, ver `docs/interrogador.md`
+  sección "Justiniano: persona unificadora" para el detalle completo. Ojo
+  con la ortografía usada en código y docs: **JustinIAno**. Ya NO es un chat
+  lateral en `app/alternativas.html` -- ahora es `app/justiniano.html`,
+  página propia con su propio selector de materia, solo accesible desde el
+  menú hamburguesa ("Con IA" → Justiniano). Diseño de Laura: **una sola
+  materia a la vez** (así el contexto queda acotado). La idea original
+  apuntaba a reusar el router de Haiku 4.5 del Interrogador, pero terminó
+  construido con búsqueda vectorial real (embeddings de Voyage AI + pgvector
+  en Supabase) en vez de eso. **VOYAGE_API_KEY ya está cargada en Vercel**
+  (Production + Preview, agregada 2026-08-10) -- sin tarjeta cargada en la
+  cuenta de Voyage el límite de velocidad es bajo, pero no afecta el uso
+  normal de la app, solo correr de nuevo el script de embeddings si cambian
+  los manuales. La tarjeta de Justiniano en `app/dashboard.html` sigue
+  bloqueada ("Próximamente") a propósito -- por ahora el único punto de
+  entrada es el menú hamburguesa, decidir si se desbloquea ahí también más
+  adelante.
 - **Cuaderno de errores: agrupar por tipo (Aplicación/Detección de
   error/Justificación/Discriminación MC)** (pedido de Laura, 2026-08-06, al
   aprobar "Reintentar pregunta"). Hoy `renderErrores()` en

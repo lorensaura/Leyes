@@ -773,71 +773,7 @@
       .filtro-dd-btn { height: 48px; }
       .btn-row .btn { width: 100%; }
       .btn-row .enter-hint { width: 100%; text-align: center; order: 3; }
-
-      .jn-panel { width: 100%; right: 0; }
     }
-
-    /* ── JUSTINIANO: chat lateral de dudas ── */
-    .jn-toggle {
-      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
-      display: flex; align-items: center; gap: 0.5rem;
-      background: var(--d-sidebar); color: #fff; border: none; border-radius: 100px;
-      padding: 0.85rem 1.3rem; font-size: 0.9rem; font-weight: 700;
-      cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
-    .jn-toggle:hover { background: #222; }
-    .jn-toggle .jn-icon { font-size: 1.1rem; }
-
-    .jn-panel {
-      position: fixed; top: 0; right: 0; bottom: 0; width: 400px; max-width: 100vw;
-      background: var(--d-surface); border-left: 1px solid var(--d-divider);
-      box-shadow: -8px 0 24px rgba(0,0,0,0.15); z-index: 201;
-      display: flex; flex-direction: column;
-      transform: translateX(100%); transition: transform 0.25s ease;
-    }
-    .jn-panel.open { transform: translateX(0); }
-
-    .jn-header {
-      padding: 1.1rem 1.2rem; border-bottom: 1px solid var(--d-divider);
-      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
-    }
-    .jn-header-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.5px; }
-    .jn-header-materia { font-size: 0.78rem; color: var(--d-muted); margin-top: 0.15rem; }
-    .jn-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--d-muted); line-height: 1; }
-    .jn-close:hover { color: var(--d-text); }
-
-    .jn-sin-materia {
-      margin: auto; padding: 2rem 1.5rem; text-align: center; color: var(--d-muted); font-size: 0.9rem;
-    }
-
-    .jn-mensajes { flex: 1; overflow-y: auto; padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.9rem; }
-    .jn-burbuja { max-width: 92%; padding: 0.7rem 0.95rem; border-radius: 12px; font-size: 0.86rem; line-height: 1.55; }
-    .jn-burbuja.user { align-self: flex-end; background: var(--d-sidebar); color: #fff; border-bottom-right-radius: 3px; }
-    .jn-burbuja.assistant { align-self: flex-start; background: var(--d-card); color: var(--d-text); border-bottom-left-radius: 3px; }
-    .jn-burbuja p { margin: 0 0 0.5rem; }
-    .jn-burbuja p:last-child { margin-bottom: 0; }
-
-    .jn-secciones { align-self: flex-start; max-width: 92%; display: flex; flex-direction: column; gap: 0.35rem; }
-    .jn-seccion-link {
-      font-size: 0.76rem; color: var(--d-accent); text-decoration: none; border: 1px solid var(--d-accent-tint);
-      background: var(--d-accent-tint); border-radius: 7px; padding: 0.45rem 0.65rem; display: block;
-    }
-    .jn-seccion-link:hover { background: #f0c9cf; }
-
-    .jn-escribiendo { align-self: flex-start; font-size: 0.8rem; color: var(--d-muted); display: flex; align-items: center; gap: 0.5rem; }
-
-    .jn-input-row { border-top: 1px solid var(--d-divider); padding: 0.85rem 1rem; display: flex; gap: 0.6rem; }
-    .jn-input {
-      flex: 1; resize: none; border: 1px solid var(--d-divider); border-radius: 10px; padding: 0.6rem 0.75rem;
-      font-family: inherit; font-size: 0.86rem; max-height: 100px; background: #fff;
-    }
-    .jn-input:focus { outline: none; border-color: var(--d-accent); }
-    .jn-enviar {
-      background: var(--d-accent); color: #fff; border: none; border-radius: 10px; padding: 0 1.1rem;
-      font-weight: 700; cursor: pointer; font-size: 0.86rem;
-    }
-    .jn-enviar:hover { background: var(--d-accent-hover); }
-    .jn-enviar:disabled { opacity: 0.5; cursor: not-allowed; }
 
   </style>
 </head>
@@ -866,21 +802,6 @@
     <div id="practica-container">
       <div class="estado-vacio"><div class="spinner"></div>Cargando…</div>
     </div>
-  </div>
-
-  <!-- JustinIAno: chat de dudas de materia (ver docs/interrogador.md) -->
-  <button class="jn-toggle" id="jn-toggle" onclick="toggleJustiniano()">
-    <span class="jn-icon">💬</span> JustinIAno
-  </button>
-  <div class="jn-panel" id="jn-panel">
-    <div class="jn-header">
-      <div>
-        <div class="jn-header-title">JustinIAno<span style="color:var(--d-accent)">.</span></div>
-        <div class="jn-header-materia" id="jn-header-materia"></div>
-      </div>
-      <button class="jn-close" onclick="toggleJustiniano()" aria-label="Cerrar">✕</button>
-    </div>
-    <div id="jn-cuerpo"></div>
   </div>
 
   <script>
@@ -1197,12 +1118,6 @@ const bancoTransversal = [
     let openDropdown = null; // 'materia' | 'area' | 'modelo' | 'subtipo' | 'metodo' | null — un solo dropdown abierto a la vez
     let subtemaAbierto = false; // fila de chips de subtema (Alternativas/Memorice), colapsada por defecto
 
-    // ── JustinIAno: chat de dudas de materia (ver docs/interrogador.md) ──
-    let jnAbierto = false;
-    let jnMateriaCargada = null; // slug de la materia con la que se armó el chat actual
-    let jnHistorial = []; // [{role, content}] -- se resetea al cambiar de materia
-    let jnEnviando = false;
-
     // Contenido cargado desde Supabase (Evaluación, Alternativas, Memorice, Flashcards)
     let datosEvaluacion = [];
     let datosAlternativas = [];
@@ -1353,7 +1268,6 @@ const bancoTransversal = [
       cells.push(subtemaRowMarkup());
 
       document.getElementById('ejes-grid').innerHTML = cells.join('');
-      refrescarJustiniano();
     }
 
     function renderStatusRow() {
@@ -2469,197 +2383,6 @@ const bancoTransversal = [
     window.addEventListener('beforeunload', () => { registrarAbandonoPendiente(); });
 
     function siguienteMemorice() { memIndice++; renderMemorice(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-
-    // ══════════════════════════════════════════════════════════════════
-    // JUSTINIANO — chat de dudas de materia (ver docs/interrogador.md,
-    // "Justiniano: persona unificadora"). Una sola materia a la vez: el
-    // slug tiene que coincidir con el que espera api/justiniano.js y con
-    // el que usa manuales.html para el deep-link a la sección exacta.
-    // ══════════════════════════════════════════════════════════════════
-    const JN_MATERIA_LABEL = {
-      contractual: 'Responsabilidad Contractual',
-      extracontractual: 'Responsabilidad Extracontractual',
-      precontractual: 'Responsabilidad Precontractual',
-    };
-
-    function toggleJustiniano() {
-      jnAbierto = !jnAbierto;
-      document.getElementById('jn-panel').classList.toggle('open', jnAbierto);
-      if (jnAbierto) refrescarJustiniano();
-    }
-
-    // La llama renderFiltros() en cada cambio de filtro -- solo hace algo si
-    // la materia disponible para JustinIAno realmente cambió.
-    function refrescarJustiniano() {
-      const materiaLabelEl = document.getElementById('jn-header-materia');
-      const disponible = materiaActiva === 'responsabilidad' && JN_MATERIA_LABEL[areaActiva];
-
-      if (!disponible) {
-        materiaLabelEl.textContent = '';
-        if (jnMateriaCargada !== null) {
-          jnMateriaCargada = null;
-          renderJustinianoSinMateria();
-        } else if (!document.getElementById('jn-mensajes') && !document.querySelector('.jn-sin-materia')) {
-          renderJustinianoSinMateria();
-        }
-        return;
-      }
-
-      materiaLabelEl.textContent = JN_MATERIA_LABEL[areaActiva];
-      if (jnMateriaCargada !== areaActiva) {
-        jnMateriaCargada = areaActiva;
-        jnHistorial = [];
-        renderJustinianoChat();
-      }
-    }
-
-    function renderJustinianoSinMateria() {
-      document.getElementById('jn-cuerpo').innerHTML =
-        '<div class="jn-sin-materia">Elegí una materia de Responsabilidad (Precontractual, Contractual o Extracontractual) para preguntarle a JustinIAno.</div>';
-    }
-
-    function renderJustinianoChat() {
-      document.getElementById('jn-cuerpo').innerHTML = `
-        <div class="jn-mensajes" id="jn-mensajes"></div>
-        <div class="jn-input-row">
-          <textarea class="jn-input" id="jn-input" rows="1" placeholder="Escribí tu duda sobre esta materia..."></textarea>
-          <button class="jn-enviar" id="jn-enviar" onclick="enviarPreguntaJustiniano()">Enviar</button>
-        </div>
-      `;
-      const input = document.getElementById('jn-input');
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviarPreguntaJustiniano(); }
-      });
-      input.addEventListener('input', function () {
-        this.style.height = 'auto';
-        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-      });
-    }
-
-    function jnFormatearTexto(texto) {
-      return texto
-        .split(/\n{2,}/)
-        .map(p => `<p>${escaparHtmlBase(p).replace(/\n/g, '<br>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`)
-        .join('');
-    }
-
-    function jnScrollAbajo() {
-      const cont = document.getElementById('jn-mensajes');
-      if (cont) cont.scrollTop = cont.scrollHeight;
-    }
-
-    function jnAgregarBurbuja(rol, texto) {
-      const cont = document.getElementById('jn-mensajes');
-      const div = document.createElement('div');
-      div.className = `jn-burbuja ${rol}`;
-      div.innerHTML = jnFormatearTexto(texto);
-      cont.appendChild(div);
-      jnScrollAbajo();
-      return div;
-    }
-
-    function jnAgregarSecciones(items) {
-      if (!items || items.length === 0) return;
-      const cont = document.getElementById('jn-mensajes');
-      const div = document.createElement('div');
-      div.className = 'jn-secciones';
-      div.innerHTML = items.map(s =>
-        `<a class="jn-seccion-link" target="_blank" href="manuales.html?materia=${jnMateriaCargada}#${escaparAtributoHtml(s.id)}">📖 Ver: ${escaparHtmlBase(s.h1)} › ${escaparHtmlBase(s.h2)}</a>`
-      ).join('');
-      cont.appendChild(div);
-      jnScrollAbajo();
-    }
-
-    async function enviarPreguntaJustiniano() {
-      if (jnEnviando) return;
-      const input = document.getElementById('jn-input');
-      const pregunta = input.value.trim();
-      if (!pregunta) return;
-
-      jnEnviando = true;
-      document.getElementById('jn-enviar').disabled = true;
-      input.value = '';
-      input.style.height = 'auto';
-
-      jnAgregarBurbuja('user', pregunta);
-
-      const cont = document.getElementById('jn-mensajes');
-      const indicador = document.createElement('div');
-      indicador.className = 'jn-escribiendo';
-      indicador.innerHTML = '<div class="spinner"></div> JustinIAno está pensando...';
-      cont.appendChild(indicador);
-      jnScrollAbajo();
-
-      let burbujaIA = null;
-      let textoAcumulado = '';
-
-      try {
-        const { data: { session } } = await sb.auth.getSession();
-        if (!session) { window.location.href = 'auth.html'; return; }
-
-        const resp = await fetch('/api/justiniano', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${session.access_token}`,
-          },
-          body: JSON.stringify({ materia: jnMateriaCargada, pregunta, historial: jnHistorial }),
-        });
-
-        if (!resp.ok || !resp.body) {
-          let detalle = 'JustinIAno no pudo responder en este momento.';
-          try {
-            const data = await resp.json();
-            if (data && data.error) detalle = data.error;
-          } catch (e) { /* sin detalle */ }
-          throw new Error(detalle);
-        }
-
-        const reader = resp.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-          const lineas = buffer.split('\n');
-          buffer = lineas.pop();
-
-          for (const linea of lineas) {
-            if (!linea.trim()) continue;
-            let evento;
-            try { evento = JSON.parse(linea); } catch (e) { continue; }
-
-            if (evento.type === 'secciones') {
-              if (indicador.parentNode) indicador.remove();
-              jnAgregarSecciones(evento.items);
-            } else if (evento.type === 'delta') {
-              if (!burbujaIA) burbujaIA = jnAgregarBurbuja('assistant', '');
-              textoAcumulado += evento.text;
-              burbujaIA.innerHTML = jnFormatearTexto(textoAcumulado);
-              jnScrollAbajo();
-            } else if (evento.type === 'error') {
-              if (indicador.parentNode) indicador.remove();
-              jnAgregarBurbuja('assistant', evento.message || 'Ocurrió un error. Intenta de nuevo.');
-            }
-          }
-        }
-
-        if (indicador.parentNode) indicador.remove();
-        if (textoAcumulado) {
-          jnHistorial.push({ role: 'user', content: pregunta });
-          jnHistorial.push({ role: 'assistant', content: textoAcumulado });
-        }
-      } catch (e) {
-        if (indicador.parentNode) indicador.remove();
-        jnAgregarBurbuja('assistant', e.message || 'Ocurrió un error. Intenta de nuevo.');
-      } finally {
-        jnEnviando = false;
-        document.getElementById('jn-enviar').disabled = false;
-      }
-    }
 
     // ══════════════════════════════════════════════════════════════════
     // INIT

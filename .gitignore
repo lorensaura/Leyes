@@ -11,3 +11,4 @@ Apuntes/
 # Notas de traspaso entre sesiones de Claude Code (snapshot del momento,
 # no un historial que valga la pena versionar — ver .claude/skills/handoff).
 .claude/handoff/
+.env*

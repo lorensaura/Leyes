@@ -429,11 +429,18 @@ vectorial real** en vez de una IA chica que lee el índice de títulos:
   usa todo el pipeline del Interrogador, así que sumar una materia nueva
   cuando exista su manual es correr los mismos 2-3 scripts, no rediseñar
   nada.
-- **UI**: chat lateral en `app/alternativas.html` (no una página aparte),
-  visible solo cuando la alumna tiene una materia específica de
-  Responsabilidad elegida en el filtro de Área -- si está en "Todas" o en
-  otra materia de Civil, muestra un mensaje pidiendo elegir una. Cambiar de
-  materia reinicia la conversación.
+- **UI (rehecha 2026-08-10)**: página propia, `app/justiniano.html` -- ya no
+  un chat lateral dentro de `app/alternativas.html` (esa versión, construida
+  el 2026-08-08, se sacó porque Laura no quería que apareciera como un chat
+  lateral tipo "duda sobre la marcha" sino como una feature propia con su
+  propio lugar). Mismo patrón de página que `app/interrogador.html`
+  (nav/login compartido, tarjeta de inicio con selector). La alumna elige la
+  materia (Contractual/Extracontractual/Precontractual, sin "todas" porque
+  la búsqueda vectorial es por una sola materia) al entrar; cambiar de
+  materia reinicia la conversación. **Único punto de entrada: menú
+  hamburguesa** ("Con IA" → Justiniano, `app/nav.js`) -- la tarjeta de
+  Justiniano en `app/dashboard.html` se deja bloqueada ("Próximamente") por
+  ahora, a propósito, no es un descuido.
 - **Verificado con Chrome headless** (perfil aislado, `--user-data-dir`
   descartable -- usar el perfil real de Chrome mezcla extensiones y
   confunde los targets de depuración entre corridas) que el flujo completo

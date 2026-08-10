@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digesto — JustinIAno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="nav.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F5EAD4;
+      color: #111111;
+      min-height: 100vh;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 56px);
+      margin-top: 56px;
+      overflow: hidden;
+      align-items: center;
+    }
+
+    .chat-shell {
+      width: 100%;
+      max-width: 760px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      padding: 1.5rem 1rem 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .chat-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+    }
+
+    .chat-materia-badge {
+      display: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #7A6E5F;
+      background: rgba(17,17,17,0.06);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+
+    /* ── TARJETA DE INICIO ── */
+    .intro-card {
+      margin: 1rem;
+      padding: 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 12px;
+    }
+
+    .intro-card h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+
+    .intro-card p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #4A4136;
+      margin-bottom: 1rem;
+    }
+
+    .selector-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #7A6E5F;
+      margin-bottom: 0.4rem;
+    }
+
+    .materia-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .filtro-btn {
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(17,17,17,0.15);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      color: #7A6E5F;
+      transition: all 0.15s;
+    }
+
+    .filtro-btn:hover { border-color: #111111; color: #111111; }
+    .filtro-btn.active { background: #111111; color: #E8D8B8; border-color: #111111; }
+    .filtro-btn:disabled { cursor: default; opacity: 0.6; }
+
+    .btn-primario {
+      padding: 0.75rem 1.5rem;
+      background: #C41E2E;
+      color: #F5EAD4;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primario:hover { opacity: 0.9; }
+    .btn-primario:disabled { opacity: 0.5; cursor: default; }
+
+    /* ── MENSAJES ── */
+    .mensajes {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem 1rem 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .burbuja {
+      max-width: 82%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .burbuja p { margin: 0 0 0.5rem; }
+    .burbuja p:last-child { margin-bottom: 0; }
+
+    .burbuja.ia {
+      align-self: flex-start;
+      background: #FFFFFF;
+      border: 1px solid rgba(17,17,17,0.08);
+      border-bottom-left-radius: 3px;
+      color: #111111;
+    }
+
+    .burbuja.alumno {
+      align-self: flex-end;
+      background: #111111;
+      color: #FFFFFF;
+      border-bottom-right-radius: 3px;
+      white-space: pre-wrap;
+    }
+
+    .secciones-usadas {
+      align-self: flex-start;
+      max-width: 82%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .seccion-link {
+      font-size: 0.78rem;
+      color: #A61825;
+      text-decoration: none;
+      border: 1px solid rgba(196,30,46,0.25);
+      background: rgba(196,30,46,0.06);
+      border-radius: 7px;
+      padding: 0.5rem 0.7rem;
+      display: block;
+    }
+    .seccion-link:hover { background: rgba(196,30,46,0.12); }
+
+    .escribiendo {
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.2rem;
+      color: #7A6E5F;
+      font-size: 0.8rem;
+    }
+
+    .spinner {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border: 2.5px solid rgba(17,17,17,0.1); border-top-color: #C41E2E;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-banner {
+      display: none;
+      margin: 0 1rem 0.75rem;
+      padding: 0.7rem 1rem;
+      background: rgba(196,30,46,0.08);
+      border: 1px solid rgba(196,30,46,0.25);
+      color: #A61825;
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+
+    /* ── INPUT ── */
+    .input-row {
+      display: none;
+      flex-shrink: 0;
+      gap: 0.6rem;
+      padding: 0.85rem 1rem 1.25rem;
+      border-top: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .input-row textarea {
+      flex: 1;
+      resize: none;
+      border: 1.5px solid rgba(17,17,17,0.12);
+      border-radius: 9px;
+      padding: 0.65rem 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      max-height: 140px;
+      background: #FFFFFF;
+    }
+
+    .input-row textarea:focus { outline: none; border-color: #C41E2E; }
+
+    .aviso-cambiar-materia {
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(17,17,17,0.35);
+      padding-bottom: 0.5rem;
+      flex-shrink: 0;
+      display: none;
+    }
+    .aviso-cambiar-materia button {
+      background: none; border: none; color: inherit; text-decoration: underline;
+      cursor: pointer; font-size: inherit; padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="app-nav" data-active="justiniano"></div>
+  <script src="nav.js"></script>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="chat-shell">
+
+      <div class="chat-header">
+        <div class="chat-title">JustinIAno<span style="color:#C41E2E">.</span></div>
+        <div class="chat-materia-badge" id="materia-badge"></div>
+      </div>
+
+      <div class="error-banner" id="error-banner"></div>
+
+      <!-- Tarjeta de inicio -->
+      <div class="intro-card" id="intro-card">
+        <h2>Tu tutor de dudas</h2>
+        <p>
+          Preguntale lo que no te quedó claro de una materia. JustinIAno busca en el manual y te
+          responde citando la sección exacta, con un link directo para leerla completa.
+        </p>
+        <div class="selector-label">Materia</div>
+        <div class="materia-selector" id="materia-selector">
+          <button type="button" class="filtro-btn active" data-materia="contractual" onclick="elegirMateria(this, 'contractual')">Contractual</button>
+          <button type="button" class="filtro-btn" data-materia="extracontractual" onclick="elegirMateria(this, 'extracontractual')">Extracontractual</button>
+          <button type="button" class="filtro-btn" data-materia="precontractual" onclick="elegirMateria(this, 'precontractual')">Precontractual</button>
+        </div>
+        <button class="btn-primario" id="btn-comenzar" onclick="comenzarChat()">Empezar a preguntar</button>
+      </div>
+
+      <!-- Mensajes -->
+      <div class="mensajes" id="mensajes"></div>
+
+      <div class="aviso-cambiar-materia" id="aviso-cambiar-materia">
+        <span id="materia-actual-label"></span> · <button type="button" onclick="cambiarMateria()">cambiar de materia</button>
+      </div>
+
+      <!-- Input -->
+      <div class="input-row" id="input-row">
+        <textarea id="input-mensaje" rows="1" placeholder="Escribí tu duda..."></textarea>
+        <button class="btn-primario" id="btn-enviar" onclick="enviarPregunta()">Enviar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://byyukzhxhtopojgvgglp.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_LOJ2usw9g_DuotcjyU3fJw_mQamm4Gq';
+    const { createClient } = supabase;
+    const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const MATERIA_LABEL = {
+      contractual: 'Responsabilidad Contractual',
+      extracontractual: 'Responsabilidad Extracontractual',
+      precontractual: 'Responsabilidad Precontractual',
+    };
+
+    let materiaElegida = 'contractual';
+    let historial = [];
+    let enviando = false;
+    // api/justiniano.js rechaza historial de más de 20 mensajes (400) -- acá
+    // no hay reset automático como en el panel viejo (se reseteaba solo con
+    // cada cambio de filtro de Práctica), así que una alumna que sigue
+    // preguntando sin cambiar de materia lo alcanzaría. Se recorta a los
+    // últimos N antes de mandar, en vez de dejar que el servidor rebote.
+    const MAX_MENSAJES_HISTORIAL = 20;
+
+    function elegirMateria(el, materia) {
+      document.querySelectorAll('#materia-selector .filtro-btn').forEach((b) => b.classList.remove('active'));
+      el.classList.add('active');
+      materiaElegida = materia;
+    }
+
+    function escaparHtml(texto) {
+      return texto
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function formatearTextoIA(texto) {
+      return texto
+        .split(/\n{2,}/)
+        .map((p) => `<p>${escaparHtml(p).replace(/\n/g, '<br>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`)
+        .join('');
+    }
+
+    function scrollAbajo() {
+      const cont = document.getElementById('mensajes');
+      cont.scrollTop = cont.scrollHeight;
+    }
+
+    function agregarBurbuja(rol, texto) {
+      const cont = document.getElementById('mensajes');
+      const div = document.createElement('div');
+      div.className = 'burbuja ' + (rol === 'user' ? 'alumno' : 'ia');
+      if (rol === 'user') {
+        div.textContent = texto;
+      } else {
+        div.innerHTML = formatearTextoIA(texto);
+      }
+      cont.appendChild(div);
+      scrollAbajo();
+      return div;
+    }
+
+    function agregarSecciones(items) {
+      if (!items || items.length === 0) return;
+      const cont = document.getElementById('mensajes');
+      const div = document.createElement('div');
+      div.className = 'secciones-usadas';
+      div.innerHTML = items.map((s) =>
+        `<a class="seccion-link" target="_blank" href="manuales.html?materia=${materiaElegida}#${encodeURIComponent(s.id)}">📖 Ver: ${escaparHtml(s.h1)} › ${escaparHtml(s.h2)}</a>`
+      ).join('');
+      cont.appendChild(div);
+      scrollAbajo();
+    }
+
+    function mostrarError(msg) {
+      const banner = document.getElementById('error-banner');
+      banner.textContent = msg;
+      banner.style.display = 'block';
+    }
+
+    function ocultarError() {
+      document.getElementById('error-banner').style.display = 'none';
+    }
+
+    function fijarEnviando(estado) {
+      enviando = estado;
+      document.getElementById('btn-enviar').disabled = estado;
+      document.getElementById('input-mensaje').disabled = estado;
+    }
+
+    function comenzarChat() {
+      historial = [];
+      document.getElementById('intro-card').style.display = 'none';
+      document.getElementById('mensajes').innerHTML = '';
+      document.getElementById('mensajes').style.display = 'flex';
+      document.getElementById('input-row').style.display = 'flex';
+      document.getElementById('aviso-cambiar-materia').style.display = 'block';
+      document.getElementById('materia-actual-label').textContent = MATERIA_LABEL[materiaElegida];
+      const badge = document.getElementById('materia-badge');
+      badge.textContent = MATERIA_LABEL[materiaElegida];
+      badge.style.display = 'inline-block';
+      document.getElementById('input-mensaje').focus();
+    }
+
+    function cambiarMateria() {
+      historial = [];
+      document.getElementById('mensajes').innerHTML = '';
+      document.getElementById('mensajes').style.display = 'none';
+      document.getElementById('input-row').style.display = 'none';
+      document.getElementById('aviso-cambiar-materia').style.display = 'none';
+      document.getElementById('materia-badge').style.display = 'none';
+      document.getElementById('intro-card').style.display = 'block';
+      ocultarError();
+    }
+
+    async function enviarPregunta() {
+      if (enviando) return;
+      const input = document.getElementById('input-mensaje');
+      const pregunta = input.value.trim();
+      if (!pregunta) return;
+
+      ocultarError();
+      fijarEnviando(true);
+      agregarBurbuja('user', pregunta);
+      input.value = '';
+      input.style.height = 'auto';
+
+      const cont = document.getElementById('mensajes');
+      const indicador = document.createElement('div');
+      indicador.className = 'escribiendo';
+      indicador.innerHTML = '<div class="spinner"></div> JustinIAno está pensando...';
+      cont.appendChild(indicador);
+      scrollAbajo();
+
+      let burbujaIA = null;
+      let textoAcumulado = '';
+
+      try {
+        const { data: { session } } = await sb.auth.getSession();
+        if (!session) { window.location.href = 'auth.html'; return; }
+
+        const resp = await fetch('/api/justiniano', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${session.access_token}`,
+          },
+          body: JSON.stringify({ materia: materiaElegida, pregunta, historial: historial.slice(-MAX_MENSAJES_HISTORIAL) }),
+        });
+
+        if (!resp.ok || !resp.body) {
+          let detalle = 'JustinIAno no pudo responder en este momento.';
+          try {
+            const data = await resp.json();
+            if (data && data.error) detalle = data.error;
+          } catch (e) { /* sin detalle */ }
+          throw new Error(detalle);
+        }
+
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lineas = buffer.split('\n');
+          buffer = lineas.pop();
+
+          for (const linea of lineas) {
+            if (!linea.trim()) continue;
+            let evento;
+            try { evento = JSON.parse(linea); } catch (e) { continue; }
+
+            if (evento.type === 'secciones') {
+              if (indicador.parentNode) indicador.remove();
+              agregarSecciones(evento.items);
+            } else if (evento.type === 'delta') {
+              if (!burbujaIA) burbujaIA = agregarBurbuja('assistant', '');
+              textoAcumulado += evento.text;
+              burbujaIA.innerHTML = formatearTextoIA(textoAcumulado);
+              scrollAbajo();
+            } else if (evento.type === 'error') {
+              if (indicador.parentNode) indicador.remove();
+              mostrarError(evento.message || 'Ocurrió un error. Intenta de nuevo.');
+            }
+          }
+        }
+
+        if (indicador.parentNode) indicador.remove();
+        if (textoAcumulado) {
+          historial.push({ role: 'user', content: pregunta });
+          historial.push({ role: 'assistant', content: textoAcumulado });
+          historial = historial.slice(-MAX_MENSAJES_HISTORIAL);
+        }
+      } catch (e) {
+        if (indicador.parentNode) indicador.remove();
+        mostrarError(e.message || 'Ocurrió un error. Intenta de nuevo.');
+      } finally {
+        fijarEnviando(false);
+        document.getElementById('input-mensaje').focus();
+      }
+    }
+
+    document.getElementById('input-mensaje').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        enviarPregunta();
+      }
+    });
+
+    document.getElementById('input-mensaje').addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 140) + 'px';
+    });
+
+    async function init() {
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) { window.location.href = 'auth.html'; return; }
+
+      const name = user.user_metadata?.full_name || user.email.split('@')[0];
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-avatar').textContent = name[0].toUpperCase();
+    }
+
+    async function handleLogout() {
+      await sb.auth.signOut();
+      window.location.href = '../index.html';
+    }
+
+    init();
+  </script>
+</body>
+</html>

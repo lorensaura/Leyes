@@ -22,7 +22,7 @@
 
       '<span class="nav-section">Con IA</span>' +
       '<a class="nav-item" data-page="interrogador" href="interrogador.html"><span class="nav-icon">&#128172;</span> Chat IA</a>' +
-      '<a class="nav-item" href="#"><span class="nav-icon">&#127963;&#65039;</span> Justiniano <span class="nav-badge">Pronto</span></a>' +
+      '<a class="nav-item" data-page="justiniano" href="justiniano.html"><span class="nav-icon">&#127963;&#65039;</span> Justiniano</a>' +
       '<a class="nav-item" href="#"><span class="nav-icon">&#127908;</span> Interrogacion oral <span class="nav-badge">Pronto</span></a>' +
 
       '<span class="nav-section">Comunidad</span>' +
