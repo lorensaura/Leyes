@@ -6,7 +6,501 @@
 > entrada por fecha): si algo de acá se resuelve, se mueve o se borra,
 > no se deja duplicado. Los ítems ya resueltos se borran del todo (no
 > se dejan tachados) apenas se cierran — quedan igual en el historial
-> de git si hace falta recuperarlos. Última actualización: 2026-08-07.
+> de git si hace falta recuperarlos. Última actualización: 2026-08-11.
+
+## Plan "llevar REC y REP a techo", retomado (2026-08-11, pedido explícito de Laura vía /goal)
+
+Laura pidió llevar Evaluación/Flashcards/Alternativas de **REC (Contractual)
+y REP (Precontractual)** a su techo real, trabajando de a uno o dos ejes
+para no alucinar, basado siempre en los manuales propios y en el Código
+Civil/Comercio cuando el manual se remite a ellos. Distinto de REX
+(Extracontractual), que es donde estaba el trabajo suelto sin commitear
+antes de este pedido (ver `scripts/alternativas_nuevas_2026-08-11_rex_*.sql`,
+no tocado por este plan).
+
+**Hallazgo importante antes de generar nada:** el recuento en vivo (no los
+docs de cobertura, desactualizados desde el 2026-08-04) mostró que los **59
+`UPDATE` de clasificación por eje de REP** (`docs/fase0_rep_clasificacion_2026-07-31.md`)
+**nunca se corrieron** — confirmado 0/59 con `tema` asignado, tanto en
+Airtable como en Supabase, pese a que este mismo doc decía "Fase 0 hecha".
+El propio doc de Fase 0 ya avisaba "No ejecutados por Claude... pendiente de
+que Laura los corra en el SQL Editor" — quedó como pendiente silencioso.
+Mientras tanto, para poder priorizar ejes de REP en este plan, se usó el
+mapeo código→eje ya vetado de ese doc solo como lectura, sin escribirlo a
+producción.
+
+**Resuelto (2026-08-11, corrido con aprobación explícita de Laura "córrelas
+tú, confío en la clasificación"):** aplicadas las 59 clasificaciones a
+Supabase, no como `UPDATE` SQL crudo (no hay conexión Postgres directa
+configurada en el proyecto) sino con su equivalente exacto vía la REST API
+de PostgREST (`PATCH .../evaluacion_practica?codigo=eq.<codigo>`, mismo
+mecanismo que ya usa `sync_airtable_supabase.py`), verificando antes los 10
+nombres de eje contra la tabla `Temas` real de Airtable. De las 59: 58 se
+aplicaron; `hist-pre-mc-003` resultó ser un código que nunca existió como
+fila real en Supabase (no un error de clasificación, un hueco de
+numeración), así que no había nada que aplicarle. Confirmado en vivo: **72
+de 73 filas de Precontractual ya tienen `tema` asignado**, la única sin
+clasificar es `hist-pre-mc-015`, que **sigue pendiente que Laura decida**
+entre eje B y J (ambiguo, ver `docs/fase0_rep_clasificacion_2026-07-31.md`).
+
+**Alcance de "técho" para este plan:** los 6 columnas de cobertura por eje
+(Aplicación/Detección de error/Justificación/Discriminación MC/Flashcards/
+Alternativas). **Memorice queda fuera** (el texto de los artículos lo manda
+Laura, no se genera solo, ver `feedback_memorice_texto_lo_manda_laura`) y
+**`preguntas_evaluacion` (banco del Interrogador) tampoco se toca** (no se
+mezcla con `evaluacion_practica`, ver `docs/practica.md`). REC son **18 ejes
+reales** (de 21 registros en Airtable: eje 11 borrado el 2026-07-31, ejes 2
+y 21 decisión de Laura de no tocar por no tener sección propia en el
+manual). REP son 10 ejes (A-J).
+
+**Lote 1 (2026-08-11), REC eje 5 (el más débil de los 18, con solo 4 ítems
+de Evaluación, 1 por tipo, todos sobre "el hecho del deudor").** Verificado
+contra el manual (`01_...Contractual...Manual.html`, líneas 1058-1119 y
+1298-1331: "Primer requisito: incumplimiento imputable" y "Tercer
+requisito: la relación de causalidad") que la sección E del manual cubre 4
+requisitos (imputabilidad, perjuicio, causalidad, mora), pero perjuicio ya
+tiene eje propio (12), mora también (9) y dolo/culpa también (7/6) — lo que
+queda genuinamente propio de eje 5 es "el hecho del deudor" (ya cubierto,
+salvo una hipótesis) y la **relación de causalidad**, completamente sin
+explotar y sin eje propio que la reclame. Contenido nuevo, sin publicar,
+creado directo en Airtable (`Digesto Contractual`, `appxeVxAE53yIqRPa`) y
+Alternativas directo en Supabase (`publicado = false`):
+- `rc-just-031`: por qué la causa adecuada se impone sobre la equivalencia
+  de las condiciones.
+- `rc-aplic-035`: aplicación del test de "supresión mental del
+  incumplimiento" (caso del incendio que destruye la planta antes incluso
+  de la fecha pactada de entrega, rompiendo el nexo causal pese al atraso).
+- `rc-mc-027`: la tercera hipótesis de "hecho del deudor" (art. 898,
+  poseedor que por su hecho o culpa dejó de poseer en la reivindicación),
+  distinta de las dos ya cubiertas (arts. 2187, 1678); correcta en C (Discr.
+  MC de REC estaba B13/A8/C7/D6, sesgada a B, no se le agregó más ahí).
+- 2 Flashcards: las cuatro teorías de causalidad; el test de supresión
+  mental.
+- `rc-alt-029` (SQL en `scripts/alternativas_nuevas_2026-08-11_rec_eje5.sql`,
+  insertado y confirmado en Supabase): cuál teoría de causalidad es la más
+  aceptada; correcta en índice 1 (Alternativas de REC estaba en 0:8/1:5/2:8/3:7,
+  el más débil, ahora 1:6).
+Eje 5 pasa de 4 a 7 ítems de Evaluación, de 5 a 7 Flashcards, de 0 a 1
+Alternativas. **Pendiente de revisión de Laura** (Evaluación y Flashcards
+sin `publicado` en Airtable; Alternativas con `publicado = false` en
+Supabase) antes de que lo vea una alumna.
+
+**Ejes 4 y 7 de REC revisados y confirmados AL TECHO (2026-08-11), sin
+generar contenido nuevo.** Antes de asumir que "5 ítems = hueco" (el error
+que el conteo bruto induce), se leyó el pasaje real del manual de cada uno
+y se comparó elemento por elemento contra el banco vivo:
+- **Eje 4 (Obligaciones de medio y de resultado, manual §B.3, líneas
+  529-539):** sección corta, un solo párrafo de concepto + un párrafo de
+  relevancia práctica + un recuadro de debate doctrinal. Los 5 ítems
+  existentes (`rc-aplic-005`, `rc-aplic-016`, `rc-detect-013`, `rc-just-003`,
+  `rc-mc-013`) cubren, uno a uno, el concepto, la exención por ausencia de
+  culpa en las de medio, el régimen distinto de exención en las de
+  resultado, y **los dos ejes de la controversia doctrinal completos**
+  (`rc-just-003` ya cubre, verificado campo por campo, tanto si el carácter
+  depende de la ley/contrato o si todas son de un solo tipo, como si la
+  distinción aplica solo a obligaciones de hacer o también a dar/no hacer).
+  No queda material sin explotar.
+- **Eje 7 (El dolo contractual, manual §4.1, líneas 1064-1073):** las
+  cuatro reglas capitales que el manual enumera (a: no se presume, art.
+  1459; b: agrava la responsabilidad hasta los perjuicios imprevistos pero
+  no los indirectos, art. 1558; c: la condonación del dolo futuro no vale,
+  art. 1465; d: se aprecia in concreto, sin grados) están las cuatro
+  cubiertas (`rc-aplic-015`, `rc-just-013`, `rc-detect-010`,
+  `rc-mc-012`/`hist-rc-mc-004`), más el concepto unitario del dolo
+  (`rc-just-027`, arts. 44/1458). Tampoco queda material sin explotar.
+Ninguno de los dos necesita revisitarse salvo que el manual se amplíe.
+
+**Siguiente candidato identificado, sin generar todavía:** eje 17 ("Las
+eximentes de responsabilidad", 6 ítems) agrupa en el manual, Sección F
+(líneas 1498-1777), **cuatro** causales distintas además de caso fortuito
+(que ya tiene su propio eje 10) e imprevisión/frustración (que ya tienen el
+eje 18): ausencia de culpa (F.2), estado de necesidad (F.3), hecho o culpa
+del acreedor (F.4) y hecho ajeno/de un tercero (F.5) — cuatro instituciones
+en solo 6 ítems, mismo patrón estructural que hizo rendir el eje 5 (varias
+instituciones legítimas comprimidas en un eje angosto del catálogo de
+Airtable). Candidato más prometedor que seguir bajando por conteo bruto.
+
+**Lote 2 (2026-08-11), REC eje 17 (eximentes), ejecutado el mismo día.**
+Verificado contra el manual (Sección F, líneas 1612-1665: "2. La ausencia
+de culpa" y "4. El hecho o culpa del acreedor") que, de las 4 causales que
+agrupa este eje, **F.2 (ausencia de culpa) no tenía ningún ítem de
+Evaluación** (sí un ítem de Alternativas ya publicado, `rc-alt-020`, que
+cubre solo la postura de la Corte Suprema, no los 3 argumentos de ABELIUK
+que la sustentan) y **F.4 (hecho o culpa del acreedor) tenía un solo ítem**
+(`rc-just-018`, ya exhaustivo en explicar los 3 efectos, pero sin ningún
+ítem que los aplique a un caso). Nuevo contenido, sin publicar, en Airtable
++ 2 Flashcards:
+- `rc-just-032`: los tres argumentos normativos de ABELIUK (arts. 1547
+  inc. 3º, 1670/1672, 1678 a fortiori) para admitir la sola ausencia de
+  culpa como eximente, sin necesidad de caso fortuito. Distinto en ángulo
+  de `rc-alt-020` (esa pregunta es "qué dijo la Corte Suprema", esta es
+  "por qué lo argumenta Abeliuk").
+- `rc-mc-028`: caso de mora del acreedor en la compraventa (comprador que
+  se niega a recibir maquinaria, rayo destruye la bodega provisoria),
+  aplicando el efecto del traslado del riesgo (art. 1827); correcta en D
+  (Discr. MC de REC seguía sesgada a B tras el lote 1, D era la más débil).
+- 2 Flashcards: la conexión de la ausencia de culpa con obligaciones de
+  medio/resultado; el efecto de traslado del riesgo por mora del acreedor.
+Eje 17 pasa de 6 a 8 ítems de Evaluación, de 4 a 6 Flashcards. F.3 (estado
+de necesidad, ya con 2 ítems) y F.5 (hecho ajeno, ya con 3) no se tocaron,
+material ya razonablemente cubierto. **Pendiente de revisión de Laura**
+(nada publicado en Airtable todavía).
+
+**HALLAZGO GRAVE, sin resolver (2026-08-11): el manual de Contractual se
+contradice a sí mismo sobre quién dijo qué en el debate "ausencia de culpa
+vs. caso fortuito".** Encontrado al revisar el eje 8 después de haber
+generado `rc-just-032` para el eje 17. Dos pasajes distintos del mismo
+manual (`01_Responsabilidad_Contractual_Manual.html`):
+- **Línea 1117-1118** (callout de la Sección 4, cerca del eje 5): "CLARO
+  SOLAR sostiene que basta probar la ausencia de culpa... ABELIUK, en
+  cambio, advierte que el inciso 2.º... exige... probar el caso fortuito".
+- **Línea 1618-1626** (Sección F.2, eje 17): "ABELIUK opina que es
+  suficiente con que el deudor pruebe su ausencia de culpa, sobre la base
+  de tres argumentos... En sentido contrario, CLARO SOLAR sostiene que...
+  sólo el caso fortuito... libera al deudor".
+**Las dos atribuciones son exactamente opuestas.** No es un matiz de
+lectura: un pasaje dice que Claro Solar defiende la tesis A y Abeliuk la
+B, el otro dice lo inverso. Esto ya afecta contenido **publicado y en
+producción**: `rc-just-028` (eje 8, `publicado = true`) sigue la versión
+de la línea 1117 (Claro Solar = ausencia de culpa basta). El ítem nuevo de
+esta sesión, `rc-just-032` (eje 17, sin publicar), transcribe fielmente la
+línea 1618 (Abeliuk = ausencia de culpa basta), que es lo que dice **su**
+pasaje — no es un error de transcripción mío, cada ítem cita correctamente
+el pasaje del que salió, el problema es que los dos pasajes del manual no
+concuerdan entre sí. No hay forma de resolver esto sin cotejar contra la
+fuente real (ORREGO, o el texto original de Claro Solar/Abeliuk que Laura
+haya usado al redactar el manual): **queda pendiente que Laura decida cuál
+atribución es la correcta y corrija el pasaje equivocado del manual.**
+Mientras tanto, `rc-just-032` sigue sin publicar (como el resto del lote),
+pero además de la revisión de contenido normal, este ítem específico
+necesita que se resuelva primero la contradicción del manual antes de
+publicarse — no basta con que Laura lo apruebe sin más, porque podría estar
+transcribiendo fielmente el pasaje equivocado. **`rc-just-028`, que ya está
+publicado, corre el mismo riesgo y debería revisarse en el mismo momento.**
+
+**Ejes 6 y 9 de REC revisados también (2026-08-11), sin generar contenido
+nuevo:** eje 6 (culpa contractual, manual §4.2) ya tiene 7 ítems cubriendo
+graduación tripartita, las 4 fuentes jerárquicas, supletoriedad y
+responsabilidad por el hecho de dependientes; eje 9 (la mora) ya tiene 6
+cubriendo interpelación, "la mora purga la mora" y los 3 efectos de la mora
+del acreedor. Ambos razonablemente cerca del techo, no se forzó contenido.
+
+**REP: se resolvió el bloqueo para poder avanzar (2026-08-11) — el
+pendiente de los 59 `UPDATE` solo bloqueaba re-clasificar el contenido
+VIEJO, no generar contenido NUEVO** (los ítems nuevos se crean con su eje
+ya enlazado desde el inicio, igual que en REC). **Eje B (Evolución
+doctrinaria) trabajado**, verificado contra el manual
+(`03_...Precontractual...Manual.html`, líneas 435-469: "5. La síntesis de
+la doctrina moderna: tres requisitos comunes" y "6. Análisis de la
+tensión") que **dos subsecciones enteras no tenían ningún ítem**: el
+cuadro comparativo Ihering/Faggella/Saleilles (momento en que nace la
+responsabilidad, fundamento, daño resarcible) y el análisis de por qué
+llegan a fundamentos distintos (restricción histórica de Ihering en el
+derecho romano vs. la libertad de Faggella 50 años después vs. la posición
+intermedia de Saleilles). Nuevo contenido, sin publicar, en Airtable
+(`Digesto Precontractual`, `appeZI0TkAC3uaeVW`) + Supabase:
+- `pre-just-011`: por qué los tres autores llegan a fundamentos distintos
+  pese a describir el mismo fenómeno.
+- `pre-mc-011`: caso de negociaciones de fusión rotas antes de la oferta,
+  aplicando el cuadro comparativo para identificar qué posiciones permiten
+  indemnizar en esa etapa (Faggella/Saleilles, no Ihering); correcta en C.
+- `pre-alt-048` (SQL en `scripts/alternativas_nuevas_2026-08-11_rep_ejeB.sql`,
+  confirmado en Supabase): el fundamento de Saleilles (equidad comercial);
+  correcta en índice 2 (Alternativas de REP estaba en 0:12/1:13/2:9/3:13,
+  el más débil, ahora 2:10).
+- 2 Flashcards: los tres requisitos comunes de la síntesis moderna; por qué
+  Faggella puede prescindir de la culpa.
+Eje B pasa de 5 a 7 ítems de Evaluación, de 6 a 8 Flashcards, de 5 a 6
+Alternativas. **Pendiente de revisión de Laura.**
+
+**REC eje 19 (derechos auxiliares del acreedor) trabajado (2026-08-11):**
+verificado contra el manual (Sección G.1, líneas 1782-1797, "El derecho de
+prenda general y su fundamento") que, pese a los 9 ítems existentes, **ninguno
+tocaba G.1 misma** (todos son sobre G.2-G.5: medidas conservativas, acción
+oblicua, pauliana, beneficio de separación). G.1 tiene tres puntos propios
+sin explotar: la nomenclatura defectuosa del "derecho de prenda general"
+(no es un contrato de prenda real), la distinción entre obligación
+*personal* y *real* (art. 2465, opuesta a las cauciones reales como
+prenda/hipoteca, no a "deudor principal vs. subsidiario"), y la doble
+finalidad de los derechos auxiliares (mantener/acrecentar el patrimonio).
+Nuevo contenido, sin publicar:
+- `rc-aplic-036`: caso de un fiador (garantía personal, sin prenda ni
+  hipoteca) perseguido en todo su patrimonio.
+- `rc-detect-032`: error de alumno que cree que el "derecho de prenda
+  general" es un contrato de prenda real con entrega de bienes.
+- `rc-alt-030` (SQL en `scripts/alternativas_nuevas_2026-08-11_rec_eje19.sql`,
+  confirmado en Supabase): la doble finalidad (mantener/acrecentar);
+  correcta en índice 1 (el más débil de Alternativas de REC).
+Eje 19 pasa de 9 a 11 ítems de Evaluación.
+
+**REP eje D (interés protegido y buena fe) trabajado (2026-08-11):**
+verificado contra el manual (líneas 633-641, "2. La buena fe como
+fundamento común") que, pese a los 6 ítems existentes (todos sobre D.1
+"qué protege", D.3 "catálogo de Saavedra" y D.4 "tensión"), **D.2 no tenía
+ningún ítem propio**: la idea matriz de DE LOS MOZOS/CASTÁN TOBEÑAS (la
+buena fe como fundamento ante el silencio de la ley civil chilena) y su
+confirmación reciente en el caso Lavín con Mena (rol C-1461-2022, vía
+BARROS BOURIE). Nuevo contenido, sin publicar:
+- `pre-just-012`: por qué la buena fe es el fundamento, y cómo lo confirma
+  Lavín con Mena.
+- `pre-detect-011`: error de alumno que cree que existe una norma expresa
+  del Código Civil chileno (confundiéndolo con el BGB alemán, que sí
+  regula fragmentariamente, ver Eje J).
+Eje D pasa de 6 a 8 ítems de Evaluación.
+
+**REC eje 10 (caso fortuito) trabajado (2026-08-11):** verificado contra el
+manual (Sección F.1, la más larga del manual, líneas 1510-1607) que, pese
+a los 5 ítems existentes, faltaban dos puntos propios: la distinción
+"clave de bóveda de la institución" entre caso fortuito **permanente**
+(extingue la obligación) y **temporal** (solo exime, la obligación
+subsiste), y la **cuarta excepción** al efecto liberatorio (la ley pone el
+caso fortuito de cargo del deudor, art. 1676, caso del ladrón) — la
+segunda excepción (mora) ya la cubre `rc-mc-007`, la tercera (pacto
+expreso) ya la cubre `rc-aplic-034` en eje 20. Nuevo contenido, sin
+publicar:
+- `rc-just-033`: por qué el caso fortuito opera a veces como eximente y a
+  veces como modo de extinguir (permanente vs. temporal, doble naturaleza
+  de VIAL).
+- `rc-aplic-037`: caso del ladrón de una bicicleta destruida por terremoto
+  mientras la tenía en su poder (art. 1676).
+Eje 10 pasa de 5 a 7 ítems de Evaluación.
+
+**REP eje A (planteamiento del problema) trabajado (2026-08-11):**
+verificado contra el manual (líneas 360-364, "3. Las dos grandes etapas
+del período precontractual") que el único ítem existente de esa
+subsección (`hist-pre-mc-001`) solo testea *qué cambia jurídicamente* al
+pasar de etapa, no el punto doctrinal de que la **doctrina tradicional
+solo protegía desde la oferta** y la **doctrina moderna (Ihering,
+profundizado por Faggella) extendió la protección hacia los tratos
+previos** — la extensión que abre el debate de todo el resto del
+material. Nuevo contenido, sin publicar:
+- `pre-just-013`: en qué consistió esa extensión doctrinal.
+- `pre-detect-012`: error de alumno que confunde tratos previos con
+  oferta como si fueran la misma etapa.
+Eje A pasa de 6 a 8 ítems de Evaluación.
+
+**REC eje 16 (autonomía de la acción indemnizatoria) trabajado
+(2026-08-11):** verificado contra el manual (Sección E.3, líneas
+1001-1057, "¿Es la indemnización un remedio autónomo?") que, pese a los 7
+ítems existentes, quedaban dos puntos ricos sin explotar: las **dos
+vertientes** de BOETSCH dentro de la tesis moderna (sistemática-finalista
+vs. obligación de garantía) y, de los 5 fallos que el manual cita como
+hitos, solo *Zorín* estaba testeado (`hist-rc-mc-003`) — el fallo
+*Universidad Santo Tomás* (Rol 17.108-2013), que el propio manual señala
+como "especialmente útil para el examen" por incluir el voto disidente del
+ministro Valdés, no tenía ningún ítem. Nuevo contenido, sin publicar:
+- `rc-just-034`: las dos vertientes de Boetsch.
+- `rc-mc-029`: caso de un abogado que busca el fallo con el contraste
+  mayoría/disidencia; correcta en D (el más débil de Discr. MC de REC,
+  que seguía cargado hacia B).
+Eje 16 pasa de 7 a 9 ítems de Evaluación. (Ejes 13 y 18 revisados solo por
+conteo de items existentes, sin leer el pasaje completo del manual —
+quedan pendientes de una verificación más a fondo, no confirmados al
+techo todavía.)
+
+**REP eje J (derecho comparado) trabajado (2026-08-11):** verificado
+contra el manual (líneas 1209-1282) que, de los cuatro ordenamientos
+comparados (Italia, Portugal, Anteproyecto de Pavía, Alemania), **Portugal
+(art. 227) no tenía ningún ítem propio** (los otros tres sí), y que la
+clasificación en **dos técnicas legislativas** (cláusula general vs.
+supuestos específicos, J.5) tampoco estaba testeada como tal — distinta de
+la "conclusión para cerrar el examen" que ya cubre `hist-pre-mc-002`.
+Nuevo contenido, sin publicar:
+- `pre-just-014`: las dos técnicas legislativas y su ventaja/defecto.
+- `pre-alt-049` (SQL en `scripts/alternativas_nuevas_2026-08-11_rep_ejeJ.sql`,
+  confirmado en Supabase): qué distingue al art. 227 portugués del 1337
+  italiano; correcta en índice 0.
+Eje J pasa de 6 a 7 ítems de Evaluación.
+
+**REC eje 1 revisado también (2026-08-11), confirmado al techo:**
+verificado línea por línea contra el manual (Sección A.3-A.5, líneas
+400-467) que los dos puntos que parecían huecos (el debate sobre si el
+cumplimiento forzado es "derecho principal", y la precisión sobre
+compatibilidad/acumulación de las acciones) ya están cubiertos, ambos a la
+vez, por `rc-detect-002` (verificado su contenido completo). Eje 1 se suma
+a los ejes confirmados al techo (5 de 18, junto a 4, 6, 7, 9).
+
+**REP eje E (naturaleza jurídica) trabajado (2026-08-11):** verificado
+contra el manual (líneas 692-784) que, de las cinco tesis que compara la
+tabla del manual, dos quedaban con material sin explotar: la tesis de
+BREBBIA no tenía ningún ítem de Aplicación (solo la regla de sus "dos
+diferencias" ya cubierta por Alternativas), y la tesis de la
+"responsabilidad legal" (minoritaria) solo aparecía como fila de la tabla
+comparativa, sin ningún ítem que testeara su debilidad específica (describe
+que la ley lo impone, pero no explica por qué). Nuevo contenido, sin
+publicar:
+- `pre-aplic-011`: caso adaptado del ejemplo de Brebbia (empresa que invita
+  a un proveedor a viajar y cierra con un tercero sin recibirlo).
+- `pre-detect-013`: error de alumno que sobrevalora el poder explicativo de
+  la tesis de responsabilidad legal.
+Eje E pasa de 6 a 8 ítems de Evaluación.
+
+**REC eje 13 (avaluación de perjuicios y cláusula penal) trabajado
+(2026-08-11):** verificado contra el manual (Sección E.9-E.10, la más
+extensa del manual, líneas 1397-1496) que, pese a los 8 ítems existentes,
+quedaban dos puntos ricos sin explotar: el **anatocismo** (el Código Civil
+lo prohíbe, art. 1559 N.º 3, pero la Ley 18.010 lo permite e incluso lo
+**presume**, contraste no testeado) y el segundo de los **tres casos** del
+art. 1544 sobre cláusula penal enorme (el **mutuo**, con su incongruencia
+frente al art. 8º de la Ley 18.010 — solo el primer caso, contratos
+conmutativos, estaba cubierto por `rc-aplic-025`; el tercero, obligaciones
+de valor inapreciable, queda como candidato para un lote futuro). Nuevo
+contenido, sin publicar:
+- `rc-detect-033`: error de alumno que cree vigente la prohibición íntegra
+  del anatocismo del Código Civil.
+- `rc-aplic-038`: caso de un mutuo de dinero con cláusula penal enorme,
+  aplicando la Ley 18.010 (rebaja al interés corriente, no al máximo
+  convencional).
+Eje 13 pasa de 8 a 10 ítems de Evaluación.
+
+**REP eje F revisado (2026-08-11), confirmado razonablemente cerca del
+techo:** verificado contra el manual (líneas 824-893) que sus 6 ítems
+existentes ya cubren el cuadro comparativo interés positivo/negativo
+(Ihering), la posición restrictiva tradicional, la posición de Brebbia con
+su ejemplo completo, y la comparación "regla categórica vs. causalidad
+adecuada". No se generó contenido nuevo (el único punto residual, el
+argumento de "superioridad dogmática" de F.4, es una variación muy cercana
+de lo ya cubierto, riesgo de redundancia).
+
+**REC eje 14 revisado (2026-08-11), confirmado al techo:** verificado
+contra el manual (Sección C completa, líneas 569-661, la acción de
+cumplimiento) que los 8 ítems existentes ya cubren, uno a uno, el objeto
+de la acción (aestimatio rei vs. indemnización), los presupuestos (no
+exige daño ni culpa), el debate del "derecho principal", y el cumplimiento
+forzado de las tres clases de obligaciones (dar/hacer/no hacer) con sus
+requisitos y límites (imposibilidad). Se suma a los ejes confirmados al
+techo (6 de 18, junto a 1, 4, 6, 7, 9).
+
+**REP eje H (responsabilidad por nulidad) trabajado (2026-08-11):**
+verificado contra el manual (líneas 1044-1122) que el argumento específico
+de BOFFI (art. 1056 del Código Civil argentino, y su equivalente chileno
+por vía del art. 1687) solo aparecía como una fila de la tabla comparativa
+de las tres posiciones (`hist-pre-mc-014`), sin ningún ítem propio que lo
+desarrollara, y que su límite explícito (el contrato celebrado por dos
+dementes no genera responsabilidad, porque ninguno puede incurrir en
+reproche subjetivo) tampoco estaba testeado. Nuevo contenido, sin
+publicar:
+- `pre-just-015`: el argumento de Boffi y su equivalente chileno (art.
+  1687).
+- `pre-detect-014`: error de alumno que generaliza la responsabilidad
+  aquiliana como automática, ignorando el límite de los dementes.
+Eje H pasa de 6 a 8 ítems de Evaluación.
+
+**REC ejes 3 y 20 revisados también (2026-08-11), sin generar contenido
+nuevo:** eje 3 (incumplimiento, noción objetiva) ya estaba confirmado
+informalmente en una ronda anterior (`rc-mc-002` cubre exhaustivamente,
+vía sus 4 distractores, los 4 supuestos del manual en que el incumplimiento
+no genera responsabilidad); queda formalmente registrado como al techo.
+Eje 20 (cláusulas modificatorias, la segunda sección más extensa del
+manual) tiene sus puntos centrales ya cubiertos por los 9 ítems existentes,
+incluidas las reglas de interpretación completas (`rc-just-010` cubre
+tanto "estipulación expresa/especial/explícita" como "interpretación
+restrictiva"). Quedan dos candidatos menores sin tocar (el "octálogo" de
+límites de FUEYO, y el precedente legal de arrendamiento/transporte que
+limita al daño emergente) pero son de menor rendimiento pedagógico que lo
+ya cubierto; se dejan anotados, no se fuerza contenido.
+
+**REP eje I revisado también (2026-08-11), confirmado al techo:** ya se
+había verificado en una ronda anterior (antes de optar por trabajar eje B)
+que sus 6 ítems existentes cubren I.1 (tesis de la proyección contractual),
+I.2 (tesis extracontractual de Corral, con su salvedad) e I.3 (el
+paralelismo con los ejes 5 y 8, la "imagen especular"). Queda formalmente
+registrado como al techo.
+
+**REC ejes 12, 15 y 18 trabajados, cerrando REC salvo el eje 8 bloqueado
+(2026-08-11).** Los tres resultaron tener material rico sin explotar pese
+a su volumen ya alto:
+- **Eje 12** (perjuicios indemnizables, la sección con más clasificaciones
+  del manual — el sistema decuple de Rodríguez Grez): faltaba el requisito
+  de que el daño lesione un "interés legítimo del acreedor" (uno de los 5
+  requisitos del daño indemnizable) y la tesis de Grez sobre la asimetría
+  reparación limitada (contractual, arts. 1556/1558/1559) vs. integral
+  (extracontractual, art. 2329). Nuevo: `rc-detect-034`, `rc-just-035`.
+  Pasa de 11 a 13 ítems.
+- **Eje 15** (resolución y pacto comisorio): faltaban dos de las
+  características de la acción resolutoria (D.6) — que es **personal**
+  (no procede contra terceros que adquirieron la cosa) — y por qué la
+  condición resolutoria tácita exige sentencia judicial, a diferencia de
+  la ordinaria (D.5). Nuevo: `rc-aplic-039`, `rc-just-036`. Pasa de 9 a 11
+  ítems.
+- **Eje 18** (imprevisión y frustración): pese a que `rc-just-008` ya
+  cubre de forma excepcionalmente completa los requisitos, los casos
+  legales y la evolución jurisprudencial reciente (CS 2024/2025), la
+  distinción fundacional **pacta sunt servanda vs. rebus sic stantibus**
+  (6.1) no tenía ningún ítem propio. Nuevo: `rc-detect-035`. Pasa de 8 a 9
+  ítems.
+Todo sin publicar. **Con esto, REC queda con 17 de 18 ejes reales
+trabajados o confirmados al techo — solo queda el eje 8, bloqueado por el
+hallazgo de la contradicción de atribución de autor (Claro Solar/Abeliuk)
+documentado arriba, que necesita que Laura decida antes de poder cerrarlo
+con confianza.**
+
+**REP ejes C y G trabajados, cerrando los 10 ejes de REP (2026-08-11).**
+- **Eje C** (etapas del proceso de formación): faltaban la "puntualización"
+  dentro de los tratos previos (con sus dos fallos contrastantes de la
+  Corte Suprema, 1937 y 1970) y las tres posiciones doctrinales sobre el
+  fundamento del cierre de negocio (Rosende/Corral/Puelma-Abeliuk),
+  ninguna testeada pese a que la distinción "cierre de negocio vs. arras"
+  sí lo estaba. Nuevo: `pre-just-016`, `pre-just-017`. Pasa de 6 a 8.
+- **Eje G** (los requisitos): el séptimo requisito de SAAVEDRA
+  (legitimación limitada a los partícipes directos de los tratos), que la
+  propia tabla comparativa del manual marca como "sin equivalente
+  directo" en Celis ni en el fallo Lavín con Mena, no tenía ningún ítem.
+  Nuevo: `pre-detect-015`. Pasa de 6 a 7.
+
+**Con esto, REP queda con sus 10 ejes trabajados o confirmados: B, D, A,
+J, E, H, C y G con contenido nuevo; F e I confirmados cerca del techo o al
+techo sin necesidad de contenido nuevo.**
+
+**REC eje 8 revisado a fondo (2026-08-11): confirmado al techo, el
+hallazgo de atribución NO es un hueco de cobertura.** Al releer el pasaje
+real de eje 8 (§B.4 "Prueba del incumplimiento y presunción de
+imputabilidad", líneas 541-559, corto: solo la regla del art. 1698, la
+presunción legal de imputabilidad del art. 1547 inc. 3º, la jurisprudencia
+CS 2025 y la comparación con la carga probatoria extracontractual) contra
+los 5 ítems no cuestionados del eje, se confirma que **cada oración del
+pasaje ya tiene su ítem**: `cont-aplic-001` (regla general), `rc-detect-003`
+(mismo título que la sección misma), `rc-mc-014` (jurisprudencia CS 2025),
+`rc-just-015` (comparación con extracontractual), `rc-detect-006`
+(contraste con la no presunción del dolo). **`rc-just-028`, el único ítem
+con el problema de atribución, en realidad no viene de este pasaje (§B.4)
+sino del callout de la Sección 4 (§4.3, línea 1117), territorio del eje
+5** — quedó clasificado en eje 8 por una decisión de una sesión anterior,
+pero es un ítem aparte, no parte del contenido propio de eje 8. Conclusión:
+**el hueco de cobertura de eje 8 no existe** (los 5 ítems propios lo
+agotan); lo que sigue pendiente es solo la corrección editorial puntual de
+`rc-just-028` (y su par nuevo `rc-just-032` en eje 17), que necesita que
+Laura decida cuál de los dos pasajes del manual tiene la atribución
+correcta — un pendiente de contenido acotado a esos dos ítems, no un
+bloqueo para dar por cerrado el eje 8.
+
+**Con esto, REC queda con sus 18 ejes reales cerrados (9 trabajados con
+contenido nuevo + 9 confirmados al techo, incluido el eje 8), y REP con
+sus 10 ejes cerrados (8 trabajados + 2 confirmados al techo). La pasada
+completa de "llevar REC y REP a techo, eje por eje" queda terminada.**
+
+**Resumen final del día (2026-08-11): REC — 9 ejes trabajados (5, 10, 12,
+13, 15, 16, 17, 18, 19) + 9 confirmados al techo (1, 3, 4, 6, 7, 8, 9, 14,
+20) = 18 de 18. REP — 8 ejes trabajados (A, B, C, D, E, G, H, J) + 2
+confirmados al techo (F, I) = 10 de 10. Total 25 ítems nuevos de
+Evaluación + 4 Flashcards + 2 Alternativas en REC; 17 ítems nuevos de
+Evaluación + 2 Flashcards + 2 Alternativas en REP. Todo sin publicar,
+pendiente de que Laura revise y marque `publicado`. Único pendiente que
+queda, acotado y aparte de la cobertura: la corrección editorial de la
+atribución Claro Solar/Abeliuk en `rc-just-028` (publicado) y
+`rc-just-032` (nuevo, eje 17) — decisión de Laura, no bloquea nada más.**
+
+## Beta en curso
+
+**Las 5 alumnas beta ya tienen acceso (confirmado por Laura, 2026-08-11):**
+`rvinuelasolano@gmail.com`, `mariasedlav@gmail.com`, `mchernandezr@uc.cl`,
+`etortello@uc.cl` y `ann.valdivia.olivares@gmail.com` están en `alumnas_autorizadas` (agregadas 2026-08-07 y
+2026-08-10) y Laura les dio el acceso el 2026-08-10. Verificado en vivo
+contra Supabase (2026-08-11): todavía no hay actividad de ninguna de las
+4 en ninguna tabla (`memorice_intentos`, `flashcard_progreso`,
+`tiempo_en_pagina`, `uso_ia_beta`, `interrogaciones_diarias`,
+`justiniano_uso_diario`), todo lo que hay ahí es de la cuenta de prueba
+de Laura. No es un bug, solo que el acceso es muy reciente.
 
 ## Hecho
 
@@ -127,7 +621,9 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   análisis de mejoras que Laura mandó (hecho con Claude Design), pero
   con la paleta y tipografía reales de Digesto, no las de ese mockup.
   Quedan 2 cosas puntuales sin resolver, verificadas en vivo contra el
-  archivo el 2026-08-06:
+  archivo el 2026-08-11. **Laura decidió (2026-08-11) posponer las dos
+  para cuando se esté por lanzar la plataforma a más gente, no antes**
+  — no son pendientes del beta con las 5 alumnas de confianza:
   1. **Sección "Sobre el examen" sigue comentada** (nunca se publicó):
      falta que Laura mande el contenido real de Formato / Duración / Qué
      se evalúa.
@@ -163,11 +659,7 @@ las alumnas tester (`docs/paywall.md`, memoria `digesto_landing_page_before_beta
   decía este doc en "Hecho" arriba ("formato definido" en los 3) — hay
   que confirmarlo mirándolos de verdad, no asumir. Ver también memoria
   `feedback_formato_manuales_digesto`.
-- **3 alumnas beta confirmadas (2026-08-07), Laura tiene sus correos y
-  quiere que arranquen mañana (2026-08-08).** El acceso está cerrado con
-  lista blanca en Supabase (`alumnas_autorizadas`, Capa 1 del paywall,
-  ver "Hecho" arriba): **falta que Laura agregue los 3 correos ahí desde
-  el Table Editor.** Sin eso, aunque se registren, quedan rechazadas.
+- **5 alumnas beta con acceso dado (ver "Beta en curso" arriba), cerrado.**
 - **Tope del Interrogador: 2 interrogaciones de práctica Y 1 de examen POR
   SEMANA, cada modo con su propio cupo independiente (pedido explícito de
   Laura, actualizado 2026-08-10 -- de diario a semanal el mismo día).**
@@ -226,7 +718,9 @@ un ítem por sesión cuando ella lo pida.
   que Laura cree la cuenta de Workspace (necesita su método de pago); una
   vez creada, agregar los registros DNS que entrega Google en el panel de
   Vercel (Laura lo puede hacer sola siguiendo la guía, o darme acceso a
-  Vercel para que lo haga yo).
+  Vercel para que lo haga yo). **Pospuesto (2026-08-11) para cuando se
+  esté por lanzar a más gente, no urgente para el beta con las 5 alumnas
+  de confianza.**
 - **Cuaderno de errores: adelantado y construido (2026-08-06), ver
   "Pendiente antes de invitar alumnas beta" más arriba.** Laura pidió
   tenerlo listo antes del beta, dejó de ser backlog. La detección de
@@ -250,23 +744,12 @@ un ítem por sesión cuando ella lo pida.
   bloqueada ("Próximamente") a propósito -- por ahora el único punto de
   entrada es el menú hamburguesa, decidir si se desbloquea ahí también más
   adelante.
-- **PENDIENTE ANTES DEL BETA: correr 3 scripts SQL en Supabase** (2026-08-10),
-  ninguno se corrió todavía -- el código ya asume que las tres tablas
-  existen, así que sin correrlos las funciones de abajo van a fallar en
-  producción. Todos van desde Supabase → Database → SQL Editor → New query →
-  pegar → Run, uno por uno:
-  1. `scripts/supabase_schema_justiniano_uso_diario.sql` -- tope de 50
-     preguntas por día por alumna en JustinIAno. Sin esto, cada pregunta
-     falla con "No se pudo verificar tu cupo diario en este momento".
-  2. `scripts/supabase_schema_uso_ia_beta.sql` -- registro de costo real
-     (USD) y tokens de cada respuesta del Interrogador y de JustinIAno, ver
-     "Registro de uso durante la beta" más abajo. Sin esto, cada respuesta
-     de la IA sigue funcionando igual (el registro falla en silencio y solo
-     queda un error en los logs de Vercel), pero no queda nada guardado.
-  3. `scripts/supabase_schema_tiempo_en_pagina.sql` -- cuánto tiempo pasa
-     cada alumna en la app, ver el mismo apartado más abajo. Sin esto, cada
-     inserción desde el navegador falla en silencio (no rompe nada visible
-     para la alumna), pero tampoco queda nada guardado.
+- **Los 3 scripts SQL de la beta ya están corridos (confirmado en vivo,
+  2026-08-11)**: `justiniano_uso_diario`, `uso_ia_beta` y
+  `tiempo_en_pagina` existen en Supabase (HTTP 200 vía API), las tres en
+  0 filas porque todavía no hay actividad real de alumnas beta (ver
+  "Beta en curso" arriba), no por un problema de las tablas ni del
+  código.
 - **Registro de uso durante la beta (costo real + preguntas + tiempo en la
   página), construido 2026-08-10, pedido de Laura para poder cruzar cuánto
   gastó y cuánto usó cada alumna con qué tan en serio tomar su feedback.**
@@ -817,6 +1300,104 @@ de esta tanda.
   cada uno.** Quedan sin tocar en esta ronda los ejes que ya tenían aún
   más profundidad de antes (2, 9, 14, 15, 20, 21, 23), candidatos si
   Laura quiere seguir llevando REX más allá.
+- **Retomada la pasada (2026-08-11), a pedido de Laura ("llevemos
+  Evaluación/Flashcards/Alternativas a su técho real de cobertura"),
+  arrancando por los ejes 9 y 15 (los dos más débiles de los 7 que
+  quedaban sin tocar, según la tabla de cobertura armada en vivo contra
+  Supabase/Airtable). Lote chico, vía skill `generar-evaluacion`.**
+  Quedan sin tocar todavía los ejes 2, 14, 20, 21, 23.
+  - Flashcards: **no se generaron nuevas.** Al revisar en vivo, eje 9 (8
+    tarjetas) y eje 15 (7 tarjetas) ya cubren bien los ángulos centrales
+    (Alessandri/Ducci, naturaleza de la presunción, tres grupos, culpa
+    difusa, sociedad controladora, evolución del criterio de
+    dependencia) — generar más ahí habría sido relleno, no cobertura
+    real.
+  - Evaluación, 6 ítems nuevos, creados directo en Airtable (`Digesto
+    Extracontractual`, `appz8ePbArPV9cbE3`), **sin publicar**, pendientes
+    de revisión de Laura:
+    - Eje 9: `re-aplic-044` (peligrosidad desproporcionada, caso del
+      camión de gas licuado), `re-just-040` (las dos vías para
+      desvirtuar la presunción del art. 2329), `re-mc-045` (las tres
+      lecturas del alcance del art. 2329: Ducci/Alessandri/Meza Barros,
+      correcta en D).
+    - Eje 15: `re-aplic-045` (responsabilidad por el hecho propio de la
+      organización, caso del laboratorio farmacéutico), `re-detect-042`
+      (criterio jerárquico superado por el funcional, error de alumno),
+      `re-mc-046` (responsabilidad de la sociedad controladora, correcta
+      en C).
+    Verificados contra el manual (líneas 1064-1160 y 1664-1740) y sin
+    redundancia con el contenido vivo del eje. Ojo, un caso de
+    redundancia evitado a último momento: el primer borrador de
+    Aplicación para eje 15 (subcontratación a suma alzada) resultó casi
+    idéntico a `re-aplic-015`, ya publicada pero etiquetada al eje 14, no
+    al 15 — se cambió por la responsabilidad por el hecho propio de la
+    organización en su lugar.
+  - Alternativas, 2 ítems nuevos (`ext-alt-042` eje 9, `ext-alt-043` eje
+    15), insertados directo en Supabase con `publicado = false` (Laura
+    decidió el 2026-07-27 que Alternativas no pasa por Airtable). SQL en
+    `scripts/alternativas_nuevas_2026-08-11_rex_ejes9_15.sql`.
+  - Chequeo de sesgo de posición corrido después del lote: Discriminación
+    MC de REX queda A13/B13/C13/D11 (antes A13/B13/C12/D10); Alternativas
+    de REX queda 0:11/1:10/2:12/3:9 (antes 0:10/1:10/2:12/3:8). Sin sesgo
+    relevante en ninguna de las dos.
+  - **Revisado y aprobado por Laura (2026-08-11).** Un ajuste durante la
+    revisión: el enunciado de `re-mc-046` preguntaba "¿bajo qué
+    criterio...?" pero las opciones respondían Sí/No/Depende a una
+    pregunta distinta; se corrigió el enunciado a "¿Puede la víctima
+    dirigir la acción extracontractual también contra la matriz?" para
+    que calce con las opciones. El resto del lote, sin cambios.
+- **Continuada la misma pasada (2026-08-11), ejes 2, 14, 20, 21 y 23 —
+  cierra los 7 ejes que quedaban sin tocar de la segunda pasada de
+  volumen extra de REX.** A diferencia de 9 y 15, estos ejes ya estaban
+  en su mayoría razonablemente cubiertos (2, 14 y 20 con 8-14 ítems de
+  Evaluación y 8-12 Flashcards), así que el lote fue quirúrgico: solo se
+  llenaron las casillas realmente vacías o débiles de cada uno, sin
+  padding.
+  - Eje 2 (8 ítems previos, débil en Detección de error y
+    Justificación): `re-just-041` (por qué la absolución penal por duda
+    razonable no siempre produce cosa juzgada civil) y `re-detect-043`
+    (mismo tema, error de alumno que confunde estándar probatorio con
+    efecto procesal).
+  - Eje 14 (14 ítems previos, ya profundo — no se tocó Evaluación) y eje
+    20 (13 ítems previos, tampoco tocado): solo +1 Alternativas cada uno,
+    que era la columna realmente débil en ambos.
+  - Eje 21 (7 ítems previos, débil en Detección de error y Discriminación
+    MC): `re-detect-044` (cómplice vs. encubridor como legitimados
+    pasivos) y `re-mc-047` (excepción a la solidaridad del art. 2317 por
+    ruina de edificio en comunidad, correcta en D).
+  - Eje 23 (7 ítems previos, débil en Aplicación y Detección de error):
+    `re-aplic-046` (la cláusula penal no es trasladable a lo
+    extracontractual) y `re-detect-045` (la graduación de la culpa SÍ se
+    reconduce a la distinción estructural, el error opuesto al que ya
+    prueba `re-detect-025`).
+  - 3 Alternativas nuevas (`ext-alt-044` eje 2, `ext-alt-045` eje 14,
+    `ext-alt-046` eje 20), directo en Supabase con `publicado = false`.
+    SQL en `scripts/alternativas_nuevas_2026-08-11_rex_ejes2_14_20.sql`.
+  - Con esto, **los 7 ejes que quedaban de la segunda pasada de REX (2,
+    9, 14, 15, 20, 21, 23) quedan todos con al menos un lote nuevo**,
+    pendientes todos de que Laura los revise y publique.
+  - Sesgo de posición proyectado tras publicar todo lo de hoy (2026-08-11):
+    Discriminación MC de REX quedaría A13/B13/C13/D12; Alternativas ya
+    está en vivo (sin publicar) en 0:13/1:11/2:12/3:9 — algo más cargado
+    en el índice 0 que en el 3, sin ser un sesgo grave.
+  - **Pendiente: Laura revisa este segundo lote, marca `publicado` en
+    Airtable, decide sobre el SQL de Alternativas, y luego se corre
+    `scripts/sync_airtable_supabase.py` para ambos lotes del día junto.**
+- **Sync corrido (2026-08-11).** Primer intento se cortó a mitad de
+  camino por un `ConnectionResetError` justo al llegar a Extracontractual
+  (error de red, no de datos); como el upsert es idempotente, se
+  reintentó y esta vez terminó limpio: 519 Flashcards, 369
+  Preguntas_Evaluacion, 356 Evaluación (124 Contractual + 173
+  Extracontractual + 59 Precontractual). De los 12 ítems de Evaluación
+  nuevos de hoy (ejes 9, 15, 2, 14 -no aplica-, 20 -no aplica-, 21, 23),
+  **solo los 4 que Laura ya había marcado `publicado` antes de correr el
+  sync llegaron a producción**: `re-aplic-044`, `re-just-040`,
+  `re-aplic-045`, `re-detect-042` (verificado en vivo contra Supabase).
+  Los otros 8 (`re-mc-045`, `re-mc-046`, y los 6 del lote de ejes 2/21/23)
+  siguen sin publicar en Airtable, igual que las 5 Alternativas nuevas
+  (`ext-alt-042` a `046`), que no pasan por este sync — necesitan que
+  alguien les cambie `publicado` a `true` directo en Supabase cuando
+  Laura las apruebe.
   **Lotes 6 y 7 (eje 12, 19, 25, 6 ítems en total, no 8 como se dijo al
   cerrar la sesión anterior, error de suma) revisados y publicados
   (2026-08-05), a pedido de Laura ("revísalas y públicalas cuando
