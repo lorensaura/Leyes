@@ -85,6 +85,14 @@ publicar:
   Práctica todavía no existe, ver `docs/historial-2026-08.md` (hallazgo
   2026-08-12) y la idea de Laura de particionar el contenido por materia
   en Supabase, anotada ahí mismo.
+  **2026-08-12: primer contenido real de Acto Jurídico ya generado** —
+  `scripts/memorice_acto_juridico_2026-08.sql` (40 artículos de Memorice,
+  materia `acto_juridico`, más 2 `UPDATE` a artículos que ya existían bajo
+  otra materia). Sin correr en Supabase todavía. Aunque se corra, no se va
+  a ver en la app: `acto_juridico` sigue `disabled:true` en
+  `MATERIAS_CIVIL` (`app/alternativas.html`), y aunque se habilite, choca
+  con el andamiaje pendiente de la línea de arriba (el filtro de Materia a
+  nivel Civil no está conectado todavía a qué ítems se muestran).
 
 **Producto / app:**
 - No existe una tabla que guarde **todos** los intentos de
