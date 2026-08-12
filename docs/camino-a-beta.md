@@ -79,20 +79,25 @@ publicar:
 - Checkpoints de comprensión lectora del manual de Precontractual
   (preguntas/keywords en `app/manuales.html`): son borrador de Claude, sin
   la revisión de Laura todavía.
-- Materias nuevas (Bienes, Acto Jurídico, Contratos, Familia, Sucesorio,
-  Procesal, Penal, Constitucional, Administrativo): en stand by. El
-  andamiaje de código para que una materia nueva filtre de verdad en
-  Práctica todavía no existe, ver `docs/historial-2026-08.md` (hallazgo
-  2026-08-12) y la idea de Laura de particionar el contenido por materia
-  en Supabase, anotada ahí mismo.
-  **2026-08-12: primer contenido real de Acto Jurídico ya generado** —
-  `scripts/memorice_acto_juridico_2026-08.sql` (40 artículos de Memorice,
-  materia `acto_juridico`, más 2 `UPDATE` a artículos que ya existían bajo
-  otra materia). Sin correr en Supabase todavía. Aunque se corra, no se va
-  a ver en la app: `acto_juridico` sigue `disabled:true` en
-  `MATERIAS_CIVIL` (`app/alternativas.html`), y aunque se habilite, choca
-  con el andamiaje pendiente de la línea de arriba (el filtro de Materia a
-  nivel Civil no está conectado todavía a qué ítems se muestran).
+- Materias nuevas (Bienes, Contratos, Familia, Sucesorio, Procesal, Penal,
+  Constitucional, Administrativo): en stand by, sin contenido ni filtro
+  habilitado. Acto Jurídico ya dio su primer paso real, ver el punto de
+  abajo.
+  **2026-08-12: Acto Jurídico habilitado en el módulo de Práctica.** 40
+  artículos de Memorice cargados en Supabase (`scripts/memorice_acto_juridico_2026-08.sql`
+  y `scripts/memorice_acto_juridico_2026-08_paso2_updates.sql`, corridos y
+  confirmados). Antes de esto, el filtro de Materia a nivel Civil
+  (`MATERIAS_CIVIL` en `app/alternativas.html`) estaba `disabled:true` y,
+  aunque se hubiera habilitado, no llegaba a filtrar los datos: solo el
+  Área dentro de Responsabilidad lo hacía. Se agregó `perteneceAMateriaCivil()`
+  y se conectó en los 5 modelos (Evaluación, Alternativas, Memorice,
+  Flashcards, Errores), verificado con 22 casos de prueba en Node contra el
+  código real (compatibilidad retroactiva de Responsabilidad incluida).
+  Evaluación, Alternativas y Flashcards de Acto Jurídico siguen sin
+  contenido propio todavía, el filtro ya queda listo para cuando se cargue.
+  El resto de las materias nuevas (Bienes, etc.) puede seguir el mismo
+  camino sin más cambios de código, solo cargar su contenido y sacarles el
+  `disabled` en `MATERIAS_CIVIL`.
 
 **Producto / app:**
 - No existe una tabla que guarde **todos** los intentos de
