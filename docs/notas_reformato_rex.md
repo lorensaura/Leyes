@@ -146,3 +146,35 @@ las adiciones de criterio (enum-i/enum-a, cajas, arreglos de numeración).
 
 ## Eje 16 (P)
 - Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 17 (Q)
+- Convertidas a `.enum-i` las tres críticas a la doctrina objetiva (1); a
+  `.enum-a` los cuatro grupos de casos que justifican responsabilidad
+  estricta (dato-grado).
+
+## Eje 18 (R)
+- Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 19 (S)
+- Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 20 (T)
+- Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 21 (U)
+- Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 22 (V)
+- Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 23 (W)
+- Solo cortes mecánicos (por anclas); las nueve diferencias entre
+  estatutos vienen agrupadas en prosa, no se forzó a enum-i.
+
+## Eje 24 (X)
+- Solo cortes mecánicos (por anclas); sin agregados de enum/caja.
+
+## Eje 25 (Y, último)
+- Convertidos a `.enum-i` los tres requisitos de Rosende para la
+  responsabilidad precontractual (1.2).
+- Con este eje termina el reformato completo de los 25 ejes de REX.

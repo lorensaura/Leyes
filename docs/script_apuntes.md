@@ -38,8 +38,12 @@ Estas tres reglas no son negociables ni se relajan por volumen o apuro:
 
 ## 1. Formato
 
-El estándar es el de **Responsabilidad Contractual y Precontractual**, no
-el de Extracontractual (ver sección 2, "por qué no REX").
+El estándar es el de **Responsabilidad Contractual y Precontractual**
+(ver sección 1.6, "por qué no REX" en su versión original). **Actualizado
+2026-08-12: REX ya fue reformateada a este mismo estándar**, eje por eje,
+con verificación mecánica de que no se perdió contenido (ver
+`docs/notas_reformato_rex.md` para el detalle de qué se agregó en cada
+eje). Los tres manuales publicados siguen hoy el mismo formato.
 
 ### 1.1 Jerarquía de títulos y numeración
 
@@ -283,13 +287,16 @@ falta, `--accent`/`--accent2` u otro color de marca, nunca la estructura):
 
 ### 1.6 Densidad de texto: párrafos cortos, documento espaciado
 
-**Este es el punto que más se corrigió al escribir este template.** El
-estándar es Contractual y Precontractual, **no** Extracontractual: al medir
-los 3 manuales existentes, Extracontractual promedia 1048 caracteres por
-párrafo (con párrafos de hasta **10.529 caracteres seguidos**, sin ningún
-recuadro `.callout` ni `.warn` en todo el documento), mientras que
-Contractual promedia 620 caracteres (máximo 1770) y Precontractual 512
-(máximo 1650), ambos con recuadros frecuentes intercalados.
+**Este fue el punto que más se corrigió al escribir este template.** El
+estándar es Contractual y Precontractual. Al medirlos originalmente (antes
+del reformato de 2026-08-12), Extracontractual promediaba 1048 caracteres
+por párrafo (con párrafos de hasta **10.529 caracteres seguidos**, sin
+ningún recuadro `.callout` ni `.warn` en todo el documento), mientras que
+Contractual promediaba 620 caracteres (máximo 1770) y Precontractual 512
+(máximo 1650), ambos con recuadros frecuentes intercalados. **Extracontractual
+ya fue reformateada a este mismo estándar (2026-08-12, ver
+`docs/notas_reformato_rex.md`)**; esta sección queda como referencia del
+criterio a aplicar en manuales nuevos, no como advertencia sobre REX.
 
 Reglas concretas:
 
@@ -303,8 +310,8 @@ Reglas concretas:
 - Cada eje debe llevar al menos un recuadro de Ejemplo o Dato de grado; si
   el material fuente trae jurisprudencia o una distinción que merece un
   callout, agrégalos también. Un tramo largo de puro texto corrido, sin
-  ningún recuadro, es la señal de que el tramo quedó con formato REX en vez
-  del formato objetivo.
+  ningún recuadro, es la señal de que el tramo quedó denso en vez de
+  espaciado.
 
 ### 1.7 Índice con subtemas (requisito nuevo para manuales nuevos)
 
