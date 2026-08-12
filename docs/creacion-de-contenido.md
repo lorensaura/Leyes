@@ -81,7 +81,12 @@ legal, pero no hace falta correr este script de nuevo.
   generación).
 - **Formato:** jerarquía A/1/1.1/a)/(i), recuadros pedagógicos
   (callout/dato-grado/jurisprudencia/ejemplo/advertencia), sin guiones
-  largos (—) en ningún campo — regla permanente y retroactiva.
+  largos (—) en ningún campo — regla permanente y retroactiva. Para
+  construir el manual de una materia **nueva** (no una de las 3 de
+  Responsabilidad ya publicadas), usar `docs/script_apuntes.md`: template
+  completo de formato (con la hoja de estilos lista para copiar) y proceso,
+  con el estándar de Contractual/Precontractual (no de Extracontractual,
+  que quedó más denso y con menos recuadros de lo deseado).
 - **Manual de Precontractual** (`03_...html`) se construyó a partir de un
   borrador de Laura; sus recuadros pedagógicos y las preguntas/keywords de
   los checkpoints de `app/manuales.html` son borrador de Claude, **todavía

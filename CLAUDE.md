@@ -43,10 +43,11 @@ seguir.
 Clasificado por para qué lo abrirías — no leas ninguno de entrada, solo el que aplique:
 
 **Estado del proyecto:**
-- `docs/camino-a-beta.md`: hecho / pendiente / por determinar antes de invitar alumnas beta. Se actualiza in place cada sesión, es el punto de partida si no está claro qué sigue.
+- `docs/camino-a-beta.md`: hecho / pendiente / por determinar antes de invitar alumnas beta. Se actualiza in place cada sesión, es el punto de partida si no está claro qué sigue. Corto a propósito; el detalle sesión a sesión vive aparte en `docs/historial-2026-08.md` (archivo, no se actualiza in place, abrir solo si hace falta el detalle fino).
 
 **Contenido jurídico (manuales, preguntas, Práctica):**
 - `docs/creacion-de-contenido.md` — punto de entrada: qué modelo vive dónde, qué revisar antes de generar, pendientes de contenido. Ábrelo siempre antes de tocar manuales o preguntas.
+- **Creación de apuntes/manuales (materia nueva): ver `docs/script_apuntes.md`.**
 - `docs/practica.md` — cómo funciona el módulo Práctica en la app (los 3 ejes de filtro, el motor de Memorice).
 - `docs/prompt-generacion-contenido-practica.md` — prompt maestro con las reglas mecánicas de redacción y anti-alucinación.
 - `docs/interrogador.md` — Interrogador IA: grounding, costos, modo transversal, estado y pendientes.
