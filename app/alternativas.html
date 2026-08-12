@@ -1103,6 +1103,26 @@ const bancoTransversal = [
       if (!raw) return area === 'general';
       return raw.split(',').map(s => normalizarMateria(s.trim())).includes(area);
     }
+    // Filtro de Materia a nivel Civil (Responsabilidad, Acto Jurídico, etc.),
+    // distinto del área de arriba (que es solo el desglose interno de
+    // Responsabilidad). Reusa el mismo campo `materia` separado por coma: una
+    // fila pertenece a 'responsabilidad' si no trae ningún tag de otra
+    // materia civil (todo el contenido de antes de que existieran materias
+    // nuevas, comportamiento por defecto), o si trae explícitamente un tag de
+    // área/transversal (fila cruzada, ej. 'contractual,acto_juridico'
+    // pertenece a las dos). Para cualquier otra materia (ej. 'acto_juridico')
+    // exige el tag exacto.
+    function perteneceAMateriaCivil(raw, materiaId) {
+      if (materiaId === 'todas') return true;
+      const tags = (raw || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+      if (materiaId === 'responsabilidad') {
+        const otrasMaterias = MATERIAS_CIVIL.map(m => m.id).filter(id => id !== 'todas' && id !== 'responsabilidad');
+        const tieneOtraMateria = tags.some(t => otrasMaterias.includes(t));
+        const tagsResponsabilidad = ['precontractual', 'contractual', 'extracontractual', 'transversal'];
+        return !tieneOtraMateria || tags.some(t => tagsResponsabilidad.includes(t));
+      }
+      return tags.includes(materiaId);
+    }
     function escaparHtmlBase(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
     function escaparAtributoHtml(t) { return escaparHtmlBase(t).replace(/"/g, '&quot;'); }
     function sumarDias(dias) { return new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toISOString(); }
@@ -1140,7 +1160,7 @@ const bancoTransversal = [
     const MATERIAS_CIVIL = [
       { id: 'todas', label: 'Todas' },
       { id: 'responsabilidad', label: 'Responsabilidad' },
-      { id: 'acto_juridico', label: 'Acto Jurídico', disabled: true },
+      { id: 'acto_juridico', label: 'Acto Jurídico' },
       { id: 'bienes', label: 'Bienes', disabled: true },
       { id: 'obligaciones', label: 'Obligaciones', disabled: true },
       { id: 'contratos', label: 'Contratos', disabled: true },
@@ -1216,7 +1236,7 @@ const bancoTransversal = [
     function subtemasDelModeloActivo() {
       if (!(modeloActivo === 'alternativa' || modeloActivo === 'memorice')) return [];
       const fuente = modeloActivo === 'alternativa' ? datosAlternativas : datosMemoriceArticulos;
-      const filtradasPorMateria = fuente.filter(it => areaActiva === 'todas' || perteneceAArea(it.materia, areaActiva));
+      const filtradasPorMateria = fuente.filter(it => perteneceAMateriaCivil(it.materia, materiaActiva) && (areaActiva === 'todas' || perteneceAArea(it.materia, areaActiva)));
       return subtemasDisponibles(filtradasPorMateria);
     }
 
@@ -1351,7 +1371,7 @@ const bancoTransversal = [
 
     function renderErrores() {
       const cont = document.getElementById('practica-container');
-      const filtrados = erroresCargados.filter(e => areaActiva === 'todas' || perteneceAArea(e.materia, areaActiva));
+      const filtrados = erroresCargados.filter(e => perteneceAMateriaCivil(e.materia, materiaActiva) && (areaActiva === 'todas' || perteneceAArea(e.materia, areaActiva)));
       if (filtrados.length === 0) {
         cont.innerHTML = `<div class="estado-vacio">Sin pendientes por ahora — cuando falles una pregunta de Evaluación o Alternativas, aparece acá para repasar antes del examen.</div>`;
         return;
@@ -1440,6 +1460,18 @@ const bancoTransversal = [
     async function iniciarEvaluacion() {
       modoReintentoError = false;
       document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando evaluación…</div>`;
+      // Evaluación es hoy 100% contenido de Responsabilidad (banco hardcodeado
+      // + tabla Supabase), sin ítems de ninguna otra materia todavía. En vez de
+      // sumarle el mismo chequeo por tag de las otras 3 vistas (su campo
+      // `materia` no sigue la convención de lista separada por coma), se corta
+      // acá para cualquier materia que no sea Responsabilidad/Todas -- sin
+      // tocar la lógica de abajo, ya validada con alumnas reales.
+      if (materiaActiva !== 'todas' && materiaActiva !== 'responsabilidad') {
+        itemsFiltrados = [];
+        idxActual = 0; creditoTotal = 0; itemsCompletados = 0;
+        renderItemEvaluacion();
+        return;
+      }
       if (datosEvaluacion.length === 0) await cargarEvaluacion();
       // bancoTransversal usa los nombres de campo viejos (tema/id/articulos_referencia
       // como arreglo); se normaliza acá para que el resto del código solo maneje
@@ -1808,6 +1840,7 @@ const bancoTransversal = [
       document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando flashcards…</div>`;
       if (datosFlashcards.length === 0) await cargarFlashcards();
       fcFiltradas = datosFlashcards.filter(t => {
+        if (!perteneceAMateriaCivil(t.materia, materiaActiva)) return false;
         if (areaActiva !== 'todas' && !perteneceAArea(t.materia, areaActiva)) return false;
         return fcEsDebida(t);
       });
@@ -1906,6 +1939,7 @@ const bancoTransversal = [
       document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando alternativas…</div>`;
       if (datosAlternativas.length === 0) await cargarAlternativas();
       altFiltradas = datosAlternativas.filter(it => {
+        if (!perteneceAMateriaCivil(it.materia, materiaActiva)) return false;
         if (areaActiva !== 'todas' && !perteneceAArea(it.materia, areaActiva)) return false;
         if (subtipoActivo !== 'todos' && it.subtema !== subtipoActivo) return false;
         return true;
@@ -2027,6 +2061,7 @@ const bancoTransversal = [
       if (datosMemoriceArticulos.length === 0) await cargarMemorice();
       const ahora = new Date();
       memCola = datosMemoriceArticulos.filter(a => {
+        if (!perteneceAMateriaCivil(a.materia, materiaActiva)) return false;
         if (areaActiva !== 'todas' && !perteneceAArea(a.materia, areaActiva)) return false;
         if (subtipoActivo !== 'todos' && a.subtema !== subtipoActivo) return false;
         const p = progresoMemorice[claveProgreso(a.id, metodoMemorice)];

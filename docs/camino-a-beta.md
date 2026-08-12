@@ -48,7 +48,8 @@ tablas de uso (`memorice_intentos`, `flashcard_progreso`,
   ítem por ítem en `docs/historial-2026-08.md`.
 - `docs/script_apuntes.md`: template de formato y proceso para construir
   el manual de una materia nueva (piloto: Bienes), con el estándar de
-  densidad de Contractual/Precontractual (ver pendiente de REX abajo).
+  densidad de Contractual/Precontractual, ahora también aplicado a REX
+  (ver "Manuales" abajo).
 
 ## Pendiente
 
@@ -68,23 +69,39 @@ publicar:
   `docs/fase0_rep_clasificacion_2026-07-31.md`).
 
 **Manuales:**
-- **Extracontractual (REX) quedó con un formato más denso que
-  Contractual/Precontractual** (confirmado con conteo real el 2026-08-12:
-  párrafos hasta de 10.500 caracteres, cero recuadros `.callout`/`.warn`
-  en todo el manual). Igualarlo al estándar de `docs/script_apuntes.md` es
-  trabajo pendiente, no se tocó todavía.
+- ~~Extracontractual (REX) quedó con un formato más denso que
+  Contractual/Precontractual~~ **Hecho 2026-08-12**: reformateados los 25
+  ejes de REX al mismo estándar de `docs/script_apuntes.md` (párrafos
+  cortos, recuadros `.callout`/`.enum-i`/`.enum-a` agregados, jurisprudencia
+  repetida agrupada). Verificado sin pérdida de contenido eje por eje
+  (script de anclas + diff de texto). Detalle en
+  `docs/notas_reformato_rex.md`. **Sigue pendiente de revisión de Laura**,
+  como todo el contenido jurídico de los manuales.
 - Índice de los 3 manuales publicados: falta que liste también los
   subtemas de nivel 2 (`h3`, "N.M"), no solo los ejes. Pedido de Laura,
   2026-07-31.
 - Checkpoints de comprensión lectora del manual de Precontractual
   (preguntas/keywords en `app/manuales.html`): son borrador de Claude, sin
   la revisión de Laura todavía.
-- Materias nuevas (Bienes, Acto Jurídico, Contratos, Familia, Sucesorio,
-  Procesal, Penal, Constitucional, Administrativo): en stand by. El
-  andamiaje de código para que una materia nueva filtre de verdad en
-  Práctica todavía no existe, ver `docs/historial-2026-08.md` (hallazgo
-  2026-08-12) y la idea de Laura de particionar el contenido por materia
-  en Supabase, anotada ahí mismo.
+- Materias nuevas (Bienes, Contratos, Familia, Sucesorio, Procesal, Penal,
+  Constitucional, Administrativo): en stand by, sin contenido ni filtro
+  habilitado. Acto Jurídico ya dio su primer paso real, ver el punto de
+  abajo.
+  **2026-08-12: Acto Jurídico habilitado en el módulo de Práctica.** 40
+  artículos de Memorice cargados en Supabase (`scripts/memorice_acto_juridico_2026-08.sql`
+  y `scripts/memorice_acto_juridico_2026-08_paso2_updates.sql`, corridos y
+  confirmados). Antes de esto, el filtro de Materia a nivel Civil
+  (`MATERIAS_CIVIL` en `app/alternativas.html`) estaba `disabled:true` y,
+  aunque se hubiera habilitado, no llegaba a filtrar los datos: solo el
+  Área dentro de Responsabilidad lo hacía. Se agregó `perteneceAMateriaCivil()`
+  y se conectó en los 5 modelos (Evaluación, Alternativas, Memorice,
+  Flashcards, Errores), verificado con 22 casos de prueba en Node contra el
+  código real (compatibilidad retroactiva de Responsabilidad incluida).
+  Evaluación, Alternativas y Flashcards de Acto Jurídico siguen sin
+  contenido propio todavía, el filtro ya queda listo para cuando se cargue.
+  El resto de las materias nuevas (Bienes, etc.) puede seguir el mismo
+  camino sin más cambios de código, solo cargar su contenido y sacarles el
+  `disabled` en `MATERIAS_CIVIL`.
 
 **Producto / app:**
 - No existe una tabla que guarde **todos** los intentos de
@@ -104,6 +121,15 @@ publicar:
 - Fusionar a `main` el arreglo de encabezado de los PDF (worktree
   `pdf-header-fix`, ya pusheado): a propósito no fusionado, Laura quiere
   juntar más arreglos de PDF antes de regenerar los 3 de una vez.
+
+**JustinIAno / Interrogador, pendientes heredados sin fecha reciente:**
+falta agregar la tarjeta de pago a la cuenta de Voyage AI (a propósito
+pospuesto, el límite gratuito no afecta el uso normal todavía, pero hay
+que hacerlo antes de que las alumnas usen JustinIAno en volumen); no está
+confirmado si `VOYAGE_API_KEY` ya tomó efecto en producción; y el
+"self-answering" del Interrogador (la IA a veces se respondía sola su
+propia pregunta, reportado hace varias sesiones) sigue sin confirmación
+concluyente de si sigue pasando.
 
 **Contenido, tareas sueltas menores:** normalizar el campo `materia` de
 las preguntas nuevas de Contractual (cosmético); terminar de linkear a
