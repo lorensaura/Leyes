@@ -214,3 +214,84 @@ especial del art. 1768). Ningún hallazgo de prioridad alta; consistente
 con ser el PDF más largo y denso del set de fuentes (21p).
 
 ---
+
+## Tanda 4 — Ejes C, D. Capacidad, Objeto (fuente: PDF 4 + PDF 5, 25p)
+
+### 1. Profundidad insuficiente
+- **[medio]** `sC3-1` (dementes): se pierde el desarrollo de fondo de dos
+  fallos reales de la <strong>Corte de Concepción</strong> (1896 y 2008)
+  sobre el sentido amplio de "demencia"; el manual solo parafrasea de
+  forma genérica y sin atribución la conclusión del fallo de 2008.
+- **[medio]** `sC3-2-b` (disipadores): se pierde por completo el
+  desarrollo de un fallo de la <strong>Corte de Concepción (2008)</strong>
+  que define la interdicción y explica el fundamento de la institución
+  (interés del interdicto, su familia y la sociedad).
+- **[medio]** `sD4-1` (contravención del derecho público): falta la
+  precisión de que el <span class="art">art. 1462</span> no se refiere al
+  <em>orden público</em> sino al <em>derecho público</em> (conceptos
+  distintos), falta la mención de que se ha resuelto que adolece de
+  nulidad absoluta por objeto ilícito el contrato fundado en un acto
+  administrativo nulo de derecho público, y falta enteramente el párrafo
+  sobre la <strong>nulidad de derecho público</strong> del art. 7 de la
+  Constitución, aplicable cuando la contravención proviene de un órgano
+  del Estado y no de un particular.
+- **[medio]** `sD4-3-iv` (especies litigiosas): falta la observación
+  doctrinal de que el Nº 4 del <span class="art">art. 1464</span> sería
+  redundante con el Nº 3 (dado el alcance amplio que la jurisprudencia da
+  a "cosas embargadas"), y falta que el demandado es responsable de
+  fraude si enajena a sabiendas una especie litigiosa mueble estando
+  vigente la prohibición.
+- **[bajo]** `sC3-2` (disipadores): falta el punto de que se discute si
+  los actos de los disipadores interdictos también generan obligaciones
+  naturales (remitido por la fuente al curso de Obligaciones).
+- **[bajo]** `sD4-3-iii` (cosas embargadas): falta la protección del
+  acreedor que embargó primero mediante el procedimiento de las
+  tercerías (art. 528 C.P.C.).
+
+### 2. Falta de ejemplos
+Sin hallazgos nuevos. El ejemplo de la venta de la suerte (red del
+pescador) ya está recogido en un recuadro `.ejemplo` propio.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+- **[medio]** `sC3-1` (dementes): falta el fallo de la Corte de
+  Concepción de 1896 (la demencia comprende no solo a quienes carecen en
+  absoluto de razón, sino también a quienes no pueden dirigirse a sí
+  mismos o administrar competentemente sus negocios), y falta la
+  atribución explícita del fallo de 2008 de la misma Corte, cuya
+  conclusión el manual recoge pero sin citarlo como jurisprudencia. Eje C
+  no tiene ningún recuadro `.jurisprudencia`, pese a que la fuente trae
+  tres fallos reales con tribunal y año en este tramo.
+- **[medio]** `sC3-2-b` (disipadores): falta el fallo de la Corte de
+  Concepción de 2008 sobre el concepto y fundamento de la interdicción,
+  citado en extenso por la fuente (mismo punto de la categoría 1).
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+Sin hallazgos adicionales a los ya señalados en 1 y 3.
+
+### 5. Debate doctrinal aplanado
+Sin hallazgos. Los debates de objeto ilícito (inexistencia vs. nulidad
+absoluta en cosas incomerciables, sentido estricto vs. amplio de
+"enajenación") están bien representados con ambas posturas.
+
+### 6. Coherencia estructural
+Sin hallazgos. Numeración fiel a la fuente en ambos ejes (1/2/2.1/2.2/3
+con 3.1-3.3 para capacidad; 1/2/2.1-2.3/3/3.1-3.3/4/4.1-4.7 para objeto,
+con la subdivisión (i)-(iv) correcta dentro de 4.3).
+
+### 7. Contenido del manual sin respaldo en fuente
+Sin hallazgos.
+
+### Resumen de la tanda
+El hallazgo más notable hasta ahora: **tres fallos reales, con tribunal y
+año, presentes en la fuente y ausentes o diluidos en el manual**, los
+tres en el eje C (Capacidad), que además no tiene ningún recuadro
+`.jurisprudencia`. El eje D (Objeto), pese a ser la fuente más densa y
+técnica del set (17p sobre objeto ilícito, arts. 1462 a 1466), tiene una
+transcripción muy completa y fiel, con solo algunos puntos puntuales
+perdidos (derecho público vs. orden público, nulidad de derecho público
+del art. 7 CPR, redundancia del art. 1464 Nº 4). Ningún hallazgo de
+prioridad alta, pero los de categoría 3 (jurisprudencia) son los
+primeros de esa categoría en toda la auditoría y ameritan atención
+prioritaria en fase 2.
+
+---
