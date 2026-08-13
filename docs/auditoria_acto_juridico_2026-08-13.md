@@ -22,93 +22,86 @@
 
 ## Resumen ejecutivo
 
-**Estado de corrección (actualizado 2026-08-13):** los ejes **N
-(Simulación)**, **H (Inexistencia)** y **C (Capacidad)** ya fueron
-corregidos en el HTML del manual (`04_Acto_Juridico_Manual.html`), en esta
-misma rama, a pedido de Laura y priorizando los ejes de mayor
-concentración de jurisprudencia real. Los 12 hallazgos de esos tres ejes
-(alto/medio/bajo) están cerrados. **El resto de los ejes con hallazgos
-sigue sin corregir**: B, D, E-G, I (el punto de `sI9`), L-M, O (`sO2-1`),
-P-R, S-U. El PDF del manual (`app/pdf/Acto_Juridico.pdf`, generado
-2026-08-12) quedó desactualizado respecto de estos tres ejes; no se
-regeneró todavía, a propósito, porque Laura prefiere juntar varias
-correcciones de PDF antes de regenerar los 3 manuales de una vez (mismo
-criterio que ya usa para otros PDF, ver `docs/camino-a-beta.md`).
+**Estado de corrección (actualizado 2026-08-13): los 49 hallazgos de los
+21 ejes están corregidos en el HTML del manual**
+(`04_Acto_Juridico_Manual.html`, misma rama que este reporte), a pedido
+de Laura. La corrección se hizo en dos tandas: primero los tres ejes de
+mayor concentración de jurisprudencia real (N, H, C), y después el resto
+del manual completo (B, D, E-G, `sI9`, L-M, `sO2-1`, P-R, y el problema
+estructural de `sR10-2`/eje S). Cada corrección se verificó contra el
+texto extraído de su PDF fuente antes de escribirla (nada agregado de
+conocimiento general), y el archivo se revisó al cierre con un chequeo de
+balance de etiquetas HTML e ids duplicados, sin errores. El PDF del
+manual (`app/pdf/Acto_Juridico.pdf`, generado 2026-08-12) sigue
+desactualizado y **se regenera a continuación de este resumen**.
 
 **49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
 alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
-tiene hallazgos de contenido sin respaldo en fuente (categoría 7): el
-manual es, en ese sentido, limpio, no se detectó alucinación.
+tuvo hallazgos de contenido sin respaldo en fuente (categoría 7): el
+manual era, en ese sentido, limpio desde el principio, no hubo
+alucinación que corregir.
 
 | Tanda | Eje(s) | Alto | Medio | Bajo | Total | Estado |
 |---|---|---|---|---|---|---|
 | 1 | A | 0 | 0 | 0 | 0 | (sin hallazgos) |
-| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 | Pendiente |
-| 3 | B (4-8, vicios) | 0 | 6 | 3 | 9 | Pendiente |
-| 4 | C, D | 0 | 7 | 2 | 9 | Parcial: C corregido, D pendiente |
-| 5 | E, F, G | 0 | 4 | 3 | 7 | Pendiente |
-| 6 | H, I, J, K | 0 | 2 | 0 | 2 | Parcial: H corregido, `sI9` pendiente |
-| 7 | L, M | 0 | 0 | 2 | 2 | Pendiente |
-| 8 | N, O | 1 | 4 | 2 | 7 | Parcial: N corregido, `sO2-1` pendiente |
-| 9 | P, Q, R | 0 | 4 | 1 | 5 | Pendiente |
-| 10 | S, T, U | 0 | 1 | 0 | 1 | Pendiente |
+| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 | Corregido |
+| 3 | B (4-8, vicios) | 0 | 6 | 3 | 9 | Corregido |
+| 4 | C, D | 0 | 7 | 2 | 9 | Corregido |
+| 5 | E, F, G | 0 | 4 | 3 | 7 | Corregido |
+| 6 | H, I, J, K | 0 | 2 | 0 | 2 | Corregido |
+| 7 | L, M | 0 | 0 | 2 | 2 | Corregido |
+| 8 | N, O | 1 | 4 | 2 | 7 | Corregido |
+| 9 | P, Q, R | 0 | 4 | 1 | 5 | Corregido |
+| 10 | S, T, U | 0 | 1 | 0 | 1 | Corregido |
 | 11 | Transversal | 0 | 0 | 0 | 0 | (sin hallazgos) |
-| **Total** | | **1** | **33** | **15** | **49** | 12 corregidos, 37 pendientes |
+| **Total** | | **1** | **33** | **15** | **49** | **49 corregidos, 0 pendientes** |
 
 **El único hallazgo de prioridad alta** era la ausencia de dos fallos
 reales (RDJ 1936 y RDJ 1991) que respaldan directamente la tesis central
-de la sección de simulación lícita (`sN3`, tanda 8). **Ya corregido.**
+de la sección de simulación lícita (`sN3`, tanda 8). **Corregido.**
 
-**Nota sobre las etiquetas de prioridad:** cada tanda se calificó por
-separado, en sesiones distintas, así que el mismo tipo de vacío
-(jurisprudencia real de la fuente, ausente del manual) no siempre quedó
-con la misma etiqueta según el eje. En el eje N, los 2 fallos de
-1936/1991 se marcaron `[alto]` porque sostienen la tesis central de esa
-sección. En el eje H, un solo hallazgo `[medio]` agrupa 18 fallos reales
-de la fuente frente a solo 5 citados en el manual (la brecha de
-jurisprudencia más grande de todo el reporte, aunque cuenta como un solo
-hallazgo). En el eje C, 3 fallos reales de la Corte de Concepción
-(1896 y 2008 x2) están repartidos en 2 hallazgos también `[medio]`. Si
-se prioriza por volumen real de jurisprudencia no usada y no solo por la
-etiqueta, el orden era **N > H > C**, no únicamente "el único hallazgo
-alto". **Los tres ya están corregidos** (ver "Estado de corrección"
-arriba).
+**Nota sobre las etiquetas de prioridad** (queda como referencia
+histórica, ya no cambia la priorización porque todo está corregido): cada
+tanda se calificó por separado, en sesiones distintas, así que el mismo
+tipo de vacío no siempre quedó con la misma etiqueta según el eje. En el
+eje N, los 2 fallos de 1936/1991 se marcaron `[alto]` porque sostienen la
+tesis central de esa sección. En el eje H, un solo hallazgo `[medio]`
+agrupaba 18 fallos reales de la fuente frente a solo 5 citados en el
+manual (la brecha de jurisprudencia más grande de todo el reporte). En el
+eje C, 3 fallos reales de la Corte de Concepción (1896 y 2008 x2) estaban
+repartidos en 2 hallazgos también `[medio]`.
 
-**Concentración de hallazgos por eje** (más de 3 hallazgos):
-- **Eje N (Simulación)** — el más señalado: 5 fallos reales ausentes
-  (incluido el único hallazgo alto), más 2 citas de autor sin usar
-  (ALCALDE, JOSSERAND). **Corregido 2026-08-13.**
-- **Eje B, secciones 4-8 (Vicios de la voluntad)** — 6 hallazgos menores:
-  argumento propio del autor sobre el error sustancial, ejemplos y
-  presunciones legales de dolo incompletas. Pendiente; siguiente
-  candidato natural por volumen de hallazgos.
-- **Eje H (Inexistencia)** — jurisprudencia comprimida: 18 fallos reales
-  en la fuente, 5 en el manual. **Corregido 2026-08-13** (se amplió a 8
-  fallos citados en el cuerpo, priorizando los que tienen rol citable).
-- **Eje C (Capacidad)** — 3 fallos reales (Corte de Concepción, 1896 y
-  2008 x2) ausentes o diluidos, eje sin ningún recuadro `.jurisprudencia`.
-  **Corregido 2026-08-13.**
-- **Eje P (Fraude a la ley)** — pierde el argumento moral de DOMÍNGUEZ y
-  las citas de FERREIRA y DIEZ-PICAZO sobre buena fe y abuso del derecho.
-  Pendiente.
+**Concentración de hallazgos por eje** (más de 3 hallazgos, todos ya
+corregidos):
+- **Eje N (Simulación)**: 5 fallos reales ausentes (incluido el único
+  hallazgo alto), más 2 citas de autor sin usar (ALCALDE, JOSSERAND).
+- **Eje B, secciones 4-8 (Vicios de la voluntad)**: 9 hallazgos,
+  concentrados en el error sustancial (argumento propio del autor sobre
+  el elemento subjetivo y la discusión del dominio del vendedor) y en
+  ejemplos o citas puntuales del dolo (presunciones legales, ejemplo del
+  anticuario, sanción especial del art. 1768).
+- **Eje H (Inexistencia)**: jurisprudencia comprimida, ampliada de 4 a 8
+  fallos citados en el cuerpo, priorizando los que tienen rol citable.
+- **Eje C (Capacidad)**: 3 fallos reales (Corte de Concepción, 1896 y
+  2008 x2), con su primer recuadro `.jurisprudencia`.
+- **Eje P (Fraude a la ley)**: argumento moral de DOMÍNGUEZ, contra-crítica
+  de ALCALDE y citas de FERREIRA y DIEZ-PICAZO sobre buena fe y abuso del
+  derecho.
 
-**Ejes de altísima fidelidad, sin hallazgos relevantes**: A, E, F, G, L,
-M, S, T, U. En conjunto, más de la mitad de los 21 ejes no tiene ningún
-hallazgo de prioridad media o alta.
+**Único problema de forma, ya corregido**: el párrafo introductorio de
+modalidades (RAMOS, ABELIUK) se movió del final del eje R al inicio del
+eje S, donde corresponde temáticamente.
 
-**Un solo problema de forma, no de contenido**: el párrafo introductorio
-de modalidades (RAMOS, ABELIUK) quedó al final del eje R en vez de al
-inicio del eje S (tanda 9-10).
+**Ejes que resultaron de altísima fidelidad desde la auditoría original,
+sin hallazgos relevantes**: A, F, G, L, M, S, T, U.
 
 ### Qué sigue
-La fase 2 (corrección del HTML) ya empezó: los ejes N, H y C, los de
-mayor concentración de jurisprudencia real, están corregidos (2026-08-13,
-misma rama que este reporte). Falta que Laura revise esas tres
-correcciones y decida si sigue con el resto por tandas similares. Los
-siguientes candidatos naturales por volumen de hallazgos son el eje B
-(secciones 4-8, 9 hallazgos), el eje D (Objeto, dentro de la tanda 4) y
-el eje P (Fraude a la ley). El PDF del manual sigue sin regenerar a
-propósito (ver "Estado de corrección" arriba).
+La fase 2 (corrección del HTML) está terminada: los 49 hallazgos de los
+21 ejes quedaron corregidos en `04_Acto_Juridico_Manual.html` (2026-08-13,
+misma rama que este reporte). Falta que Laura revise el resultado y
+confirme el contenido antes de que el manual se enlace en
+`app/manuales.html`. El PDF se regeneró junto con esta corrección (ver
+"Estado de corrección" arriba).
 
 ---
 
