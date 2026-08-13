@@ -1339,6 +1339,17 @@ const bancoTransversal = [
       } catch (e) { /* la instrumentación nunca debe bloquear el estudio */ }
     }
 
+    // Log de todos los intentos de Evaluación/Alternativas (practica_intentos
+    // en Supabase), mismo patrón que registrarIntentoMemorice: insert simple,
+    // nunca se pisa un intento anterior, nunca bloquea el estudio.
+    async function registrarIntentoPractica(origen, itemId, materia, subtema, tipo, resultado, credito) {
+      try {
+        await sb.from('practica_intentos').insert({
+          user_id: usuarioId, origen, item_id: itemId, materia, subtema, tipo, resultado, credito,
+        });
+      } catch (e) { /* la instrumentación nunca debe bloquear el estudio */ }
+    }
+
     async function actualizarBadgeErrores() {
       try {
         const { count } = await sb.from('practica_errores').select('id', { count: 'exact', head: true }).eq('user_id', usuarioId);
@@ -1611,6 +1622,8 @@ const bancoTransversal = [
       if (siguienteAccion !== 'segunda_pasada') {
         if (siguienteAccion === 'avanzar') limpiarError('evaluacion', item.codigo);
         else registrarError('evaluacion', item.codigo, item.materia, item.subtema, item.tipo, item.enunciado);
+        const resultadoIntento = siguienteAccion === 'avanzar' ? 'correcto' : (credito >= 0.35 ? 'parcial' : 'incorrecto');
+        registrarIntentoPractica('evaluacion', item.codigo, item.materia, item.subtema, item.tipo, resultadoIntento, credito);
       }
 
       let veredicto, feedbackDiag;
@@ -1752,6 +1765,7 @@ const bancoTransversal = [
       itemsCompletados++;
       if (esCorrecta) limpiarError('evaluacion', item.codigo);
       else registrarError('evaluacion', item.codigo, item.materia, item.subtema, item.tipo, item.enunciado);
+      registrarIntentoPractica('evaluacion', item.codigo, item.materia, item.subtema, item.tipo, esCorrecta ? 'correcto' : 'incorrecto', esCorrecta ? 1 : 0);
       document.querySelectorAll('.option-btn').forEach((btn, i) => {
         btn.disabled = true;
         if (i === correctaIdx) btn.classList.add(esCorrecta && i === seleccionMC ? 'correct' : 'revealed');
@@ -2008,6 +2022,7 @@ const bancoTransversal = [
       altCompletados++;
       if (esCorrecta) { altCorrectas++; limpiarError('alternativas', item.id); }
       else registrarError('alternativas', item.id, item.materia, item.subtema, null, item.pregunta);
+      registrarIntentoPractica('alternativas', item.id, item.materia, item.subtema, null, esCorrecta ? 'correcto' : 'incorrecto', esCorrecta ? 1 : 0);
 
       botones[idx].classList.add(esCorrecta ? 'selected' : 'wrong');
       if (!esCorrecta) botones[item.correcta].classList.add('revealed');

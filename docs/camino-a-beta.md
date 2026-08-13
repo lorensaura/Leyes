@@ -117,11 +117,18 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   contenido.
 
 **Producto / app:**
-- No existe una tabla que guarde **todos** los intentos de
-  Evaluación/Alternativas por alumna (solo Memorice y Flashcards la
-  tienen). Por eso el dashboard muestra "sin datos" en vez de "preguntas
-  respondidas" / "% acierto hoy", y la "racha" sigue mockeada. Laura
-  decidió posponerlo, retomar cuando lo pida.
+- **2026-08-13: tabla `practica_intentos` creada** (código, falta que
+  Laura la corra), mismo patrón que `memorice_intentos`: un registro por
+  cada intento de Evaluación/Alternativas, log de solo inserción.
+  `scripts/supabase_schema_practica_intentos.sql` listo para pegar en el
+  SQL Editor de Supabase. Ya conectada en `app/alternativas.html`
+  (`registrarIntentoPractica`, llamada junto a `registrarError` en los 3
+  puntos donde se resuelve una pregunta: Evaluación libre, Evaluación
+  discriminación MC, Alternativas) -- en cuanto Laura corra el script en
+  Supabase, empieza a llenarse sola. **Falta todavía:** conectar el
+  dashboard para que lea de esta tabla en vez de mostrar "sin datos"
+  (racha sigue mockeada). Laura decidió posponer esa parte, retomar
+  cuando lo pida.
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
