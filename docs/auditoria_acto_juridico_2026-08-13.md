@@ -389,3 +389,79 @@ la actualización de derecho comparado sobre la reforma francesa de 2016.
 Ningún hallazgo de prioridad alta en la tanda.
 
 ---
+
+## Tanda 6 — Ejes H, I, J, K. Inexistencia, Nulidad general/absoluta/relativa (fuente: PDF 9 + PDF 10, 25p, más anexo Bozzo-Ibarra)
+
+Nota metodológica: se verificó puntualmente contra el anexo Bozzo-Ibarra
+(`Anexo_secundario_AJ_Ineficacia.pdf`) el contenido del manual que no
+aparecía en PDF 9 ni PDF 10, para descartar contenido sin respaldo
+(categoría 7). Los dos casos encontrados (la "nulidad refleja" de `sI9` y
+el fallo de actos propios de `sJ4`) **sí están respaldados** en ese
+anexo, aunque formalmente asignado a otra tanda: quien escribió el
+manual ya lo cruzó para estos dos puntos puntuales, señal de que el uso
+de fuentes secundarias fue real pero inconsistente entre tramos.
+
+### 1. Profundidad insuficiente
+- **[medio]** `sI9` (nulidad refleja): la misma fuente secundaria de la
+  que sale este concepto (Bozzo-Ibarra) trae, justo antes del pasaje
+  usado, dos conceptos adyacentes que no llegaron al manual: la
+  <strong>nulidad consecuencial o de resultado</strong> (cuando la
+  cláusula nula contiene la estipulación principal del acto, o este no
+  puede subsistir sin ella, su nulidad acarrea la de todo el acto), y el
+  principio de que <strong>la nulidad de lo accesorio no afecta a lo
+  principal, pero la nulidad de lo principal sí acarrea la de lo
+  accesorio</strong>, con dos ejemplos de artículo concretos: la cláusula
+  penal (<span class="art">art. 1536</span>) y la fianza (<span class="art">art.
+  2381 Nº 3</span>).
+
+### 2. Falta de ejemplos
+Sin hallazgos nuevos.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+- **[medio]** `sH4-4` (jurisprudencia sobre inexistencia vs. nulidad
+  absoluta): la fuente lista <strong>18 fallos reales</strong>, con rol,
+  tribunal y cita de RDJ (8 que rechazan la teoría de la inexistencia, 10
+  que la acogen); el manual cita solo 4 en el cuerpo del texto más uno en
+  recuadro `.jurisprudencia`. Entre los omitidos hay varios con rol
+  citable y relativamente recientes: Corte Suprema, 28 de noviembre de
+  2012, rol 4537-10; C. de Santiago, 2 de mayo de 1997, rol 2153-1995; C.
+  de Concepción, 11 de abril de 1995, rol 315-1994; C. de Santiago, 18 de
+  noviembre de 2011, rol 5168-2010. La selección hecha es razonable como
+  recorte editorial, pero al ser esta la sección con más jurisprudencia
+  real de todo el manual hasta ahora, vale la pena que Laura revise si
+  conviene ampliar la muestra o agregar un segundo recuadro con más
+  fallos.
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+Sin hallazgos adicionales a los ya señalados.
+
+### 5. Debate doctrinal aplanado
+Sin hallazgos. El debate central de la tanda (¿distingue el Código
+chileno la inexistencia de la nulidad absoluta?) está tratado con
+extraordinaria fidelidad: ambas doctrinas completas (`sH4-1`, `sH4-2`),
+más el análisis de historia fidedigna (`sH4-3`) y la jurisprudencia
+(`sH4-4`).
+
+### 6. Coherencia estructural
+Sin hallazgos. Numeración fiel en los cuatro ejes; se verificó
+específicamente que `sI9` (nulidad refleja, sin numeración correlativa
+visible en el temario original de la fuente principal) no rompe la
+jerarquía del manual porque es contenido adicional correctamente
+integrado con su propio `<h2>`.
+
+### 7. Contenido del manual sin respaldo en fuente
+Sin hallazgos, tras la verificación puntual descrita en la nota
+metodológica.
+
+### Resumen de la tanda
+Los ejes I, J y K (nulidad general, absoluta y relativa) son de
+altísima fidelidad, probablemente los más completos de la auditoría
+hasta ahora, incluyendo puntos técnicos finos (BARAONA sobre la
+naturaleza de la caducidad del art. 1683, la discusión sobre el
+representante doloso, la situación excepcional del art. 1685). El único
+hallazgo de fondo es la jurisprudencia comprimida del eje H (18 fallos
+reales en la fuente, 5 en el manual) y dos conceptos adyacentes a la
+nulidad refleja que no se cruzaron desde la misma fuente secundaria que
+sí se usó para ese punto. Ningún hallazgo de prioridad alta.
+
+---
