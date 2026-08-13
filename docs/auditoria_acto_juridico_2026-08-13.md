@@ -22,29 +22,42 @@
 
 ## Resumen ejecutivo
 
+**Estado de corrección (actualizado 2026-08-13):** los ejes **N
+(Simulación)**, **H (Inexistencia)** y **C (Capacidad)** ya fueron
+corregidos en el HTML del manual (`04_Acto_Juridico_Manual.html`), en esta
+misma rama, a pedido de Laura y priorizando los ejes de mayor
+concentración de jurisprudencia real. Los 12 hallazgos de esos tres ejes
+(alto/medio/bajo) están cerrados. **El resto de los ejes con hallazgos
+sigue sin corregir**: B, D, E-G, I (el punto de `sI9`), L-M, O (`sO2-1`),
+P-R, S-U. El PDF del manual (`app/pdf/Acto_Juridico.pdf`, generado
+2026-08-12) quedó desactualizado respecto de estos tres ejes; no se
+regeneró todavía, a propósito, porque Laura prefiere juntar varias
+correcciones de PDF antes de regenerar los 3 manuales de una vez (mismo
+criterio que ya usa para otros PDF, ver `docs/camino-a-beta.md`).
+
 **49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
 alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
 tiene hallazgos de contenido sin respaldo en fuente (categoría 7): el
 manual es, en ese sentido, limpio, no se detectó alucinación.
 
-| Tanda | Eje(s) | Alto | Medio | Bajo | Total |
-|---|---|---|---|---|---|
-| 1 | A | 0 | 0 | 0 | 0 |
-| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 |
-| 3 | B (4-8, vicios) | 0 | 6 | 3 | 9 |
-| 4 | C, D | 0 | 7 | 2 | 9 |
-| 5 | E, F, G | 0 | 4 | 3 | 7 |
-| 6 | H, I, J, K | 0 | 2 | 0 | 2 |
-| 7 | L, M | 0 | 0 | 2 | 2 |
-| 8 | N, O | 1 | 4 | 2 | 7 |
-| 9 | P, Q, R | 0 | 4 | 1 | 5 |
-| 10 | S, T, U | 0 | 1 | 0 | 1 |
-| 11 | Transversal | 0 | 0 | 0 | 0 |
-| **Total** | | **1** | **33** | **15** | **49** |
+| Tanda | Eje(s) | Alto | Medio | Bajo | Total | Estado |
+|---|---|---|---|---|---|---|
+| 1 | A | 0 | 0 | 0 | 0 | (sin hallazgos) |
+| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 | Pendiente |
+| 3 | B (4-8, vicios) | 0 | 6 | 3 | 9 | Pendiente |
+| 4 | C, D | 0 | 7 | 2 | 9 | Parcial: C corregido, D pendiente |
+| 5 | E, F, G | 0 | 4 | 3 | 7 | Pendiente |
+| 6 | H, I, J, K | 0 | 2 | 0 | 2 | Parcial: H corregido, `sI9` pendiente |
+| 7 | L, M | 0 | 0 | 2 | 2 | Pendiente |
+| 8 | N, O | 1 | 4 | 2 | 7 | Parcial: N corregido, `sO2-1` pendiente |
+| 9 | P, Q, R | 0 | 4 | 1 | 5 | Pendiente |
+| 10 | S, T, U | 0 | 1 | 0 | 1 | Pendiente |
+| 11 | Transversal | 0 | 0 | 0 | 0 | (sin hallazgos) |
+| **Total** | | **1** | **33** | **15** | **49** | 12 corregidos, 37 pendientes |
 
-**El único hallazgo de prioridad alta** es la ausencia de dos fallos
+**El único hallazgo de prioridad alta** era la ausencia de dos fallos
 reales (RDJ 1936 y RDJ 1991) que respaldan directamente la tesis central
-de la sección de simulación lícita (`sN3`, tanda 8).
+de la sección de simulación lícita (`sN3`, tanda 8). **Ya corregido.**
 
 **Nota sobre las etiquetas de prioridad:** cada tanda se calificó por
 separado, en sesiones distintas, así que el mismo tipo de vacío
@@ -57,22 +70,27 @@ jurisprudencia más grande de todo el reporte, aunque cuenta como un solo
 hallazgo). En el eje C, 3 fallos reales de la Corte de Concepción
 (1896 y 2008 x2) están repartidos en 2 hallazgos también `[medio]`. Si
 se prioriza por volumen real de jurisprudencia no usada y no solo por la
-etiqueta, el orden es **N > H > C**, no únicamente "el único hallazgo
-alto".
+etiqueta, el orden era **N > H > C**, no únicamente "el único hallazgo
+alto". **Los tres ya están corregidos** (ver "Estado de corrección"
+arriba).
 
 **Concentración de hallazgos por eje** (más de 3 hallazgos):
 - **Eje N (Simulación)** — el más señalado: 5 fallos reales ausentes
   (incluido el único hallazgo alto), más 2 citas de autor sin usar
-  (ALCALDE, JOSSERAND). Es la prioridad más clara para la fase 2.
+  (ALCALDE, JOSSERAND). **Corregido 2026-08-13.**
 - **Eje B, secciones 4-8 (Vicios de la voluntad)** — 6 hallazgos menores:
   argumento propio del autor sobre el error sustancial, ejemplos y
-  presunciones legales de dolo incompletas.
+  presunciones legales de dolo incompletas. Pendiente; siguiente
+  candidato natural por volumen de hallazgos.
 - **Eje H (Inexistencia)** — jurisprudencia comprimida: 18 fallos reales
-  en la fuente, 5 en el manual.
+  en la fuente, 5 en el manual. **Corregido 2026-08-13** (se amplió a 8
+  fallos citados en el cuerpo, priorizando los que tienen rol citable).
 - **Eje C (Capacidad)** — 3 fallos reales (Corte de Concepción, 1896 y
   2008 x2) ausentes o diluidos, eje sin ningún recuadro `.jurisprudencia`.
+  **Corregido 2026-08-13.**
 - **Eje P (Fraude a la ley)** — pierde el argumento moral de DOMÍNGUEZ y
   las citas de FERREIRA y DIEZ-PICAZO sobre buena fe y abuso del derecho.
+  Pendiente.
 
 **Ejes de altísima fidelidad, sin hallazgos relevantes**: A, E, F, G, L,
 M, S, T, U. En conjunto, más de la mitad de los 21 ejes no tiene ningún
@@ -82,13 +100,15 @@ hallazgo de prioridad media o alta.
 de modalidades (RAMOS, ABELIUK) quedó al final del eje R en vez de al
 inicio del eje S (tanda 9-10).
 
-### Qué sigue (fuera del alcance de este reporte)
-Este documento es una auditoría de brechas, no una corrección. La
-edición del HTML es una fase 2 posterior que requiere que Laura revise
-estos hallazgos y decida cuáles corregir y en qué orden. Dado el volumen
-de jurisprudencia real identificada (ejes N, H y C concentran casi toda),
-esa fase podría organizarse por tandas similares a esta auditoría,
-empezando por los ejes de mayor concentración de hallazgos.
+### Qué sigue
+La fase 2 (corrección del HTML) ya empezó: los ejes N, H y C, los de
+mayor concentración de jurisprudencia real, están corregidos (2026-08-13,
+misma rama que este reporte). Falta que Laura revise esas tres
+correcciones y decida si sigue con el resto por tandas similares. Los
+siguientes candidatos naturales por volumen de hallazgos son el eje B
+(secciones 4-8, 9 hallazgos), el eje D (Objeto, dentro de la tanda 4) y
+el eje P (Fraude a la ley). El PDF del manual sigue sin regenerar a
+propósito (ver "Estado de corrección" arriba).
 
 ---
 
@@ -634,13 +654,16 @@ razonable dado el contenido, no un vacío a corregir.
   cita del fallo de la Corte Suprema de 30 de marzo de 2017, que la
   fuente menciona junto al de 2015 como reiteración de los mismos
   requisitos.
-- **[medio]** `sN4-4` (consideraciones probatorias): faltan dos fallos
-  reales más, de la Corte de Apelaciones de Concepción de 29 de agosto de
-  1997 (confirmado por la Corte Suprema el 20 de octubre de 1997), sobre
-  la prueba indirecta y por indicios de la simulación, y la síntesis de
-  "dos consecuencias probatorias" que la Corte Suprema formula en sus
-  fallos de 2015 y 2017. El manual solo conserva el fallo de 1918 sobre
-  la prueba por presunciones.
+- **[medio]** `sN4-4` (consideraciones probatorias): falta el fallo de la
+  Corte de Apelaciones de Concepción de 29 de agosto de 1997 (confirmado
+  por la Corte Suprema el 20 de octubre de 1997), sobre la prueba
+  indirecta y por indicios de la simulación. **Corrección (2026-08-13,
+  al aplicar esta auditoría):** la redacción original de este hallazgo
+  también daba por ausente la síntesis de "dos consecuencias probatorias"
+  de los fallos de 2015 y 2017, pero esa síntesis ya estaba en el manual
+  (recuadro de jurisprudencia de `sN4-4`) al momento de la auditoría; fue
+  un error de la auditoría, no un hallazgo real. Solo el fallo de 1997
+  faltaba, y ya se agregó al manual.
 
 ### 4. Dato de grado marcado en la fuente, ausente en el manual
 Sin hallazgos adicionales a los ya señalados.
