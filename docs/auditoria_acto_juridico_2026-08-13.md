@@ -20,6 +20,78 @@
 
 ---
 
+## Resumen ejecutivo
+
+**49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
+alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
+tiene hallazgos de contenido sin respaldo en fuente (categoría 7): el
+manual es, en ese sentido, limpio, no se detectó alucinación.
+
+| Tanda | Eje(s) | Alto | Medio | Bajo | Total |
+|---|---|---|---|---|---|
+| 1 | A | 0 | 0 | 0 | 0 |
+| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 |
+| 3 | B (4-8, vicios) | 0 | 6 | 3 | 9 |
+| 4 | C, D | 0 | 7 | 2 | 9 |
+| 5 | E, F, G | 0 | 4 | 3 | 7 |
+| 6 | H, I, J, K | 0 | 2 | 0 | 2 |
+| 7 | L, M | 0 | 0 | 2 | 2 |
+| 8 | N, O | 1 | 4 | 2 | 7 |
+| 9 | P, Q, R | 0 | 4 | 1 | 5 |
+| 10 | S, T, U | 0 | 1 | 0 | 1 |
+| 11 | Transversal | 0 | 0 | 0 | 0 |
+| **Total** | | **1** | **33** | **15** | **49** |
+
+**El único hallazgo de prioridad alta** es la ausencia de dos fallos
+reales (RDJ 1936 y RDJ 1991) que respaldan directamente la tesis central
+de la sección de simulación lícita (`sN3`, tanda 8).
+
+**Nota sobre las etiquetas de prioridad:** cada tanda se calificó por
+separado, en sesiones distintas, así que el mismo tipo de vacío
+(jurisprudencia real de la fuente, ausente del manual) no siempre quedó
+con la misma etiqueta según el eje. En el eje N, los 2 fallos de
+1936/1991 se marcaron `[alto]` porque sostienen la tesis central de esa
+sección. En el eje H, un solo hallazgo `[medio]` agrupa 18 fallos reales
+de la fuente frente a solo 5 citados en el manual (la brecha de
+jurisprudencia más grande de todo el reporte, aunque cuenta como un solo
+hallazgo). En el eje C, 3 fallos reales de la Corte de Concepción
+(1896 y 2008 x2) están repartidos en 2 hallazgos también `[medio]`. Si
+se prioriza por volumen real de jurisprudencia no usada y no solo por la
+etiqueta, el orden es **N > H > C**, no únicamente "el único hallazgo
+alto".
+
+**Concentración de hallazgos por eje** (más de 3 hallazgos):
+- **Eje N (Simulación)** — el más señalado: 5 fallos reales ausentes
+  (incluido el único hallazgo alto), más 2 citas de autor sin usar
+  (ALCALDE, JOSSERAND). Es la prioridad más clara para la fase 2.
+- **Eje B, secciones 4-8 (Vicios de la voluntad)** — 6 hallazgos menores:
+  argumento propio del autor sobre el error sustancial, ejemplos y
+  presunciones legales de dolo incompletas.
+- **Eje H (Inexistencia)** — jurisprudencia comprimida: 18 fallos reales
+  en la fuente, 5 en el manual.
+- **Eje C (Capacidad)** — 3 fallos reales (Corte de Concepción, 1896 y
+  2008 x2) ausentes o diluidos, eje sin ningún recuadro `.jurisprudencia`.
+- **Eje P (Fraude a la ley)** — pierde el argumento moral de DOMÍNGUEZ y
+  las citas de FERREIRA y DIEZ-PICAZO sobre buena fe y abuso del derecho.
+
+**Ejes de altísima fidelidad, sin hallazgos relevantes**: A, E, F, G, L,
+M, S, T, U. En conjunto, más de la mitad de los 21 ejes no tiene ningún
+hallazgo de prioridad media o alta.
+
+**Un solo problema de forma, no de contenido**: el párrafo introductorio
+de modalidades (RAMOS, ABELIUK) quedó al final del eje R en vez de al
+inicio del eje S (tanda 9-10).
+
+### Qué sigue (fuera del alcance de este reporte)
+Este documento es una auditoría de brechas, no una corrección. La
+edición del HTML es una fase 2 posterior que requiere que Laura revise
+estos hallazgos y decida cuáles corregir y en qué orden. Dado el volumen
+de jurisprudencia real identificada (ejes N, H y C concentran casi toda),
+esa fase podría organizarse por tandas similares a esta auditoría,
+empezando por los ejes de mayor concentración de hallazgos.
+
+---
+
 ## Tanda 1 — Eje A. Teoría general del acto jurídico (fuente: PDF 1, 19p)
 
 ### 1. Profundidad insuficiente
@@ -791,52 +863,14 @@ por su cuenta; se deja anotado solo para que ella lo tenga presente si
 alguna vez cruza ambos materiales.
 
 ### Verificación de fuentes secundarias sin cruzar
-Se confirmó que los 17 PDF principales, las 3 fuentes secundarias
+Se confirmó que los 17 PDF fragmentados, las 3 fuentes secundarias
 específicas (Causa Domínguez/Boetsch, Bozzo-Ibarra en sus 3 copias, Cuadro
-comparativo) y el glosario de Memorice fueron todos leídos y cruzados
-contra el manual en algún punto de las 10 tandas anteriores. No queda
-ningún archivo de la carpeta `Apuntes/CIVIL/Acto Jurídico/` sin revisar.
-
----
-
-## Resumen ejecutivo
-
-**49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
-alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
-tiene hallazgos de contenido sin respaldo en fuente (categoría 7): el
-manual es, en ese sentido, limpio, no se detectó alucinación.
-
-**El único hallazgo de prioridad alta** es la ausencia de dos fallos
-reales (RDJ 1936 y RDJ 1991) que respaldan directamente la tesis central
-de la sección de simulación lícita (`sN3`, tanda 8).
-
-**Concentración de hallazgos por eje** (más de 3 hallazgos):
-- **Eje N (Simulación)** — el más señalado: 5 fallos reales ausentes
-  (incluido el único hallazgo alto), más 2 citas de autor sin usar
-  (ALCALDE, JOSSERAND). Es la prioridad más clara para la fase 2.
-- **Eje B, secciones 4-8 (Vicios de la voluntad)** — 6 hallazgos menores:
-  argumento propio del autor sobre el error sustancial, ejemplos y
-  presunciones legales de dolo incompletas.
-- **Eje H (Inexistencia)** — jurisprudencia comprimida: 18 fallos reales
-  en la fuente, 5 en el manual.
-- **Eje C (Capacidad)** — 3 fallos reales (Corte de Concepción, 1896 y
-  2008 x2) ausentes o diluidos, eje sin ningún recuadro `.jurisprudencia`.
-- **Eje P (Fraude a la ley)** — pierde el argumento moral de DOMÍNGUEZ y
-  las citas de FERREIRA y DIEZ-PICAZO sobre buena fe y abuso del derecho.
-
-**Ejes de altísima fidelidad, sin hallazgos relevantes**: A, E, F, G, L,
-M, S, T, U. En conjunto, más de la mitad de los 21 ejes no tiene ningún
-hallazgo de prioridad media o alta.
-
-**Un solo problema de forma, no de contenido**: el párrafo introductorio
-de modalidades (RAMOS, ABELIUK) quedó al final del eje R en vez de al
-inicio del eje S (tanda 9-10).
-
-### Qué sigue (fuera del alcance de este reporte)
-Este documento es una auditoría de brechas, no una corrección. La
-edición del HTML es una fase 2 posterior que requiere que Laura revise
-estos hallazgos y decida cuáles corregir y en qué orden. Dado el volumen
-de jurisprudencia real identificada (ejes N, H y C concentran casi toda),
-esa fase podría organizarse por tandas similares a esta auditoría,
-empezando por los ejes de mayor concentración de hallazgos.
+comparativo) y el glosario de Memorice fueron todos leídos con extracción
+real de texto y cruzados contra el manual en algún punto de las 10 tandas
+anteriores. No se abrió por separado el PDF unificado
+`Acto Jurídico_principal_BOETSCH.pdf` (221p): solo se verificó que la
+suma de páginas de los 17 fragmentos (≈219p) es consistente con que sea
+el mismo libro dividido por tema, no se leyó su texto de forma
+independiente. La cobertura de contenido es equivalente (los fragmentos
+cubren el mismo texto), pero no es una lectura duplicada del unificado.
 
