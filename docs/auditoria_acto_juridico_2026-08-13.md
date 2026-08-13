@@ -465,3 +465,60 @@ nulidad refleja que no se cruzaron desde la misma fuente secundaria que
 sí se usó para ese punto. Ningún hallazgo de prioridad alta.
 
 ---
+
+## Tanda 7 — Ejes L, M. Efectos de la nulidad, Lesión (fuente: PDF 11 + PDF 12, 23p)
+
+Dos de los ejes más extensos y técnicamente densos del manual (la acción
+de indemnización de perjuicios de `sL4-3` recorre ocho hipótesis
+distintas por causal de nulidad, con la controversia RODRÍGUEZ/BARAONA en
+cada una) resultaron ser, a la vez, de los más fieles de toda la
+auditoría.
+
+### 1. Profundidad insuficiente
+- **[bajo]** `sL4-3` (indemnización de perjuicios por error): la fuente
+  distingue dos hipótesis separadas de error con tratamiento distinto
+  (error en cualidades accidentales, donde se compensan las culpas si
+  ambas partes erraron o hay reticencia si solo una sabía; y error
+  sustancial o esencial, donde RODRÍGUEZ y BARAONA discrepan sobre si
+  necesariamente lo padecen ambas partes); el manual las presenta en un
+  solo párrafo de "el error", sin marcar con la misma claridad que son
+  dos hipótesis distintas de la fuente.
+
+### 2. Falta de ejemplos
+- **[bajo]** `sM3` (viii, hipoteca): falta el ejemplo numérico de la
+  fuente que ilustra la regla del duplo: un deudor con una deuda de
+  $30.000 (mutuo) y $20.000 (sobregiro) puede pedir que la hipoteca de
+  garantía general se limite a $100.000.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+Sin hallazgos. Ninguna de las dos fuentes de esta tanda cita fallos con
+rol, tribunal o fecha.
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+Sin hallazgos.
+
+### 5. Debate doctrinal aplanado
+Sin hallazgos de fondo. La tesis minoritaria de DUCCI sobre la lesión
+como error en la magnitud de las prestaciones está recogida en un
+recuadro `.dato-grado` propio, con sus dos argumentos de texto (arts.
+1348 y 2458); el debate RODRÍGUEZ/BARAONA sobre la naturaleza de la
+responsabilidad por nulidad y sobre cada hipótesis de indemnización está
+completo (ver matiz en categoría 1).
+
+### 6. Coherencia estructural
+Sin hallazgos. Los 8 casos de lesión del eje M siguen el orden exacto de
+la fuente, con la misma numeración (i) a (viii).
+
+### 7. Contenido del manual sin respaldo en fuente
+Sin hallazgos.
+
+### Resumen de la tanda
+Los ejes más técnicos y extensos de la auditoría hasta ahora resultaron
+también de los más fieles: sin hallazgos de prioridad media o alta en
+ninguna categoría. El eje L trata con notable precisión ocho hipótesis
+distintas de responsabilidad por nulidad, cada una con su propia
+controversia doctrinal, sin aplanar ninguna. El eje M recoge los 8 casos
+taxativos de lesión del Código con todos sus artículos y la tesis
+minoritaria de DUCCI en un recuadro dedicado.
+
+---
