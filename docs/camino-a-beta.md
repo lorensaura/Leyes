@@ -69,14 +69,9 @@ publicar:
   `docs/fase0_rep_clasificacion_2026-07-31.md`).
 
 **Manuales:**
-- ~~Extracontractual (REX) quedó con un formato más denso que
-  Contractual/Precontractual~~ **Hecho 2026-08-12**: reformateados los 25
-  ejes de REX al mismo estándar de `docs/script_apuntes.md` (párrafos
-  cortos, recuadros `.callout`/`.enum-i`/`.enum-a` agregados, jurisprudencia
-  repetida agrupada). Verificado sin pérdida de contenido eje por eje
-  (script de anclas + diff de texto). Detalle en
-  `docs/notas_reformato_rex.md`. **Sigue pendiente de revisión de Laura**,
-  como todo el contenido jurídico de los manuales.
+- Los 25 ejes de REX reformateados (2026-08-12) siguen **pendientes de
+  revisión de Laura**, como todo el contenido jurídico de los manuales.
+  Detalle de qué se agregó en cada eje en `docs/notas_reformato_rex.md`.
 - Índice de los 3 manuales publicados: falta que liste también los
   subtemas de nivel 2 (`h3`, "N.M"), no solo los ejes. Pedido de Laura,
   2026-07-31.
@@ -102,6 +97,17 @@ publicar:
   El resto de las materias nuevas (Bienes, etc.) puede seguir el mismo
   camino sin más cambios de código, solo cargar su contenido y sacarles el
   `disabled` en `MATERIAS_CIVIL`.
+- **2026-08-12: manual de Acto Jurídico (`04_Acto_Juridico_Manual.html`)
+  terminado y su PDF generado** (`app/pdf/Acto_Juridico.pdf`, 21 ejes A-U,
+  ~40.500 palabras), a partir del libro completo de Boetsch más 3 fuentes
+  secundarias (Bozzo e Ibarra, Causa Domínguez y Boetsch, cuadro
+  comparativo de ineficacia). Verificado (tags, densidad, sin guiones
+  largos, sin ids duplicados) y **pendiente de revisión de Laura**. Todavía
+  **no está enlazado en `app/manuales.html`**: falta agregarle su objeto
+  `civil_N` (título, `sourceFile`, `pdfFile`, `cpInsertBefore` por eje, y
+  los checkpoints de comprensión lectora con keywords, uno por eje, al
+  estilo de los otros 3 manuales) una vez que Laura dé el visto bueno al
+  contenido.
 
 **Producto / app:**
 - No existe una tabla que guarde **todos** los intentos de
