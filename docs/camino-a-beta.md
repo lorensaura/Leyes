@@ -53,20 +53,27 @@ tablas de uso (`memorice_intentos`, `flashcard_progreso`,
 
 ## Pendiente
 
-**Contenido generado, sin publicar todavía (el bloque más grande):**
-Gran parte de la pasada de REC/REX/REP de agosto quedó creada en
-Airtable/Supabase pero sin marcar `publicado`, a la espera de que Laura la
-revise. Detalle completo, ítem por ítem, en `docs/historial-2026-08.md`.
-Dos correcciones puntuales que necesitan decisión de Laura antes de
-publicar:
-- `rc-just-028` (ya publicado) y `rc-just-032` (nuevo): el manual de
-  Contractual se contradice a sí mismo sobre si CLARO SOLAR o ABELIUK
-  defiende "ausencia de culpa basta como eximente" (dos pasajes opuestos
-  del mismo manual). Laura tiene que decidir cuál atribución es la
-  correcta y corregir el manual antes de publicar cualquiera de los dos.
-- `hist-pre-mc-015` (Precontractual): sin eje asignado, genuinamente
-  partido entre el eje B y el J (detalle en
-  `docs/fase0_rep_clasificacion_2026-07-31.md`).
+**Contenido generado, sin publicar todavía (verificado en vivo contra
+Airtable/Supabase el 2026-08-13, no solo este doc):** de ~950 registros
+entre las 3 materias, **68 (≈7%)** siguen con `publicado=false` o en
+estado "Revisar/Verificar" en Airtable (19 Flashcards Contractual, 16
+Preguntas_Evaluacion Extracontractual, y el resto repartido entre
+Aplicación/Detección de error/Justificación/Discriminación MC de las 3
+materias). El resto ya está publicado y sincronizado en Supabase.
+Confirmado con Laura (2026-08-13): esos 66 siguen genuinamente
+pendientes de que ella los revise, no es que falte solo correr el sync.
+Dos ítems puntuales necesitan decisión de Laura antes de publicar:
+- `rc-just-028` (excluido de Supabase hoy pese a estar `publicado=true`,
+  por su `Revision_status="Revisar"`) y `rc-just-032` (nuevo, sin
+  publicar): el manual de Contractual se contradice a sí mismo sobre si
+  CLARO SOLAR o ABELIUK defiende "ausencia de culpa basta como eximente"
+  (línea ~1117 dice una cosa, línea ~1618-1626 la contraria, en
+  `01_Responsabilidad_Contractual_Manual.html`). Laura va a revisar cuál
+  atribución es la correcta (2026-08-13, todavía sin resolver).
+- `hist-pre-mc-015` (Precontractual): contenido ya revisado y publicado
+  (`Revision_status="Verificado"`), solo le falta el eje/tema asignado,
+  genuinamente partido entre el eje B y el J (detalle en
+  `docs/fase0_rep_clasificacion_2026-07-31.md`). No bloquea nada.
 
 **Manuales:**
 - Los 25 ejes de REX reformateados (2026-08-12) siguen **pendientes de
