@@ -102,17 +102,6 @@ publicar:
   El resto de las materias nuevas (Bienes, etc.) puede seguir el mismo
   camino sin más cambios de código, solo cargar su contenido y sacarles el
   `disabled` en `MATERIAS_CIVIL`.
-- **Manual de Acto Jurídico** (`04_Acto_Juridico_Manual.html`, 21 ejes,
-  terminado 2026-08-12): sigue **sin revisión de Laura y sin enlazar en
-  `app/manuales.html`**. Se le hizo una auditoría de brechas contra sus 17
-  PDF fuente (libro de Boetsch) más las fuentes secundarias, eje por eje,
-  sin agregar jurisprudencia ni doctrina nueva (`docs/auditoria_acto_juridico_2026-08-13.md`):
-  49 hallazgos, 1 de prioridad alta (dos fallos reales de 1936 y 1991 que
-  faltan en el eje de Simulación), 33 medios, 15 bajos, ninguno de
-  contenido inventado. Los ejes con más jurisprudencia real sin usar son
-  Simulación (N), Inexistencia (H) y Capacidad (C). Corregir el manual
-  según este reporte es una fase 2 todavía no iniciada, a decisión de
-  Laura.
 
 **Producto / app:**
 - No existe una tabla que guarde **todos** los intentos de
