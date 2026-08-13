@@ -685,3 +685,65 @@ debate. Ningún hallazgo de prioridad alta; queda abierto un punto de
 coherencia estructural a cerrar en la tanda 10.
 
 ---
+
+## Tanda 10 — Ejes S, T, U. Condición, Plazo, Modo (fuente: PDF 17, 13p)
+
+### Cierre del punto pendiente de la tanda 9
+Se confirma: el párrafo final de `sR10-2` (definiciones de RAMOS y
+ABELIUK, características de las modalidades, actos que admiten
+modalidades, lugar del Código) es exactamente la introducción general de
+PDF 17 ("VI. Modalidades de los actos jurídicos", secciones 1 a 4, antes
+de que la fuente entre en "A. La condición"). El contenido está
+correctamente respaldado en la fuente, incluida la referencia a dónde
+trata el Código las modalidades (Libro III y Libro IV) — **no falta
+nada**, pero está mal ubicado: pertenece como introducción del eje S
+("Modalidades", con sus tres subejes condición/plazo/modo), no como
+cierre del eje R (Representación). No se duplicó en `sS`, que arranca
+directo en "1. Concepto" de la condición, sin ningún párrafo introductorio
+general sobre modalidades.
+
+### 1. Profundidad insuficiente
+Sin hallazgos. Los tres ejes son transcripciones prácticamente completas
+de la fuente: todas las clasificaciones de la condición (positiva/negativa,
+posible/imposible, suspensiva/resolutoria, potestativa/casual/mixta), los
+tres estados (pendiente/cumplida/fallida) para ambos tipos de condición,
+las semejanzas/diferencias y clasificaciones del plazo, y el concepto,
+efectos y cumplimiento del modo están todos presentes con sus artículos y
+ejemplos.
+
+### 2. Falta de ejemplos
+Sin hallazgos. Todos los ejemplos de la fuente (condición físicamente
+imposible de la estrella, condición mixta del casamiento con María, plazo
+determinado/indeterminado, modo de las escuelas fronterizas, etc.) están
+recogidos.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+Sin hallazgos. El único punto jurisprudencial de la fuente (la condición
+suspensiva puramente potestativa del deudor es nula, la resolutoria es
+válida) está recogido en un recuadro `.dato-grado` propio en `sS2-4`, con
+el razonamiento completo.
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+Sin hallazgos adicionales.
+
+### 5. Debate doctrinal aplanado
+Sin hallazgos. No hay debates doctrinales relevantes en esta fuente más
+allá del punto ya recogido en el recuadro de la categoría 3.
+
+### 6. Coherencia estructural
+- **[medio]** Ver "Cierre del punto pendiente de la tanda 9" arriba: la
+  introducción general de modalidades quedó al final del eje R en lugar
+  de al inicio del eje S. Es un problema de ubicación, no de contenido
+  perdido.
+
+### 7. Contenido del manual sin respaldo en fuente
+Sin hallazgos, incluido el párrafo verificado en el punto anterior.
+
+### Resumen de la tanda
+Los tres ejes finales del manual son de altísima fidelidad, sin
+hallazgos de contenido en ninguna categoría. El único punto real de esta
+tanda es de forma, no de fondo: mover el párrafo introductorio de
+modalidades (RAMOS, ABELIUK, características, ámbito de aplicación) del
+final de `sR10-2` al inicio de `sS`, donde temáticamente corresponde.
+
+---
