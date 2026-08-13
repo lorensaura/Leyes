@@ -259,6 +259,14 @@
   .toc a{color:var(--accent);text-decoration:none;}
   .toc a:hover{text-decoration:underline;}
   .toc ol{text-align:left;list-style:none;padding-left:0;}
+  .toc .toc-l1{padding-left:0;}
+  .toc .toc-l1>li{font-weight:700;margin:.55rem 0;}
+  .toc .toc-l1>li>a{font-weight:700;}
+  .toc .toc-l2{padding-left:1.1rem;margin-top:.25rem;}
+  .toc .toc-l2>li{font-weight:400;margin:.2rem 0;}
+  .toc .toc-l3{padding-left:1.1rem;margin-top:.15rem;}
+  .toc .toc-l3>li{font-size:9pt;color:var(--grey);margin:.12rem 0;}
+  .toc .toc-l3>li>a{color:var(--grey);}
 
   code{background:var(--light);padding:1px 4px;font-size:10pt;}
 
@@ -276,8 +284,11 @@
       min-height:23cm;box-sizing:border-box;
       padding:0 20px;margin:0;
     }
-    /* El índice fluye hacia el contenido (sin dejar media página en blanco) */
-    .toc{page-break-after:always;margin-bottom:1.4rem;}
+    /* El índice NO fuerza su propio salto: el h1 de "A." (page-break-before:
+       always) ya abre página nueva para el inicio de la materia. Forzar
+       ambos saltos a la vez dejaba una página en blanco entre el índice y
+       el contenido. */
+    .toc{margin-bottom:1.4rem;}
   }
 </style>
 </head>
@@ -292,32 +303,517 @@
 </div>
 <div class="toc">
   <strong>Índice</strong>
-  <ol>
-    <li><a href="#eje1">A. Concepto, regulación y funciones de la responsabilidad civil extracontractual</a></li>
-    <li><a href="#eje2">B. Responsabilidad civil y responsabilidad penal</a></li>
-    <li><a href="#eje3">C. Delimitación de estatutos: contractual, cuasicontractual y derecho común</a></li>
-    <li><a href="#eje4">D. Sistemas o modelos de atribución de responsabilidad</a></li>
-    <li><a href="#eje5">E. La capacidad delictual</a></li>
-    <li><a href="#eje6">F. El hecho voluntario. Caso fortuito y personas jurídicas</a></li>
-    <li><a href="#eje7">G. La antijuridicidad y las causales de justificación</a></li>
-    <li><a href="#eje8">H. La culpabilidad: dolo y culpa</a></li>
-    <li><a href="#eje9">I. Prueba de la culpa y presunciones de culpabilidad por el hecho propio</a></li>
-    <li><a href="#eje10">J. El daño: concepto y requisitos de resarcibilidad</a></li>
-    <li><a href="#eje11">K. Clases de daño (I): el daño patrimonial</a></li>
-    <li><a href="#eje12">L. Clases de daño (II): el daño moral</a></li>
-    <li><a href="#eje13">M. La causalidad</a></li>
-    <li><a href="#eje14">N. Régimen general y casos particulares de responsabilidad por el hecho ajeno</a></li>
-    <li><a href="#eje15">O. Responsabilidad del empresario</a></li>
-    <li><a href="#eje16">P. Responsabilidad por el hecho de las cosas</a></li>
-    <li><a href="#eje17">Q. Regímenes legales de responsabilidad objetiva</a></li>
-    <li><a href="#eje18">R. Responsabilidad del Estado</a></li>
-    <li><a href="#eje19">S. La acción por daño contingente</a></li>
-    <li><a href="#eje20">T. Objeto y extensión de la reparación</a></li>
-    <li><a href="#eje21">U. Legitimación activa y pasiva</a></li>
-    <li><a href="#eje22">V. Tribunal, procedimiento y extinción de la acción</a></li>
-    <li><a href="#eje23">W. Dualidad o unidad de regímenes; diferencias entre estatutos</a></li>
-    <li><a href="#eje24">X. Cúmulo o concurso de responsabilidades</a></li>
-    <li><a href="#eje25">Y. Responsabilidad precontractual, por nulidad y postcontractual</a></li>
+  <ol class="toc-l1">
+    <li><a href="#extracontractual-A-0">A. Concepto, regulación y funciones de la responsabilidad civil extracontractual</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-A-1">1. Concepto de responsabilidad civil</a>
+        </li>
+        <li><a href="#extracontractual-A-2">2. El daño como elemento esencial. Contraste con la responsabilidad penal</a>
+        </li>
+        <li><a href="#extracontractual-A-3">3. Regulación: el hecho ilícito como fuente de obligaciones</a>
+        </li>
+        <li><a href="#extracontractual-A-4">4. Las funciones de la responsabilidad extracontractual</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-A-4-1">4.1. Función primordial: la reparación del daño</a></li>
+            <li><a href="#extracontractual-A-4-2">4.2. Función de garantía de la libertad de actuar</a></li>
+            <li><a href="#extracontractual-A-4-3">4.3. Función preventiva</a></li>
+            <li><a href="#extracontractual-A-4-4">4.4. Función punitiva</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-A-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-B-0">B. Responsabilidad civil y responsabilidad penal</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-B-1">1. Las diferencias entre ambas responsabilidades</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-B-1-1">1.1. Tipicidad y legalidad</a></li>
+            <li><a href="#extracontractual-B-1-2">1.2. La culpa</a></li>
+            <li><a href="#extracontractual-B-1-3">1.3. El daño</a></li>
+            <li><a href="#extracontractual-B-1-4">1.4. Sujetos pasivos de la acción</a></li>
+            <li><a href="#extracontractual-B-1-5">1.5. Sujetos activos de la acción y disponibilidad</a></li>
+            <li><a href="#extracontractual-B-1-6">1.6. La prueba</a></li>
+            <li><a href="#extracontractual-B-1-7">1.7. La prescripción</a></li>
+            <li><a href="#extracontractual-B-1-8">1.8. La capacidad</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-B-2">2. Las relaciones entre ambas responsabilidades: el principio de independencia</a>
+        </li>
+        <li><a href="#extracontractual-B-3">3. Efectos de las sentencias penales en sede civil</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-B-3-1">3.1. Sentencias condenatorias</a></li>
+            <li><a href="#extracontractual-B-3-2">3.2. Sentencias absolutorias</a></li>
+            <li><a href="#extracontractual-B-3-3">3.3. Las circunstancias del artículo 179 del Código de Procedimiento Civil</a></li>
+            <li><a href="#extracontractual-B-3-4">3.4. La contraexcepción: las obligaciones restitutorias</a></li>
+            <li><a href="#extracontractual-B-3-5">3.5. El alcance de la cosa juzgada penal: una anomalía del sistema</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-B-4">4. Efectos de las resoluciones civiles en sede penal</a>
+        </li>
+        <li><a href="#extracontractual-B-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-C-0">C. Delimitación de estatutos: contractual, cuasicontractual y derecho común</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-C-1">1. Responsabilidad contractual y responsabilidad extracontractual</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-C-1-1">1.1. Los conceptos</a></li>
+            <li><a href="#extracontractual-C-1-2">1.2. El criterio de delimitación</a></li>
+            <li><a href="#extracontractual-C-1-3">1.3. La sustitución convencional del régimen extracontractual</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-C-2">2. Responsabilidad extracontractual y cuasicontractual</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-C-2-1">2.1. El criterio: acción indemnizatoria y acción restitutoria</a></li>
+            <li><a href="#extracontractual-C-2-2">2.2. La demostración: el artículo 2290 y la agencia oficiosa</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-C-3">3. El derecho común de la responsabilidad civil</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-C-3-1">3.1. La laguna</a></li>
+            <li><a href="#extracontractual-C-3-2">3.2. La tesis contractualista: ALESSANDRI</a></li>
+            <li><a href="#extracontractual-C-3-3">3.3. La tesis contraria</a></li>
+            <li><a href="#extracontractual-C-3-4">3.4. La zona gris: las obligaciones de fuente legal</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-C-4">4. Las aplicaciones del criterio</a>
+        </li>
+        <li><a href="#extracontractual-C-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-D-0">D. Sistemas o modelos de atribución de responsabilidad</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-D-1">1. La responsabilidad subjetiva o por culpa</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-D-1-1">1.1. El fundamento clásico</a></li>
+            <li><a href="#extracontractual-D-1-2">1.2. Las críticas al sistema de la culpa</a></li>
+            <li><a href="#extracontractual-D-1-3">1.3. La culpa como régimen común en el derecho chileno</a></li>
+            <li><a href="#extracontractual-D-1-4">1.4. Los elementos del régimen de responsabilidad por culpa</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-D-2">2. La responsabilidad estricta u objetiva</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-D-2-1">2.1. El concepto y su antecedente</a></li>
+            <li><a href="#extracontractual-D-2-2">2.2. El fundamento: riesgo provecho y riesgo creado</a></li>
+            <li><a href="#extracontractual-D-2-3">2.3. Las críticas a la doctrina objetiva</a></li>
+            <li><a href="#extracontractual-D-2-4">2.4. Carácter excepcional y de derecho estricto</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-D-3">3. El seguro obligatorio: una técnica que no es un modelo de atribución</a>
+        </li>
+        <li><a href="#extracontractual-D-4">4. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-E-0">E. La capacidad delictual</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-E-1">1. La regla general: la capacidad</a>
+        </li>
+        <li><a href="#extracontractual-E-2">2. La incapacidad por privación de razón: los dementes</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-E-2-1">2.1. Concepto</a></li>
+            <li><a href="#extracontractual-E-2-2">2.2. El valor del decreto de interdicción</a></li>
+            <li><a href="#extracontractual-E-2-3">2.3. Requisitos de la demencia como causal de exoneración</a></li>
+            <li><a href="#extracontractual-E-2-4">2.4. La ebriedad y la intoxicación</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-E-3">3. La incapacidad por minoría de edad</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-E-3-1">3.1. Las dos reglas del artículo 2319</a></li>
+            <li><a href="#extracontractual-E-3-2">3.2. El contenido del discernimiento</a></li>
+            <li><a href="#extracontractual-E-3-3">3.3. La crítica al juicio de discernimiento</a></li>
+            <li><a href="#extracontractual-E-3-4">3.4. La jurisprudencia sobre capacidad del menor</a></li>
+            <li><a href="#extracontractual-E-3-5">3.5. La tendencia comparada</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-E-4">4. La responsabilidad del guardián del incapaz</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-E-4-1">4.1. La regla del artículo 2319 inciso primero</a></li>
+            <li><a href="#extracontractual-E-4-2">4.2. Naturaleza: responsabilidad por el hecho propio</a></li>
+            <li><a href="#extracontractual-E-4-3">4.3. Ausencia de acción de reembolso</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-E-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-F-0">F. El hecho voluntario. Caso fortuito y personas jurídicas</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-F-1">1. La dimensión material: acción y omisión</a>
+        </li>
+        <li><a href="#extracontractual-F-2">2. La dimensión subjetiva: exclusión de responsabilidad por falta de voluntad</a>
+        </li>
+        <li><a href="#extracontractual-F-3">3. El caso fortuito o fuerza mayor</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-F-3-1">3.1. Concepto</a></li>
+            <li><a href="#extracontractual-F-3-2">3.2. La ubicación dogmática del caso fortuito</a></li>
+            <li><a href="#extracontractual-F-3-3">3.3. Los elementos del caso fortuito</a></li>
+            <li><a href="#extracontractual-F-3-4">3.4. Efectos</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-F-4">4. La responsabilidad de las personas jurídicas</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-F-4-1">4.1. El problema</a></li>
+            <li><a href="#extracontractual-F-4-2">4.2. La solución del derecho chileno</a></li>
+            <li><a href="#extracontractual-F-4-3">4.3. La teoría del órgano y sus límites</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-F-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-G-0">G. La antijuridicidad y las causales de justificación</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-G-1">1. La discusión sobre la autonomía de la antijuridicidad</a>
+        </li>
+        <li><a href="#extracontractual-G-2">2. El ilícito civil típico</a>
+        </li>
+        <li><a href="#extracontractual-G-3">3. Las causales de justificación: nociones generales</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-G-3-1">3.1. Ausencia de regulación y fundamento</a></li>
+            <li><a href="#extracontractual-G-3-2">3.2. Enumeración y delimitación</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-G-4">4. Primera causal: la ejecución de actos autorizados por el derecho</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-G-4-1">4.1. El ejercicio de un derecho</a></li>
+            <li><a href="#extracontractual-G-4-2">4.2. El cumplimiento de un deber legal</a></li>
+            <li><a href="#extracontractual-G-4-3">4.3. Los actos autorizados por usos normativos</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-G-5">5. Segunda causal: el consentimiento de la víctima</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-G-5-1">5.1. Planteamiento</a></li>
+            <li><a href="#extracontractual-G-5-2">5.2. Los límites de la disposición</a></li>
+            <li><a href="#extracontractual-G-5-3">5.3. La distinción decisiva: renuncia de un derecho y aceptación de un riesgo</a></li>
+            <li><a href="#extracontractual-G-5-4">5.4. La asunción de riesgos deportivos</a></li>
+            <li><a href="#extracontractual-G-5-5">5.5. Los deberes de información y el consentimiento presunto</a></li>
+            <li><a href="#extracontractual-G-5-6">5.6. La renuncia posterior al daño</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-G-6">6. Tercera causal: el estado de necesidad</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-G-6-1">6.1. Concepto y fundamento</a></li>
+            <li><a href="#extracontractual-G-6-2">6.2. Requisitos</a></li>
+            <li><a href="#extracontractual-G-6-3">6.3. La jurisprudencia: dos casos que conviene contrastar</a></li>
+            <li><a href="#extracontractual-G-6-4">6.4. Delimitación, fundamento normativo y efectos</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-G-7">7. Cuarta causal: la legítima defensa</a>
+        </li>
+        <li><a href="#extracontractual-G-8">8. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-H-0">H. La culpabilidad: dolo y culpa</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-H-1">1. La exigencia de culpabilidad y la distinción entre delito y cuasidelito civil</a>
+        </li>
+        <li><a href="#extracontractual-H-2">2. El dolo</a>
+        </li>
+        <li><a href="#extracontractual-H-3">3. La culpa</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-H-3-1">3.1. Concepto y fundamento legal</a></li>
+            <li><a href="#extracontractual-H-3-2">3.2. Apreciación en abstracto y consideración de las circunstancias</a></li>
+            <li><a href="#extracontractual-H-3-3">3.3. El estándar de cuidado: culpa leve</a></li>
+            <li><a href="#extracontractual-H-3-4">3.4. La previsibilidad como elemento de la culpa</a></li>
+            <li><a href="#extracontractual-H-3-5">3.5. Culpa infraccional</a></li>
+            <li><a href="#extracontractual-H-3-6">3.6. Culpa por omisión</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-H-4">4. Naturaleza jurídica del juicio de culpabilidad</a>
+        </li>
+        <li><a href="#extracontractual-H-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-I-0">I. Prueba de la culpa y presunciones de culpabilidad por el hecho propio (art. 2329)</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-I-1">1. Prueba de la culpa: reglas generales</a>
+        </li>
+        <li><a href="#extracontractual-I-2">2. La presunción de culpabilidad por el hecho propio: origen de su interpretación</a>
+        </li>
+        <li><a href="#extracontractual-I-3">3. Condiciones de aplicación de la presunción</a>
+        </li>
+        <li><a href="#extracontractual-I-4">4. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-J-0">J. El daño: concepto y requisitos de resarcibilidad</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-J-1">1. Concepto de daño</a>
+        </li>
+        <li><a href="#extracontractual-J-2">2. Requisitos de resarcibilidad del daño</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-J-2-1">2.1. El daño debe lesionar un derecho o un interés legítimo</a></li>
+            <li><a href="#extracontractual-J-2-2">2.2. El daño debe ser cierto</a></li>
+            <li><a href="#extracontractual-J-2-3">2.3. Debe existir una relación directa con el hecho ilícito</a></li>
+            <li><a href="#extracontractual-J-2-4">2.4. El daño no debe estar indemnizado</a></li>
+            <li><a href="#extracontractual-J-2-5">2.5. El daño debe ser de una magnitud suficiente</a></li>
+            <li><a href="#extracontractual-J-2-6">2.6. El daño debe ser previsible</a></li>
+            <li><a href="#extracontractual-J-2-7">2.7. El daño debe haber sido personalmente sufrido por la víctima</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-J-3">3. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-K-0">K. Clases de daño (I): el daño patrimonial</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-K-1">1. Fundamento normativo y clasificación legal</a>
+        </li>
+        <li><a href="#extracontractual-K-2">2. El daño emergente</a>
+        </li>
+        <li><a href="#extracontractual-K-3">3. El lucro cesante</a>
+        </li>
+        <li><a href="#extracontractual-K-4">4. Determinación del daño patrimonial: el problema de la comparación</a>
+        </li>
+        <li><a href="#extracontractual-K-5">5. Fuentes del daño patrimonial y su prueba</a>
+        </li>
+        <li><a href="#extracontractual-K-6">6. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-L-0">L. Clases de daño (II): el daño moral</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-L-1">1. Concepto de daño moral</a>
+        </li>
+        <li><a href="#extracontractual-L-2">2. Resarcibilidad del daño moral</a>
+        </li>
+        <li><a href="#extracontractual-L-3">3. Categorías de daño moral</a>
+        </li>
+        <li><a href="#extracontractual-L-4">4. El daño moral en las personas jurídicas</a>
+        </li>
+        <li><a href="#extracontractual-L-5">5. Prueba del daño moral</a>
+        </li>
+        <li><a href="#extracontractual-L-6">6. Avaluación del daño moral</a>
+        </li>
+        <li><a href="#extracontractual-L-7">7. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-M-0">M. La causalidad</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-M-1">1. Teorías para resolver el problema de la causalidad</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-M-1-1">1.1. Teorías empiristas</a></li>
+            <li><a href="#extracontractual-M-1-2">1.2. Teorías normativas</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-M-2">2. La causalidad como un tema empírico y normativo</a>
+        </li>
+        <li><a href="#extracontractual-M-3">3. Pluralidad de causas</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-M-3-1">3.1. Caso fortuito o fuerza mayor</a></li>
+            <li><a href="#extracontractual-M-3-2">3.2. Pluralidad de agentes</a></li>
+            <li><a href="#extracontractual-M-3-3">3.3. Concurrencia de culpa de la víctima</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-M-4">4. Prueba de la causalidad</a>
+        </li>
+        <li><a href="#extracontractual-M-5">5. Calificación de la causalidad</a>
+        </li>
+        <li><a href="#extracontractual-M-6">6. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-N-0">N. Régimen general y casos particulares de responsabilidad por el hecho ajeno (art. 2320)</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-N-1">1. Nociones generales</a>
+        </li>
+        <li><a href="#extracontractual-N-2">2. Requisitos de la responsabilidad por el hecho ajeno</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-N-2-1">2.1. Capacidad delictual del hechor y del responsable</a></li>
+            <li><a href="#extracontractual-N-2-2">2.2. Comisión de un hecho ilícito por la persona de cuyos actos se responde</a></li>
+            <li><a href="#extracontractual-N-2-3">2.3. Vínculo de subordinación o dependencia</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-N-3">3. Casos particulares reglamentados por el Código</a>
+        </li>
+        <li><a href="#extracontractual-N-4">4. Exoneración del tercero civilmente responsable</a>
+        </li>
+        <li><a href="#extracontractual-N-5">5. Acción de regreso contra el subordinado</a>
+        </li>
+        <li><a href="#extracontractual-N-6">6. La responsabilidad del hechor no se excluye</a>
+        </li>
+        <li><a href="#extracontractual-N-7">7. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-O-0">O. Responsabilidad del empresario</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-O-1">1. La responsabilidad del empresario por el hecho ajeno: evolución del criterio de dependencia</a>
+        </li>
+        <li><a href="#extracontractual-O-2">2. Requisitos de la presunción de culpabilidad del empresario</a>
+        </li>
+        <li><a href="#extracontractual-O-3">3. Descarga de la presunción y su cercanía con la responsabilidad estricta</a>
+        </li>
+        <li><a href="#extracontractual-O-4">4. Comparación entre el artículo 2320 inciso cuarto y el artículo 2322</a>
+        </li>
+        <li><a href="#extracontractual-O-5">5. La responsabilidad por el hecho propio de la organización empresarial</a>
+        </li>
+        <li><a href="#extracontractual-O-6">6. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-P-0">P. Responsabilidad por el hecho de las cosas: animales, ruina de edificio, cosas que caen o se arrojan</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-P-1">1. Daños causados por un animal</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-P-1-1">1.1. Regulación del Código Civil</a></li>
+            <li><a href="#extracontractual-P-1-2">1.2. La Ley Nº 21.020 sobre tenencia responsable de mascotas y animales de compañía</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-P-2">2. Daños causados por la ruina de un edificio</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-P-2-1">2.1. Acciones preventivas</a></li>
+            <li><a href="#extracontractual-P-2-2">2.2. Acciones indemnizatorias</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-P-3">3. Daños causados por una cosa que cae o se arroja</a>
+        </li>
+        <li><a href="#extracontractual-P-4">4. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-Q-0">Q. Regímenes legales de responsabilidad objetiva</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-Q-1">1. Nociones generales sobre la responsabilidad objetiva</a>
+        </li>
+        <li><a href="#extracontractual-Q-2">2. Catálogo de regímenes legales de responsabilidad objetiva</a>
+        </li>
+        <li><a href="#extracontractual-Q-3">3. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-R-0">R. Responsabilidad del Estado</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-R-1">1. Responsabilidad de la Administración del Estado y de las Municipalidades</a>
+        </li>
+        <li><a href="#extracontractual-R-2">2. Responsabilidad por error judicial</a>
+        </li>
+        <li><a href="#extracontractual-R-3">3. Responsabilidad por actos legislativos</a>
+        </li>
+        <li><a href="#extracontractual-R-4">4. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-S-0">S. La acción por daño contingente (art. 2333)</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-S-1">1. El daño contingente como fundamento de la responsabilidad preventiva</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-S-1-1">1.1. Amenaza y contingencia del daño</a></li>
+            <li><a href="#extracontractual-S-1-2">1.2. Relación de causalidad</a></li>
+            <li><a href="#extracontractual-S-1-3">1.3. Culpabilidad</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-S-2">2. Legitimación pasiva</a>
+        </li>
+        <li><a href="#extracontractual-S-3">3. Legitimación activa</a>
+        </li>
+        <li><a href="#extracontractual-S-4">4. Prescripción</a>
+        </li>
+        <li><a href="#extracontractual-S-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-T-0">T. Objeto y extensión de la reparación</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-T-1">1. Formas de reparación</a>
+        </li>
+        <li><a href="#extracontractual-T-2">2. Extensión de la reparación</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-T-2-1">2.1. El principio de la reparación integral</a></li>
+            <li><a href="#extracontractual-T-2-2">2.2. Reducción de la reparación</a></li>
+            <li><a href="#extracontractual-T-2-3">2.3. Reajustabilidad de la indemnización</a></li>
+            <li><a href="#extracontractual-T-2-4">2.4. Procedencia del pago de intereses</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-T-3">3. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-U-0">U. Legitimación activa y pasiva</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-U-1">1. Legitimación activa</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-U-1-1">1.1. Titulares por derecho propio: lesionados directos</a></li>
+            <li><a href="#extracontractual-U-1-2">1.2. Titulares por derecho propio: lesionados indirectos o víctimas por repercusión</a></li>
+            <li><a href="#extracontractual-U-1-3">1.3. Titulares por derecho derivado</a></li>
+            <li><a href="#extracontractual-U-1-4">1.4. Titularidad de las clases de perjudicados y acción popular</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-U-2">2. Legitimación pasiva</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-U-2-1">2.1. El autor del hecho ilícito</a></li>
+            <li><a href="#extracontractual-U-2-2">2.2. El responsable del hecho ajeno</a></li>
+            <li><a href="#extracontractual-U-2-3">2.3. El que recibe provecho del dolo ajeno</a></li>
+            <li><a href="#extracontractual-U-2-4">2.4. Los herederos</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-U-3">3. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-V-0">V. Tribunal, procedimiento y extinción de la acción (art. 2332)</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-V-1">1. Tribunal competente y procedimiento</a>
+        </li>
+        <li><a href="#extracontractual-V-2">2. Extinción de la acción de responsabilidad</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-V-2-1">2.1. Renuncia</a></li>
+            <li><a href="#extracontractual-V-2-2">2.2. Transacción</a></li>
+            <li><a href="#extracontractual-V-2-3">2.3. Prescripción</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-V-3">3. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-W-0">W. Dualidad o unidad de regímenes; diferencias entre estatutos</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-W-1">1. La discusión acerca de la dualidad o unidad de regímenes</a>
+        </li>
+        <li><a href="#extracontractual-W-2">2. Diferencias entre ambos estatutos</a>
+        </li>
+        <li><a href="#extracontractual-W-3">3. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-X-0">X. Cúmulo o concurso de responsabilidades</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-X-1">1. Dos preguntas distintas bajo un mismo nombre</a>
+        </li>
+        <li><a href="#extracontractual-X-2">2. La posición dominante: rechazo de la opción</a>
+        </li>
+        <li><a href="#extracontractual-X-3">3. Excepciones a la regla general</a>
+        </li>
+        <li><a href="#extracontractual-X-4">4. Ejercicio conjunto de acciones</a>
+        </li>
+        <li><a href="#extracontractual-X-5">5. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#extracontractual-Y-0">Y. Responsabilidad precontractual, por nulidad y postcontractual</a>
+      <ol class="toc-l2">
+        <li><a href="#extracontractual-Y-1">1. Responsabilidad precontractual</a>
+          <ol class="toc-l3">
+            <li><a href="#extracontractual-Y-1-1">1.1. La etapa de negociación preliminar</a></li>
+            <li><a href="#extracontractual-Y-1-2">1.2. Las construcciones doctrinales sobre su fundamento</a></li>
+            <li><a href="#extracontractual-Y-1-3">1.3. La naturaleza de esta responsabilidad</a></li>
+          </ol>
+        </li>
+        <li><a href="#extracontractual-Y-2">2. Responsabilidad de quien causa la nulidad del contrato</a>
+        </li>
+        <li><a href="#extracontractual-Y-3">3. Responsabilidad postcontractual</a>
+        </li>
+        <li><a href="#extracontractual-Y-4">4. Síntesis para estructurar la respuesta de examen</a>
+        </li>
+      </ol>
+    </li>
   </ol>
 </div>
 <!-- ============================================================
@@ -388,13 +884,13 @@
 
 <p>Hay un fin primordial, que no se discute, y funciones adicionales que la doctrina reconoce con distinto grado de consenso. Conviene respetar esa jerarquía en la exposición, porque ella misma constituye una toma de posición.</p>
 
-<h3>4.1. Función primordial: la reparación del daño</h3>
+<h3 id="extracontractual-A-4-1">4.1. Función primordial: la reparación del daño</h3>
 
 <p>La responsabilidad extracontractual, o derecho de daños, apunta a un fin fundamental: reparar el daño causado, dejar indemne a la víctima. El alcance de esta afirmación debe precisarse, y la precisión es importante: no se pretende que el daño desaparezca, puesto que ya se ha producido; la reparación que se obtiene mediante el ejercicio de la acción de responsabilidad sólo consigue que otra persona asuma el costo que significa compensar, hasta donde sea posible, la pérdida sufrida por el perjudicado. La reparación es, entonces, un desplazamiento del costo, no una restitución del estado anterior de las cosas.</p>
 
 <p>Esta función no se debate, y sólo adicionalmente la doctrina estima que la responsabilidad cumple otras. Se trata del principio operativo del sistema, y de él se derivan consecuencias concretas que se estudiarán al tratar la extensión de la reparación (principio de reparación integral, reajustabilidad, intereses). La jurisprudencia lo confirma: se ha fallado que nuestro derecho consagra el principio de la reparación integral o completa del daño en el ámbito de la responsabilidad civil extracontractual (Corte de Apelaciones de Santiago, 1 de septiembre de 2003), y que la reparación del daño es el principal efecto que el legislador asigna a la responsabilidad delictual o cuasidelictual (Corte de Apelaciones de Santiago, 10 de julio de 2002).</p>
 
-<h3>4.2. Función de garantía de la libertad de actuar</h3>
+<h3 id="extracontractual-A-4-2">4.2. Función de garantía de la libertad de actuar</h3>
 
 <p>La libertad de los particulares encuentra, entre otros límites, la prohibición de causar un daño injustificado a otro. Nadie tiene derecho a actuar si con ello perjudica a alguien que no debe soportar ese daño: alterum non laedere. La perspectiva debe entonces invertirse, y esta inversión es la clave de la función: las reglas de responsabilidad no sólo restringen la libertad, sino que la definen y la garantizan. Sirven a los particulares para conocer la esfera de libertad que el ordenamiento les reconoce; permiten saber a priori qué eventos podrán serle imputados a quien actúa, y en esa medida consienten a la persona una libre elección de sus propios comportamientos. La responsabilidad opera, así, como un elemento de garantía y de certeza: quien conoce el límite sabe también que dentro de él puede actuar sin temor.</p>
 
@@ -411,7 +907,7 @@
 <p class="enum-i">(iii) Los regímenes de responsabilidad objetiva.</p>
 <p>Sólo pueden operar en los ámbitos que el legislador haya definido previamente.</p>
 
-<h3>4.3. Función preventiva</h3>
+<h3 id="extracontractual-A-4-3">4.3. Función preventiva</h3>
 
 <p>El derecho de daños cumple también una función disuasiva, que opera en dos planos. En el plano particular, respecto de quien ya ha sufrido una condena civil: parece lógico que, desde el punto de vista psicológico, la persona que ha obrado dañosamente y que en virtud de esa acción se ve conminada a soportar en su patrimonio el costo del daño causado procurará evitar en el futuro la conducta descuidada o dolosa que le produjo esa pérdida. Y en el plano general, respecto del resto de los integrantes de la sociedad, que quedan advertidos de no producir ciertos daños o de ser más cuidadosos, para no incurrir en los desembolsos que han debido soportar quienes fueron condenados.</p>
 
@@ -419,7 +915,7 @@
 
 <p>Este sistema suele complementarse con normas de prevención especial de carácter administrativo (exigencia de estudios de impacto ambiental, límites de velocidad, certificación sanitaria de medicamentos), cuya manifestación extrema es la prohibición legal de ciertas actividades. Y debe advertirse, con realismo, que la eficacia de esas prohibiciones depende más de las sanciones penales y administrativas que de las obligaciones indemnizatorias que imponga el sistema de responsabilidad civil. La prevención, siendo una función real, no puede erigirse en el fundamento único del sistema.</p>
 
-<h3>4.4. Función punitiva</h3>
+<h3 id="extracontractual-A-4-4">4.4. Función punitiva</h3>
 
 <p>Existen sistemas de derecho de daños en los que la responsabilidad cumple declaradamente una función punitiva o represiva. Es el caso del sistema jurídico angloamericano (Tort Law), en el que se reconoce que el derecho de torts cumple tres funciones: compensation (reparación), deterrence (disuasión) y punishment (sanción). La forma de realizar esta última son los punitive damages: una suma de dinero que el juez puede ordenar pagar a la víctima más allá de la indemnización reparatoria, y que sólo procede en casos de ilícitos de especial malignidad o gravedad. En el sistema inglés se distinguen tres categorías de daños punitivos:</p>
 
@@ -486,7 +982,7 @@
 
 <p>La responsabilidad penal es más exigente; por eso, quien la acredita ha acreditado a fortiori lo que basta en sede civil, y por eso la sentencia penal condenatoria irradia efectos sobre el juicio civil, mientras que la civil no los irradia sobre el penal.</p>
 
-<h3>1.1. Tipicidad y legalidad</h3>
+<h3 id="extracontractual-B-1-1">1.1. Tipicidad y legalidad</h3>
 
 <p>En materia penal, el requisito de la tipicidad exige que la conducta sancionada se adecue exactamente a la descripción del delito contenida en la ley. En materia civil, en cambio, el concepto de ilicitud importa la infracción a un deber de cuidado que puede haber sido establecido previamente por la ley (hipótesis de culpa infraccional), pero que en la generalidad de los casos es determinado por el juez con posterioridad a la conducta que se juzga.</p>
 
@@ -506,7 +1002,7 @@
 
 <p>Estos dos fallos son especialmente útiles en el examen porque muestran que la diferencia no es teórica: hay un ámbito de negligencia (la culpa levísima, y en general toda culpa que no alcanza el umbral del cuasidelito penal) que genera responsabilidad civil sin generar responsabilidad penal alguna.</p>
 
-<h3>1.2. La culpa</h3>
+<h3 id="extracontractual-B-1-2">1.2. La culpa</h3>
 
 <p>La culpa civil consiste en la infracción a un deber de conducta determinado a partir del estándar del hombre prudente o buen padre de familia; los deberes específicos de conducta expresan las expectativas razonables que recíprocamente tenemos respecto del comportamiento de los demás. Salvo en los casos de dolo, la culpabilidad civil no importa un juicio de disvalor subjetivo referido al autor, sino exclusivamente referido a la conducta: se limita a una comparación en abstracto entre la conducta efectiva y la conducta debida.</p>
 
@@ -518,7 +1014,7 @@
   <p>El juicio civil de culpa es objetivo y comparativo: se limita a una comparación en abstracto entre la conducta efectiva y la conducta debida, sin indagar en el autor. El juicio penal de culpabilidad es subjetivo y personal: se aprecia en concreto, atendiendo a las condiciones particulares de quien actuó. De allí que un mismo comportamiento pueda ser civilmente culpable y penalmente inculpable, sin contradicción alguna.</p>
 </div>
 
-<h3>1.3. El daño</h3>
+<h3 id="extracontractual-B-1-3">1.3. El daño</h3>
 
 <p>El daño es condición necesaria de la responsabilidad civil: si la acción culpable no genera daño, no hay responsabilidad. En materia penal, en cambio, se sanciona el disvalor de la acción y no sólo el del resultado; no es necesario que se produzca un daño efectivo al bien jurídico protegido para atribuir responsabilidad, salvo que se trate de un delito de resultado, y por eso la ley penal contempla sanciones para la mera tentativa y el delito frustrado.</p>
 
@@ -528,7 +1024,7 @@
 
 <p>De ahí que la responsabilidad penal y la civil puedan coexistir respecto de un mismo hecho, cuando el delito o cuasidelito del que derivan es a la vez civil y penal, esto es, cuando ha inferido daño en la persona o bienes de otro y además está penado por la ley.</p>
 
-<h3>1.4. Sujetos pasivos de la acción</h3>
+<h3 id="extracontractual-B-1-4">1.4. Sujetos pasivos de la acción</h3>
 
 <p>En materia penal, sólo son sujetos pasivos de responsabilidad las personas naturales personalmente responsables del delito; por la misma razón, la responsabilidad penal es intransmisible. Las personas jurídicas están excluidas de este tipo de responsabilidad, y conforme al <span class="art">artículo 39</span> del Código Penal, por ellas responden quienes hayan intervenido en el acto punible, sin perjuicio de la responsabilidad civil que afecte a la corporación a cuyo nombre hubieren obrado.</p>
 
@@ -536,13 +1032,13 @@
 
 <p>En materia civil, en cambio, las personas jurídicas son plenamente responsables, y lo son no sólo por el hecho ajeno, sino también por el hecho propio. La jurisprudencia extrajo de esta asimetría una consecuencia práctica de gran interés: la Corte Suprema, en fallo de 14 de abril de 1953, resolvió que no hay inconveniente legal alguno para sostener que exista responsabilidad delictual o cuasidelictual civil respecto de una persona sin que exista la penal, y que eso es precisamente lo ocurrido en el caso, en que la compañía demandada incurrió en responsabilidad civil sin incurrir en la penal, puesto que una compañía no puede cometer delitos penales. El fallo es la mejor ilustración disponible de la independencia de ambos estatutos.</p>
 
-<h3>1.5. Sujetos activos de la acción y disponibilidad</h3>
+<h3 id="extracontractual-B-1-5">1.5. Sujetos activos de la acción y disponibilidad</h3>
 
 <p>La regla general en materia penal es que la acción sea pública: puede ejercerla el propio afectado, el Estado a nombre de la sociedad o cualquier persona, y es irrenunciable. La acción penal privada, de carácter excepcional, sólo puede ser ejercida por la víctima o por otra persona a su nombre y, por esa razón, es renunciable, quedando incluso sujeta a extinguirse por el ejercicio de la acción civil que emana del mismo delito (<span class="art">artículo 66</span> del Código Procesal Penal).</p>
 
 <p>En materia civil, en cambio, una vez materializado el daño, la acción indemnizatoria es esencialmente renunciable, conforme al <span class="art">artículo 12</span> del Código Civil. Sólo excepcionalmente está prohibida su renuncia antes de producirse el accidente (situación que configura más bien una causal civil de justificación), cuando importa condonación del dolo futuro o renuncia de bienes jurídicos indisponibles, como la vida o la integridad física. Esta última precisión conecta directamente con el consentimiento de la víctima como causal de justificación, materia del Eje 7.</p>
 
-<h3>1.6. La prueba</h3>
+<h3 id="extracontractual-B-1-6">1.6. La prueba</h3>
 
 <p>En materia penal rige un estándar probatorio más estricto. Conforme al <span class="art">artículo 340</span> del Código Procesal Penal, nadie puede ser condenado por delito sino cuando el tribunal adquiera, más allá de toda duda razonable, la convicción de que realmente se cometió el hecho punible objeto de la acusación y de que en él correspondió al acusado una participación culpable y penada por la ley.</p>
 
@@ -552,11 +1048,11 @@
 
 <p>Esta diferencia de estándar es la clave de bóveda del sistema: si el estándar penal es más exigente, entonces la absolución penal no prueba nada en sede civil (bien puede deberse a que la prueba no alcanzó el umbral penal, aunque sí alcance el civil), mientras que la condena penal, por haber superado el umbral más alto, satisface con creces el más bajo.</p>
 
-<h3>1.7. La prescripción</h3>
+<h3 id="extracontractual-B-1-7">1.7. La prescripción</h3>
 
 <p>En materia penal, el plazo de prescripción de la acción varía entre seis meses y quince años, según la gravedad de la pena asignada al delito, y se cuenta desde la fecha de comisión del ilícito (<span class="art">artículos 94</span> y siguientes del Código Penal). En materia civil, el plazo es de cuatro años contados desde la perpetración del acto (<span class="art">artículo 2332</span> del Código Civil), con las calificaciones que se examinarán en el Eje 22 (donde se verá que el cómputo desde la perpetración es precisamente el punto más discutido de la norma).</p>
 
-<h3>1.8. La capacidad</h3>
+<h3 id="extracontractual-B-1-8">1.8. La capacidad</h3>
 
 <p>Los umbrales de imputabilidad civil y penal no coinciden, siendo la capacidad delictual civil considerablemente más amplia. La materia se desarrolla en el Eje 5, a propósito del <span class="art">artículo 2319</span> del Código Civil.</p>
 
@@ -574,7 +1070,7 @@
 
 <span id="extracontractual-B-3" class="justiniano-ancla"></span><h2>3. Efectos de las sentencias penales en sede civil</h2>
 
-<h3>3.1. Sentencias condenatorias</h3>
+<h3 id="extracontractual-B-3-1">3.1. Sentencias condenatorias</h3>
 
 <p>Conforme al <span class="art">artículo 178</span> del Código de Procedimiento Civil, en los juicios civiles podrán hacerse valer las sentencias dictadas en un proceso criminal siempre que condenen al reo. El fundamento es el ya explicado: la condena penal supone haber acreditado, con un estándar más exigente, aquello que basta y sobra en sede civil.</p>
 
@@ -596,7 +1092,7 @@
   <p>Un conductor es condenado en sede penal por el cuasidelito de lesiones menos graves tras chocar a un peatón. En el juicio civil posterior, la víctima invoca esa condena para acreditar el hecho, la culpa y su participación, lo que efectivamente logra sin más trámite (<span class="art">artículo 178</span> del Código de Procedimiento Civil). Pero si además reclama el lucro cesante de seis meses sin trabajar, deberá probarlo con liquidaciones de sueldo, licencias médicas o certificados laborales: la sentencia penal nada dice sobre cuánto dejó de ganar la víctima, porque el proceso penal no tuvo por objeto acreditar esa partida. Si no rinde esa prueba, el tribunal civil acogerá la acción en cuanto al hecho ilícito, pero rechazará o reducirá drásticamente la indemnización por falta de prueba del daño reclamado.</p>
 </div>
 
-<h3>3.2. Sentencias absolutorias</h3>
+<h3 id="extracontractual-B-3-2">3.2. Sentencias absolutorias</h3>
 
 <p>Por regla general, las sentencias absolutorias penales no producen cosa juzgada en materia civil, porque de la circunstancia de que no exista responsabilidad penal no se sigue necesariamente que tampoco exista responsabilidad civil. Así lo establece el <span class="art">artículo 179</span> inciso primero del Código de Procedimiento Civil, conforme al cual las sentencias que absuelvan de la acusación o que ordenen el sobreseimiento definitivo sólo producen cosa juzgada en materia civil cuando se funden en ciertas circunstancias que la propia disposición señala.</p>
 
@@ -620,7 +1116,7 @@
   <p>Declaró que la amnistía sólo produce efectos en la esfera de la responsabilidad penal, sin alcanzar el campo de la responsabilidad civil: la primera tiene su origen en el hecho punible, que la ley reprime en resguardo del interés de la colectividad; la segunda nace como consecuencia de ese hecho, en cuanto ocasiona al ofendido un daño que le confiere derecho a la reparación. Por consiguiente, la obligación que genera ese derecho no se extingue por la amnistía.</p>
 </div>
 
-<h3>3.3. Las circunstancias del artículo 179 del Código de Procedimiento Civil</h3>
+<h3 id="extracontractual-B-3-3">3.3. Las circunstancias del artículo 179 del Código de Procedimiento Civil</h3>
 
 <p class="enum-i">(i) La no existencia del delito o cuasidelito que ha sido materia del proceso.</p>
 <p>La propia norma advierte que no quedan comprendidos en este numeral los casos en que la absolución o el sobreseimiento provengan de la existencia de circunstancias que eximan de responsabilidad criminal. La inexistencia del delito puede obedecer a una razón material (no se cometió el hecho) o a una razón jurídica (los hechos no son constitutivos de delito desde el punto de vista penal).</p>
@@ -641,13 +1137,13 @@
 
 <p>Nótese, además, que ésta es la única de las tres reglas cuyo efecto es relativo (limitado a quienes fueron partes), y no absoluto.</p>
 
-<h3>3.4. La contraexcepción: las obligaciones restitutorias</h3>
+<h3 id="extracontractual-B-3-4">3.4. La contraexcepción: las obligaciones restitutorias</h3>
 
 <p>El inciso final del <span class="art">artículo 179</span> del Código de Procedimiento Civil contiene una limitación adicional: las sentencias absolutorias o de sobreseimiento en materia criminal relativas a tutores, curadores, albaceas, síndicos, depositarios, tesoreros y demás personas que hayan recibido valores u objetos muebles por un título del que nazca obligación de devolverlos, no producirán en ningún caso cosa juzgada en materia civil.</p>
 
 <p>El fundamento es límpido: la absolución penal no puede liberar al absuelto de su obligación de restituir, porque la ley diferencia claramente la acción indemnizatoria (que es la acción de responsabilidad civil) de la acción puramente restitutoria. La distinción es la misma que separa la responsabilidad extracontractual del régimen cuasicontractual, y reaparece en el Eje 3.</p>
 
-<h3>3.5. El alcance de la cosa juzgada penal: una anomalía del sistema</h3>
+<h3 id="extracontractual-B-3-5">3.5. El alcance de la cosa juzgada penal: una anomalía del sistema</h3>
 
 <p>El efecto de cosa juzgada de la sentencia penal en sede civil se aparta de los principios generales de la institución, y conviene advertirlo. En primer lugar, la jurisprudencia ha resuelto que la cosa juzgada de la sentencia dictada en sede criminal produce efectos erga omnes, sin que se requiera la concurrencia de la triple identidad a que se refiere el <span class="art">artículo 177</span> del Código de Procedimiento Civil.</p>
 
@@ -722,7 +1218,7 @@
 
 <span id="extracontractual-C-1" class="justiniano-ancla"></span><h2>1. Responsabilidad contractual y responsabilidad extracontractual</h2>
 
-<h3>1.1. Los conceptos</h3>
+<h3 id="extracontractual-C-1-1">1.1. Los conceptos</h3>
 
 <p>La imputación a una persona de la obligación de reparar un perjuicio constituye el contenido esencial del concepto de responsabilidad civil. Ambos estatutos comparten, pues, la misma sustancia; lo que los separa es el antecedente de esa obligación de reparar.</p>
 
@@ -730,7 +1226,7 @@
 
 <p>El cuadro de diferencias entre ambos regímenes (capacidad, graduación de la culpa, mora, extensión de la reparación, solidaridad, prescripción y peso de la prueba) es materia del Eje 23, y el cúmulo lo es del Eje 24. Lo que aquí interesa no es enumerar en qué se diferencian, sino establecer cuándo se aplica cada uno.</p>
 
-<h3>1.2. El criterio de delimitación</h3>
+<h3 id="extracontractual-C-1-2">1.2. El criterio de delimitación</h3>
 
 <p>El criterio que permite delimitar ambos estatutos es el que ya se estudió en el Eje 1, y conviene reiterarlo aquí porque es el que resuelve todos los casos de frontera. En materia contractual, la acción de responsabilidad complementa (y en algunos casos sustituye) a la acción que persigue el cumplimiento forzado en naturaleza de la obligación principal; se traduce, por tanto, en una obligación de segundo grado (indemnizar los perjuicios ocasionados con el incumplimiento) cuyo fundamento es precisamente el incumplimiento de la obligación principal o de primer grado. Así lo sostienen <strong>BARROS</strong> y <strong>DUCCI</strong>.</p>
 
@@ -756,7 +1252,7 @@
 
 <p>La jurisprudencia, entonces, ya venía extendiendo el estatuto llamado “contractual” a toda obligación preexistente, cualquiera fuese su fuente. Ese dato es un argumento de peso (y de origen jurisprudencial, no doctrinario) a favor de la solución que se examinará a propósito del derecho común.</p>
 
-<h3>1.3. La sustitución convencional del régimen extracontractual</h3>
+<h3 id="extracontractual-C-1-3">1.3. La sustitución convencional del régimen extracontractual</h3>
 
 <p>El riesgo general de ocasionar daños puede ser materia de un acuerdo previo entre los potenciales afectados. Una industria contaminante puede celebrar acuerdos con sus vecinos sobre los daños que provocará su funcionamiento, y en tal caso el contrato regirá materias que, de no mediar acuerdo, se someterían a las reglas de la responsabilidad extracontractual.</p>
 
@@ -768,13 +1264,13 @@
 
 <span id="extracontractual-C-2" class="justiniano-ancla"></span><h2>2. Responsabilidad extracontractual y cuasicontractual</h2>
 
-<h3>2.1. El criterio: acción indemnizatoria y acción restitutoria</h3>
+<h3 id="extracontractual-C-2-1">2.1. El criterio: acción indemnizatoria y acción restitutoria</h3>
 
 <p>Mientras en materia extracontractual la acción que se concede a la víctima es esencialmente indemnizatoria y tiene por objeto obtener la reparación íntegra del daño sufrido por ésta (<span class="art">artículo 2329</span> del Código Civil), en el ámbito cuasicontractual el derecho concede acciones meramente restitutorias, cuyo objeto es el resarcimiento de los costos directos en que el actor ha incurrido en beneficio de un tercero.</p>
 
 <p>La diferencia es de medida, y ahí está la clave. La acción indemnizatoria se mide por el daño sufrido por el demandante; la acción restitutoria se mide por el provecho obtenido por el demandado o por el costo efectivamente incurrido por el actor en beneficio ajeno. Una repara; la otra evita un enriquecimiento injustificado. No son dos intensidades de lo mismo: son dos lógicas distintas.</p>
 
-<h3>2.2. La demostración: el artículo 2290 y la agencia oficiosa</h3>
+<h3 id="extracontractual-C-2-2">2.2. La demostración: el artículo 2290 y la agencia oficiosa</h3>
 
 <p>El <span class="art">artículo 2290</span> del Código Civil, aplicable a la agencia oficiosa, dispone que aquel que sin mediar mandato se ha hecho cargo de la administración de negocios ajenos (el gerente) sólo tiene derecho a que se le restituya lo invertido en expensas útiles o necesarias, pero no puede exigir que se le remunere por sus actos.</p>
 
@@ -792,11 +1288,11 @@
 
 <span id="extracontractual-C-3" class="justiniano-ancla"></span><h2>3. El derecho común de la responsabilidad civil</h2>
 
-<h3>3.1. La laguna</h3>
+<h3 id="extracontractual-C-3-1">3.1. La laguna</h3>
 
 <p>La legislación nacional regula dos grandes estatutos de responsabilidad civil (contractual y extracontractual), pero no establece explícitamente el régimen común aplicable, por ejemplo, al incumplimiento de obligaciones legales. Se trata de una auténtica laguna: hay hipótesis de responsabilidad civil que no son contractuales (porque no hay contrato) pero que tampoco encajan cómodamente en el modelo extracontractual (porque sí hay una obligación previa, sólo que de fuente legal). El sistema debe decidir cuál de los dos regímenes opera supletoriamente, y el Código no lo dice.</p>
 
-<h3>3.2. La tesis contractualista: <strong>ALESSANDRI</strong></h3>
+<h3 id="extracontractual-C-3-2">3.2. La tesis contractualista: <strong>ALESSANDRI</strong></h3>
 
 <p><strong>ALESSANDRI</strong> sostiene que el régimen común de responsabilidad es el contractual, y su argumentación se despliega en tres tramos. El primero es de ubicación normativa: el estatuto contractual es el único regulado genéricamente a propósito de los efectos de las obligaciones, en los <span class="art">artículos 1545</span> y siguientes del Código Civil. Los hechos ilícitos, en cambio, reciben un tratamiento particular y separado, bastante más adelante.</p>
 
@@ -808,7 +1304,7 @@
 
 <p>La conclusión de <strong>ALESSANDRI</strong> es categórica: las reglas de la responsabilidad contractual constituyen el derecho común en materia de responsabilidad, y la responsabilidad delictual y cuasidelictual es de excepción.</p>
 
-<h3>3.3. La tesis contraria</h3>
+<h3 id="extracontractual-C-3-3">3.3. La tesis contraria</h3>
 
 <p>La réplica se despliega en cuatro movimientos.</p>
 
@@ -830,7 +1326,7 @@
 
 <p>Son comunes a ambos regímenes el <span class="art">artículo 1556</span>, que fija el contenido de la indemnización (daño emergente y lucro cesante) como regla general de daño patrimonial también aplicada en sede extracontractual, y la parte final del <span class="art">artículo 1558</span>, que exige un nexo causal directo entre el hecho y el daño. En cambio, son exclusivas del ámbito contractual los <span class="art">artículos 1551</span> y <span class="art">1557</span>, sobre la exigencia y los efectos de la mora; el <span class="art">artículo 1547</span> inciso 3.º, sobre la carga de la prueba de la culpa; y el <span class="art">artículo 1558</span> en lo relativo a la previsibilidad del daño.</p>
 
-<h3>3.4. La zona gris: las obligaciones de fuente legal</h3>
+<h3 id="extracontractual-C-3-4">3.4. La zona gris: las obligaciones de fuente legal</h3>
 
 <p>Aquí está el verdadero punto de dificultad. La cuestión se torna más discutible en los casos en que existe una obligación preexistente que no tiene su origen en el contrato, sino en la ley. Dos ejemplos: la responsabilidad que surge del incumplimiento de la obligación de dar alimentos, y la que tienen los directores de una sociedad anónima respecto de los accionistas (<span class="art">artículo 41</span> inciso primero de la Ley Nº 18.046).</p>
 
@@ -914,7 +1410,7 @@
 
 <span id="extracontractual-D-1" class="justiniano-ancla"></span><h2>1. La responsabilidad subjetiva o por culpa</h2>
 
-<h3>1.1. El fundamento clásico</h3>
+<h3 id="extracontractual-D-1-1">1.1. El fundamento clásico</h3>
 
 <p>La doctrina clásica señala como fundamento de la obligación de indemnizar que la ley impone, la culpabilidad del agente: esto es, la actitud reprochable del autor del delito o cuasidelito, que puede recorrer una cierta graduación desde el dolo hasta la negligencia, pero que le impone en todo caso la necesidad de responder de su conducta. Para esta doctrina, dos son los requisitos fundamentales de la responsabilidad extracontractual: el daño, y que él haya sido originado por la culpa o el dolo de quien lo ha provocado.</p>
 
@@ -926,7 +1422,7 @@
 
 <p>La observación no es incidental: explica por qué el sistema de responsabilidad por culpa puede operar sobre la base de cláusulas generales (los <span class="art">artículos 2314</span> y <span class="art">2329</span> del Código Civil) sin infringir garantía alguna, y por qué la culpa civil es, en definitiva, una construcción judicial. Este punto se desarrolla en el Eje 8.</p>
 
-<h3>1.2. Las críticas al sistema de la culpa</h3>
+<h3 id="extracontractual-D-1-2">1.2. Las críticas al sistema de la culpa</h3>
 
 <p>El sistema de responsabilidad subjetiva no ha estado exento de críticas, y conviene conocerlas porque son el antecedente histórico y dogmático de la aparición de la responsabilidad objetiva.</p>
 
@@ -939,7 +1435,7 @@
 <p class="enum-i">(iii) Es de justicia social, y la que históricamente tuvo mayor fuerza.</p>
 <p>El problema adquirió caracteres dramáticos en los accidentes del trabajo, en los que los obreros quedaban prácticamente desamparados para litigar en pleitos largos y engorrosos contra las empresas. Generalmente la víctima es de menores recursos que el autor del daño, y se sostiene que el legislador debe protegerla. Desde esta perspectiva se critica a la doctrina subjetiva el mirar más hacia la actuación del autor del daño que hacia la situación de la víctima, que es quien merece mayor protección.</p>
 
-<h3>1.3. La culpa como régimen común en el derecho chileno</h3>
+<h3 id="extracontractual-D-1-3">1.3. La culpa como régimen común en el derecho chileno</h3>
 
 <p>No obstante esas críticas, el sistema de responsabilidad civil por culpa o negligencia constituye el régimen común de responsabilidad en el derecho nacional, aplicable a todos aquellos casos que no están regidos por una regla especial diversa.</p>
 
@@ -949,7 +1445,7 @@
 
 <p><strong>BARROS</strong> suscribe la misma conclusión, y precisa la razón por la cual el régimen de la culpa merece ser estudiado con prioridad: es el estatuto general y supletorio, en él se establecen las mayores exigencias, y su análisis permite comprender el de responsabilidad estricta, que si bien prescinde del requisito de la culpa, en lo demás está sujeto a reglas semejantes. La observación tiene valor práctico inmediato: el régimen objetivo no es un sistema autónomo y completo, sino el régimen general menos el elemento culpa.</p>
 
-<h3>1.4. Los elementos del régimen de responsabilidad por culpa</h3>
+<h3 id="extracontractual-D-1-4">1.4. Los elementos del régimen de responsabilidad por culpa</h3>
 
 <p>Establecido que la culpa es el régimen común, corresponde determinar cuáles son sus elementos, y aquí la doctrina nacional se divide. La discusión importa porque de ella depende el orden de la exposición y, sobre todo, la existencia o no de un juicio de antijuridicidad distinto del juicio de culpa.</p>
 
@@ -971,7 +1467,7 @@
 
 <span id="extracontractual-D-2" class="justiniano-ancla"></span><h2>2. La responsabilidad estricta u objetiva</h2>
 
-<h3>2.1. El concepto y su antecedente</h3>
+<h3 id="extracontractual-D-2-1">2.1. El concepto y su antecedente</h3>
 
 <p>A diferencia del modelo general de responsabilidad por culpa o negligencia, la responsabilidad estricta u objetiva tiene como antecedente el riesgo generado por una determinada conducta, y no la negligencia, de modo que resulta indiferente el juicio de valor respecto de la conducta del autor del daño.</p>
 
@@ -985,7 +1481,7 @@
   <p>Un perro muerde a un transeúnte en la calle. Si el perro es una mascota doméstica, el dueño solo responde si se prueba que fue negligente (por ejemplo, si dejó la reja abierta pudiendo cerrarla): rige el modelo de la culpa, y basta acreditar la diligencia debida para exonerarse. Si en cambio se trata de un animal fiero que no reporta utilidad para la guarda del predio (<span class="art">artículo 2327</span> del Código Civil), el dueño responde siempre, aunque pruebe que hizo todo lo posible por evitar el daño: aquí rige la responsabilidad estricta, y la diligencia del dueño es sencillamente irrelevante. El mismo hecho (una mordedura) se juzga con dos varas distintas según el ámbito de actividad en que ocurre, porque solo el segundo caso fue definido por el legislador como uno de riesgo objetivo.</p>
 </div>
 
-<h3>2.2. El fundamento: riesgo provecho y riesgo creado</h3>
+<h3 id="extracontractual-D-2-2">2.2. El fundamento: riesgo provecho y riesgo creado</h3>
 
 <p>En el plano dogmático, la evolución fue la siguiente. Se comenzó por contraponer a una responsabilidad objetiva indiscriminada (que se fundaba sólo en la causalidad material entre el agente y el daño) diferentes tipos de responsabilidad sin culpa, pero atribuibles a otros factores de imputación diversos del mero nexo causal. La razón de ese desplazamiento es evidente: una responsabilidad fundada en la sola causalidad material carece de todo criterio para discriminar entre las múltiples causas que concurren en cualquier accidente, y termina siendo arbitraria.</p>
 
@@ -993,7 +1489,7 @@
 
 <p>De allí que muchas veces se empleen como sinónimos los conceptos de responsabilidad objetiva y responsabilidad por riesgo. La distinción entre ambas versiones no es ociosa. El riesgo provecho supone una actividad lucrativa y explica bien la responsabilidad del empresario o del explotador de una instalación; el riesgo creado alcanza también a quien crea peligro sin ánimo de lucro, y explica mejor casos como el del tenedor de un animal fiero. Conviene tenerlas presentes porque, al examinar los regímenes legales de responsabilidad objetiva (Eje 17), se verá que unos se justifican mejor por una y otros por la otra.</p>
 
-<h3>2.3. Las críticas a la doctrina objetiva</h3>
+<h3 id="extracontractual-D-2-3">2.3. Las críticas a la doctrina objetiva</h3>
 
 <p>La doctrina objetiva ha recibido, a su turno, severas críticas, que importan otras tantas defensas de la doctrina clásica.</p>
 
@@ -1006,7 +1502,7 @@
 <p class="enum-i">(iii) No es equitativo que la víctima resulte siempre indemne.</p>
 <p>Referido al problema de la relación entre la víctima y el autor: debe mirarse a ambas partes, y no sancionar a quien nada ha puesto de su parte para que el accidente ocurra. Esta última crítica es la más profunda, porque no ataca la eficacia del sistema, sino su justicia: recuerda que el demandado también es una persona, y que atribuirle un daño que no pudo evitar ni con la máxima diligencia exige una razón que la sola causalidad no proporciona.</p>
 
-<h3>2.4. Carácter excepcional y de derecho estricto</h3>
+<h3 id="extracontractual-D-2-4">2.4. Carácter excepcional y de derecho estricto</h3>
 
 <p>De todo lo anterior se sigue la conclusión que domina la materia y que debe enunciarse con firmeza: la responsabilidad estricta es un régimen especial y, como tal, de derecho estricto, que opera sólo respecto de ciertos ámbitos de conducta o de tipos de riesgos previamente definidos por el legislador. Su fuente es la ley, y sólo la ley. De ahí se derivan tres consecuencias prácticas que conviene extraer expresamente.</p>
 
@@ -1094,7 +1590,7 @@
 
 <span id="extracontractual-E-2" class="justiniano-ancla"></span><h2>2. La incapacidad por privación de razón: los dementes</h2>
 
-<h3>2.1. Concepto</h3>
+<h3 id="extracontractual-E-2-1">2.1. Concepto</h3>
 
 <p>En términos generales, demente es aquella persona privada de razón. <strong>ALESSANDRI</strong> precisa que son dementes quienes, al tiempo de ejecutar el hecho, están privados de la razón por causas patológicas. La expresión “demencia” es genérica: designa diversas formas de privación de la razón, y comprende condiciones tan distintas entre sí como la imbecilidad, la esquizofrenia o los extremos estados maníaco-depresivos, en la medida en que médicamente traigan consigo los efectos que enseguida se indican.</p>
 
@@ -1102,7 +1598,7 @@
 
 <p>La determinación de la privación de razón es, ante todo, una cuestión de hecho, que debe ser probada al oponerse como excepción perentoria en el juicio de responsabilidad. Pero es también, y simultáneamente, una cuestión normativa, porque el concepto jurídico de demencia no es idéntico al de la medicina. Y por esa misma razón la noción jurídica de demencia no coincide necesariamente en materia contractual y extracontractual: al igual que ocurre con la edad, el umbral de deliberación exigido por el derecho puede diferir en una y en otra.</p>
 
-<h3>2.2. El valor del decreto de interdicción</h3>
+<h3 id="extracontractual-E-2-2">2.2. El valor del decreto de interdicción</h3>
 
 <p>Este es el punto más discutido del eje, y en él la doctrina nacional se divide. El problema surge de la asimetría entre ambos estatutos. En materia contractual, el decreto de interdicción produce efectos permanentes e irrebatibles: excluye la capacidad negocial sin que sea posible alegar lucidez circunstancial, según se desprende de los <span class="art">artículos 456</span> y <span class="art">465</span> del Código Civil. Los actos del demente interdicto son nulos aunque se pruebe que fueron ejecutados en un intervalo lúcido. La pregunta es si ese mismo efecto se produce en sede extracontractual.</p>
 
@@ -1120,7 +1616,7 @@
   <p>La tensión de fondo entre estas posiciones no es exegética, sino conceptual. Quien sostiene que el decreto de interdicción vincula al juez civil está tratando la demencia como un estado (una condición jurídica declarada, estable, oponible). Quien sostiene que es un mero antecedente está tratando la demencia como un hecho que debe verificarse en el momento preciso de la ejecución del acto dañoso. Y la ley se inclina por lo segundo: el <span class="art">artículo 2319</span> no exige interdicción alguna, sino privación de razón; y el propio <strong>ALESSANDRI</strong> define al demente como aquel que, al tiempo de ejecutar el hecho, está privado de razón. La capacidad delictual no se declara: se constata, y se constata respecto de un momento determinado.</p>
 </div>
 
-<h3>2.3. Requisitos de la demencia como causal de exoneración</h3>
+<h3 id="extracontractual-E-2-3">2.3. Requisitos de la demencia como causal de exoneración</h3>
 
 <p>Para que la demencia excluya la imputabilidad se requiere que concurran los siguientes requisitos.</p>
 
@@ -1133,7 +1629,7 @@
 <p class="enum-i">(iii) Que no sea imputable a la voluntad del sujeto.</p>
 <p>Este requisito no es generalmente admitido por los autores, y conviene exponerlo con esa reserva. Sin embargo, la regulación que el Código Civil hace de la situación del ebrio revela un principio general en la materia, y de ella puede inducirse la exigencia: no puede excusarse con la privación de razón quien se ha colocado voluntariamente en ese estado.</p>
 
-<h3>2.4. La ebriedad y la intoxicación</h3>
+<h3 id="extracontractual-E-2-4">2.4. La ebriedad y la intoxicación</h3>
 
 <p>El <span class="art">artículo 2318</span> del Código Civil dispone que el ebrio es responsable del daño causado por su delito o cuasidelito. La norma es tajante, y su fundamento es el que acaba de anunciarse: la responsabilidad del ebrio, pese a la privación de razón que eventualmente se sigue de su estado, se funda en que la ebriedad le es imputable, porque proviene de un acto voluntario. Es la aplicación civil del principio de la actio liberae in causa: la conducta libre no es la que causó el daño, sino la que produjo el estado en que el daño se causó, y en esa conducta anterior se sitúa el reproche.</p>
 
@@ -1147,7 +1643,7 @@
 
 <span id="extracontractual-E-3" class="justiniano-ancla"></span><h2>3. La incapacidad por minoría de edad</h2>
 
-<h3>3.1. Las dos reglas del artículo 2319</h3>
+<h3 id="extracontractual-E-3-1">3.1. Las dos reglas del artículo 2319</h3>
 
 <p>El <span class="art">artículo 2319</span> comprende dos reglas de estructura distinta, y conviene no confundirlas. Conforme al inciso primero, no son capaces de delito o cuasidelito los menores de siete años, esto es, los infantes, según la definición del <span class="art">artículo 26</span> del Código Civil. Se trata de una incapacidad absoluta y de pleno derecho: no admite prueba en contrario, y el juez carece de toda facultad de apreciación. El infante no responde nunca, por hábil que haya sido su conducta o por evidente que resulte que comprendía lo que hacía.</p>
 
@@ -1155,7 +1651,7 @@
 
 <p>De la combinación de ambas reglas resulta el esquema que debe retenerse: la plena capacidad delictual se adquiere a los dieciséis años, pero puede extenderse hacia atrás, hasta los siete, si el juez estima que el menor obró con discernimiento. Entre los siete y los dieciséis, en consecuencia, la capacidad es la regla y la incapacidad la excepción, pues, conforme al principio general ya enunciado, en la duda el menor es tenido por responsable, salvo que se acredite su falta de discernimiento.</p>
 
-<h3>3.2. El contenido del discernimiento</h3>
+<h3 id="extracontractual-E-3-2">3.2. El contenido del discernimiento</h3>
 
 <p>¿Qué debe entenderse por discernimiento? <strong>BARROS</strong> ofrece el criterio, y es el mismo que rige para el demente: basta que el menor sea capaz de discernir la corrección y el riesgo que suponía su acción. En la responsabilidad por culpa, el discernimiento supone la capacidad para comprender que un acto es ilícito, junto a una mínima aptitud de apreciación del riesgo.</p>
 
@@ -1171,7 +1667,7 @@
 
 <p>Es decir: se pregunta en concreto si este niño podía comprender la ilicitud y el riesgo; pero, establecido que podía, se le compara en abstracto con el estándar de conducta exigible. La subjetividad opera en el umbral de la capacidad, no en el juicio de culpa. Esta distinción se retomará en el Eje 8.</p>
 
-<h3>3.3. La crítica al juicio de discernimiento</h3>
+<h3 id="extracontractual-E-3-3">3.3. La crítica al juicio de discernimiento</h3>
 
 <p>El juicio de discernimiento es, en definitiva, una facultad prudencial del juez de la causa, expresiva de la liberalidad del derecho civil en materia de capacidad. Y esa discrecionalidad ha sido objeto de una crítica que conviene conocer, porque proviene de la evolución de otra rama del ordenamiento. <strong>BARROS</strong> observa que el ejercicio por el juez civil de la facultad de efectuar un juicio de discernimiento es casi desconocido en la práctica.</p>
 
@@ -1181,7 +1677,7 @@
 
 <p>La observación deja planteada una cuestión que el examinando puede aprovechar para cerrar con altura: si el discernimiento fue abandonado en sede penal por impreciso y arbitrario, y si en sede civil prácticamente no se ejerce, cabe preguntarse qué función cumple realmente el inciso segundo del <span class="art">artículo 2319</span>. La respuesta más plausible es que opera menos como filtro efectivo que como válvula de escape: una facultad que el juez conserva para los casos extremos, y que precisamente por su carácter excepcional rara vez utiliza.</p>
 
-<h3>3.4. La jurisprudencia sobre capacidad del menor</h3>
+<h3 id="extracontractual-E-3-4">3.4. La jurisprudencia sobre capacidad del menor</h3>
 
 <p>La jurisprudencia nacional ha sido tradicionalmente severa, y ha tendido a reconocer capacidad a menores de corta edad cuando el riesgo era intuitivamente comprensible.</p>
 
@@ -1195,7 +1691,7 @@
 
 <p><strong>ALESSANDRI</strong> y <strong>DUCCI</strong> concuerdan con esta línea jurisprudencial.</p>
 
-<h3>3.5. La tendencia comparada</h3>
+<h3 id="extracontractual-E-3-5">3.5. La tendencia comparada</h3>
 
 <p>Bajo el influjo de la concepción objetiva de la responsabilidad, la legislación contemporánea tiende a abolir, en mayor o menor grado, la irresponsabilidad del incapaz, y conviene conocer las tres técnicas empleadas, porque muestran soluciones graduales al mismo problema.</p>
 
@@ -1212,13 +1708,13 @@
 
 <span id="extracontractual-E-4" class="justiniano-ancla"></span><h2>4. La responsabilidad del guardián del incapaz</h2>
 
-<h3>4.1. La regla del artículo 2319 inciso primero</h3>
+<h3 id="extracontractual-E-4-1">4.1. La regla del artículo 2319 inciso primero</h3>
 
 <p>En materia de responsabilidad, el término guardián designa a la persona que tiene a su cargo a otra o a una cosa y debe vigilarla; si no cumple ese deber, es responsable de los daños que ocasione esa persona o cosa, y su culpa consiste precisamente en haber faltado a dicha obligación. Así ocurre con los incapaces.</p>
 
 <p>El <span class="art">artículo 2319</span> inciso primero, tras declarar la incapacidad del demente y del infante, agrega que serán responsables de los daños causados por ellos las personas a cuyo cargo estén, si pudiere imputárseles negligencia. La frase final es decisiva y debe subrayarse: la responsabilidad del guardián no se presume; la víctima debe probar su negligencia.</p>
 
-<h3>4.2. Naturaleza: responsabilidad por el hecho propio</h3>
+<h3 id="extracontractual-E-4-2">4.2. Naturaleza: responsabilidad por el hecho propio</h3>
 
 <p>Este es el punto técnicamente más fino del eje, y su dominio distingue una respuesta completa. La responsabilidad del guardián del <span class="art">artículo 2319</span> no es responsabilidad por el hecho ajeno. Es responsabilidad directa, personal y exclusiva por el hecho propio. La razón es rigurosa: como el incapaz no puede cometer hecho ilícito alguno (le falta el presupuesto de la capacidad), no hay hecho ajeno del cual responder. Lo que hay es un hecho propio del guardián, consistente en la infracción de su deber de vigilancia. El daño no es jurídicamente atribuible al incapaz, sino precisamente a quien lo tenía bajo su cuidado.</p>
 
@@ -1232,7 +1728,7 @@
 
 <p>Conviene advertir, con todo, que la doctrina reconoce que ambos regímenes obedecen a una misma lógica de fondo, tal como lo ha expresado la Corte Suprema, en fallo de 29 de agosto de 1974, al declarar que quien responde por el hecho de otro satisface la indemnización no propiamente por el hecho ilícito ajeno, sino por su descuido personal como cuidador o empleador que debía estar vigilante del correcto desempeño de quienes se encuentran bajo su guarda o dependencia. La responsabilidad por el hecho ajeno es, en su fundamento, también responsabilidad por culpa propia; lo que la distingue del <span class="art">artículo 2319</span> no es su naturaleza última, sino la técnica probatoria y la subsistencia de la responsabilidad del autor directo.</p>
 
-<h3>4.3. Ausencia de acción de reembolso</h3>
+<h3 id="extracontractual-E-4-3">4.3. Ausencia de acción de reembolso</h3>
 
 <p>El guardián soporta definitivamente la indemnización: no puede repetir contra el incapaz. La conclusión se deduce a contrario sensu del <span class="art">artículo 2325</span> del Código Civil, que confiere derecho a pedir restitución de lo pagado únicamente respecto de quien era capaz de delito o cuasidelito según el <span class="art">artículo 2319</span>.</p>
 
@@ -1314,7 +1810,7 @@
 
 <span id="extracontractual-F-3" class="justiniano-ancla"></span><h2>3. El caso fortuito o fuerza mayor</h2>
 
-<h3>3.1. Concepto</h3>
+<h3 id="extracontractual-F-3-1">3.1. Concepto</h3>
 
 <p>El <span class="art">artículo 45</span> del Código Civil define la fuerza mayor o caso fortuito como el imprevisto a que no es posible resistir, y ofrece como ejemplos un naufragio, un terremoto, el apresamiento de enemigos y los actos de autoridad ejercidos por un funcionario público. En materia extracontractual se aplica el mismo concepto que rige en el ámbito contractual, pero su función es distinta, y esa diferencia constituye el punto más fino de esta sección.</p>
 
@@ -1328,7 +1824,7 @@
   <p>Un automovilista cruza la línea continua y choca con otro vehículo: hay, sin duda, culpa infraccional. Pero si esa infracción se produjo porque intentaba esquivar a un peatón que se cruzó imprevistamente, o porque el conductor sufrió un ataque cardíaco imprevisible, entonces el evento determinante del daño es el caso fortuito y no la culpa del agente directo. Nótese que la culpa infraccional subsiste (la línea continua fue cruzada); lo que falla es la atribución del daño a esa culpa. He aquí, precisamente, la utilidad de la institución.</p>
 </div>
 
-<h3>3.2. La ubicación dogmática del caso fortuito</h3>
+<h3 id="extracontractual-F-3-2">3.2. La ubicación dogmática del caso fortuito</h3>
 
 <p>La cuestión de dónde situar el caso fortuito dentro de la estructura de la responsabilidad ha dividido a la doctrina, y conviene exponer las posiciones porque de ellas dependen consecuencias prácticas. Cierta doctrina afirma que el caso fortuito constituye una causal de exoneración por falta de antijuridicidad, o de culpa, o de nexo causal entre el hecho y el daño.</p>
 
@@ -1340,7 +1836,7 @@
 
 <p>Y si se lo concibe como exclusión de la causalidad (<strong>BARROS</strong>), se explican todos los casos, incluidos aquellos en que concurre culpa del agente y, sin embargo, no responde. Esta última construcción es la más completa, y es también la que mejor da cuenta de la función que el caso fortuito cumple en los regímenes de responsabilidad estricta, donde el juicio de culpa está excluido por definición y, no obstante, la fuerza mayor conserva eficacia exoneratoria.</p>
 
-<h3>3.3. Los elementos del caso fortuito</h3>
+<h3 id="extracontractual-F-3-3">3.3. Los elementos del caso fortuito</h3>
 
 <p>Los elementos del caso fortuito o fuerza mayor son tres: la irresistibilidad, la imprevisibilidad y la exterioridad. La Corte Suprema, en fallo de 9 de septiembre de 1992, los recogió al declarar que de la definición legal resulta necesaria la concurrencia, a lo menos, de un hecho imprevisto, irresistible para el deudor, y que no haya sido desencadenado por el hecho propio.</p>
 
@@ -1375,7 +1871,7 @@
 
 <p>La exterioridad cobra importancia especial en los regímenes de responsabilidad estricta, y conviene explicar por qué. En ellos, la previsibilidad y la irresistibilidad pueden no ser excusa suficiente, en la medida en que haya intervenido como causa del daño el riesgo creado por la actividad: precisamente porque el régimen objetivo prescinde del juicio de culpa, de nada sirve alegar que el evento no pudo preverse ni resistirse si él pertenece al riesgo típico de la actividad. Pero la fuerza mayor sí pesará como excusa si el daño se debió a un hecho externo al ámbito de riesgo cubierto por la regla de responsabilidad estricta. Con todo, advierte <strong>BARROS</strong>, una responsabilidad estricta muy extensa puede llegar a comprender incluso el caso fortuito, en cuyo caso la exoneración desaparece por completo.</p>
 
-<h3>3.4. Efectos</h3>
+<h3 id="extracontractual-F-3-4">3.4. Efectos</h3>
 
 <p>El principio es que la fuerza mayor o caso fortuito excluyen la causalidad, aun cuando haya intervenido culpa de la víctima. La jurisprudencia ofrece una aplicación de particular interés, ya conocida del Eje 2: la Corte Suprema, en fallo de 5 de noviembre de 1970, resolvió un caso de destrucción de un inmueble producida como resultado de una pérdida momentánea de conocimiento del conductor del vehículo.</p>
 
@@ -1383,11 +1879,11 @@
 
 <span id="extracontractual-F-4" class="justiniano-ancla"></span><h2>4. La responsabilidad de las personas jurídicas</h2>
 
-<h3>4.1. El problema</h3>
+<h3 id="extracontractual-F-4-1">4.1. El problema</h3>
 
 <p>Si la responsabilidad exige un hecho voluntario, y el hecho voluntario supone voluntad humana, surge de inmediato la pregunta acerca de la posibilidad de que respondan las personas jurídicas. El tema fue discutido, y lo fue especialmente para quienes sostienen que la persona jurídica es una mera ficción, pues desde esa premisa no cabría hablar de una “voluntad” real de la asociación, y sin voluntad no habría hecho voluntario ni, por tanto, responsabilidad.</p>
 
-<h3>4.2. La solución del derecho chileno</h3>
+<h3 id="extracontractual-F-4-2">4.2. La solución del derecho chileno</h3>
 
 <p>En Chile la cuestión está zanjada, y lo está por texto expreso. El <span class="art">artículo 58</span> inciso segundo del Código Procesal Penal (que reprodujo en lo sustancial la regla del antiguo <span class="art">artículo 39</span> del Código de Procedimiento Penal) dispone que la responsabilidad penal sólo puede hacerse efectiva en las personas naturales, y que por las personas jurídicas responden quienes hubieren intervenido en el acto punible, sin perjuicio de la responsabilidad civil que las afectare.</p>
 
@@ -1397,7 +1893,7 @@
 
 <p>Conviene contrastar ambas evoluciones, porque la asimetría es notable y ya se anticipó en el Eje 2: mientras en materia penal la regla sigue siendo la incapacidad de las personas jurídicas (con la excepción del estatuto especial de la Ley Nº 20.393), en materia civil la tendencia ha sido la creciente extensión de su responsabilidad.</p>
 
-<h3>4.3. La teoría del órgano y sus límites</h3>
+<h3 id="extracontractual-F-4-3">4.3. La teoría del órgano y sus límites</h3>
 
 <p>Tradicionalmente se ha sostenido que la persona jurídica responde por el hecho propio cuando el ilícito ha sido cometido por un órgano en ejercicio de sus funciones. La construcción es importante y debe comprenderse bien: no se trata de que la persona jurídica responda por el hecho ajeno de sus dependientes (hipótesis del <span class="art">artículo 2320</span>, que se estudia en el Eje 14), sino de que el acto del órgano es el acto de la persona jurídica. El órgano no representa a la persona jurídica: la constituye.</p>
 
@@ -1488,13 +1984,13 @@
 
 <span id="extracontractual-G-3" class="justiniano-ancla"></span><h2>3. Las causales de justificación: nociones generales</h2>
 
-<h3>3.1. Ausencia de regulación y fundamento</h3>
+<h3 id="extracontractual-G-3-1">3.1. Ausencia de regulación y fundamento</h3>
 
 <p>A diferencia de lo que ocurre en el derecho penal, donde el <span class="art">artículo 10</span> del Código Penal enumera taxativamente las causales de justificación, la ley civil no ha reglamentado las causas eximentes de responsabilidad. Han sido la doctrina y la jurisprudencia las que las han identificado. <strong>ALESSANDRI</strong> funda su existencia en los principios generales de nuestro derecho, conforme a los cuales sólo se responde de los daños causados con dolo o culpa, según se desprende de los <span class="art">artículos 2284</span> y <span class="art">2314</span> del Código Civil. El argumento es sólido: si sólo se responde del daño culpable, entonces toda circunstancia que excluya el reproche excluye la responsabilidad, aunque la ley no la haya catalogado.</p>
 
 <p><strong>BARROS</strong> precisa la función que cumplen en sede civil, y su formulación es la más útil: mientras en materia penal las causales de justificación excluyen la antijuridicidad del hecho, tratándose de la responsabilidad civil actúan sobre el ilícito eliminando la culpabilidad; su función es, por tanto, servir de excusa razonable para el hombre prudente. Esta caracterización es la que permite ordenar todo el catálogo: en cada una de las cuatro causales se trata de establecer que el hombre prudente, colocado en la situación del demandado, habría actuado del mismo modo.</p>
 
-<h3>3.2. Enumeración y delimitación</h3>
+<h3 id="extracontractual-G-3-2">3.2. Enumeración y delimitación</h3>
 
 <p>Las causales de justificación son cuatro: la ejecución de actos autorizados por el derecho, el consentimiento de la víctima, el estado de necesidad y la legítima defensa. <strong>ALESSANDRI</strong> incluye además, entre las que denomina “eximentes de responsabilidad”, el caso fortuito o fuerza mayor, la violencia física o moral, la culpa exclusiva de la víctima y el hecho de un tercero.</p>
 
@@ -1508,7 +2004,7 @@
 
 <p>Dentro de estos actos es posible distinguir tres grupos: los ejecutados en ejercicio de un derecho, los ejecutados en cumplimiento de un deber legal, y los autorizados por usos normativos.</p>
 
-<h3>4.1. El ejercicio de un derecho</h3>
+<h3 id="extracontractual-G-4-1">4.1. El ejercicio de un derecho</h3>
 
 <p>El ejercicio de un derecho elimina la ilicitud de la acción que causa el daño. Por ello, en principio no hay ilicitud en el hecho de que un restaurante se instale a media cuadra de otro ya existente y le prive de parte de su clientela, siempre que respete las normas de la libre competencia. Del mismo modo, la jurisprudencia ha declarado que el mero ejercicio de una acción judicial, aunque los tribunales no la acojan en definitiva, no constituye injuria o daño por sí solo (así lo resolvió la Corte de Apelaciones de Santiago en fallo de 1 de enero de 1925), criterio ratificado en materia concursal por la Corte Suprema, en fallo de 14 de enero de 1913, al declarar que la solicitud de quiebra que, acogida en principio, resulta finalmente rechazada, no impone responsabilidad si no se acredita que el solicitante obró con dolo o malicia.</p>
 
@@ -1546,7 +2042,7 @@
 
 <p>Como ejemplo concreto de abuso reconocido por los tribunales, la Corte Suprema, en fallo de 24 de julio de 1905, resolvió que el ejecutante que embarga animales de propiedad de un tercero, a sabiendas de que no pertenecían al deudor (y de lo que pudo cerciorarse antes del embargo con mediana diligencia), debe responder por las faltas del ganado que ha de restituir a aquel cuyo dominio fue reconocido. El caso ilustra bien el criterio: el embargo es el ejercicio de un derecho, pero ejercido con negligencia grave sobre bienes ajenos deviene en ilícito.</p>
 
-<h3>4.2. El cumplimiento de un deber legal</h3>
+<h3 id="extracontractual-G-4-2">4.2. El cumplimiento de un deber legal</h3>
 
 <p>Quien actúa en cumplimiento de un deber impuesto por la ley no comete ilícito alguno. Tal es el caso del agente de policía que priva de libertad al detenido, o del receptor judicial que traba un embargo. <strong>DUCCI</strong> lo expresa señalando que el obrar en cumplimiento de una ley imperativa, o el abstenerse conforme a un precepto prohibitivo, constituyen los casos más claros e indiscutibles de proceder con aptitud jurídica.</p>
 
@@ -1558,7 +2054,7 @@
 
 <p><strong>CORRAL</strong>, por su parte, propone un criterio sustantivo distinto: lo relevante sería determinar el grado de coerción de la orden, esto es, si ella es capaz de suprimir la voluntariedad del acto (lo que, advierte, raramente ocurrirá). Obsérvese que ambas soluciones no operan en el mismo plano, y explicitarlo es valioso: la de <strong>BARROS</strong> mantiene el problema en sede de justificación (la orden legitima el obrar si el subordinado hizo lo que podía hacer para oponerse); la de <strong>CORRAL</strong> lo traslada a la voluntariedad (la orden exonera sólo si eliminó la libertad de la acción). Bajo el criterio de <strong>CORRAL</strong>, la excusa se estrecha considerablemente, porque una orden de servicio rara vez suprime la voluntad de quien la recibe.</p>
 
-<h3>4.3. Los actos autorizados por usos normativos</h3>
+<h3 id="extracontractual-G-4-3">4.3. Los actos autorizados por usos normativos</h3>
 
 <p>Más allá de las fuentes formales, la ilicitud en materia civil se refiere a aquello que es generalmente considerado como impropio. De este modo, queda excluida la culpa cuando la conducta da cuenta de usos o prácticas que son tenidos comúnmente por correctos. Los dos ejemplos clásicos son la incisión que hace el médico al operar conforme a las prescripciones de su lex artis, y las lesiones que ocasiona el futbolista que ejecuta una acción violenta, pero tolerada por las reglas del juego. Ninguno de esos hechos constituye ilícito, pese a lesionar la integridad física de otro.</p>
 
@@ -1566,7 +2062,7 @@
 
 <span id="extracontractual-G-5" class="justiniano-ancla"></span><h2>5. Segunda causal: el consentimiento de la víctima</h2>
 
-<h3>5.1. Planteamiento</h3>
+<h3 id="extracontractual-G-5-1">5.1. Planteamiento</h3>
 
 <p>Tratándose de responsabilidad extracontractual, lo normal es que no exista relación previa entre la víctima y el autor del daño: los encuentros son, por regla general, casuales. Sin embargo, nada obsta a que existan acuerdos previos entre el potencial autor del daño y la eventual víctima, sea en la forma de autorizaciones para realizar un determinado acto (caso en el cual el acuerdo es, en rigor, un acto jurídico unilateral), sea en la de convenciones sobre responsabilidad, mediante las cuales se acepta un cierto nivel de riesgo, se modifican las condiciones de responsabilidad o se limitan los daños indemnizables. Es el principio volenti non fit iniuria: a quien consiente no se le hace injuria.</p>
 
@@ -1574,13 +2070,13 @@
 
 <p>Debe hacerse aquí una precisión que enlaza con el Eje 3 y que suele preguntarse: la existencia de una estipulación sobre responsabilidad no convierte a ésta en contractual, porque la responsabilidad contractual supone una obligación previa que no se ha cumplido, y aquí no la hay. La convención modula el régimen extracontractual; no lo sustituye por otro.</p>
 
-<h3>5.2. Los límites de la disposición</h3>
+<h3 id="extracontractual-G-5-2">5.2. Los límites de la disposición</h3>
 
 <p>Cuando la víctima potencial presta su consentimiento autorizando la ejecución de un acto que puede causarle daño, realiza un acto de disposición, que como tal está sujeto a los límites establecidos por las reglas generales que rigen la validez de los actos jurídicos. El consentimiento no puede validar un acto ilegal o contrario a las buenas costumbres, conforme al <span class="art">artículo 1461</span> del Código Civil.</p>
 
 <p>De allí se siguen dos límites precisos: la autorización no puede importar condonación del dolo futuro, por prohibirlo el <span class="art">artículo 1465</span> del Código Civil (y ello comprende la culpa grave, por su equivalencia con el dolo conforme al <span class="art">artículo 44</span>); y no puede significar la renuncia de derechos indisponibles, como la vida o la integridad física, en virtud de lo dispuesto en el <span class="art">artículo 12</span> del mismo Código.</p>
 
-<h3>5.3. La distinción decisiva: renuncia de un derecho y aceptación de un riesgo</h3>
+<h3 id="extracontractual-G-5-3">5.3. La distinción decisiva: renuncia de un derecho y aceptación de un riesgo</h3>
 
 <p>Aquí se encuentra la clave de toda la causal, y su dominio es indispensable. La situación es distinta según que la víctima renuncie a un derecho o solamente asuma un riesgo. En principio, sólo puede hablarse de disposición en el primer caso y, en consecuencia, sólo a él se aplican los límites recién señalados.</p>
 
@@ -1590,7 +2086,7 @@
 
 <p>Con todo, el límite existe: si la probabilidad del daño es muy alta y hace que el riesgo devenga en temerario, excediendo lo razonable, entonces habrá en verdad un acto de disposición respecto de bienes o derechos irrenunciables, y como tal la autorización de la víctima no será válida. La frontera entre aceptar un riesgo y disponer de la vida es, pues, una cuestión de grado, y el criterio para trazarla es la razonabilidad del riesgo asumido.</p>
 
-<h3>5.4. La asunción de riesgos deportivos</h3>
+<h3 id="extracontractual-G-5-4">5.4. La asunción de riesgos deportivos</h3>
 
 <p>Marginalmente distintos de la aceptación de un riesgo (donde hay una voluntad específica) son los casos de asunción voluntaria de riesgo, típicos de las actividades deportivas. <strong>BARROS</strong> observa que el deporte riesgoso constituye hoy un área especial de la responsabilidad, precisamente porque combina por naturaleza el placer con el peligro.</p>
 
@@ -1598,7 +2094,7 @@
 
 <p>Esto se aprecia con especial claridad en los deportes particularmente riesgosos. <strong>BARROS</strong> ofrece dos ejemplos que conviene retener: no puede atribuirse culpa al empresario que administra un centro de esquí y accede a la petición de un esquiador de ser llevado a una zona conocidamente peligrosa; ni a la empresa que suministra una canoa a quien desea navegar por rápidos especialmente riesgosos. Y establece el contraste que da sentido al criterio: distinto es el cuidado debido en la mantención de las canchas o en las excursiones abiertas a todo público, donde nadie ha asumido riesgo extraordinario alguno.</p>
 
-<h3>5.5. Los deberes de información y el consentimiento presunto</h3>
+<h3 id="extracontractual-G-5-5">5.5. Los deberes de información y el consentimiento presunto</h3>
 
 <p>Para que la aceptación voluntaria del riesgo opere como causal de justificación es necesario que el autor del daño haya proporcionado a la víctima información suficiente acerca del riesgo y de sus componentes (su intensidad y su probabilidad), siéndoles aplicables íntegramente las reglas generales sobre la buena fe. La razón la formula <strong>BARROS</strong> con una frase que conviene citar por su exactitud conceptual: no puede entenderse que asume voluntariamente un riesgo quien conocidamente no está en situación de medirlo.</p>
 
@@ -1606,7 +2102,7 @@
 
 <p>De particular importancia es el consentimiento presunto, esto es, el que se supone prestado cuando la víctima no estaba en condiciones de otorgarlo: situación típica en materia de responsabilidad médica (el paciente inconsciente que requiere una intervención urgente). <strong>BARROS</strong> propone en la materia una regla de razonabilidad pasiva: se trata de una modalidad de la pregunta acerca de la conducta hipotética de una persona razonable y prudente, referida a cómo habría decidido respecto de la asunción del riesgo si hubiese estado en condiciones de hacerlo, atendidas las circunstancias.</p>
 
-<h3>5.6. La renuncia posterior al daño</h3>
+<h3 id="extracontractual-G-5-6">5.6. La renuncia posterior al daño</h3>
 
 <p>Cosa enteramente distinta es que, una vez producido el hecho ilícito, la víctima renuncie a la indemnización, la componga directamente con el responsable o transija con él. En tales casos no hay condonación del dolo futuro, sino del ya ocurrido; ni se comercia con la personalidad humana, sino con un efecto meramente pecuniario: la indemnización, que es netamente patrimonial.</p>
 
@@ -1614,11 +2110,11 @@
 
 <span id="extracontractual-G-6" class="justiniano-ancla"></span><h2>6. Tercera causal: el estado de necesidad</h2>
 
-<h3>6.1. Concepto y fundamento</h3>
+<h3 id="extracontractual-G-6-1">6.1. Concepto y fundamento</h3>
 
 <p>El estado de necesidad es aquel en que una persona se ve obligada a ocasionar un daño a otra para evitar uno mayor, a sí misma o a un tercero. Se trata de una excusa que se basa en la desproporción de los bienes en juego: la víctima soporta un daño sustancialmente menor que aquel que el autor pretendía evitar. Desde la perspectiva de la culpa, el estado de necesidad opera como causal excluyente de responsabilidad en cuanto es propio del hombre prudente optar por un mal menor para evitar un mal mayor. <strong>ALESSANDRI</strong> lo formula con nitidez: es indispensable que el daño que se trata de evitar sea mayor que el causado para evitarlo, pues un hombre prudente no sacrifica un bien ajeno para salvar uno suyo que vale lo mismo o menos.</p>
 
-<h3>6.2. Requisitos</h3>
+<h3 id="extracontractual-G-6-2">6.2. Requisitos</h3>
 
 <p>Son dos, y ambos tienen fundamento propio.</p>
 
@@ -1628,7 +2124,7 @@
 <p class="enum-i">(ii) Que no existan medios inocuos o menos dañinos para evitar el daño.</p>
 <p>Si los había, el estado de necesidad queda descartado en razón de la desproporción del medio empleado: quien pudiendo evitar el mal mayor con un daño menor optó por uno mayor, no obró como habría obrado el hombre prudente.</p>
 
-<h3>6.3. La jurisprudencia: dos casos que conviene contrastar</h3>
+<h3 id="extracontractual-G-6-3">6.3. La jurisprudencia: dos casos que conviene contrastar</h3>
 
 <p>Los tribunales chilenos han resuelto dos casos notablemente simétricos, y su comparación permite fijar con exactitud el alcance de la causal.</p>
 
@@ -1642,7 +2138,7 @@
 
 <p>El contraste es didáctico: en ambos casos hubo destrucción de propiedad ajena por la autoridad para evitar un mal; en el primero no había medio menos dañino disponible (faltaba el agua); en el segundo no se acreditó que lo fuera. El estado de necesidad no es una licencia para dañar, sino la autorización para escoger el mal menor cuando no hay alternativa.</p>
 
-<h3>6.4. Delimitación, fundamento normativo y efectos</h3>
+<h3 id="extracontractual-G-6-4">6.4. Delimitación, fundamento normativo y efectos</h3>
 
 <div class="callout">
   <span class="caja-tipo">No confundir</span>
@@ -1768,13 +2264,13 @@
 
 <span id="extracontractual-H-3" class="justiniano-ancla"></span><h2>3. La culpa</h2>
 
-<h3>3.1. Concepto y fundamento legal</h3>
+<h3 id="extracontractual-H-3-1">3.1. Concepto y fundamento legal</h3>
 
 <p>A diferencia de lo que ocurre con el dolo, el Código Civil no contiene, entre las disposiciones sobre delitos y cuasidelitos, una definición especial de la culpa aplicable a la responsabilidad extracontractual. Rige, en consecuencia, la definición general del <span class="art">artículo 44</span>, situada también en el Título Preliminar, que describe tres grados de culpa, grave, leve y levísima, tomando como referencia sendos patrones abstractos de conducta: el hombre de poca prudencia para la culpa grave, el buen padre de familia para la culpa leve, y el hombre juicioso o esmeradamente cuidadoso para la culpa levísima. Puede definirse la culpa, siguiendo esta línea, como la omisión de la diligencia a que el agente estaba jurídicamente obligado, o bien como la falta de aquel cuidado que las personas prudentes emplean ordinariamente en sus propios negocios.</p>
 
 <p>Esta construcción, de raíz romana, se aparta deliberadamente de un concepto moral de culpa asociado a la idea de reproche personal. La evolución de la noción hacia la objetividad no es un fenómeno reciente ni exclusivamente chileno: el propio derecho romano describió la culpa mediante patrones abstractos de conducta, y solo bajo la influencia posterior del derecho canónico se transformó transitoriamente en un criterio moral, próximo a la idea de pecado, antes de que el derecho moderno retomara la objetividad clásica. El fundamento de esa opción es tan antiguo como sencillo: cada cual debe hacerse cargo de sus propias limitaciones, compensándolas con un actuar diligente, de manera que ni la inexperiencia ni la impericia personal sirven de excusa frente a quien confió razonablemente en que se emplearía el cuidado exigible.</p>
 
-<h3>3.2. Apreciación en abstracto y consideración de las circunstancias</h3>
+<h3 id="extracontractual-H-3-2">3.2. Apreciación en abstracto y consideración de las circunstancias</h3>
 
 <p>La doctrina nacional es prácticamente unánime en sostener que la culpa extracontractual se aprecia en abstracto: se compara la conducta efectiva del agente con la que habría observado, en su lugar, una persona prudente, el buen padre de familia del <span class="art">artículo 44</span>, y no con la conducta que ese mismo agente, atendidas sus capacidades personales, habría podido desplegar. La apreciación en concreto, propia del dolo, es ajena a este juicio.</p>
 
@@ -1810,7 +2306,7 @@
 
 <p>El mismo criterio explica el tratamiento benigno que reciben los llamados casos de rescate: quien interviene espontáneamente para socorrer a la víctima de un accidente en la vía pública, quien causa daños a una propiedad ajena para contener un incendio, o quien se arroja al agua para auxiliar a alguien que se ahoga, son juzgados con un rigor atenuado, precisamente por el valor social que reviste su intervención.</p>
 
-<h3>3.3. El estándar de cuidado: culpa leve</h3>
+<h3 id="extracontractual-H-3-3">3.3. El estándar de cuidado: culpa leve</h3>
 
 <p>Parece razonable sostener que, en materia extracontractual, se responde de culpa leve: el descuido en que incurre quien no emplea el cuidado que un hombre prudente, el buen padre de familia, emplea ordinariamente en sus propios negocios. Esta conclusión se apoya en el propio <span class="art">artículo 44</span> inciso segundo del Código Civil, conforme al cual "culpa o descuido, sin otra calificación, significa culpa o descuido leve", de manera que, ante la ausencia de una calificación especial en las normas sobre delitos y cuasidelitos, corresponde aplicar por defecto ese grado intermedio.</p>
 
@@ -1820,7 +2316,7 @@
 
 <p>La discusión, aunque de apariencia dogmática, tiene consecuencias prácticas considerables, que se examinarán en el apartado siguiente.</p>
 
-<h3>3.4. La previsibilidad como elemento de la culpa</h3>
+<h3 id="extracontractual-H-3-4">3.4. La previsibilidad como elemento de la culpa</h3>
 
 <p>La culpa supone siempre la previsibilidad de las consecuencias dañosas de la conducta, porque el modelo del hombre prudente remite a una persona que delibera y actúa razonablemente, y lo imprevisible, por definición, no puede ser objeto de deliberación. La previsibilidad es, así, la línea que separa la culpa del caso fortuito examinado en el Eje 6: mientras este último se caracteriza por consecuencias imprevistas e irresistibles que escapan a toda posibilidad de deliberación, la culpa exige que el daño causado haya podido preverse.</p>
 
@@ -1828,7 +2324,7 @@
 
 <p>Que la previsibilidad sea condición de la culpa tiene, además, una consecuencia sobre la extensión de la reparación: si el autor solo pudo obrar imprudentemente respecto de los daños que le era dado prever, son en principio esos daños previsibles, y no otros, los que quedan comprendidos en su obligación de indemnizar.</p>
 
-<h3>3.5. Culpa infraccional</h3>
+<h3 id="extracontractual-H-3-5">3.5. Culpa infraccional</h3>
 
 <p>Existe culpa infraccional cuando los deberes de cuidado que se estiman infringidos han sido establecidos, con antelación al hecho dañoso, por el legislador o por otra autoridad dotada de potestad normativa, mediante una ley, un reglamento o una ordenanza. Los ejemplos más frecuentes en la práctica se encuentran en la Ley Nº 18.290, de Tránsito, típicamente, los límites de velocidad y las reglas sobre prioridad de paso, así como en la normativa sobre seguridad en instalaciones peligrosas, sobre control de medicamentos y en la legislación medioambiental.</p>
 
@@ -1836,7 +2332,7 @@
 
 <p>Con todo, la sola infracción normativa no basta para dar por establecida la responsabilidad: es indispensable, además, que exista una relación de causalidad directa entre la infracción y el daño, de manera que este se haya producido precisamente a consecuencia de aquella.</p>
 
-<h3>3.6. Culpa por omisión</h3>
+<h3 id="extracontractual-H-3-6">3.6. Culpa por omisión</h3>
 
 <p>La culpa puede consistir en un obrar positivo indebido, culpa de acción o de comisión, o en un dejar de obrar debiendo hacerlo, culpa por omisión o abstención. La distinción entre ambas modalidades no es meramente descriptiva, porque el riesgo que subyace a cada una es de naturaleza distinta: en la acción, el daño es resultado de un riesgo creado por el propio agente; en la omisión, el riesgo es autónomo, esto es, existe con independencia de la conducta de quien luego se abstiene de intervenir. De esa diferencia cualitativa se sigue, a su vez, una distinción entre dos categorías de omisión.</p>
 
@@ -2082,7 +2578,7 @@
 
 <span id="extracontractual-J-2" class="justiniano-ancla"></span><h2>2. Requisitos de resarcibilidad del daño</h2>
 
-<h3>2.1. El daño debe lesionar un derecho o un interés legítimo</h3>
+<h3 id="extracontractual-J-2-1">2.1. El daño debe lesionar un derecho o un interés legítimo</h3>
 
 <p>Existe amplio consenso en que el daño es resarcible en cuanto lesiona un derecho subjetivo. Esta concepción originaria se ha ampliado con el tiempo, admitiéndose la indemnización no solo cuando se vulnera un derecho en sentido estricto, sino también cuando se lesiona un interés en la satisfacción de necesidades o bienes humanos de carácter privado, aunque ese interés no esté configurado como un derecho subjetivo autónomo. </p>
 
@@ -2094,7 +2590,7 @@
 
 <p>En esta misma línea de flexibilización, se ha resuelto que el llamado daño por rebote o repercusión no exige que exista un vínculo jurídico formal entre la víctima directa y quien reclama la indemnización por repercusión, según sentencia de la Corte de Concepción de 4 de diciembre de 2000, confirmada por la Corte Suprema el 5 de marzo de 2002.</p>
 
-<h3>2.2. El daño debe ser cierto</h3>
+<h3 id="extracontractual-J-2-2">2.2. El daño debe ser cierto</h3>
 
 <p>Que el daño sea cierto significa que debe ser real y efectivo, esto es, tener existencia, aunque sea futura. Se rechaza, en consecuencia, la indemnización del daño eventual o meramente hipotético, del que no puede saberse si llegará o no a producirse. Esta exigencia de certeza no equivale, sin embargo, a exigir actualidad: es indemnizable el daño futuro, siempre que al momento de dictarse la sentencia exista certeza de que necesariamente sobrevendrá, de manera que la certidumbre debe ser actual aunque el perjuicio mismo sea futuro. Sobre esta misma base se admite la reparación del daño contingente, que aún no ha ocurrido pero amenaza con producirse si no se adoptan medidas preventivas, caso en el cual la certidumbre exigida recae sobre la inminencia de su producción y no sobre el daño mismo.</p>
 
@@ -2118,7 +2614,7 @@
 
 <p>La Corte calificó este perjuicio como un daño autónomo e independiente del resultado final de la licitación, distinto del daño emergente, del lucro cesante y del daño moral, y ordenó avaluarlo prudencialmente: no en el monto total de la utilidad que la demandante habría obtenido de adjudicarse el contrato, sino en una fracción de ese monto, correspondiente a la probabilidad real que tenía de resultar adjudicataria entre el número de oferentes que, según la prueba pericial rendida, se encontraban en condiciones ciertas de disputar la adjudicación.</p>
 
-<h3>2.3. Debe existir una relación directa con el hecho ilícito</h3>
+<h3 id="extracontractual-J-2-3">2.3. Debe existir una relación directa con el hecho ilícito</h3>
 
 <p>El daño indemnizable debe ser consecuencia cierta y necesaria del hecho ilícito, sin la interposición de eslabones causales adicionales. Los daños secundarios o indirectos no son indemnizables, no porque la ley los excluya expresamente, sino porque respecto de ellos falla la relación de causalidad, que es un elemento indispensable y autónomo de la responsabilidad civil, según se examinará en el Eje 13. Esta exigencia de inmediación reproduce, en el ámbito extracontractual, una lógica semejante a la que el <span class="art">artículo 1558</span> consagra expresamente para la responsabilidad contractual, aunque, como se dirá al examinar la previsibilidad, esa norma no sea aplicable como tal a los delitos y cuasidelitos civiles.</p>
 
@@ -2134,13 +2630,13 @@
   <p>Un conductor negligente choca a un taxista, que queda con una fractura y no puede trabajar durante dos meses: el daño emergente (la reparación del auto) y el lucro cesante (lo que dejó de ganar) son daños directos, indemnizables. Por no poder pagar el arriendo de su casa durante esos dos meses, el taxista es desalojado, y meses después, ya sin domicilio fijo, pierde una oportunidad laboral que exigía una dirección estable. Esta última pérdida ya no es indemnizable: entre el choque y la oportunidad laboral frustrada se interponen demasiados eslabones (el desalojo, la falta de domicilio, la exigencia particular de ese empleo) como para seguir atribuyendo ese perjuicio, razonablemente, al conductor negligente.</p>
 </div>
 
-<h3>2.4. El daño no debe estar indemnizado</h3>
+<h3 id="extracontractual-J-2-4">2.4. El daño no debe estar indemnizado</h3>
 
 <p>No puede exigirse la reparación de un perjuicio ya reparado. La aplicación práctica más frecuente de esta regla se presenta cuando existen varios responsables solidarios del mismo hecho ilícito, conforme al <span class="art">artículo 2317</span>: la víctima puede cobrar el total de la indemnización a cualquiera de ellos, pero satisfecha por uno no puede volver a exigirla de los demás. La misma lógica gobierna la responsabilidad por el hecho ajeno, examinada en el Eje 14: la víctima puede dirigirse contra el autor material del daño o contra el civilmente responsable, pero no puede exigir de cada uno el pago íntegro y acumulativo de la indemnización.</p>
 
 <p>Distinto es el problema del llamado cúmulo de indemnizaciones, que se presenta cuando la víctima ha obtenido de un tercero ajeno al hecho ilícito, una compañía aseguradora, un organismo de seguridad social, una reparación total o parcial del mismo daño. La solución generalmente aceptada es que, en la medida en que esos beneficios tiendan efectivamente a reparar el daño sufrido, este se extingue y no puede exigirse nuevamente su reparación al autor del ilícito; sin perjuicio de que la entidad que pagó ese beneficio se subrogue en los derechos de la víctima para repetir en contra del hechor, de manera que este último no queda, en definitiva, liberado de su obligación, sino que esta se traslada al patrimonio del asegurador o de la entidad que indemnizó en primer lugar.</p>
 
-<h3>2.5. El daño debe ser de una magnitud suficiente</h3>
+<h3 id="extracontractual-J-2-5">2.5. El daño debe ser de una magnitud suficiente</h3>
 
 <p>Aunque el Código Civil se refiere a "todo daño" como objeto de la obligación de indemnizar, la doctrina reconoce que no toda incomodidad o molestia recíproca propia de la vida en común, las relaciones de vecindad son el ejemplo constante, alcanza a configurar un daño jurídicamente relevante; de aceptarse lo contrario, el sistema judicial colapsaría bajo el peso de reclamaciones por perjuicios triviales. La jurisprudencia ha aplicado este criterio para rechazar, por ejemplo, la indemnización de las molestias que genera para una persona el solo hecho de verse envuelta en un juicio, según sentencia de la Corte de Santiago de 31 de marzo de 1970.</p>
 
@@ -2148,7 +2644,7 @@
 
 <p>La jurisprudencia alemana ofrece, en este punto, una categoría útil para nombrar el fenómeno: la de los daños de bagatela, con que se designa a las turbaciones pequeñas y transitorias del bienestar del demandante, incluidas ciertas heridas leves o privaciones de libertad de pocas horas con ocasión de un procedimiento policial, que quedan excluidas de reparación aun cuando, en sentido estricto, exista un detrimento real; la utilidad de reconocer expresamente esta categoría es evitar que cualquier molestia, frustración personal o simple malestar pasajero se transforme, a fuerza de reclamarse ante los tribunales, en un daño moral indemnizable.</p>
 
-<h3>2.6. El daño debe ser previsible</h3>
+<h3 id="extracontractual-J-2-6">2.6. El daño debe ser previsible</h3>
 
 <p>Existe en este punto una discusión doctrinal de fondo, cuyos términos conviene exponer con precisión porque de ella depende la extensión misma de la reparación. El <span class="art">artículo 1558</span> del Código Civil, situado a propósito de los efectos de las obligaciones, distingue entre perjuicios previstos e imprevistos, disponiendo que el deudor contractual que ha incurrido en culpa solo responde de los primeros, respondiendo de ambos únicamente si ha mediado dolo o culpa grave.</p>
 
@@ -2162,7 +2658,7 @@
 
 <p>De modo que negar la aplicación literal del <span class="art">artículo 1558</span> no equivale a expulsar por completo la previsibilidad del juicio de responsabilidad extracontractual, sino a redistribuir el lugar en que esta opera: ya no como una regla expresa sobre extensión de la reparación, sino como un ingrediente que reaparece, primero, al calificar la conducta como culpable, y, después, al decidir hasta dónde llega la cadena de daños mediatos que se tienen por directos.</p>
 
-<h3>2.7. El daño debe haber sido personalmente sufrido por la víctima</h3>
+<h3 id="extracontractual-J-2-7">2.7. El daño debe haber sido personalmente sufrido por la víctima</h3>
 
 <p>La exigencia de que el daño esté radicado en quien acciona excluye la indemnización de los daños difusos, esto es, aquellos que afectan a personas indeterminadas sin que pueda identificarse a una víctima concreta. De esta exigencia se sigue el problema del daño por repercusión o rebote: aquel que sufre una persona a consecuencia del daño experimentado directamente por otra, como ocurre con quien pierde los ingresos que la víctima directa le proporcionaba a título de alimentos, incluso sin tener derecho legal a ellos, según se ha visto al tratar el interés legítimo, o con quien sufre el dolor moral por la pérdida de un ser querido.</p>
 
@@ -2489,7 +2985,7 @@
 
 <p>Las múltiples doctrinas elaboradas para determinar la causa en materia de responsabilidad pueden agruparse en dos grandes corrientes: las teorías empiristas o naturalísticas, que intentan localizar el momento causal observando los fenómenos físicos y emplazando la conducta humana dentro del cortejo de acontecimientos que ocurren en la naturaleza; y las teorías normativas, que si bien parten también de la observación del suceder causal empírico, estiman imprescindible efectuar, además, valoraciones jurídicas que superen el marco de la mera causalidad física.</p>
 
-<h3>1.1. Teorías empiristas</h3>
+<h3 id="extracontractual-M-1-1">1.1. Teorías empiristas</h3>
 
 <p>La teoría de la equivalencia de las condiciones, también llamada de la condictio sine qua non, es la más clásica y postula que no es posible distinguir, entre las varias condiciones que concurren para producir un daño, cuál es más causa que las demás: todas son equivalentes. Para determinar si un factor es condición del resultado, y por tanto causa, se emplea el procedimiento de la supresión mental hipotética: se reconstruye mentalmente la situación sin ese factor, y si el resultado igualmente se habría producido, el factor no era condición; si, en cambio, el resultado no se habría producido, el factor sí es condición y, por tanto, causa. Aplicando este criterio, si en un resultado dañoso interviene una secuencia de causas necesarias, como en el caso de lesiones de tránsito que devienen mortales por un tratamiento médico erróneo, cada una de ellas da lugar a un vínculo causal relevante, sin perjuicio de que quien deba indemnizar íntegramente a la víctima pueda repetir contra los demás responsables por la parte que a cada uno corresponda, conforme a la regla de solidaridad del <span class="art">artículo 2317.</span> </p>
 
@@ -2512,7 +3008,7 @@
 
 <p>La segunda es que recurre a la figura de un observador externo que juzga ex post cuáles consecuencias pertenecen al desarrollo natural de los acontecimientos y cuáles a circunstancias extraordinarias, y ese observador cuenta, casi inevitablemente, con más información que la que tenía disponible el agente al momento de actuar, lo que distorsiona el juicio: la jurisprudencia alemana ha tendido, en este sentido, a construir un observador óptimo dotado de información perfecta, con lo cual la responsabilidad termina extendiéndose más allá de lo que era previsible según la experiencia general de la vida, desnaturalizando la función misma que la doctrina de la causa adecuada pretendía cumplir.</p>
 
-<h3>1.2. Teorías normativas</h3>
+<h3 id="extracontractual-M-1-2">1.2. Teorías normativas</h3>
 
 <p>La teoría de la relevancia jurídica intenta conciliar las dos doctrinas anteriores, reconociendo la validez de la equivalencia de las condiciones en el plano puramente empírico, todas las condiciones son causas naturales, pero sosteniendo que, jurídicamente, no todas esas causas son equivalentes: para el derecho solo son relevantes aquellos procesos causales que, conforme a criterios de previsibilidad tomados de la teoría de la adecuación, alcanzan cierta significación jurídica. Precisamente por intentar conciliar dos doctrinas distintas, esta teoría no ha sido acogida de manera plena.</p>
 
@@ -2541,7 +3037,7 @@
 
 <p>Existen diversas hipótesis en que el daño no puede atribuirse a una sola causa aislada. La primera se presenta cuando dos o más personas intervienen en su producción, ya ejecutando un mismo hecho, ya ejecutando cada una un hecho distinto que contribuye al resultado. La segunda ocurre cuando el daño se debe en parte al hecho del demandado y en parte a la intervención de la propia víctima. La tercera se presenta cuando el daño se debe a un hecho externo al autor, que respecto de él constituye caso fortuito o fuerza mayor.</p>
 
-<h3>3.1. Caso fortuito o fuerza mayor</h3>
+<h3 id="extracontractual-M-3-1">3.1. Caso fortuito o fuerza mayor</h3>
 
 <p>El problema se plantea cuando coexisten, en la producción del daño, un acontecimiento inevitable, imprevisible e irresistible, el caso fortuito, y un comportamiento imprudente del demandado. La pregunta decisiva es si ese comportamiento imprudente puede considerarse causa del daño con independencia de la existencia del caso fortuito: si la acción del demandado hubiera causado el perjuicio aun sin la intervención de la fuerza mayor, debe afirmarse la relación de causalidad y, con ella, la responsabilidad; si, a la inversa, la causa del daño es el caso fortuito, y este se habría producido con independencia del comportamiento negligente del demandado, no existe relación de causalidad entre esa conducta y el daño. </p>
 
@@ -2549,7 +3045,7 @@
 
 <p>Este eje retoma aquí un hilo ya anunciado al examinar el hecho voluntario y el caso fortuito: lo que en aquella sede se identificó como el requisito de la exterioridad, que el hecho invocado como fuerza mayor sea ajeno a la esfera de acción y de control del demandado, es, precisamente, lo que explica por qué el caso fortuito excluye la relación de causalidad, y no solamente la culpa. Y por la misma razón se advirtió entonces que la culpa de la víctima comparte ese mismo carácter exterior: respecto del autor del hecho, la conducta de la víctima que resulta ser la causa determinante del daño es un hecho ajeno a su ámbito de control, por el cual no puede considerársele responsable, aun cuando su propia acción constituya, en un sentido puramente empírico, una causa remota y necesaria del perjuicio.</p>
 
-<h3>3.2. Pluralidad de agentes</h3>
+<h3 id="extracontractual-M-3-2">3.2. Pluralidad de agentes</h3>
 
 <p>Cuando varios responsables actúan simultáneamente ejecutando un mismo hecho, todos ellos responden solidariamente, conforme al <span class="art">artículo 2317</span> del Código Civil; la misma solidaridad rige entre quien responde por el hecho de un tercero bajo su dependencia y el autor material del daño, conforme a los <span class="art">artículos 2320</span> y <span class="art">2322</span>, aun cuando los deberes de cuidado infringidos por uno y otro sean distintos, negligencia en la ejecución del hecho, en el primer caso; negligencia en la vigilancia, en el segundo, porque el hecho generador de la responsabilidad es, en definitiva, el mismo. </p>
 
@@ -2559,7 +3055,7 @@
 
 <p>Mayor dificultad presenta la denominada causa difusa, que se produce cuando el daño se debe al hecho culpable de alguno entre varios candidatos a responsable, sin que resulte posible determinar cuál de ellos lo desencadenó efectivamente, situación que puede presentarse en choques múltiples, en accidentes por productos defectuosos o en daños ambientales. El derecho chileno no contiene una regla general para este problema, y solo reconoce reglas especiales de responsabilidad difusa a propósito de la ruina de edificios y de la caída de objetos, que establecen una distribución proporcional entre los posibles responsables, constituyendo una excepción puntual al principio general de solidaridad del <span class="art">artículo 2317.</span> Esa misma regla de distribución, aplicada por analogía mientras no se pruebe a cuál hecho concreto es atribuible el daño, parece la solución más razonable también para los demás casos de causa difusa no expresamente regulados.</p>
 
-<h3>3.3. Concurrencia de culpa de la víctima</h3>
+<h3 id="extracontractual-M-3-3">3.3. Concurrencia de culpa de la víctima</h3>
 
 <p>Corresponde examinar, en primer lugar, si la culpa de la víctima fue la única causa del daño, caso en el cual no existe responsabilidad alguna del demandado, precisamente porque de su parte no hubo culpa: así ocurre con el peatón que cruza de improviso la calzada a mitad de cuadra y es atropellado por un vehículo que circulaba respetando todas las exigencias reglamentarias.</p>
 
@@ -2640,7 +3136,7 @@
 
 <p>La doctrina identifica tres requisitos para que proceda esta responsabilidad: la capacidad delictual tanto del dependiente como del guardián, la comisión de un hecho ilícito por parte del primero, y la existencia de un vínculo de subordinación o dependencia entre ambos.</p>
 
-<h3>2.1. Capacidad delictual del hechor y del responsable</h3>
+<h3 id="extracontractual-N-2-1">2.1. Capacidad delictual del hechor y del responsable</h3>
 
 <p>El <span class="art">artículo 2319</span>, que fija el requisito general de capacidad examinado en el Eje 5, no distingue entre responsabilidad por el hecho propio y por el hecho ajeno, y se aplica, en consecuencia, a ambos. Esto significa que tanto quien comete el hecho ilícito como quien lo tiene a su cuidado deben ser plenamente capaces para que opere el régimen del <span class="art">artículo 2320.</span></p>
 
@@ -2650,11 +3146,11 @@
 
 <p>La incapacidad puede presentarse, además, en el extremo opuesto: si la persona a quien pretende hacerse responsable por el hecho ajeno es ella misma incapaz, el propio <span class="art">artículo 2319</span> lo impide, porque esa norma excluye de toda obligación de indemnizar, tanto por el hecho propio como por el ajeno o el de las cosas, a quien carece de capacidad delictual. Así, el padre demente no responde de los hechos de sus hijos menores que vivan con él, porque mal puede ejercer un cuidado eficaz sobre otra persona quien no puede ni siquiera atender a su propia persona.</p>
 
-<h3>2.2. Comisión de un hecho ilícito por la persona de cuyos actos se responde</h3>
+<h3 id="extracontractual-N-2-2">2.2. Comisión de un hecho ilícito por la persona de cuyos actos se responde</h3>
 
 <p>La responsabilidad por el hecho ajeno supone la comisión, por parte del dependiente, de un delito o cuasidelito civil que reúna todos los requisitos generales de la responsabilidad extracontractual ya examinados en los ejes anteriores. La víctima debe probar ese hecho ilícito, acción u omisión culpable o dolosa, daño y relación de causalidad, conforme a las reglas generales, salvo que exista a su respecto alguna otra presunción legal aplicable. La única particularidad de este régimen es que, una vez establecido el hecho ilícito del dependiente, la víctima queda liberada de acreditar además la culpa del tercero civilmente responsable, porque esa culpa se presume. De ahí que se haya resuelto que no existe responsabilidad del tercero si el hechor ha sido absuelto por falta de culpa: la responsabilidad por el hecho ajeno no puede subsistir sin un ilícito civil del dependiente que le sirva de sustento.</p>
 
-<h3>2.3. Vínculo de subordinación o dependencia</h3>
+<h3 id="extracontractual-N-2-3">2.3. Vínculo de subordinación o dependencia</h3>
 
 <p>Debe existir, entre el responsable y el hechor, un vínculo de subordinación y dependencia, porque si el fundamento de esta responsabilidad es la falta de vigilancia, resulta indispensable que quien deba responder tenga autoridad sobre la persona por la cual responde. En los casos expresamente enumerados por la ley este vínculo se presume, así, el padre que quiera eximirse deberá probar que no tenía al hijo bajo su cuidado; en los demás casos, corresponde probarlo a quien invoca la responsabilidad por el hecho ajeno. Aplicando esta exigencia, se ha resuelto que el ejecutante no responde de los hechos del depositario definitivo, ni quien encarga una obra responde de los hechos del contratista que la ejecuta por su propia cuenta, ni el mandante responde de los hechos ilícitos del mandatario, porque los mandatos se otorgan para ejecutar actos lícitos, y el mandatario no se encuentra, en rigor, bajo el cuidado de quien le confirió el poder. </p>
 
@@ -2850,13 +3346,13 @@
 
 <span id="extracontractual-P-1" class="justiniano-ancla"></span><h2>1. Daños causados por un animal</h2>
 
-<h3>1.1. Regulación del Código Civil</h3>
+<h3 id="extracontractual-P-1-1">1.1. Regulación del Código Civil</h3>
 
 <p>El <span class="art">artículo 2326</span> presume la culpabilidad del dueño por los daños causados por un animal, aun después de que este se haya soltado o extraviado. El dueño puede exculparse probando que el daño, la soltura o el extravío no se deben a su culpa ni a la del dependiente encargado de su guarda. Esta misma presunción se aplica a quien se sirve de un animal ajeno, quien responde en los mismos términos que el dueño frente a la víctima, ambos solidariamente, sin perjuicio de su acción de reembolso contra este último si el daño se debió a un vicio del animal que el dueño conocía y no le informó.</p>
 
 <p>Tratándose de animales fieros, de los que no se reporta utilidad para la guarda o servicio de un predio, el <span class="art">artículo 2327</span> establece una regla distinta y más severa: una responsabilidad estricta de quien tenga el animal, fundada en la tenencia física y no en el dominio, respecto de la cual la víctima solo debe probar la naturaleza fiera e inútil del animal y su tenencia por el demandado, resultando inadmisible cualquier excusa de diligencia.</p>
 
-<h3>1.2. La Ley Nº 21.020 sobre tenencia responsable de mascotas y animales de compañía</h3>
+<h3 id="extracontractual-P-1-2">1.2. La Ley Nº 21.020 sobre tenencia responsable de mascotas y animales de compañía</h3>
 
 <p>La Ley Nº 21.020, de 2 de agosto de 2017, conocida popularmente como "Ley Cholito", emplea la expresión "responsabilidad" en dos sentidos distintos: uno amplio, que comprende todos los deberes que asume quien acepta o mantiene una mascota, registrarla, proporcionarle alimento y cuidados veterinarios, adoptar las medidas necesarias para evitar que cause daños, y uno específico, que es propiamente la responsabilidad civil extracontractual por el daño que el animal causa a una persona determinada.</p>
 
@@ -2874,11 +3370,11 @@
 
 <p>Las expresiones "edificio" y "ruina" se emplean, en esta materia, en un sentido amplio: la primera comprende toda construcción adherida al suelo de manera permanente, y la segunda no exige la destrucción íntegra de la obra, bastando que una parte cualquiera de ella, adherida al conjunto, sufra un deterioro que cause daño a terceros.</p>
 
-<h3>2.1. Acciones preventivas</h3>
+<h3 id="extracontractual-P-2-1">2.1. Acciones preventivas</h3>
 
 <p>El Código Civil concede, en esta materia, dos acciones de carácter preventivo: la querella de obra ruinosa, regulada en los <span class="art">artículos 932</span> a <span class="art">935</span> como acción posesoria especial, y la acción general de prevención por daño contingente de los <span class="art">artículos 2333</span> y <span class="art">2334</span>, cuyo examen se reserva para el Eje 19.</p>
 
-<h3>2.2. Acciones indemnizatorias</h3>
+<h3 id="extracontractual-P-2-2">2.2. Acciones indemnizatorias</h3>
 
 <p>El <span class="art">artículo 934</span> dispone que si, notificada la querella de obra ruinosa, el edificio cae por efecto de su mal estado, se indemnizará de todo perjuicio a los vecinos; pero si cae por caso fortuito, una avenida, un rayo, un terremoto, no habrá lugar a indemnización, a menos que se pruebe que el caso fortuito, sin el mal estado del edificio, no lo habría derribado; y en todo caso, sin notificación previa de la querella, no procede indemnización alguna conforme a esta norma específica.</p>
 
@@ -3108,7 +3604,7 @@
 
 <span id="extracontractual-S-1" class="justiniano-ancla"></span><h2>1. El daño contingente como fundamento de la responsabilidad preventiva</h2>
 
-<h3>1.1. Amenaza y contingencia del daño</h3>
+<h3 id="extracontractual-S-1-1">1.1. Amenaza y contingencia del daño</h3>
 
 <p>El <span class="art">artículo 2333</span> habla, en términos generales, de "daño contingente", esto es, de un daño que puede llegar a suceder o no, sin efectuar distinción alguna sobre su naturaleza. No basta, sin embargo, que el daño sea meramente hipotético o posible: es necesario que su ocurrencia sea más que probable, sin que baste tampoco la existencia de un mero riesgo o de una situación de peligro general y abstracto. La amenaza puede provenir tanto de un comportamiento activo como de una omisión, en los mismos términos ya reconocidos para la acción constitucional de protección. Aunque el concepto de daño contingente suele asociarse, en el imaginario común, a consecuencias materiales, la caída de un edificio que amenaza ruina, la de un árbol mal arraigado, el Código no distingue según la naturaleza del perjuicio amenazado, de manera que cualquier clase de daño puede ser objeto de esta responsabilidad preventiva.</p>
 
@@ -3118,11 +3614,11 @@
   <p>Un árbol grande, con la raíz visiblemente dañada por una obra vecina, se inclina cada vez más hacia la calle donde transitan escolares. Un vecino que observa la situación no necesita esperar a que el árbol caiga y aplaste a alguien para accionar: puede ejercer ya la acción de daño contingente del artículo 2333, exigiendo al dueño del predio que lo apuntale o lo derribe. Distinto es el caso de un árbol sano, en un patio privado sin acceso público, que en teoría podría caer algún día por un temporal extraordinario: ahí no hay amenaza seria e inminente, sino un riesgo general de la vida en común, y la acción preventiva no procede.</p>
 </div>
 
-<h3>1.2. Relación de causalidad</h3>
+<h3 id="extracontractual-S-1-2">1.2. Relación de causalidad</h3>
 
 <p>La amenaza del daño debe tener como causa un comportamiento descuidado del demandado. Esta exigencia presenta una particularidad conceptual que conviene destacar: puesto que el daño amenazado todavía no se ha producido, la relación de causalidad debe establecerse en términos hipotéticos, preguntándose si, de llegar a producirse el daño, este coincidiría con la relación causal que existiría entre esa conducta negligente y el resultado dañoso. Si esa relación hipotética puede afirmarse, debe darse por establecida la causalidad entre la amenaza actual y el hecho activo u omisivo del demandado.</p>
 
-<h3>1.3. Culpabilidad</h3>
+<h3 id="extracontractual-S-1-3">1.3. Culpabilidad</h3>
 
 <p>El <span class="art">artículo 2333</span> exige expresamente que de parte del agente exista negligencia, esto es, culpa: la amenaza debe corresponder a una conducta, normalmente una omisión, que le sea imputable por haber incumplido un deber de cuidado que lo obligaba a eliminar la amenaza o la inminencia del daño. Lo que se exige respecto de la culpa se aplica con mayor razón si el demandado no adopta las precauciones necesarias con la intención misma de que el daño llegue a producirse, esto es, si actúa con dolo.</p>
 
@@ -3185,15 +3681,15 @@
 
 <span id="extracontractual-T-2" class="justiniano-ancla"></span><h2>2. Extensión de la reparación</h2>
 
-<h3>2.1. El principio de la reparación integral</h3>
+<h3 id="extracontractual-T-2-1">2.1. El principio de la reparación integral</h3>
 
 <p>La jurisprudencia ha resuelto reiteradamente que la ley obliga a reparar el perjuicio causado por el hecho ilícito de manera completa, esto es, en una medida igual al daño producido, de modo que permita a la víctima reponer las cosas al estado en que se encontraban antes del ilícito. De este principio se siguen, según <strong>ALESSANDRI</strong>, tres consecuencias: que el monto de la reparación depende de la extensión del daño y no de la gravedad del hecho que lo causó; que la reparación comprende todo el perjuicio sufrido por la víctima que sea consecuencia necesaria y directa del delito o cuasidelito, según los criterios de causalidad examinados en el Eje 13; y que el monto de la reparación no puede ser superior ni inferior al daño efectivamente sufrido. La doctrina y la jurisprudencia coinciden, además, en que la indemnización debe comprender tanto el daño material como el daño moral, examinados respectivamente en los Ejes 11 y 12.</p>
 
-<h3>2.2. Reducción de la reparación</h3>
+<h3 id="extracontractual-T-2-2">2.2. Reducción de la reparación</h3>
 
 <p>La reparación puede verse reducida en dos supuestos ya examinados en ejes anteriores, que aquí basta con recordar en su función de límites a la extensión de la reparación. El primero es la disposición especial del <span class="art">artículo 2331</span>, que condiciona la indemnización pecuniaria por imputaciones injuriosas contra el honor o el crédito a la prueba de un daño emergente o lucro cesante apreciable en dinero, norma cuya interpretación tradicional, y la controversia jurisprudencial abierta sobre su alcance respecto del daño moral, se examinaron con detalle en el Eje 12. El segundo es la concurrencia de culpa de la víctima del <span class="art">artículo 2330</span>, que establece una suerte de compensación de culpas, examinada en el Eje 13 a propósito de la causalidad.</p>
 
-<h3>2.3. Reajustabilidad de la indemnización</h3>
+<h3 id="extracontractual-T-2-3">2.3. Reajustabilidad de la indemnización</h3>
 
 <p>La doctrina y la jurisprudencia contemporáneas coinciden en que el valor del daño debe reajustarse para que la indemnización repare completamente el menoscabo sufrido, por dos razones: porque el propio <span class="art">artículo 2329</span> exige que la reparación sea integral, lo que no ocurriría si el acreedor la recibiera desvalorizada por el transcurso del tiempo; y porque, desde la dictación de la legislación que sustituyó al antiguo régimen sobre reajustabilidad de deudas de dinero, la regla general en el derecho chileno es precisamente esa reajustabilidad. No existe, con todo, un índice de reajuste de aplicación obligatoria para el juez, aunque en la práctica se recurre habitualmente al Índice de Precios al Consumidor.</p>
 
@@ -3203,7 +3699,7 @@
   <p>Un accidente destruye una maquinaria cuyo valor de reposición era de $10.000.000 al momento del hecho. Si el juicio dura tres años y la sentencia condena a pagar exactamente esos $10.000.000 sin reajuste, la víctima recibe una suma que, por la sola inflación acumulada en esos tres años, ya no le alcanza para comprar una máquina equivalente: en términos reales, recibió menos de lo que perdió. Reajustar esa suma según el IPC entre la fecha del hecho y el pago efectivo es, precisamente, lo que permite que los $10.000.000 originales conserven su poder adquisitivo y la reparación sea íntegra, no nominal.</p>
 </div>
 
-<h3>2.4. Procedencia del pago de intereses</h3>
+<h3 id="extracontractual-T-2-4">2.4. Procedencia del pago de intereses</h3>
 
 <p>Se sostiene que la única manera de que la reparación sea cabal es que considere también las variaciones ocurridas durante la tramitación del pleito, lo que se logra mediante el pago de intereses desde la fecha en que estos hayan sido solicitados, atendida la relativa libertad de que dispone el juez en materia extracontractual. La determinación del momento exacto desde el cual deben computarse esos reajustes e intereses ha sido, sin embargo, objeto de discusión jurisprudencial persistente: algunas sentencias los aplican desde la fecha del ilícito; otras aplican las normas sobre la mora, haciéndolos correr solo desde la presentación o la notificación de la demanda; y otras, finalmente, solo desde la dictación de la sentencia que impone la obligación de indemnizar, o incluso desde que esta queda ejecutoriada.</p>
 
@@ -3248,13 +3744,13 @@
 
 <span id="extracontractual-U-1" class="justiniano-ancla"></span><h2>1. Legitimación activa</h2>
 
-<h3>1.1. Titulares por derecho propio: lesionados directos</h3>
+<h3 id="extracontractual-U-1-1">1.1. Titulares por derecho propio: lesionados directos</h3>
 
 <p>Tratándose de daños causados a las cosas, están legitimados el dueño y el poseedor, y también quienes detentan otros derechos reales sobre ellas, el usufructuario, el habitador, el usuario, si el daño perjudica sus respectivos derechos. El mero tenedor, en cambio, carece de derechos sobre la cosa y no puede, en consecuencia, reclamar su valor mediante acción directa en caso de pérdida o deterioro; solo puede accionar en ausencia del dueño, entendiéndose entonces que lo hace en su nombre y no a título personal. Con todo, el mero tenedor sí está legitimado para reclamar, a título personal, el perjuicio que el daño irroga a un derecho personal propio que se ejerce sobre la cosa, como ocurre con el arrendatario respecto del perjuicio que sufre su crédito. </p>
 
 <p>Tratándose de daños a las personas, están legitimados quienes sufren una lesión directa en intereses o derechos no susceptibles de avaluación económica, concurra o no con un daño material, para reclamar la reparación del daño moral examinada en el Eje 12.</p>
 
-<h3>1.2. Titulares por derecho propio: lesionados indirectos o víctimas por repercusión</h3>
+<h3 id="extracontractual-U-1-2">1.2. Titulares por derecho propio: lesionados indirectos o víctimas por repercusión</h3>
 
 <p>Se reconoce también legitimación a la víctima indirecta, esto es, a quien sufre un daño patrimonial o moral a consecuencia del daño experimentado por la víctima directa, el dolor causado por la muerte de un ser querido, ya examinado en el Eje 10 a propósito del daño por rebote. Tratándose de daños patrimoniales, la doctrina y la jurisprudencia han reconocido legitimación a todo aquel que recibía ayuda económica de la víctima directa, aun sin tener derecho a exigirla, y que resulta privado de ella a consecuencia del accidente. Tratándose de daño moral, la regla general restringe la acción a los casos de muerte, exigiendo un parentesco cercano con la víctima directa; excepcionalmente se concede acción por daño moral en casos de lesiones, cuando estas son de tal entidad que imponen, en los hechos, una obligación de cuidado que afecta la calidad de vida de la víctima indirecta, como ocurre con el pariente que debe hacerse cargo de la invalidez sobreviniente de la víctima directa.</p>
 
@@ -3264,11 +3760,11 @@
   <p>Un accidente de tránsito mata al padre de familia que sostenía económicamente a su cónyuge conviviente (sin obligación legal de alimentos) y a sus dos hijos. La víctima directa es el fallecido, cuya acción se transmite a sus herederos. Pero la cónyuge y los hijos son, además, víctimas indirectas o por repercusión: sufren un daño patrimonial propio (la ayuda económica de la que quedan privados) y un daño moral propio (el dolor de la pérdida), y pueden demandar ambos por derecho propio, no como herederos del fallecido. Si en cambio el padre solo hubiese sufrido una lesión leve de la que se recuperó sin secuelas, sus hijos no tendrían, por regla general, acción por daño moral propio: la excepción para lesiones exige que estas sean de tal entidad que impongan una carga de cuidado sobre la víctima indirecta, lo que aquí no ocurre.</p>
 </div>
 
-<h3>1.3. Titulares por derecho derivado</h3>
+<h3 id="extracontractual-U-1-3">1.3. Titulares por derecho derivado</h3>
 
 <p>Pueden interponer la acción los sucesores a título universal de los legitimados por derecho propio, esto es, sus herederos; el Código lo señala expresamente respecto del daño en las cosas, pero el mismo principio se extiende a los daños personales por aplicación de las reglas generales sobre transmisibilidad de los derechos. El derecho a pedir la indemnización de perjuicios ya devengados puede, además, ser objeto de cesión entre vivos, incluso tratándose de daño moral, porque la indemnización tiene siempre un carácter patrimonial y no existe norma que prohíba su transferencia.</p>
 
-<h3>1.4. Titularidad de las clases de perjudicados y acción popular</h3>
+<h3 id="extracontractual-U-1-4">1.4. Titularidad de las clases de perjudicados y acción popular</h3>
 
 <p>El derecho chileno no reconoce, a diferencia del common law, una institución general equivalente a las acciones de clase, debiendo recurrirse, en su defecto, a la acumulación de acciones que emanen directa e inmediatamente de un mismo hecho, siempre que sus titulares las interpongan expresamente por sí o por mandatario común. Existe, con todo, una excepción sectorial en la legislación de protección al consumidor, que admite el ejercicio de acciones en beneficio del interés colectivo, de un conjunto determinado o determinable de consumidores ligados a un proveedor por vínculo contractual, o difuso, en defensa de un conjunto indeterminado de consumidores afectados.</p>
 
@@ -3276,15 +3772,15 @@
 
 <span id="extracontractual-U-2" class="justiniano-ancla"></span><h2>2. Legitimación pasiva</h2>
 
-<h3>2.1. El autor del hecho ilícito</h3>
+<h3 id="extracontractual-U-2-1">2.1. El autor del hecho ilícito</h3>
 
 <p>Es en primer término legitimado pasivo el autor del daño. La jurisprudencia comprende dentro de esta categoría al cómplice, pero no al encubridor, distinción que no ha estado exenta de críticas. Cuando son varios los autores, el Código establece entre ellos responsabilidad solidaria, salvas las excepciones ya examinadas en el Eje 16 respecto de la ruina de un edificio perteneciente a una comunidad y de las cosas que caen o se arrojan desde lo alto de un edificio sin que pueda individualizarse su origen. Para que proceda esta solidaridad es necesario que dos o más personas hayan participado, como autores o cómplices, en un mismo delito o cuasidelito; si se trata de hechos ilícitos distintos, aunque afecten a la misma víctima, como el peatón atropellado sucesivamente por dos vehículos distintos, no hay solidaridad, sino la división proporcional ya examinada en el Eje 13 a propósito de la pluralidad de agentes.</p>
 
-<h3>2.2. El responsable del hecho ajeno</h3>
+<h3 id="extracontractual-U-2-2">2.2. El responsable del hecho ajeno</h3>
 
 <p>La acción puede dirigirse también contra quien responde del hecho ajeno conforme al régimen general examinado en los Ejes 14 y 15, como el padre por los hechos ilícitos de su hijo menor que vive con él, quien comparece en el proceso penal, si es este el que conoce de la demanda civil, en calidad de tercero civilmente responsable, sin que ello le acarree responsabilidad penal alguna.</p>
 
-<h3>2.3. El que recibe provecho del dolo ajeno</h3>
+<h3 id="extracontractual-U-2-3">2.3. El que recibe provecho del dolo ajeno</h3>
 
 <p>Conforme al <span class="art">artículo 2316</span> inciso segundo, quien recibe provecho del dolo ajeno, sin ser cómplice en él, solo está obligado hasta la concurrencia de lo que valga ese provecho. La circunstancia de que la norma excluya expresamente al cómplice, cuya responsabilidad es la misma del autor, confirma que esta obligación más limitada está reservada para quien, sin haber participado en el ilícito, se benefició de sus efectos; el encubridor, en cambio, queda sujeto a esta misma obligación acotada al monto del provecho recibido, salvo que su reticencia a advertir de la existencia del dolo, conociéndolo, buscara precisamente aprovecharse de sus efectos, caso en el cual pasa a responder como autor por el total de los perjuicios. </p>
 
@@ -3294,7 +3790,7 @@
 
 <p>La acción indemnizatoria del <span class="art">artículo 2314</span>, que constituye la regla general de este estatuto, se mide por el daño efectivamente sufrido por la víctima, sin límite cuantitativo alguno vinculado al beneficio que el responsable haya podido obtener del ilícito. La acción del <span class="art">artículo 2316</span> inciso segundo, en cambio, se mide exclusivamente por el provecho recibido por el tercero, y no por el daño sufrido por la víctima: de ahí que quien recibió un provecho modesto de un dolo ajeno que causó un daño cuantioso solo deba restituir ese provecho modesto, y nunca el daño íntegro, precisamente porque lo que se le reclama no es la reparación de un perjuicio que él no causó, sino la restitución de un enriquecimiento que carece de causa jurídica que lo justifique. Esta es la razón estructural por la cual el <span class="art">artículo 2316</span> inciso segundo tiene un límite cuantitativo del que carece el <span class="art">artículo 2314</span>: uno y otro precepto no son dos grados de la misma responsabilidad, sino dos instituciones de lógica diversa, indemnizatoria la una, restitutoria la otra, que coexisten dentro de un mismo título del Código.</p>
 
-<h3>2.4. Los herederos</h3>
+<h3 id="extracontractual-U-2-4">2.4. Los herederos</h3>
 
 <p>Finalmente, la obligación de indemnizar es transmisible conforme a las reglas generales, de manera que los herederos del responsable quedan obligados a satisfacerla dentro de los límites de su responsabilidad sucesoria.</p>
 
@@ -3343,7 +3839,7 @@
 
 <p>La acción de responsabilidad se extingue, en general, por los mismos medios de extinguir las obligaciones, puesto que su objeto es hacer valer una pretensión indemnizatoria de naturaleza patrimonial. Conviene, con todo, detenerse en tres de esos modos: la renuncia, la transacción y la prescripción.</p>
 
-<h3>2.1. Renuncia</h3>
+<h3 id="extracontractual-V-2-1">2.1. Renuncia</h3>
 
 <p>De acuerdo con la regla general sobre renunciabilidad de los derechos, no cabe duda de que puede renunciarse a la reparación del daño una vez que este se ha producido: la renuncia es, en tal caso, un acto de disposición que extingue la acción cuando se efectúa con posterioridad al hecho que genera la responsabilidad.</p>
 
@@ -3351,11 +3847,11 @@
 
 <p>Por eso la renuncia anticipada al ejercicio de la acción, entendida como una condonación del dolo o de la culpa grave futuros, no es más eficaz que la condonación del dolo futuro que el <span class="art">artículo 1465</span> del Código Civil declara sin valor en materia contractual: en ambos casos se trataría de autorizar de antemano la comisión de un ilícito, lo que el orden público no tolera; la renuncia posterior, en cambio, no condona nada futuro, sino que dispone de un efecto meramente pecuniario ya nacido, y es, por eso, plenamente válida.</p>
 
-<h3>2.2. Transacción</h3>
+<h3 id="extracontractual-V-2-2">2.2. Transacción</h3>
 
 <p>El Código Civil admite expresamente este modo de extinguir la responsabilidad extracontractual, al disponer que la transacción puede recaer sobre la acción civil que nace de un delito, sin perjuicio de la acción criminal. Las partes pueden, en consecuencia, componer libremente la indemnización ya devengada, en el mismo sentido y con el mismo fundamento que hace válida la renuncia posterior al daño examinada en la sección anterior: el objeto sobre el que recae la transacción es, también aquí, un crédito patrimonial y no un bien de la personalidad.</p>
 
-<h3>2.3. Prescripción</h3>
+<h3 id="extracontractual-V-2-3">2.3. Prescripción</h3>
 
 <p>El <span class="art">artículo 2332</span> establece un plazo especial de prescripción de cuatro años, contado desde la perpetración del acto, para las acciones que concede el título de los delitos y cuasidelitos por daño o dolo. Este plazo se refiere exclusivamente a la acción indemnizatoria que nace del delito o cuasidelito civil, y no a otras acciones de que pueda disponer la víctima, como la reivindicatoria, si ha sido objeto de robo, hurto o usurpación, que se rige por su propio término; y es sin perjuicio de los plazos especiales que contemplan leyes particulares y el propio Código, como el de cinco años para la responsabilidad del constructor por la ruina de un edificio, o el de un año para los daños que esa ruina cause a los vecinos, ya examinados en el Eje 16.</p>
 
@@ -3542,13 +4038,13 @@
 
 <span id="extracontractual-Y-1" class="justiniano-ancla"></span><h2>1. Responsabilidad precontractual</h2>
 
-<h3>1.1. La etapa de negociación preliminar</h3>
+<h3 id="extracontractual-Y-1-1">1.1. La etapa de negociación preliminar</h3>
 
 <p>La regulación legal de la formación del consentimiento no recoge adecuadamente una realidad práctica constante: antes de que exista una oferta propiamente tal, suele existir un período de negociación o tratativas preliminares, en el que las partes desarrollan una multiplicidad de conductas tendientes a conocer sus respectivos puntos de vista sobre un negocio que se proyecta, sin entender por ello quedar obligadas. La pregunta que ha ocupado a la doctrina es si, durante esta etapa previa a la formación del contrato, puede surgir responsabilidad para alguno de los partícipes de la negociación.</p>
 
 <p>Durante esta etapa impera, en principio, la libertad de contratar: las partes son libres para negociar, debatir posturas distintas y explorar si conviene o no contratar, intercambiando información sin comprometerse todavía a nada. La doctrina tradicional sostiene que, en consecuencia, no existe responsabilidad por el desistimiento unilateral de la negociación, porque este constituye el ejercicio legítimo del derecho a desistirse de un contrato eventual, aunque de ese desistimiento se sigan daños para la otra parte. La doctrina moderna, en cambio, admite que sí puede haber responsabilidad en ciertos casos.</p>
 
-<h3>1.2. Las construcciones doctrinales sobre su fundamento</h3>
+<h3 id="extracontractual-Y-1-2">1.2. Las construcciones doctrinales sobre su fundamento</h3>
 
 <p><strong>FAGUELLA</strong> sostiene que existe responsabilidad cuando una de las partes se retira arbitrariamente de las negociaciones, y que ese retiro es arbitrario cuando viola la confianza generada al negociar o el llamado pacto de garantía implícito en toda negociación, que tiende a asegurar que esta seguirá su curso normal hasta la celebración del contrato o hasta el fracaso de las tratativas por existir intereses económicos irreconciliables. Esta construcción ha sido criticada por su rigidez: llevada a sus últimas consecuencias, nadie estaría dispuesto a negociar bajo esas condiciones. Saleilles propone, en cambio, un criterio distinto: no puede haber responsabilidad sin culpa, y existe culpa cuando se infringen los usos comerciales impuestos por la práctica y la equidad comercial.</p>
 
@@ -3569,7 +4065,7 @@
   <p>Dos empresas negocian durante meses la compraventa de una planta industrial. A pedido de la vendedora, la compradora encarga y paga un informe de auditoría técnica sobre la maquinaria, gasto que ambas partes entendían necesario para avanzar hacia la firma. Cuando todo está prácticamente acordado y solo resta fijar la fecha de la escritura, la vendedora se retira de las negociaciones sin explicación, para vender la planta a un tercero que ofreció un precio apenas superior. Aplicando los requisitos de Rosende, hubo consentimiento en negociar, hubo gastos, el informe de auditoría, realizados por iniciativa de la compradora pero en beneficio de ambas partes para el negocio proyectado, y hubo un retiro unilateral en un estado avanzado de la negociación que la buena fe no permite calificar de simple ejercicio de la libertad para no contratar. Distinto habría sido el caso si la vendedora se hubiese retirado en una etapa temprana, antes de comprometer gastos serios de la otra parte, o si hubiese explicado su decisión por una razón atendible, como una oferta sustancialmente mejor recibida antes de que la negociación avanzara.</p>
 </div>
 
-<h3>1.3. La naturaleza de esta responsabilidad</h3>
+<h3 id="extracontractual-Y-1-3">1.3. La naturaleza de esta responsabilidad</h3>
 
 <p>Se ha discutido extensamente si la responsabilidad que puede surgir de la ruptura de las negociaciones preliminares es de naturaleza contractual o extracontractual. La opinión más generalizada se inclina por la segunda, porque la responsabilidad contractual supone, precisamente, un contrato, y este todavía no se ha formado durante la etapa de negociación. </p>
 
