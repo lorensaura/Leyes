@@ -607,3 +607,81 @@ fase 2 priorice el eje N para agregar jurisprudencia, dado el volumen de
 fallos reales disponibles y sin usar.
 
 ---
+
+## Tanda 9 — Ejes P, Q, R. Fraude a la ley, Otras causales, Representación (fuente: PDF 15 + PDF 16, 33p)
+
+Nota metodológica: el eje Q trae tres puntos (Terminación, Renuncia,
+Muerte) que no están en PDF 16, la fuente principal de esta tanda. Se
+verificó contra `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (anexo de
+Bozzo e Ibarra) y **los tres están correctamente respaldados ahí**, con
+definiciones que calzan casi textualmente con el manual: no es contenido
+sin fuente.
+
+### 1. Profundidad insuficiente
+- **[medio]** `sP2` (el fraude a la ley en Chile): falta el argumento
+  moral e iusnaturalista, extenso, que la fuente atribuye a DOMÍNGUEZ,
+  sobre por qué un fin ilícito vicia un acto en sí lícito ("un fin lícito
+  no legitima un acto ilícito: el fin no justifica los medios; pero un
+  fin ilícito vicia el acto intrínsecamente lícito").
+- **[bajo]** `sP2`: de los diez artículos que DOMÍNGUEZ cita como
+  manifestaciones del principio <em>fraus omnia corrumpit</em>, el
+  manual retiene siete y omite tres (arts. 539 Nº 2 y 541, sobre remoción
+  del guardador por fraude; art. 555, sobre el "delito de fraude" en las
+  asociaciones).
+
+### 2. Falta de ejemplos
+Sin hallazgos nuevos. Los casos Bauffremont y Fritz Mandel ya están
+recogidos en un recuadro `.ejemplo` propio en `sP1`.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+Sin hallazgos. Ninguna de las dos fuentes de esta tanda cita fallos con
+rol o fecha en las secciones de fraude a la ley u otras causales; en
+representación, el único fallo real de la fuente (Corte Suprema, 9 de
+enero de 2017) está correctamente citado en extenso en `sR4-4`.
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+Sin hallazgos adicionales a los ya señalados.
+
+### 5. Debate doctrinal aplanado
+- **[medio]** `sP4-1` (fraude a la ley y simulación): falta la
+  contra-crítica de ALCALDE a la distinción mayoritaria entre ambas
+  figuras: para él, aunque las distinciones propuestas son correctas
+  "desde una perspectiva científica o académica", no gozan de la misma
+  consistencia "si uno atiende a la realidad de los hechos".
+- **[medio]** `sP4-2` (fraude a la ley y abuso del derecho): faltan las
+  citas de FERREIRA y DIEZ-PICAZO sobre la buena fe como límite al
+  ejercicio de los derechos subjetivos, y el catálogo amplio de
+  conductas que la doctrina califica como abuso del derecho (ejercicio
+  con el solo propósito de dañar, desproporción extrema entre el interés
+  del titular y el efecto en el tercero, actos propios, ejercicio de
+  mala fe, desviación del fin de un derecho potestativo).
+
+### 6. Coherencia estructural
+- **[medio]** `sR10-2` (cierre del eje R): el último párrafo del eje,
+  sobre las definiciones de "modalidad" de RAMOS y ABELIUK y su
+  clasificación (accidental/de la naturaleza/de la esencia; actos
+  patrimoniales vs. de familia), no aparece en PDF 16 (fuente de
+  Representación) y temáticamente pertenece al eje S (Modalidades), cuya
+  fuente (PDF 17) todavía no se revisó en esta auditoría. Queda
+  pendiente verificar en la tanda 10 si el contenido está simplemente
+  duplicado ahí (como introducción del eje S) o si quedó mal ubicado.
+
+### 7. Contenido del manual sin respaldo en fuente
+Pendiente de cerrar el punto de la categoría 6 (párrafo final de
+modalidades en `sR10-2`) en la tanda 10, cruzándolo contra PDF 17. Fuera
+de eso, sin hallazgos: se verificó explícitamente que Q7-Q9 sí tienen
+respaldo (ver nota metodológica).
+
+### Resumen de la tanda
+El eje R (Representación) es uno de los más completos y fieles de toda
+la auditoría, incluyendo la transcripción casi íntegra del fallo de la
+Corte Suprema de 2017 sobre las cuatro teorías de la naturaleza jurídica
+de la representación. El eje Q es breve y fiel, con una fuente adicional
+(Cuadro comparativo) correctamente cruzada para tres de sus nueve
+puntos. El eje P pierde algunas citas de autor con nombre propio
+(DOMÍNGUEZ, ALCALDE, FERREIRA, DIEZ-PICAZO) en los puntos más
+argumentativos de la sección, sin perder la estructura central del
+debate. Ningún hallazgo de prioridad alta; queda abierto un punto de
+coherencia estructural a cerrar en la tanda 10.
+
+---
