@@ -522,3 +522,88 @@ taxativos de lesión del Código con todos sus artículos y la tesis
 minoritaria de DUCCI en un recuadro dedicado.
 
 ---
+
+## Tanda 8 — Ejes N, O. Simulación, Inoponibilidad (fuente: PDF 13 + PDF 14, 19p)
+
+El eje N (Simulación) es la fuente con más jurisprudencia real y densa
+encontrada hasta ahora en la auditoría (comparable solo al eje H), y es
+también donde más se comprimió: de al menos 6 fallos reales y 2 citas de
+autor con nombre propio, el manual retuvo 2 fallos. El eje O
+(Inoponibilidad) es, en cambio, de altísima fidelidad.
+
+### 1. Profundidad insuficiente
+- **[bajo]** `sN2`: la fuente lista siete códigos civiles extranjeros del
+  siglo XX que sí regulan la simulación, cada uno con sus artículos (el
+  alemán de 1900, art. 117; el italiano de 1942, arts. 1414 a 1417; el
+  etíope de 1960; el portugués de 1967; el boliviano de 1975; el peruano
+  de 1984; el paraguayo de 1985); el manual nombra solo tres (alemán,
+  italiano, peruano) y sin citar ningún artículo, ni siquiera de los tres
+  que sí menciona.
+- **[bajo]** `sN2`: falta la referencia a la Ley Nº 20.720 de 2014, que
+  modificó el art. 466 del Código Penal, y a la definición de "persona
+  deudora" del art. 2º Nº 25 de esa misma ley.
+
+### 2. Falta de ejemplos
+Sin hallazgos relevantes. La fuente da un segundo ejemplo de simulación
+relativa por diferencia en el objeto (contrato de servicios que aparenta
+ser de "empleada de casa particular" y en realidad es de otra
+naturaleza) que el manual omitió, en lo que parece una decisión editorial
+razonable dado el contenido, no un vacío a corregir.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+- **[alto]** `sN3` (simulación lícita): faltan los dos fallos que la
+  fuente cita como respaldo directo de la tesis central de la sección
+  (que la simulación sin perjuicio de terceros es lícita): uno de 1936
+  (RDJ, t. XXXVIII, secc. 2ª, p. 17) y otro de 1991 (RDJ, t. LXXXVIII,
+  secc. 1ª, p. 14). El manual solo trae el fallo de 2015 sobre la
+  <em>causa simulandi</em>, que es un punto distinto (por qué existe la
+  simulación, no que sea lícita).
+- **[medio]** `sN4-1` (requisitos de la simulación ilícita): falta la
+  cita del fallo de la Corte Suprema de 30 de marzo de 2017, que la
+  fuente menciona junto al de 2015 como reiteración de los mismos
+  requisitos.
+- **[medio]** `sN4-4` (consideraciones probatorias): faltan dos fallos
+  reales más, de la Corte de Apelaciones de Concepción de 29 de agosto de
+  1997 (confirmado por la Corte Suprema el 20 de octubre de 1997), sobre
+  la prueba indirecta y por indicios de la simulación, y la síntesis de
+  "dos consecuencias probatorias" que la Corte Suprema formula en sus
+  fallos de 2015 y 2017. El manual solo conserva el fallo de 1918 sobre
+  la prueba por presunciones.
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+Sin hallazgos adicionales a los ya señalados.
+
+### 5. Debate doctrinal aplanado
+- **[medio]** `sN3` (introducción a la simulación lícita): falta el
+  argumento de ALCALDE de que toda simulación busca engañar a terceros
+  sin que ello la vuelva necesariamente ilícita, y la cita de JOSSERAND
+  sobre que el móvil perseguido es decisivo para calificar el acto
+  ("habrá mentiras jurídicas condenables y a veces criminales, otras que
+  serán solo pecados veniales..."), ambos citados por nombre en la fuente
+  al introducir la distinción entre simulación lícita e ilícita.
+- **[medio]** `sO2-1` (i, inoponibilidades por publicidad): falta la
+  discusión doctrinal sobre si el art. 1707 inciso 1º (contraescrituras
+  privadas) debería clasificarse como una "inoponibilidad por
+  clandestinidad" (de fondo) en lugar de una inoponibilidad de forma, con
+  la crítica de que esa clasificación alternativa exigiría acreditar un
+  ánimo de ocultamiento que la norma no pide.
+
+### 6. Coherencia estructural
+Sin hallazgos. Numeración fiel en ambos ejes (1 a 4 con 4.1-4.4 en N; 1 a
+5 con 2.1-2.2 en O).
+
+### 7. Contenido del manual sin respaldo en fuente
+Sin hallazgos.
+
+### Resumen de la tanda
+El eje N concentra el hallazgo de jurisprudencia más importante de toda
+la auditoría hasta ahora: cinco fallos reales, verificables por tomo y
+página de RDJ o por fecha exacta, ausentes del manual, más dos citas de
+autor con nombre propio (ALCALDE, JOSSERAND) que enmarcan justamente el
+punto doctrinal central de la sección (por qué la simulación no es, por
+sí sola, ilícita). El eje O es, en contraste, de gran fidelidad, con solo
+una discusión de clasificación doctrinal aplanada. Se recomienda que la
+fase 2 priorice el eje N para agregar jurisprudencia, dado el volumen de
+fallos reales disponibles y sin usar.
+
+---
