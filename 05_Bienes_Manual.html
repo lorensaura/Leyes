@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienes: Manual de Estudio | Digesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#C41E2E;--accent2:#111111;--light:#E8D8B8;--soft:#F5EAD4;
+    --grey:#7A6E5F;--warn:#8A5A00;--warnbg:#FFF6E5;
+    --green:#1A6B3A;--greenbg:#F4FAF6;--greenborder:#4CAF50;
+    --orange:#7B3F00;--orangebg:#FFFAF4;--orangeborder:#C87028;
+    --juris:#111111;--jurisbg:#F5EAD4;--jurisborder:#2A2A2A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Times New Roman',Times,Georgia,serif;
+    font-size:11pt;color:#111;line-height:1.45;max-width:800px;
+    margin:0 auto;padding:52px 58px 88px;background:#fff;
+    text-align:justify;hyphens:auto;-webkit-hyphens:auto;
+  }
+  h1{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-weight:700;
+    color:var(--accent2);font-size:1.35rem;margin:0 0 .9rem;text-align:center;
+    text-transform:uppercase;text-decoration:underline;letter-spacing:.03em;
+    page-break-before:always;page-break-after:avoid;
+  }
+  h2{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:var(--accent);
+    font-size:1.1rem;margin:2.4rem 0 .45rem;text-align:left;
+    text-transform:uppercase;text-decoration:underline;page-break-after:avoid;
+  }
+  h3{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;
+    color:#222;font-size:1.02rem;margin:1.7rem 0 .3rem;text-align:left;
+    text-decoration:underline;page-break-after:avoid;
+  }
+  h4{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;
+    color:#222;font-size:1.02rem;margin:1.3rem 0 .2rem;text-align:left;
+    text-decoration:underline;page-break-after:avoid;
+  }
+  h5{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:400;
+    font-style:italic;color:#333;font-size:1rem;margin:1rem 0 .2rem;
+    text-align:left;page-break-after:avoid;
+  }
+  .enum-i{display:block;font-weight:700;margin:.9rem 0 .15rem;}
+  .enum-a{display:block;text-decoration:underline;margin:.7rem 0 .15rem;}
+  .enum-c{display:block;font-style:italic;margin:.6rem 0 .15rem;}
+  p{margin:.75rem 0 .75rem;text-align:justify;}
+  ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
+  li{margin:.4rem 0;text-align:justify;}
+  table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:10pt;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;}
+  td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:700;color:var(--accent);white-space:nowrap;}
+
+  .caja-tipo{display:block;text-align:center;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;font-size:9pt;margin-bottom:4px;}
+  .caja-titulo{display:block;text-align:center;font-weight:700;font-size:10pt;margin-bottom:.4rem;}
+  .jurisprudencia .caja-titulo{text-transform:uppercase;font-size:9.5pt;margin-bottom:6px;
+    padding-bottom:5px;border-bottom:1px solid var(--jurisborder);}
+  .callout .caja-tipo{color:var(--accent);}
+  .warn .caja-tipo{color:var(--warn);}
+  .jurisprudencia .caja-tipo{color:var(--juris);}
+  .ejemplo .caja-tipo{color:var(--green);}
+  .dato-grado .caja-tipo{color:var(--orange);}
+
+  .callout{border-left:5px solid var(--accent);background:var(--soft);padding:12px 16px;margin:1.3rem 0;}
+  .warn{border-left:5px solid var(--warn);background:var(--warnbg);padding:12px 16px;margin:1.3rem 0;}
+  .jurisprudencia{border:1px solid var(--jurisborder);background:var(--jurisbg);
+    padding:10px 14px;margin:1.5rem 0;font-size:12pt;line-height:1.2;}
+  .jurisprudencia .titulo-bloque{font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;color:var(--juris);display:block;margin-bottom:6px;padding-bottom:5px;
+    border-bottom:1px solid var(--jurisborder);font-size:9pt;text-transform:uppercase;
+    letter-spacing:.04em;text-align:left;}
+  .jurisprudencia p,.jurisprudencia strong{font-size:12pt;}
+  .jurisprudencia strong{color:#333;}
+  .ejemplo{border-left:4px solid var(--greenborder);background:var(--greenbg);padding:12px 16px;margin:1.3rem 0;}
+  .dato-grado{border:2px dashed var(--orangeborder);background:var(--orangebg);padding:12px 16px;margin:1.3rem 0;}
+
+  .repaso{border-left:4px solid var(--accent);background:#FCF7EC;padding:11px 16px;
+    margin:2.4rem 0 .4rem;font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:9.5pt;line-height:1.4;color:#5a5043;text-align:left;page-break-inside:avoid;}
+
+  .cover{text-align:center;padding:96px 20px 60px;border-bottom:none;margin-bottom:2rem;}
+  .cover .brand{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;display:inline-block;
+    background:var(--accent2);color:var(--light);font-size:1.5rem;letter-spacing:7px;
+    font-weight:400;padding:9px 28px 6px;text-indent:7px;}
+  .cover .doc{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;color:var(--accent2);
+    font-size:4.4rem;font-weight:400;line-height:.92;letter-spacing:1px;margin-top:2.2rem;
+    text-transform:uppercase;}
+  .cover .rule{width:84px;height:4px;background:var(--accent);margin:1.8rem auto 1.5rem;}
+  .cover .sub{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--accent);
+    font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;}
+  .cover .author{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--accent2);
+    font-size:1.05rem;font-weight:400;margin-top:1.7rem;}
+  .cover .meta{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--grey);
+    margin-top:1.3rem;font-size:.8rem;font-weight:300;line-height:1.55;max-width:460px;
+    margin-left:auto;margin-right:auto;}
+
+  .toc{background:var(--soft);border:1px solid var(--light);padding:14px 22px;
+    margin-bottom:2rem;font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:10pt;}
+  .toc a{color:var(--accent);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  .toc ol{text-align:left;}
+
+  @media print{
+    body{margin:0;padding:0;max-width:none;font-size:12pt;line-height:1.3;}
+    h1{page-break-after:avoid;} h2,h3{page-break-after:avoid;}
+    .callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,.repaso,table,tr,li{page-break-inside:avoid;}
+    .cover{page-break-after:always;display:flex;flex-direction:column;justify-content:center;
+      align-items:center;min-height:23cm;box-sizing:border-box;padding:0 20px;margin:0;}
+    .toc{page-break-after:always;margin-bottom:1.4rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">DIGESTO</div>
+  <div class="doc">Bienes</div>
+  <div class="rule"></div>
+  <div class="sub">Manual de estudio · Nivel examen de grado</div>
+  <div class="author">Elaborado por <strong>Laura Schultz Solano</strong></div>
+  <div class="meta">Texto refundido a partir de los apuntes de Cristián Boetsch Gillet, jurisprudencia seleccionada y comparaciones doctrinales · Borrador en construcción, pendiente de revisión</div>
+</div>
+
+<div class="toc">
+<strong>Índice</strong>
+<ol type="A">
+  <li><a href="#sA">Conceptos generales y clasificaciones de los bienes</a>
+    <ol type="1">
+      <li><a href="#sA1">Introducción</a></li>
+      <li><a href="#sA2">Cosa y bien</a></li>
+      <li><a href="#sA3">Regulación</a></li>
+      <li><a href="#sA4">Bienes corporales e incorporales</a>
+        <ol type="a">
+          <li><a href="#sA4-1">Concepto</a></li>
+          <li><a href="#sA4-2">Críticas a esta clasificación</a></li>
+          <li><a href="#sA4-3">Importancia y aplicación práctica de esta clasificación</a></li>
+          <li><a href="#sA4-4">Bienes incorporales</a></li>
+          <li><a href="#sA4-5">Bienes corporales</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA5">Bienes muebles e inmuebles</a>
+        <ol type="a">
+          <li><a href="#sA5-1">Conceptos generales</a></li>
+          <li><a href="#sA5-2">Importancia de la clasificación</a></li>
+          <li><a href="#sA5-3">Bienes (corporales) muebles</a></li>
+          <li><a href="#sA5-4">Bienes (corporales) inmuebles</a></li>
+          <li><a href="#sA5-5">Bienes incorporales (derechos) muebles e inmuebles</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA6">Bienes consumibles y no consumibles</a>
+        <ol type="a">
+          <li><a href="#sA6-1">Clases de consumibilidad</a></li>
+          <li><a href="#sA6-2">Bienes deteriorables y corruptibles</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA7">Bienes fungibles y no fungibles</a>
+        <ol type="a">
+          <li><a href="#sA7-1">Concepto y fungibilidad objetiva y subjetiva</a></li>
+          <li><a href="#sA7-2">Consumibilidad, fungibilidad y cosas genéricas</a></li>
+          <li><a href="#sA7-3">Importancia de esta clasificación</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA8">Bienes principales y accesorios</a>
+        <ol type="a">
+          <li><a href="#sA8-1">Factores para determinar lo principal y lo accesorio</a></li>
+          <li><a href="#sA8-2">Importancia de la clasificación</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA9">Bienes divisibles e indivisibles</a>
+        <ol type="a">
+          <li><a href="#sA9-1">Divisibilidad de los derechos</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA10">Bienes singulares y bienes universales</a>
+        <ol type="a">
+          <li><a href="#sA10-1">Las universalidades</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA11">Bienes presentes y futuros</a></li>
+      <li><a href="#sA12">Bienes comerciables e incomerciables</a>
+        <ol type="a">
+          <li><a href="#sA12-1">Clasificación de los bienes incomerciables</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA13">Bienes apropiables e inapropiables</a>
+        <ol type="a">
+          <li><a href="#sA13-1">Bienes apropiados e inapropiados</a></li>
+          <li><a href="#sA13-2">Bienes susceptibles e insusceptibles de apropiación por particulares</a></li>
+        </ol>
+      </li>
+      <li><a href="#sA14">Bienes privados y públicos (o nacionales)</a>
+        <ol type="a">
+          <li><a href="#sA14-1">Bienes nacionales de uso público</a></li>
+          <li><a href="#sA14-2">Bienes fiscales</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+<!-- PLACEHOLDER_TOC -->
+</div>
+
+<h1 id="sA">A. Conceptos generales y clasificaciones de los bienes</h1>
+
+<h2 id="sA1">1. Introducción</h2>
+
+<p>El Derecho de Bienes (también denominado <em>Derecho de Cosas</em> y/o <em>Derechos Reales</em>) tiene por objeto el estudio de las normas jurídicas que regulan a los objetos: determinar su concepto, clasificarlos según su naturaleza material y otros factores, analizar el poder que se puede tener sobre ellos, establecer los modos de lograr esa potestad y decidir la protección que a ese poder adquirido se confiere.</p>
+
+<p>Conviene distinguir el campo del Derecho de Bienes del Derecho de Obligaciones. Mientras el Derecho de Obligaciones regula el intercambio de bienes y servicios para la satisfacción de las necesidades de los individuos, la materia jurídica de los derechos reales, primero, fija o radica los bienes en el patrimonio de cada individuo, y segundo, determina los poderes o facultades que el sujeto tiene sobre ellos.</p>
+
+<h2 id="sA2">2. Cosa y bien</h2>
+
+<p>En doctrina se discute el sentido y alcance de los conceptos de cosa y bien, cuestión que no resuelve el Código Civil. Buena parte de la doctrina estima que, jurídicamente, cosa es todo lo que forma parte del mundo exterior y sensible (cosas materiales), y también todo aquello que, sin representación exterior ni percepción por los sentidos, sí puede percibirse con la inteligencia (cosas inmateriales). Así, <strong>ROZAS</strong> señala que <em>cosa es todo lo que es relevante o tomado en cuenta por la ley y que pueda ser objeto de relaciones jurídicas</em>.</p>
+
+<p>Las características de la noción jurídica de cosa serían: (a) debe ser extraña al sujeto, pues la cosa se contrapone a la persona, como objeto se contrapone a sujeto; (b) debe tener relevancia jurídica, esto es, posibilidad de ser objeto de relaciones jurídicas; (c) la noción de cosa es independiente de la de apropiabilidad por un sujeto, por ejemplo los metales de una mina inexplorada; y (d) las cosas pueden ser presentes o futuras.</p>
+
+<p>Parte de la doctrina asocia el concepto de bien a aquellas cosas que presentan un interés o utilidad para un sujeto. <strong>ALESSANDRI</strong> señala que la etimología de la palabra bienes delata el carácter útil de las cosas que el Derecho considera: proviene del adjetivo latino <em>bonus</em>, que a su vez deriva del verbo <em>beare</em>, hacer feliz. Aunque las cosas propias no dan la felicidad, contribuyen al bienestar del hombre por la utilidad moral o material que de ellas puede obtenerse. El Código no define lo que es bien, sino que se limita en el <span class="art">art. 565</span> a señalar en qué consiste.</p>
+
+<p>Para algunos autores la relación entre cosa y bien es de género a especie; para otros, la noción de cosa es objetiva y la de bien es subjetiva. En todo caso, la distinción tiene utilidad, pues permite explicar la coexistencia de varios derechos subjetivos en una misma cosa (un mismo predio, cosa, puede ser objeto de diversos derechos reales, bienes, con distintas utilidades: dominio, usufructo, servidumbres, hipotecas, etc.).</p>
+
+<div class="callout">
+  <span class="caja-tipo">No confundir</span>
+  <span class="caja-titulo">Cosa vs. bien</span>
+  <p>Atendido que nuestro ordenamiento jurídico emplea indistintamente estos conceptos, así se hará en este manual, salvo que se indique lo contrario. La distinción es doctrinal, no legal: el Código no la formula expresamente.</p>
+</div>
+
+<h2 id="sA3">3. Regulación</h2>
+
+<p>Siendo el centro de la materia el derecho de propiedad, la regulación base se encuentra en la Constitución Política, en particular en el <span class="art">artículo 19 Nºs 21 a 25</span> (destacándose los Nºs 23 y 24). El principal conjunto de normas legales se encuentra en el Libro II del Código Civil, denominado <em>De los Bienes, y de su Dominio, Posesión, Uso y Goce</em>. También regulan la materia otras normas del mismo Código y de leyes y reglamentos especiales.</p>
+
+<h2 id="sA4">4. Bienes corporales e incorporales</h2>
+
+<h3 id="sA4-1">4.1. Concepto</h3>
+
+<p>Esta clasificación está expresamente reconocida en el Código Civil, que abre el Libro II con el <span class="art">art. 565</span>: <em>los bienes consisten en cosas corporales o incorporales. Corporales son las que tienen un ser real y pueden ser percibidas con los sentidos, como una casa, un libro. Incorporales las que consisten en meros derechos, como los créditos, y las servidumbres activas</em>.</p>
+
+<p>Esta disposición se complementa con el <span class="art">art. 576</span>, que establece que las cosas incorporales son derechos reales o personales, y con el <span class="art">art. 583</span>, que señala que sobre las cosas incorporales hay también una especie de propiedad: así, el usufructuario tiene la propiedad de su derecho de usufructo. La clasificación también está reconocida en el <span class="art">art. 19 Nº 24</span> de la Constitución.</p>
+
+<h3 id="sA4-2">4.2. Críticas a esta clasificación</h3>
+
+<p>La doctrina suele indicar que esta clasificación consagra la llamada <em>cosificación de los derechos</em>: el entendimiento de que un derecho está en el mismo plano que una cosa corporal cualquiera, lo que para muchos es un error. La doctrina extranjera objeta que las cosas corporales son objeto de derechos (relación vertical), de modo que no sería procedente pretender luego que estos, a su vez, son cosas junto a los primeros (relación horizontal), lo que además posibilita derechos sobre derechos.</p>
+
+<p>Muchos autores estiman que entre los derechos considerados cosas no puede incluirse el derecho de propiedad, pues este se identifica tradicionalmente con la cosa en que se ejerce; considerarlo cosa crearía una cadena infinita de derechos sobre derechos (se tiene propiedad sobre un automóvil, sobre ese derecho se tiene a la vez propiedad, y así sucesivamente). Esta crítica es atendible, pero el Código sí reconoce la <em>propiedad sobre el derecho de propiedad</em>, pues el <span class="art">art. 577</span> menciona entre los derechos reales, cosas incorporales conforme al <span class="art">art. 576</span>, el de dominio o propiedad.</p>
+
+<h3 id="sA4-3">4.3. Importancia y aplicación práctica de esta clasificación</h3>
+
+<p>Para muchos autores, la ley atiende a la naturaleza corporal o incorporal de los bienes para dictar las normas sobre los modos de adquirir las diversas clases de bienes y la manera de disponer de ellos. En Chile, desde los años sesenta, esta clasificación ha tenido gran aplicación práctica en dos ámbitos:</p>
+
+<span class="enum-a">a. Protección de derechos ante agresiones legislativas cometidas mediante retroactividad.</span>
+<p>Si una ley dispone que se aplicará incluso a situaciones ya producidas (como efectivamente ocurrió en Chile, cuando una nueva ley extendió la duración mínima de los arrendamientos de predios rústicos aplicándose a los contratos vigentes) y se detecta que vulnera un derecho ya adquirido de un particular, se sostiene que la ley priva de la propiedad de ese derecho y que, por no reunir los requisitos que la Constitución exige para expropiar, es inconstitucional.</p>
+
+<span class="enum-a">b. Protección de derechos ante agresiones de la autoridad o de particulares, mediante actos administrativos o materiales ilegales o arbitrarios.</span>
+<p>Cuando el derecho afectado no está directamente protegido por el recurso de protección (<span class="art">art. 20</span> de la Constitución), como ocurre con el derecho a la educación del <span class="art">art. 19 Nº 10</span>, se plantea que en todo caso el afectado es dueño de ese derecho y que, al agredírsele, se agrede su derecho de propiedad, que sí está protegido por ese recurso.</p>
+
+<div class="dato-grado">
+  <span class="caja-tipo">Dato de grado</span>
+  <span class="caja-titulo">¿Por qué importa la cosificación de los derechos en un examen?</span>
+  <p>Porque explica la llamada "propietarización" de los derechos: en Chile se recurre de protección invocando el derecho de propiedad sobre otros derechos (a la educación, a una pensión, a un crédito) precisamente porque el <span class="art">art. 583</span> permite hablar de propiedad sobre cosas incorporales. Conviene tener a mano este mecanismo argumental, aunque doctrinalmente se le critique.</p>
+</div>
+
+<h3 id="sA4-4">4.4. Bienes incorporales</h3>
+
+<p>Si bien el <span class="art">art. 576</span> dispone que las cosas incorporales son derechos reales o personales, también existen otras cosas no perceptibles por los sentidos (y por tanto incorporales) distintas de derechos, que igualmente tienen regulación y protección, como el espacio aéreo, las energías o las obras del ingenio. Este apartado se centra en los derechos reales y personales, por ser los que reciben mayor atención en el Código Civil.</p>
+
+<h4 id="sA4-4-a">a) Los derechos reales</h4>
+
+<p>Por definición legal, los derechos reales son aquellos que se tienen sobre una cosa sin respecto a determinada persona (<span class="art">art. 577</span>).</p>
+
+<span class="enum-i">(i) Concepto.</span>
+<p>Se concibe como una relación persona-cosa, inmediata, absoluta: un derecho en la cosa (<em>ius in re</em>). Puede entenderse como un poder o señorío que tiene un sujeto sobre una cosa. Cuando ese poder es completo y total se está ante el derecho real máximo, el dominio; pero puede ser parcial, incompleto, como en los demás derechos reales (usufructo, prenda, hipoteca). El titular es una persona, pero puede ser también varias, como en la copropiedad.</p>
+
+<span class="enum-i">(ii) Elementos del derecho real.</span>
+<p>La doctrina suele indicar que los derechos reales están compuestos por dos elementos: el sujeto activo o titular del derecho, que tiene el poder de aprovecharse de la cosa en forma total o parcial; y la cosa objeto del derecho, que puede ser corporal o incorporal y que debe ser siempre determinada, porque, como decía <strong>PLANIOL</strong>, el derecho real tiene por objeto garantizar el hecho de la posesión, necesariamente concreto. Para este mismo autor existiría un tercer elemento: un sujeto pasivo, que sería "todo el mundo" (obligación pasivamente universal), cuya obligación consistiría en abstenerse de perturbar el ejercicio del derecho.</p>
+
+<span class="enum-i">(iii) Clases.</span>
+<p>El contenido de los distintos derechos reales conduce a agruparlos en derechos reales de goce y de garantía. Los de goce permiten la utilización directa de la cosa (uso, percepción de frutos): el más completo es el dominio, y junto a él están el usufructo, el uso o las servidumbres. Los de garantía, como la prenda y la hipoteca, permiten utilizar la cosa indirectamente por su valor de cambio, con la facultad de lograr su enajenación para obtener con el producto una prestación incumplida. También puede distinguirse, por un lado, el dominio y, por otro, los demás derechos reales, llamados derechos reales en cosa ajena o derechos reales limitados.</p>
+
+<span class="enum-i">(iv) Reserva legal en la creación de derechos reales.</span>
+<p>A diferencia de los derechos personales, que son infinitos en número, los derechos reales, por su contenido absoluto y directo sobre las cosas, solo los puede establecer la ley. Nuestro Código los enumera en el <span class="art">art. 577</span> inc. 2º: el dominio, el de herencia, el de usufructo, el de uso, el de habitación, las servidumbres activas, la prenda y la hipoteca. Esta enumeración no es taxativa: otros textos legales establecen otros derechos reales, como el censo (<span class="art">art. 579</span>) o los llamados derechos reales administrativos (derecho de aprovechamiento de aguas, derecho de un concesionario, etc.).</p>
+
+<p>La doctrina chilena, en general, no acepta que los particulares puedan crear derechos reales distintos de los establecidos por la ley, atendido el carácter de orden público de las normas sobre organización de la propiedad. Esto no se opone a que la voluntad de los particulares sea, por regla general, lo que origina los derechos reales concretos: para que se configure un usufructo será necesario que un sujeto se lo conceda a otro en un convenio o testamento, pero el usufructo, como figura jurídica, ya está diseñado en la ley.</p>
+
+<h4 id="sA4-4-b">b) Los derechos personales</h4>
+
+<span class="enum-i">(i) Concepto.</span>
+<p>Por definición legal, los derechos personales o créditos son los que solo pueden reclamarse de ciertas personas que, por un hecho suyo o por la sola disposición de la ley, han contraído las obligaciones correlativas (<span class="art">art. 578</span>). Las nociones de derecho personal (o crédito) y obligación son correlativas: se habla de derecho personal o de obligación según la relación entre los sujetos se mire desde el punto de vista del acreedor o del deudor.</p>
+
+<span class="enum-i">(ii) Elementos del derecho personal.</span>
+<p>Los elementos de la obligación son: los sujetos, activo (acreedor) y pasivo (deudor); el objeto del crédito, esto es, la prestación a que se obliga el deudor, que consiste en un comportamiento positivo o negativo, lo que el deudor debe dar, hacer o no hacer (<span class="art">art. 1438</span>); y un vínculo jurídico, que es lo que diferencia la obligación de otros deberes, como los morales.</p>
+
+<span class="enum-i">(iii) Carácter ilimitado de los derechos personales.</span>
+<p>A diferencia de los derechos reales, y en base al principio de la autonomía de la voluntad, los derechos personales son ilimitados, pues pueden originarse libremente en la voluntad de los contratantes, sin perjuicio del respeto a la ley, la moral, el orden público y las buenas costumbres. Por ende, hay tantos derechos personales como relaciones jurídicas puedan crearse.</p>
+
+<h4 id="sA4-4-c">c) Paralelo entre los derechos reales y personales</h4>
+
+<p>La doctrina tradicional contrapone los derechos reales a los personales, destacando las siguientes diferencias:</p>
+
+<table>
+<tr><th>Criterio</th><th>Derechos reales</th><th>Derechos personales</th></tr>
+<tr><td>Relación con la cosa</td><td>Relación directa de persona a cosa (<em>jure in re</em>)</td><td>Relación entre dos sujetos determinados: acreedor y deudor (<em>jure ad rem</em>)</td></tr>
+<tr><td>Contenido</td><td>Poder jurídico inmediato y directo sobre la cosa</td><td>El acreedor solo obtiene el beneficio mediante un acto del deudor</td></tr>
+<tr><td>Forma de adquirir</td><td>Título más modo de adquirir (ej. contrato más tradición)</td><td>Basta el título: de la sola celebración del contrato nacen y se incorporan al patrimonio</td></tr>
+<tr><td>Carácter absoluto o relativo</td><td>Absolutos: acción persecutoria y restitutoria ejercitable frente a terceros</td><td>Relativos: solo se pueden exigir del deudor</td></tr>
+<tr><td>Contravención</td><td>Pueden ser violados por cualquiera</td><td>Solo pueden ser violados por el deudor</td></tr>
+<tr><td>Acciones</td><td>Nacen acciones reales, para perseguir la cosa de manos de quien la tenga</td><td>Nacen acciones personales, para reclamar al deudor el cumplimiento de la prestación</td></tr>
+<tr><td>Origen y número</td><td>Solo los crea la ley (<em>numerus clausus</em>)</td><td>Los crean las partes sin más límite que la ley, el orden público o la moral (<em>numerus apertus</em>)</td></tr>
+</table>
+
+<p>Si la obligación consiste en dar una cosa y esta es transferida por el deudor a un tercero, el acreedor no puede pedir al tercero la restitución de la cosa debida: deberá ejercer otra clase de acciones contra el deudor (indemnización de perjuicios, nulidad absoluta, acción pauliana, etc.), precisamente porque su derecho es personal y no real.</p>
+
+<h4 id="sA4-4-d">d) Las acciones</h4>
+
+<p>Luego de definir el derecho real y el derecho personal, el Código declara que de ellos nacen, respectivamente, las acciones reales y las acciones personales (parte final de los <span class="art">arts. 577 y 578</span>). Desde el punto de vista del Derecho Civil, la acción es el derecho que se hace valer en juicio para obtener que sea reconocido, satisfecho o respetado.</p>
+
+<p>Desde el punto de vista del Derecho Procesal, el término acción tiene al menos tres acepciones: como sinónimo de derecho (el demandante carece de acción); como sinónimo de pretensión de tener un derecho válido (la acción es fundada o infundada); y como la facultad de provocar la actividad jurisdiccional, el poder jurídico de todo sujeto de derecho de acudir a los órganos jurisdiccionales para reclamar la satisfacción de una pretensión.</p>
+
+<p>La acción real tutela un derecho real y puede interponerse contra cualquier persona que no lo hubiese respetado. La acción personal tutela un derecho personal y solo puede ejercerse contra la persona (deudor) que hubiese contraído la obligación correlativa.</p>
+
+<h3 id="sA4-5">4.5. Bienes corporales</h3>
+
+<p>El <span class="art">art. 565</span> indica que los bienes corporales son los que tienen un ser real y pueden ser percibidos por los sentidos, como una casa o un libro. El <span class="art">art. 566</span> establece que las cosas corporales se dividen en muebles e inmuebles, clasificación que se analiza en el apartado siguiente. El <span class="art">art. 580</span> aplica también esta clasificación a los derechos y acciones, según sea la cosa en que han de ejercerse (derechos reales) o que se debe (derechos personales), y el <span class="art">art. 581</span> agrega que los hechos que se deben se reputan muebles.</p>
+
+<h2 id="sA5">5. Bienes muebles e inmuebles</h2>
+
+<h3 id="sA5-1">5.1. Conceptos generales</h3>
+
+<p>Esta clasificación se funda en la fijeza: la posibilidad o imposibilidad de las cosas de trasladarse de un lugar a otro, sea por fuerza propia o por una fuerza externa. Sin embargo, la ley admite que una cosa mueble por naturaleza sea considerada inmueble y, a la inversa, que una cosa inmueble se repute mueble para constituir un derecho sobre ella en favor de terceros.</p>
+
+<p>Aunque el <span class="art">art. 566</span> señala que las cosas corporales se dividen en muebles e inmuebles, esta clasificación es aplicable tanto a los bienes corporales como a los incorporales (<span class="art">art. 580</span>). Nacida en el Derecho Romano, se transformó en una de las clasificaciones fundamentales de los bienes: la naturaleza y el rol económico distinto de unos y otros imponen diversidad de normas en muchas materias. Hasta el desarrollo industrial, los inmuebles fueron el bien económico por excelencia, lo que explica su especial protección en las codificaciones decimonónicas; hoy la producción industrial ha generado muchos bienes muebles cuyo valor puede superar el de los inmuebles.</p>
+
+<h3 id="sA5-2">5.2. Importancia de la clasificación</h3>
+
+<p>Son numerosas las disposiciones que distinguen entre bienes muebles e inmuebles, la mayoría de ellas en protección de estos últimos. Entre las más relevantes:</p>
+
+<span class="enum-a">a. Compraventa.</span>
+<p>La de bienes raíces es solemne, requiere escritura pública para perfeccionarse, mientras que la de muebles es simplemente consensual (<span class="art">art. 1801</span>).</p>
+
+<span class="enum-a">b. Tradición.</span>
+<p>La de inmuebles se efectúa por la inscripción del título en el Registro del Conservador de Bienes Raíces (<span class="art">art. 686</span>); la de muebles, por la entrega material o simbólica (<span class="art">art. 684</span>).</p>
+
+<span class="enum-a">c. Prescripción adquisitiva ordinaria.</span>
+<p>Para adquirir el dominio de inmuebles se exige poseerlos por un plazo mayor que el exigido para los muebles (<span class="art">art. 2508</span>).</p>
+
+<span class="enum-a">d. Sucesión por causa de muerte.</span>
+<p>Para que los herederos puedan disponer de los inmuebles transmitidos, deben cumplirse ciertas diligencias que no se exigen respecto de los muebles (<span class="art">art. 688</span>).</p>
+
+<span class="enum-a">e. Sociedad conyugal.</span>
+<p>Los inmuebles aportados o adquiridos a título gratuito durante el matrimonio pertenecen al haber del respectivo cónyuge; los muebles aportados o adquiridos a cualquier título ingresan al haber social (<span class="art">arts. 1725</span> y siguientes).</p>
+
+<span class="enum-a">f. Lesión enorme.</span>
+<p>La acción rescisoria por lesión enorme procede solo en la venta o permuta de inmuebles (<span class="art">art. 1891</span>).</p>
+
+<span class="enum-a">g. Enajenación de bienes de incapaces.</span>
+<p>La del hijo o pupilo debe cumplir formalidades especiales, previo decreto judicial, y en el caso del pupilo, además, pública subasta (<span class="art">arts. 254, 393 y 394</span>).</p>
+
+<span class="enum-a">h. Cauciones reales.</span>
+<p>Se distinguen dos instituciones distintas según la garantía sea mueble o inmueble: la prenda y la hipoteca, respectivamente (<span class="art">arts. 2384 y 2407</span>).</p>
+
+<span class="enum-a">i. Competencia de los tribunales.</span>
+<p>Es distinta según sea mueble o inmueble la acción intentada (<span class="art">arts. 135 y 138</span> del Código Orgánico de Tribunales).</p>
+
+<h3 id="sA5-3">5.3. Bienes (corporales) muebles</h3>
+
+<p>Los define el <span class="art">art. 567</span>: son las cosas que pueden transportarse de un lugar a otro, sea moviéndose ellas a sí mismas, como los animales (que por eso se llaman semovientes), sea que solo se muevan por una fuerza externa, como las cosas inanimadas.</p>
+
+<h4 id="sA5-3-a">a) Clasificación</h4>
+
+<span class="enum-i">(i) Muebles por naturaleza.</span>
+<p>Son las cosas muebles propiamente tales, a las que se refiere la definición del <span class="art">art. 567</span>, que a su vez se dividen en semovientes (se trasladan moviéndose por sí mismas, como los animales) y cosas inanimadas (solo se mueven por una fuerza externa).</p>
+
+<span class="enum-i">(ii) Muebles por anticipación.</span>
+<p>Los consagra el <span class="art">art. 571</span>: los productos de los inmuebles y las cosas accesorias a ellos, como las hierbas de un campo, la madera y fruto de los árboles, o los animales de un vivar, se reputan muebles aun antes de su separación, para el efecto de constituir un derecho sobre esos productos o cosas a favor de otra persona que el dueño. Lo mismo se aplica a la tierra o arena de un suelo, a los metales de una mina y a las piedras de una cantera. Al reputarse muebles, se les aplican todas las normas de estos cuando se trata de constituir derechos a favor de terceros (de ahí, por ejemplo, el <span class="art">art. 1801</span> inc. 3º).</p>
+
+<div class="ejemplo">
+  <span class="caja-tipo">Ejemplo</span>
+  <span class="caja-titulo">Un mueble por anticipación</span>
+  <p>El dueño de un fundo vende a un tercero, antes de la cosecha, toda la madera de un bosque que crece en su predio. Aunque los árboles siguen adheridos al suelo (y por tanto son inmuebles por naturaleza mientras no se corten), para el efecto de constituir el derecho del comprador sobre esa madera, se reputan muebles desde ya.</p>
+</div>
+
+<h4 id="sA5-3-b">b) Reglas de interpretación relativas a los bienes muebles</h4>
+
+<p>Atendido que a la palabra mueble se le puede dar un sentido diverso, el Código establece, en forma dispersa, ciertas reglas de interpretación. El <span class="art">art. 574</span> inc. 1º dispone que cuando por la ley o el hombre se usa la expresión bienes muebles sin otra calificación, se comprende en ella todo lo que se entiende por cosas muebles según el <span class="art">art. 567</span>, esto es, los muebles por naturaleza. El inciso 2º agrega que en los muebles de una casa no se comprende el dinero, los documentos y papeles, las colecciones científicas o artísticas, los libros o sus estantes, las medallas, las armas, los instrumentos de artes y oficios, las joyas, la ropa de vestir y de cama, los carruajes o caballerías o sus arreos, los granos, caldos, mercancías, ni en general otras cosas que las que forman el ajuar de una casa.</p>
+
+<p>Por su parte, el <span class="art">art. 1121</span> inc. 1º indica que si se lega una casa con sus muebles o con todo lo que se encuentre en ella, no se entienden comprendidas las cosas enumeradas en el inciso 2º del <span class="art">art. 574</span>, sino solo las que forman el ajuar de la casa y se encuentran en ella. En síntesis: el término mueble, sin calificativo, se refiere a los muebles por naturaleza; y los muebles de una casa son los que forman su ajuar.</p>
+
+<h3 id="sA5-4">5.4. Bienes (corporales) inmuebles</h3>
+
+<p>Los define el <span class="art">art. 568</span>: inmuebles o fincas o bienes raíces son las cosas que no pueden transportarse de un lugar a otro, como las tierras y minas, y las que adhieren permanentemente a ellas, como los edificios y los árboles. Las casas y heredades se llaman predios o fundos. Debido a que el legislador considera jurídicamente inmuebles ciertos bienes que naturalmente no lo son, se distingue entre inmuebles por naturaleza, por adherencia y por destinación.</p>
+
+<h4 id="sA5-4-a">a) Inmuebles por naturaleza</h4>
+
+<p>Son las cosas que no pueden trasladarse de un lugar a otro sin que se altere su sustancia (tierras, minas, etc.). En rigor, el suelo, el subsuelo y las minas son las únicas cosas cuya movilización no se concibe atendiendo a su propio ser. La palabra "casa" alude en general a todo edificio en que se puede vivir o morar; "heredad" es una porción de terreno cultivado perteneciente a un mismo dueño, con lo que se designa a los predios rústicos; y "finca" se refiere tanto a predios urbanos como rústicos, aunque en su acepción natural alude más bien a los últimos.</p>
+
+<p>Diversas leyes especiales han definido, de modo no uniforme, los conceptos de inmueble rústico e inmueble urbano (la derogada Ley Nº 16.640 sobre Reforma Agraria, el Decreto Ley 3.516 sobre División de Predios Rústicos, la Ley Nº 18.101 sobre Arrendamiento de Predios Urbanos, el Decreto Ley 993 sobre Arrendamiento de Predios Rústicos). Esta distinción importa, entre otras cosas, porque las reglas sobre cabida de los predios solo se aplican a la venta de predios rústicos (<span class="art">art. 1831</span> y siguientes), porque predios urbanos y rústicos tienen normas de arrendamiento distintas, y porque la subdivisión de un predio urbano y la de uno rústico siguen procedimientos y autoridades distintas.</p>
+
+<h4 id="sA5-4-b">b) Inmuebles por adherencia</h4>
+
+<p>Del <span class="art">art. 568</span> se desprende que son ciertos bienes que, siendo muebles, se reputan inmuebles por estar adheridos permanentemente a un inmueble, como los árboles. El <span class="art">art. 569</span> agrega, como ejemplo, los árboles y las plantas que adhieren al suelo por sus raíces, siempre que no se encuentren en macetas que puedan transportarse de un lugar a otro.</p>
+
+<p>Los productos de la tierra y los frutos de los árboles, mientras permanecen adheridos a su fuente de origen, son inmuebles, pues forman con ella un solo todo; separados permanentemente, son muebles, y se reputan muebles aun antes de su separación para constituir derechos sobre ellos en favor de terceros (muebles por anticipación). La jurisprudencia ha resuelto que deben reputarse inmuebles por adherencia los durmientes, rieles y demás obras de un ferrocarril, los puentes, alcantarillados y terraplenes, y también las líneas telegráficas, por estar permanentemente adheridas al suelo.</p>
+
+<p>Para que un bien se califique de inmueble por adherencia se requiere, copulativamente: que la cosa adhiera a un bien inmueble por naturaleza o a otro inmueble por adherencia; y que la cosa adhiera de forma permanente, esto es, con una incorporación estable, íntima y fija, y no una mera adherencia exterior. Permanencia no es lo mismo que perpetuidad: por eso son inmuebles por adherencia las construcciones levantadas para una exposición, aunque deban demolerse luego de cierto tiempo.</p>
+
+<h4 id="sA5-4-c">c) Inmuebles por destinación</h4>
+
+<p>El <span class="art">art. 570</span> dispone que se reputan inmuebles, aunque por su naturaleza no lo sean, las cosas que están permanentemente destinadas al uso, cultivo y beneficio de un inmueble, aunque puedan separarse sin detrimento. Son, entonces, ciertos bienes muebles que la ley reputa inmuebles por estar permanentemente destinados al uso, cultivo o beneficio de un inmueble (no del propietario del inmueble): las losas de un pavimento, los tubos de las cañerías, los utensilios de labranza o minería, o los animales actualmente destinados al cultivo o beneficio de una finca.</p>
+
+<p>Los inmuebles por destinación conservan su naturaleza mueble y difieren de los inmuebles por adherencia en que su inmovilización es solo ficticia y jurídica: el motivo de la ficción es evitar el menoscabo de separar bienes que para su mejor aprovechamiento requieren de otros elementos complementarios. Celebrado un acto jurídico sobre un inmueble sin especificar la suerte de esos objetos, se entienden incluidos, salvo que la voluntad de las partes los excluya.</p>
+
+<h5>Elementos de los inmuebles por destinación</h5>
+
+<p>Deben reunirse copulativamente tres requisitos: que la cosa mueble se haya colocado en un inmueble; que haya sido colocada en interés del inmueble mismo, esto es, para su uso, cultivo o beneficio; y que la destinación tenga carácter permanente, lo que no es lo mismo que perpetuidad, como lo comprueba que el <span class="art">art. 570</span> mencione los "abonos" existentes en la finca, que dejan de existir por su empleo.</p>
+
+<h5>Cesación de la calidad de inmueble por destinación</h5>
+
+<p>Conforme al <span class="art">art. 573</span>, los inmuebles por destinación no dejan de serlo por su separación momentánea del inmueble al que acceden, pero desde que se separan con el objeto de darles un destino diferente, dejan de ser inmuebles. En armonía con ello, el <span class="art">art. 2420</span> establece que la hipoteca afecta a los muebles que por accesión pertenecen al inmueble según el <span class="art">art. 570</span>, pero el gravamen deja de afectarlos desde que esos inmuebles por destinación pasan a pertenecer a terceros, reconociéndose el derecho del deudor para enajenarlos.</p>
+
+<h3 id="sA5-5">5.5. Bienes incorporales (derechos) muebles e inmuebles</h3>
+
+<p>El <span class="art">art. 580</span> indica que los derechos reales y personales pueden ser muebles o inmuebles: cuando dispone que los derechos se reputan bienes muebles o inmuebles según lo sea la cosa en que han de ejercerse, se refiere a los derechos reales, que se ejercen "en" las cosas; cuando expresa que se reputan muebles o inmuebles según sea la cosa "que se debe", alude a los derechos personales, porque en virtud de ellos se deben las cosas.</p>
+
+<p>Hay derechos reales que siempre son inmuebles, como las servidumbres activas, la hipoteca, el derecho de habitación y el censo; el derecho real de prenda, en cambio, es siempre mueble. El derecho real de usufructo y el de uso podrán ser muebles o inmuebles, según la naturaleza de la cosa corporal sobre la que recaen.</p>
+
+<p>Tratándose de derechos personales, en las obligaciones de dar, si el objeto corporal que el acreedor puede exigir al deudor es mueble, el derecho personal también lo será; si es inmueble, el derecho personal será inmueble. En las obligaciones de hacer y de no hacer, los derechos personales se reputan muebles (<span class="art">art. 581</span>).</p>
+
+<p>Se discute qué naturaleza tiene el derecho real de herencia frente a esta clasificación: para algunos será mueble o inmueble según los bienes que compongan la herencia; para otros, por ser esta una universalidad jurídica sin regulación especial, se le aplica la regla general y se estima de naturaleza mueble.</p>
+
+<h2 id="sA6">6. Bienes consumibles y no consumibles</h2>
+
+<p>Por su naturaleza, esta clasificación solo es aplicable a los bienes muebles. Está contenida, en forma confusa, en el <span class="art">art. 575</span> (que se refiere a las cosas fungibles e infungibles), lo que para algunos autores confunde consumibilidad con fungibilidad. Mientras lo consumible es aquello que, usándolo conforme a su destino, se destruye, lo fungible es aquello que tiene igual poder liberatorio.</p>
+
+<h3 id="sA6-1">6.1. Clases de consumibilidad</h3>
+
+<p>La doctrina distingue entre consumibilidad objetiva y subjetiva. Son objetivamente consumibles los bienes que, por sus propias características, se destruyen ya natural, ya civilmente, por el primer uso: naturalmente, si desaparecen físicamente o sufren una alteración substancial (un alimento); civilmente, si el uso implica enajenar el bien (las monedas). Son objetivamente no consumibles los que, por sus características, no se destruyen ni natural ni civilmente por el primer uso, como una mesa o un automóvil.</p>
+
+<p>Son subjetivamente consumibles los bienes que, atendido el destino que tienen para su actual titular, su primer uso importa enajenarlos o destruirlos (un automóvil usado para rodar una escena en que será arrojado a un precipicio). Son subjetivamente no consumibles los que, atendido ese destino, su primer uso no importa enajenarlos (monedas que forman una colección numismática, o estampillas de una colección filatélica).</p>
+
+<div class="ejemplo">
+  <span class="caja-tipo">Ejemplo</span>
+  <span class="caja-titulo">Consumibilidad objetiva y subjetiva combinadas</span>
+  <p>Los libros de una librería son subjetivamente consumibles para el librero (su destino es venderlos), pero no son objetivamente consumibles (leerlos no los destruye). A la inversa, una botella de licor es objetivamente consumible, pero, destinada a una exposición o muestra, es subjetivamente no consumible. Los alimentos de un almacén, en cambio, son consumibles desde ambos puntos de vista.</p>
+</div>
+
+<h3 id="sA6-2">6.2. Bienes deteriorables y corruptibles</h3>
+
+<p>El carácter de no consumible de un bien no se opone al paulatino deterioro ocasionado por el uso. Algunos autores configuran una categoría especial, la de los bienes deteriorables o gradualmente consumibles, intermedia entre consumibles y no consumibles, aunque en rigor se trata siempre de cosas no consumibles, pues no se destruyen objetivamente por el primer uso sino de forma gradual. Dentro de los bienes consumibles hay, a su vez, una categoría especial de bienes corruptibles, que deben consumirse en breve tiempo porque rápidamente pierden su aptitud para el consumo, como algunas frutas o medicamentos (<span class="art">art. 488</span> del Código Civil y <span class="art">art. 483</span> del Código de Procedimiento Civil).</p>
+
+<h2 id="sA7">7. Bienes fungibles y no fungibles</h2>
+
+<h3 id="sA7-1">7.1. Concepto y fungibilidad objetiva y subjetiva</h3>
+
+<p>En general puede decirse que son fungibles las cosas que, por presentar entre sí una igualdad de hecho, se les considera de igual poder liberatorio; en otros términos, las que pertenecen a un mismo género y se encuentran en el mismo estado, y que por ende son sustituibles. Desde un punto de vista objetivo, la fungibilidad es precisamente esto. Se ha propuesto también, sin ser aceptada unánimemente, una acepción subjetiva: dos o más cosas serían subjetivamente fungibles cuando el interesado les atribuye igual poder liberatorio (como en la dación en pago, las obligaciones alternativas o la compensación convencional). Así, cosas objetivamente fungibles pueden no serlo subjetivamente, sobre todo cuando media el poder de afección, como un reloj corriente que, por ser un recuerdo familiar, es no fungible para su actual propietario.</p>
+
+<h3 id="sA7-2">7.2. Consumibilidad, fungibilidad y cosas genéricas</h3>
+
+<p>Generalmente las cosas consumibles son también fungibles, como la mayoría de los alimentos, pero ambos caracteres no van necesariamente unidos: hay bienes consumibles no fungibles (una bebida exclusiva y cuidadosamente preparada) y bienes fungibles no consumibles objetivamente (los libros de una misma edición, las reproducciones de una obra de arte). Solo puede afirmarse que ambos caracteres a menudo concurren, pero son independientes.</p>
+
+<p>El criterio de las cosas genéricas y el de las fungibles también es distinto: en las genéricas se atiende a la determinación de las cosas; en las fungibles, a la similitud o disimilitud entre dos o más cosas, a las que se les confiere o no idéntico poder liberatorio. No puede sostenerse, por tanto, que las cosas fungibles sean necesariamente genéricas y las no fungibles, cuerpos ciertos: una pistola de cierto calibre es una cosa genérica y fungible, pero la misma pistola identificada por su número de serie es un cuerpo cierto y, a la vez, fungible.</p>
+
+<h3 id="sA7-3">7.3. Importancia de esta clasificación</h3>
+
+<p>Esta clasificación reviste importancia, entre otras, en dos materias: el mutuo recae en cosas fungibles (<span class="art">art. 2196</span>), mientras que el comodato, por regla general, recae en cosas no fungibles; y la compensación legal solo es posible entre dos deudas que tienen por objeto cosas fungibles (<span class="art">art. 1656 Nº 1</span>).</p>
+
+<h2 id="sA8">8. Bienes principales y accesorios</h2>
+
+<p>Bienes principales son los que tienen existencia independiente, sin necesidad de otros, como el suelo. Bienes accesorios son los que están subordinados a otros sin los cuales no pueden subsistir, como los árboles. El Código no formula esta clasificación, pero la reconoce implícitamente en numerosas disposiciones (<span class="art">arts. 587, 1122, 1127 y 1830</span>). Se aplica no solo a los bienes corporales, sino también a los incorporales: la servidumbre es accesoria del dominio sobre el predio en que se ejerce, y la hipoteca es accesoria del crédito que garantiza.</p>
+
+<h3 id="sA8-1">8.1. Factores para determinar lo principal y lo accesorio</h3>
+
+<span class="enum-a">a. Subsistencia.</span>
+<p>Se considera principal la cosa que puede subsistir por sí misma, y accesoria la que necesita de otra. El suelo es siempre cosa principal respecto de una casa, aunque valga menos que esta, pues el edificio no se concibe sin suelo donde adherirse (<span class="art">art. 668</span>). Un crédito existe por sí mismo, pero no la hipoteca que lo cauciona.</p>
+
+<span class="enum-a">b. Finalidad.</span>
+<p>Es accesoria la cosa destinada al uso, cultivo, beneficio, adorno o complemento de otra, como la vaina respecto de un sable.</p>
+
+<span class="enum-a">c. Valor.</span>
+<p>En la adjunción, si de las dos cosas unidas una es de mucho más valor que la otra, la primera es la principal (<span class="art">art. 659</span>).</p>
+
+<span class="enum-a">d. Volumen.</span>
+<p>Cuando no pueden aplicarse los criterios de mayor estimación y finalidad, en la adjunción se mira como principal la de mayor volumen (<span class="art">art. 661</span>).</p>
+
+<h3 id="sA8-2">8.2. Importancia de la clasificación</h3>
+
+<p>La clasificación es importante porque rige el principio de que lo accesorio sigue la suerte de lo principal: traspasado un derecho sobre una cosa principal, se traspasa el derecho sobre las accesorias, y extinguido el primero, se extingue el segundo. Adquiere especial relevancia a propósito de la accesión como modo de adquirir el dominio, en la cual, en los diversos casos que trata el Código, el dominio de lo accesorio accede al dominio de lo principal.</p>
+
+<h2 id="sA9">9. Bienes divisibles e indivisibles</h2>
+
+<p>Desde un punto de vista físico, todas las cosas corporales son divisibles, pues en último término todas pueden fraccionarse, aunque ello suponga su destrucción. Desde un punto de vista jurídico, en cambio, hay dos conceptos de divisibilidad: uno material y otro intelectual.</p>
+
+<span class="enum-a">a. Divisibilidad material.</span>
+<p>Son jurídica y materialmente divisibles los bienes que pueden fraccionarse sin destruirse en su estado normal ni perder notoriamente su valor al considerar las partes en conjunto. Un líquido es divisible; un animal es indivisible, porque al fraccionarlo se destruye en su estado normal; un diamante normalmente es indivisible, porque al fraccionarlo disminuye apreciablemente su valor.</p>
+
+<span class="enum-a">b. Divisibilidad intelectual.</span>
+<p>Son jurídica e intelectualmente divisibles las cosas que pueden fraccionarse en partes ideales o imaginarias, aunque no puedan serlo materialmente. Desde este punto de vista todos los bienes, corporales e incorporales, son divisibles. Los bienes incorporales (derechos), al no tener consistencia física, solo son intelectualmente divisibles, y hay ciertos derechos que la ley declara indivisibles ni siquiera intelectualmente, como la servidumbre (<span class="art">arts. 1524, 826 y 827</span>).</p>
+
+<h3 id="sA9-1">9.1. Divisibilidad de los derechos</h3>
+
+<p>Los derechos personales son divisibles o indivisibles según lo sea la obligación que es su contrapartida: la obligación de construir una casa o de conceder una servidumbre es indivisible, y asimismo el derecho correlativo; la obligación de pagar una suma de dinero es divisible, y asimismo el derecho (<span class="art">art. 1524</span>). En cuanto a los derechos reales, algunos son indivisibles conforme al derecho positivo, como los de servidumbre (<span class="art">arts. 826 y 827</span>), prenda (<span class="art">art. 2405</span>) e hipoteca (<span class="art">art. 2408</span>).</p>
+
+<p>El derecho real de dominio, en cambio, es típicamente divisible desde un doble punto de vista: primero, admite desmembraciones, siendo la más usual aquella en que el propietario mantiene la nuda propiedad y confiere a un tercero las facultades de uso y goce, dando origen al usufructo; y segundo, sobre un mismo objeto varias personas pueden ejercer el derecho de dominio a la vez, dando origen a la copropiedad o comunidad.</p>
+
+<h2 id="sA10">10. Bienes singulares y bienes universales</h2>
+
+<p>Son bienes singulares los que constituyen una unidad, natural o artificial. Son bienes universales las agrupaciones de bienes singulares que no tienen entre sí una conexión física, pero que forman un todo funcional y están relacionados por un vínculo determinado.</p>
+
+<h3 id="sA10-1">10.1. Las universalidades</h3>
+
+<p>Se suele distinguir entre universalidades de hecho (<em>universitas facti</em>) y universalidades de derecho o jurídicas (<em>universitas juris</em>).</p>
+
+<h4 id="sA10-1-a">a) Universalidades de hecho</h4>
+
+<p>Suelen definirse como un conjunto de bienes que, sin perder su individualidad, forman un todo al estar unidos por un vínculo de igual destino, generalmente económico. Aunque tradicionalmente se indicaba que solo podían estar compuestas por muebles, hoy la doctrina admite que también pueden estar compuestas por inmuebles. Presentan las siguientes notas: los bienes que la componen pueden ser de la misma naturaleza (colecciones, como los libros de una biblioteca) o de naturaleza diferente (explotaciones, como el establecimiento de comercio); mantienen su propia individualidad, función y valor, por lo que las meras partes de un bien singular no constituyen universalidad de hecho; el vínculo que las une es de un común destino o finalidad, generalmente económico; y comprenden solo elementos activos, no pasivos o deudas.</p>
+
+<h4 id="sA10-1-b">b) Universalidades de derecho</h4>
+
+<p>Están constituidas por un conjunto de bienes y relaciones jurídicas activas y pasivas consideradas jurídicamente como formando un todo indivisible. Contienen tanto elementos pasivos como activos, existiendo una correlación funcional entre ellos, de modo que el activo responde del pasivo existente o eventual; y funciona en ellas, como norma general, el principio de la subrogación real, por el cual los bienes que ingresan a la universalidad a costa de otros que salen pasan a ocupar la posición jurídica de estos. En el derecho chileno, la universalidad jurídica típica es la herencia; la doctrina agrega, discutiblemente, otras como la sociedad conyugal, el patrimonio del fallido o el patrimonio reservado de la mujer casada.</p>
+
+<h4 id="sA10-1-c">c) Diferencias entre ambas universalidades</h4>
+
+<p>Mientras la unidad de la universalidad de hecho es configurada por el hombre, en la de derecho es impuesta por la ley. Las de hecho solo comprenden activo; las de derecho, activo y pasivo. Las de hecho, por regla general, no tienen regulación jurídica especial; las de derecho sí la tienen. Nuestro derecho positivo no reglamenta las universalidades como categoría general, pero el Código supone la clasificación: los <span class="art">arts. 1317 y 1340</span> distinguen bienes singulares y universales, el <span class="art">art. 951</span> se refiere a la herencia como universalidad de derecho, y el <span class="art">art. 788</span> implica un caso de universalidad de hecho.</p>
+
+<h2 id="sA11">11. Bienes presentes y futuros</h2>
+
+<p>Atendiendo a la existencia real de los bienes al momento de crearse una relación jurídica, se clasifican en presentes y futuros. Es una clasificación puramente jurídica, porque en la realidad solo son bienes los llamados presentes. Son bienes presentes los que, a un momento determinado, tienen existencia real; son futuros los que a esa época no existen y solo se espera que existan. El Código no formula expresamente esta clasificación, pero la reconoce en diversas disposiciones, como los <span class="art">arts. 1461 y 1813</span>, a propósito del objeto de un acto jurídico o de una compraventa, respectivamente.</p>
+
+<h2 id="sA12">12. Bienes comerciables e incomerciables</h2>
+
+<p>Los bienes se clasifican en comerciables e incomerciables según puedan o no ser objeto de relaciones jurídicas por los particulares. Son comerciables los que pueden ser objeto de relaciones jurídicas privadas, de manera que sobre ellos puede recaer un derecho real o constituirse un derecho personal (<span class="art">arts. 1461 y 2498</span>): son susceptibles de propiedad o posesión privada, y la mayoría de las cosas lo son. Son incomerciables los que no pueden ser objeto de relaciones jurídicas por los particulares, no susceptibles de propiedad o posesión privada. La clasificación es importante porque el objeto de los actos jurídicos debe ser comerciable (<span class="art">art. 1461</span>), habiendo objeto ilícito en la enajenación de bienes no comerciables (<span class="art">art. 1464 Nº 1</span>).</p>
+
+<div class="callout">
+  <span class="caja-tipo">No confundir</span>
+  <span class="caja-titulo">Bienes incomerciables vs. bienes inalienables o personalísimos</span>
+  <p>Los bienes inalienables o personalísimos son plenamente comerciables, en cuanto son susceptibles de propiedad y posesión privada, pero tienen la particularidad de que no pueden transferirse ni transmitirse a otras personas. Es el caso de los derechos reales de uso y habitación (<span class="art">art. 819</span>). No debe confundirse esta categoría con la de los bienes incomerciables propiamente tales.</p>
+</div>
+
+<h3 id="sA12-1">12.1. Clasificación de los bienes incomerciables</h3>
+
+<span class="enum-a">a. Incomerciables en razón de su naturaleza.</span>
+<p>Como la alta mar o el aire: son las llamadas por el <span class="art">art. 585</span> "cosas comunes a todos los hombres", las únicas que en rigor no son objeto de relaciones jurídicas en general y a las que puede aplicarse la expresión de cosas fuera del comercio humano.</p>
+
+<span class="enum-a">b. Incomerciables en razón de su destino.</span>
+<p>Bienes que, siendo naturalmente comerciables, se han sustraído del comercio jurídico para dedicarlos a un fin público, como las plazas, calles y demás bienes nacionales de uso público (<span class="art">art. 589</span>). Pueden ser objeto de ciertas relaciones jurídicas de carácter público, como las concesiones que otorga la autoridad, por lo que solo desde el punto de vista del derecho privado son incomerciables.</p>
+
+<p>En cuanto a las cosas consagradas al culto divino, el Código se remite, en el <span class="art">art. 586</span>, al Derecho Canónico; el <span class="art">art. 587</span> deja en claro que estos bienes son comerciables.</p>
+
+<h2 id="sA13">13. Bienes apropiables e inapropiables</h2>
+
+<p>Relacionada con la clasificación anterior, pero atendiendo exclusivamente al dominio, se clasifican en apropiables e inapropiables según sean o no susceptibles de propiedad, pública o privada. Pueden entenderse como inapropiables las cosas comunes a todos los hombres, antes calificadas de absolutamente incomerciables.</p>
+
+<h3 id="sA13-1">13.1. Bienes apropiados e inapropiados</h3>
+
+<p>Apropiados son los susceptibles de apropiación y que actualmente poseen un dueño. Inapropiados son los susceptibles de apropiación que actualmente carecen de dueño: pueden no haber tenido nunca propietario (<em>res nullius</em>) o haberlo tenido y haber sido abandonados con intención de desprenderse del dominio (<em>res derelictae</em>). En el Derecho chileno la existencia de bienes inapropiados (llamados "mostrencos" si son muebles y "vacantes" si son inmuebles) queda limitada a los muebles: el <span class="art">art. 590</span> establece que son bienes del Estado todas las tierras situadas dentro de los límites territoriales que carecen de otro dueño.</p>
+
+<h3 id="sA13-2">13.2. Bienes susceptibles e insusceptibles de apropiación por particulares</h3>
+
+<p>La organización social ha impuesto siempre la necesidad de que ciertos bienes, por su naturaleza susceptibles de apropiación, no queden entregados al dominio de particulares, sino que pertenezcan a toda la comunidad para la satisfacción de necesidades generales, como los caminos y calles. El <span class="art">art. 19 Nº 23</span> de la Constitución garantiza a todas las personas la libertad para adquirir el dominio de toda clase de bienes, excepto los que la naturaleza ha hecho comunes a todos los hombres o los que deban pertenecer a la Nación toda y la ley así lo declare, sin perjuicio de otras normas constitucionales (el Estado es dueño de las minas, las aguas no se pueden apropiar libremente, etc.). En Chile se acostumbra denominar a los bienes de dominio de los particulares "bienes privados" o "particulares", y a los de la Nación toda, "bienes nacionales", subdistinguiéndose entre "bienes nacionales de uso público" y "bienes del Estado" o "fiscales".</p>
+
+<h2 id="sA14">14. Bienes privados y públicos (o nacionales)</h2>
+
+<p>Bienes privados son los que pertenecen a los particulares. Bienes públicos o nacionales son, conforme al <span class="art">art. 589</span>, aquellos cuyo dominio pertenece a la nación toda, subdistinguiéndose entre bienes nacionales de uso público (o bienes públicos) y bienes del Estado (o bienes fiscales).</p>
+
+<h3 id="sA14-1">14.1. Bienes nacionales de uso público</h3>
+
+<p>Son aquellos cuyo dominio pertenece a la nación toda y su uso, a todos los habitantes (<span class="art">art. 589</span>): plazas, calles, puentes, caminos, mar adyacente. Su tuición está encargada a distintas autoridades según su naturaleza (Ministerio de Obras Públicas, Fuerzas Armadas, Ministerio de Bienes Nacionales, municipalidades, etc.).</p>
+
+<span class="enum-i">(i) Características.</span>
+<p>Su uso pertenece a todos los habitantes del país. Aunque el Código no lo expresa, están fuera del comercio por su propio destino, por lo que son imprescriptibles e inalienables. Sin perjuicio de ello, la autoridad puede otorgar a particulares permisos y concesiones sobre algunos de estos bienes, o más usualmente sobre partes de ellos, para destinarlos a fines específicos de los que también se beneficie la comunidad: así, el <span class="art">art. 599</span> exige permiso especial de la autoridad competente para construir obras sobre calles, plazas, puentes, playas y demás lugares de propiedad nacional, y el <span class="art">art. 602</span> aclara que quien obtiene ese permiso solo adquiere el uso y goce de las obras construidas, no la propiedad del suelo.</p>
+
+<span class="enum-i">(ii) Desafectación.</span>
+<p>El Estado puede desprenderse del dominio de un bien nacional de uso público, pero solo en virtud de una ley que declare su desafectación, esto es, su sustracción al dominio público y a su condición y destino de bien nacional de uso público.</p>
+
+<h4 id="sA14-1-a">a) Dominio público marítimo</h4>
+
+<p>El <span class="art">art. 593</span> define el mar territorial como el mar adyacente hasta la distancia de 12 millas marinas medidas desde las respectivas líneas de base, y es de dominio nacional. Define también la zona contigua, que se extiende hasta las 24 millas marinas, en la que el Estado ejerce jurisdicción para prevenir y sancionar infracciones a sus leyes aduaneras, fiscales, de inmigración o sanitarias. Las aguas interiores del Estado son las situadas en el interior de las líneas de base del mar territorial. El <span class="art">art. 596</span> define la zona económica exclusiva, que se extiende hasta las 200 millas contadas desde esas mismas líneas de base. Otras disposiciones atingentes son los <span class="art">arts. 585, 594, 604, 612, 613 y 614</span>, además de la Ley de Navegación, la Ley Orgánica de la Dirección General de Territorio Marítimo y de Marina Mercante, y la Ley General de Pesca y Acuicultura.</p>
+
+<h4 id="sA14-1-b">b) Dominio público terrestre</h4>
+
+<p>Comprende todos los bienes nacionales de uso público situados en la superficie del territorio del Estado (<span class="art">arts. 589 y 592</span>). La administración de los bienes nacionales de uso público situados en cada comuna corresponde al municipio respectivo, sin perjuicio de la Ley General de Urbanismo y Construcciones y la Ley Orgánica del Ministerio de Obras Públicas.</p>
+
+<h4 id="sA14-1-c">c) Dominio público fluvial y lacustre</h4>
+
+<p>Comprende todas las aguas del territorio nacional: conforme al <span class="art">art. 595</span>, todas las aguas son bienes nacionales de uso público. El <span class="art">art. 19 Nº 24</span> inciso final de la Constitución establece que los derechos de los particulares sobre las aguas, reconocidos o constituidos conforme a la ley, otorgan a sus titulares la propiedad sobre ellos.</p>
+
+<h4 id="sA14-1-d">d) Dominio público aéreo</h4>
+
+<p>El propietario de un predio es dueño del espacio existente sobre su inmueble, lo que significa que tiene derecho a ocuparlo con construcciones o plantaciones, con las limitaciones que imponga la ley (la Ley General de Urbanismo y Construcciones o las normas municipales). Cuando se afirma que el Estado tiene soberanía sobre el espacio ubicado sobre su territorio, se quiere indicar que está facultado para regular su utilización, materia de la que se ocupa el Código Aeronáutico.</p>
+
+<h3 id="sA14-2">14.2. Bienes fiscales</h3>
+
+<p>El Estado, ente de Derecho Público, puede ser sujeto o titular de derechos privados. Los bienes fiscales constituyen el patrimonio privado del Estado, y le pertenecen en cuanto sujeto de relaciones patrimoniales privadas, para lo cual es llamado "Fisco". Con el <span class="art">art. 589</span> puede decirse que son los bienes nacionales cuyo uso no pertenece a la nación toda. Teóricamente su régimen jurídico es el Derecho Privado, aunque siempre se han dictado leyes especiales que reglamentan su adquisición, administración y disposición (actualmente el Decreto Ley 1.939 y los <span class="art">arts. 19 Nº 21 y 60 Nº 10</span> de la Constitución), de modo que las normas de Derecho Privado común solo tienen valor supletorio.</p>
+
+<p>El Ministerio de Bienes Nacionales es el órgano que principalmente administra los bienes fiscales, aunque todos los ministerios y reparticiones públicas poseen bienes fiscales bajo la tuición del servicio correspondiente. Entre los bienes fiscales pueden mencionarse los afectos al funcionamiento de los servicios públicos, las herencias en que sucede el Fisco como heredero intestado (herencias yacentes que se transforman en vacantes, <span class="art">art. 995</span>), las nuevas islas que se forman en el mar territorial o en ríos y lagos navegables por buques de más de 100 toneladas (<span class="art">art. 597</span>), la captura bélica (<span class="art">art. 640</span>), y las tierras que, ubicadas dentro del territorio nacional, carecen de otro dueño (<span class="art">art. 590</span>).</p>
+
+<div class="dato-grado">
+  <span class="caja-tipo">Dato de grado</span>
+  <span class="caja-titulo">El art. 590 como presunción de dominio fiscal</span>
+  <p>Se estima que el <span class="art">art. 590</span> establece una verdadera presunción de dominio a favor del Fisco respecto de las tierras sin otro dueño dentro del territorio nacional, de manera que quien le dispute un inmueble debe acreditar dominio, aunque tenga posesión. Conviene recordar este punto al analizar conflictos de tierras sin antecedentes registrales claros.</p>
+</div>
+
+<!-- PLACEHOLDER_BODY -->
+
+</body>
+</html>
