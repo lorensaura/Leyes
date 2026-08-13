@@ -309,3 +309,83 @@ primeros de esa categoría en toda la auditoría y ameritan atención
 prioritaria en fase 2.
 
 ---
+
+## Tanda 5 — Ejes E, F, G. Causa, Formalidades, Efectos de los AJ (fuente: PDF 6 + PDF 7 + PDF 8, 22p, más el anexo "Causa Domínguez/Boetsch")
+
+Los ejes F (Formalidades) y G (Efectos) resultaron ser transcripciones de
+muy alta fidelidad, prácticamente completas frente a sus PDF fuente (7 y
+8): no se encontraron hallazgos de prioridad media o alta en ninguna
+categoría. El eje E (Causa) también es muy fiel a su fuente principal
+(PDF 6), pero la fuente secundaria "Causa Domínguez/Boetsch" (en
+realidad un resumen de interrogación de Bozzo e Ibarra, compilado por
+Lucas Pavez a partir de apuntes de Carmen Domínguez y Cristián Boetsch)
+aporta contenido real que no está en ninguna de las dos fuentes ya
+usadas en el manual.
+
+### 1. Profundidad insuficiente
+- **[medio]** `sE4-4` (doctrina unitaria de ALCALDE): falta el punto
+  final del autor, que precisa que ciertas instituciones tradicionalmente
+  explicadas en función de la causa (la <em>condición resolutoria
+  tácita</em> y la <em>excepción de contrato no cumplido</em>) en
+  realidad no se relacionan con ella.
+- **[medio]** `sE3` (generalidades del debate causalista/anticausalista):
+  falta por completo una actualización de derecho comparado que trae el
+  anexo Domínguez/Boetsch: la eliminación de la exigencia expresa de
+  causa en el Código Civil de Quebec, en los códigos escandinavos y, más
+  recientemente, en la reforma francesa de derecho de contratos del <strong>10
+  de enero de 2016</strong>, junto con la precisión de <strong>MAZEAUD</strong> de
+  que la causa no desapareció de forma absoluta, sino que subsiste en
+  ciertos casos. Es un dato con fecha y países específicos, fácil de
+  verificar y ausente del manual.
+- **[bajo]** `sE3-4` (doctrina anticausalista, PLANIOL): falta el
+  argumento adicional, presente en el anexo, de que no sería necesario
+  exigir que la causa sea lícita porque el cuestionamiento a la moralidad
+  del acto ya está cubierto por el objeto ilícito.
+- **[bajo]** `sE4-1` (¿causa del acto o de la obligación?): falta el
+  argumento adicional a favor de la tesis "causa del contrato", apoyado
+  en el art. 2057 (sociedades nulas por ilicitud del objeto o la causa).
+- **[bajo]** `sG3-3` (efecto absoluto): falta la mención de que los
+  sistemas jurídicos que más han desarrollado la interferencia en
+  contratos ajenos (americano, alemán y francés) presentan diferencias
+  entre sí, y el punto de que un tercero puede valerse de un contrato
+  ajeno para determinar el legitimado pasivo de una acción de
+  responsabilidad extracontractual.
+
+### 2. Falta de ejemplos
+- **[medio]** `sE5` (causa real): falta un segundo ejemplo de causa falsa
+  o errónea, distinto del de la deuda inexistente ya recogido: el
+  heredero que paga un legado sin saber que el testamento en que se
+  basaba fue revocado por uno posterior, ejemplo del anexo
+  Domínguez/Boetsch.
+
+### 3. Jurisprudencia en la fuente, ausente en el manual
+Sin hallazgos. Ninguna de las fuentes de esta tanda (PDF 6, 7, 8 ni el
+anexo Domínguez/Boetsch) cita fallos con rol, tribunal o fecha.
+
+### 4. Dato de grado marcado en la fuente, ausente en el manual
+- **[medio]** El dato de la reforma francesa de 2016 (categoría 1) es
+  precisamente el tipo de actualización reciente que merecería un
+  recuadro `.dato-grado` propio, dado que altera la premisa de que "la
+  causa es un elemento universal" en el derecho comparado.
+
+### 5. Debate doctrinal aplanado
+Cubierto en la categoría 1 (los puntos de ALCALDE y PLANIOL). Fuera de
+eso, el resto de los debates de causa (objetivo/subjetivo, dual/unitaria)
+están completos y con ambas posturas bien desarrolladas.
+
+### 6. Coherencia estructural
+Sin hallazgos en los tres ejes. Numeración fiel a la fuente (1 a 7 con
+subniveles en E; 1 a 2.4 en F; 1 a 3.3 en G).
+
+### 7. Contenido del manual sin respaldo en fuente
+Sin hallazgos.
+
+### Resumen de la tanda
+Los ejes F y G son de los más fieles y completos de toda la auditoría
+hasta ahora: sin hallazgos de prioridad media o alta. El eje E es fiel a
+su fuente principal, pero al cruzarlo con el anexo Domínguez/Boetsch
+aparece contenido real y verificable ausente del manual, en particular
+la actualización de derecho comparado sobre la reforma francesa de 2016.
+Ningún hallazgo de prioridad alta en la tanda.
+
+---
