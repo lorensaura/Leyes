@@ -747,3 +747,96 @@ modalidades (RAMOS, ABELIUK, características, ámbito de aplicación) del
 final de `sR10-2` al inicio de `sS`, donde temáticamente corresponde.
 
 ---
+
+## Tanda 11 — Pasada transversal
+
+### Cuadro comparativo de Ineficacia (Bozzo-Ibarra)
+Se leyó completo (3p, 13 causales: inexistencia, nulidad absoluta,
+nulidad relativa, resciliación o mutuo disenso, resolución, terminación,
+inoponibilidad, revocación, renuncia, retractación, suspensión,
+caducidad, muerte) y se cruzó contra el manual completo. Las 13 causales
+están representadas: 12 tienen su propia sección en algún eje (H, J, K, L
+por la reivindicatoria contra terceros de la resolución, O, Q); la
+**retractación** no tiene sección propia en el eje Q (Otras causales),
+pero está desarrollada en detalle a propósito de la oferta, en `sB3-2-a`
+(tempestiva/intempestiva). No es un vacío de contenido, solo una
+ubicación distinta a la que sugiere el cuadro. Sin hallazgos nuevos de
+categorías 1-5 o 7.
+
+### Memorice_ART y Definiciones
+Se leyó completo (4p, glosario de definiciones con cita de artículo o
+autor) y se usó para verificar por muestreo, no exhaustivamente, que las
+definiciones del manual coinciden con las que Laura ya validó para el
+módulo de Memorice. La gran mayoría de las ~35 entradas del glosario
+(voluntad, oferta, aceptación, error, error de derecho, dolo, fuerza,
+lesión, capacidad, formalidades, los tres tipos de efectos, parte,
+terceros relativos, inexistencia, nulidad, nulidad absoluta/relativa,
+ratificación tácita, acción reivindicatoria, conversión, suspensión,
+inoponibilidad, representación, poder de representación, mandato,
+contemplatio domini, estipulación para otro, entre otras) coincide
+palabra por palabra o casi con el texto del manual: buena señal de
+consistencia general.
+
+Una sola divergencia real: la tarjeta de <strong>Simulación</strong> del
+Memorice, atribuida a Boetsch, la define como <em>"cuando la declaración
+de voluntad constitutiva de un acto jurídico se dirige por la persona
+que la hace a otra, con la cual se está de acuerdo en no querer darle
+eficacia"</em>, mientras que el manual (`sN1`) usa la definición de
+Avelino LEÓN ("aparentar una declaración de voluntad que no se desea,
+contando con la aquiescencia de la parte a quien esa declaración va
+dirigida"), que es la que efectivamente trae PDF 13. No se persiguió más
+allá esta divergencia porque el contenido de Memorice lo decide y envía
+Laura directamente, no algo que este proceso deba verificar o corregir
+por su cuenta; se deja anotado solo para que ella lo tenga presente si
+alguna vez cruza ambos materiales.
+
+### Verificación de fuentes secundarias sin cruzar
+Se confirmó que los 17 PDF principales, las 3 fuentes secundarias
+específicas (Causa Domínguez/Boetsch, Bozzo-Ibarra en sus 3 copias, Cuadro
+comparativo) y el glosario de Memorice fueron todos leídos y cruzados
+contra el manual en algún punto de las 10 tandas anteriores. No queda
+ningún archivo de la carpeta `Apuntes/CIVIL/Acto Jurídico/` sin revisar.
+
+---
+
+## Resumen ejecutivo
+
+**49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
+alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
+tiene hallazgos de contenido sin respaldo en fuente (categoría 7): el
+manual es, en ese sentido, limpio, no se detectó alucinación.
+
+**El único hallazgo de prioridad alta** es la ausencia de dos fallos
+reales (RDJ 1936 y RDJ 1991) que respaldan directamente la tesis central
+de la sección de simulación lícita (`sN3`, tanda 8).
+
+**Concentración de hallazgos por eje** (más de 3 hallazgos):
+- **Eje N (Simulación)** — el más señalado: 5 fallos reales ausentes
+  (incluido el único hallazgo alto), más 2 citas de autor sin usar
+  (ALCALDE, JOSSERAND). Es la prioridad más clara para la fase 2.
+- **Eje B, secciones 4-8 (Vicios de la voluntad)** — 6 hallazgos menores:
+  argumento propio del autor sobre el error sustancial, ejemplos y
+  presunciones legales de dolo incompletas.
+- **Eje H (Inexistencia)** — jurisprudencia comprimida: 18 fallos reales
+  en la fuente, 5 en el manual.
+- **Eje C (Capacidad)** — 3 fallos reales (Corte de Concepción, 1896 y
+  2008 x2) ausentes o diluidos, eje sin ningún recuadro `.jurisprudencia`.
+- **Eje P (Fraude a la ley)** — pierde el argumento moral de DOMÍNGUEZ y
+  las citas de FERREIRA y DIEZ-PICAZO sobre buena fe y abuso del derecho.
+
+**Ejes de altísima fidelidad, sin hallazgos relevantes**: A, E, F, G, L,
+M, S, T, U. En conjunto, más de la mitad de los 21 ejes no tiene ningún
+hallazgo de prioridad media o alta.
+
+**Un solo problema de forma, no de contenido**: el párrafo introductorio
+de modalidades (RAMOS, ABELIUK) quedó al final del eje R en vez de al
+inicio del eje S (tanda 9-10).
+
+### Qué sigue (fuera del alcance de este reporte)
+Este documento es una auditoría de brechas, no una corrección. La
+edición del HTML es una fase 2 posterior que requiere que Laura revise
+estos hallazgos y decida cuáles corregir y en qué orden. Dado el volumen
+de jurisprudencia real identificada (ejes N, H y C concentran casi toda),
+esa fase podría organizarse por tandas similares a esta auditoría,
+empezando por los ejes de mayor concentración de hallazgos.
+
