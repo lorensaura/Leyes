@@ -269,9 +269,23 @@ pescador) ya está recogido en un recuadro `.ejemplo` propio.
 Sin hallazgos adicionales a los ya señalados en 1 y 3.
 
 ### 5. Debate doctrinal aplanado
-Sin hallazgos. Los debates de objeto ilícito (inexistencia vs. nulidad
-absoluta en cosas incomerciables, sentido estricto vs. amplio de
-"enajenación") están bien representados con ambas posturas.
+- **[medio]** `sD4` (concepto de objeto ilícito): el anexo secundario de
+  Bozzo e Ibarra trae un debate de al menos cuatro posturas sobre qué
+  debe entenderse por "objeto ilícito" (para <strong>CLARO SOLAR</strong>,
+  el conforme a la ley y amparado por ella; para <strong>SOMARRIVA</strong>,
+  el conforme a la ley, las buenas costumbres y el orden público; para
+  <strong>ALESSANDRI</strong>, sinónimo de comerciable; para
+  <strong>VELASCO LETELIER</strong>, el que cumple las cualidades del art.
+  1461, agregando que solo los arts. 1445, 1468 y 1682 le dan su sentido
+  real, y que en los arts. 1462, 1464 y 1466 el legislador lo usa
+  impropiamente). El manual introduce el objeto ilícito con una sola
+  frase genérica ("buena parte de la doctrina entiende..."), sin este
+  debate de autores.
+
+Fuera de este punto, sin más hallazgos: los debates de objeto ilícito
+propios de la fuente principal (inexistencia vs. nulidad absoluta en
+cosas incomerciables, sentido estricto vs. amplio de "enajenación") están
+bien representados con ambas posturas.
 
 ### 6. Coherencia estructural
 Sin hallazgos. Numeración fiel a la fuente en ambos ejes (1/2/2.1/2.2/3
