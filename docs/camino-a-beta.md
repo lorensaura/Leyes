@@ -53,33 +53,43 @@ tablas de uso (`memorice_intentos`, `flashcard_progreso`,
 
 ## Pendiente
 
-**Contenido generado, sin publicar todavía (el bloque más grande):**
-Gran parte de la pasada de REC/REX/REP de agosto quedó creada en
-Airtable/Supabase pero sin marcar `publicado`, a la espera de que Laura la
-revise. Detalle completo, ítem por ítem, en `docs/historial-2026-08.md`.
-Dos correcciones puntuales que necesitan decisión de Laura antes de
-publicar:
-- `rc-just-028` (ya publicado) y `rc-just-032` (nuevo): el manual de
-  Contractual se contradice a sí mismo sobre si CLARO SOLAR o ABELIUK
-  defiende "ausencia de culpa basta como eximente" (dos pasajes opuestos
-  del mismo manual). Laura tiene que decidir cuál atribución es la
-  correcta y corregir el manual antes de publicar cualquiera de los dos.
-- `hist-pre-mc-015` (Precontractual): sin eje asignado, genuinamente
-  partido entre el eje B y el J (detalle en
-  `docs/fase0_rep_clasificacion_2026-07-31.md`).
+**Contenido generado, sin publicar todavía (verificado en vivo contra
+Airtable/Supabase el 2026-08-13, no solo este doc):** de ~950 registros
+entre las 3 materias, **68 (≈7%)** siguen con `publicado=false` o en
+estado "Revisar/Verificar" en Airtable (19 Flashcards Contractual, 16
+Preguntas_Evaluacion Extracontractual, y el resto repartido entre
+Aplicación/Detección de error/Justificación/Discriminación MC de las 3
+materias). El resto ya está publicado y sincronizado en Supabase.
+Confirmado con Laura (2026-08-13): esos 66 siguen genuinamente
+pendientes de que ella los revise, no es que falte solo correr el sync.
+Dos ítems puntuales necesitan decisión de Laura antes de publicar:
+- `rc-just-028` (excluido de Supabase hoy pese a estar `publicado=true`,
+  por su `Revision_status="Revisar"`) y `rc-just-032` (nuevo, sin
+  publicar): el manual de Contractual se contradice a sí mismo sobre si
+  CLARO SOLAR o ABELIUK defiende "ausencia de culpa basta como eximente"
+  (línea ~1117 dice una cosa, línea ~1618-1626 la contraria, en
+  `01_Responsabilidad_Contractual_Manual.html`). Laura va a revisar cuál
+  atribución es la correcta (2026-08-13, todavía sin resolver).
+- `hist-pre-mc-015` (Precontractual): contenido ya revisado y publicado
+  (`Revision_status="Verificado"`), solo le falta el eje/tema asignado,
+  genuinamente partido entre el eje B y el J (detalle en
+  `docs/fase0_rep_clasificacion_2026-07-31.md`). No bloquea nada.
 
 **Manuales:**
-- ~~Extracontractual (REX) quedó con un formato más denso que
-  Contractual/Precontractual~~ **Hecho 2026-08-12**: reformateados los 25
-  ejes de REX al mismo estándar de `docs/script_apuntes.md` (párrafos
-  cortos, recuadros `.callout`/`.enum-i`/`.enum-a` agregados, jurisprudencia
-  repetida agrupada). Verificado sin pérdida de contenido eje por eje
-  (script de anclas + diff de texto). Detalle en
-  `docs/notas_reformato_rex.md`. **Sigue pendiente de revisión de Laura**,
-  como todo el contenido jurídico de los manuales.
+- Los 25 ejes de REX reformateados (2026-08-12) siguen **pendientes de
+  revisión de Laura**, como todo el contenido jurídico de los manuales.
+  Detalle de qué se agregó en cada eje en `docs/notas_reformato_rex.md`.
 - Índice de los 3 manuales publicados: falta que liste también los
   subtemas de nivel 2 (`h3`, "N.M"), no solo los ejes. Pedido de Laura,
-  2026-07-31.
+  2026-07-31. **2026-08-13: hecho en Extracontractual** (índice anidado
+  letra/número/sub-número, ver `docs/pdf.md`); **falta todavía en
+  Contractual y Precontractual** (mismo patrón, se puede repetir el mismo
+  proceso). De paso se encontró y corrigió en REX un bug de página en
+  blanco en el PDF (doble salto de página entre índice y materia) que
+  **sigue presente en los otros 2 manuales** (`01_...Contractual...html` y
+  `03_...Precontractual...html` tienen la misma regla
+  `.toc{page-break-after:always}` que lo causa) — corregir junto con el
+  índice anidado cuando se retome.
 - Checkpoints de comprensión lectora del manual de Precontractual
   (preguntas/keywords en `app/manuales.html`): son borrador de Claude, sin
   la revisión de Laura todavía.
@@ -102,13 +112,43 @@ publicar:
   El resto de las materias nuevas (Bienes, etc.) puede seguir el mismo
   camino sin más cambios de código, solo cargar su contenido y sacarles el
   `disabled` en `MATERIAS_CIVIL`.
+- **2026-08-12: manual de Acto Jurídico (`04_Acto_Juridico_Manual.html`)
+  terminado y su PDF generado** (`app/pdf/Acto_Juridico.pdf`, 21 ejes A-U,
+  ~40.500 palabras), a partir del libro completo de Boetsch más 3 fuentes
+  secundarias (Bozzo e Ibarra, Causa Domínguez y Boetsch, cuadro
+  comparativo de ineficacia). Verificado (tags, densidad, sin guiones
+  largos, sin ids duplicados) y **pendiente de revisión de Laura**. Todavía
+  **no está enlazado en `app/manuales.html`**: falta agregarle su objeto
+  `civil_N` (título, `sourceFile`, `pdfFile`, `cpInsertBefore` por eje, y
+  los checkpoints de comprensión lectora con keywords, uno por eje, al
+  estilo de los otros 3 manuales) una vez que Laura dé el visto bueno al
+  contenido.
 
 **Producto / app:**
-- No existe una tabla que guarde **todos** los intentos de
-  Evaluación/Alternativas por alumna (solo Memorice y Flashcards la
-  tienen). Por eso el dashboard muestra "sin datos" en vez de "preguntas
-  respondidas" / "% acierto hoy", y la "racha" sigue mockeada. Laura
-  decidió posponerlo, retomar cuando lo pida.
+- **2026-08-13/14: tabla `practica_intentos` creada y corrida en
+  Supabase por Laura**, mismo patrón que `memorice_intentos`: un
+  registro por cada intento de Evaluación/Alternativas, log de solo
+  inserción. Conectada en `app/alternativas.html`
+  (`registrarIntentoPractica`, junto a `registrarError` en los 3 puntos
+  donde se resuelve una pregunta).
+- **2026-08-14: dashboard conectado a datos reales**
+  (`app/dashboard.html`, función `cargarStatsDashboard`). Lee
+  `practica_intentos` + `memorice_intentos` + `flashcard_progreso` y
+  muestra dos tarjetas nuevas cuando hay actividad histórica: "% de
+  acierto hoy" (promedio ponderado de los 4 modelos, huso de Chile) y
+  "racha" (días consecutivos con al menos un intento en cualquier
+  modelo, definición acordada con Laura). Reemplaza el placeholder "sin
+  datos" y la racha mockeada (antes fija en 5) cuando corresponde.
+  **Limitación conocida:** `flashcard_progreso` es upsert por tarjeta
+  (guarda solo la última revisión, no un historial completo), así que
+  puede subestimar días viejos de racha si las mismas tarjetas se
+  repasaron varias veces sin tocar tarjetas nuevas. Verificado en
+  Chrome headless (Supabase bloqueado e interceptado vía CDP, 3
+  escenarios: con actividad hoy y racha de 3 días, sin actividad nunca,
+  y con racha viva pero sin intentos hoy): los 3 dan los números y la
+  visibilidad de tarjetas esperados, cero excepciones de JS. Falta
+  todavía la verificación visual real con una alumna beta (colores,
+  layout en mobile).
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
