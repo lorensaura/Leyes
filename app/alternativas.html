@@ -1212,12 +1212,15 @@ const bancoTransversal = [
         const desde = new Date(Date.now() - 60 * 86400000).toISOString();
         const [practica, memorice, flashcards] = await Promise.all([
           sb.from('practica_intentos').select('creado_en').eq('user_id', usuarioId).gte('creado_en', desde),
-          sb.from('memorice_intentos').select('creado_en').eq('user_id', usuarioId).gte('creado_en', desde),
+          sb.from('memorice_intentos').select('creado_en, abandono').eq('user_id', usuarioId).gte('creado_en', desde),
           sb.from('flashcard_progreso').select('ultima_revision').eq('user_id', usuarioId).gte('ultima_revision', desde),
         ]);
         const fechasActividad = new Set();
         (practica.data || []).forEach(r => fechasActividad.add(fechaSantiago(r.creado_en)));
-        (memorice.data || []).forEach(r => fechasActividad.add(fechaSantiago(r.creado_en)));
+        // Una sesión de Memorice abandonada a medias (cerró la pestaña sin
+        // terminar) no cuenta como "día con actividad" -- mismo criterio que
+        // app/dashboard.html.
+        (memorice.data || []).forEach(r => { if (!r.abandono) fechasActividad.add(fechaSantiago(r.creado_en)); });
         (flashcards.data || []).forEach(r => fechasActividad.add(fechaSantiago(r.ultima_revision)));
         rachaReal = calcularRacha(fechasActividad);
       } catch (e) {
