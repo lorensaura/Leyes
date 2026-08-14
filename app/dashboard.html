@@ -91,7 +91,7 @@
     /* ── STATS CARDS ── */
     .stats-grid {
       display: grid;
-      grid-template-columns: minmax(180px, 260px) 1fr;
+      grid-template-columns: minmax(180px, 260px) repeat(auto-fit, minmax(160px, 1fr));
       gap: 1.25rem;
       margin-bottom: 2.5rem;
     }
@@ -529,7 +529,17 @@
         <div class="stat-card-num" id="days-count">0</div>
         <div class="stat-card-label">días en Digesto</div>
       </div>
-      <div class="stat-empty-card">
+      <div class="stat-card" id="acierto-card" style="display:none;">
+        <div class="stat-card-icon">🎯</div>
+        <div class="stat-card-num" id="acierto-hoy-num">0%</div>
+        <div class="stat-card-label" id="acierto-hoy-label">de acierto hoy</div>
+      </div>
+      <div class="stat-card" id="racha-card" style="display:none;">
+        <div class="stat-card-icon">🔥</div>
+        <div class="stat-card-num" id="racha-num">0</div>
+        <div class="stat-card-label">días seguidos</div>
+      </div>
+      <div class="stat-empty-card" id="stat-empty-card">
         <div>
           <div class="stat-empty-title">Aún no tienes actividad esta semana</div>
           <div class="stat-empty-desc">Responde tu primera pregunta para ver aciertos, racha y posición en la liga.</div>
@@ -704,6 +714,112 @@
       const created = new Date(user.created_at);
       const days = Math.floor((Date.now() - created) / 86400000);
       document.getElementById('days-count').textContent = days || 1;
+
+      cargarStatsDashboard(user.id);
+    }
+
+    // ══════════════════════════════════════════════════════════════════
+    // % de acierto hoy + racha, combinando los 4 modelos de Práctica.
+    // Racha = días consecutivos (huso de Chile) con al menos un intento en
+    // practica_intentos, memorice_intentos o flashcard_progreso. Este
+    // último es upsert por tarjeta (no guarda cada intento, solo el
+    // último), así que subestima días viejos si una misma tarjeta se
+    // repasó varias veces -- limitación conocida, aceptable para la racha.
+    // ══════════════════════════════════════════════════════════════════
+    const SANTIAGO_TZ = 'America/Santiago';
+
+    function fechaSantiago(fechaOrigen) {
+      return new Date(fechaOrigen).toLocaleDateString('en-CA', { timeZone: SANTIAGO_TZ });
+    }
+
+    function diaAnteriorClave(clave) {
+      // Ancla al mediodía UTC de esa fecha antes de restar un día: evita que
+      // el offset de Chile empuje la fecha al día equivocado.
+      const d = new Date(clave + 'T12:00:00Z');
+      d.setUTCDate(d.getUTCDate() - 1);
+      return fechaSantiago(d);
+    }
+
+    function calcularRacha(fechasActividad) {
+      const hoy = fechaSantiago(new Date());
+      let clave = fechasActividad.has(hoy) ? hoy : diaAnteriorClave(hoy);
+      let racha = 0;
+      while (fechasActividad.has(clave)) {
+        racha++;
+        clave = diaAnteriorClave(clave);
+      }
+      return racha;
+    }
+
+    async function cargarStatsDashboard(userId) {
+      try {
+        const desde = new Date(Date.now() - 60 * 86400000).toISOString();
+        const [practica, memorice, flashcards] = await Promise.all([
+          sb.from('practica_intentos').select('resultado, credito, creado_en').eq('user_id', userId).gte('creado_en', desde),
+          sb.from('memorice_intentos').select('resultado, abandono, creado_en').eq('user_id', userId).gte('creado_en', desde),
+          sb.from('flashcard_progreso').select('calificacion, ultima_revision').eq('user_id', userId).gte('ultima_revision', desde),
+        ]);
+
+        const hoy = fechaSantiago(new Date());
+        const fechasActividad = new Set();
+        let sumaCreditoHoy = 0, countHoy = 0;
+
+        (practica.data || []).forEach(r => {
+          const dia = fechaSantiago(r.creado_en);
+          fechasActividad.add(dia);
+          if (dia === hoy) { sumaCreditoHoy += Number(r.credito) || 0; countHoy++; }
+        });
+
+        (memorice.data || []).forEach(r => {
+          if (r.abandono) return;
+          const dia = fechaSantiago(r.creado_en);
+          fechasActividad.add(dia);
+          if (dia === hoy) {
+            sumaCreditoHoy += r.resultado === 'correcto' ? 1 : r.resultado === 'parcial' ? 0.5 : 0;
+            countHoy++;
+          }
+        });
+
+        (flashcards.data || []).forEach(r => {
+          const dia = fechaSantiago(r.ultima_revision);
+          fechasActividad.add(dia);
+          if (dia === hoy) {
+            sumaCreditoHoy += r.calificacion === 'bien' ? 1 : r.calificacion === 'mas_o_menos' ? 0.5 : 0;
+            countHoy++;
+          }
+        });
+
+        const aciertoPct = countHoy > 0 ? Math.round((sumaCreditoHoy / countHoy) * 100) : null;
+        const racha = calcularRacha(fechasActividad);
+
+        renderStatsDashboard({ aciertoPct, racha, tieneActividad: fechasActividad.size > 0 });
+      } catch (e) {
+        // La instrumentación nunca debe romper el dashboard: si falla,
+        // se queda en el estado "sin datos" de siempre.
+      }
+    }
+
+    function renderStatsDashboard({ aciertoPct, racha, tieneActividad }) {
+      const empty = document.getElementById('stat-empty-card');
+      const acCard = document.getElementById('acierto-card');
+      const raCard = document.getElementById('racha-card');
+      if (!tieneActividad) return; // deja el placeholder "aún no tienes actividad"
+
+      empty.style.display = 'none';
+      acCard.style.display = '';
+      raCard.style.display = '';
+
+      const num = document.getElementById('acierto-hoy-num');
+      const label = document.getElementById('acierto-hoy-label');
+      if (aciertoPct === null) {
+        num.textContent = '-';
+        label.textContent = 'sin intentos hoy';
+      } else {
+        num.textContent = aciertoPct + '%';
+        label.textContent = 'de acierto hoy';
+      }
+
+      document.getElementById('racha-num').textContent = racha;
     }
 
     async function handleLogout() {
