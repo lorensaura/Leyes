@@ -1212,11 +1212,11 @@ const bancoTransversal = [
       const opts = options.map(o => {
         if (o.disabled) return `<div class="filtro-dd-opt disabled" title="Próximamente">${escaparHtmlBase(o.label)}</div>`;
         const idJs = escaparAtributoHtml(escaparParaJsString(o.id));
-        return `<div class="filtro-dd-opt${o.id === current ? ' active' : ''}" onclick="${onSelectFn}('${idJs}')">${escaparHtmlBase(o.label)}</div>`;
+        return `<div class="filtro-dd-opt${o.id === current ? ' active' : ''}" onclick="event.stopPropagation(); ${onSelectFn}('${idJs}')">${escaparHtmlBase(o.label)}</div>`;
       }).join('');
       return `<div class="filtro-dd">
         <label class="filtro-dd-label">${labelTxt}</label>
-        <button type="button" class="filtro-dd-btn" onclick="toggleDropdown('${key}')">${escaparHtmlBase(currentLabel)}<span>▾</span></button>
+        <button type="button" class="filtro-dd-btn" onclick="event.stopPropagation(); toggleDropdown('${key}')">${escaparHtmlBase(currentLabel)}<span>▾</span></button>
         ${open ? `<div class="filtro-dd-menu">${opts}</div>` : ''}
         ${extraHtml || ''}
       </div>`;
