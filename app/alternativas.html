@@ -86,27 +86,22 @@
       display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
       text-transform: uppercase; color: var(--d-muted); margin-bottom: 0.4rem;
     }
-    .filtro-dd-btn {
-      width: 100%; height: 40px; padding: 0.4rem 0.75rem;
+    /* <select> nativo en vez de un menú propio: el picker de iOS/Android es
+       quien maneja abrir/cerrar y el toque de cada opción, así que nunca
+       puede fallar por un bug nuestro de eventos. Solo se estiliza el
+       control cerrado (appearance:none + flecha propia); la lista abierta
+       la dibuja el sistema operativo, no se puede igualar al diseño de acá. */
+    .filtro-dd-select {
+      width: 100%; height: 40px; padding: 0.4rem 2.2rem 0.4rem 0.75rem;
       font: inherit; font-size: 0.85rem; font-family: 'Inter', sans-serif;
-      background: var(--d-card); border: 1px solid var(--d-divider); color: var(--d-text);
-      border-radius: 10px; text-align: left;
-      display: flex; align-items: center; justify-content: space-between; cursor: pointer;
+      background: var(--d-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%237A6E5F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 0.85rem center;
+      background-size: 10px 6px;
+      border: 1px solid var(--d-divider); color: var(--d-text);
+      border-radius: 10px; cursor: pointer;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
     }
-    .filtro-dd-btn:hover { border-color: var(--d-accent); }
-    .filtro-dd-menu {
-      position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
-      background: var(--d-card); border: 1px solid var(--d-divider); border-radius: 10px;
-      margin-top: 0.25rem; box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-      max-height: 240px; overflow-y: auto;
-    }
-    .filtro-dd-opt {
-      padding: 0.7rem 0.9rem; font-size: 0.85rem; cursor: pointer; color: var(--d-text);
-    }
-    .filtro-dd-opt:hover { background: rgba(17,17,17,0.04); }
-    .filtro-dd-opt.active { background: var(--d-accent-tint); color: var(--d-accent); font-weight: 600; }
-    .filtro-dd-opt.disabled { opacity: 0.4; cursor: default; }
-    .filtro-dd-opt.disabled:hover { background: none; }
+    .filtro-dd-select:hover { border-color: var(--d-accent); }
+    .filtro-dd-select:disabled { opacity: 0.5; cursor: default; }
     .subtema-toggle {
       background: none; border: none; padding: 0; margin-top: 0.4rem;
       font-size: 0.75rem; color: var(--d-accent); cursor: pointer; font-family: 'Inter', sans-serif;
@@ -770,7 +765,7 @@
       }
 
       .ejes-grid { grid-template-columns: 1fr; }
-      .filtro-dd-btn { height: 48px; }
+      .filtro-dd-select { height: 48px; }
       .btn-row .btn { width: 100%; }
       .btn-row .enter-hint { width: 100%; text-align: center; order: 3; }
     }
@@ -1135,7 +1130,6 @@ const bancoTransversal = [
     let areaActiva = 'todas'; // dentro de Responsabilidad: precontractual/contractual/extracontractual
     let modeloActivo = 'evaluacion';
     let subtipoActivo = 'todos';
-    let openDropdown = null; // 'materia' | 'area' | 'modelo' | 'subtipo' | 'metodo' | null — un solo dropdown abierto a la vez
     let subtemaAbierto = false; // fila de chips de subtema (Alternativas/Memorice), colapsada por defecto
 
     // Contenido cargado desde Supabase (Evaluación, Alternativas, Memorice, Flashcards)
@@ -1185,12 +1179,52 @@ const bancoTransversal = [
       { id: 'B', label: 'Método B (cláusulas)' },
     ];
 
-    // MOCK: valores fijos pendientes de conectar a datos reales de progreso
-    // (racha de sesiones seguidas, % de cobertura de la materia activa). Ver
-    // handoff de diseño del rediseño de Práctica. El conteo de "Repaso de
-    // errores" (antes acá, mock) ya se conecta a datos reales de
-    // practica_errores -- ver actualizarBadgeErrores().
-    const MOCK_STATS = { streak: 5, coveragePct: 18 };
+    // La racha (streak) ya es real, ver cargarRacha() más abajo. coveragePct
+    // (% de cobertura de la materia activa) sigue MOCK, pendiente de
+    // conectar -- no hay todavía una fuente de datos para "cuánto cubrí de
+    // la materia". El conteo de "Repaso de errores" (antes acá, mock) ya se
+    // conecta a datos reales de practica_errores -- ver actualizarBadgeErrores().
+    const MOCK_STATS = { coveragePct: 18 };
+    let rachaReal = null; // null = todavía no cargó
+
+    function fechaSantiago(fechaOrigen) {
+      return new Date(fechaOrigen).toLocaleDateString('en-CA', { timeZone: 'America/Santiago' });
+    }
+    function diaAnteriorClave(clave) {
+      const d = new Date(clave + 'T12:00:00Z');
+      d.setUTCDate(d.getUTCDate() - 1);
+      return fechaSantiago(d);
+    }
+    function calcularRacha(fechasActividad) {
+      const hoy = fechaSantiago(new Date());
+      let clave = fechasActividad.has(hoy) ? hoy : diaAnteriorClave(hoy);
+      let racha = 0;
+      while (fechasActividad.has(clave)) { racha++; clave = diaAnteriorClave(clave); }
+      return racha;
+    }
+
+    // Racha real = días consecutivos (huso Chile) con al menos un intento en
+    // cualquiera de los 4 modelos. Mismo cálculo que app/dashboard.html
+    // (cargarStatsDashboard), duplicado acá porque el proyecto no comparte
+    // JS entre páginas.
+    async function cargarRacha() {
+      try {
+        const desde = new Date(Date.now() - 60 * 86400000).toISOString();
+        const [practica, memorice, flashcards] = await Promise.all([
+          sb.from('practica_intentos').select('creado_en').eq('user_id', usuarioId).gte('creado_en', desde),
+          sb.from('memorice_intentos').select('creado_en').eq('user_id', usuarioId).gte('creado_en', desde),
+          sb.from('flashcard_progreso').select('ultima_revision').eq('user_id', usuarioId).gte('ultima_revision', desde),
+        ]);
+        const fechasActividad = new Set();
+        (practica.data || []).forEach(r => fechasActividad.add(fechaSantiago(r.creado_en)));
+        (memorice.data || []).forEach(r => fechasActividad.add(fechaSantiago(r.creado_en)));
+        (flashcards.data || []).forEach(r => fechasActividad.add(fechaSantiago(r.ultima_revision)));
+        rachaReal = calcularRacha(fechasActividad);
+      } catch (e) {
+        rachaReal = 0; // la instrumentación nunca debe bloquear el estudio
+      }
+      renderStatusRow();
+    }
 
     function subtemasDisponibles(items) {
       const set = new Set();
@@ -1203,32 +1237,28 @@ const bancoTransversal = [
     // ══════════════════════════════════════════════════════════════════
     function escaparParaJsString(s) { return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
 
-    // Pinta un dropdown custom: botón con el valor actual + lista de opciones
-    // absoluta (solo un dropdown abierto a la vez, vía openDropdown/toggleDropdown).
+    // <select> nativo por cada filtro. Antes era un menú propio (botón +
+    // lista absoluta con onclick por opción); en iPhone Safari el menú se
+    // abría pero tocar una opción no la registraba (se cerraba solo), sin
+    // poder reproducirlo en simulador para arreglarlo a ciegas. El picker
+    // nativo lo maneja el sistema operativo, así que ese bug de raíz deja
+    // de ser posible (2026-08-14).
     function ddCell(key, labelTxt, options, current, onSelectFn, extraHtml) {
-      const open = openDropdown === key;
-      const currentOpt = options.find(o => o.id === current);
-      const currentLabel = currentOpt ? currentOpt.label : current;
       const opts = options.map(o => {
-        if (o.disabled) return `<div class="filtro-dd-opt disabled" title="Próximamente">${escaparHtmlBase(o.label)}</div>`;
-        const idJs = escaparAtributoHtml(escaparParaJsString(o.id));
-        return `<div class="filtro-dd-opt${o.id === current ? ' active' : ''}" onclick="event.stopPropagation(); ${onSelectFn}('${idJs}')">${escaparHtmlBase(o.label)}</div>`;
+        const idAttr = escaparAtributoHtml(o.id);
+        const selected = o.id === current ? ' selected' : '';
+        const disabled = o.disabled ? ' disabled' : '';
+        const label = o.disabled ? `${o.label} (Próximamente)` : o.label;
+        return `<option value="${idAttr}"${selected}${disabled}>${escaparHtmlBase(label)}</option>`;
       }).join('');
       return `<div class="filtro-dd">
-        <label class="filtro-dd-label">${labelTxt}</label>
-        <button type="button" class="filtro-dd-btn" onclick="event.stopPropagation(); toggleDropdown('${key}')">${escaparHtmlBase(currentLabel)}<span>▾</span></button>
-        ${open ? `<div class="filtro-dd-menu">${opts}</div>` : ''}
+        <label class="filtro-dd-label" for="dd-${key}">${labelTxt}</label>
+        <select id="dd-${key}" class="filtro-dd-select" onchange="${onSelectFn}(this.value)">${opts}</select>
         ${extraHtml || ''}
       </div>`;
     }
 
-    function toggleDropdown(key) { openDropdown = (openDropdown === key) ? null : key; renderFiltros(); }
     function toggleSubtemaRow() { subtemaAbierto = !subtemaAbierto; renderFiltros(); }
-
-    // Cierra cualquier dropdown abierto al hacer clic afuera de él.
-    document.addEventListener('click', e => {
-      if (openDropdown && !e.target.closest('.filtro-dd')) { openDropdown = null; renderFiltros(); }
-    });
 
     // Subtemas de Alternativas/Memorice: no son una lista fija (a diferencia de
     // los 4 subtipos de Evaluación), vienen de los datos ya cargados. Se
@@ -1291,18 +1321,19 @@ const bancoTransversal = [
     }
 
     function renderStatusRow() {
+      const streakTxt = rachaReal === null ? '…' : rachaReal;
       document.getElementById('status-row').innerHTML = `
-        <div class="status-streak">🔥 ${MOCK_STATS.streak} seguidas</div>
+        <div class="status-streak">🔥 ${streakTxt} seguidas</div>
         <div class="status-bar-bg"><div class="status-bar-fill" style="width:${MOCK_STATS.coveragePct}%"></div></div>
         <div class="status-pct">${MOCK_STATS.coveragePct}% de la materia</div>
       `;
     }
 
-    function setRama(r) { ramaActiva = r; materiaActiva = 'todas'; areaActiva = 'todas'; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
-    function setMateria(m) { materiaActiva = m; areaActiva = 'todas'; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
-    function setArea(a) { areaActiva = a; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
-    function setModelo(m) { modeloActivo = m; subtipoActivo = 'todos'; openDropdown = null; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
-    function setSubtipo(s) { subtipoActivo = s; openDropdown = null; renderFiltros(); iniciarSesion(); }
+    function setRama(r) { ramaActiva = r; materiaActiva = 'todas'; areaActiva = 'todas'; subtipoActivo = 'todos'; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setMateria(m) { materiaActiva = m; areaActiva = 'todas'; subtipoActivo = 'todos'; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setArea(a) { areaActiva = a; subtipoActivo = 'todos'; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setModelo(m) { modeloActivo = m; subtipoActivo = 'todos'; subtemaAbierto = false; renderFiltros(); iniciarSesion(); }
+    function setSubtipo(s) { subtipoActivo = s; renderFiltros(); iniciarSesion(); }
 
     function iniciarSesion() {
       if (modeloActivo === 'evaluacion') iniciarEvaluacion();
@@ -2066,7 +2097,6 @@ const bancoTransversal = [
       metodoMemorice = m;
       localStorage.setItem('digesto_metodo_memorice', m);
       registrarAbandonoPendiente();
-      openDropdown = null;
       renderFiltros();
       iniciarMemoriceModelo();
     }
@@ -2451,6 +2481,7 @@ const bancoTransversal = [
 
       renderFiltros();
       renderStatusRow();
+      cargarRacha(); // async, repinta el status-row apenas tenga el dato real
       iniciarSesion();
     }
 
