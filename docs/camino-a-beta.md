@@ -117,18 +117,30 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   contenido.
 
 **Producto / app:**
-- **2026-08-13: tabla `practica_intentos` creada** (código, falta que
-  Laura la corra), mismo patrón que `memorice_intentos`: un registro por
-  cada intento de Evaluación/Alternativas, log de solo inserción.
-  `scripts/supabase_schema_practica_intentos.sql` listo para pegar en el
-  SQL Editor de Supabase. Ya conectada en `app/alternativas.html`
-  (`registrarIntentoPractica`, llamada junto a `registrarError` en los 3
-  puntos donde se resuelve una pregunta: Evaluación libre, Evaluación
-  discriminación MC, Alternativas) -- en cuanto Laura corra el script en
-  Supabase, empieza a llenarse sola. **Falta todavía:** conectar el
-  dashboard para que lea de esta tabla en vez de mostrar "sin datos"
-  (racha sigue mockeada). Laura decidió posponer esa parte, retomar
-  cuando lo pida.
+- **2026-08-13/14: tabla `practica_intentos` creada y corrida en
+  Supabase por Laura**, mismo patrón que `memorice_intentos`: un
+  registro por cada intento de Evaluación/Alternativas, log de solo
+  inserción. Conectada en `app/alternativas.html`
+  (`registrarIntentoPractica`, junto a `registrarError` en los 3 puntos
+  donde se resuelve una pregunta).
+- **2026-08-14: dashboard conectado a datos reales**
+  (`app/dashboard.html`, función `cargarStatsDashboard`). Lee
+  `practica_intentos` + `memorice_intentos` + `flashcard_progreso` y
+  muestra dos tarjetas nuevas cuando hay actividad histórica: "% de
+  acierto hoy" (promedio ponderado de los 4 modelos, huso de Chile) y
+  "racha" (días consecutivos con al menos un intento en cualquier
+  modelo, definición acordada con Laura). Reemplaza el placeholder "sin
+  datos" y la racha mockeada (antes fija en 5) cuando corresponde.
+  **Limitación conocida:** `flashcard_progreso` es upsert por tarjeta
+  (guarda solo la última revisión, no un historial completo), así que
+  puede subestimar días viejos de racha si las mismas tarjetas se
+  repasaron varias veces sin tocar tarjetas nuevas. Verificado en
+  Chrome headless (Supabase bloqueado e interceptado vía CDP, 3
+  escenarios: con actividad hoy y racha de 3 días, sin actividad nunca,
+  y con racha viva pero sin intentos hoy): los 3 dan los números y la
+  visibilidad de tarjetas esperados, cero excepciones de JS. Falta
+  todavía la verificación visual real con una alumna beta (colores,
+  layout en mobile).
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
