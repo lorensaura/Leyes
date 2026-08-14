@@ -149,24 +149,24 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   visibilidad de tarjetas esperados, cero excepciones de JS. Falta
   todavía la verificación visual real con una alumna beta (colores,
   layout en mobile).
-- **2026-08-14: reportado por Laura (dropdown "Modelo" de Práctica
-  atascado en Evaluación en iPhone Safari), dos arreglos fallidos, tercer
-  intento con enfoque distinto, falta que Laura lo confirme en su
-  iPhone.** Primer intento (`stopPropagation` sobre el menú custom) no
-  resolvió nada, Laura confirmó que seguía sin funcionar. En vez de
-  seguir parcheando a ciegas un bug no reproducible en simulador, se
-  reemplazó el menú propio (botón + lista absoluta) de Materia/Modelo/
-  Subtipo/Área/Método por un `<select>` nativo por filtro (función
-  `ddCell` en `app/alternativas.html`): el picker de iOS/Android pasa a
-  manejar abrir/cerrar y el toque de cada opción, así que ese bug de raíz
-  deja de ser posible. El control cerrado mantiene el mismo diseño (box y
-  flecha) vía `appearance:none`; la lista abierta la dibuja el sistema
-  operativo, no se puede igualar al diseño anterior. De paso se conectó
-  la racha real ("N seguidas") del status-row de Práctica, que Laura
-  también notó mockeada en 5 pese a ya existir la lógica real (construida
-  el mismo día para `app/dashboard.html`, mismo cálculo duplicado acá).
-  Verificado en Chrome headless. Falta confirmación de Laura en su
-  iPhone real.
+- **2026-08-14: dropdown "Modelo" de Práctica en iPhone Safari,
+  resuelto y confirmado por Laura.** Dos arreglos fallidos
+  (`stopPropagation` sobre el menú custom) antes de reemplazar el menú
+  propio de Materia/Modelo/Subtipo/Área/Método por un `<select>` nativo
+  por filtro (función `ddCell` en `app/alternativas.html`): el picker de
+  iOS/Android maneja abrir/cerrar y el toque de cada opción, ese bug de
+  raíz deja de ser posible. El control cerrado mantiene el mismo diseño
+  (box y flecha) vía `appearance:none`; la lista abierta la dibuja el
+  sistema operativo. **Laura confirmó que ya funciona en su iPhone.**
+- **2026-08-14: racha de Práctica corregida (bug real, no de UX).** Al
+  conectar la racha real del status-row de Práctica (antes mockeada en
+  5) se duplicó la lógica de `app/dashboard.html` pero sin el filtro de
+  `abandono` en `memorice_intentos` -- una sesión de Memorice cerrada a
+  medias contaba como "día con actividad". Laura reportó una racha de 2
+  que no se condecía con lo que había hecho; confirmado contra sus
+  datos reales en Supabase (fila del 13-08 con `abandono=true`) y
+  corregido: con el filtro, sus datos dan racha=1, verificado
+  reproduciendo el cálculo con sus filas reales antes de subir el fix.
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
