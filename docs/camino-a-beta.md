@@ -74,7 +74,15 @@ publicar:
   Detalle de qué se agregó en cada eje en `docs/notas_reformato_rex.md`.
 - Índice de los 3 manuales publicados: falta que liste también los
   subtemas de nivel 2 (`h3`, "N.M"), no solo los ejes. Pedido de Laura,
-  2026-07-31.
+  2026-07-31. **2026-08-13: hecho en Extracontractual** (índice anidado
+  letra/número/sub-número, ver `docs/pdf.md`); **falta todavía en
+  Contractual y Precontractual** (mismo patrón, se puede repetir el mismo
+  proceso). De paso se encontró y corrigió en REX un bug de página en
+  blanco en el PDF (doble salto de página entre índice y materia) que
+  **sigue presente en los otros 2 manuales** (`01_...Contractual...html` y
+  `03_...Precontractual...html` tienen la misma regla
+  `.toc{page-break-after:always}` que lo causa) — corregir junto con el
+  índice anidado cuando se retome.
 - Checkpoints de comprensión lectora del manual de Precontractual
   (preguntas/keywords en `app/manuales.html`): son borrador de Claude, sin
   la revisión de Laura todavía.
