@@ -149,6 +149,18 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   visibilidad de tarjetas esperados, cero excepciones de JS. Falta
   todavía la verificación visual real con una alumna beta (colores,
   layout en mobile).
+- **2026-08-14: reportado por Laura, arreglo aplicado, falta que ella lo
+  confirme en su iPhone.** En iPhone Safari, el dropdown "Modelo" de
+  Práctica (`app/alternativas.html`) se abría pero al tocar una opción
+  se cerraba solo sin registrar la elección, dejándola atascada en
+  Evaluación. No reproducible en Chrome headless (mouse y touch
+  simulados en viewport 390x844, el flujo ya funcionaba ahí). Aplicado
+  `event.stopPropagation()` en el botón del dropdown y en cada opción
+  (función `ddCell`), para que el listener de "cerrar al tocar afuera"
+  nunca pueda interferir con la selección, sin depender de que
+  `closest()` acierte sobre un DOM recién re-renderizado (sospecha:
+  WebKit recalculando el target del clic después del re-render). Falta
+  confirmación de Laura en su iPhone real.
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
