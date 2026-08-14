@@ -149,18 +149,24 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   visibilidad de tarjetas esperados, cero excepciones de JS. Falta
   todavía la verificación visual real con una alumna beta (colores,
   layout en mobile).
-- **2026-08-14: reportado por Laura, arreglo aplicado, falta que ella lo
-  confirme en su iPhone.** En iPhone Safari, el dropdown "Modelo" de
-  Práctica (`app/alternativas.html`) se abría pero al tocar una opción
-  se cerraba solo sin registrar la elección, dejándola atascada en
-  Evaluación. No reproducible en Chrome headless (mouse y touch
-  simulados en viewport 390x844, el flujo ya funcionaba ahí). Aplicado
-  `event.stopPropagation()` en el botón del dropdown y en cada opción
-  (función `ddCell`), para que el listener de "cerrar al tocar afuera"
-  nunca pueda interferir con la selección, sin depender de que
-  `closest()` acierte sobre un DOM recién re-renderizado (sospecha:
-  WebKit recalculando el target del clic después del re-render). Falta
-  confirmación de Laura en su iPhone real.
+- **2026-08-14: reportado por Laura (dropdown "Modelo" de Práctica
+  atascado en Evaluación en iPhone Safari), dos arreglos fallidos, tercer
+  intento con enfoque distinto, falta que Laura lo confirme en su
+  iPhone.** Primer intento (`stopPropagation` sobre el menú custom) no
+  resolvió nada, Laura confirmó que seguía sin funcionar. En vez de
+  seguir parcheando a ciegas un bug no reproducible en simulador, se
+  reemplazó el menú propio (botón + lista absoluta) de Materia/Modelo/
+  Subtipo/Área/Método por un `<select>` nativo por filtro (función
+  `ddCell` en `app/alternativas.html`): el picker de iOS/Android pasa a
+  manejar abrir/cerrar y el toque de cada opción, así que ese bug de raíz
+  deja de ser posible. El control cerrado mantiene el mismo diseño (box y
+  flecha) vía `appearance:none`; la lista abierta la dibuja el sistema
+  operativo, no se puede igualar al diseño anterior. De paso se conectó
+  la racha real ("N seguidas") del status-row de Práctica, que Laura
+  también notó mockeada en 5 pese a ya existir la lógica real (construida
+  el mismo día para `app/dashboard.html`, mismo cálculo duplicado acá).
+  Verificado en Chrome headless. Falta confirmación de Laura en su
+  iPhone real.
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
