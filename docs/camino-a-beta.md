@@ -174,8 +174,15 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
 - Correo `admin@digesto.cl`: falta que Laura cree la cuenta de Google
   Workspace (necesita su método de pago); después se agregan los DNS en
   Vercel.
-- Memoria entre sesiones del Interrogador: construida, verificada solo con
-  mocks, **falta correr su SQL en Supabase y mergear la rama a `main`**.
+- Memoria entre sesiones del Interrogador: código fusionado a `main`
+  (commit `4d80743`) y SQL corrido en producción (verificado en vivo
+  2026-08-14: existe `interrogador_memoria`, y `interrogaciones_diarias`
+  ya tiene `materia`/`historial`). El doc decía que faltaba esto, estaba
+  desactualizado. **Lo que sí sigue pendiente**, según
+  `docs/interrogador.md`: probarla con una interrogación real (gasto
+  real) en dos sesiones seguidas de la misma materia, para confirmar que
+  la comisión varía las preguntas y prioriza los temas débiles -- solo
+  verificado con datos simulados hasta ahora.
 - Fusionar a `main` el arreglo de encabezado de los PDF (worktree
   `pdf-header-fix`, ya pusheado): a propósito no fusionado, Laura quiere
   juntar más arreglos de PDF antes de regenerar los 3 de una vez.
