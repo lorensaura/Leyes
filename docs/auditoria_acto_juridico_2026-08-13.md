@@ -23,19 +23,18 @@
 ## Resumen ejecutivo
 
 **Estado de corrección (actualizado 2026-08-14):** los ejes **N
-(Simulación)**, **H (Inexistencia)**, **C (Capacidad)** y **B, secciones
-4-8 (Vicios de la voluntad)** ya fueron corregidos en el HTML del manual
-(`04_Acto_Juridico_Manual.html`), a pedido de Laura y priorizando primero
-los ejes de mayor concentración de jurisprudencia real y luego el de
-mayor volumen de hallazgos. Los 21 hallazgos de esos cuatro ejes/tramos
-(alto/medio/bajo) están cerrados. **El resto de los ejes con hallazgos
-sigue sin corregir**: B (1-3), D, E-G, I (el punto de `sI9`), L-M, O
+(Simulación)**, **H (Inexistencia)**, **C (Capacidad)** y **B completo
+(secciones 1-8, La voluntad y sus vicios)** ya fueron corregidos en el
+HTML del manual (`04_Acto_Juridico_Manual.html`), a pedido de Laura y
+priorizando primero los ejes de mayor concentración de jurisprudencia
+real y luego el de mayor volumen de hallazgos. Los 28 hallazgos de esos
+ejes/tramos (alto/medio/bajo) están cerrados. **El resto de los ejes con
+hallazgos sigue sin corregir**: D, E-G, I (el punto de `sI9`), L-M, O
 (`sO2-1`), P-R, S-U. El PDF del manual (`app/pdf/Acto_Juridico.pdf`,
-generado 2026-08-12) quedó desactualizado respecto de estos cuatro
-ejes/tramos; no se regeneró todavía, a propósito, porque Laura prefiere
-juntar varias correcciones de PDF antes de regenerar los 3 manuales de
-una vez (mismo criterio que ya usa para otros PDF, ver
-`docs/camino-a-beta.md`).
+generado 2026-08-12) quedó desactualizado respecto de estos ejes/tramos;
+no se regeneró todavía, a propósito, porque Laura prefiere juntar varias
+correcciones de PDF antes de regenerar los 3 manuales de una vez (mismo
+criterio que ya usa para otros PDF, ver `docs/camino-a-beta.md`).
 
 **49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
 alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
@@ -45,7 +44,7 @@ manual es, en ese sentido, limpio, no se detectó alucinación.
 | Tanda | Eje(s) | Alto | Medio | Bajo | Total | Estado |
 |---|---|---|---|---|---|---|
 | 1 | A | 0 | 0 | 0 | 0 | (sin hallazgos) |
-| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 | Pendiente |
+| 2 | B (1-3, la voluntad) | 0 | 5 | 2 | 7 | Corregido 2026-08-14 |
 | 3 | B (4-8, vicios) | 0 | 6 | 3 | 9 | Corregido 2026-08-14 |
 | 4 | C, D | 0 | 7 | 2 | 9 | Parcial: C corregido, D pendiente |
 | 5 | E, F, G | 0 | 4 | 3 | 7 | Pendiente |
@@ -55,7 +54,7 @@ manual es, en ese sentido, limpio, no se detectó alucinación.
 | 9 | P, Q, R | 0 | 4 | 1 | 5 | Pendiente |
 | 10 | S, T, U | 0 | 1 | 0 | 1 | Pendiente |
 | 11 | Transversal | 0 | 0 | 0 | 0 | (sin hallazgos) |
-| **Total** | | **1** | **33** | **15** | **49** | 21 corregidos, 28 pendientes |
+| **Total** | | **1** | **33** | **15** | **49** | 28 corregidos, 21 pendientes |
 
 **El único hallazgo de prioridad alta** era la ausencia de dos fallos
 reales (RDJ 1936 y RDJ 1991) que respaldan directamente la tesis central
@@ -103,12 +102,12 @@ inicio del eje S (tanda 9-10).
 
 ### Qué sigue
 La fase 2 (corrección del HTML) sigue en curso: los ejes N, H y C
-(2026-08-13) y el eje B, secciones 4-8 (2026-08-14), están corregidos.
-Falta que Laura revise estas correcciones y decida si sigue con el resto
-por tandas similares. Los siguientes candidatos naturales por volumen de
-hallazgos son el eje B (secciones 1-3, 7 hallazgos), el eje D (Objeto,
-dentro de la tanda 4) y el eje P (Fraude a la ley). El PDF del manual
-sigue sin regenerar a propósito (ver "Estado de corrección" arriba).
+(2026-08-13) y el eje B completo, secciones 1-8 (2026-08-14), están
+corregidos. Falta que Laura revise estas correcciones y decida si sigue
+con el resto por tandas similares. Los siguientes candidatos naturales
+por volumen de hallazgos son el eje D (Objeto, dentro de la tanda 4) y el
+eje P (Fraude a la ley). El PDF del manual sigue sin regenerar a
+propósito (ver "Estado de corrección" arriba).
 
 ---
 
@@ -230,7 +229,8 @@ concentrado casi todo en el tratamiento de la **aceptación** dentro de
 regla de carga de la prueba) y en un vacío puntual de los contratos
 electrónicos (falta la obligación de confirmación escrita). Ningún
 hallazgo de prioridad alta; los de prioridad media son candidatos claros
-para la fase 2.
+para la fase 2. **Los 7 hallazgos de esta tanda ya están corregidos en
+el HTML del manual (2026-08-14).**
 
 ---
 
