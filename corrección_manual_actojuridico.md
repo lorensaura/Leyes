@@ -82,53 +82,36 @@ reciente: `fc3b544`.
 | F | Formalidades | PDF7 | ✅ revisado, ya estaba completo, sin cambios |
 | G | Efectos de los AJ | PDF8 | ✅ revisado, ya estaba completo, sin cambios |
 | H | Inexistencia jurídica | PDF9 | ✅ hecho (commit `fc3b544`): se completaron las listas de jurisprudencia (4→8 fallos que rechazan, 4→10 que acogen la teoría) y dos argumentos que faltaban en 4.2 (art. 464 Nº14 CPC, y que ninguna ley reconoce la inexistencia como sanción autónoma) |
+| I | Nulidad, aspectos generales | PDF10 (B.1) | ✅ hecho (commit `b8149ce`): las tres razones completas de la doctrina que distingue nulidad relativa de rescisión, ejemplo de la nulidad absoluta de pleno derecho, precisión sobre nulidad parcial |
+| J | Nulidad absoluta | PDF10 (B.2) | ✅ hecho (commit `cbc4f82`): art. 1468 (paralelo del conocimiento del vicio), fundamento de la tesis minoritaria sobre el representado (art. 1448), argumentos completos sobre herederos (art. 1685), cómputo del plazo de saneamiento (art. 2514), cita del art. 37 LMC |
+| K | Nulidad relativa | PDF10 (B.3) | ✅ revisado, ya estaba completo, sin cambios propios |
+| L | Efectos de la nulidad | PDF11 (B.4) | ✅ hecho (commit `827fe6b`): crítica de VIAL a la distinción cumplido/no cumplido, extensión de la reivindicatoria a gravámenes, regla de restitución cuando el poseedor enajenó (arts. 898 y 900), prescripción extintiva y de corto tiempo (art. 2524), concordancia art. 2520 inc. 2°, detalle de la incapacidad relativa en la indemnización |
 
-**Nota sobre E, F, G:** no generaron commits porque, tras leer la fuente
-completa y la sección del manual completa, no había ningún argumento,
-ejemplo o excepción faltante. La fidelidad medida (60.6%, 55.7%, 68.0%)
-está deprimida por artefactos del script de medición (ver más arriba), no
-por contenido faltante. Si se retoma la revisión de estos tres ejes en el
-futuro, no hace falta releerlos salvo que se sospeche algo puntual.
+**Nota sobre E, F, G, K:** no generaron cambios de contenido porque, tras
+leer la fuente completa y la sección del manual completa, no había ningún
+argumento, ejemplo o excepción faltante. La fidelidad medida en E, F, G
+(60.6%, 55.7%, 68.0%) está deprimida por artefactos del script de medición
+(ver más arriba), no por contenido faltante. Si se retoma la revisión de
+estos ejes en el futuro, no hace falta releerlos salvo que se sospeche algo
+puntual.
+
+**Nota sobre I, J, K, L:** comparten fuente (PDF10 se solapa con el inicio
+de PDF11: se verificó que PDF11 repite el final de PDF10 antes de
+continuar, sin pérdida de contenido en el empalme). El script de fidelidad
+automático no se usó tramo a tramo en estos cuatro ejes porque el
+denominador no se puede aislar limpiamente por eje; se hizo lectura y
+comparación manual completa en su lugar.
 
 ## Qué falta (por dónde seguir)
 
-Quedé revisando el **eje J (nulidad absoluta)** contra su fuente (PDF10)
-sin encontrar todavía ninguna brecha (llegué a leer hasta la sección 7 del
-manual, "La nulidad absoluta no se produce de pleno derecho", comparado
-contra el texto del PDF10 hasta su línea 858 — el PDF10 se corta ahí mismo,
-en medio de la sección "B.4 Los efectos de la nulidad"). **No hice ningún
-edit ni commit en I, J o K todavía.**
+Los ejes A a L (12 de 21) están terminados. Sigue:
 
-Pendiente, en orden:
-
-1. **Terminar de comparar J (nulidad absoluta)** contra PDF10 — falta
-   confirmar si hay brechas en la sección 4 (declaración de nulidad
-   absoluta, especialmente el sub-punto sobre representantes/herederos que
-   discuten legitimación) y en las secciones 5-7. Por lo leído hasta ahora
-   parece bastante completo, pero no se terminó de verificar.
-2. **Revisar I (nulidad, aspectos generales)** contra PDF10 — ya se leyó
-   completo y **parece ya estar íntegro** (incluye hasta una sección "9. La
-   nulidad refleja" que no viene en el fragmento de PDF10 leído, así que
-   probablemente ya fue enriquecido en una pasada anterior). Confirmar que
-   no falte nada de la sección 1-8 del PDF10 (reglas generales, concepto,
-   especies, terminología, regla general, diferencias, principios, nulidad
-   total/parcial) — de una lectura rápida ya lo tiene todo.
-3. **Revisar K (nulidad relativa)** contra PDF10 (secciones "B.3 La nulidad
-   relativa" del PDF, líneas 541-830 aprox: definición, causales,
-   características, legitimados para alegarla, situación del incapaz que
-   se hizo pasar por capaz, saneamiento por tiempo, ratificación/confirmación
-   con sus clases, características y requisitos). Sin revisar todavía.
-4. **Eje L (efectos de la nulidad)** — fuente PDF11. El final de PDF10 ya
-   empieza a hablar de "B.4 Los efectos de la nulidad" (líneas 832-858);
-   confirmar que ese arranque efectivamente se cubre en la fuente PDF11
-   (que debería continuar desde ahí) y no se duplique ni se pierda contenido
-   en el empalme.
-5. **Eje M (lesión)** — fuente PDF12.
-6. **Eje N (simulación)** — fuente PDF13.
-7. **Eje O (inoponibilidad)** — fuente PDF14.
-8. **Eje P (fraude a la ley)** — fuente PDF15.
-9. **Ejes Q, R (otras causales, representación)** — fuente PDF16.
-10. **Ejes S, T, U (condición, plazo, modo)** — fuente PDF17.
+1. **Eje M (lesión)** — fuente PDF12.
+2. **Eje N (simulación)** — fuente PDF13.
+3. **Eje O (inoponibilidad)** — fuente PDF14.
+4. **Eje P (fraude a la ley)** — fuente PDF15.
+5. **Ejes Q, R (otras causales, representación)** — fuente PDF16.
+6. **Ejes S, T, U (condición, plazo, modo)** — fuente PDF17.
 
 Después de terminar el eje U: **Fase B** (segunda pasada agregando
 argumentos de fuentes secundarias — ver abajo), y luego **regenerar el
@@ -139,13 +122,11 @@ PDF** (ver "Pendientes fuera de esta lista").
 El estado real de las tareas del sistema (`TaskList`) al momento de este
 handoff:
 
-- `#27`-`#34` (ejes A a H): `completed`.
-- `#35` (ejes I, J, K): `in_progress` — retomar desde acá.
-- `#36` a `#42` (L a U): `pending`.
-
-Si al retomar el `TaskList` no coincide con esto (por ejemplo si otra
-sesión avanzó), confiar en el `TaskList` real y en `git log`, no en esta
-tabla congelada.
+Estado desactualizado (era de la sesión anterior). El estado real hoy:
+ejes A-L completos y commiteados (ver tabla arriba y `git log`). Si se usa
+`TaskList` en una sesión nueva, crear tareas para M-U y no confiar en los
+números `#27`-`#42` de una sesión pasada, que no persisten entre sesiones.
+Confiar siempre en `git log` sobre esta tabla congelada.
 
 ## Dónde está el texto fuente ya extraído (no releer los PDF originales)
 
