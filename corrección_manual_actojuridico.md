@@ -24,52 +24,46 @@ por eje)** para no perder precisión. Instrucción textual suya:
 
 Esto define **dos fases**:
 
-- **Fase A (en curso):** recorrer los 21 ejes (A-U) y reescribir cada uno
+- **Fase A (COMPLETA):** recorrer los 21 ejes (A-U) y reescribir cada uno
   lo más cerca posible de la fuente primaria (el libro de Boetsch),
   recuperando argumentos, ejemplos, excepciones y citas de jurisprudencia
   completos que se habían perdido en la compresión original.
-- **Fase B (sin empezar):** una segunda pasada, después de terminar los 21
-  ejes, agregando los argumentos extra de las fuentes secundarias y anexos
-  (ver más abajo). No empezar esta fase hasta que la Fase A esté 100% completa.
+- **Fase B (sin empezar):** una segunda pasada agregando los argumentos
+  extra de las fuentes secundarias y anexos (ver más abajo). Recién ahora
+  puede empezar, porque la Fase A ya terminó.
 
-## Método de trabajo (ritmo ya validado por Laura)
+## Método de trabajo (ritmo ya validado por Laura, para la Fase B)
 
 Al principio se persiguió llegar a un 85% de fidelidad exacto por eje,
 iterando frase por frase. Laura interrumpió ese ritmo ("Cómo vamos? siento
 que llevamos mucho en lo mismo?") porque era demasiado lento. El método
-que ella aprobó y que hay que seguir:
+que ella aprobó y que hay que seguir en la Fase B:
 
-1. Leer el/los PDF fuente completos del eje (texto ya extraído en caché,
-   ver abajo).
+1. Leer el/los PDF fuente completos del eje.
 2. Leer la sección actual del manual (`<h1 id="sX">` hasta el siguiente `<h1>`).
 3. Buscar **argumentos, ejemplos o excepciones completos que falten**, no
    perseguir la última frase suelta. Si una lista de citas de jurisprudencia
-   está incompleta (fallos reales que aparecen en la fuente pero no en el
-   manual), completarla también: es contenido verificable, no interpretación.
+   está incompleta, completarla también: es contenido verificable, no
+   interpretación.
 4. Aplicar el o los `Edit` necesarios en **pocas pasadas** (no 15-20 rondas
    de microedición).
-5. Correr **una sola vez** el script de fidelidad (más abajo) y **una vez**
-   el de balance de etiquetas/em-dash/ids duplicados.
-6. Si el contenido ya está completo tras leer fuente y manual (pasó varias
-   veces: E, F, G ya estaban íntegros), **no editar nada** y marcar el eje
-   como revisado igual. No hace falta forzar una edición si no hay nada
-   que agregar.
-7. Commit en español (ver formato de commits ya hechos con `git log`),
-   cerrando con la línea "Fidelidad: X% → Y%." y el trailer de coautoría.
-   Push a `origin worktree-auditoria-acto-juridico` (nunca a `main`).
+5. Correr **una sola vez** el script de balance de etiquetas/em-dash/ids
+   duplicados (más abajo) antes de cada commit.
+6. Si el contenido ya está completo tras leer fuente y manual, **no editar
+   nada** y marcar el eje como revisado igual.
+7. Commit en español (ver formato de commits ya hechos con `git log`), con
+   el trailer de coautoría. Push a `origin worktree-auditoria-acto-juridico`
+   (nunca a `main`).
 
-No perseguir el 85% exacto. Aceptar el porcentaje que resulte una vez que
-el contenido está completo: el propio script de fidelidad infla el
-denominador en varios ejes (repite encabezados de página no siempre bien
-filtrados, o incluye texto de la sección siguiente cuando dos ejes
-comparten PDF), así que un 45-55% con contenido íntegro es normal y no es
-señal de que falte algo.
+No perseguir un porcentaje de fidelidad exacto. El script de fidelidad por
+tramo dejó de ser útil desde el eje I en adelante (varios ejes comparten
+PDF fuente y el denominador no se puede aislar limpiamente); desde ahí se
+usó lectura y comparación manual completa en su lugar.
 
-## Estado actual: qué está hecho
+## Estado actual: Fase A completa (los 21 ejes A-U)
 
-Todo lo de abajo está commiteado y pusheado en la rama
-`worktree-auditoria-acto-juridico` (branch de este worktree). Commit más
-reciente: `fc3b544`.
+Todo está commiteado y pusheado en la rama `worktree-auditoria-acto-juridico`
+(branch de este worktree). Commit más reciente: `a82099c`.
 
 | Eje | Tema | Fuente | Estado |
 |---|---|---|---|
@@ -81,52 +75,59 @@ reciente: `fc3b544`.
 | E | Causa | PDF6 | ✅ revisado, ya estaba completo, sin cambios |
 | F | Formalidades | PDF7 | ✅ revisado, ya estaba completo, sin cambios |
 | G | Efectos de los AJ | PDF8 | ✅ revisado, ya estaba completo, sin cambios |
-| H | Inexistencia jurídica | PDF9 | ✅ hecho (commit `fc3b544`): se completaron las listas de jurisprudencia (4→8 fallos que rechazan, 4→10 que acogen la teoría) y dos argumentos que faltaban en 4.2 (art. 464 Nº14 CPC, y que ninguna ley reconoce la inexistencia como sanción autónoma) |
-| I | Nulidad, aspectos generales | PDF10 (B.1) | ✅ hecho (commit `b8149ce`): las tres razones completas de la doctrina que distingue nulidad relativa de rescisión, ejemplo de la nulidad absoluta de pleno derecho, precisión sobre nulidad parcial |
-| J | Nulidad absoluta | PDF10 (B.2) | ✅ hecho (commit `cbc4f82`): art. 1468 (paralelo del conocimiento del vicio), fundamento de la tesis minoritaria sobre el representado (art. 1448), argumentos completos sobre herederos (art. 1685), cómputo del plazo de saneamiento (art. 2514), cita del art. 37 LMC |
+| H | Inexistencia jurídica | PDF9 | ✅ hecho (commit `fc3b544`): listas de jurisprudencia completadas (4→8 y 4→10 fallos), dos argumentos en 4.2 |
+| I | Nulidad, aspectos generales | PDF10 (B.1) | ✅ hecho (commit `b8149ce`) |
+| J | Nulidad absoluta | PDF10 (B.2) | ✅ hecho (commit `cbc4f82`) |
 | K | Nulidad relativa | PDF10 (B.3) | ✅ revisado, ya estaba completo, sin cambios propios |
-| L | Efectos de la nulidad | PDF11 (B.4) | ✅ hecho (commit `827fe6b`): crítica de VIAL a la distinción cumplido/no cumplido, extensión de la reivindicatoria a gravámenes, regla de restitución cuando el poseedor enajenó (arts. 898 y 900), prescripción extintiva y de corto tiempo (art. 2524), concordancia art. 2520 inc. 2°, detalle de la incapacidad relativa en la indemnización |
+| L | Efectos de la nulidad | PDF11 (B.4) | ✅ hecho (commit `827fe6b`) |
+| M | Lesión | PDF12 (C) | ✅ hecho (commit `527b651`) |
+| N | Simulación | PDF13 (D) | ✅ hecho (commit `3f053a1`) |
+| O | Inoponibilidad | PDF14 (E) | ✅ hecho (commit `36b5e1a`) |
+| P | Fraude a la ley | PDF15 (F) | ✅ hecho (commit `c77e46a`) |
+| Q | Otras causales de ineficacia | PDF16 (G) | ✅ hecho (commit `8734c79`) — **ver flag abajo** |
+| R | Representación | PDF16 (V) | ✅ hecho (commit `e1d1c20`) |
+| S | La condición | PDF17 (VI/A) | ✅ hecho (commit `629f96a`) |
+| T, U | Plazo y modo | PDF17 (B, C) | ✅ hecho (commit `a82099c`) |
 
 **Nota sobre E, F, G, K:** no generaron cambios de contenido porque, tras
 leer la fuente completa y la sección del manual completa, no había ningún
-argumento, ejemplo o excepción faltante. La fidelidad medida en E, F, G
-(60.6%, 55.7%, 68.0%) está deprimida por artefactos del script de medición
-(ver más arriba), no por contenido faltante. Si se retoma la revisión de
-estos ejes en el futuro, no hace falta releerlos salvo que se sospeche algo
-puntual.
+argumento, ejemplo o excepción faltante.
 
-**Nota sobre I, J, K, L:** comparten fuente (PDF10 se solapa con el inicio
-de PDF11: se verificó que PDF11 repite el final de PDF10 antes de
-continuar, sin pérdida de contenido en el empalme). El script de fidelidad
-automático no se usó tramo a tramo en estos cuatro ejes porque el
-denominador no se puede aislar limpiamente por eje; se hizo lectura y
-comparación manual completa en su lugar.
+**Nota sobre I-L y Q-R:** varios ejes comparten PDF fuente (10 y 11 se
+solapan; 16 cubre Q y R). Se verificó que no hay pérdida ni duplicación de
+contenido en los empalmes.
 
-## Qué falta (por dónde seguir)
+## ⚠️ Hallazgo pendiente de decisión de Laura: eje Q
 
-Los ejes A a L (12 de 21) están terminados. Sigue:
+Al revisar el eje Q (otras causales de ineficacia) contra el PDF16, se
+confirmó que **el libro de Boetsch solo trata 6 causales en ese capítulo**:
+suspensión, resolución, resciliación, revocación, desistimiento unilateral
+y caducidad. Después de "caducidad" el libro salta directo a "V. LA
+REPRESENTACIÓN".
 
-1. **Eje M (lesión)** — fuente PDF12.
-2. **Eje N (simulación)** — fuente PDF13.
-3. **Eje O (inoponibilidad)** — fuente PDF14.
-4. **Eje P (fraude a la ley)** — fuente PDF15.
-5. **Ejes Q, R (otras causales, representación)** — fuente PDF16.
-6. **Ejes S, T, U (condición, plazo, modo)** — fuente PDF17.
+Pero el manual (desde antes de este trabajo de reparación) tiene **tres
+secciones más** en el eje Q que no vienen de Boetsch en este tramo: **7.
+Terminación, 8. Renuncia, 9. Muerte**. Son doctrina estándar y correcta
+(cualquier manual de acto jurídico las trata), pero no están respaldadas
+por la fuente primaria en este punto del libro — probablemente vienen de
+una fuente secundaria o de una pasada anterior a este proyecto de
+reparación.
 
-Después de terminar el eje U: **Fase B** (segunda pasada agregando
-argumentos de fuentes secundarias — ver abajo), y luego **regenerar el
-PDF** (ver "Pendientes fuera de esta lista").
+**No se borró ese contenido** (no hay indicación de Laura para hacerlo, y
+es contenido jurídicamente correcto), pero queda marcado acá para que
+Laura decida: dejarlo como está, buscar si viene de alguna fuente
+secundaria concreta para citarla, o quitarlo si quiere que este eje sea
+estrictamente Boetsch.
 
-## Tareas (TaskList del sistema)
+## Qué sigue
 
-El estado real de las tareas del sistema (`TaskList`) al momento de este
-handoff:
-
-Estado desactualizado (era de la sesión anterior). El estado real hoy:
-ejes A-L completos y commiteados (ver tabla arriba y `git log`). Si se usa
-`TaskList` en una sesión nueva, crear tareas para M-U y no confiar en los
-números `#27`-`#42` de una sesión pasada, que no persisten entre sesiones.
-Confiar siempre en `git log` sobre esta tabla congelada.
+1. **Fase B**: agregar los argumentos extra de las fuentes secundarias y
+   anexos (ver más abajo), eje por eje, con el mismo método de la Fase A
+   (leer fuente secundaria + sección actual, buscar solo lo que falte).
+2. **Regenerar el PDF** `app/pdf/Acto_Juridico.pdf` (ver "Pendientes fuera
+   de esta lista" más abajo) — se puede hacer ahora que la Fase A terminó,
+   o esperar a que termine también la Fase B, a decidir con Laura.
+3. Resolver el flag del eje Q (arriba).
 
 ## Dónde está el texto fuente ya extraído (no releer los PDF originales)
 
@@ -136,34 +137,11 @@ Los 17 PDF de Boetsch ya están extraídos a texto plano en:
 /Users/lorensaura/.claude/jobs/f61b1698/tmp/aj_pdf1.txt   … aj_pdf17.txt
 ```
 
-Mapeo PDF → eje(s):
-
-| PDF | Tema | Eje(s) |
-|---|---|---|
-| 1 | Teoría general | A |
-| 2 | Voluntad | B (1-3) |
-| 3 | Vicios de la voluntad | B (4-8) |
-| 4 | Capacidad | C |
-| 5 | Objeto | D |
-| 6 | Causa | E |
-| 7 | Formalidades | F |
-| 8 | Efectos de los AJ | G |
-| 9 | Inexistencia | H |
-| 10 | Nulidad general/absoluta/relativa | I, J, K |
-| 11 | Efectos de la nulidad | L |
-| 12 | Lesión | M |
-| 13 | Simulación | N |
-| 14 | Inoponibilidad | O |
-| 15 | Fraude a la ley | P |
-| 16 | Otras causales + Representación | Q, R |
-| 17 | Modalidades del AJ | S, T, U |
-
-**Ojo:** ese directorio de caché (`/Users/lorensaura/.claude/jobs/f61b1698/tmp/`)
-pertenece a un job específico y puede no persistir entre sesiones. Si al
-retomar esos archivos ya no existen, volver a extraer con PyMuPDF (`fitz`,
-confirmado instalado) desde `Apuntes/CIVIL/Acto Jurídico/` (ruta del
-checkout original, no de este worktree, que no versiona esa carpeta por
-`.gitignore`):
+**Ojo:** ese directorio de caché pertenece a un job específico y puede no
+persistir entre sesiones. Si al retomar esos archivos ya no existen,
+volver a extraer con PyMuPDF (`fitz`, confirmado instalado) desde
+`Apuntes/CIVIL/Acto Jurídico/` (ruta del checkout original, no de este
+worktree, que no versiona esa carpeta por `.gitignore`):
 
 ```python
 import fitz
@@ -171,41 +149,17 @@ doc = fitz.open("ruta.pdf")
 text = "".join(p.get_text() for p in doc)
 ```
 
-Fuentes secundarias, para la **Fase B** (no usar todavía), también ya
-extraídas en el mismo directorio: `aj_causa_dyb.txt` (Causa, Domínguez y
-Boetsch) y `aj_bozzo_ibarra.txt` (resumen de Bozzo e Ibarra, cubre objeto
-ilícito, causa, inexistencia/nulidad con la discusión Claro Solar vs.
-Alessandri, lesión y simulación). También pendientes de usar en la Fase B:
+Fuentes secundarias, para la **Fase B**, también ya extraídas en el mismo
+directorio: `aj_causa_dyb.txt` (Causa, Domínguez y Boetsch) y
+`aj_bozzo_ibarra.txt` (resumen de Bozzo e Ibarra, cubre objeto ilícito,
+causa, inexistencia/nulidad con la discusión Claro Solar vs. Alessandri,
+lesión y simulación). También pendientes de usar en la Fase B:
 `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` y `Memorice_ART y
 Definiciones.pdf` (glosario/verificación de citas de artículo).
 
-## Scripts de verificación (reusar tal cual, no hace falta guardarlos en archivo)
+## Script de verificación (correr antes de cada commit)
 
-**Fidelidad de un tramo** (ajustar `pdf`, `sid`, `eid`):
-
-```python
-import re
-def clean(text, materia_marker, autor_marker):
-    lines = [l for l in text.split("\n")
-             if "Facultad de Derecho" not in l
-             and materia_marker not in l
-             and autor_marker not in l
-             and not l.strip().startswith("__")
-             and "Página" not in l]
-    return " ".join(l.strip() for l in lines if l.strip())
-
-texto_fuente = open('/Users/lorensaura/.claude/jobs/f61b1698/tmp/aj_pdfN.txt', encoding='utf-8').read()
-fuente_limpia = clean(texto_fuente, "TEORÍA DEL ACTO JURÍDICO", "Cristián Boetsch Gillet")
-html = open('/Users/lorensaura/Desktop/DERECHO LIBRE/Derecho Libre/.claude/worktrees/auditoria-acto-juridico/04_Acto_Juridico_Manual.html', encoding='utf-8').read()
-start = html.find('<h1 id="sX">')
-end = html.find('<h1 id="sY">')
-tramo_html = html[start:end]
-manual_texto = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", tramo_html)).strip()
-print("fidelidad:", round(len(manual_texto) / len(fuente_limpia) * 100, 1), "%")
-```
-
-**Balance de etiquetas / em-dash / ids duplicados** (correr sobre el
-archivo completo antes de cada commit):
+**Balance de etiquetas / em-dash / ids duplicados:**
 
 ```python
 import re, collections
@@ -221,9 +175,9 @@ dupes = [i for i,c in collections.Counter(ids).items() if c>1]
 print('ids duplicados:', dupes)
 ```
 
-Último resultado conocido (tras el commit `fc3b544`, eje H): p:508/508,
-div:47/47, span:664/664, h1:21/21, h2:114/114, h3:137/137, h4:19/19,
-em-dash:0, sin ids duplicados.
+Último resultado conocido (tras el commit `a82099c`, cierre de Fase A):
+p:513/513, div:47/47, span:677/677, h1:21/21, h2:114/114, h3:137/137,
+h4:19/19, em-dash:0, sin ids duplicados.
 
 ## Reglas fijas del proyecto que aplican a este trabajo
 
@@ -236,9 +190,8 @@ em-dash:0, sin ids duplicados.
   pre-incidente; la versión actualizada con la regla "prohibido resumir"
   está en `.claude/worktrees/apunte-bienes/docs/script_apuntes.md` si hace
   falta consultarla).
-- Un commit por tramo/eje, en español, formato imperativo, con la línea
-  final "Fidelidad: X% → Y%." y el trailer `Co-Authored-By: Claude Sonnet 5
-  <noreply@anthropic.com>`.
+- Un commit por eje, en español, formato imperativo, con el trailer
+  `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 - Nunca hacer push a `main`. Laura mergea desde GitHub Desktop.
 
 ## Pendientes fuera de esta lista de ejes (no olvidar)
@@ -246,9 +199,7 @@ em-dash:0, sin ids duplicados.
 - **Regenerar el PDF** `app/pdf/Acto_Juridico.pdf` con
   `python3 scripts/generar_pdf_manual.py 04_Acto_Juridico_Manual.html
   app/pdf/Acto_Juridico.pdf "Acto Jurídico"` — no se ha regenerado desde
-  que empezó este trabajo de acercamiento a la fuente. Hacerlo recién
-  cuando la Fase A (los 21 ejes) esté terminada, no en cada commit
-  intermedio.
+  que empezó este trabajo de acercamiento a la fuente.
 - Una vez mergeado a `main` por Laura, falta enlazar el manual en
   `app/manuales.html` si es que todavía no está enlazado (verificar el
   estado real de ese archivo al retomar, no asumir).
