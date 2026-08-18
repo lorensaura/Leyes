@@ -6,7 +6,11 @@
 > generalizado a partir de los 3 manuales de Responsabilidad ya publicados.
 > No reemplaza `docs/prompt-generacion-contenido-practica.md` (eso es para
 > generar preguntas de Práctica a partir de un manual ya escrito, un paso
-> posterior y todavía no cubierto por este documento).
+> posterior y todavía no cubierto por este documento). **La sección 4
+> (auditoría de cobertura) también aplica a un manual ya publicado**, no
+> solo a uno nuevo: es el proceso a seguir cuando se sospecha (o se quiere
+> descartar) que un manual terminado tiene huecos frente a sus fuentes,
+> con o sin relación a estar construyendo contenido nuevo en ese momento.
 
 ---
 
@@ -507,3 +511,126 @@ Una vez exista el manual completo (fuera del alcance de esta primera
 versión del template): regenerar el PDF con `scripts/generar_pdf_manual.py`
 y revisarlo visualmente, y correr `scripts/agregar_anclas_manuales.js`
 (previa entrada nueva en su array `FUENTES`) para las anclas de sección.
+
+---
+
+## 4. Auditoría de cobertura al terminar el manual (obligatoria)
+
+> Origen de esta sección: el 2026-08-13/14 se auditó `04_Acto_Juridico_Manual.html`
+> completo contra sus 17 fuentes (`docs/auditoria_acto_juridico_2026-08-13.md`,
+> 49 hallazgos en 21 ejes) y el 2026-08-18 Laura encontró a mano, revisando
+> una pregunta de Airtable, dos huecos reales en Contractual que ese
+> proceso no habría atrapado del todo. Ambos casos quedan documentados
+> abajo como ejemplo de trabajo real, no hipotético.
+
+### 4.1 Por qué el chequeo de la sección 1.6 no alcanza
+
+El chequeo de fidelidad de la sección 1.6 (razón caracteres del
+manual/caracteres de la fuente, tramo por tramo, apuntando a 80-90%) mide
+si un tramo es fiel **a la fuente que se usó para escribirlo**. No mide
+si esa fue la única fuente relevante para el tema. Contractual pasa ese
+chequeo con 92% de fidelidad a Boetsch (su fuente principal) y aun así
+le faltaba, verificado el 2026-08-18, todo el tratamiento que Orrego
+("Efectos de las obligaciones") hace de la misma pregunta sistemática
+(qué estatuto rige las obligaciones legales y cuasicontractuales),
+con una lista de autores distinta y más completa que la de Boetsch.
+**Un tramo fiel a su fuente puede seguir siendo un manual incompleto**
+si existe una fuente secundaria que trata el mismo tema con más
+profundidad y esa fuente nunca se cruzó. Esta sección 4 existe para
+atrapar justamente ese tipo de vacío, que el chequeo de tramo no puede
+ver por construcción.
+
+### 4.2 Cuándo corre
+
+Al terminar el apunte principal completo de una materia nueva (antes o
+después de incorporar los anexos de la sección 2.2, según convenga), y
+también, por separado, sobre cualquiera de los 3 manuales ya publicados
+cuando haya motivo para sospechar un hueco (un hallazgo suelto de Laura,
+como el de Contractual del 2026-08-18, o simplemente porque nunca se
+auditó formalmente, como sigue siendo el caso de Extracontractual y
+Precontractual). No es parte del ciclo de cada tramo (eso lo cubre la
+sección 3): es un paso final, sobre el manual ya cerrado.
+
+### 4.3 El artefacto central: tabla tema × fuente
+
+Antes de escribir un solo hallazgo, construir una tabla con **una fila
+por tema o subtema del manual** (los `h2`/`h3` ya numerados) y **una
+columna por fuente disponible para esa materia**: el apunte principal,
+cada documento secundario (aunque solo cubra uno o dos temas), y los
+documentos que son solo jurisprudencia (fallos sueltos, sentencias). Cada
+celda se marca:
+
+- **Tratado** — el tema aparece en esa fuente y el manual ya lo recoge
+  con fidelidad equivalente.
+- **No tratado** — esa fuente no toca el tema (normal, no es un hueco).
+- **Tratado con más detalle en la fuente** — la fuente trata el tema y
+  el manual, aunque no esté vacío en ese punto, se quedó corto frente a
+  *esa* fuente en particular (autores distintos, un argumento adicional,
+  jurisprudencia no citada, etc.). **Esta es la celda que genera un
+  hallazgo:** cada una se convierte en un ítem de la categoría 1 o 5 de
+  la sección 4.4, con su prioridad.
+
+Esta tabla es lo que obliga a cruzar cada fuente secundaria contra
+**cada** tema al que podría aplicar, no solo contra el tema para el que
+se abrió originalmente esa fuente (que es como se coló el hueco de
+Orrego: se leyó para otro punto, nunca se buscó "estatuto de derecho
+común" en ella). Se construye leyendo cada fuente completa una vez
+(extracción de texto con `fitz`/PyMuPDF, igual que en la sección 2.1) y
+anotando, por búsqueda dirigida a los temas del manual, en qué páginas
+aparece cada uno. El mismo patrón de "extraer y mapear primero, escribir
+después" de la sección 2.2 para anexos.
+
+### 4.4 Categorías de hallazgo (heredadas de la auditoría de Acto Jurídico)
+
+Sobre la tabla de 4.3, revisar cada eje en tandas cortas (un eje o un
+grupo chico de ejes emparentados con su misma fuente, nunca el manual
+completo de una pasada) contra estas siete categorías. Si una categoría
+no tiene hallazgos en esa tanda, se deja **"Sin hallazgos."** explícito,
+nunca se omite la categoría:
+
+1. **Profundidad insuficiente** — un argumento, una excepción o un matiz
+   de alguna fuente (principal o secundaria) que no llegó al manual.
+2. **Falta de ejemplos** — un ejemplo concreto de la fuente, ausente.
+3. **Jurisprudencia en la fuente, ausente en el manual** — un fallo real
+   (rol/tribunal/fecha o cita de RDJ) que la fuente trae y el manual no.
+4. **Dato de grado marcado en la fuente, ausente en el manual** — una
+   pregunta clásica de examen oral que la fuente señala como tal y el
+   manual no destaca en ningún recuadro.
+5. **Debate doctrinal aplanado** — cuando dos o más fuentes tratan la
+   misma controversia con autores distintos y el manual solo usó la
+   lista de una de ellas, o cuando el manual toma partido sin mostrar
+   ambas tesis con la misma extensión que la fuente. **No mezclar los
+   autores de fuentes distintas en una sola lista compuesta**: si Boetsch
+   atribuye una tesis a Stitchkin y Alessandri, y Orrego la misma tesis a
+   Claro Solar, Alessandri, Meza Barros y Abeliuk, eso se reporta como
+   dos atribuciones distintas de dos fuentes distintas (posible punto a
+   decidir por Laura), nunca se funde en una lista única sin fuente
+   verificable para la combinación completa.
+6. **Coherencia estructural** — numeración, orden, contenido bien escrito
+   pero en el eje o sección equivocada.
+7. **Contenido del manual sin respaldo en fuente** — la contracara de
+   todo lo anterior: una afirmación, cita o atribución del manual que no
+   se pudo encontrar en ninguna fuente disponible. Es la categoría que
+   detecta alucinación real, a diferencia de las seis anteriores que
+   detectan omisión.
+
+Cada hallazgo lleva prioridad **alto/medio/bajo**, igual criterio que la
+auditoría de Acto Jurídico: alto cuando falta algo que sostiene la tesis
+central de la sección (ej. jurisprudencia que respalda directamente un
+punto clave), medio para vacíos de fondo puntuales, bajo para matices
+menores (una referencia comparada, un ejemplo adicional al ya existente).
+
+### 4.5 Reporte, no reescritura
+
+El resultado es un documento nuevo, `docs/auditoria_<materia>_<fecha>.md`,
+con el mismo formato que `docs/auditoria_acto_juridico_2026-08-13.md`:
+resumen ejecutivo con tabla de tandas × prioridad, luego una sección por
+tanda con las 7 categorías (explícito "Sin hallazgos." donde corresponda)
+y un resumen de tanda al cierre. **Es un reporte de brechas, no una
+reescritura del manual**: la corrección del HTML es una fase 2 aparte,
+que Laura prioriza y aprueba tanda por tanda, igual que se hizo con Acto
+Jurídico (ejes N, H, C y B corregidos primero por concentración de
+jurisprudencia real, el resto pendiente). No se agrega jurisprudencia ni
+doctrina de conocimiento general del modelo: todo hallazgo debe señalar
+contenido que ya existe en una fuente concreta de Laura y que el manual
+omitió, o marcar explícitamente si no se pudo verificar contra ninguna.

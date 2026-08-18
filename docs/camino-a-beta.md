@@ -67,15 +67,47 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   por su `Revision_status="Revisar"`) y `rc-just-032` (nuevo, sin
   publicar): el manual de Contractual se contradice a sí mismo sobre si
   CLARO SOLAR o ABELIUK defiende "ausencia de culpa basta como eximente"
-  (línea ~1117 dice una cosa, línea ~1618-1626 la contraria, en
-  `01_Responsabilidad_Contractual_Manual.html`). Laura va a revisar cuál
-  atribución es la correcta (2026-08-13, todavía sin resolver).
+  (línea ~1117/1134 dice una cosa, línea ~1618-1626/1643 la contraria, en
+  `01_Responsabilidad_Contractual_Manual.html`). **2026-08-18: resuelto
+  por la auditoría de cobertura** (`docs/auditoria_responsabilidad_contractual_2026-08-18.md`),
+  cruzando ambos pasajes contra la fuente que ambos citan (Orrego,
+  p.37-38): **la versión correcta es la del eje F** (ABELIUK sostiene que
+  basta la ausencia de culpa, CLARO SOLAR exige el caso fortuito); la del
+  eje E (línea ~1134) tiene los dos nombres invertidos. Falta que Laura
+  confirme y se corrija el HTML (recomendación del audit: alinear el
+  recuadro de E.4.3 con el de F.2, o fusionar ambos en uno solo).
 - `hist-pre-mc-015` (Precontractual): contenido ya revisado y publicado
   (`Revision_status="Verificado"`), solo le falta el eje/tema asignado,
   genuinamente partido entre el eje B y el J (detalle en
   `docs/fase0_rep_clasificacion_2026-07-31.md`). No bloquea nada.
 
 **Manuales:**
+- **2026-08-18: nuevo paso obligatorio en el proceso de manuales**,
+  sección 4 de `docs/script_apuntes.md` ("Auditoría de cobertura al
+  terminar el manual"). Surgió porque Laura encontró a mano, revisando
+  una pregunta de Airtable, dos temas reales de las fuentes (presunción
+  de culpa grave en Boetsch p.75, y el debate sobre qué estatuto rige las
+  obligaciones legales/cuasicontractuales en Orrego p.60) ausentes del
+  manual de Contractual, algo que el chequeo de fidelidad tramo a tramo
+  ya existente (sección 1.6) no podía detectar por construcción (mide
+  fidelidad a la fuente usada, no si esa era la única fuente relevante).
+  Ambos puntos ya están **agregados al manual de Contractual**
+  (`01_Responsabilidad_Contractual_Manual.html`), verificados contra las
+  fuentes, balance de etiquetas y cero guiones largos. Se abrió además
+  `docs/auditoria_responsabilidad_contractual_2026-08-18.md` (mismo
+  formato que la de Acto Jurídico), **completada el mismo día para los 8
+  ejes** (7 con verificación de alta confianza, el eje D por muestreo
+  dirigido, no lectura íntegra). Encontró, en total, **3 hallazgos más
+  sin corregir todavía**: **el más importante, resuelve una contradicción
+  interna que ya estaba anotada como pendiente más arriba** (Claro
+  Solar/Abeliuk invertidos entre los ejes E y F, ver arriba); un
+  argumento de Aedo mal ubicado en el eje H en vez del A; un debate
+  doctrinal completo sobre la mora del acreedor, ausente del eje E. Fuera
+  de esos 3 puntos, el manual resultó de **fidelidad muy alta** frente a
+  sus 5 fuentes, sin contenido inventado en ningún tramo. El PDF de
+  Contractual (`app/pdf/Responsabilidad_Contractual.pdf`) quedó
+  desactualizado frente a los arreglos ya aplicados, no se regeneró a
+  propósito (mismo criterio que Acto Jurídico, ver más abajo).
 - Los 25 ejes de REX reformateados (2026-08-12) siguen **pendientes de
   revisión de Laura**, como todo el contenido jurídico de los manuales.
   Detalle de qué se agregó en cada eje en `docs/notas_reformato_rex.md`.
