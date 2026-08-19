@@ -4,6 +4,41 @@
 > de la conversación. Está pensado para abrirse al inicio de una sesión
 > nueva.
 
+## Estado (actualizado): Fase A y Fase B completas, PDF regenerado
+
+Las tres tareas que quedaban pendientes al cierre de la Fase A ya están
+resueltas, en orden, en la rama `worktree-auditoria-acto-juridico`:
+
+1. **Eje Q**: las tres secciones sin respaldo en Boetsch (terminación,
+   renuncia, muerte) se mantuvieron y se agregó una nota que las atribuye a
+   la clasificación de causales de ineficacia de BOZZO E IBARRA, fuente
+   verificada en `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (commit
+   `5beea7f`).
+2. **Fase B**: se comparó el manual completo (los 21 ejes) contra las tres
+   fuentes secundarias disponibles: el anexo de BOZZO E IBARRA (mismo
+   documento en `aj_bozzo_ibarra.txt`, `Anexo_secundario_AJ_Ineficacia.pdf`,
+   `Anexo_secundario_AJ_ elementos principales e ineficacia.pdf` y
+   `Anexo_secundario.docx`, todos idénticos), el resumen de Causa de
+   Domínguez y Boetsch (`aj_causa_dyb.txt`, que resultó ser en realidad una
+   compilación de interrogaciones de Bozzo e Ibarra basada en apuntes de
+   esos dos profesores) y el glosario `Memorice_ART y Definiciones.pdf`.
+   Se agregó contenido solo donde faltaba (commit `0cda2e8`): eje A
+   (ejemplo de Stolfi y cita de Roubier), eje B (presunciones de dolo
+   completadas de 4 a 8), eje D (alcance de la condonación del dolo futuro),
+   eje H (antecedente de la Ley 18.046/19.499 de sociedades anónimas), eje L
+   (jurisprudencia de conversión, Corte Suprema 3 de diciembre de 1921), eje
+   N (por qué la simulación exige acto bilateral o recepticio) y eje P
+   (ejemplo de interposición de tercero entre cónyuges). Los ejes C, E, F,
+   G, I, J, K, M, O, R, S, T y U se revisaron contra las mismas fuentes y ya
+   estaban completos, sin cambios. El glosario se usó para verificar citas
+   de artículo (1453, 1460, 2116, entre otras revisadas): todas correctas.
+3. **PDF**: regenerado con `scripts/generar_pdf_manual.py` (commit
+   `3dd418b`), 134 páginas.
+
+**Qué falta**: nada de esta lista. Sigue pendiente, fuera de esta reparación,
+que Laura mergee la rama a `main` desde GitHub Desktop y que alguien
+verifique si el manual ya está enlazado en `app/manuales.html`.
+
 ## Qué es este trabajo y por qué existe
 
 `04_Acto_Juridico_Manual.html` se generó originalmente comprimido a ~49%
