@@ -5,12 +5,17 @@
 > El fix del proceso para que esto no vuelva a pasar está en
 > `docs/script_apuntes.md` (secciones 0.4, 1.6 y 2.1), no acá.
 >
-> **Acto Jurídico ya no está "sin empezar": ver la sección "Fase 1"
-> más abajo antes de creer el 49% de la tabla de arriba.** Existe una
-> auditoría independiente y más precisa (`docs/auditoria_acto_juridico_2026-08-13.md`)
-> con sus 49 hallazgos ya corregidos en una rama sin fusionar a `main`
-> (detalle en `.claude/handoff/ESTADO_ACTUAL.md`, Hilo 23). Lo que falta
-> ahí es un merge de git, no releer fuentes ni escribir contenido nuevo.
+> **Actualizado 2026-08-19: Acto Jurídico está terminado, no solo
+> "empezado".** Ver la sección "Fase 1" más abajo antes de creer el 49%
+> de la tabla de arriba: ese número mide un estado ya superado. La rama
+> `worktree-auditoria-acto-juridico` tiene los 49 hallazgos de la
+> auditoría corregidos, más una segunda pasada de comparación directa
+> contra los 17 PDF fuente ("reparación de compresión") y una tercera de
+> fuentes secundarias (Fase B), PDF regenerado (134 páginas), y el
+> conflicto de merge con `main` (en `docs/auditoria_acto_juridico_2026-08-13.md`)
+> ya resuelto y pusheado. Solo falta que Laura mergee esa rama a `main`
+> desde GitHub Desktop, revise el contenido, y la enlace en
+> `app/manuales.html`.
 
 ## Qué pasó
 
@@ -129,38 +134,46 @@ Para cada eje (o tramo corto, si el eje es largo):
 6. Un commit por tramo, con el detalle de qué se agregó y la fidelidad
    antes/después. No pasar al siguiente tramo sin cerrar el anterior.
 
-### Fase 1: Acto Jurídico — CORRECCIÓN: ya está hecha, en otra rama sin mergear
+### Fase 1: Acto Jurídico, terminada, incluido el merge con `main`
 
-**Esto es una corrección sobre lo que este documento decía antes ("sin
-empezar"). Era incorrecto.** Al escribir la primera versión de este
-documento no se sabía que ya existía una auditoría independiente,
-completa y verificada, de Acto Jurídico: `docs/auditoria_acto_juridico_2026-08-13.md`,
-hecha en la rama `worktree-auditoria-acto-juridico` con una metodología
-más precisa que la de este documento (comparación cualitativa eje por
-eje contra las 17 fuentes PDF + secundarias, con 7 categorías de
-hallazgo, no solo una razón de caracteres). Según
-`.claude/handoff/ESTADO_ACTUAL.md` (Hilo 23, verificado con `git log`),
-**los 49 hallazgos de esa auditoría ya están cerrados y corregidos en el
-HTML**, en esa rama.
+**Estado al 2026-08-19: completo en tres pasadas, en la rama
+`worktree-auditoria-acto-juridico`, sin bloqueos de git pendientes.**
+
+1. Los 49 hallazgos de `docs/auditoria_acto_juridico_2026-08-13.md`
+   (comparación cualitativa eje por eje contra las 17 fuentes PDF +
+   secundarias, 7 categorías de hallazgo) se cerraron primero.
+2. Una segunda pasada, más profunda ("reparación de compresión",
+   documentada en `corrección_manual_actojuridico.md` dentro de esa
+   misma rama), volvió a comparar cada uno de los 21 ejes directamente
+   contra el texto completo de los 17 PDF de Boetsch. Encontró huecos que
+   la auditoría por categorías no había detectado (ej. el eje A, que la
+   auditoría marcó "sin hallazgos", tenía 3 argumentos completos
+   faltantes).
+3. Una tercera pasada (Fase B) agregó los argumentos de las fuentes
+   secundarias (Bozzo e Ibarra, Domínguez/Boetsch) que todavía faltaban
+   en 7 ejes.
 
 El 49% de fidelidad medido en este documento (507.205 → 246.760
-caracteres) se calculó contra una copia de `04_Acto_Juridico_Manual.html`
-que no tenía esas correcciones aplicadas: no es una medición del estado
-final corregido, es del estado que la auditoría diagnosticó como
-insuficiente. **No usar este número para decidir si falta trabajo**: la
-auditoría ya es la referencia correcta.
+caracteres) se calculó contra el estado previo a las tres pasadas: **no
+usar este número**, ya no describe el manual actual.
 
-**Lo que sí sigue pendiente, y no es un problema de contenido sino de
-git:** `main` solo tiene fusionada la primera tanda de esa rama (ejes N,
-H, C). El resto del trabajo (ejes B, D, E-G, `sI9`, L-M, `sO2-1`, P-R, y
-un ajuste estructural del eje S) sigue solo en la rama, sin fusionar.
-Además apareció un commit directo en `main` (`53757d9`, "arreglo apunte
-Acto jurídico") que también toca el eje B, la misma sección que la rama
-sin fusionar también corrige: **antes de fusionar la rama hay que
-comparar ambos cambios al eje B para no duplicar o pisar una corrección**
-(instrucciones exactas en el Hilo 23 del handoff). Este análisis y el
-merge en sí son trabajo de git/integración, no de redacción de
-contenido: no requieren releer las fuentes ni escribir nada nuevo.
+**El commit directo en `main` (`53757d9`, "arreglo apunte Acto
+jurídico") que preocupaba en la versión anterior de esta nota ya se
+revisó**: tocaba el eje B, la misma sección que la rama corrige de forma
+independiente, pero en líneas distintas del archivo (confirmado con
+`git merge-tree`, sin conflicto real en el HTML). El único conflicto de
+verdad estaba en el documento de seguimiento
+`docs/auditoria_acto_juridico_2026-08-13.md` (ambas ramas habían
+actualizado su resumen ejecutivo de forma distinta); se resolvió
+fusionando `main` dentro de la rama, con un commit de merge que además
+actualiza ese resumen para reflejar las tres pasadas completas, y ya se
+pusheó. Confirmado con `git merge-tree --write-tree main
+origin/worktree-auditoria-acto-juridico`: fusiona limpio.
+
+El PDF (`app/pdf/Acto_Juridico.pdf`, 134 páginas) se regeneró al cierre
+de la Fase B. **Lo único que falta es que Laura mergee la rama a `main`
+desde GitHub Desktop** (ya no debería mostrar conflictos), revise el
+contenido, y la enlace en `app/manuales.html`.
 
 ### Fase 2: Bienes
 

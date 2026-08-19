@@ -145,16 +145,21 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   camino sin más cambios de código, solo cargar su contenido y sacarles el
   `disabled` en `MATERIAS_CIVIL`.
 - **2026-08-12: manual de Acto Jurídico (`04_Acto_Juridico_Manual.html`)
-  terminado y su PDF generado** (`app/pdf/Acto_Juridico.pdf`, 21 ejes A-U,
-  ~40.500 palabras), a partir del libro completo de Boetsch más 3 fuentes
-  secundarias (Bozzo e Ibarra, Causa Domínguez y Boetsch, cuadro
-  comparativo de ineficacia). Verificado (tags, densidad, sin guiones
-  largos, sin ids duplicados) y **pendiente de revisión de Laura**. Todavía
-  **no está enlazado en `app/manuales.html`**: falta agregarle su objeto
-  `civil_N` (título, `sourceFile`, `pdfFile`, `cpInsertBefore` por eje, y
-  los checkpoints de comprensión lectora con keywords, uno por eje, al
-  estilo de los otros 3 manuales) una vez que Laura dé el visto bueno al
-  contenido.
+  terminado y su PDF generado** (`app/pdf/Acto_Juridico.pdf`, 21 ejes A-U),
+  a partir del libro completo de Boetsch más 3 fuentes secundarias (Bozzo
+  e Ibarra, Causa Domínguez y Boetsch, cuadro comparativo de ineficacia).
+  **Actualizado 2026-08-19: además auditado y reparado por completo**, en
+  tres pasadas sucesivas, en la rama `worktree-auditoria-acto-juridico`
+  (detalle en `docs/incidente_compresion_manuales.md`, sección "Fase 1").
+  PDF regenerado (134 páginas). El conflicto de merge con `main` ya se
+  resolvió y se pusheó: la rama fusiona limpio. Verificado (tags,
+  densidad, sin guiones largos, sin ids duplicados) y **pendiente de que
+  Laura mergee la rama a `main` desde GitHub Desktop y revise el
+  contenido**. Todavía **no está enlazado en `app/manuales.html`**: falta
+  agregarle su objeto `civil_N` (título, `sourceFile`, `pdfFile`,
+  `cpInsertBefore` por eje, y los checkpoints de comprensión lectora con
+  keywords, uno por eje, al estilo de los otros 3 manuales) una vez que
+  Laura dé el visto bueno al contenido.
 
 **Producto / app:**
 - **2026-08-13/14: tabla `practica_intentos` creada y corrida en
