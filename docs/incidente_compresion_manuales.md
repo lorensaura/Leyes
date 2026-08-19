@@ -4,6 +4,13 @@
 > el registro del problema, la evidencia y el plan de arreglo por partes.
 > El fix del proceso para que esto no vuelva a pasar está en
 > `docs/script_apuntes.md` (secciones 0.4, 1.6 y 2.1), no acá.
+>
+> **Acto Jurídico ya no está "sin empezar": ver la sección "Fase 1"
+> más abajo antes de creer el 49% de la tabla de arriba.** Existe una
+> auditoría independiente y más precisa (`docs/auditoria_acto_juridico_2026-08-13.md`)
+> con sus 49 hallazgos ya corregidos en una rama sin fusionar a `main`
+> (detalle en `.claude/handoff/ESTADO_ACTUAL.md`, Hilo 23). Lo que falta
+> ahí es un merge de git, no releer fuentes ni escribir contenido nuevo.
 
 ## Qué pasó
 
@@ -122,20 +129,38 @@ Para cada eje (o tramo corto, si el eje es largo):
 6. Un commit por tramo, con el detalle de qué se agregó y la fidelidad
    antes/después. No pasar al siguiente tramo sin cerrar el anterior.
 
-### Fase 1: Acto Jurídico
+### Fase 1: Acto Jurídico — CORRECCIÓN: ya está hecha, en otra rama sin mergear
 
-- Fuente: `Apuntes/CIVIL/Acto Jurídico/Acto Jurídico_principal_BOETSCH .pdf`
-  (221 páginas). Los 17 archivos `Acto Jurídico_principal_N_*.pdf` son el
-  mismo contenido cortado por tema (suman 219 páginas, confirmado
-  contando cada uno): usar cualquiera de las dos formas, no como fuentes
-  independientes. Hay además un anexo secundario en esa misma carpeta
-  ("Anexo_secundario_AJ_elementos principales e ineficacia.pdf", 28
-  páginas) y otros archivos sin extraer todavía (ver la carpeta
-  completa), que quedan para una fase de anexos posterior a la
-  reparación del apunte principal, igual que se hizo con Bienes.
-- Manual: `04_Acto_Juridico_Manual.html` → `app/pdf/Acto_Juridico.pdf`.
-- Fidelidad medida: 49% (507.205 → 246.760 caracteres).
-- Sin empezar.
+**Esto es una corrección sobre lo que este documento decía antes ("sin
+empezar"). Era incorrecto.** Al escribir la primera versión de este
+documento no se sabía que ya existía una auditoría independiente,
+completa y verificada, de Acto Jurídico: `docs/auditoria_acto_juridico_2026-08-13.md`,
+hecha en la rama `worktree-auditoria-acto-juridico` con una metodología
+más precisa que la de este documento (comparación cualitativa eje por
+eje contra las 17 fuentes PDF + secundarias, con 7 categorías de
+hallazgo, no solo una razón de caracteres). Según
+`.claude/handoff/ESTADO_ACTUAL.md` (Hilo 23, verificado con `git log`),
+**los 49 hallazgos de esa auditoría ya están cerrados y corregidos en el
+HTML**, en esa rama.
+
+El 49% de fidelidad medido en este documento (507.205 → 246.760
+caracteres) se calculó contra una copia de `04_Acto_Juridico_Manual.html`
+que no tenía esas correcciones aplicadas: no es una medición del estado
+final corregido, es del estado que la auditoría diagnosticó como
+insuficiente. **No usar este número para decidir si falta trabajo**: la
+auditoría ya es la referencia correcta.
+
+**Lo que sí sigue pendiente, y no es un problema de contenido sino de
+git:** `main` solo tiene fusionada la primera tanda de esa rama (ejes N,
+H, C). El resto del trabajo (ejes B, D, E-G, `sI9`, L-M, `sO2-1`, P-R, y
+un ajuste estructural del eje S) sigue solo en la rama, sin fusionar.
+Además apareció un commit directo en `main` (`53757d9`, "arreglo apunte
+Acto jurídico") que también toca el eje B, la misma sección que la rama
+sin fusionar también corrige: **antes de fusionar la rama hay que
+comparar ambos cambios al eje B para no duplicar o pisar una corrección**
+(instrucciones exactas en el Hilo 23 del handoff). Este análisis y el
+merge en sí son trabajo de git/integración, no de redacción de
+contenido: no requieren releer las fuentes ni escribir nada nuevo.
 
 ### Fase 2: Bienes
 
