@@ -67,15 +67,47 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   por su `Revision_status="Revisar"`) y `rc-just-032` (nuevo, sin
   publicar): el manual de Contractual se contradice a sí mismo sobre si
   CLARO SOLAR o ABELIUK defiende "ausencia de culpa basta como eximente"
-  (línea ~1117 dice una cosa, línea ~1618-1626 la contraria, en
-  `01_Responsabilidad_Contractual_Manual.html`). Laura va a revisar cuál
-  atribución es la correcta (2026-08-13, todavía sin resolver).
+  (línea ~1117/1134 dice una cosa, línea ~1618-1626/1643 la contraria, en
+  `01_Responsabilidad_Contractual_Manual.html`). **2026-08-18: resuelto
+  por la auditoría de cobertura** (`docs/auditoria_responsabilidad_contractual_2026-08-18.md`),
+  cruzando ambos pasajes contra la fuente que ambos citan (Orrego,
+  p.37-38): **la versión correcta es la del eje F** (ABELIUK sostiene que
+  basta la ausencia de culpa, CLARO SOLAR exige el caso fortuito); la del
+  eje E (línea ~1134) tiene los dos nombres invertidos. Falta que Laura
+  confirme y se corrija el HTML (recomendación del audit: alinear el
+  recuadro de E.4.3 con el de F.2, o fusionar ambos en uno solo).
 - `hist-pre-mc-015` (Precontractual): contenido ya revisado y publicado
   (`Revision_status="Verificado"`), solo le falta el eje/tema asignado,
   genuinamente partido entre el eje B y el J (detalle en
   `docs/fase0_rep_clasificacion_2026-07-31.md`). No bloquea nada.
 
 **Manuales:**
+- **2026-08-18: nuevo paso obligatorio en el proceso de manuales**,
+  sección 4 de `docs/script_apuntes.md` ("Auditoría de cobertura al
+  terminar el manual"). Surgió porque Laura encontró a mano, revisando
+  una pregunta de Airtable, dos temas reales de las fuentes (presunción
+  de culpa grave en Boetsch p.75, y el debate sobre qué estatuto rige las
+  obligaciones legales/cuasicontractuales en Orrego p.60) ausentes del
+  manual de Contractual, algo que el chequeo de fidelidad tramo a tramo
+  ya existente (sección 1.6) no podía detectar por construcción (mide
+  fidelidad a la fuente usada, no si esa era la única fuente relevante).
+  Ambos puntos ya están **agregados al manual de Contractual**
+  (`01_Responsabilidad_Contractual_Manual.html`), verificados contra las
+  fuentes, balance de etiquetas y cero guiones largos. Se abrió además
+  `docs/auditoria_responsabilidad_contractual_2026-08-18.md` (mismo
+  formato que la de Acto Jurídico), **completada el mismo día para los 8
+  ejes** (7 con verificación de alta confianza, el eje D por muestreo
+  dirigido, no lectura íntegra). Encontró, en total, **3 hallazgos más
+  sin corregir todavía**: **el más importante, resuelve una contradicción
+  interna que ya estaba anotada como pendiente más arriba** (Claro
+  Solar/Abeliuk invertidos entre los ejes E y F, ver arriba); un
+  argumento de Aedo mal ubicado en el eje H en vez del A; un debate
+  doctrinal completo sobre la mora del acreedor, ausente del eje E. Fuera
+  de esos 3 puntos, el manual resultó de **fidelidad muy alta** frente a
+  sus 5 fuentes, sin contenido inventado en ningún tramo. El PDF de
+  Contractual (`app/pdf/Responsabilidad_Contractual.pdf`) quedó
+  desactualizado frente a los arreglos ya aplicados, no se regeneró a
+  propósito (mismo criterio que Acto Jurídico, ver más abajo).
 - Los 25 ejes de REX reformateados (2026-08-12) siguen **pendientes de
   revisión de Laura**, como todo el contenido jurídico de los manuales.
   Detalle de qué se agregó en cada eje en `docs/notas_reformato_rex.md`.
@@ -149,6 +181,24 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   visibilidad de tarjetas esperados, cero excepciones de JS. Falta
   todavía la verificación visual real con una alumna beta (colores,
   layout en mobile).
+- **2026-08-14: dropdown "Modelo" de Práctica en iPhone Safari,
+  resuelto y confirmado por Laura.** Dos arreglos fallidos
+  (`stopPropagation` sobre el menú custom) antes de reemplazar el menú
+  propio de Materia/Modelo/Subtipo/Área/Método por un `<select>` nativo
+  por filtro (función `ddCell` en `app/alternativas.html`): el picker de
+  iOS/Android maneja abrir/cerrar y el toque de cada opción, ese bug de
+  raíz deja de ser posible. El control cerrado mantiene el mismo diseño
+  (box y flecha) vía `appearance:none`; la lista abierta la dibuja el
+  sistema operativo. **Laura confirmó que ya funciona en su iPhone.**
+- **2026-08-14: racha de Práctica corregida (bug real, no de UX).** Al
+  conectar la racha real del status-row de Práctica (antes mockeada en
+  5) se duplicó la lógica de `app/dashboard.html` pero sin el filtro de
+  `abandono` en `memorice_intentos` -- una sesión de Memorice cerrada a
+  medias contaba como "día con actividad". Laura reportó una racha de 2
+  que no se condecía con lo que había hecho; confirmado contra sus
+  datos reales en Supabase (fila del 13-08 con `abandono=true`) y
+  corregido: con el filtro, sus datos dan racha=1, verificado
+  reproduciendo el cálculo con sus filas reales antes de subir el fix.
 - Reconectar el link "Progreso" del menú con la sección de progreso del
   dashboard (se perdió al unificar el menú global).
 - Agrupar el cuaderno de errores por tipo de pregunta (hoy es una lista
@@ -156,8 +206,15 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
 - Correo `admin@digesto.cl`: falta que Laura cree la cuenta de Google
   Workspace (necesita su método de pago); después se agregan los DNS en
   Vercel.
-- Memoria entre sesiones del Interrogador: construida, verificada solo con
-  mocks, **falta correr su SQL en Supabase y mergear la rama a `main`**.
+- Memoria entre sesiones del Interrogador: código fusionado a `main`
+  (commit `4d80743`) y SQL corrido en producción (verificado en vivo
+  2026-08-14: existe `interrogador_memoria`, y `interrogaciones_diarias`
+  ya tiene `materia`/`historial`). El doc decía que faltaba esto, estaba
+  desactualizado. **Lo que sí sigue pendiente**, según
+  `docs/interrogador.md`: probarla con una interrogación real (gasto
+  real) en dos sesiones seguidas de la misma materia, para confirmar que
+  la comisión varía las preguntas y prioriza los temas débiles -- solo
+  verificado con datos simulados hasta ahora.
 - Fusionar a `main` el arreglo de encabezado de los PDF (worktree
   `pdf-header-fix`, ya pusheado): a propósito no fusionado, Laura quiere
   juntar más arreglos de PDF antes de regenerar los 3 de una vez.

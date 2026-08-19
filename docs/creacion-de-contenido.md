@@ -87,6 +87,14 @@ legal, pero no hace falta correr este script de nuevo.
   completo de formato (con la hoja de estilos lista para copiar) y proceso,
   con el estándar de Contractual/Precontractual (no de Extracontractual,
   que quedó más denso y con menos recuadros de lo deseado).
+- **Bienes y Acto Jurídico quedaron con 49-57% del contenido de su
+  fuente** (Contractual, el estándar, quedó en 92%): se sintetizó de
+  memoria en vez de transcribir cerca y recién ahí formatear. Diagnóstico
+  completo, ejemplo real y plan de reparación por partes (primero Acto
+  Jurídico, después Bienes) en `docs/incidente_compresion_manuales.md`.
+  El proceso ya se corrigió en `docs/script_apuntes.md` (secciones 0.4,
+  1.6, 2.1) para que no vuelva a pasar en manuales nuevos; la reparación
+  de estos dos manuales todavía no empezó.
 - **Manual de Precontractual** (`03_...html`) se construyó a partir de un
   borrador de Laura; sus recuadros pedagógicos y las preguntas/keywords de
   los checkpoints de `app/manuales.html` son borrador de Claude, **todavía

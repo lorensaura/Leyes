@@ -245,7 +245,8 @@ concentrado casi todo en el tratamiento de la **aceptación** dentro de
 regla de carga de la prueba) y en un vacío puntual de los contratos
 electrónicos (falta la obligación de confirmación escrita). Ningún
 hallazgo de prioridad alta; los de prioridad media son candidatos claros
-para la fase 2.
+para la fase 2. **Los 7 hallazgos de esta tanda ya están corregidos en
+el HTML del manual (2026-08-14).**
 
 ---
 
