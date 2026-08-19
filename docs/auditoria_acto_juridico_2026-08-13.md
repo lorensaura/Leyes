@@ -22,18 +22,36 @@
 
 ## Resumen ejecutivo
 
-**Estado de corrección (actualizado 2026-08-13): los 49 hallazgos de los
-21 ejes están corregidos en el HTML del manual**
-(`04_Acto_Juridico_Manual.html`, misma rama que este reporte), a pedido
-de Laura. La corrección se hizo en dos tandas: primero los tres ejes de
-mayor concentración de jurisprudencia real (N, H, C), y después el resto
-del manual completo (B, D, E-G, `sI9`, L-M, `sO2-1`, P-R, y el problema
-estructural de `sR10-2`/eje S). Cada corrección se verificó contra el
-texto extraído de su PDF fuente antes de escribirla (nada agregado de
-conocimiento general), y el archivo se revisó al cierre con un chequeo de
-balance de etiquetas HTML e ids duplicados, sin errores. El PDF del
-manual (`app/pdf/Acto_Juridico.pdf`, generado 2026-08-12) sigue
-desactualizado y **se regenera a continuación de este resumen**.
+**Estado de corrección (actualizado 2026-08-19): completo, en dos pasadas
+sucesivas.** Los 49 hallazgos de esta auditoría, en los 21 ejes, se
+corrigieron en el HTML del manual (`04_Acto_Juridico_Manual.html`) el
+2026-08-13, en dos tandas: primero los tres ejes de mayor concentración de
+jurisprudencia real (N, H, C), y después el resto del manual completo (B,
+D, E-G, `sI9`, L-M, `sO2-1`, P-R, y el problema estructural de
+`sR10-2`/eje S). Esa corrección de main se hizo en paralelo, por tandas
+más lentas, y quedó parcial (solo N, H, C y B) al momento de este merge;
+la corrección completa de los 49 hallazgos ya está en esta rama.
+
+Después de esa corrección, una segunda pasada, más profunda, volvió a
+comparar cada uno de los 21 ejes directamente contra el texto completo de
+los 17 PDF fuente de Boetsch (documentada en `corrección_manual_actojuridico.md`,
+no en este reporte). Esa pasada encontró y corrigió argumentos, ejemplos y
+citas de jurisprudencia que esta auditoría no había detectado: por
+ejemplo, el eje A, que esta auditoría marcó "sin hallazgos" en las 7
+categorías, tenía igual 3 argumentos completos faltantes frente al PDF
+fuente. Terminada esa pasada (Fase A, 2026-08-13 a 2026-08-18), una
+tercera pasada (Fase B, 2026-08-19) agregó los argumentos de las fuentes
+secundarias (Bozzo e Ibarra, Domínguez/Boetsch) que aún faltaban en 7
+ejes más (A, B, D, H, L, N, P), y también resolvió el eje Q (las
+secciones de terminación, renuncia y muerte, sin respaldo de Boetsch en
+ese tramo, quedaron citadas a su fuente real). Cada corrección, en las
+tres pasadas, se verificó contra el texto extraído de su PDF fuente antes
+de escribirla (nada agregado de conocimiento general), y el archivo se
+revisó al cierre de cada pasada con un chequeo de balance de etiquetas
+HTML, guiones largos e ids duplicados, sin errores. El PDF del manual
+(`app/pdf/Acto_Juridico.pdf`) se regeneró al cierre de la Fase B
+(2026-08-19, 134 páginas). Falta que Laura revise el conjunto antes de
+mergear esta rama a `main` y enlazar el manual en `app/manuales.html`.
 
 **49 hallazgos** en total a lo largo de los 21 ejes: **1 de prioridad
 alta**, **33 de prioridad media**, **15 de prioridad baja**. Ningún eje
@@ -93,15 +111,19 @@ modalidades (RAMOS, ABELIUK) se movió del final del eje R al inicio del
 eje S, donde corresponde temáticamente.
 
 **Ejes que resultaron de altísima fidelidad desde la auditoría original,
-sin hallazgos relevantes**: A, F, G, L, M, S, T, U.
+sin hallazgos relevantes**: F, G, L, M, S, T, U. (El eje A también figuró
+aquí en la auditoría original, pero la pasada posterior de comparación
+directa contra el PDF fuente sí le encontró 3 argumentos completos
+faltantes: ver "Estado de corrección" arriba. Queda como aviso de que esta
+auditoría, basada en categorías de hallazgos, no capturó todo lo que sí
+capturó la comparación línea a línea contra la fuente.)
 
 ### Qué sigue
-La fase 2 (corrección del HTML) está terminada: los 49 hallazgos de los
-21 ejes quedaron corregidos en `04_Acto_Juridico_Manual.html` (2026-08-13,
-misma rama que este reporte). Falta que Laura revise el resultado y
-confirme el contenido antes de que el manual se enlace en
-`app/manuales.html`. El PDF se regeneró junto con esta corrección (ver
-"Estado de corrección" arriba).
+Las tres pasadas de corrección (la fase 2 de esta auditoría, la
+"reparación de compresión" y la Fase B de fuentes secundarias) están
+terminadas, con el PDF regenerado al final. Falta que Laura revise el
+resultado y confirme el contenido antes de mergear esta rama a `main` y
+enlazar el manual en `app/manuales.html`.
 
 ---
 
