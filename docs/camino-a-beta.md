@@ -160,6 +160,42 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   `cpInsertBefore` por eje, y los checkpoints de comprensión lectora con
   keywords, uno por eje, al estilo de los otros 3 manuales) una vez que
   Laura dé el visto bueno al contenido.
+- **RESUELTO (2026-08-07, fusionado a `main` 2026-08-20): el bloque de
+  manual completo del cierre del Interrogador no usaba caché.**
+  `api/interrogador.js` permite hasta `MAX_MENSAJES` mensajes por
+  interrogación. Si una alumna seguía escribiendo después del cierre
+  normal (el umbral varía según duración: 12/24/40 mensajes para
+  5/15/30 min), cada mensaje que seguía pasaba por `respaldoDeCierre`,
+  que recargaba el manual COMPLETO de la materia (hasta ~159.000 tokens
+  en Extracontractual, el más grande) fresco, sin `cache_control`, en
+  cada turno -- a diferencia del resto del sistema, que sí cachea. En
+  ese escenario (raro, pero sin techo de costo) una sola interrogación
+  podía llegar a ~US$11,50 en modo Examen o ~US$6,20 en modo Práctica,
+  muy por encima del costo normal de una sesión (~US$1,90 / ~US$0,95).
+  **Arreglo aplicado:** `elegirContenidoDelTurno`/`respaldoDeCierre`
+  ahora devuelven `{ text, cacheable }`, y el bloque del `system` que
+  arma la llamada principal agrega `cache_control: {type: 'ephemeral',
+  ttl: '1h'}` cuando `cacheable` es true -- cubre tanto `respaldoDeCierre`
+  como el fallback "no estoy seguro"/error del router en un turno normal
+  (mismo defecto, mismo arreglo). Precisiones importantes:
+  - **No se comparte entre alumnas**: el bloque de muestra de preguntas
+    varía por `sessionId`, así que el prefijo cacheado completo es
+    distinto por sesión. El ahorro es turno a turno dentro de la MISMA
+    sesión, no entre alumnas.
+  - El caso normal (sesión que termina justo en el cierre, sin mensajes
+    extra) ahora paga un cache-write (~2x el precio base de ese bloque)
+    en vez de una lectura simple. El punto de equilibrio está en ~2
+    mensajes extra pasado el cierre; de ahí en adelante el arreglo gana
+    con margen amplio.
+  - **Esto acota la cola, no la elimina**: `MAX_MENSAJES` contra un
+    umbral de cierre de 12 (sesión de 5 min) sigue permitiendo turnos
+    extra tras el cierre, ahora todos a precio de lectura de caché en
+    vez de precio completo. Cortar la sesión de verdad en el umbral de
+    cierre sigue siendo un arreglo complementario si Laura quiere un
+    techo más duro.
+  - Verificado con `node --check`, sin correr una interrogación real de
+    punta a punta contra la API (pendiente si se quiere confirmar
+    `cache_creation_input_tokens`/`cache_read_input_tokens` en vivo).
 
 **Producto / app:**
 - **2026-08-13/14: tabla `practica_intentos` creada y corrida en
@@ -211,6 +247,13 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
 - Correo `admin@digesto.cl`: falta que Laura cree la cuenta de Google
   Workspace (necesita su método de pago); después se agregan los DNS en
   Vercel.
+- **Precios de venta ya definidos por Laura (2026-08-07), ver
+  `docs/pricing/planes-y-precios.md` — pero todavía sin cargar en la
+  landing.** Las 3 tarjetas de la sección Precios de `index.html` siguen
+  mostrando "Por definir" (verificado 2026-08-20); falta reemplazar esos
+  montos por los reales. Ojo: dos de los tres planes incluyen Justiniano,
+  que no está construido todavía (ver `docs/interrogador.md`) — decidir
+  si se publica el precio antes de que exista esa pieza.
 - Memoria entre sesiones del Interrogador: código fusionado a `main`
   (commit `4d80743`) y SQL corrido en producción (verificado en vivo
   2026-08-14: existe `interrogador_memoria`, y `interrogaciones_diarias`
@@ -220,9 +263,15 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   real) en dos sesiones seguidas de la misma materia, para confirmar que
   la comisión varía las preguntas y prioriza los temas débiles -- solo
   verificado con datos simulados hasta ahora.
-- Fusionar a `main` el arreglo de encabezado de los PDF (worktree
-  `pdf-header-fix`, ya pusheado): a propósito no fusionado, Laura quiere
-  juntar más arreglos de PDF antes de regenerar los 3 de una vez.
+- **2026-08-20: fusionado a `main` el arreglo de encabezado de los PDF**
+  (worktree `pdf-header-fix`, había quedado sin fusionar a propósito para
+  juntarlo con otro arreglo de PDF pendiente). `Responsabilidad_Contractual.pdf`
+  y `Responsabilidad_Extracontractual.pdf` regenerados y verificados
+  (portada sin encabezado, "DIGESTO + título + Examen de grado" sin el
+  nombre de Laura desde la página 2). **Ojo:** el bug de índice
+  anidado/página en blanco de Contractual y Precontractual (ver más
+  arriba, "Índice de los 3 manuales") sigue sin corregir, así que estos
+  2 PDFs van a necesitar regenerarse de nuevo cuando se resuelva.
 
 **JustinIAno / Interrogador, pendientes heredados sin fecha reciente:**
 falta agregar la tarjeta de pago a la cuenta de Voyage AI (a propósito

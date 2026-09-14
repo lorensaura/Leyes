@@ -60,3 +60,10 @@ Clasificado por para qué lo abrirías — no leas ninguno de entrada, solo el q
 **Producto, pendiente / sin priorizar:**
 - `docs/paywall.md` — plan del paywall (3 capas).
 - `docs/gamificacion.md` — idea de gamificación, sin priorizar.
+
+**Precios (`docs/pricing/`):**
+- `docs/pricing/planes-y-precios.md` — precios de venta de los 3 planes
+  (Práctica/Estándar/Gradista) + Recarga, definidos por Laura
+  (2026-08-07). Ábrelo antes de tocar la sección Precios de `index.html`.
+- `docs/pricing/costos-interrogador-justiniano.md` — costo real a Digesto
+  (API de Anthropic) por plan, para comparar contra el precio de venta.

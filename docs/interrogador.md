@@ -198,15 +198,22 @@ el Código Civil.
    una sesión, así que el caché de Anthropic sigue funcionando turno a
    turno).
 4. **Extractos del manual para este turno** — el resultado de
-   `elegirContenidoDelTurno` (ver arriba). Es el único bloque que cambia de
-   turno a turno; por eso va SIN `cache_control` -- pero como ahora es
-   chico (unos pocos miles de tokens, no ~279K), pagarlo fresco en cada
-   turno sale igual o más barato que antes.
+   `elegirContenidoDelTurno` (ver arriba), que devuelve `{ text, cacheable }`.
+   En el turno normal (extracto por chunks) cambia turno a turno y va SIN
+   `cache_control` -- chico (unos pocos miles de tokens, no ~279K), pagarlo
+   fresco sale igual o más barato que antes. Pero cuando este bloque es el
+   **respaldo de manual completo** (`respaldoDeCierre`, o el fallback "no
+   estoy seguro"/error del router por turno) SÍ va con `cache_control`
+   desde 2026-08-07 (ver `docs/camino-a-beta.md`): ese texto es idéntico
+   turno a turno dentro de la misma sesión, así que si la alumna sigue
+   escribiendo después del cierre (hasta el tope de `MAX_MENSAJES`), los
+   turnos extra leen de caché en vez de recargar el manual entero (hasta
+   ~159K tokens en Extracontractual) fresco cada vez.
 
-El bloque 3 (muestra) sigue siendo el único con `cache_control` -- cachea
-todo el prefijo (reglas + código + muestra) de una vez. Ese prefijo ahora
-pesa ~8-14K tokens en vez de ~279K, así que además de más barato, el
-caché se escribe más rápido cuando expira (cada 1h de inactividad).
+El bloque 3 (muestra) tiene siempre `cache_control`, y el bloque 4 lo tiene
+condicionalmente (ver arriba). Cuando el bloque 4 no cachea, solo el
+prefijo 1-3 (reglas + código + muestra, ~8-14K tokens) se reutiliza entre
+turnos; cuando el bloque 4 sí cachea, se reutiliza el prefijo completo 1-4.
 
 El router (`api/interrogador.js`) tiene su propio `system` separado
 (prompt del router + checklist de anclas + índice), también con
@@ -259,11 +266,13 @@ vuelve a comprimir a como máximo ~350 palabras.
 
 **Dónde va en el prompt: nunca en el prefijo cacheado.** El bloque de
 memoria (`construirBloqueMemoria`) se agrega DESPUÉS del bloque 3 (la
-muestra, que es el último con `cache_control`, ver arriba) y junto al
-bloque 4 (extractos del turno), ambos sin `cache_control`. Es información
-de UNA alumna puntual, así que meterla en el prefijo cacheado (compartido
-entre todas las alumnas que elijan la misma materia dentro de la ventana de
-1h) volvería ese prefijo distinto por alumna y rompería el ahorro que da
+muestra, que siempre tiene `cache_control`, ver arriba) y ANTES del
+bloque 4 (extractos del turno), siempre sin `cache_control` -- a
+diferencia del bloque 4, que desde 2026-08-07 sí puede cachear cuando es
+el respaldo de manual completo (ver arriba). Es información de UNA alumna
+puntual, así que meterla en el prefijo cacheado (compartido entre todas
+las alumnas que elijan la misma materia dentro de la ventana de 1h)
+volvería ese prefijo distinto por alumna y rompería el ahorro que da
 compartirlo. El costo de mandarlo fresco en cada turno es bajo: 300-500
 tokens típicos.
 

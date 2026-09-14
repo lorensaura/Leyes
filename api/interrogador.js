@@ -407,9 +407,18 @@ function unirConTopePorMateria(listasDeIds, tope) {
 //   falla o el router de verdad no le alcanza, se cae a los 3 manuales
 //   completos. Ahí sí está justificado: se tocaron las 3 materias a
 //   propósito (modo pensado para 1-2 veces por semana, no todos los días).
+//
+// Devuelve { text, cacheable }: el manual completo (por materia o los 3
+// juntos) es siempre el mismo texto para la misma materia, así que se marca
+// cacheable -- si la alumna sigue escribiendo después del cierre (hasta el
+// tope de mensajes), los turnos siguientes reusan el caché en vez de
+// recargar el manual entero fresco cada vez. La selección ampliada de
+// extractos SÍ cambia turno a turno (la conversación creció), así que esa
+// va sin cache_control -- cachearla no ahorraría nada, solo pagaría el
+// costo de escritura de caché sin nunca acertar un hit.
 async function respaldoDeCierre(messages, materiaSesion) {
   if (materiaSesion !== 'todas') {
-    return textoRespaldoPorMateria(materiaSesion);
+    return { text: textoRespaldoPorMateria(materiaSesion), cacheable: true };
   }
 
   try {
@@ -421,14 +430,14 @@ async function respaldoDeCierre(messages, materiaSesion) {
     const idsFinal = unirConTopePorMateria([idsDelRouter, porArticulo, porPalabraClave], ROUTER_MAX_CHUNKS_AMPLIO);
 
     if (!eleccionAmplia.no_estoy_seguro && idsFinal.length > 0) {
-      return construirBloqueExtractos(idsFinal, ENCABEZADO_EXTRACTOS_AMPLIOS);
+      return { text: construirBloqueExtractos(idsFinal, ENCABEZADO_EXTRACTOS_AMPLIOS), cacheable: false };
     }
     // El router marcó que ni con la selección ancha le alcanza -- último
     // recurso, aceptado como costo justificado para este modo.
   } catch (e) {
     console.error('Selección ampliada del cierre falló, cae a los 3 manuales completos:', e);
   }
-  return CONTENIDO_MANUALES.completo;
+  return { text: CONTENIDO_MANUALES.completo, cacheable: true };
 }
 
 // Punto de entrada: decide qué bloque de manual va en el system prompt de
@@ -471,13 +480,19 @@ async function elegirContenidoDelTurno(messages, materiaSesion, duracionMinutos)
       if (idsFinal.length >= ROUTER_MAX_CHUNKS) break;
     }
 
+    // Mismo respaldo de manual completo que respaldoDeCierre (por materia o
+    // los 3 juntos): mismo texto en cada turno donde se repita este
+    // fallback, así que también va cacheable -- si el router queda inseguro
+    // varios turnos seguidos, no se recarga fresco cada vez.
     if (eleccion.no_estoy_seguro || idsFinal.length === 0) {
-      return textoRespaldoPorMateria(materiaSesion !== 'todas' ? materiaSesion : eleccion.materia_respaldo);
+      const texto = textoRespaldoPorMateria(materiaSesion !== 'todas' ? materiaSesion : eleccion.materia_respaldo);
+      return { text: texto, cacheable: true };
     }
-    return construirBloqueExtractos(idsFinal);
+    return { text: construirBloqueExtractos(idsFinal), cacheable: false };
   } catch (e) {
     console.error('Fraccionamiento del turno falló, cae a respaldo:', e);
-    return materiaSesion !== 'todas' ? textoRespaldoPorMateria(materiaSesion) : CONTENIDO_MANUALES.completo;
+    const texto = materiaSesion !== 'todas' ? textoRespaldoPorMateria(materiaSesion) : CONTENIDO_MANUALES.completo;
+    return { text: texto, cacheable: true };
   }
 }
 
@@ -1021,7 +1036,17 @@ module.exports = async (req, res) => {
           // cacheado de arriba, que se comparte entre todas las alumnas que
           // elijan la misma materia dentro de la ventana de 1h.
           ...(bloqueMemoria ? [{ type: 'text', text: bloqueMemoria }] : []),
-          { type: 'text', text: contenidoDelTurno },
+          // contenidoDelTurno.cacheable es true cuando el bloque es el
+          // manual completo de respaldo (cierre, o el router inseguro varios
+          // turnos seguidos) -- mismo texto en cada turno que se repite, así
+          // que conviene marcarlo para no recargarlo fresco (hasta ~159K
+          // tokens) en cada mensaje extra. Ver respaldoDeCierre /
+          // elegirContenidoDelTurno.
+          {
+            type: 'text',
+            text: contenidoDelTurno.text,
+            ...(contenidoDelTurno.cacheable ? { cache_control: { type: 'ephemeral', ttl: '1h' } } : {}),
+          },
         ],
         messages,
       }),
