@@ -82,24 +82,57 @@ numerar.
 
 ### 1.2 Enumeraciones dentro de un párrafo
 
-Nunca `<ul><li>` de bullets para requisitos, características o categorías
-legales. Cada punto en su propio párrafo (salto de línea entre el
-encabezado del punto y el párrafo que lo desarrolla):
+**Regla permanente, corregida 2026-09-16 a pedido explícito de Laura: se
+sigue siempre, en todos los manuales, no solo en el tramo donde se
+detectó.** Nunca `<ul><li>` de bullets para requisitos, características
+o categorías legales. Nunca, tampoco, un párrafo corrido con los puntos
+separados por punto y coma ("son requisitos: que..., que..., y
+que..."): eso obliga a releer la frase para separar los puntos a
+mano, y es exactamente lo que este formato existe para evitar. Cada vez
+que un párrafo va a enumerar varios requisitos, elementos, soluciones,
+posturas o pasos:
 
-- **`.enum-i`** — números romanos en negrita `(i)` `(ii)` `(iii)`: cuando es
-  la **única enumeración** del punto (requisitos, elementos, excepciones,
+1. La frase que introduce la enumeración **termina en dos puntos** (":"),
+   en su propio párrafo, no en punto seguido.
+2. Cada punto va **en su propio párrafo** (salto de línea entre punto y
+   punto). Si el punto es un mini-título con desarrollo propio abajo
+   (ej. "(iii) Elementos."), la frase corta entera va en negrita o
+   subrayado según su nivel, seguida de un párrafo aparte que lo
+   desarrolla (ver clases `.enum-i`/`.enum-a` de bloque, abajo). Si el
+   punto es una oración corta y autocontenida, sin desarrollo aparte
+   (como un requisito de una sola frase), va como texto corrido normal
+   con un marcador `(i)`/`(ii)`/`(iii)` al inicio (`<span
+   class="num">`, sin negrita ni cursiva propia — ver 1.8).
+3. **Dentro de cada punto, resaltar (negrita) solo la palabra o frase
+   clave, nunca el punto completo.** Poner en negrita o cursiva la
+   oración entera (como pasó en la primera versión de este arreglo, con
+   toda la frase en cursiva) le quita peso exactamente a lo que se
+   quiere destacar: si todo resalta, nada resalta. Ejemplo correcto:
+   "Que se **ejerza un derecho**, a lo menos con apariencia de
+   **legalidad**." — no la frase completa en negrita ni en cursiva.
+4. Cuando la enumeración se presenta con palabras ordinales en vez de
+   números/letras ("la primera... la segunda...", "en primer
+   lugar... en segundo lugar..."), esas palabras ordinales van en
+   negrita, mismo criterio de "resaltar el marcador, no todo el punto".
+
+Clases disponibles para el nivel de bloque (punto con desarrollo propio
+en un párrafo aparte):
+
+- **`.enum-i`** — números romanos en **cursiva** `(i)` `(ii)` `(iii)`
+  (cambiado de negrita a cursiva el 2026-09-16, ver 1.8): cuando es la
+  **única enumeración** del punto (requisitos, elementos, excepciones,
   pasos, casos).
 - **`.enum-a`** — letras subrayadas `a.` `b.` `c.`: cuando los puntos son
   **características, categorías o tipos** de un mismo concepto (una
   clasificación en subtipos, no una lista de requisitos).
+- **`.enum-a-inline`** — variante de `.enum-a` en cursiva, sin salto de
+  línea: cuando el punto es una etiqueta corta seguida de dos puntos y
+  el desarrollo sigue en la misma oración (ej. "*Compraventa:* la de
+  bienes raíces es solemne..."). Aquí la cursiva va solo en la etiqueta
+  ("Compraventa:"), nunca en el desarrollo que sigue.
 - **`.enum-c`** — cursiva, sin negrita ni subrayado (reservada, poco usada):
   un cuarto nivel más profundo (ej. "c.1", "c.2"), cuando hay una
   subdivisión dentro de una letra.
-- Si el punto es un mini-título (ej. "(iii) Elementos."), la frase corta
-  entera va en negrita/subrayado según su nivel, seguida de un párrafo
-  aparte. Si el punto es continuación gramatical de una frase que lo
-  introduce, solo la palabra o frase clave dentro del punto va en negrita,
-  no la línea completa.
 
 ### 1.3 Recuadros pedagógicos
 
@@ -226,9 +259,14 @@ falta, `--accent`/`--accent2` u otro color de marca, nunca la estructura):
     font-style:italic;color:#333;font-size:1rem;margin:1rem 0 .2rem;
     text-align:left;page-break-after:avoid;
   }
-  .enum-i{display:block;font-weight:700;margin:.9rem 0 .15rem;}
+  .enum-i{display:block;font-style:italic;margin:.9rem 0 .15rem;}
   .enum-a{display:block;text-decoration:underline;margin:.7rem 0 .15rem;}
+  .enum-a-inline{font-style:italic;}
+  .enum-a-inline .tit{text-decoration:none;}
   .enum-c{display:block;font-style:italic;margin:.6rem 0 .15rem;}
+  .num{text-decoration:none;}
+  .tit{text-decoration:underline;}
+  h4 .tit{text-decoration:none;}
   p{margin:.75rem 0 .75rem;text-align:justify;}
   ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
   li{margin:.4rem 0;text-align:justify;}
@@ -390,7 +428,113 @@ Reglas concretas:
   deliberadamente" es aceptable; una razón de fidelidad baja porque
   nadie se dio cuenta, no.
 
-### 1.7 Índice con subtemas (requisito nuevo para manuales nuevos)
+### 1.7 Ejes que se dividen en varios bloques temáticos: pasan a ser capítulos romanos propios
+
+**2026-09-15, piloto en Bienes Eje A. Corregido 2026-09-16, a pedido de
+Laura, antes de que se replicara el error en otro eje.** La primera
+versión de este punto (ver historial de git si hace falta el detalle)
+proponía un divisor `.parte` *dentro* del Eje A, sin salto de página,
+solo como agrupador visual. Laura pidió algo distinto: cuando un eje
+tiene varios bloques temáticos bien distintos en la fuente
+(típicamente "aspectos generales" y "clasificación"), **cada bloque se
+convierte en su propio capítulo de nivel superior**, con número romano
+correlativo (I, II, III...), al mismo nivel que los demás ejes del
+manual (letra A-Z hoy) — no en un nivel intermedio nuevo.
+
+En la práctica: el Eje A se transformó en dos capítulos `h1`
+independientes, exactamente con el mismo formato que cualquier otro
+eje (salto de página incluido):
+
+```html
+<h1 id="cI">I. Aspectos generales</h1>
+...
+<h1 id="cII">II. Clasificación de los bienes</h1>
+```
+
+Los antiguos subtemas de primer nivel del bloque II (que eran "4.
+Bienes corporales...", numerados) pasan a un nivel de "clasificación"
+con letra mayúscula (`h2`, sigue el mismo patrón `.num`/`.tit` que
+cualquier otro `h2` del manual), y sus antiguos subtemas `N.M` (que
+eran `h3`) se renumeran `1.`, `2.`... reiniciando dentro de cada letra.
+Los `h4` (a, b, c...) debajo no cambian.
+
+**Ids: usar el prefijo `c` (capítulo), nunca `s` + número romano.**
+Los ejes existentes ya usan ids de una sola letra (`sB`, `sC`... y
+también `sI`, para el eje "La tradición del derecho real de herencia",
+noveno en el orden A-Z). Si un capítulo romano nuevo usara `id="sI"`
+para "I. Aspectos generales", **choca directo con ese `sI` que ya
+existe** — pasó en la primera pasada de esta corrección, detectado
+recién con un chequeo de ids duplicados antes de dar el tramo por
+bueno. Por eso los capítulos romanos usan `id="cI"`, `id="cII"`, etc.
+(y sub-ids `cI-1`, `cII-A`, `cII-A-1`...), un namespace que nunca
+choca con las letras `sA`-`sZ` todavía en uso.
+
+**No hace falta saltar ninguna letra.** Como el número romano del
+capítulo y las letras de clasificación quedan en niveles visuales
+distintos (título de capítulo centrado arriba vs. subtítulos A, B, C
+más abajo), no compiten por el mismo golpe de vista. La primera
+versión de este punto recomendaba saltar la letra "I" en la secuencia
+de clasificaciones para no chocar con un romano "I." vecino: ya no
+aplica, la secuencia de clasificación va A, B, C... sin saltos.
+
+**Alcance: aplicación progresiva, eje por eje, no de una sola vez.**
+Laura decidió (2026-09-16) no renumerar los 26 ejes del manual completo
+de golpe, porque 24 de ellos todavía no pasaron por la revisión de
+fidelidad de contenido (sección 3). El plan es: a medida que se revisa
+cada eje contra la fuente, si tiene varios bloques temáticos, se
+convierte en el (los) siguiente(s) número(s) romano(s) correlativo(s)
+del manual (el Eje A se volvió I y II; el próximo eje que se toque y
+no se subdivida se numerará III, y así). Mientras tanto, el índice va
+a mostrar una mezcla de romanos (I, II) y letras (B, C, D...) hasta que
+el manual completo pase por este proceso. Si un eje no tiene bloques
+temáticos distintos, simplemente se convierte en un solo número romano
+(mismo título, mismo contenido, solo cambia el id y el numeral).
+
+### 1.8 Espaciado después del número o letra de cada encabezado
+
+**2026-09-15, piloto en Bienes Eje A. Extendido a todo el manual y a
+`h1` el 2026-09-16, a pedido explícito de Laura: "que esto aplique a
+todos los enunciados numerales".** Después del número/letra/romano de
+cualquier título o enumeración (`h1`, `h2`, `h3`, `h4`, `.enum-a`,
+`.enum-i`, y los marcadores `(i)/(ii)/(iii)` sueltos dentro de un
+párrafo, ver 1.2), va `&nbsp;&nbsp;&nbsp;&nbsp;` (cuatro espacios
+duros) antes de empezar el texto, en vez de un espacio simple. Un
+espacio simple se colapsa igual en HTML, por eso hace falta `&nbsp;`.
+Objetivo: que el número se distinga del título de un vistazo rápido.
+
+**Regla permanente: el subrayado va solo en las palabras del título,
+nunca en el número/letra/romano.** El número y el espacio van
+envueltos en `<span class="num">` (`.num{text-decoration:none}`) y el
+título en `<span class="tit">` (`.tit{text-decoration:underline}`), en
+los niveles que llevan subrayado (`h1`, `h2`, `h3`, `h4`, `.enum-a`,
+`.enum-a-inline`): sin ese envoltorio, el subrayado del encabezado se
+extiende también por debajo del número y del espacio, no solo del
+título, que es el error que salió en la primera pasada de Bienes. El
+`h4` además pierde el subrayado del todo (`h4 .tit{text-decoration:none}`,
+ver 1.2) para no tener el mismo peso visual que el `h3` de arriba.
+
+**Aplica a los 27 `h1` del manual completo, no solo a los capítulos
+romanos nuevos.** La primera versión de este punto eximía a `h1`
+("un solo espacio normal, sin `span`") porque se pensó que el
+problema de lectura solo aparecía en encabezados chicos y densos, no
+en un título grande y centrado. Laura corrigió eso: la regla es
+"todos los enunciados numerales", sin excepción. Como el texto de los
+27 `h1` (letra/romano + título) no cambia, esto se aplicó de una sola
+vez a todo el documento (no hace falta esperar a la revisión de
+contenido de cada eje, es un cambio puramente de formato, igual que el
+resto de este punto): `<h1 id="sB" style="text-decoration:none"><span
+class="num">B.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">El
+dominio</span></h1>`. Mismo criterio para `h2`/`h3`/`h4`: como el
+envoltorio no cambia el texto ni el esquema de numeración de cada eje
+(sigue "N." para `h2`, "N.M." para `h3` en los ejes sin revisar,
+"1., 2., 3..." reiniciado por letra donde ya se aplicó 1.7), se
+aplicó de una sola vez a los 27 ejes existentes. Lo que sigue
+progresivo, eje por eje, es únicamente la reparación de **contenido**
+(fidelidad, cobertura) y la conversión a capítulos romanos de 1.7 — no
+el formato de espaciado/subrayado, que ya es parejo en todo el
+manual.
+
+### 1.9 Índice con subtemas (requisito nuevo para manuales nuevos)
 
 Los 3 manuales existentes solo listan en su índice los ejes de nivel
 superior (nivel 0, letra). Laura pidió (2026-07-31) que el índice liste
@@ -492,6 +636,16 @@ fuera de esta primera versión del template.
 ---
 
 ## 3. Verificación antes de dar un tramo por terminado
+
+**2026-09-14: Laura revisa y aprueba cada tramo contra la fuente antes de
+abrir el siguiente.** Los chequeos mecánicos de abajo (balance de
+etiquetas, guiones largos, fidelidad de caracteres) son piso mínimo, no
+cierre: no reemplazan la lectura de Laura. Nace de que la auditoría de
+cobertura (sección 4) solo corre al final del manual completo, y para
+entonces ya se coló contenido comprimido (Bienes, Acto Jurídico) o un
+hueco frente a una fuente secundaria (Contractual, ver sección 4.1) sin
+que nadie lo note hasta mucho después. Aplica a manuales nuevos y a
+reparación de manuales existentes por igual.
 
 - **Balance de etiquetas.** Verificar (conteo + pila de anidamiento) que
   cada `div`, `p`, `em`, `strong` abierto tenga su cierre. Hay un bug real
