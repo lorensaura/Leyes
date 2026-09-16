@@ -479,16 +479,55 @@ aplica, la secuencia de clasificación va A, B, C... sin saltos.
 
 **Alcance: aplicación progresiva, eje por eje, no de una sola vez.**
 Laura decidió (2026-09-16) no renumerar los 26 ejes del manual completo
-de golpe, porque 24 de ellos todavía no pasaron por la revisión de
-fidelidad de contenido (sección 3). El plan es: a medida que se revisa
-cada eje contra la fuente, si tiene varios bloques temáticos, se
-convierte en el (los) siguiente(s) número(s) romano(s) correlativo(s)
-del manual (el Eje A se volvió I y II; el próximo eje que se toque y
-no se subdivida se numerará III, y así). Mientras tanto, el índice va
-a mostrar una mezcla de romanos (I, II) y letras (B, C, D...) hasta que
-el manual completo pase por este proceso. Si un eje no tiene bloques
+de golpe, porque en ese momento 24 de ellos todavía no habían pasado
+por la revisión de fidelidad de contenido (sección 3). El plan es: a
+medida que se revisa cada eje contra la fuente, si tiene varios
+bloques temáticos, se convierte en el (los) siguiente(s) número(s)
+romano(s) correlativo(s) del manual. Si un eje no tiene bloques
 temáticos distintos, simplemente se convierte en un solo número romano
-(mismo título, mismo contenido, solo cambia el id y el numeral).
+(mismo título, mismo contenido, solo cambia el id y el numeral). Hecho
+hasta ahora: el Eje A se volvió I y II; B (El dominio) se volvió III;
+C (La copropiedad) se volvió IV (2026-09-16, ambos ya revisados contra
+la fuente). Mientras el resto no se revise, el índice sigue mostrando
+una mezcla de romanos y letras (D, E, F...).
+
+**Plan ya acordado para "V. Los modos de adquirir" (D-U), a aplicar
+cuando le toque el turno a esos ejes — no ejecutado todavía porque
+ninguno de esos 18 ejes pasó aún por la revisión de contenido.**
+Laura pidió seguir la estructura real de Boetsch en vez de inventar
+una propia, verificada el 2026-09-16 leyendo los PDF fuente
+directamente (`BIENES_principal_5` a `_17`):
+
+- **V.1 Aspectos generales** y **V.2 La ocupación** — hoy fusionados en
+  el título del Eje D ("Los modos de adquirir: aspectos generales y la
+  ocupación"); Boetsch los trata como dos puntos `IV.1`/`IV.2`
+  separados dentro del mismo PDF. Separarlos en dos números al
+  reformatear.
+- **V.3 La accesión** = Eje E actual, sin cambios de fondo.
+- **V.4 La tradición** = Ejes F, G, H, I actuales, que pasan a ser las
+  letras **A** (F: descripción general, requisitos y efectos — Boetsch
+  trae esto en tres letras A/B/C separadas, pero nuestro manual ya las
+  fusionó en un eje, y eso se conserva), **B** (G: tradición de
+  muebles), **C** (H: tradición de inmuebles) y **D** (I: tradición del
+  derecho real de herencia).
+- **V.5 La prescripción** = Ejes J a T actuales completos (¡11 ejes!),
+  porque Boetsch mete **toda** la Posesión como preámbulo necesario de
+  la Prescripción, no como tema aparte. Se divide en dos letras: **A.
+  La posesión** (Ejes J-P actuales: aspectos generales, clases, mera
+  tenencia, adquisición/pérdida en muebles, posesión inscrita,
+  adquisición/pérdida en inmuebles inscritos, prueba — con su propia
+  sub-numeración `A.1`-`A.7`) y **B. La prescripción adquisitiva**
+  (Ejes Q-T actuales, sub-numerados `B.1`-`B.4`). **Decisión explícita
+  de Laura (2026-09-16): seguir a Boetsch tal cual, sin darle a la
+  Posesión su propio número romano pese a ser mucho contenido** (7
+  ejes) escondido dos niveles abajo del índice.
+- **V.6 La sucesión por causa de muerte** = Eje U actual, sin cambios
+  de fondo.
+
+No verificado todavía: qué pasa en el límite con el Eje V actual (La
+propiedad fiduciaria) en adelante — probablemente Boetsch abre ahí un
+capítulo romano nuevo ("V. Los derechos reales limitados" o similar),
+a confirmar contra la fuente cuando se llegue a ese punto del manual.
 
 ### 1.8 Espaciado después del número o letra de cada encabezado
 
