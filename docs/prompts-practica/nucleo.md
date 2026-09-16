@@ -21,6 +21,11 @@
 
 1. Copia el prompt del tipo que vas a generar (`docs/prompts-practica/{tipo}.md`),
    que ya incluye "aplican además las reglas de este núcleo" al principio.
+   Algunos tipos comparten además un documento intermedio (ni universal a
+   los 7, ni exclusivo de uno) porque varios tipos necesitan exactamente
+   la misma convención: hoy existe `docs/prompts-practica/elementos-clave.md`,
+   para Aplicación, Detección de error y Justificación (los tres tipos
+   con respuesta libre calificada por `elementos_clave`/`keywords`).
 2. Reemplaza `{MATERIA}` por la materia a trabajar y `{MANUAL}` por el
    archivo HTML del manual correspondiente (ej. `05_Bienes_Manual.html`,
    `02_Responsabilidad_Contractual_Manual.html`). Este núcleo y los
