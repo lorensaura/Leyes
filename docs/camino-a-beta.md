@@ -151,12 +151,15 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   **Actualizado 2026-08-19: además auditado y reparado por completo**, en
   tres pasadas sucesivas, en la rama `worktree-auditoria-acto-juridico`
   (detalle en `docs/incidente_compresion_manuales.md`, sección "Fase 1").
-  PDF regenerado (134 páginas). El conflicto de merge con `main` ya se
-  resolvió y se pusheó: la rama fusiona limpio. Verificado (tags,
-  densidad, sin guiones largos, sin ids duplicados) y **pendiente de que
-  Laura mergee la rama a `main` desde GitHub Desktop y revise el
-  contenido**. Todavía **no está enlazado en `app/manuales.html`**: falta
-  agregarle su objeto `civil_N` (título, `sourceFile`, `pdfFile`,
+  PDF regenerado (134 páginas). **2026-09-15: confirmado en vivo que la
+  rama ya está fusionada a `main`** (`git diff main
+  worktree-auditoria-acto-juridico -- 04_Acto_Juridico_Manual.html` sin
+  diferencias; los commits de Fase B y del eje Q aparecen directo en
+  `git log main`) — el doc decía "pendiente de que Laura mergee", estaba
+  desactualizado, no hace falta ese paso. Sigue pendiente que Laura
+  revise el contenido. Lo que sí sigue sin hacer, confirmado también hoy:
+  **no está enlazado en `app/manuales.html`** (`grep` sin resultados):
+  falta agregarle su objeto `civil_N` (título, `sourceFile`, `pdfFile`,
   `cpInsertBefore` por eje, y los checkpoints de comprensión lectora con
   keywords, uno por eje, al estilo de los otros 3 manuales) una vez que
   Laura dé el visto bueno al contenido.
