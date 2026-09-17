@@ -71,11 +71,36 @@ no inventes otras categorías):
   corresponde según el manual) y presentarla como si fuera la mayoritaria.
 
 Lo que nunca debe pasar: una opción sin relación jurídica con la
-pregunta, un error de redacción evidente, o tres opciones "de relleno"
-claramente inferiores con una sola que se nota de inmediato como la
-buena por su extensión o formulación. Si al terminar de escribir las 4
-opciones una persona sin formación jurídica podría adivinar la correcta
-por eliminación obvia, reescribe los distractores.
+pregunta, o un error de redacción evidente. Si al terminar de escribir
+las 4 opciones una persona sin formación jurídica podría adivinar la
+correcta por eliminación obvia, reescribe los distractores.
+
+## Paridad de extensión entre opciones (obligatorio)
+
+Además de que ningún distractor sea descartable por su contenido,
+ninguna opción debe delatarse por su **forma**. El caso más común: la
+opción correcta queda sistemáticamente más larga o más matizada que las
+otras tres porque trae la justificación incrustada en el propio texto de
+la opción, y una alumna puede acertar por ese patrón sin saber la
+materia. Esto pasó en la primera prueba real de este prompt
+(2026-09-17, feedback de Laura): la opción correcta decía "el solo
+transcurso del tiempo nunca basta para la transformación; incluso en los
+casos de los arts. 730 y 2510, regla 3ª, la ley exige que concurra un
+antecedente adicional al tiempo, no que este opere solo", mientras las
+tres incorrectas eran una sola frase corta sin desarrollo.
+
+**Regla mecánica:** las 4 `opciones` deben tener extensión y estructura
+gramatical comparable, como si fueran cuatro respuestas cortas al mismo
+molde de pregunta. Toda la justificación, el matiz o la referencia a la
+cita de respaldo va en `retroalimentacion` (`correcta` y `por_que_no`),
+nunca dentro del texto de la opción misma. Si al terminar de redactar
+las 4 opciones una se nota más larga o más elaborada que las otras tres,
+recórtala a una afirmación del mismo tamaño y mueve lo que sobra a la
+retroalimentación.
+
+Esta regla, igual que la de arriba (distractores no obvios), aplica sin
+cambios a Discriminación MC cuando se construya ese prompt: es un
+problema del formato "varias opciones", no específico de Alternativas.
 
 ## Esquema exacto y destino
 
@@ -117,6 +142,10 @@ Alternativas por eje. Prioriza calidad y verificabilidad sobre volumen.
 Además de la auto-auditoría del núcleo, verifica:
 
 - [ ] Los cuatro distractores pasan el "test de obviedad" de arriba.
+- [ ] Las 4 opciones tienen extensión y estructura comparable; ninguna
+      se distingue por ser más larga o más matizada que las demás (la
+      justificación completa vive en `retroalimentacion`, nunca dentro
+      del texto de la opción).
 - [ ] El `id` es único y sigue el correlativo del banco existente para
       esta materia (revisa el máximo correlativo ya cargado antes de
       numerar los nuevos).
