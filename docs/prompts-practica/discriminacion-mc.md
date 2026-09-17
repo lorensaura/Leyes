@@ -43,10 +43,10 @@ parecida es candidata a un caso donde hay que discriminar entre ambas.
 
 ## Esquema exacto y destino
 
-**Dónde vive:** igual que Aplicación, en Airtable (base por área de
-Responsabilidad, tabla "Discriminación MC"), sincronizado a
-`evaluacion_practica`. Ver la misma nota de alcance de `aplicacion.md`
-sobre materias que todavía no tienen base propia.
+**Dónde vive:** igual que Aplicación, en Airtable, tabla "Discriminación
+MC" dentro de la base de esa área/tramo, sincronizado a
+`evaluacion_practica`. Ver la tabla de bases existentes y el estado de
+conexión con Supabase en `aplicacion.md` ("Dónde vive").
 
 El entregable es una fila por ítem, con estos campos:
 

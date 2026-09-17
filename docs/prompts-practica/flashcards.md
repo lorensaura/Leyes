@@ -39,11 +39,17 @@ completa si son pocos y siempre se piden juntos.
 
 ## Esquema exacto y destino
 
-Se editan en Airtable (base `Digesto`, tabla `Flashcards`), **no** en
-código ni en Supabase directo: el flujo real es Airtable →
-`scripts/sync_airtable_supabase.py` → Supabase (ver
-`docs/contenido-airtable-supabase.md`). El entregable es una tabla que
-Laura pueda pegar directo en Airtable:
+Se editan en Airtable, **no** en código ni en Supabase directo: el flujo
+real es Airtable → `scripts/sync_airtable_supabase.py` → Supabase (ver
+`docs/contenido-airtable-supabase.md`). El script lee la tabla
+`Flashcards` de **cualquier base registrada en `PREGUNTAS_BASES`** (el
+mismo diccionario que usa para Evaluación, ver `aplicacion.md`), así que
+para una materia con su propia base (ej. las 3 bases de Bienes creadas
+el 2026-09-17) el destino es la tabla `Flashcards` de esa base, no la
+base compartida `Digesto` original (esa sigue existiendo, pero es el
+esquema viejo de antes de que existiera el patrón de una base por
+materia). El entregable es una tabla que Laura pueda pegar directo en
+Airtable:
 
 | pregunta | respuesta | dificultad | materia | tema | subtema |
 |---|---|---|---|---|---|

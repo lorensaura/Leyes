@@ -42,11 +42,11 @@ persona que comete el error, en vez de citar la advertencia directamente
 
 ## Esquema exacto y destino
 
-**Dónde vive:** igual que Aplicación, en Airtable (base por área de
-Responsabilidad, tabla "Detección de error"), sincronizado a
-`evaluacion_practica`. Ver la misma nota de alcance de `aplicacion.md`
-sobre materias que todavía no tienen base propia: avísale a Laura si
-{MATERIA} no es una de las tres áreas ya soportadas.
+**Dónde vive:** igual que Aplicación, en Airtable, tabla "Detección de
+error" dentro de la base de esa área/tramo, sincronizado a
+`evaluacion_practica`. Ver la tabla de bases existentes y el estado de
+conexión con Supabase en `aplicacion.md` ("Dónde vive"): avísale a Laura
+si {MATERIA} todavía no tiene ninguna base creada.
 
 El entregable es una fila por ítem, con estos campos:
 

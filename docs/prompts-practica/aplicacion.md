@@ -46,15 +46,33 @@ porque ya viene con el tipo de hechos que Aplicación necesita.
 
 **Dónde vive:** hoy, Evaluación (Aplicación/Detección de error/
 Justificación/Discriminación MC) se cura en **Airtable**, una base por
-área de Responsabilidad (Digesto Contractual/Extracontractual/
-Precontractual), tabla "Aplicación", y se sincroniza a la tabla Supabase
-`evaluacion_practica` vía `scripts/sync_airtable_supabase.py` (ver
-`scripts/supabase_schema_evaluacion.sql`). **Si {MATERIA} no es una de
-esas tres áreas, esa base de Airtable todavía no existe** y hace falta
-crearla (y remover el corte que hoy limita Evaluación a Responsabilidad
-en `app/alternativas.html`, función `iniciarEvaluacion`) antes de que
-este contenido sea visible en la app. Avísale a Laura si este es el
-caso, no asumas que alcanza con generar el contenido.
+área/tramo de la materia, tabla "Aplicación", y se sincroniza a la
+tabla Supabase `evaluacion_practica` vía
+`scripts/sync_airtable_supabase.py` (ver
+`scripts/supabase_schema_evaluacion.sql`). Bases existentes hoy
+(2026-09-17):
+
+| Área/tramo | Base de Airtable |
+|---|---|
+| Responsabilidad contractual | Digesto Contractual |
+| Responsabilidad extracontractual | Digesto Extracontractual |
+| Responsabilidad precontractual | Digesto Precontractual |
+| Bienes - Hasta tradición | Digesto Bienes - Hasta Tradición |
+| Bienes - Posesión | Digesto Bienes - Posesión |
+| Bienes - Prescripción y otros | Digesto Bienes - Prescripción y Otros |
+
+Las 3 bases de Bienes tienen la misma estructura que las de
+Responsabilidad (Temas, Flashcards, Aplicación, Detección de error,
+Justificación, Discriminación MC), creadas el 2026-09-17. **Todavía no
+están conectadas a Supabase**: falta agregarlas al diccionario
+`PREGUNTAS_BASES` del script de sincronización, verificar que el valor
+del campo `materia` sea el que espera `app/alternativas.html`
+(`perteneceAMateriaCivil`/`normalizarMateria`), y sacar el corte que hoy
+limita Evaluación a Responsabilidad (función `iniciarEvaluacion`). Es un
+paso deliberadamente posterior (generar y auditar primero, conectar
+después), no algo que falte para poder usar este prompt hoy. Si
+{MATERIA} no tiene todavía ninguna base creada, avísale a Laura antes de
+generar contenido que no tendría dónde vivir.
 
 El entregable es una fila por ítem, lista para pegar en la tabla
 "Aplicación" de Airtable, con estos campos:
