@@ -8,14 +8,15 @@
 > lo específico de ese tipo: qué extraer del manual, el esquema exacto de
 > entrega, su volumen esperado y su parte de la auto-auditoría.
 >
-> **Piloto en validación (2026-09-16):** este documento y
-> `alternativas.md` son la primera pasada de una reestructuración del
-> antiguo `docs/prompt-generacion-contenido-practica.md` (un solo prompt
+> **Estado (2026-09-17):** los 7 prompts por tipo ya existen
+> (`aplicacion.md`, `deteccion-error.md`, `justificacion.md`,
+> `discriminacion-mc.md`, `alternativas.md`, `memorice.md`,
+> `flashcards.md`), reemplazando al antiguo
+> `docs/prompt-generacion-contenido-practica.md` (un solo prompt
 > larguísimo, atado a las tres materias de Responsabilidad). Ese doc
-> anterior sigue vigente y en uso por los skills `generar-evaluacion` y
-> `generar-practica` hasta que Laura valide esta estructura nueva y se
-> migren los 6 tipos restantes. No lo borres ni lo des por reemplazado
-> todavía.
+> anterior sigue vigente por ahora porque los skills `generar-evaluacion`
+> y `generar-practica` todavía apuntan a él; migrarlos es el paso
+> pendiente antes de poder retirarlo. No lo borres todavía.
 
 ## Cómo se usa
 
