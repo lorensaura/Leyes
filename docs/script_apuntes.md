@@ -114,6 +114,61 @@ posturas o pasos:
    números/letras ("la primera... la segunda...", "en primer
    lugar... en segundo lugar..."), esas palabras ordinales van en
    negrita, mismo criterio de "resaltar el marcador, no todo el punto".
+5. **Regla general de negrita vs. cursiva, corregida 2026-09-17 a partir
+   de 10 ejemplos concretos de Laura en `II.2 Bienes muebles e
+   inmuebles`, aplica a cualquier prosa del manual, no solo dentro de
+   enumeraciones ni solo en artículos transcritos.** La pregunta que
+   decide el formato no es "¿es un concepto jurídico importante?" (casi
+   todo lo es), sino: **¿esta frase es la protagonista de su propio
+   punto u oración, o es un detalle que apoya una idea más grande?**
+   - **Negrita**: la frase funciona como el término o la regla que se
+     está definiendo o nombrando en ese punto, la que responde
+     directamente "¿qué es esto?" o "¿qué establece este artículo?".
+     Ejemplos reales: "esta clasificación se funda en la **fijeza**"
+     (fijeza es el concepto que define todo el punto); "Muebles son las
+     cosas que pueden **transportarse de un lugar a otro**" (la frase
+     ES la definición legal); "se dividen en **semovientes** y **cosas
+     inanimadas**" (son las dos categorías que el punto introduce); "el
+     art. 580... **según lo sea la cosa en que han de ejercerse**" (el
+     criterio operativo del artículo); "Hay **derechos reales** que..."
+     / "Tratándose de **derechos personales**..." (el sujeto de todo el
+     párrafo).
+   - **Cursiva**: la frase aparece dentro de una oración más larga cuyo
+     tema principal es otra cosa; describe, matiza, ejemplifica o
+     precisa una circunstancia secundaria, sin ser ella misma lo que el
+     punto define. Ejemplos reales: "sea moviéndose ellas *a sí
+     mismas*... sea que solo se muevan por una *fuerza externa*" (el
+     modo de movimiento es un detalle dentro de la definición de
+     "mueble", no la definición misma); "Los *productos de los
+     inmuebles*, y las *cosas accesorias a ellos*..." (describe qué
+     cosas cubre el artículo, pero el efecto jurídico que el artículo
+     establece es lo que va en negrita, más adelante en la misma cita);
+     "en las *obligaciones de dar*... En las *obligaciones de hacer y
+     de no hacer*..." (son sub-casos que ilustran la regla sobre
+     derechos personales, que ya llevó su propia negrita al empezar el
+     párrafo).
+   - **Prueba práctica**: si de un punto o cita solo quedara el texto en
+     negrita, ese resto debería seguir respondiendo "qué es esto" o
+     "qué establece la norma". Si lo que queda en negrita es apenas un
+     ingrediente de una respuesta más larga, probablemente debería ser
+     cursiva.
+   - Puede haber más de una negrita en una misma cita cuando dos
+     frases son partes co-iguales de la misma definición (ej. el art.
+     568 define inmueble con dos criterios alternativos, ambos en
+     negrita: "**no pueden transportarse de un lugar a otro**" y
+     "**adhieren permanentemente a ellas**"), a diferencia de cuando hay
+     un concepto principal y un detalle secundario (ahí el principal es
+     negrita y el detalle es cursiva, no los dos negrita).
+6. **Transcripción literal de artículos, corregida 2026-09-17.** Cuando
+   el texto dice "lo define el art. X", "el art. X dispone que..." o
+   equivalente y lo que sigue es una paráfrasis, corregir para
+   transcribir el artículo **completo y textual, entre comillas rectas**
+   (nunca guillemets «»), verificado contra la fuente que se esté
+   usando (los apuntes de Boetsch citan la mayoría de los artículos
+   relevantes de forma textual: buscar el número de artículo en el PDF
+   fuente antes de transcribir, nunca completar de memoria). La negrita
+   y la cursiva dentro de la cita siguen la regla del punto 5 de arriba,
+   aplicada a la cita como si fuera cualquier otra oración del manual.
 
 Clases disponibles para el nivel de bloque (punto con desarrollo propio
 en un párrafo aparte):
