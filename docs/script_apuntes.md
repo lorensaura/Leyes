@@ -636,6 +636,30 @@ también los subtemas de nivel 2 (`h3`, tipo "10.1"); nunca se implementó en
 los manuales viejos. **Para un manual nuevo, el índice debe incluir esos
 subtemas desde el principio**, para no heredar esa deuda.
 
+### 1.10 Notación rápida de Laura para marcar negrita/cursiva/párrafos (2026-09-17)
+
+Cuando Laura pega un tramo de texto ya existente y lo anota a mano en
+vez de describir cada cambio en prosa, usa esta notación (no es
+Markdown estándar, la definió ella misma para este proyecto):
+
+- `*palabra*` (un asterisco a cada lado) → **negrita**.
+- `**palabra**` (dos asteriscos a cada lado) → *cursiva*.
+- `—` (guión largo) entre dos oraciones → cortar ahí y empezar **un
+  párrafo nuevo**. (Esto es notación de instrucción de Laura sobre el
+  propio texto, no contenido final: el guión largo en sí nunca se
+  transcribe al HTML, que sigue con la regla de cero guiones largos de
+  siempre.)
+- Si agrega comillas (`"..."`) alrededor de un tramo, esas comillas sí
+  van al HTML final (transcripción textual, ver 1.2.6).
+- Un número/letra que aparece seguido de texto entre paréntesis, ej.
+  "1.1. Desde un punto de vista objetivo (negrita y subrayado)", es una
+  instrucción de **crear un encabezado nuevo** en ese punto exacto del
+  documento (nivel decimal, continuando el número del punto padre), no
+  texto a transcribir tal cual.
+- Aplicar la negrita/cursiva literalmente como las marca, sin
+  recalcularla con el criterio de 1.2.5: su anotación explícita
+  reemplaza esa inferencia para ese tramo puntual.
+
 ---
 
 ## 2. Proceso de construcción
