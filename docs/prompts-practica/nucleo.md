@@ -37,25 +37,61 @@
 4. Revisa el reporte de auto-auditoría antes de pegar cualquier contenido
    en Airtable, Supabase o el código, igual que con el prompt anterior.
 
+## Antes de generar: qué tipo de ítem es cada cosa
+
+- **Ítems CON caso** (llevan un relato narrativo ficticio, campo `caso`):
+  Aplicación, Detección de error y Discriminación MC. La alumna lee una
+  situación concreta y razona sobre ella.
+- **Ítems SIN caso / de regla directa** (preguntan sobre una regla,
+  distinción o fundamento, sin narrativa): Justificación, y todo el
+  modelo Alternativas (MC puro).
+
+No mezcles estas categorías por comodidad: si estás generando un ítem de
+Alternativas o Justificación, no le agregues un caso "para que se
+entienda mejor"; si de verdad necesita un caso para tener sentido, es
+Aplicación, Detección de error o Discriminación MC, no Alternativas ni
+Justificación.
+
 ## Filosofía: aplicación y relación entre instituciones por sobre memoria
 
 Digesto separa deliberadamente memorización de razonamiento: **memorizar
 texto legal y definiciones puntuales ya lo cubren Flashcards y Memorice**.
-El resto de los tipos (Aplicación, Detección de error, Justificación,
-Discriminación MC y Alternativas) no deben limitarse a que la alumna
-recuerde una definición: tienen que exigir que **aplique** una regla a
-una situación, **distinga** entre dos instituciones parecidas, o
-**relacione** una institución con otra.
+Lo que se prohíbe en los otros 5 tipos es la **memoria aislada**: una
+pregunta que se responde recitando la definición de un solo concepto,
+sin compararlo con otro, sin distinguirlo, sin fundamentar nada (ej.
+"¿qué es la tradición?"). Eso **no** es lo mismo que exigir siempre un
+caso concreto: **comparar dos instituciones parecidas o explicar el
+fundamento de una regla ya es razonar, aunque no haya hechos de por
+medio.**
 
-Antes de dar por bueno un ítem de cualquiera de esos cinco tipos,
-pregúntate: ¿esto se responde solo con memoria (recitar una definición o
-un artículo), o exige razonar? Si la respuesta es "solo con memoria",
-reformúlalo para que dependa de aplicar la regla a un hecho concreto, de
-distinguirla de otra parecida, o de conectarla con una institución
-distinta, en vez de descartarlo directo (a menos que el punto de derecho
-en sí sea puramente memorístico, ej. un plazo, en cuyo caso probablemente
-rinde mejor como Memorice o Flashcard que como Alternativa o
-Justificación).
+Ejemplo real (feedback de Laura, 2026-09-16): "explique la diferencia
+entre la tradición de muebles por brevi manu y por constituto posesorio"
+no es una pregunta de aplicación (no hay hechos que resolver), pero
+tampoco es memoria aislada (no pide recitar una sola definición): exige
+distinguir dos instituciones parecidas, que es exactamente el tipo de
+razonamiento que Digesto quiere premiar. Es un ítem legítimo de
+Justificación o Alternativas tal cual, sin que haga falta forzarle un
+caso que no le corresponde por tipo.
+
+**La barra es distinta según el tipo, no uniforme:**
+- **Aplicación** es estricto: por definición siempre lleva un caso, y el
+  ítem debe depender de resolver esos hechos, no de explicar la
+  distinción en abstracto. Si un ítem de Aplicación se puede responder
+  igual de bien sin haber leído el caso, no es un buen ítem de
+  Aplicación: falta que dependa de los hechos concretos.
+- **Detección de error, Justificación, Discriminación MC y Alternativas**
+  cumplen la barra con cualquiera de estas, sin que haga falta forzar
+  hechos donde el tipo no los lleva (ver taxonomía arriba): comparar o
+  distinguir dos instituciones parecidas, explicar el fundamento o la
+  razón de ser de una regla, o aplicar la regla dentro del caso cuando el
+  tipo sí lo trae.
+
+Antes de dar por bueno un ítem, pregúntate: ¿esto se responde solo
+recitando la definición aislada de un concepto? Si sí, reformúlalo para
+que compare, distinga, fundamente o aplique (según lo que el tipo
+permita), en vez de descartarlo directo, a menos que el punto de derecho
+en sí sea puramente memorístico (ej. un plazo puntual), caso en el que
+probablemente rinde mejor como Memorice o Flashcard.
 
 ## 0. Regla de oro: prohibido alucinar, y cómo se aplica en la práctica
 
@@ -204,8 +240,10 @@ específica del tipo:
 - [ ] Cada atribución a un autor coincide con lo que el manual
       efectivamente le atribuye.
 - [ ] Cero guiones largos, cero guillemets, en cualquier campo.
-- [ ] Ningún ítem prioriza memoria pura por sobre aplicación/relación
-      cuando el punto de derecho lo permite (ver "Filosofía" arriba).
+- [ ] Ningún ítem se responde solo recitando la definición aislada de un
+      concepto, sin comparar, distinguir ni fundamentar nada (ver
+      "Filosofía" arriba). En Aplicación, además: el ítem depende de
+      verdad de los hechos del caso, no sería igual de válido sin ellos.
 - [ ] Ningún caso o dato reutiliza literalmente un recuadro `.ejemplo`
       del manual palabra por palabra.
 - [ ] Ningún ítem nuevo repite, con otro caso o redacción, un punto de
