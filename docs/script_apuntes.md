@@ -543,15 +543,17 @@ temáticos distintos, simplemente se convierte en un solo número romano
 (mismo título, mismo contenido, solo cambia el id y el numeral). Hecho
 hasta ahora: el Eje A se volvió I y II; B (El dominio) se volvió III;
 C (La copropiedad) se volvió IV (2026-09-16, ambos ya revisados contra
-la fuente). Mientras el resto no se revise, el índice sigue mostrando
-una mezcla de romanos y letras (D, E, F...).
+la fuente). **La reestructuración a romanos V-VII (antiguos D-Z) ya se
+ejecutó también** (commit `8331ff2`), siguiendo el plan de abajo, pero
+fue solo el cambio de numeración/ids: la revisión de contenido
+(fidelidad contra la fuente, sección 3) recién empezó, tramo por
+tramo, el 2026-09-18 con V.1+V.2 (antiguo Eje D). El resto de V-VII
+sigue sin esa revisión.
 
-**Plan ya acordado para "V. Los modos de adquirir" (D-U), a aplicar
-cuando le toque el turno a esos ejes — no ejecutado todavía porque
-ninguno de esos 18 ejes pasó aún por la revisión de contenido.**
-Laura pidió seguir la estructura real de Boetsch en vez de inventar
-una propia, verificada el 2026-09-16 leyendo los PDF fuente
-directamente (`BIENES_principal_5` a `_17`):
+**Plan ya acordado para "V. Los modos de adquirir" (D-U), ya aplicado
+en su parte estructural.** Laura pidió seguir la estructura real de
+Boetsch en vez de inventar una propia, verificada el 2026-09-16
+leyendo los PDF fuente directamente (`BIENES_principal_5` a `_17`):
 
 - **V.1 Aspectos generales** y **V.2 La ocupación** — hoy fusionados en
   el título del Eje D ("Los modos de adquirir: aspectos generales y la
@@ -579,10 +581,14 @@ directamente (`BIENES_principal_5` a `_17`):
 - **V.6 La sucesión por causa de muerte** = Eje U actual, sin cambios
   de fondo.
 
-No verificado todavía: qué pasa en el límite con el Eje V actual (La
-propiedad fiduciaria) en adelante — probablemente Boetsch abre ahí un
-capítulo romano nuevo ("V. Los derechos reales limitados" o similar),
-a confirmar contra la fuente cuando se llegue a ese punto del manual.
+**Ya resuelto (commit `8331ff2`):** a partir del antiguo Eje V (La
+propiedad fiduciaria) se abre el capítulo **VI. Los derechos reales
+limitados** (propiedad fiduciaria, usufructo, uso y habitación,
+servidumbres, más el excurso del derecho real de conservación), y
+desde el antiguo Eje Y, **VII. Las acciones protectoras** (formas de
+protección, acción reivindicatoria, acciones posesorias). Igual que el
+resto de V-VII, esto es solo la reestructuración de numeración: la
+revisión de contenido contra la fuente de VI y VII sigue pendiente.
 
 ### 1.8 Espaciado después del número o letra de cada encabezado
 

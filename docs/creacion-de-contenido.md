@@ -93,8 +93,10 @@ legal, pero no hace falta correr este script de nuevo.
   completo, ejemplo real y plan de reparación por partes (primero Acto
   Jurídico, después Bienes) en `docs/incidente_compresion_manuales.md`.
   El proceso ya se corrigió en `docs/script_apuntes.md` (secciones 0.4,
-  1.6, 2.1) para que no vuelva a pasar en manuales nuevos; la reparación
-  de estos dos manuales todavía no empezó.
+  1.6, 2.1) para que no vuelva a pasar en manuales nuevos. Acto Jurídico
+  ya está reparado y fusionado a `main`. La reparación de Bienes está
+  en curso, tramo por tramo (I-IV ya revisados contra la fuente, V en
+  adelante todavía no); detalle en `docs/incidente_compresion_manuales.md`.
 - **Manual de Precontractual** (`03_...html`) se construyó a partir de un
   borrador de Laura; sus recuadros pedagógicos y las preguntas/keywords de
   los checkpoints de `app/manuales.html` son borrador de Claude, **todavía

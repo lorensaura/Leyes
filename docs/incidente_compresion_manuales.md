@@ -188,4 +188,21 @@ contenido, y la enlace en `app/manuales.html`.
   `docs/`); esa parte no se repite. Lo que falta es releer el apunte
   principal contra lo ya escrito, eje por eje, y completar lo que se
   perdió.
-- Sin empezar.
+- **Empezada 2026-09-16, en curso.** Método por tramo aplicado (no de
+  una sola pasada, ver `docs/script_apuntes.md` §1.7 para el detalle
+  actualizado de qué eje quedó en qué número romano). Tramos con
+  contenido ya revisado contra la fuente: Eje A (→ I y II, con II
+  además reformateado a decimal y revisado por Laura en navegador),
+  Eje B (→ III, El dominio), Eje C (→ IV, La copropiedad), y
+  2026-09-18: V.1 Aspectos generales + V.2 La ocupación (antiguo Eje
+  D), fidelidad 66% → 74%; V.3 La accesión (antiguo Eje E), fidelidad
+  60% → 68% (detalle de ambos en sus commits). La accesión es más densa
+  en reglas numeradas (aluvión, avulsión, adjunción, especificación,
+  edificación en suelo propio/ajeno...) que la ocupación o el dominio,
+  y comprime peor sin perder contenido real; el número más bajo no es
+  una reparación a medias, es el techo razonable para ese tipo de
+  fuente, con la brecha explicada en el commit igual que exige §1.6.
+  Los ejes V.4 en adelante (tradición, prescripción, posesión,
+  sucesión, derechos reales limitados, acciones protectoras) ya están
+  renumerados a la estructura de Boetsch pero **sin revisión de
+  contenido todavía**, mismo estado que tenían antes de empezar.
