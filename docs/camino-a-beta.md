@@ -125,10 +125,17 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
 - Checkpoints de comprensión lectora del manual de Precontractual
   (preguntas/keywords en `app/manuales.html`): son borrador de Claude, sin
   la revisión de Laura todavía.
-- Materias nuevas (Bienes, Contratos, Familia, Sucesorio, Procesal, Penal,
-  Constitucional, Administrativo): en stand by, sin contenido ni filtro
-  habilitado. Acto Jurídico ya dio su primer paso real, ver el punto de
-  abajo.
+- **Bienes: manual en reparación de fidelidad, tramo por tramo** (I a IV
+  y V.1 a V.3 ya revisados contra la fuente; de V.4 en adelante solo
+  renumerados, sin esa revisión; detalle en
+  `docs/incidente_compresion_manuales.md`). Existen además 3 bases de
+  Airtable de Bienes (Hasta Tradición / Posesión / Prescripción y Otros),
+  recién creadas y vacías, sin conectar a Supabase; el filtro de Bienes
+  sigue `disabled` en la app.
+- Materias nuevas restantes (Contratos, Familia, Sucesorio, Procesal,
+  Penal, Constitucional, Administrativo): en stand by, sin contenido ni
+  filtro habilitado. Acto Jurídico ya dio su primer paso real, ver el
+  punto de abajo.
   **2026-08-12: Acto Jurídico habilitado en el módulo de Práctica.** 40
   artículos de Memorice cargados en Supabase (`scripts/memorice_acto_juridico_2026-08.sql`
   y `scripts/memorice_acto_juridico_2026-08_paso2_updates.sql`, corridos y
