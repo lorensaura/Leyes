@@ -240,8 +240,15 @@ Uso de cada tipo:
   "JURISPRUDENCIA" arriba, y luego, repetido tantas veces como fallos, una
   línea `.caja-titulo` con el rol/corte/fecha + tema, seguida de su propio
   párrafo, sin cerrar el `<div>` hasta el final.
-- **Ejemplo:** un caso ficticio breve (nombres inventados) que ilustra el
-  concepto que se acaba de explicar.
+- **Ejemplo:** un caso ficticio breve que ilustra el concepto que se acaba
+  de explicar. **Regla desde 2026-09-28:** usar nombres propios reales de
+  persona (Diego, Valentina, Matías), nunca "una persona A" / "otra
+  persona B"; y, siempre que el concepto lo permita sin forzarlo, dale un
+  toque ridículo o gracioso a la situación (el ejemplo se recuerda mejor
+  si hace sonreír). No es upgrade retroactivo obligatorio: se aplica de a
+  poco, cada vez que se revisa o toca un capítulo por otro motivo, no en
+  una pasada masiva sobre ejemplos ya existentes. Aplica a los tres
+  manuales publicados y a los que se agreguen.
 - **Dato de grado:** una pregunta típica de examen oral/cédula sobre ese
   punto, con la respuesta esperada o las tesis en juego.
 - **Callout ("No confundir" u otro título corto):** una precisión doctrinal
