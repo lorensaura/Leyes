@@ -46,8 +46,9 @@ tablas de uso (`memorice_intentos`, `flashcard_progreso`,
   volumen completa sobre sus 25 ejes** (2026-08-04 a 2026-08-11). Mucho de
   este contenido nuevo sigue sin publicar, ver "Pendiente" abajo. Detalle
   ítem por ítem en `docs/historial-2026-08.md`.
-- `docs/script_apuntes.md`: template de formato y proceso para construir
-  el manual de una materia nueva (piloto: Bienes), con el estándar de
+- `docs/manuales/` (antes `docs/script_apuntes.md`, dividido el
+  2026-09-28): formato, guía editorial y proceso para construir el
+  manual de una materia nueva (piloto: Bienes), con el estándar de
   densidad de Contractual/Precontractual, ahora también aplicado a REX
   (ver "Manuales" abajo).
 
@@ -83,7 +84,7 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
 
 **Manuales:**
 - **2026-08-18: nuevo paso obligatorio en el proceso de manuales**,
-  sección 4 de `docs/script_apuntes.md` ("Auditoría de cobertura al
+  hoy en `docs/manuales/auditoria.md` ("Auditoría de cobertura al
   terminar el manual"). Surgió porque Laura encontró a mano, revisando
   una pregunta de Airtable, dos temas reales de las fuentes (presunción
   de culpa grave en Boetsch p.75, y el debate sobre qué estatuto rige las

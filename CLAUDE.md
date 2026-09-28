@@ -47,7 +47,7 @@ Clasificado por para qué lo abrirías — no leas ninguno de entrada, solo el q
 
 **Contenido jurídico (manuales, preguntas, Práctica):**
 - `docs/creacion-de-contenido.md` — punto de entrada: qué modelo vive dónde, qué revisar antes de generar, pendientes de contenido. Ábrelo siempre antes de tocar manuales o preguntas.
-- **Creación de apuntes/manuales (materia nueva): ver `docs/script_apuntes.md`.**
+- `docs/manuales/`: cómo se construyen y cómo se ven los manuales (materia nueva o reparación de uno existente). `proceso.md` (reglas de oro, borrador, verificación por tramo), `formato.md` (escalera de numeración, enumeraciones, recuadros, hoja de estilos), `guia-editorial.md` (criterio de redacción, recuadros, ejemplos), `auditoria.md` (auditoría de cobertura), `decisiones.md` (el porqué de cada regla, con fecha) y `bienes-reestructuracion.md` (plan de capítulos de Bienes). `docs/script_apuntes.md` quedó solo como tabla de equivalencias de secciones antiguas.
 - `docs/practica.md` — cómo funciona el módulo Práctica en la app (los 3 ejes de filtro, el motor de Memorice).
 - `docs/prompt-generacion-contenido-practica.md` — prompt maestro con las reglas mecánicas de redacción y anti-alucinación.
 - `docs/interrogador.md` — Interrogador IA: grounding, costos, modo transversal, estado y pendientes.

@@ -2,12 +2,12 @@
 
 > Bitácora de decisiones editoriales (no mecánicas) tomadas al reformatear
 > el manual de Extracontractual para igualar el formato de REC/REP, según
-> `docs/script_apuntes.md` sección 1.6. El grueso del trabajo es mecánico
+> `docs/manuales/proceso.md` sección 3 (densidad). El grueso del trabajo es mecánico
 > (partir párrafos largos en varios `<p>`, sin tocar una palabra); esta nota
 > registra solo lo que sí implicó una decisión: qué se agregó, qué se
 > reordenó, qué se fusionó o se quitó por duplicado. Todo el contenido
 > jurídico sigue pendiente de revisión de Laura, igual que el resto del
-> manual (regla de `docs/script_apuntes.md` sección 0).
+> manual (regla de `docs/manuales/proceso.md` sección 0).
 
 ## Global
 - `font-size` 12pt→11pt y `line-height` 1.2→1.45 en el body del `<style>`,
@@ -25,7 +25,7 @@
 
 ## Eje 2 (B)
 - Agrupadas en cajas `.jurisprudencia` (varios fallos, un solo recuadro,
-  por la regla de `script_apuntes.md` 1.3): CS 1921 + CS 1938 (tipicidad);
+  por la regla de `docs/manuales/formato.md` sección 7): CS 1921 + CS 1938 (tipicidad);
   CS 1917 + CS 1938(ene) + CS 1952 (interpretación restrictiva del art.
   179); CA Santiago 1923 + CS 1970 (efecto erga omnes).
 - Agregada 1 caja `.callout`: culpa civil objetiva vs. culpabilidad penal
