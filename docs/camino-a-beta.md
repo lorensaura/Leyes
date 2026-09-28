@@ -151,6 +151,17 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   El resto de las materias nuevas (Bienes, etc.) puede seguir el mismo
   camino sin más cambios de código, solo cargar su contenido y sacarles el
   `disabled` en `MATERIAS_CIVIL`.
+  **2026-09-28: creada la base de Airtable `Digesto Acto Jurídico`**
+  (`appBDWY3eCXgxBGpL`), mismo esquema que las bases de Bienes (Temas,
+  Flashcards, Aplicación, Detección de error, Justificación, Discriminación
+  MC; sin `Preguntas_Evaluacion`, que es solo para materias que ya
+  alimentan el Interrogador). Recién creada y vacía, sin contenido ni
+  conectar a Supabase todavía, igual que las 3 bases de Bienes.
+  **Pendiente antes de que el contenido llegue a la app:**
+  `scripts/sync_airtable_supabase.py` (`PREGUNTAS_BASES`) sigue hardcodeado
+  a las 3 materias de Responsabilidad; hay que sumarle Acto Jurídico (y
+  Bienes, que tiene el mismo pendiente) antes de poder sincronizar a
+  Supabase.
 - **2026-08-12: manual de Acto Jurídico (`04_Acto_Juridico_Manual.html`)
   terminado y su PDF generado** (`app/pdf/Acto_Juridico.pdf`, 21 ejes A-U),
   a partir del libro completo de Boetsch más 3 fuentes secundarias (Bozzo
