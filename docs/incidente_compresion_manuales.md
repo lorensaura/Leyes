@@ -202,7 +202,31 @@ contenido, y la enlace en `app/manuales.html`.
   y comprime peor sin perder contenido real; el número más bajo no es
   una reparación a medias, es el techo razonable para ese tipo de
   fuente, con la brecha explicada en el commit igual que exige §1.6.
-  Los ejes V.4 en adelante (tradición, prescripción, posesión,
-  sucesión, derechos reales limitados, acciones protectoras) ya están
-  renumerados a la estructura de Boetsch pero **sin revisión de
-  contenido todavía**, mismo estado que tenían antes de empezar.
+- **2026-09-28: V.4 La tradición, trabajado por sub-tramos (A/B/C/D),
+  empezado con V.4.A Descripción general** (antiguo Eje F, primera
+  parte; fuente `BIENES_principal_7_TRADICIÓN_BOETSCH.pdf`), fidelidad
+  77.7% → 80.7%. Se transcribió literal la definición del art. 670
+  (antes parafraseada, viola §1.2.6), se restauró una frase sobre la
+  posibilidad teórica de usar la tradición para transferir
+  universalidades, y se recuperó la enumeración (i)/(ii)/(iii) de las
+  diferencias entre entrega y tradición dentro de un recuadro, que
+  había quedado fusionada en un párrafo corrido sin marcadores
+  (commit `4af761d`). Quedan pendientes, sin revisión de contenido
+  todavía, V.4.B (Requisitos), V.4.C (Efectos) y V.4.D (Formas de
+  efectuar la tradición: muebles, inmuebles, herencia, derechos
+  personales), y después V.5-V.6 (prescripción/posesión, sucesión) y
+  VI-VII (derechos reales limitados, acciones protectoras).
+- **2026-09-28, mismo día: V.4.B Requisitos** (antiguo Eje F, parte 2),
+  fidelidad 56.5% → 76.6% (commit `49cb4bb`). Tramo largo y denso en
+  debate doctrinal con muchas citas textuales de artículos que estaban
+  parafraseadas (arts. 671, 672, 673, 675, 676 x2, 677, 682): se
+  transcribieron literales. Se restauró contenido perdido (síntesis
+  sobre dónde viven las sanciones de capacidad/facultad, debate sobre
+  la "impropiedad de lenguaje" del art. 1575 con su conclusión
+  práctica, cita a VIAL, los dos aspectos del error en el título, el
+  punto de que la representación legal del art. 671 no cubre el título
+  y requiere normas del CPC, el matiz del art. 1901, el cierre
+  doctrinal "en Chile la tradición es acto causado"). Omisión
+  deliberada: citas de jurisprudencia puntual (RDJ, F. del M.) sin
+  desarrollo propio. Quedan V.4.C (Efectos) y V.4.D (Formas de
+  efectuar la tradición).
