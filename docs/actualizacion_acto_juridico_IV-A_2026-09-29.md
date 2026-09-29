@@ -429,10 +429,10 @@ citen fragmentos, entre comillas.
 6. **Artículos transcritos**, verificados contra `Apuntes/Codigo Civil
    Chileno.pdf`: arts. 1681, 1682, 1683, 1690 y 1701 completos;
    fragmentos de los arts. 10, 1444, 1447, 1809 y 2055. Sin verificar
-   contra el texto legal: las citas de la Ley N° 18.046 (art. 6°) y de la
-   Ley N° 19.499 (art. 6° A), que vienen textuales de Bozzo e Ibarra, y el
-   año "1997" de la Ley N° 19.499, que ya estaba en el manual y no aparece
-   en ninguna de las fuentes.
+   contra el texto legal por el modelo: las citas de la Ley N° 18.046 (art.
+   6°) y de la Ley N° 19.499 (art. 6° A), que vienen textuales de Bozzo e
+   Ibarra, y el año "1997" de la Ley N° 19.499. **Laura las revisó y
+   confirmó (2026-09-29).**
 7. **Conexiones con página pendiente (`p. __`):** 4.
 8. **Preguntas clásicas:** una, desde la marca de examen de la fuente
    (Bozzo e Ibarra), al cierre del punto 4. Sin banco de Acto Jurídico.
@@ -452,5 +452,19 @@ citen fragmentos, entre comillas.
 | Punto 4.1 | No confundir: nulidad de pleno derecho frente a nulidad del Código Civil |
 | Punto 4.3 | Advertencia: ¿La inexistencia es imprescriptible e insaneable en Chile? |
 | Punto 4.3 | No olvidar: plazo del art. 1683 |
-| Punto 4.4 | Pregunta clásica: respuesta a la discusión entre CLARO SOLAR y ALESSANDRI |
+| Punto 4, justo antes de 4.3 | Pregunta clásica: respuesta a la discusión entre CLARO SOLAR y ALESSANDRI |
 | Punto 4 | Conexiones: Compraventa, Sociedades, Derecho Procesal Civil |
+
+## 7. Ajustes pedidos por Laura tras la revisión (2026-09-29)
+
+- **Jurisprudencia de 4.4:** ocupaba mucho espacio. Quedan solo los cinco
+  fallos con rol (se pueden buscar), del más reciente al más antiguo, cada
+  uno con `[FALTA: extracto del fallo]` para que Laura agregue el pasaje.
+  Los otros trece, solo con cita de revista (1914 a 1991), se resumen en una
+  línea. La regla quedó en `guia-editorial.md` 4.1.
+- **Filete a la izquierda:** los artículos transcritos (`.ley`) llevan ahora
+  la misma línea vertical que las definiciones, en el manual, en
+  `formato.md` y en el lector en línea.
+- **Pregunta clásica:** se movió justo antes del punto 4.3.
+- **Ley N° 19.499:** Laura confirmó el año (1997) y el contenido.
+- La cantidad de recuadros del punto 4 queda como está.

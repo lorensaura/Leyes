@@ -331,7 +331,7 @@ elemento tiene un tratamiento distinto y fijo:
 | Elemento | Tratamiento |
 |---|---|
 | Artículo citado dentro del texto | Rojo y negrita: `<span class="art">artículo 1489</span>`, cubriendo la palabra y el número |
-| **Artículo transcrito completo** | Bloque propio `.ley`: párrafo aparte, con sangría a ambos lados e interlineado más abierto. Empieza con el número en rojo y negrita (`<span class="ley-num">Art. 1681.</span>`) y el texto va entre comillas rectas |
+| **Artículo transcrito completo** | Bloque propio `.ley`: párrafo aparte, con sangría a ambos lados, un filete fino a la izquierda (igual que `.definicion`) e interlineado más abierto. Empieza con el número en rojo y negrita (`<span class="ley-num">Art. 1681.</span>`) y el texto va entre comillas rectas |
 | **Definición del punto** (legal o doctrinal) | Bloque propio `.definicion`: párrafo aparte, con un filete fino a la izquierda e interlineado más abierto. El término definido va en negrita. Si es una definición doctrinal, cita textual con su autor |
 | Término protagonista | Negrita (sección 3) |
 | Detalle o matiz | Cursiva (sección 3) |
@@ -678,7 +678,7 @@ Extensión (va dentro del mismo `<style>`, antes de `</style>`):
   /* Explicación corta en la misma línea: el título lleva el estilo de su nivel, el texto que sigue no */
   .enum-i-run,.enum-a-run,.enum-c-run{display:inline;}
   /* Jerarquía de lectura */
-  .ley{margin:1.1rem 1.6rem;line-height:1.65;}
+  .ley{margin:1.1rem 1.6rem;padding:.15rem 0 .15rem .9rem;border-left:2px solid var(--light);line-height:1.65;}
   .ley .ley-num{font-weight:700;color:var(--accent);margin-right:.35em;}
   .definicion{margin:1.1rem 0;padding:.15rem 0 .15rem .9rem;
     border-left:2px solid var(--light);line-height:1.65;}
