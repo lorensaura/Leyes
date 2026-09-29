@@ -21,7 +21,7 @@
 | 1.8 Espaciado después del número | `manuales/formato.md`, sección 1.3 |
 | 1.9 Índice con subtemas | `manuales/formato.md`, sección 1.4 |
 | 1.10 Notación rápida de Laura | `manuales/formato.md`, sección 9 |
-| 2.1 Apunte principal | `manuales/proceso.md`, sección 2 (con el borrador interno, la lista de unidades y la voz propia) |
+| 2.1 Apunte principal | `manuales/proceso.md`, sección 2 (con el inventario de la fuente y la voz propia) |
 | 2.2 Anexos y documentos secundarios | `manuales/proceso.md`, sección 5 |
 | 3. Verificación | `manuales/proceso.md`, sección 4 (con el chequeo de unidades y la segunda pasada) |
 | 4. Auditoría de cobertura | `manuales/auditoria.md` |

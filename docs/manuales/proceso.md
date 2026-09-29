@@ -36,9 +36,11 @@ apuro.
 4. **Prohibido resumir. Reformatear no es sintetizar.** Esta regla
    existe porque se violó de verdad: Bienes y Acto Jurídico quedaron con
    49-57% del contenido de su fuente, mientras Contractual quedó en 92%.
-   La causa fue redactar el párrafo final directo desde la lectura de la
-   fuente, sin pasar por un borrador cercano. Por eso el borrador de la
-   sección 2 es obligatorio. Caso completo en
+   La causa fue redactar el párrafo final de memoria desde la lectura de
+   la fuente, sin registrar antes qué decía. Por eso el inventario de la
+   fuente (sección 2, paso 2) es obligatorio: lo que protege contra la
+   pérdida de contenido es el registro de qué dice la fuente, no una
+   copia de ella. Caso completo en
    `docs/incidente_compresion_manuales.md`.
 
 **Marca única de pendiente:** `[FALTA: ...]`, tanto para un dato que no
@@ -68,42 +70,37 @@ por eje.
    sola vez (por ejemplo con `fitz`/PyMuPDF) y guardarlo, para releerlo
    sin abrir el PDF y para el chequeo de fidelidad de la sección 4.1.
 
-2. **Borrador de transcripción cercana (interno).** Para cada tramo,
-   volcar primero el contenido de la fuente casi tal cual: mismas
-   oraciones, mismos argumentos, mismos ejemplos, con edición mínima
-   (arreglar una redacción torpe, unificar terminología). **Este borrador
-   es un insumo de trabajo y nunca se publica.** Es la protección contra
-   la compresión: todo lo que está en la fuente queda a la vista antes
-   de redactar. Puede ser un archivo aparte (como los
-   `BORRADOR_manual_*.html` de Extracontractual y Precontractual) o un
-   paso de trabajo explícito, pero no se salta.
-
-3. **Lista de unidades de contenido.** Desde el borrador, listar las
-   unidades del tramo: definiciones, argumentos, excepciones,
+2. **Inventario de la fuente (interno).** Antes de redactar, se recorre
+   la fuente del tramo **directamente** (el texto extraído del PDF, nunca
+   de memoria ni desde un resumen), **párrafo por párrafo**, y se anota
+   cada unidad de contenido: definiciones, argumentos, excepciones,
    distinciones, tesis con sus autores, fallos, y el punto que ilustra
-   cada ejemplo de la fuente. Es la lista contra la que se verifica el
-   texto final (sección 4.2).
+   cada ejemplo. **Cada párrafo de la fuente aporta al menos una unidad o
+   queda anotado como "sin contenido nuevo"**, para que ninguno se salte
+   sin que se note. El inventario es un insumo de trabajo: **nunca se
+   publica**, y es la lista contra la que se verifica el texto final
+   (sección 4.2).
 
-4. **Redacción final con voz propia.** Desde el borrador, redactar el
-   texto final según `guia-editorial.md` (sección 3): se reestructura la
+3. **Redacción final con voz propia**, con la fuente y el inventario a
+   la vista. Se redacta el texto final según `guia-editorial.md` (sección 3): se reestructura la
    exposición y se mantiene idéntico el vocabulario técnico. Aquí se
    aplica todo `formato.md`: la escalera de numeración con la regla de
    ascenso, las enumeraciones, la negrita y la cursiva, los bloques
    `.ley` y `.definicion`, los recuadros, los artículos en rojo, los
    autores en negrita y mayúscula, sin guiones largos. Los ejemplos se
    crean originales (`guia-editorial.md`, sección 5).
-   Lo que nunca puede pasar en este paso es que una unidad de la lista
-   quede fuera: la densidad se logra partiendo en más piezas, no
-   descartando piezas.
+   Lo que nunca puede pasar en este paso es que una unidad del
+   inventario quede fuera: la densidad se logra partiendo en más piezas,
+   no descartando piezas.
 
-5. **Cierre del tramo.** Verificación y segunda pasada (sección 4). No se
+4. **Cierre del tramo.** Verificación y segunda pasada (sección 4). No se
    abre el siguiente tramo sin cerrar este.
 
-6. **Archivo final:** `0X_<Materia>_Manual.html` en la raíz del
+5. **Archivo final:** `0X_<Materia>_Manual.html` en la raíz del
    repositorio, siguiendo la numeración ya usada.
 
 **Manuales existentes en reparación** (por ejemplo, Bienes): siguen
-reparándose con el proceso vigente hasta ahora, sin el paso 4 de voz
+reparándose con el proceso vigente hasta ahora, sin el paso 3 de voz
 propia, para no frenar el avance. La voz propia se les aplicará en la
 pasada aparte de `auditoria.md`, sección 6.
 
@@ -186,8 +183,8 @@ manuales existentes.
 
 ### 4.2 Chequeo de unidades
 
-Cada unidad de la lista del paso 3 (sección 2) tiene que estar en el
-texto final. Una unidad que falta se agrega antes de cerrar el tramo. Es
+Cada unidad del inventario de la fuente (sección 2, paso 2) tiene que
+estar en el texto final. Una unidad que falta se agrega antes de cerrar el tramo. Es
 lo que detecta una omisión aunque el conteo de caracteres pase.
 
 ### 4.3 Segunda pasada: informe para Laura
@@ -222,25 +219,34 @@ Con el apunte principal completo, se revisan los anexos para agregar lo
 que corresponda en las secciones ya escritas. No son un eje nuevo al
 final: la mayoría trata uno o dos temas que ya tienen lugar en el
 manual, así que la edición queda repartida por todo el documento.
-Proceso que funcionó con los 12 anexos de Bienes:
+Proceso (basado en lo que funcionó con los 12 anexos de Bienes):
 
-1. **Extraer y mapear primero, escribir después.** Extraer el texto de
-   cada anexo, leerlo y anotar a qué sección exacta del manual apunta
-   (basta una tabla anexo → sección) antes de tocar el HTML. Los anexos
-   muy grandes (un libro completo o un resumen de 60-80 páginas) casi
-   seguro se solapan con el apunte principal: no se leen de corrido, se
-   buscan por términos dirigidos a los huecos ya conocidos.
-2. **La confiabilidad de la fuente define cuánto se verifica.** Un
+1. **Un inventario por anexo.** Cada anexo tiene su propio inventario,
+   sacado directamente del anexo (texto extraído, párrafo por párrafo,
+   igual que en la sección 2, paso 2).
+2. **Cada unidad se compara con el texto principal y se clasifica:**
+   - **Ya está en el texto principal:** no se agrega. Nunca se duplica.
+   - **Agrega algo** (un dato, una característica, una anotación, otro
+     autor, un fallo): se incorpora en el **lugar exacto** del texto
+     principal, integrado a la explicación y con su autor.
+   - **Contradice al texto principal:** se exponen ambas versiones, cada
+     una con su fuente, o se marca `[FALTA: decidir entre ...]` para que
+     Laura decida.
+3. **Tabla antes de tocar el HTML.** Con la clasificación hecha, se arma
+   una tabla **anexo → unidad → sección del manual → acción** (no se
+   agrega / se incorpora / se exponen ambas / FALTA). Recién con esa
+   tabla se edita el HTML.
+4. **La confiabilidad de la fuente define cuánto se verifica.** Un
    apunte de cátedra (Boetsch, Peñailillo, Vial, Orrego) se usa directo,
    con la misma regla anti alucinación. Un apunte de compañeros
    (interrogaciones, resúmenes de otro alumno) es de menor confiabilidad:
    antes de agregarlo se cruza con una fuente de cátedra. Si no se puede
    corroborar, no entra, salvo que Laura confirme ese punto específico
    (su confirmación vale para ese punto, no baja el estándar del resto).
-3. **Nada de pendientes silenciosos.** Si un anexo trae contenido
+5. **Nada de pendientes silenciosos.** Si un anexo trae contenido
    relevante que no se pudo verificar, o que se decidió no usar, se dice
    al reportar el lote: qué anexo, qué contenido y por qué no entró.
-4. **Lotes chicos, un commit por lote.** No se juntan todos los anexos
+6. **Lotes chicos, un commit por lote.** No se juntan todos los anexos
    en un solo commit al final.
 
 ---

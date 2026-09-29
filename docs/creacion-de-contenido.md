@@ -84,7 +84,7 @@ legal, pero no hace falta correr este script de nuevo.
   generación).
 - **Cómo se construye y cómo se ve un manual:** todo está en
   `docs/manuales/`:
-  - `proceso.md`: reglas de oro, borrador de trabajo, voz propia,
+  - `proceso.md`: reglas de oro, inventario de la fuente, voz propia,
     verificación y segunda pasada por tramo, anexos.
   - `formato.md`: numeración (escalera y regla de ascenso),
     enumeraciones, negrita y cursiva, jerarquía de lectura, código de los

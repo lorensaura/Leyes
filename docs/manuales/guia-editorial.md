@@ -71,7 +71,8 @@ enumeraciones y párrafos cortos, qué va a un recuadro.
 
 - **El vocabulario técnico**: idéntico al de la fuente.
 - **El contenido**: cada argumento, excepción, distinción, autor y fallo
-  del borrador de trabajo tiene que aparecer en el texto final. Esto se
+  de la fuente, verificado contra el inventario, tiene que aparecer en
+  el texto final. Esto se
   verifica unidad por unidad (`proceso.md`, sección 4.2).
 - **Las definiciones legales**: textuales, como artículo transcrito en
   bloque `.ley`.
@@ -101,7 +102,7 @@ enumeraciones y párrafos cortos, qué va a un recuadro.
 
 **Prueba:** ¿se reconoce la oración de la fuente con sinónimos cambiados?
 Entonces hay que reestructurarla. ¿Falta algún término técnico o alguna
-unidad de contenido? Entonces hay que volver al borrador.
+unidad de contenido? Entonces hay que volver a la fuente.
 
 **Alcance:** se aplica a los manuales nuevos desde el primer tramo. Los
 manuales ya escritos se revisarán en una pasada aparte, cuando Laura la
