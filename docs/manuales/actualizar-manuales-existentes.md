@@ -32,8 +32,11 @@ cada tramo antes de seguir**, igual que en `proceso.md`. En cada tramo:
 
 **a) Inventario desde la fuente.** Igual que en `proceso.md` (sección 2,
 paso 2): se recorre la fuente directamente, párrafo por párrafo, sobre el
-apunte principal y los anexos del tramo (con la regla de anexos muy
-grandes de `proceso.md`, sección 5).
+apunte principal y los anexos del tramo. Si un anexo es muy grande, se
+aplica la misma regla de `proceso.md`, sección 5: se arma su mapa, **se
+presenta a Laura antes del inventario del tramo**, se inventarían solo
+las secciones que ella confirma, y las excluidas se listan en el informe
+con su motivo.
 
 **b) Comparación con el manual actual.** Cada unidad del inventario se
 busca en el texto actual del tramo, y cada parte del texto actual se

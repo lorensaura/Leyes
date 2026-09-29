@@ -148,6 +148,9 @@ manuales existentes.
 
 ### 4.1 Chequeos mecánicos
 
+En un anexo muy grande (sección 5), estos chequeos y los de 4.2 cubren
+solo las secciones del anexo que Laura confirmó en el mapa.
+
 - **Balance de etiquetas.** Cada `div`, `p`, `em` y `strong` abierto
   tiene su cierre (conteo y pila de anidamiento). Bug conocido: al
   insertar un recuadro justo antes de un párrafo existente, es fácil
@@ -186,7 +189,9 @@ manuales existentes.
 
 Cada unidad del inventario de la fuente (sección 2, paso 2) tiene que
 estar en el texto final. Una unidad que falta se agrega antes de cerrar el tramo. Es
-lo que detecta una omisión aunque el conteo de caracteres pase.
+lo que detecta una omisión aunque el conteo de caracteres pase. En un
+anexo muy grande, se aplica a las secciones confirmadas del mapa
+(sección 5).
 
 ### 4.3 Segunda pasada: informe para Laura
 
@@ -212,6 +217,9 @@ formato. El resultado es un informe breve para Laura con:
 9. **Cuadros comparativos:** paralelos y discusiones doctrinales del
    tramo, y si quedaron en cuadro comparativo (`guia-editorial.md`,
    sección 4.12).
+10. **Anexos muy grandes:** qué secciones del anexo quedaron dentro del
+    tramo (inventariadas) y la lista "Secciones del anexo no
+    inventariadas", con el motivo de cada una (sección 5).
 
 El informe también se usa al actualizar un manual ya escrito
 (`actualizar-manuales-existentes.md`).
@@ -226,22 +234,43 @@ final: la mayoría trata uno o dos temas que ya tienen lugar en el
 manual, así que la edición queda repartida por todo el documento.
 Proceso (basado en lo que funcionó con los 12 anexos de Bienes):
 
-1. **Un inventario por anexo.** Cada anexo tiene su propio inventario,
-   sacado directamente del anexo (texto extraído, párrafo por párrafo,
-   igual que en la sección 2, paso 2).
+1. **Un inventario por anexo.** Regla general: cada anexo se
+   inventaría **completo**, sacado directamente del anexo (texto
+   extraído, párrafo por párrafo, igual que en la sección 2, paso 2).
 
-   **Anexos muy grandes** (un libro completo o un resumen de 60-80
-   páginas):
-   - **Primero, un mapa del anexo:** qué trata cada capítulo o sección,
-     armado desde su índice y sus títulos.
-   - **Después, el inventario párrafo por párrafo solo de las secciones
-     que tocan temas del manual** y no son repetición del apunte
-     principal.
-   - **Las secciones que se dejan fuera quedan anotadas en el mapa, con
-     la razón** (por ejemplo: "otra materia", "repite el apunte
-     principal, pp. 12-30").
-   - **La búsqueda por términos no reemplaza al inventario:** solo sirve
-     para ubicar secciones dentro del mapa.
+   **Excepción: anexos muy grandes.** Si un anexo es tan grande que
+   inventariarlo entero no cabe en una tanda (criterio orientativo: más
+   de unas 40 páginas o más de unos 100.000 caracteres; **si hay duda,
+   se trata como grande**), se procede en dos pasos:
+
+   a) **Mapa del anexo.** Antes de inventariar, se listan sus secciones
+      (títulos y rango de páginas, o de párrafos si no hay páginas), con
+      una línea que diga de qué trata cada una. El mapa **no contiene
+      contenido del anexo**, solo su estructura. Cada sección se
+      clasifica en:
+      - **Relacionada** con un tema del manual (indicando con qué eje o
+        tramo).
+      - **Sin relación** con el manual.
+      - **Dudosa.**
+
+   b) **Laura confirma el mapa.** Se le presenta el mapa y ella decide
+      qué secciones entran; las dudosas las decide ella. **No se
+      inventaría nada hasta que confirme.**
+
+   Después, las secciones confirmadas se inventarían **completas**,
+   párrafo por párrafo, con la regla habitual (cada párrafo genera una
+   unidad o queda como "sin contenido nuevo"; lo que ya está en el texto
+   principal no se duplica; lo que agrega se incorpora en su lugar
+   exacto; lo que contradice se reporta). **Cada sección se inventaría
+   cuando se trabaja el tramo al que pertenece**, no todas de una vez.
+   La búsqueda por términos sirve solo para ubicar secciones al armar el
+   mapa; nunca reemplaza al inventario.
+
+   **Nada se descarta en silencio.** El informe de cada tramo incluye
+   una lista **"Secciones del anexo no inventariadas"**, con el motivo
+   (sin relación con el manual, o fuera de alcance por decisión de
+   Laura). Si más adelante Laura quiere sumar una de ellas, se
+   inventaría entonces.
 2. **Cada unidad se compara con el texto principal y se clasifica:**
    - **Ya está en el texto principal:** no se agrega. Nunca se duplica.
    - **Agrega algo** (un dato, una característica, una anotación, otro
