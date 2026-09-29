@@ -301,6 +301,12 @@ Proceso (basado en lo que funcionó con los 12 anexos de Bienes):
 ## 6. Después del manual completo
 
 - Auditoría de cobertura: `auditoria.md`.
+- **Revisión final de lo que creó el modelo.** Al terminar cada manual, Laura
+  revisa no solo que los artículos y la jurisprudencia estén bien citados,
+  sino también **todos los recuadros creados por el modelo**: Ejemplos, No
+  confundir, Advertencias, No olvidar, Conexiones y respuestas de las
+  Preguntas clásicas. Para facilitarla, se le entrega la lista completa de
+  esos recuadros, con su ubicación.
 - Regenerar el PDF con `scripts/generar_pdf_manual.py` y revisarlo
   visualmente (incluida la prueba en blanco y negro).
 - Correr `scripts/agregar_anclas_manuales.js`, previa entrada nueva en su

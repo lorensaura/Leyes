@@ -89,6 +89,10 @@ texto nuevo. El informe de segunda pasada (`proceso.md`, sección 4.3)
 agrega una línea: qué contenido previo del manual se conservó sin estar
 en la fuente principal.
 
+**Al terminar el manual completo**, igual que en uno nuevo (`proceso.md`,
+sección 6): revisión final de artículos, jurisprudencia y de todos los
+recuadros creados por el modelo, con la lista de su ubicación.
+
 Si hace falta registrar en qué va la actualización de un manual, se hace
 en un documento aparte para ese manual (como `bienes-reestructuracion.md`),
 no aquí: este documento solo contiene reglas.

@@ -363,3 +363,94 @@ citen fragmentos, entre comillas.
    reemplazarlos por el ejemplo original de 3.6.
 7. Z01: ¿se menciona la formulación "existencia o validez" de Bozzo e
    Ibarra o se sigue solo a Boetsch?
+
+---
+
+## 5. Decisiones de Laura sobre este informe (2026-09-29)
+
+1. Cambios aprobados.
+2. Se corrige la fila "Reconocimiento legal expreso" (hoy "Otras leyes").
+3. CLARO SOLAR y ALESSANDRI van en los encabezados del cuadro, sin indicar
+   la fuente de la atribución.
+4. La marca de examen de la fuente pasa a recuadro de Pregunta clásica.
+5. C02: "las partes deben ser retrotraídas al estado en que se encontraban
+   antes de celebrar el acto".
+6. Todos los ejemplos deben ser propios; se reemplazan los de Boetsch. Al
+   terminar cada manual se revisan también todos los recuadros creados por
+   el modelo (quedó en `proceso.md` 6 y en `decisiones.md`).
+7. Se sigue a Boetsch ("eficacia y validez").
+
+## 6. Segunda pasada (paso e, tras la reescritura)
+
+1. **Cobertura:** las 94 unidades del inventario (56 de Boetsch, más las
+   de los anexos) están en el texto nuevo, comprobadas una por una con
+   una frase clave. Razón de caracteres: **117%** frente a Boetsch (antes,
+   55%); pasa del 100% porque suma el aporte de los anexos, las citas
+   textuales y los cuadros. Todo el contenido previo del manual se
+   conserva.
+2. **Redacción:**
+   - En la definición textual de ineficacia de Boetsch se corrigió una
+     errata de la fuente ("a aquel a acto" pasa a "a aquel acto").
+   - La cita de CLARO SOLAR (4.1 ii) conserva su texto: "sordomudos que no
+     pueden darse a entender por escrito", que es la redacción antigua del
+     art. 1447. En 4.2 (iii) se usa el texto vigente ("sordos o sordomudos
+     que no pueden darse a entender claramente", Ley N° 19.904).
+   - El ejemplo del art. 1809 se corrigió respecto de lo propuesto en el
+     informe: esa norma no dice "sin precio no hay venta" en general, sino
+     "no habrá venta" cuando el precio se deja al arbitrio de un tercero
+     que no lo fija y las partes no se ponen de acuerdo en otro. El ejemplo
+     final (vinilos de Los Prisioneros) sigue exactamente ese supuesto.
+   - Z02 ("coetáneas") se incorporó como opinión de "algunos autores".
+   - Frase para confirmar: "tratadas más adelante en este capítulo" (sobre
+     suspensión, resolución, revocación, caducidad e inoponibilidad) venía
+     del manual; se confirma al revisar IV.E y IV.G.
+3. **Formato:** escalera sin cambios (A. / 1. a 4. / 4.1. a 4.4.); no se usó
+   `A.1`. Enumeraciones: `(i)` en negrita para clasificaciones (causas de
+   ineficacia, grupos de fallos) y `(i)` subrayado para listas (argumentos
+   de cada tesis, etapas del art. 1683). Bloques `.definicion`: 3.
+   Bloques `.ley`: 5. Se agregó a la hoja de estilos de Acto Jurídico solo
+   lo que el formato nuevo necesita y el resto del manual no usa, así que
+   el aspecto de los demás capítulos no cambia.
+4. **Recuadros por punto:**
+
+   | Punto | Recuadros pedagógicos | Otros |
+   |---|---|---|
+   | Introducción IV | 0 | 2 bloques `.definicion` |
+   | 1 | 0 (ejemplo breve en el texto) | 1 `.definicion` |
+   | 2 | 0 | Conexiones |
+   | 3 | 0 | Cuadro comparativo, bloque `.ley` |
+   | 4 | **4**: Ejemplo, No confundir, Advertencia, Pregunta clásica | 2 cuadros, No olvidar, Jurisprudencia, Conexiones, 4 bloques `.ley` |
+
+   El punto 4 pasa del máximo orientativo de dos recuadros pedagógicos. No
+   se borró nada: **Laura decide** si alguno sobra o se mueve.
+5. **Pendientes `[FALTA: ...]`:** las secciones de los apuntes de otras
+   materias en las Conexiones (Familia, Compraventa, Sociedades,
+   Procesal Civil), que todavía no existen.
+6. **Artículos transcritos**, verificados contra `Apuntes/Codigo Civil
+   Chileno.pdf`: arts. 1681, 1682, 1683, 1690 y 1701 completos;
+   fragmentos de los arts. 10, 1444, 1447, 1809 y 2055. Sin verificar
+   contra el texto legal: las citas de la Ley N° 18.046 (art. 6°) y de la
+   Ley N° 19.499 (art. 6° A), que vienen textuales de Bozzo e Ibarra, y el
+   año "1997" de la Ley N° 19.499, que ya estaba en el manual y no aparece
+   en ninguna de las fuentes.
+7. **Conexiones con página pendiente (`p. __`):** 4.
+8. **Preguntas clásicas:** una, desde la marca de examen de la fuente
+   (Bozzo e Ibarra), al cierre del punto 4. Sin banco de Acto Jurídico.
+9. **Cuadros comparativos:** 3. Los 2 existentes, ampliados (el del punto
+   4 con autores en los encabezados, fila "Otras leyes" corregida y
+   postura de la jurisprudencia debajo), y 1 nuevo (Código francés frente
+   a Código chileno, en 4.3).
+10. **Anexos muy grandes:** ninguno en este tramo.
+
+**Recuadros creados por el modelo, para la revisión final del manual:**
+
+| Dónde | Recuadro |
+|---|---|
+| Punto 1 | Ejemplo breve en el texto: la "sociedad" de la sanguchería de Ñuñoa (art. 2055) |
+| Punto 2 | Conexiones: Derecho de Familia |
+| Punto 4.1 | Ejemplo: "El precio que nadie fijó" (art. 1809) |
+| Punto 4.1 | No confundir: nulidad de pleno derecho frente a nulidad del Código Civil |
+| Punto 4.3 | Advertencia: ¿La inexistencia es imprescriptible e insaneable en Chile? |
+| Punto 4.3 | No olvidar: plazo del art. 1683 |
+| Punto 4.4 | Pregunta clásica: respuesta a la discusión entre CLARO SOLAR y ALESSANDRI |
+| Punto 4 | Conexiones: Compraventa, Sociedades, Derecho Procesal Civil |

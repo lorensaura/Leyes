@@ -306,9 +306,10 @@ era materia, no un dato de examen.
   un artículo citado en el mismo punto. Un ejemplo no introduce una
   regla que el texto no enseña.
 - **Referencias actuales**, prefiriendo las que no envejezcan en un año.
-- **Aplicación en manuales existentes:** no es una mejora retroactiva
-  obligatoria. Se aplica de a poco, cada vez que se toca un capítulo por
-  otro motivo.
+- **Aplicación en manuales existentes:** todos los ejemplos deben ser
+  propios. Al actualizar cada tramo (`actualizar-manuales-existentes.md`),
+  los ejemplos que vienen de la fuente se reemplazan por ejemplos
+  originales.
 
 ### 5.1 Antes y después (casos reales)
 
