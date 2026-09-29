@@ -38,6 +38,7 @@
 | 2026-09-29 | Etiquetas de los encabezados iguales a las de Acto Jurídico: tema `h2.grupo`, institución `h2.inst`, punto `h2`, subpunto `h3`. | `formato.md` 1 |
 | 2026-09-30 | Se mantiene el aspecto trabajado en Acto Jurídico: capítulo negro, centrado y subrayado; tema negro, centrado, sin subrayado; punto en rojo, a la izquierda y subrayado; subpunto en negrita y subrayado. Reemplaza el aspecto del 2026-09-28 (rojo solo en el capítulo, 16/15pt). | `formato.md` 1 y 8 |
 | 2026-09-30 | Lo común a todas las instituciones de una letra va como su propia institución `A.1 Aspectos generales`, no como texto sin número bajo la letra. Modelo: Acto Jurídico, IV.B Nulidad (B.1 Aspectos generales, B.2 Nulidad absoluta, B.3 Nulidad relativa). | `formato.md` 1.1 |
+| 2026-09-30 | La letra del tema (`A.`) va del mismo tamaño que el romano del capítulo. | `formato.md` 1 y 8 |
 | 2026-09-29 | Los números del índice se escriben como texto, no con la numeración automática de las listas. | `formato.md` 1.4 |
 | 2026-09-29 | Preguntas clásicas: Laura las trabaja mientras se redacta y envía cuáles agregar. Reemplaza la selección propuesta desde `preguntas_evaluacion`. | `guia-editorial.md` 6 |
 | 2026-09-29 | Los recuadros antiguos de los manuales ya escritos se revisan después, con el formato nuevo ya probado en contenido nuevo. | `auditoria.md` 6 |

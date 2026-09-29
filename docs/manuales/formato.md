@@ -21,7 +21,7 @@ se inventa fuera de ella.
 | Nivel | Marcador | Qué es | Etiqueta HTML | Cómo se ve |
 |---|---|---|---|---|
 | 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Negro**, centrado, **negrita**, MAYÚSCULA, título subrayado (1.35rem). Salto de página antes |
-| 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Negro, centrado, negrita, MAYÚSCULA, **sin subrayado** (1.3rem) |
+| 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Negro, centrado, negrita, MAYÚSCULA, **sin subrayado**, del **mismo tamaño que el capítulo** (1.35rem) |
 | 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Negro, centrado, MAYÚSCULA, **sin negrita y sin subrayado**, algo más chico que el tema (1.2rem). En Acto Jurídico: IV.B Nulidad, con B.1 Aspectos generales, B.2 Nulidad absoluta y B.3 Nulidad relativa |
 | 4 | `1.`, `2.` | Punto | `h2` (sin clase) | **Rojo**, a la izquierda, **negrita**, MAYÚSCULA, título subrayado (1.1rem) |
 | 5 | `1.1.`, `2.1.` | Subpunto con título | `h3` | A la izquierda, **negrita**, título subrayado, mayúscula solo en la inicial |
@@ -115,11 +115,14 @@ I.  Ineficacia
                      (i) Error
                          a) Error de hecho
                             a.1) Error esencial
+        B.4  Los efectos de la nulidad
+             1. ...
 ```
 
 Inexistencia va directo a `1.` porque no contiene instituciones con
-desarrollo propio; Nulidad sube a `B.1` a `B.3` porque contiene dos
-instituciones (más sus aspectos generales comunes).
+desarrollo propio; Nulidad sube a `B.1` a `B.4` porque contiene dos
+instituciones, más lo común a ambas antes (aspectos generales) y después
+(efectos): por la regla de todo o nada, también van numerados.
 
 **Manuales existentes:** no se renumeran. Cuando se revise uno (por
 ejemplo Acto Jurídico, cuyo índice Laura armó a mano), se compara contra
@@ -626,7 +629,7 @@ Extensión (va dentro del mismo `<style>`, antes de `</style>`):
      (capítulo negro centrado y subrayado; punto rojo, a la izquierda y subrayado; subpunto serif
      en negrita y subrayado). Solo se agregan el tema y la institución. */
   /* A. Tema: negro, centrado, negrita, mayúscula, sin subrayado */
-  h2.grupo{color:var(--accent2);font-size:1.3rem;text-align:center;
+  h2.grupo{color:var(--accent2);font-size:1.35rem;text-align:center;
     text-decoration:none;margin:2.6rem 0 .9rem;}
   /* A.1 Institución: negro, centrado, mayúscula, sin negrita, sin subrayado */
   h2.inst{color:var(--accent2);font-weight:400;font-size:1.2rem;text-align:center;
