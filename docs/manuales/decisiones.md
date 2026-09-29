@@ -30,8 +30,14 @@
 | 2026-09-28 | Voz propia: citar la fuente resuelve la honestidad académica, no la paráfrasis cercana. El texto final reestructura la exposición sin cambiar vocabulario técnico ni contenido; las definiciones se citan textuales con su autor. El borrador cercano se mantiene como insumo interno y se agrega el chequeo por unidades de contenido. | `guia-editorial.md` 3, `proceso.md` 2 y 4.2 |
 | 2026-09-28 | Ejemplos siempre originales; el punto que ilustra un ejemplo de la fuente se cubre con uno propio. | `guia-editorial.md` 5, `auditoria.md` 4 |
 | 2026-09-28 | Se retira Dato de grado (terminó conteniendo materia). Nuevos recuadros: Pregunta clásica, No olvidar y Conexiones. No confundir y Pregunta clásica se fusionan cuando son la misma pregunta. | `guia-editorial.md` 4 |
-| 2026-09-28 | Preguntas clásicas: solo de una selección de Laura sobre `preguntas_evaluacion`, propuesta por frecuencia. | `guia-editorial.md` 6 |
+| 2026-09-28 | Preguntas clásicas: solo de una selección de Laura sobre `preguntas_evaluacion`, propuesta por frecuencia (reemplazado el 2026-09-29). | `guia-editorial.md` 6 |
 | 2026-09-28 | Comprensión lectora: las preguntas se responden en la plataforma, con retroalimentación de la IA, nunca en el apunte. | `guia-editorial.md` 4.9 |
 | 2026-09-28 | Conexiones al cierre de cada punto, con sección y página, sin enlaces, porque la mayoría imprime. | `guia-editorial.md` 4.8 |
 | 2026-09-28 | Se posponen: examen oral vs. escrito, índice de artículos y reescritura con voz propia de los manuales ya escritos. | `guia-editorial.md` 9, `auditoria.md` 6 |
+| 2026-09-29 | Escalera confirmada con el nivel `1.1.`. `(i)` tiene dos estilos: negrita sin subrayado si abre una clasificación nueva; solo subrayado si enumera requisitos o circunstancias. `a)` subrayado, `a.1)` cursiva. | `formato.md` 1 y 8 |
+| 2026-09-29 | Etiquetas de los encabezados iguales a las de Acto Jurídico: tema `h2.grupo`, institución `h2.inst`, punto `h2`, subpunto `h3`. El aspecto de cada nivel sigue la decisión del 2026-09-28 (rojo solo en el capítulo). | `formato.md` 1 |
+| 2026-09-29 | Los números del índice se escriben como texto, no con la numeración automática de las listas. | `formato.md` 1.4 |
+| 2026-09-29 | Preguntas clásicas: Laura las trabaja mientras se redacta y envía cuáles agregar. Reemplaza la selección propuesta desde `preguntas_evaluacion`. | `guia-editorial.md` 6 |
+| 2026-09-29 | Los recuadros antiguos de los manuales ya escritos se revisan después, con el formato nuevo ya probado en contenido nuevo. | `auditoria.md` 6 |
+| 2026-09-29 | Los estilos de la escalera y de los recuadros nuevos se agregan también al lector en línea (`app/manuales.html`), que no usa la hoja de estilos del manual. | `formato.md` 8 |
 | 2026-09-28 | `script_apuntes.md` se divide en `formato.md`, `guia-editorial.md`, `proceso.md`, `auditoria.md` y este registro. | `docs/script_apuntes.md` (redirección) |

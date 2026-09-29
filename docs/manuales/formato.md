@@ -7,8 +7,9 @@
 > `proceso.md`. El porqué de cada regla, con fechas, está en
 > `decisiones.md`.
 
-El estándar visual es el de Responsabilidad Contractual y Precontractual.
-Los tres manuales de Responsabilidad ya siguen este formato.
+El estándar de densidad y de recuadros es el de Responsabilidad
+Contractual y Precontractual. La numeración y las etiquetas de los
+encabezados siguen a Acto Jurídico, donde nació la escalera.
 
 ---
 
@@ -19,14 +20,21 @@ se inventa fuera de ella.
 
 | Nivel | Marcador | Qué es | Etiqueta HTML | Cómo se ve |
 |---|---|---|---|---|
-| 1 | `I.`, `II.` | Capítulo | `h1` | **Rojo**, centrado, 16pt, **negrita**, MAYÚSCULA, título subrayado. Salto de página antes |
-| 2 | `A.`, `B.` | Tema | `h2` | Igual al capítulo, pero **negro y sin subrayado**: centrado, 16pt, negrita, MAYÚSCULA |
-| 3 (opcional) | `A.1`, `A.2` | Institución | `h2 class="inst"` | Centrado, 15pt, MAYÚSCULA, **sin negrita y sin subrayado** |
-| 4 | `1.`, `2.` | Punto | `h3` | A la izquierda, **negrita**, MAYÚSCULA, título subrayado |
-| 5 | `1.1.`, `2.1.` | Subpunto con título | `h4` | A la izquierda, **negrita**, título subrayado, mayúscula solo en la inicial |
-| 6 | `(i)`, `(ii)` | Elemento | `.enum-i` | **Negrita**, sin subrayado, mayúscula solo en la inicial |
+| 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Rojo**, centrado, 16pt, **negrita**, MAYÚSCULA, título subrayado. Salto de página antes |
+| 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Igual al capítulo, pero **negro y sin subrayado**: centrado, 16pt, negrita, MAYÚSCULA |
+| 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Centrado, 15pt, MAYÚSCULA, **sin negrita y sin subrayado** |
+| 4 | `1.`, `2.` | Punto | `h2` (sin clase) | A la izquierda, **negrita**, MAYÚSCULA, título subrayado |
+| 5 | `1.1.`, `2.1.` | Subpunto con título | `h3` | A la izquierda, **negrita**, título subrayado, mayúscula solo en la inicial |
+| 6a | `(i)`, `(ii)` | Elemento que abre una **clasificación nueva** | `.enum-i` | **Negrita**, sin subrayado, mayúscula solo en la inicial |
+| 6b | `(i)`, `(ii)` | Elemento de una **lista de requisitos o circunstancias** | `.enum-i` + clase `lista` | Título **subrayado**, sin negrita, mayúscula solo en la inicial |
 | 7 | `a)`, `b)` | Subelemento | `.enum-a` | Título subrayado, sin negrita, mayúscula solo en la inicial |
 | 8 | `a.1)`, `a.2)` | Último nivel | `.enum-c` | *Cursiva* |
+
+**Por qué estas etiquetas:** son las que ya usa Acto Jurídico. Además, el
+punto `1.` queda en `h2`, igual que en los manuales de Responsabilidad, y
+el subpunto en `h3`, así que el lector en línea (`app/manuales.html`) y
+los scripts que arman secciones a partir de `h1`/`h2` tratan igual los
+manuales antiguos y los nuevos. `h4` y `h5` no se usan en contenido nuevo.
 
 Los niveles 1 a 3 van en la fuente sans serif de los títulos; del 4 en
 adelante, en la serif del cuerpo. El rojo de los títulos queda **solo
@@ -41,6 +49,19 @@ Los marcadores se ordenan **por profundidad**, no por el tipo de lista:
 bajo un subpunto `1.1.`, el primer nivel siempre es `(i)`, el siguiente
 siempre es `a)` y el último `a.1)`. Esto reemplaza la regla anterior que
 elegía `(i)` para requisitos y `a.` para categorías.
+
+Lo que sí depende del tipo de lista es el **estilo** de `(i)`, no el
+marcador:
+
+- **Clasificación nueva** (el `(i)` abre categorías o clases que después
+  se desarrollan, por ejemplo "(i) Actos unilaterales, (ii) Actos
+  bilaterales"): **negrita, sin subrayado** (`.enum-i`).
+- **Lista de requisitos o circunstancias** (el `(i)` solo enumera
+  condiciones, casos o elementos de algo ya definido, por ejemplo los
+  requisitos del error): **basta el subrayado del título, sin negrita**
+  (`.enum-i lista`).
+- Si hay duda, se deja `[FALTA: ¿clasificación o lista?]` para que Laura
+  decida.
 
 **¿`1.1.` o `(i)`?** Prueba: *¿la parte tiene título propio y un
 desarrollo de varios párrafos, o enumeraciones propias debajo?* Entonces
@@ -101,11 +122,20 @@ ejemplo Acto Jurídico, cuyo índice Laura armó a mano), se compara contra
 esta regla y se **listan las diferencias** para que Laura decida. No se
 cambia nada sin su aprobación.
 
-**Antes de usar `h2 class="inst"` por primera vez**, verificar que el
-índice, `scripts/agregar_anclas_manuales.js` y
-`scripts/generar_pdf_manual.py` lo reconocen. Si algún script arma listas
-a partir de `h2`, las instituciones deben aparecer también (el índice
-las incluye, ver 1.4). Reportar a Laura lo que haya que ajustar.
+**Estado de las herramientas frente a la escalera (revisado
+2026-09-29):**
+
+- **PDF** (`scripts/generar_pdf_manual.py`): imprime la página con su
+  propia hoja de estilos, así que reconoce todos los niveles sin ajustes.
+- **Índice**: se escribe a mano, con los números como texto (1.4).
+- **Lector en línea** (`app/manuales.html`): tiene reglas para todos los
+  niveles y recuadros de este documento desde el 2026-09-29.
+- **Anclas de Justiniano** (`scripts/agregar_anclas_manuales.js`, que
+  copia la lógica de `scripts/extraer_contenido_interrogador.js`): tratan
+  `h2.grupo`, `h2.inst` y `h2` como secciones del mismo nivel, y **no
+  entienden los números romanos** (asignan letras sin sentido y pueden
+  repetir ids). Pendiente de ajustar en los dos scripts, solo cuando un
+  manual nuevo entre al Interrogador.
 
 ### 1.2 Capítulos romanos e ids
 
@@ -120,13 +150,14 @@ las incluye, ver 1.4). Reportar a Laura lo que haya que ajustar.
   - Tema: `cII-A`
   - Institución: `cI-B1`
   - Punto: `cII-A-1`, o `cI-B1-2` dentro de una institución
+  - Subpunto: `cII-A-4-1` (el 4.1. del tema A)
 - La secuencia de letras va A, B, C... sin saltarse ninguna.
 
 ### 1.3 Espaciado y subrayado después del número
 
-En **todo** encabezado o enumeración numerada (`h1`, `h2`, `h2.inst`,
-`h3`, `h4`, `.enum-i`, `.enum-a`, `.enum-c` y sus versiones en la misma
-línea de la sección 2):
+En **todo** encabezado o enumeración numerada (`h1`, `h2.grupo`,
+`h2.inst`, `h2`, `h3`, `.enum-i`, `.enum-a`, `.enum-c` y sus versiones en
+la misma línea de la sección 2):
 
 - Después del número, letra o romano van **cuatro espacios duros**
   (`&nbsp;&nbsp;&nbsp;&nbsp;`), no un espacio simple.
@@ -138,14 +169,15 @@ línea de la sección 2):
 
 ```html
 <h1 id="cI" style="text-decoration:none"><span class="num">I.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Ineficacia</span></h1>
+<h2 id="cI-B" class="grupo" style="text-decoration:none"><span class="num">B.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Nulidad</span></h2>
 <h2 id="cI-B1" class="inst" style="text-decoration:none"><span class="num">B.1&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Nulidad relativa</span></h2>
-<h3 id="cI-B1-1" style="text-decoration:none"><span class="num">1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Concepto</span></h3>
-<h4 style="text-decoration:none"><span class="num">2.1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Seriedad de la voluntad</span></h4>
+<h2 id="cI-B1-1" style="text-decoration:none"><span class="num">1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Concepto</span></h2>
+<h3 id="cI-B1-2-1" style="text-decoration:none"><span class="num">2.1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Seriedad de la voluntad</span></h3>
 ```
 
-Todo `h1`, `h2`, `h3` y `h4` lleva su número: no hay subtítulos sin
-numerar. Las mayúsculas de los niveles 1 a 4 las pone la hoja de estilos:
-en el HTML el título se escribe normal ("Concepto", no "CONCEPTO").
+Todo `h1`, `h2` y `h3` lleva su número: no hay subtítulos sin numerar.
+Las mayúsculas de los niveles 1 a 4 las pone la hoja de estilos: en el
+HTML el título se escribe normal ("Concepto", no "CONCEPTO").
 
 ### 1.4 Índice
 
@@ -153,6 +185,37 @@ El índice de un manual nuevo lista los niveles 1 a 5: capítulos (`I.`),
 temas (`A.`), instituciones (`A.1`), puntos (`1.`) y subpuntos (`1.1.`). Los manuales
 antiguos que solo listan el nivel superior se completan cuando se
 revisen.
+
+**Los números del índice se escriben como texto**, igual que en el
+encabezado, dentro de listas sin numeración automática. La numeración
+automática de las listas no puede mostrar `A.1` ni `1.1.`. El índice se
+escribe a mano (ningún script lo genera), así que al agregar o mover un
+encabezado se actualiza también su línea del índice.
+
+```html
+<div class="toc">
+<strong>Índice</strong>
+<ol class="toc-lista">
+  <li><a href="#cI"><span class="num">I.</span> Ineficacia</a>
+    <ol class="toc-lista">
+      <li><a href="#cI-B"><span class="num">B.</span> Nulidad</a>
+        <ol class="toc-lista">
+          <li><a href="#cI-B1"><span class="num">B.1</span> Nulidad relativa</a>
+            <ol class="toc-lista">
+              <li><a href="#cI-B1-2"><span class="num">2.</span> Causales</a>
+                <ol class="toc-lista">
+                  <li><a href="#cI-B1-2-1"><span class="num">2.1.</span> Incapacidad relativa</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+</div>
+```
 
 ---
 
@@ -191,9 +254,12 @@ pasos:
    <!-- Explicación corta: misma línea -->
    <p><span class="enum-a-run" style="text-decoration:none"><span class="num">a)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Menores adultos</span></span>: actúan válidamente representados o autorizados por su representante legal.</p>
 
-   <!-- Explicación larga: título solo y párrafo aparte -->
-   <span class="enum-i"><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span>Manifestación de voluntad expresa</span>
+   <!-- Explicación larga: título solo y párrafo aparte (clasificación: negrita) -->
+   <span class="enum-i"><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Manifestación de voluntad expresa</span></span>
    <p>Es aquella que se formula en términos explícitos y directos...</p>
+
+   <!-- Lista de requisitos o circunstancias: subrayado, sin negrita -->
+   <p><span class="enum-i-run lista" style="text-decoration:none"><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Que sea real</span></span>: ...</p>
    ```
 3. **Dentro de cada punto, se resalta solo la palabra o frase clave,
    nunca el punto completo.** Si todo resalta, nada resalta. Correcto:
@@ -318,7 +384,7 @@ Ver `muestra_jerarquia.png` para cómo se ve con la hoja de estilos real.
 Todos tienen el mismo formato de **dos líneas centradas**: el tipo de
 recuadro (`.caja-tipo`, mayúscula, negrita, 9pt) y el título o cita
 específica (`.caja-titulo`, negrita, 10pt). La única excepción es la
-Pausa, que es una sola línea. Cuándo usar cada uno está en
+Pausa, que tiene su propio formato (al final de esta sección). Cuándo usar cada uno está en
 `guia-editorial.md`, sección 4.
 
 ```html
@@ -378,9 +444,19 @@ Pausa, que es una sola línea. Cuándo usar cada uno está en
   recuadro. Un `.caja-tipo` "Jurisprudencia" arriba y luego, por cada
   fallo, una línea `.caja-titulo` con rol, corte, fecha y tema, seguida
   de su párrafo, sin cerrar el `<div>` hasta el final.
-- **Pausa (checkpoint de comprensión lectora):** una sola línea,
-  `Pausa: Comprensión lectora`. Las preguntas viven en la plataforma
-  (`app/manuales.html`), nunca en el HTML del manual.
+- **Pausa (checkpoint de comprensión lectora):** va al cierre de cada
+  capítulo. Es un aviso, no un recuadro de contenido: usa `.repaso` con
+  un título `.titulo-bloque` y una frase que dice dónde responder. Las
+  preguntas viven en la plataforma (`app/manuales.html`, dentro del
+  código de la página, una lista por manual), nunca en el HTML del
+  manual. Así está hoy en los tres manuales de Responsabilidad:
+
+  ```html
+  <div class="repaso">
+    <span class="titulo-bloque">Pausa: Comprensión lectora</span>
+    Has terminado <strong>I. Ineficacia</strong>. Responde las preguntas de comprensión lectora de este capítulo en digesto.cl.
+  </div>
+  ```
 - **`.dato-grado` está retirado.** No se usa en contenido nuevo. Queda
   en la hoja de estilos solo para los manuales que todavía lo tienen,
   hasta su revisión (`guia-editorial.md`, sección 4.9).
@@ -389,12 +465,19 @@ Pausa, que es una sola línea. Cuándo usar cada uno está en
 
 ## 8. Hoja de estilos
 
-Base: el `<style>` real del manual de Contractual. Se copia tal cual,
-ajustando solo el `<title>` y, si hace falta, los colores de marca,
-nunca la estructura. Después de la base va la **extensión del
-2026-09-28**, que define el aspecto de cada nivel de la escalera
-(sección 1), los bloques de lectura y los recuadros nuevos. En los
-manuales nuevos, la extensión manda sobre la base.
+Base: la hoja común de los manuales. Sale de la de Contractual, con los
+ajustes que se sumaron en Bienes y Acto Jurídico (spans `.num`/`.tit`,
+títulos de recuadro en dos líneas), así que no es una copia literal de
+ningún manual publicado. Se copia tal cual, ajustando solo el `<title>`
+y, si hace falta, los colores de marca, nunca la estructura. Después de
+la base va la **extensión**, que define el aspecto de cada nivel de la
+escalera (sección 1), los bloques de lectura y los recuadros nuevos. En
+los manuales nuevos, la extensión manda sobre la base.
+
+Esta hoja solo se ve en el HTML abierto directo y en el PDF. El lector en
+línea de la app (`app/manuales.html`) descarta el `<style>` del manual y
+usa sus propias reglas (`.manual-body ...`): toda clase nueva que se
+agregue aquí tiene que agregarse también allá.
 
 La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
 `<link>` de Google Fonts que ya usan los manuales existentes.
@@ -486,6 +569,9 @@ La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
   .repaso{border-left:4px solid var(--accent);background:#FCF7EC;padding:11px 16px;
     margin:2.4rem 0 .4rem;font-family:-apple-system,"Segoe UI",Arial,sans-serif;
     font-size:9.5pt;line-height:1.4;color:#5a5043;text-align:left;page-break-inside:avoid;}
+  .repaso .titulo-bloque{font-weight:700;font-size:9pt;color:var(--accent);display:block;
+    margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.04em;}
+  .repaso strong{color:var(--accent);font-weight:700;}
 
   .cover{text-align:center;padding:96px 20px 60px;border-bottom:none;margin-bottom:2rem;}
   .cover .brand{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;display:inline-block;
@@ -523,34 +609,43 @@ La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
 Extensión (va dentro del mismo `<style>`, antes de `</style>`):
 
 ```css
-  /* Extensión 2026-09-28: escalera de niveles, jerarquía de lectura y recuadros nuevos.
-     Reemplaza el aspecto de h1-h4 y de las enumeraciones de la base en los manuales nuevos. */
+  /* Extensión 2026-09-28 (ajustada 2026-09-29): escalera de niveles, jerarquía de lectura y
+     recuadros nuevos. Etiquetas como en Acto Jurídico: h1 capítulo, h2.grupo tema,
+     h2.inst institución, h2 punto, h3 subpunto. Manda sobre la base en los manuales nuevos. */
   :root{
     --navy:#2C4A6E;--navybg:#EEF3F8;
     --purple:#5B3F86;--purplebg:#F4F0F8;
   }
   /* I. Capítulo: rojo, centrado, negrita, mayúscula, subrayado (solo el título), 16pt */
   h1{font-size:16pt;color:var(--accent);}
-  /* A. Tema: igual al capítulo, pero sin subrayado */
-  h2{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-weight:700;color:var(--accent2);
-    font-size:16pt;text-align:center;text-transform:uppercase;text-decoration:none;
-    letter-spacing:.03em;margin:2.2rem 0 .9rem;}
-  h2 .tit{text-decoration:none;}
+  /* 1. Punto (h2 sin clase): serif, negrita, mayúscula, a la izquierda, subrayado solo en el título */
+  h2{font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;color:var(--accent2);
+    font-size:1.05rem;text-align:left;text-transform:uppercase;text-decoration:none;
+    margin:1.9rem 0 .35rem;}
+  /* A. Tema: igual al capítulo, pero negro y sin subrayado */
+  h2.grupo{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:16pt;
+    text-align:center;letter-spacing:.03em;margin:2.2rem 0 .9rem;}
   /* A.1 Institución: centrada, mayúscula, sin negrita, sin subrayado, 15pt */
-  h2.inst{font-weight:400;font-size:15pt;margin:1.9rem 0 .8rem;}
-  /* 1. Punto: negrita, mayúscula, subrayado (solo el título) */
-  h3{text-transform:uppercase;}
-  /* 1.1. Subpunto con título: negrita, subrayado, mayúscula solo inicial */
-  h4{text-transform:none;}
-  h4 .tit{text-decoration:underline;}
-  /* (i): negrita, sin subrayado, sin cursiva */
-  .enum-i,.enum-i-run{font-style:normal;font-weight:700;}
-  .enum-i .tit,.enum-i-run .tit,.enum-c .tit,.enum-c-run .tit{text-decoration:none;}
+  h2.inst{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-weight:400;font-size:15pt;
+    text-align:center;margin:1.9rem 0 .8rem;}
+  h2.grupo .tit,h2.inst .tit{text-decoration:none;}
+  /* 1.1. Subpunto (h3): negrita, subrayado solo en el título, mayúscula solo inicial */
+  h3{text-transform:none;text-decoration:none;}
+  /* (i) de clasificación nueva: negrita, sin subrayado */
+  .enum-i,.enum-i-run{font-style:normal;font-weight:700;text-decoration:none;}
+  .enum-i .tit,.enum-i-run .tit{text-decoration:none;}
+  /* (i) de lista de requisitos o circunstancias: subrayado solo en el título, sin negrita */
+  .enum-i.lista,.enum-i-run.lista{font-weight:400;}
+  .enum-i.lista .tit,.enum-i-run.lista .tit{text-decoration:underline;}
   /* a): subrayado solo en el título, sin negrita */
-  .enum-a,.enum-a-run{font-weight:400;}
-  .enum-a-run .tit{text-decoration:underline;}
-  /* a.1): cursiva */
-  .enum-c,.enum-c-run{font-style:italic;}
+  .enum-a,.enum-a-run{font-weight:400;font-style:normal;text-decoration:none;}
+  .enum-a .tit,.enum-a-run .tit{text-decoration:underline;}
+  /* a.1): cursiva, sin subrayado */
+  .enum-c,.enum-c-run{font-style:italic;font-weight:400;text-decoration:none;}
+  .enum-c .tit,.enum-c-run .tit{text-decoration:none;}
+  /* Índice: números escritos como texto, sin numeración automática */
+  .toc-lista{list-style:none;padding-left:1.1rem;}
+  .toc > .toc-lista{padding-left:0;}
   /* Explicación corta en la misma línea: el título lleva el estilo de su nivel, el texto que sigue no */
   .enum-i-run,.enum-a-run,.enum-c-run{display:inline;}
   /* Jerarquía de lectura */
@@ -569,7 +664,7 @@ Extensión (va dentro del mismo `<style>`, antes de `</style>`):
   .conexiones .caja-tipo{color:var(--purple);}
   .conexiones p{margin:.45rem 0;}
   @media print{
-    h1,h2{font-size:16pt;} h2.inst{font-size:15pt;}
+    h1,h2.grupo{font-size:16pt;} h2.inst{font-size:15pt;}
     .ley,.definicion,.pregunta-clasica,.no-olvidar,.conexiones{page-break-inside:avoid;}
   }
 ```

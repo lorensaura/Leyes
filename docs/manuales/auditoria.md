@@ -77,9 +77,8 @@ tanda, se escribe **"Sin hallazgos."**, nunca se omite.
    no.
 4. **Pregunta de examen señalada en la fuente, sin destacar:** la fuente
    marca un punto como pregunta típica de examen y el manual no lo
-   destaca. Se revisa si está en `preguntas_evaluacion`: si está, pasa a
-   las candidatas a Pregunta clásica para que Laura decida; si no, se
-   reporta igual.
+   destaca. Se reporta a Laura, que decide si la envía como Pregunta
+   clásica (`guia-editorial.md`, sección 6).
 5. **Debate doctrinal aplanado:** dos o más fuentes tratan la misma
    controversia con autores distintos y el manual solo usó la lista de
    una, o el manual toma partido sin mostrar ambas tesis con la misma
@@ -126,7 +125,9 @@ pudo verificar contra ninguna.
 Los manuales escritos antes del 2026-09-28 (Contractual,
 Extracontractual, Precontractual, Bienes y Acto Jurídico) no siguen
 todavía la guía editorial completa. Se revisarán **cuando Laura lo
-pida**, sin frenar los manuales nuevos, en dos pasadas:
+pida**, sin frenar los manuales nuevos: primero se avanza con el
+contenido nuevo y, cuando ese formato esté probado y organizado, se usa
+el mismo para revisar los antiguos. La revisión va en dos pasadas:
 
 **Pasada 1: marcar.** Sin reescribir nada, se listan en un reporte:
 
@@ -135,6 +136,10 @@ pida**, sin frenar los manuales nuevos, en dos pasadas:
 - Ejemplos que parecen adaptados de la fuente en vez de originales.
 - Recuadros de Dato de grado, con su reclasificación propuesta
   (`guia-editorial.md`, sección 4.10).
+- Recuadros con el formato antiguo (título en una sola línea con
+  `.titulo-bloque`, en vez de las dos líneas `.caja-tipo`/`.caja-titulo`
+  de `formato.md`, sección 7), y recuadros que faltan según la guía
+  editorial (No olvidar, Conexiones).
 - Diferencias de numeración frente a la escalera y la regla de ascenso
   (`formato.md`, sección 1). No se renumera: solo se listan.
 

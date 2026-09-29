@@ -208,8 +208,9 @@ formato. El resultado es un informe breve para Laura con:
 6. **Artículos transcritos:** verificados contra la fuente textual, y
    cuáles quedan por confirmar.
 7. **Conexiones** con página pendiente (`p. __`).
-8. **Candidatas a Pregunta clásica** para cada punto, si ya se hizo la
-   búsqueda en `preguntas_evaluacion` (`guia-editorial.md`, sección 6).
+8. **Preguntas clásicas:** dónde quedó cada una de las que envió Laura,
+   y los puntos que la fuente marca como típicos de examen, para que ella
+   decida (`guia-editorial.md`, sección 6).
 
 El informe también se usa al revisar un manual ya escrito.
 

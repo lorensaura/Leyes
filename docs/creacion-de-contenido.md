@@ -37,9 +37,8 @@ Alternativas (ver `docs/practica.md`). Se ven solo bajo el filtro "Todas".
 **preguntas_evaluacion es una tabla distinta**, el banco de examen real
 usado como grounding del Interrogador IA (ver `docs/interrogador.md`), no
 se toca ni se mezcla con `evaluacion_practica`.
-Los manuales la leen, sin modificarla, para proponer las Preguntas
-clásicas que Laura selecciona (`docs/manuales/guia-editorial.md`,
-sección 6).
+Las Preguntas clásicas de los manuales no salen de esta tabla: las envía
+Laura mientras se redacta (`docs/manuales/guia-editorial.md`, sección 6).
 
 ## Antes de generar nada: revisar las 5 fuentes existentes
 
@@ -108,8 +107,9 @@ legal, pero no hace falta correr este script de nuevo.
   El proceso ya se corrigió (`docs/manuales/proceso.md`, secciones 0, 2
   y 4) para que no vuelva a pasar en manuales nuevos. Acto Jurídico
   ya está reparado y fusionado a `main`. La reparación de Bienes está
-  en curso, tramo por tramo (I-IV ya revisados contra la fuente, V en
-  adelante todavía no); detalle en `docs/incidente_compresion_manuales.md`
+  en curso, tramo por tramo (I-IV, V.1-V.3, V.4.A y V.4.B ya revisados
+  contra la fuente al 2026-09-29; de V.4.C en adelante todavía no);
+  detalle en `docs/incidente_compresion_manuales.md`
   y plan de capítulos en `docs/manuales/bienes-reestructuracion.md`.
 - **Manual de Precontractual** (`03_...html`) se construyó a partir de un
   borrador de Laura; sus recuadros pedagógicos y las preguntas/keywords de

@@ -117,7 +117,7 @@ pida (`auditoria.md`, sección 6).
 | Ejemplo | `.ejemplo` | Un caso ficticio que fija el concepto | Siempre original (sección 5) |
 | No confundir | `.callout` | Dos conceptos que se confunden | Concepto A, concepto B y el criterio que los distingue |
 | Advertencia | `.warn` | Una trampa típica o un error común de examen | Se dice el error y por qué es error |
-| Pregunta clásica | `.pregunta-clasica` | Una pregunta real de examen | Solo de la selección hecha desde `preguntas_evaluacion` (sección 6) |
+| Pregunta clásica | `.pregunta-clasica` | Una pregunta real de examen | Solo las que envía Laura (sección 6) |
 | No olvidar | `.no-olvidar` | Un dato duro y puntual | Una o dos líneas; nunca explica materia |
 | Conexiones | `.conexiones` | Relación con otras materias | Al cierre de cada punto (nivel `1.`) |
 | Pausa | una línea | Aviso de comprensión lectora | Las preguntas están en la plataforma, no en el apunte |
@@ -161,9 +161,8 @@ seguidos lo tienen, el verde deja de señalar algo especial.
 
 ### 4.5 Pregunta clásica
 
-- **Nunca se inventa.** Solo entran las preguntas que Laura seleccionó
-  desde `preguntas_evaluacion` (sección 6). Si un punto no tiene pregunta
-  seleccionada, no lleva recuadro.
+- **Nunca se inventa.** Solo entran las preguntas que Laura envía
+  (sección 6). Si un punto no tiene pregunta enviada, no lleva recuadro.
 - La pregunta se transcribe **tal como está en el banco**, sin
   reformularla.
 - **Ubicación:** justo después del párrafo que la responde.
@@ -181,7 +180,7 @@ recuadro con encabezado doble ("No confundir | Pregunta clásica"), un
 solo título y un solo cuerpo (código en `formato.md`, sección 7).
 
 Prueba: *¿el título del No confundir es una pregunta que la comisión
-hace tal cual, y está entre las preguntas seleccionadas?* Si la respuesta
+hace tal cual, y está entre las preguntas que envió Laura?* Si la respuesta
 es sí, se fusionan. Si es no, van separados. Si hay duda, separados y con
 `[FALTA: decidir si se fusiona]`.
 
@@ -230,7 +229,7 @@ revisar un manual que lo tenga, su contenido se reclasifica:
 | Si el Dato de grado era... | Va a... |
 |---|---|
 | Materia (lo más común) | El cuerpo del texto |
-| Una pregunta de examen que está entre las seleccionadas | Pregunta clásica |
+| Una pregunta de examen | Se le menciona a Laura; es Pregunta clásica solo si ella la envía |
 | Un dato duro y puntual | No olvidar |
 | Un error típico | Advertencia |
 
@@ -251,7 +250,7 @@ era materia, no un dato de examen.
   de segunda pasada (`proceso.md`, sección 4.3) para que Laura decida.
 - **Mínimo:** cada capítulo (lo que antes se llamaba eje) lleva al menos un Ejemplo. Ya no se exige
   "Ejemplo o Dato de grado", porque las Preguntas clásicas solo salen de
-  la selección de Laura y exigirlas empujaría a inventarlas.
+  las que envía Laura y exigirlas empujaría a inventarlas.
 - **Orden:** la caja de Conexiones es lo último de cada punto.
 
 ---
@@ -310,24 +309,26 @@ para funcionar.
 
 ---
 
-## 6. Preguntas clásicas: selección desde `preguntas_evaluacion`
+## 6. Preguntas clásicas: las envía Laura
 
-`preguntas_evaluacion` es el banco de preguntas de exámenes reales que
-Laura cargó desde sus PDF. Es también la base del Interrogador IA. Para
-las Preguntas clásicas del manual **se lee, nunca se modifica**.
+Mientras se redacta un manual, **Laura trabaja las preguntas clásicas
+por su cuenta y envía cuáles agregar**, con su texto y el punto donde
+van. El modelo no busca candidatas en `preguntas_evaluacion` ni en
+ninguna otra fuente, y no propone preguntas propias.
 
-1. **Buscar.** Para el tema que se está escribiendo, listar las preguntas
-   del banco que corresponden a cada punto.
-2. **Agrupar.** Las preguntas equivalentes con distinta redacción se
-   agrupan, conservando cada variante textual.
-3. **Contar.** La frecuencia de cada grupo (cuántas veces aparece en el
-   banco) es lo que define que una pregunta sea "clásica".
-4. **Proponer.** Entregar a Laura, por punto, las candidatas ordenadas
-   por frecuencia, con su texto literal y los datos que traiga el banco.
-   Si el banco no trae un dato (universidad, año), no se completa.
-5. **Seleccionar.** Laura elige. Solo las elegidas entran al manual.
+1. **Recibir.** Laura envía la pregunta (texto literal) y el punto del
+   manual al que corresponde.
+2. **Ubicar.** Se agrega el recuadro justo después del párrafo que la
+   responde (sección 4.5). Si no es claro cuál es ese párrafo, se deja
+   `[FALTA: ubicación de la pregunta clásica]`.
+3. **Responder.** Se escribe solo el esqueleto de la respuesta, a partir
+   del texto del manual (sección 4.5). Si el manual no trae lo necesario
+   para responderla, no se completa de memoria: se avisa a Laura.
+4. **Fusionar si corresponde** con un No confundir (sección 4.6).
 
----
+Si al redactar aparece una pregunta que la fuente marca como típica de
+examen, se le **menciona a Laura** en el informe del tramo (proceso.md,
+sección 4.3), sin crear el recuadro.
 
 ## 7. Relación con los formatos de práctica
 
