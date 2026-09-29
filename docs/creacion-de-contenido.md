@@ -91,8 +91,10 @@ legal, pero no hace falta correr este script de nuevo.
     recuadros y hoja de estilos lista para copiar.
   - `guia-editorial.md`: estándar, vocabulario, atribución, voz propia,
     cuándo usar cada recuadro, ejemplos, preguntas clásicas e impresión.
-  - `auditoria.md`: auditoría de cobertura, también para manuales ya
-    publicados.
+  - `auditoria.md`: auditoría de cobertura (encontrar lo que falta,
+    sin reescribir), también para manuales ya publicados.
+  - `actualizar-manuales-existentes.md`: poner al día por tramos un
+    manual escrito con las reglas antiguas, sin perder lo ya revisado.
   - `decisiones.md`: el porqué de cada regla, con su fecha.
   Aquí no se repiten resúmenes de formato, para que no queden
   desactualizados. El estándar visual es el de Contractual y

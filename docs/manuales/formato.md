@@ -360,6 +360,27 @@ Reglas de uso:
 encabezados son del diseño del 2026-09-28 (capítulo en rojo), ya
 reemplazado por el aspecto de Acto Jurídico.
 
+### 4.1 Cuadros comparativos
+
+Cuándo se usan está en `guia-editorial.md`, sección 4.12. Usan el estilo
+de tabla que ya está en la hoja de estilos (sección 8: encabezado en
+rojo con letra blanca, filas alternadas), **sin cambiarlo**. En la
+impresión **no se cortan filas entre páginas**: la base ya lo asegura
+con `tr{page-break-inside:avoid}` dentro de `@media print`.
+
+```html
+<p>Paralelo entre nulidad absoluta y relativa:</p>
+<table>
+  <tr><th>Criterio</th><th>Nulidad absoluta</th><th>Nulidad relativa</th></tr>
+  <tr><td>Quién puede alegarla</td><td>...</td><td>...</td></tr>
+  <tr><td>Saneamiento por el tiempo</td><td>...</td><td>...</td></tr>
+</table>
+```
+
+En una discusión doctrinal, el encabezado de cada columna lleva la tesis
+y sus autores (`<th>Tesis de la inexistencia<br><strong>CLARO SOLAR</strong>, ...</th>`),
+y la postura mayoritaria o jurisprudencial va en un párrafo debajo.
+
 ---
 
 ## 5. Transcripción de artículos

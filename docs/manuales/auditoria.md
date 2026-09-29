@@ -1,5 +1,11 @@
 # Auditoría de cobertura de un manual
 
+> **Qué es y qué no es.** "Auditoría" o "revisión de cobertura" es este
+> documento: comparar un manual terminado contra **todas** sus fuentes
+> para encontrar lo que falta, **sin reescribir**. "Actualizar un manual
+> existente" a las reglas nuevas es otra cosa y tiene su propio
+> documento: `actualizar-manuales-existentes.md`.
+>
 > Se usa al terminar el apunte principal de una materia nueva, y también
 > sobre cualquier manual ya publicado cuando se sospecha (o se quiere
 > descartar) que tiene huecos frente a sus fuentes. Es un paso final
@@ -119,32 +125,3 @@ jurisprudencia real). No se agrega jurisprudencia ni doctrina del
 conocimiento general del modelo: todo hallazgo señala contenido que ya
 existe en una fuente concreta de Laura, o marca explícitamente que no se
 pudo verificar contra ninguna.
-
-## 6. Revisión de manuales ya escritos (pendiente, a pedido de Laura)
-
-Los manuales escritos antes del 2026-09-28 (Contractual,
-Extracontractual, Precontractual, Bienes y Acto Jurídico) no siguen
-todavía la guía editorial completa. Se revisarán **cuando Laura lo
-pida**, sin frenar los manuales nuevos: primero se avanza con el
-contenido nuevo y, cuando ese formato esté probado y organizado, se usa
-el mismo para revisar los antiguos. La revisión va en dos pasadas:
-
-**Pasada 1: marcar.** Sin reescribir nada, se listan en un reporte:
-
-- Pasajes con posible paráfrasis cercana de la fuente
-  (`guia-editorial.md`, sección 3), con la frase señalada.
-- Ejemplos que parecen adaptados de la fuente en vez de originales.
-- Recuadros de Dato de grado, con su reclasificación propuesta
-  (`guia-editorial.md`, sección 4.10).
-- Recuadros con el formato antiguo (título en una sola línea con
-  `.titulo-bloque`, en vez de las dos líneas `.caja-tipo`/`.caja-titulo`
-  de `formato.md`, sección 7), y recuadros que faltan según la guía
-  editorial (No olvidar, Conexiones).
-- Diferencias de numeración frente a la escalera y la regla de ascenso
-  (`formato.md`, sección 1). No se renumera: solo se listan.
-
-**Pasada 2: reescribir.** Con el reporte aprobado por Laura, se
-reescriben los pasajes marcados con voz propia, se reemplazan los
-ejemplos adaptados por originales y se aplican las reclasificaciones. Se
-hace como una pasada dedicada sobre todos los manuales, para mantener el
-mismo criterio en todos.

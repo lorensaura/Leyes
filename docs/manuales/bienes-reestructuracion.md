@@ -29,7 +29,8 @@
   | VII Las acciones protectoras | Pendiente |
 
 - La reparación continúa tramo por tramo con el proceso vigente, sin el
-  paso de voz propia (`proceso.md`, sección 2).
+  paso de voz propia (`proceso.md`, sección 2). La puesta al día con las
+  reglas nuevas viene después, con `actualizar-manuales-existentes.md`.
 
 ## Cómo quedó V. Los modos de adquirir (antiguos D a U)
 

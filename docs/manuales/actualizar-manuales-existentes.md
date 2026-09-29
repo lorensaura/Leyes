@@ -1,0 +1,94 @@
+# Actualizar un manual existente a las reglas nuevas
+
+> Ábrelo cuando toque poner al día un manual escrito con las reglas
+> antiguas. Hoy son cinco: Contractual, Extracontractual, Precontractual,
+> Bienes y Acto Jurídico. No confundir con la **auditoría** (`auditoria.md`),
+> que compara un manual terminado contra todas sus fuentes para encontrar
+> lo que falta, sin reescribir. Actualizar sí reescribe, pero solo con los
+> cambios que Laura aprueba.
+>
+> Se hace **cuando Laura lo pida**, sin frenar los manuales nuevos:
+> primero se avanza con el contenido nuevo y, cuando ese formato esté
+> probado y organizado, se usa el mismo para actualizar los antiguos.
+
+---
+
+## 1. Regla central: nada de lo que hoy está en el manual se pierde
+
+- **Lo que Laura agregó o corrigió en revisiones anteriores se conserva**,
+  aunque no esté en la fuente principal. El manual actual no es un
+  borrador descartable: tiene trabajo de revisión encima.
+- **Lo que está en la fuente y falta en el manual se reporta** en el
+  informe del tramo (sección 2, paso c), no se agrega en silencio.
+- **Los cuadros comparativos que ya existen en un manual se conservan
+  siempre.**
+- Las reglas de oro de `proceso.md` (sección 0) valen igual: prohibido
+  alucinar, prohibido resumir, todo queda pendiente de revisión de Laura.
+
+## 2. Por tramos, con aprobación de Laura
+
+Se trabaja por tramos (un capítulo o una parte de él), y **Laura aprueba
+cada tramo antes de seguir**, igual que en `proceso.md`. En cada tramo:
+
+**a) Inventario desde la fuente.** Igual que en `proceso.md` (sección 2,
+paso 2): se recorre la fuente directamente, párrafo por párrafo, sobre el
+apunte principal y los anexos del tramo (con la regla de anexos muy
+grandes de `proceso.md`, sección 5).
+
+**b) Comparación con el manual actual.** Cada unidad del inventario se
+busca en el texto actual del tramo, y cada parte del texto actual se
+revisa contra el inventario:
+
+- Unidades de la fuente que faltan en el manual: se reportan.
+- Contenido del manual que no está en la fuente principal: se conserva
+  (puede venir de un anexo o de una revisión de Laura). Si no se
+  encuentra en ninguna fuente, se reporta como en `auditoria.md`,
+  categoría 7, pero **no se borra** sin su aprobación.
+
+**c) Informe de cambios propuestos, antes de tocar el HTML.** Se entrega
+a Laura una lista con:
+
+- Pasajes con paráfrasis cercana de la fuente (`guia-editorial.md`,
+  sección 3), con la frase señalada.
+- Ejemplos adaptados de la fuente en vez de originales, y ejemplos que
+  deberían pasar de caja a texto o al revés (`guia-editorial.md`,
+  secciones 4.2 y 5).
+- Recuadros de Dato de grado y su reclasificación (`guia-editorial.md`,
+  sección 4.10).
+- Recuadros con el formato antiguo (título en una sola línea con
+  `.titulo-bloque`, en vez de las dos líneas `.caja-tipo`/`.caja-titulo`
+  de `formato.md`, sección 7).
+- Recuadros nuevos que corresponderían (No confundir, Advertencia, No
+  olvidar, Conexiones) y candidatas a Pregunta clásica desde
+  `preguntas_evaluacion`. **Esto es una excepción a `guia-editorial.md`,
+  sección 6**: al actualizar un manual existente sí se proponen
+  candidatas desde el banco, con su texto literal, y Laura elige cuáles
+  entran. Nunca se agrega una sin su selección.
+- Paralelos o discusiones doctrinales que deberían ir en cuadro
+  comparativo (`guia-editorial.md`, sección 4.12).
+- Artículos transcritos y definiciones que deberían ir en bloques `.ley`
+  y `.definicion` (`formato.md`, sección 4).
+- Diferencias con la escalera de numeración y la regla de ascenso
+  (`formato.md`, sección 1). **Solo se listan; no se renumera sin
+  aprobación.**
+- Lo que falta de la fuente (paso b).
+
+**d) Reescritura.** Con la aprobación de Laura, se reescribe el tramo con
+voz propia (`guia-editorial.md`, sección 3), aplicando **solo los cambios
+aprobados**.
+
+**e) Verificación y segunda pasada** (`proceso.md`, sección 4): cada
+unidad del inventario **y todo lo que el manual tenía antes** está en el
+texto nuevo. El informe de segunda pasada (`proceso.md`, sección 4.3)
+agrega una línea: qué contenido previo del manual se conservó sin estar
+en la fuente principal.
+
+## 3. Estado de cada manual
+
+| Manual | Situación |
+|---|---|
+| Contractual | Sin actualizar |
+| Extracontractual | Sin actualizar (reformateado en densidad el 2026-08-12, `docs/notas_reformato_rex.md`) |
+| Precontractual | Sin actualizar |
+| Bienes | En reparación de fidelidad por tramos con el proceso anterior, sin voz propia (`bienes-reestructuracion.md`); la actualización viene después |
+| Acto Jurídico | Encabezados, índice y colores ya en el formato nuevo (2026-09-30); revisión fina de contenido hecha hasta IV.B |

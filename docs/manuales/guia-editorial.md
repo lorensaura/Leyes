@@ -105,8 +105,8 @@ Entonces hay que reestructurarla. ¿Falta algún término técnico o alguna
 unidad de contenido? Entonces hay que volver a la fuente.
 
 **Alcance:** se aplica a los manuales nuevos desde el primer tramo. Los
-manuales ya escritos se revisarán en una pasada aparte, cuando Laura la
-pida (`auditoria.md`, sección 6).
+manuales ya escritos se actualizarán por tramos, cuando Laura lo pida
+(`actualizar-manuales-existentes.md`).
 
 ---
 
@@ -122,6 +122,7 @@ pida (`auditoria.md`, sección 6).
 | No olvidar | `.no-olvidar` | Un dato duro y puntual | Una o dos líneas; nunca explica materia |
 | Conexiones | `.conexiones` | Relación con otras materias | Al cierre de cada punto (nivel `1.`) |
 | Pausa | una línea | Aviso de comprensión lectora | Las preguntas están en la plataforma, no en el apunte |
+| Cuadro comparativo | tabla | Un paralelo entre instituciones o una discusión doctrinal | Una columna por institución o tesis; no pierde contenido (sección 4.12) |
 
 El código de cada uno está en `formato.md`, sección 7.
 
@@ -153,6 +154,9 @@ seguidos lo tienen, el verde deja de señalar algo especial.
 - Cuando se pueda, el título se formula como pregunta.
 - La estructura fija importa también fuera del manual: los No confundir
   son la materia prima natural de las Flashcards (sección 7).
+- Sirve para dos conceptos que se distinguen con **un solo criterio**.
+  Si la distinción necesita tres criterios o más, va en cuadro
+  comparativo (sección 4.12).
 
 ### 4.4 Advertencia
 
@@ -244,7 +248,8 @@ era materia, no un dato de examen.
 - **Criterio (no regla dura):** como referencia, no más de **dos
   recuadros pedagógicos grandes por punto** (Ejemplo en caja, No
   confundir, Advertencia, Pregunta clásica o el recuadro fusionado).
-  Jurisprudencia, No olvidar, Conexiones y Pausa no cuentan: la
+  Jurisprudencia, No olvidar, Conexiones, Pausa y los cuadros
+  comparativos no cuentan: la
   jurisprudencia es contenido de la fuente y nunca se recorta para
   cumplir un máximo.
 - Si un punto pasa de dos, **no se borra nada**: se anota en el informe
@@ -253,6 +258,30 @@ era materia, no un dato de examen.
   "Ejemplo o Dato de grado", porque las Preguntas clásicas solo salen de
   las que envía Laura y exigirlas empujaría a inventarlas.
 - **Orden:** la caja de Conexiones es lo último de cada punto.
+
+### 4.12 Cuadros comparativos
+
+- **Paralelos y comparaciones.** Cada vez que la fuente hace un
+  paralelo, una comparación o señala las diferencias entre dos o más
+  instituciones ("paralelo entre A y B", "diferencias entre..."), se
+  presenta en un **cuadro comparativo**: una columna por institución y
+  una fila por criterio de comparación.
+- **Discusiones doctrinales.** Lo mismo cuando las tesis responden los
+  mismos puntos en sentido contrario: una columna por tesis, con **sus
+  autores en el encabezado**, y una fila por punto o argumento. **Debajo
+  del cuadro** va la postura mayoritaria o la de la jurisprudencia.
+- **El cuadro no puede perder contenido.** Cada unidad del inventario
+  queda en el cuadro o en el texto que lo acompaña. Si un argumento
+  necesita más desarrollo del que cabe en una celda, se desarrolla en el
+  texto y el cuadro lo nombra.
+- **Se introduce con una frase que termina en dos puntos**, por ejemplo:
+  "Paralelo entre nulidad absoluta y relativa:".
+- **Diferencia con No confundir:** No confundir es para dos conceptos
+  que se distinguen con un solo criterio; si la distinción necesita tres
+  criterios o más, va en cuadro comparativo.
+- **No cuentan** para el máximo de recuadros pedagógicos por punto
+  (sección 4.11).
+- Cómo se ve: `formato.md`, sección 4.1.
 
 ---
 
@@ -331,6 +360,10 @@ Si al redactar aparece una pregunta que la fuente marca como típica de
 examen, se le **menciona a Laura** en el informe del tramo (proceso.md,
 sección 4.3), sin crear el recuadro.
 
+**Excepción:** al actualizar un manual existente, el informe de cambios
+propuestos sí incluye candidatas desde `preguntas_evaluacion`, con su
+texto literal, para que Laura elija (`actualizar-manuales-existentes.md`, sección 2, paso c).
+
 ## 7. Relación con los formatos de práctica
 
 El manual es la **fuente de verdad** de todo el contenido de práctica de
@@ -381,6 +414,8 @@ No se implementa hasta que Laura lo decida:
   Digesto). Se evaluará cuando estén terminados todos los apuntes,
   incluidos los de Procesal.
 - **Recuadro de Discusión doctrinal.** No existe: la doctrina es materia
-  y va en el texto, siempre con sus tesis y autores.
-- **Reescritura con voz propia de los manuales ya escritos.** Se hará en
-  una pasada aparte, cuando Laura la pida (`auditoria.md`, sección 6).
+  y va en el texto, siempre con sus tesis y autores (o en cuadro
+  comparativo cuando las tesis se contraponen punto por punto, sección
+  4.12).
+- **Reescritura con voz propia de los manuales ya escritos.** Se hará
+  por tramos, cuando Laura la pida (`actualizar-manuales-existentes.md`).

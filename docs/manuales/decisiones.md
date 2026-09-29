@@ -1,7 +1,8 @@
 # Registro de decisiones: manuales
 
 > El porqué de las reglas de `formato.md`, `guia-editorial.md`,
-> `proceso.md` y `auditoria.md`, con su fecha. Las reglas se escriben en
+> `proceso.md`, `auditoria.md` y `actualizar-manuales-existentes.md`, con
+> su fecha. Las reglas se escriben en
 > presente en esos documentos; la historia queda aquí. Cuando Laura tome
 > una decisión nueva, se agrega una fila y se actualiza el documento
 > correspondiente.
@@ -33,7 +34,7 @@
 | 2026-09-28 | Preguntas clásicas: solo de una selección de Laura sobre `preguntas_evaluacion`, propuesta por frecuencia (reemplazado el 2026-09-29). | `guia-editorial.md` 6 |
 | 2026-09-28 | Comprensión lectora: las preguntas se responden en la plataforma, con retroalimentación de la IA, nunca en el apunte. | `guia-editorial.md` 4.9 |
 | 2026-09-28 | Conexiones al cierre de cada punto, con sección y página, sin enlaces, porque la mayoría imprime. | `guia-editorial.md` 4.8 |
-| 2026-09-28 | Se posponen: examen oral vs. escrito, índice de artículos y reescritura con voz propia de los manuales ya escritos. | `guia-editorial.md` 9, `auditoria.md` 6 |
+| 2026-09-28 | Se posponen: examen oral vs. escrito, índice de artículos y reescritura con voz propia de los manuales ya escritos. | `guia-editorial.md` 9, `actualizar-manuales-existentes.md` |
 | 2026-09-29 | Escalera confirmada con el nivel `1.1.`. `(i)` tiene dos estilos: negrita sin subrayado si abre una clasificación nueva; solo subrayado si enumera requisitos o circunstancias. `a)` subrayado, `a.1)` cursiva. | `formato.md` 1 y 8 |
 | 2026-09-29 | Etiquetas de los encabezados iguales a las de Acto Jurídico: tema `h2.grupo`, institución `h2.inst`, punto `h2`, subpunto `h3`. | `formato.md` 1 |
 | 2026-09-30 | Se mantiene el aspecto trabajado en Acto Jurídico: capítulo negro, centrado y subrayado; tema negro, centrado, sin subrayado; punto en rojo, a la izquierda y subrayado; subpunto en negrita y subrayado. Reemplaza el aspecto del 2026-09-28 (rojo solo en el capítulo, 16/15pt). | `formato.md` 1 y 8 |
@@ -44,6 +45,8 @@
 | 2026-09-30 | Anexos muy grandes (un libro o un resumen de 60-80 páginas): primero un mapa del anexo desde su índice y títulos; después se inventarían párrafo por párrafo solo las secciones que tocan temas del manual y no repiten el apunte principal; las secciones descartadas quedan anotadas en el mapa con su razón. La búsqueda por términos ya no reemplaza al inventario, solo ubica secciones en el mapa. | `proceso.md` 5 |
 | 2026-09-29 | Los números del índice se escriben como texto, no con la numeración automática de las listas. | `formato.md` 1.4 |
 | 2026-09-29 | Preguntas clásicas: Laura las trabaja mientras se redacta y envía cuáles agregar. Reemplaza la selección propuesta desde `preguntas_evaluacion`. | `guia-editorial.md` 6 |
-| 2026-09-29 | Los recuadros antiguos de los manuales ya escritos se revisan después, con el formato nuevo ya probado en contenido nuevo. | `auditoria.md` 6 |
+| 2026-09-29 | Los recuadros antiguos de los manuales ya escritos se revisan después, con el formato nuevo ya probado en contenido nuevo. | `actualizar-manuales-existentes.md` |
 | 2026-09-29 | Los estilos de la escalera y de los recuadros nuevos se agregan también al lector en línea (`app/manuales.html`), que no usa la hoja de estilos del manual. | `formato.md` 8 |
+| 2026-09-29 | Actualizar un manual existente a las reglas nuevas pasa a su propio documento, separado de la auditoría, para no confundir "auditar" (encontrar lo que falta, sin reescribir) con "actualizar" (reescribir con lo aprobado). Flujo por tramos con aprobación de Laura: inventario, comparación, informe de cambios, reescritura y verificación. Regla central: no se pierde nada de lo que Laura ya revisó o agregó, aunque no esté en la fuente principal. | `actualizar-manuales-existentes.md`, `auditoria.md` |
+| 2026-09-29 | Cuadros comparativos: los paralelos entre instituciones (una columna por institución, una fila por criterio) y las discusiones doctrinales (una columna por tesis con sus autores, una fila por argumento, y la postura mayoritaria o jurisprudencial debajo) van en tabla, sin perder contenido. No confundir queda para un solo criterio; con tres o más, cuadro. No cuentan para el máximo de recuadros. | `guia-editorial.md` 4.12, `formato.md` 4.1, `proceso.md` 4.3 |
 | 2026-09-28 | `script_apuntes.md` se divide en `formato.md`, `guia-editorial.md`, `proceso.md`, `auditoria.md` y este registro. | `docs/script_apuntes.md` (redirección) |

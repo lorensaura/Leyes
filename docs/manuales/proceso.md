@@ -5,7 +5,8 @@
 > Civil, Procesal Penal, etc.), o reparar un tramo de un manual
 > existente. Cómo debe verse está en `formato.md`; con qué criterio se
 > escribe, en `guia-editorial.md`; la auditoría de cobertura del manual
-> terminado, en `auditoria.md`. Generar preguntas de práctica a partir de
+> terminado, en `auditoria.md`; poner al día un manual escrito con las
+> reglas antiguas, en `actualizar-manuales-existentes.md`. Generar preguntas de práctica a partir de
 > un manual ya escrito es otro paso: `docs/prompt-generacion-contenido-practica.md`.
 
 ---
@@ -101,8 +102,8 @@ por eje.
 
 **Manuales existentes en reparación** (por ejemplo, Bienes): siguen
 reparándose con el proceso vigente hasta ahora, sin el paso 3 de voz
-propia, para no frenar el avance. La voz propia se les aplicará en la
-pasada aparte de `auditoria.md`, sección 6.
+propia, para no frenar el avance. La voz propia se les aplicará al
+actualizarlos (`actualizar-manuales-existentes.md`).
 
 ---
 
@@ -208,8 +209,12 @@ formato. El resultado es un informe breve para Laura con:
 8. **Preguntas clásicas:** dónde quedó cada una de las que envió Laura,
    y los puntos que la fuente marca como típicos de examen, para que ella
    decida (`guia-editorial.md`, sección 6).
+9. **Cuadros comparativos:** paralelos y discusiones doctrinales del
+   tramo, y si quedaron en cuadro comparativo (`guia-editorial.md`,
+   sección 4.12).
 
-El informe también se usa al revisar un manual ya escrito.
+El informe también se usa al actualizar un manual ya escrito
+(`actualizar-manuales-existentes.md`).
 
 ---
 
