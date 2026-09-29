@@ -37,8 +37,9 @@ Alternativas (ver `docs/practica.md`). Se ven solo bajo el filtro "Todas".
 **preguntas_evaluacion es una tabla distinta**, el banco de examen real
 usado como grounding del Interrogador IA (ver `docs/interrogador.md`), no
 se toca ni se mezcla con `evaluacion_practica`.
-Las Preguntas clásicas de los manuales no salen de esta tabla: las envía
-Laura mientras se redacta (`docs/manuales/guia-editorial.md`, sección 6).
+Los manuales la leen, sin modificarla, para proponer las candidatas a
+Pregunta clásica que Laura selecciona (`docs/manuales/guia-editorial.md`,
+sección 6).
 
 ## Antes de generar nada: revisar las 5 fuentes existentes
 

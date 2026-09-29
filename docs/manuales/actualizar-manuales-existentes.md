@@ -59,11 +59,14 @@ a Laura una lista con:
   `.titulo-bloque`, en vez de las dos líneas `.caja-tipo`/`.caja-titulo`
   de `formato.md`, sección 7).
 - Recuadros nuevos que corresponderían (No confundir, Advertencia, No
-  olvidar, Conexiones) y candidatas a Pregunta clásica desde
-  `preguntas_evaluacion`. **Esto es una excepción a `guia-editorial.md`,
-  sección 6**: al actualizar un manual existente sí se proponen
-  candidatas desde el banco, con su texto literal, y Laura elige cuáles
-  entran. Nunca se agrega una sin su selección.
+  olvidar, Conexiones).
+- Candidatas a Pregunta clásica, con el mismo flujo que en un manual
+  nuevo (`guia-editorial.md`, sección 6): se lee el banco, se agrupan
+  las equivalentes, se cuenta la frecuencia y se proponen ordenadas;
+  Laura elige. Una pregunta que hoy está en un Dato de grado también
+  puede proponerse, indicando su origen ("viene de un Dato de grado del
+  manual, no de `preguntas_evaluacion`"); solo entra si Laura la
+  aprueba.
 - Paralelos o discusiones doctrinales que deberían ir en cuadro
   comparativo (`guia-editorial.md`, sección 4.12).
 - Artículos transcritos y definiciones que deberían ir en bloques `.ley`
@@ -83,12 +86,6 @@ texto nuevo. El informe de segunda pasada (`proceso.md`, sección 4.3)
 agrega una línea: qué contenido previo del manual se conservó sin estar
 en la fuente principal.
 
-## 3. Estado de cada manual
-
-| Manual | Situación |
-|---|---|
-| Contractual | Sin actualizar |
-| Extracontractual | Sin actualizar (reformateado en densidad el 2026-08-12, `docs/notas_reformato_rex.md`) |
-| Precontractual | Sin actualizar |
-| Bienes | En reparación de fidelidad por tramos con el proceso anterior, sin voz propia (`bienes-reestructuracion.md`); la actualización viene después |
-| Acto Jurídico | Encabezados, índice y colores ya en el formato nuevo (2026-09-30); revisión fina de contenido hecha hasta IV.B |
+Si hace falta registrar en qué va la actualización de un manual, se hace
+en un documento aparte para ese manual (como `bienes-reestructuracion.md`),
+no aquí: este documento solo contiene reglas.

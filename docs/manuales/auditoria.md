@@ -83,8 +83,9 @@ tanda, se escribe **"Sin hallazgos."**, nunca se omite.
    no.
 4. **Pregunta de examen señalada en la fuente, sin destacar:** la fuente
    marca un punto como pregunta típica de examen y el manual no lo
-   destaca. Se reporta a Laura, que decide si la envía como Pregunta
-   clásica (`guia-editorial.md`, sección 6).
+   destaca. Se revisa si está en `preguntas_evaluacion`: si está, pasa a
+   las candidatas a Pregunta clásica para que Laura decida
+   (`guia-editorial.md`, sección 6); si no, se reporta igual.
 5. **Debate doctrinal aplanado:** dos o más fuentes tratan la misma
    controversia con autores distintos y el manual solo usó la lista de
    una, o el manual toma partido sin mostrar ambas tesis con la misma
