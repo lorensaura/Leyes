@@ -6,7 +6,8 @@
 > (reglas de redacción, anti-alucinación, esquema exacto por modelo) y en
 > `docs/practica.md` (cómo funciona el módulo en la app). El skill
 > `generar-practica` orquesta el proceso completo, léelo antes de generar
-> el primer lote de una sesión.
+> el primer lote de una sesión. Para escribir o revisar manuales, ver
+> `docs/manuales/` (sección "Manuales" abajo).
 
 ## Los cuatro modelos y dónde vive cada uno (estado actual)
 
@@ -36,6 +37,8 @@ Alternativas (ver `docs/practica.md`). Se ven solo bajo el filtro "Todas".
 **preguntas_evaluacion es una tabla distinta**, el banco de examen real
 usado como grounding del Interrogador IA (ver `docs/interrogador.md`), no
 se toca ni se mezcla con `evaluacion_practica`.
+Las Preguntas clásicas de los manuales no salen de esta tabla: las envía
+Laura mientras se redacta (`docs/manuales/guia-editorial.md`, sección 6).
 
 ## Antes de generar nada: revisar las 5 fuentes existentes
 
@@ -79,24 +82,35 @@ legal, pero no hace falta correr este script de nuevo.
   `03_Responsabilidad_Precontractual_Manual.html` — fuente de verdad del
   contenido jurídico y de los PDF (`docs/pdf.md` para las reglas de
   generación).
-- **Formato:** jerarquía A/1/1.1/a)/(i), recuadros pedagógicos
-  (callout/dato-grado/jurisprudencia/ejemplo/advertencia), sin guiones
-  largos (—) en ningún campo — regla permanente y retroactiva. Para
-  construir el manual de una materia **nueva** (no una de las 3 de
-  Responsabilidad ya publicadas), usar `docs/script_apuntes.md`: template
-  completo de formato (con la hoja de estilos lista para copiar) y proceso,
-  con el estándar de Contractual/Precontractual (no de Extracontractual,
-  que quedó más denso y con menos recuadros de lo deseado).
+- **Cómo se construye y cómo se ve un manual:** todo está en
+  `docs/manuales/`:
+  - `proceso.md`: reglas de oro, borrador de trabajo, voz propia,
+    verificación y segunda pasada por tramo, anexos.
+  - `formato.md`: numeración (escalera y regla de ascenso),
+    enumeraciones, negrita y cursiva, jerarquía de lectura, código de los
+    recuadros y hoja de estilos lista para copiar.
+  - `guia-editorial.md`: estándar, vocabulario, atribución, voz propia,
+    cuándo usar cada recuadro, ejemplos, preguntas clásicas e impresión.
+  - `auditoria.md`: auditoría de cobertura, también para manuales ya
+    publicados.
+  - `decisiones.md`: el porqué de cada regla, con su fecha.
+  Aquí no se repiten resúmenes de formato, para que no queden
+  desactualizados. El estándar visual es el de Contractual y
+  Precontractual (no el de Extracontractual antes de su reformato).
+  Regla permanente y retroactiva que sí se repite porque aplica a todo
+  el contenido: sin guiones largos (—) en ningún campo.
 - **Bienes y Acto Jurídico quedaron con 49-57% del contenido de su
   fuente** (Contractual, el estándar, quedó en 92%): se sintetizó de
   memoria en vez de transcribir cerca y recién ahí formatear. Diagnóstico
   completo, ejemplo real y plan de reparación por partes (primero Acto
   Jurídico, después Bienes) en `docs/incidente_compresion_manuales.md`.
-  El proceso ya se corrigió en `docs/script_apuntes.md` (secciones 0.4,
-  1.6, 2.1) para que no vuelva a pasar en manuales nuevos. Acto Jurídico
+  El proceso ya se corrigió (`docs/manuales/proceso.md`, secciones 0, 2
+  y 4) para que no vuelva a pasar en manuales nuevos. Acto Jurídico
   ya está reparado y fusionado a `main`. La reparación de Bienes está
-  en curso, tramo por tramo (I-IV ya revisados contra la fuente, V en
-  adelante todavía no); detalle en `docs/incidente_compresion_manuales.md`.
+  en curso, tramo por tramo (I-IV, V.1-V.3, V.4.A y V.4.B ya revisados
+  contra la fuente al 2026-09-29; de V.4.C en adelante todavía no);
+  detalle en `docs/incidente_compresion_manuales.md`
+  y plan de capítulos en `docs/manuales/bienes-reestructuracion.md`.
 - **Manual de Precontractual** (`03_...html`) se construyó a partir de un
   borrador de Laura; sus recuadros pedagógicos y las preguntas/keywords de
   los checkpoints de `app/manuales.html` son borrador de Claude, **todavía
