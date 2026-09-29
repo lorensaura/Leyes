@@ -768,21 +768,23 @@
        Los encabezados con <span class="num"> son del formato nuevo; los manuales
        antiguos no lo usan, así que su aspecto no cambia. */
     .manual-body .num { text-decoration: none; }
+    /* Aspecto de Acto Jurídico: capítulo negro centrado y subrayado; tema e institución
+       negros y centrados; punto rojo a la izquierda y subrayado; subpunto subrayado. */
     .manual-body h1:has(.num) {
-      color: #C41E2E; text-align: center; text-transform: uppercase;
+      color: #111; text-align: center; text-transform: uppercase;
       border-bottom: none;
     }
     .manual-body h1:has(.num) .tit,
     .manual-body h2:has(.num) .tit,
     .manual-body h3:has(.num) .tit { text-decoration: underline; }
     .manual-body h2:has(.num) {
-      color: #111; text-transform: uppercase; letter-spacing: 0.02em;
+      color: #C41E2E; text-transform: uppercase; letter-spacing: 0.02em;
     }
     .manual-body h2.grupo {
-      font-size: 1.3rem; text-align: center; margin: 2.2rem 0 0.8rem;
+      color: #111; font-size: 1.3rem; text-align: center; margin: 2.2rem 0 0.8rem;
     }
     .manual-body h2.inst {
-      font-size: 1.15rem; font-weight: 400; text-align: center; margin: 1.8rem 0 0.7rem;
+      color: #111; font-size: 1.15rem; font-weight: 400; text-align: center; margin: 1.8rem 0 0.7rem;
     }
     .manual-body h2.grupo .tit,
     .manual-body h2.inst .tit { text-decoration: none; }

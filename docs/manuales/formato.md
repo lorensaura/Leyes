@@ -20,10 +20,10 @@ se inventa fuera de ella.
 
 | Nivel | Marcador | Qué es | Etiqueta HTML | Cómo se ve |
 |---|---|---|---|---|
-| 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Rojo**, centrado, 16pt, **negrita**, MAYÚSCULA, título subrayado. Salto de página antes |
-| 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Igual al capítulo, pero **negro y sin subrayado**: centrado, 16pt, negrita, MAYÚSCULA |
-| 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Centrado, 15pt, MAYÚSCULA, **sin negrita y sin subrayado** |
-| 4 | `1.`, `2.` | Punto | `h2` (sin clase) | A la izquierda, **negrita**, MAYÚSCULA, título subrayado |
+| 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Negro**, centrado, **negrita**, MAYÚSCULA, título subrayado (1.35rem). Salto de página antes |
+| 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Negro, centrado, negrita, MAYÚSCULA, **sin subrayado** (1.3rem) |
+| 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Negro, centrado, MAYÚSCULA, **sin negrita y sin subrayado**, algo más chico que el tema (1.2rem). Nivel nuevo: Acto Jurídico todavía no lo usa |
+| 4 | `1.`, `2.` | Punto | `h2` (sin clase) | **Rojo**, a la izquierda, **negrita**, MAYÚSCULA, título subrayado (1.1rem) |
 | 5 | `1.1.`, `2.1.` | Subpunto con título | `h3` | A la izquierda, **negrita**, título subrayado, mayúscula solo en la inicial |
 | 6a | `(i)`, `(ii)` | Elemento que abre una **clasificación nueva** | `.enum-i` | **Negrita**, sin subrayado, mayúscula solo en la inicial |
 | 6b | `(i)`, `(ii)` | Elemento de una **lista de requisitos o circunstancias** | `.enum-i` + clase `lista` | Título **subrayado**, sin negrita, mayúscula solo en la inicial |
@@ -36,10 +36,11 @@ el subpunto en `h3`, así que el lector en línea (`app/manuales.html`) y
 los scripts que arman secciones a partir de `h1`/`h2` tratan igual los
 manuales antiguos y los nuevos. `h4` y `h5` no se usan en contenido nuevo.
 
-Los niveles 1 a 3 van en la fuente sans serif de los títulos; del 4 en
-adelante, en la serif del cuerpo. El rojo de los títulos queda **solo
-en el capítulo** (romano); todos los demás niveles van en negro. Los
-artículos siguen en rojo y los recuadros mantienen sus colores.
+Es el aspecto que ya tiene Acto Jurídico, que es el modelo visual. Los
+niveles 1 a 4 van en la fuente sans serif de los títulos; del 5 en
+adelante, en la serif del cuerpo. El rojo de los títulos queda **solo en
+el punto** (`1.`); capítulo, tema, institución y subpunto van en negro.
+Los artículos siguen en rojo y los recuadros mantienen sus colores.
 
 **Manuales antiguos:** usan otras combinaciones (letra como `h1`, `N.M`
 como `h3`, `h4` para `a)`). Se mantienen como están hasta que se revise
@@ -348,7 +349,9 @@ Reglas de uso:
 <p class="definicion">La <strong>nulidad relativa</strong> es la sanción legal de los actos o contratos que adolecen de un vicio establecido en consideración a la <em>calidad o estado de las partes</em>.</p>
 ```
 
-Ver `muestra_jerarquia.png` para cómo se ve con la hoja de estilos real.
+`muestra_jerarquia.png` muestra los bloques `.ley` y `.definicion`; sus
+encabezados son del diseño del 2026-09-28 (capítulo en rojo), ya
+reemplazado por el aspecto de Acto Jurídico.
 
 ---
 
@@ -609,28 +612,23 @@ La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
 Extensión (va dentro del mismo `<style>`, antes de `</style>`):
 
 ```css
-  /* Extensión 2026-09-28 (ajustada 2026-09-29): escalera de niveles, jerarquía de lectura y
+  /* Extensión 2026-09-28 (ajustada 2026-09-29/30): escalera de niveles, jerarquía de lectura y
      recuadros nuevos. Etiquetas como en Acto Jurídico: h1 capítulo, h2.grupo tema,
      h2.inst institución, h2 punto, h3 subpunto. Manda sobre la base en los manuales nuevos. */
   :root{
     --navy:#2C4A6E;--navybg:#EEF3F8;
     --purple:#5B3F86;--purplebg:#F4F0F8;
   }
-  /* I. Capítulo: rojo, centrado, negrita, mayúscula, subrayado (solo el título), 16pt */
-  h1{font-size:16pt;color:var(--accent);}
-  /* 1. Punto (h2 sin clase): serif, negrita, mayúscula, a la izquierda, subrayado solo en el título */
-  h2{font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;color:var(--accent2);
-    font-size:1.05rem;text-align:left;text-transform:uppercase;text-decoration:none;
-    margin:1.9rem 0 .35rem;}
-  /* A. Tema: igual al capítulo, pero negro y sin subrayado */
-  h2.grupo{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:16pt;
-    text-align:center;letter-spacing:.03em;margin:2.2rem 0 .9rem;}
-  /* A.1 Institución: centrada, mayúscula, sin negrita, sin subrayado, 15pt */
-  h2.inst{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-weight:400;font-size:15pt;
-    text-align:center;margin:1.9rem 0 .8rem;}
+  /* I. Capítulo (h1), 1. Punto (h2) y 1.1. Subpunto (h3): los de la base, como en Acto Jurídico
+     (capítulo negro centrado y subrayado; punto rojo, a la izquierda y subrayado; subpunto serif
+     en negrita y subrayado). Solo se agregan el tema y la institución. */
+  /* A. Tema: negro, centrado, negrita, mayúscula, sin subrayado */
+  h2.grupo{color:var(--accent2);font-size:1.3rem;text-align:center;
+    text-decoration:none;margin:2.6rem 0 .9rem;}
+  /* A.1 Institución: negro, centrado, mayúscula, sin negrita, sin subrayado */
+  h2.inst{color:var(--accent2);font-weight:400;font-size:1.2rem;text-align:center;
+    text-decoration:none;margin:2rem 0 .8rem;}
   h2.grupo .tit,h2.inst .tit{text-decoration:none;}
-  /* 1.1. Subpunto (h3): negrita, subrayado solo en el título, mayúscula solo inicial */
-  h3{text-transform:none;text-decoration:none;}
   /* (i) de clasificación nueva: negrita, sin subrayado */
   .enum-i,.enum-i-run{font-style:normal;font-weight:700;text-decoration:none;}
   .enum-i .tit,.enum-i-run .tit{text-decoration:none;}
@@ -664,7 +662,6 @@ Extensión (va dentro del mismo `<style>`, antes de `</style>`):
   .conexiones .caja-tipo{color:var(--purple);}
   .conexiones p{margin:.45rem 0;}
   @media print{
-    h1,h2.grupo{font-size:16pt;} h2.inst{font-size:15pt;}
     .ley,.definicion,.pregunta-clasica,.no-olvidar,.conexiones{page-break-inside:avoid;}
   }
 ```
