@@ -224,6 +224,19 @@ Proceso (basado en lo que funcionó con los 12 anexos de Bienes):
 1. **Un inventario por anexo.** Cada anexo tiene su propio inventario,
    sacado directamente del anexo (texto extraído, párrafo por párrafo,
    igual que en la sección 2, paso 2).
+
+   **Anexos muy grandes** (un libro completo o un resumen de 60-80
+   páginas):
+   - **Primero, un mapa del anexo:** qué trata cada capítulo o sección,
+     armado desde su índice y sus títulos.
+   - **Después, el inventario párrafo por párrafo solo de las secciones
+     que tocan temas del manual** y no son repetición del apunte
+     principal.
+   - **Las secciones que se dejan fuera quedan anotadas en el mapa, con
+     la razón** (por ejemplo: "otra materia", "repite el apunte
+     principal, pp. 12-30").
+   - **La búsqueda por términos no reemplaza al inventario:** solo sirve
+     para ubicar secciones dentro del mapa.
 2. **Cada unidad se compara con el texto principal y se clasifica:**
    - **Ya está en el texto principal:** no se agrega. Nunca se duplica.
    - **Agrega algo** (un dato, una característica, una anotación, otro
