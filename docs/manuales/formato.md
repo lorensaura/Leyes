@@ -22,7 +22,7 @@ se inventa fuera de ella.
 |---|---|---|---|---|
 | 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Negro**, centrado, **negrita**, MAYÚSCULA, título subrayado (1.35rem). Salto de página antes |
 | 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Negro, centrado, negrita, MAYÚSCULA, **sin subrayado** (1.3rem) |
-| 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Negro, centrado, MAYÚSCULA, **sin negrita y sin subrayado**, algo más chico que el tema (1.2rem). Nivel nuevo: Acto Jurídico todavía no lo usa |
+| 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Negro, centrado, MAYÚSCULA, **sin negrita y sin subrayado**, algo más chico que el tema (1.2rem). En Acto Jurídico: IV.B Nulidad, con B.1 Aspectos generales, B.2 Nulidad absoluta y B.3 Nulidad relativa |
 | 4 | `1.`, `2.` | Punto | `h2` (sin clase) | **Rojo**, a la izquierda, **negrita**, MAYÚSCULA, título subrayado (1.1rem) |
 | 5 | `1.1.`, `2.1.` | Subpunto con título | `h3` | A la izquierda, **negrita**, título subrayado, mayúscula solo en la inicial |
 | 6a | `(i)`, `(ii)` | Elemento que abre una **clasificación nueva** | `.enum-i` | **Negrita**, sin subrayado, mayúscula solo en la inicial |
@@ -78,13 +78,14 @@ decide con esta regla, siempre la misma:
 
 1. **Una parte sube a `A.1` cuando es una institución con desarrollo
    propio.** Prueba: *¿esta parte tiene su propio "1. Concepto"?* La
-   nulidad relativa sí: va como `B.1`. El menor adulto no: queda como
+   nulidad relativa sí: va como `B.3`. El menor adulto no: queda como
    `a)`.
 2. **Todo o nada dentro de la letra.** Si una letra tiene `B.1`, todo lo
    que depende de ella va en `B.1`, `B.2`... Nunca se mezclan `B.1` y
    puntos `1.` sueltos al mismo nivel. Lo que es común a todas las
    instituciones de la letra (por ejemplo, lo que aplica a ambas
-   nulidades) va directamente bajo `B.`, sin número, antes de `B.1`.
+   nulidades) va primero, como su propia institución `B.1 Aspectos
+   generales`, igual que en Acto Jurídico.
 3. **La numeración `1.`, `2.` vuelve a empezar** dentro de cada `A.1`, o
    dentro de la letra si esa letra no tiene `A.1`.
 4. **Nunca `a.1.1)`.** Si algo necesita bajar de `a.1)`, no se crea un
@@ -99,8 +100,12 @@ I.  Ineficacia
         1. Concepto
         2. ...
     B.  Nulidad
-        (texto común a ambas nulidades, sin número)
-        B.1  Nulidad relativa
+        B.1  Aspectos generales
+             1. ...
+        B.2  Nulidad absoluta
+             1. Concepto
+             ...
+        B.3  Nulidad relativa
              1. Concepto
              2. Causales
                 2.1. Incapacidad relativa
@@ -110,13 +115,11 @@ I.  Ineficacia
                      (i) Error
                          a) Error de hecho
                             a.1) Error esencial
-        B.2  Nulidad absoluta
-             1. Concepto
-             ...
 ```
 
 Inexistencia va directo a `1.` porque no contiene instituciones con
-desarrollo propio; Nulidad sube a `B.1` y `B.2` porque contiene dos.
+desarrollo propio; Nulidad sube a `B.1` a `B.3` porque contiene dos
+instituciones (más sus aspectos generales comunes).
 
 **Manuales existentes:** no se renumeran. Cuando se revise uno (por
 ejemplo Acto Jurídico, cuyo índice Laura armó a mano), se compara contra
@@ -171,9 +174,9 @@ la misma línea de la sección 2):
 ```html
 <h1 id="cI" style="text-decoration:none"><span class="num">I.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Ineficacia</span></h1>
 <h2 id="cI-B" class="grupo" style="text-decoration:none"><span class="num">B.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Nulidad</span></h2>
-<h2 id="cI-B1" class="inst" style="text-decoration:none"><span class="num">B.1&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Nulidad relativa</span></h2>
-<h2 id="cI-B1-1" style="text-decoration:none"><span class="num">1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Concepto</span></h2>
-<h3 id="cI-B1-2-1" style="text-decoration:none"><span class="num">2.1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Seriedad de la voluntad</span></h3>
+<h2 id="cI-B3" class="inst" style="text-decoration:none"><span class="num">B.3&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Nulidad relativa</span></h2>
+<h2 id="cI-B3-1" style="text-decoration:none"><span class="num">1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Concepto</span></h2>
+<h3 id="cI-B3-2-1" style="text-decoration:none"><span class="num">2.1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Seriedad de la voluntad</span></h3>
 ```
 
 Todo `h1`, `h2` y `h3` lleva su número: no hay subtítulos sin numerar.
@@ -201,11 +204,11 @@ encabezado se actualiza también su línea del índice.
     <ol class="toc-lista">
       <li><a href="#cI-B"><span class="num">B.</span> Nulidad</a>
         <ol class="toc-lista">
-          <li><a href="#cI-B1"><span class="num">B.1</span> Nulidad relativa</a>
+          <li><a href="#cI-B3"><span class="num">B.3</span> Nulidad relativa</a>
             <ol class="toc-lista">
-              <li><a href="#cI-B1-2"><span class="num">2.</span> Causales</a>
+              <li><a href="#cI-B3-2"><span class="num">2.</span> Causales</a>
                 <ol class="toc-lista">
-                  <li><a href="#cI-B1-2-1"><span class="num">2.1.</span> Incapacidad relativa</a></li>
+                  <li><a href="#cI-B3-2-1"><span class="num">2.1.</span> Incapacidad relativa</a></li>
                 </ol>
               </li>
             </ol>
