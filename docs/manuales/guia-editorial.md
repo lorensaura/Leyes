@@ -130,6 +130,11 @@ El código de cada uno está en `formato.md`, sección 7.
 
 - Solo fallos reales y verificables, citados como aparecen en la fuente
   (rol, tribunal y fecha si están). Si falta un dato: `[FALTA: ...]`.
+- **El recuadro de Jurisprudencia se usa solo si el fallo tiene rol (para
+  que se pueda revisar) o si la fuente lo desarrolla lo suficiente para
+  explicar algo.** Una frase suelta de un fallo sin rol no justifica un
+  recuadro: se omite y se deja `[FALTA: jurisprudencia reciente, con rol]`
+  para que Laura busque una más actual.
 - Varios fallos sobre el mismo punto van en un solo recuadro.
 - **Listas de fallos citados sin contenido** (solo la referencia): se dejan
   los que tienen **rol**, para que el estudiante pueda buscarlos, empezando

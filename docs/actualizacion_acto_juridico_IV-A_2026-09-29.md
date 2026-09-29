@@ -468,3 +468,7 @@ citen fragmentos, entre comillas.
 - **Pregunta clásica:** se movió justo antes del punto 4.3.
 - **Ley N° 19.499:** Laura confirmó el año (1997) y el contenido.
 - La cantidad de recuadros del punto 4 queda como está.
+- **Recuadro de jurisprudencia (Corte Suprema, RDJ t. LI, p. 483):** se
+  quitó por decisión de Laura, porque no tiene rol para revisarlo y explica
+  poco. Queda `[FALTA: jurisprudencia reciente sobre la inexistencia, con
+  rol; la busca Laura]`.
