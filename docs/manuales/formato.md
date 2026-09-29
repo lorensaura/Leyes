@@ -20,10 +20,10 @@ se inventa fuera de ella.
 
 | Nivel | Marcador | Qué es | Etiqueta HTML | Cómo se ve |
 |---|---|---|---|---|
-| 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Negro**, centrado, **negrita**, MAYÚSCULA, título subrayado (1.35rem). Salto de página antes |
+| 1 | `I.`, `II.` | Capítulo (el tema del manual) | `h1` | **Rojo**, centrado, **negrita**, MAYÚSCULA, título subrayado (1.35rem). Salto de página antes |
 | 2 | `A.`, `B.` | Tema (subtema del capítulo) | `h2 class="grupo"` | Negro, centrado, negrita, MAYÚSCULA, **sin subrayado**, del **mismo tamaño que el capítulo** (1.35rem) |
 | 3 (opcional) | `A.1`, `A.2` | Institución (subtema del subtema, solo si hace falta) | `h2 class="inst"` | Negro, centrado, MAYÚSCULA, **sin negrita y sin subrayado**, algo más chico que el tema (1.2rem). En Acto Jurídico: IV.B Nulidad, con B.1 Aspectos generales, B.2 Nulidad absoluta y B.3 Nulidad relativa |
-| 4 | `1.`, `2.` | Punto | `h2` (sin clase) | **Rojo**, a la izquierda, **negrita**, MAYÚSCULA, título subrayado (1.1rem) |
+| 4 | `1.`, `2.` | Punto | `h2` (sin clase) | **Negro**, a la izquierda, **negrita**, MAYÚSCULA, título subrayado (1.1rem) |
 | 5 | `1.1.`, `2.1.` | Subpunto con título | `h3` | A la izquierda, **negrita**, título subrayado, mayúscula solo en la inicial |
 | 6a | `(i)`, `(ii)` | Elemento que abre una **clasificación nueva** | `.enum-i` | **Negrita**, sin subrayado, mayúscula solo en la inicial |
 | 6b | `(i)`, `(ii)` | Elemento de una **lista de requisitos o circunstancias** | `.enum-i` + clase `lista` | Título **subrayado**, sin negrita, mayúscula solo en la inicial |
@@ -36,11 +36,12 @@ el subpunto en `h3`, así que el lector en línea (`app/manuales.html`) y
 los scripts que arman secciones a partir de `h1`/`h2` tratan igual los
 manuales antiguos y los nuevos. `h4` y `h5` no se usan en contenido nuevo.
 
-Es el aspecto que ya tiene Acto Jurídico, que es el modelo visual. Los
+Es el aspecto que tiene Acto Jurídico, que es el modelo visual. Los
 niveles 1 a 4 van en la fuente sans serif de los títulos; del 5 en
 adelante, en la serif del cuerpo. El rojo de los títulos queda **solo en
-el punto** (`1.`); capítulo, tema, institución y subpunto van en negro.
-Los artículos siguen en rojo y los recuadros mantienen sus colores.
+el capítulo** (romano); tema, institución, punto y subpunto van en negro.
+En el índice, igual: solo los capítulos en rojo. Los artículos siguen en
+rojo y los recuadros mantienen sus colores.
 
 **Manuales antiguos:** usan otras combinaciones (letra como `h1`, `N.M`
 como `h3`, `h4` para `a)`). Se mantienen como están hasta que se revise
@@ -625,9 +626,10 @@ Extensión (va dentro del mismo `<style>`, antes de `</style>`):
     --navy:#2C4A6E;--navybg:#EEF3F8;
     --purple:#5B3F86;--purplebg:#F4F0F8;
   }
-  /* I. Capítulo (h1), 1. Punto (h2) y 1.1. Subpunto (h3): los de la base, como en Acto Jurídico
-     (capítulo negro centrado y subrayado; punto rojo, a la izquierda y subrayado; subpunto serif
-     en negrita y subrayado). Solo se agregan el tema y la institución. */
+  /* I. Capítulo (h1), 1. Punto (h2) y 1.1. Subpunto (h3): tamaños y alineación de la base, como en
+     Acto Jurídico. Color: el rojo de los títulos queda solo en el capítulo. */
+  h1{color:var(--accent);}
+  h2{color:var(--accent2);}
   /* A. Tema: negro, centrado, negrita, mayúscula, sin subrayado */
   h2.grupo{color:var(--accent2);font-size:1.35rem;text-align:center;
     text-decoration:none;margin:2.6rem 0 .9rem;}
@@ -650,6 +652,8 @@ Extensión (va dentro del mismo `<style>`, antes de `</style>`):
   /* Índice: números escritos como texto, sin numeración automática */
   .toc-lista{list-style:none;padding-left:1.1rem;}
   .toc > .toc-lista{padding-left:0;}
+  .toc a{color:var(--accent2);}
+  .toc > .toc-lista > li > a{color:var(--accent);font-weight:700;}
   /* Explicación corta en la misma línea: el título lleva el estilo de su nivel, el texto que sigue no */
   .enum-i-run,.enum-a-run,.enum-c-run{display:inline;}
   /* Jerarquía de lectura */
