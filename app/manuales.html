@@ -763,6 +763,82 @@
       color: #C41E2E; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.8rem;
     }
     .manual-body .repaso strong { color: #C41E2E; }
+
+    /* ── Formato de manuales de docs/manuales/formato.md (escalera y recuadros) ──
+       Los encabezados con <span class="num"> son del formato nuevo; los manuales
+       antiguos no lo usan, así que su aspecto no cambia. */
+    .manual-body .num { text-decoration: none; }
+    .manual-body h1:has(.num) {
+      color: #C41E2E; text-align: center; text-transform: uppercase;
+      border-bottom: none;
+    }
+    .manual-body h1:has(.num) .tit,
+    .manual-body h2:has(.num) .tit,
+    .manual-body h3:has(.num) .tit { text-decoration: underline; }
+    .manual-body h2:has(.num) {
+      color: #111; text-transform: uppercase; letter-spacing: 0.02em;
+    }
+    .manual-body h2.grupo {
+      font-size: 1.3rem; text-align: center; margin: 2.2rem 0 0.8rem;
+    }
+    .manual-body h2.inst {
+      font-size: 1.15rem; font-weight: 400; text-align: center; margin: 1.8rem 0 0.7rem;
+    }
+    .manual-body h2.grupo .tit,
+    .manual-body h2.inst .tit { text-decoration: none; }
+    .manual-body h3:has(.num) { text-transform: none; letter-spacing: 0; }
+    /* (i) clasificación: negrita; (i) lista: subrayado; a): subrayado; a.1): cursiva */
+    .manual-body .enum-i, .manual-body .enum-a, .manual-body .enum-c { display: block; margin: 0.8rem 0 0.15rem; }
+    .manual-body .enum-i, .manual-body .enum-i-run { font-weight: 700; font-style: normal; }
+    .manual-body .enum-i.lista, .manual-body .enum-i-run.lista { font-weight: 400; }
+    .manual-body .enum-i.lista .tit, .manual-body .enum-i-run.lista .tit { text-decoration: underline; }
+    .manual-body .enum-a { text-decoration: underline; }
+    .manual-body .enum-a:has(.tit) { text-decoration: none; }
+    .manual-body .enum-a .tit, .manual-body .enum-a-run .tit { text-decoration: underline; }
+    .manual-body .enum-c, .manual-body .enum-c-run { font-style: italic; }
+    .manual-body .enum-i-run, .manual-body .enum-a-run, .manual-body .enum-c-run { display: inline; }
+    /* Jerarquía de lectura */
+    .manual-body .ley { margin: 1rem 1.4rem; line-height: 1.85; }
+    .manual-body .ley .ley-num { font-weight: 700; color: #C41E2E; margin-right: 0.35em; }
+    .manual-body .definicion {
+      margin: 1rem 0; padding: 0.15rem 0 0.15rem 0.9rem;
+      border-left: 2px solid #E8D8B8; line-height: 1.85;
+    }
+    /* Títulos de recuadro en dos líneas */
+    .manual-body .caja-tipo {
+      display: block; text-align: center; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; font-size: 0.72rem; margin-bottom: 4px;
+    }
+    .manual-body .caja-titulo {
+      display: block; text-align: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem;
+    }
+    .manual-body .jurisprudencia .caja-titulo {
+      text-transform: uppercase; font-size: 0.8rem; padding-bottom: 5px;
+      border-bottom: 1px solid #2A2A2A;
+    }
+    .manual-body .callout .caja-tipo { color: #C41E2E; }
+    .manual-body .warn .caja-tipo { color: #A06000; }
+    .manual-body .jurisprudencia .caja-tipo { color: #111; }
+    .manual-body .ejemplo .caja-tipo { color: #1A6B3A; }
+    .manual-body .dato-grado .caja-tipo { color: #7B3F00; }
+    /* Recuadros nuevos */
+    .manual-body .pregunta-clasica {
+      border-left: 4px solid #2C4A6E; background: #EEF3F8;
+      padding: 12px 16px; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .pregunta-clasica .caja-tipo, .manual-body .fusion .t-pc { color: #2C4A6E; }
+    .manual-body .fusion .sep { color: #bbb; font-weight: 400; margin: 0 0.7em; }
+    .manual-body .no-olvidar {
+      border: 2px dashed #C87028; background: #FFFAF4;
+      padding: 10px 16px; margin: 1rem 0; border-radius: 6px;
+    }
+    .manual-body .no-olvidar .caja-tipo { color: #7B3F00; }
+    .manual-body .conexiones {
+      border-left: 4px solid #5B3F86; background: #F4F0F8;
+      padding: 12px 16px; margin: 1.3rem 0 1rem; border-radius: 0 6px 6px 0;
+    }
+    .manual-body .conexiones .caja-tipo { color: #5B3F86; }
+    .manual-body .conexiones p { margin: 0.45rem 0; }
     .manual-body .lex {
       background: rgba(17,17,17,0.04); border: 1px solid rgba(17,17,17,0.1);
       border-radius: 6px; padding: 10px 14px; margin: 0.75rem 0;
