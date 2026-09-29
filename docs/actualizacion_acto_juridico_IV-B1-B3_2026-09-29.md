@@ -265,3 +265,67 @@ citan entre comillas en el texto, también verificados.
 4. Términos "formalidades habilitantes" y "calidad accidental elevada a
    la categoría de esencial" (B.3.2): ¿se vuelve a la redacción de la
    fuente o se conservan?
+
+---
+
+## 5. Decisiones de Laura (2026-09-29)
+
+1. Cambios aprobados.
+2. El razonamiento del fallo de la Corte de Pedro Aguirre Cerda (1988) se
+   integra al texto, sin recuadro.
+3. B.1.9 pasa a llamarse "Nulidad consecuencial y nulidad refleja".
+4. Causales de B.3.2: redacción de Boetsch (se quitan "habilitantes" y
+   "elevada a la categoría de esencial").
+5. **Ninguna mención a Bozzo e Ibarra en el manual.** Se eliminó además la
+   única que había, una nota sobre fuentes en IV.G. Regla nueva en
+   `guia-editorial.md` 2.
+
+## 6. Segunda pasada
+
+1. **Cobertura:** 138 frases clave del inventario (Boetsch y anexos)
+   presentes en el texto nuevo (una marcada como ausente es falsa alarma:
+   "tiene que existir un juicio" en vez de "exista un juicio"). Razón de
+   caracteres: **116%** (antes, 61%). Todo el contenido previo se conserva.
+2. **Redacción:** corregidas las dos inexactitudes frente al Código
+   ("interés de carácter pecuniario"; ministerio público "en el interés de
+   la moral o de la ley"). Se volvió a la redacción de Boetsch en las
+   causales de B.3.2.
+3. **Formato:** B.2.4 pasó de `a.`, `b.`, `c.` a `(i)`, `(ii)`, `(iii)`;
+   B.3.4 y B.3.6 tienen subpuntos `4.1.`, `4.2.` y `6.1.` a `6.4.` (el
+   índice sumó esas seis entradas). Principios y características en `(i)`
+   estilo lista; causales enumeradas. Bloques `.definicion`: 6; bloques
+   `.ley`: 3 (arts. 1684, 1685 y 1691). Los arts. 1681, 1682 y 1683 se
+   remiten a su transcripción en IV.A.
+4. **Recuadros por punto:** B.1.8: Ejemplo y Conexiones. B.1.9: No
+   confundir y Conexiones. B.2.4: Jurisprudencia, cuadro y Conexiones.
+   B.2.6: Conexiones. B.3.4: Advertencia y Ejemplo. B.3.5: No olvidar.
+   B.3.6: No confundir. Ningún punto pasa de dos recuadros pedagógicos.
+5. **Pendientes `[FALTA: ...]`:** secciones de las Conexiones hacia
+   Sucesorio, Obligaciones, Contratos y Procesal (apuntes que aún no
+   existen o no tienen esa parte).
+6. **Artículos**, verificados contra el Código: 1684, 1685 y 1691
+   completos; 10, 12, 1057, 1058, 1061, 1468, 1469, 1536, 1692, 1693,
+   1694, 1695, 1696, 1697, 2381 N° 3 y 705 en fragmentos o paráfrasis
+   fiel. El art. 2160 y el art. 350 COT se citan como en la fuente, sin
+   verificar su texto.
+7. **Conexiones con página pendiente (`p. __`):** 5.
+8. **Preguntas clásicas:** ninguna (sin banco; la fuente no marca).
+9. **Cuadros comparativos:** 2 nuevos (diferencias entre ambas nulidades;
+   representado y herederos).
+10. **Anexos muy grandes:** ninguno.
+
+**Recuadros creados por el modelo, para la revisión final del manual:**
+
+| Dónde | Recuadro |
+|---|---|
+| B.1.8 | Ejemplo: "La colección de Condorito del notario" (art. 1061) |
+| B.1.8 | Conexiones: Derecho Sucesorio |
+| B.1.9 | Ejemplo breve en el texto: la escritura de Diego y Sebastián (auto y préstamo) |
+| B.1.9 | No confundir: nulidad refleja frente a varios actos en una escritura |
+| B.1.9 | Conexiones: Obligaciones y Contratos |
+| B.2.4 | Conexiones: Derecho Procesal |
+| B.2.6 | Conexiones: Bienes (V.5.A.2) |
+| B.3.4 | Advertencia: ¿cualquier engaño del incapaz le impide pedir la nulidad? |
+| B.3.4 | Ejemplo: "La guitarra eléctrica" (art. 1685) |
+| B.3.5 | No olvidar: plazos para alegar la nulidad |
+| B.3.6 | No confundir: ¿ratificar es lo mismo que confirmar? |

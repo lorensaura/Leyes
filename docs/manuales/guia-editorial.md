@@ -49,6 +49,11 @@ banda tributo".
 - Nunca se afirma como conclusión propia algo que viene de un autor.
 - Si dos fuentes atribuyen la misma tesis a autores distintos, no se
   funden en una sola lista: se reporta (`auditoria.md`, categoría 5).
+- **Los anexos que son apuntes recopilados (por ejemplo, Bozzo e Ibarra)
+  no se nombran en el manual.** Su contenido se integra sin atribuírselo a
+  quienes lo recopilaron; las tesis se atribuyen a sus autores
+  doctrinales, cuando la fuente los nombra. En los informes internos sí se
+  indica de qué anexo viene cada unidad.
 
 ---
 
