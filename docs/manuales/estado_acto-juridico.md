@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.5).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.6).
 
 ## Dónde estamos
 
@@ -75,10 +75,68 @@ sección 0.
 | **4.3** | IV.E La inoponibilidad | 170-177 | `docs/actualizacion_acto_juridico_tramo4-3_inoponibilidad_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-3-inoponibilidad` (parte de 4.2, que todavía no está en `main`), **esperando revisión visual de Laura antes de mergear** |
 | **4.4** | IV.F El fraude a la ley | 177-186 | `docs/actualizacion_acto_juridico_tramo4-4_fraude_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-4-fraude` (parte de 4.2 y 4.3, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
 | **4.5** | IV.G Otras causales (G.1-G.9) | 186-189 | `docs/actualizacion_acto_juridico_tramo4-5_otras-causales_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3 y 4.4, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear**. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
-| 4.6 | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | — | Pendiente |
+| **4.6** | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | `docs/actualizacion_acto_juridico_tramo4-6_representacion_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3, 4.4 y 4.5, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
 | 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
 | 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
 | 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.6 (La representación, V.1-V.5)
+
+- A diferencia de todos los tramos anteriores, **V.1-V.5 no venía de
+  una reescritura de esta sesión**: ya estaba en el manual con el
+  formato nuevo (`h1`/`h2`/`h3`, `span.art`, cajas `.callout` y
+  `.jurisprudencia`), pero nunca se había auditado unidad por unidad
+  contra Boetsch. Este fue el primer cruce.
+- Inventario completo contra Boetsch `principal_16` (el mismo PDF de
+  4.5, pp. 190-199 de 221; el punto 5.5 se extendió hasta media p.
+  200 para incluirlo completo). El punto "V.6. Requisitos..." empieza
+  justo después, en la p. 200: es la fuente del sub-tramo 4.7.
+  Confirmado que el anexo secundario no aporta nada (no trata la
+  representación como institución, solo tres menciones sueltas de la
+  palabra).
+- Los 11 artículos del Código Civil citados se verificaron íntegros:
+  los 11 coinciden, salvo el art. 43, cuyo texto vigente (reforma Ley
+  21.400, 2021) dice "uno o ambos progenitores" en vez de "el padre o
+  la madre"; se actualizó la paráfrasis del manual a la fórmula
+  vigente. El art. 659 que cita Boetsch es del Código de Procedimiento
+  Civil (no del Código Civil, que tiene un art. 659 distinto, sobre
+  accesión); el manual ya lo distinguía bien.
+- Cambios aprobados por Laura ("dale con todo"):
+  - V.1: agregada la segunda definición alternativa de Boetsch.
+  - V.2: agregados los sordomudos como ejemplo de incapacidad absoluta
+    y el procurador junto al abogado.
+  - V.3.2 (i): agregado el párrafo sobre representación de origen
+    judicial y la precisión de que los curadores dativos también son
+    representantes legales (art. 43).
+  - V.3.3: dividido el párrafo que excedía 1.200 caracteres en dos;
+    agregada la definición de agencia oficiosa; completada la caja "No
+    confundir" con la frase sobre quién es titular de los derechos
+    frente a terceros.
+  - V.4.4: enriquecida la caja de jurisprudencia (Corte Suprema, 9 de
+    enero de 2017) con el pasaje donde la Corte descarta expresamente
+    las tres teorías de V.4.1-4.3, dividido en dos párrafos para no
+    exceder el máximo. **No se encontró el rol del fallo por búsqueda
+    web**: a pedido de Laura, se dejó el marcador `[VERIFICAR: rol]`
+    en el título de la caja, en vez de omitirlo en silencio.
+  - V.5.1: agregada la razón de por qué el representado debe ser capaz
+    en la voluntaria, y la consecuencia de nulidad para las
+    obligaciones del mandatario incapaz sin autorización.
+  - V.5.3: agregada la oración introductoria que contrasta las
+    teorías, y convertidas las tres distinciones de VIAL a lista
+    `enum-i lista` con `(i)/(ii)/(iii)` (formato de "lista de
+    argumentos" de `decisiones.md`; se había propuesto por error un
+    formato de letras `a)/b)/c)` en el informe, corregido antes de
+    guardar).
+  - V.5.4: agregada la oración introductoria con el ejemplo posesorio.
+  - V.5.5: agregada la mención de la discusión doctrinal y
+    jurisprudencial, y la extensión final a la causa u objeto ilícito.
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos, ningún párrafo sobre 1.200 caracteres (se dividió también el
+  párrafo de la jurisprudencia de V.4.4 al crecer con el agregado),
+  diff línea por línea (11 líneas eliminadas, todas correspondientes a
+  los 10 bloques del informe, nada ajeno), capturas de Chrome headless
+  revisadas bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
 
 ### Qué se hizo en el tramo 4.5 (Otras causales de ineficacia)
 
@@ -313,14 +371,20 @@ sección 0.
    mergee la rama `worktree-acto-juridico-tramo4-5-otras-causales` con
    GitHub Desktop (incluye también los cambios de 4.2, 4.3 y 4.4, ver
    nota en la sección 0 del informe de 4.5 sobre la base de la rama).
-6. **Sub-tramo 4.6: La representación (V.1-V.5, concepto a influencia
-   de circunstancias personales)** (pp. 190-199), y así sucesivamente
-   por la tabla de arriba, un sub-tramo a la vez con su propio informe
-   y aprobación.
-7. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+6. **Sub-tramo 4.6 (La representación, V.1-V.5) reescrito y aprobado
+   por Laura** ("dale con todo", 2026-09-30); falta la revisión visual
+   final y que mergee la misma rama
+   `worktree-acto-juridico-tramo4-5-otras-causales` (incluye también
+   los cambios de 4.2, 4.3, 4.4 y 4.5). Queda un `[VERIFICAR: rol]` en
+   la caja de jurisprudencia de V.4.4, a la espera de que Laura lo
+   encuentre o decida dejarla sin rol.
+7. **Sub-tramo 4.7: La representación (V.6-V.10, requisitos a otras
+   hipótesis)** (pp. 200-208), y así sucesivamente por la tabla de
+   arriba, un sub-tramo a la vez con su propio informe y aprobación.
+8. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-8. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+9. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
@@ -442,6 +506,10 @@ más afectan el trabajo por tramos:
   tocar esos manuales sin que ella lo pida.
 - **Laura busca jurisprudencia reciente con rol** para IV.A (hay un
   `[FALTA: ...]` en 4.4) y los extractos de los 5 fallos con rol de 4.4.
+- **`[VERIFICAR: rol]` en V.4.4** (tramo 4.6): la caja de jurisprudencia
+  cita un fallo de la Corte Suprema del 9 de enero de 2017 sobre la
+  teoría de la representación modalidad; ni Boetsch lo cita con rol ni
+  la búsqueda web lo encontró. Laura lo busca o decide dejarlo sin rol.
 - **Conexiones con `[FALTA: sección]` y `p. __`** hacia apuntes que no
   existen todavía (Familia, Compraventa, Sociedades, Procesal,
   Sucesorio, Obligaciones, Contratos). Se completan cuando existan y
