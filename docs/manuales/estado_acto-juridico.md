@@ -182,12 +182,20 @@ con GitHub Desktop. Con eso se cierra **todo el tramo 4**
   revisadas bloque por bloque.
 - No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3` (la
   tabla y la reformulación de B.2 quedan dentro del mismo punto "2.").
-- **Queda solo una decisión abierta**, que Laura dejó explícitamente
-  para una pasada aparte: los ejemplos de VI que reutilizan casi
-  textual los nombres y hechos de Boetsch (María, Juan Antonio, Pedro,
-  Primus, la estrella con la mano), sin "achilenizar" como pide la
-  regla desde el tramo 3. Implicaría reescribir varios ejemplos más,
-  más allá de los dos que ya se redactaron en esta segunda pasada.
+- **Tercera pasada, corrección de criterio de Laura**: dijo que los
+  ejemplos sin achilenizar debían corregirse en el mismo tramo, no en
+  una pasada aparte ("como lo estábamos haciendo antes con las
+  modificaciones que hice a actualización de manuales y redacción de
+  manuales"). Se reescribieron los 6 ejemplos de VI que reutilizaban
+  nombres y hechos de Boetsch casi textuales: el Cristóbal (casual), la
+  Javiera (mixta), el tío Walter (condición resolutoria pendiente), el
+  primo Gonzalo y la Antonia (condición resolutoria fallida), don
+  Hernán (derecho a exigir cumplimiento del modo) y la sobrina
+  Constanza (modo en beneficio exclusivo). No se tocó el ejemplo
+  clásico de raíz romana de A.2.2 ("la estrella con la mano"): no tiene
+  nombre propio y el manual ya lo presenta como cita histórica. **Con
+  esto no queda ninguna decisión abierta**: el tramo 4.8-4.9 está
+  completo.
 
 ### Qué se hizo en el tramo 4.7 (La representación, V.6-V.10)
 
@@ -643,12 +651,6 @@ más afectan el trabajo por tramos:
   cita un fallo de la Corte Suprema del 9 de enero de 2017 sobre la
   teoría de la representación modalidad; ni Boetsch lo cita con rol ni
   la búsqueda web lo encontró. Laura lo busca o decide dejarlo sin rol.
-- **Ejemplos de VI sin achilenizar** (tramo 4.8-4.9): a diferencia de
-  otros tramos, VI reutiliza casi textual los nombres y hechos de
-  Boetsch (Manuel, María, Juan Antonio, Pedro, Primus, la estrella con
-  la mano), sin reemplazarlos por ejemplos propios como pide la regla
-  desde el tramo 3. Laura decidió dejarlo para una pasada aparte, no
-  para este tramo.
 - **Conexiones con `[FALTA: sección]` y `p. __`** hacia apuntes que no
   existen todavía (Familia, Compraventa, Sociedades, Procesal,
   Sucesorio, Obligaciones, Contratos). Se completan cuando existan y
