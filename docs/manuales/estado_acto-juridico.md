@@ -70,7 +70,7 @@ sección 0.
 
 | Sub-tramo | Institución | Páginas Boetsch (de 221) | Informe | Estado |
 |---|---|---|---|---|
-| **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | Reescrito, verificado y **aprobado por Laura** tras la vista previa; rama `worktree-acto-juridico-tramo4-1-lesion` pusheada, **falta que lo mergee con GitHub Desktop** |
+| **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | **Mergeado a `main`** |
 | 4.2 | IV.D La simulación | 160-170 | — | Pendiente |
 | 4.3 | IV.E La inoponibilidad | 170-177 | — | Pendiente |
 | 4.4 | IV.F El fraude a la ley | 177-186 | — | Pendiente |
@@ -108,9 +108,7 @@ sección 0.
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **Laura aprobó la vista previa del tramo 4.1** (2026-09-30); falta
-   solo que mergee la rama `worktree-acto-juridico-tramo4-1-lesion` con
-   GitHub Desktop.
+1. **Tramo 4.1 (La lesión) mergeado a `main`.**
 2. **Sub-tramo 4.2: La simulación** (pp. 160-170), y así sucesivamente
    por la tabla de arriba, un sub-tramo a la vez con su propio informe
    y aprobación.
