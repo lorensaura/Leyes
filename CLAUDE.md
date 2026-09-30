@@ -38,10 +38,13 @@ seguir.
 - Verificación de HTML/JS y PDF: **Chrome headless vía CDP**. Para páginas que usan Supabase, bloquear el CDN e inyectar un stub para evitar el redirect a `auth.html`.
 - Antes de dar por hecho un arreglo, **verificarlo** (pruebas dirigidas en headless).
 - Cero guiones largos (—) en ningún contenido generado (código, manuales, preguntas). Regla permanente.
-- **Cortar y retomar sesión por manual, sin recapitular:** cada manual en
-  trabajo activo (Acto Jurídico, Bienes, Obligaciones, ...) tiene su
-  propio `docs/manuales/estado_<manual>.md` (ej. `estado_acto-juridico.md`),
-  con todo lo necesario para seguir desde cero: qué está terminado, qué
+- **Cortar y retomar sesión por manual, sin recapitular:** aplica a
+  **cualquier manual o apunte** que se esté trabajando (Acto Jurídico,
+  Bienes, Obligaciones, Responsabilidad, Sucesorio, Familia, Procesal,
+  Contratos, ...), no solo a una lista fija. Cada uno en trabajo activo
+  tiene su propio `docs/manuales/estado_<manual>.md` (ej.
+  `estado_acto-juridico.md`), con todo lo necesario para seguir desde
+  cero: qué está terminado, qué
   falta, decisiones de redacción o estructura que no deben cambiar, y el
   siguiente paso exacto. Se actualiza **in place**, nunca se crea uno
   nuevo por sesión. Si Laura dice **"guarda el estado [de X]"**,
