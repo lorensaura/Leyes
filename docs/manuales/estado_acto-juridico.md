@@ -4,10 +4,14 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.8-4.9, VI.
-> Modalidades completo, escrito y aprobado por Laura; con esto termina
-> **todo el tramo 4**, capítulos IV+V+VI. Falta el push/merge a `main`
-> de este último tramo).
+> de seguir. Última actualización: 2026-09-30 (**todo el tramo 4**,
+> capítulos IV+V+VI, confirmado mergeado a `main`, commit de merge
+> `ca9adc6`. Además: un commit chico de auditoría de IV+V con la
+> corrección del ejemplo de V.5.3, ya pusheado a
+> `worktree-acto-juridico-tramo4-5-otras-causales`, pendiente de que
+> Laura lo mergee. Y ahora, **capítulo I completo** (Teoría general),
+> escrito y pusheado en `worktree-acto-juridico-cap1`, aprobado por
+> Laura, pendiente de merge).
 
 ## Dónde estamos
 
@@ -514,19 +518,56 @@ con GitHub Desktop. Con eso se cierra **todo el tramo 4**
 
 ## Qué sigue (orden decidido por Laura)
 
-**Tramos 4.1 a 4.7 mergeados a `main`** (Laura revisó y mergeó con
-GitHub Desktop; confirmado en `origin/main`). Eso cierra por completo
-la Ineficacia del acto jurídico (IV) y La representación (V).
-**Tramo 4.8-4.9 (VI. Modalidades) escrito y aprobado por Laura en esta
-rama**, falta el push y que Laura lo mergee con GitHub Desktop.
+**Tramo 4 completo (IV, V y VI) confirmado mergeado a `main`** (commit
+de merge `ca9adc6`). Pendientes de merge por Laura: el commit
+`b39a974` (auditoría de IV+V, corrección de V.5.3) y el capítulo I
+completo (rama `worktree-acto-juridico-cap1`, ver tabla abajo).
 
-1. **Push del tramo 4.8-4.9** y merge de Laura con GitHub Desktop. Con
-   eso se cierra **todo el tramo 4** (capítulos IV, V y VI completos).
-2. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
-   método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
-   Boetsch para II.D).
+1. **Merges pendientes de Laura**: `b39a974` (tramo4-5-otras-causales)
+   y el capítulo I (`worktree-acto-juridico-cap1`).
+2. **Seguir con capítulos II y III**: II (Requisitos de los AJ: A. La
+   voluntad, B. Capacidad, C. Objeto, D. Causa, E. Formalidades,
+   fuentes `principal_2` a `_7`, más el anexo Causa de Domínguez y
+   Boetsch para II.D) y III (Efectos de los AJ, fuente `principal_8`).
+   Es el bloque más largo que queda de la Teoría General: conviene
+   repartirlo en varios sub-tramos, como se hizo con el tramo 4.
 3. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
+
+### Qué se hizo en el capítulo I (Teoría general del acto jurídico)
+
+- Rama nueva `worktree-acto-juridico-cap1`, desde `origin/main` (ya con
+  todo el tramo 4 incluido).
+- Fuente: Boetsch `principal_1` (páginas 12-30 de 221, 19 páginas),
+  coincide exactamente con la extensión del capítulo I en el manual.
+  Informe: `docs/actualizacion_acto_juridico_cap1_2026-09-30.md`.
+- Igual que V y VI, **el capítulo I tampoco venía de una reescritura de
+  esta sesión**: ya estaba en el formato nuevo, primera vez que se
+  audita contra Boetsch. **Sin huecos**: los 8 puntos y 16 subpuntos
+  cubren el contenido íntegro de la fuente.
+- **Los cuatro anexos se leyeron completos**, no solo por título, a
+  pedido expreso de Laura: se encontró que
+  `Anexo_secundario_AJ_Ineficacia.pdf` (Bozzo e Ibarra), pese a su
+  nombre de archivo, trae en sus primeras páginas la cita de ROUBIER y
+  el ejemplo de STOLFI del punto I.4, que no están en Boetsch. Son la
+  fuente real de ese contenido, no un agregado sin respaldo. El resto
+  del anexo, y los otros tres (Cuadro comparativo, Causa Domínguez,
+  Memorice), no aportan nada nuevo a este capítulo.
+- 23 artículos citados verificados contra el Código Civil: los 23
+  coinciden, sin errores.
+- Único cambio, aprobado por Laura ("dale con todo"): dos cajas
+  `.dato-grado` (clase retirada) bajadas a texto corrido, **sin
+  parafrasear**, palabra por palabra el contenido ya aprobado (punto 7,
+  pregunta clásica de existencia/nulidad; punto 8.1, irrevocabilidad de
+  los actos recepticios).
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos/guillemets, ningún párrafo sobre 1.200 caracteres, diff línea
+  por línea (solo las dos cajas, sin tocar el contenido), capturas de
+  Chrome headless revisadas bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
+- Commit `fe6efce`, pusheado a
+  `origin/worktree-acto-juridico-cap1`. Falta que Laura lo revise en
+  vista previa y mergee con GitHub Desktop.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
 
