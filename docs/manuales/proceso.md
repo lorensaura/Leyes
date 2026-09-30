@@ -160,16 +160,22 @@ solo las secciones del anexo que Laura confirmó en el mapa.
 - **Cero guiones largos y cero guillemets** en cualquier parte del tramo.
 - **Ningún artículo, fallo o atribución doctrinal que no esté
   literalmente en el material fuente** de Laura.
-- **Tipografía de recuadros y cuadros comparativos.** Todo recuadro
-  (incluida cada celda de un cuadro comparativo) usa la misma fuente y
-  el mismo tamaño de letra que el texto principal del manual; nunca una
-  fuente o un tamaño distinto. Bug real encontrado en Acto Jurídico
-  (2026-09-30): la regla `table` de la hoja de estilos traía una fuente
-  sans-serif ajena y un tamaño menor (10pt/9pt) al del cuerpo del texto
-  (11pt, Times New Roman). Se corrigió ahí; al escribir o revisar un
-  cuadro comparativo en cualquier manual, comprobar que su `<table>`
-  hereda la tipografía del texto y no una regla de estilos propia
-  (`formato.md`, sección 4.1).
+- **Tipografía de recuadros y cuadros comparativos.** El **cuerpo** de
+  todo recuadro (y cada celda `td` de un cuadro comparativo) usa la
+  misma fuente y el mismo tamaño de letra que el texto principal del
+  manual; nunca una fuente o un tamaño distinto. El encabezado (`th`,
+  o el `.caja-tipo`/`.caja-titulo` de un recuadro) sí puede mantener su
+  propio estilo (letra sans-serif, mayúscula, fondo de color), porque es
+  una etiqueta de diseño, no cuerpo de texto. Bug real encontrado en
+  Acto Jurídico (2026-09-30): la regla `table` de la hoja de estilos le
+  daba a las celdas `td` la misma fuente sans-serif y el mismo tamaño
+  menor (10pt) que el encabezado `th`, en vez de la fuente y el tamaño
+  del cuerpo del texto (11pt, Times New Roman). Se corrigió dejando
+  `table`/`th` con su estilo de etiqueta (ahora además en mayúscula) y
+  `td` con la tipografía del texto principal. Al escribir o revisar un
+  cuadro comparativo en cualquier manual, comprobar que sus celdas `td`
+  usan la tipografía del texto y no la del encabezado (`formato.md`,
+  sección 4.1).
 - **Fidelidad de caracteres.** Se cuentan los caracteres del texto plano
   de la fuente del tramo (sin encabezados de página repetidos) y los del
   HTML escrito (sin etiquetas). La razón debe rondar **80-90%**. Bajo

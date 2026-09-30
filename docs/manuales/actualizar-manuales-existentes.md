@@ -22,12 +22,15 @@
   informe del tramo (sección 2, paso c), no se agrega en silencio.
 - **Los cuadros comparativos que ya existen en un manual se conservan
   siempre.**
-- **Todo recuadro y cuadro comparativo usa la misma fuente y el mismo
-  tamaño de letra que el texto principal del manual** (`proceso.md`,
-  sección 4.1). Al revisar o agregar uno, comprobar la hoja de estilos
-  del manual, no solo el HTML del recuadro: en Acto Jurídico la regla
-  `table` traía una fuente y un tamaño ajenos al cuerpo del texto
-  (corregido 2026-09-30).
+- **El cuerpo de todo recuadro y de cada celda `td` de un cuadro
+  comparativo usa la misma fuente y el mismo tamaño de letra que el
+  texto principal del manual** (`proceso.md`, sección 4.1); el
+  encabezado (`th`, o el `.caja-tipo`/`.caja-titulo`) puede mantener su
+  propio estilo de etiqueta. Al revisar o agregar uno, comprobar la
+  hoja de estilos del manual, no solo el HTML del recuadro: en Acto
+  Jurídico la regla `table` le daba a las celdas `td` la misma fuente y
+  tamaño del encabezado, ajenos al cuerpo del texto (corregido
+  2026-09-30).
 - Las reglas de oro de `proceso.md` (sección 0) valen igual: prohibido
   alucinar, prohibido resumir, todo queda pendiente de revisión de Laura.
 
