@@ -10,8 +10,11 @@
 > corrección del ejemplo de V.5.3, ya pusheado a
 > `worktree-acto-juridico-tramo4-5-otras-causales`, pendiente de que
 > Laura lo mergee. Y ahora, **capítulo I completo** (Teoría general),
-> escrito y pusheado en `worktree-acto-juridico-cap1`, aprobado por
-> Laura, pendiente de merge).
+> reescrito en voz propia en `worktree-acto-juridico-cap1` a pedido de
+> Laura (ver "Corrección de proceso" abajo: se detectó paráfrasis
+> cercana no chequeada en ningún tramo de este hilo), pusheado,
+> pendiente de merge. **Queda pendiente decidir** si se corrige el
+> mismo problema en IV, V y VI, ya mergeados a `main`).
 
 ## Dónde estamos
 
@@ -555,17 +558,41 @@ completo (rama `worktree-acto-juridico-cap1`, ver tabla abajo).
   Memorice), no aportan nada nuevo a este capítulo.
 - 23 artículos citados verificados contra el Código Civil: los 23
   coinciden, sin errores.
-- Único cambio, aprobado por Laura ("dale con todo"): dos cajas
-  `.dato-grado` (clase retirada) bajadas a texto corrido, **sin
-  parafrasear**, palabra por palabra el contenido ya aprobado (punto 7,
-  pregunta clásica de existencia/nulidad; punto 8.1, irrevocabilidad de
-  los actos recepticios).
-- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
-  largos/guillemets, ningún párrafo sobre 1.200 caracteres, diff línea
-  por línea (solo las dos cajas, sin tocar el contenido), capturas de
-  Chrome headless revisadas bloque por bloque.
+- **Corrección de proceso, a pedido de Laura**: el primer informe solo
+  revisaba contenido y artículos, no paráfrasis cercana. Laura pidió
+  aplicar el chequeo que ya existía (`guia-editorial.md` 3,
+  `actualizar-manuales-existentes.md` 2c) y que no se había estado
+  aplicando en ningún tramo de este hilo. Comparado oración por
+  oración contra Boetsch, se encontró el mismo patrón (misma
+  construcción de la fuente con sinónimos cambiados) en capítulo I y,
+  como muestra, también en IV.C La lesión (reescrita en esta sesión) y
+  en V.1 y VI.A.1 (ya mergeados a `main`, solo auditados). Detalle de
+  la comparación en `docs/actualizacion_acto_juridico_cap1_2026-09-30.md`,
+  sección 6. Decisión registrada en `decisiones.md` (2026-09-30).
+- **Se reescribió el capítulo I completo en voz propia** (los 8 puntos
+  y 16 subpuntos), con dos criterios: si el párrafo reproduce la
+  posición de un autor con nombre (VIAL, ROUBIER, STOLFI, ALESSANDRI),
+  se atribuye con claridad (la definición de VIAL en el punto 4 pasó a
+  bloque `.definicion`, citada textual); si es prosa de conexión de
+  Boetsch sin autor, se reestructura de verdad (otro orden de
+  cláusulas, no solo sinónimos). Se conservó íntegro el contenido, el
+  vocabulario técnico y los 23 artículos citados (verificado con
+  script). A pedido de Laura, se aprovechó para destensar el tono en
+  varios puntos (preguntas retóricas, ejemplos cotidianos como un
+  contrato de arriendo), sin agregar contenido jurídico nuevo.
+- Verificación mecánica repetida después de la reescritura: balance de
+  etiquetas OK, cero guiones largos/guillemets, ningún párrafo sobre
+  1.200 caracteres, mismos 23 artículos (verificados por número),
+  capturas de Chrome headless revisadas bloque por bloque, capítulo
+  completo desde la Introducción hasta el cierre de 8.13.
 - No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
-- Commit `fe6efce`, pusheado a
+- **Pendiente por decidir**: el mismo patrón de paráfrasis cercana
+  existe en contenido ya mergeado a `main` (tramos 3 a 4.9: IV, V y VI
+  completos). No se tocó en esta pasada, a pedido de Laura. Falta
+  decidir si se abre una rama de corrección o se deja para la próxima
+  vez que se trabaje sobre esos capítulos.
+- Commit final de esta pasada pendiente de push (ver `git log` de esta
+  rama para el hash exacto). Pusheado a
   `origin/worktree-acto-juridico-cap1`. Falta que Laura lo revise en
   vista previa y mergee con GitHub Desktop.
 

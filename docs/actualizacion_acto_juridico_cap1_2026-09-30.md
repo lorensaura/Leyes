@@ -88,9 +88,76 @@ errores de artículos que corregir.
 Ninguno nuevo. Los pendientes generales (jurisprudencia, conexiones con
 `[FALTA: sección]`, etc.) no aplican a este capítulo introductorio.
 
-## 5. Siguiente paso
+## 5. Siguiente paso (superado, ver sección 6)
 
-Con tu aprobación, se aplican solo los dos cambios de la sección 3
-(bajar las cajas `.dato-grado` a texto), se verifica de nuevo
-(mecánico + capturas) y se hace commit/push para que lo revises en vista
-previa antes de mergear.
+~~Con tu aprobación, se aplican solo los dos cambios de la sección 3...~~
+Este informe original solo revisaba contenido y artículos. Faltaba el
+chequeo de **paráfrasis cercana** (`guia-editorial.md` sección 3, paso
+c de `actualizar-manuales-existentes.md`), que no se había aplicado en
+ningún tramo de este hilo. Laura lo pidió expresamente y se hizo la
+pasada completa: ver sección 6.
+
+## 6. Reescritura en voz propia (pasada completa, 2026-09-30)
+
+Al comparar oración por oración contra Boetsch, buena parte de la
+prosa del capítulo (sobre todo los párrafos de "Concepto") resultó ser
+**paráfrasis cercana**: misma construcción de la fuente con sinónimos
+cambiados, sin comillas ni autor cuando correspondía. Confirmado el
+mismo patrón en un tramo escrito en esta sesión (IV.C, La lesión) y en
+otros dos ya mergeados a `main` y solo auditados (V.1, VI.A.1), lo que
+indica que el chequeo faltó en todo el hilo, no solo en este capítulo.
+
+**Criterio aplicado** (`guia-editorial.md`, sección 3, y precisión de
+Laura sobre atribución):
+
+- Si el párrafo reproduce la posición de un **autor con nombre**
+  (VIAL, ROUBIER, STOLFI, ALESSANDRI), el arreglo es **atribución
+  clara**: cita textual entre comillas y en bloque `.definicion`
+  cuando el texto es literal (caso de VIAL en el punto 4), o reporte
+  claramente atribuido cuando no se tiene el texto exacto del autor,
+  solo una traducción o paráfrasis de un tercero (caso de ROUBIER y
+  STOLFI, reformulados en voz propia pero con su nombre siempre
+  presente).
+- Si el párrafo es prosa de conexión o de resumen de Boetsch, **sin
+  autor nombrado**, el arreglo es **reestructurar de verdad**: otro
+  orden de cláusulas, otra forma de construir la oración, no solo
+  cambiar palabras por sinónimos.
+
+**Qué se reescribió:** el capítulo I completo, los 8 puntos y 16
+subpuntos, con estos criterios:
+
+- Se conserva íntegro el contenido, el vocabulario técnico y los
+  artículos citados (ninguno se agregó, quitó ni cambió; verificado
+  con script: mismos 23 números de artículo que en la sección 2).
+- La definición de **VIAL** en el punto 4 pasa a bloque `.definicion`,
+  citada textual y atribuida (antes estaba mezclada en el texto
+  corrido, sin comillas).
+- Las citas de **ROUBIER** y **STOLFI** se mantienen atribuidas por
+  nombre, pero reformuladas en voz propia: no se tenían sus textos
+  originales (solo la traducción/paráfrasis que trae el anexo Bozzo e
+  Ibarra), así que ponerlas entre comillas como si fueran su cita
+  exacta habría sido más riesgoso que reformularlas.
+- A pedido de Laura, se aprovechó la reescritura para **destensar el
+  tono** en varios puntos (preguntas retóricas, ejemplos cotidianos
+  como el contrato de arriendo en la Introducción) sin alterar el
+  contenido jurídico ni inventar nada nuevo.
+- Se mantienen los dos ajustes de la sección 3 (las antiguas cajas
+  `.dato-grado`), ahora también reescritas en voz propia y no solo
+  bajadas a texto.
+
+**Verificación mecánica** (repetida después de la reescritura): balance
+de etiquetas OK (`p`, `div`, `span`, `em`, `strong`, `h2`, `h3`), cero
+guiones largos y guillemets, ningún párrafo sobre 1.200 caracteres,
+mismos 23 artículos citados (verificados por número), capturas de
+Chrome headless revisadas bloque por bloque, capítulo completo desde
+la Introducción hasta el cierre de 8.13.
+
+No se tocó el índice ni ningún `h2`/`h3`.
+
+## 7. Pendiente por decidir
+
+Lo mismo que se encontró en capítulo I existe en contenido ya
+mergeado a `main` (tramos 3 a 4.9: IV, V y VI completos). No se tocó
+en esta pasada, a pedido de Laura ("primero cerremos capítulo I").
+Queda pendiente decidir si se abre una rama de corrección para esos
+capítulos o si se deja para la próxima vez que se trabaje sobre ellos.
