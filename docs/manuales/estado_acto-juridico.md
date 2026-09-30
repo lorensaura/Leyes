@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.4).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.5).
 
 ## Dónde estamos
 
@@ -74,11 +74,59 @@ sección 0.
 | **4.2** | IV.D La simulación | 160-170 | `docs/actualizacion_acto_juridico_tramo4-2_simulacion_2026-09-30.md` | Reescrito, verificado y **aprobado por Laura**; rama `worktree-acto-juridico-tramo4-2-simulacion` pusheada, **falta que lo mergee con GitHub Desktop** |
 | **4.3** | IV.E La inoponibilidad | 170-177 | `docs/actualizacion_acto_juridico_tramo4-3_inoponibilidad_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-3-inoponibilidad` (parte de 4.2, que todavía no está en `main`), **esperando revisión visual de Laura antes de mergear** |
 | **4.4** | IV.F El fraude a la ley | 177-186 | `docs/actualizacion_acto_juridico_tramo4-4_fraude_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-4-fraude` (parte de 4.2 y 4.3, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
-| 4.5 | IV.G Otras causales (G.1-G.9) | 186-189 | — | Pendiente. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
+| **4.5** | IV.G Otras causales (G.1-G.9) | 186-189 | `docs/actualizacion_acto_juridico_tramo4-5_otras-causales_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3 y 4.4, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear**. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
 | 4.6 | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | — | Pendiente |
 | 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
 | 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
 | 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.5 (Otras causales de ineficacia)
+
+- Esta rama se creó desde `worktree-acto-juridico-tramo4-4-fraude`
+  (trae también 4.2 y 4.3, sin mergear). IV.G no fue tocado por
+  ninguno de esos tres tramos.
+- Inventario completo de IV.G contra Boetsch `principal_16` (pp.
+  186-189; el PDF sigue hasta la p. 208 con "V. La representación",
+  fuente del sub-tramo 4.6, que no se toca acá) y el anexo
+  `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra, 3
+  páginas completas).
+- A diferencia de todos los tramos anteriores, **este llegó
+  mecánicamente impecable**: sin párrafos sobre 1.200 caracteres, sin
+  guiones largos, etiquetas balanceadas, ya antes de tocarlo. El
+  trabajo fue puramente de contenido.
+- Confirmado: **Boetsch solo trata G.1-G.6** (suspensión, resolución,
+  resciliación, revocación, desistimiento unilateral, caducidad).
+  **G.7, G.8 y G.9 (terminación, renuncia, muerte) no están en
+  Boetsch**: su única fuente es el anexo, ya confirmado en una sesión
+  anterior.
+- Los 9 artículos citados (1716, 1489, 1567, 2163, 1212, 1053, 1143,
+  1490, 1491) se verificaron íntegros contra el Código Civil: los 9
+  coinciden. El art. 2163 se cita tres veces (G.4, G.8, G.9) porque un
+  solo artículo agrupa la revocación, la renuncia y la muerte como
+  causales de término del mandato; verificado que es así.
+- Cambios aprobados por Laura ("dale con todo"):
+  - G.2 (resolución): agregada la falta de acción reivindicatoria
+    contra terceros de buena fe (muebles, art. 1490) y la exigencia de
+    publicidad de la condición para afectar a terceros (inmuebles,
+    art. 1491), contenido del anexo que faltaba.
+  - G.7 (terminación) y G.8 (renuncia): agregada en ambas, del anexo
+    (única fuente de estas dos unidades), la oración sobre el momento
+    en que la causal es oponible a terceros.
+  - G.9 (muerte): agregados el matrimonio como ejemplo adicional de
+    acto <em>intuito personae</em>, la sanción a la mala fe de quien
+    perjudica a los herederos de la parte fallecida, y la distinción
+    entre muerte natural y presunta para el efecto frente a terceros;
+    los tres, del anexo.
+  - **No se tocó G.4** (revocación): el anexo la asocia también al
+    "fraude pauliano", pero eso contradice lo ya explicado en el
+    tramo 4.4 (la sanción al fraude a los acreedores es inoponibilidad
+    o nulidad, no revocación). Queda señalada la inconsistencia entre
+    el anexo y Boetsch, sin resolver.
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos, ningún párrafo sobre 1.200 caracteres, diff línea por línea
+  (solo los 4 párrafos tocados, nada más), capturas de Chrome headless
+  revisadas bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
 
 ### Qué se hizo en el tramo 4.4 (El fraude a la ley)
 
@@ -260,13 +308,19 @@ sección 0.
    mergee la rama `worktree-acto-juridico-tramo4-4-fraude` con GitHub
    Desktop (incluye también los cambios de 4.2 y 4.3, ver nota en la
    sección 0 del informe de 4.4 sobre la base de la rama).
-5. **Sub-tramo 4.5: Otras causales** (G.1-G.9, pp. 186-189), y así
-   sucesivamente por la tabla de arriba, un sub-tramo a la vez con su
-   propio informe y aprobación.
-6. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+5. **Sub-tramo 4.5 (Otras causales) reescrito y aprobado por Laura**
+   ("dale con todo", 2026-09-30); falta la revisión visual final y que
+   mergee la rama `worktree-acto-juridico-tramo4-5-otras-causales` con
+   GitHub Desktop (incluye también los cambios de 4.2, 4.3 y 4.4, ver
+   nota en la sección 0 del informe de 4.5 sobre la base de la rama).
+6. **Sub-tramo 4.6: La representación (V.1-V.5, concepto a influencia
+   de circunstancias personales)** (pp. 190-199), y así sucesivamente
+   por la tabla de arriba, un sub-tramo a la vez con su propio informe
+   y aprobación.
+7. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-7. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+8. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
