@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.1).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.2).
 
 ## Dónde estamos
 
@@ -71,7 +71,7 @@ sección 0.
 | Sub-tramo | Institución | Páginas Boetsch (de 221) | Informe | Estado |
 |---|---|---|---|---|
 | **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | **Mergeado a `main`** |
-| 4.2 | IV.D La simulación | 160-170 | — | Pendiente |
+| **4.2** | IV.D La simulación | 160-170 | `docs/actualizacion_acto_juridico_tramo4-2_simulacion_2026-09-30.md` | Reescrito, verificado y **aprobado por Laura**; rama `worktree-acto-juridico-tramo4-2-simulacion` pusheada, **falta que lo mergee con GitHub Desktop** |
 | 4.3 | IV.E La inoponibilidad | 170-177 | — | Pendiente |
 | 4.4 | IV.F El fraude a la ley | 177-186 | — | Pendiente |
 | 4.5 | IV.G Otras causales (G.1-G.9) | 186-189 | — | Pendiente. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
@@ -79,6 +79,40 @@ sección 0.
 | 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
 | 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
 | 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.2 (La simulación)
+
+- Inventario completo de IV.D contra Boetsch `principal_13` (pp.
+  160-170): a diferencia de 4.1, acá el anexo Bozzo e Ibarra sí aportó
+  contenido de fondo que Boetsch no trae (no solo redacción distinta).
+- Los 11 artículos citados (10, 686, 1467, 1490, 1491, 1681, 1707, 1709,
+  1768, 1796, 1876) se verificaron íntegros contra el Código Civil.
+- Un fallo del anexo (Corte Suprema, 13 de enero de 2014, rol N°
+  9.631-2012) se confirmó real por búsqueda web antes de usarlo en una
+  caja de jurisprudencia.
+- Cambios aprobados por Laura:
+  - Definición de LEÓN pasada a caja `.definicion`.
+  - Párrafo nuevo sobre por qué el acto con reserva mental es válido y
+    el simulado es generalmente nulo (viene del anexo).
+  - Dos frases menores: motivo del art. 686 en la simulación lícita, y
+    "motivos inocentes o morales" de la lícita.
+  - Requisitos de la simulación ilícita convertidos de prosa a lista
+    `(i)-(iv)` (`enum-i lista`), con caja de jurisprudencia citando el
+    rol verificado.
+  - Dos ejemplos que reproducían los de Boetsch reemplazados por
+    ejemplos propios (Rodrigo y su primo Cristóbal para la absoluta;
+    Cristina, Ignacio y Josefina, con el art. 1796, para la relativa
+    por sustitución de sujeto).
+  - Cuadro comparativo de efectos (absoluta/relativa × entre las
+    partes/frente a terceros de buena fe), del anexo.
+  - Cita de Ferrara sobre la dificultad de la prueba directa + párrafo
+    nuevo sobre la carga de la prueba y el art. 1709.
+  - Punto nuevo 4.5, "La acción de simulación" (íntegro del anexo, no
+    estaba ni en Boetsch ni en el manual).
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos/guillemets, ningún párrafo sobre 1.200 caracteres, todas las
+  frases clave presentes, diff línea por línea de lo eliminado revisado
+  (coincide exactamente con lo propuesto en el informe).
 
 ### Qué se hizo en el tramo 4.1 (La lesión)
 
@@ -109,13 +143,16 @@ sección 0.
 ## Qué sigue (orden decidido por Laura)
 
 1. **Tramo 4.1 (La lesión) mergeado a `main`.**
-2. **Sub-tramo 4.2: La simulación** (pp. 160-170), y así sucesivamente
-   por la tabla de arriba, un sub-tramo a la vez con su propio informe
-   y aprobación.
-3. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+2. **Tramo 4.2 (La simulación) aprobado por Laura** (2026-09-30); falta
+   solo que mergee la rama `worktree-acto-juridico-tramo4-2-simulacion`
+   con GitHub Desktop.
+3. **Sub-tramo 4.3: La inoponibilidad** (pp. 170-177), y así
+   sucesivamente por la tabla de arriba, un sub-tramo a la vez con su
+   propio informe y aprobación.
+4. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-4. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
