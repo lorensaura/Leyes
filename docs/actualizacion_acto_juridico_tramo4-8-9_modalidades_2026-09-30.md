@@ -370,19 +370,58 @@ corrección de cita del art. 1463 → 1473 (sección 4.1). Para los tres
 puntos que no tenían una recomendación única, se aplicó el criterio por
 defecto que el propio informe ya proponía:
 
-- **Art. 1094** (sección 4.2): se mantuvo la cita tal cual, fiel a
-  Boetsch, sin reemplazo inventado. Queda como pendiente sin resolver
-  (ver `docs/manuales/estado_acto-juridico.md`), igual que la
-  inconsistencia de G.4 en el tramo 4.5.
 - **B.2, tabla vs. lista** (3.8): se aplicó la tabla comparativa
   (era la propuesta principal del informe).
-- **Recuadro `.dato-grado` de A.2.4**: no se tocó, para dejarlo junto
-  con el mismo bug de las tablas de Responsabilidad y Bienes, en una
-  pasada aparte.
-- **Ejemplos sin achilenizar**: no se reescribieron en este tramo. Se
-  deja pendiente en `estado_acto-juridico.md` como decisión abierta
-  sobre si conviene una pasada dedicada a esto (afectaría a bastante
-  más contenido que el de este tramo).
+- **Ejemplos sin achilenizar**: Laura corrigió el criterio inicial de
+  dejarlo para una pasada aparte ("deben modificarse ahora, no
+  después, como lo estábamos haciendo antes"). Se reescribieron los 6
+  ejemplos que reutilizaban nombres y hechos de Boetsch casi textuales
+  (detalle en la sección 6).
+
+Después de la primera pasada, Laura pidió dos correcciones adicionales
+sobre lo que el informe había dejado sin resolver:
+
+- **Recuadro `.dato-grado` de A.2.4**: Laura pidió bajarlo a texto
+  corrido (mismo criterio que el tramo 4.1) y agregar un ejemplo
+  propio, que no existía. Se agregó: Bastián y la Fernanda, contraste
+  entre la condición suspensiva puramente potestativa nula (<em>te pago
+  cinco millones si quiero</em>) y la resolutoria puramente potestativa
+  válida (donación con reserva de revocarla cuando quiera el donante).
+- **Art. 1094** (sección 4.2): Laura confirmó el texto vigente del
+  artículo (coincide exactamente con el verificado contra el Código).
+  Como ese texto no respalda la frase "la persona favorecida con el
+  modo puede exigir judicialmente su cumplimiento" (que queda sin cita
+  de artículo, tal como se dejó en el informe original), se usó para
+  agregar contenido nuevo y genuino que antes faltaba: la regla del
+  art. 1094 sobre el juez fijando el tiempo o la forma del modo cuando
+  el testador no lo determinó suficientemente, con el resguardo del
+  mínimo de un quinto del valor de la cosa para el asignatario modal.
+  Se agregó como punto nuevo en C.3, con ejemplo propio (Camila y la
+  casa) y caja `.ley` con el texto exacto que dio Laura.
+- **Ejemplos sin achilenizar**: Laura pidió corregirlos ahora, en el
+  mismo tramo, no en una pasada aparte. Se reescribieron los 6 que
+  reutilizaban nombres y hechos de Boetsch casi textuales:
+  - A.2.4, condición casual: "si Pedro deja el empleo, te lo reservo a
+    ti" → "si el Cristóbal deja la pega en el taller, te la reservo a
+    ti".
+  - A.2.4, condición mixta: "si me caso con María, te donaré mi auto"
+    → "si me caso con la Javiera, te donaré mi auto".
+  - A.3.2(i), condición resolutoria pendiente: "dono una casa a
+    Manuel..." → "le dono una casa a mi tío Walter...".
+  - A.3.2(iii), condición resolutoria fallida: "dono un millón de
+    pesos a Juan Antonio... si se casa con María" → "le dono un
+    millón de pesos a mi primo Gonzalo... si se casa con la Antonia".
+  - C.3, derecho a exigir el cumplimiento del modo: "se asigna una
+    suma a Primus..." → "se asigna una suma a don Hernán... a su
+    sobrina".
+  - C.3, modo en beneficio exclusivo: "dejo a Manuel diez millones de
+    pesos para que adquiera una biblioteca jurídica" → "le dejo a mi
+    sobrina Constanza diez millones de pesos para que se arme una
+    biblioteca jurídica".
+  - No se tocó el ejemplo clásico de raíz romana de A.2.2 ("te doy mi
+    fundo si tomas una estrella con la mano"): no tiene nombre propio,
+    y el manual ya lo presenta como cita histórica, no como ejemplo de
+    redacción propia.
 
 **Verificación mecánica sobre VI ya reescrito:** balance de etiquetas
 OK (incluidas las de `table`/`tr`/`th`/`td`, nuevas en este tramo),
@@ -401,6 +440,7 @@ ajeno), capturas de Chrome headless revisadas bloque por bloque.
 | Caja `.ley` | A.3.2(ii) | Art. 1487 completo |
 | Caja `.ley` | C.1 | Art. 1089 completo |
 | Caja `.ley` | C.3 | Art. 1090 completo |
+| Caja `.ley` | C.3 | Art. 1094 completo (regla nueva, ver más abajo) |
 | Tabla (`<table>`) | B.2 | Cuadro comparativo plazo/condición, 4 criterios |
 
 Con esto se cierra el tramo 4.8-4.9 y **todo el tramo 4** (capítulos
