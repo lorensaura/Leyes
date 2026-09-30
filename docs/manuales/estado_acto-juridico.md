@@ -4,7 +4,10 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.7).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.8-4.9, VI.
+> Modalidades completo, escrito y aprobado por Laura; con esto termina
+> **todo el tramo 4**, capítulos IV+V+VI. Falta el push/merge a `main`
+> de este último tramo).
 
 ## Dónde estamos
 
@@ -19,9 +22,9 @@ Laura en cada uno**.
 | 3 | IV.B.4 Los efectos de la nulidad | `docs/actualizacion_acto_juridico_IV-B4_2026-09-30.md` | commit `481af70` | **Mergeada a `main`** |
 
 `main` ya incluye el tramo 3 (`481af70`) y los dos commits de
-documentación posteriores (`07b7956`, `31247f4`). Este worktree
-(`worktree-actualizar-acto-juridico-tramo-3`) está al día con `main`:
-no hay nada pendiente de mergear.
+documentación posteriores (`07b7956`, `31247f4`), además de los tramos
+4.1 a 4.7 (ver tabla de abajo). El worktree activo para retomar el
+tramo 4 es `worktree-acto-juridico-tramo4-5-otras-causales`.
 
 ### Qué se hizo en el tramo 3 (para no repetirlo si se retoma a medio camino)
 
@@ -71,14 +74,109 @@ sección 0.
 | Sub-tramo | Institución | Páginas Boetsch (de 221) | Informe | Estado |
 |---|---|---|---|---|
 | **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | **Mergeado a `main`** |
-| **4.2** | IV.D La simulación | 160-170 | `docs/actualizacion_acto_juridico_tramo4-2_simulacion_2026-09-30.md` | Reescrito, verificado y **aprobado por Laura**; rama `worktree-acto-juridico-tramo4-2-simulacion` pusheada, **falta que lo mergee con GitHub Desktop** |
-| **4.3** | IV.E La inoponibilidad | 170-177 | `docs/actualizacion_acto_juridico_tramo4-3_inoponibilidad_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-3-inoponibilidad` (parte de 4.2, que todavía no está en `main`), **esperando revisión visual de Laura antes de mergear** |
-| **4.4** | IV.F El fraude a la ley | 177-186 | `docs/actualizacion_acto_juridico_tramo4-4_fraude_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-4-fraude` (parte de 4.2 y 4.3, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
-| **4.5** | IV.G Otras causales (G.1-G.9) | 186-189 | `docs/actualizacion_acto_juridico_tramo4-5_otras-causales_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3 y 4.4, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear**. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
-| **4.6** | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | `docs/actualizacion_acto_juridico_tramo4-6_representacion_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3, 4.4 y 4.5, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
-| **4.7** | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | `docs/actualizacion_acto_juridico_tramo4-7_representacion2_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2 a 4.6, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear**. Cierra el capítulo V completo |
-| 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
-| 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+| **4.2** | IV.D La simulación | 160-170 | `docs/actualizacion_acto_juridico_tramo4-2_simulacion_2026-09-30.md` | **Mergeado a `main`** |
+| **4.3** | IV.E La inoponibilidad | 170-177 | `docs/actualizacion_acto_juridico_tramo4-3_inoponibilidad_2026-09-30.md` | **Mergeado a `main`** |
+| **4.4** | IV.F El fraude a la ley | 177-186 | `docs/actualizacion_acto_juridico_tramo4-4_fraude_2026-09-30.md` | **Mergeado a `main`** |
+| **4.5** | IV.G Otras causales (G.1-G.9) | 186-189 | `docs/actualizacion_acto_juridico_tramo4-5_otras-causales_2026-09-30.md` | **Mergeado a `main`**. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
+| **4.6** | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | `docs/actualizacion_acto_juridico_tramo4-6_representacion_2026-09-30.md` | **Mergeado a `main`**. Queda `[VERIFICAR: rol]` pendiente en la caja de jurisprudencia de V.4.4 |
+| **4.7** | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | `docs/actualizacion_acto_juridico_tramo4-7_representacion2_2026-09-30.md` | **Mergeado a `main`**. Cierra el capítulo V completo |
+| **4.8-4.9** | VI completo (Concepto, A. La condición, B. El plazo, C. El modo) | 209-221 | `docs/actualizacion_acto_juridico_tramo4-8-9_modalidades_2026-09-30.md` | **Escrito y aprobado por Laura, falta el push/merge**. A pedido de Laura, se hizo de una sola vez en vez de dividirlo en 4.8 y 4.9 |
+
+`main` ya incluye los tramos 4.1 a 4.7 completos (confirmado en
+`origin/main`, commit de merge `fcc538b`). VI (Modalidades de los
+actos jurídicos: la condición, el plazo y el modo) ya está escrito en
+esta rama (`worktree-acto-juridico-tramo4-5-otras-causales`) y
+aprobado por Laura; falta el commit final, push y que Laura lo mergee
+con GitHub Desktop. Con eso se cierra **todo el tramo 4**
+(IV+V+VI: Ineficacia, Representación y Modalidades).
+
+### Qué se hizo en el tramo 4.8-4.9 (VI. Modalidades, completo)
+
+- Fuente: Boetsch `principal_17`, "MODALIDADES DEL AJ" (pp. 209-221 de
+  221, PDF distinto al `principal_16` de los tramos 4.5-4.7). Ningún
+  anexo (secundario, cuadro comparativo, Memorice) aporta contenido
+  nuevo a Modalidades: todos ya se habían usado por completo en tramos
+  anteriores o no llegan a cubrir este capítulo.
+- Igual que V.1-V.10, **VI tampoco venía de una reescritura de esta
+  sesión**: ya estaba en el formato nuevo, primera vez que se audita
+  contra Boetsch. A diferencia de varios tramos previos, **no tenía
+  huecos grandes**: todos los ejemplos y reglas de Boetsch ya estaban.
+  Razón de caracteres antes de tocarlo: 53,7%, ya en línea con los
+  tramos cerrados.
+- Los 28 artículos citados se verificaron contra el Código Civil: 26
+  coinciden. Dos no, **ambos heredados del propio Boetsch, no
+  introducidos por el manual**:
+  - **Art. 1463 en el concepto de condición**: no corresponde (es
+    sobre pacto de sucesión futura). Se corrigió a **art. 1473**
+    ("Es obligación condicional la que depende de una condición..."),
+    verificado como la definición correcta. Mismo criterio que la
+    corrección del art. 1573→1578 del tramo 4.4.
+  - **Art. 1094 en "Cumplimiento del modo"**: tampoco corresponde (es
+    sobre el juez fijando plazo o forma del modo, no sobre la acción
+    del beneficiado para exigir su cumplimiento). Se revisaron los
+    arts. 1089-1098 completos sin encontrar el artículo correcto.
+    **Se dejó la cita tal cual, sin reemplazo inventado**: queda
+    pendiente (ver "Pendientes sueltos" abajo), igual que la
+    inconsistencia de G.4 en el tramo 4.5.
+  - Nota adicional: Boetsch transcribe mal el art. 1485 ("verificarse"
+    en vez de "efectuarse" del texto vigente). La caja `.ley` agregada
+    usa el texto correcto del Código, no el de Boetsch.
+- Cambios aprobados por Laura ("Todo ok, apruebo todo", sin
+  modificaciones al informe):
+  - VI.1 (Concepto): agregada la razón concreta de por qué la
+    solidaridad y la representación son modalidades.
+  - VI.2 (Características): reformateado de prosa corrida a
+    enumeración `a)/b)/c)` (`formato.md` lo exige para explicaciones de
+    dos líneas o más; no era una mejora opcional).
+  - VI.3 (Actos que admiten modalidades): agregada la razón de la
+    regla general patrimonial ("puede hacerse todo lo que la ley no
+    prohíbe") y el glosado de "actual" e "indisolublemente" del art.
+    102.
+  - VI.4 (Lugar en el Código): agregado el detalle de títulos y
+    párrafos exactos, en párrafo propio (antes estaba fusionado con
+    VI.3 en un solo párrafo).
+  - A.2 (Clasificaciones): agregada la frase introductoria con los
+    cuatro criterios, que faltaba.
+  - A.2.3 (Suspensiva/resolutoria): agregada la reformulación
+    doctrinal ("en otras palabras...").
+  - A.2.4: agregada caja `.ley` con el art. 1477 completo, después del
+    recuadro `.dato-grado` existente (no se tocó ese recuadro, ver
+    pendientes).
+  - A.3.1(i): agregadas cajas `.ley` con los arts. 1485 y 1492
+    completos.
+  - A.3.2(ii): completada la frase de la retroactividad ("las cosas
+    vuelven al estado en que se hallaban...") y agregada caja `.ley`
+    con el art. 1487 completo.
+  - B.2 (Semejanzas y diferencias): reformateado a lista `(i)/(ii)/(iii)`
+    para las semejanzas y **tabla comparativa nueva** (4 criterios)
+    para las diferencias plazo/condición, siguiendo la regla de
+    `formato.md` 4.1 para paralelos con 3 o más criterios.
+  - B.3.2 (determinado/indeterminado): agregada la precisión de
+    "dos cosas que se saben de antemano".
+  - B.4.2 (efectos del plazo extintivo): agregado el ejemplo del
+    arrendamiento que faltaba.
+  - C.1 (Concepto del modo): agregado "al menos en general" al
+    aforismo, y caja `.ley` con el art. 1089 completo.
+  - C.3 (Cumplimiento del modo): agregada caja `.ley` con el art. 1090
+    completo.
+- Verificación mecánica hecha: balance de etiquetas OK (incluidas las
+  de `table`/`tr`/`th`/`td`, nuevas en este tramo), cero guiones largos
+  y guillemets, ningún párrafo sobre 1.200 caracteres, diff línea por
+  línea (10 líneas eliminadas, las 10 correspondientes a los párrafos
+  reemplazados, nada ajeno), capturas de Chrome headless revisadas
+  bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3` (la
+  tabla y la reformulación de B.2 quedan dentro del mismo punto "2.").
+- **Dos decisiones quedaron explícitamente abiertas, sin tocar en este
+  tramo** (Laura las dejó para una pasada aparte):
+  - El recuadro `.dato-grado` de A.2.4 (clase retirada de `formato.md`,
+    pendiente de revisión general junto con el bug de las tablas de
+    Responsabilidad y Bienes).
+  - Los ejemplos de VI que reutilizan casi textual los nombres y
+    hechos de Boetsch (Manuel, María, Juan Antonio, Pedro, Primus, la
+    estrella con la mano), sin "achilenizar" como pide la regla desde
+    el tramo 3. Implicaría reescribir 6-7 ejemplos, más que los huecos
+    reales de este tramo.
 
 ### Qué se hizo en el tramo 4.7 (La representación, V.6-V.10)
 
@@ -397,43 +495,18 @@ sección 0.
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **Tramo 4.1 (La lesión) mergeado a `main`.**
-2. **Tramo 4.2 (La simulación) aprobado por Laura** (2026-09-30); falta
-   solo que mergee la rama `worktree-acto-juridico-tramo4-2-simulacion`
-   con GitHub Desktop.
-3. **Sub-tramo 4.3 (La inoponibilidad) reescrito y aprobado por Laura**
-   ("dale con todo", 2026-09-30); falta la revisión visual final y que
-   mergee la rama `worktree-acto-juridico-tramo4-3-inoponibilidad` con
-   GitHub Desktop (incluye también los cambios de 4.2, ver nota en la
-   sección 0 del informe de 4.3 sobre la base de la rama).
-4. **Sub-tramo 4.4 (El fraude a la ley) reescrito y aprobado por Laura**
-   ("dale con todo", 2026-09-30); falta la revisión visual final y que
-   mergee la rama `worktree-acto-juridico-tramo4-4-fraude` con GitHub
-   Desktop (incluye también los cambios de 4.2 y 4.3, ver nota en la
-   sección 0 del informe de 4.4 sobre la base de la rama).
-5. **Sub-tramo 4.5 (Otras causales) reescrito y aprobado por Laura**
-   ("dale con todo", 2026-09-30); falta la revisión visual final y que
-   mergee la rama `worktree-acto-juridico-tramo4-5-otras-causales` con
-   GitHub Desktop (incluye también los cambios de 4.2, 4.3 y 4.4, ver
-   nota en la sección 0 del informe de 4.5 sobre la base de la rama).
-6. **Sub-tramo 4.6 (La representación, V.1-V.5) reescrito y aprobado
-   por Laura** ("dale con todo", 2026-09-30); falta la revisión visual
-   final y que mergee la misma rama
-   `worktree-acto-juridico-tramo4-5-otras-causales` (incluye también
-   los cambios de 4.2, 4.3, 4.4 y 4.5). Queda un `[VERIFICAR: rol]` en
-   la caja de jurisprudencia de V.4.4, a la espera de que Laura lo
-   encuentre o decida dejarla sin rol.
-7. **Sub-tramo 4.7 (La representación, V.6-V.10) reescrito y aprobado
-   por Laura** ("dale con todo", 2026-09-30); falta la revisión visual
-   final y que mergee la misma rama (incluye también 4.2 a 4.6). Con
-   este tramo **se cierra el capítulo V completo**.
-8. **Sub-tramo 4.8: VI + VI.A La condición** (pp. 209-215), y así
-   sucesivamente por la tabla de arriba, un sub-tramo a la vez con su
-   propio informe y aprobación.
-9. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+**Tramos 4.1 a 4.7 mergeados a `main`** (Laura revisó y mergeó con
+GitHub Desktop; confirmado en `origin/main`). Eso cierra por completo
+la Ineficacia del acto jurídico (IV) y La representación (V).
+**Tramo 4.8-4.9 (VI. Modalidades) escrito y aprobado por Laura en esta
+rama**, falta el push y que Laura lo mergee con GitHub Desktop.
+
+1. **Push del tramo 4.8-4.9** y merge de Laura con GitHub Desktop. Con
+   eso se cierra **todo el tramo 4** (capítulos IV, V y VI completos).
+2. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-10. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+3. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
@@ -559,6 +632,23 @@ más afectan el trabajo por tramos:
   cita un fallo de la Corte Suprema del 9 de enero de 2017 sobre la
   teoría de la representación modalidad; ni Boetsch lo cita con rol ni
   la búsqueda web lo encontró. Laura lo busca o decide dejarlo sin rol.
+- **Cita del art. 1094 en VI.C.3** (tramo 4.8-4.9, "Cumplimiento del
+  modo"): Boetsch cita el art. 1094 para la acción del beneficiado con
+  el modo para exigir su cumplimiento, pero el texto vigente de ese
+  artículo es otra cosa (el juez fijando plazo o forma del modo). Se
+  revisaron los arts. 1089-1098 completos sin encontrar el artículo
+  correcto; se dejó la cita tal cual, sin resolver. Si Laura conoce el
+  artículo correcto, se corrige.
+- **Ejemplos de VI sin achilenizar** (tramo 4.8-4.9): a diferencia de
+  otros tramos, VI reutiliza casi textual los nombres y hechos de
+  Boetsch (Manuel, María, Juan Antonio, Pedro, Primus, la estrella con
+  la mano), sin reemplazarlos por ejemplos propios como pide la regla
+  desde el tramo 3. Laura decidió dejarlo para una pasada aparte, no
+  para este tramo.
+- **Recuadro `.dato-grado` de VI.A.2.4** (tramo 4.8-4.9): mismo caso que
+  el bug de las tablas, clase retirada pendiente de revisión general
+  (no se convirtió a `.callout` "No confundir" en este tramo, a pedido
+  de Laura).
 - **Conexiones con `[FALTA: sección]` y `p. __`** hacia apuntes que no
   existen todavía (Familia, Compraventa, Sociedades, Procesal,
   Sucesorio, Obligaciones, Contratos). Se completan cuando existan y
