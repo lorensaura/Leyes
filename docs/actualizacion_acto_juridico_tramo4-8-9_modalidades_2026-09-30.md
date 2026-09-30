@@ -361,3 +361,48 @@ Con la aprobación se reescribe VI con `Edit`, se verifica (balance de
 etiquetas, cero guiones largos, ningún párrafo sobre 1.200 caracteres,
 frases clave del inventario presentes, diff línea por línea de lo
 eliminado), y se muestran capturas de Chrome headless.
+
+## 6. Decisiones de Laura y segunda pasada
+
+Laura aprobó todo el informe sin cambios ("Todo ok, apruebo todo"). Se
+aplicaron los 12 cambios de contenido/formato (3.1 a 3.12) y la
+corrección de cita del art. 1463 → 1473 (sección 4.1). Para los tres
+puntos que no tenían una recomendación única, se aplicó el criterio por
+defecto que el propio informe ya proponía:
+
+- **Art. 1094** (sección 4.2): se mantuvo la cita tal cual, fiel a
+  Boetsch, sin reemplazo inventado. Queda como pendiente sin resolver
+  (ver `docs/manuales/estado_acto-juridico.md`), igual que la
+  inconsistencia de G.4 en el tramo 4.5.
+- **B.2, tabla vs. lista** (3.8): se aplicó la tabla comparativa
+  (era la propuesta principal del informe).
+- **Recuadro `.dato-grado` de A.2.4**: no se tocó, para dejarlo junto
+  con el mismo bug de las tablas de Responsabilidad y Bienes, en una
+  pasada aparte.
+- **Ejemplos sin achilenizar**: no se reescribieron en este tramo. Se
+  deja pendiente en `estado_acto-juridico.md` como decisión abierta
+  sobre si conviene una pasada dedicada a esto (afectaría a bastante
+  más contenido que el de este tramo).
+
+**Verificación mecánica sobre VI ya reescrito:** balance de etiquetas
+OK (incluidas las de `table`/`tr`/`th`/`td`, nuevas en este tramo),
+cero guiones largos y guillemets, ningún párrafo sobre 1.200
+caracteres, `git diff` línea por línea de lo eliminado (10 líneas,
+las 10 correspondientes a los párrafos reemplazados de 3.1-3.12, nada
+ajeno), capturas de Chrome headless revisadas bloque por bloque.
+
+**Tabla de recuadros y elementos nuevos creados por el modelo:**
+
+| Elemento | Ubicación | Contenido |
+|---|---|---|
+| Caja `.ley` | A.2.4, después del recuadro `.dato-grado` | Art. 1477 completo |
+| Caja `.ley` | A.3.1(i) | Art. 1485 completo (texto del Código, no el de Boetsch: corrige "verificarse" → "efectuarse") |
+| Caja `.ley` | A.3.1(i) | Art. 1492 completo |
+| Caja `.ley` | A.3.2(ii) | Art. 1487 completo |
+| Caja `.ley` | C.1 | Art. 1089 completo |
+| Caja `.ley` | C.3 | Art. 1090 completo |
+| Tabla (`<table>`) | B.2 | Cuadro comparativo plazo/condición, 4 criterios |
+
+Con esto se cierra el tramo 4.8-4.9 y **todo el tramo 4** (capítulos
+IV, V y VI). Commit y push hechos; `docs/manuales/estado_acto-juridico.md`
+actualizado con el resultado.
