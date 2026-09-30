@@ -139,9 +139,7 @@ con GitHub Desktop. Con eso se cierra **todo el tramo 4**
     cuatro criterios, que faltaba.
   - A.2.3 (Suspensiva/resolutoria): agregada la reformulación
     doctrinal ("en otras palabras...").
-  - A.2.4: agregada caja `.ley` con el art. 1477 completo, después del
-    recuadro `.dato-grado` existente (no se tocó ese recuadro, ver
-    pendientes).
+  - A.2.4: agregada caja `.ley` con el art. 1477 completo.
   - A.3.1(i): agregadas cajas `.ley` con los arts. 1485 y 1492
     completos.
   - A.3.2(ii): completada la frase de la retroactividad ("las cosas
@@ -159,24 +157,37 @@ con GitHub Desktop. Con eso se cierra **todo el tramo 4**
     aforismo, y caja `.ley` con el art. 1089 completo.
   - C.3 (Cumplimiento del modo): agregada caja `.ley` con el art. 1090
     completo.
-- Verificación mecánica hecha: balance de etiquetas OK (incluidas las
-  de `table`/`tr`/`th`/`td`, nuevas en este tramo), cero guiones largos
-  y guillemets, ningún párrafo sobre 1.200 caracteres, diff línea por
-  línea (10 líneas eliminadas, las 10 correspondientes a los párrafos
-  reemplazados, nada ajeno), capturas de Chrome headless revisadas
-  bloque por bloque.
+- **Segunda pasada, a pedido de Laura** (después de revisar el informe
+  y la vista previa), sobre los dos puntos que habían quedado abiertos:
+  - **Recuadro `.dato-grado` de A.2.4**: bajado a texto corrido (mismo
+    criterio que el tramo 4.1), con un ejemplo propio nuevo (Bastián y
+    la Fernanda) que contrasta la condición suspensiva puramente
+    potestativa del deudor, nula, con la resolutoria puramente
+    potestativa, válida.
+  - **Art. 1094 en C.3**: Laura dio el texto vigente del artículo
+    (coincide con el verificado contra el Código: el juez fija el
+    tiempo o la forma del modo cuando el testador no lo determinó
+    suficientemente, resguardando al asignatario modal un mínimo de un
+    quinto del valor de la cosa). Como ese texto no respalda la frase
+    sobre el derecho a exigir judicialmente el cumplimiento (que Boetsch
+    le atribuía sin fundamento), se quitó esa cita y se agregó, como
+    contenido nuevo, un párrafo sobre la regla real del art. 1094, con
+    ejemplo propio (Camila y la casa) y caja `.ley`.
+- Verificación mecánica hecha (dos veces, antes y después de la segunda
+  pasada): balance de etiquetas OK (incluidas las de
+  `table`/`tr`/`th`/`td`, nuevas en este tramo; el recuadro `.dato-grado`
+  eliminado llevó el conteo de `div` a 0), cero guiones largos y
+  guillemets, ningún párrafo sobre 1.200 caracteres, diff línea por
+  línea revisado en ambas pasadas, capturas de Chrome headless
+  revisadas bloque por bloque.
 - No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3` (la
   tabla y la reformulación de B.2 quedan dentro del mismo punto "2.").
-- **Dos decisiones quedaron explícitamente abiertas, sin tocar en este
-  tramo** (Laura las dejó para una pasada aparte):
-  - El recuadro `.dato-grado` de A.2.4 (clase retirada de `formato.md`,
-    pendiente de revisión general junto con el bug de las tablas de
-    Responsabilidad y Bienes).
-  - Los ejemplos de VI que reutilizan casi textual los nombres y
-    hechos de Boetsch (Manuel, María, Juan Antonio, Pedro, Primus, la
-    estrella con la mano), sin "achilenizar" como pide la regla desde
-    el tramo 3. Implicaría reescribir 6-7 ejemplos, más que los huecos
-    reales de este tramo.
+- **Queda solo una decisión abierta**, que Laura dejó explícitamente
+  para una pasada aparte: los ejemplos de VI que reutilizan casi
+  textual los nombres y hechos de Boetsch (María, Juan Antonio, Pedro,
+  Primus, la estrella con la mano), sin "achilenizar" como pide la
+  regla desde el tramo 3. Implicaría reescribir varios ejemplos más,
+  más allá de los dos que ya se redactaron en esta segunda pasada.
 
 ### Qué se hizo en el tramo 4.7 (La representación, V.6-V.10)
 
@@ -632,23 +643,12 @@ más afectan el trabajo por tramos:
   cita un fallo de la Corte Suprema del 9 de enero de 2017 sobre la
   teoría de la representación modalidad; ni Boetsch lo cita con rol ni
   la búsqueda web lo encontró. Laura lo busca o decide dejarlo sin rol.
-- **Cita del art. 1094 en VI.C.3** (tramo 4.8-4.9, "Cumplimiento del
-  modo"): Boetsch cita el art. 1094 para la acción del beneficiado con
-  el modo para exigir su cumplimiento, pero el texto vigente de ese
-  artículo es otra cosa (el juez fijando plazo o forma del modo). Se
-  revisaron los arts. 1089-1098 completos sin encontrar el artículo
-  correcto; se dejó la cita tal cual, sin resolver. Si Laura conoce el
-  artículo correcto, se corrige.
 - **Ejemplos de VI sin achilenizar** (tramo 4.8-4.9): a diferencia de
   otros tramos, VI reutiliza casi textual los nombres y hechos de
   Boetsch (Manuel, María, Juan Antonio, Pedro, Primus, la estrella con
   la mano), sin reemplazarlos por ejemplos propios como pide la regla
   desde el tramo 3. Laura decidió dejarlo para una pasada aparte, no
   para este tramo.
-- **Recuadro `.dato-grado` de VI.A.2.4** (tramo 4.8-4.9): mismo caso que
-  el bug de las tablas, clase retirada pendiente de revisión general
-  (no se convirtió a `.callout` "No confundir" en este tramo, a pedido
-  de Laura).
 - **Conexiones con `[FALTA: sección]` y `p. __`** hacia apuntes que no
   existen todavía (Familia, Compraventa, Sociedades, Procesal,
   Sucesorio, Obligaciones, Contratos). Se completan cuando existan y
