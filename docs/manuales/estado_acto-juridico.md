@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.2).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.3).
 
 ## Dónde estamos
 
@@ -72,13 +72,72 @@ sección 0.
 |---|---|---|---|---|
 | **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | **Mergeado a `main`** |
 | **4.2** | IV.D La simulación | 160-170 | `docs/actualizacion_acto_juridico_tramo4-2_simulacion_2026-09-30.md` | Reescrito, verificado y **aprobado por Laura**; rama `worktree-acto-juridico-tramo4-2-simulacion` pusheada, **falta que lo mergee con GitHub Desktop** |
-| 4.3 | IV.E La inoponibilidad | 170-177 | — | Pendiente |
+| **4.3** | IV.E La inoponibilidad | 170-177 | `docs/actualizacion_acto_juridico_tramo4-3_inoponibilidad_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-3-inoponibilidad` (parte de 4.2, que todavía no está en `main`), **esperando revisión visual de Laura antes de mergear** |
 | 4.4 | IV.F El fraude a la ley | 177-186 | — | Pendiente |
 | 4.5 | IV.G Otras causales (G.1-G.9) | 186-189 | — | Pendiente. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
 | 4.6 | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | — | Pendiente |
 | 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
 | 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
 | 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.3 (La inoponibilidad)
+
+- Esta rama se creó primero desde `origin/main` y se corrigió con
+  `git merge --ff-only worktree-acto-juridico-tramo4-2-simulacion`
+  antes de escribir el informe, porque IV.D (justo antes de IV.E) se
+  reescribió por completo en el tramo 4.2, que todavía no está en
+  `main`. Trabajar sobre la versión vieja de IV.D habría generado
+  conflictos. Laura puede mergear 4.2 o 4.3 primero; si mergea 4.2
+  primero, 4.3 se aplica limpio encima.
+- Inventario completo de IV.E contra Boetsch `principal_14` (pp.
+  170-177) y el apartado "g) La inoponibilidad" del anexo Bozzo e
+  Ibarra (pp. 17-19 del PDF del anexo): el anexo sí aportó contenido de
+  fondo (distinción de DUCCI, atribuciones de VODANOVIC y LÓPEZ SANTA
+  MARÍA, un cuarto criterio de diferencia con la nulidad).
+- Los 24 artículos del Código Civil citados se verificaron íntegros
+  contra el Código Civil: los 24 coinciden. Sin jurisprudencia con rol
+  en este tramo (Boetsch no cita ningún fallo en "La inoponibilidad").
+- Cambios aprobados por Laura ("dale con todo"):
+  - Corrección de un error de contenido en el Concepto: el manual decía
+    que el tercero puede oponerse a efectos "favorables o
+    desfavorables"; Boetsch dice "efectos que los perjudican". Se
+    volvió a la fuente.
+  - Concepto enriquecido con DUCCI (distinción entre efectos y realidad
+    jurídica del acto), VODANOVIC (terceros interesados) y LÓPEZ SANTA
+    MARÍA (excepciones de terceros absolutos).
+  - El caso de las contraescrituras (art. 1707), que estaba comprimido
+    en un solo párrafo de 1.446 caracteres con un paréntesis mal
+    cerrado, se separó en una lista `enum-a` de seis casos (a-f), y se
+    restauró una frase de Boetsch que faltaba ("entre las partes la
+    contraescritura es perfectamente válida").
+  - Dos cajas `.ley` nuevas: art. 1707 (primera vez que se transcribe
+    completo en el manual, pese a citarse seis veces en IV.D) y art.
+    246.
+  - Un ejemplo propio nuevo (Bernarda, Nicolás y Tomás, cesión de
+    crédito, arts. 1902 y 1905): no reemplaza ningún ejemplo de la
+    fuente, Boetsch no trae ninguno para ese caso.
+  - Precisión mercantil agregada al final de "falta de fecha cierta"
+    (C. de Comercio, art. 127).
+  - Precisión menor en la cita del art. 2058 (la nulidad recae en el
+    contrato de sociedad, no perjudica las acciones de terceros contra
+    cada socio, cuando la sociedad existió de hecho).
+  - La sección "Diferencias entre la nulidad y la inoponibilidad" pasó
+    de prosa a un cuadro comparativo de 4 criterios (el anexo agrega la
+    declaración de oficio, que Boetsch no trae).
+  - Dos cajas de Conexiones nuevas (Obligaciones, por la cesión de
+    créditos; Sucesorio, por la acción de reforma de testamento),
+    ambas con `[FALTA: sección]` porque esos apuntes no existen
+    todavía.
+  - Se dejó señalada (sin resolver) una inconsistencia propia de
+    Boetsch: su párrafo introductorio de "inoponibilidades de fondo"
+    no coincide con sus propias subsecciones. El manual no la
+    arrastraba porque no reproduce esa enumeración.
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos, ningún párrafo sobre 1.200 caracteres (el de 1.446
+  caracteres que había se corrigió), capturas de Chrome headless
+  revisadas bloque por bloque, diff línea por línea de lo eliminado
+  revisado (coincide con lo propuesto en el informe).
+- Razón de caracteres del tramo: pasó de 43,7% a 63,4%.
 
 ### Qué se hizo en el tramo 4.2 (La simulación)
 
@@ -146,13 +205,18 @@ sección 0.
 2. **Tramo 4.2 (La simulación) aprobado por Laura** (2026-09-30); falta
    solo que mergee la rama `worktree-acto-juridico-tramo4-2-simulacion`
    con GitHub Desktop.
-3. **Sub-tramo 4.3: La inoponibilidad** (pp. 170-177), y así
+3. **Sub-tramo 4.3 (La inoponibilidad) reescrito y aprobado por Laura**
+   ("dale con todo", 2026-09-30); falta la revisión visual final y que
+   mergee la rama `worktree-acto-juridico-tramo4-3-inoponibilidad` con
+   GitHub Desktop (incluye también los cambios de 4.2, ver nota en la
+   sección 0 del informe de 4.3 sobre la base de la rama).
+4. **Sub-tramo 4.4: El fraude a la ley** (pp. 177-186), y así
    sucesivamente por la tabla de arriba, un sub-tramo a la vez con su
    propio informe y aprobación.
-4. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+5. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+6. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
