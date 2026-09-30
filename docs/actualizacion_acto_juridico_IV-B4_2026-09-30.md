@@ -286,3 +286,81 @@ está entre los documentos del proyecto).
    sobre indemnización, sin desarrollo en la fuente): ¿se agrega la
    mención aunque no se explique cada una, o se deja fuera por no
    aportar mucho sin desarrollo?
+
+---
+
+## 5. Decisiones de Laura (2026-09-30)
+
+1. Todos los cambios de la sección 3, aprobados ("dale con todo").
+2. Los tres recuadros candidatos de B.4.5 (`.definicion`, cuadro
+   comparativo y "No olvidar") se incluyen los tres: no cuentan contra
+   el máximo de dos recuadros pedagógicos por punto (`guia-editorial.md`
+   4.11), porque ninguno de los tres está en esa lista.
+3. La `.definicion` de acción reivindicatoria va en B.4.4 ("La acción
+   reivindicatoria", donde tiene su propio subpunto); se elimina la
+   explicación equivalente que estaba en B.4.3, que ahora solo remite a
+   B.4.4.
+4. Se agrega Y11 (conservación del negocio jurídico frente a conversión,
+   cuando las partes solo se equivocan en el nombre del contrato).
+5. Se agrega la mención genérica a los arts. 1353 y 1813.
+
+## 6. Segunda pasada
+
+1. **Cobertura:** todas las unidades pendientes de la sección 1 y todo
+   lo agregado de la sección 2 (Y01 a Y09 y Y11) quedaron en el texto.
+   Razón de caracteres: **52,6%** (antes, 37,5%); sigue por debajo del
+   116% de coincidencia total, porque en los puntos 1 a 4 se mantuvo la
+   redacción condensada ya aprobada en su momento, salvo donde el
+   inventario marcaba algo pendiente. Todo el contenido previo se
+   conserva: el diff solo elimina las oraciones que quedaron reescritas
+   o trasladadas (verificado, sección de cambios).
+2. **Redacción:** agregado el marco teórico de "contacto social y
+   deberes de lealtad" y la cita textual de RODRÍGUEZ antes de nombrar
+   las tres posturas sobre la naturaleza de la responsabilidad; la
+   conversión pasó de "un concepto y dos ejemplos" a tener definición,
+   clasificación en tres clases, dos requisitos y ejemplos legales
+   adicionales, con la misma estructura de las demás instituciones del
+   manual.
+3. **Formato:** bloques `.definicion` nuevos: 3 (Eduardo Court sobre
+   conversión, acción reivindicatoria, y se retira la reexplicación
+   duplicada de B.4.3). Bloques `.ley` nuevos: 1 (art. 1687 completo).
+   Primer cuadro comparativo del manual (las tres clases de conversión),
+   con la frase de introducción terminada en dos puntos y sin perder
+   contenido del inventario. Ningún párrafo supera los 1.200 caracteres
+   (se partieron dos que superaban el límite tras agregar contenido).
+   Balance de etiquetas verificado (p, div, span, table, tr, th, td, h2):
+   correcto. Cero guiones largos y guillemets.
+4. **Recuadros por punto:** B.4.2: Ejemplo. B.4.3: Ejemplo. B.4.4: sin
+   recuadros pedagógicos grandes (solo `.definicion`, que no cuenta).
+   B.4.5: Definición, Cuadro comparativo, No olvidar y Jurisprudencia
+   (ninguno de los cuatro cuenta contra el máximo de dos). Ningún punto
+   pasa de dos recuadros pedagógicos grandes.
+5. **Pendientes `[FALTA: ...]`:** ninguno nuevo en este tramo (no se
+   agregaron conexiones hacia otras materias).
+6. **Artículos**, verificados contra el Código: 1687 completo; 1567 N°
+   8, 907, 1468, 1688, 682, 683, 717, 1895, 1893, 974, 889, 2517, 2524,
+   2520, 1455, 1814, 1458, 1685, 2314, 1701, 1444, 1545, 1554, 747,
+   2044, 1062, 1133, 1137, 1138, 1141, 1142, 1203, 1404, 1433 y 2480 en
+   fragmentos, cita textual o paráfrasis fiel. El art. 102 del Código de
+   Comercio se cita como en la fuente, sin verificar (esa fuente no está
+   entre los documentos del proyecto).
+7. **Conexiones con página pendiente (`p. __`):** ninguna nueva.
+8. **Preguntas clásicas:** ninguna (sin banco; ni Boetsch ni los anexos
+   marcan una en este tramo).
+9. **Cuadros comparativos:** 1 nuevo (las tres clases de conversión). El
+   de las filas de efectos del cuadro comparativo de ineficacia no se
+   usó, porque solo confirma que ambas nulidades no difieren en sus
+   efectos (ya dicho en el punto 1), sin aportar un paralelo nuevo.
+10. **Anexos muy grandes:** ninguno.
+
+**Recuadros creados por el modelo, para la revisión final del manual:**
+
+| Dónde | Recuadro |
+|---|---|
+| B.4.2 | `.ley`: art. 1687 completo |
+| B.4.2 | Ejemplo: "Las cuentas entre Felipe y la Coty" |
+| B.4.3 | Ejemplo: "Por qué la señora Pilar se salva de la reivindicación" (antes, con letras A/B/C) |
+| B.4.4 | `.definicion`: acción reivindicatoria (art. 889), trasladada desde B.4.3 |
+| B.4.5 | `.definicion`: conversión, según Eduardo Court |
+| B.4.5 | Cuadro comparativo: las tres clases de conversión (formal, material, legal) |
+| B.4.5 | No olvidar: los dos requisitos de la conversión material |
