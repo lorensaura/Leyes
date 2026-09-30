@@ -16,9 +16,12 @@ Laura en cada uno**.
 |---|---|---|---|---|
 | 1 (piloto) | Introducción cap. IV + IV.A La inexistencia | `docs/actualizacion_acto_juridico_IV-A_2026-09-29.md` | `caecee9` (+ `3ba6f9d`) | En `main` |
 | 2 | IV.B.1 Aspectos generales, B.2 Nulidad absoluta, B.3 Nulidad relativa | `docs/actualizacion_acto_juridico_IV-B1-B3_2026-09-29.md` | `44c82b5` | En `main` |
-| 3 | IV.B.4 Los efectos de la nulidad | `docs/actualizacion_acto_juridico_IV-B4_2026-09-30.md` | rama `worktree-actualizar-acto-juridico-tramo-3`, commit `481af70` | **Pusheada a origin, falta que Laura la mergee con GitHub Desktop** |
+| 3 | IV.B.4 Los efectos de la nulidad | `docs/actualizacion_acto_juridico_IV-B4_2026-09-30.md` | commit `481af70` | **Mergeada a `main`** |
 
-`main` sigue en `44c82b5` hasta que se mergee el tramo 3.
+`main` ya incluye el tramo 3 (`481af70`) y los dos commits de
+documentación posteriores (`07b7956`, `31247f4`). Este worktree
+(`worktree-actualizar-acto-juridico-tramo-3`) está al día con `main`:
+no hay nada pendiente de mergear.
 
 ### Qué se hizo en el tramo 3 (para no repetirlo si se retoma a medio camino)
 
@@ -58,17 +61,15 @@ Laura en cada uno**.
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **Falta que Laura mergee el tramo 3** (rama
-   `worktree-actualizar-acto-juridico-tramo-3`) con GitHub Desktop.
-2. **Tramo 4: IV.C a IV.G** (Lesión, Simulación, Inoponibilidad, Fraude a
+1. **Tramo 4: IV.C a IV.G** (Lesión, Simulación, Inoponibilidad, Fraude a
    la ley, Otras causales, Representación, Modalidades), un tramo por
    vez. Fuentes: `Acto Jurídico_principal_12` a `_17`. Definir junto con
    Laura si se hace de un tramo o se separa en varios (regla de oro 1 de
    `proceso.md`: no tramos demasiado largos).
-3. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+2. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-4. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+3. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
