@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.6).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.7).
 
 ## Dónde estamos
 
@@ -76,9 +76,54 @@ sección 0.
 | **4.4** | IV.F El fraude a la ley | 177-186 | `docs/actualizacion_acto_juridico_tramo4-4_fraude_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-4-fraude` (parte de 4.2 y 4.3, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
 | **4.5** | IV.G Otras causales (G.1-G.9) | 186-189 | `docs/actualizacion_acto_juridico_tramo4-5_otras-causales_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3 y 4.4, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear**. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
 | **4.6** | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | `docs/actualizacion_acto_juridico_tramo4-6_representacion_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2, 4.3, 4.4 y 4.5, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
-| 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
+| **4.7** | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | `docs/actualizacion_acto_juridico_tramo4-7_representacion2_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-5-otras-causales` (parte de 4.2 a 4.6, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear**. Cierra el capítulo V completo |
 | 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
 | 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.7 (La representación, V.6-V.10)
+
+- Cierra el capítulo V completo: era el último sub-tramo de "La
+  representación". Igual que V.1-V.5, **V.6-V.10 tampoco venía de una
+  reescritura de esta sesión**: ya estaba en el formato nuevo, primera
+  vez que se audita unidad por unidad contra Boetsch.
+- Inventario completo contra Boetsch `principal_16` (pp. 200-208, el
+  final del PDF fragmentado y de todo el capítulo V; el capítulo VI
+  arranca en otro PDF, `principal_17`, fuente del sub-tramo 4.8). Anexo
+  secundario sin contenido de fondo, mismo resultado que en 4.6.
+- Este fue el tramo con **menos huecos** de los tres de representación:
+  la mayoría de las unidades ya estaban completas. La única falta real
+  y completa era el párrafo introductorio de V.10 (principio de la
+  relatividad de los contratos), que directamente no existía: el
+  manual saltaba del título al primer subpunto.
+- Los 10 artículos nuevos citados (1581, 2290, 2160, 2173, 2131, 2122,
+  2154, 1449, 1450, 1694) se verificaron íntegros contra el Código
+  Civil: los 10 coinciden.
+- Cambios aprobados por Laura ("dale con todo"):
+  - V.6.1: agregada la explicación de por qué importa la capacidad del
+    representado en la convencional (nulidad del mandato si el
+    mandante es incapaz).
+  - V.6.3: agregada la razón de por qué la agencia oficiosa es un caso
+    de representación legal.
+  - V.8(ii): dividido en dos párrafos (mandante / terceros, siguiendo
+    la propia estructura a)/b) de Boetsch) y completado el de terceros
+    con la distinción entre el mandatario que informó sus poderes
+    limitados y el que no, más la conexión con la promesa de hecho
+    ajeno (art. 1450, que se trata en V.10.2 del mismo tramo).
+  - V.9: dividido el primer párrafo en dos y agregados cuatro matices
+    (capacidad sobrevenida del representado incapaz, segundo ejemplo
+    de ratificación tácita, por qué puede ratificarse en cualquier
+    momento, fundamento doctrinal de la irrevocabilidad).
+  - V.10: agregado el párrafo introductorio completo que faltaba.
+  - V.10.1 y V.10.2: agregadas cajas `.ley` con los arts. 1449 y 1450
+    completos (Boetsch los cita textuales), sin quitar la paráfrasis ya
+    existente.
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos, ningún párrafo sobre 1.200 caracteres (dos que estaban cerca
+  del límite, en V.8(ii) y V.9, se dividieron al crecer con los
+  agregados), diff línea por línea (5 líneas eliminadas, las 5
+  correspondientes a los párrafos divididos, nada ajeno), capturas de
+  Chrome headless revisadas bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
 
 ### Qué se hizo en el tramo 4.6 (La representación, V.1-V.5)
 
@@ -378,13 +423,17 @@ sección 0.
    los cambios de 4.2, 4.3, 4.4 y 4.5). Queda un `[VERIFICAR: rol]` en
    la caja de jurisprudencia de V.4.4, a la espera de que Laura lo
    encuentre o decida dejarla sin rol.
-7. **Sub-tramo 4.7: La representación (V.6-V.10, requisitos a otras
-   hipótesis)** (pp. 200-208), y así sucesivamente por la tabla de
-   arriba, un sub-tramo a la vez con su propio informe y aprobación.
-8. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+7. **Sub-tramo 4.7 (La representación, V.6-V.10) reescrito y aprobado
+   por Laura** ("dale con todo", 2026-09-30); falta la revisión visual
+   final y que mergee la misma rama (incluye también 4.2 a 4.6). Con
+   este tramo **se cierra el capítulo V completo**.
+8. **Sub-tramo 4.8: VI + VI.A La condición** (pp. 209-215), y así
+   sucesivamente por la tabla de arriba, un sub-tramo a la vez con su
+   propio informe y aprobación.
+9. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-9. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+10. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
