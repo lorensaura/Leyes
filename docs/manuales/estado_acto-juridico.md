@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.3).
+> de seguir. Última actualización: 2026-09-30 (tramo 4.4).
 
 ## Dónde estamos
 
@@ -73,12 +73,57 @@ sección 0.
 | **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | **Mergeado a `main`** |
 | **4.2** | IV.D La simulación | 160-170 | `docs/actualizacion_acto_juridico_tramo4-2_simulacion_2026-09-30.md` | Reescrito, verificado y **aprobado por Laura**; rama `worktree-acto-juridico-tramo4-2-simulacion` pusheada, **falta que lo mergee con GitHub Desktop** |
 | **4.3** | IV.E La inoponibilidad | 170-177 | `docs/actualizacion_acto_juridico_tramo4-3_inoponibilidad_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-3-inoponibilidad` (parte de 4.2, que todavía no está en `main`), **esperando revisión visual de Laura antes de mergear** |
-| 4.4 | IV.F El fraude a la ley | 177-186 | — | Pendiente |
+| **4.4** | IV.F El fraude a la ley | 177-186 | `docs/actualizacion_acto_juridico_tramo4-4_fraude_2026-09-30.md` | Reescrito y verificado; rama `worktree-acto-juridico-tramo4-4-fraude` (parte de 4.2 y 4.3, que todavía no están en `main`), **esperando revisión visual de Laura antes de mergear** |
 | 4.5 | IV.G Otras causales (G.1-G.9) | 186-189 | — | Pendiente. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
 | 4.6 | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | — | Pendiente |
 | 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
 | 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
 | 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.4 (El fraude a la ley)
+
+- Esta rama se creó desde `worktree-acto-juridico-tramo4-3-inoponibilidad`
+  (no desde `origin/main`), para no arrastrar conflictos: trae también
+  los cambios de 4.2 y 4.3, todavía sin mergear. IV.F no fue tocado por
+  esos dos tramos, así que no hay contenido ajeno mezclado, solo evita
+  el conflicto de merge.
+- Inventario completo de IV.F contra Boetsch `principal_15` (pp.
+  177-186) y el apartado "El fraude a la ley" del anexo Bozzo e Ibarra
+  (pp. 25-26 del PDF del anexo).
+- A diferencia de los tramos 4.1-4.3, acá **no faltaba contenido de
+  fondo** de Boetsch: las seis unidades ya estaban completas y bien
+  redactadas. El trabajo fue sobre todo de forma (dos párrafos sobre
+  1.200 caracteres) más el contenido puntual que sí aporta el anexo.
+- Los 15 artículos del Código Civil citados se verificaron íntegros
+  contra el Código Civil: los 15 coinciden. Se encontró (y ya estaba
+  corregido en el manual) un error de tipeo de la propia fuente:
+  Boetsch cita "art. 1573 Nº 3" en la p. 185 cuando el artículo
+  correcto es el 1578 Nº 3 (que él mismo cita bien en la p. 179). Sin
+  jurisprudencia con rol en este tramo.
+- Cambios aprobados por Laura ("dale con todo"):
+  - Dos párrafos divididos por exceder 1.200 caracteres (ordenamiento
+    jurídico nacional, y fraude a la ley vs. abuso del derecho), sin
+    cambiar una palabra del contenido, y completando de paso la lista
+    de artículos de la sección 2 con los arts. 1662 y 1792-24 que
+    Boetsch enumera junto a los demás.
+  - Enriquecido 4.1 (fraude a la ley y simulación) con una cita de
+    VIAL DEL RÍO/FERRARA y tres diferencias de VODANOVIC entre ambas
+    figuras, contenido del anexo que no estaba.
+  - Caja `.definicion` nueva con la cita de ALCALDE en el Concepto (F.1
+    no tenía ninguna).
+  - Ejemplo propio nuevo (el Gastón y la Antonia, separación de bienes
+    en fraude a los acreedores) para el requisito (ii) de F.3: no
+    reemplaza ningún ejemplo de la fuente, Boetsch solo lo menciona en
+    abstracto.
+  - Caja de Conexiones nueva hacia Obligaciones (la acción pauliana,
+    art. 2468), con `[FALTA: sección]` porque ese apunte no existe
+    todavía.
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos, ningún párrafo sobre 1.200 caracteres, capturas de Chrome
+  headless revisadas bloque por bloque, diff línea por línea (solo 3
+  líneas eliminadas, las tres correspondientes a párrafos que se
+  dividieron sin perder contenido).
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
 
 ### Qué se hizo en el tramo 4.3 (La inoponibilidad)
 
@@ -210,13 +255,18 @@ sección 0.
    mergee la rama `worktree-acto-juridico-tramo4-3-inoponibilidad` con
    GitHub Desktop (incluye también los cambios de 4.2, ver nota en la
    sección 0 del informe de 4.3 sobre la base de la rama).
-4. **Sub-tramo 4.4: El fraude a la ley** (pp. 177-186), y así
+4. **Sub-tramo 4.4 (El fraude a la ley) reescrito y aprobado por Laura**
+   ("dale con todo", 2026-09-30); falta la revisión visual final y que
+   mergee la rama `worktree-acto-juridico-tramo4-4-fraude` con GitHub
+   Desktop (incluye también los cambios de 4.2 y 4.3, ver nota en la
+   sección 0 del informe de 4.4 sobre la base de la rama).
+5. **Sub-tramo 4.5: Otras causales** (G.1-G.9, pp. 186-189), y así
    sucesivamente por la tabla de arriba, un sub-tramo a la vez con su
    propio informe y aprobación.
-5. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+6. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-6. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+7. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
