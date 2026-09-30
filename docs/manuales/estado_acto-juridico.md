@@ -4,7 +4,7 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30.
+> de seguir. Última actualización: 2026-09-30 (tramo 4.1).
 
 ## Dónde estamos
 
@@ -59,17 +59,66 @@ no hay nada pendiente de mergear.
   `actualizar-manuales-existentes.md`.
 - Razón de caracteres del tramo: pasó de 37,5% a 52,6%.
 
+## Tramo 4: reparto en 9 sub-tramos (2026-09-30)
+
+Laura pidió separar el tramo 4 en varios y evitar imprecisión. El
+reparto se hizo por página real de Boetsch ("Página N de 221" que
+imprime cada hoja), no por el conteo de cada PDF fragmentado (que se
+solapan una página en cada empalme). Detalle completo del reparto y de
+por qué en `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md`,
+sección 0.
+
+| Sub-tramo | Institución | Páginas Boetsch (de 221) | Informe | Estado |
+|---|---|---|---|---|
+| **4.1** | IV.C La lesión | 151-160 | `docs/actualizacion_acto_juridico_tramo4-1_lesion_2026-09-30.md` | Reescrito y pusheado a rama `worktree-acto-juridico-tramo4-1-lesion` (commit `16a33ac`); vista previa abierta para Laura, **falta que lo mergee con GitHub Desktop** |
+| 4.2 | IV.D La simulación | 160-170 | — | Pendiente |
+| 4.3 | IV.E La inoponibilidad | 170-177 | — | Pendiente |
+| 4.4 | IV.F El fraude a la ley | 177-186 | — | Pendiente |
+| 4.5 | IV.G Otras causales (G.1-G.9) | 186-189 | — | Pendiente. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
+| 4.6 | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | — | Pendiente |
+| 4.7 | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | — | Pendiente |
+| 4.8 | VI + VI.A La condición | 209-215 | — | Pendiente |
+| 4.9 | VI.B El plazo + VI.C El modo | 216-221 | — | Pendiente |
+
+### Qué se hizo en el tramo 4.1 (La lesión)
+
+- Inventario completo de IV.C contra Boetsch `principal_12` (pp.
+  151-160): **no faltaba contenido de fondo**, los cuatro puntos
+  (concepto doctrinal, ¿es vicio del consentimiento?, los ocho casos
+  regulados, sanción) ya estaban completos.
+- Se revisó el anexo secundario Bozzo e Ibarra para Lesión: no aporta
+  nada que Boetsch no traiga.
+- Se verificaron los 23 artículos citados contra el Código Civil: los
+  23 coinciden exactamente.
+- Cambios de forma aplicados (aprobados por Laura):
+  - La caja `.dato-grado` (clase retirada, ver `formato.md` sección 7)
+    con la tesis de DUCCI se bajó a párrafo corrido.
+  - El ejemplo de la hipoteca (caso viii) reproducía el mismo ejemplo
+    de la fuente con las mismas cifras; se reemplazó por uno propio
+    (doña Marta y el Banco Estado, mismo mecanismo del art. 2431).
+  - Los tres criterios sobre la naturaleza de la lesión (subjetivo,
+    objetivo, mixto), que estaban en prosa con negrita suelta, se
+    convirtieron a `enum-i` `(i)/(ii)/(iii)`.
+  - Se agregó una caja `.ley` para el art. 1889 (define la lesión
+    enorme), con la frase clave en negrita.
+- Verificación mecánica hecha: balance de etiquetas OK, cero guiones
+  largos/guillemets, ningún párrafo sobre 1.200 caracteres, todas las
+  frases clave del inventario presentes, diff línea por línea de lo
+  eliminado revisado (coincide exactamente con lo acordado).
+
 ## Qué sigue (orden decidido por Laura)
 
-1. **Tramo 4: IV.C a IV.G** (Lesión, Simulación, Inoponibilidad, Fraude a
-   la ley, Otras causales, Representación, Modalidades), un tramo por
-   vez. Fuentes: `Acto Jurídico_principal_12` a `_17`. Definir junto con
-   Laura si se hace de un tramo o se separa en varios (regla de oro 1 de
-   `proceso.md`: no tramos demasiado largos).
-2. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
+1. **Laura revisa la vista previa del tramo 4.1** (`AJ_vista_previa.html`,
+   fuera del repo, abierta en el ancla `#cIV-C`) y pide ajustes finos si
+   corresponde; luego mergea la rama `worktree-acto-juridico-tramo4-1-lesion`
+   con GitHub Desktop.
+2. **Sub-tramo 4.2: La simulación** (pp. 160-170), y así sucesivamente
+   por la tabla de arriba, un sub-tramo a la vez con su propio informe
+   y aprobación.
+3. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
    método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
    Boetsch para II.D).
-3. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+4. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
