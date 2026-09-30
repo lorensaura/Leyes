@@ -14,10 +14,26 @@ subpuntos, y Clasificaciones con sus trece subpuntos).
 - Fuente: Boetsch `principal_1`, "TEORÍA GENERAL DEL ACTO JURÍDICO"
   (páginas 12 a 30 de 221), 19 páginas, coincide exactamente con la
   extensión del capítulo I en el manual.
-- Ningún anexo (Bozzo e Ibarra, Cuadro comparativo, Causa Domínguez y
-  Boetsch, Memorice) aporta contenido a este capítulo: todos son propios de
-  Ineficacia (IV), Causa (II.D) o listas de artículos/definiciones que no
-  agregan nada nuevo aquí.
+- **Los cuatro anexos se leyeron completos** (no solo por título) para
+  confirmar si aportaban algo a este capítulo:
+  - `Anexo_secundario_AJ_Ineficacia.pdf` (Bozzo e Ibarra): pese a su
+    nombre de archivo, **sus primeras páginas sí tocan la Teoría
+    General**: trae textual la cita de **ROUBIER** sobre qué distingue al
+    acto jurídico del delito y el ejemplo de **STOLFI** del ladrón y el
+    comprador. Es la fuente real de esos dos agregados en el punto I.4 del
+    manual (no son un aporte inventado sin respaldo, como se dijo por
+    error en una versión anterior de este informe). El resto del anexo
+    (82.000 caracteres) es íntegramente sobre Lesión, Objeto, Simulación y
+    Nulidad: materia de los capítulos II y IV, no de este capítulo.
+  - `INEFICACIA JURÍDICA_Cuadro comparativo.pdf`: causales de ineficacia
+    (inexistencia, resolución, retractación, suspensión, etc.), sin nada
+    de Teoría General.
+  - `Causa_ DOMINGUEZ y BOETSCH.pdf`: específico de la causa (II.D).
+  - `Memorice_ART y Definiciones.pdf`: sus dos primeras definiciones
+    ("Hecho jurídico" y "Acto Jurídico (Vial)") coinciden palabra por
+    palabra con lo que ya está en I.3 e I.4; el resto de la lista es de
+    Requisitos, Efectos, Ineficacia y Representación, materia de otros
+    capítulos.
 
 ## 2. Qué se encontró
 
@@ -29,13 +45,14 @@ audita punto por punto contra Boetsch, igual que pasó con V y VI.
 - **Inventario completo, sin huecos**: los 8 puntos y sus 16 subpuntos
   están todos presentes y cubren el contenido íntegro de Boetsch
   `principal_1`.
-- **Contenido propio agregado, no viene de Boetsch**: en el punto 4
+- **Contenido que no viene de Boetsch pero sí de un anexo**: en el punto 4
   (Concepto de acto jurídico), la cita de **ROUBIER** sobre qué distingue
   al acto jurídico del delito, y el ejemplo de **STOLFI** (el ladrón y el
   comprador persiguen el mismo fin práctico, pero solo uno celebra un acto
-  jurídico). Ninguno de los dos está en el PDF de Boetsch. No se tocan: son
-  enriquecimiento válido y ya aprobado en una sesión anterior a esta
-  auditoría.
+  jurídico). Ninguno está en el PDF de Boetsch, pero ambos están
+  transcritos casi textual en `Anexo_secundario_AJ_Ineficacia.pdf` (Bozzo
+  e Ibarra), confirmado al leer el anexo completo (ver sección 1). No se
+  tocan: es contenido con fuente verificada, ya incorporado.
 - **23 artículos citados** (12, 46, 391, 393, 654, 999, 1386, 1437, 1438,
   1439, 1440, 1443, 1444, 1445, 1461, 1467, 1545, 1631 Nº 2, 1682, 1716,
   1802, 1962 Nº 1, 2413) verificados uno por uno contra el Código Civil:
