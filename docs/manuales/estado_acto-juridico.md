@@ -13,7 +13,12 @@
 > Inoponibilidad, F. Fraude a la ley, G. Otras causales, y luego V y
 > VI. Se revisaron y limpiaron todas las ramas remotas: borradas
 > `worktree-acto-juridico-tramo4-5-otras-causales` y
-> `worktree-pdf-header-fix`, sin nada de valor sin recuperar).
+> `worktree-pdf-header-fix`, sin nada de valor sin recuperar. Laura
+> intentó mergear esta rama a `main` y salió un conflicto en este mismo
+> archivo (ambas ramas lo habían actualizado en paralelo, sin pisarse
+> en contenido real); se resolvió trayendo `main` a esta rama
+> (commit de merge `e114d9c`) y verificado que ya no queda ningún
+> conflicto. Falta que Laura reintente el merge con GitHub Desktop).
 
 ## Dónde estamos
 
