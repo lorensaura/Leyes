@@ -18,7 +18,13 @@
 > archivo (ambas ramas lo habían actualizado en paralelo, sin pisarse
 > en contenido real); se resolvió trayendo `main` a esta rama
 > (commit de merge `e114d9c`) y verificado que ya no queda ningún
-> conflicto. Falta que Laura reintente el merge con GitHub Desktop).
+> conflicto. De paso se encontraron 4 archivos que nunca debieron
+> versionarse (`.claude/settings.local.json`, `AJ_vista_previa.html`,
+> `Informe_AJ_4-3.html`, `Informe_AJ_tramo4-2.html`): se sacaron del
+> índice de Git y se agregaron al `.gitignore` (commit `b740f82`),
+> siguen en el disco pero ya no aparecen como cambios. Falta que Laura
+> reintente el merge con GitHub Desktop; confirmado sin conflictos
+> (`git merge-tree` limpio contra `origin/main`).
 
 ## Dónde estamos
 
