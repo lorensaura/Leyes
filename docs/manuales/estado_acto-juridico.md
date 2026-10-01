@@ -4,10 +4,17 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-09-30 (tramo 4.8-4.9, VI.
-> Modalidades completo, escrito y aprobado por Laura; con esto termina
-> **todo el tramo 4**, capítulos IV+V+VI. Falta el push/merge a `main`
-> de este último tramo).
+> de seguir. Última actualización: 2026-10-01 (**todo el tramo 4**,
+> capítulos IV+V+VI, confirmado mergeado a `main`, commit de merge
+> `ca9adc6`. Pendientes de merge por Laura: el commit `b39a974`
+> (auditoría de IV+V, corrección de V.5.3) y el **capítulo I completo**,
+> reescrito en voz propia en `worktree-acto-juridico-cap1`. Se detectó
+> que ningún tramo de este hilo chequeaba **paráfrasis cercana**
+> (`guia-editorial.md` 3); se está corrigiendo capítulo por capítulo.
+> **Ahora en curso: capítulo IV**, en `worktree-acto-juridico-cap4`.
+> Hecho: intro + A. La inexistencia jurídica, corregido y pusheado.
+> Falta: B. Nulidad, C. Lesión, D. Simulación, E. Inoponibilidad,
+> F. Fraude a la ley, G. Otras causales, por partes).
 
 ## Dónde estamos
 
@@ -80,15 +87,7 @@ sección 0.
 | **4.5** | IV.G Otras causales (G.1-G.9) | 186-189 | `docs/actualizacion_acto_juridico_tramo4-5_otras-causales_2026-09-30.md` | **Mergeado a `main`**. G.7-G.9 (Terminación, Renuncia, Muerte) no están en Boetsch: vienen del anexo `INEFICACIA JURÍDICA_Cuadro comparativo.pdf` (Bozzo e Ibarra), ya confirmado |
 | **4.6** | V.1-V.5 La representación (concepto a influencia de circunstancias personales) | 190-199 | `docs/actualizacion_acto_juridico_tramo4-6_representacion_2026-09-30.md` | **Mergeado a `main`**. Queda `[VERIFICAR: rol]` pendiente en la caja de jurisprudencia de V.4.4 |
 | **4.7** | V.6-V.10 La representación (requisitos a otras hipótesis) | 200-208 | `docs/actualizacion_acto_juridico_tramo4-7_representacion2_2026-09-30.md` | **Mergeado a `main`**. Cierra el capítulo V completo |
-| **4.8-4.9** | VI completo (Concepto, A. La condición, B. El plazo, C. El modo) | 209-221 | `docs/actualizacion_acto_juridico_tramo4-8-9_modalidades_2026-09-30.md` | **Escrito y aprobado por Laura, falta el push/merge**. A pedido de Laura, se hizo de una sola vez en vez de dividirlo en 4.8 y 4.9 |
-
-`main` ya incluye los tramos 4.1 a 4.7 completos (confirmado en
-`origin/main`, commit de merge `fcc538b`). VI (Modalidades de los
-actos jurídicos: la condición, el plazo y el modo) ya está escrito en
-esta rama (`worktree-acto-juridico-tramo4-5-otras-causales`) y
-aprobado por Laura; falta el commit final, push y que Laura lo mergee
-con GitHub Desktop. Con eso se cierra **todo el tramo 4**
-(IV+V+VI: Ineficacia, Representación y Modalidades).
+| **4.8-4.9** | VI completo (Concepto, A. La condición, B. El plazo, C. El modo) | 209-221 | `docs/actualizacion_acto_juridico_tramo4-8-9_modalidades_2026-09-30.md` | **Mergeado a `main`** (commit de merge `ca9adc6`). Con esto, el tramo 4 (IV+V+VI) está completo en `main` |
 
 ### Qué se hizo en el tramo 4.8-4.9 (VI. Modalidades, completo)
 
@@ -512,20 +511,126 @@ con GitHub Desktop. Con eso se cierra **todo el tramo 4**
   frases clave del inventario presentes, diff línea por línea de lo
   eliminado revisado (coincide exactamente con lo acordado).
 
+## Corrección de proceso: chequeo de paráfrasis cercana (2026-10-01)
+
+Laura pidió revisar, tramo por tramo, que el manual no tenga
+**paráfrasis cercana** de Boetsch sin atribución (`guia-editorial.md`
+3, `actualizar-manuales-existentes.md` 2c): un chequeo que ya existía
+como regla pero que no se había estado aplicando en ningún tramo de
+este hilo. Criterio aplicado (precisado por Laura, registrado en
+`decisiones.md` 2026-09-30):
+
+- Si el párrafo reproduce la posición de un **autor con nombre** (VIAL,
+  ROUBIER, BOETSCH, CLARO SOLAR, etc.), el arreglo es **atribuirlo con
+  claridad**: cita textual entre comillas en bloque `.definicion`
+  cuando se tiene el texto exacto, o reporte en voz propia pero
+  siempre atribuido cuando solo se cuenta con una traducción o
+  paráfrasis de tercero.
+- Si es prosa de conexión de Boetsch, **sin autor nombrado**, el
+  arreglo es **reestructurar de verdad**: otro orden de cláusulas,
+  no solo cambiar sinónimos.
+
+Se revisa capítulo por capítulo, en el orden en que se escribieron:
+
+| Capítulo / tramo | Rama | Resultado | Estado |
+|---|---|---|---|
+| I. Teoría general (completo) | `worktree-acto-juridico-cap1` | Paráfrasis cercana en casi todo el capítulo (no se había auditado nunca). Reescrito completo en voz propia. | Pusheado, pendiente de merge |
+| IV, intro + A. La inexistencia | `worktree-acto-juridico-cap4` | Tramo piloto, ya trabajado de cerca con Laura: solo 3 pasajes con paráfrasis cercana (el resto ya tenía citas atribuidas y cuadros genuinamente reestructurados). Corregidos los 3. | Pusheado (`5bacbcc`), pendiente de merge |
+| IV.B Nulidad (B.1-B.4) | — | No revisado todavía | Pendiente |
+| IV.C La lesión | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (C.1, Concepto doctrinal), como muestra. Falta revisión completa del punto. | Pendiente |
+| IV.D Simulación | — | No revisado todavía | Pendiente |
+| IV.E Inoponibilidad | — | No revisado todavía | Pendiente |
+| IV.F Fraude a la ley | — | No revisado todavía | Pendiente |
+| IV.G Otras causales | — | No revisado todavía | Pendiente |
+| V. La representación | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (V.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
+| VI. Modalidades | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (VI.A.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
+
+### Qué se hizo en capítulo I (Teoría general del acto jurídico)
+
+- Rama `worktree-acto-juridico-cap1`, desde `origin/main` (ya con todo
+  el tramo 4 incluido).
+- Fuente: Boetsch `principal_1` (páginas 12-30 de 221, 19 páginas).
+  Informe: `docs/actualizacion_acto_juridico_cap1_2026-09-30.md`.
+- Antes del chequeo de paráfrasis: inventario completo contra Boetsch
+  (sin huecos, los 8 puntos y 16 subpuntos cubren la fuente), los
+  cuatro anexos leídos completos (se encontró que
+  `Anexo_secundario_AJ_Ineficacia.pdf`, pese a su nombre, trae en sus
+  primeras páginas la cita de ROUBIER y el ejemplo de STOLFI del punto
+  I.4, que no están en Boetsch: es su fuente real, no un agregado sin
+  respaldo), y los 23 artículos citados verificados sin errores.
+- **Se reescribió el capítulo I completo en voz propia** (los 8 puntos
+  y 16 subpuntos), aplicando el criterio de arriba: la definición de
+  VIAL en el punto 4 pasó a bloque `.definicion`, citada textual; el
+  resto, prosa de Boetsch sin autor, se reestructuró de verdad. Se
+  conservó íntegro el contenido, el vocabulario técnico y los 23
+  artículos (verificado con script). A pedido de Laura, se aprovechó
+  para destensar el tono en varios puntos (preguntas retóricas,
+  ejemplos cotidianos como un contrato de arriendo), sin agregar
+  contenido jurídico nuevo.
+- Verificación mecánica repetida después de la reescritura: balance de
+  etiquetas OK, cero guiones largos/guillemets, ningún párrafo sobre
+  1.200 caracteres, mismos 23 artículos, capturas de Chrome headless
+  revisadas bloque por bloque.
+- No se tocó el índice.
+- Commits `fe6efce` (reescritura del tramo original) y `8c8ad34`
+  (reescritura en voz propia), pusheados a
+  `origin/worktree-acto-juridico-cap1`. Falta que Laura lo revise en
+  vista previa y mergee con GitHub Desktop.
+
+### Qué se hizo en IV, intro + A. La inexistencia jurídica
+
+- Rama `worktree-acto-juridico-cap4`, desde `origin/main`.
+- Fuente: Boetsch `principal_9` (páginas 114-123 de 221). Informe:
+  `docs/actualizacion_acto_juridico_cap4-A_2026-09-30.md`.
+- Es el tramo 1, el piloto original del método nuevo, trabajado de
+  cerca con Laura. A diferencia del capítulo I, **no** venía sin
+  revisar: ya tenía citas atribuidas (BOETSCH, CLARO SOLAR) en bloques
+  `.definicion` o entre comillas, y dos cuadros comparativos
+  genuinamente reestructurados (inexistencia vs. nulidad; CLARO SOLAR
+  vs. ALESSANDRI), no la fuente reordenada en filas.
+- Comparado oración por oración contra Boetsch, se encontraron solo
+  **tres pasajes con paráfrasis cercana**:
+  1. A.1, el párrafo "Dicho de otro modo, el acto es jurídicamente
+     inexistente cuando le falta..." (antes del ejemplo de Diego y
+     Sebastián).
+  2. A.2 completo, "Origen de la teoría de la inexistencia jurídica"
+     (los tres párrafos sobre ZACHARIAE, el axioma francés y el
+     matrimonio entre personas del mismo sexo).
+  3. A.4.1(i), el párrafo sobre el art. 1701.
+- Los tres se reescribieron en voz propia: mismo contenido, mismos
+  artículos, mismo vocabulario técnico, otra construcción de oración.
+  No se tocó nada más.
+- Verificación mecánica: balance de etiquetas OK (incluidas
+  `table`/`tr`/`th`/`td`), cero guiones largos/guillemets, ningún
+  párrafo sobre 1.200 caracteres, capturas de Chrome headless
+  revisadas bloque por bloque. No se tocó el índice.
+- Commit `5bacbcc`, pusheado a `origin/worktree-acto-juridico-cap4`.
+  Falta que Laura lo revise en vista previa y mergee con GitHub
+  Desktop.
+
 ## Qué sigue (orden decidido por Laura)
 
-**Tramos 4.1 a 4.7 mergeados a `main`** (Laura revisó y mergeó con
-GitHub Desktop; confirmado en `origin/main`). Eso cierra por completo
-la Ineficacia del acto jurídico (IV) y La representación (V).
-**Tramo 4.8-4.9 (VI. Modalidades) escrito y aprobado por Laura en esta
-rama**, falta el push y que Laura lo mergee con GitHub Desktop.
-
-1. **Push del tramo 4.8-4.9** y merge de Laura con GitHub Desktop. Con
-   eso se cierra **todo el tramo 4** (capítulos IV, V y VI completos).
-2. **Volver al principio de AJ**: capítulos **I, II y III** con el mismo
-   método (fuentes `principal_1` a `_8`; anexo Causa de Domínguez y
-   Boetsch para II.D).
-3. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+1. **Seguir el chequeo de paráfrasis cercana por capítulo IV**: B.
+   Nulidad (el bloque más largo, con sus cuatro sub-instituciones B.1
+   a B.4), después C. Lesión, D. Simulación, E. Inoponibilidad, F.
+   Fraude a la ley, G. Otras causales. Se avisa a Laura antes de seguir
+   con cada parte.
+2. Después, el mismo chequeo en V (La representación) y VI
+   (Modalidades).
+3. **Merges pendientes de Laura**: `b39a974` (rama
+   `worktree-acto-juridico-tramo4-5-otras-causales`), capítulo I
+   (`worktree-acto-juridico-cap1`) e IV intro+A
+   (`worktree-acto-juridico-cap4`).
+4. **Seguir con capítulos II y III** (Teoría general, la parte que
+   falta): II (Requisitos de los AJ: A. La voluntad, B. Capacidad, C.
+   Objeto, D. Causa, E. Formalidades, fuentes `principal_2` a `_7`,
+   más el anexo Causa de Domínguez y Boetsch para II.D) y III (Efectos
+   de los AJ, fuente `principal_8`). Es el bloque más largo que queda
+   de la Teoría General: conviene repartirlo en varios sub-tramos,
+   como se hizo con el tramo 4. Al escribirlos o auditarlos, aplicar
+   ya el chequeo de paráfrasis cercana (no dejarlo para después, como
+   pasó con I, IV, V y VI).
+5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
@@ -540,10 +645,15 @@ rama**, falta el push y que Laura lo mergee con GitHub Desktop.
 4. Verificar cada artículo citado contra `Apuntes/Codigo Civil Chileno.pdf`
    con regex `Art. N.` sobre el texto extraído con `fitz` (limpiando
    líneas de pie de página "DFL 1, JUSTICIA...").
-5. Escribir el **informe** `docs/actualizacion_acto_juridico_<tramo>_<fecha>.md`
-   (mismo formato que los tres anteriores: alcance y fuentes, inventario
-   por punto, anexos, cambios propuestos con recuadros/voz
-   propia/ejemplos/artículos, pendientes para Laura). Commit, y
+5. **Chequear paráfrasis cercana** (`guia-editorial.md` 3): comparar
+   oración por oración contra la fuente. Si reproduce la posición de
+   un autor con nombre, atribuirla con claridad (cita textual en
+   `.definicion` si se tiene el texto exacto); si es prosa de conexión
+   sin autor, reestructurar de verdad, no solo cambiar sinónimos.
+6. Escribir el **informe** `docs/actualizacion_acto_juridico_<tramo>_<fecha>.md`
+   (alcance y fuentes, inventario por punto, anexos, pasajes con
+   paráfrasis cercana señalados, cambios propuestos con
+   recuadros/ejemplos/artículos, pendientes para Laura). Commit, y
    mostrárselo a Laura **como HTML** (no quiere leer `.md` en GitHub):
    convertir con Python `markdown` a `DERECHO LIBRE/Informe_AJ_<tramo>.html`
    (fuera del repo) y abrir con `open` (usar `subprocess.run` desde
@@ -551,7 +661,7 @@ rama**, falta el push y que Laura lo mergee con GitHub Desktop.
    invocaciones de Chrome/`open` con muchos flags encadenados por la
    regla de aislamiento del worktree). **Detenerse y esperar
    aprobación.**
-6. Con la aprobación: reescribir el tramo con `Edit` (old_string/
+7. Con la aprobación: reescribir el tramo con `Edit` (old_string/
    new_string exactos); verificar con script Python: balance de
    etiquetas (`p`, `div`, `span`, `em`, `strong`, `table`, `tr`, `th`,
    `td`, `h2`), cero guiones largos y guillemets, ningún párrafo sobre
@@ -559,11 +669,10 @@ rama**, falta el push y que Laura lo mergee con GitHub Desktop.
    presentes, contenido previo conservado (revisar el `git diff` línea
    por línea de lo eliminado). Capturas en Chrome headless (ver
    comando abajo) recortadas con PIL en bloques de ~1900 px; rehacer el
-   índice desde los encabezados si se agregó o cambió algún `h2`/`h3`
-   (no hizo falta en el tramo 3). Agregar al informe las decisiones de
-   Laura y la segunda pasada (con la tabla de recuadros creados por el
-   modelo); commit y push.
-7. Copiar el manual a `DERECHO LIBRE/AJ_vista_previa.html` (fuera del
+   índice desde los encabezados si se agregó o cambió algún `h2`/`h3`.
+   Agregar al informe las decisiones de Laura y la segunda pasada;
+   commit y push.
+8. Copiar el manual a `DERECHO LIBRE/AJ_vista_previa.html` (fuera del
    repo) y abrirlo en el navegador en el tramo (con ancla `#cIV-...`).
    Laura revisa y pide ajustes finos (negritas, cursivas, ejemplos) antes
    de mergear: aplicarlos con `Edit`, volver a verificar, commit y push
@@ -588,6 +697,10 @@ Para abrir un archivo en el navegador con ancla, tampoco usar `open
 archivo.html#ancla` directo (el shell lo trata como parte del path):
 usar `subprocess.run(['open', 'file://' + urllib.parse.quote(ruta) + '#ancla'])`.
 
+Para verificar solo un tramo sin cargar todo el manual (más rápido):
+extraer el `<style>` completo y el fragmento del tramo (entre sus
+anchors) a un HTML aparte y hacer el screenshot de eso.
+
 ## Decisiones de formato y redacción que NO deben cambiar
 
 Todas están también en `docs/manuales/decisiones.md`, con fecha. Las que
@@ -607,7 +720,9 @@ más afectan el trabajo por tramos:
   corrido).
 - `.definicion` solo para la oración que define el concepto del punto
   (normalmente una por punto); lleva filete a la izquierda igual que
-  `.ley`.
+  `.ley`. Se usa también para atribuir con claridad la posición de un
+  autor con nombre, citada textual entre comillas (decisión
+  2026-09-30 a raíz del chequeo de paráfrasis cercana).
 - **Cuadros comparativos** (`<table>`): el **cuerpo** (`td`) usa la
   misma tipografía que el texto principal (Times New Roman, 11pt); el
   **encabezado** (`th`) mantiene su propio estilo de etiqueta: letra
@@ -637,6 +752,11 @@ más afectan el trabajo por tramos:
   solo se amplía con fuentes que ella entregue (anexos, Código, otros
   autores), nunca de memoria.
 - Cero guiones largos y cero guillemets en cualquier parte del manual.
+- **Paráfrasis cercana**: un párrafo parecido a la fuente no es, por sí
+  solo, el problema. Si reproduce la posición de un autor con nombre,
+  el arreglo es atribuirlo con claridad; si es prosa de conexión sin
+  autor, el arreglo es reestructurar de verdad, no solo cambiar
+  sinónimos (`decisiones.md`, 2026-09-30; detalle arriba).
 
 ## Pendientes sueltos
 
