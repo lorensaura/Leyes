@@ -7,11 +7,21 @@
 > de seguir. Última actualización: 2026-10-01 (chequeo de **paráfrasis
 > cercana** capítulo por capítulo en curso, `guia-editorial.md` 3.
 > Capítulo I ya mergeado a `main`. **En curso: capítulo IV**, en
-> `worktree-acto-juridico-cap4`. Hecho: intro + A. La inexistencia
-> jurídica, y B.1 Aspectos generales, ambos corregidos y aprobados por
-> Laura. Falta: B.2 a B.4, después C. Lesión, D. Simulación, E.
-> Inoponibilidad, F. Fraude a la ley, G. Otras causales, y luego V y
-> VI. Se revisaron y limpiaron todas las ramas remotas: borradas
+> `worktree-acto-juridico-cap4`. Hecho y aprobado por Laura: intro + A.
+> La inexistencia jurídica, y B.1 Aspectos generales. **B.2 La nulidad
+> absoluta ya reescrito y verificado con Chrome headless, pendiente de
+> revisión de Laura** (detalle en
+> `docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md`). Al
+> reescribir B.2 se encontró que **el inventario original de todo el
+> bloque B (B.1-B.4) estaba incompleto**: se corrigió el método y quedó
+> escrito como regla permanente en `actualizar-manuales-existentes.md`
+> 3 (chequeo tramo por tramo, contra la fuente extraída directo, con
+> checklist exhaustivo, no solo paráfrasis) y en `decisiones.md`
+> 2026-10-01. **B.3 y B.4 hay que inventariarlos de nuevo con ese
+> método, no partir de la lista vieja del informe.** Falta: B.3, B.4,
+> después C. Lesión, D. Simulación, E. Inoponibilidad, F. Fraude a la
+> ley, G. Otras causales, y luego V y VI. Se revisaron y limpiaron
+> todas las ramas remotas: borradas
 > `worktree-acto-juridico-tramo4-5-otras-causales` y
 > `worktree-pdf-header-fix`, sin nada de valor sin recuperar. Laura
 > intentó mergear esta rama a `main` y salió un conflicto en este mismo
@@ -546,7 +556,10 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 |---|---|---|---|
 | I. Teoría general (completo) | `worktree-acto-juridico-cap1` | Paráfrasis cercana en casi todo el capítulo (no se había auditado nunca). Reescrito completo en voz propia. | Pusheado, pendiente de merge |
 | IV, intro + A. La inexistencia | `worktree-acto-juridico-cap4` | Tramo piloto, ya trabajado de cerca con Laura: solo 3 pasajes con paráfrasis cercana (el resto ya tenía citas atribuidas y cuadros genuinamente reestructurados). Corregidos los 3. | Pusheado (`5bacbcc`), pendiente de merge |
-| IV.B Nulidad (B.1-B.4) | — | No revisado todavía | Pendiente |
+| IV.B.1 Aspectos generales | `worktree-acto-juridico-cap4` | Paráfrasis cercana generalizada (se escribió el día antes de nacer la regla). Reescrito. | Aprobado por Laura |
+| IV.B.2 La nulidad absoluta | `worktree-acto-juridico-cap4` | Mismo problema. Reescrito; el inventario original (hecho de un tirón sobre B.1-B.4) no había detectado todo, ver nota de método abajo. | Pendiente de revisión de Laura |
+| IV.B.3 La nulidad relativa | — | Por inventariar de nuevo con el método corregido (no usar el informe original) | Pendiente |
+| IV.B.4 Los efectos de la nulidad | — | Por inventariar de nuevo con el método corregido (no usar el informe original) | Pendiente |
 | IV.C La lesión | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (C.1, Concepto doctrinal), como muestra. Falta revisión completa del punto. | Pendiente |
 | IV.D Simulación | — | No revisado todavía | Pendiente |
 | IV.E Inoponibilidad | — | No revisado todavía | Pendiente |
@@ -554,6 +567,33 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 | IV.G Otras causales | — | No revisado todavía | Pendiente |
 | V. La representación | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (V.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
 | VI. Modalidades | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (VI.A.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
+
+### Nota de método: el inventario original de B (B.1-B.4) no era confiable
+
+El informe `docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md` hizo
+el inventario de paráfrasis cercana del bloque completo B.1-B.4 de una
+sola pasada, y su propia sección "Qué se encontró" dice "los más
+claros": era una muestra, no una lista exhaustiva. Al reescribir B.2
+punto por punto contra el texto de Boetsch extraído directo del PDF
+(no contra el resumen del informe) aparecieron dos párrafos enteros que
+esa muestra no había visto (B.2.5 completo, primer párrafo de B.2.7).
+
+Corregido en `actualizar-manuales-existentes.md` 3 y `decisiones.md`
+2026-10-01: de ahora en más, el chequeo de cada sub-punto que falta
+(B.3, B.4, y los capítulos C-G, V, VI que siguen) se hace **tramo por
+tramo justo antes de reescribirlo**, con una tabla exhaustiva (una fila
+por punto numerado, con veredicto), contra el texto de la fuente
+extraído con `fitz`, **no** a partir de una lista hecha de antemano
+para varios puntos a la vez. El chequeo también se amplía a las mismas
+categorías del informe de cambios de `actualizar-manuales-existentes.md`
+2.c (párrafos largos, ejemplos sin achilenizar, recuadros con formato
+viejo, cuadros comparativos posibles), no solo paráfrasis, para no
+diferir correcciones ya detectadas a una pasada aparte.
+
+Detalle completo de B.1 y B.2 (qué se encontró, qué se reescribió, la
+cita del fallo Pedro Aguirre Cerda corregida contra el anexo, la
+corrección de fidelidad en la cita del art. 1683) en
+`docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md`.
 
 ### Qué se hizo en capítulo I (Teoría general del acto jurídico)
 
@@ -620,11 +660,13 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **Seguir el chequeo de paráfrasis cercana por capítulo IV**: B.
-   Nulidad (el bloque más largo, con sus cuatro sub-instituciones B.1
-   a B.4), después C. Lesión, D. Simulación, E. Inoponibilidad, F.
-   Fraude a la ley, G. Otras causales. Se avisa a Laura antes de seguir
-   con cada parte.
+1. **Seguir el chequeo de paráfrasis cercana por capítulo IV**: B.3 La
+   nulidad relativa y B.4 Los efectos de la nulidad (inventariar cada
+   uno de nuevo con el método corregido, ver "Nota de método" arriba:
+   tramo por tramo, contra la fuente extraída directo, checklist
+   exhaustivo, no solo paráfrasis), después C. Lesión, D. Simulación,
+   E. Inoponibilidad, F. Fraude a la ley, G. Otras causales. Se avisa a
+   Laura antes de seguir con cada parte.
 2. Después, el mismo chequeo en V (La representación) y VI
    (Modalidades).
 3. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV

@@ -102,6 +102,40 @@ en la fuente principal.
 sección 6): revisión final de artículos, jurisprudencia y de todos los
 recuadros creados por el modelo, con la lista de su ubicación.
 
+## 3. Chequeo retroactivo de un tramo ya actualizado
+
+Aplica cuando un tramo ya pasó por los pasos de la sección 2 (reescrito,
+achilenizado, con sus cuadros y recuadros al día) pero se escribió antes
+de que el chequeo de paráfrasis cercana del paso 2.c se aplicara con
+rigor, o antes de que existiera. Nace del caso de Acto Jurídico IV.B: los
+tramos 2 y 3 se redactaron el 29-30 de septiembre de 2026, el día después
+de nacer la regla de voz propia, sin que todavía hubiera un método para
+chequearla (ver `decisiones.md`, fila del 2026-09-30).
+
+- **Por sub-punto, no por capítulo.** No se compara el bloque completo
+  (p. ej. B.1 a B.4 de un tirón) contra la fuente en una sola pasada:
+  cada sub-punto (B.2, B.3, B.4...) se audita justo antes de reescribirlo.
+  Una pasada grande produce una lista de "los casos más claros", no una
+  lista completa: así quedó corto el primer intento con B.1-B.4 juntos,
+  y se escaparon dos párrafos enteros de B.2 (B.2.5 completo y el primer
+  párrafo de B.2.7) que solo aparecieron al comparar de nuevo, más fino.
+- **Contra el texto de la fuente extraído directo, no contra un resumen.**
+  Se extrae el texto de la fuente (PDF) con un script y se compara
+  oración por oración contra el manual, igual que el inventario de
+  `proceso.md`. No sirve apoyarse en un informe de una sesión anterior ni
+  en lo que se recuerda de la fuente.
+- **Checklist exhaustivo, una fila por punto numerado**, con su veredicto:
+  verbatim (se reescribe), paráfrasis cercana (se reescribe), atribuido
+  con autor nombrado (no se toca), o genuinamente reestructurado (no se
+  toca). No una lista de ejemplos representativos.
+- **Mismas categorías del informe de cambios del paso 2.c, no solo
+  paráfrasis.** Si de paso aparece un párrafo que supera los 1.200
+  caracteres, un ejemplo sin achilenizar, un recuadro con formato viejo o
+  un paralelo que debería ir en cuadro comparativo, se corrige en el
+  mismo tramo: no se difiere a una pasada aparte. El informe del tramo
+  deja constancia de qué otras categorías se revisaron y que no había
+  nada que corregir en ellas, para que quede explícito y no asumido.
+
 Si hace falta registrar en qué va la actualización de un manual, se hace
 en un documento aparte para ese manual (como `bienes-reestructuracion.md`),
 no aquí: este documento solo contiene reglas.

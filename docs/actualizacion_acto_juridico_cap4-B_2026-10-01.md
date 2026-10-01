@@ -204,7 +204,103 @@ línea por línea de lo eliminado revisado (coincide exactamente con lo
 señalado en este informe), capturas de Chrome headless revisadas
 bloque por bloque. No se tocó el índice.
 
+## Corrección al inventario original de B.2
+
+Al reescribir B.2 se encontró que el chequeo original (sección "Qué se
+encontró") **no había detectado todo** lo que necesitaba arreglo en
+este punto. Quedaron fuera del inventario inicial:
+
+- **B.2.2**, la segunda frase introductoria ("Para quienes no aceptan
+  la teoría de la inexistencia...") es idéntica palabra por palabra a
+  Boetsch. (La lista de causales en sí, items (i)-(ix), sigue sin
+  tocarse: es enumeración de categorías legales.)
+- **B.2.4**, la frase introductoria ("Conforme al art. 1683... puede
+  declararse por tres vías") es Boetsch con una palabra cambiada.
+- **B.2.5 completo**: no apareció en ninguna de las cuatro categorías
+  del informe original, pero es paráfrasis cercana clase por clase
+  contra Boetsch (misma estructura de tres oraciones, sinónimos
+  cambiados).
+- **B.2.6**, los dos primeros párrafos (no el tercero, que sí estaba
+  bien identificado como atribuido a BARAONA): el primero es
+  paráfrasis cercana, el segundo tiene una oración completa idéntica
+  palabra por palabra a Boetsch ("El plazo se cuenta desde la fecha en
+  que se celebró el acto o contrato nulo, porque desde entonces podía
+  hacerse valer la acción de nulidad").
+- **B.2.7**, el primer párrafo (no el segundo, atribuido a BARAONA):
+  paráfrasis cercana, mismo contenido en el mismo orden.
+
+Conclusión para Laura: el inventario original de este informe (sección
+"Qué se encontró") **no es confiable para B.3 y B.4** tal como está.
+Antes de reescribir esos dos puntos hay que repetir la comparación
+oración por oración contra Boetsch y, donde corresponda, contra el
+anexo, en vez de partir de la lista ya hecha.
+
+## Qué se hizo en B.2 (La nulidad absoluta)
+
+Se comparó cada párrafo de B.2 oración por oración contra Boetsch
+`principal_10` (pp. 129-138, páginas reales impresas "Página N de 221"
+que coinciden con las páginas del PDF) y, para los pasajes que no
+vienen de Boetsch, contra el anexo `Anexo_secundario_AJ_Ineficacia.pdf`
+de Bozzo e Ibarra (pp. internas 9-12 del PDF, sección "QUIEN NO PUEDE
+PEDIR LA DECLARACION DE NULIDAD").
+
+Se reescribieron en voz propia, conservando contenido, artículos y
+vocabulario técnico:
+
+- B.2.1: el `.definicion` completo (verbatim en Boetsch), además
+  redactado para no repetir la fórmula ya usada en la nueva B.1.3
+  ("naturaleza o especie").
+- B.2.2: solo la segunda frase introductoria (antes de las causales
+  v-ix). La lista de causales no se tocó.
+- B.2.3: el párrafo completo.
+- B.2.4: la frase introductoria; en (i), las dos oraciones de conexión
+  después de la cita textual; en (ii), los seis párrafos de conexión
+  (se dejaron intactas la cita del art. 1683, la caja de
+  jurisprudencia de la Corte Suprema 2008 y la tabla
+  representado/herederos); en (iii), la oración de conexión después de
+  la cita.
+- B.2.5: el párrafo completo.
+- B.2.6: los dos primeros párrafos y la primera oración del tercero
+  (hasta donde empieza la atribución a BARAONA); el resto del tercer
+  párrafo, atribuido a BARAONA, no se tocó.
+- B.2.7: el primer párrafo; el segundo, atribuido a BARAONA, no se
+  tocó.
+
+Dos hallazgos adicionales durante la reescritura, fuera del alcance de
+paráfrasis pero corregidos de paso porque se estaba trabajando el
+mismo párrafo:
+
+- **Cita incompleta del art. 1683 en B.2.4(iii)**: el manual citaba
+  "puede asimismo pedirse por el ministerio público..." pero el texto
+  real del art. 1683 (verificado contra la caja `.ley` de A.4.3, línea
+  2111) dice "puede asimismo pedirse **su declaración** por el
+  ministerio público...". Corregido para que la cita entre comillas
+  sea literal.
+- **Párrafo de la Corte Pedro Aguirre Cerda, ahora con cita literal**:
+  el párrafo no tenía comillas pese a presentarse como lo que resolvió
+  el fallo. El anexo Bozzo e Ibarra sí trae la cita textual completa
+  del fallo, con su referencia ("Repertorio, Tomo VI, pág. 234", no un
+  rol, el anexo no da uno). Se usó esa cita literal entre comillas en
+  vez de la paráfrasis. También se corrigió el principio latino, que
+  en el anexo es "nemo auditur propriam **suam** turpitudinem
+  allegans" (el manual omitía "suam").
+
+Verificación mecánica: balance de etiquetas OK en todo el archivo (`p`
+758/758, `span` 1930/1930, `div` 69/69, `strong` 588/588, `em`
+277/277, `table`/`tr`/`th`/`td` OK, `h2` 133/133), cero guiones largos
+y guillemets en B.2, ningún párrafo sobre 1.200 caracteres, mismos
+artículos citados antes y después del bloque B.2 (1681, 1682, 1683,
+8°, 1468, 1448, 1685, 350 COT, 2514, 705, 1687, 1689, 37 LMC), diff
+línea por línea revisado (19 párrafos modificados, todos coinciden con
+lo descrito acá). **No se pudo tomar captura de Chrome headless**: el
+sandbox de este worktree bloqueó la invocación por la ruta con
+espacios ("Google Chrome.app"); quedó pendiente si Laura quiere
+verificación visual antes de aprobar.
+
 ## Siguiente paso
 
-Laura revisa B.1 en la vista previa. Con su aprobación: commit, push,
-y seguir con B.2 (La nulidad absoluta).
+Laura revisa B.2 en la vista previa (o pide la captura de Chrome
+headless desde fuera del worktree). Con su aprobación: commit, push,
+y seguir con B.3 (La nulidad relativa), repitiendo la comparación
+completa contra Boetsch y el anexo en vez de partir del inventario
+original de este informe.
