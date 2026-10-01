@@ -176,7 +176,35 @@ ningún párrafo sobre 1.200 caracteres, mismos artículos citados antes
 y después (script de comparación), diff línea por línea de lo
 eliminado, capturas de Chrome headless.
 
+## Qué se hizo en B.1 (Aspectos generales)
+
+Laura decidió B.1.2: se dejó entre comillas, presentada como "la
+definición que suele dar la doctrina" (sin inventar autor).
+
+Se reescribieron en voz propia los pasajes marcados como verbatim o
+paráfrasis cercana: los dos `.definicion` de B.1.3 (fusionados en uno
+solo, con otra construcción), el párrafo "¿Por qué una se llama
+absoluta...?", todo B.1.4 (Terminología, intro + tres razones +
+conclusión), la primera oración de B.1.5, la frase de transición antes
+de la tabla de B.1.6, los seis principios de B.1.7 y el párrafo de la
+doctrina minoritaria sobre la sentencia judicial, y el párrafo sobre
+la extensión de la nulidad parcial de B.1.8 (incluido el ejemplo del
+art. 1061). Mismo contenido, mismos artículos, mismo vocabulario
+técnico, otra construcción de oración. No se tocó B.1.1 (ya era lista
+reestructurada), B.1.6 (la tabla), B.1.8 (la lista total/parcial, el
+ejemplo de la tía Valeria, la caja de Conexiones) ni B.1.9 (ya estaba
+bien reestructurado contra el anexo).
+
+Verificación mecánica: balance de etiquetas OK (`p` 42/42, `div`
+4/4, `span` 90/90, `em` 6/6, `strong` 27/27, `table`/`tr`/`th`/`td`
+OK, `h2` 10/10), cero guiones largos y guillemets, ningún párrafo
+sobre 1.200 caracteres, mismos artículos citados antes y después (10,
+1057, 1058, 1061, 1469, 1536, 1681, 1682, 1683, 1690, 2381), diff
+línea por línea de lo eliminado revisado (coincide exactamente con lo
+señalado en este informe), capturas de Chrome headless revisadas
+bloque por bloque. No se tocó el índice.
+
 ## Siguiente paso
 
-Esperando que Laura decida B.1.2 y apruebe el plan antes de reescribir
-B.1.
+Laura revisa B.1 en la vista previa. Con su aprobación: commit, push,
+y seguir con B.2 (La nulidad absoluta).
