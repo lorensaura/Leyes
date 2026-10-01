@@ -4,17 +4,16 @@
 > [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
 > corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
 > archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-10-01 (**todo el tramo 4**,
-> capítulos IV+V+VI, confirmado mergeado a `main`, commit de merge
-> `ca9adc6`. Pendientes de merge por Laura: el commit `b39a974`
-> (auditoría de IV+V, corrección de V.5.3) y el **capítulo I completo**,
-> reescrito en voz propia en `worktree-acto-juridico-cap1`. Se detectó
-> que ningún tramo de este hilo chequeaba **paráfrasis cercana**
-> (`guia-editorial.md` 3); se está corrigiendo capítulo por capítulo.
-> **Ahora en curso: capítulo IV**, en `worktree-acto-juridico-cap4`.
-> Hecho: intro + A. La inexistencia jurídica, corregido y pusheado.
-> Falta: B. Nulidad, C. Lesión, D. Simulación, E. Inoponibilidad,
-> F. Fraude a la ley, G. Otras causales, por partes).
+> de seguir. Última actualización: 2026-10-01 (chequeo de **paráfrasis
+> cercana** capítulo por capítulo en curso, `guia-editorial.md` 3.
+> Capítulo I ya mergeado a `main`. **En curso: capítulo IV**, en
+> `worktree-acto-juridico-cap4`. Hecho: intro + A. La inexistencia
+> jurídica, y B.1 Aspectos generales, ambos corregidos y aprobados por
+> Laura. Falta: B.2 a B.4, después C. Lesión, D. Simulación, E.
+> Inoponibilidad, F. Fraude a la ley, G. Otras causales, y luego V y
+> VI. Se revisaron y limpiaron todas las ramas remotas: borradas
+> `worktree-acto-juridico-tramo4-5-otras-causales` y
+> `worktree-pdf-header-fix`, sin nada de valor sin recuperar).
 
 ## Dónde estamos
 
@@ -617,10 +616,20 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
    con cada parte.
 2. Después, el mismo chequeo en V (La representación) y VI
    (Modalidades).
-3. **Merges pendientes de Laura**: `b39a974` (rama
-   `worktree-acto-juridico-tramo4-5-otras-causales`), capítulo I
-   (`worktree-acto-juridico-cap1`) e IV intro+A
-   (`worktree-acto-juridico-cap4`).
+3. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
+   intro+A, B.1, y lo que siga del chequeo de paráfrasis). El
+   **capítulo I** (`worktree-acto-juridico-cap1`) ya está mergeado a
+   `main` (confirmado 2026-10-01, `main` HEAD = `8c8ad34`, el commit de
+   la reescritura en voz propia). El commit `b39a974` (achilenización
+   del ejemplo de V.5.3) estaba en la rama
+   `worktree-acto-juridico-tramo4-5-otras-causales`, que ya no tenía
+   nada más pendiente (su contenido real ya estaba en `main` por otra
+   vía) y se borró a pedido de Laura el 2026-10-01; el cambio puntual
+   de V.5.3 se rescató antes de borrarla y quedó en
+   `worktree-acto-juridico-cap4` (commit `cb30eb3`). También se borró
+   `worktree-pdf-header-fix` (2026-07-28): su único contenido propio
+   eran dos PDF regenerados ya obsoletos, la lógica del encabezado ya
+   está en `main`.
 4. **Seguir con capítulos II y III** (Teoría general, la parte que
    falta): II (Requisitos de los AJ: A. La voluntad, B. Capacidad, C.
    Objeto, D. Causa, E. Formalidades, fuentes `principal_2` a `_7`,
@@ -782,10 +791,12 @@ más afectan el trabajo por tramos:
 - `guia-editorial.md` 4.9 dice que la Pausa tiene retroalimentación de
   IA, pero la app corrige por palabras clave. Laura no decidió qué
   hacer.
-- Ramas sin mergear que no son de este hilo: `worktree-manual-obligaciones`
+- Única rama sin mergear que no es de este hilo: `worktree-manual-obligaciones`
   (ver `docs/manuales/estado_obligaciones.md` si existe, o crearlo al
-  retomarlo) y `worktree-virtual-enchanting-kite` (de agosto, contenido
-  ya en `main`; se puede borrar).
+  retomarlo). Revisadas el 2026-10-01 todas las ramas remotas contra
+  `main`: de las demás, solo quedaba `worktree-acto-juridico-cap4`
+  (este hilo, activo a propósito); `worktree-virtual-enchanting-kite`
+  ya no existe (se había borrado antes).
 
 ## Contexto clave
 
