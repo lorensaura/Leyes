@@ -787,6 +787,67 @@ Con esto, el bloque completo B (B.1 a B.4) ya pasó por el chequeo de
 paráfrasis cercana con el método corregido. Falta solo la aprobación
 final de Laura sobre B.3 y B.4 en vista previa.
 
+## Enriquecimiento de B.4.5 con Alessandri (2026-10-05, aportado por Laura)
+
+Laura trajo cuatro páginas de Alessandri, *La nulidad y la rescisión
+en el derecho civil chileno* (Tomo II, §§1301-1303), con contenido que
+Boetsch y el anexo Bozzo e Ibarra no traían. Se incorporó:
+
+- **Definición de ALESSANDRI**, atribuida y textual, junto a la de
+  Eduardo Court (que ya estaba).
+- **Requisito objetivo/subjetivo de COVIELLO**, ahora con cita textual
+  atribuida en el recuadro "No olvidar" (antes era paráfrasis sin
+  autor).
+- **VIAL sobre el art. 1138**: frase nueva después de la tabla,
+  explicando la donación entre cónyuges.
+- **Caso nuevo de conversión material por vía jurisprudencial**: el
+  convenio extrajudicial nulo que, según cita Alessandri de la Corte
+  Suprema, vale como reconocimiento de deuda. Sin rol ni fecha
+  disponibles en las páginas que Laura compartió (notas 487 y 492 no
+  visibles); se deja igual de desarrollado que la fuente, sin
+  inventar un dato que no está.
+- **El debate sobre si la conversión material necesita norma legal
+  expresa, ahora con nombres**: ALESSANDRI y VIAL, en el lado
+  restrictivo ("solo en los casos que la ley permite"); el lado
+  contrario queda sin autor, porque ni Alessandri ni Boetsch nombran a
+  nadie de ese lado en lo que se tiene.
+
+**Corrección importante, no solo agregado**: Alessandri cita a
+Coviello diciendo, sobre el mismo caso del testamento verbal que ya
+estaba en la caja de jurisprudencia de este manual (aprobada en el
+tramo 3), que "es evidente que aquí no puede hablarse de conversión,
+ya que es idéntico el negocio que se hace valer y el querido por las
+partes". La caja de jurisprudencia se mantuvo (a pedido de Laura), pero
+se agregó un recuadro "No confundir" justo después, explicando con la
+misma cita de Coviello por qué este caso es una mera equivalencia de
+formas (el testamento sigue siendo testamento, solo baja de
+solemnidad) y no una conversión verdadera (que exige que el acto
+cambie de naturaleza). Se consultó a Laura antes de tocar contenido ya
+aprobado: eligió mantener la caja con la aclaración, no sacarla.
+
+**Corroboración independiente del fallo de 1921**: el relato de
+Alessandri del caso (enferma cuya muerte no se consideraba inminente,
+testamento no alcanzó a leerse, murió antes) coincide en los hechos
+con el del anexo Bozzo e Ibarra, usado hasta ahora como única fuente.
+Dos tratadistas distintos describen el mismo caso de forma
+independiente: ya no depende de una sola fuente, aunque sigue sin
+confirmarse por búsqueda web ni tener rol.
+
+Verificación mecánica repetida después de estos agregados: balance de
+etiquetas OK (`p` 768/768, `div` 68/68, `span` 1955/1955, `strong`
+590/590, `em` 277/277), cero guiones largos y guillemets, ningún
+párrafo sobre 1.200 caracteres (se dividió en dos el párrafo de los
+límites de la conversión, que había quedado en 1.348 al agregar la
+atribución a ALESSANDRI/VIAL), capturas de Chrome headless revisadas
+bloque por bloque. No se agregó ningún artículo nuevo del Código Civil
+(el convenio extrajudicial no cita uno). No se tocó el índice.
+
+No se agregó, por quedar fuera del alcance acordado con Laura para
+esta pasada, el razonamiento de Alessandri sobre por qué el art. 1404
+es un caso de conversión (argumento a contrario: sin la regla de
+conversión, la omisión de la escritura produciría nulidad absoluta).
+Queda disponible si Laura lo pide más adelante.
+
 ## Siguiente paso
 
 Laura revisa B.3 y B.4 en `AJ_vista_previa_B3.html` y
