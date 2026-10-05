@@ -5,74 +5,35 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-05 (chequeo de **paráfrasis cercana** capítulo por capítulo,
-> `guia-editorial.md` 3). Capítulo I ya mergeado a `main`. **En curso:
-> capítulo IV**, en `worktree-acto-juridico-cap4`. **El capítulo IV
-> completo (intro+A, B, C, D, E, F, G) y el capítulo V (La
-> representación) ya pasaron el chequeo de paráfrasis cercana y Laura
-> los aprobó todos** ("Todo ok", 2026-10-05). **El capítulo VI
-> (Modalidades), el último de este hilo, también está reescrito**
-> (40 de 48 párrafos con paráfrasis cercana corregidos, informe
-> `docs/actualizacion_acto_juridico_cap4-VI_2026-10-05.md`): con esto
-> **el chequeo de paráfrasis cercana de todo Acto Jurídico queda
-> terminado**, solo falta que Laura confirme la vista previa de VI
-> (y de los tramos que todavía no confirmó: C, D, E, F, G, V).
-> Detalle de qué se encontró y qué se reescribió en cada bloque: ver
-> las secciones "Qué se hizo en..." de este archivo, una por
-> letra/capítulo, y los informes
-> `docs/actualizacion_acto_juridico_cap4-<letra>_2026-10-05.md`.
-> **El bloque B (Nulidad) había pasado por el chequeo de paráfrasis cercana**:
-> intro + A. La inexistencia jurídica, B.1 Aspectos generales, **B.2 La
-> nulidad absoluta** (aprobado 2026-10-05 tras 4 ajustes de formato:
-> cursiva en "aparece de manifiesto en el acto o contrato", subrayado en
-> "excepción" del punto 4(ii), se quitó el cuadro de Conexiones sobre el
-> art. 350 COT, y se puso en rojo el art. 1683 al final del punto 6;
-> Laura preguntó por el origen de los dos fallos citados en B.2.4 —
-> Corte Pedro Aguirre Cerda 1988 y Corte Suprema 2008 rol 1.969-2006—,
-> ambos confirmados reales, tomados del anexo Bozzo e Ibarra, pp. 11-12,
-> no de Boetsch), **B.3 La nulidad relativa** (aprobada 2026-10-05 con 5
-> ajustes: definición simplificada en voz de "según el art. 1681...",
-> se quitó la caja Advertencia de B.3.4.2 por redundante, "art. 1691" en
-> rojo y "cuatro años" en negrita y subrayado en B.3.5, "Criterio" en
-> negrita en la caja No confundir de B.3.6.1), y **B.4 Los efectos de la
-> nulidad** (reescrito en voz propia completo, incluida la conversión,
-> enriquecido con Alessandri, Coviello, Stolfi, Vial y un fallo de la CS
-> 2012 rol 3.557-2010 que aportó Laura; **todavía sin su aprobación
-> final de vista previa**, a diferencia de B.2 y B.3). Detalle completo
-> de los cuatro en `docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md`;
-> vista previa en `AJ_vista_previa.html` (B.2/B.4) y
-> `AJ_vista_previa_B3.html` (B.3), ambas fuera del repo. Último commit
-> `0822158`, pusheado a `origin/worktree-acto-juridico-cap4`. Al
-> reescribir B.2 se encontró que **el inventario original de todo el
-> bloque B (B.1-B.4) estaba incompleto**: se corrigió el método y quedó
-> escrito como regla permanente en `actualizar-manuales-existentes.md` 3
-> (chequeo tramo por tramo, contra la fuente extraída directo, con
-> checklist exhaustivo, no solo paráfrasis) y en `decisiones.md`
-> 2026-10-01. Al inventariar B.3 de nuevo con ese método se confirmó una
-> corrección adicional: los **seis** requisitos de la ratificación de
-> B.3.6.4 vienen todos de Boetsch (los cuatro últimos están al principio
-> de la p. 138 del PDF fuente, justo antes de "B.4", no solo los dos
-> primeros que aparecen en la p. 137). **Falta: C. Lesión, D.
-> Simulación, E. Inoponibilidad, F. Fraude a la ley, G. Otras causales,
-> y luego V y VI**, con el mismo chequeo. También se encontró y corrigió
-> un bug de CSS de alcance general (no solo del chequeo de paráfrasis):
-> los cuadros comparativos dejaban la columna "Criterio" tan angosta que
-> el navegador partía palabras con guion; corregido en la hoja de
-> estilos y registrado como regla permanente en `formato.md` 4.1 y 8,
-> `proceso.md` y `actualizar-manuales-existentes.md` 2.c (decisión
-> 2026-10-05). Se revisaron y limpiaron todas las ramas remotas:
-> borradas `worktree-acto-juridico-tramo4-5-otras-causales` y
-> `worktree-pdf-header-fix`, sin nada de valor sin recuperar. Laura
-> intentó mergear esta rama a `main` y salió un conflicto en este mismo
-> archivo (ambas ramas lo habían actualizado en paralelo, sin pisarse
-> en contenido real); se resolvió trayendo `main` a esta rama
-> (commit de merge `e114d9c`) y verificado que ya no queda ningún
-> conflicto. De paso se encontraron 4 archivos que nunca debieron
-> versionarse (`.claude/settings.local.json`, `AJ_vista_previa.html`,
-> `Informe_AJ_4-3.html`, `Informe_AJ_tramo4-2.html`): se sacaron del
-> índice de Git y se agregaron al `.gitignore` (commit `b740f82`),
-> siguen en el disco pero ya no aparecen como cambios. Falta que Laura
-> reintente el merge con GitHub Desktop.
+> 2026-10-05.
+>
+> **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
+> (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
+> C, D, E, F, G), V (La representación) y VI (Modalidades) ya están
+> reescritos en voz propia donde hacía falta. Detalle de qué se
+> encontró y qué se reescribió en cada bloque: ver las secciones "Qué
+> se hizo en..." de este archivo, una por letra/capítulo, y los
+> informes `docs/actualizacion_acto_juridico_cap4-<letra>_2026-10-05.md`
+> (o `_IV-A`, `_IV-B1-B3`, `_IV-B4` para los tramos de septiembre).
+>
+> **`worktree-acto-juridico-cap4` ya se mergeó a `main`** (2026-10-05,
+> `main` y `origin/main` quedaron en el commit `7675b08`, el mismo de
+> esta rama). Al mergear apareció un conflicto que no tenía que ver con
+> el contenido: un resto sin resolver del 1 de octubre, con 2 archivos
+> marcados "deleted by us" (`AJ_vista_previa.html`,
+> `.claude/settings.local.json`) y 3 informes HTML mal commiteados
+> (`Informe_AJ_cap1.html`, `Informe_AJ_cap4-B.html`,
+> `Informe_AJ_tramo4-8-9.html`) que nunca debieron versionarse. Se
+> limpió desde la Terminal del checkout principal (`git rm --cached` +
+> `git restore --staged`, sin tocar los archivos en disco) y el merge
+> pasó sin problema. **Laura no revisó el contenido de VI línea por
+> línea en esta sesión** (ver "Pendiente" más abajo), solo resolvió el
+> conflicto de Git; el resto de los tramos (C-G, V) sí los había
+> aprobado antes en vista previa.
+>
+> **Qué sigue**: capítulos II (Requisitos del AJ) y III (Efectos del
+> AJ), la parte de la Teoría General que todavía no se tocó (ver "Qué
+> sigue" más abajo).
 
 ## Dónde estamos
 
@@ -960,37 +921,38 @@ corrección de fidelidad en la cita del art. 1683) en
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**:
-   capítulo I, capítulo IV completo (A-G), V y ahora VI (Modalidades)
-   ya están reescritos. **Falta commitear y pushear VI, y que Laura
-   confirme la vista previa de VI** (`AJ_vista_previa.html`, ancla
-   `#cVI`), igual que la de los tramos anteriores todavía sin
-   confirmar (C, D, E, F, G, V). Después de eso sigue el punto 2
-   (merge de esta rama a `main`) y el punto 3 (capítulos II y III).
-2. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
-   intro+A, B.1, y lo que siga del chequeo de paráfrasis). El
-   **capítulo I** (`worktree-acto-juridico-cap1`) ya está mergeado a
-   `main` (confirmado 2026-10-01, `main` HEAD = `8c8ad34`, el commit de
-   la reescritura en voz propia). El commit `b39a974` (achilenización
-   del ejemplo de V.5.3) estaba en la rama
+1. ~~El chequeo de paráfrasis cercana de todo Acto Jurídico~~ — **hecho**:
+   capítulo I, capítulo IV completo (A-G), V y VI (Modalidades) ya
+   están reescritos.
+2. ~~Merge de `worktree-acto-juridico-cap4` a `main`~~ — **hecho**
+   (2026-10-05, `main` y `origin/main` quedaron en `7675b08`, el mismo
+   commit que esta rama; detalle del conflicto que hubo que limpiar en
+   el encabezado de este archivo). El **capítulo I**
+   (`worktree-acto-juridico-cap1`) sigue sin mergear aparte: su
+   contenido (commit `8c8ad34`) es anterior y distinto a este hilo,
+   falta que Laura lo revise en vista previa y lo mergee. El commit
+   `b39a974` (achilenización del ejemplo de V.5.3) estaba en la rama
    `worktree-acto-juridico-tramo4-5-otras-causales`, que ya no tenía
-   nada más pendiente (su contenido real ya estaba en `main` por otra
-   vía) y se borró a pedido de Laura el 2026-10-01; el cambio puntual
-   de V.5.3 se rescató antes de borrarla y quedó en
-   `worktree-acto-juridico-cap4` (commit `cb30eb3`). También se borró
+   nada más pendiente y se borró a pedido de Laura el 2026-10-01; el
+   cambio puntual de V.5.3 se rescató antes de borrarla y ya está en
+   `main` (vía el commit `cb30eb3` de este hilo). También se borró
    `worktree-pdf-header-fix` (2026-07-28): su único contenido propio
    eran dos PDF regenerados ya obsoletos, la lógica del encabezado ya
    está en `main`.
-3. **Seguir con capítulos II y III** (Teoría general, la parte que
+3. **Pendiente, opcional**: Laura no revisó el contenido de VI en
+   vista previa línea por línea en esta sesión (solo resolvió el
+   conflicto de Git para mergear); si quiere revisarlo igual que C-G y
+   V, el manual ya está en `main`, ancla `#cVI`.
+4. **Seguir con capítulos II y III** (Teoría general, la parte que
    falta): II (Requisitos de los AJ: A. La voluntad, B. Capacidad, C.
    Objeto, D. Causa, E. Formalidades, fuentes `principal_2` a `_7`,
    más el anexo Causa de Domínguez y Boetsch para II.D) y III (Efectos
    de los AJ, fuente `principal_8`). Es el bloque más largo que queda
    de la Teoría General: conviene repartirlo en varios sub-tramos,
    como se hizo con el tramo 4. Al escribirlos o auditarlos, aplicar
-   ya el chequeo de paráfrasis cercana (no dejarlo para después, como
-   pasó con I, IV, V y VI).
-4. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+   ya el chequeo de paráfrasis cercana desde el principio (no dejarlo
+   para después, como pasó con I, IV, V y VI).
+5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
@@ -1142,12 +1104,13 @@ más afectan el trabajo por tramos:
 - `guia-editorial.md` 4.9 dice que la Pausa tiene retroalimentación de
   IA, pero la app corrige por palabras clave. Laura no decidió qué
   hacer.
-- Única rama sin mergear que no es de este hilo: `worktree-manual-obligaciones`
+- Rama sin mergear que no es de este hilo: `worktree-manual-obligaciones`
   (ver `docs/manuales/estado_obligaciones.md` si existe, o crearlo al
-  retomarlo). Revisadas el 2026-10-01 todas las ramas remotas contra
-  `main`: de las demás, solo quedaba `worktree-acto-juridico-cap4`
-  (este hilo, activo a propósito); `worktree-virtual-enchanting-kite`
-  ya no existe (se había borrado antes).
+  retomarlo). `worktree-acto-juridico-cap4` (este hilo) ya se mergeó a
+  `main` el 2026-10-05 (commit `7675b08`); `worktree-acto-juridico-cap1`
+  (capítulo I) sigue sin mergear, ver "Qué sigue" arriba.
+  `worktree-virtual-enchanting-kite` ya no existe (se había borrado
+  antes).
 
 ## Contexto clave
 
