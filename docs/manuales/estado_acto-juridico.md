@@ -27,7 +27,12 @@
 > Suprema se resolvieron con comillas de cita textual atribuida, no
 > reescritura. Informe en
 > `docs/actualizacion_acto_juridico_cap4-D_2026-10-05.md`, commit
-> `4a07265`, pusheado. **Faltan las vistas previas de C y D sin
+> `4a07265`, pusheado. Se siguió además con **E. Inoponibilidad**,
+> mismo criterio: de 26 párrafos, 15 con paráfrasis cercana,
+> reescritos; DUCCI, VODANOVIC y LÓPEZ SANTA MARÍA ya estaban
+> atribuidos, sin tocar. Informe
+> `docs/actualizacion_acto_juridico_cap4-E_2026-10-05.md`, commit
+> `675fc50`. **Faltan las vistas previas de C, D y E sin
 > confirmar por Laura.** **El
 > bloque B (Nulidad) había pasado por el chequeo de paráfrasis cercana**:
 > intro + A. La inexistencia jurídica, B.1 Aspectos generales, **B.2 La
@@ -608,6 +613,7 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 | IV.B.4 Los efectos de la nulidad | `worktree-acto-juridico-cap4` | Inventariado de nuevo (tabla exhaustiva, checklist completo) contra Boetsch `principal_11` entero y el anexo. Reescrito completo, incluida la conversión (B.4.5), enriquecida con Alessandri, Coviello, Stolfi, Vial y un fallo de la CS aportados por Laura. | **Aprobado por Laura** en vista previa (2026-10-05) |
 | IV.C La lesión | `worktree-acto-juridico-cap4` | Inventario exhaustivo (22 párrafos) contra Boetsch `principal_12` (pp. 151-160 de 221): 17 con paráfrasis cercana sin autor nombrado, reescritos; DUCCI y 4 más ya atribuidos/reestructurados, sin tocar. Informe `docs/actualizacion_acto_juridico_cap4-C_2026-10-05.md`, commit `bac36ac`. | Reescrito y pusheado, falta que Laura confirme la vista previa |
 | IV.D La simulación | `worktree-acto-juridico-cap4` | Inventario exhaustivo (33 párrafos) contra Boetsch `principal_13` (pp. 160-170) y el anexo Bozzo e Ibarra (4.4-4.5): 19 con paráfrasis cercana, reescritos; ALCALDE/JOSSERAND y la definición de la CS resueltos con comillas de cita atribuida. Informe `docs/actualizacion_acto_juridico_cap4-D_2026-10-05.md`, commit `4a07265`. | Reescrito y pusheado, falta que Laura confirme la vista previa |
+| IV.E La inoponibilidad | `worktree-acto-juridico-cap4` | Inventario exhaustivo (26 párrafos) contra Boetsch `principal_14` (pp. 170-177) y el anexo Bozzo e Ibarra: 15 con paráfrasis cercana, reescritos; DUCCI/VODANOVIC/LÓPEZ SANTA MARÍA ya atribuidos, sin tocar. Informe `docs/actualizacion_acto_juridico_cap4-E_2026-10-05.md`, commit `675fc50`. | Reescrito y pusheado, falta que Laura confirme la vista previa |
 | IV.D Simulación | — | No revisado todavía | Pendiente |
 | IV.E Inoponibilidad | — | No revisado todavía | Pendiente |
 | IV.F Fraude a la ley | — | No revisado todavía | Pendiente |
@@ -683,6 +689,39 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
   `4a07265`, pusheado a `origin/worktree-acto-juridico-cap4`. **Falta
   que Laura confirme la vista previa** (`AJ_vista_previa.html`, ancla
   `#cIV-D`), igual que con C.
+
+### Qué se hizo en IV.E La inoponibilidad (chequeo de paráfrasis cercana)
+
+- Inventario exhaustivo de los 26 párrafos de prosa de E.1 a E.5,
+  contra Boetsch `principal_14` (pp. 170-177 de 221) y el anexo
+  Bozzo e Ibarra (apartado "g) La inoponibilidad", pp. 18-19 del
+  anexo), que es la fuente de las atribuciones a DUCCI, VODANOVIC y
+  LÓPEZ SANTA MARÍA y del cuarto criterio del cuadro comparativo
+  (declaración de oficio), ya incorporadas desde el tramo 4.3.
+- **15 de 26 párrafos tenían paráfrasis cercana** sin autor nombrado y
+  se reescribieron en voz propia, mismo contenido, mismos artículos.
+  Las atribuciones a DUCCI, VODANOVIC y LÓPEZ SANTA MARÍA no se
+  tocaron, por estar ya marcadas con el nombre del autor.
+- Varios párrafos cortos que son, en esencia, una oración parafraseando
+  directamente un artículo (cesión de crédito, prescripción,
+  interdicción, patria potestad, cuidado personal) se dejaron sin
+  tocar: no es prosa doctrinal de Boetsch, es la ley misma resumida,
+  donde cualquier redacción alternativa dice lo mismo con las mismas
+  palabras técnicas (mismo criterio aplicado al "Mutuo" de C. Lesión).
+- El cuadro comparativo de E.5 ya estaba en tabla desde el tramo 4.3:
+  la conversión de prosa a tabla ya es la reestructuración que pide la
+  regla, no se tocó.
+- Verificación mecánica: balance de etiquetas OK, cero guiones
+  largos/guillemets, ningún párrafo sobre 1.200 caracteres (el más
+  largo, 1.066), los 27 artículos y referencias verificados siguen
+  presentes, capturas de Chrome headless revisadas bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
+- Igual que con D, Laura pidió seguir sin pausar a mostrarle el
+  informe antes de aplicar los cambios. Informe completo con la tabla
+  de veredictos en `docs/actualizacion_acto_juridico_cap4-E_2026-10-05.md`.
+  Commit `675fc50`, pusheado a `origin/worktree-acto-juridico-cap4`.
+  **Falta que Laura confirme la vista previa** (`AJ_vista_previa.html`,
+  ancla `#cIV-E`), junto con las de C y D.
 
 ### Nota de método: el inventario original de B (B.1-B.4) no era confiable
 
@@ -777,15 +816,15 @@ corrección de fidelidad en la cita del art. 1683) en
 ## Qué sigue (orden decidido por Laura)
 
 1. **El bloque B (B.1-B.4) ya terminó el chequeo de paráfrasis
-   cercana y está aprobado por Laura completo**. **C. Lesión y D.
-   Simulación también terminaron el chequeo** (17 de 22, y 19 de 33
-   párrafos reescritos respectivamente); falta solo que Laura confirme
-   ambas vistas previas. **Seguir con E. Inoponibilidad, F. Fraude a la
-   ley, G. Otras causales** (mismo método: tramo por tramo, contra la
-   fuente extraída directo, checklist exhaustivo, no solo paráfrasis;
-   ver "Nota de método" arriba). Se avisa a Laura antes de seguir con
-   cada parte, salvo que ella pida explícitamente continuar sin
-   esperar (como con D).
+   cercana y está aprobado por Laura completo**. **C. Lesión, D.
+   Simulación y E. Inoponibilidad también terminaron el chequeo** (17
+   de 22, 19 de 33, y 15 de 26 párrafos reescritos respectivamente);
+   falta solo que Laura confirme las tres vistas previas. **Seguir con
+   F. Fraude a la ley, G. Otras causales** (mismo método: tramo por
+   tramo, contra la fuente extraída directo, checklist exhaustivo, no
+   solo paráfrasis; ver "Nota de método" arriba). Se avisa a Laura
+   antes de seguir con cada parte, salvo que ella pida explícitamente
+   continuar sin esperar (como con D y E).
 2. Después, el mismo chequeo en V (La representación) y VI
    (Modalidades).
 3. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
