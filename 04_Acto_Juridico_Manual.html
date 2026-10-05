@@ -62,11 +62,14 @@
   ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
   li{margin:.4rem 0;text-align:justify;}
   table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:10pt;
-    font-family:-apple-system,"Segoe UI",Arial,sans-serif;}
-  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;text-transform:uppercase;}
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;table-layout:fixed;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;text-transform:uppercase;
+    hyphens:none;-webkit-hyphens:none;}
   td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;
-    font-family:'Times New Roman',Times,Georgia,serif;font-size:11pt;}
+    font-family:'Times New Roman',Times,Georgia,serif;font-size:11pt;
+    hyphens:none;-webkit-hyphens:none;}
   tr:nth-child(even) td{background:var(--soft);}
+  th:first-child,td:first-child{width:15%;text-align:left;}
   .art{font-weight:700;color:var(--accent);white-space:nowrap;}
 
   .caja-tipo{display:block;text-align:center;font-weight:700;text-transform:uppercase;
