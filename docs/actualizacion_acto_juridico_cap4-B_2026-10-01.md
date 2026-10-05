@@ -359,8 +359,69 @@ conversión, contra el anexo Bozzo e Ibarra pp. 13-16 (sección
 "Conversión de los actos nulos"), que es de donde salió toda la
 ampliación de B.4.5 aprobada en el tramo 3. A diferencia del
 inventario original de este mismo informe (que para B.4 solo daba una
-lista parcial, "los más claros"), este es exhaustivo: una fila por
-párrafo.
+lista parcial, "los más claros"), este sigue el método de
+`actualizar-manuales-existentes.md` 3: checklist exhaustivo, una fila
+por punto, contra la fuente extraída directo, con las mismas categorías
+del paso 2.c (no solo paráfrasis).
+
+### Checklist, una fila por punto
+
+| Punto | Contenido | Veredicto |
+|---|---|---|
+| B.4.1 | Conceptos generales (párrafo único) | Paráfrasis cercana |
+| B.4.2 | Caja `.ley` art. 1687 | Cita textual, no se toca |
+| B.4.2 | "Como la nulidad opera con efecto retroactivo..." | Paráfrasis cercana |
+| B.4.2 | Ejemplo Felipe y la Coty | Propio, no se toca |
+| B.4.2 | "La doctrina tradicional suele distinguir..." (antes de VIAL) | Paráfrasis cercana |
+| B.4.2 | Atribución a VIAL | Atribuido, no se toca |
+| B.4.2(i) | Poseedor de buena fe | Verbatim parcial |
+| B.4.2(ii) | Objeto o causa ilícita a sabiendas | Paráfrasis cercana |
+| B.4.2(iii) | Contrato con incapaz (fundamento y restitución) | Está completo, paráfrasis cercana |
+| B.4.2(iv) | Poseedor que adquiere por prescripción | Paráfrasis cercana |
+| B.4.3 | Párrafo de apertura (acción reivindicatoria, dominio no sale del tradente) | Verbatim parcial |
+| B.4.3 | "Existen tres excepciones..." | Paráfrasis cercana |
+| B.4.3(i) | Lesión enorme | Paráfrasis cercana |
+| B.4.3(ii) | Tercero que adquirió por prescripción (primera parte) | Paráfrasis cercana |
+| B.4.3 | Ejemplo señora Pilar | Propio, no se toca |
+| B.4.3(ii) | Poseedor que se colocó en imposibilidad de restituir | Verbatim parcial |
+| B.4.3(iii) | Heredero indigno | Paráfrasis cercana |
+| B.4.4 | Párrafo de apertura (dos acciones, tercera doctrinal) | Verbatim parcial |
+| B.4.4.1(i) | A quién se dirige la acción de nulidad | Paráfrasis cercana |
+| B.4.4.1(ii) | Plazos de prescripción (10/4 años, violencia/incapacidad) | Está completo, factual |
+| B.4.4.1 | Prescripción extintiva, de corto tiempo (art. 2524) | Verbatim parcial |
+| B.4.4.1 | Suspensión a favor de herederos menores (art. 1692) | Verbatim parcial, **y Falta**: no se dice que la suspensión no puede extenderse por analogía a otros incapaces (Boetsch sí lo explicita) |
+| B.4.4.2 | "Es de carácter real: se dirige contra quien posea la cosa" | Verbatim parcial |
+| B.4.4.2 | `.definicion` acción reivindicatoria (art. 889) | Texto literal del artículo, no se toca |
+| B.4.4.2 | Extinción por prescripción adquisitiva (art. 2517) | Está completo, factual |
+| B.4.4.3 | "Es un tema poco explorado por la doctrina nacional..." | Verbatim parcial |
+| B.4.4.3 | Hipótesis legales (arts. 1455, 1814, 1458 con BARAONA) | Atribuido donde corresponde, no se toca |
+| B.4.4.3 | "El Código no tiene una regla general..." | Paráfrasis cercana |
+| B.4.4.3 a) | La fuerza | Paráfrasis cercana, **y Formato**: corre junto con b)-h) en prosa, debería ser `enum-a` |
+| B.4.4.3 b) | Error en cualidades accidentales | Paráfrasis cercana, mismo problema de formato |
+| B.4.4.3 c) | Error sustancial/esencial (RODRÍGUEZ/BARAONA) | Atribuido, no se toca; mismo problema de formato |
+| B.4.4.3 d) | Incapacidad relativa | Verbatim parcial; mismo problema de formato |
+| B.4.4.3 e) | Formalidades habilitantes | Paráfrasis cercana; mismo problema de formato |
+| B.4.4.3 f) | Falta de objeto (BARAONA/RODRÍGUEZ) | Atribuido, no se toca; mismo problema de formato |
+| B.4.4.3 g) | Incapacidad absoluta | Paráfrasis cercana; mismo problema de formato |
+| B.4.4.3 h) | Omisión de solemnidad | Verbatim parcial; mismo problema de formato |
+| B.4.4.3 | Síntesis ("En síntesis, la indemnización...") | Verbatim parcial, **y Falta**: no menciona la petición reconvencional de perjuicios que trae Boetsch |
+| B.4.4.3(iv) | "¿Por qué se discute la naturaleza...?" (contacto social) | Verbatim parcial |
+| B.4.4.3(iv) | Cita textual de RODRÍGUEZ | Atribuido, cita textual, no se toca |
+| B.4.4.3(iv) | "La posición mayoritaria, entre ellos BARAONA..." | Atribuido, no se toca (frase de enlace calcada, no amerita por sí sola) |
+| B.4.5 | Cita textual de Eduardo Court | Atribuido, no se toca |
+| B.4.5 | "Hay conversión cuando un acto inválido..." (definición sin comillas) | Verbatim parcial |
+| B.4.5 | Art. 1444 + principio de conservación del negocio jurídico | Verbatim parcial (la frase de cierre reproduce una cita del anexo sin atribuir) |
+| B.4.5 | Tabla, fila "Qué cambia" | Genuinamente reestructurado |
+| B.4.5 | Tabla, fila "Cuándo opera", celda Formal | Paráfrasis cercana de una cita del anexo |
+| B.4.5 | Tabla, fila "Cuándo opera", celda Legal | Paráfrasis cercana de una cita del anexo |
+| B.4.5 | Tabla, fila "Ejemplo", celda Formal (promesa/notario) | Ejemplo de la fuente (anexo), no propio |
+| B.4.5 | Tabla, fila "Ejemplo", celda Material (letra de cambio) | Ejemplo de la fuente (Boetsch), no propio |
+| B.4.5 | Tabla, fila "Ejemplo", celda Legal (art. 1701, arts. 1137/1138) | Está completo, factual |
+| B.4.5 | "No olvidar", los dos requisitos de la conversión material | Verbatim parcial (ya señalado en el inventario original de B) |
+| B.4.5 | "Fuera de los dos casos ya vistos..." (fideicomisos, legados, censos, donaciones) | Paráfrasis cercana, mismo orden que el anexo |
+| B.4.5 | **Falta**: los dos límites de la conversión legal (formalidad con sanción de nulidad; partes que prohíben la conversión) y el debate sobre si se necesita norma legal expresa | — |
+| B.4.5 | "No hay conversión... cuando las partes se equivocan en el nombre" | **Atribución faltante**: es la posición de COVIELLO, no nombrado |
+| B.4.5 | Jurisprudencia, Corte Suprema 3-dic-1921 | Paráfrasis cercana del resumen del caso que hace el anexo (no es cita textual de la sentencia) |
 
 ### 1. Autor con nombre, ya atribuido con claridad (cumple la regla, no se toca)
 
@@ -467,73 +528,182 @@ reescritura por sí sola.
   (cita textual o reporte atribuido, igual que se hace con VIAL,
   BARAONA y RODRÍGUEZ en el resto de B.4).
 
-### 5. Genuinamente reestructurado, cumple la regla (no se toca)
+### 5. La tabla de la conversión: la estructura sí está reestructurada, el contenido de algunas celdas no
 
-- La tabla comparativa de las tres clases de conversión (formal,
-  material, legal): condensación real de la prosa del anexo, no
-  transcripción reordenada. **Salvo una celda**: el ejemplo de
-  "Conversión material" (la letra de cambio que vale como
-  reconocimiento abstracto de deuda, art. 102 C. de Comercio) es el
-  mismo ejemplo de Boetsch casi palabra por palabra, y además es un
-  ejemplo de la fuente, no uno propio (viola también la regla de
-  "todos los ejemplos deben ser propios"). Se señala acá porque está
-  dentro de una tabla que por lo demás sí está bien reestructurada.
-- El `.definicion` de la acción reivindicatoria (art. 889): no es
-  paráfrasis de Boetsch, es el texto literal del propio artículo del
-  Código, correctamente citado como tal. No se toca.
-- Los ejemplos propios ya existentes (Felipe y la Coty; doña Marta,
-  don Waldo y la señora Pilar): no vienen de la fuente, no se tocan.
-- Los artículos citados en B.4 (más de 40, incluidos los nuevos del
-  bloque de la conversión: 1444, 1545, 1554, 1701, 747, 2044, 1062,
-  1133, 1141, 1142, 1203, 2480, 1404, 1433, 102) se verificaron de
-  nuevo íntegros contra el Código Civil (`Apuntes/Codigo Civil
-  Chileno.pdf`): los más de 40 coinciden, sin errores. Incluye la
-  verificación puntual del art. 1691 (el cuadrienio de la nulidad
-  relativa corre desde que cesa la incapacidad legal, no solo la
-  violencia, tal como dice el manual) y del art. 1545 (fundamento
-  correcto del "mutuo disenso" en la tabla de conversión legal).
+La tabla en sí (comparar formal/material/legal en tres criterios) es
+una reorganización real de la prosa lineal del anexo, no una
+transcripción reordenada: eso no se toca. Pero revisando celda por
+celda contra el anexo aparecen dos problemas distintos, ninguno
+resuelto por la forma de tabla:
 
-### 6. Jurisprudencia (no requiere acción, a diferencia de las categorías anteriores)
+- **Dos celdas de "Cuándo opera" repiten casi palabra por palabra una
+  cita que el anexo trae entre comillas de un autor no identificado**
+  ("ha dicho la doctrina..."): la celda Formal ("forma más rigurosa...
+  forma menos rigurosa") y la celda Legal ("la ley... prescindiendo de
+  su voluntad"; "no tienen otra vía que el mutuo disenso").
+- **Dos celdas de "Ejemplo" son ejemplos de la fuente, no propios**:
+  la celda Material (la letra de cambio que vale como reconocimiento
+  abstracto de deuda) es el ejemplo de Boetsch; la celda Formal (la
+  promesa de compraventa nula por incompetencia del notario) es el
+  ejemplo del propio anexo. Viola la regla de "todos los ejemplos
+  deben ser propios", no solo la de paráfrasis.
+- La celda Legal (art. 1701, arts. 1137/1138) es una lista de
+  artículos, no prosa: no tiene problema de paráfrasis.
 
-La caja de jurisprudencia de B.4.5 (Corte Suprema, 3 de diciembre de
-1921, conversión de testamento solemne en verbal) viene del anexo
-Bozzo e Ibarra, que la trae con el mismo nivel de detalle (sin rol,
-como es normal en fallos de esa época). Una búsqueda web no encontró
-el fallo exacto, pero sí confirmó que el patrón que describe
-(conversión de testamento abierto en verbal por muerte repentina antes
-de firmar) es un caso clásico y reconocido en la doctrina sucesoria
-chilena, no una invención. Mismo criterio que otros fallos antiguos
-sin rol ya usados en el manual (ej. Corte Pedro Aguirre Cerda 1988 en
-B.2.4): se deja la caja como está, sin marcador `[VERIFICAR: rol]`
-porque la caja no afirma tener un rol que falte, y está desarrollada
-(cumple el requisito de "rol o desarrollado, basta una de las dos").
+### 6. Inconsistencia de la fuente, señalada sin resolver
+
+El propio anexo cita el **art. 1701** dos veces, en dos secciones
+distintas: una vez dentro de su explicación de la conversión **formal**
+("Lo anterior se desprende además del tenor del art. 1701..."), y otra
+vez en su lista de ejemplos de conversión **legal** ("ii.-
+Reconocimiento de valor... Señala aquí los artículos 1137..., 1701..."). 
+Boetsch, por su parte, también llama "formal" al mecanismo del art.
+1701 cuando lo presenta ("hay otra [conversión], llamada formal, que
+obra sin más, automáticamente, en virtud de la disposición de la ley
+[...] el instrumento defectuoso [...] vale como instrumento privado").
+El manual, siguiendo la segunda mención del anexo, pone el art. 1701
+en la columna "Legal" de la tabla. No es un error del manual: es una
+inconsistencia que ya traía la fuente (mismo tipo de caso que la
+discrepancia de G.4 en el tramo 4.5, o el "tres excepciones" de
+Boetsch que en realidad lista cuatro, ya corregido). Se deja señalado
+para que Laura decida si prefiere anotarlo o dejarlo como está.
+
+### 7. Contenido de la fuente que falta en el manual (no es paráfrasis, es cobertura)
+
+- **B.4.4.1**: Boetsch explicita que la regla de suspensión del art.
+  1692 (a favor de herederos menores) **no puede extenderse por
+  analogía** a otros incapaces que no sean menores de edad, "aunque
+  sean incapaces por cualquier otro capítulo". El manual no lo dice.
+- **B.4.4.3, síntesis**: Boetsch agrega que, además de la acción
+  indemnizatoria de quien pide la nulidad, también es procedente **la
+  petición reconvencional de perjuicios** de quien debe sufrirla,
+  "dependiendo de la causal invocada y de las circunstancias en que se
+  ha celebrado el contrato". El manual no lo menciona.
+- **B.4.5, conversión legal**: el anexo trae dos límites que el manual
+  no incluye: (a) no hay conversión si la ley exige una formalidad para
+  la validez del acto con sanción expresa de nulidad; (b) no hay
+  conversión si los propios interesados la prohíben. También recoge un
+  debate doctrinal sobre si la conversión requiere siempre una norma
+  legal expresa, o si es una institución de aplicación general. Ninguno
+  de los dos está en el manual.
+- Se revisó también si el inicio de B.4.2 en Boetsch (la nulidad
+  aprovecha solo a la parte en cuyo favor se declaró, arts. 1690 y 3°
+  inc. 2°) falta en el manual: **no falta**, ya está en B.1.7(iv)
+  ("Solo aprovecha a quien la obtiene", con el art. 1690), a propósito
+  no repetido en B.4 para no duplicar contenido.
+
+### 8. Formato: B.4.4.3 debería ser una enumeración, no dos párrafos corridos
+
+Boetsch presenta las ocho causales sin regla expresa de indemnización
+(fuerza, error en cualidades accidentales, error sustancial/esencial,
+incapacidad relativa, formalidades habilitantes, falta de objeto,
+incapacidad absoluta, omisión de solemnidad) como una lista con letras
+a)-h). El manual las convirtió en dos párrafos corridos (929 y 1.153
+caracteres) separados solo por punto seguido. Es exactamente la regla
+de `formato.md` sección 2 que ya se aplicó en el tramo 4.8-4.9 de VI.2
+("Características"): una enumeración de posturas o categorías con
+explicación de dos líneas o más no va en prosa corrida, va en bloques
+`.enum-a` con cada letra aparte. Esto no es opcional ni una mejora:
+corresponde arreglarlo en este mismo tramo, no diferirlo.
+
+### 9. Artículos citados: verificación corregida
+
+La primera verificación de este inventario tenía dos errores: buscó
+"arts. 17 y 18" y "art. 102" en el **Código Civil**, cuando el manual
+mismo los cita como **C.P.C.** (17 y 18) y **C. de Comercio** (102), y
+dio por "verificados íntegros" más de 40 artículos habiendo leído solo
+~250 caracteres de cada uno. Corregido:
+
+- **Arts. 17 y 18 C.P.C.**: no hay copia local del Código de
+  Procedimiento Civil en `Apuntes/`; se verificó por búsqueda web. Art.
+  17: permite proponer en una misma demanda dos o más acciones
+  incompatibles, resueltas una como subsidiaria de otra. Art. 18:
+  permite que varias personas litiguen juntas cuando las acciones
+  "emanen directa e inmediatamente de un mismo hecho". Ambos coinciden
+  con lo que el manual les atribuye (interposición conjunta de la
+  acción de nulidad y la reivindicatoria, la segunda condicional a la
+  primera).
+- **Art. 102 C. de Comercio**: verificado contra `Apuntes/CÓDIGO DE
+  COMERCIO.pdf`: "La aceptación condicional será considerada como una
+  propuesta." Coincide con lo que dice el manual (se la trata como
+  nueva oferta).
+- **Resto de los artículos (todos del Código Civil)**: se volvió a
+  extraer el texto **completo** de los que tenían una afirmación
+  puntual que verificar (no solo el inicio): arts. 1203, 1567 N° 8,
+  1690, 1692 (los tres incisos) y 1893. Los cinco coinciden con lo que
+  el manual afirma, incluida la excepción del art. 1893 sobre el
+  comprador que enajenó por más de lo que pagó (ni Boetsch ni el
+  manual la mencionan; no es un error introducido por el manual, la
+  omite igual que la fuente). El resto de los artículos (1444, 1468,
+  1545, 1554, 1685, 1687, 1688, 1689, 1691, 1701, 1814, 1895, 2314,
+  2517, 2520, 2524, 682, 683, 717, 747, 889, 898, 900, 904-915, 974,
+  1062, 1133, 1141, 1142, 1353, 1404, 1433, 1455, 1458, 1490, 1491,
+  2044, 2480) se verificó contra el primer tramo de cada artículo en
+  `Apuntes/Codigo Civil Chileno.pdf`, suficiente para las citas breves
+  o de remisión que hace el manual de ellos. Ninguno arrojó un error de
+  número o de contenido.
+
+### 10. Jurisprudencia: reclasificada como paráfrasis cercana
+
+La caja de B.4.5 (Corte Suprema, 3 de diciembre de 1921, conversión de
+testamento solemne en verbal) se había dejado antes como "no requiere
+acción", por tratarse de un hecho judicial y no de una posición
+doctrinal. Al compararla de nuevo con el anexo, el texto del manual
+sigue casi la misma oración que la descripción que hace Bozzo e
+Ibarra del fallo (no una cita textual de la sentencia, sino el resumen
+que ellos redactan), con el mismo orden de cláusulas y solo sinónimos
+cambiados: corresponde tratarla igual que cualquier prosa de conexión
+sin autor nombrado, es decir, **reestructurarla**, no solo porque
+describe hechos sino porque copia de cerca la redacción de Bozzo e
+Ibarra. Sobre el fallo mismo: una búsqueda web no encontró la
+sentencia exacta ni logró confirmarla independientemente del anexo.
+Sí aparece, en apuntes de sucesorio de otros autores, una conversión de
+testamento abierto en verbal por fallecimiento repentino antes de
+firmar, pero descrita con un supuesto de hecho distinto (peligro
+inminente ya percibido, no una muerte imprevista como dice el anexo):
+no es necesariamente el mismo caso, así que no sirve como confirmación
+independiente. Se deja la caja (está desarrollada, cumple "rol o
+desarrollado") pero sin presentarla como un hallazgo verificado más
+allá de lo que ya respaldaba el anexo.
 
 ## Propuesta para B.4
 
-Igual criterio que B.1-B.3: reescribir en voz propia los pasajes de
-las categorías 2, 3 y 4 (la atribución a Coviello), conservando
-intacto el resto (BARAONA/VIAL/RODRÍGUEZ/Eduardo Court atribuidos, la
-tabla salvo la celda señalada, el `.definicion` del art. 889, los
-ejemplos propios, las cajas `.ley`, la jurisprudencia). Para la celda
-de la tabla con el ejemplo de Boetsch, dos caminos: (a) reemplazarlo
-por un ejemplo propio de conversión material (más coherente con la
-regla de ejemplos propios, pero exige inventar un caso chileno
-plausible de "acto nulo que vale como otro"), o (b) dejarlo pero
-presentado explícitamente como "el ejemplo clásico de la letra de
-cambio" sin pretender que sea un hallazgo propio. Laura decide.
+Reescribir en voz propia todo lo marcado "Paráfrasis cercana" o
+"Verbatim parcial" en la tabla de arriba, atribuir a Coviello el
+párrafo que hoy no lo nombra, convertir B.4.4.3 a)-h) en enumeración
+`.enum-a`, y agregar (si Laura aprueba) los tres contenidos que faltan
+de la sección 7. Conservar intacto: BARAONA/VIAL/RODRÍGUEZ/Eduardo
+Court ya atribuidos, la estructura de la tabla de conversión, el
+`.definicion` del art. 889, los ejemplos propios ya existentes, las
+cajas `.ley`, la caja de jurisprudencia (reescrita, no eliminada).
 
-Verificación mecánica ya hecha para este informe: balance de etiquetas
-(`p`, `table`/`tr`/`th`/`td`, `h2`, `div`, `span` dentro del fragmento
-B.4), cero guiones largos y guillemets, ningún párrafo sobre 1.200
-caracteres (el más largo, 1.153, dentro del límite), sin cajas
-`.dato-grado` (clase retirada). Falta repetirla después de la
-reescritura.
+Decisiones que le corresponden a Laura:
+
+1. **Las dos celdas de "Ejemplo" de la tabla** (letra de cambio;
+   promesa ante notario): (a) reemplazarlas por ejemplos propios de
+   conversión material y formal (exige inventar dos casos chilenos
+   plausibles), o (b) dejarlas presentadas explícitamente como "los
+   ejemplos clásicos de..." sin pretender que sean hallazgos propios,
+   mismo criterio que se usó con "la estrella con la mano" en el
+   capítulo I.
+2. **La inconsistencia del art. 1701** (formal según Boetsch, legal
+   según la segunda mención del anexo y la tabla del manual): dejarla
+   como está (ya es defendible, el anexo mismo lo clasifica ahí) o
+   agregar una nota señalándola, igual que se hizo con G.4.
+3. **Los tres contenidos que faltan** (sección 7): si se agregan o se
+   deja el manual como está, más breve que Boetsch en esos puntos
+   (igual criterio que otros tramos: el largo sigue a la fuente salvo
+   que Laura pida ampliar).
+
+Verificación mecánica ya hecha para este informe: balance de etiquetas,
+cero guiones largos y guillemets, ningún párrafo sobre 1.200 caracteres
+(el más largo, 1.153, dentro del límite), sin cajas `.dato-grado`.
+Falta repetirla después de la reescritura.
 
 ## Siguiente paso
 
-Laura revisa B.2 (`AJ_vista_previa.html`) y B.3
-(`AJ_vista_previa_B3.html`) en el navegador (pendientes de su
-aprobación). Para B.4: con la aprobación de este inventario y de los
-dos caminos propuestos para la celda de la tabla, se reescribe con
-`Edit`, se verifica de nuevo mecánicamente, y se muestra en vista
-previa.
+Laura revisa B.2, ya aprobado el 2026-10-05, y B.3
+(`AJ_vista_previa_B3.html`), todavía pendiente de su aprobación. Para
+B.4: con la aprobación de este inventario y de las tres decisiones de
+la sección anterior, se reescribe con `Edit`, se verifica de nuevo
+mecánicamente, y se muestra en vista previa.
