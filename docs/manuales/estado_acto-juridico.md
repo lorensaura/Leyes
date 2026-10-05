@@ -1,40 +1,54 @@
 # Estado: actualización de Acto Jurídico al método nuevo
 
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
-> [de Acto Jurídico / de AJ]". No acumular una entrada nueva por sesión:
-> corregir esta. Al decir "retoma Acto Jurídico" o "retoma AJ", leer este
-> archivo completo primero y resumir en pocas líneas dónde quedó antes
-> de seguir. Última actualización: 2026-10-05 (chequeo de **paráfrasis
-> cercana** capítulo por capítulo en curso, `guia-editorial.md` 3.
-> Capítulo I ya mergeado a `main`. **En curso: capítulo IV**, en
-> `worktree-acto-juridico-cap4`. Hecho y aprobado por Laura: intro + A.
-> La inexistencia jurídica, B.1 Aspectos generales, y **B.2 La nulidad
-> absoluta** (aprobado 2026-10-05 tras 4 ajustes de formato: cursiva en
-> "aparece de manifiesto en el acto o contrato", subrayado en
-> "excepción" del punto 4(ii), se quitó el cuadro de Conexiones sobre
-> el art. 350 COT, y se puso en rojo el art. 1683 al final del punto 6;
+> [de Acto Jurídico / de AJ]" (o "actualiza Acto Jurídico"). No acumular
+> una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
+> Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
+> en pocas líneas dónde quedó antes de seguir. Última actualización:
+> 2026-10-05 (chequeo de **paráfrasis cercana** capítulo por capítulo en
+> curso, `guia-editorial.md` 3. Capítulo I ya mergeado a `main`. **En
+> curso: capítulo IV**, en `worktree-acto-juridico-cap4`. **El bloque
+> completo B (Nulidad) ya pasó por el chequeo de paráfrasis cercana**:
+> intro + A. La inexistencia jurídica, B.1 Aspectos generales, **B.2 La
+> nulidad absoluta** (aprobado 2026-10-05 tras 4 ajustes de formato:
+> cursiva en "aparece de manifiesto en el acto o contrato", subrayado en
+> "excepción" del punto 4(ii), se quitó el cuadro de Conexiones sobre el
+> art. 350 COT, y se puso en rojo el art. 1683 al final del punto 6;
 > Laura preguntó por el origen de los dos fallos citados en B.2.4 —
 > Corte Pedro Aguirre Cerda 1988 y Corte Suprema 2008 rol 1.969-2006—,
 > ambos confirmados reales, tomados del anexo Bozzo e Ibarra, pp. 11-12,
-> no de Boetsch). **B.3 La nulidad relativa ya reescrito y verificado
-> mecánicamente, pendiente de revisión de Laura** (detalle en
-> `docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md`; vista previa
-> en `AJ_vista_previa_B3.html`, fuera del repo). Commit `c4a7d9f`,
-> pusheado a `origin/worktree-acto-juridico-cap4`. Al reescribir B.2 se
-> encontró que **el inventario original de todo el bloque B (B.1-B.4)
-> estaba incompleto**: se corrigió el método y quedó escrito como regla
-> permanente en `actualizar-manuales-existentes.md` 3 (chequeo tramo
-> por tramo, contra la fuente extraída directo, con checklist
-> exhaustivo, no solo paráfrasis) y en `decisiones.md` 2026-10-01. Al
-> inventariar B.3 de nuevo con ese método se confirmó una corrección
-> adicional: los **seis** requisitos de la ratificación de B.3.6.4
-> vienen todos de Boetsch (los cuatro últimos están al principio de la
-> p. 138 del PDF fuente, justo antes de "B.4", no solo los dos primeros
-> que aparecen en la p. 137). **Falta: B.4, inventariado con el mismo
-> método**, después C. Lesión, D. Simulación, E. Inoponibilidad, F.
-> Fraude a la ley, G. Otras causales, y luego V y VI. Se revisaron y
-> limpiaron todas las ramas remotas: borradas
-> `worktree-acto-juridico-tramo4-5-otras-causales` y
+> no de Boetsch), **B.3 La nulidad relativa** (aprobada 2026-10-05 con 5
+> ajustes: definición simplificada en voz de "según el art. 1681...",
+> se quitó la caja Advertencia de B.3.4.2 por redundante, "art. 1691" en
+> rojo y "cuatro años" en negrita y subrayado en B.3.5, "Criterio" en
+> negrita en la caja No confundir de B.3.6.1), y **B.4 Los efectos de la
+> nulidad** (reescrito en voz propia completo, incluida la conversión,
+> enriquecido con Alessandri, Coviello, Stolfi, Vial y un fallo de la CS
+> 2012 rol 3.557-2010 que aportó Laura; **todavía sin su aprobación
+> final de vista previa**, a diferencia de B.2 y B.3). Detalle completo
+> de los cuatro en `docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md`;
+> vista previa en `AJ_vista_previa.html` (B.2/B.4) y
+> `AJ_vista_previa_B3.html` (B.3), ambas fuera del repo. Último commit
+> `0822158`, pusheado a `origin/worktree-acto-juridico-cap4`. Al
+> reescribir B.2 se encontró que **el inventario original de todo el
+> bloque B (B.1-B.4) estaba incompleto**: se corrigió el método y quedó
+> escrito como regla permanente en `actualizar-manuales-existentes.md` 3
+> (chequeo tramo por tramo, contra la fuente extraída directo, con
+> checklist exhaustivo, no solo paráfrasis) y en `decisiones.md`
+> 2026-10-01. Al inventariar B.3 de nuevo con ese método se confirmó una
+> corrección adicional: los **seis** requisitos de la ratificación de
+> B.3.6.4 vienen todos de Boetsch (los cuatro últimos están al principio
+> de la p. 138 del PDF fuente, justo antes de "B.4", no solo los dos
+> primeros que aparecen en la p. 137). **Falta: C. Lesión, D.
+> Simulación, E. Inoponibilidad, F. Fraude a la ley, G. Otras causales,
+> y luego V y VI**, con el mismo chequeo. También se encontró y corrigió
+> un bug de CSS de alcance general (no solo del chequeo de paráfrasis):
+> los cuadros comparativos dejaban la columna "Criterio" tan angosta que
+> el navegador partía palabras con guion; corregido en la hoja de
+> estilos y registrado como regla permanente en `formato.md` 4.1 y 8,
+> `proceso.md` y `actualizar-manuales-existentes.md` 2.c (decisión
+> 2026-10-05). Se revisaron y limpiaron todas las ramas remotas:
+> borradas `worktree-acto-juridico-tramo4-5-otras-causales` y
 > `worktree-pdf-header-fix`, sin nada de valor sin recuperar. Laura
 > intentó mergear esta rama a `main` y salió un conflicto en este mismo
 > archivo (ambas ramas lo habían actualizado en paralelo, sin pisarse
@@ -569,8 +583,8 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 | IV, intro + A. La inexistencia | `worktree-acto-juridico-cap4` | Tramo piloto, ya trabajado de cerca con Laura: solo 3 pasajes con paráfrasis cercana (el resto ya tenía citas atribuidas y cuadros genuinamente reestructurados). Corregidos los 3. | Pusheado (`5bacbcc`), pendiente de merge |
 | IV.B.1 Aspectos generales | `worktree-acto-juridico-cap4` | Paráfrasis cercana generalizada (se escribió el día antes de nacer la regla). Reescrito. | Aprobado por Laura |
 | IV.B.2 La nulidad absoluta | `worktree-acto-juridico-cap4` | Mismo problema. Reescrito; el inventario original (hecho de un tirón sobre B.1-B.4) no había detectado todo, ver nota de método abajo. | **Aprobado por Laura** (2026-10-05, con 4 ajustes de formato) |
-| IV.B.3 La nulidad relativa | `worktree-acto-juridico-cap4` | Inventariado de nuevo contra Boetsch pp. 133-138; confirma y completa lo señalado en el informe original. Reescrito. | Pendiente de revisión de Laura |
-| IV.B.4 Los efectos de la nulidad | — | Por inventariar de nuevo con el método corregido (no usar el informe original) | Pendiente |
+| IV.B.3 La nulidad relativa | `worktree-acto-juridico-cap4` | Inventariado de nuevo contra Boetsch pp. 133-138; confirma y completa lo señalado en el informe original. Reescrito. | **Aprobado por Laura** (2026-10-05, con 5 ajustes de formato) |
+| IV.B.4 Los efectos de la nulidad | `worktree-acto-juridico-cap4` | Inventariado de nuevo (tabla exhaustiva, checklist completo) contra Boetsch `principal_11` entero y el anexo. Reescrito completo, incluida la conversión (B.4.5), enriquecida con Alessandri, Coviello, Stolfi, Vial y un fallo de la CS aportados por Laura. | Pendiente de revisión final de Laura en vista previa |
 | IV.C La lesión | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (C.1, Concepto doctrinal), como muestra. Falta revisión completa del punto. | Pendiente |
 | IV.D Simulación | — | No revisado todavía | Pendiente |
 | IV.E Inoponibilidad | — | No revisado todavía | Pendiente |
@@ -671,13 +685,14 @@ corrección de fidelidad en la cita del art. 1683) en
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **Seguir el chequeo de paráfrasis cercana por capítulo IV**: B.3 La
-   nulidad relativa y B.4 Los efectos de la nulidad (inventariar cada
-   uno de nuevo con el método corregido, ver "Nota de método" arriba:
-   tramo por tramo, contra la fuente extraída directo, checklist
-   exhaustivo, no solo paráfrasis), después C. Lesión, D. Simulación,
-   E. Inoponibilidad, F. Fraude a la ley, G. Otras causales. Se avisa a
-   Laura antes de seguir con cada parte.
+1. **El bloque B (B.1-B.4) ya terminó el chequeo de paráfrasis
+   cercana**: B.1, B.2 y B.3 aprobados por Laura; B.4 reescrito y
+   enriquecido, pendiente solo de su revisión final en vista previa (no
+   de más cambios de contenido conocidos). **Seguir con C. Lesión, D.
+   Simulación, E. Inoponibilidad, F. Fraude a la ley, G. Otras
+   causales** (mismo método: tramo por tramo, contra la fuente extraída
+   directo, checklist exhaustivo, no solo paráfrasis; ver "Nota de
+   método" arriba). Se avisa a Laura antes de seguir con cada parte.
 2. Después, el mismo chequeo en V (La representación) y VI
    (Modalidades).
 3. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
@@ -882,8 +897,9 @@ más afectan el trabajo por tramos:
 - La hoja de estilos de AJ ya tiene todas las clases del método nuevo
   (`.ley`, `.definicion`, `.pregunta-clasica`, `.no-olvidar`,
   `.conexiones`, `.enum-i lista`, `-run`, `.toc-lista`, `table`/`th`/`td`
-  con la tipografía corregida). El lector en línea (`app/manuales.html`)
-  también las tiene (AJ todavía no está conectado a la app).
+  con la tipografía corregida **y el ancho de columnas corregido**,
+  2026-10-05). El lector en línea (`app/manuales.html`) también las
+  tiene (AJ todavía no está conectado a la app).
 - **No se puede commitear en el `main` compartido** (el sistema lo
   bloquea): trabajar siempre en una rama/worktree y que Laura mergee con
   GitHub Desktop. Nunca commitear `.claude/settings.local.json`.
