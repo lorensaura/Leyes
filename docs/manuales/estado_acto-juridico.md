@@ -7,8 +7,19 @@
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
 > 2026-10-05 (chequeo de **paráfrasis cercana** capítulo por capítulo en
 > curso, `guia-editorial.md` 3. Capítulo I ya mergeado a `main`. **En
-> curso: capítulo IV**, en `worktree-acto-juridico-cap4`. **El bloque
-> completo B (Nulidad) ya pasó por el chequeo de paráfrasis cercana**:
+> curso: capítulo IV**, en `worktree-acto-juridico-cap4`. Laura aprobó
+> B.4 en vista previa: **el bloque completo B (Nulidad) queda
+> cerrado**. Se siguió con **C. Lesión**: de 22 párrafos de C.1 a C.4,
+> 17 tenían paráfrasis cercana de la prosa de conexión de Boetsch sin
+> autor nombrado y se reescribieron en voz propia (mismo contenido,
+> mismos artículos); el párrafo de DUCCI y 4 más ya estaban bien
+> atribuidos o reestructurados y no se tocaron. Laura aprobó "dale con
+> todo" directo sobre el informe, sin pedir ajustes (a diferencia de
+> B.2-B.4): **falta que confirme la vista previa** antes de darlo por
+> cerrado igual que B.2 y B.3. Informe en
+> `docs/actualizacion_acto_juridico_cap4-C_2026-10-05.md`, commit
+> `bac36ac`, pusheado a `origin/worktree-acto-juridico-cap4`. **El
+> bloque B (Nulidad) había pasado por el chequeo de paráfrasis cercana**:
 > intro + A. La inexistencia jurídica, B.1 Aspectos generales, **B.2 La
 > nulidad absoluta** (aprobado 2026-10-05 tras 4 ajustes de formato:
 > cursiva en "aparece de manifiesto en el acto o contrato", subrayado en
@@ -584,14 +595,45 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 | IV.B.1 Aspectos generales | `worktree-acto-juridico-cap4` | Paráfrasis cercana generalizada (se escribió el día antes de nacer la regla). Reescrito. | Aprobado por Laura |
 | IV.B.2 La nulidad absoluta | `worktree-acto-juridico-cap4` | Mismo problema. Reescrito; el inventario original (hecho de un tirón sobre B.1-B.4) no había detectado todo, ver nota de método abajo. | **Aprobado por Laura** (2026-10-05, con 4 ajustes de formato) |
 | IV.B.3 La nulidad relativa | `worktree-acto-juridico-cap4` | Inventariado de nuevo contra Boetsch pp. 133-138; confirma y completa lo señalado en el informe original. Reescrito. | **Aprobado por Laura** (2026-10-05, con 5 ajustes de formato) |
-| IV.B.4 Los efectos de la nulidad | `worktree-acto-juridico-cap4` | Inventariado de nuevo (tabla exhaustiva, checklist completo) contra Boetsch `principal_11` entero y el anexo. Reescrito completo, incluida la conversión (B.4.5), enriquecida con Alessandri, Coviello, Stolfi, Vial y un fallo de la CS aportados por Laura. | Pendiente de revisión final de Laura en vista previa |
-| IV.C La lesión | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (C.1, Concepto doctrinal), como muestra. Falta revisión completa del punto. | Pendiente |
+| IV.B.4 Los efectos de la nulidad | `worktree-acto-juridico-cap4` | Inventariado de nuevo (tabla exhaustiva, checklist completo) contra Boetsch `principal_11` entero y el anexo. Reescrito completo, incluida la conversión (B.4.5), enriquecida con Alessandri, Coviello, Stolfi, Vial y un fallo de la CS aportados por Laura. | **Aprobado por Laura** en vista previa (2026-10-05) |
+| IV.C La lesión | `worktree-acto-juridico-cap4` | Inventario exhaustivo (22 párrafos) contra Boetsch `principal_12` (pp. 151-160 de 221): 17 con paráfrasis cercana sin autor nombrado, reescritos; DUCCI y 4 más ya atribuidos/reestructurados, sin tocar. Informe `docs/actualizacion_acto_juridico_cap4-C_2026-10-05.md`, commit `bac36ac`. | Reescrito y pusheado, falta que Laura confirme la vista previa |
 | IV.D Simulación | — | No revisado todavía | Pendiente |
 | IV.E Inoponibilidad | — | No revisado todavía | Pendiente |
 | IV.F Fraude a la ley | — | No revisado todavía | Pendiente |
 | IV.G Otras causales | — | No revisado todavía | Pendiente |
 | V. La representación | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (V.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
 | VI. Modalidades | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (VI.A.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
+
+### Qué se hizo en IV.C La lesión (chequeo de paráfrasis cercana)
+
+- Inventario exhaustivo de los 22 párrafos de prosa de C.1 a C.4 contra
+  Boetsch `principal_12` (pp. 151-160 de 221), con tabla de veredicto
+  unidad por unidad (no solo una muestra). El contenido de fondo ya se
+  había verificado completo en el tramo 4.1 (2026-09-30): este chequeo
+  es aparte y mide solo cercanía de redacción.
+- **17 de 22 párrafos tenían paráfrasis cercana** de la prosa de
+  conexión de Boetsch, sin autor nombrado (mismo orden de ideas, mismas
+  frases clave, solo sinónimos cambiados): C.1 completo, C.2 casi
+  completo, y la mayoría de las explicaciones de C.3 y C.4. Se
+  reescribieron en voz propia, mismo contenido, mismos artículos,
+  verificados después de la reescritura (ninguno se perdió).
+- **5 unidades no se tocaron**: el párrafo que reporta la posición de
+  DUCCI (ya atribuido con claridad, "DUCCI sostiene que..."), la
+  primera frase de C.3(i) (compraventa), C.3(iv) Partición, C.3(v)
+  Mutuo (estos tres ya condensados o parafraseando texto legal, no
+  doctrina) y el ejemplo de doña Marta (ya propio).
+- Verificación mecánica: balance de etiquetas OK, cero guiones
+  largos/guillemets, ningún párrafo sobre 1.200 caracteres (el más
+  largo, 921), los 24 artículos citados siguen presentes, capturas de
+  Chrome headless revisadas bloque por bloque.
+- No se tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
+- Laura aprobó "dale con todo" directo sobre el informe (a diferencia
+  de B.2-B.4, donde pidió ajustes después de ver la vista previa).
+  Informe completo con la tabla de veredictos y las 17 reescrituras
+  propuestas en `docs/actualizacion_acto_juridico_cap4-C_2026-10-05.md`.
+  Commit `bac36ac`, pusheado a `origin/worktree-acto-juridico-cap4`.
+  **Falta que Laura confirme la vista previa** (`AJ_vista_previa.html`,
+  ancla `#cIV-C`) antes de darlo por cerrado igual que B.2 y B.3.
 
 ### Nota de método: el inventario original de B (B.1-B.4) no era confiable
 
@@ -686,10 +728,10 @@ corrección de fidelidad en la cita del art. 1683) en
 ## Qué sigue (orden decidido por Laura)
 
 1. **El bloque B (B.1-B.4) ya terminó el chequeo de paráfrasis
-   cercana**: B.1, B.2 y B.3 aprobados por Laura; B.4 reescrito y
-   enriquecido, pendiente solo de su revisión final en vista previa (no
-   de más cambios de contenido conocidos). **Seguir con C. Lesión, D.
-   Simulación, E. Inoponibilidad, F. Fraude a la ley, G. Otras
+   cercana y está aprobado por Laura completo**. **C. Lesión también
+   terminó el chequeo** (17 de 22 párrafos reescritos); falta solo que
+   Laura confirme la vista previa, como ya hizo con B.2 y B.3. **Seguir
+   con D. Simulación, E. Inoponibilidad, F. Fraude a la ley, G. Otras
    causales** (mismo método: tramo por tramo, contra la fuente extraída
    directo, checklist exhaustivo, no solo paráfrasis; ver "Nota de
    método" arriba). Se avisa a Laura antes de seguir con cada parte.
