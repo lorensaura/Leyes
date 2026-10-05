@@ -144,7 +144,7 @@ Vodanovic aparecen citados por Boetsch en este punto). Dos caminos:
   chequeo (ya se verificaron en los tramos 2 y 3 originales); no se
   repitió esa verificación acá.
 
-## Propuesta
+## Propuesta (ya ejecutada: las 4 sub-pasadas de abajo son B.1, B.2, B.3 y B.4, completas al 2026-10-05)
 
 Igual que en el capítulo I: dado que el problema es generalizado y no
 puntual, la reescritura punto por punto con `Edit` sería más lenta y
@@ -700,10 +700,98 @@ cero guiones largos y guillemets, ningún párrafo sobre 1.200 caracteres
 (el más largo, 1.153, dentro del límite), sin cajas `.dato-grado`.
 Falta repetirla después de la reescritura.
 
+## Qué se hizo en B.4 (Los efectos de la nulidad)
+
+Laura aprobó B.3 el 2026-10-05 y dio las tres decisiones pendientes de
+B.4: ejemplos propios para las dos celdas de la tabla de conversión; el
+art. 1701 sigue la clasificación de Boetsch, no la del anexo; y se
+agregan los tres contenidos que faltaban.
+
+Se reescribió en voz propia todo lo marcado "Paráfrasis cercana" o
+"Verbatim parcial" en la tabla del inventario, conservando intacto lo
+atribuido a BARAONA/VIAL/RODRÍGUEZ/Eduardo Court, el `.definicion` del
+art. 889, los ejemplos propios ya existentes (Felipe y la Coty; doña
+Marta, don Waldo y la señora Pilar) y las cajas `.ley`.
+
+- **Atribución a COVIELLO**: agregada en el párrafo sobre el simple
+  error de nombre del contrato.
+- **B.4.4.3 a)-h)**: las ocho causales de la acción de indemnización
+  (fuerza, error, incapacidad, formalidades, objeto, solemnidad) se
+  convirtieron de dos párrafos corridos a una enumeración `enum-a`,
+  siguiendo la misma letra que usa Boetsch.
+- **Contenido agregado** (los tres que faltaban): que la suspensión del
+  art. 1692 no se extiende por analogía a otros incapaces que no sean
+  menores; que además de la acción de indemnización, quien debe
+  soportar la nulidad puede reconvenir pidiendo perjuicios; y los dos
+  límites de la conversión en general, más el debate doctrinal sobre si
+  la conversión material necesita una norma legal expresa.
+- **Art. 1701 reclasificado**: salió de la columna "Legal" de la tabla
+  (donde lo ponía el anexo) y pasó a la columna "Formal" junto al
+  ejemplo propio de la promesa, siguiendo el criterio de Boetsch, que
+  lo llama "formal" por operar automáticamente por disposición de la
+  ley. Esto dejó la celda "Legal" solo con la donación irrevocable
+  entre cónyuges (arts. 1137 y 1138).
+- **Ejemplos propios**: la promesa de compraventa nula por
+  incompetencia del notario (antes del anexo) se reemplazó por un
+  ejemplo propio (don Hugo y la Sofía); la letra de cambio (antes de
+  Boetsch) se mantuvo como instrumento, pero con personajes propios
+  (Nacho y la Camila), mismo criterio que doña Marta y el Banco Estado
+  en el tramo 4.1: mismo mecanismo legal, no el ejemplo de la fuente
+  con los nombres cambiados.
+- **Los dos límites de la conversión**: en una primera redacción se
+  habían atribuido ambos a la conversión legal, lo que contradecía la
+  propia tabla (la legal es imperativa, no depende de la voluntad de
+  las partes). Corregido: el límite de que las partes la prohíban es
+  de la conversión material, que sí descansa en la voluntad hipotética;
+  el límite de la formalidad con sanción de nulidad es el que ya
+  explica el art. 1701 (no hay instrumento privado que valga si la ley
+  exigía el instrumento público como solemnidad). El párrafo se movió
+  justo después del recuadro "No olvidar", porque ahora depende de los
+  dos requisitos que ahí se explican.
+- **Jurisprudencia**: la caja de 1921 se reescribió en voz propia
+  (estaba muy cerca de la redacción del anexo, no de una cita textual
+  de la sentencia). La frase "menos solemne o privilegiado" se dejó
+  igual que el anexo, en vez de "el menos solemne de los privilegiados"
+  (frase inventada en la primera redacción). No se encontró el fallo de
+  forma independiente por búsqueda web: queda sin confirmación propia,
+  igual que se dejó constancia en el inventario.
+- **Dos correcciones de precisión** encontradas al verificar de nuevo:
+  se agregó la cita del art. 1692 inciso final (el que fija el tope de
+  diez años) junto a la del art. 2520 inc. 2° que ya estaba, porque
+  Boetsch cita ambos; y se corrigió un sujeto ambiguo en B.4.3 ("el
+  verdadero dueño también puede pedir...", antes sin sujeto explícito).
+
+Verificación mecánica: balance de etiquetas OK en todo el archivo (`p`
+764/764, `span` 1953/1953, `div` 67/67, `strong` 582/582, `em`
+277/277, `table`/`tr`/`th`/`td` OK, `h2` 133/133, `h3` 135/135), cero
+guiones largos y guillemets, ningún párrafo sobre 1.200 caracteres (el
+más largo, 1.092), los 45 artículos de B.4 verificados de nuevo
+presentes después de la reescritura, diff línea por línea de lo
+eliminado revisado (coincide con lo descrito en este informe),
+capturas de Chrome headless revisadas bloque por bloque, incluida una
+segunda pasada después de corregir los cinco problemas que encontró el
+advisor (contradicción de los dos límites, celda de tabla redundante,
+afirmaciones sin fuente, error de sujeto, negritas perdidas). No se
+tocó el índice: no se agregó ni cambió ningún `h2`/`h3`.
+
+**Nota de formato, sin resolver**: las enumeraciones `(i)-(iv)` de
+B.4.2-B.4.4 siguen con el marcado antiguo en línea (`<span
+class="enum-i">(i) Título.</span>`), mientras que B.3 ya usa el
+formato de dos niveles (`span.num`/`span.tit`) que exige `formato.md`
+2. No se tocó en este tramo porque no es parte del chequeo de
+paráfrasis ni de los problemas de cobertura o formato que sí estaban
+en alcance; se deja anotado para una pasada de formato aparte si Laura
+la pide.
+
+Con esto, el bloque completo B (B.1 a B.4) ya pasó por el chequeo de
+paráfrasis cercana con el método corregido. Falta solo la aprobación
+final de Laura sobre B.3 y B.4 en vista previa.
+
 ## Siguiente paso
 
-Laura revisa B.2, ya aprobado el 2026-10-05, y B.3
-(`AJ_vista_previa_B3.html`), todavía pendiente de su aprobación. Para
-B.4: con la aprobación de este inventario y de las tres decisiones de
-la sección anterior, se reescribe con `Edit`, se verifica de nuevo
-mecánicamente, y se muestra en vista previa.
+Laura revisa B.3 y B.4 en `AJ_vista_previa_B3.html` y
+`AJ_vista_previa.html` (se actualiza con el manual completo). Con su
+aprobación de ambos: commit, push, y seguir con el chequeo de
+paráfrasis cercana de C (La lesión), D (Simulación), E
+(Inoponibilidad), F (Fraude a la ley) y G (Otras causales), en ese
+orden, avisando a Laura antes de cada uno.

@@ -84,6 +84,10 @@ enumeraciones y párrafos cortos, qué va a un recuadro.
 - **Las definiciones doctrinales**: textuales, entre comillas y con su
   autor, en bloque `.definicion`. Citar una definición con su autor es
   legítimo y le da al texto la seriedad que el estudiante necesita.
+- **Si la definición no tiene autor** (ni la fuente se lo atribuye a
+  nadie), no se inventa uno: se presenta como "la definición que le ha
+  dado la doctrina es...", sin comillas si no se tiene el texto exacto
+  (decisión 2026-10-05, ver `decisiones.md`).
 
 **Ejemplo:**
 

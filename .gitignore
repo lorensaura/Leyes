@@ -20,4 +20,5 @@ Apuntes/
 # fuera del repo para que Laura los revise en el navegador; se regeneran
 # todo el tiempo, no son contenido versionable).
 /AJ_vista_previa.html
+/AJ_vista_previa_*.html
 /Informe_AJ_*.html
