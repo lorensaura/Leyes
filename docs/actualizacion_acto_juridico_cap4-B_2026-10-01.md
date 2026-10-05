@@ -848,6 +848,64 @@ es un caso de conversión (argumento a contrario: sin la regla de
 conversión, la omisión de la escritura produciría nulidad absoluta).
 Queda disponible si Laura lo pide más adelante.
 
+## Segundo enriquecimiento de B.4.5: un fallo de la CS y el libro de VIAL (2026-10-05)
+
+Laura aportó el texto de un fallo (Corte Suprema, 2012, rol N°
+3.557-2010) y cinco páginas de VIAL, *Teoría general del acto
+jurídico*, sección "Conversión del acto nulo" (§§199-201).
+
+**Verificación del fallo**: no se encontró por búsqueda web
+independiente (los fallos chilenos no suelen estar indexados en
+buscadores generales); viene de Laura con rol específico, cita
+textualmente la definición de ALESSANDRI que ya está en el manual, y
+aplica correctamente los dos incisos del art. 1701. Se usa con el
+mismo criterio que otros fallos de Laura con rol, sin verificación
+web independiente disponible.
+
+**Dos correcciones, no solo agregados.** El texto de VIAL obligó a
+corregir contenido ya escrito en esta misma sesión, no solo a sumar
+contenido nuevo:
+
+- **El art. 1444 no es un caso de conversión, según VIAL**: lo
+  analiza como un problema de error de calificación jurídica (el
+  contrato que las partes llaman compraventa y que para la ley es
+  permuta, no se perfecciona como compraventa ni produce sus efectos:
+  desde el primer momento es permuta). No hay ahí ningún acto nulo que
+  convertir. Como el art. 1444 se usaba en el párrafo de la definición
+  como "antecedente" de la idea de conversión, se consultó a Laura:
+  decidió mantenerlo, con una caja "No confundir" nueva que explica el
+  punto de VIAL (mismo criterio que con el testamento verbal).
+- **El requisito subjetivo tiene dos lecturas, no una sola**: Coviello
+  exige que las partes **ignoren** la nulidad; STOLFI (citado por
+  VIAL) exige lo contrario, que las partes **tengan conocimiento** de
+  la ineficacia, porque la ley se conforma con una hipótesis razonable
+  sobre su consentimiento. Se consultó a Laura, que decidió agregar la
+  posición de Stolfi marcando la diferencia con Coviello, en vez de
+  omitirla para no generar una aparente contradicción.
+
+**Agregado sin conflicto**: la caja de jurisprudencia del fallo de
+2012, que ilustra con un caso real la doctrina restrictiva de
+ALESSANDRI/VIAL ya incorporada (las hipótesis de conversión son de
+aplicación estricta) y el límite del art. 1701 inciso 1° (solemnidad)
+frente al inciso 2° (*ad probationem*).
+
+**No se agregó** (no estaba en el alcance de esta pasada, ni Laura lo
+pidió): la definición propia de VIAL al abrir su sección ("la
+conversión es el medio jurídico en virtud del cual..."), redundante
+con las de Court y Alessandri ya presentes, ni el dato de que la
+teoría de la conversión es de origen alemán, seguida por el Código
+italiano (que sí la regula expresamente, a diferencia del chileno).
+Queda disponible si Laura lo pide.
+
+Verificación mecánica: balance de etiquetas OK (`p` 771/771, `div`
+70/70, `span` 1960/1960, `strong` 593/593, `em` 278/278), cero guiones
+largos y guillemets, ningún párrafo sobre 1.200 caracteres (máximo
+912), dos cajas "No confundir" en el punto 5 (testamento verbal y art.
+1444), dentro del máximo de dos recuadros pedagógicos grandes por
+punto (`guia-editorial.md` 4, las cajas No olvidar y Jurisprudencia no
+cuentan contra ese máximo). Capturas de Chrome headless revisadas
+bloque por bloque. No se tocó el índice.
+
 ## Siguiente paso
 
 Laura revisa B.3 y B.4 en `AJ_vista_previa_B3.html` y
