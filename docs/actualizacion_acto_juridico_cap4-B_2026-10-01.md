@@ -297,10 +297,64 @@ sandbox de este worktree bloqueó la invocación por la ruta con
 espacios ("Google Chrome.app"); quedó pendiente si Laura quiere
 verificación visual antes de aprobar.
 
+## Qué se hizo en B.3 (La nulidad relativa)
+
+Se repitió la comparación oración por oración contra Boetsch
+`principal_10` (pp. 133-138, la última parte del PDF: B.3 termina a
+media página 138, justo antes de que empiece "B.4 LOS EFECTOS DE LA
+NULIDAD"), en vez de partir del inventario de la sección "Qué se
+encontró" de este informe. El resultado confirma y completa lo que ya
+se había anotado ahí para B.3, con una corrección: los **seis**
+requisitos de la ratificación de B.3.6.4 vienen los seis de Boetsch
+(no solo los dos primeros, que es lo único que parecía en la página
+137; los cuatro restantes, (iii) a (vi), están al principio de la
+página 138, antes del título de B.4).
+
+Se reescribieron en voz propia, conservando contenido, artículos,
+ejemplos y vocabulario técnico:
+
+- B.3.1: el `.definicion` (verbatim con cláusulas reordenadas) y el
+  párrafo siguiente (contracara de la absoluta).
+- B.3.3: la frase introductoria de las tres características.
+- B.3.4.1: los tres puntos (i) el beneficiado, (ii) sus herederos,
+  (iii) sus cesionarios.
+- B.3.4.2: la frase introductoria y los dos párrafos (i) la simple
+  aserción, (ii) el dolo. No se tocó el art. 1685 citado en bloque
+  `.ley`, ni la Advertencia ni el Ejemplo ("La guitarra eléctrica"),
+  que ya eran voz propia.
+- B.3.5: la frase sobre el saneamiento transcurridos los cuatro años, y
+  la frase introductoria del párrafo de los herederos (el contenido
+  sustantivo de esa parte, verificado contra el art. 1692 en el tramo
+  2, no viene de Boetsch y no se tocó). No se tocó el "No olvidar".
+- B.3.6.1: la frase de las dos acepciones, las etiquetas (i) y (ii), el
+  `.definicion` de confirmación (que en el chequeo anterior ya constaba
+  como casi verbatim del anexo), el párrafo de la renuncia y la crítica
+  terminológica, y el párrafo del fundamento (art. 12). No se tocó el
+  "No confundir".
+- B.3.6.2: (i) ratificación expresa, la frase introductoria de (ii), y
+  las tres preguntas a)/b)/c) sobre la ejecución voluntaria (esta
+  última parte no estaba en el inventario original de "Qué se
+  encontró", que solo marcaba la introducción de (ii); al comparar de
+  nuevo, las tres resultaron igual de cercanas a Boetsch).
+- B.3.6.3: los cuatro caracteres (i)-(iv) y el párrafo final sobre la
+  consolidación de la situación de hecho (del anexo, Y13).
+- B.3.6.4: los seis requisitos (i)-(vi), conservando las citas
+  textuales entre comillas de los arts. 1696, 1697 y 1694.
+
+No se tocaron las listas de causales (B.3.2): son enumeración de las
+ocho categorías legales del art. 1682, igual criterio que B.2.2.
+
+Verificación mecánica: balance de etiquetas OK (`p` 56/56, `span`
+122/122, `div` 4/4, `strong` 28/28, `em` 1/1, `h2` 7/7, `h3` 6/6), cero
+guiones largos y guillemets, ningún párrafo sobre 1.200 caracteres (el
+más largo quedó en 536), mismos artículos citados antes y después
+(1681, 1682, 1683, 1684, 1685, 1691, 1692, 1693, 1694, 1695, 1696,
+1697, 2160, 12). No se tocó el índice.
+
 ## Siguiente paso
 
-Laura revisa B.2 en la vista previa (o pide la captura de Chrome
-headless desde fuera del worktree). Con su aprobación: commit, push,
-y seguir con B.3 (La nulidad relativa), repitiendo la comparación
-completa contra Boetsch y el anexo en vez de partir del inventario
-original de este informe.
+Laura revisa B.2 (`AJ_vista_previa.html`) y B.3
+(`AJ_vista_previa_B3.html`) en el navegador. Con su aprobación: commit,
+push, y seguir con B.4 (Los efectos de la nulidad), repitiendo la
+comparación completa contra Boetsch y el anexo en vez de partir del
+inventario original de este informe.
