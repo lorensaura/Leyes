@@ -10,13 +10,17 @@
 > capítulo IV**, en `worktree-acto-juridico-cap4`. **El capítulo IV
 > completo (intro+A, B, C, D, E, F, G) y el capítulo V (La
 > representación) ya pasaron el chequeo de paráfrasis cercana y Laura
-> los aprobó todos** ("Todo ok", 2026-10-05). Detalle de qué se
-> encontró y qué se reescribió en cada bloque: ver las secciones "Qué
-> se hizo en..." de este archivo, una por letra/capítulo, y los
-> informes `docs/actualizacion_acto_juridico_cap4-<letra>_2026-10-05.md`.
-> **Sigue: VI. Modalidades**, el último capítulo pendiente de este
-> hilo (mismo método; avisar a Laura antes de aplicar cambios, salvo
-> que pida continuar sin esperar, como hizo para D, E, F, G y V).
+> los aprobó todos** ("Todo ok", 2026-10-05). **El capítulo VI
+> (Modalidades), el último de este hilo, también está reescrito**
+> (40 de 48 párrafos con paráfrasis cercana corregidos, informe
+> `docs/actualizacion_acto_juridico_cap4-VI_2026-10-05.md`): con esto
+> **el chequeo de paráfrasis cercana de todo Acto Jurídico queda
+> terminado**, solo falta que Laura confirme la vista previa de VI
+> (y de los tramos que todavía no confirmó: C, D, E, F, G, V).
+> Detalle de qué se encontró y qué se reescribió en cada bloque: ver
+> las secciones "Qué se hizo en..." de este archivo, una por
+> letra/capítulo, y los informes
+> `docs/actualizacion_acto_juridico_cap4-<letra>_2026-10-05.md`.
 > **El bloque B (Nulidad) había pasado por el chequeo de paráfrasis cercana**:
 > intro + A. La inexistencia jurídica, B.1 Aspectos generales, **B.2 La
 > nulidad absoluta** (aprobado 2026-10-05 tras 4 ajustes de formato:
@@ -600,7 +604,7 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 | IV.F El fraude a la ley | `worktree-acto-juridico-cap4` | Inventario exhaustivo (24 párrafos) contra Boetsch `principal_15` (pp. 177-186) y el anexo Bozzo e Ibarra: 13 con paráfrasis cercana, reescritos; COVIELLO/LARENZ/VIAL/VIAL DEL RÍO/FERREIRA/DIEZ-PICAZO/BARROS resueltos con comillas de cita atribuida. Informe `docs/actualizacion_acto_juridico_cap4-F_2026-10-05.md`, commit `bab10ff`. | **Aprobado por Laura** (tras corregir negritas de autor, commit `024faa3`) |
 | IV.G Otras causales | `worktree-acto-juridico-cap4` | Inventario exhaustivo (intro + G.1-G.9) contra Boetsch `principal_16` (pp. 186-189, solo cubre G.1-G.6) y el anexo "Cuadro comparativo" (G.7-G.9): 9 de 10 párrafos con paráfrasis cercana, reescritos. Informe `docs/actualizacion_acto_juridico_cap4-G_2026-10-05.md`, commit `0f40746`. Cierra el chequeo de paráfrasis de todo el capítulo IV. | **Aprobado por Laura** ("Todo ok") |
 | V. La representación | `worktree-acto-juridico-cap4` | Inventario exhaustivo (38 párrafos) contra Boetsch `principal_16` (pp. 190-208): 36 con paráfrasis cercana, reescritos; VIAL/ALESSANDRI ya atribuidos; ejemplo de V.10.2 reemplazado por uno propio. Informe `docs/actualizacion_acto_juridico_cap4-V_2026-10-05.md`, commit `83912da`. | **Aprobado por Laura** ("Todo ok") |
-| VI. Modalidades | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (VI.A.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
+| VI. Modalidades | `worktree-acto-juridico-cap4` | Inventario exhaustivo (48 párrafos) contra Boetsch `principal_17` (pp. 209-221): 40 con paráfrasis cercana, reescritos; la jurisprudencia de 2.4 resuelta con comillas de cita atribuida. Informe `docs/actualizacion_acto_juridico_cap4-VI_2026-10-05.md`. Cierra el chequeo de paráfrasis de todo Acto Jurídico. | Reescrito, falta commit/push y vista previa de Laura |
 
 ### Qué se hizo en IV.C La lesión (chequeo de paráfrasis cercana)
 
@@ -816,6 +820,54 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
   que Laura confirme la vista previa** (`AJ_vista_previa.html`, ancla
   `#cV`).
 
+### Qué se hizo en VI. Modalidades (chequeo de paráfrasis cercana)
+
+- Último capítulo del hilo. Igual que V, **no venía de una reescritura
+  de esta sesión**: ya estaba en el formato nuevo desde el tramo
+  4.8-4.9, pero nunca se había auditado párrafo por párrafo contra
+  Boetsch. El chequeo de capítulo I ya había encontrado, como muestra,
+  un párrafo con paráfrasis cercana en VI.A.1; este informe confirmó
+  que el problema era generalizado, igual que en V.
+- Inventario exhaustivo de los 48 párrafos de prosa del capítulo
+  completo (intro, A. La condición, B. El plazo, C. El modo), contra
+  Boetsch `principal_17` (pp. 209-221 de 221, PDF propio, distinto al
+  `principal_16` de V). Ningún anexo aporta contenido (ya confirmado en
+  el tramo 4.8-4.9).
+- **40 de 48 párrafos tenían paráfrasis cercana** sin autor nombrado y
+  se reescribieron en voz propia, mismo contenido, mismos artículos
+  (los 28 verificados en el tramo 4.8-4.9, incluida la corrección
+  1463→1473 y el párrafo propio del art. 1094).
+- La jurisprudencia de 2.4 (condición suspensiva meramente potestativa
+  del deudor) estaba parafraseada en estilo indirecto, sin comillas,
+  pese a que Boetsch la transcribe textual: se agregaron las comillas
+  sobre el texto exacto, atribuida a "la jurisprudencia" (Boetsch no da
+  rol, no se inventó uno), mismo criterio que ALCALDE/JOSSERAND en D y
+  los autores de F.
+- No se tocaron: el enunciado "Las modalidades tienen tres
+  características" (sin contenido que parafrasear), el punto 3
+  (Estados de la condición, ya condensado antes), B.2 (Semejanzas y
+  diferencias, ya convertido a lista y tabla en el tramo 4.8-4.9), el
+  párrafo propio del art. 1094 en C.3 (no parafrasea a Boetsch, lo
+  corrige), los ejemplos ya achilenizados (Cristóbal, Javiera,
+  Bastián/Fernanda, tío Walter, Gonzalo/Antonia, don Hernán, Constanza)
+  y los ejemplos abstractos sin nombre propio de la fuente (estrella
+  con la mano, aseguradora, venta/Europa).
+- Dos párrafos superaron 1.200 caracteres tras la reescritura
+  (patrimoniales/familia; potestativa/casual/mixta) y se dividieron en
+  dos sin perder contenido.
+- Verificación mecánica: balance de etiquetas OK, cero guiones
+  largos/guillemets, ningún párrafo sobre 1.200 caracteres tras los dos
+  splits, los 28 artículos y las 7 cajas `.ley` siguen presentes,
+  verificado con impresión a PDF del manual completo en Chrome headless
+  (páginas 122-129, capítulo VI) revisada página por página.
+- No se tocó el índice: no se agregó ni cambió ningún `h1`/`h2`/`h3`.
+- **Con esto, termina el chequeo de paráfrasis cercana capítulo por
+  capítulo de todo Acto Jurídico** (I, IV completo, V y VI). Informe
+  completo con el detalle en
+  `docs/actualizacion_acto_juridico_cap4-VI_2026-10-05.md`. **Falta
+  commitear, pushear y que Laura confirme la vista previa**
+  (`AJ_vista_previa.html`, ancla `#cVI`).
+
 ### Nota de método: el inventario original de B (B.1-B.4) no era confiable
 
 El informe `docs/actualizacion_acto_juridico_cap4-B_2026-10-01.md` hizo
@@ -908,14 +960,13 @@ corrección de fidelidad en la cita del art. 1683) en
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **El capítulo IV completo (A a G) y el capítulo V (La
-   representación) ya terminaron el chequeo de paráfrasis cercana y
-   están aprobados por Laura.** **Seguir con VI. Modalidades**, el
-   último capítulo pendiente de este hilo (mismo método: tramo por
-   tramo, contra la fuente extraída directo, checklist exhaustivo, no
-   solo paráfrasis; ver "Nota de método" arriba). Se avisa a Laura
-   antes de seguir con cada parte, salvo que ella pida explícitamente
-   continuar sin esperar (como con D, E, F, G y V).
+1. **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**:
+   capítulo I, capítulo IV completo (A-G), V y ahora VI (Modalidades)
+   ya están reescritos. **Falta commitear y pushear VI, y que Laura
+   confirme la vista previa de VI** (`AJ_vista_previa.html`, ancla
+   `#cVI`), igual que la de los tramos anteriores todavía sin
+   confirmar (C, D, E, F, G, V). Después de eso sigue el punto 2
+   (merge de esta rama a `main`) y el punto 3 (capítulos II y III).
 2. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
    intro+A, B.1, y lo que siga del chequeo de paráfrasis). El
    **capítulo I** (`worktree-acto-juridico-cap1`) ya está mergeado a
