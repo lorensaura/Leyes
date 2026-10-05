@@ -81,6 +81,11 @@ a Laura una lista con:
   aprueba.
 - Paralelos o discusiones doctrinales que deberían ir en cuadro
   comparativo (`guia-editorial.md`, sección 4.12).
+- Si el manual tiene cuadros comparativos, que su hoja de estilos tenga
+  la corrección de columnas angostas (`formato.md`, sección 4.1): sin
+  ella, la columna "Criterio" puede quedar tan angosta que el navegador
+  parte palabras con guion. Se compara contra la hoja base de
+  `formato.md` y se corrige si falta.
 - Artículos transcritos y definiciones que deberían ir en bloques `.ley`
   y `.definicion` (`formato.md`, sección 4).
 - Diferencias con la escalera de numeración y la regla de ascenso

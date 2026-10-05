@@ -176,6 +176,14 @@ solo las secciones del anexo que Laura confirmó en el mapa.
   cuadro comparativo en cualquier manual, comprobar que sus celdas `td`
   usan la tipografía del texto y no la del encabezado (`formato.md`,
   sección 4.1).
+- **Ancho de columnas en cuadros comparativos.** Otro bug real
+  encontrado en Acto Jurídico (2026-10-05): sin un ancho fijo, la
+  columna "Criterio" podía quedar tan angosta que el navegador partía
+  palabras con guion (`hyphens:auto` global de `body`). Se corrigió en
+  la hoja de estilos base con `table-layout:fixed` y la primera columna
+  con ancho mínimo (15%) y alineación izquierda. Al escribir o revisar
+  un cuadro comparativo en cualquier manual, comprobar que la hoja de
+  estilos tiene esta corrección (`formato.md`, secciones 4.1 y 8).
 - **Fidelidad de caracteres.** Se cuentan los caracteres del texto plano
   de la fuente del tramo (sin encabezados de página repetidos) y los del
   HTML escrito (sin etiquetas). La razón debe rondar **80-90%**. Bajo

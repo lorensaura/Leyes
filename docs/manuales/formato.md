@@ -368,6 +368,21 @@ rojo con letra blanca, filas alternadas), **sin cambiarlo**. En la
 impresión **no se cortan filas entre páginas**: la base ya lo asegura
 con `tr{page-break-inside:avoid}` dentro de `@media print`.
 
+**La primera columna (el "Criterio") nunca debe quedar angosta al
+punto de que el navegador parta palabras con guion** (ej. "CRI-TE-RIO",
+"Ejem-plo"): pasaba porque `body` tiene `hyphens:auto` global y, sin un
+ancho fijo, el layout automático de la tabla dejaba esa columna
+demasiado estrecha para palabras cortas como "Criterio" o "Ejemplo". La
+hoja de estilos base (sección 8) ya trae la corrección: `table-layout:
+fixed`, la primera columna con `width:15%` y alineada a la izquierda, y
+`hyphens:none` dentro de `th`/`td`. Las demás columnas se reparten el
+resto del ancho en partes iguales. No hace falta hacer nada al escribir
+un cuadro nuevo si se parte de la hoja base ya corregida; **al revisar
+un manual existente, comprobar que su hoja de estilos tenga esta
+corrección** (comparar contra la base de esta sección) y aplicarla si
+no la tiene, igual que con cualquier otro ajuste de la hoja de estilos
+(decisión 2026-10-05, ver `decisiones.md`).
+
 ```html
 <p>Paralelo entre nulidad absoluta y relativa:</p>
 <table>
@@ -567,10 +582,13 @@ La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
   ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
   li{margin:.4rem 0;text-align:justify;}
   table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:10pt;
-    font-family:-apple-system,"Segoe UI",Arial,sans-serif;}
-  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;}
-  td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;}
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;table-layout:fixed;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;
+    hyphens:none;-webkit-hyphens:none;}
+  td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;
+    hyphens:none;-webkit-hyphens:none;}
   tr:nth-child(even) td{background:var(--soft);}
+  th:first-child,td:first-child{width:15%;text-align:left;}
   .art{font-weight:700;color:var(--accent);white-space:nowrap;}
 
   .caja-tipo{display:block;text-align:center;font-weight:700;text-transform:uppercase;
