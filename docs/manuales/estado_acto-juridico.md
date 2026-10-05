@@ -5,57 +5,19 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-05 (chequeo de **paráfrasis cercana** capítulo por capítulo en
-> curso, `guia-editorial.md` 3. Capítulo I ya mergeado a `main`. **En
-> curso: capítulo IV**, en `worktree-acto-juridico-cap4`. Laura aprobó
-> B.4 en vista previa: **el bloque completo B (Nulidad) queda
-> cerrado**. Se siguió con **C. Lesión**: de 22 párrafos de C.1 a C.4,
-> 17 tenían paráfrasis cercana de la prosa de conexión de Boetsch sin
-> autor nombrado y se reescribieron en voz propia (mismo contenido,
-> mismos artículos); el párrafo de DUCCI y 4 más ya estaban bien
-> atribuidos o reestructurados y no se tocaron. Laura aprobó "dale con
-> todo" directo sobre el informe, sin pedir ajustes (a diferencia de
-> B.2-B.4): **falta que confirme la vista previa** antes de darlo por
-> cerrado igual que B.2 y B.3. Informe en
-> `docs/actualizacion_acto_juridico_cap4-C_2026-10-05.md`, commit
-> `bac36ac`, pusheado a `origin/worktree-acto-juridico-cap4`. Mientras
-> Laura revisaba C, se siguió con **D. Simulación** sin pausar a
-> esperar su aprobación del informe (ella lo pidió así): de 33
-> párrafos de D.1 a D.4.5, 19 tenían paráfrasis cercana (16 de
-> Boetsch, 3 del anexo Bozzo e Ibarra en 4.4-4.5) y se reescribieron;
-> ALCALDE/JOSSERAND y la definición de simulación ilícita de la Corte
-> Suprema se resolvieron con comillas de cita textual atribuida, no
-> reescritura. Informe en
-> `docs/actualizacion_acto_juridico_cap4-D_2026-10-05.md`, commit
-> `4a07265`, pusheado. Se siguió además con **E. Inoponibilidad**,
-> mismo criterio: de 26 párrafos, 15 con paráfrasis cercana,
-> reescritos; DUCCI, VODANOVIC y LÓPEZ SANTA MARÍA ya estaban
-> atribuidos, sin tocar. Informe
-> `docs/actualizacion_acto_juridico_cap4-E_2026-10-05.md`, commit
-> `675fc50`. **Laura confirmó las vistas previas de C, D y E: "Revisado
-> ok"**, los tres quedan cerrados. Se siguió con **F. Fraude a la
-> ley**: de 24 párrafos, 13 con paráfrasis cercana, reescritos; 6 más
-> (COVIELLO, LARENZ, VIAL, VIAL DEL RÍO/FERRARA, FERREIRA, DIEZ-PICAZO,
-> BARROS) se resolvieron agregando comillas de cita atribuida en vez
-> de reescribirlos, por tenerse el texto exacto. Informe
-> `docs/actualizacion_acto_juridico_cap4-F_2026-10-05.md`, commit
-> `bab10ff`. Se siguió con **G. Otras causales**, cerrando así **todo
-> el chequeo de paráfrasis cercana del capítulo IV (A a G)**: de 10
-> párrafos (intro + G.1-G.9), 9 con paráfrasis cercana (contra Boetsch
-> en G.1-G.6, contra el anexo en G.7-G.9), reescritos. Informe
-> `docs/actualizacion_acto_juridico_cap4-G_2026-10-05.md`, commit
-> `0f40746`. **Laura aprobó F** (tras corregir 6 nombres de autor sin
-> negrita encontrados en C, D y F, commit `024faa3`). Se siguió con
-> **V. La representación**, el primer capítulo fuera de IV en pasar
-> por este chequeo: de 38 párrafos, 36 con paráfrasis cercana (nunca
-> se había auditado), reescritos; VIAL y ALESSANDRI ya atribuidos, sin
-> tocar; la caja de jurisprudencia de V.4.4 reescrita completa; el
-> ejemplo de la promesa de hecho ajeno (V.10.2) reemplazado por uno
-> propio (Marcela, Ignacio, Tomás) por reproducir casi textual el de
-> Boetsch. Informe `docs/actualizacion_acto_juridico_cap4-V_2026-10-05.md`,
-> commit `83912da`. **Falta la vista previa de G y de V sin confirmar
-> por Laura.** **El
-> bloque B (Nulidad) había pasado por el chequeo de paráfrasis cercana**:
+> 2026-10-05 (chequeo de **paráfrasis cercana** capítulo por capítulo,
+> `guia-editorial.md` 3). Capítulo I ya mergeado a `main`. **En curso:
+> capítulo IV**, en `worktree-acto-juridico-cap4`. **El capítulo IV
+> completo (intro+A, B, C, D, E, F, G) y el capítulo V (La
+> representación) ya pasaron el chequeo de paráfrasis cercana y Laura
+> los aprobó todos** ("Todo ok", 2026-10-05). Detalle de qué se
+> encontró y qué se reescribió en cada bloque: ver las secciones "Qué
+> se hizo en..." de este archivo, una por letra/capítulo, y los
+> informes `docs/actualizacion_acto_juridico_cap4-<letra>_2026-10-05.md`.
+> **Sigue: VI. Modalidades**, el último capítulo pendiente de este
+> hilo (mismo método; avisar a Laura antes de aplicar cambios, salvo
+> que pida continuar sin esperar, como hizo para D, E, F, G y V).
+> **El bloque B (Nulidad) había pasado por el chequeo de paráfrasis cercana**:
 > intro + A. La inexistencia jurídica, B.1 Aspectos generales, **B.2 La
 > nulidad absoluta** (aprobado 2026-10-05 tras 4 ajustes de formato:
 > cursiva en "aparece de manifiesto en el acto o contrato", subrayado en
@@ -636,8 +598,8 @@ Se revisa capítulo por capítulo, en el orden en que se escribieron:
 | IV.D La simulación | `worktree-acto-juridico-cap4` | Inventario exhaustivo (33 párrafos) contra Boetsch `principal_13` (pp. 160-170) y el anexo Bozzo e Ibarra (4.4-4.5): 19 con paráfrasis cercana, reescritos; ALCALDE/JOSSERAND y la definición de la CS resueltos con comillas de cita atribuida. Informe `docs/actualizacion_acto_juridico_cap4-D_2026-10-05.md`, commit `4a07265`. | **Aprobado por Laura** ("Revisado ok") |
 | IV.E La inoponibilidad | `worktree-acto-juridico-cap4` | Inventario exhaustivo (26 párrafos) contra Boetsch `principal_14` (pp. 170-177) y el anexo Bozzo e Ibarra: 15 con paráfrasis cercana, reescritos; DUCCI/VODANOVIC/LÓPEZ SANTA MARÍA ya atribuidos, sin tocar. Informe `docs/actualizacion_acto_juridico_cap4-E_2026-10-05.md`, commit `675fc50`. | **Aprobado por Laura** ("Revisado ok") |
 | IV.F El fraude a la ley | `worktree-acto-juridico-cap4` | Inventario exhaustivo (24 párrafos) contra Boetsch `principal_15` (pp. 177-186) y el anexo Bozzo e Ibarra: 13 con paráfrasis cercana, reescritos; COVIELLO/LARENZ/VIAL/VIAL DEL RÍO/FERREIRA/DIEZ-PICAZO/BARROS resueltos con comillas de cita atribuida. Informe `docs/actualizacion_acto_juridico_cap4-F_2026-10-05.md`, commit `bab10ff`. | **Aprobado por Laura** (tras corregir negritas de autor, commit `024faa3`) |
-| IV.G Otras causales | `worktree-acto-juridico-cap4` | Inventario exhaustivo (intro + G.1-G.9) contra Boetsch `principal_16` (pp. 186-189, solo cubre G.1-G.6) y el anexo "Cuadro comparativo" (G.7-G.9): 9 de 10 párrafos con paráfrasis cercana, reescritos. Informe `docs/actualizacion_acto_juridico_cap4-G_2026-10-05.md`, commit `0f40746`. Cierra el chequeo de paráfrasis de todo el capítulo IV. | Reescrito y pusheado, falta que Laura confirme la vista previa |
-| V. La representación | `worktree-acto-juridico-cap4` | Inventario exhaustivo (38 párrafos) contra Boetsch `principal_16` (pp. 190-208): 36 con paráfrasis cercana, reescritos; VIAL/ALESSANDRI ya atribuidos; ejemplo de V.10.2 reemplazado por uno propio. Informe `docs/actualizacion_acto_juridico_cap4-V_2026-10-05.md`, commit `83912da`. | Reescrito y pusheado, falta que Laura confirme la vista previa |
+| IV.G Otras causales | `worktree-acto-juridico-cap4` | Inventario exhaustivo (intro + G.1-G.9) contra Boetsch `principal_16` (pp. 186-189, solo cubre G.1-G.6) y el anexo "Cuadro comparativo" (G.7-G.9): 9 de 10 párrafos con paráfrasis cercana, reescritos. Informe `docs/actualizacion_acto_juridico_cap4-G_2026-10-05.md`, commit `0f40746`. Cierra el chequeo de paráfrasis de todo el capítulo IV. | **Aprobado por Laura** ("Todo ok") |
+| V. La representación | `worktree-acto-juridico-cap4` | Inventario exhaustivo (38 párrafos) contra Boetsch `principal_16` (pp. 190-208): 36 con paráfrasis cercana, reescritos; VIAL/ALESSANDRI ya atribuidos; ejemplo de V.10.2 reemplazado por uno propio. Informe `docs/actualizacion_acto_juridico_cap4-V_2026-10-05.md`, commit `83912da`. | **Aprobado por Laura** ("Todo ok") |
 | VI. Modalidades | — | Encontrado un párrafo con paráfrasis cercana al verificar capítulo I (VI.A.1, Concepto), como muestra. Falta revisión completa del capítulo. | Pendiente |
 
 ### Qué se hizo en IV.C La lesión (chequeo de paráfrasis cercana)
@@ -946,20 +908,15 @@ corrección de fidelidad en la cita del art. 1683) en
 
 ## Qué sigue (orden decidido por Laura)
 
-1. **El capítulo IV completo (A a G) ya terminó el chequeo de
-   paráfrasis cercana**, con A-F ya aprobados por Laura; falta solo
-   que confirme la vista previa de G. **V. La representación también
-   terminó el chequeo** (36 de 38 párrafos reescritos), primer
-   capítulo fuera de IV en auditarse; falta que Laura confirme su
-   vista previa. **Seguir con VI. Modalidades**, el último capítulo
-   pendiente de este hilo (mismo método: tramo por tramo, contra la
-   fuente extraída directo, checklist exhaustivo, no solo paráfrasis;
-   ver "Nota de método" arriba). Se avisa a Laura antes de seguir con
-   cada parte, salvo que ella pida explícitamente continuar sin
-   esperar (como con D, E, F, G y V).
-2. Después, el mismo chequeo en V (La representación) y VI
-   (Modalidades).
-3. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
+1. **El capítulo IV completo (A a G) y el capítulo V (La
+   representación) ya terminaron el chequeo de paráfrasis cercana y
+   están aprobados por Laura.** **Seguir con VI. Modalidades**, el
+   último capítulo pendiente de este hilo (mismo método: tramo por
+   tramo, contra la fuente extraída directo, checklist exhaustivo, no
+   solo paráfrasis; ver "Nota de método" arriba). Se avisa a Laura
+   antes de seguir con cada parte, salvo que ella pida explícitamente
+   continuar sin esperar (como con D, E, F, G y V).
+2. **Merge pendiente de Laura**: `worktree-acto-juridico-cap4` (IV
    intro+A, B.1, y lo que siga del chequeo de paráfrasis). El
    **capítulo I** (`worktree-acto-juridico-cap1`) ya está mergeado a
    `main` (confirmado 2026-10-01, `main` HEAD = `8c8ad34`, el commit de
@@ -973,7 +930,7 @@ corrección de fidelidad en la cita del art. 1683) en
    `worktree-pdf-header-fix` (2026-07-28): su único contenido propio
    eran dos PDF regenerados ya obsoletos, la lógica del encabezado ya
    está en `main`.
-4. **Seguir con capítulos II y III** (Teoría general, la parte que
+3. **Seguir con capítulos II y III** (Teoría general, la parte que
    falta): II (Requisitos de los AJ: A. La voluntad, B. Capacidad, C.
    Objeto, D. Causa, E. Formalidades, fuentes `principal_2` a `_7`,
    más el anexo Causa de Domínguez y Boetsch para II.D) y III (Efectos
@@ -982,7 +939,7 @@ corrección de fidelidad en la cita del art. 1683) en
    como se hizo con el tramo 4. Al escribirlos o auditarlos, aplicar
    ya el chequeo de paráfrasis cercana (no dejarlo para después, como
    pasó con I, IV, V y VI).
-5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
+4. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
