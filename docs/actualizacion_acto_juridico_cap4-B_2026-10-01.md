@@ -351,10 +351,189 @@ más largo quedó en 536), mismos artículos citados antes y después
 (1681, 1682, 1683, 1684, 1685, 1691, 1692, 1693, 1694, 1695, 1696,
 1697, 2160, 12). No se tocó el índice.
 
+## Qué se encontró en B.4 (Los efectos de la nulidad), inventario completo con el método corregido (2026-10-05)
+
+Comparación oración por oración contra Boetsch `principal_11` completo
+(pp. 138-150 de 221, el PDF íntegro de "EFECTOS NULIDAD") y, para la
+conversión, contra el anexo Bozzo e Ibarra pp. 13-16 (sección
+"Conversión de los actos nulos"), que es de donde salió toda la
+ampliación de B.4.5 aprobada en el tramo 3. A diferencia del
+inventario original de este mismo informe (que para B.4 solo daba una
+lista parcial, "los más claros"), este es exhaustivo: una fila por
+párrafo.
+
+### 1. Autor con nombre, ya atribuido con claridad (cumple la regla, no se toca)
+
+BARAONA y RODRÍGUEZ en B.4.4 (error sustancial/esencial, falta de
+objeto, naturaleza de la responsabilidad) y la cita textual de
+RODRÍGUEZ sobre la responsabilidad legal; Eduardo Court en B.4.5
+(cita textual, atribuida). También la frase "La posición mayoritaria,
+entre ellos BARAONA..." (B.4.4): está atribuida, aunque la frase
+"entre ellos BARAONA" repite literalmente la de Boetsch, no amerita
+reescritura por sí sola.
+
+### 2. Verbatim o casi verbatim, sin atribución (la categoría más grave)
+
+- **B.4.3**, primer párrafo: "por haber sido constituidos por quien no
+  era dueño" es idéntico a Boetsch, igual que "nadie puede transferir
+  más derechos de los que tiene" (el manual dice "tenía", única
+  palabra cambiada).
+- **B.4.3(ii)**, el párrafo del poseedor que se colocó en
+  imposibilidad de restituir: "si la enajenó a sabiendas de que era
+  ajena, debe además resarcir todo perjuicio" es literalmente la misma
+  frase de Boetsch.
+- **B.4.4**, párrafo de apertura: "siendo la segunda una petición
+  condicional a que se acoja la primera" y "cierta doctrina agrega una
+  tercera acción posible, de indemnización de perjuicios" son
+  paráfrasis casi palabra por palabra.
+- **B.4.4(i)**, el párrafo de la prescripción extintiva: "es
+  extintiva", "corren contra toda persona, salvo que... se establezca
+  otra regla" y "es uno de los pocos casos de excepción" son idénticos
+  a Boetsch.
+- El párrafo de la suspensión a favor de herederos menores: "no se
+  toman en cuenta las suspensiones establecidas a favor de ciertas
+  personas" es casi idéntico ("no se tomarán en cuenta...").
+- **B.4.4(ii)**: "Es de carácter real: se dirige contra quien posea la
+  cosa" es casi verbatim de Boetsch ("que es de carácter real: se
+  dirige contra el que posea la cosa").
+- **B.4.4(iii)**, primer párrafo: "se funda en la existencia de un daño
+  causado por culpa o dolo de quien lo causa" es idéntico a Boetsch,
+  palabra por palabra; "un tema poco explorado por la doctrina
+  nacional" es casi igual ("bastante inexplorado").
+- El párrafo de la incapacidad relativa: "los casos posibles son solo
+  dos" es idéntico a Boetsch; "donde la consulta a los registros
+  públicos es insoslayable" es casi igual.
+- El párrafo de la omisión de solemnidad: "porque la ley se presume
+  conocida por todos" es idéntico a Boetsch.
+- El párrafo de síntesis ("En síntesis, la indemnización es
+  compatible..."): la apertura y la estructura de los requisitos
+  mínimos repiten a Boetsch casi palabra por palabra.
+- El párrafo "¿Por qué se discute la naturaleza de esta
+  responsabilidad?": "deberes de lealtad, distintos... de los que
+  nacen de un contrato ya celebrado... como del deber general de no
+  dañar a cualquiera" parafrasea de cerca a Boetsch, que no está
+  atribuido a ningún autor en ese pasaje (es su propio análisis).
+- **B.4.5**: la definición sin comillas ("Hay conversión cuando un
+  acto inválido como tal se emplea...") repite casi palabra por
+  palabra tanto a Boetsch como al anexo (que a su vez parafrasea a
+  Boetsch casi igual). Y el pasaje sobre el art. 1444 y la
+  conservación del negocio jurídico ("la voluntad negocial debe
+  mantenerse en vigor en lo posible, para lograr el fin práctico que
+  las partes persiguen con ella") repite casi palabra por palabra una
+  cita que el propio anexo trae entre comillas de un autor no
+  identificado ("Se ha señalado que...").
+- El "No olvidar" de B.4.5 (los dos requisitos de la conversión
+  material): ya estaba señalado en el inventario original de este
+  informe como casi verbatim del anexo; sigue pendiente, no se tocó
+  todavía.
+
+### 3. Paráfrasis cercana, mismo orden de cláusulas (necesita reestructurarse)
+
+- **B.4.1** completo.
+- **B.4.2**: el párrafo de conexión después de la caja `.ley` del art.
+  1687 ("Como la nulidad opera con efecto retroactivo..."); la primera
+  oración del párrafo siguiente ("La doctrina tradicional suele
+  distinguir...", antes de la atribución a VIAL); las cuatro
+  excepciones (i)-(iv).
+- **B.4.3**: la frase de transición "Existen tres excepciones..."; la
+  excepción (i) lesión enorme; la primera parte de la excepción (ii)
+  (antes del ejemplo propio); la excepción (iii) heredero indigno.
+- **B.4.4**: la primera oración de (i) ("Es personal: se dirige contra
+  el otro contratante..."); el párrafo "Para las demás causales, sin
+  norma expresa, la doctrina distingue" y la frase sobre la fuerza y
+  el error en cualidades accidentales (prosa propia de Boetsch, sin
+  autor nombrado en ese pasaje); la frase de la omisión de
+  formalidades habilitantes; el párrafo de la incapacidad absoluta;
+  "El Código no tiene una regla general, pero sí disposiciones
+  aisladas que la reconocen" (antes de los tres casos atribuidos).
+- **B.4.5**: el párrafo final sobre los demás ejemplos de conversión
+  legal ("Fuera de los dos casos ya vistos..."), que sigue la misma
+  clasificación en dos grupos del anexo ("i. Mutación de la
+  naturaleza..."; "ii. Reconocimiento de valor...") con los mismos
+  artículos en el mismo orden. **Esto responde al pendiente que había
+  quedado abierto en este mismo informe** ("no se comparó todavía
+  letra por letra contra el anexo"): ya se comparó, y sí hay paráfrasis
+  cercana que corregir.
+
+### 4. Atribución faltante a un autor con nombre (no es solo paráfrasis: falta el nombre)
+
+- **B.4.5**, el párrafo "No hay conversión, en cambio, cuando las
+  partes solo se equivocan en el nombre del contrato...": en el anexo
+  esta es la posición de **COVIELLO**, citado textual ("Según Coviello
+  'no hay conversión, asimismo, sino conservación del negocio
+  querido...'"). El manual la presenta como prosa propia, sin nombrar
+  a Coviello. A diferencia de los demás casos de esta categoría, acá
+  no basta reestructurar la oración: hay que **atribuirla a Coviello**
+  (cita textual o reporte atribuido, igual que se hace con VIAL,
+  BARAONA y RODRÍGUEZ en el resto de B.4).
+
+### 5. Genuinamente reestructurado, cumple la regla (no se toca)
+
+- La tabla comparativa de las tres clases de conversión (formal,
+  material, legal): condensación real de la prosa del anexo, no
+  transcripción reordenada. **Salvo una celda**: el ejemplo de
+  "Conversión material" (la letra de cambio que vale como
+  reconocimiento abstracto de deuda, art. 102 C. de Comercio) es el
+  mismo ejemplo de Boetsch casi palabra por palabra, y además es un
+  ejemplo de la fuente, no uno propio (viola también la regla de
+  "todos los ejemplos deben ser propios"). Se señala acá porque está
+  dentro de una tabla que por lo demás sí está bien reestructurada.
+- El `.definicion` de la acción reivindicatoria (art. 889): no es
+  paráfrasis de Boetsch, es el texto literal del propio artículo del
+  Código, correctamente citado como tal. No se toca.
+- Los ejemplos propios ya existentes (Felipe y la Coty; doña Marta,
+  don Waldo y la señora Pilar): no vienen de la fuente, no se tocan.
+- Los artículos citados en B.4 (más de 40, incluidos los nuevos del
+  bloque de la conversión: 1444, 1545, 1554, 1701, 747, 2044, 1062,
+  1133, 1141, 1142, 1203, 2480, 1404, 1433, 102) se verificaron de
+  nuevo íntegros contra el Código Civil (`Apuntes/Codigo Civil
+  Chileno.pdf`): los más de 40 coinciden, sin errores. Incluye la
+  verificación puntual del art. 1691 (el cuadrienio de la nulidad
+  relativa corre desde que cesa la incapacidad legal, no solo la
+  violencia, tal como dice el manual) y del art. 1545 (fundamento
+  correcto del "mutuo disenso" en la tabla de conversión legal).
+
+### 6. Jurisprudencia (no requiere acción, a diferencia de las categorías anteriores)
+
+La caja de jurisprudencia de B.4.5 (Corte Suprema, 3 de diciembre de
+1921, conversión de testamento solemne en verbal) viene del anexo
+Bozzo e Ibarra, que la trae con el mismo nivel de detalle (sin rol,
+como es normal en fallos de esa época). Una búsqueda web no encontró
+el fallo exacto, pero sí confirmó que el patrón que describe
+(conversión de testamento abierto en verbal por muerte repentina antes
+de firmar) es un caso clásico y reconocido en la doctrina sucesoria
+chilena, no una invención. Mismo criterio que otros fallos antiguos
+sin rol ya usados en el manual (ej. Corte Pedro Aguirre Cerda 1988 en
+B.2.4): se deja la caja como está, sin marcador `[VERIFICAR: rol]`
+porque la caja no afirma tener un rol que falte, y está desarrollada
+(cumple el requisito de "rol o desarrollado, basta una de las dos").
+
+## Propuesta para B.4
+
+Igual criterio que B.1-B.3: reescribir en voz propia los pasajes de
+las categorías 2, 3 y 4 (la atribución a Coviello), conservando
+intacto el resto (BARAONA/VIAL/RODRÍGUEZ/Eduardo Court atribuidos, la
+tabla salvo la celda señalada, el `.definicion` del art. 889, los
+ejemplos propios, las cajas `.ley`, la jurisprudencia). Para la celda
+de la tabla con el ejemplo de Boetsch, dos caminos: (a) reemplazarlo
+por un ejemplo propio de conversión material (más coherente con la
+regla de ejemplos propios, pero exige inventar un caso chileno
+plausible de "acto nulo que vale como otro"), o (b) dejarlo pero
+presentado explícitamente como "el ejemplo clásico de la letra de
+cambio" sin pretender que sea un hallazgo propio. Laura decide.
+
+Verificación mecánica ya hecha para este informe: balance de etiquetas
+(`p`, `table`/`tr`/`th`/`td`, `h2`, `div`, `span` dentro del fragmento
+B.4), cero guiones largos y guillemets, ningún párrafo sobre 1.200
+caracteres (el más largo, 1.153, dentro del límite), sin cajas
+`.dato-grado` (clase retirada). Falta repetirla después de la
+reescritura.
+
 ## Siguiente paso
 
 Laura revisa B.2 (`AJ_vista_previa.html`) y B.3
-(`AJ_vista_previa_B3.html`) en el navegador. Con su aprobación: commit,
-push, y seguir con B.4 (Los efectos de la nulidad), repitiendo la
-comparación completa contra Boetsch y el anexo en vez de partir del
-inventario original de este informe.
+(`AJ_vista_previa_B3.html`) en el navegador (pendientes de su
+aprobación). Para B.4: con la aprobación de este inventario y de los
+dos caminos propuestos para la celda de la tabla, se reescribe con
+`Edit`, se verifica de nuevo mecánicamente, y se muestra en vista
+previa.
