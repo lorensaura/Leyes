@@ -1171,9 +1171,13 @@ cercana (tabla exhaustiva por punto), no después.
   los usa; solo los nombra `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
   **Decisión de Laura (2026-10-06): se ven cuando se trabaje ese
   apunte**, no ahora.
-- **Ley 19.947 art. 8** (error en la identidad o cualidades del otro
-  contrayente, citado en 5.3 (iv) c)): sin verificar contra el texto
-  de la ley; Laura mandó el art. 12 por error. Pedírselo de nuevo.
+- **Para 5.2c (fuerza):** Laura entregó el art. 8 de la Ley 19.947
+  completo. Su **Nº 3** dice que falta el consentimiento libre y
+  espontáneo "Si ha habido fuerza, en los términos de los artículos
+  1456 y 1457 del Código Civil, ocasionada por una persona o por una
+  circunstancia externa, que hubiere sido determinante para contraer el
+  vínculo". Sirve para 7.4 (indiferencia de quien ejerce la fuerza) y
+  para las Conexiones con Familia. Es ley especial: va resumida.
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con

@@ -557,7 +557,8 @@ paréntesis al llevarlos al manual.
   nombra en ese punto).
 - **Ley de Matrimonio Civil:** Laura mandó el **art. 12** (constancia
   del consentimiento para el matrimonio), que no es el que se cita. El
-  art. 8 quedó resumido según Boetsch; **sigue pendiente verificarlo**.
+  art. 8 quedó resumido según Boetsch. Después Laura mandó el art. 8:
+  **verificado**, el resumen de los Nº 1 y Nº 2 calza a la letra.
 - **Torres con Fisco:** se cita "en el mismo sentido" que Alessandri
   Besa (León Hurtado lo menciona así), sin afirmar que la Corte acogió
   la tesis, porque el fallo no está desarrollado en las fuentes.
