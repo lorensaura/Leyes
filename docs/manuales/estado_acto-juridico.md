@@ -964,7 +964,7 @@ y aprobación antes de tocar el manual:
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
-| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común | | Pendiente; fuentes ya entregadas: Vial pp. 89-104 y Figueroa pp. 66-75 (jurisprudencia Izquierdo con Aduana 1859, Butcher con Plaza 1943, error común) |
+| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Informe escrito, esperando aprobación de Laura (7 preguntas en la sección 6); manual sin tocar |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
