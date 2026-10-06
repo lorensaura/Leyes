@@ -1009,12 +1009,17 @@ cercana (tabla exhaustiva por punto), no después.
 
 - **Vista previa de 5.1c** (ancla `#cII-A-3-3`).
 - **`[VERIFICAR vigencia]` en 3.3 (iv)**: la regulación "escasa" y su
-  lista de normas, "solo rige actos mixtos" y "la sanción es solo
-  multa" (Ley 19.496). Laura no encontró la norma de la sanción.
+  lista de normas, y "la sanción es solo multa" (Ley 19.496). Laura
+  no encontró la norma de la sanción (sugerido: revisar arts. 24 y 50).
+  "Solo rige actos mixtos" ya se corrigió con el art. 2 que entregó
+  Laura (la letra a es la regla general, hay otros casos).
 - **Número del artículo de la definición de proveedor** (Ley 19.496):
-  Laura la mandó como "Art. 2", parece art. 1 Nº 2; se citó sin número.
+  Laura la mandó como "Art. 2", pero el art. 2 es el ámbito de
+  aplicación (ella lo entregó después); la definición sería art. 1 Nº 2.
+  Se citó sin número hasta confirmarlo.
 - **Duración de la oferta** (Boetsch p. 48): omitida; los artículos que
-  entregó Laura no la cubren.
+  entregó Laura no la cubren. Sugerido: revisar el art. 35 de la Ley
+  19.496.
 
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
