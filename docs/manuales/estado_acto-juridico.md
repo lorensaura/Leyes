@@ -984,7 +984,7 @@ y aprobación antes de tocar el manual:
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
-| 5.3 | B. Capacidad, `principal_4` | | Pendiente |
+| 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Informe listo (commit `81a917f`), esperando respuestas de Laura a las 5 preguntas |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
@@ -1220,7 +1220,8 @@ cercana (tabla exhaustiva por punto), no después.
   revisión final del manual**, no ahora.
 - **Merge de `worktree-acto-juridico-cap2-3`** a `main`: hecho hasta
   5.2b (2026-10-06, commit `08abcb5`). Lo de 5.2c en adelante se
-  mergea cuando Laura quiera.
+  mergea cuando Laura quiera. **5.2c ya está mergeado y pusheado**
+  (confirmado por Laura, 2026-10-06).
 
 ## Qué sigue (orden decidido por Laura)
 
