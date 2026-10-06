@@ -222,3 +222,33 @@ texto del art. 16 de la Ley del Consumidor.
    con `[VERIFICAR]`?
 4. Código alemán: ¿"art. 181" (como Boetsch) o "§ 181"?
 5. ¿Te parecen bien los ejemplos de 6.4, o quieres cambiar alguno?
+
+## 8. Decisiones de Laura y aplicación (2026-10-06)
+
+- **Reescritura completa aprobada**, con los recuadros y ejemplos de la
+  sección 6 tal como se propusieron.
+- **Ley del Consumidor:** Laura entregó el texto de los arts. 12 A y 16,
+  y la definición de proveedor ("2.- Proveedores: ..."; ella la rotuló
+  "Art. 2", pero por su forma parece el Nº 2 de la lista de definiciones
+  del art. 1: **se citó sin número de artículo** hasta confirmarlo).
+  Arts. 12 A y 16 quedaron en recuadro de ley completos. No encontró la
+  norma de la sanción: esa afirmación, la de que la ley solo rige actos
+  mixtos y la de la regulación "escasa" con su lista de normas quedaron
+  con `[VERIFICAR vigencia]`.
+- **Duración de la oferta (unidad 21):** Laura pidió resolverla con los
+  artículos entregados. **No se resuelve:** ni el art. 12, ni el 12 A,
+  ni el 16, ni la definición de proveedor hablan de la duración de la
+  oferta. Queda omitida, como estaba; pendiente si Laura encuentra el
+  artículo.
+- **Código alemán:** "§ 181".
+- **Ejemplos:** aprobados (Chillán, la Pame, don Arturo, la Trini). En
+  el contrato de adhesión no se agregó ejemplo.
+- **Formato:** (i) a (iv) con estilo de clasificación; a) a d) en la
+  escalera; confirmación escrita movida a c); art. 412 corregido y
+  completo; arts. 2144 y 2145 en recuadro de ley con su letra exacta.
+  Ningún `h2`/`h3` cambió (índice igual).
+- **Verificación:** etiquetas balanceadas, cero guiones largos y
+  guillemets, ningún párrafo de texto propio sobre 1.200 caracteres
+  (solo los recuadros de ley de los arts. 16 y 12 A, que son citas
+  completas), frases clave de las 27 unidades presentes, capturas en
+  Chrome headless revisadas.

@@ -36,9 +36,9 @@
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
 > pusheada, **sin mergear a `main`**). Hechos: **5.1a** (II intro, A.1,
 > A.2) y **5.1b** (II.A.3.1-3.2), ambos aprobados por Laura en vista
-> previa. **En curso: 5.1c** (II.A.3.3, casos especiales de formación
-> del consentimiento: fuente `principal_2`, pp. 45-49). Ver
-> "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
+> previa. **5.1c** (II.A.3.3) reescrito, falta vista previa de Laura.
+> **Siguiente: 5.2** (A.4-A.8, vicios de la voluntad, `principal_3`).
+> Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
 ## Dónde estamos
@@ -934,7 +934,7 @@ y aprobación antes de tocar el manual:
 |---|---|---|---|
 | 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
-| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | **En curso**: informe para aprobación |
+| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito; falta vista previa de Laura |
 | 5.2 | A.4-A.8 Vicios (error, dolo, fuerza, remisión lesión/simulación), fuente `principal_3` | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
@@ -1006,6 +1006,15 @@ cercana (tabla exhaustiva por punto), no después.
   cuatro teorías).
 
 ### Pendientes de II (recordar a Laura al retomar)
+
+- **Vista previa de 5.1c** (ancla `#cII-A-3-3`).
+- **`[VERIFICAR vigencia]` en 3.3 (iv)**: la regulación "escasa" y su
+  lista de normas, "solo rige actos mixtos" y "la sanción es solo
+  multa" (Ley 19.496). Laura no encontró la norma de la sanción.
+- **Número del artículo de la definición de proveedor** (Ley 19.496):
+  Laura la mandó como "Art. 2", parece art. 1 Nº 2; se citó sin número.
+- **Duración de la oferta** (Boetsch p. 48): omitida; los artículos que
+  entregó Laura no la cubren.
 
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
