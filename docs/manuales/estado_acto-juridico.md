@@ -34,7 +34,10 @@
 > **Qué sigue (2026-10-06)**: capítulos II (Requisitos del AJ) y III
 > (Efectos del AJ), en tandas chicas, en la rama
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
-> pusheada, **sin mergear a `main`**, último commit `4f6f29e`). Hechos
+> pusheada, **sin mergear a `main`**, último commit de contenido
+> `a6657b4`). Ojo: esta rama trae también el cambio de Advertencia a No
+> confundir en los manuales de **Responsabilidad** (HTML y PDF), que sí
+> están publicados: llegan a digesto.cl solo cuando Laura mergee. Hechos
 > y aprobados en vista previa: **5.1a**, **5.1b** y **5.1c**. **5.2 se
 > dividió** a pedido de Laura (el error es muy preguntado y quiere más
 > detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
@@ -1134,6 +1137,11 @@ cercana (tabla exhaustiva por punto), no después.
 
 ### Pendientes de II (recordar a Laura al retomar)
 
+- **Archivos HTML antiguos con cajas Advertencia** sin tocar:
+  `01_Responsabilidad_Civil_Manual_de_Estudio.html` y
+  `01b_Responsabilidad_Contractual_DESARROLLADO_muestra.html` (la app no
+  los usa; solo los nombra `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
+  Preguntado a Laura si se cambian o se borran; sin respuesta.
 - **Conformidad final de 5.2a** en vista previa (ancla `#cII-A-4`),
   después de los ajustes de cajas.
 - **5.2b, ya detectado:** el manual (5.4) dice que el art. 1454 inc. 2°
