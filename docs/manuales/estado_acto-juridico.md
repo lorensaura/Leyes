@@ -36,12 +36,19 @@
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
 > pusheada, **sin mergear a `main`**). Hechos: **5.1a** (II intro, A.1,
 > A.2) y **5.1b** (II.A.3.1-3.2), ambos aprobados por Laura en vista
-> previa. **5.1c** (II.A.3.3) reescrito y puesto al día con la Ley del
-> Consumidor vigente (DFL 3 de 2021); falta que Laura lo lea en vista
-> previa. **Siguiente: 5.2** (A.4-A.8, vicios de la voluntad,
-> `principal_3`): extraer la fuente, inventario, chequeo de paráfrasis
-> e informe para aprobación, igual que 5.1c. Ojo con la regla nueva:
-> las leyes especiales se resumen, no se transcriben en `.ley`.
+> previa. **5.1c** (II.A.3.3) también aprobado en vista previa
+> (2026-10-06). **5.2 se dividió** a pedido de Laura (el error es muy
+> preguntado y quiere más detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases
+> de error de hecho, 5.3 a 5.6) y 5.2c (dolo, fuerza, remisión). Laura
+> entregó pantallazos de **VIAL** (pp. 77-89) y **FIGUEROA YÁÑEZ** (pp.
+> 63-65, con casos para resolver y extractos de León Hurtado y Claro
+> Solar); están en su Escritorio (`Screenshot 2026-10-06 at 1.14.15 pm`
+> a `1.15.23 pm` = Vial; `1.23.57 pm` a `1.24.07 pm` = Figueroa), y lo
+> usado está transcrito en la sección 8 del informe de 5.2a.
+> **Siguiente: esperar la aprobación del informe de 5.2a**
+> (`docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md`), con
+> 8 preguntas abiertas; la más importante es el formato de los "casos
+> para resolver" (cambio de regla, sección 6 del informe).
 > Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
@@ -938,8 +945,10 @@ y aprobación antes de tocar el manual:
 |---|---|---|---|
 | 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
-| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); falta vista previa |
-| 5.2 | A.4-A.8 Vicios (error, dolo, fuerza, remisión lesión/simulación), fuente `principal_3` | | Pendiente |
+| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
+| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Informe listo, esperando aprobación de Laura |
+| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común (+ casos de Figueroa) | | Pendiente; falta saber si Laura tiene Vial p. 89+ y Figueroa p. 66 |
+| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
@@ -1062,7 +1071,6 @@ cercana (tabla exhaustiva por punto), no después.
 
 ### Pendientes de II (recordar a Laura al retomar)
 
-- **Vista previa de 5.1c** (ancla `#cII-A-3-3`).
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
