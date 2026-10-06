@@ -43,8 +43,8 @@
 > detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
 > a 5.6) y 5.2c (dolo, fuerza, remisión). **5.2a reescrito** con VIAL,
 > LEÓN HURTADO y un párrafo textual de Laura; Laura lo revisó en vista
-> previa y pidió menos cajas (ya aplicado, ver "Qué se hizo en 5.2a").
-> Falta que confirme que quedó conforme.
+> previa, pidió menos cajas (aplicado) y quedó **conforme**
+> (2026-10-06).
 >
 > **Siguiente: 5.2b** (5.3 a 5.6): extraer Boetsch (`principal_3`, pp.
 > 52-59), inventario, chequeo de paráfrasis e informe para aprobación,
@@ -963,7 +963,7 @@ y aprobación antes de tocar el manual:
 | 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
-| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); Laura lo revisó en vista previa y pidió menos cajas (aplicado); falta su conformidad final |
+| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común | | Pendiente; fuentes ya entregadas: Vial pp. 89-104 y Figueroa pp. 66-75 (jurisprudencia Izquierdo con Aduana 1859, Butcher con Plaza 1943, error común) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
@@ -1141,9 +1141,8 @@ cercana (tabla exhaustiva por punto), no después.
   `01_Responsabilidad_Civil_Manual_de_Estudio.html` y
   `01b_Responsabilidad_Contractual_DESARROLLADO_muestra.html` (la app no
   los usa; solo los nombra `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
-  Preguntado a Laura si se cambian o se borran; sin respuesta.
-- **Conformidad final de 5.2a** en vista previa (ancla `#cII-A-4`),
-  después de los ajustes de cajas.
+  **Decisión de Laura (2026-10-06): se ven cuando se trabaje ese
+  apunte**, no ahora.
 - **5.2b, ya detectado:** el manual (5.4) dice que el art. 1454 inc. 2°
   exige error "compartido por ambas partes"; el artículo solo exige que
   el motivo sea "conocido de la otra parte" (Boetsch se equivoca). Y en
