@@ -371,3 +371,33 @@ de la víctima en la defensa de sus intereses."
 **p. 8 (prueba):** "El dolo puede probarse por cualquier medio de
 prueba, no rigiendo a su respecto las limitaciones a la prueba de
 testigos establecidas en los arts. 1708 y 1709."
+
+## 8. Decisiones de Laura y aplicación (2026-10-06)
+
+- **Aprobó todo** (preguntas 1, 2, 5, 7 y 8): reescritura completa, una
+  sola caja No confundir (7.4), anexo de Bozzo e Ibarra (VON TUHR,
+  PESCIO, LEÓN HURTADO, elementos, simple mentira, arts. 1708-1709),
+  presunciones distinguidas por "dolo" o "mala fe", sin el art. 974, y
+  los ejemplos propios.
+- **Pregunta 3: sí al cuadro comparativo** error / dolo / fuerza, al
+  final de 7.8.
+- **Pregunta 6: sin la glosa hombre / mujer.** Queda la letra del art.
+  1456 ("edad, sexo y condición") y un ejemplo propio de la relatividad
+  del temor (la señora Elba en Coyhaique).
+- **Pregunta 4: Laura entregó los textos.**
+  - **Art. 280 C.P.C.** confirma la presunción: "considerándose doloso
+    su procedimiento". Queda como letra g), resumido.
+  - **Art. 22 de la Ley de Cheques: no presume el dolo.** Tipifica el
+    giro sin fondos o sobre cuenta cerrada y permite el sobreseimiento
+    si se paga, "a menos que de los antecedentes aparezca en forma clara
+    que el imputado ha girado el o los cheques con ánimo de defraudar".
+    Exige ese ánimo, no lo presume. **Se sacó de la lista de
+    presunciones** (el anexo de Bozzo e Ibarra estaba mal en esto) y
+    quedó en una frase aparte, como contraejemplo.
+- Ejemplos aplicados: los de 5.4, más el Seba y el alternador
+  "original" (reticencia sin norma expresa, en lugar de la cómoda de
+  Boetsch).
+- **Verificación:** etiquetas balanceadas, cero guiones largos y
+  guillemets, ningún párrafo sobre 1.200 caracteres, todos los
+  artículos del texto anterior siguen citados, capturas en Chrome
+  headless revisadas. Ningún `h2`/`h3` cambió (índice igual).

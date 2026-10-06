@@ -977,7 +977,7 @@ y aprobación antes de tocar el manual:
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
-| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Informe listo, esperando aprobación de Laura (8 preguntas en la sección 6) |
+| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito; esperando revisión de Laura en vista previa |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
@@ -1172,6 +1172,30 @@ cercana (tabla exhaustiva por punto), no después.
 - Claro Solar cita arts. 1267, 704 y 1269 para una regla que está en
   el art. 94 regla 4ª: se cita el 94. Sus arts. 361-363 C. de Comercio
   (derogados en parte) no se usaron.
+
+### Qué se hizo en 5.2c (A.6, A.7, A.8)
+
+- Fuentes: Boetsch pp. 59-69 y anexo de Bozzo e Ibarra pp. 6-9 (sin
+  fuentes nuevas, decisión de Laura). Todo con paráfrasis cercana:
+  reescrito completo.
+- 6.1 en escalera: (i) tres ámbitos (a) celebración con la definición
+  doctrinal, b) cumplimiento con arts. 1558 y 1546, c) delito civil),
+  (ii) VON TUHR, PESCIO, LEÓN HURTADO, (iii) elementos y simple mentira.
+- `.ley` 1458, 1459, 1465, 1456, 1457. Arts. 524-525 C. de Comercio
+  resumidos con el matiz de la Ley 20.667.
+- Presunciones en a) a g), distinguiendo "dolo" y "mala fe"; art. 974
+  descartado; **art. 22 Ley de Cheques sacado de la lista** (exige
+  ánimo de defraudar, no lo presume; texto entregado por Laura). Art.
+  280 C.P.C. verificado con el texto de Laura.
+- "Injusta" atribuida a la doctrina; 7.3 (i) a (iii) como lista
+  subrayada; sin la glosa hombre/mujer de Boetsch (decisión de Laura).
+- Cajas: 1 No confundir (dolo y fuerza de un tercero, 7.4), cuadro
+  comparativo error/dolo/fuerza (final de 7.8), Conexiones (final de
+  8, con secciones reales de Responsabilidad: Contractual E.4.1 y
+  H.2.5, Extracontractual H.2). Sale la caja de la cómoda.
+- Ejemplos propios: casero de Temuco, don Raúl, señora Juana y Gaspar,
+  Seba, Nico, Pía y Dani, Mati y don Jaime, Marce, don Sergio, Clau y
+  Polo, Rodrigo, señora Elba, Kathy y tía Chela, Agustín.
 
 ### Pendientes de II (recordar a Laura al retomar)
 
