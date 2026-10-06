@@ -455,3 +455,42 @@ Para no depender de los pantallazos. Textual, con la página.
   del error se vuelve imposible). **CLARO SOLAR** (p. 65): en el error
   del art. 1453 "no hay sólo vicio del consentimiento, sino que no hay
   en absoluto consentimiento" (sigue en la p. 66, que falta).
+
+## 9. Decisiones de Laura y aplicación (2026-10-06)
+
+- **Reescritura aprobada** con la estructura de 5.1 y los recuadros de
+  5.3, salvo lo que sigue.
+- **Casos para resolver: no van en los manuales.** Se harán aparte,
+  después de que Digesto esté en línea (anotado en
+  `docs/camino-a-beta.md`, "Fuera de alcance del beta", y en
+  `decisiones.md`). El caso piloto de la Coni queda guardado en la
+  sección 6 de este informe para entonces.
+- **Definición del error de hecho:** la de Boetsch, con la fórmula "la
+  definición que le ha dado la doctrina...".
+- **Fallo de la Gaceta de 1928:** en recuadro de Jurisprudencia (sin
+  rol, con la frase del fallo).
+- **Pregunta clásica** "¿Vicia el consentimiento el error de derecho?
+  ¿Tiene excepciones?": incluida, al final de 5.2 (i).
+- **Ejemplos de 5.4:** aprobados. En el manual quedaron como texto
+  corrido (no en recuadro) para no pasar de dos recuadros grandes por
+  punto, salvo el *food truck* de la Feña, que va en recuadro de
+  Ejemplo. Para no repetir nombres con 5.1c, el comprador del cuadro
+  es **don Hernán** y el de la parcela, **el Nacho**. Se agregó un
+  ejemplo corto propio para el error vicio (la Cami y los aros de
+  alpaca).
+- **Párrafo de Laura** sobre si los arts. 2297 y 2299 son realmente
+  excepciones: incorporado **textual** como primer párrafo de 5.2 (i)
+  c) "¿Son realmente excepciones?", seguido de las lecturas de LEÓN
+  HURTADO y VIAL y del cuadro comparativo.
+- **Citas de las fuentes nuevas** (para informes; en el manual van solo
+  los apellidos): VIAL DEL RÍO, Víctor, *Teoría general del acto
+  jurídico*, 2011. FIGUEROA YÁÑEZ, Gonzalo, *Curso de Derecho Civil*,
+  t. II, 2012.
+- **Pantallazos:** Laura los dejó en `Apuntes/CIVIL/Acto Jurídico/`
+  (checkout principal; 42 archivos `Screenshot 2026-10-06 at ...`).
+  Además entregó, para 5.2b, Vial pp. 89 a 104 (la 104 incompleta) y
+  Figueroa pp. 66 a 75.
+- **Verificación:** etiquetas balanceadas, cero guiones largos y
+  guillemets, ningún párrafo sobre 1.200 caracteres, todo el contenido
+  de Boetsch presente, capturas en Chrome headless revisadas. Ningún
+  `h2`/`h3` cambió: el índice queda igual.

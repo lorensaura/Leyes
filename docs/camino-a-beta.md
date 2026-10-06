@@ -349,6 +349,14 @@ una en `docs/historial-2026-08.md`.
   los temas/subtemas, con volumen bastante mayor: meta post-beta, ver
   `.claude/skills/generar-evaluacion/SKILL.md` sección 5.
 - Gamificación (`docs/gamificacion.md`): sin priorizar.
+- **Casos para resolver** (estilo FIGUEROA YÁÑEZ, *Curso de Derecho
+  Civil*, t. II: un caso inventado con preguntas encadenadas): Laura los
+  quiere, pero **aparte de los manuales** y **después de que Digesto
+  esté en línea** (decisión 2026-10-06). Primero se terminan los
+  manuales. Hay un caso piloto ya redactado (la Coni y la suegra, error
+  de derecho y pago de lo no debido) en la sección 6 de
+  `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md`; los
+  casos de Figueroa no se copian (ejemplos propios y derechos de autor).
 - `scripts/sync_airtable_supabase.py` nunca borra en Supabase lo que se
   borra en Airtable: conocido, no bloquea nada mientras no se vuelva a
   borrar contenido ya sincronizado.

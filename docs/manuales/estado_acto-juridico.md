@@ -45,10 +45,13 @@
 > Solar); están en su Escritorio (`Screenshot 2026-10-06 at 1.14.15 pm`
 > a `1.15.23 pm` = Vial; `1.23.57 pm` a `1.24.07 pm` = Figueroa), y lo
 > usado está transcrito en la sección 8 del informe de 5.2a.
-> **Siguiente: esperar la aprobación del informe de 5.2a**
-> (`docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md`), con
-> 8 preguntas abiertas; la más importante es el formato de los "casos
-> para resolver" (cambio de regla, sección 6 del informe).
+> **5.2a reescrito** (A.4 + 5.1 + 5.2, con Vial, León Hurtado y un
+> párrafo textual de Laura en 5.2 (i) c)); falta que Laura lo lea en
+> vista previa (ancla `#cII-A-4`). **Siguiente: 5.2b** (5.3 a 5.6),
+> con Vial pp. 89-104 y Figueroa pp. 66-75 que Laura ya entregó (en
+> `Apuntes/CIVIL/Acto Jurídico/`, pantallazos del 2026-10-06 de las
+> 2.31 pm a las 2.34 pm). Los **casos para resolver** no van en los
+> manuales: se harán aparte, después del lanzamiento.
 > Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
@@ -946,8 +949,8 @@ y aprobación antes de tocar el manual:
 | 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
-| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Informe listo, esperando aprobación de Laura |
-| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común (+ casos de Figueroa) | | Pendiente; falta saber si Laura tiene Vial p. 89+ y Figueroa p. 66 |
+| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito; falta vista previa |
+| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común | | Pendiente; fuentes ya entregadas: Vial pp. 89-104 y Figueroa pp. 66-75 (jurisprudencia Izquierdo con Aduana 1859, Butcher con Plaza 1943, error común) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
@@ -1071,6 +1074,12 @@ cercana (tabla exhaustiva por punto), no después.
 
 ### Pendientes de II (recordar a Laura al retomar)
 
+- **Vista previa de 5.2a** (ancla `#cII-A-4`).
+- **5.2b, ya detectado:** el manual (5.4) dice que el art. 1454 inc. 2°
+  exige error "compartido por ambas partes"; el artículo solo exige que
+  el motivo sea "conocido de la otra parte" (Boetsch se equivoca). Y en
+  5.3 hay dos "la fuente toma partido/sugiere" que deben decir
+  "Para **BOETSCH**...".
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
