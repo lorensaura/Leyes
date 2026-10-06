@@ -1245,8 +1245,8 @@ cercana (tabla exhaustiva por punto), no después.
 - **Merge de `worktree-acto-juridico-cap2-3`** a `main`: hecho hasta
   5.2b (2026-10-06, commit `08abcb5`). Lo de 5.2c en adelante se
   mergea cuando Laura quiera. **5.2c ya está mergeado y pusheado**
-  (confirmado por Laura, 2026-10-06). **5.3 aprobado** (2026-10-06):
-  no se confirmó si ya se mergeó; preguntarle a Laura al retomar.
+  (confirmado por Laura, 2026-10-06). **5.3 aprobado y en `main`**
+  (confirmado por Laura, 2026-10-06).
 
 ## Qué sigue (orden decidido por Laura)
 
@@ -1261,7 +1261,12 @@ cercana (tabla exhaustiva por punto), no después.
    en `main`** (verificado 2026-10-06). El commit
    `b39a974` (achilenización del ejemplo de V.5.3) estaba en la rama
    `worktree-acto-juridico-tramo4-5-otras-causales`, que ya no tenía
-   nada más pendiente y se borró a pedido de Laura el 2026-10-01; el
+   nada más pendiente y Laura pidió borrarla el 2026-10-01 (**ojo: el
+   2026-10-06 seguía existiendo en local, con su worktree
+   `.claude/worktrees/acto-juridico-tramo4-5-otras-causales`, y GitHub
+   Desktop la ofrecía para mergear con 2 conflictos. NO mergearla**: sus
+   2 commits son `b39a974`, ya en main reescrito, y `f9b2793`, una nota
+   vieja de este archivo); el
    cambio puntual de V.5.3 se rescató antes de borrarla y ya está en
    `main` (vía el commit `cb30eb3` de este hilo). También se borró
    `worktree-pdf-header-fix` (2026-07-28): su único contenido propio
@@ -1274,9 +1279,9 @@ cercana (tabla exhaustiva por punto), no después.
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
    **Siguiente paso exacto:** tramo 5.4, C. El objeto (`principal_5`,
-   Boetsch desde p. 76). Antes de empezar, preguntar a Laura si se
-   trabaja solo con Boetsch y el Código (como 5.2c y 5.3) o con fuentes
-   nuevas.
+   Boetsch desde p. 76). **Fuentes decididas por Laura (2026-10-06):
+   solo Boetsch, los anexos y el Código, nada más** (vale también para
+   5.5 y 5.6).
 5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
