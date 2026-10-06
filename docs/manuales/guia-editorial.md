@@ -329,7 +329,13 @@ era materia, no un dato de examen.
 - **Aplicación en manuales existentes:** todos los ejemplos deben ser
   propios. Al actualizar cada tramo (`actualizar-manuales-existentes.md`),
   los ejemplos que vienen de la fuente se reemplazan por ejemplos
-  originales.
+  originales. **Esto incluye los ejemplos genéricos o "de texto"** de
+  la fuente, aunque no tengan nombres ni sean casos armados (la obra de
+  teatro, "te vendo tal cosa a tal precio", la lista de ofertas tácitas,
+  la carta depositada en el correo): también se reemplazan. Lo que no es
+  ejemplo sino materia (el testamento como acto no recepticio, el
+  desahucio como recepticio, los contratos en que se pacta prórroga
+  tácita) se conserva tal cual.
 
 ### 5.1 Antes y después (casos reales)
 

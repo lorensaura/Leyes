@@ -1072,6 +1072,11 @@ más afectan el trabajo por tramos:
   gracioso), nunca los de la fuente con las letras cambiadas: la
   consecuencia jurídica respaldada en un artículo citado en el mismo
   punto y verificado contra el Código.
+  **Incluye los ejemplos genéricos "de texto" de Boetsch** (decisión de
+  Laura 2026-10-06): también se reemplazan. En I y VI se habían dejado
+  algunos (VI: la estrella con la mano, la aseguradora, la venta/Europa;
+  revisar I); **pendiente preguntarle a Laura si se repasan esos
+  capítulos** o se dejan para la revisión final del manual.
 - **Jurisprudencia:** recuadro solo si el fallo tiene rol o está
   desarrollado (basta una de las dos condiciones); listas de fallos sin
   contenido: solo los con rol, del más reciente al más antiguo, con
