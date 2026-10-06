@@ -126,7 +126,7 @@ manuales ya escritos se actualizarán por tramos, cuando Laura lo pida
 | Jurisprudencia | `.jurisprudencia` | Un fallo real | Tal como aparece en la fuente. Nunca se inventa un rol ni una fecha |
 | Ejemplo | `.ejemplo` | Un caso ficticio que fija el concepto | Siempre original (sección 5) |
 | No confundir | `.callout` | Dos conceptos que se confunden | Concepto A, concepto B y el criterio que los distingue |
-| Advertencia | `.warn` | Una trampa típica o un error común de examen | Se dice el error y por qué es error |
+| ~~Advertencia~~ | `.warn` | **Retirada (2026-10-06)**: lo que iría aquí va como No confundir | Ver 4.4 |
 | Pregunta clásica | `.pregunta-clasica` | Una pregunta real de examen | Solo las que Laura selecciona de las candidatas (sección 6) |
 | No olvidar | `.no-olvidar` | Un dato duro y puntual | Una o dos líneas; nunca explica materia |
 | Conexiones | `.conexiones` | Relación con otras materias | Al cierre de cada punto (nivel `1.`) |
@@ -178,11 +178,13 @@ seguidos lo tienen, el verde deja de señalar algo especial.
   Si la distinción necesita tres criterios o más, va en cuadro
   comparativo (sección 4.12).
 
-### 4.4 Advertencia
+### 4.4 Advertencia (retirada)
 
-- Una trampa típica de examen o un error que comete quien no domina el
-  punto. Se dice cuál es el error y por qué lo es.
-- Si en realidad son dos conceptos que se confunden, es un No confundir.
+- **No se usa como caja** (Laura, 2026-10-06). Una trampa típica de
+  examen o un error de quien no domina el punto va en un **No
+  confundir**, diciendo cuál es el error y por qué lo es.
+- `.warn` queda en la hoja de estilos solo por compatibilidad; en
+  Acto Jurídico ya no queda ninguna.
 
 ### 4.5 Pregunta clásica
 
@@ -257,7 +259,7 @@ revisar un manual que lo tenga, su contenido se reclasifica:
 | Materia (lo más común) | El cuerpo del texto |
 | Una pregunta de examen | Candidata a Pregunta clásica, indicando que viene de un Dato de grado; entra solo si Laura la aprueba (sección 6) |
 | Un dato duro y puntual | No olvidar |
-| Un error típico | Advertencia |
+| Un error típico | No confundir |
 
 Prueba: *si se quita el recuadro, ¿el texto principal queda incompleto?*
 Si la respuesta es sí, era materia y vuelve al texto. Ejemplo real: "Los
@@ -268,7 +270,7 @@ era materia, no un dato de examen.
 
 - **Criterio (no regla dura):** como referencia, no más de **dos
   recuadros pedagógicos grandes por punto** (Ejemplo en caja, No
-  confundir, Advertencia, Pregunta clásica o el recuadro fusionado).
+  confundir, Pregunta clásica o el recuadro fusionado).
   Jurisprudencia, No olvidar, Conexiones, Pausa y los cuadros
   comparativos no cuentan: la
   jurisprudencia es contenido de la fuente y nunca se recorta para

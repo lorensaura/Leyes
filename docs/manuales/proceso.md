@@ -328,7 +328,7 @@ Proceso (basado en lo que funcionó con los 12 anexos de Bienes):
 - **Revisión final de lo que creó el modelo.** Al terminar cada manual, Laura
   revisa no solo que los artículos y la jurisprudencia estén bien citados,
   sino también **todos los recuadros creados por el modelo**: Ejemplos, No
-  confundir, Advertencias, No olvidar, Conexiones y respuestas de las
+  confundir, No olvidar, Conexiones y respuestas de las
   Preguntas clásicas. Para facilitarla, se le entrega la lista completa de
   esos recuadros, con su ubicación.
 - Regenerar el PDF con `scripts/generar_pdf_manual.py` y revisarlo

@@ -70,7 +70,7 @@ a Laura una lista con:
 - Recuadros con el formato antiguo (título en una sola línea con
   `.titulo-bloque`, en vez de las dos líneas `.caja-tipo`/`.caja-titulo`
   de `formato.md`, sección 7).
-- Recuadros nuevos que corresponderían (No confundir, Advertencia, No
+- Recuadros nuevos que corresponderían (No confundir, No
   olvidar, Conexiones).
 - Candidatas a Pregunta clásica, con el mismo flujo que en un manual
   nuevo (`guia-editorial.md`, sección 6): se lee el banco, se agrupan

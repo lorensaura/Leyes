@@ -460,12 +460,6 @@ Pausa, que tiene su propio formato (al final de esta sección). Cuándo usar cad
   <p>El <strong>efecto del contrato</strong> es <em>crear obligaciones</em>...</p>
 </div>
 
-<div class="warn">
-  <span class="caja-tipo">Advertencia</span>
-  <span class="caja-titulo">Trampa típica de examen</span>
-  <p>...</p>
-</div>
-
 <div class="pregunta-clasica">
   <span class="caja-tipo">Pregunta clásica</span>
   <span class="caja-titulo">¿Se pueden vender las cosas del art. 1464?</span>
@@ -509,6 +503,8 @@ Pausa, que tiene su propio formato (al final de esta sección). Cuándo usar cad
     Has terminado <strong>I. Ineficacia</strong>. Responde las preguntas de comprensión lectora de este capítulo en digesto.cl.
   </div>
   ```
+- **`.warn` (Advertencia) está retirada** (2026-10-06): lo que iría ahí
+  va como No confundir (`guia-editorial.md` 4.4).
 - **`.dato-grado` está retirado.** No se usa en contenido nuevo. Queda
   en la hoja de estilos solo para los manuales que todavía lo tienen,
   hasta su revisión (`guia-editorial.md`, sección 4.9).

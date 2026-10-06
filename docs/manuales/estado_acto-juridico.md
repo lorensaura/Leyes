@@ -1231,7 +1231,9 @@ más afectan el trabajo por tramos:
   `[FALTA: extracto del fallo]`; los demás en una línea.
 - **Cuadros comparativos, No olvidar, Conexiones, Pausa y Jurisprudencia
   NO cuentan** contra el máximo de dos recuadros pedagógicos grandes por
-  punto (Ejemplo, No confundir, Advertencia, Pregunta clásica).
+  punto (Ejemplo, No confundir, Pregunta clásica). La **Advertencia
+  está retirada** (2026-10-06): va como No confundir; las cuatro que
+  había en AJ ya se cambiaron.
 - **Preguntas clásicas:** candidatas desde `preguntas_evaluacion` (Laura
   elige), pero **no hay banco de AJ**; si la fuente marca una pregunta de
   examen, se le propone a Laura.
