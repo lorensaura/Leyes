@@ -288,3 +288,21 @@ Resolución 66 exenta de 2020 (Energía).
   12, 12 A, 16, 24, 35 y 50 no cambiaron.
 - Cero marcas `[VERIFICAR]` en 3.3; verificación mecánica y capturas
   repetidas.
+
+## 10. Tercera ronda: DFL 3 de 2021 y resúmenes (2026-10-06)
+
+- **Laura pidió no transcribir completas las leyes especiales**: los
+  recuadros de ley de los arts. 16, 12 A y 35 de la Ley 19.496 y del
+  art. 3 de la Ley 19.799 se cambiaron por un resumen en el texto, con
+  la frase clave entre comillas. Regla general nueva, en `formato.md` 4
+  y `decisiones.md`.
+- **Comparación con el DFL 3 de 2021** (texto refundido de la Ley
+  19.496, versión vigente desde el 11-jul-2025, entregado por Laura):
+  arts. 1 Nº 2, 2, 12, 12 A, 24, 35 y 50 **sin cambios** de fondo.
+  **El art. 16 sí cambió** (Ley 21.398, de 2021): se agregó la letra h)
+  ("Limiten los medios a través de los cuales los consumidores puedan
+  ejercer sus derechos") y desaparecieron los dos incisos finales sobre
+  la recusación del árbitro. La versión transcrita antes estaba
+  desactualizada; el resumen nuevo no depende de esos incisos. El
+  manual ahora menciona que el texto refundido lo fija el DFL Nº 3 de
+  2021.

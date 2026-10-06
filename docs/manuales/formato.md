@@ -342,6 +342,12 @@ Reglas de uso:
 - `.ley` es solo para artículos transcritos **completos** o incisos
   completos. Un fragmento breve citado dentro de una oración va entre
   comillas en el texto corrido, con su `span.art`.
+- **Leyes especiales** (Ley del Consumidor, Ley de firma electrónica,
+  etc., todo lo que no sea un código): **no se transcriben completas**
+  en `.ley`. Se deja lo importante en el texto corrido: un resumen en
+  voz propia y, si hace falta, la frase clave entre comillas con su
+  `span.art`. El `.ley` completo queda para los códigos (Civil,
+  Comercio, etc.). Decisión de Laura, 2026-10-06.
 - `.definicion` es solo para **la** oración que define el concepto del
   punto, normalmente una por punto. No se usa para cualquier frase
   importante.

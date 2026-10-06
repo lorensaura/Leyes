@@ -1008,13 +1008,8 @@ cercana (tabla exhaustiva por punto), no después.
 ### Pendientes de II (recordar a Laura al retomar)
 
 - **Vista previa de 5.1c** (ancla `#cII-A-3-3`).
-- **Ley 19.496: confirmar contra el texto refundido (DFL 3 de 2021).**
-  El PDF que entregó Laura es la versión al 20-abr-2021; si hubo
-  reformas después, están en el DFL 3. Revisar que los arts. 1 Nº 2, 2,
-  12, 12 A, 16, 24, 35 y 50 citados en 3.2 y 3.3 no hayan cambiado.
-  Las demás dudas de 3.3 (sanción, duración de la oferta, DS 81, número
-  del artículo de proveedor) ya se resolvieron con las leyes que entregó
-  (ver informe 5.1c, sección 9).
+- Ley 19.496 ya comparada con el DFL 3 de 2021 (solo cambió el art.
+  16; ver informe 5.1c, sección 10). Sin pendientes de ley en 3.3.
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
@@ -1136,6 +1131,9 @@ más afectan el trabajo por tramos:
   2026-09-30, a partir del art. 1687 del tramo 3: destacar en negrita lo
   esencial de cada artículo transcrito, no solo dejarlo en texto
   corrido).
+- **Leyes especiales** (no códigos): sin `.ley` completo, solo lo
+  importante o un resumen en el texto (decisión de Laura 2026-10-06,
+  `formato.md` 4).
 - `.definicion` solo para la oración que define el concepto del punto
   (normalmente una por punto); lleva filete a la izquierda igual que
   `.ley`. Se usa también para atribuir con claridad la posición de un
