@@ -1,7 +1,7 @@
 # Informe tramo 5.3: Acto Jurídico II.B La capacidad
 
 Fecha: 2026-10-06. Rama: `worktree-acto-juridico-cap2-3`.
-Estado: **informe para aprobación de Laura. El manual todavía no se ha tocado.**
+Estado: **aprobado por Laura y aplicado al manual (2026-10-06).** Ver sección 7.
 
 ## 1. Alcance y fuentes
 
@@ -238,3 +238,27 @@ Todos en texto corrido, con nombres que no se repiten en el manual:
    interdicción queda sola en 3.2.
 5. **Cuadro comparativo** absoluta / relativa / particular al final de
    3.3: ¿lo agrego? (Recomendado: resume todo B en una mirada.)
+
+## 7. Decisiones de Laura y aplicación (2026-10-06)
+
+1. **Art. 114:** se cuenta cómo era el antiguo art. 114 y que lo derogó
+   la Ley 21.515 (2022), sin afirmar el motivo. Laura propuso dos
+   ejemplos vigentes, verificados contra el Código:
+   - Venta o gravamen de un bien raíz propio de la mujer sin su
+     voluntad (arts. 1754 y 1757): la sanción es **nulidad relativa**,
+     así que se puso como segundo ejemplo de la (ii), no de la (iii).
+     Ojo: en el art. 1754 el juez solo suple la voluntad de la mujer si
+     ella está imposibilitada de manifestarla.
+   - Arriendo por el marido, sin autorización de la mujer, de predios
+     urbanos por más de 5 años o rústicos por más de 8 (arts. 1749 inc.
+     4°, 1756 y 1757): el contrato rige solo por esos plazos y el exceso
+     es inoponible. Es el **ejemplo vigente de la (iii)**.
+2. Cita de incapacidades de goce cambiada a 963, 965 y 1061.
+3. Fallos como cita textual entre comillas.
+4. Mujer casada pasó al texto, en 3.2 (ii).
+5. Cuadro comparativo agregado al final de 3.3.
+
+**Segunda pasada (verificación):** etiquetas balanceadas, cero guiones
+largos y guillemets, ningún párrafo sobre 1.200 caracteres, todas las
+frases clave del inventario presentes, ningún `h2`/`h3` cambiado (el
+índice queda igual). Capturas en Chrome headless revisadas.
