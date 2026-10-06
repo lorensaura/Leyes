@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-06.
+> 2026-10-06 (cierre de 5.2c).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -39,7 +39,7 @@
 > pendiente de merge. Con ese merge también llegó a `main` el cambio
 > de Advertencia a No confundir en los manuales de **Responsabilidad**
 > (HTML y PDF). Hechos
-> y aprobados en vista previa: **5.1a**, **5.1b**, **5.1c**, **5.2a** y **5.2b**. **5.2 se
+> y aprobados en vista previa: **5.1a**, **5.1b**, **5.1c**, **5.2a**, **5.2b** y **5.2c**. **5.2 se
 > dividió** a pedido de Laura (el error es muy preguntado y quiere más
 > detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
 > a 5.6) y 5.2c (dolo, fuerza, remisión). **5.2a reescrito** con VIAL,
@@ -52,17 +52,23 @@
 > reescritura, `1fd4fa8` verificación del art. 8 LMC). Detalle en "Qué
 > se hizo en 5.2b" más abajo.
 >
-> **Siguiente: 5.2c** (6. Dolo, 7. Fuerza, 8. Remisión a lesión y
-> simulación), manual desde `#cII-A-6` hasta antes de `#cII-B`. Pasos:
-> extraer Boetsch `principal_3` desde la p. 59 ("6. EL DOLO") hasta el
-> final del PDF, inventario unidad por unidad, verificar artículos
-> (todos los que cite Boetsch y el manual actual), chequeo
-> de paráfrasis e informe para aprobación. **Por ahora no hay fuentes
-> nuevas** (Vial y Figueroa entregados solo llegan al error); preguntar
-> a Laura si tiene páginas de VIAL o FIGUEROA sobre dolo y fuerza antes
-> de cerrar el informe. Para la fuerza ya está el **art. 8 Nº 3 Ley
-> 19.947** (ver "Pendientes de II"). Los recuadros de 6.x y 7.x
-> existentes se revisan con el mismo criterio de pocas cajas.
+> **5.2c reescrito** (dolo, fuerza, remisión; commits `36a76c2`
+> informe, `455ff24` reescritura). Laura aprobó el informe completo,
+> pidió el cuadro comparativo error/dolo/fuerza y sacar la glosa
+> hombre/mujer, entregó los arts. 280 C.P.C. y 22 Ley de Cheques, y
+> respondió "ok" a la vista previa (2026-10-06, sin ajustes). Detalle
+> en "Qué se hizo en 5.2c". **Con esto II.A (La voluntad) está
+> completo.** Pendiente de merge a `main` desde `36a76c2`.
+>
+> **Siguiente: 5.3** (B. La capacidad), manual desde `#cII-B` hasta
+> antes de `#cII-C`. Fuente: Boetsch `principal_4` (y el arranque de
+> B, pp. 69 en adelante, que ya aparece al final de `principal_3`).
+> Mismos pasos: extraer, inventario unidad por unidad (incluidos los
+> anexos de Bozzo e Ibarra y Memorice: revisarlos siempre, en 5.2c
+> aportaron material), verificar artículos, chequeo de paráfrasis,
+> informe para aprobación. Preguntar a Laura al inicio si tiene páginas
+> de VIAL o FIGUEROA sobre capacidad; si no, Boetsch, Código y anexos
+> bastan (así se decidió en 5.2c).
 >
 > Fuentes ya entregadas (registro): **VIAL** pp. 77-104 y **FIGUEROA
 > YÁÑEZ** pp. 63-75, en `Apuntes/CIVIL/Acto Jurídico/` del checkout
@@ -977,7 +983,7 @@ y aprobación antes de tocar el manual:
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
-| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito; esperando revisión de Laura en vista previa |
+| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
@@ -1205,13 +1211,8 @@ cercana (tabla exhaustiva por punto), no después.
   los usa; solo los nombra `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
   **Decisión de Laura (2026-10-06): se ven cuando se trabaje ese
   apunte**, no ahora.
-- **Para 5.2c (fuerza):** Laura entregó el art. 8 de la Ley 19.947
-  completo. Su **Nº 3** dice que falta el consentimiento libre y
-  espontáneo "Si ha habido fuerza, en los términos de los artículos
-  1456 y 1457 del Código Civil, ocasionada por una persona o por una
-  circunstancia externa, que hubiere sido determinante para contraer el
-  vínculo". Sirve para 7.4 (indiferencia de quien ejerce la fuerza) y
-  para las Conexiones con Familia. Es ley especial: va resumida.
+- ~~**Para 5.2c (fuerza):** art. 8 Nº 3 Ley 19.947~~: **resuelto**, ya
+  está resumido en 7.4 y en las Conexiones (2026-10-06).
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
