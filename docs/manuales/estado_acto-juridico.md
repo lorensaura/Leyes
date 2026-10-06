@@ -31,12 +31,17 @@
 > conflicto de Git; el resto de los tramos (C-G, V) sí los había
 > aprobado antes en vista previa.
 >
-> **Qué sigue**: capítulos II (Requisitos del AJ) y III (Efectos del
-> AJ), en tandas chicas. **5.1a (II intro, A.1, A.2) hecho el
-> 2026-10-06**, y **5.1b (II.A.3.1-3.2) también**; el siguiente es
-> **5.1c (II.A.3.3, casos especiales de formación del consentimiento)**.
-> El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf` (sirve
-> para verificar sus artículos). Ver "Qué sigue" más abajo.
+> **Qué sigue (2026-10-06)**: capítulos II (Requisitos del AJ) y III
+> (Efectos del AJ), en tandas chicas, en la rama
+> **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
+> pusheada, **sin mergear a `main`**). Hechos: **5.1a** (II intro, A.1,
+> A.2) y **5.1b** (II.A.3.1-3.2). **Siguiente: 5.1c** (II.A.3.3, casos
+> especiales de formación del consentimiento: fuente `principal_2`,
+> líneas ~799-1033 del texto extraído, pp. 45-48). Antes de empezarlo,
+> recordarle a Laura los pendientes de la sección "Pendientes de II"
+> (vista previa de 5.1a y 5.1b, *lex loci*, ejemplos genéricos en I y
+> VI). El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
+> (checkout principal), para verificar sus artículos.
 
 ## Dónde estamos
 
@@ -922,6 +927,99 @@ corrección de fidelidad en la cita del art. 1683) en
   Falta que Laura lo revise en vista previa y mergee con GitHub
   Desktop.
 
+## Capítulos II y III: tramos 5.x (desde 2026-10-06)
+
+Reparto acordado con Laura, en tandas chicas, cada una con su informe
+y aprobación antes de tocar el manual:
+
+| Tramo | Contenido | Informe | Estado |
+|---|---|---|---|
+| 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); falta vista previa de Laura |
+| 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); falta vista previa y confirmar *lex loci* |
+| 5.1c | A.3.3 Casos especiales de formación del consentimiento | | **Siguiente** |
+| 5.2 | A.4-A.8 Vicios (error, dolo, fuerza, remisión lesión/simulación), fuente `principal_3` | | Pendiente |
+| 5.3 | B. Capacidad, `principal_4` | | Pendiente |
+| 5.4 | C. Objeto, `principal_5` | | Pendiente |
+| 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
+| 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
+
+Para cada tramo se aplica desde el principio el chequeo de paráfrasis
+cercana (tabla exhaustiva por punto), no después.
+
+### Qué se hizo en 5.1a (II intro, A.1, A.2)
+
+- Contenido completo respecto de Boetsch (pp. 31-34); solo faltaba la
+  introducción del capítulo (agregada, con remisión a I.7). Ningún
+  anexo ni Memorice aporta a este tramo.
+- 13 de 13 párrafos con paráfrasis cercana (sin autores nombrados):
+  reescritos en voz propia.
+- El recuadro "No confundir" con las tres excepciones del silencio era
+  materia: pasó al texto como a) La ley, b) Las partes, c) El juez.
+- **(iii) reordenado** a pedido de Laura: el párrafo sobre el Código
+  Civil quedó como cierre de la manifestación tácita, sin número; el
+  silencio pasó a ser (iii).
+- `.ley` nuevos: art. 2125 completo (faltaba el inc. 2°) y art. 1233
+  ("se entenderá que repudia", corrige el "se presume" de Boetsch).
+  Art. 1566 ajustado a su letra.
+- Recuadros nuevos: Ejemplo (la señora Carmen y el abogado que no
+  contestó, art. 2125), Advertencia ("el que calla otorga"), No
+  olvidar (expresa = tácita, salvo excepciones), Conexiones.
+- Ejemplos propios: el Benja y el Yaris "por una piscola" (seriedad),
+  la notaría y la junta de vecinos (expresa), don Lucho en la feria
+  (tácita).
+
+### Qué se hizo en 5.1b (A.3.1, A.3.2)
+
+- Contenido completo respecto de Boetsch (pp. 34-45). Casi todo con
+  paráfrasis cercana: reescrito completo.
+- **Artículos del Código de Comercio verificados** (arts. 97 a 108)
+  contra `Apuntes/CÓDIGO DE COMERCIO.pdf`. Hallazgos: al art. 97 le
+  faltaba "queda el proponente libre de todo compromiso"; al art. 99,
+  "El arrepentimiento no se presume"; Boetsch atribuye el deber de
+  indemnizar al art. 99, pero está en el **art. 100**. Laura entregó el
+  texto del art. 12 Ley 19.496 y del art. 22 Ley sobre Efecto
+  Retroactivo (ambos confirmados y citados textuales).
+- **Numeración nueva de 3.2** (antes bajaba cuatro niveles con
+  sangrías a mano): (i) La oferta, (ii) La aceptación, (iii) Momento,
+  (iv) Lugar, (v) Negociaciones preliminares y responsabilidad
+  precontractual, con a) y a.1) debajo. Ningún `h2`/`h3` cambió.
+- Los dos Dato de grado ("la aceptación no se presume"; FAGGELLA,
+  SALEILLES, ROSENDE) pasaron al texto. El No confundir del art. 105 se
+  dividió: la materia al texto, queda un No confundir corto.
+- `.ley` de los arts. 97, 98, 99, 100, 101 y 104 C. de Comercio.
+- **FAGGELLA y SALEILLES** con la ortografía correcta (Boetsch escribe
+  "FAGUELLA" y "SALEIYES"; así están en el manual de Precontractual).
+- Definición de negociación preliminar devuelta a cita textual en
+  `.definicion` ("la definición que le ha dado la doctrina...").
+- **Lex loci:** Boetsch dice *lex loci rei sitae* para el principio de
+  que el acto se rige por la ley del país donde se celebra; se cambió
+  a *lex loci celebrationis* (la *rei sitae* es la del lugar de los
+  bienes, art. 16 CC). Laura dudó; **falta que lo confirme**.
+- Recuadros nuevos: cuadro comparativo de las cuatro teorías del
+  momento, Advertencia (retractación tempestiva e indemnización), No
+  olvidar (plazos arts. 97-98), Conexiones (con secciones reales del
+  manual de Precontractual: B.3, B.4, B.5, C).
+- Ejemplos propios: la Fran y el taxi, la tía Mónica y Tomás (100
+  libros), don Patricio y la Cata (comedor), la Javi y Diego
+  (bicicleta, oferta completa/incompleta), la micro, la panadería y
+  la máquina del metro (oferta tácita), el casero de la Vega y la
+  góndola (oferta indeterminada), la Sofi y la cabaña en Pucón (las
+  cuatro teorías).
+
+### Pendientes de II (recordar a Laura al retomar)
+
+- **Vista previa de 5.1a y 5.1b**: Laura las estaba leyendo; puede
+  pedir ajustes de negritas, cursivas o ejemplos.
+- **Confirmar *lex loci celebrationis*** (5.1b, punto (iv)).
+- **Ejemplos genéricos de Boetsch en I y VI**: con la decisión del
+  2026-10-06 (ver "Decisiones de formato" abajo) también deben ser
+  propios. En VI quedaron la estrella con la mano, la aseguradora y la
+  venta "si voy a Europa"; I no se ha revisado con este criterio.
+  **Se le preguntó a Laura si repasarlos ahora o en la revisión final;
+  no ha respondido.**
+- **Merge de `worktree-acto-juridico-cap2-3`** a `main`: cuando Laura
+  quiera (con GitHub Desktop); por ahora se sigue trabajando en la rama.
+
 ## Qué sigue (orden decidido por Laura)
 
 1. ~~El chequeo de paráfrasis cercana de todo Acto Jurídico~~ — **hecho**:
@@ -945,29 +1043,8 @@ corrección de fidelidad en la cita del art. 1683) en
    vista previa línea por línea en esta sesión (solo resolvió el
    conflicto de Git para mergear); si quiere revisarlo igual que C-G y
    V, el manual ya está en `main`, ancla `#cVI`.
-4. **Capítulos II y III, en curso** (rama `worktree-acto-juridico-cap2-3`,
-   en el mismo worktree `acto-juridico-cap4`). Reparto acordado con
-   Laura el 2026-10-06, en tandas chicas: **5.1a** II intro + A.1-A.2
-   (**hecho**, informe `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md`,
-   aprobado "dale con todo", (iii) reordenado; falta vista previa de
-   Laura), **5.1b** A.3.1-3.2 unilaterales y formación del
-   consentimiento (**hecho**, informe
-   `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md`, aprobado;
-   **pendiente que Laura confirme *lex loci celebrationis*** en lugar del
-   *lex loci rei sitae* de Boetsch, ver sección 7 del informe; falta
-   vista previa), **5.1c** A.3.3 Casos especiales de formación del
-   consentimiento (**siguiente**),
-   5.2 A.4-8 vicios, 5.3 B capacidad, 5.4 C objeto, 5.5 D causa + anexo
-   Domínguez y Boetsch, 5.6 E formalidades + III. Detalle original del
-   alcance: (Teoría general, la parte que
-   falta): II (Requisitos de los AJ: A. La voluntad, B. Capacidad, C.
-   Objeto, D. Causa, E. Formalidades, fuentes `principal_2` a `_7`,
-   más el anexo Causa de Domínguez y Boetsch para II.D) y III (Efectos
-   de los AJ, fuente `principal_8`). Es el bloque más largo que queda
-   de la Teoría General: conviene repartirlo en varios sub-tramos,
-   como se hizo con el tramo 4. Al escribirlos o auditarlos, aplicar
-   ya el chequeo de paráfrasis cercana desde el principio (no dejarlo
-   para después, como pasó con I, IV, V y VI).
+4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
+   III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
 5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
