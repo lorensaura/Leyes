@@ -494,3 +494,15 @@ Para no depender de los pantallazos. Textual, con la página.
   guillemets, ningún párrafo sobre 1.200 caracteres, todo el contenido
   de Boetsch presente, capturas en Chrome headless revisadas. Ningún
   `h2`/`h3` cambió: el índice queda igual.
+
+## 10. Ajustes de Laura en la vista previa (2026-10-06)
+
+- **Menos cajas en 5.2 (i):** se eliminaron el **cuadro comparativo**
+  de las tres lecturas de los arts. 2297 y 2299 y la **Pregunta
+  clásica**. Las posturas de LEÓN HURTADO y VIAL siguen en el texto.
+- **"Repetir no es anular"** pasó de Advertencia a **No confundir**.
+  Laura recordó que la Advertencia no se usa como caja.
+- Quedan en 5.2: el No confundir, el recuadro de Jurisprudencia (Gaceta
+  1928), el No olvidar y las Conexiones.
+- **Dato de grado en 5.3** (sanción del error esencial): es parte de
+  5.2b. Se elimina al reescribir ese tramo y su contenido pasa al texto.
