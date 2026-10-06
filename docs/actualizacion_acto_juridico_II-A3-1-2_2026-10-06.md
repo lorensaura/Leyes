@@ -284,8 +284,8 @@ rigen por la ley del país en que se celebran", que es la *lex loci
 celebrationis*; la *lex rei sitae* es la ley del lugar donde están los
 bienes (en Chile, art. 16 CC: "Los bienes situados en Chile están
 sujetos a las leyes chilenas..."). Se puso *lex loci celebrationis*;
-**pendiente que Laura lo confirme** en la vista previa (si prefiere,
-se vuelve a la fórmula de Boetsch con `[VERIFICAR]`).
+**decisión de Laura (2026-10-06): eliminar el latinazgo** para evitar
+problemas; queda solo el principio en castellano.
 
 **Qué se cambió en el manual:** todo lo propuesto en la sección 5:
 numeración nueva de 3.2 ((i) oferta, (ii) aceptación, (iii) momento,
