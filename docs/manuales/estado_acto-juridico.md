@@ -35,12 +35,10 @@
 > (Efectos del AJ), en tandas chicas, en la rama
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
 > pusheada, **sin mergear a `main`**). Hechos: **5.1a** (II intro, A.1,
-> A.2) y **5.1b** (II.A.3.1-3.2). **Siguiente: 5.1c** (II.A.3.3, casos
-> especiales de formación del consentimiento: fuente `principal_2`,
-> líneas ~799-1033 del texto extraído, pp. 45-48). Antes de empezarlo,
-> recordarle a Laura los pendientes de la sección "Pendientes de II"
-> (vista previa de 5.1a y 5.1b, *lex loci*, ejemplos genéricos en I y
-> VI). El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
+> A.2) y **5.1b** (II.A.3.1-3.2), ambos aprobados por Laura en vista
+> previa. **En curso: 5.1c** (II.A.3.3, casos especiales de formación
+> del consentimiento: fuente `principal_2`, pp. 45-49). Ver
+> "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
 ## Dónde estamos
@@ -934,9 +932,9 @@ y aprobación antes de tocar el manual:
 
 | Tramo | Contenido | Informe | Estado |
 |---|---|---|---|
-| 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); falta vista previa de Laura |
-| 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); falta vista previa y confirmar *lex loci* |
-| 5.1c | A.3.3 Casos especiales de formación del consentimiento | | **Siguiente** |
+| 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
+| 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
+| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | **En curso**: informe para aprobación |
 | 5.2 | A.4-A.8 Vicios (error, dolo, fuerza, remisión lesión/simulación), fuente `principal_3` | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
@@ -992,9 +990,10 @@ cercana (tabla exhaustiva por punto), no después.
 - Definición de negociación preliminar devuelta a cita textual en
   `.definicion` ("la definición que le ha dado la doctrina...").
 - **Lex loci:** Boetsch dice *lex loci rei sitae* para el principio de
-  que el acto se rige por la ley del país donde se celebra; se cambió
-  a *lex loci celebrationis* (la *rei sitae* es la del lugar de los
-  bienes, art. 16 CC). Laura dudó; **falta que lo confirme**.
+  que el acto se rige por la ley del país donde se celebra (y la *rei
+  sitae* es la del lugar de los bienes, art. 16 CC). **Decisión de
+  Laura (2026-10-06): eliminar el latinazgo**; queda solo el principio
+  en castellano.
 - Recuadros nuevos: cuadro comparativo de las cuatro teorías del
   momento, Advertencia (retractación tempestiva e indemnización), No
   olvidar (plazos arts. 97-98), Conexiones (con secciones reales del
@@ -1008,17 +1007,13 @@ cercana (tabla exhaustiva por punto), no después.
 
 ### Pendientes de II (recordar a Laura al retomar)
 
-- **Vista previa de 5.1a y 5.1b**: Laura las estaba leyendo; puede
-  pedir ajustes de negritas, cursivas o ejemplos.
-- **Confirmar *lex loci celebrationis*** (5.1b, punto (iv)).
-- **Ejemplos genéricos de Boetsch en I y VI**: con la decisión del
-  2026-10-06 (ver "Decisiones de formato" abajo) también deben ser
-  propios. En VI quedaron la estrella con la mano, la aseguradora y la
-  venta "si voy a Europa"; I no se ha revisado con este criterio.
-  **Se le preguntó a Laura si repasarlos ahora o en la revisión final;
-  no ha respondido.**
+- **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
+  (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
+  aseguradora y la venta "si voy a Europa"; I no se ha revisado con
+  este criterio. **Decisión de Laura (2026-10-06): se dejan para la
+  revisión final del manual**, no ahora.
 - **Merge de `worktree-acto-juridico-cap2-3`** a `main`: cuando Laura
-  quiera (con GitHub Desktop); por ahora se sigue trabajando en la rama.
+  quiera (con GitHub Desktop). La rama ya está pusheada.
 
 ## Qué sigue (orden decidido por Laura)
 
@@ -1152,8 +1147,8 @@ más afectan el trabajo por tramos:
   **Incluye los ejemplos genéricos "de texto" de Boetsch** (decisión de
   Laura 2026-10-06): también se reemplazan. En I y VI se habían dejado
   algunos (VI: la estrella con la mano, la aseguradora, la venta/Europa;
-  revisar I); **pendiente preguntarle a Laura si se repasan esos
-  capítulos** o se dejan para la revisión final del manual.
+  revisar I); **se dejan para la revisión final del manual**
+  (decisión de Laura, 2026-10-06).
 - **Jurisprudencia:** recuadro solo si el fallo tiene rol o está
   desarrollado (basta una de las dos condiciones); listas de fallos sin
   contenido: solo los con rol, del más reciente al más antiguo, con
