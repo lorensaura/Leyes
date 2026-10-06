@@ -35,10 +35,10 @@
 > (Efectos del AJ), en tandas chicas, en la rama
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
 > pusheada, **sin mergear a `main`**, último commit de contenido
-> `a6657b4`). Ojo: esta rama trae también el cambio de Advertencia a No
+> `1fd4fa8`). Ojo: esta rama trae también el cambio de Advertencia a No
 > confundir en los manuales de **Responsabilidad** (HTML y PDF), que sí
 > están publicados: llegan a digesto.cl solo cuando Laura mergee. Hechos
-> y aprobados en vista previa: **5.1a**, **5.1b** y **5.1c**. **5.2 se
+> y aprobados en vista previa: **5.1a**, **5.1b**, **5.1c**, **5.2a** y **5.2b**. **5.2 se
 > dividió** a pedido de Laura (el error es muy preguntado y quiere más
 > detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
 > a 5.6) y 5.2c (dolo, fuerza, remisión). **5.2a reescrito** con VIAL,
@@ -46,21 +46,30 @@
 > previa, pidió menos cajas (aplicado) y quedó **conforme**
 > (2026-10-06).
 >
-> **5.2b reescrito** (2026-10-06, Laura aprobó todo el informe; falta
-> su revisión en vista previa, ancla `#cII-A-5-3`). **Siguiente: 5.2c**
-> (6. Dolo, 7. Fuerza, 8. Remisión), desde Boetsch `principal_3`
-> (desde la p. 59). Lo que sigue en este párrafo es el registro de las
-> fuentes que se usaron en 5.2b: **VIAL** pp. 89-104 (la 104 incompleta) y
-> **FIGUEROA YÁÑEZ** pp. 63-75 (extractos de LEÓN HURTADO y CLARO
-> SOLAR; jurisprudencia Izquierdo con Ministros de la Aduana de
-> Valparaíso, CS 1859, y Butcher con Plaza, CA Santiago 1943; error
-> común). Las fuentes están en `Apuntes/CIVIL/Acto Jurídico/` del
-> checkout principal: 42 pantallazos `Screenshot 2026-10-06 at ...`
-> (1.14.15 pm a 1.15.23 pm = Vial pp. 77-89; 1.23.57 pm a 1.24.07 pm =
-> Figueroa pp. 63-65; 2.31.09 pm a 2.34.29 pm = Vial pp. 89-104 y
-> Figueroa pp. 66-75, en desorden: identificar cada página por su
-> número al pie). Primera tarea de 5.2b: sacar el **Dato de grado** de
-> 5.3 (sanción del error esencial) y pasar su contenido al texto.
+> **5.2b reescrito y aprobado** por Laura en vista previa
+> (2026-10-06, sin ajustes; commits `f952530` informe, `7d4abc8`
+> reescritura, `1fd4fa8` verificación del art. 8 LMC). Detalle en "Qué
+> se hizo en 5.2b" más abajo.
+>
+> **Siguiente: 5.2c** (6. Dolo, 7. Fuerza, 8. Remisión a lesión y
+> simulación), manual desde `#cII-A-6` hasta antes de `#cII-B`. Pasos:
+> extraer Boetsch `principal_3` desde la p. 59 ("6. EL DOLO") hasta el
+> final del PDF, inventario unidad por unidad, verificar artículos
+> (todos los que cite Boetsch y el manual actual), chequeo
+> de paráfrasis e informe para aprobación. **Por ahora no hay fuentes
+> nuevas** (Vial y Figueroa entregados solo llegan al error); preguntar
+> a Laura si tiene páginas de VIAL o FIGUEROA sobre dolo y fuerza antes
+> de cerrar el informe. Para la fuerza ya está el **art. 8 Nº 3 Ley
+> 19.947** (ver "Pendientes de II"). Los recuadros de 6.x y 7.x
+> existentes se revisan con el mismo criterio de pocas cajas.
+>
+> Fuentes ya entregadas (registro): **VIAL** pp. 77-104 y **FIGUEROA
+> YÁÑEZ** pp. 63-75, en `Apuntes/CIVIL/Acto Jurídico/` del checkout
+> principal, 42 pantallazos `Screenshot 2026-10-06 at ...` (1.14.15 pm a
+> 1.15.23 pm = Vial pp. 77-89; 1.23.57 pm a 1.24.07 pm = Figueroa pp.
+> 63-65; 2.31.09 pm a 2.34.29 pm = Vial pp. 89-104 y Figueroa pp. 66-75,
+> en desorden). Los nombres de archivo traen un espacio especial antes
+> de "pm": para leerlos, copiarlos primero con Python a nombres simples.
 >
 > Citas para informes: VIAL DEL RÍO, Víctor, *Teoría general del acto
 > jurídico*, 2011; FIGUEROA YÁÑEZ, Gonzalo, *Curso de Derecho Civil*,
@@ -966,7 +975,7 @@ y aprobación antes de tocar el manual:
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
-| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito ("dale con todo"); esperando revisión de Laura en vista previa |
+| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
