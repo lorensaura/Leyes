@@ -36,8 +36,12 @@
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
 > pusheada, **sin mergear a `main`**). Hechos: **5.1a** (II intro, A.1,
 > A.2) y **5.1b** (II.A.3.1-3.2), ambos aprobados por Laura en vista
-> previa. **5.1c** (II.A.3.3) reescrito, falta vista previa de Laura.
-> **Siguiente: 5.2** (A.4-A.8, vicios de la voluntad, `principal_3`).
+> previa. **5.1c** (II.A.3.3) reescrito y puesto al día con la Ley del
+> Consumidor vigente (DFL 3 de 2021); falta que Laura lo lea en vista
+> previa. **Siguiente: 5.2** (A.4-A.8, vicios de la voluntad,
+> `principal_3`): extraer la fuente, inventario, chequeo de paráfrasis
+> e informe para aprobación, igual que 5.1c. Ojo con la regla nueva:
+> las leyes especiales se resumen, no se transcriben en `.ley`.
 > Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
@@ -934,7 +938,7 @@ y aprobación antes de tocar el manual:
 |---|---|---|---|
 | 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
-| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito; falta vista previa de Laura |
+| 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); falta vista previa |
 | 5.2 | A.4-A.8 Vicios (error, dolo, fuerza, remisión lesión/simulación), fuente `principal_3` | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
@@ -1005,11 +1009,60 @@ cercana (tabla exhaustiva por punto), no después.
   góndola (oferta indeterminada), la Sofi y la cabaña en Pucón (las
   cuatro teorías).
 
+### Qué se hizo en 5.1c (A.3.3)
+
+- Contenido completo respecto de Boetsch (pp. 45-49). Todo con
+  paráfrasis cercana: reescrito completo. Ningún anexo ni Memorice
+  aporta.
+- (i) licitación, (ii) adhesión, (iii) autocontratación, (iv)
+  contratos electrónicos, con a) a d) en la escalera; la confirmación
+  escrita pasó de b) a c), donde la pone Boetsch.
+- Definiciones sin autor con la fórmula "la definición que le ha dado
+  la doctrina es...": licitación, adhesión, autocontrato, contrato
+  electrónico.
+- **Art. 412 corregido**: Boetsch lo corta y el manual había perdido
+  "o de sus hermanos, o de sus consanguíneos o afines hasta el cuarto
+  grado inclusive". Ahora completo en `.ley`, con el inc. 2° (la
+  prohibición absoluta) en negrita. Arts. 2144 y 2145 en `.ley` con su
+  letra exacta. Código alemán citado como "§ 181" (decisión de Laura).
+- **Ley 19.496 verificada contra el DFL 3 de 2021** (texto refundido
+  vigente, entregado por Laura). Hallazgos donde Boetsch está
+  desactualizado o incompleto:
+  - La ley no rige "solo" actos mixtos: es la regla general (art. 2
+    letra a), con otros casos.
+  - La sanción no es "solo multa": el art. 35 permite pedir el
+    cumplimiento forzado de la oferta; además art. 24 (multa) y art.
+    50 (acciones).
+  - La "duración de la oferta" (frase confusa de Boetsch) es el art.
+    35.
+  - El art. 16 cambió con la Ley 21.398 (2021): letra h) nueva y sin
+    los incisos del árbitro.
+  - Proveedor = art. 1 Nº 2.
+- **DS 81 de 1999 derogado** (Decreto 181 de 2002): se dejó en la lista
+  con esa aclaración. Se agregó el art. 3 de la Ley 19.799
+  (equivalencia de la firma electrónica, con sus tres excepciones).
+  "Regulación escasa" quedó atribuida a la doctrina. No se usaron las
+  Leyes 21.180 y 21.464 ni la Res. 66 de 2020 (no tratan la formación
+  del consentimiento).
+- **Regla nueva (Laura, 2026-10-06)**: las leyes especiales se
+  resumen en el texto, sin `.ley` completo (arts. 12 A, 16, 35 y art.
+  3 Ley 19.799 quedaron resumidos). En `formato.md` 4 y `decisiones.md`.
+- Recuadros nuevos: No confundir (llamado a licitación / oferta a
+  persona indeterminada), cuadro comparativo (el autocontrato en el
+  Código Civil), Advertencia (residencia del aceptante, no ubicación del
+  aparato), Conexiones (V. Representación, Contratos, Familia).
+- Ejemplos propios: la Municipalidad de Chillán y las luminarias, la
+  Pame y su Suzuki (art. 2144), don Arturo y la parcela de Olmué (art.
+  412 inc. 2°), la Trini y las botas compradas desde Lima (art. 104 C.
+  de Comercio).
+- Las leyes que entregó Laura están en `~/Downloads/` (Ley-19496,
+  DFL 3 de 2021, Ley-19799, Ley-20217, DTO-81, Ley-21180, Ley-21464);
+  sirven para verificar 5.2 en adelante si se cita la Ley del
+  Consumidor.
+
 ### Pendientes de II (recordar a Laura al retomar)
 
 - **Vista previa de 5.1c** (ancla `#cII-A-3-3`).
-- Ley 19.496 ya comparada con el DFL 3 de 2021 (solo cambió el art.
-  16; ver informe 5.1c, sección 10). Sin pendientes de ley en 3.3.
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
