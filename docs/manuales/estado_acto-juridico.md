@@ -46,9 +46,11 @@
 > previa, pidió menos cajas (aplicado) y quedó **conforme**
 > (2026-10-06).
 >
-> **Siguiente: 5.2b** (5.3 a 5.6): extraer Boetsch (`principal_3`, pp.
-> 52-59), inventario, chequeo de paráfrasis e informe para aprobación,
-> con las fuentes nuevas: **VIAL** pp. 89-104 (la 104 incompleta) y
+> **5.2b reescrito** (2026-10-06, Laura aprobó todo el informe; falta
+> su revisión en vista previa, ancla `#cII-A-5-3`). **Siguiente: 5.2c**
+> (6. Dolo, 7. Fuerza, 8. Remisión), desde Boetsch `principal_3`
+> (desde la p. 59). Lo que sigue en este párrafo es el registro de las
+> fuentes que se usaron en 5.2b: **VIAL** pp. 89-104 (la 104 incompleta) y
 > **FIGUEROA YÁÑEZ** pp. 63-75 (extractos de LEÓN HURTADO y CLARO
 > SOLAR; jurisprudencia Izquierdo con Ministros de la Aduana de
 > Valparaíso, CS 1859, y Butcher con Plaza, CA Santiago 1943; error
@@ -964,7 +966,7 @@ y aprobación antes de tocar el manual:
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
-| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Informe escrito, esperando aprobación de Laura (7 preguntas en la sección 6); manual sin tocar |
+| 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito ("dale con todo"); esperando revisión de Laura en vista previa |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
@@ -1135,6 +1137,32 @@ cercana (tabla exhaustiva por punto), no después.
   6 del informe.
 - Ningún `h2`/`h3` cambió (índice igual).
 
+### Qué se hizo en 5.2b (A.5.3 a A.5.6)
+
+- Fuentes: Boetsch pp. 52-59, VIAL pp. 89-104, FIGUEROA pp. 66-75
+  (CLARO SOLAR, LEÓN HURTADO, fallos Izquierdo 1859 y Butcher 1943).
+- Todo con paráfrasis cercana: reescrito completo. Dato de grado de
+  5.3 pasado al texto como (i) c) con c.1) a c.3), con autores
+  (ALESSANDRI BESA, LEÓN HURTADO; Torres con Fisco en una línea).
+- `.ley` 1453, 1454 (agrega "acto o", que faltaba), 1455, 1057, 1058,
+  1013, 2058. Art. 2456 y art. 94 regla 4ª citados en el texto.
+- (ii) reordenado en a) a e): sinónimos / distintos (VIAL) / lectura de
+  BOETSCH; presunción de la materia, labor del juez y dominio del
+  vendedor, todo a nombre de VIAL.
+- **5.4 corregido** (el inc. 2° pide conocer el motivo, no compartir
+  el error).
+- Cajas: 1 No confundir (calidad esencial / accidental elevada), 2
+  Jurisprudencia (Izquierdo; Butcher, con la advertencia de la ley
+  antigua), 1 tabla comparativa de las cuatro clases al final de 5.3,
+  Conexiones al final de 5.6.
+- Ejemplos propios en texto: Martín e Isi (guitarra), don Iván (depto
+  302), Maite (cadena) y Joaco (camiseta), Cote (sillón de calle
+  Italia / Persa), don Ernesto (camioneta), Rorro (vino 2018), señora
+  del almacén, Flo y el fotógrafo homónimo, don Lalo en Pichidegua.
+- Claro Solar cita arts. 1267, 704 y 1269 para una regla que está en
+  el art. 94 regla 4ª: se cita el 94. Sus arts. 361-363 C. de Comercio
+  (derogados en parte) no se usaron.
+
 ### Pendientes de II (recordar a Laura al retomar)
 
 - **Archivos HTML antiguos con cajas Advertencia** sin tocar:
@@ -1143,11 +1171,9 @@ cercana (tabla exhaustiva por punto), no después.
   los usa; solo los nombra `03_Interrogador_IA_Responsabilidad_PROMPT.md`).
   **Decisión de Laura (2026-10-06): se ven cuando se trabaje ese
   apunte**, no ahora.
-- **5.2b, ya detectado:** el manual (5.4) dice que el art. 1454 inc. 2°
-  exige error "compartido por ambas partes"; el artículo solo exige que
-  el motivo sea "conocido de la otra parte" (Boetsch se equivoca). Y en
-  5.3 hay dos "la fuente toma partido/sugiere" que deben decir
-  "Para **BOETSCH**...".
+- **Ley 19.947 art. 8** (error en la identidad o cualidades del otro
+  contrayente, citado en 5.3 (iv) c)): sin verificar contra el texto
+  de la ley; Laura mandó el art. 12 por error. Pedírselo de nuevo.
 - **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con

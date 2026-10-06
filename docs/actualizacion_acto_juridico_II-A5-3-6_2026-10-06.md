@@ -540,3 +540,28 @@ paréntesis al llevarlos al manual.
   "lo supone siempre", porque el aceptante ignora las disposiciones
   testamentarias que disminuyen la asignación: "se ha representado
   falsamente la realidad".
+
+## 8. Decisiones de Laura y aplicación (2026-10-06)
+
+- **"Dale con todo":** reescritura aprobada con la estructura de la
+  sección 5, ejemplos aprobados tal cual.
+- **5.4 corregido:** basta el error de una parte; el inc. 2° pide que
+  la otra **conozca** el motivo. La afirmación de Boetsch queda como
+  "algunos autores", frente a LEÓN HURTADO y VIAL.
+- **Tabla comparativa en vez de No olvidar:** al final de 5.3, con
+  clase de error, artículo, cuándo vicia y sanción (no cuenta para el
+  máximo de cajas).
+- **Art. 94 regla 4ª:** se cita el artículo, sin atribuir a Claro
+  Solar la cita errada.
+- **Dominio del vendedor:** solo a nombre de VIAL (Boetsch no se
+  nombra en ese punto).
+- **Ley de Matrimonio Civil:** Laura mandó el **art. 12** (constancia
+  del consentimiento para el matrimonio), que no es el que se cita. El
+  art. 8 quedó resumido según Boetsch; **sigue pendiente verificarlo**.
+- **Torres con Fisco:** se cita "en el mismo sentido" que Alessandri
+  Besa (León Hurtado lo menciona así), sin afirmar que la Corte acogió
+  la tesis, porque el fallo no está desarrollado en las fuentes.
+- **Verificación:** etiquetas balanceadas, cero guiones largos y
+  guillemets, ningún párrafo sobre 1.200 caracteres, todas las
+  unidades de Boetsch presentes, capturas en Chrome headless revisadas.
+  Ningún `h2`/`h3` cambió: el índice queda igual.
