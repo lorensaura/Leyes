@@ -33,8 +33,10 @@
 >
 > **Qué sigue**: capítulos II (Requisitos del AJ) y III (Efectos del
 > AJ), en tandas chicas. **5.1a (II intro, A.1, A.2) hecho el
-> 2026-10-06**; el siguiente es **5.1b (II.A.3, formación del
-> consentimiento)**. Ver "Qué sigue" más abajo.
+> 2026-10-06**, y **5.1b (II.A.3.1-3.2) también**; el siguiente es
+> **5.1c (II.A.3.3, casos especiales de formación del consentimiento)**.
+> El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf` (sirve
+> para verificar sus artículos). Ver "Qué sigue" más abajo.
 
 ## Dónde estamos
 
@@ -948,7 +950,13 @@ corrección de fidelidad en la cita del art. 1683) en
    Laura el 2026-10-06, en tandas chicas: **5.1a** II intro + A.1-A.2
    (**hecho**, informe `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md`,
    aprobado "dale con todo", (iii) reordenado; falta vista previa de
-   Laura), **5.1b** A.3 Formación del consentimiento (**siguiente**),
+   Laura), **5.1b** A.3.1-3.2 unilaterales y formación del
+   consentimiento (**hecho**, informe
+   `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md`, aprobado;
+   **pendiente que Laura confirme *lex loci celebrationis*** en lugar del
+   *lex loci rei sitae* de Boetsch, ver sección 7 del informe; falta
+   vista previa), **5.1c** A.3.3 Casos especiales de formación del
+   consentimiento (**siguiente**),
    5.2 A.4-8 vicios, 5.3 B capacidad, 5.4 C objeto, 5.5 D causa + anexo
    Domínguez y Boetsch, 5.6 E formalidades + III. Detalle original del
    alcance: (Teoría general, la parte que

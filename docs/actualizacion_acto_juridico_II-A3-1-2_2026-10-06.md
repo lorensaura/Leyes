@@ -270,3 +270,43 @@ párrafos cortos, sin perder ninguna oración.
 6. FAGGELLA / SALEILLES: ¿corrijo la ortografía (3.2)?
 7. *Lex loci rei sitae*: ¿lo corrijo a *lex loci celebrationis* o lo
    marco para verificar (3.2)?
+
+## 7. Decisiones de Laura y segunda pasada (2026-10-06)
+
+**Decisión:** aprobado todo ("a todo el resto sí"). Laura entregó el
+texto del **art. 12 de la Ley 19.496** y del **art. 22 de la Ley sobre
+Efecto Retroactivo**: los dos confirman lo que dice Boetsch, y ahora se
+citan textuales en el manual (el art. 22 en su inciso 1°).
+
+**Lex loci rei sitae:** Laura dudó si Boetsch quiso decir eso. No
+calza: la frase de Boetsch habla del principio de que los actos "se
+rigen por la ley del país en que se celebran", que es la *lex loci
+celebrationis*; la *lex rei sitae* es la ley del lugar donde están los
+bienes (en Chile, art. 16 CC: "Los bienes situados en Chile están
+sujetos a las leyes chilenas..."). Se puso *lex loci celebrationis*;
+**pendiente que Laura lo confirme** en la vista previa (si prefiere,
+se vuelve a la fórmula de Boetsch con `[VERIFICAR]`).
+
+**Qué se cambió en el manual:** todo lo propuesto en la sección 5:
+numeración nueva de 3.2 ((i) oferta, (ii) aceptación, (iii) momento,
+(iv) lugar, (v) negociaciones preliminares y responsabilidad
+precontractual, con a) y a.1) por debajo); los dos Dato de grado al
+texto; el No confundir del art. 105 dividido; recuadros de ley de los
+arts. 97, 98, 99, 100, 101 y 104 C. de Comercio; los tres ejemplos
+propios; cuadro de las cuatro teorías; Advertencia; No olvidar;
+Conexiones; FAGGELLA y SALEILLES con la ortografía correcta; definición
+de negociación preliminar devuelta a cita textual en `.definicion`.
+
+**Segunda pasada (verificación):**
+- Las 30 unidades del inventario están en el texto nuevo (chequeo de
+  frases clave por script, más lectura de la captura completa).
+- Se conservan todos los artículos que había (12, 22, 97 a 105, 1412)
+  y se agregan las arras (arts. 107 y 108) en Conexiones.
+- Balance de etiquetas correcto, incluida la tabla. Cero guiones
+  largos y cero comillas angulares. Ningún párrafo supera 800
+  caracteres (antes había cinco cerca de 1.200).
+- No cambió ningún `h2`/`h3`: el índice queda igual.
+- Texto del tramo: de unos 22.000 a unos 25.300 caracteres, por los
+  artículos transcritos, el cuadro y los recuadros; no se eliminó
+  contenido.
+- Contenido previo conservado sin estar en Boetsch: ninguno (no había).
