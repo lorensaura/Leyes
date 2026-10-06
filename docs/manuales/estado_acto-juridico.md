@@ -33,11 +33,12 @@
 >
 > **Qué sigue (2026-10-06)**: capítulos II (Requisitos del AJ) y III
 > (Efectos del AJ), en tandas chicas, en la rama
-> **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
-> pusheada, **sin mergear a `main`**, último commit de contenido
-> `1fd4fa8`). Ojo: esta rama trae también el cambio de Advertencia a No
-> confundir en los manuales de **Responsabilidad** (HTML y PDF), que sí
-> están publicados: llegan a digesto.cl solo cuando Laura mergee. Hechos
+> **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`).
+> **Laura la mergeó a `main` el 2026-10-06** con todo hasta 5.2b
+> (commit `08abcb5`); lo que venga después de eso queda de nuevo
+> pendiente de merge. Con ese merge también llegó a `main` el cambio
+> de Advertencia a No confundir en los manuales de **Responsabilidad**
+> (HTML y PDF). Hechos
 > y aprobados en vista previa: **5.1a**, **5.1b**, **5.1c**, **5.2a** y **5.2b**. **5.2 se
 > dividió** a pedido de Laura (el error es muy preguntado y quiere más
 > detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
@@ -976,7 +977,7 @@ y aprobación antes de tocar el manual:
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
-| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
+| 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Informe listo, esperando aprobación de Laura (8 preguntas en la sección 6) |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
@@ -1192,8 +1193,9 @@ cercana (tabla exhaustiva por punto), no después.
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
   este criterio. **Decisión de Laura (2026-10-06): se dejan para la
   revisión final del manual**, no ahora.
-- **Merge de `worktree-acto-juridico-cap2-3`** a `main`: cuando Laura
-  quiera (con GitHub Desktop). La rama ya está pusheada.
+- **Merge de `worktree-acto-juridico-cap2-3`** a `main`: hecho hasta
+  5.2b (2026-10-06, commit `08abcb5`). Lo de 5.2c en adelante se
+  mergea cuando Laura quiera.
 
 ## Qué sigue (orden decidido por Laura)
 
