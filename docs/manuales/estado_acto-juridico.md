@@ -984,7 +984,7 @@ y aprobación antes de tocar el manual:
 | 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); vista previa aprobada (2026-10-06), con menos cajas |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
-| 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Informe listo (commit `81a917f`), esperando respuestas de Laura a las 5 preguntas |
+| 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa abierta, falta que Laura la revise |
 | 5.4 | C. Objeto, `principal_5` | | Pendiente |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
@@ -1202,6 +1202,30 @@ cercana (tabla exhaustiva por punto), no después.
 - Ejemplos propios: casero de Temuco, don Raúl, señora Juana y Gaspar,
   Seba, Nico, Pía y Dani, Mati y don Jaime, Marce, don Sergio, Clau y
   Polo, Rodrigo, señora Elba, Kathy y tía Chela, Agustín.
+
+### Qué se hizo en 5.3 (B. La capacidad)
+
+- Fuentes: Boetsch pp. 69-76 y el Código (decisión de Laura, sin
+  fuentes nuevas). Todo con paráfrasis cercana: reescrito completo.
+- `.definicion` capacidad y capacidad de goce (Memorice); `.ley` 1445 y
+  1447 completos.
+- 3.1 y 3.2 en la escalera de Boetsch (i) concepto, (ii) quiénes con
+  a) b) c), (iii) cómo actúan, (iv) sanción.
+- Corregidos al texto vigente: art. 43 (progenitores, Ley 21.400), art.
+  1796 (hijo sujeto a patria potestad), art. 412 inc. 2° (extensión),
+  cita de incapacidades de goce (963, 965, 1061 en vez de 961 y 1065).
+- **Art. 114 derogado** (Ley 21.515, D.O. 28.12.2022, con los arts.
+  105-116): se cuenta como "el antiguo art. 114". Ejemplos vigentes
+  propuestos por Laura: arts. 1754/1757 (nulidad relativa, en la (ii))
+  y arriendo arts. 1749 inc. 4°/1756/1757 (inoponibilidad del exceso,
+  en la (iii)). No se afirmó el motivo de la derogación (edad mínima
+  18) porque no se pudo verificar con el texto de la ley.
+- Fallos de Concepción (1896, 2008, 2008) como cita textual. Mujer
+  casada pasó al texto. Cajas: 1 No confundir (interdicción del demente
+  y del disipador), cuadro comparativo absoluta/relativa/particular,
+  Conexiones (incluye Extracontractual E. La capacidad delictual).
+- Ejemplos propios: Vicho, don Washington, Coti, Moni, Macarena, Tere y
+  Joaquín, el fundo en Paillaco.
 
 ### Pendientes de II (recordar a Laura al retomar)
 
