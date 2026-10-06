@@ -34,24 +34,35 @@
 > **Qué sigue (2026-10-06)**: capítulos II (Requisitos del AJ) y III
 > (Efectos del AJ), en tandas chicas, en la rama
 > **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`,
-> pusheada, **sin mergear a `main`**). Hechos: **5.1a** (II intro, A.1,
-> A.2) y **5.1b** (II.A.3.1-3.2), ambos aprobados por Laura en vista
-> previa. **5.1c** (II.A.3.3) también aprobado en vista previa
-> (2026-10-06). **5.2 se dividió** a pedido de Laura (el error es muy
-> preguntado y quiere más detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases
-> de error de hecho, 5.3 a 5.6) y 5.2c (dolo, fuerza, remisión). Laura
-> entregó pantallazos de **VIAL** (pp. 77-89) y **FIGUEROA YÁÑEZ** (pp.
-> 63-65, con casos para resolver y extractos de León Hurtado y Claro
-> Solar); están en su Escritorio (`Screenshot 2026-10-06 at 1.14.15 pm`
-> a `1.15.23 pm` = Vial; `1.23.57 pm` a `1.24.07 pm` = Figueroa), y lo
-> usado está transcrito en la sección 8 del informe de 5.2a.
-> **5.2a reescrito** (A.4 + 5.1 + 5.2, con Vial, León Hurtado y un
-> párrafo textual de Laura en 5.2 (i) c)); falta que Laura lo lea en
-> vista previa (ancla `#cII-A-4`). **Siguiente: 5.2b** (5.3 a 5.6),
-> con Vial pp. 89-104 y Figueroa pp. 66-75 que Laura ya entregó (en
-> `Apuntes/CIVIL/Acto Jurídico/`, pantallazos del 2026-10-06 de las
-> 2.31 pm a las 2.34 pm). Los **casos para resolver** no van en los
-> manuales: se harán aparte, después del lanzamiento.
+> pusheada, **sin mergear a `main`**, último commit `4f6f29e`). Hechos
+> y aprobados en vista previa: **5.1a**, **5.1b** y **5.1c**. **5.2 se
+> dividió** a pedido de Laura (el error es muy preguntado y quiere más
+> detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
+> a 5.6) y 5.2c (dolo, fuerza, remisión). **5.2a reescrito** con VIAL,
+> LEÓN HURTADO y un párrafo textual de Laura; Laura lo revisó en vista
+> previa y pidió menos cajas (ya aplicado, ver "Qué se hizo en 5.2a").
+> Falta que confirme que quedó conforme.
+>
+> **Siguiente: 5.2b** (5.3 a 5.6): extraer Boetsch (`principal_3`, pp.
+> 52-59), inventario, chequeo de paráfrasis e informe para aprobación,
+> con las fuentes nuevas: **VIAL** pp. 89-104 (la 104 incompleta) y
+> **FIGUEROA YÁÑEZ** pp. 63-75 (extractos de LEÓN HURTADO y CLARO
+> SOLAR; jurisprudencia Izquierdo con Ministros de la Aduana de
+> Valparaíso, CS 1859, y Butcher con Plaza, CA Santiago 1943; error
+> común). Las fuentes están en `Apuntes/CIVIL/Acto Jurídico/` del
+> checkout principal: 42 pantallazos `Screenshot 2026-10-06 at ...`
+> (1.14.15 pm a 1.15.23 pm = Vial pp. 77-89; 1.23.57 pm a 1.24.07 pm =
+> Figueroa pp. 63-65; 2.31.09 pm a 2.34.29 pm = Vial pp. 89-104 y
+> Figueroa pp. 66-75, en desorden: identificar cada página por su
+> número al pie). Primera tarea de 5.2b: sacar el **Dato de grado** de
+> 5.3 (sanción del error esencial) y pasar su contenido al texto.
+>
+> Citas para informes: VIAL DEL RÍO, Víctor, *Teoría general del acto
+> jurídico*, 2011; FIGUEROA YÁÑEZ, Gonzalo, *Curso de Derecho Civil*,
+> t. II, 2012. En el manual van solo los apellidos.
+>
+> Los **casos para resolver** (estilo Figueroa) no van en los
+> manuales: se harán aparte, después del lanzamiento (`camino-a-beta.md`).
 > Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
@@ -949,7 +960,7 @@ y aprobación antes de tocar el manual:
 | 5.1a | II intro + A.1 Conceptos generales + A.2 Requisitos de la voluntad | `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md` | Reescrito (commit `274d5cf`); vista previa aprobada |
 | 5.1b | A.3.1 Unilaterales + A.3.2 Formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-1-2_2026-10-06.md` | Reescrito (commit `a3b4326`); vista previa aprobada; latinazgo eliminado |
 | 5.1c | A.3.3 Casos especiales de formación del consentimiento | `docs/actualizacion_acto_juridico_II-A3-3_2026-10-06.md` | Reescrito (commits `b6dbb08` informe, luego 3 rondas de ajustes con las leyes de Laura); vista previa aprobada (2026-10-06) |
-| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito; falta vista previa |
+| 5.2a | A.4 Vicios + A.5.1 Concepto de error + A.5.2 Error de derecho y de hecho; fuentes nuevas: Vial pp. 77-89 y Figueroa pp. 63-65 (León Hurtado) | `docs/actualizacion_acto_juridico_II-A4-A5-1-2_2026-10-06.md` | Reescrito (commits `85c73ab`, `04cb186`); Laura lo revisó en vista previa y pidió menos cajas (aplicado); falta su conformidad final |
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común | | Pendiente; fuentes ya entregadas: Vial pp. 89-104 y Figueroa pp. 66-75 (jurisprudencia Izquierdo con Aduana 1859, Butcher con Plaza 1943, error común) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación | | Pendiente |
 | 5.3 | B. Capacidad, `principal_4` | | Pendiente |
@@ -1072,9 +1083,59 @@ cercana (tabla exhaustiva por punto), no después.
   sirven para verificar 5.2 en adelante si se cita la Ley del
   Consumidor.
 
+### Qué se hizo en 5.2a (A.4, A.5.1, A.5.2)
+
+- Boetsch completo (pp. 49-52); todo tenía paráfrasis cercana:
+  reescrito completo. Fuentes nuevas de Laura: VIAL pp. 77-89 y
+  FIGUEROA pp. 63-65 (extracto de LEÓN HURTADO). Transcripción de lo
+  usado en la sección 8 del informe.
+- **A.4:** art. 1451 en `.ley` (Boetsch no lo citaba); COVIELLO (los
+  vicios se reducen a error y temor).
+- **5.1:** `.definicion` de STOLFI; GIORGI y COVIELLO; por qué es vicio
+  del conocimiento (PIETROBON). Escalera (i) error e ignorancia (cita
+  sin autor de Boetsch + CLARO SOLAR), (ii) error y duda (la frase de
+  la duda que Boetsch usa sin autor **es de PIETROBON**; duda objetiva
+  de VIAL), (iii) error y previsión (definición de PIETROBON).
+  Recuadros: Ejemplo (la Feña y el food truck de Pichilemu) y No
+  confundir (error, ignorancia y duda). Ejemplo en texto: don Hernán y
+  el cuadro "atribuido a" en la feria de Franklin.
+- **5.2 (i) error de derecho:** definición de Boetsch con la fórmula de
+  doctrina; supuestos de VIAL; arts. 1452 y 8 en `.ley`; ejemplo del
+  Nacho y su parcela de Paine (arts. 1801 inc. 2° y 1545); art. 706
+  inc. final; historia (Roma, POTHIER, DOMAT, Código italiano). a) art.
+  2297 y b) art. 2299 en `.ley`, explicados; ejemplo de la tía Gladys y
+  la junta de vecinos. **c) ¿Son realmente excepciones?: el primer
+  párrafo es textual de Laura** (no se toca), seguido de LEÓN HURTADO
+  (interpretación restrictiva, rechazo de *damno vitando*) y VIAL
+  (excepción a la irrelevancia, no al "no vicia"). Recuadros:
+  Jurisprudencia (Gaceta 1928, sent. 191, p. 883, sin rol) y No
+  confundir "Repetir no es anular".
+- **5.2 (ii) error de hecho:** definición de Boetsch con la fórmula de
+  doctrina; error *in re*, *in persona*, *in negotio*; a) error
+  obstáculo y error vicio (ejemplo: la Cami y los aros de alpaca), b)
+  criterio objetivo y subjetivo, y que el Código exige error
+  determinante (VIAL), c) el Código no recoge la distinción (art.
+  1453). No olvidar y Conexiones al final de 5.2.
+- **Ajustes de Laura en vista previa:** se eliminaron el cuadro
+  comparativo de las tres lecturas de los arts. 2297 y 2299 y la
+  Pregunta clásica (Laura: "se ve mucha caja"); la Advertencia pasó a
+  No confundir. Se mantienen Jurisprudencia, No olvidar y Conexiones.
+- **Advertencia retirada como caja** (decisión 2026-10-06): las cuatro
+  que había en AJ (II.A.2.2, II.A.3.2, II.A.3.3, IV.A.4.3) pasaron a No
+  confundir, y se sacó de `guia-editorial.md`, `formato.md`,
+  `proceso.md` y `actualizar-manuales-existentes.md`.
+- **Casos para resolver:** decidido que van aparte, después del
+  lanzamiento. El caso piloto (la Coni y la suegra) quedó en la sección
+  6 del informe.
+- Ningún `h2`/`h3` cambió (índice igual).
+
 ### Pendientes de II (recordar a Laura al retomar)
 
-- **Vista previa de 5.2a** (ancla `#cII-A-4`).
+- **Conformidad final de 5.2a** en vista previa (ancla `#cII-A-4`),
+  después de los ajustes de cajas.
+- **Advertencias en los manuales de Responsabilidad** (2 en
+  Contractual, 3 en Precontractual): preguntado a Laura si se cambian a
+  No confundir ahora o al revisar esos manuales; sin respuesta.
 - **5.2b, ya detectado:** el manual (5.4) dice que el art. 1454 inc. 2°
   exige error "compartido por ambas partes"; el artículo solo exige que
   el motivo sea "conocido de la otra parte" (Boetsch se equivoca). Y en
