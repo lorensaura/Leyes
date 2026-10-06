@@ -252,3 +252,39 @@ texto del art. 16 de la Ley del Consumidor.
   (solo los recuadros de ley de los arts. 16 y 12 A, que son citas
   completas), frases clave de las 27 unidades presentes, capturas en
   Chrome headless revisadas.
+
+## 9. Segunda ronda con las leyes que entregó Laura (2026-10-06)
+
+Laura entregó en PDF (leychile, generados el 06-oct-2026): Ley 19.496,
+Ley 19.799, Ley 20.217, DS 81 de 1999, Ley 21.180, Ley 21.464 y la
+Resolución 66 exenta de 2020 (Energía).
+
+- **Art. 1 Nº 2 Ley 19.496** confirmado como la definición de
+  proveedor: se agregó el número al manual.
+- **Art. 2 letra a):** "solo actos mixtos" corregido a "por regla
+  general", con los demás casos del art. 2.
+- **Duración de la oferta (unidad 21): resuelta con el art. 35**, que
+  exige informar "el tiempo o plazo de su duración". Recuadro de ley
+  completo.
+- **Sanción "solo multa": Boetsch está desactualizado.** El art. 35
+  inc. 3° permite pedir al juez el cumplimiento forzado de lo ofrecido;
+  el art. 24 fija la multa y el art. 50 da acciones para obtener la
+  prestación incumplida y la indemnización. Se reescribió en ese
+  sentido.
+- **DS 81 de 1999: derogado** el 17-ago-2002 por el Decreto 181. Se
+  mantiene en la lista (Boetsch lo cita) con la aclaración.
+- **"Regulación escasa":** quedó atribuida a la doctrina.
+- **Ley 19.799, art. 3** (equivalencia de los contratos con firma
+  electrónica a los escritos en papel, con sus tres excepciones):
+  agregado en recuadro de ley.
+- **No se incorporaron** la Ley 21.180 ni la 21.464 (tratan de
+  procedimientos administrativos electrónicos del Estado, no de la
+  formación del consentimiento entre particulares), ni la Resolución 66
+  (delegación de funciones en el Ministerio de Energía).
+- **Ojo con la versión de la Ley 19.496:** el PDF es la versión al
+  20-abr-2021 y dice "Tiene texto refundido: DFL 3, 2021-05-31". Las
+  reformas posteriores (si las hay) están en ese DFL. Pendiente que
+  Laura descargue el DFL 3 de 2021 para confirmar que los arts. 1, 2,
+  12, 12 A, 16, 24, 35 y 50 no cambiaron.
+- Cero marcas `[VERIFICAR]` en 3.3; verificación mecánica y capturas
+  repetidas.
