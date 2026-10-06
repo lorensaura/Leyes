@@ -985,7 +985,7 @@ y aprobación antes de tocar el manual:
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
-| 5.4 | C. Objeto, `principal_5` | | Pendiente |
+| 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Informe listo (commit `b5b1373`); esperando aprobación de Laura (5 preguntas en la sección 6) |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
 
