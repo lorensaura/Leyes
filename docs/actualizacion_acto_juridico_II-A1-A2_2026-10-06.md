@@ -202,3 +202,43 @@ me digas lo contrario.**
    prefieres otros (5.4)?
 5. ¿Advertencia, No olvidar y Conexiones (5.5)?
 6. ¿Reordenamos (iii) o lo dejamos como está (5.7)?
+
+## 7. Decisiones de Laura y segunda pasada (2026-10-06)
+
+**Decisión:** "dale con todo, y el (iii) reordénalo". Se aplicaron las
+propuestas 5.1 a 5.6, y también la 5.7: el párrafo sobre el Código Civil
+quedó como cierre de la manifestación tácita, sin número (seguido del
+No olvidar), y el silencio pasó a ser (iii).
+
+**Qué se cambió en el manual:**
+- Introducción nueva del capítulo II, con remisión a I.7.
+- Los 13 párrafos reescritos en voz propia; los de más de una idea se
+  partieron (A.1 en tres párrafos, 2.1 en dos, (i) en dos, (ii) en
+  cuatro, (iii) en dos, b) en dos).
+- Las excepciones del silencio salieron del recuadro "No confundir" al
+  texto, como a) La ley, b) Las partes, c) El juez (`.enum-a`).
+- Recuadros de ley: art. 2125 completo (con el inc. 2° que faltaba) y
+  art. 1233 completo ("se entenderá que repudia", corrige el "se
+  presume").
+- Ejemplo de la tienda reemplazado por el de don Lucho en la feria (en
+  el texto). Recuadro de Ejemplo nuevo: la señora Carmen y el abogado
+  que no contestó el correo (art. 2125).
+- Recuadros nuevos: No olvidar (expresa y tácita), Advertencia ("el que
+  calla otorga"), Conexiones (Sucesorio, Contratos, Obligaciones).
+- Art. 1566: se ajustó a la letra del artículo ("la falta de una
+  explicación que haya debido darse por ella").
+
+**Segunda pasada (verificación):**
+- Las 21 unidades del inventario están en el texto nuevo, más la
+  introducción que faltaba.
+- Los 11 artículos (incluido el 1023 y el 103 del C. de Comercio) siguen
+  presentes, los mismos que antes.
+- Balance de etiquetas correcto (`p`, `div`, `span`, `em`, `strong`).
+  Cero guiones largos y cero comillas angulares. Ningún párrafo supera
+  700 caracteres.
+- Texto del tramo: de unos 6.200 a unos 8.800 caracteres, por los
+  recuadros nuevos y los dos artículos transcritos; no se eliminó
+  contenido.
+- No se agregó ni cambió ningún `h1`/`h2`/`h3`: el índice no cambia.
+- Captura en Chrome headless revisada completa.
+- Contenido previo conservado sin estar en Boetsch: ninguno (no había).

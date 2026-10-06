@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-05.
+> 2026-10-06.
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -32,8 +32,9 @@
 > aprobado antes en vista previa.
 >
 > **Qué sigue**: capítulos II (Requisitos del AJ) y III (Efectos del
-> AJ), la parte de la Teoría General que todavía no se tocó (ver "Qué
-> sigue" más abajo).
+> AJ), en tandas chicas. **5.1a (II intro, A.1, A.2) hecho el
+> 2026-10-06**; el siguiente es **5.1b (II.A.3, formación del
+> consentimiento)**. Ver "Qué sigue" más abajo.
 
 ## Dónde estamos
 
@@ -928,9 +929,8 @@ corrección de fidelidad en la cita del art. 1683) en
    (2026-10-05, `main` y `origin/main` quedaron en `7675b08`, el mismo
    commit que esta rama; detalle del conflicto que hubo que limpiar en
    el encabezado de este archivo). El **capítulo I**
-   (`worktree-acto-juridico-cap1`) sigue sin mergear aparte: su
-   contenido (commit `8c8ad34`) es anterior y distinto a este hilo,
-   falta que Laura lo revise en vista previa y lo mergee. El commit
+   (`worktree-acto-juridico-cap1`, commit `8c8ad34`) **también ya está
+   en `main`** (verificado 2026-10-06). El commit
    `b39a974` (achilenización del ejemplo de V.5.3) estaba en la rama
    `worktree-acto-juridico-tramo4-5-otras-causales`, que ya no tenía
    nada más pendiente y se borró a pedido de Laura el 2026-10-01; el
@@ -943,7 +943,15 @@ corrección de fidelidad en la cita del art. 1683) en
    vista previa línea por línea en esta sesión (solo resolvió el
    conflicto de Git para mergear); si quiere revisarlo igual que C-G y
    V, el manual ya está en `main`, ancla `#cVI`.
-4. **Seguir con capítulos II y III** (Teoría general, la parte que
+4. **Capítulos II y III, en curso** (rama `worktree-acto-juridico-cap2-3`,
+   en el mismo worktree `acto-juridico-cap4`). Reparto acordado con
+   Laura el 2026-10-06, en tandas chicas: **5.1a** II intro + A.1-A.2
+   (**hecho**, informe `docs/actualizacion_acto_juridico_II-A1-A2_2026-10-06.md`,
+   aprobado "dale con todo", (iii) reordenado; falta vista previa de
+   Laura), **5.1b** A.3 Formación del consentimiento (**siguiente**),
+   5.2 A.4-8 vicios, 5.3 B capacidad, 5.4 C objeto, 5.5 D causa + anexo
+   Domínguez y Boetsch, 5.6 E formalidades + III. Detalle original del
+   alcance: (Teoría general, la parte que
    falta): II (Requisitos de los AJ: A. La voluntad, B. Capacidad, C.
    Objeto, D. Causa, E. Formalidades, fuentes `principal_2` a `_7`,
    más el anexo Causa de Domínguez y Boetsch para II.D) y III (Efectos
@@ -1108,7 +1116,7 @@ más afectan el trabajo por tramos:
   (ver `docs/manuales/estado_obligaciones.md` si existe, o crearlo al
   retomarlo). `worktree-acto-juridico-cap4` (este hilo) ya se mergeó a
   `main` el 2026-10-05 (commit `7675b08`); `worktree-acto-juridico-cap1`
-  (capítulo I) sigue sin mergear, ver "Qué sigue" arriba.
+  (capítulo I) ya está en `main` (verificado 2026-10-06).
   `worktree-virtual-enchanting-kite` ya no existe (se había borrado
   antes).
 
