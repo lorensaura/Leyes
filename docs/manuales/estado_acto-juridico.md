@@ -1264,9 +1264,9 @@ cercana (tabla exhaustiva por punto), no después.
    nada más pendiente y Laura pidió borrarla el 2026-10-01 (**ojo: el
    2026-10-06 seguía existiendo en local, con su worktree
    `.claude/worktrees/acto-juridico-tramo4-5-otras-causales`, y GitHub
-   Desktop la ofrecía para mergear con 2 conflictos. NO mergearla**: sus
-   2 commits son `b39a974`, ya en main reescrito, y `f9b2793`, una nota
-   vieja de este archivo); el
+   Desktop la ofrecía para mergear con 2 conflictos. Sus 2 commits eran
+   `b39a974`, ya en main reescrito, y `f9b2793`, una nota vieja de este
+   archivo. **Borrada de verdad el 2026-10-06**, rama y worktree); el
    cambio puntual de V.5.3 se rescató antes de borrarla y ya está en
    `main` (vía el commit `cb30eb3` de este hilo). También se borró
    `worktree-pdf-header-fix` (2026-07-28): su único contenido propio
