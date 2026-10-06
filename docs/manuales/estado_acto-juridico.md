@@ -1123,7 +1123,10 @@ cercana (tabla exhaustiva por punto), no después.
 - **Advertencia retirada como caja** (decisión 2026-10-06): las cuatro
   que había en AJ (II.A.2.2, II.A.3.2, II.A.3.3, IV.A.4.3) pasaron a No
   confundir, y se sacó de `guia-editorial.md`, `formato.md`,
-  `proceso.md` y `actualizar-manuales-existentes.md`.
+  `proceso.md` y `actualizar-manuales-existentes.md`. Laura pidió
+  aplicarlo en **todos** los manuales: también se cambiaron las de
+  Responsabilidad (3 "Advertencia" en Precontractual y 2 "Atención",
+  misma caja `.warn`, en Contractual) y se regeneraron sus PDF.
 - **Casos para resolver:** decidido que van aparte, después del
   lanzamiento. El caso piloto (la Coni y la suegra) quedó en la sección
   6 del informe.
@@ -1133,9 +1136,6 @@ cercana (tabla exhaustiva por punto), no después.
 
 - **Conformidad final de 5.2a** en vista previa (ancla `#cII-A-4`),
   después de los ajustes de cajas.
-- **Advertencias en los manuales de Responsabilidad** (2 en
-  Contractual, 3 en Precontractual): preguntado a Laura si se cambian a
-  No confundir ahora o al revisar esos manuales; sin respuesta.
 - **5.2b, ya detectado:** el manual (5.4) dice que el art. 1454 inc. 2°
   exige error "compartido por ambas partes"; el artículo solo exige que
   el motivo sea "conocido de la otra parte" (Boetsch se equivoca). Y en
