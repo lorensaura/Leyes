@@ -1,7 +1,7 @@
 # Informe tramo 5.4: Acto Jurídico II.C El objeto
 
 Fecha: 2026-10-06. Rama: `worktree-acto-juridico-cap2-3`.
-Estado: **esperando aprobación de Laura.** No se ha tocado el manual.
+Estado: **pregunta 1 aprobada por Laura, con fuentes nuevas (ver sección 7); faltan las preguntas 2 a 5.** No se ha tocado el manual.
 
 ## 1. Alcance y fuentes
 
@@ -344,3 +344,77 @@ mismo punto. Nombres que no se repiten en el manual:
    latín (*Impossibilium nulla obligatio*). El manual hoy solo trae la
    versión en español. ¿Lo dejo así? (Recomendado, en línea con el
    latinazgo que sacamos en 5.1b.)
+
+## 7. Respuesta de Laura y fuentes nuevas (2026-10-06)
+
+**Pregunta 1 aprobada:** la venta de las cosas del art. 1464 pasa al
+texto como discusión con sus autores. Laura entregó dos fuentes nuevas
+para este punto:
+
+- **Fallo de la Corte Suprema, rol Nº 3671-1998** (texto pegado por
+  Laura, sin fecha). Acoge la tesis de Velasco: el art. 1810 habla de
+  enajenación *prohibida*, es decir, la que no puede hacerse en caso
+  alguno; la del Nº 3 del art. 1464 se puede hacer con autorización del
+  juez o consentimiento del acreedor, así que no es una norma
+  prohibitiva y el art. 1810 no se aplica a la venta de cosas
+  embargadas. Lo refuerza: la venta de una cosa de enajenación
+  prohibida nunca producirá efecto; la de una cosa embargada puede
+  llegar a producir todos sus efectos. Aplica lo mismo al Nº 4: la
+  compraventa, por sí sola, no es enajenación. Cumple las dos
+  condiciones para ir en recuadro (tiene rol y está desarrollado).
+- **VIAL**, *Teoría general del acto jurídico*, 2011, **pp. 170-183**
+  (14 pantallazos `Screenshot 2026-10-06 at 10.54.02 pm` a `10.55.46
+  pm`, en la carpeta de AJ y en el escritorio).
+
+### 7.1 Qué agrega Vial (inventario)
+
+| # | Unidad de Vial | Dónde va | Estado |
+|---|---|---|---|
+| V1 | p. 170: enajenar es hacer la tradición (definición legal de tradición); sentido amplio y restringido | 4.3, enajenación | Ya estaba en Boetsch; Vial aporta que la enajenación **es la tradición** |
+| V2 | p. 171: argumento de la tesis restringida (el Código dice "enajenar o gravar", como cosas distintas); la doctrina prefiere la amplia en el art. 1464; da igual la intención de la tradición | 4.3, enajenación | **Nuevo** el argumento |
+| V3 | p. 171, nota 223: es válida la adjudicación de una cosa embargada o de una especie litigiosa | 4.3, adjudicación | Confirma lo de Boetsch y el anexo |
+| V4 | p. 172: el art. 1464 reprocha la tradición, no los contratos (por ej., el arriendo de una cosa embargada); la compraventa adolece de objeto ilícito, pero **no por el art. 1464** sino por la suma de los arts. 1810, 1464 y 1466 | 4.3, discusión sobre la venta (postura mayoritaria) | **Nuevo** el razonamiento completo |
+| V5 | p. 173: la tesis contraria (Nºs 3 y 4 no son prohibitivos; la remisión del art. 1810 sería parcial) | 4.3, discusión | Ya estaba (Velasco) |
+| V6 | p. 173: la opinión mayoritaria de la doctrina, **recogida por la jurisprudencia**, es que el art. 1464 es prohibitivo para todas sus cosas | 4.3, discusión | Confirma el hallazgo 6. Con el fallo de 1998 se dice que **la jurisprudencia no es uniforme** |
+| V7 | pp. 173-176: cosas incomerciables. **Claro Solar** ve en el Nº 1 una confusión entre requisitos de existencia y de validez; **Vial** adhiere: si la cosa no existe, no está determinada o es incomerciable, no hay objeto y el acto no produce efecto alguno. Consecuencias absurdas de tratarlo como nulidad (vender el cerro Santa Lucía obligaría a pagar y a hacer la tradición, daría acción resolutoria, y se sanearía a los diez años). Reconoce que el texto del Código dice objeto ilícito, pero solo para la venta y la enajenación: los demás actos sobre cosas incomerciables (comodato, arriendo) serían inexistentes (arts. 1461 y 1444). Lo atribuye a un **error del Código** | 4.3 (i) | **Nuevo**: hoy el manual solo dice "buena parte de la doctrina de la inexistencia". Ahora con nombres (Claro Solar y Vial) frente a la crítica de texto expreso (art. 1682) |
+| V8 | pp. 176-177: el Nº 2 no es redundante; sigue la distinción romana: toda cosa incomerciable es inalienable, pero no toda inalienable es incomerciable | 4.3 (ii) | **Nuevo** el criterio |
+| V9 | p. 177: definición de embargo de la Corte Suprema (citada por León Hurtado): "la aprehensión compulsiva que el juez de la causa hace de determinado bien del deudor, y desde el momento en que se verifica, tales bienes quedan sujetos a la autoridad del referido juez" | 4.3 (iii) a) | **Nuevo**, va como cita textual (`.definicion`) |
+| V10 | p. 177: doctrina y jurisprudencia coinciden en que también es cosa embargada la afectada por una precautoria de prohibición de celebrar actos y contratos o de gravar y enajenar | 4.3 (iii) a) | Ya estaba |
+| V11 | pp. 177-178, nota 225: **Velasco**: el art. 1464 deja fuera contratos como la compraventa y el arriendo; si se infringe una prohibición judicial de vender o arrendar, no habría sanción por la letra de la ley; por eso concluye que el art. 296 C.P.C. modificó los Nºs 3 y 4 del art. 1464 y hay objeto ilícito aunque la prohibición no sea de enajenar | 4.3 (iii) a) | **Nuevo** |
+| V12 | p. 178: desde cuándo está embargada: entre las partes, desde que se notifica la resolución que ordena requerir de pago y embargar, y el ministro de fe traba el embargo sobre bienes específicos; terceros: muebles, desde que conocen el embargo; inmuebles, desde la inscripción en el Registro de Interdicciones y Prohibiciones de Enajenar del Conservador (arts. 297 y 453 C.P.C.) | 4.3 (iii) b) | Ya estaba, Vial precisa el registro |
+| V13 | pp. 178-179: **la enajenación de un inmueble embargado tiene objeto ilícito aunque el embargo no esté inscrito** (el Código Civil no exige la inscripción); la inscripción solo decide si la sentencia de nulidad afecta a terceros. Ejemplo de Vial (A, B y C) | 4.3 (iii) b) | **Nuevo** y muy preguntable. Ejemplo propio en vez del de Vial |
+| V14 | p. 179: el embargo debe existir al momento de la enajenación | 4.3 (iii) c) | Ya estaba |
+| V15 | pp. 179-180: enajenación forzada: **Claro Solar y León Hurtado**: es válida (el Nº 3 castiga la enajenación voluntaria del deudor); **otros**: la ley no distingue y hay que proteger al acreedor; **la jurisprudencia es equívoca**; Vial adhiere a la primera | 4.3 (iii) d) | **Nuevo**: Boetsch lo da por resuelto (art. 528 C.P.C.); se presenta como discusión |
+| V16 | p. 180: autorización del mismo juez que decretó el embargo; si son varios jueces, todos (León Hurtado) | 4.3 (iii) g) | Ya estaba |
+| V17 | pp. 180-181: el consentimiento del acreedor se funda en el **art. 12** (renuncia de derechos en beneficio propio): es una renuncia tácita a sus derechos de embargante; si son varios acreedores, todos | 4.3 (iii) g) | **Nuevo** el fundamento (art. 12, verificado) |
+| V18 | p. 181: autorización y consentimiento deben ser previos: darlos después sería sanear una nulidad absoluta, lo que la ley no contempla | 4.3 (iii) g) | Ya estaba |
+| V19 | p. 181, nota 227 (León Hurtado): consentimiento expreso o tácito; tácito si el comprador es el propio acreedor embargante (Corte de Valdivia); una vez dado, no se puede retractar en perjuicio de terceros | 4.3 (iii) g) | **Nuevo** lo de la retractación |
+| V20 | p. 181: especie litigiosa: cuerpo cierto cuyo dominio se discute en juicio; ejemplo (A demanda a B la restitución) | 4.3 (iv) | Concepto ya estaba; ejemplo propio |
+| V21 | pp. 181-182: no confundir con el derecho litigioso: en la especie, el objeto es la cosa; en la cesión del derecho litigioso, el álea del juicio | 4.3 (iv), No confundir | **Nuevo** el criterio para la caja |
+| V22 | p. 182: **texto de los arts. 296 y 297 C.P.C.** (transcritos por Vial); el 296 **modifica** el Nº 4 (exige que el juez decrete prohibición); el 297 **no** lo modifica (la inscripción solo es para oponer a terceros) | 4.3 (iv) | **Nuevo** el análisis |
+| V23 | p. 183: si la prohibición sobre un inmueble no se inscribe, la enajenación igual es el acto prohibido | 4.3 (iv) | **Nuevo** |
+| V24 | p. 183: el Código calla sobre la autorización de la parte beneficiada; algunos dicen que es irrelevante; Vial: vale, por renuncia tácita y por la equivalencia con el embargo | 4.3 (iv) | Ya estaba en Boetsch como "doctrina"; ahora con la objeción y la respuesta |
+
+### 7.2 Efectos en el informe
+
+- **Pregunta 2 queda resuelta en parte:** el texto de los arts. 296 y
+  297 C.P.C. viene transcrito en Vial, y lo puedo usar. Siguen sin
+  verificar los arts. 453 y 528 C.P.C. y el art. 19 Nº 4 de la
+  Constitución: los cito solo por su contenido, sin transcribir.
+- **Art. 12 del Código Civil:** verificado ("podrán renunciarse los derechos conferidos por las leyes, con tal que sólo miren al interés individual del renunciante, y que no esté prohibida su renuncia").
+- **4.3 crece bastante.** Para que se lea bien, la (iii) va con la
+  escalera a) a g) de Boetsch, y las discusiones nuevas (V7, V11,
+  V15) en párrafos cortos con el autor nombrado. Ningún `h2`/`h3`
+  cambia.
+- **Recuadros de 4.3:** se agregan una caja de **Jurisprudencia** (CS
+  rol 3671-1998, extracto textual de los considerandos) y el **cuadro
+  comparativo** de las tres posturas, que ahora tiene una fila de
+  jurisprudencia (mayoritaria según Vial y el anexo / CS 1998 con
+  Velasco). Ninguno de los dos cuenta para el máximo de dos. La
+  Pregunta clásica y la No confundir (especie litigiosa / derecho
+  litigioso) se quedan como estaban propuestas.
+- **Ejemplo nuevo** para V13: a don Tito le embargan su parcela en
+  Olmué; antes de que el embargo se inscriba, se la vende e inscribe a
+  nombre de la Chepa. La tradición tiene objeto ilícito igual, pero la
+  sentencia de nulidad no afecta a la Chepa si a la fecha de la
+  tradición el embargo no estaba inscrito.
