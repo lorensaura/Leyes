@@ -134,3 +134,23 @@ interdicción").
 3. ¿Te sirve dejar las dos posturas sobre el elemento intencional con
    la cita textual de VERGARA BAEZA y la de COVIELLO, o prefieres solo
    una de las dos citas para no alargar (iii)?
+
+## 6. Decisiones de Laura y aplicación (2026-10-07)
+
+- Aprobó las tres correcciones y el ejemplo del tío Lucho.
+- En F.3 (iii) pidió dejar solo la cita de **COVIELLO**: la cita de
+  VERGARA BAEZA (p. 30, "actos reales voluntarios, aunque, a veces, no
+  intencionales...") no se incorporó. Las dos formulaciones de VERGARA
+  BAEZA de F.1 (inventario 4) sí entraron.
+- Aplicado: F.1 (atribución corregida, "tienen", párrafo de VERGARA
+  BAEZA, Ejemplo del tío Lucho), F.3 (ii) y (iii) (elemento material,
+  elemento intencional, ánimo fraudatorio, postura objetiva con
+  COVIELLO y subjetiva con causa ilícita), F.4.1 (tres actitudes y los
+  dos caminos de CARIOTA FERRARA), F.5 (VIAL por la nulidad absoluta,
+  con DOMÍNGUEZ como contraste). "VIAL DEL RÍO" pasó a "VIAL" también
+  en II.D (línea de LEÓN HURTADO). *Contra legem* en cursiva.
+- Verificación: balance de etiquetas OK en IV.F, cero guiones largos y
+  guillemets, ningún párrafo sobre 1.200 caracteres, sin títulos
+  nuevos (índice sin cambios), diff revisado línea por línea (todo lo
+  eliminado reaparece modificado), capturas en Chrome headless
+  revisadas.

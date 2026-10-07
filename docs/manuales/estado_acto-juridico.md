@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (5.6, Formalidades y Efectos, aprobado en vista previa; falta merge a `main`. Capítulos II y III terminados).
+> 2026-10-07 (capítulos II y III terminados y en `main`; pasada de IV.F con VIAL pp. 211-214 aplicada en la rama `worktree-acto-juridico-IV-F-vial`, esperando que Laura revise la vista previa y la mergee).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -1386,10 +1386,21 @@ cercana (tabla exhaustiva por punto), no después.
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
    **Capítulos II y III terminados** (5.6 aprobado en vista previa el
-   2026-10-07). **Siguiente paso exacto:** (a) Laura mergea
-   `worktree-acto-juridico-cap2-3` a `main` con GitHub Desktop (5.6
-   todavía no está en `main`); (b) la pasada chica de IV.F con VIAL
-   pp. 211-214 (pendiente explícito de abajo).
+   2026-10-07) **y ya en `main`** (commit `d6800fa`, verificado
+   2026-10-07).
+   **Pasada de IV.F con VIAL pp. 211-214: aplicada** (2026-10-07, rama
+   `worktree-acto-juridico-IV-F-vial`, commits `b3c5c45` informe y
+   `463c170` manual; informe
+   `docs/actualizacion_acto_juridico_IV-F-VIAL_2026-10-07.md`). Laura
+   aprobó todo y pidió dejar en F.3 (iii) solo la cita de COVIELLO.
+   Se corrigió la atribución de la definición de F.1 (es de
+   LIGEROPOULO vía VERGARA BAEZA, no de VIAL), F.5 presenta la
+   "coincidencia" en la nulidad absoluta como opinión de VIAL, y
+   "VIAL DEL RÍO" quedó "VIAL" en todo el manual. Ejemplo nuevo: el
+   tío Lucho (casino de Viña, parcela en Pirque).
+   **Siguiente paso exacto:** Laura revisa la vista previa (`#cIV-F`)
+   y mergea `worktree-acto-juridico-IV-F-vial` a `main`; después,
+   Bienes (punto 5).
    **Pendiente explícito nacido de 5.5:** incorporar a IV.F las pp.
    211-214 de VIAL (elementos material y subjetivo, cita de Vergara
    Baeza, ejemplo del que enajena antes de la interdicción por
