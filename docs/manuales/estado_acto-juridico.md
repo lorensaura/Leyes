@@ -5,8 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (5.5, La causa, reescrito; falta la revisión de Laura en
-> vista previa y el merge).
+> 2026-10-07 (cierre de 5.5, La causa, en `main`; sigue 5.6).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -992,7 +991,7 @@ y aprobación antes de tocar el manual:
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
 | 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe, `d4e0b86` reescritura); vista previa sin ajustes; **en `main`** (2026-10-07) |
-| 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` + VIAL pp. 189-214 (26 pantallazos de Laura, 2026-10-07) | `docs/actualizacion_acto_juridico_II-D_2026-10-07.md` | Reescrito (2026-10-07) con las 5 recomendaciones aceptadas; **falta vista previa de Laura y merge** |
+| 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` + VIAL pp. 189-214 (26 pantallazos de Laura, 2026-10-07) | `docs/actualizacion_acto_juridico_II-D_2026-10-07.md` | Reescrito (commits `fd73319`, `123a9ec` informe, `3b0d44f` reescritura); **en `main`** (merge `3a6301d`, 2026-10-07) |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
 
 Para cada tramo se aplica desde el principio el chequeo de paráfrasis
@@ -1300,8 +1299,7 @@ cercana (tabla exhaustiva por punto), no después.
 - Fuera del tramo: rol de V.4.4 puesto (CS, 9-1-2017, rol Nº
   14.853-2016, dato de Laura).
 - Commits `fd73319`, `123a9ec` (informe) y `3b0d44f` (reescritura).
-  Vista previa en `DERECHO LIBRE/AJ_vista_previa.html#cII-D`; **falta
-  la revisión de Laura y el merge**.
+  **En `main`** (merge `3a6301d`, hecho por Laura el 2026-10-07).
 
 ### Pendientes de II (recordar a Laura al retomar)
 
@@ -1355,9 +1353,7 @@ cercana (tabla exhaustiva por punto), no después.
    V, el manual ya está en `main`, ancla `#cVI`.
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
-   **Siguiente paso exacto:** Laura revisa 5.5 (D. La causa) en
-   `DERECHO LIBRE/AJ_vista_previa.html#cII-D`; aplicar sus ajustes y
-   que mergee con GitHub Desktop. Luego **5.6** (E. Formalidades,
+   **Siguiente paso exacto:** **5.6** (E. Formalidades,
    `principal_7`, y III. Efectos, `principal_8`); fuentes: Boetsch, los
    anexos y los códigos, más lo que Laura entregue por su cuenta.
    **Pendiente explícito nacido de 5.5:** incorporar a IV.F las pp.
