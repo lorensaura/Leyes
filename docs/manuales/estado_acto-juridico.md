@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-06 (cierre de 5.3; sigue 5.4, El objeto).
+> 2026-10-07 (cierre de 5.4, en `main`; sigue 5.5, La causa).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -60,15 +60,20 @@
 > en "Qué se hizo en 5.2c". **Con esto II.A (La voluntad) está
 > completo.** Pendiente de merge a `main` desde `36a76c2`.
 >
-> **Siguiente: 5.3** (B. La capacidad), manual desde `#cII-B` hasta
-> antes de `#cII-C`. Fuente: Boetsch `principal_4` (y el arranque de
-> B, pp. 69 en adelante, que ya aparece al final de `principal_3`).
-> Mismos pasos: extraer, inventario unidad por unidad (incluidos los
-> anexos de Bozzo e Ibarra y Memorice: revisarlos siempre, en 5.2c
-> aportaron material), verificar artículos, chequeo de paráfrasis,
-> informe para aprobación. Preguntar a Laura al inicio si tiene páginas
-> de VIAL o FIGUEROA sobre capacidad; si no, Boetsch, Código y anexos
-> bastan (así se decidió en 5.2c).
+> **5.3 (La capacidad) y 5.4 (El objeto) terminados y en `main`.**
+> 5.4 se mergeó el 2026-10-07 (commit `d4e0b86`); Laura lo mergeó
+> después de la vista previa, sin pedir ajustes. Detalle en "Qué se
+> hizo en 5.4".
+>
+> **Siguiente: 5.5** (D. La causa), manual desde `#cII-D` hasta antes
+> de `#cII-E`. Fuentes: Boetsch `principal_6` y el anexo `Causa_
+> DOMINGUEZ y BOETSCH.pdf`; revisar también Bozzo e Ibarra y Memorice
+> (en 5.4 el anexo de Bozzo e Ibarra aportó bastante). Mismos pasos:
+> extraer, inventario unidad por unidad, verificar artículos en
+> `Apuntes/CODIGOS/`, chequeo de paráfrasis, informe para aprobación.
+> En 5.4 Laura entregó por su cuenta páginas de VIAL y un fallo: al
+> partir 5.5, preguntarle si tiene material de VIAL u otros sobre la
+> causa.
 >
 > Fuentes ya entregadas (registro): **VIAL** pp. 77-104 y **FIGUEROA
 > YÁÑEZ** pp. 63-75, en `Apuntes/CIVIL/Acto Jurídico/` del checkout
@@ -985,7 +990,7 @@ y aprobación antes de tocar el manual:
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
-| 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe; reescritura en el commit siguiente); **falta la revisión de Laura en vista previa** |
+| 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe, `d4e0b86` reescritura); vista previa sin ajustes; **en `main`** (2026-10-07) |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
 
@@ -1227,6 +1232,38 @@ cercana (tabla exhaustiva por punto), no después.
 - Ejemplos propios: Vicho, don Washington, Coti, Moni, Macarena, Tere y
   Joaquín, el fundo en Paillaco.
 
+### Qué se hizo en 5.4 (C. El objeto)
+
+- Fuentes: Boetsch pp. 76-92, anexo de Bozzo e Ibarra (pp. 3-6 y 22),
+  Memorice y, aportados por Laura, **VIAL pp. 170-183** (14 pantallazos
+  `Screenshot 2026-10-06 at 10.54.02 pm` a `10.55.46 pm`) y el **fallo
+  CS rol 3671-1998** (sin fecha). Todo con paráfrasis cercana:
+  reescrito completo, sin cambiar ningún `h2`/`h3`.
+- **Error de contenido corregido:** la caja No confundir de 4.3
+  presentaba la tesis de Velasco (venta de cosas embargadas o litigiosas
+  válida) como "la doctrina". Ahora es una discusión en el texto:
+  mayoritaria (Alessandri, Somarriva, Vial, mayoría de la
+  jurisprudencia), Velasco (con la CS 3671-1998) e Iturra; cuadro
+  comparativo, caja de Jurisprudencia y Pregunta clásica.
+- Agregado de Vial: Claro Solar y Vial sobre cosas incomerciables
+  (inexistencia, cerro Santa Lucía); inmueble embargado no inscrito
+  (objeto ilícito igual, la inscripción solo mira a terceros); venta
+  forzada como discusión (Claro Solar y León Hurtado / otros); art. 12
+  como fundamento del consentimiento del acreedor; arts. 296 y 297
+  C.P.C. frente al Nº 4.
+- Corregidos al texto vigente: art. 1204 (escritura pública,
+  legitimario a la fecha), art. 589 ("mar adyacente"), art. 1509
+  ("determinadamente"), juego (arts. 2260 y 2263), CPR 19 Nº 4 (incluye
+  datos personales; resumido sin transcribir). Art. 703 inc. 4°
+  eliminado (decisión de Laura). Sin latín.
+- Ejemplos propios: don Tito y la Chepa (Quintay; Olmué), don Kike
+  (uva del Elqui), Marcelo (Caleta Portales), la Panchita (el Rucio),
+  Coke (empanadas), Rapa Nui, la Trinidad (herencia), la marihuana
+  Chile/Holanda (propuesta de Laura, puesta en 3.3 porque es
+  imposibilidad moral, no física).
+- **Desde 5.4 los códigos están en `Apuntes/CODIGOS/`** (Civil, C.P.C.,
+  Constitución, Comercio); Laura agrega otros si hacen falta.
+
 ### Pendientes de II (recordar a Laura al retomar)
 
 - **Archivos HTML antiguos con cajas Advertencia** sin tocar:
@@ -1246,7 +1283,8 @@ cercana (tabla exhaustiva por punto), no después.
   5.2b (2026-10-06, commit `08abcb5`). Lo de 5.2c en adelante se
   mergea cuando Laura quiera. **5.2c ya está mergeado y pusheado**
   (confirmado por Laura, 2026-10-06). **5.3 aprobado y en `main`**
-  (confirmado por Laura, 2026-10-06).
+  (confirmado por Laura, 2026-10-06). **5.4 en `main`** (commit
+  `d4e0b86`, mergeado por Laura el 2026-10-07).
 
 ## Qué sigue (orden decidido por Laura)
 
@@ -1278,10 +1316,11 @@ cercana (tabla exhaustiva por punto), no después.
    V, el manual ya está en `main`, ancla `#cVI`.
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
-   **Siguiente paso exacto:** tramo 5.4, C. El objeto (`principal_5`,
-   Boetsch desde p. 76). **Fuentes decididas por Laura (2026-10-06):
-   solo Boetsch, los anexos y el Código, nada más** (vale también para
-   5.5 y 5.6).
+   **Siguiente paso exacto:** tramo 5.5, D. La causa (`principal_6`
+   + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf`). **Fuentes decididas por
+   Laura (2026-10-06): Boetsch, los anexos y los códigos** (vale
+   también para 5.6); si Laura entrega más material por su cuenta
+   (como VIAL y el fallo en 5.4), se incorpora con su inventario.
 5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
