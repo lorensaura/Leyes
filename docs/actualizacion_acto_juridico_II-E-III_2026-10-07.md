@@ -330,3 +330,27 @@ consecuencia apoyada en un artículo verificado del mismo punto:
 - Ley de Competencia Desleal, art. 4 letra f): no verificada.
 - Sigue pendiente, después de este tramo, la pasada chica de IV.F con
   Vial pp. 211-214.
+
+## 8. Decisiones de Laura y aplicación (2026-10-07)
+
+Laura aprobó el informe con todas las recomendaciones:
+
+1. Definiciones de Memorice: opción A. Seis `.definicion` con "la
+   definición que le ha dado la doctrina es..." (formalidades,
+   habilitantes, de prueba, efectos, parte, terceros relativos);
+   solemnidad de existencia y los tres efectos, en el texto.
+2. Pregunta clásica de 2.1: va.
+3. Autorización: arts. 260 y 440 inc. 2°; art. 255 corregido a 254.
+4. Quiebra: "procedimiento concursal de liquidación (la antigua
+   quiebra)", sin citar la Ley 20.720.
+5. Ejemplos: aprobados. El de III.3.2 pasó de cama elástica a
+   **refrigerador**, y el Benja es adulto ("se acaba de ir a vivir
+   solo"), para no meter la aceptación de un menor.
+
+**Aplicación:** tramo reescrito completo; ningún `h2`/`h3` cambió (el
+índice queda igual). Verificado: etiquetas balanceadas, cero guiones
+largos y guillemets, ningún párrafo sobre 1.200 caracteres, todas las
+unidades del inventario presentes, capturas en Chrome headless
+revisadas. Se agregó también el **art. 1708** (verificado), que es el
+que niega la prueba de testigos cuando la obligación debió constar por
+escrito. Falta la vista previa de Laura.
