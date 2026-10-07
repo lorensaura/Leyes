@@ -36,41 +36,123 @@ estado y trae el comando de Chrome headless que funciona.
   corrigió (regla central de `actualizar-manuales-existentes.md` 1).
 - Todavía no hay ningún tramo hecho con el método nuevo.
 
-## Decisiones a tomar con Laura ANTES del primer tramo
+## Decisiones tomadas con Laura (2026-10-07)
 
-Pendientes; no empezar el tramo 1 sin resolverlas (son las que en AJ
-obligaron a volver atrás):
+1. **Ejemplos: pasada final común.** Se dejan los ejemplos genéricos de
+   Boetsch por ahora; la redacción de ejemplos propios se hace al final,
+   en una pasada aparte para todos los manuales. No se abre una tercera
+   vuelta por esto en Bienes.
+2. **Numeración: reformatear al inicio**, antes del tramo 1, en vez de
+   por tramo o de dejarla como está.
+3. **Hoja de estilos: igualar a la de AJ al inicio**, antes del tramo 1
+   (tipografía de las 2 tablas de Bienes y clases nuevas que falten).
+4. **Anexos grandes: mapa primero.** Se arma un mapa breve de qué trae
+   cada anexo grande antes de tocar el tramo 1; Laura elige qué entra y
+   dónde (`proceso.md` 5).
 
-1. **Ejemplos.** Laura está trabajando una idea sobre los ejemplos
-   (dicho el 2026-10-07). Preguntarle si ya la tiene: o se aplica desde
-   el primer tramo, o se acuerda que los ejemplos van en una pasada
-   final común a todos los manuales. No improvisar un criterio propio.
-2. **Numeración.** Bienes no sigue la escalera de `formato.md` (ver
-   "Diferencias con la escalera" en `bienes-reestructuracion.md`: nivel
-   `V.1.` intermedio, `h4`-`h6`, títulos en mayúscula, `(i)` en
-   cursiva). Decidir con Laura si se ajusta por tramo, de una vez al
-   inicio, o se deja. En AJ el reformato fue una pasada aparte.
-3. **Hoja de estilos.** Comparar la de Bienes con la de AJ (modelo):
-   falta corregir la tipografía de sus 2 tablas (pendiente desde el
-   2026-09-30, Laura dijo entonces "solo los de AJ") y probablemente
-   faltan clases nuevas (`.ley`, `.definicion`, `.no-olvidar`,
-   `.conexiones`, `.pregunta-clasica`, ancho de columna de cuadros).
-   Proponer igualarla al inicio.
-4. **Anexos grandes.** Fuentes en `Apuntes/CIVIL/Bienes/` del checkout
-   principal (34 archivos): Boetsch en 20 partes
-   (`BIENES_principal_N_...` / `Bienes_principal_N_...`), y anexos:
-   PEÑAILILLO (libro completo), VIAL (*Relaciones jurídicas con una
-   cosa* y *Tradición y prescripción*), ORREGO (acciones protectoras),
-   posesión inscrita, adquisición/conservación/pérdida de la posesión,
-   derechos reales fuera del art. 577, paralelo de derechos reales y
-   personales, temario (INDEX) y Memorice (`.pages`). Para los grandes:
-   **mapa primero y Laura elige qué entra** (`proceso.md` 5).
+## Decisión pendiente (no resuelta todavía)
+
 5. **Reparto de tramos** por página real de Boetsch (unas 10 páginas;
-   más chico si el tema es muy preguntado). Anotarlo aquí en una tabla
-   como la de `estado_acto-juridico.md`.
+   más chico si el tema es muy preguntado). Todavía no se armó la tabla.
+   Anotarla aquí, como la de `estado_acto-juridico.md`, una vez que el
+   reformato de numeración esté aprobado y hecho (tiene que repartirse
+   sobre la numeración final, no la vieja).
+
+## Relevamiento del reformato de numeración (2026-10-07)
+
+Hecho: conteo completo de encabezados del manual (544 en total: 7 `h1`,
+47 `h2`, 107 `h3`, 164 `h4`, 105 `h5`, 73 `h6`, 36 `div.h7`, 5 `div.h8`;
+34 sin número) y grep de referencias cruzadas. **Buena noticia: no hay
+riesgo de romper nada afuera.** Ningún otro manual enlaza a
+`05_Bienes_Manual.html`, no hay referencias internas tipo "ver II.3" o
+"V.4." dentro del propio texto, y `app/manuales.html` solo tiene el
+nombre "Bienes y Derechos Reales" en una lista, sin anclas a secciones.
+
+Conclusión de magnitud: clasificar cada uno de los ~380 encabezados
+profundos (`h4` en adelante) como clasificación nueva o lista de
+requisitos (la distinción de `formato.md` para `(i)`) es un trabajo que
+requiere leer el contenido de cada punto, no se puede resolver de una
+sentada separada del tramo. Recomendación (pendiente de aprobación de
+Laura): dividir el reformato en dos fases, igual que pasó de hecho en
+AJ.
+
+- **Fase 1, ahora, antes del tramo 1:** solo los niveles 1 a 5 de la
+  escalera (capítulo, tema, institución, punto, subpunto): deshacer el
+  nivel intermedio `V.1.`/`II.1.` convirtiéndolo en temas con letra,
+  mayúsculas a normal, ids con el patrón de `formato.md` 1.2, índice
+  reconstruido. Las dos colisiones reales que necesitan decisión de
+  Laura antes de tocar nada:
+  - **V.4 La tradición:** al subir a tema (letra), sus A-D internas
+    (descripción general, requisitos, efectos, formas) pasan a
+    instituciones D.1-D.4; dentro de D.4 (formas), las 4 formas actuales
+    bajan a puntos 1-4. La forma inmuebles (sistema registral) es la más
+    extensa de Boetsch: falta decidir si cabe como un punto más o si
+    necesita su propia institución.
+  - **V.5 La prescripción:** A. La posesión (con A.1-A.7 internos) y B.
+    La prescripción adquisitiva pasarían a instituciones E.1 y E.2 de un
+    tema "Prescripción"; los A.1-A.7 de la posesión bajarían a puntos
+    1-7 de esa institución. Repregunta si esto respeta la decisión del
+    2026-09-16 de no darle a la Posesión su propio romano, dado el peso
+    real que tiene (7 sub-instituciones).
+- **Fase 2, por tramo:** las enumeraciones profundas (`(i)`, `a)`,
+  `a.1)`) se deciden al reescribir cada tramo con el método completo,
+  igual que el resto del contenido (voz propia, inventario, etc.), no
+  antes.
+
+## Decisión sobre el capítulo V (2026-10-07): no se renumera
+
+Laura aprobó la división en dos fases y el capítulo II como piloto
+(informe `Informes/Informe_Bienes_reformato-piloto-II.html`). Al
+revisar la colisión de V.4/V.5, aclaró algo más importante: **el
+capítulo V mantiene su nivel intermedio V.1-V.6** (Aspectos generales,
+Ocupación, Accesión, Tradición, Prescripción, Sucesión por causa de
+muerte), en vez de aplastarlo en una sola secuencia de letras por
+capítulo como en II. La razón que dio: así, dentro de cada V.n, se
+puede partir de nuevo con letra propia (A., B., C.) cuando el tema lo
+necesita, por ejemplo "A. Posesión" dentro de V.5 Prescripción.
+
+**Verificado contra el manual real: esto ya es exactamente como está
+hoy.** V.4 La tradición ya tiene A, B, C, D (con D.1-D.4 adentro); V.5
+La prescripción ya tiene A (con A.1-A.6) y B (con B.1-B.9); V.6 La
+sucesión ya tiene A, B, C. **No hay colisión ni renumeración pendiente
+en V: se queda tal cual está.** Las "colisiones" que anoté antes (V.4 y
+V.5) quedan resueltas por esta decisión, no por una tabla de
+conversión.
+
+**Lo único que falta para V (no bloqueante para el piloto de II):**
+definir en `formato.md` el estilo visual nuevo de estos niveles dentro
+de V.n:
+- Letra (A., B., C., institución): centrado, mayúscula, sin negrita (ya
+  existe como `h2.inst` en la escalera).
+- Sub-letra (A.1, A.2..., cuando una institución tiene sub-instituciones
+  propias, como la Posesión con A.1-A.6): centrado, mayúscula, sin
+  negrita, **cursiva** (nuevo, no existe hoy en `formato.md`), tamaño
+  algo menor que la institución. Confirmado por Laura con el mockup de
+  `Informes/Informe_Bienes_reformato-piloto-II.html` sección 6.
+- Falta decidir con Laura el estilo del propio nivel V.n ("V.4. La
+  tradición"): hoy renderiza como un punto normal (rojo, a la
+  izquierda, subrayado), no como un tema. Proponer mockup cuando se
+  llegue al tramo de V.
 
 ## Siguiente paso exacto
 
-Leer las lecciones (paso 0), luego presentarle a Laura las cinco
-decisiones de arriba en un mensaje corto, con una recomendación para
-cada una, y esperar su respuesta antes de armar el primer informe.
+**Implementar el piloto del capítulo II** (aprobado): tabla de la
+sección 2 del informe, con dos ajustes que pidió Laura:
+- Los puntos (nivel "1. Concepto") ya salen en mayúscula por CSS
+  (`h2{text-transform:uppercase}`, verificado en la hoja de estilos
+  actual de Bienes); no hay que escribirlos en mayúscula en el HTML.
+- B.4.3 Inmuebles por destinación: sus dos hijos pasan a `a)` y `b)`
+  subrayados (no `(i)`), y si hace falta un nivel más abajo, `(i)`,
+  `(ii)` sin negrita, más indentado. Es una excepción al orden habitual
+  de la escalera (que pondría `(i)` antes de `a)`), aprobada por Laura
+  para este punto específico.
+
+Implementar en una rama: script a partir de la tabla aprobada, hoja de
+estilos copiada del `<style>` real de AJ (no del bloque de
+`formato.md`) en un commit aparte, índice del capítulo II reconstruido,
+y verificar: mismo número de encabezados antes/después, texto de cuerpo
+(sin tags, sin títulos ni índice) idéntico, ids únicos, todo
+`href="#..."` resuelve, cero guiones largos, capturas en Chrome headless
+y vista previa en `Vista_previa/`. Después de II, seguir con I, III, IV
+(solo ids y mayúscula, ya siguen casi toda la escalera), y recién al
+final V, VI, VII con sus propias reglas.
