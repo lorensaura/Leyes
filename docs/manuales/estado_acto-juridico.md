@@ -1265,6 +1265,42 @@ cercana (tabla exhaustiva por punto), no después.
 - **Desde 5.4 los códigos están en `Apuntes/CODIGOS/`** (Civil, C.P.C.,
   Constitución, Comercio); Laura agrega otros si hacen falta.
 
+### Qué se hizo en 5.5 (D. La causa)
+
+- Fuentes: Boetsch pp. 93-103, anexo `Causa_ DOMINGUEZ y BOETSCH.pdf`,
+  Memorice y, aportado por Laura, **VIAL pp. 189-214** (26 pantallazos
+  en el chat del 2026-10-07, no guardados en `Apuntes/`). Todo con
+  paráfrasis cercana: reescrito completo, sin cambiar ningún `h2`/`h3`.
+  Laura aceptó las 5 recomendaciones del informe.
+- Agregado de Vial: móvil ilícito en gratuitos (basta el del autor) y
+  onerosos (debe conocerlo la otra parte); antecedente francés de la
+  tesis dual; labor del juez ante la causa ilícita; arts. 1454 y 1455
+  (motivo y causa como sinónimos); argumento del "enajenado" y de León
+  Hurtado; la tesis dual como **opinión más aceptada** (anexo); la
+  presunción de causa y de licitud **atribuida a Vial**; su tesis de
+  que todo contrato simulado es inexistente por falta de causa, como
+  opinión suya con remisión a IV.D 4.3 (que no se tocó); cita de Claro
+  Solar sobre la inexistencia. Autores nombrados: Claro Solar, Velasco,
+  Betti, Cariota Ferrara, León Hurtado.
+- Caja **Dato de grado** (tipo retirado) pasada al texto de 3. Nuevo:
+  `.ley` art. 1467, cuadro de las cuatro doctrinas, Pregunta clásica
+  (¿qué concepto de causa sigue el Código?), No confundir (error-motivo
+  / error sobre los motivos), Conexiones. Ejemplos propios: citroneta
+  de don Rigo, cordero del Chalo, bodega de Quilicura (pasta base,
+  arts. 1467, 1682 y 1468), pagaré de la Pili; Mane y don Memo en el
+  texto.
+- **Ley 18.092** ya está en `Apuntes/CODIGOS/LEY 18092.pdf`. Su art. 28
+  no distingue terceros de buena o mala fe: eso es de Boetsch y quedó
+  atribuido a él; el art. 107 extiende la regla al pagaré. Solo los
+  arts. 11 y 27 de esa ley hablan de buena/mala fe, y no dicen lo de
+  Boetsch. **Decisión de Laura (2026-10-07): dejarlo así**, sin
+  agregar una línea aclaratoria en 7.2.
+- Fuera del tramo: rol de V.4.4 puesto (CS, 9-1-2017, rol Nº
+  14.853-2016, dato de Laura).
+- Commits `fd73319`, `123a9ec` (informe) y `3b0d44f` (reescritura).
+  Vista previa en `DERECHO LIBRE/AJ_vista_previa.html#cII-D`; **falta
+  la revisión de Laura y el merge**.
+
 ### Pendientes de II (recordar a Laura al retomar)
 
 - **Archivos HTML antiguos con cajas Advertencia** sin tocar:
