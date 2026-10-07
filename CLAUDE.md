@@ -37,6 +37,11 @@ seguir.
 - Responder a Laura **en español**, claro y sin tecnicismos.
 - Verificación de HTML/JS y PDF: **Chrome headless vía CDP**. Para páginas que usan Supabase, bloquear el CDN e inyectar un stub para evitar el redirect a `auth.html`.
 - Antes de dar por hecho un arreglo, **verificarlo** (pruebas dirigidas en headless).
+- **Archivos fuera del repo, siempre en su carpeta** (regla permanente, ver
+  `../CLAUDE.md`): informes HTML para Laura en `DERECHO LIBRE/Informes/`,
+  vista previa del manual en `DERECHO LIBRE/Vista_previa/`, lo que ya no
+  se usa en `DERECHO LIBRE/Archivo (ya no se usa)/`. Nunca dejar informes
+  ni vistas previas sueltos en la raíz de `DERECHO LIBRE/` ni del repo.
 - Cero guiones largos (—) en ningún contenido generado (código, manuales, preguntas). Regla permanente.
 - **Cortar y retomar sesión por manual, sin recapitular:** aplica a
   **cualquier manual o apunte** que se esté trabajando (Acto Jurídico,

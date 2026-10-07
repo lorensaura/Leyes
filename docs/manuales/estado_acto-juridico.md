@@ -1307,8 +1307,9 @@ cercana (tabla exhaustiva por punto), no después.
    paráfrasis cercana señalados, cambios propuestos con
    recuadros/ejemplos/artículos, pendientes para Laura). Commit, y
    mostrárselo a Laura **como HTML** (no quiere leer `.md` en GitHub):
-   convertir con Python `markdown` a `DERECHO LIBRE/Informe_AJ_<tramo>.html`
-   (fuera del repo) y abrir con `open` (usar `subprocess.run` desde
+   convertir con Python `markdown` a
+   `DERECHO LIBRE/Informes/Informe_AJ_<tramo>.html` (fuera del repo,
+   siempre en la carpeta `Informes/`, nunca suelto en la raíz) y abrir con `open` (usar `subprocess.run` desde
    Python en vez de shell directo: el shell del worktree bloquea
    invocaciones de Chrome/`open` con muchos flags encadenados por la
    regla de aislamiento del worktree). **Detenerse y esperar
@@ -1324,8 +1325,8 @@ cercana (tabla exhaustiva por punto), no después.
    índice desde los encabezados si se agregó o cambió algún `h2`/`h3`.
    Agregar al informe las decisiones de Laura y la segunda pasada;
    commit y push.
-8. Copiar el manual a `DERECHO LIBRE/AJ_vista_previa.html` (fuera del
-   repo) y abrirlo en el navegador en el tramo (con ancla `#cIV-...`).
+8. Copiar el manual a `DERECHO LIBRE/Vista_previa/AJ_vista_previa.html`
+   (fuera del repo, sobrescribiendo la anterior) y abrirlo en el navegador en el tramo (con ancla `#cIV-...`).
    Laura revisa y pide ajustes finos (negritas, cursivas, ejemplos) antes
    de mergear: aplicarlos con `Edit`, volver a verificar, commit y push
    de nuevo. Cuando esté conforme, Laura mergea con GitHub Desktop.
