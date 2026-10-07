@@ -5,7 +5,8 @@
 > `formato.md`, sección 1.2. Detalle tramo por tramo de la reparación en
 > `docs/incidente_compresion_manuales.md`.
 >
-> **Antes de seguir con Bienes, leer `lecciones-acto-juridico.md`**
+> **Antes de seguir con Bienes, abrir `estado_bienes.md` (el estado
+> vivo de la actualización) y leer `lecciones-acto-juridico.md`**
 > (sección 6): los tramos marcados "revisados" abajo se revisaron solo
 > por fidelidad, sin el método nuevo.
 

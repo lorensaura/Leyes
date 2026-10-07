@@ -1415,7 +1415,9 @@ cercana (tabla exhaustiva por punto), no después.
    como `VIAL_fraude_a_la_ley_p211.png` a `..._p214.png` (copiadas el
    2026-10-07, a pedido de Laura). Pasada chica, después de 5.6.
 5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
-   mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
+   mismo método. **Empezar por `docs/manuales/estado_bienes.md`**
+   (creado 2026-10-07), que obliga a leer antes
+   `docs/manuales/lecciones-acto-juridico.md`.
 
 ## Cómo se trabaja cada tramo (ya probado tres veces)
 

@@ -126,10 +126,11 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
 - Checkpoints de comprensión lectora del manual de Precontractual
   (preguntas/keywords en `app/manuales.html`): son borrador de Claude, sin
   la revisión de Laura todavía.
-- **Bienes: manual en reparación de fidelidad, tramo por tramo** (I a IV
-  y V.1 a V.3 ya revisados contra la fuente; de V.4 en adelante solo
-  renumerados, sin esa revisión; detalle en
-  `docs/incidente_compresion_manuales.md`). Existen además 3 bases de
+- **Bienes: siguiente manual a actualizar con el método nuevo** (Acto
+  Jurídico terminado el 2026-10-07). Lo revisado antes (I a IV, V.1 a
+  V.4.B) fue solo por fidelidad y vuelve a pasar por el método
+  completo. **Empezar por `docs/manuales/estado_bienes.md`**, que obliga
+  a leer `docs/manuales/lecciones-acto-juridico.md`. Existen además 3 bases de
   Airtable de Bienes (Hasta Tradición / Posesión / Prescripción y Otros),
   recién creadas y vacías, sin conectar a Supabase; el filtro de Bienes
   sigue `disabled` en la app.

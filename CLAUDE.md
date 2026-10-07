@@ -22,7 +22,7 @@
 2. ~~Práctica (`app/alternativas.html`)~~ — hecho: módulo unificado con Evaluación/Flashcards/Alternativas/Memorice.
 3. **Interrogador con IA** — v1 en producción, alcance Contractual + Extracontractual + Precontractual. Ver `docs/interrogador.md`. La interrogación oral (voz) queda para después.
 4. **Paywall** — pendiente, después de validar el Interrogador con alumnas reales. Ver `docs/paywall.md`.
-5. **Revisar las demás materias de Civil y Procesal** — en stand by hasta terminar de validar Responsabilidad.
+5. **Revisar las demás materias de Civil y Procesal** — en stand by hasta terminar de validar Responsabilidad. Excepción en curso: actualización de manuales de Civil con el método nuevo. Acto Jurídico terminado (2026-10-07); **el siguiente es Bienes: empezar siempre por `docs/manuales/estado_bienes.md`**, que exige leer antes `docs/manuales/lecciones-acto-juridico.md` para hacerlo en una sola pasada.
 
 **¿Qué falta exactamente antes de invitar alumnas beta?** Eso ya no vive
 acá, ver `docs/camino-a-beta.md`, la lista viva de hecho / pendiente /
