@@ -11,21 +11,28 @@
   (commit `c03dac9`, rama `bienes-reformato-cap2` ya borrada). Los 7
   capítulos tienen el aspecto correcto de la escalera. Detalle completo
   más abajo ("Piloto del capítulo II" y "Primera revisión de Laura").
-- **Reparto de tramos: hecho**, ~43 tramos por página real de Boetsch
-  (sección "Reparto de tramos").
+- **Reparto de tramos: corregido el tramo 1** (ver sección "Reparto de
+  tramos" y "Corrección del tramo 1"); el resto sigue como estimado,
+  ~43 tramos por página real de Boetsch.
 - **Mapa de anexos grandes: hecho** (sección "Mapa de los anexos
-  grandes"). Laura decidió: **todos entran, según toque el tramo**.
+  grandes"). Laura decidió: **todos entran, según toque el tramo**. Dos
+  correcciones puntuales al mapa tras trabajar el tramo 1a: ver
+  "Corrección del tramo 1".
 - **Excurso de VI** (derecho real de conservación ambiental): confirmado
   que no va en el apunte, hay que borrarlo del manual cuando se trabaje
-  el tramo 19.
+  el tramo 19. Distinto de la mención puntual de una línea al derecho
+  real de conservación (Ley 20.930) en II.A.4.1(iv), que Laura confirmó
+  mantener (no es el mismo caso).
 - **Pendiente de Fase 2** (no bloquea el inicio del contenido, se
   resuelve tramo por tramo): encabezados sin número, el gris de las
   `a)/b)/c)` del sistema registral (tiene que volver a negro), el
   estilo del propio "V.4." como tema (ya quedó resuelto y aplicado, ver
   "Primera revisión de Laura").
-- **Todavía no se ha reescrito ningún tramo con el método completo.**
-  Ese es el siguiente trabajo real (ver "Siguiente paso exacto" al
-  final de este archivo).
+- **Tramo 1a (Capítulo I + II.A, p. 18-28 de Boetsch): terminado y
+  aprobado por Laura (2026-10-07).** Es el primer tramo de Bienes hecho
+  con el método completo. Detalle en "Tramo 1a: hecho y aprobado", más
+  abajo. **Siguiente paso real: tramo 1b (II.B, p. 28-36)**, ver
+  "Siguiente paso exacto" al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -55,7 +62,10 @@ estado y trae el comando de Chrome headless que funciona.
   y las cajas nuevas. **No darlos por terminados:** pasan por el método
   completo igual que el resto, conservando lo que Laura ya agregó o
   corrigió (regla central de `actualizar-manuales-existentes.md` 1).
-- Todavía no hay ningún tramo hecho con el método nuevo.
+- **El Capítulo I y II.A (tramo 1a) ya están hechos con el método
+  nuevo** (voz propia, inventario, anexos cotejados). El resto de los
+  tramos "revisados" (II.B en adelante hasta V.4.B) sigue en la
+  situación de arriba: pendientes del método completo.
 
 ## Decisiones tomadas con Laura (2026-10-07)
 
@@ -81,9 +91,9 @@ que en AJ.
 
 | # | Páginas reales | Parte(s) Boetsch | Tema aprox. del manual |
 |---|---|---|---|
-| 1a | 18-27 | 1 | I. Aspectos generales |
-| 1b | 27-36 | 1 | II.A Bienes corporales e incorporales |
-| 2a | 36-44 | 2 | II.B Bienes muebles e inmuebles |
+| 1a | 18-28 | 1 | I. Aspectos generales + II.A Bienes corporales e incorporales (corregido 2026-10-07, hecho y aprobado: ver "Tramo 1a: hecho y aprobado") |
+| 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A) |
+| 2a | 36-44 | 2 | II.C-D aprox. (consumibles, fungibles); el límite real con 1b queda en p. 36, no en p. 44 como asumía el reparto original. Revisar el corte exacto al llegar a este tramo |
 | 2b | 44-51 | 2 | II.C-K (consumibles, fungibles, principales, divisibles, singulares, presentes, comerciables, apropiables, públicos) |
 | 3 | 52-63 | 3 | III. El dominio |
 | 4a | 63-72 | 4 | IV. La copropiedad (1ª mitad) |
@@ -313,17 +323,17 @@ partes del reparto, no es un anexo de otro autor.
 
 | Archivo | Páginas | Qué trae | Dónde pegaría |
 |---|---|---|---|
-| `BIENES, PROPIEDAD...PEÑAILILLO.pdf` | 68 | Resumen (no el libro completo pese al nombre): Primera Parte (conceptos fundamentales, clasificaciones) y Segunda Parte (propiedad, posesión, copropiedad, modos de adquirir) **hasta accesión** (edificación/siembra/plantación). No llega a tradición, posesión profunda, prescripción, sucesión, derechos reales limitados ni acciones protectoras. | Tramos 1 a 6 (I-IV, V.1-V.3) |
-| `Relaciones jurídicas con una cosa_VIAL.pdf` | 13 | Clasificación de relaciones sobre una cosa (dominio, posesión, mera tenencia, etc.), con interrogaciones de Bozzo e Ibarra incluidas | Apoya I, II.A y el inicio de posesión (tramo 11) |
+| `BIENES, PROPIEDAD...PEÑAILILLO.pdf` | 68 | Resumen (no el libro completo pese al nombre): Primera Parte (conceptos fundamentales, clasificaciones) y Segunda Parte (propiedad, posesión, copropiedad, modos de adquirir) **hasta accesión** (edificación/siembra/plantación). No llega a tradición, posesión profunda, prescripción, sucesión, derechos reales limitados ni acciones protectoras. | Tramos 1 a 6 (I-IV, V.1-V.3). **Usado en el tramo 1a (2026-10-07) con el mismo método que en Acto Jurídico**: tabla unidad por unidad contra el manual, ver "Tramo 1a: hecho y aprobado" |
+| `Relaciones jurídicas con una cosa_VIAL.pdf` | 13 | Clasificación de relaciones sobre una cosa (dominio, posesión, mera tenencia, etc.), con interrogaciones de Bozzo e Ibarra incluidas | **Corregido (2026-10-07):** no aplica a I ni a II.A, revisado completo al trabajar el tramo 1a. Es íntegramente sobre títulos posesorios, mera tenencia y prescripción: tramo 11 en adelante |
 | `TRADICIÓN Y PRESCRIPCIÓN_VIAL.pdf` | 83 | 3 capítulos: I. La tradición; II. Modos de adquirir en que la ley exige posesión previa; III. La prescripción adquisitiva. Es el mismo VIAL que ya corrigió errores reales en AJ (lecciones, sección 4) | Tramos 7-10 (tradición) y 11-16 (posesión/prescripción). Candidato fuerte a revisar a fondo por lo que pasó en AJ |
 | `Acciones protectoras_ORREGO.pdf` | 26 | Mismo autor y tema que el capítulo VII del manual (diversas formas de protección, acción reivindicatoria, acciones posesorias) | Tramos 20a-20c |
 | `anexo_prescripción...ORREGO(DL 2695).pdf` | 22 | El DL 2695 ("Decreto Ladrón"): regularización de la posesión de la pequeña propiedad raíz | Tramo 14 o 15 (posesión inscrita / prescripción), como complemento legal específico |
 | `Teoría de la posesión inscrita_anexo.pdf` | 3 | Resumen corto de las doctrinas sobre posesión inscrita (el tema que en el manual hoy aparece como encabezados sin número, ver sección anterior) | Tramo 14, directamente relacionado con la excepción ya detectada ahí |
-| `Paralelo Derechos Reales y Derechos Personales.pdf` | 1 | Cuadro comparativo (interrogaciones Bozzo e Ibarra) | Tramo 1b o 2a (II.A.4.3, que ya tiene este paralelo) |
-| `Derechos Reales fuera 577 CC_específico.pdf` | 2 | Derechos reales no enumerados en el art. 577 | Tramo 1b (II.A Bienes incorporales) |
+| `Paralelo Derechos Reales y Derechos Personales.pdf` | 1 | Cuadro comparativo (interrogaciones Bozzo e Ibarra) | **Confirmado (2026-10-07):** es la fuente real de las filas "Fuentes", "Duración" y "Posesión y prescripción" del cuadro de II.A.4.3 (tramo 1a, ya hecho) |
+| `Derechos Reales fuera 577 CC_específico.pdf` | 2 | Derechos reales no enumerados en el art. 577 | **Confirmado (2026-10-07):** es la fuente real de censo/aguas/minas/conservación/copropiedad en II.A.4.1(iv) (tramo 1a, ya hecho) |
 | `Anexo_Adquisición, conservación y pérdida de la posesión_secundario.pdf` | 12 | Apunte de alumna (Francesca Lombardo) sobre ACP de la posesión | Tramos 13c-14 |
-| `anex_discusiones doctrinales_secundario.pdf` | 15 | Recopilación de discusiones doctrinales de Bienes (Bórquez/Polit) | Transversal, revisar por tramo según el tema |
-| `anexo_secundario.pdf` | 12 | Interrogación obligatoria 1 de Bozzo e Ibarra ("Los Bienes 1") | Transversal, primeros tramos |
+| `anex_discusiones doctrinales_secundario.pdf` | 15 | Recopilación de discusiones doctrinales de Bienes (Bórquez/Polit) | **Corregido (2026-10-07):** revisado completo al trabajar el tramo 1a, no aplica ni a I ni a II.A. Sus 15 discusiones son todas sobre título/modo, posesión, prescripción y tradición del derecho de herencia: tramo 7 en adelante |
+| `anexo_secundario.pdf` | 12 | Interrogación obligatoria 1 de Bozzo e Ibarra ("Los Bienes 1") | **Precisado (2026-10-07):** solo su página 1 (distinción cosa/bien) aplica a I.2, ya incorporada en el tramo 1a. El resto (p. 2-12) es íntegramente sobre limitaciones y características del dominio: tramo 3 |
 | `anexo_secundario_posersión y prescripción.pdf` | 15 | Interrogación obligatoria 2 de Bozzo e Ibarra ("Bienes 2": posesión, prescripción, corpus y animus) | Tramos 11-16 |
 | `Temario Bienes (INDEX).pdf` | 15 | Es el temario/índice de Boetsch, no contenido nuevo | Referencia para verificar el reparto, no se usa como fuente |
 | `MEMORICE BIENES.pages` | — | Definiciones de memorice (como en AJ): hay que mantenerlas reconocibles en el manual | Verificar por tramo, igual que en AJ |
@@ -333,36 +343,66 @@ No se descarta ninguno de entrada; en el inventario de cada tramo se
 revisa cuál de estos anexos aplica a ese tema puntual (tabla "Dónde
 pegaría" arriba) y se usa ahí.
 
+## Tramo 1a: hecho y aprobado (2026-10-07)
+
+**Capítulo I (Aspectos generales) + II.A (Bienes corporales e
+incorporales), páginas 18 a 28 de Boetsch.** Primer tramo de Bienes
+hecho con el método completo (voz propia, inventario, anexos cotejados
+unidad por unidad). Informe en
+`Informes/Informe_Bienes_tramo1a.html`. Resumen de lo que se hizo:
+
+- **Corrección de alcance detectada al abrir el tramo:** el reparto
+  original decía que 1a era el capítulo I completo (p. 18-27); en
+  realidad el capítulo I solo ocupa p. 18-19, y II.B (muebles e
+  inmuebles) empieza en la p. 28, no en la 27 ni en la 36. Laura aprobó
+  partir el tramo 1 más chico de lo previsto: 1a = I + II.A (p. 18-28),
+  1b = II.B (p. 28-36). Reflejado en la tabla de "Reparto de tramos".
+- **Anexos revisados completos**, con el mismo método que en Acto
+  Jurídico (tabla unidad por unidad: ya está / tesis distinta / contenido
+  nuevo): Peñailillo (capítulos I y II hasta antes de muebles/inmuebles)
+  y `anexo_secundario.pdf` (solo su página 1). Dos anexos que el mapa
+  marcaba para este tramo **no aplicaban** (`Relaciones jurídicas con
+  una cosa_VIAL.pdf` y `anex_discusiones doctrinales_secundario.pdf`,
+  ambos sobre posesión/prescripción/tradición de la herencia, tramos 7
+  en adelante); corregido en el mapa de anexos.
+- **Un error de cita corregido:** el art. 565 transcrito decía
+  "percibidas **con** los sentidos"; el texto vigente dice "**por**".
+- **Dos cajas reclasificadas** (Dato de grado de II.A.3 y No confundir
+  de I.2) a texto corrido, con el contenido de Peñailillo que las
+  sustenta (incluidas sus cuatro preguntas abiertas sobre el art. 583).
+- **Contenido incorporado desde los anexos** (no estaba en Boetsch):
+  ejemplo de la compraventa en I.1; patrimonialidad e individualidad de
+  la cosa, y la corriente restringida de "cosa" como contraste, en I.2;
+  cita del art. 584 junto a "obras del ingenio" en II.A.4; clasificación
+  dominio/cosa ajena y el debate número abierto/cerrado nombrado en
+  II.A.4.1; precisión de que el objeto del derecho personal es una
+  conducta, no una cosa, en II.A.4.2.
+- **Formato:** los marcadores `(i)/(ii)/(iii)/(iv)` de 4.1 y 4.2 se
+  reescribieron con la estructura de `formato.md` 1.3 (`.enum-i` con
+  `span.num`/`span.tit`), con estilo de clasificación nueva (negrita,
+  sin subrayado). Laura confirmó que es el criterio correcto para este
+  caso (4., 4.1., (i), a)). También se corrigió la enumeración de las
+  características de "cosa" en I.2 (estaba como párrafo corrido con
+  (a)(b)(c)(d), ahora es lista según la escalera).
+- **Verificación:** cero guiones largos, etiquetas balanceadas, ningún
+  párrafo sobre 1.200 caracteres, razón de caracteres fuente/manual
+  0,89. Vista previa actualizada en `Vista_previa/Bienes_vista_previa.html`.
+- **Pendiente:** este tramo se escribió directo en `main` (sin rama ni
+  commit todavía); falta decidir con Laura si se commitea así o se
+  rehace en una rama, según su flujo de Git habitual.
+
 ## Siguiente paso exacto (2026-10-07, vigente)
 
-El reformato de numeración de los 7 capítulos está hecho y mergeado a
-`main`. El mapa de anexos está resuelto (todos entran, según toque el
-tramo). Lo único que falta antes de escribir el tramo 1:
-
-1. **Confirmar el tramo 1** con Laura: hoy la propuesta es 1a (p. 18-27,
-   I. Aspectos generales) y 1b (p. 27-36, II.A Bienes corporales e
-   incorporales). Preguntarle si prefiere empezar por ahí o por otro
-   punto.
-2. **Arrancar el tramo 1** con el checklist único de
-   `lecciones-acto-juridico.md` sección 6, completo desde el primer
-   tramo (nada de pasadas separadas):
-   - Inventario exhaustivo de la fuente (Boetsch, página real) y de los
-     anexos que correspondan a ese tramo, tabla sub-punto por sub-punto
-   - Preguntarle a Laura si tiene material propio sobre ese tema
-   - Artículos verificados contra `Apuntes/CODIGOS` (texto vigente)
-   - Paráfrasis cercana: autor con nombre se cita, prosa sin autor se
-     reestructura
-   - "La doctrina" contrastada contra todas las fuentes del tramo
-   - Ejemplos genéricos de Boetsch por ahora (la pasada de ejemplos
-     propios va al final, para todos los manuales, decisión ya tomada)
-   - Pocas cajas (retirar cualquier `.dato-grado` que haya en ese tramo,
-     está descontinuada desde AJ); cuadro comparativo solo con 3+
-     criterios
-   - Informe en HTML en `Informes/` con el inventario y los cambios
-     propuestos, **antes de tocar el manual** → aprobación de Laura →
-     reescritura → verificación con script (etiquetas balanceadas, cero
-     guiones largos, artículos presentes) → vista previa en
-     `Vista_previa/` → merge en una rama nueva y borrarla
-3. Repetir tramo por tramo según la tabla de "Reparto de tramos",
+1. **Tramo 1b: II.B (Bienes muebles e inmuebles), páginas 28 a 36.**
+   Mismo checklist que 1a (`lecciones-acto-juridico.md` sección 6):
+   inventario exhaustivo de Boetsch y de los anexos que correspondan
+   (Peñailillo cubre esta parte también, revisar desde donde empieza
+   "II. BIENES MUEBLES E INMUEBLES" en su resumen), artículos verificados
+   contra `Apuntes/CODIGOS`, paráfrasis cercana, "la doctrina"
+   contrastada, pocas cajas, informe en `Informes/` antes de tocar el
+   manual, aprobación de Laura, reescritura, verificación, vista previa.
+2. Repetir tramo por tramo según la tabla de "Reparto de tramos",
    ajustando los cortes sobre la marcha si un tema resulta más
-   preguntado de lo previsto (como pasó con "el error" en AJ).
+   preguntado de lo previsto (como pasó con "el error" en AJ), e
+   igual que en 1a, revisando si el "Tema aprox." de la tabla coincide
+   con el contenido real al llegar a cada tramo (ver nota en 2a).
