@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (capítulos II y III terminados y en `main`; pasada de IV.F con VIAL pp. 211-214 aplicada en la rama `worktree-acto-juridico-IV-F-vial`, esperando que Laura revise la vista previa y la mergee).
+> 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -1326,8 +1326,13 @@ cercana (tabla exhaustiva por punto), no después.
   crédito de la Kathy (la Fran, don Beto), don Hugo y la Cami, el
   refrigerador del Benja (tía Mirna, Maipú).
 - No verificado: art. 4 letra f) Ley de Competencia Desleal (resumido).
-- Pendiente para la revisión final: I.8.6 dice "nulo" donde 2.1 dice
-  "inexistente o nulo absolutamente".
+- ~~I.8.6 dice "nulo" donde 2.1 dice "inexistente o nulo
+  absolutamente"~~: **resuelto** (2026-10-07, rama
+  `worktree-acto-juridico-I-8-6`). I.8.6 ahora dice: solemnidad de
+  validez, nulidad absoluta; de existencia, inexistente o nulo
+  absolutamente según la postura (ver II.E.2.1 y IV.A); y la omisión de
+  la solemnidad legal "acarrea la sanción que corresponda según su
+  clase".
 - Ajuste de Laura en vista previa: en 2.1 (i), la pregunta "¿Qué pasa
   si falta una solemnidad de existencia?" en negrita y las dos posturas
   como `a)` El acto es inexistente / `b)` El acto es nulo absolutamente
@@ -1379,10 +1384,8 @@ cercana (tabla exhaustiva por punto), no después.
    `worktree-pdf-header-fix` (2026-07-28): su único contenido propio
    eran dos PDF regenerados ya obsoletos, la lógica del encabezado ya
    está en `main`.
-3. **Pendiente, opcional**: Laura no revisó el contenido de VI en
-   vista previa línea por línea en esta sesión (solo resolvió el
-   conflicto de Git para mergear); si quiere revisarlo igual que C-G y
-   V, el manual ya está en `main`, ancla `#cVI`.
+3. ~~Revisión de VI en vista previa~~: **hecha**, Laura dijo "todo
+   ok con modalidades" (2026-10-07).
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
    **Capítulos II y III terminados** (5.6 aprobado en vista previa el
@@ -1398,9 +1401,12 @@ cercana (tabla exhaustiva por punto), no después.
    "coincidencia" en la nulidad absoluta como opinión de VIAL, y
    "VIAL DEL RÍO" quedó "VIAL" en todo el manual. Ejemplo nuevo: el
    tío Lucho (casino de Viña, parcela en Pirque).
-   **Siguiente paso exacto:** Laura revisa la vista previa (`#cIV-F`)
-   y mergea `worktree-acto-juridico-IV-F-vial` a `main`; después,
-   Bienes (punto 5).
+   **IV.F revisado y mergeado por Laura a `main`** (2026-10-07,
+   `origin/main` en `d89ac5f`).
+   **Siguiente paso exacto:** Laura mergea
+   `worktree-acto-juridico-I-8-6` (unificación de I.8.6 con II.E.2.1);
+   queda solo la revisión final (ejemplos genéricos de Boetsch en I y
+   VI); después, Bienes (punto 5).
    **Pendiente explícito nacido de 5.5:** incorporar a IV.F las pp.
    211-214 de VIAL (elementos material y subjetivo, cita de Vergara
    Baeza, ejemplo del que enajena antes de la interdicción por
