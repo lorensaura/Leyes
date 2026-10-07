@@ -3,8 +3,29 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-07 (creado al cerrar
-> Acto Jurídico; la actualización de Bienes todavía no empieza).
+> antes de seguir. Última actualización: 2026-10-07.
+
+## Resumen para retomar (léelo primero)
+
+- **Reformato de numeración: terminado y mergeado a `main`**
+  (commit `c03dac9`, rama `bienes-reformato-cap2` ya borrada). Los 7
+  capítulos tienen el aspecto correcto de la escalera. Detalle completo
+  más abajo ("Piloto del capítulo II" y "Primera revisión de Laura").
+- **Reparto de tramos: hecho**, ~43 tramos por página real de Boetsch
+  (sección "Reparto de tramos").
+- **Mapa de anexos grandes: hecho** (sección "Mapa de los anexos
+  grandes"). Falta que Laura diga qué anexos entran.
+- **Excurso de VI** (derecho real de conservación ambiental): confirmado
+  que no va en el apunte, hay que borrarlo del manual cuando se trabaje
+  el tramo 19.
+- **Pendiente de Fase 2** (no bloquea el inicio del contenido, se
+  resuelve tramo por tramo): encabezados sin número, el gris de las
+  `a)/b)/c)` del sistema registral (tiene que volver a negro), el
+  estilo del propio "V.4." como tema (ya quedó resuelto y aplicado, ver
+  "Primera revisión de Laura").
+- **Todavía no se ha reescrito ningún tramo con el método completo.**
+  Ese es el siguiente trabajo real (ver "Siguiente paso exacto" al
+  final de este archivo).
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -311,19 +332,38 @@ partes del reparto, no es un anexo de otro autor.
 (puede ser "todos, según toque el tramo" o descartar algunos) antes de
 empezar el tramo 1.
 
-## Siguiente paso exacto
+## Siguiente paso exacto (2026-10-07, vigente)
 
-1. Esperar el visto bueno de Laura sobre la vista previa del capítulo
-   II. Si pide ajustes, corregir en la misma rama.
-2. Con su aprobación: mergear `bienes-reformato-cap2` a `main` y borrar
-   la rama (lección 11 de `lecciones-acto-juridico.md`: borrar ramas
-   viejas en el mismo momento del merge).
-3. Seguir con el mismo patrón (informe HTML con tabla antes de tocar el
-   manual) para I, III, IV (solo ids y mayúscula, ya siguen casi toda
-   la escalera, reformato rápido) y, al final, V, VI, VII: V no se
-   renumera (ver "Decisión sobre el capítulo V" arriba), pero falta
-   definir el estilo visual de "V.4. La tradición" y sus letras
-   internas (A., A.1...) antes de tocar esos capítulos.
-4. Recién después del reformato completo de los 7 capítulos: reparto de
-   tramos (decisión 5, todavía sin tabla) y arranca el contenido con el
-   método completo de `lecciones-acto-juridico.md`.
+El reformato de numeración de los 7 capítulos está hecho y mergeado a
+`main`. Lo único que falta antes de escribir el tramo 1:
+
+1. **Que Laura decida qué anexos entran** (tabla de "Mapa de los anexos
+   grandes"): puede ser "todos, según toque el tramo" o descartar
+   algunos de entrada. Sin esto no se arma el inventario del tramo 1.
+2. **Confirmar el tramo 1** con Laura: hoy la propuesta es 1a (p. 18-27,
+   I. Aspectos generales) y 1b (p. 27-36, II.A Bienes corporales e
+   incorporales). Preguntarle si prefiere empezar por ahí o por otro
+   punto.
+3. **Arrancar el tramo 1** con el checklist único de
+   `lecciones-acto-juridico.md` sección 6, completo desde el primer
+   tramo (nada de pasadas separadas):
+   - Inventario exhaustivo de la fuente (Boetsch, página real) y de los
+     anexos que correspondan a ese tramo, tabla sub-punto por sub-punto
+   - Preguntarle a Laura si tiene material propio sobre ese tema
+   - Artículos verificados contra `Apuntes/CODIGOS` (texto vigente)
+   - Paráfrasis cercana: autor con nombre se cita, prosa sin autor se
+     reestructura
+   - "La doctrina" contrastada contra todas las fuentes del tramo
+   - Ejemplos genéricos de Boetsch por ahora (la pasada de ejemplos
+     propios va al final, para todos los manuales, decisión ya tomada)
+   - Pocas cajas (retirar cualquier `.dato-grado` que haya en ese tramo,
+     está descontinuada desde AJ); cuadro comparativo solo con 3+
+     criterios
+   - Informe en HTML en `Informes/` con el inventario y los cambios
+     propuestos, **antes de tocar el manual** → aprobación de Laura →
+     reescritura → verificación con script (etiquetas balanceadas, cero
+     guiones largos, artículos presentes) → vista previa en
+     `Vista_previa/` → merge en una rama nueva y borrarla
+4. Repetir tramo por tramo según la tabla de "Reparto de tramos",
+   ajustando los cortes sobre la marcha si un tema resulta más
+   preguntado de lo previsto (como pasó con "el error" en AJ).
