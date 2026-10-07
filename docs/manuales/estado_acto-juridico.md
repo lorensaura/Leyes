@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (cierre de 5.5, La causa, en `main`; sigue 5.6).
+> 2026-10-07 (5.6, Formalidades y Efectos, reescrito; falta vista previa de Laura).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -992,7 +992,7 @@ y aprobación antes de tocar el manual:
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
 | 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe, `d4e0b86` reescritura); vista previa sin ajustes; **en `main`** (2026-10-07) |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` + VIAL pp. 189-214 (26 pantallazos de Laura, 2026-10-07) | `docs/actualizacion_acto_juridico_II-D_2026-10-07.md` | Reescrito (commits `fd73319`, `123a9ec` informe, `3b0d44f` reescritura); **en `main`** (merge `3a6301d`, 2026-10-07) |
-| 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
+| 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`); solo Boetsch y anexos (decisión de Laura) | `docs/actualizacion_acto_juridico_II-E-III_2026-10-07.md` | Reescrito (commits `9439a7b` informe, `3279571` reescritura); **falta vista previa de Laura** |
 
 Para cada tramo se aplica desde el principio el chequeo de paráfrasis
 cercana (tabla exhaustiva por punto), no después.
@@ -1301,6 +1301,34 @@ cercana (tabla exhaustiva por punto), no después.
 - Commits `fd73319`, `123a9ec` (informe) y `3b0d44f` (reescritura).
   **En `main`** (merge `3a6301d`, hecho por Laura el 2026-10-07).
 
+### Qué se hizo en 5.6 (E. Las formalidades y III. Los efectos)
+
+- Fuentes: Boetsch pp. 103-113 y Memorice (10 definiciones). El anexo
+  de Bozzo e Ibarra no trae capítulo propio: lo suyo (nulidad refleja,
+  conversión formal, art. 1694, S.A. nula de pleno derecho) ya está en
+  IV y solo se enlaza. Todo con paráfrasis cercana: reescrito completo,
+  sin cambiar ningún `h2`/`h3`. Laura aprobó todas las recomendaciones.
+- **Errores de artículos corregidos** (Boetsch usa la numeración previa
+  a la Ley 19.585): bienes raíces del hijo es **art. 254** (no 255);
+  autorización del hijo y del pupilo, **arts. 260 y 440 inc. 2°** (no
+  253, 254 y 439). Art. 1682 dice "formalidad", no "solemnidad". Art.
+  447 exige además inscripción en el Conservador.
+- Agregados: arts. 1014, 1026, 1401, 1708, 1450, 1902; `.ley` arts.
+  1709, 1902 y 1545; seis `.definicion` con "la definición que le ha
+  dado la doctrina es..."; cuadro de las formalidades; Pregunta clásica
+  (sanción de la falta de solemnidad de existencia); dos No confundir
+  (solemnidad / formalidad de prueba; tercero absoluto / relativo);
+  dos Conexiones. Caja Dato de grado (retirada) pasada al texto.
+  "Quiebra" quedó como "procedimiento concursal de liquidación (la
+  antigua quiebra)", sin citar la Ley 20.720.
+- Ejemplos propios: testamento de don Lalo (Curicó, Rangers), el
+  departamento de la Isi (la Javi), la moto del Pipe y el Cote, el
+  crédito de la Kathy (la Fran, don Beto), don Hugo y la Cami, el
+  refrigerador del Benja (tía Mirna, Maipú).
+- No verificado: art. 4 letra f) Ley de Competencia Desleal (resumido).
+- Pendiente para la revisión final: I.8.6 dice "nulo" donde 2.1 dice
+  "inexistente o nulo absolutamente".
+
 ### Pendientes de II (recordar a Laura al retomar)
 
 - **Archivos HTML antiguos con cajas Advertencia** sin tocar:
@@ -1353,9 +1381,10 @@ cercana (tabla exhaustiva por punto), no después.
    V, el manual ya está en `main`, ancla `#cVI`.
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
-   **Siguiente paso exacto:** **5.6** (E. Formalidades,
-   `principal_7`, y III. Efectos, `principal_8`); fuentes: Boetsch, los
-   anexos y los códigos, más lo que Laura entregue por su cuenta.
+   **Siguiente paso exacto:** Laura revisa 5.6 en vista previa
+   (`DERECHO LIBRE/Vista_previa/AJ_vista_previa.html#cII-E`), se
+   aplican sus ajustes y ella mergea con GitHub Desktop. Con eso los
+   capítulos II y III quedan terminados.
    **Pendiente explícito nacido de 5.5:** incorporar a IV.F las pp.
    211-214 de VIAL (elementos material y subjetivo, cita de Vergara
    Baeza, ejemplo del que enajena antes de la interdicción por
