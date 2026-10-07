@@ -159,18 +159,21 @@ Dos ítems puntuales necesitan decisión de Laura antes de publicar:
   MC; sin `Preguntas_Evaluacion`, que es solo para materias que ya
   alimentan el Interrogador). Recién creada y vacía, sin contenido ni
   conectar a Supabase todavía, igual que las 3 bases de Bienes.
-  **Pendiente antes de que el contenido llegue a la app:**
-  `scripts/sync_airtable_supabase.py` (`PREGUNTAS_BASES`) sigue hardcodeado
-  a las 3 materias de Responsabilidad; hay que sumarle Acto Jurídico (y
-  Bienes, que tiene el mismo pendiente) antes de poder sincronizar a
-  Supabase.
-  **2026-09-28: primer lote de Evaluación/Flashcards de Acto Jurídico
-  cargado directo en la base**, Eje I (Teoría general del acto jurídico)
-  únicamente: 1 ítem por cada uno de los 4 tipos de Evaluación
-  (`aj-aplic-001`, `aj-det-001`, `aj-just-001`, `aj-mc-001`) y 6
-  Flashcards (`aj-fc-001` a `006`), todos con `publicado=false` y
-  `Revision_status=Revisar`, pendientes de que Laura los revise. Eje B
-  (La voluntad) y el resto de los 21 ejes quedan para lotes siguientes.
+  **2026-10-07: conectada a la app** (sin correr todavía el sync real):
+  `scripts/sync_airtable_supabase.py` lee la base desde
+  `BASES_SOLO_PRACTICA` (Flashcards + Evaluación, no Preguntas_Evaluacion)
+  y fuerza `materia='acto_juridico'`; `app/alternativas.html` ya filtra
+  Evaluación por materia Civil (antes la cortaba para todo lo que no
+  fuera Responsabilidad). Bienes puede usar el mismo dict cuando toque.
+  **Contenido de Práctica de AJ (preguntas):** estado vivo por capítulo,
+  dónde está cada cosa, herramientas, orden de pasos para publicar y
+  decisiones pendientes en `docs/preguntas-acto-juridico.md`. Al
+  2026-10-07: 194 Flashcards en Airtable (todos los subtemas de los temas
+  1 a 19 cubiertos; sigue la nulidad), 12 de Evaluación y SQL sin correr
+  de 12 Alternativas y 7 definiciones de Memorice; todo sin publicar y
+  pendiente de revisión de Laura. **Antes de publicar cualquier pregunta
+  de AJ hay que desplegar el cambio de `app/alternativas.html`** (detalle
+  en ese doc).
 - **2026-08-12: manual de Acto Jurídico (`04_Acto_Juridico_Manual.html`)
   terminado y su PDF generado** (`app/pdf/Acto_Juridico.pdf`, 21 ejes A-U),
   a partir del libro completo de Boetsch más 3 fuentes secundarias (Bozzo

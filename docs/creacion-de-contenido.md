@@ -15,7 +15,7 @@
 |---|---|---|
 | Evaluación | Tabla `evaluacion_practica` en Supabase | Airtable (una base por materia, tablas `Aplicación`/`Detección de error`/`Justificación`/`Discriminación MC`) → `scripts/sync_airtable_supabase.py` → Supabase. |
 | Alternativas | Tabla `alternativas` en Supabase | SQL directo (Laura lo corre en el SQL Editor). No pasa por Airtable. |
-| Memorice | Tabla `memorice_articulos` en Supabase | SQL directo. El artículo y su texto verbatim los manda **Laura**, nunca se generan ni verifican solos. |
+| Memorice | Tabla `memorice_articulos` en Supabase | SQL directo. **Artículos:** el artículo y su texto verbatim los manda **Laura**, nunca se generan ni verifican solos. **Definiciones** (desde 2026-10-07, pedido de Laura): se copian literal de las definiciones entre comillas del manual (`p.definicion`), con `articulo = ''`, id `<materia>-def-NNN` y la ubicación en el manual en `fuente`; la app no pide número de artículo para esas filas (ver `docs/practica.md`). |
 | Flashcards | Tabla `flashcards` en Supabase | Airtable (base `Digesto`, tabla `Flashcards`) → `scripts/sync_airtable_supabase.py` → Supabase. |
 
 **Migrado el 2026-07-28:** Evaluación vivía hardcodeada en `const banco` de

@@ -1,0 +1,47 @@
+# Flashcards de Acto Jurídico: lote 6 (temas 18 Ineficacia en general y 19 Inexistencia).
+A = lambda n: f'<span class="art">art. {n}</span>'
+AS = lambda n: f'<span class="art">arts. {n}</span>'
+NO_CONFUNDIR = []
+NUEVAS = [
+ # Tema 18: Ineficacia en general
+ ('T19.1', 'Concepto', 'intermedia', 'Según BOETSCH, ¿qué es la ineficacia de los actos jurídicos?',
+  '"La reacción del ordenamiento jurídico en cuya virtud se priva de efectos a aquel acto que no cumple con los requisitos de eficacia y validez del acto jurídico, o bien que por un hecho o causa posterior eliminan, reducen o perturban los efectos propios de un acto válido" (<b>BOETSCH</b>). Un acto ineficaz es el que no genera sus efectos propios o deja de producirlos.',
+  'IV'),
+ ('T19.1', 'Distinción', 'intermedia', '¿Qué diferencia a la invalidez de la ineficacia en sentido estricto?',
+  'La <b>invalidez</b> tiene una causa <b>intrínseca</b>: un defecto de la propia estructura del acto; comprende la inexistencia (para parte de la doctrina) y la nulidad. La <b>ineficacia en sentido estricto</b> supone un acto <b>existente y válidamente formado</b> que no produce efectos o queda privado de ellos por un <b>hecho posterior y ajeno</b> al acto (<b>BOETSCH</b>): la suspensión, la resolución, la revocación, la caducidad y la inoponibilidad.',
+  'IV'),
+ ('T19.1', 'Distinción', 'basica', 'Dentro de la invalidez, ¿cuándo la nulidad es absoluta y cuándo relativa? ¿Produce efectos el acto nulo antes de su declaración?',
+  'Es <b>absoluta</b> si el requisito omitido se exige en consideración al <b>acto mismo</b>; <b>relativa</b>, si se exige en atención a la <b>calidad o estado</b> de quienes lo ejecutan o acuerdan. A diferencia de lo que se dice de la inexistencia, el acto nulo <b>produce todos sus efectos</b> hasta que la nulidad se declara judicialmente.',
+  'IV'),
+ # Tema 19: Inexistencia
+ ('T20.1', 'Concepto', 'basica', '¿Qué es la inexistencia jurídica y qué le falta al acto inexistente?',
+  'Según <b>BOETSCH</b>, es "la sanción que tienen los actos jurídicos celebrados con omisión de uno de los requisitos necesarios para su existencia en el mundo del Derecho". Al acto le falta uno de cuatro ingredientes: <b>voluntad, objeto, causa o solemnidades</b> exigidas para su existencia. El acto ocurrió en los hechos, pero no existe para el Derecho.',
+  'IV.A.1'),
+ ('T20.1', 'Enumeración', 'intermedia', '¿Qué tres consecuencias atribuyen a la inexistencia quienes sostienen la teoría?',
+  '(i) Opera de <b>pleno derecho</b>, ipso iure; (ii) <b>no es susceptible de saneamiento</b> alguno; y (iii) la acción para pedir su constatación sería <b>imprescriptible</b>.',
+  'IV.A.1'),
+ ('T20.1', 'Regla', 'intermedia', '¿Dónde y para qué nació la teoría de la inexistencia?',
+  'La formuló <b>ZACHARIAE</b> a principios del siglo XIX, comentando el Código de Napoleón, a propósito del <b>matrimonio</b>. El derecho francés seguía el axioma "<b>no hay nulidad sin texto</b>", y ninguna ley declaraba nulo el matrimonio entre personas del mismo sexo. Zachariae sostuvo que, faltando el acuerdo que la ley presupone, no hay un matrimonio nulo, sino ningún matrimonio. Después la idea se extendió a los actos patrimoniales.',
+  'IV.A.2'),
+ ('T20.2', 'Distinción', 'intermedia', 'Para quienes sostienen la teoría, ¿qué diferencias hay entre la inexistencia y la nulidad?',
+  'La <b>inexistencia</b> recae en un requisito de existencia, no produce efecto alguno, opera de pleno derecho, no se sanea por el tiempo ni por ratificación ("la nada confirmada continúa siendo la nada") y puede alegarla <b>todo el mundo</b>. La <b>nulidad</b> recae en un requisito de validez, produce efectos mientras no se declara judicialmente, se sanea por el tiempo y, la relativa, por ratificación, y solo pueden alegarla ciertas personas (' + AS('1683 y 1684') + ').',
+  'IV.A.3'),
+ ('T20.2', 'Regla', 'avanzada', '¿A quién aprovecha la declaración de nulidad y se aplica esa regla a la inexistencia?',
+  'La nulidad declarada, absoluta o relativa, solo produce efectos respecto de las partes en cuyo favor se decretó: "cuando dos o más personas han contratado con un tercero, la nulidad declarada a favor de una de ellas no aprovechará a las otras" (' + A(1690) + '). Para la doctrina, esta regla <b>no se extiende a la inexistencia</b>: constatada judicialmente, cualquier interesado puede aprovecharla.',
+  'IV.A.3'),
+ ('T20.3', 'Enumeración', 'avanzada', '¿Qué argumentos da la doctrina que sostiene que el Código sí distingue la inexistencia de la nulidad (CLARO SOLAR)?',
+  '(i) La letra de los ' + AS('1444 y 1681') + ': el primero dice que sin una cosa esencial el contrato "no produce efecto alguno", sin llamarlo nulo, y el segundo declara nulo el acto al que falta un requisito para su <b>valor</b>; además, el ' + A(1701) + ' manda mirar como "no ejecutados o celebrados" los actos sin el instrumento público exigido. (ii) Los actos de los absolutamente incapaces se declaran nulos porque pueden <b>aparentemente consentir</b>. (iii) Sin la inexistencia, la falta de objeto, causa o consentimiento caería en la nulidad relativa. (iv) El Código regula la nulidad como modo de extinguir obligaciones, que el acto inexistente no genera.',
+  'IV.A.4.1'),
+ ('T20.3', 'Enumeración', 'avanzada', '¿Qué argumentos da la doctrina que niega que el Código distinga la inexistencia (ALESSANDRI)?',
+  '(i) El axioma francés "no hay nulidad sin texto" no rige en Chile. (ii) El ' + A(1682) + ', con la fórmula "algún requisito o formalidad", cubre los requisitos de existencia y de validez. (iii) Declara nulos absolutamente los actos de los absolutamente incapaces, que carecen de voluntad. (iv) El ' + A(1461) + ' trata igual el hecho físicamente imposible que el ilícito. (v) El ' + A(10) + ' usa "nulos y de ningún valor" como sinónimos. (vi) El ' + A('464 Nº 14 CPC') + ' solo menciona la nulidad de la obligación. (vii) Ninguna norma reconoce la inexistencia como sanción autónoma.',
+  'IV.A.4.2'),
+ ('T20.3', 'Regla', 'avanzada', '¿Qué conclusión se extrae de la historia fidedigna del ' + A(1683) + ' sobre la inexistencia?',
+  'Que <b>BELLO</b> se apartó conscientemente del modelo francés. El proyecto de 1842 decía que la nulidad absoluta no se sanea por el tiempo; el proyecto de 1853 agregó un límite de treinta años de posesión; y el Proyecto Inédito la dejó saneable por un lapso de <b>treinta años</b>, que la Ley Nº 16.952 (1968) redujo a <b>diez</b>. Como la nulidad absoluta chilena coincide en sus causales con la inexistencia francesa, en Chile <b>ambas son la misma institución</b>, regida por el ' + A(1683) + '.',
+  'IV.A.4.3'),
+ ('T20.3', 'Regla', 'avanzada', '¿Cómo usa la tesis de la inexistencia la legislación sobre sociedades anónimas?',
+  'El antiguo ' + A('6° de la Ley Nº 18.046') + ' distinguía expresamente la sociedad que <b>no existe</b> (sin escritura o sin inscripción o publicación oportuna del extracto) de la sociedad <b>nula</b>. La Ley Nº 19.499 eliminó esa referencia, pero creó una <b>nulidad de pleno derecho</b> insaneable (art. 6° A) que se asimila a la inexistencia; para esta tesis, eso fortalece el concepto en vez de desvanecerlo.',
+  'IV.A.4.1'),
+ ('T20.3', 'Regla', 'basica', '¿Qué ha dicho la jurisprudencia sobre la inexistencia?',
+  'Ha sido <b>fluctuante</b>, pero en general la mayoría de los fallos de la <b>Corte Suprema no reconoce la inexistencia</b> como sanción autónoma con los caracteres que le atribuyen sus defensores; y cuando la reconoce, suele hacerlo en términos retóricos, aplicándole en definitiva las reglas de la <b>nulidad absoluta</b>.',
+  'IV.A.4.4'),
+]

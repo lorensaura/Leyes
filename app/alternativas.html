@@ -1118,6 +1118,13 @@ const bancoTransversal = [
       }
       return tags.includes(materiaId);
     }
+    // Nombre legible de la materia para las insignias: los tags de materias
+    // Civil nuevas ('acto_juridico') se muestran con su etiqueta; los valores
+    // de Responsabilidad ('Responsabilidad contractual', etc.) ya son legibles.
+    function etiquetaMateria(raw) {
+      const m = MATERIAS_CIVIL.find(x => x.id === raw);
+      return m ? m.label : raw;
+    }
     function escaparHtmlBase(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
     function escaparAtributoHtml(t) { return escaparHtmlBase(t).replace(/"/g, '&quot;'); }
     function sumarDias(dias) { return new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toISOString(); }
@@ -1505,18 +1512,11 @@ const bancoTransversal = [
     async function iniciarEvaluacion() {
       modoReintentoError = false;
       document.getElementById('practica-container').innerHTML = `<div class="estado-vacio"><div class="spinner"></div>Cargando evaluación…</div>`;
-      // Evaluación es hoy 100% contenido de Responsabilidad (banco hardcodeado
-      // + tabla Supabase), sin ítems de ninguna otra materia todavía. En vez de
-      // sumarle el mismo chequeo por tag de las otras 3 vistas (su campo
-      // `materia` no sigue la convención de lista separada por coma), se corta
-      // acá para cualquier materia que no sea Responsabilidad/Todas -- sin
-      // tocar la lógica de abajo, ya validada con alumnas reales.
-      if (materiaActiva !== 'todas' && materiaActiva !== 'responsabilidad') {
-        itemsFiltrados = [];
-        idxActual = 0; creditoTotal = 0; itemsCompletados = 0;
-        renderItemEvaluacion();
-        return;
-      }
+      // Filtro por materia Civil igual que en las otras vistas: los ítems de
+      // Responsabilidad traen materia 'Responsabilidad contractual' (etc.,
+      // sin tag de otra materia, así que caen en Responsabilidad) y los de
+      // Acto Jurídico traen el tag exacto 'acto_juridico' (lo fuerza
+      // scripts/sync_airtable_supabase.py, ver BASES_SOLO_PRACTICA).
       if (datosEvaluacion.length === 0) await cargarEvaluacion();
       // bancoTransversal usa los nombres de campo viejos (tema/id/articulos_referencia
       // como arreglo); se normaliza acá para que el resto del código solo maneje
@@ -1529,6 +1529,7 @@ const bancoTransversal = [
       }));
       const fuente = areaActiva === 'todas' ? datosEvaluacion.concat(transvNormalizado) : datosEvaluacion;
       itemsFiltrados = fuente.filter(item => {
+        if (!perteneceAMateriaCivil(item.materia, materiaActiva)) return false;
         const mat = normalizarMateria(item.materia);
         if (areaActiva !== 'todas' && mat !== areaActiva) return false;
         if (subtipoActivo !== 'todos' && item.tipo !== subtipoActivo) return false;
@@ -1575,7 +1576,7 @@ const bancoTransversal = [
         <div class="item-card">
           <div class="item-meta">
             <span class="badge-tipo ${tipoCss}">${tipoLabel}</span>
-            <span class="badge-materia">${item.materia} · ${item.subtema}</span>
+            <span class="badge-materia">${etiquetaMateria(item.materia)} · ${item.subtema}</span>
           </div>
           ${item.caso ? `<div class="caso-box"><span class="caso-label">Caso</span>${item.caso}</div>` : ''}
           <div class="pregunta-text">${item.enunciado}</div>
@@ -2094,6 +2095,9 @@ const bancoTransversal = [
     let memTiempoMostrado = null; // para segundos_hasta_evaluar
     let memPendienteAbandono = null; // {articuloId, metodo, nivel} del item mostrado sin evaluar aún
 
+    // Una fila de memorice_articulos sin número de artículo (articulo = '')
+    // es una definición doctrinal tomada del manual, no un artículo de ley.
+    function esMemoriceDefinicion(articulo) { return !String(articulo.articulo || '').trim(); }
     function claveProgreso(articuloId, metodo) { return `${articuloId}::${metodo}`; }
 
     function setMetodoMemorice(m) {
@@ -2191,6 +2195,10 @@ const bancoTransversal = [
       const key = claveProgreso(articulo.id, metodoMemorice);
       const progresoItem = progresoMemorice[key];
       const pct = Math.round((memIndice / memCola.length) * 100);
+      // Definiciones doctrinales (Memorice sin número de artículo): se
+      // memoriza solo el texto, no se pide ni se corrige un número.
+      const esDefinicion = esMemoriceDefinicion(articulo);
+      const elTexto = esDefinicion ? 'la definición completa' : 'el artículo completo';
 
       let cuerpoHtml, botonHtml, faseLabel;
 
@@ -2200,7 +2208,7 @@ const bancoTransversal = [
         if (nivel >= 4) {
           cuerpoHtml = `
             <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
-            <textarea id="mem-textarea" class="mem-textarea-n4" placeholder="Escribe el artículo completo, de memoria…" onpaste="return false;" ondrop="return false;"></textarea>`;
+            <textarea id="mem-textarea" class="mem-textarea-n4" placeholder="Escribe ${elTexto}, de memoria…" onpaste="return false;" ondrop="return false;"></textarea>`;
         } else {
           const { partes } = construirBlanks(articulo, nivel);
           let inputIdx = 0;
@@ -2224,7 +2232,7 @@ const bancoTransversal = [
             <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
             <div class="mem-articulo-texto">${escaparHtmlBase(articulo.texto)}</div>
             <div class="justificacion-label">Escríbelo una vez, copiándolo (esto ayuda a fijarlo antes de practicar sin apoyo):</div>
-            <textarea id="mem-textarea-estudio" placeholder="Copia el artículo completo…" onpaste="return false;" ondrop="return false;"></textarea>`;
+            <textarea id="mem-textarea-estudio" placeholder="Copia ${elTexto}…" onpaste="return false;" ondrop="return false;"></textarea>`;
           botonHtml = `<button class="btn btn-primary" id="mem-btn-evaluar" onclick="continuarEstudioMemorice()">Continuar →</button>`;
         } else {
           const nivel = progresoItem.nivel_actual || 1;
@@ -2232,7 +2240,7 @@ const bancoTransversal = [
             faseLabel = 'B4';
             cuerpoHtml = `
               <div class="mem-fuente">${escaparHtmlBase(articulo.fuente || '')}</div>
-              <textarea id="mem-textarea" class="mem-textarea-n4" placeholder="Escribe el artículo completo, de memoria, sin ningún apoyo…" onpaste="return false;" ondrop="return false;"></textarea>`;
+              <textarea id="mem-textarea" class="mem-textarea-n4" placeholder="Escribe ${elTexto}, de memoria, sin ningún apoyo…" onpaste="return false;" ondrop="return false;"></textarea>`;
           } else {
             faseLabel = `B${nivel}`;
             const clausulas = derivarClausulas(articulo);
@@ -2255,14 +2263,14 @@ const bancoTransversal = [
         </div>
         <div class="item-card">
           <div class="item-meta">
-            <span class="badge-tipo badge-memorice">Memorice · Método ${metodoMemorice}</span>
+            <span class="badge-tipo badge-memorice">Memorice${esDefinicion ? ' · Definición' : ''} · Método ${metodoMemorice}</span>
             <span class="mem-nivel-badge">${faseLabel}</span>
             <span class="badge-materia">${articulo.subtema || ''}</span>
           </div>
-          <div class="mem-articulo-numero">
+          ${esDefinicion ? '' : `<div class="mem-articulo-numero">
             <label for="mem-articulo-num">N° de artículo:</label>
             <input type="text" id="mem-articulo-num" placeholder="Ej: 1489" autocomplete="off" onpaste="return false;" ondrop="return false;" />
-          </div>
+          </div>`}
           ${cuerpoHtml}
           <div class="btn-row">${botonHtml}</div>
           <div id="mem-feedback"></div>
@@ -2290,7 +2298,7 @@ const bancoTransversal = [
 
       const inputNumero = document.getElementById('mem-articulo-num');
       const numeroEscrito = inputNumero ? inputNumero.value : '';
-      const numeroCorrecto = normalizarNumeroArticulo(numeroEscrito) === normalizarNumeroArticulo(articulo.articulo);
+      const numeroCorrecto = esMemoriceDefinicion(articulo) || normalizarNumeroArticulo(numeroEscrito) === normalizarNumeroArticulo(articulo.articulo);
       if (inputNumero) { inputNumero.disabled = true; inputNumero.classList.add(numeroCorrecto ? 'mem-ok' : 'mem-mal'); }
 
       let resultado; // 'correcto' | 'parcial' | 'incorrecto'
@@ -2320,7 +2328,7 @@ const bancoTransversal = [
             explicaciones.push(`Faltó "<strong>${escaparHtmlBase(it.palabra)}</strong>"${it.critica ? ' — es una palabra clave: cambia el sentido de la regla.' : '.'}`);
           });
           diff.items.filter(it => it.tipo === 'sobra').forEach(it => {
-            explicaciones.push(`Sobra "<strong>${escaparHtmlBase(it.palabra)}</strong>" respecto del texto del artículo.`);
+            explicaciones.push(`Sobra "<strong>${escaparHtmlBase(it.palabra)}</strong>" respecto del texto esperado.`);
           });
         }
       } else if (metodoMemorice === 'A') {
