@@ -1,5 +1,5 @@
 // Prompt de sistema del Interrogador IA — adaptado de
-// 03_Interrogador_IA_Responsabilidad_PROMPT.md para uso vía API (en vez del
+// archivo/03_Interrogador_IA_Responsabilidad_PROMPT.md para uso vía API (en vez del
 // flujo manual de "Proyecto de Claude"). Si Laura ajusta el prompt original,
 // hay que trasladar los cambios acá a mano.
 //

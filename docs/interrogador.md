@@ -163,7 +163,7 @@ el Código Civil.
 
 ### Los 4 bloques del `system` de la llamada principal, en orden
 1. **Reglas del examinador** — `api/_interrogador-prompt.js` (adaptado de
-   `03_Interrogador_IA_Responsabilidad_PROMPT.md`). Desde el 2026-08-05 es
+   `archivo/03_Interrogador_IA_Responsabilidad_PROMPT.md`). Desde el 2026-08-05 es
    una función (`construirPromptExaminador(materia)`, ver "Selector de
    materia" arriba): recorta ALCANCE, el checklist de DURACIÓN Y COBERTURA
    y el paso 3 del PROTOCOLO a la materia elegida (o se comporta igual que
