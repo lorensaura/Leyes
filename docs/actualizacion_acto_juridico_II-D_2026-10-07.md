@@ -156,7 +156,7 @@ oración por oración.
 | 1. (2 párrafos) | La primera oración es literal de Boetsch; el resto sigue su orden con sinónimos; ejemplos de Boetsch | Reescribir; acepciones en `(i)` a `(iii)` en negrita (clasificación); Claro Solar y Velasco atribuidos; ejemplo propio |
 | 2. (2 párrafos) | Sigue a Boetsch oración por oración | Reescribir, sumando lo del anexo y Vial (V2) |
 | 3. intro | Lista de autores de Boetsch casi igual | Reescribir |
-| Caja Dato de grado de 3 | 42% del anexo, literal | Reescribir dentro de la caja |
+| Caja Dato de grado de 3 | 42% del anexo, literal; además es un tipo de caja **retirado** (`guia-editorial.md` 4.10) | Es materia: pasa al texto de 3, reescrita |
 | 3.1 | Orden y frases de Boetsch | Reescribir con las tres categorías en escalera, sumando V3 a V5 |
 | 3.2 | Sigue a Boetsch | Reescribir; Betti en `.definicion` (V6) |
 | 3.3 | Sigue a Boetsch | Reescribir; agregar V7 |
@@ -185,7 +185,7 @@ de Vial.
   tres a la vez (ver 5.4).
 - **2. Evolución histórica.** Roma, canonistas (no basta el
   consentimiento), Domat, Pothier, códigos francés y chileno.
-- **3. Doctrinas.** Intro con los dos bandos. **3.1** con `a)`
+- **3. Doctrinas.** Intro con los dos bandos y, en el texto (ya no en caja Dato de grado, que está retirada), el derecho comparado: Quebec, escandinavos, reforma francesa de 2016 y Mazeaud. **3.1** con `a)`
   bilaterales, `b)` reales, `c)` gratuitos, cada uno con su definición,
   ejemplos de contratos y la regla; en a), que la causa es la misma en
   todos los bilaterales y que la obligación sin causa no se puede
@@ -227,12 +227,12 @@ que induce al acto o contrato" en negrita. Los arts. 1445 (II.B) y 1682
 | Punto | Caja | ¿Cuenta para el máximo de 2? |
 |---|---|---|
 | 1 | Ejemplo **nuevo**: las tres causas en una misma compraventa | Sí (1 de 2) |
-| 3 | Dato de grado (se queda, reescrita) | No es Ejemplo/No confundir/Pregunta; queda igual que hoy |
+| 3 | La caja Dato de grado **desaparece** (tipo retirado): su contenido, el derecho comparado y la reforma francesa de 2016, pasa al texto | (no queda caja) |
 | 3 | **Cuadro comparativo nuevo**: clásica, italiana, móvil, anticausalista (qué tiene causa, criterio, qué es la causa, autores) | No |
-| 4.3 | **Pregunta clásica nueva**: "¿Qué concepto de causa sigue el Código Civil chileno?" (la respuesta: la dual, opinión más aceptada, frente a la unitaria) | Sí (1 de 2) |
+| 4.3 | **Pregunta clásica nueva**: "¿Qué concepto de causa sigue el Código Civil chileno?" (la respuesta: la dual, opinión más aceptada, frente a la unitaria). Califica porque Boetsch y Vial plantean 4.1 y 4.2 como preguntas abiertas y el anexo marca cuál es la mayoritaria; la eliges tú | Sí (1 de 2) |
 | 5 | Ejemplo **nuevo** de causa falsa (reemplaza al del legado revocado del anexo) | Sí (1 de 2) |
 | 6 | Ejemplo **nuevo** de causa ilícita con el art. 1468 (versión chilena del arriendo para fumadero de opio de Vial) | Sí (1 de 2) |
-| 7.2 | Ejemplo **nuevo** del pagaré endosado | Sí (1 de 2) |
+| 7.2 | Ejemplo **nuevo** del pagaré endosado, **solo si me mandas el art. 28 de la Ley 18.092** (pregunta 4) | Sí (1 de 2) |
 | 8 | **No confundir nueva**: error-motivo / error sobre los motivos | Sí (1 de 2) |
 | 8 | Conexiones (cierra todo D) | No |
 
@@ -258,16 +258,16 @@ funcionario trasladado, A salvó la vida de B) se reemplazan. Cada
 consecuencia se apoya en un artículo citado y verificado en el mismo
 punto. Nombres que no se repiten en el manual:
 
-- **1, las tres causas (caja):** la Feña le compra a don Rigo su
+- **1, las tres causas (caja):** la Vero le compra a don Rigo su
   citroneta del 78. Causa eficiente de la obligación de don Rigo de
   entregarla: el contrato de compraventa. Causa final del comprador,
   igual en toda compraventa: hacerse de la cosa; la del vendedor:
-  hacerse del precio. Causa ocasional: la Feña quiere llegar en ella a
+  hacerse del precio. Causa ocasional: la Vero quiere llegar en ella a
   su matrimonio en Pichilemu; don Rigo necesita la plata para pagar
   la operación de su perro.
-- **5, causa falsa (caja; art. 1467 inc. final):** el Benja está
-  convencido de que le debe $300.000 a su compadre Lucho por el
-  cordero del 18, que en realidad Lucho le regaló. Le firma una
+- **5, causa falsa (caja; art. 1467 inc. final):** el Chalo está
+  convencido de que le debe $300.000 a su compadre Toño por el
+  cordero del 18, que en realidad el Toño le regaló. Le firma una
   promesa de pagárselos en marzo. La promesa carece de causa: no hay
   deuda que pagar.
 - **6, causa ilícita y art. 1468 (caja):** don Pato le arrienda su
@@ -277,14 +277,14 @@ punto. Nombres que no se repiten en el manual:
   nada de ilícito mirada sola; lo ilícito es el motivo que ambos
   conocían. El contrato es nulo absolutamente (arts. 1467 y 1682), y lo
   que se pagó a sabiendas no se puede pedir de vuelta (art. 1468).
-- **7.2, acto abstracto (caja; Ley 18.092, sin transcribir):** la
-  Cami le compra un auto usado a un vendedor y le paga con un pagaré.
+- **7.2, acto abstracto (caja; depende del art. 28 de la Ley 18.092, que no tengo: pregunta 4):** la
+  Pili le compra un auto usado a un vendedor y le paga con un pagaré.
   El vendedor lo endosa a una financiera, que no sabe nada de la
-  venta. Aunque después la compraventa se anule, la Cami no puede
+  venta. Aunque después la compraventa se anule, la Pili no puede
   negarse a pagarle a la financiera alegando ese problema: solo podría
   oponérselo al vendedor.
-- **8, error en la persona (en el texto; art. 1455):** don Lalo le
-  dona su lancha a la Cote porque cree que ella lo sacó del agua en
+- **8, error en la persona (en el texto; art. 1455):** don Memo le
+  dona su lancha a la Rocío porque cree que ella lo sacó del agua en
   Reñaca; en realidad fue la hermana. El motivo (la gratitud) existe;
   el error está en la persona.
 - **8, error sobre los motivos (en el texto):** la Mane se compra un
@@ -306,15 +306,23 @@ punto. Nombres que no se repiten en el manual:
    **Recomendado:** sí, sin tocar IV.D.
 3. **Ejemplos.** ¿Te sirven los de 5.4? En particular el de la pasta
    base (es la versión chilena del fumadero de opio de Vial).
-4. **Art. 28 de la Ley 18.092.** No lo tengo. Opciones: **A
-   (recomendada):** citarlo solo por su contenido, como hoy (es ley
-   especial, va resumida). **B:** me mandas el texto y lo verifico.
+4. **Art. 28 de la Ley 18.092.** No lo tengo, y el ejemplo del
+   pagaré de 7.2 depende de él (la regla es que la consecuencia de cada
+   ejemplo descanse en un artículo verificado). Opciones: **A
+   (recomendada):** me mandas el texto del art. 28, lo verifico y entra
+   el ejemplo (en el texto va resumido igual, por ser ley especial).
+   **B:** lo cito solo por su contenido, como hoy, y 7.2 queda sin
+   ejemplo.
 5. **Vial sobre fraude a la ley (pp. 211-214).** Es material de IV.F,
    no de este tramo. Trae cosas que IV.F no tiene: los dos elementos
    (material y subjetivo) con nombre, el ejemplo del que enajena sus
    bienes antes de que lo declaren interdicto por disipación, y la
-   afirmación de que la doctrina coincide en la nulidad absoluta (IV.F
-   5 dice que no hay sanción única). Opciones: **A (recomendada):**
+   cita de Vergara Baeza sobre si basta el elemento material. En la
+   sanción **no hay choque**: Vial dice que la doctrina coincide en la
+   nulidad absoluta, e IV.F 5 ya llega a la nulidad absoluta por causa
+   ilícita para los casos no regulados (con la discusión de Domínguez
+   y la inoponibilidad); a lo más se agrega a Vial como uno de los que
+   la sostienen. Es un agregado chico. Opciones: **A (recomendada):**
    aquí solo una línea en 6 (para Vial, en el fraude hay causa ilícita:
    la intención fraudulenta) y dejar IV.F anotado como pendiente
    explícito para una pasada chica después de 5.6. **B:** incorporarlo

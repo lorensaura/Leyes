@@ -5,7 +5,8 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (cierre de 5.4, en `main`; sigue 5.5, La causa).
+> 2026-10-07 (informe de 5.5, La causa, listo; esperando las
+> respuestas de Laura a sus 5 preguntas, sin tocar el manual).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -1316,11 +1317,19 @@ cercana (tabla exhaustiva por punto), no después.
    V, el manual ya está en `main`, ancla `#cVI`.
 4. **Capítulos II y III, en curso**: ver la sección "Capítulos II y
    III: tramos 5.x" arriba (tabla de tramos, qué se hizo, pendientes).
-   **Siguiente paso exacto:** tramo 5.5, D. La causa (`principal_6`
-   + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf`). **Fuentes decididas por
-   Laura (2026-10-06): Boetsch, los anexos y los códigos** (vale
-   también para 5.6); si Laura entrega más material por su cuenta
-   (como VIAL y el fallo en 5.4), se incorpora con su inventario.
+   **Siguiente paso exacto:** el **informe de 5.5** (D. La causa) ya
+   está listo y commiteado (`docs/actualizacion_acto_juridico_II-D_2026-10-07.md`,
+   HTML en `DERECHO LIBRE/Informe_AJ_5-5_causa.html`). Fuentes:
+   Boetsch `principal_6`, el anexo de causa y **VIAL pp. 189-214** (26
+   pantallazos que mandó Laura el 2026-10-07; no están guardados en
+   `Apuntes/`, solo en el chat: si hacen falta de nuevo, pedírselos o
+   usar el inventario 2.3 del informe). **No rehacer el informe:**
+   esperar las respuestas de Laura a las preguntas 1 a 5 de la sección
+   6 y, con eso, reescribir el tramo. Pendiente explícito que nace de
+   ahí: las pp. 211-214 de Vial (fraude a la ley) son para IV.F
+   (pregunta 5). Después de 5.5 viene 5.6 (formalidades y efectos);
+   fuentes: Boetsch, los anexos y los códigos, más lo que Laura
+   entregue por su cuenta.
 5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
