@@ -14,7 +14,7 @@
 - **Reparto de tramos: hecho**, ~43 tramos por página real de Boetsch
   (sección "Reparto de tramos").
 - **Mapa de anexos grandes: hecho** (sección "Mapa de los anexos
-  grandes"). Falta que Laura diga qué anexos entran.
+  grandes"). Laura decidió: **todos entran, según toque el tramo**.
 - **Excurso de VI** (derecho real de conservación ambiental): confirmado
   que no va en el apunte, hay que borrarlo del manual cuando se trabaje
   el tramo 19.
@@ -328,23 +328,22 @@ partes del reparto, no es un anexo de otro autor.
 | `Temario Bienes (INDEX).pdf` | 15 | Es el temario/índice de Boetsch, no contenido nuevo | Referencia para verificar el reparto, no se usa como fuente |
 | `MEMORICE BIENES.pages` | — | Definiciones de memorice (como en AJ): hay que mantenerlas reconocibles en el manual | Verificar por tramo, igual que en AJ |
 
-**Siguiente paso sobre esto:** esperar que Laura diga qué anexos entran
-(puede ser "todos, según toque el tramo" o descartar algunos) antes de
-empezar el tramo 1.
+**Decisión de Laura (2026-10-07): todos entran, según toque el tramo.**
+No se descarta ninguno de entrada; en el inventario de cada tramo se
+revisa cuál de estos anexos aplica a ese tema puntual (tabla "Dónde
+pegaría" arriba) y se usa ahí.
 
 ## Siguiente paso exacto (2026-10-07, vigente)
 
 El reformato de numeración de los 7 capítulos está hecho y mergeado a
-`main`. Lo único que falta antes de escribir el tramo 1:
+`main`. El mapa de anexos está resuelto (todos entran, según toque el
+tramo). Lo único que falta antes de escribir el tramo 1:
 
-1. **Que Laura decida qué anexos entran** (tabla de "Mapa de los anexos
-   grandes"): puede ser "todos, según toque el tramo" o descartar
-   algunos de entrada. Sin esto no se arma el inventario del tramo 1.
-2. **Confirmar el tramo 1** con Laura: hoy la propuesta es 1a (p. 18-27,
+1. **Confirmar el tramo 1** con Laura: hoy la propuesta es 1a (p. 18-27,
    I. Aspectos generales) y 1b (p. 27-36, II.A Bienes corporales e
    incorporales). Preguntarle si prefiere empezar por ahí o por otro
    punto.
-3. **Arrancar el tramo 1** con el checklist único de
+2. **Arrancar el tramo 1** con el checklist único de
    `lecciones-acto-juridico.md` sección 6, completo desde el primer
    tramo (nada de pasadas separadas):
    - Inventario exhaustivo de la fuente (Boetsch, página real) y de los
@@ -364,6 +363,6 @@ El reformato de numeración de los 7 capítulos está hecho y mergeado a
      reescritura → verificación con script (etiquetas balanceadas, cero
      guiones largos, artículos presentes) → vista previa en
      `Vista_previa/` → merge en una rama nueva y borrarla
-4. Repetir tramo por tramo según la tabla de "Reparto de tramos",
+3. Repetir tramo por tramo según la tabla de "Reparto de tramos",
    ajustando los cortes sobre la marcha si un tema resulta más
    preguntado de lo previsto (como pasó con "el error" en AJ).
