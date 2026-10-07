@@ -84,7 +84,7 @@
 >
 > Los **casos para resolver** (estilo Figueroa) no van en los
 > manuales: se harán aparte, después del lanzamiento (`camino-a-beta.md`).
-> Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CÓDIGO DE COMERCIO.pdf`
+> Ver "Pendientes de II". El Código de Comercio está en `Apuntes/CODIGOS/CÓDIGO DE COMERCIO.pdf`
 > (checkout principal), para verificar sus artículos.
 
 ## Dónde estamos
@@ -985,7 +985,7 @@ y aprobación antes de tocar el manual:
 | 5.2b | A.5.3-A.5.6 Clases de error de hecho, actos bilaterales/unilaterales, error común; fuentes nuevas: Vial pp. 89-104 y Figueroa pp. 66-75 | `docs/actualizacion_acto_juridico_II-A5-3-6_2026-10-06.md` | Reescrito (commits `f952530`, `7d4abc8`, `1fd4fa8`); vista previa aprobada (2026-10-06) |
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
-| 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Informe listo (commit `b5b1373`); pregunta 1 aprobada con fuentes nuevas de Laura: VIAL pp. 170-183 (pantallazos `10.54.02 pm` a `10.55.46 pm`) y fallo CS rol 3671-1998 (sección 7 del informe); faltan preguntas 2 a 5 |
+| 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe; reescritura en el commit siguiente); **falta la revisión de Laura en vista previa** |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
 
@@ -1294,7 +1294,7 @@ cercana (tabla exhaustiva por punto), no después.
 3. **Inventario unidad por unidad** desde la fuente (nunca desde el
    manual) y cruce con el manual: Está / Parcial / Falta. Inventariar
    también los anexos del tramo.
-4. Verificar cada artículo citado contra `Apuntes/Codigo Civil Chileno.pdf`
+4. Verificar cada artículo citado contra `Apuntes/CODIGOS/` (Código Civil, C.P.C., Constitución, Comercio)
    con regex `Art. N.` sobre el texto extraído con `fitz` (limpiando
    líneas de pie de página "DFL 1, JUSTICIA...").
 5. **Chequear paráfrasis cercana** (`guia-editorial.md` 3): comparar
@@ -1464,8 +1464,10 @@ más afectan el trabajo por tramos:
   el mismo texto: usar una sola copia), `INEFICACIA JURÍDICA_Cuadro
   comparativo.pdf`, `Causa_ DOMINGUEZ y BOETSCH.pdf`, `Memorice_ART y
   Definiciones.pdf`.
-- Código Civil para verificar artículos: `Apuntes/Codigo Civil Chileno.pdf`
-  (texto de leychile, 14-jul-2026).
+- Códigos para verificar artículos (desde 2026-10-06): `Apuntes/CODIGOS/`
+  del checkout principal: `Codigo Civil Chileno.pdf` (leychile,
+  14-jul-2026), `CPC.pdf`, `CPR.pdf` y `CÓDIGO DE COMERCIO.pdf`. Si hace
+  falta otro, pedírselo a Laura (ella lo agrega a la carpeta).
 - Reglas: `docs/manuales/` (`proceso.md`, `formato.md`,
   `guia-editorial.md`, `actualizar-manuales-existentes.md`,
   `auditoria.md`, `decisiones.md`).

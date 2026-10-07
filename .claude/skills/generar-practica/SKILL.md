@@ -65,7 +65,7 @@ reglas, las orquesta**. Léelo antes de generar el primer lote de la sesión.
 - **Memorice: Laura decide el artículo y manda ella el texto legal
   (confirmado 2026-07-28).** No es un modelo que se genere solo: no salgas
   a buscar ni a proponer qué artículo memorizar, ni a verificar el texto
-  vos mismo contra `Apuntes/Codigo Civil Chileno.pdf` o `leychile.cl`. Eso
+  vos mismo contra `Apuntes/CODIGOS/Codigo Civil Chileno.pdf` o `leychile.cl`. Eso
   contradice lo que decía esta sección antes (y lo que sigue diciendo
   `docs/prompt-generacion-contenido-practica.md`, sección 0, punto de
   Memorice) — ese proceso ya se usó en lotes anteriores (incluido

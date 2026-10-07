@@ -1,7 +1,7 @@
 # Informe tramo 5.4: Acto Jurídico II.C El objeto
 
 Fecha: 2026-10-06. Rama: `worktree-acto-juridico-cap2-3`.
-Estado: **pregunta 1 aprobada por Laura, con fuentes nuevas (ver sección 7); faltan las preguntas 2 a 5.** No se ha tocado el manual.
+Estado: **aprobado por Laura y aplicado al manual (2026-10-06); falta su revisión en vista previa.** Ver secciones 7 y 8.
 
 ## 1. Alcance y fuentes
 
@@ -418,3 +418,40 @@ para este punto:
   nombre de la Chepa. La tradición tiene objeto ilícito igual, pero la
   sentencia de nulidad no afecta a la Chepa si a la fecha de la
   tradición el embargo no estaba inscrito.
+
+## 8. Decisiones de Laura sobre las preguntas 2 a 5 y aplicación (2026-10-06)
+
+1. **Pregunta 2:** Laura creó `Apuntes/CODIGOS/` (checkout principal)
+   con el Código Civil, el de Comercio, el C.P.C. (`CPC.pdf`) y la
+   Constitución (`CPR.pdf`), para verificar desde ahí. Verificados: arts.
+   296, 297, 453 y 528 C.P.C.; arts. 7 y 19 Nº 4 y Nº 12 CPR. El 19 Nº 4
+   **sí incluye hoy la protección de los datos personales**: la cita de
+   Boetsch estaba incompleta, y en el manual se resume sin transcribir.
+   También se verificaron los arts. 12 y 1444 del Código Civil.
+2. **Pregunta 3:** art. 703 inc. 4° eliminado; la adjudicación se apoya
+   en los arts. 718, 1344 y 2417.
+3. **Pregunta 4:** ejemplos aprobados. Para "imposible en un lugar y
+   posible en otro" Laura propuso matrimonio igualitario (Afganistán /
+   Chile) o venta de marihuana (Chile / Holanda). Como los dos son de
+   imposibilidad **moral** (lo que prohíbe cada ley) y no física, se
+   usó el de la marihuana en **3.3** (lo moralmente imposible cambia de
+   un país a otro), y 3.2 dice que la imposibilidad física cambia "con
+   el tiempo, y también de un lugar a otro", con el ejemplo de Rapa Nui
+   para el tiempo. Los ejemplos de 4.3 se juntaron en uno solo (la
+   parcela de don Tito en Olmué), que cubre el embargo no inscrito.
+4. **Pregunta 5:** sin latín.
+
+**Aplicación.** Tramo reescrito completo (`#cII-C` a `#cII-C4-7`).
+Ningún `h2`/`h3` cambió; el índice queda igual. Verificación: etiquetas
+balanceadas, cero guiones largos y guillemets, ningún párrafo sobre
+1.200 caracteres, las 70 frases clave del inventario presentes, capturas
+en Chrome headless revisadas.
+
+**Recuadros creados por el modelo en este tramo** (para la revisión
+final de Laura): `.ley` arts. 1460, 1463, 1464 y 1465; `.definicion`
+objeto ilícito, enajenación amplia y embargo (CS, vía León Hurtado);
+Ejemplo de Caleta Portales (2.1), de Rapa Nui (3.2) y de Olmué (4.3
+(iii) b)); Jurisprudencia CS rol 3671-1998, cuadro comparativo de las
+tres tesis y Pregunta clásica (4.3); No confundir especie litigiosa /
+derecho litigioso (4.3 (iv)); Conexiones (4.7). Se mantuvo el Ejemplo de
+Valeria y Sebastián (3.3).
