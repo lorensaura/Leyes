@@ -4,6 +4,10 @@
 > No es plantilla: la regla general de capítulos romanos está en
 > `formato.md`, sección 1.2. Detalle tramo por tramo de la reparación en
 > `docs/incidente_compresion_manuales.md`.
+>
+> **Antes de seguir con Bienes, leer `lecciones-acto-juridico.md`**
+> (sección 6): los tramos marcados "revisados" abajo se revisaron solo
+> por fidelidad, sin el método nuevo.
 
 ## Estado (al 2026-09-29)
 
