@@ -57,10 +57,20 @@ de siempre). Al elegir una opción se marca de inmediato correcta/incorrecta;
 solo el verde y el botón de avanzar). Datos en la tabla nueva `alternativas`.
 
 ### Memorice — modelo nuevo
+
 Memorización textual de artículos, con andamiaje que se retira en 4 niveles
 (N1 ~25% oculto → N4 recitado completo). El artículo se guarda **una sola
 vez**; el nivel de ocultamiento se calcula en el cliente según el
 `nivel_actual` guardado para ese alumno y ese artículo.
+
+**Definiciones (2026-10-07):** una fila con `articulo = ''` es una
+definición doctrinal copiada literal del manual, no un artículo de ley
+(`esMemoriceDefinicion()` en `app/alternativas.html`). Para esas filas la
+app no muestra ni corrige el "N° de artículo", la insignia dice
+"Memorice · Definición" y los textos de ayuda dicen "la definición". Las
+filas de artículos siguen igual (número obligatorio). Verificado en
+headless el mismo día (definición sin número, artículo con número
+penalizado si va en blanco).
 
 **Ocultamiento:** si el ítem trae `prioridad_ocultamiento` (curado a mano, en
 grupos acumulativos 0→3), manda sobre el automático. Si no lo trae, se calcula

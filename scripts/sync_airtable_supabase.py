@@ -80,6 +80,16 @@ PREGUNTAS_BASES = {
     "Responsabilidad precontractual": "appeZI0TkAC3uaeVW",
 }
 
+# Bases de materias nuevas que solo alimentan Práctica (Flashcards y las 4
+# tablas de Evaluación), sin tabla Preguntas_Evaluacion: por eso no van en
+# PREGUNTAS_BASES (sync_preguntas fallaría con 404). La clave es el tag
+# exacto que app/alternativas.html exige en `materia` (perteneceAMateriaCivil),
+# y se fuerza tal cual en Supabase en vez de usar Temas.materia de Airtable
+# ("Acto jurídico"), que la app no reconocería.
+BASES_SOLO_PRACTICA = {
+    "acto_juridico": "appBDWY3eCXgxBGpL",
+}
+
 
 def cargar_env():
     valores = {}
@@ -215,7 +225,7 @@ def _resolver_tema(fields, info_tema):
     return (info_tema.get(tema_ids[0]) or {}).get("nombre")
 
 
-def _leer_flashcards_de_base(airtable_token, base, materia_default):
+def _leer_flashcards_de_base(airtable_token, base, materia_default, forzar_materia=False):
     info_tema = _leer_temas(airtable_token, base)
 
     flashcards = airtable_fetch_all(airtable_token, base, "Flashcards")
@@ -229,7 +239,7 @@ def _leer_flashcards_de_base(airtable_token, base, materia_default):
             "fields": fields,
             "fila": {
                 "airtable_id": f["id"],
-                "materia": (info or {}).get("materia") or materia_default,
+                "materia": materia_default if forzar_materia else ((info or {}).get("materia") or materia_default),
                 "tema": (info or {}).get("nombre"),
                 "pregunta": fields.get("pregunta", ""),
                 "respuesta": fields.get("respuesta", ""),
@@ -255,6 +265,8 @@ def sync_flashcards(airtable_token, supabase_key):
         if base == FLASHCARDS_BASE:
             continue
         candidatos.extend(_leer_flashcards_de_base(airtable_token, base, materia))
+    for materia, base in BASES_SOLO_PRACTICA.items():
+        candidatos.extend(_leer_flashcards_de_base(airtable_token, base, materia, forzar_materia=True))
 
     # La tabla Flashcards de "Digesto Contractual" comparte el mismo id
     # interno de registro de Airtable que la Flashcards de la base "Digesto"
@@ -427,7 +439,7 @@ def sync_evaluacion(airtable_token, supabase_key):
     antes = supabase_count(supabase_key, "evaluacion_practica")
     total = 0
     total_airtable = 0
-    for materia, base in PREGUNTAS_BASES.items():
+    for materia, base in {**PREGUNTAS_BASES, **BASES_SOLO_PRACTICA}.items():
         info_tema = _leer_temas(airtable_token, base)
         filas = []
         malos_ids = []
