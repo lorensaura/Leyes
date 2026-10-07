@@ -991,7 +991,7 @@ y aprobación antes de tocar el manual:
 | 5.2c | A.6 Dolo, A.7 Fuerza, A.8 Remisión lesión/simulación; solo Boetsch, Código y anexo de Bozzo e Ibarra (decisión de Laura: sin fuentes nuevas) | `docs/actualizacion_acto_juridico_II-A6-A8_2026-10-06.md` | Reescrito (commits `36a76c2`, `455ff24`); vista previa aprobada (2026-10-06) |
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
 | 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe, `d4e0b86` reescritura); vista previa sin ajustes; **en `main`** (2026-10-07) |
-| 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` | | Pendiente |
+| 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` + VIAL pp. 189-214 (26 pantallazos de Laura, 2026-10-07) | `docs/actualizacion_acto_juridico_II-D_2026-10-07.md` | Informe listo, **esperando respuesta de Laura a las 5 preguntas** |
 | 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`) | | Pendiente |
 
 Para cada tramo se aplica desde el principio el chequeo de paráfrasis
@@ -1468,10 +1468,9 @@ más afectan el trabajo por tramos:
   tocar esos manuales sin que ella lo pida.
 - **Laura busca jurisprudencia reciente con rol** para IV.A (hay un
   `[FALTA: ...]` en 4.4) y los extractos de los 5 fallos con rol de 4.4.
-- **`[VERIFICAR: rol]` en V.4.4** (tramo 4.6): la caja de jurisprudencia
-  cita un fallo de la Corte Suprema del 9 de enero de 2017 sobre la
-  teoría de la representación modalidad; ni Boetsch lo cita con rol ni
-  la búsqueda web lo encontró. Laura lo busca o decide dejarlo sin rol.
+- ~~`[VERIFICAR: rol]` en V.4.4~~: **resuelto** (2026-10-07). Laura
+  encontró el rol: Corte Suprema, 9 de enero de 2017, rol Nº
+  14.853-2016 (casación); ya está en la caja.
 - **Conexiones con `[FALTA: sección]` y `p. __`** hacia apuntes que no
   existen todavía (Familia, Compraventa, Sociedades, Procesal,
   Sucesorio, Obligaciones, Contratos). Se completan cuando existan y
