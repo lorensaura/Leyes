@@ -1,8 +1,8 @@
 # Informe tramo 5.5: Acto Jurídico II.D La causa
 
 Fecha: 2026-10-07. Rama: `worktree-acto-juridico-cap2-3`.
-Estado: **informe para revisión de Laura; el manual no se ha tocado**
-(salvo el rol de V.4.4, ver sección 7).
+Estado: **aprobado por Laura y aplicado al manual (2026-10-07); falta su
+revisión en vista previa.** Ver sección 8.
 
 ## 1. Alcance y fuentes
 
@@ -334,3 +334,36 @@ Laura encontró el fallo que faltaba: **Corte Suprema, 9 de enero de
 2017, rol Nº 14.853-2016** (casación). Se reemplazó el `[VERIFICAR:
 rol]` de la caja de Jurisprudencia de V.4.4. No verifiqué el fallo en
 línea; el dato es de Laura.
+
+## 8. Decisiones de Laura y aplicación (2026-10-07)
+
+Laura aceptó las cinco recomendaciones y dejó la Ley 18.092 en
+`Apuntes/CODIGOS/LEY 18092.pdf` (leychile, 07-oct-2026).
+
+- **Art. 28 Ley 18.092 (verificado):** "La persona demandada en virtud
+  de una letra de cambio no puede oponer al demandante excepciones
+  fundadas en relaciones personales con anteriores portadores de la
+  letra." **Hallazgo:** el artículo no habla de terceros de buena o
+  mala fe; eso es doctrina de Boetsch. En el manual quedó atribuido a
+  Boetsch, y el art. 28 citado por lo que dice. El **art. 107** extiende
+  las normas de la letra al pagaré: por eso el ejemplo usa un pagaré.
+- Aplicado todo lo de la sección 5: tramo reescrito completo, ningún
+  `h2`/`h3` cambió (índice igual), caja Dato de grado pasada al texto,
+  `.ley` del art. 1467, `.definicion` de Betti y de Alcalde, cuadro de
+  las cuatro doctrinas, Pregunta clásica, No confundir del error,
+  ejemplos propios (citroneta de don Rigo, cordero del Chalo, bodega
+  de Quilicura, pagaré de la Pili; Mane y don Memo en el texto) y
+  Conexiones.
+- Autores de Vial nombrados: Claro Solar, Velasco, Betti, Cariota
+  Ferrara, León Hurtado (pregunta 1). Hevia y Pietrobon quedaron en la
+  voz del manual.
+- Simulación relativa: tesis de Vial como opinión suya, con remisión a
+  IV.D 4.3, que no se tocó (pregunta 2).
+- Fraude a la ley: una línea en 6, sin atribuirla a Vial como opinión
+  propia (él la expone como la de quienes exigen el ánimo
+  fraudulento). Las pp. 211-214 de Vial quedan **pendientes para
+  IV.F** (pregunta 5).
+- **Verificación:** etiquetas balanceadas, cero guiones largos y
+  guillemets, ningún párrafo sobre 1.200 caracteres, las mismas anclas,
+  62 frases clave del inventario presentes; capturas en Chrome headless
+  revisadas.
