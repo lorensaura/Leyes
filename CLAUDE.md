@@ -57,7 +57,11 @@ seguir.
   falta, decisiones de redacción o estructura que no deben cambiar, y el
   siguiente paso exacto. Se actualiza **in place**, nunca se crea uno
   nuevo por sesión. Si Laura dice **"guarda el estado [de X]"**,
-  actualizar ese archivo antes de cerrar. Si dice **"retoma [X]"**, leerlo
+  actualizar ese archivo antes de cerrar. **Las preguntas de Práctica de
+  una materia son otro trabajo, con su propio archivo:**
+  `docs/preguntas-<materia>.md` (hoy existe `docs/preguntas-acto-juridico.md`).
+  Si Laura dice **"retoma preguntas [X]"** (o "las preguntas de [X]"),
+  se lee ese archivo, no el `estado_` del manual. Si dice **"retoma [X]"**, leerlo
   primero y resumir en pocas líneas dónde quedó antes de seguir.
 
 ## Índice de documentación (`docs/`)
@@ -69,6 +73,7 @@ Clasificado por para qué lo abrirías — no leas ninguno de entrada, solo el q
 **Contenido jurídico (manuales, preguntas, Práctica):**
 - `docs/creacion-de-contenido.md` — punto de entrada: qué modelo vive dónde, qué revisar antes de generar, pendientes de contenido. Ábrelo siempre antes de tocar manuales o preguntas.
 - `docs/manuales/`: cómo se construyen y cómo se ven los manuales (materia nueva o reparación de uno existente). `proceso.md` (reglas de oro, inventario de la fuente, verificación por tramo), `formato.md` (escalera de numeración, enumeraciones, recuadros, hoja de estilos), `guia-editorial.md` (criterio de redacción, recuadros, ejemplos), `auditoria.md` (auditoría de cobertura, sin reescribir), `actualizar-manuales-existentes.md` (poner al día un manual antiguo por tramos), `decisiones.md` (el porqué de cada regla, con fecha), `bienes-reestructuracion.md` (plan de capítulos de Bienes) y `lecciones-acto-juridico.md` (qué se aprendió actualizando AJ: leerlo antes de actualizar Bienes u otro manual). `docs/script_apuntes.md` quedó solo como tabla de equivalencias de secciones antiguas. Además, `docs/manuales/estado_<manual>.md` por cada manual en trabajo activo (ver "Convenciones de trabajo"): léelo primero al retomar ese manual.
+- `docs/preguntas-acto-juridico.md`: estado vivo de las preguntas de Práctica de Acto Jurídico (por capítulo, qué está cargado, qué falta, siguiente paso). Leerlo primero si Laura dice "retoma las preguntas de Acto Jurídico".
 - `docs/practica.md` — cómo funciona el módulo Práctica en la app (los 3 ejes de filtro, el motor de Memorice).
 - `docs/prompt-generacion-contenido-practica.md` — prompt maestro con las reglas mecánicas de redacción y anti-alucinación.
 - `docs/interrogador.md` — Interrogador IA: grounding, costos, modo transversal, estado y pendientes.

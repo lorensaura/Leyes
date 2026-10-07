@@ -1,0 +1,1469 @@
+{
+ "fuente_relevancia": "81 exámenes reales (planilla Preguntas Grado ACA, hojas Civil y Lyon, 2018-2019, e interrogatorios orales de PREGUNTAS ACTO JURIDICO); análisis del 2026-10-07, ver docs/preguntas-acto-juridico.md",
+ "examenes_total": 81,
+ "temas": [
+  {
+   "codigo": "T01",
+   "numero": 1,
+   "nombre": "Concepto de acto jurídico; hechos jurídicos",
+   "ref": "I.1-4",
+   "examenes": 3,
+   "pct": 4,
+   "preguntas": 3,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T01.1",
+     "nombre": "La teoría del acto jurídico en el Código Civil",
+     "ref": "I.1-2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T01.2",
+     "nombre": "Hechos jurídicos: concepto y clasificación",
+     "ref": "I.3",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T01.3",
+     "nombre": "Acto jurídico y negocio jurídico",
+     "ref": "I.3 (No confundir)",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T01.4",
+     "nombre": "Concepto de acto jurídico y sus elementos",
+     "ref": "I.4",
+     "examenes": 2,
+     "preguntas": 2
+    }
+   ]
+  },
+  {
+   "codigo": "T02",
+   "numero": 2,
+   "nombre": "Autonomía de la voluntad y sus límites",
+   "ref": "I.5",
+   "examenes": 9,
+   "pct": 11,
+   "preguntas": 42,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T02.1",
+     "nombre": "Concepto y fundamento de la autonomía de la voluntad",
+     "ref": "I.5.1",
+     "examenes": 2,
+     "preguntas": 9
+    },
+    {
+     "codigo": "T02.2",
+     "nombre": "Consecuencias de la autonomía de la voluntad",
+     "ref": "I.5.2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T02.3",
+     "nombre": "Límites: orden público y buenas costumbres",
+     "ref": "I.5.3",
+     "examenes": 9,
+     "preguntas": 32
+    }
+   ]
+  },
+  {
+   "codigo": "T03",
+   "numero": 3,
+   "nombre": "Elementos esenciales, de la naturaleza y accidentales",
+   "ref": "I.6",
+   "examenes": 10,
+   "pct": 12,
+   "preguntas": 24,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T03.1",
+     "nombre": "Elementos esenciales (generales y especiales)",
+     "ref": "I.6.1",
+     "examenes": 4,
+     "preguntas": 7
+    },
+    {
+     "codigo": "T03.2",
+     "nombre": "Elementos de la naturaleza",
+     "ref": "I.6.2",
+     "examenes": 3,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T03.3",
+     "nombre": "Elementos accidentales",
+     "ref": "I.6.3",
+     "examenes": 2,
+     "preguntas": 3
+    }
+   ]
+  },
+  {
+   "codigo": "T04",
+   "numero": 4,
+   "nombre": "Requisitos de existencia y de validez",
+   "ref": "I.7",
+   "examenes": 21,
+   "pct": 26,
+   "preguntas": 35,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T04.1",
+     "nombre": "Doctrina de los requisitos de existencia y de validez",
+     "ref": "I.7.1",
+     "examenes": 14,
+     "preguntas": 25
+    },
+    {
+     "codigo": "T04.2",
+     "nombre": "Doctrina de los requisitos de eficacia",
+     "ref": "I.7.2",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T05",
+   "numero": 5,
+   "nombre": "Clasificaciones de los actos jurídicos",
+   "ref": "I.8",
+   "examenes": 9,
+   "pct": 11,
+   "preguntas": 11,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T05.01",
+     "nombre": "Unilaterales, bilaterales y plurilaterales (y convención/contrato)",
+     "ref": "I.8.1",
+     "examenes": 2,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T05.02",
+     "nombre": "Patrimoniales y de familia",
+     "ref": "I.8.2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.03",
+     "nombre": "Gratuitos y onerosos (conmutativos y aleatorios)",
+     "ref": "I.8.3",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T05.04",
+     "nombre": "Administración y disposición",
+     "ref": "I.8.4",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.05",
+     "nombre": "Entre vivos y por causa de muerte",
+     "ref": "I.8.5",
+     "examenes": 2,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T05.06",
+     "nombre": "Solemnes y no solemnes",
+     "ref": "I.8.6",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.07",
+     "nombre": "Consensuales y reales",
+     "ref": "I.8.7",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.08",
+     "nombre": "Puros y simples y sujetos a modalidad",
+     "ref": "I.8.8",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.09",
+     "nombre": "Causales y abstractos",
+     "ref": "I.8.9",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.10",
+     "nombre": "Principales y accesorios",
+     "ref": "I.8.10",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T05.11",
+     "nombre": "Constitutivos, declarativos y traslaticios",
+     "ref": "I.8.11",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.12",
+     "nombre": "Instantáneos, de ejecución diferida y de tracto sucesivo",
+     "ref": "I.8.12",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T05.13",
+     "nombre": "Típicos y atípicos",
+     "ref": "I.8.13",
+     "examenes": 3,
+     "preguntas": 5
+    }
+   ]
+  },
+  {
+   "codigo": "T06",
+   "numero": 6,
+   "nombre": "Voluntad: requisitos, manifestación y silencio",
+   "ref": "II.A.1-2",
+   "examenes": 4,
+   "pct": 5,
+   "preguntas": 6,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T06.1",
+     "nombre": "Conceptos generales y seriedad de la voluntad",
+     "ref": "II.A.1-2.1",
+     "examenes": 0,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T06.2",
+     "nombre": "Manifestación expresa y tácita",
+     "ref": "II.A.2.2 (i)-(ii)",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T06.3",
+     "nombre": "El silencio como manifestación de voluntad",
+     "ref": "II.A.2.2 (iii)",
+     "examenes": 1,
+     "preguntas": 1
+    }
+   ]
+  },
+  {
+   "codigo": "T07",
+   "numero": 7,
+   "nombre": "Formación del consentimiento (oferta, aceptación, casos especiales)",
+   "ref": "II.A.3",
+   "examenes": 6,
+   "pct": 7,
+   "preguntas": 13,
+   "otras_materias": "5",
+   "subtemas": [
+    {
+     "codigo": "T07.1",
+     "nombre": "Voluntad en los actos unilaterales y concepto de consentimiento",
+     "ref": "II.A.3.1-3.2",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T07.2",
+     "nombre": "La oferta (requisitos, retractación, caducidad)",
+     "ref": "II.A.3.2 (i)",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T07.3",
+     "nombre": "La aceptación (requisitos, plazo)",
+     "ref": "II.A.3.2 (ii)",
+     "examenes": 2,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T07.4",
+     "nombre": "Momento y lugar en que se forma el consentimiento",
+     "ref": "II.A.3.2 (iii)-(iv)",
+     "examenes": 2,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T07.5",
+     "nombre": "Negociaciones preliminares",
+     "ref": "II.A.3.2 (v)",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T07.6",
+     "nombre": "Casos especiales: licitación, adhesión, autocontrato y electrónicos",
+     "ref": "II.A.3.3",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T08",
+   "numero": 8,
+   "nombre": "Vicios del consentimiento en general",
+   "ref": "II.A.4",
+   "examenes": 20,
+   "pct": 25,
+   "preguntas": 25,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T08.1",
+     "nombre": "Vicios del consentimiento: enumeración y concepto",
+     "ref": "II.A.4",
+     "examenes": 20,
+     "preguntas": 25
+    }
+   ]
+  },
+  {
+   "codigo": "T09",
+   "numero": 9,
+   "nombre": "Error",
+   "ref": "II.A.5",
+   "examenes": 36,
+   "pct": 44,
+   "preguntas": 242,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T09.1",
+     "nombre": "Concepto de error (ignorancia, duda, previsión)",
+     "ref": "II.A.5.1",
+     "examenes": 19,
+     "preguntas": 52
+    },
+    {
+     "codigo": "T09.2",
+     "nombre": "Error de derecho",
+     "ref": "II.A.5.2 (i)",
+     "examenes": 7,
+     "preguntas": 15
+    },
+    {
+     "codigo": "T09.3",
+     "nombre": "Error de hecho y sus clases",
+     "ref": "II.A.5.2 (ii)",
+     "examenes": 14,
+     "preguntas": 20
+    },
+    {
+     "codigo": "T09.4",
+     "nombre": "Error esencial u obstáculo",
+     "ref": "II.A.5.3 (i)",
+     "examenes": 21,
+     "preguntas": 56
+    },
+    {
+     "codigo": "T09.5",
+     "nombre": "Error sustancial",
+     "ref": "II.A.5.3 (ii)",
+     "examenes": 20,
+     "preguntas": 49
+    },
+    {
+     "codigo": "T09.6",
+     "nombre": "Error sobre calidades accidentales",
+     "ref": "II.A.5.3 (iii)",
+     "examenes": 18,
+     "preguntas": 24
+    },
+    {
+     "codigo": "T09.7",
+     "nombre": "Error en la persona",
+     "ref": "II.A.5.3 (iv)",
+     "examenes": 12,
+     "preguntas": 48
+    },
+    {
+     "codigo": "T09.8",
+     "nombre": "Error en actos bilaterales y unilaterales",
+     "ref": "II.A.5.4-5.5",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T09.9",
+     "nombre": "Error común",
+     "ref": "II.A.5.6",
+     "examenes": 2,
+     "preguntas": 5
+    }
+   ]
+  },
+  {
+   "codigo": "T10",
+   "numero": 10,
+   "nombre": "Dolo",
+   "ref": "II.A.6",
+   "examenes": 22,
+   "pct": 27,
+   "preguntas": 84,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T10.1",
+     "nombre": "Concepto de dolo, sus ámbitos y elementos",
+     "ref": "II.A.6.1",
+     "examenes": 7,
+     "preguntas": 15
+    },
+    {
+     "codigo": "T10.2",
+     "nombre": "Clases de dolo (bueno/malo, positivo/negativo, principal/incidental)",
+     "ref": "II.A.6.2",
+     "examenes": 5,
+     "preguntas": 8
+    },
+    {
+     "codigo": "T10.3",
+     "nombre": "Cuándo vicia el consentimiento (bilaterales y unilaterales)",
+     "ref": "II.A.6.3",
+     "examenes": 10,
+     "preguntas": 31
+    },
+    {
+     "codigo": "T10.4",
+     "nombre": "Prueba del dolo",
+     "ref": "II.A.6.4",
+     "examenes": 0,
+     "preguntas": 3
+    },
+    {
+     "codigo": "T10.5",
+     "nombre": "Condonación o renuncia del dolo",
+     "ref": "II.A.6.5",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T10.6",
+     "nombre": "Sanción del dolo y acción de dolo",
+     "ref": "II.A.6.6-6.7",
+     "examenes": 3,
+     "preguntas": 6
+    }
+   ]
+  },
+  {
+   "codigo": "T11",
+   "numero": 11,
+   "nombre": "Fuerza",
+   "ref": "II.A.7",
+   "examenes": 17,
+   "pct": 21,
+   "preguntas": 68,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T11.1",
+     "nombre": "Concepto y clases de fuerza (física y moral)",
+     "ref": "II.A.7.1-7.2",
+     "examenes": 5,
+     "preguntas": 9
+    },
+    {
+     "codigo": "T11.2",
+     "nombre": "Requisitos: injusta, grave y determinante",
+     "ref": "II.A.7.3",
+     "examenes": 8,
+     "preguntas": 37
+    },
+    {
+     "codigo": "T11.3",
+     "nombre": "Persona que ejerce la fuerza",
+     "ref": "II.A.7.4",
+     "examenes": 2,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T11.4",
+     "nombre": "Prueba, efectos y prescripción de la acción",
+     "ref": "II.A.7.5-7.7",
+     "examenes": 1,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T11.5",
+     "nombre": "Temor reverencial",
+     "ref": "II.A.7.8",
+     "examenes": 0,
+     "preguntas": 2
+    }
+   ]
+  },
+  {
+   "codigo": "T13",
+   "numero": 12,
+   "nombre": "Capacidad e incapacidades",
+   "ref": "II.B",
+   "examenes": 9,
+   "pct": 11,
+   "preguntas": 20,
+   "otras_materias": "43 (sobre todo en Personas)",
+   "subtemas": [
+    {
+     "codigo": "T13.1",
+     "nombre": "Concepto y clases de capacidad (goce y ejercicio)",
+     "ref": "II.B.1-2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T13.2",
+     "nombre": "Incapacidad absoluta",
+     "ref": "II.B.3.1",
+     "examenes": 3,
+     "preguntas": 5
+    },
+    {
+     "codigo": "T13.3",
+     "nombre": "Incapacidad relativa",
+     "ref": "II.B.3.2",
+     "examenes": 2,
+     "preguntas": 5
+    },
+    {
+     "codigo": "T13.4",
+     "nombre": "Incapacidades particulares o especiales",
+     "ref": "II.B.3.3",
+     "examenes": 1,
+     "preguntas": 2
+    }
+   ]
+  },
+  {
+   "codigo": "T14",
+   "numero": 13,
+   "nombre": "Objeto: concepto y requisitos",
+   "ref": "II.C.1-3",
+   "examenes": 28,
+   "pct": 35,
+   "preguntas": 128,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T14.1",
+     "nombre": "Concepto de objeto",
+     "ref": "II.C.1",
+     "examenes": 15,
+     "preguntas": 41
+    },
+    {
+     "codigo": "T14.2",
+     "nombre": "Objeto que recae sobre una cosa: real (existente o futura)",
+     "ref": "II.C.2.1",
+     "examenes": 5,
+     "preguntas": 11
+    },
+    {
+     "codigo": "T14.3",
+     "nombre": "Cosa comerciable",
+     "ref": "II.C.2.2",
+     "examenes": 6,
+     "preguntas": 23
+    },
+    {
+     "codigo": "T14.4",
+     "nombre": "Cosa determinada o determinable",
+     "ref": "II.C.2.3",
+     "examenes": 3,
+     "preguntas": 8
+    },
+    {
+     "codigo": "T14.5",
+     "nombre": "Objeto que recae sobre un hecho: determinado, física y moralmente posible",
+     "ref": "II.C.3",
+     "examenes": 10,
+     "preguntas": 23
+    }
+   ]
+  },
+  {
+   "codigo": "T15",
+   "numero": 14,
+   "nombre": "Objeto ilícito (1462 a 1466)",
+   "ref": "II.C.4",
+   "examenes": 24,
+   "pct": 30,
+   "preguntas": 114,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T15.1",
+     "nombre": "Concepto de objeto ilícito y casos en general",
+     "ref": "II.C.4",
+     "examenes": 14,
+     "preguntas": 21
+    },
+    {
+     "codigo": "T15.2",
+     "nombre": "Actos contrarios al derecho público chileno",
+     "ref": "II.C.4.1",
+     "examenes": 3,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T15.3",
+     "nombre": "Pactos sobre sucesiones futuras",
+     "ref": "II.C.4.2",
+     "examenes": 13,
+     "preguntas": 42
+    },
+    {
+     "codigo": "T15.4",
+     "nombre": "Enajenación del art. 1464 (cosas incomerciables, intransferibles, embargadas y litigiosas)",
+     "ref": "II.C.4.3",
+     "examenes": 11,
+     "preguntas": 30
+    },
+    {
+     "codigo": "T15.5",
+     "nombre": "Condonación del dolo futuro",
+     "ref": "II.C.4.4",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T15.6",
+     "nombre": "Juego de azar, libros prohibidos y actos prohibidos por la ley",
+     "ref": "II.C.4.5-4.7",
+     "examenes": 1,
+     "preguntas": 4
+    }
+   ]
+  },
+  {
+   "codigo": "T16",
+   "numero": 15,
+   "nombre": "Causa",
+   "ref": "II.D",
+   "examenes": 31,
+   "pct": 38,
+   "preguntas": 107,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T16.1",
+     "nombre": "Generalidades: causa eficiente, final y ocasional",
+     "ref": "II.D.1-2",
+     "examenes": 10,
+     "preguntas": 17
+    },
+    {
+     "codigo": "T16.2",
+     "nombre": "Doctrinas de la causa (clásica, italiana, móvil, anticausalista)",
+     "ref": "II.D.3",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T16.3",
+     "nombre": "La causa en el Código: ¿acto u obligación?, criterio objetivo o subjetivo, doctrina dual y unitaria",
+     "ref": "II.D.4",
+     "examenes": 11,
+     "preguntas": 36
+    },
+    {
+     "codigo": "T16.4",
+     "nombre": "Causa real",
+     "ref": "II.D.5",
+     "examenes": 1,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T16.5",
+     "nombre": "Licitud de la causa",
+     "ref": "II.D.6",
+     "examenes": 11,
+     "preguntas": 30
+    },
+    {
+     "codigo": "T16.6",
+     "nombre": "Actos causales y abstractos",
+     "ref": "II.D.7",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T16.7",
+     "nombre": "Relación de la causa con el error, la fuerza y el dolo",
+     "ref": "II.D.8",
+     "examenes": 7,
+     "preguntas": 8
+    }
+   ]
+  },
+  {
+   "codigo": "T17",
+   "numero": 16,
+   "nombre": "Formalidades y solemnidades",
+   "ref": "II.E",
+   "examenes": 3,
+   "pct": 4,
+   "preguntas": 6,
+   "otras_materias": "23 (compraventa solemne, en Fuentes)",
+   "subtemas": [
+    {
+     "codigo": "T17.1",
+     "nombre": "Concepto y clases de formalidades",
+     "ref": "II.E.1-2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T17.2",
+     "nombre": "Solemnidades (de existencia y de validez)",
+     "ref": "II.E.2.1",
+     "examenes": 3,
+     "preguntas": 6
+    },
+    {
+     "codigo": "T17.3",
+     "nombre": "Formalidades habilitantes",
+     "ref": "II.E.2.2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T17.4",
+     "nombre": "Formalidades de prueba y medidas de publicidad",
+     "ref": "II.E.2.3-2.4",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T18",
+   "numero": 17,
+   "nombre": "Efectos del acto: partes, terceros y efecto relativo",
+   "ref": "III",
+   "examenes": 0,
+   "pct": 0,
+   "preguntas": 0,
+   "otras_materias": "5 (efecto relativo, en Fuentes)",
+   "subtemas": [
+    {
+     "codigo": "T18.1",
+     "nombre": "Generalidades y efectos esenciales, naturales y accidentales",
+     "ref": "III.1",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T18.2",
+     "nombre": "Partes y terceros (absolutos y relativos)",
+     "ref": "III.2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T18.3",
+     "nombre": "Efecto relativo y sus excepciones",
+     "ref": "III.3.1-3.2",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T18.4",
+     "nombre": "Efecto absoluto o erga omnes",
+     "ref": "III.3.3",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T19",
+   "numero": 18,
+   "nombre": "Ineficacia en general",
+   "ref": "IV, introducción",
+   "examenes": 8,
+   "pct": 10,
+   "preguntas": 13,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T19.1",
+     "nombre": "Ineficacia: concepto y clasificación (invalidez e ineficacia en sentido estricto)",
+     "ref": "IV (introducción)",
+     "examenes": 8,
+     "preguntas": 13
+    }
+   ]
+  },
+  {
+   "codigo": "T20",
+   "numero": 19,
+   "nombre": "Inexistencia jurídica",
+   "ref": "IV.A",
+   "examenes": 15,
+   "pct": 19,
+   "preguntas": 31,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T20.1",
+     "nombre": "Concepto, características y origen de la inexistencia",
+     "ref": "IV.A.1-2",
+     "examenes": 1,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T20.2",
+     "nombre": "Diferencias entre inexistencia y nulidad",
+     "ref": "IV.A.3",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T20.3",
+     "nombre": "¿Distingue el Código la inexistencia? (doctrinas, historia y jurisprudencia)",
+     "ref": "IV.A.4",
+     "examenes": 6,
+     "preguntas": 13
+    }
+   ]
+  },
+  {
+   "codigo": "T21",
+   "numero": 20,
+   "nombre": "Nulidad: concepto, clases, causales, titulares y saneamiento",
+   "ref": "IV.B.1-3",
+   "examenes": 39,
+   "pct": 48,
+   "preguntas": 169,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T21.01",
+     "nombre": "Reglas, concepto general y especies de nulidad",
+     "ref": "IV.B.1.1-3",
+     "examenes": 15,
+     "preguntas": 35
+    },
+    {
+     "codigo": "T21.02",
+     "nombre": "Terminología y nulidad como regla general",
+     "ref": "IV.B.1.4-5",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T21.03",
+     "nombre": "Diferencias entre nulidad absoluta y relativa",
+     "ref": "IV.B.1.6",
+     "examenes": 5,
+     "preguntas": 10
+    },
+    {
+     "codigo": "T21.04",
+     "nombre": "Principios comunes a ambas nulidades",
+     "ref": "IV.B.1.7",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T21.05",
+     "nombre": "Nulidad total y parcial; consecuencial y refleja",
+     "ref": "IV.B.1.8-9",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T21.06",
+     "nombre": "Nulidad absoluta: concepto, causales y fundamento",
+     "ref": "IV.B.2.1-3",
+     "examenes": 10,
+     "preguntas": 13
+    },
+    {
+     "codigo": "T21.07",
+     "nombre": "Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público)",
+     "ref": "IV.B.2.4",
+     "examenes": 14,
+     "preguntas": 36
+    },
+    {
+     "codigo": "T21.08",
+     "nombre": "Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho",
+     "ref": "IV.B.2.5-7",
+     "examenes": 9,
+     "preguntas": 15
+    },
+    {
+     "codigo": "T21.09",
+     "nombre": "Nulidad relativa: definición, fundamento, causales y características",
+     "ref": "IV.B.3.1-3",
+     "examenes": 11,
+     "preguntas": 19
+    },
+    {
+     "codigo": "T21.10",
+     "nombre": "Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede)",
+     "ref": "IV.B.3.4",
+     "examenes": 11,
+     "preguntas": 33
+    },
+    {
+     "codigo": "T21.11",
+     "nombre": "Nulidad relativa: saneamiento por el transcurso del tiempo",
+     "ref": "IV.B.3.5",
+     "examenes": 15,
+     "preguntas": 42
+    }
+   ]
+  },
+  {
+   "codigo": "T22",
+   "numero": 21,
+   "nombre": "Ratificación o confirmación",
+   "ref": "IV.B.3.6",
+   "examenes": 3,
+   "pct": 4,
+   "preguntas": 3,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T22.1",
+     "nombre": "Ratificación o confirmación: concepto, clases, características y requisitos",
+     "ref": "IV.B.3.6",
+     "examenes": 3,
+     "preguntas": 3
+    }
+   ]
+  },
+  {
+   "codigo": "T23",
+   "numero": 22,
+   "nombre": "Efectos de la nulidad, restituciones, reivindicación y conversión",
+   "ref": "IV.B.4",
+   "examenes": 8,
+   "pct": 10,
+   "preguntas": 13,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T23.1",
+     "nombre": "Efectos de la nulidad entre las partes (restituciones mutuas)",
+     "ref": "IV.B.4.1-2",
+     "examenes": 1,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T23.2",
+     "nombre": "Efectos respecto de terceros y acción reivindicatoria",
+     "ref": "IV.B.4.3-4",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T23.3",
+     "nombre": "La conversión del acto nulo",
+     "ref": "IV.B.4.5",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T12",
+   "numero": 23,
+   "nombre": "Lesión",
+   "ref": "IV.C",
+   "examenes": 6,
+   "pct": 7,
+   "preguntas": 26,
+   "otras_materias": "5 (lesión enorme en compraventa y partición)",
+   "subtemas": [
+    {
+     "codigo": "T12.1",
+     "nombre": "Concepto de lesión",
+     "ref": "IV.C.1",
+     "examenes": 2,
+     "preguntas": 5
+    },
+    {
+     "codigo": "T12.2",
+     "nombre": "¿Es la lesión un vicio del consentimiento?",
+     "ref": "IV.C.2",
+     "examenes": 3,
+     "preguntas": 6
+    },
+    {
+     "codigo": "T12.3",
+     "nombre": "Casos de lesión en el Código Civil",
+     "ref": "IV.C.3",
+     "examenes": 2,
+     "preguntas": 12
+    },
+    {
+     "codigo": "T12.4",
+     "nombre": "Sanción de la lesión",
+     "ref": "IV.C.4",
+     "examenes": 1,
+     "preguntas": 2
+    }
+   ]
+  },
+  {
+   "codigo": "T24",
+   "numero": 24,
+   "nombre": "Simulación",
+   "ref": "IV.D",
+   "examenes": 8,
+   "pct": 10,
+   "preguntas": 45,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T24.1",
+     "nombre": "Concepto de simulación y su reconocimiento en Chile",
+     "ref": "IV.D.1-2",
+     "examenes": 6,
+     "preguntas": 8
+    },
+    {
+     "codigo": "T24.2",
+     "nombre": "Simulación lícita e ilícita y sus requisitos",
+     "ref": "IV.D.3-4.1",
+     "examenes": 2,
+     "preguntas": 8
+    },
+    {
+     "codigo": "T24.3",
+     "nombre": "Clases: absoluta y relativa (e interposición de persona)",
+     "ref": "IV.D.4.2",
+     "examenes": 2,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T24.4",
+     "nombre": "Sanción, prueba y acción de simulación",
+     "ref": "IV.D.4.3-4.5",
+     "examenes": 6,
+     "preguntas": 21
+    }
+   ]
+  },
+  {
+   "codigo": "T25",
+   "numero": 25,
+   "nombre": "Inoponibilidad",
+   "ref": "IV.E",
+   "examenes": 3,
+   "pct": 4,
+   "preguntas": 10,
+   "otras_materias": "13 (acción pauliana, en Obligaciones)",
+   "subtemas": [
+    {
+     "codigo": "T25.1",
+     "nombre": "Concepto de inoponibilidad",
+     "ref": "IV.E.1",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T25.2",
+     "nombre": "Inoponibilidades de forma y de fondo (incluida la acción pauliana)",
+     "ref": "IV.E.2",
+     "examenes": 2,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T25.3",
+     "nombre": "Inoponibilidad derivada de la nulidad o resolución",
+     "ref": "IV.E.3",
+     "examenes": 1,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T25.4",
+     "nombre": "Cómo se hace valer y diferencias con la nulidad",
+     "ref": "IV.E.4-5",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T26",
+   "numero": 26,
+   "nombre": "Fraude a la ley",
+   "ref": "IV.F",
+   "examenes": 1,
+   "pct": 1,
+   "preguntas": 1,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T26.1",
+     "nombre": "Fraude a la ley: concepto, requisitos, figuras afines y sanción",
+     "ref": "IV.F",
+     "examenes": 1,
+     "preguntas": 1
+    }
+   ]
+  },
+  {
+   "codigo": "T27",
+   "numero": 27,
+   "nombre": "Otras causales de ineficacia (resolución, resciliación, revocación, caducidad...)",
+   "ref": "IV.G",
+   "examenes": 4,
+   "pct": 5,
+   "preguntas": 13,
+   "otras_materias": "",
+   "subtemas": [
+    {
+     "codigo": "T27.1",
+     "nombre": "Resolución",
+     "ref": "IV.G.2",
+     "examenes": 2,
+     "preguntas": 8
+    },
+    {
+     "codigo": "T27.2",
+     "nombre": "Resciliación",
+     "ref": "IV.G.3",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T27.3",
+     "nombre": "Revocación y desistimiento unilateral",
+     "ref": "IV.G.4-5",
+     "examenes": 2,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T27.4",
+     "nombre": "Suspensión, caducidad, terminación, renuncia y muerte",
+     "ref": "IV.G.1, 6-9",
+     "examenes": 1,
+     "preguntas": 3
+    }
+   ]
+  },
+  {
+   "codigo": "T28",
+   "numero": 28,
+   "nombre": "Representación (y estipulación por otro, promesa de hecho ajeno)",
+   "ref": "V",
+   "examenes": 8,
+   "pct": 10,
+   "preguntas": 23,
+   "otras_materias": "174 (sobre todo mandato, en Fuentes y Sucesorio)",
+   "subtemas": [
+    {
+     "codigo": "T28.1",
+     "nombre": "Concepto, utilidad y clases de representación",
+     "ref": "V.1-3.2",
+     "examenes": 4,
+     "preguntas": 12
+    },
+    {
+     "codigo": "T28.2",
+     "nombre": "Mandato y representación voluntaria",
+     "ref": "V.3.3",
+     "examenes": 3,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T28.3",
+     "nombre": "Naturaleza jurídica de la representación",
+     "ref": "V.4",
+     "examenes": 1,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T28.4",
+     "nombre": "Circunstancias personales: capacidad, vicios y buena fe",
+     "ref": "V.5",
+     "examenes": 1,
+     "preguntas": 1
+    },
+    {
+     "codigo": "T28.5",
+     "nombre": "Requisitos y efectos de la representación (contemplatio domini, poder)",
+     "ref": "V.6-7",
+     "examenes": 1,
+     "preguntas": 2
+    },
+    {
+     "codigo": "T28.6",
+     "nombre": "Actos sin poder o con extralimitación y su ratificación",
+     "ref": "V.8-9",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T28.7",
+     "nombre": "Estipulación para otro y promesa de hecho ajeno",
+     "ref": "V.10",
+     "examenes": 0,
+     "preguntas": 0
+    }
+   ]
+  },
+  {
+   "codigo": "T29",
+   "numero": 29,
+   "nombre": "Modalidades: condición, plazo y modo",
+   "ref": "VI",
+   "examenes": 6,
+   "pct": 7,
+   "preguntas": 8,
+   "otras_materias": "61 (sobre todo en Obligaciones)",
+   "subtemas": [
+    {
+     "codigo": "T29.1",
+     "nombre": "Condición: concepto y clasificaciones",
+     "ref": "VI.A.1-2",
+     "examenes": 3,
+     "preguntas": 4
+    },
+    {
+     "codigo": "T29.2",
+     "nombre": "Estados y efectos de la condición (suspensiva y resolutoria)",
+     "ref": "VI.A.3",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T29.3",
+     "nombre": "Plazo: concepto, diferencias con la condición, clases y efectos",
+     "ref": "VI.B",
+     "examenes": 0,
+     "preguntas": 0
+    },
+    {
+     "codigo": "T29.4",
+     "nombre": "Modo",
+     "ref": "VI.C",
+     "examenes": 3,
+     "preguntas": 4
+    }
+   ]
+  }
+ ],
+ "memorice": {
+  "cc-art-1444": "T03.1",
+  "cc-art-1445": "T04.1",
+  "cc-art-1446": "T13.1",
+  "cc-art-1447": "T13.2",
+  "cc-art-1451": "T08.1",
+  "cc-art-1452": "T09.2",
+  "cc-art-1453": "T09.4",
+  "cc-art-1454": "T09.5",
+  "cc-art-1455": "T09.7",
+  "cc-art-1456": "T11.2",
+  "cc-art-1457": "T11.3",
+  "cc-art-1458": "T10.3",
+  "cc-art-1459": "T10.4",
+  "cc-art-1460": "T14.1",
+  "cc-art-1461": "T14.2",
+  "cc-art-1462": "T15.2",
+  "cc-art-1463": "T15.3",
+  "cc-art-1464": "T15.4",
+  "cc-art-1465": "T15.5",
+  "cc-art-1466": "T15.6",
+  "cc-art-1467": "T16.3",
+  "cc-art-1468": "T23.1",
+  "cc-art-1681": "T21.01",
+  "cc-art-1682": "T21.06",
+  "cc-art-1683": "T21.07",
+  "cc-art-1684": "T21.10",
+  "cc-art-1685": "T21.10",
+  "cc-art-1687": "T23.1",
+  "cc-art-1689": "T23.2",
+  "cc-art-1690": "T21.04",
+  "cc-art-1691": "T21.11",
+  "cc-art-1693": "T22.1",
+  "cc-art-1694": "T22.1",
+  "cc-art-1695": "T22.1",
+  "cc-art-1696": "T22.1",
+  "cc-art-1697": "T22.1",
+  "cc-art-1707": "T24.4",
+  "cc-art-1448": "T28.5",
+  "cc-art-43": "T28.1",
+  "cc-art-2116": "T28.2",
+  "aj-def-001": "T01.4",
+  "aj-def-002": "T07.1",
+  "aj-def-003": "T10.1",
+  "aj-def-004": "T11.1",
+  "aj-def-005": "T13.1",
+  "aj-def-006": "T15.1",
+  "aj-def-007": "T21.01"
+ },
+ "no_confundir": [
+  {
+   "titulo": "Negocio jurídico vs. acto jurídico",
+   "subtema": "T01.3"
+  },
+  {
+   "titulo": "Unilateral/bilateral del acto vs. del contrato",
+   "subtema": "T05.01"
+  },
+  {
+   "titulo": "\"El que calla otorga\" no vale en derecho",
+   "subtema": "T06.3"
+  },
+  {
+   "titulo": "Oferta a persona indeterminada y oferta en anuncios impresos",
+   "subtema": "T07.2"
+  },
+  {
+   "titulo": "Retractarse a tiempo no sale gratis",
+   "subtema": "T07.2"
+  },
+  {
+   "titulo": "El llamado a licitación y la oferta a persona indeterminada",
+   "subtema": "T07.6"
+  },
+  {
+   "titulo": "Residencia, no ubicación del aparato",
+   "subtema": "T07.4"
+  },
+  {
+   "titulo": "Error, ignorancia y duda",
+   "subtema": "T09.1"
+  },
+  {
+   "titulo": "Repetir no es anular",
+   "subtema": "T09.2"
+  },
+  {
+   "titulo": "Calidad esencial y calidad accidental elevada a esencial",
+   "subtema": "T09.6"
+  },
+  {
+   "titulo": "El dolo y la fuerza de un tercero",
+   "subtema": "T11.3"
+  },
+  {
+   "titulo": "La interdicción del demente y la del disipador",
+   "subtema": "T13.3"
+  },
+  {
+   "titulo": "Especie litigiosa y derecho litigioso",
+   "subtema": "T15.4"
+  },
+  {
+   "titulo": "Error-motivo y error sobre los motivos",
+   "subtema": "T16.7"
+  },
+  {
+   "titulo": "Solemnidad y formalidad de prueba",
+   "subtema": "T17.4"
+  },
+  {
+   "titulo": "Tercero absoluto y tercero relativo",
+   "subtema": "T18.2"
+  },
+  {
+   "titulo": "¿Es lo mismo la nulidad de pleno derecho que la nulidad del Código Civil?",
+   "subtema": "T20.3"
+  },
+  {
+   "titulo": "¿La inexistencia es imprescriptible e insaneable?",
+   "subtema": "T20.3"
+  },
+  {
+   "titulo": "¿Arrastra la nulidad de la escritura a todo lo que contiene?",
+   "subtema": "T21.05"
+  },
+  {
+   "titulo": "¿Ratificar es lo mismo que confirmar?",
+   "subtema": "T22.1"
+  },
+  {
+   "titulo": "¿El art. 1444 es un caso de conversión?",
+   "subtema": "T23.3"
+  },
+  {
+   "titulo": "¿Es esto conversión? (COVIELLO)",
+   "subtema": "T23.3"
+  },
+  {
+   "titulo": "Representar no es de la esencia del mandato",
+   "subtema": "T28.2"
+  }
+ ],
+ "items": {
+  "aj-aplic-001": "T03.1",
+  "aj-det-001": "T01.3",
+  "aj-just-001": "T01.2",
+  "aj-mc-001": "T05.10",
+  "aj-aplic-002": "T05.04",
+  "aj-aplic-003": "T03.2",
+  "aj-det-002": "T05.01",
+  "aj-det-003": "T04.1",
+  "aj-just-002": "T04.2",
+  "aj-just-003": "T05.01",
+  "aj-mc-002": "T05.01",
+  "aj-mc-003": "T05.03",
+  "aj-fc-001": "T03.1",
+  "aj-fc-002": "T03.1",
+  "aj-fc-003": "T02.1",
+  "aj-fc-004": "T05.01",
+  "aj-fc-005": "T05.07",
+  "aj-fc-006": "T01.4",
+  "aj-fc-007": "T01.2",
+  "aj-fc-008": "T01.4",
+  "aj-fc-009": "T01.4",
+  "aj-fc-010": "T01.4",
+  "aj-fc-011": "T02.2",
+  "aj-fc-012": "T02.3",
+  "aj-fc-013": "T02.3",
+  "aj-fc-014": "T03.2",
+  "aj-fc-015": "T03.3",
+  "aj-fc-016": "T04.1",
+  "aj-fc-017": "T05.01",
+  "aj-fc-018": "T05.01",
+  "aj-fc-019": "T05.02",
+  "aj-fc-020": "T05.09",
+  "aj-fc-021": "T05.11",
+  "aj-fc-022": "T05.12",
+  "aj-alt-001": "T01.1",
+  "aj-alt-002": "T01.2",
+  "aj-alt-003": "T01.4",
+  "aj-alt-004": "T02.2",
+  "aj-alt-005": "T02.3",
+  "aj-alt-006": "T02.3",
+  "aj-alt-007": "T03.3",
+  "aj-alt-008": "T05.06",
+  "aj-alt-009": "T05.01",
+  "aj-alt-010": "T05.01",
+  "aj-alt-011": "T05.10",
+  "aj-alt-012": "T05.13"
+ }
+}

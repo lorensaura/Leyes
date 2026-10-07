@@ -73,6 +73,13 @@ reglas, las orquesta**. Léelo antes de generar el primer lote de la sesión.
   este: pedile a Laura el artículo y el texto verbatim, y trabajá solo a
   partir de lo que ella entregue.
 
+- **Memorice de definiciones (desde 2026-10-07, pedido de Laura):**
+  distinto de los artículos. El texto se copia literal de las
+  definiciones entre comillas del manual (párrafos `p.definicion`), con
+  `articulo = ''`, id `<materia>-def-NNN` y la ubicación en el manual en
+  `fuente`. Laura elige cuáles entran (el informe del lote le lista todas
+  con su ubicación). Detalle en `docs/practica.md`, sección Memorice.
+
 ## Verificación antes de correr nada
 
 Antes de dar un SQL por listo, corré este chequeo (ya armado como patrón,
