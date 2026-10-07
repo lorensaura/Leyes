@@ -1269,7 +1269,9 @@ cercana (tabla exhaustiva por punto), no después.
 
 - Fuentes: Boetsch pp. 93-103, anexo `Causa_ DOMINGUEZ y BOETSCH.pdf`,
   Memorice y, aportado por Laura, **VIAL pp. 189-214** (26 pantallazos
-  en el chat del 2026-10-07, no guardados en `Apuntes/`). Todo con
+  en el chat del 2026-10-07; de ellos, solo las pp. 211-214, de fraude
+  a la ley, se guardaron en `Apuntes/CIVIL/Acto Jurídico/`
+  `VIAL_fraude_a_la_ley_p211.png` a `p214.png`). Todo con
   paráfrasis cercana: reescrito completo, sin cambiar ningún `h2`/`h3`.
   Laura aceptó las 5 recomendaciones del informe.
 - Agregado de Vial: móvil ilícito en gratuitos (basta el del autor) y
@@ -1361,9 +1363,10 @@ cercana (tabla exhaustiva por punto), no después.
    **Pendiente explícito nacido de 5.5:** incorporar a IV.F las pp.
    211-214 de VIAL (elementos material y subjetivo, cita de Vergara
    Baeza, ejemplo del que enajena antes de la interdicción por
-   disipación, Vial entre los que sostienen la nulidad absoluta); los
-   pantallazos están solo en el chat del 2026-10-07, pedírselos a
-   Laura si hacen falta. Pasada chica, después de 5.6.
+   disipación, Vial entre los que sostienen la nulidad absoluta); esas
+   cuatro páginas ya están guardadas en `Apuntes/CIVIL/Acto Jurídico/`
+   como `VIAL_fraude_a_la_ley_p211.png` a `..._p214.png` (copiadas el
+   2026-10-07, a pedido de Laura). Pasada chica, después de 5.6.
 5. Después, **el manual de Bienes** (`05_Bienes_Manual.html`) con el
    mismo método. Leer primero `docs/manuales/bienes-reestructuracion.md`.
 
