@@ -73,10 +73,14 @@ estado y trae el comando de Chrome headless que funciona.
 
 ## Decisiones tomadas con Laura (2026-10-07)
 
-1. **Ejemplos: pasada final común.** Se dejan los ejemplos genéricos de
-   Boetsch por ahora; la redacción de ejemplos propios se hace al final,
-   en una pasada aparte para todos los manuales. No se abre una tercera
-   vuelta por esto en Bienes.
+1. **Ejemplos (precisado por Laura el 2026-10-08, no cambiar):** lo
+   que se deja para la pasada final común de todos los manuales son
+   solo los **ejemplos genéricos que van en el texto** (los de Boetsch
+   tipo "las losas de un pavimento"). Las **cajas de Ejemplo se
+   reescriben como propias en el mismo tramo**, y además **siempre se
+   crean ejemplos nuevos** donde ayuden (la respuesta de Laura a "¿agrego
+   ejemplos?" es siempre sí): quiere el manual lleno de ejemplos
+   propios. Reglas en `guia-editorial.md` 5.
 2. **Numeración: reformatear al inicio**, antes del tramo 1, en vez de
    por tramo o de dejarla como está.
 3. **Hoja de estilos: igualar a la de AJ al inicio**, antes del tramo 1
@@ -434,10 +438,21 @@ Lo que se hizo:
 - Recuadro **No confundir** nuevo al cierre de 4.3: "¿Inmueble por
   adherencia o por destinación?" (inmovilización material versus
   inmovilización ficticia).
-- El Ejemplo de 3.2 ("Un mueble por anticipación") se dejó tal cual
-  por la decisión 1 (pasada final de ejemplos para todos los manuales).
-- **Pendiente sin resolver:** arts. 135 y 138 del COT (tabla del punto
-  2) siguen sin verificar, no hay COT en `Apuntes/CODIGOS`.
+- **Ejemplos (segunda pasada, 2026-10-08, tras la corrección de
+  Laura):** la caja de Boetsch "Un mueble por anticipación" se
+  reemplazó por una propia (la uva de don Hernán, arts. 571 y 1801
+  inc. 3º) y se agregaron cajas nuevas: "Ocho millones por WhatsApp"
+  (punto 2, art. 1801), "La casa de la tía Marta" (3.2, arts. 574 y
+  1121), "El limonero y el bonsái" (4.2), "El tractor sí, el caballo de
+  carreras no" (4.3, art. 570) y "Un mural en el living" (5, arts. 580
+  y 581); más dos ejemplos breves en cursiva en el texto (semoviente /
+  cosa inanimada en 3.1; el tractor en el taller en 4.3 b), art. 573).
+  También se agregaron 4 cajas al tramo 1a, que no tenía ninguna: "Una
+  parcela, cuatro bienes" (I.2), "Lo corporal y lo incorporal en una
+  misma mochila" (II.A.1), "El derecho real de quincho" (II.A.4.1) y
+  "La bicicleta vendida dos veces" (II.A.4.3).
+- Arts. 135 y 138 del COT verificados contra `Apuntes/CODIGOS/COT.pdf`
+  (Laura lo agregó el 2026-10-08): correctos.
 - Verificación: cero guiones largos, etiquetas balanceadas, ids únicos,
   todos los `href` resuelven, ningún párrafo sobre 1.200 caracteres,
   todos los artículos presentes, capturas en Chrome headless revisadas.
