@@ -3,7 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-07.
+> antes de seguir. Última actualización: 2026-10-08 (tramo 1b reescrito con
+> los ajustes de Laura al informe; siguiente: tramo 2a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -31,7 +32,10 @@
 - **Tramo 1a (Capítulo I + II.A, p. 18-28 de Boetsch): terminado y
   aprobado por Laura (2026-10-07).** Es el primer tramo de Bienes hecho
   con el método completo. Detalle en "Tramo 1a: hecho y aprobado", más
-  abajo. **Siguiente paso real: tramo 1b (II.B, p. 28-36)**, ver
+  abajo.
+- **Tramo 1b (II.B, p. 28-36): reescrito (2026-10-08)** con los
+  ajustes de Laura al informe `Informes/Informe_Bienes_tramo1b.html`.
+  Detalle en "Tramo 1b: hecho", más abajo. Siguiente: tramo 2a, ver
   "Siguiente paso exacto" al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -92,7 +96,7 @@ que en AJ.
 | # | Páginas reales | Parte(s) Boetsch | Tema aprox. del manual |
 |---|---|---|---|
 | 1a | 18-28 | 1 | I. Aspectos generales + II.A Bienes corporales e incorporales (corregido 2026-10-07, hecho y aprobado: ver "Tramo 1a: hecho y aprobado") |
-| 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A) |
+| 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A). Hecho 2026-10-08 |
 | 2a | 36-44 | 2 | II.C-D aprox. (consumibles, fungibles); el límite real con 1b queda en p. 36, no en p. 44 como asumía el reparto original. Revisar el corte exacto al llegar a este tramo |
 | 2b | 44-51 | 2 | II.C-K (consumibles, fungibles, principales, divisibles, singulares, presentes, comerciables, apropiables, públicos) |
 | 3 | 52-63 | 3 | III. El dominio |
@@ -387,22 +391,69 @@ unidad por unidad). Informe en
 - **Verificación:** cero guiones largos, etiquetas balanceadas, ningún
   párrafo sobre 1.200 caracteres, razón de caracteres fuente/manual
   0,89. Vista previa actualizada en `Vista_previa/Bienes_vista_previa.html`.
-- **Pendiente:** este tramo se escribió directo en `main` (sin rama ni
-  commit todavía); falta decidir con Laura si se commitea así o se
-  rehace en una rama, según su flujo de Git habitual.
+- **Commiteado:** directo en `main`, commit `eb624e0` ("Reescribir
+  Bienes I y II.A con el método completo (tramo 1a)").
 
-## Siguiente paso exacto (2026-10-07, vigente)
+## Tramo 1b: hecho (2026-10-08)
 
-1. **Tramo 1b: II.B (Bienes muebles e inmuebles), páginas 28 a 36.**
-   Mismo checklist que 1a (`lecciones-acto-juridico.md` sección 6):
-   inventario exhaustivo de Boetsch y de los anexos que correspondan
-   (Peñailillo cubre esta parte también, revisar desde donde empieza
-   "II. BIENES MUEBLES E INMUEBLES" en su resumen), artículos verificados
-   contra `Apuntes/CODIGOS`, paráfrasis cercana, "la doctrina"
-   contrastada, pocas cajas, informe en `Informes/` antes de tocar el
-   manual, aprobación de Laura, reescritura, verificación, vista previa.
-2. Repetir tramo por tramo según la tabla de "Reparto de tramos",
-   ajustando los cortes sobre la marcha si un tema resulta más
-   preguntado de lo previsto (como pasó con "el error" en AJ), e
-   igual que en 1a, revisando si el "Tema aprox." de la tabla coincide
-   con el contenido real al llegar a cada tramo (ver nota en 2a).
+**II.B Bienes muebles e inmuebles, páginas 28 a 36 de Boetsch.**
+Informe en `Informes/Informe_Bienes_tramo1b.html`. Ajustes de Laura al
+informe (2026-10-08), **no cambiar**:
+
+- **De Peñailillo entra solo una unidad:** la distinción cuestión de
+  hecho (si el bien está destinado al uso, cultivo o beneficio del
+  inmueble) / cuestión de derecho (si, establecido ese destino, es
+  inmueble por destinación), al cierre de los requisitos de 4.3 a).
+  Las otras dos que proponía el informe (sociedades de capital y
+  "movilización de los inmuebles"; desarrollo urbano que valoriza los
+  inmuebles) **no aportan y quedaron fuera**.
+- **"Bienes medios de producción y bienes de consumo" (Peñailillo) no
+  se agrega** al manual, ni como letra nueva de II ni en otro tramo.
+
+Lo que se hizo:
+
+- Prosa de conexión reescrita en voz propia en todo II.B (el chequeo de
+  6-gramas solo deja coincidencias en nombres de leyes y listas de
+  términos técnicos).
+- Artículos transcritos completos en `.ley`: 567 (con su inciso 2º,
+  que faltaba), 568, 569, 570 (con todos sus ejemplos, lo que cubre el
+  hueco del informe), 571, 573, 574, 580 y 1121 inc. 1º (estaba
+  cortado). **Error de cita adicional corregido:** el art. 567 empieza
+  "Muebles son las que pueden...", no "las cosas que pueden" (error que
+  venía de Boetsch). En las transcripciones se respeta el "sólo" con
+  tilde del texto vigente.
+- Recuperado de Boetsch lo que faltaba: definición RAE de "ajuar"; el
+  sentido de "casa" como inmueble urbano o vivienda en predio rústico;
+  los muebles por anticipación como inmuebles (por naturaleza,
+  adherencia o destinación) tratados por adelantado como muebles; qué
+  dice el art. 1801 inc. 3º.
+- Predios rústicos/urbanos: las 5 consecuencias quedaron como lista
+  `(i)` a `(v)`.
+- Formato: 3.1 pasó a `.enum-i` con `span.num`/`span.tit`. La excepción
+  de 4.3 (a)/b) subrayados, (i)(ii)(iii) indentados) se mantuvo.
+- Recuadro **No confundir** nuevo al cierre de 4.3: "¿Inmueble por
+  adherencia o por destinación?" (inmovilización material versus
+  inmovilización ficticia).
+- El Ejemplo de 3.2 ("Un mueble por anticipación") se dejó tal cual
+  por la decisión 1 (pasada final de ejemplos para todos los manuales).
+- **Pendiente sin resolver:** arts. 135 y 138 del COT (tabla del punto
+  2) siguen sin verificar, no hay COT en `Apuntes/CODIGOS`.
+- Verificación: cero guiones largos, etiquetas balanceadas, ids únicos,
+  todos los `href` resuelven, ningún párrafo sobre 1.200 caracteres,
+  todos los artículos presentes, capturas en Chrome headless revisadas.
+  Vista previa actualizada en `Vista_previa/Bienes_vista_previa.html`.
+
+## Siguiente paso exacto (2026-10-08, vigente)
+
+1. **Que Laura revise la vista previa de II.B** (ajustes, si los hay,
+   en el mismo tramo).
+2. **Tramo 2a: II.C en adelante (consumibles, fungibles...), desde la
+   p. 36.** Primero confirmar el corte real contra Boetsch (la tabla de
+   reparto es solo un estimado), luego el mismo checklist de 1a/1b:
+   inventario de Boetsch y de Peñailillo (lo que sigue a "II. Bienes
+   muebles e inmuebles" en su resumen, salvo "medios de producción y
+   de consumo", que Laura descartó), artículos contra `Apuntes/CODIGOS`,
+   paráfrasis medida con 6-gramas, informe en `Informes/` antes de
+   tocar el manual.
+3. Repetir tramo por tramo según la tabla de "Reparto de tramos",
+   ajustando los cortes sobre la marcha.
