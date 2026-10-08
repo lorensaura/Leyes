@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
+> 2026-10-08 (PDF regenerado e índice del PDF arreglado; propuesta de ejemplos propios de I y VI esperando a Laura). Antes: 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -1348,7 +1348,11 @@ cercana (tabla exhaustiva por punto), no después.
   apunte**, no ahora.
 - ~~**Para 5.2c (fuerza):** art. 8 Nº 3 Ley 19.947~~: **resuelto**, ya
   está resumido en 7.4 y en las Conexiones (2026-10-06).
-- **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
+- **Ejemplos genéricos de Boetsch en I y VI** (2026-10-08: propuesta
+  de reemplazo completa en `DERECHO LIBRE/Informes/Informe_AJ_ejemplos_I_VI.html`,
+  esperando respuesta de Laura a 2 preguntas: STOLFI opción A/B y
+  si se conserva la mención de la estrella romana; al aprobar, aplicar
+  y regenerar `app/pdf/Acto_Juridico.pdf`): deben ser propios
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
   este criterio. **Decisión de Laura (2026-10-06): se dejan para la
