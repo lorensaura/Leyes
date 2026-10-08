@@ -31,6 +31,13 @@
   mayor abundamiento") y las oraciones kilométricas. Los términos no se
   tocan.
 - El registro relajado vive **solo** en los recuadros de Ejemplo.
+- **Latinazgos (Laura, 2026-10-08, Bienes II.G):** se sacan los que
+  solo duplican una expresión castellana que dice lo mismo
+  (*universitas facti* / *universitas juris* = universalidad de hecho /
+  de derecho). **No todos:** se conservan los que son la denominación
+  técnica con que se pregunta en examen, como la ley del lugar (*lex rei
+  sitae*), la tradición *brevi manu* o el *constituto posesorio*, o la
+  usucapión. Ante la duda, preguntar.
 
 Así se ve la diferencia: el concepto de error sustancial se explica con
 todo su rigor técnico en el texto; el ejemplo que lo ilustra ya no es

@@ -4,7 +4,7 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-10-08 (tramo 1b terminado y
-> aprobado por Laura; siguiente: tramo 2a).
+> aprobado por Laura; tramo 2a con informe hecho, esperando decisiones).
 
 ## Resumen para retomar (léelo primero)
 
@@ -34,8 +34,10 @@
   con el método completo. Detalle en "Tramo 1a: hecho y aprobado", más
   abajo.
 - **Tramo 1b (II.B, p. 28-36): terminado y aprobado por Laura
-  (2026-10-08).** Detalle en "Tramo 1b: hecho y aprobado", más abajo. Siguiente: tramo 2a, ver
-  "Siguiente paso exacto" al final de este archivo.
+  (2026-10-08).** Detalle en "Tramo 1b: hecho y aprobado", más abajo.
+- **Tramo 2a (II.C a II.H, p. 36-44): reescrito (2026-10-08), falta
+  que Laura apruebe la vista previa y commitear.** Detalle en "Tramo
+  2a", más abajo; siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -100,8 +102,8 @@ que en AJ.
 |---|---|---|---|
 | 1a | 18-28 | 1 | I. Aspectos generales + II.A Bienes corporales e incorporales (corregido 2026-10-07, hecho y aprobado: ver "Tramo 1a: hecho y aprobado") |
 | 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A). Hecho 2026-10-08 |
-| 2a | 36-44 | 2 | II.C-D aprox. (consumibles, fungibles); el límite real con 1b queda en p. 36, no en p. 44 como asumía el reparto original. Revisar el corte exacto al llegar a este tramo |
-| 2b | 44-51 | 2 | II.C-K (consumibles, fungibles, principales, divisibles, singulares, presentes, comerciables, apropiables, públicos) |
+| 2a | 36-44 | 2 | II.C-H (consumibles, fungibles, principales y accesorios, divisibles, singulares y universales, presentes y futuros). Corte confirmado 2026-10-08. Reescrito, falta aprobación de la vista previa |
+| 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). II.9 empieza en la p. 45 |
 | 3 | 52-63 | 3 | III. El dominio |
 | 4a | 63-72 | 4 | IV. La copropiedad (1ª mitad) |
 | 4b | 72-80 | 4 | IV. La copropiedad (2ª mitad) |
@@ -465,16 +467,64 @@ Lo que se hizo:
   todos los artículos presentes, capturas en Chrome headless revisadas.
   Vista previa actualizada en `Vista_previa/Bienes_vista_previa.html`.
 
+## Tramo 2a: reescrito, esperando aprobación de la vista previa (2026-10-08)
+
+**II.C a II.H, páginas 36 a 44 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo2a.html`. Decisiones de Laura al informe
+(2026-10-08), **no cambiar**:
+
+- **"Bienes simples y compuestos" (Peñailillo) no se agrega.**
+- **Latinazgos:** se sacaron *universitas facti* / *universitas juris*.
+  Regla general nueva (no todos los latinazgos se sacan: se conservan
+  ley del lugar, *brevi manu*, *constituto posesorio*, usucapión...),
+  anotada en `guia-editorial.md` 1.1 y `decisiones.md`.
+- **Factores de lo principal y lo accesorio en el orden de Boetsch**
+  (subsistencia, finalidad, valor, volumen). Igual se transcriben los
+  arts. 659-661 y se dice que en la adjunción el Código los aplica en
+  cadena (estimación, finalidad, volumen).
+- **Art. 1340 reemplazado por el 2304** (el 1340 citado por Boetsch
+  trata de las deudas en la partición, no de bienes singulares y
+  universales).
+- **Pregunta clásica: solo "¿Qué caracteriza a la universalidad
+  jurídica?"** (de `PREGUNTAS BIENES.pages`), en G.1.2. Las otras dos
+  candidatas (distingo consumibles/fungibles; mecanismos de lo
+  accesorio) no entran; el No confundir "¿Consumible o fungible?" quedó
+  sin fusionar.
+- Laura no tiene material propio sobre este tramo.
+
+Lo que se hizo: prosa reescrita completa en voz propia (paráfrasis:
+de 53/135 oraciones sobre el umbral, 17 casi idénticas, a 9/358, y una
+sola sobre 70%, que es la lista de patrimonios, términos técnicos);
+art. 575 transcrito; arts. 659-661 transcritos; recuperados los 4
+matices de Boetsch que faltaban; contenido nuevo de Peñailillo
+(cuasiusufructo, arts. 764 y 789, como C.3 "Importancia" nuevo, con su
+entrada en el índice; hechos fungibles; tres especies de cosas
+accesorias; par de zapatos; futureidad, graduaciones y existencia
+esperada/aleatoria; diferencias 2 y 3 entre universalidades); tesis
+de la copropiedad atribuida a BOETSCH y a PEÑAILILLO; dos errores del
+resumen de Peñailillo descartados (servidumbre/prenda/hipoteca
+"divisibles"; "un animal" como divisible). Cajas: Ejemplo propias
+(tía Gloria, bodega del tío Sergio, kilo de azúcar y batidora, anillo
+de Camila, parcela de los tres hermanos, food truck de Javiera,
+cerezas que todavía no existen) más ejemplos breves en el texto; No
+confundir en D.2; cuadro comparativo en G.1.3; Conexiones en D, F, G y
+H (las de Contratos, Obligaciones y Sucesorio con `[FALTA: sección]`,
+esos manuales no existen aún). Verificación: cero guiones largos, ids
+únicos, `href` resuelven, etiquetas balanceadas, párrafos bajo 1.200
+caracteres, todos los artículos presentes, capturas revisadas. Vista
+previa actualizada.
+
 ## Siguiente paso exacto (2026-10-08, vigente)
 
-1. **Tramo 2a: II.C en adelante (consumibles, fungibles...), desde la
-   p. 36.** Primero confirmar el corte real contra Boetsch (la tabla de
-   reparto es solo un estimado), luego el mismo checklist de 1a/1b:
-   inventario de Boetsch y de Peñailillo (lo que sigue a "II. Bienes
-   muebles e inmuebles" en su resumen, salvo "medios de producción y
-   de consumo", que Laura descartó), artículos contra `Apuntes/CODIGOS`,
-   paráfrasis medida con 6-gramas, cajas de Ejemplo propias y ejemplos
-   nuevos (decisión 1), sin referencias internas, informe en
-   `Informes/` antes de tocar el manual.
-2. Repetir tramo por tramo según la tabla de "Reparto de tramos",
-   ajustando los cortes sobre la marcha.
+1. **Si Laura aprueba la vista previa del tramo 2a:** commitear en
+   `main` ("Reescribir Bienes II.C a II.H con el método completo
+   (tramo 2a)"), junto con este archivo, `guia-editorial.md` y
+   `decisiones.md`. Si pide ajustes, aplicarlos y anotarlos arriba.
+2. **Tramo 2b: II.I a II.K (comerciables, apropiables, privados y
+   públicos), p. 45-51.** Mismo checklist: inventario de Boetsch y de
+   Peñailillo (desde "XI. Bienes comerciables" de su resumen),
+   artículos contra `Apuntes/CODIGOS`, paráfrasis medida con 6-gramas,
+   cajas de Ejemplo propias y ejemplos nuevos, sin referencias
+   internas, preguntas candidatas desde `PREGUNTAS BIENES.pages`,
+   informe en `Informes/` antes de tocar el manual.
+3. Repetir tramo por tramo según la tabla de "Reparto de tramos".
