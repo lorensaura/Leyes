@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
+> 2026-10-08 (ejemplos propios de I y VI aplicados, índice del PDF arreglado y `app/pdf/Acto_Juridico.pdf` regenerado; con esto el manual queda terminado). Antes: 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -1348,7 +1348,14 @@ cercana (tabla exhaustiva por punto), no después.
   apunte**, no ahora.
 - ~~**Para 5.2c (fuerza):** art. 8 Nº 3 Ley 19.947~~: **resuelto**, ya
   está resumido en 7.4 y en las Conexiones (2026-10-06).
-- **Ejemplos genéricos de Boetsch en I y VI**: deben ser propios
+- ~~**Ejemplos genéricos de Boetsch en I y VI**~~: **hecho 2026-10-08.**
+  Laura aprobó la propuesta de `DERECHO LIBRE/Informes/Informe_AJ_ejemplos_I_VI.html`
+  (STOLFI opción B: se conserva la cita con personajes, la Coni y el
+  Kevin; se conserva la estrella del derecho romano como dato histórico).
+  10 ejemplos reemplazados (I.3 don Pato y el quincho del Nacho, I.4,
+  I.6.1, I.8.1 x2, I.8.8 la tía Chela; VI 2.2, 2.3, 2.4) y PDF
+  regenerado. Laura aclaró que **el capítulo I no se reescribe**: solo
+  se cambiaron sus ejemplos. Texto original de la regla
   (decisión 2026-10-06). En VI quedaron la estrella con la mano, la
   aseguradora y la venta "si voy a Europa"; I no se ha revisado con
   este criterio. **Decisión de Laura (2026-10-06): se dejan para la
@@ -1405,8 +1412,8 @@ cercana (tabla exhaustiva por punto), no después.
    `origin/main` en `d89ac5f`).
    **Siguiente paso exacto:** Laura mergea
    `worktree-acto-juridico-I-8-6` (unificación de I.8.6 con II.E.2.1);
-   queda solo la revisión final (ejemplos genéricos de Boetsch en I y
-   VI); después, Bienes (punto 5).
+   la revisión final (ejemplos genéricos de I y VI) quedó hecha el
+   2026-10-08; sigue Bienes (punto 5).
    **Pendiente explícito nacido de 5.5:** incorporar a IV.F las pp.
    211-214 de VIAL (elementos material y subjetivo, cita de Vergara
    Baeza, ejemplo del que enajena antes de la interdicción por
