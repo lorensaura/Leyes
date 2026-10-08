@@ -15,7 +15,7 @@
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Introducción y IV.A Inexistencia (temas 18 y 19): Flashcards cubiertas** (lote 6). Desde IV.B Nulidad: pendiente |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Introducción, IV.A Inexistencia y IV.B.1 a B.3.5 Nulidad (temas 18 a 20): Flashcards cubiertas** (lotes 6 y 7). Desde el tema 21 (Ratificación): pendiente |
 | V. Representación | Pendiente |
 | VI. Modalidades | Pendiente |
 
@@ -218,18 +218,18 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Concepto, características y origen de la inexistencia | IV.A.1-2 | | 1 | · | · | · | · | · | 3 | · | · |
 | &nbsp;&nbsp;&nbsp;Diferencias entre inexistencia y nulidad | IV.A.3 | | · | · | · | · | · | · | 2 | · | · |
 | &nbsp;&nbsp;&nbsp;¿Distingue el Código la inexistencia? (doctrinas, historia y jurisprudencia) | IV.A.4 | | 6 | · | · | · | · | · | 7 | 2 | · |
-| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **·** | **·** | **·** | **·** | **·** | **1** | **1** | **8** |
-| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | · | · | · | · | · | · | · | 2 |
-| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | · | · | · | · | · | 1 | 1 | · |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | · | · | · | · | · | · | · | 2 |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | · | · | · | · | · | · | · | 1 |
+| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **·** | **·** | **·** | **·** | **·** | **39** | **1** | **8** |
+| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | · | · | · | · | · | 4 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | · | · | · | · | · | 5 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | · | · | · | · | · | 3 | 1 | · |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | · | · | · | · | · | 3 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | · | · | · | · | · | 6 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | · | · | · | · | · | 4 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | · | · | · | · | · | 3 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | · | · | · | · | · | 3 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | · | · | · | · | · | 4 | · | 1 |
 | **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **1** | **1** | **5** |
 | &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 1 | 1 | 5 |
 | **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **2** | **2** | **3** |
@@ -271,14 +271,14 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | · | · | · |
 | &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | · | · | · |
 | &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | · | · | · |
-| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **194** | **23** | **47** |
+| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **232** | **23** | **47** |
 <!-- tablero:fin -->
 
-## Dónde está cada cosa (al 2026-10-07)
+## Dónde está cada cosa (al 2026-10-08)
 
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
-| Flashcards | **194** (`aj-fc-001` a `194`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
+| Flashcards | **232** (`aj-fc-001` a `232`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
 | Evaluación | 12 (3 por tipo: `aj-*-001` a `003`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema. Todo del Cap. I (lote 1 y 2026-09-28) |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
@@ -288,7 +288,7 @@ Informes de revisión (fuera del repo, en `DERECHO LIBRE/Informes/`):
 `Informe_AJ_relevancia_temas.html` (relevancia y tablero por subtema,
 se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
 (lote 1 de Evaluación, Alternativas y definiciones) e
-`Informe_AJ_flashcards_lote2.html` a `lote6.html`.
+`Informe_AJ_flashcards_lote2.html` a `lote7.html`.
 
 ## Herramientas (scripts del repo)
 
@@ -395,6 +395,12 @@ en el orden del manual.
   los dos recuadros No confundir); la discusión de si el Código distingue
   la inexistencia (Claro Solar, Alessandri, historia del art. 1683)
   lleva 7. Informe: `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote6.html`.
+- **Lote 7 (2026-10-08), hecho:** 38 Flashcards (`aj-fc-195` a `232`)
+  del tema 20 (Nulidad) solo, IV.B.1 a IV.B.3.5, sus 11 subtemas
+  cubiertos. Más carga en lo más preguntado: quién pide o declara la
+  nulidad absoluta (6), principios comunes (5) y saneamiento de la
+  relativa (4). Control sin fallos al primer intento. Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote7.html`.
 - **Criterio de cantidad usado:** al menos una por subtema; dos a cuatro
   en los subtemas que más aparecen en exámenes (error esencial y
   sustancial, error en la persona, clases de dolo, requisitos de la
@@ -406,20 +412,20 @@ en el orden del manual.
   artículo y cada autor citado aparezca **en esa misma sección** del
   manual (no solo en alguna parte), que no haya guiones largos ni
   etiquetas no permitidas y que ninguna pregunta repita una existente; si
-  algo falla, no se sube. Lotes 2 a 6: 172 tarjetas, ninguna subida con fallos.
+  algo falla, no se sube. Lotes 2 a 7: 210 tarjetas, ninguna subida con fallos.
 
 ## Siguiente paso exacto
 
 Seguir con Flashcards, **dos temas por tanda**, en orden del manual,
 con las herramientas de `scripts/practica_aj/` (ver "Herramientas"):
-próxima tanda, **tema 20 (Nulidad) solo**: es el más preguntado del
-examen (48% de los exámenes) y tiene 11 subtemas. Después, temas 21
-(Ratificación) y 22 (Efectos de la nulidad). Antes de redactar, correr
+próxima tanda, **temas 21 (Ratificación, IV.B.3.6) y 22 (Efectos de la
+nulidad, IV.B.4)**. El tema 20 (Nulidad) quedó hecho en el lote 7.
+Lote nuevo en `scripts/practica_aj/lote_fc8.py`. Antes de redactar, correr
 `python3 scripts/tablero_cobertura_aj.py` para ver qué subtemas ya tienen
 algo. Al terminar: verificar (artículos y autores en su sección), subir a
 Airtable sin publicar con tema y subtema exacto, correr de nuevo el
 tablero, hacer el informe en `DERECHO LIBRE/Informes/` y actualizar esta
-sección. Próximo id libre: `aj-fc-195`. Evaluación y Alternativas siguen
+sección. Próximo id libre: `aj-fc-233`. Evaluación y Alternativas siguen
 en pausa hasta que Laura decida cómo seguir con ellas.
 
 ## Reglas y decisiones que no cambian
@@ -442,7 +448,7 @@ en pausa hasta que Laura decida cómo seguir con ellas.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-195`,
+  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-233`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
