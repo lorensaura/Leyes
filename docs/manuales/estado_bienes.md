@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-08 (tramo 1b reescrito con
-> los ajustes de Laura al informe; siguiente: tramo 2a).
+> antes de seguir. Última actualización: 2026-10-08 (tramo 1b terminado y
+> aprobado por Laura; siguiente: tramo 2a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -33,9 +33,8 @@
   aprobado por Laura (2026-10-07).** Es el primer tramo de Bienes hecho
   con el método completo. Detalle en "Tramo 1a: hecho y aprobado", más
   abajo.
-- **Tramo 1b (II.B, p. 28-36): reescrito (2026-10-08)** con los
-  ajustes de Laura al informe `Informes/Informe_Bienes_tramo1b.html`.
-  Detalle en "Tramo 1b: hecho", más abajo. Siguiente: tramo 2a, ver
+- **Tramo 1b (II.B, p. 28-36): terminado y aprobado por Laura
+  (2026-10-08).** Detalle en "Tramo 1b: hecho y aprobado", más abajo. Siguiente: tramo 2a, ver
   "Siguiente paso exacto" al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -398,7 +397,7 @@ unidad por unidad). Informe en
 - **Commiteado:** directo en `main`, commit `eb624e0` ("Reescribir
   Bienes I y II.A con el método completo (tramo 1a)").
 
-## Tramo 1b: hecho (2026-10-08)
+## Tramo 1b: hecho y aprobado (2026-10-08)
 
 **II.B Bienes muebles e inmuebles, páginas 28 a 36 de Boetsch.**
 Informe en `Informes/Informe_Bienes_tramo1b.html`. Ajustes de Laura al
@@ -451,6 +450,14 @@ Lo que se hizo:
   parcela, cuatro bienes" (I.2), "Lo corporal y lo incorporal en una
   misma mochila" (II.A.1), "El derecho real de quincho" (II.A.4.1) y
   "La bicicleta vendida dos veces" (II.A.4.3).
+- **Sin referencias internas (Laura, 2026-10-08, al revisar la vista
+  previa):** se eliminan del manual las menciones del tipo "se
+  desarrolla más abajo", "como se vio", "según se verá", "como se
+  adelantó", "(punto 4.3)", "en el apartado siguiente". Se sacaron 7
+  en I, II.A y II.B. **Regla para todos los tramos que siguen:** no
+  escribir referencias de este tipo y borrar las que traiga el texto
+  (anotada en `guia-editorial.md` 3). Con eso, Laura aprobó II.B
+  ("el resto ok").
 - Arts. 135 y 138 del COT verificados contra `Apuntes/CODIGOS/COT.pdf`
   (Laura lo agregó el 2026-10-08): correctos.
 - Verificación: cero guiones largos, etiquetas balanceadas, ids únicos,
@@ -460,15 +467,14 @@ Lo que se hizo:
 
 ## Siguiente paso exacto (2026-10-08, vigente)
 
-1. **Que Laura revise la vista previa de II.B** (ajustes, si los hay,
-   en el mismo tramo).
-2. **Tramo 2a: II.C en adelante (consumibles, fungibles...), desde la
+1. **Tramo 2a: II.C en adelante (consumibles, fungibles...), desde la
    p. 36.** Primero confirmar el corte real contra Boetsch (la tabla de
    reparto es solo un estimado), luego el mismo checklist de 1a/1b:
    inventario de Boetsch y de Peñailillo (lo que sigue a "II. Bienes
    muebles e inmuebles" en su resumen, salvo "medios de producción y
    de consumo", que Laura descartó), artículos contra `Apuntes/CODIGOS`,
-   paráfrasis medida con 6-gramas, informe en `Informes/` antes de
-   tocar el manual.
-3. Repetir tramo por tramo según la tabla de "Reparto de tramos",
+   paráfrasis medida con 6-gramas, cajas de Ejemplo propias y ejemplos
+   nuevos (decisión 1), sin referencias internas, informe en
+   `Informes/` antes de tocar el manual.
+2. Repetir tramo por tramo según la tabla de "Reparto de tramos",
    ajustando los cortes sobre la marcha.

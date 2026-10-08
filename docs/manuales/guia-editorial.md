@@ -113,6 +113,12 @@ enumeraciones y párrafos cortos, qué va a un recuadro.
 Entonces hay que reestructurarla. ¿Falta algún término técnico o alguna
 unidad de contenido? Entonces hay que volver a la fuente.
 
+**Sin referencias internas (Laura, 2026-10-08):** el texto no remite a
+otras partes del manual. No se escriben, y se borran si vienen de la
+fuente, frases como "se desarrolla más abajo", "como se vio", "según se
+verá", "como se adelantó", "en el apartado siguiente" o "(punto 4.3)".
+Cada punto se lee solo.
+
 **Alcance:** se aplica a los manuales nuevos desde el primer tramo. Los
 manuales ya escritos se actualizarán por tramos, cuando Laura lo pida
 (`actualizar-manuales-existentes.md`).
