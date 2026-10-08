@@ -15,7 +15,7 @@
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Introducción, IV.A Inexistencia y IV.B.1 a B.3.5 Nulidad (temas 18 a 20): Flashcards cubiertas** (lotes 6 y 7). Desde el tema 21 (Ratificación): pendiente |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Introducción, IV.A Inexistencia y IV.B Nulidad completa (temas 18 a 22, incluidas ratificación y efectos): Flashcards cubiertas** (lotes 6 a 8). Desde el tema 23 (Lesión, IV.C): pendiente |
 | V. Representación | Pendiente |
 | VI. Modalidades | Pendiente |
 
@@ -230,12 +230,12 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | · | · | · | · | · | 3 | · | · |
 | &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | · | · | · | · | · | 3 | · | 2 |
 | &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | · | · | · | · | · | 4 | · | 1 |
-| **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **1** | **1** | **5** |
-| &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 1 | 1 | 5 |
-| **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **2** | **2** | **3** |
-| &nbsp;&nbsp;&nbsp;Efectos de la nulidad entre las partes (restituciones mutuas) | IV.B.4.1-2 | | 1 | · | · | · | · | · | · | · | 2 |
-| &nbsp;&nbsp;&nbsp;Efectos respecto de terceros y acción reivindicatoria | IV.B.4.3-4 | | 1 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;La conversión del acto nulo | IV.B.4.5 | | · | · | · | · | · | · | 2 | 2 | · |
+| **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **8** | **1** | **5** |
+| &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 8 | 1 | 5 |
+| **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **20** | **2** | **3** |
+| &nbsp;&nbsp;&nbsp;Efectos de la nulidad entre las partes (restituciones mutuas) | IV.B.4.1-2 | | 1 | · | · | · | · | · | 5 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Efectos respecto de terceros y acción reivindicatoria | IV.B.4.3-4 | | 1 | · | · | · | · | · | 8 | · | 1 |
+| &nbsp;&nbsp;&nbsp;La conversión del acto nulo | IV.B.4.5 | | · | · | · | · | · | · | 7 | 2 | · |
 | **23. Lesión** | IV.C | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
 | &nbsp;&nbsp;&nbsp;Concepto de lesión | IV.C.1 | | 2 | · | · | · | · | · | · | · | · |
 | &nbsp;&nbsp;&nbsp;¿Es la lesión un vicio del consentimiento? | IV.C.2 | | 3 | · | · | · | · | · | · | · | · |
@@ -271,14 +271,14 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | · | · | · |
 | &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | · | · | · |
 | &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | · | · | · |
-| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **232** | **23** | **47** |
+| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **257** | **23** | **47** |
 <!-- tablero:fin -->
 
 ## Dónde está cada cosa (al 2026-10-08)
 
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
-| Flashcards | **232** (`aj-fc-001` a `232`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
+| Flashcards | **257** (`aj-fc-001` a `257`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
 | Evaluación | 12 (3 por tipo: `aj-*-001` a `003`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema. Todo del Cap. I (lote 1 y 2026-09-28) |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
@@ -288,7 +288,7 @@ Informes de revisión (fuera del repo, en `DERECHO LIBRE/Informes/`):
 `Informe_AJ_relevancia_temas.html` (relevancia y tablero por subtema,
 se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
 (lote 1 de Evaluación, Alternativas y definiciones) e
-`Informe_AJ_flashcards_lote2.html` a `lote7.html`.
+`Informe_AJ_flashcards_lote2.html` a `lote8.html`.
 
 ## Herramientas (scripts del repo)
 
@@ -401,6 +401,13 @@ en el orden del manual.
   nulidad absoluta (6), principios comunes (5) y saneamiento de la
   relativa (4). Control sin fallos al primer intento. Informe:
   `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote7.html`.
+- **Lote 8 (2026-10-08), hecho:** 25 Flashcards (`aj-fc-233` a `257`)
+  de los temas 21 (Ratificación, 7) y 22 (Efectos de la nulidad, 18:
+  partes 5, terceros y acciones 8, conversión 5). Se evitó repetir lo ya
+  cubierto (los 3 recuadros No confundir del lote 2 y el art. 1692 del
+  lote 7, que aquí solo aparece por la regla de no extender la suspensión
+  por analogía). Control sin fallos al primer intento. Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote8.html`.
 - **Criterio de cantidad usado:** al menos una por subtema; dos a cuatro
   en los subtemas que más aparecen en exámenes (error esencial y
   sustancial, error en la persona, clases de dolo, requisitos de la
@@ -412,20 +419,21 @@ en el orden del manual.
   artículo y cada autor citado aparezca **en esa misma sección** del
   manual (no solo en alguna parte), que no haya guiones largos ni
   etiquetas no permitidas y que ninguna pregunta repita una existente; si
-  algo falla, no se sube. Lotes 2 a 7: 210 tarjetas, ninguna subida con fallos.
+  algo falla, no se sube. Lotes 2 a 8: 235 tarjetas, ninguna subida con fallos.
 
 ## Siguiente paso exacto
 
 Seguir con Flashcards, **dos temas por tanda**, en orden del manual,
 con las herramientas de `scripts/practica_aj/` (ver "Herramientas"):
-próxima tanda, **temas 21 (Ratificación, IV.B.3.6) y 22 (Efectos de la
-nulidad, IV.B.4)**. El tema 20 (Nulidad) quedó hecho en el lote 7.
-Lote nuevo en `scripts/practica_aj/lote_fc8.py`. Antes de redactar, correr
+próxima tanda, **los dos temas siguientes del manual desde IV.C (La
+lesión)**, revisando su tamaño en el catálogo antes de decidir si van
+dos o uno. La nulidad completa (temas 20 a 22) quedó hecha en los lotes
+7 y 8. Lote nuevo en `scripts/practica_aj/lote_fc9.py`. Antes de redactar, correr
 `python3 scripts/tablero_cobertura_aj.py` para ver qué subtemas ya tienen
 algo. Al terminar: verificar (artículos y autores en su sección), subir a
 Airtable sin publicar con tema y subtema exacto, correr de nuevo el
 tablero, hacer el informe en `DERECHO LIBRE/Informes/` y actualizar esta
-sección. Próximo id libre: `aj-fc-233`. Evaluación y Alternativas siguen
+sección. Próximo id libre: `aj-fc-258`. Evaluación y Alternativas siguen
 en pausa hasta que Laura decida cómo seguir con ellas.
 
 ## Reglas y decisiones que no cambian
@@ -448,7 +456,7 @@ en pausa hasta que Laura decida cómo seguir con ellas.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-233`,
+  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-258`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
