@@ -316,14 +316,13 @@ se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
 
 ## Pasos para que el contenido llegue a la app, en este orden
 
-1. **Llevar a `main` y desplegar** los cambios de código del 2026-10-07
-   (`app/alternativas.html` y `scripts/sync_airtable_supabase.py`). Hoy
-   están sin commit en la worktree `acto-juridico-cap4`, rama
-   `worktree-bienes-preparacion`. Laura pushea con GitHub Desktop.
-   **No saltarse este paso:** con el código viejo en producción,
-   Evaluación no filtra por materia Civil y un ítem de AJ publicado
-   aparecería mezclado bajo Responsabilidad y Todas; y una definición de
-   Memorice pediría un número de artículo que no existe.
+1. ~~Llevar a `main` y desplegar los cambios de código del 2026-10-07~~
+   **Hecho** (comprobado el 2026-10-08: `app/alternativas.html` y
+   `scripts/sync_airtable_supabase.py` ya están en `origin/main`). Sin
+   esos cambios, un ítem de AJ publicado aparecería mezclado bajo
+   Responsabilidad y una definición de Memorice pediría un número de
+   artículo. Las Flashcards viven en Airtable, así que no necesitan
+   fusionar esta rama para llegar a la app.
 2. Laura revisa los informes y corrige o aprueba.
 3. Flashcards y Evaluación: en Airtable, marcar `publicado` y poner
    `Revision_status = Verificado`; luego correr
@@ -448,8 +447,9 @@ depende de Laura:
    acordar con Laura" en "Método"): cuántas por tema según su
    relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
    entran a Memorice.
-3. Antes de publicar nada, cumplir "Pasos para que el contenido llegue a
-   la app" (llevar a `main` y desplegar los cambios de código primero).
+3. Para publicar lo aprobado, seguir "Pasos para que el contenido llegue
+   a la app" (el paso de código ya está hecho; queda marcar en Airtable y
+   correr el sync).
 
 Si más adelante hacen falta más Flashcards, el lote nuevo va en
 `scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes
