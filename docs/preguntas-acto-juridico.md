@@ -16,8 +16,8 @@
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
 | IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9) |
-| V. Representación | Pendiente |
-| VI. Modalidades | Pendiente |
+| V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
+| VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
 Además existen, de antes y también en Revisar, 10 ítems del Cap. I
 cargados el 2026-09-28 (`aj-aplic-001`, `aj-det-001`, `aj-just-001`,
@@ -258,27 +258,27 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Resciliación | IV.G.3 | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Revocación y desistimiento unilateral | IV.G.4-5 | | 2 | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Suspensión, caducidad, terminación, renuncia y muerte | IV.G.1, 6-9 | | 1 | · | · | · | · | · | 1 | · | · |
-| **28. Representación (y estipulación por otro, promesa de hecho ajeno)** | V | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **1** | **1** | **3** |
-| &nbsp;&nbsp;&nbsp;Concepto, utilidad y clases de representación | V.1-3.2 | | 4 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Mandato y representación voluntaria | V.3.3 | | 3 | · | · | · | · | · | 1 | 1 | 1 |
-| &nbsp;&nbsp;&nbsp;Naturaleza jurídica de la representación | V.4 | | 1 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Circunstancias personales: capacidad, vicios y buena fe | V.5 | | 1 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Requisitos y efectos de la representación (contemplatio domini, poder) | V.6-7 | | 1 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Actos sin poder o con extralimitación y su ratificación | V.8-9 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Estipulación para otro y promesa de hecho ajeno | V.10 | | · | · | · | · | · | · | · | · | · |
-| **29. Modalidades: condición, plazo y modo** | VI | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
-| &nbsp;&nbsp;&nbsp;Condición: concepto y clasificaciones | VI.A.1-2 | | 3 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | · | · | · |
-| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **278** | **23** | **47** |
+| **28. Representación (y estipulación por otro, promesa de hecho ajeno)** | V | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **9** | **1** | **3** |
+| &nbsp;&nbsp;&nbsp;Concepto, utilidad y clases de representación | V.1-3.2 | | 4 | · | · | · | · | · | 1 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Mandato y representación voluntaria | V.3.3 | | 3 | · | · | · | · | · | 2 | 1 | 1 |
+| &nbsp;&nbsp;&nbsp;Naturaleza jurídica de la representación | V.4 | | 1 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Circunstancias personales: capacidad, vicios y buena fe | V.5 | | 1 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Requisitos y efectos de la representación (contemplatio domini, poder) | V.6-7 | | 1 | · | · | · | · | · | 1 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Actos sin poder o con extralimitación y su ratificación | V.8-9 | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Estipulación para otro y promesa de hecho ajeno | V.10 | | · | · | · | · | · | · | 1 | · | · |
+| **29. Modalidades: condición, plazo y modo** | VI | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **5** | **·** | **·** |
+| &nbsp;&nbsp;&nbsp;Condición: concepto y clasificaciones | VI.A.1-2 | | 3 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | 1 | · | · |
+| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
 ## Dónde está cada cosa (al 2026-10-08)
 
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
-| Flashcards | **278** (`aj-fc-001` a `278`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
+| Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
 | Evaluación | 12 (3 por tipo: `aj-*-001` a `003`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema. Todo del Cap. I (lote 1 y 2026-09-28) |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
@@ -288,7 +288,7 @@ Informes de revisión (fuera del repo, en `DERECHO LIBRE/Informes/`):
 `Informe_AJ_relevancia_temas.html` (relevancia y tablero por subtema,
 se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
 (lote 1 de Evaluación, Alternativas y definiciones) e
-`Informe_AJ_flashcards_lote2.html` a `lote9.html`.
+`Informe_AJ_flashcards_lote2.html` a `lote10.html`.
 
 ## Herramientas (scripts del repo)
 
@@ -414,6 +414,12 @@ en el orden del manual.
   una por subtema, dos solo donde el subtema junta ideas distintas. Cierra
   el Capítulo IV. Control sin fallos al primer intento. Informe:
   `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote9.html`.
+- **Lote 10 (2026-10-08), hecho, el último:** 13 Flashcards (`aj-fc-279`
+  a `291`) de los temas 28 (Representación, 8) y 29 (Modalidades, 5), con
+  el criterio de pocas tarjetas. Control sin fallos al primer intento.
+  Con este lote, **los 132 subtemas del manual tienen al menos una
+  Flashcard** (comprobado en el tablero). Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote10.html`.
 - **Criterio de cantidad usado:** al menos una por subtema; dos a cuatro
   en los subtemas que más aparecen en exámenes (error esencial y
   sustancial, error en la persona, clases de dolo, requisitos de la
@@ -429,24 +435,26 @@ en el orden del manual.
   artículo y cada autor citado aparezca **en esa misma sección** del
   manual (no solo en alguna parte), que no haya guiones largos ni
   etiquetas no permitidas y que ninguna pregunta repita una existente; si
-  algo falla, no se sube. Lotes 2 a 9: 256 tarjetas, ninguna subida con fallos.
+  algo falla, no se sube. Lotes 2 a 10: 269 tarjetas, ninguna subida con fallos.
 
 ## Siguiente paso exacto
 
-Seguir con Flashcards, **dos temas por tanda**, en orden del manual,
-con las herramientas de `scripts/practica_aj/` (ver "Herramientas"):
-próxima y **última tanda (acordada con Laura: dos tandas para lo que
-quedaba)**, **temas 28 (Representación, V) y 29 (Modalidades, VI)**,
-juntos, con el criterio de **pocas tarjetas** (una por subtema; ver
-"Lotes de Flashcards"). Son 11 subtemas. El Capítulo IV quedó completo
-en el lote 9. La nulidad completa (temas 20 a 22) quedó hecha en los lotes
-7 y 8. Lote nuevo en `scripts/practica_aj/lote_fc10.py`. Antes de redactar, correr
-`python3 scripts/tablero_cobertura_aj.py` para ver qué subtemas ya tienen
-algo. Al terminar: verificar (artículos y autores en su sección), subir a
-Airtable sin publicar con tema y subtema exacto, correr de nuevo el
-tablero, hacer el informe en `DERECHO LIBRE/Informes/` y actualizar esta
-sección. Próximo id libre: `aj-fc-279`. Evaluación y Alternativas siguen
-en pausa hasta que Laura decida cómo seguir con ellas.
+**Flashcards de AJ terminadas** (2026-10-08): 291 en Airtable, los 132
+subtemas cubiertos, todas sin publicar y en Revisar. Lo que sigue
+depende de Laura:
+1. **Revisar los informes** de los lotes (`Informe_AJ_flashcards_lote2`
+   a `lote10` en `DERECHO LIBRE/Informes/`) y corregir o aprobar.
+2. **Decidir cómo seguir con Evaluación y Alternativas** (ver "Por
+   acordar con Laura" en "Método"): cuántas por tema según su
+   relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
+   entran a Memorice.
+3. Antes de publicar nada, cumplir "Pasos para que el contenido llegue a
+   la app" (llevar a `main` y desplegar los cambios de código primero).
+
+Si más adelante hacen falta más Flashcards, el lote nuevo va en
+`scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes
+`python3 scripts/tablero_cobertura_aj.py`; verificar, subir sin publicar,
+informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
 
 ## Reglas y decisiones que no cambian
 
@@ -468,7 +476,7 @@ en pausa hasta que Laura decida cómo seguir con ellas.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-279`,
+  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-292`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
