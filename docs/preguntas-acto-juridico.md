@@ -413,6 +413,10 @@ en el orden del manual.
   sustancial, error en la persona, clases de dolo, requisitos de la
   fuerza, etc.). Una idea por tarjeta, con el artículo cuando el manual
   lo cita, y el pasaje del manual que la respalda.
+- **Desde el tema 23 (IV.C Lesión) en adelante, pocas tarjetas** (Laura,
+  2026-10-08): lo más relevante ya se tocó. Basta **una por subtema**, y
+  dos solo donde el subtema tenga dos ideas que no caben en una tarjeta.
+  No se agregan tarjetas de detalle doctrinal fino.
 - **Control anti-alucinación (obligatorio en cada lote):** cada tarjeta se
   redacta solo desde el texto del manual leído en ese momento, con su
   respaldo (sección exacta). Antes de subir, un script comprueba que cada
@@ -425,9 +429,11 @@ en el orden del manual.
 
 Seguir con Flashcards, **dos temas por tanda**, en orden del manual,
 con las herramientas de `scripts/practica_aj/` (ver "Herramientas"):
-próxima tanda, **los dos temas siguientes del manual desde IV.C (La
-lesión)**, revisando su tamaño en el catálogo antes de decidir si van
-dos o uno. La nulidad completa (temas 20 a 22) quedó hecha en los lotes
+próxima tanda, **desde IV.C (La lesión)**, con el criterio de **pocas
+tarjetas** (una por subtema; ver "Lotes de Flashcards"). Quedan 7 temas
+y 28 subtemas: 23 Lesión, 24 Simulación, 25 Inoponibilidad, 26 Fraude a
+la ley, 27 Otras causales de ineficacia, 28 Representación y 29
+Modalidades. La nulidad completa (temas 20 a 22) quedó hecha en los lotes
 7 y 8. Lote nuevo en `scripts/practica_aj/lote_fc9.py`. Antes de redactar, correr
 `python3 scripts/tablero_cobertura_aj.py` para ver qué subtemas ya tienen
 algo. Al terminar: verificar (artículos y autores en su sección), subir a
