@@ -338,6 +338,12 @@ era materia, no un dato de examen.
   ejemplo sino materia (el testamento como acto no recepticio, el
   desahucio como recepticio, los contratos en que se pacta prórroga
   tácita) se conserva tal cual.
+- **Cajas de Ejemplo y ejemplos nuevos (Laura, 2026-10-08):** en cada
+  tramo, toda caja de Ejemplo se reescribe como propia en ese mismo
+  tramo, y se crean ejemplos nuevos donde ayuden, sin preguntar: Laura
+  quiere los manuales llenos de ejemplos propios. Lo único que puede
+  quedar para una pasada final común son los ejemplos genéricos dentro
+  del texto corrido.
 
 ### 5.1 Antes y después (casos reales)
 
