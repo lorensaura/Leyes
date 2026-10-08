@@ -62,3 +62,7 @@
   una página y Chrome lo empuja completo a la siguiente, dejando huecos.
   Todo manual con índice anidado necesita, dentro de `@media print`,
   `.toc li{page-break-inside:auto;}` (Bienes y AJ ya lo tienen).
+  Además, para que un título de capítulo no quede solo al pie de una
+  página: `.toc > .toc-lista > li > a{display:block;break-after:avoid;}`.
+  **Solo en el primer nivel**: aplicado a todos los `li > a` deja
+  páginas cortas y entradas partidas (probado en AJ, 2026-10-08).
