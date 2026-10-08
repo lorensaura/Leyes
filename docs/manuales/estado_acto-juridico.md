@@ -5,7 +5,7 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-08 (ejemplos propios de I y VI aplicados, índice del PDF arreglado y `app/pdf/Acto_Juridico.pdf` regenerado; con esto el manual queda terminado). Antes: 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
+> 2026-10-08, segunda vez (dos recuadros de Ejemplo nuevos en II.A.5.3, a pedido de Laura: "Los dos kayaks del tío Pepe", error obstáculo contrastado con error sustancial, y "El bulldog francés que creció demasiado", calidad esencial según Vial y Boetsch; aprobados por Laura, PDF regenerado, rama `worktree-aj-ejemplos-error`, falta merge a `main`). Antes: 2026-10-08 (ejemplos propios de I y VI aplicados, índice del PDF arreglado y `app/pdf/Acto_Juridico.pdf` regenerado; con esto el manual queda terminado). Antes: 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
 >
 > **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
 > (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
@@ -1410,7 +1410,9 @@ cercana (tabla exhaustiva por punto), no después.
    tío Lucho (casino de Viña, parcela en Pirque).
    **IV.F revisado y mergeado por Laura a `main`** (2026-10-07,
    `origin/main` en `d89ac5f`).
-   **Siguiente paso exacto:** Laura mergea
+   **Siguiente paso exacto:** `worktree-acto-juridico-I-8-6` ya está en
+   `main` (verificado 2026-10-08); Laura mergea
+   `worktree-aj-ejemplos-error` (ejemplos de II.A.5.3). Antes: Laura mergea
    `worktree-acto-juridico-I-8-6` (unificación de I.8.6 con II.E.2.1);
    la revisión final (ejemplos genéricos de I y VI) quedó hecha el
    2026-10-08; sigue Bienes (punto 5).
