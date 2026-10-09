@@ -10,6 +10,10 @@
 
 ## Estado por capítulo
 
+**Flashcards de los seis capítulos: revisadas contra el manual y
+publicadas el 2026-10-09** (291). Evaluación y Alternativas: pendientes
+de decidir con Laura (ver "Siguiente paso exacto").
+
 | Capítulo del manual | Estado |
 |---|---|
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
@@ -274,11 +278,11 @@ la cuenta.
 | **Total** | | | | **3** | **3** | **3** | **3** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
-## Dónde está cada cosa (al 2026-10-08)
+## Dónde está cada cosa (al 2026-10-09)
 
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
-| Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
+| Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
 | Evaluación | 12 (3 por tipo: `aj-*-001` a `003`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema. Todo del Cap. I (lote 1 y 2026-09-28) |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
@@ -313,6 +317,18 @@ se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
     esté en la sección del manual indicada como respaldo.
   - `informe_fc.py lote_fcN N "descripción"`: arma el informe de
     revisión del lote en `DERECHO LIBRE/Informes/`.
+- Revisión de Flashcards ya cargadas (2026-10-09), sin escribir en Airtable:
+  - `revisar_fc.py`: baja todas las Flashcards de Airtable, las cruza con
+    los lotes **por el texto de la pregunta** (ojo: `filas_lote_fc6.json`
+    quedó con ids corridos, `aj-fc-195` a `207`, porque se volvió a correr
+    después de subir; las tarjetas reales del lote 6 son `182` a `194`),
+    avisa si alguna se editó en Airtable y agrega controles que
+    `verificar_respaldo.py` no hace (comillas literales, artículos y autores
+    sin formato). Deja en `generado/revision_fc.json` cada tarjeta con el
+    texto de su sección, para la lectura de fondo.
+  - `correcciones_revision.py`: las correcciones propuestas (id, nivel,
+    problema, texto actual, texto propuesto). `informe_revision.py` arma con
+    ellas `Informe_AJ_revision_flashcards.html`.
 
 ## Pasos para que el contenido llegue a la app, en este orden
 
@@ -438,18 +454,48 @@ en el orden del manual.
 
 ## Siguiente paso exacto
 
-**Flashcards de AJ terminadas** (2026-10-08): 291 en Airtable, los 132
-subtemas cubiertos, todas sin publicar y en Revisar. Lo que sigue
-depende de Laura:
-1. **Revisar los informes** de los lotes (`Informe_AJ_flashcards_lote2`
-   a `lote10` en `DERECHO LIBRE/Informes/`) y corregir o aprobar.
-2. **Decidir cómo seguir con Evaluación y Alternativas** (ver "Por
-   acordar con Laura" en "Método"): cuántas por tema según su
-   relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
-   entran a Memorice.
-3. Para publicar lo aprobado, seguir "Pasos para que el contenido llegue
-   a la app" (el paso de código ya está hecho; queda marcar en Airtable y
-   correr el sync).
+**Flashcards de AJ: terminadas, revisadas y publicadas (2026-10-09).**
+291 en Airtable y en la app (Supabase, `materia = acto_juridico`), los
+132 subtemas cubiertos.
+- **Revisión contra el manual** (2026-10-09): las 291 se leyeron una por
+  una contra el manual actual, con los criterios de `digesto-revision` y
+  la regla anti-alucinación de `docs/prompts-practica/nucleo.md`. Ningún
+  artículo, autor ni fallo inventado, nada fuera de la materia. 14
+  correcciones (2 de fondo: `aj-fc-248`, el tope de diez años es del art.
+  1692 inc. final y no del 2520 inc. 2°; `aj-fc-156`, cita del art. 1467
+  cortada; 5 de precisión y 7 de forma), aprobadas por Laura con un ajuste
+  (`005`: "prenda civil") y aplicadas con
+  `scripts/practica_aj/aplicar_correcciones.py`, que también actualizó los
+  `lote_fcN.py`. Detalle en `correcciones_revision.py` y en
+  `DERECHO LIBRE/Informes/Informe_AJ_revision_flashcards.html`.
+- **Redundancia entre tarjetas:** Laura decidió no revisarla.
+- **Publicación** (2026-10-09): `publicado` y `Revision_status =
+  Verificado` en las 291 (`scripts/practica_aj/publicar_fc.py`), y sync a
+  Supabase. El sync (`scripts/sync_airtable_supabase.py`) **se corre
+  desde el repo principal**, porque busca el `.env` en su raíz. Ese sync
+  subió además 12 Flashcards de Responsabilidad que ya estaban publicadas
+  en Airtable y faltaban en Supabase.
+
+**Lo que sigue: Evaluación y Alternativas. Conversación abierta con
+Laura, sin decisión todavía.** Laura pidió verlo ahora; la propuesta que
+quedó sobre la mesa (ella pidió aclarar antes de decidir, retomar
+preguntándole qué quería aclarar):
+1. **Cantidad por relevancia** (ver tablero; Alta 8 temas, Media 10, Baja
+   11): Alta 4 de Evaluación (una de cada tipo) + 4 Alternativas por tema
+   (64); Media 2 + 2 (40); Baja 1 + 1 (22). Unas 126 en total, en tandas
+   chicas partiendo por los temas Altos, con el mismo control
+   anti-alucinación e informe por tanda. Alternativas que se ofrecieron:
+   más carga en los Altos (6 + 6, unas 158) o sin los temas Bajos (unas 104).
+2. **El "borrador del Cap. I"** (Laura no sabía a qué se refería; se le
+   explicó): el lote 1 del 2026-10-07, hecho antes de acordar partir por
+   Flashcards y nunca revisado por ella. Son 12 de Evaluación (3 por tipo,
+   en Airtable sin publicar), 12 Alternativas (SQL sin correr) y 7
+   definiciones de Memorice (SQL sin correr); inventario al final de este
+   archivo. Opciones: revisarlo contra el manual actual con el mismo método
+   y aprovechar lo que sirva para los temas del Cap. I (recomendada), o
+   descartarlo.
+3. Pendiente aparte: qué definiciones entran a Memorice (38 en el manual,
+   7 en el piloto).
 
 Si más adelante hacen falta más Flashcards, el lote nuevo va en
 `scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes

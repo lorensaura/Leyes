@@ -5,75 +5,41 @@
 > una entrada nueva por sesión: corregir esta. Al decir "retoma Acto
 > Jurídico" o "retoma AJ", leer este archivo completo primero y resumir
 > en pocas líneas dónde quedó antes de seguir. Última actualización:
-> 2026-10-08, segunda vez (dos recuadros de Ejemplo nuevos en II.A.5.3, a pedido de Laura: "Los dos kayaks del tío Pepe", error obstáculo contrastado con error sustancial, y "El bulldog francés que creció demasiado", calidad esencial según Vial y Boetsch; aprobados por Laura, PDF regenerado, rama `worktree-aj-ejemplos-error`, falta merge a `main`). Antes: 2026-10-08 (ejemplos propios de I y VI aplicados, índice del PDF arreglado y `app/pdf/Acto_Juridico.pdf` regenerado; con esto el manual queda terminado). Antes: 2026-10-07 (capítulos II y III terminados y en `main`; IV.F con VIAL y VI revisados y en `main`; I.8.6 unificado con II.E.2.1 en la rama `worktree-acto-juridico-I-8-6`, falta merge; queda la revisión final de ejemplos de I y VI).
+> 2026-10-08 (ejemplos nuevos de error obstáculo y calidad esencial en II.A.5.3, aprobados; PDF regenerado; falta merge a `main`).
 >
-> **El chequeo de paráfrasis cercana de todo Acto Jurídico terminó**
-> (`guia-editorial.md` 3): capítulo I, capítulo IV completo (intro+A, B,
-> C, D, E, F, G), V (La representación) y VI (Modalidades) ya están
-> reescritos en voz propia donde hacía falta. Detalle de qué se
-> encontró y qué se reescribió en cada bloque: ver las secciones "Qué
-> se hizo en..." de este archivo, una por letra/capítulo, y los
-> informes `docs/actualizacion_acto_juridico_cap4-<letra>_2026-10-05.md`
-> (o `_IV-A`, `_IV-B1-B3`, `_IV-B4` para los tramos de septiembre).
+> **Estado actual (2026-10-08): el manual está terminado.** Los seis
+> capítulos (I a VI) están actualizados al método nuevo, con chequeo de
+> paráfrasis cercana, ejemplos propios y vista previa aprobada por
+> Laura; todo está en `main` y `app/pdf/Acto_Juridico.pdf` está al día.
+> El detalle de cada tramo está más abajo ("Qué se hizo en...") y en
+> los informes `docs/actualizacion_acto_juridico_<tramo>_<fecha>.md`.
 >
-> **`worktree-acto-juridico-cap4` ya se mergeó a `main`** (2026-10-05,
-> `main` y `origin/main` quedaron en el commit `7675b08`, el mismo de
-> esta rama). Al mergear apareció un conflicto que no tenía que ver con
-> el contenido: un resto sin resolver del 1 de octubre, con 2 archivos
-> marcados "deleted by us" (`AJ_vista_previa.html`,
-> `.claude/settings.local.json`) y 3 informes HTML mal commiteados
-> (`Informe_AJ_cap1.html`, `Informe_AJ_cap4-B.html`,
-> `Informe_AJ_tramo4-8-9.html`) que nunca debieron versionarse. Se
-> limpió desde la Terminal del checkout principal (`git rm --cached` +
-> `git restore --staged`, sin tocar los archivos en disco) y el merge
-> pasó sin problema. **Laura no revisó el contenido de VI línea por
-> línea en esta sesión** (ver "Pendiente" más abajo), solo resolvió el
-> conflicto de Git; el resto de los tramos (C-G, V) sí los había
-> aprobado antes en vista previa.
+> **Últimos ajustes (2026-10-08):**
+> - Ejemplos genéricos de I y VI reemplazados por ejemplos propios
+>   (informe `DERECHO LIBRE/Informes/Informe_AJ_ejemplos_I_VI.html`).
+>   Laura aclaró que **el capítulo I no se reescribe**: solo se cambiaron
+>   sus ejemplos. Índice del PDF arreglado. En `main`.
+> - I.8.6 unificado con II.E.2.1 (rama `worktree-acto-juridico-I-8-6`).
+>   En `main` (verificado 2026-10-08).
+> - **Dos recuadros de Ejemplo nuevos en II.A.5.3**, a pedido de Laura
+>   (decía que faltaban ejemplos en los tipos de error): "Los dos kayaks
+>   del tío Pepe", al final de (i) b), que muestra el error obstáculo
+>   (art. 1453) y lo contrasta con el error sustancial (art. 1454) con
+>   la misma historia; y "El bulldog francés que creció demasiado", al
+>   final de (ii) a.3, que muestra el error en la calidad esencial (la
+>   raza) sin error en la sustancia, y cómo se llega a lo mismo por Vial
+>   y por Boetsch. Los ejemplos breves que ya estaban en el texto (la
+>   guitarra del Martín, el 302 de don Iván, la cadena de la Maite) se
+>   conservan. Aprobados por Laura ("están buenos"); PDF regenerado
+>   (218 páginas). Rama **`worktree-aj-ejemplos-error`** (commits
+>   `6609047` y el de PDF/estado): **falta que Laura la mergee a
+>   `main`**.
 >
-> **Qué sigue (2026-10-06)**: capítulos II (Requisitos del AJ) y III
-> (Efectos del AJ), en tandas chicas, en la rama
-> **`worktree-acto-juridico-cap2-3`** (worktree `acto-juridico-cap4`).
-> **Laura la mergeó a `main` el 2026-10-06** con todo hasta 5.2b
-> (commit `08abcb5`); lo que venga después de eso queda de nuevo
-> pendiente de merge. Con ese merge también llegó a `main` el cambio
-> de Advertencia a No confundir en los manuales de **Responsabilidad**
-> (HTML y PDF). Hechos
-> y aprobados en vista previa: **5.1a**, **5.1b**, **5.1c**, **5.2a**, **5.2b** y **5.2c**. **5.2 se
-> dividió** a pedido de Laura (el error es muy preguntado y quiere más
-> detalle): 5.2a (A.4 + 5.1 + 5.2), 5.2b (clases de error de hecho, 5.3
-> a 5.6) y 5.2c (dolo, fuerza, remisión). **5.2a reescrito** con VIAL,
-> LEÓN HURTADO y un párrafo textual de Laura; Laura lo revisó en vista
-> previa, pidió menos cajas (aplicado) y quedó **conforme**
-> (2026-10-06).
->
-> **5.2b reescrito y aprobado** por Laura en vista previa
-> (2026-10-06, sin ajustes; commits `f952530` informe, `7d4abc8`
-> reescritura, `1fd4fa8` verificación del art. 8 LMC). Detalle en "Qué
-> se hizo en 5.2b" más abajo.
->
-> **5.2c reescrito** (dolo, fuerza, remisión; commits `36a76c2`
-> informe, `455ff24` reescritura). Laura aprobó el informe completo,
-> pidió el cuadro comparativo error/dolo/fuerza y sacar la glosa
-> hombre/mujer, entregó los arts. 280 C.P.C. y 22 Ley de Cheques, y
-> respondió "ok" a la vista previa (2026-10-06, sin ajustes). Detalle
-> en "Qué se hizo en 5.2c". **Con esto II.A (La voluntad) está
-> completo.** Pendiente de merge a `main` desde `36a76c2`.
->
-> **5.3 (La capacidad) y 5.4 (El objeto) terminados y en `main`.**
-> 5.4 se mergeó el 2026-10-07 (commit `d4e0b86`); Laura lo mergeó
-> después de la vista previa, sin pedir ajustes. Detalle en "Qué se
-> hizo en 5.4".
->
-> **Siguiente: 5.5** (D. La causa), manual desde `#cII-D` hasta antes
-> de `#cII-E`. Fuentes: Boetsch `principal_6` y el anexo `Causa_
-> DOMINGUEZ y BOETSCH.pdf`; revisar también Bozzo e Ibarra y Memorice
-> (en 5.4 el anexo de Bozzo e Ibarra aportó bastante). Mismos pasos:
-> extraer, inventario unidad por unidad, verificar artículos en
-> `Apuntes/CODIGOS/`, chequeo de paráfrasis, informe para aprobación.
-> En 5.4 Laura entregó por su cuenta páginas de VIAL y un fallo: al
-> partir 5.5, preguntarle si tiene material de VIAL u otros sobre la
-> causa.
+> **Qué sigue:** nada pendiente en el contenido del manual, salvo los
+> "Pendientes sueltos" de más abajo (jurisprudencia con rol para IV.A,
+> Conexiones `[FALTA]` hacia apuntes que no existen). El siguiente
+> manual es **Bienes** (`docs/manuales/estado_bienes.md`). Las
+> preguntas de Práctica de AJ son otro trabajo: `docs/preguntas-acto-juridico.md`.
 >
 > Fuentes ya entregadas (registro): **VIAL** pp. 77-104 y **FIGUEROA
 > YÁÑEZ** pp. 63-75, en `Apuntes/CIVIL/Acto Jurídico/` del checkout
@@ -94,9 +60,9 @@
 
 ## Dónde estamos
 
-Se está actualizando `04_Acto_Juridico_Manual.html` al método de
+Se actualizó `04_Acto_Juridico_Manual.html` al método de
 `actualizar-manuales-existentes.md`, **por tramos, con aprobación de
-Laura en cada uno**.
+Laura en cada uno** (terminado el 2026-10-08). Esta sección queda como registro.
 
 | Tramo | Contenido | Informe | Rama / commit final | Estado |
 |---|---|---|---|---|
@@ -992,7 +958,7 @@ y aprobación antes de tocar el manual:
 | 5.3 | B. Capacidad, `principal_4`; solo Boetsch y el Código (decisión de Laura) | `docs/actualizacion_acto_juridico_II-B_2026-10-06.md` | Reescrito (commits `81a917f` informe, `3330e19`); vista previa aprobada (2026-10-06) |
 | 5.4 | C. Objeto, `principal_5` (pp. 76-92) + anexo de Bozzo e Ibarra pp. 3-6 y 22 + VIAL pp. 170-183 + fallo CS rol 3671-1998 | `docs/actualizacion_acto_juridico_II-C_2026-10-06.md` | Reescrito (commits `b5b1373`, `946d031` informe, `d4e0b86` reescritura); vista previa sin ajustes; **en `main`** (2026-10-07) |
 | 5.5 | D. Causa, `principal_6` + anexo `Causa_ DOMINGUEZ y BOETSCH.pdf` + VIAL pp. 189-214 (26 pantallazos de Laura, 2026-10-07) | `docs/actualizacion_acto_juridico_II-D_2026-10-07.md` | Reescrito (commits `fd73319`, `123a9ec` informe, `3b0d44f` reescritura); **en `main`** (merge `3a6301d`, 2026-10-07) |
-| 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`); solo Boetsch y anexos (decisión de Laura) | `docs/actualizacion_acto_juridico_II-E-III_2026-10-07.md` | Reescrito (commits `9439a7b` informe, `3279571` reescritura, `69ef71c` ajuste); vista previa aprobada (2026-10-07); **falta que Laura lo mergee a `main`** |
+| 5.6 | E. Formalidades (`principal_7`) + III. Efectos (`principal_8`); solo Boetsch y anexos (decisión de Laura) | `docs/actualizacion_acto_juridico_II-E-III_2026-10-07.md` | Reescrito (commits `9439a7b` informe, `3279571` reescritura, `69ef71c` ajuste); vista previa aprobada (2026-10-07); **en `main`** (commit `d6800fa`) |
 
 Para cada tramo se aplica desde el principio el chequeo de paráfrasis
 cercana (tabla exhaustiva por punto), no después.

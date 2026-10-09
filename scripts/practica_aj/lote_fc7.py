@@ -93,7 +93,7 @@ NUEVAS = [
   'No: el paso del tiempo no puede volver válido lo que nunca lo fue. Para <b>BARAONA</b> es una <b>caducidad de derechos</b> de quienes podían impugnar el acto (juez, partes, terceros interesados y ministerio público). Su efecto es consolidar los desplazamientos patrimoniales: el acto pasa de título injusto a <b>título justo</b> y permite la prescripción adquisitiva. Por eso el ' + A(705) + ' habla de validar el título "por otro medio legal".',
   'IV.B.2.6'),
  ('T21.08', 'Regla', 'intermedia', '¿Opera de pleno derecho la nulidad absoluta según la doctrina tradicional? ¿En qué normas se apoya?',
-  '<b>No</b>: necesita ser declarada por el juez, y mientras no haya sentencia el acto sigue produciendo todos sus efectos. Lo deduce de las normas que hablan de la nulidad judicialmente declarada o pronunciada (' + AS('1683, 1687 y 1689') + ' y art. 37 de la Ley de Matrimonio Civil).',
+  '<b>No</b>: necesita ser declarada por el juez, y mientras no haya sentencia el acto sigue produciendo todos sus efectos. Lo deduce de las normas que hablan de la nulidad judicialmente declarada o pronunciada (' + AS('1683, 1687 y 1689') + ' y <span class="art">art. 37 de la Ley de Matrimonio Civil</span>).',
   'IV.B.2.7'),
  # T21.09 Nulidad relativa: definición, fundamento, causales y características
  ('T21.09', 'Concepto', 'basica', '¿Qué es la nulidad relativa y cuál es su fundamento?',
@@ -125,7 +125,7 @@ NUEVAS = [
  ('T21.11', 'Regla', 'avanzada', 'Si muere quien podía pedir la rescisión, ¿cómo corre el plazo para sus herederos?',
   'Distingue el ' + A(1692) + ' según su edad. Herederos <b>mayores</b>: el plazo no se suspende; gozan del cuadrienio entero si no había empezado a correr, o del residuo. Herederos <b>menores</b>: el cuadrienio o su residuo corre desde que llegan a la <b>mayoría de edad</b>, con un tope de <b>diez años</b> desde la celebración del acto o contrato.',
   'IV.B.3.5'),
- ('T21.11', 'Distinción', 'basica', 'Compara los plazos para alegar la nulidad absoluta y la relativa.',
+ ('T21.11', 'Distinción', 'basica', 'Compare los plazos para alegar la nulidad absoluta y la relativa.',
   '<b>Absoluta</b>: diez años desde la celebración (' + A(1683) + '). <b>Relativa</b>: cuatro años, desde la celebración si hubo error o dolo, y desde que cesa la fuerza o la incapacidad (' + A(1691) + '). <b>Herederos menores</b> del que podía pedir la rescisión: desde su mayoría de edad, con tope de diez años desde la celebración (' + A(1692) + ').',
   'IV.B.3.5'),
 ]

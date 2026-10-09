@@ -43,7 +43,7 @@ NUEVAS = [
  ('T25.1', 'Concepto', 'intermedia', '¿Qué es la inoponibilidad y qué terceros pueden alegarla?',
   'Es la ineficacia de un derecho, nacido de un acto válido o de uno nulo, revocado o resuelto, <b>respecto de ciertos terceros</b>, que pueden oponerse a sus efectos. No es un vicio del acto ni afecta su validez. Por regla general la alegan los <b>terceros relativos</b>, que están o estarán en alguna relación jurídica con las partes; el tercero absoluto queda fuera, salvo excepciones, como el dueño en la venta, arrendamiento o prenda de cosa ajena.',
   'IV.E.1'),
- ('T25.2', 'Distinción', 'intermedia', 'Inoponibilidades de forma y de fondo: ¿qué las distingue? Da ejemplos de cada una.',
+ ('T25.2', 'Distinción', 'intermedia', 'Inoponibilidades de forma y de fondo: ¿qué las distingue? Dé ejemplos de cada una.',
   'Son <b>de forma</b> cuando falta una formalidad exigida no para que el acto exista, sino para oponerlo a terceros: falta de publicidad (contraescrituras, ' + A(1707) + '; cesión de créditos no notificada, ' + A(1902) + ') o falta de fecha cierta (' + A(1703) + '). Son <b>de fondo</b> cuando, sin faltar formalidad, el acto hiere injustamente derechos de terceros: falta de concurrencia (venta de cosa ajena, ' + A(1815) + '), falta o exceso de poder, <b>fraude</b> (acción pauliana, ' + A(2468) + '), lesión de derechos adquiridos y de asignaciones forzosas.',
   'IV.E.2'),
  ('T25.3', 'Regla', 'avanzada', '¿Hay casos en que la nulidad o la resolución de un acto no alcanza a los terceros?',
