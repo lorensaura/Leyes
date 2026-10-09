@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-09 (tramo 2b reescrito, esperando
-> que Laura apruebe la vista previa).
+> antes de seguir. Última actualización: 2026-10-09 (tramo 3a aprobado y commiteado;
+> siguiente: informe del tramo 3b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -39,7 +39,10 @@
   (2026-10-08), commit `c97ba01`.** Detalle en "Tramo 2a", más abajo.
 - **Tramo 2b (II.I a II.K, p. 45-51): terminado y aprobado por Laura
   (2026-10-09).** Cierra el capítulo II.
-- **Tramo 3 (III. El dominio, p. 52-63): en curso, armando el informe.** Detalle en "Tramo 2b", más
+- **Tramo 3 dividido en 3a (III.1-5, p. 52-58) y 3b (III.6-9, p.
+  58-63), aprobada por Laura 2026-10-09. Tramo 3a: terminado y
+  aprobado por Laura (2026-10-09).** Detalle en "Tramo 3a", más abajo.
+- **Siguiente: tramo 3b (III.6-9, p. 58-63), informe sin empezar.** Detalle en "Tramo 2b", más
   abajo; siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -107,7 +110,8 @@ que en AJ.
 | 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A). Hecho 2026-10-08 |
 | 2a | 36-44 | 2 | II.C-H (consumibles, fungibles, principales y accesorios, divisibles, singulares y universales, presentes y futuros). Corte confirmado 2026-10-08. Hecho y aprobado 2026-10-08 |
 | 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). Corte confirmado 2026-10-08 (cierra el capítulo II). Hecho y aprobado 2026-10-09 |
-| 3 | 52-63 | 3 | III. El dominio |
+| 3a | 52-58 | 3 | III.1-5 (preliminares, concepto, bases constitucionales, caracteres, facultades). División aprobada 2026-10-09. Hecho y aprobado 2026-10-09 |
+| 3b | 58-63 | 3 | III.6-9 (cláusulas de no enajenar, clasificaciones, aspectos pasivos, extinción) + de Peñailillo: extensión material, vecindad, propiedad familiar; del anexo: restricciones específicas |
 | 4a | 63-72 | 4 | IV. La copropiedad (1ª mitad) |
 | 4b | 72-80 | 4 | IV. La copropiedad (2ª mitad) |
 | 5a | 81-88 | 5 | V.1 Aspectos generales (modos de adquirir) |
@@ -575,12 +579,69 @@ resuelven, etiquetas balanceadas, párrafo más largo 852 caracteres,
 todos los artículos presentes, capturas revisadas. Vista previa
 actualizada.
 
+## Tramo 3a: hecho y aprobado (2026-10-09)
+
+**III.1 a III.5, páginas 52 a 58 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo3a.html`. Fuentes: Boetsch p. 52-58;
+`anexo_secundario.pdf` p. 2-12 (fuente real de abuso del derecho,
+abstracto/elástico y el muro de 10 m); Peñailillo Segunda Parte cap. I
+(p. 18-44 del PDF; lo que es de 3b quedó anotado en el informe);
+Memorice (arts. 582 y 583 completos). Hallazgos:
+
+- Boetsch completo salvo 2 matices (cierre de las consideraciones
+  preliminares; DL 2.186 de expropiaciones).
+- Paráfrasis: 27/104 oraciones sobre 70% en III.1-5 (y 25/80 en
+  III.6-9, para 3b).
+- **Error de cita:** art. 36 Ley de Copropiedad (19.537, derogada por
+  Ley 21.442 de 2022; el art. trataba de seguro y plan de emergencia,
+  no del mal menor). Propuesto reemplazar por art. 10 Nº 7 CP
+  (verificado en fuentes públicas). Arts. 582 y 583 incompletos;
+  "corporales o incorporales" (19 Nº 24); orden de las reglas de la
+  indemnización (peritos va con la toma de posesión).
+- Peñailillo: error "art. 19 Nº 20" por art. 20 (no se incorpora).
+- Decisiones pendientes: confirmar la división 3a/3b; mover el abuso
+  del derecho dentro de 4.2 Absoluto (hoy es "4.3", como si fuera un
+  carácter); 14 unidades breves (sección 3.1); 6 bloques grandes de
+  Peñailillo (A historia, B orientaciones, C privación/restricción/
+  esencia, D preservación, E urbanismo, F formas de propiedad); 3
+  preguntas clásicas candidatas; material propio.
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** división
+3a/3b sí; abuso del derecho dentro de 4.2 Absoluto (ya no es un
+carácter numerado); entran las 14 unidades breves; de los bloques
+grandes de Peñailillo **solo B (orientaciones actuales) y C
+(restricción, privación y esencia)**; **no** entran A (historia), D
+(preservación natural y cultural), E (urbanismo) ni F (formas de
+propiedad); art. 36 Ley de Copropiedad reemplazado por art. 10 Nº 7 CP
+(Laura agregó `Apuntes/CODIGOS/Código Penal.pdf`, verificado ahí);
+pregunta clásica solo la Nº 2 (facultades del dominio, con uso y goce:
+comodato / usufructo), puesta en 5; sin material propio.
+
+Lo que se hizo: III.1-5 reescritos en voz propia (de 27 oraciones
+sobre 70% a 10, todas transcripciones o frases de la CPR); arts. 582 y
+583 completos en `.ley` (Memorice); art. 19 Nº 24 inc. 2º, art. 2517 y
+art. 10 Nº 7 CP en `.ley`; "corporales o incorporales"; reglas de la
+indemnización en a)-e) con los peritos en la toma de posesión; DL
+2.186; bloque C como 3 (v); caracteres renumerados 4.1 Real, 4.2
+Absoluto (con abuso del derecho, No confundir abuso/colisión, caja
+"Los pinos de la discordia" y Conexiones a Responsabilidad
+Extracontractual), 4.3 Exclusivo, 4.4 Perpetuo, 4.5 Abstracto, 4.6
+Elástico (ids `cIII-4-3` a `cIII-4-6` reasignados, `cIII-4-7`
+eliminado, índice actualizado). Dato de grado de 4.2 retirado; caja
+del muro de 10 m reemplazada. Cajas nuevas: "La autopista que pasa por
+la parcela de don Julio" (3), "La casa de la abuela Inés" (4.5-4.6),
+"El auto de Catalina" (5); No confundir "¿Fruto o producto?" (5.2);
+Conexiones a Contratos en 5. Verificación: cero guiones largos, ids
+únicos, `href` resuelven, etiquetas balanceadas, párrafo más largo 868
+caracteres, artículos presentes, capturas revisadas, vista previa
+actualizada.
+
 ## Siguiente paso exacto (2026-10-09, vigente)
 
-1. **Tramo 3: III. El dominio, p. 52-63** (parte 3 de Boetsch; ahí
-   entran las p. 2-12 de `anexo_secundario.pdf` y Peñailillo desde la
-   "SEGUNDA PARTE: LA PROPIEDAD Y LA POSESIÓN"). Mismo checklist:
-   inventario, artículos contra `Apuntes/CODIGOS`, paráfrasis medida con
-   6-gramas, cajas de Ejemplo propias, sin referencias internas,
-   preguntas candidatas, informe en `Informes/` antes de tocar el manual.
+1. **Tramo 3b: III.6-9, p. 58-63.** Informe nuevo con el resto de
+   Peñailillo cap. I (extensión material/subsuelo, relaciones de
+   vecindad, propiedad familiar, extinción), restricciones específicas
+   del anexo (p. 8-10) y las preguntas de cláusulas de no enajenar. Ojo:
+   el anexo cita la Ley 19.537 para gastos comunes (derogada, hoy Ley
+   21.442).
 2. Repetir tramo por tramo según la tabla de "Reparto de tramos".
