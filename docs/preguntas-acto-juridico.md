@@ -478,8 +478,13 @@ parecidos, como `031`/`074`, `033`/`103`, `039`/`193`, `040`/`192` y
 
 Lo que sigue depende de Laura:
 1. ~~Aprobar y aplicar las correcciones de la revisión~~ **Hecho
-   (2026-10-09).** Queda opcional una pasada de redundancia entre
-   tarjetas (ver arriba).
+   (2026-10-09).** Laura descartó la pasada de redundancia.
+   **Flashcards publicadas el 2026-10-09:** las 291 con `publicado` y
+   `Revision_status = Verificado` (script `scripts/practica_aj/publicar_fc.py`)
+   y sincronizadas a Supabase (291 filas con `materia = acto_juridico`;
+   el sync subió además 12 Flashcards de Responsabilidad que estaban
+   publicadas en Airtable y pendientes de sync). El sync se corre desde
+   el repo principal, porque busca el `.env` en su raíz.
 2. **Decidir cómo seguir con Evaluación y Alternativas** (ver "Por
    acordar con Laura" en "Método"): cuántas por tema según su
    relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
