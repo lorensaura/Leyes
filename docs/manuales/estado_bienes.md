@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-09 (tramo 3b reescrito,
-> esperando la revisión de Laura en la vista previa; sin commit).
+> antes de seguir. Última actualización: 2026-10-09 (tramo 3b aprobado y
+> commiteado; tramo 4a reescrito, esperando revisión de Laura; sin commit).
 
 ## Resumen para retomar (léelo primero)
 
@@ -42,8 +42,10 @@
 - **Tramo 3 dividido en 3a (III.1-5, p. 52-58) y 3b (III.6-9, p.
   58-63), aprobada por Laura 2026-10-09. Tramo 3a: terminado y
   aprobado por Laura (2026-10-09), commit `bcabce8`.** Detalle en "Tramo 3a", más abajo.
-- **Tramo 3b (III.6-9, p. 58-63): reescrito con las decisiones de Laura,
-  esperando su revisión en la vista previa. Sin commit todavía.** Detalle en "Tramo 3b", más abajo;
+- **Tramo 3b (III.6-9, p. 58-63): terminado y aprobado por Laura
+  (2026-10-09), commit `c7eb772`.** Cierra el capítulo III.
+- **Tramo 4a (IV.1-6, p. 63-70): reescrito, esperando la revisión de
+  Laura en la vista previa. Sin commit todavía.** Detalle en "Tramo 4a", más abajo. Detalle en "Tramo 3b", más abajo;
   siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -113,8 +115,8 @@ que en AJ.
 | 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). Corte confirmado 2026-10-08 (cierra el capítulo II). Hecho y aprobado 2026-10-09 |
 | 3a | 52-58 | 3 | III.1-5 (preliminares, concepto, bases constitucionales, caracteres, facultades). División aprobada 2026-10-09. Hecho y aprobado 2026-10-09 |
 | 3b | 58-63 | 3 | III.6-9 (cláusulas de no enajenar, clasificaciones, aspectos pasivos, extinción) + de Peñailillo: extensión material, vecindad, propiedad familiar; del anexo: restricciones específicas |
-| 4a | 63-72 | 4 | IV. La copropiedad (1ª mitad) |
-| 4b | 72-80 | 4 | IV. La copropiedad (2ª mitad) |
+| 4a | 63-70 | 4 | IV.1-6 (terminología, naturaleza, el Código, fuentes, clases, cuota). Corte por contenido aprobado 2026-10-09 |
+| 4b | 70-80 | 4 | IV.7-10 (administración, coposesión, copropiedad inmobiliaria, extinción) |
 | 5a | 81-88 | 5 | V.1 Aspectos generales (modos de adquirir) |
 | 5b | 88-94 | 5 | V.2 La ocupación |
 | 6a | 95-103 | 6 | V.3 La accesión (1ª mitad) |
@@ -637,7 +639,7 @@ Conexiones a Contratos en 5. Verificación: cero guiones largos, ids
 caracteres, artículos presentes, capturas revisadas, vista previa
 actualizada.
 
-## Tramo 3b: reescrito, esperando revisión (2026-10-09)
+## Tramo 3b: hecho y aprobado (2026-10-09), commit `c7eb772`
 
 **III.6 a III.9, páginas 58 a 63 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo3b.html`. Laura pidió (2026-10-09) un
@@ -703,10 +705,88 @@ párrafo más largo 653 caracteres, capturas revisadas (se partió el
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_3b.html`).
 
+## Tramo 4a: reescrito, esperando revisión (2026-10-09)
+
+**IV.1 a IV.6, páginas 63 a 70 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo4a.html`. Hallazgos:
+
+- Corte propuesto por contenido (4a = IV.1-6, p. 63-70; 4b = IV.7-10,
+  p. 70-80), porque la p. 72 cae en mitad del debate del mandato tácito.
+- Boetsch completo salvo 4 matices (qué regula el título de la
+  comunidad; "si se admite la comunicación, consecuencias inversas"; los
+  actos sobre la cuota siguen las reglas del objeto; lesión enorme).
+- Paráfrasis: 30/84 oraciones sobre 70%. Se reescribe todo.
+- Peñailillo (p. 45-53 del PDF): 10 unidades breves (proindiviso/
+  prodiviso; Roma la veía transitoria y los códigos dan poder a la
+  mayoría; germánica permanente y por mayoría; adopción de la romana
+  discutida; herencia plural como universalidad de hecho; art. 1344
+  completo y venta de cosa ajena; comunidades activas/pasivas; art. 1317
+  completo; art. 2417; art. 892). Pendiente de decisión: la **tesis que
+  admite la comunicación** (art. 580, partición no es la única forma de
+  terminar, derecho real de herencia vs. comunidad sobre bienes,
+  reivindicatoria del heredero), con cuadro y No confundir; presentarla
+  como "otra parte de la doctrina" (el resumen no dice si es de
+  Peñailillo).
+- Precisiones: arts. 1098 y 2307 no consagran la igualdad de cuotas como
+  regla general (aplicaciones); goce gratuito es el art. 655 CPC; art.
+  1909 exige "sin especificar los efectos"; art. 524 CPC más preciso.
+- Formato: 5.1 a)/b)/c) pasan a (i)/(ii)/(iii) y sus argumentos a a)-c).
+  Puntos 4 y 5.2 repetidos: se recomienda borrar 5.2.
+- Cajas: reemplazar el ejemplo de Boetsch de 5.1 (ii); retirar el falso
+  No confundir "Chile se apartó"; ejemplos propios propuestos.
+- 3 preguntas clásicas candidatas (se recomienda "¿Qué título es la
+  adjudicación?").
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** aprobó
+todas las propuestas. Corte 4a = IV.1-6 (p. 63-70), 4b = IV.7-10 (p.
+70-80); entran las 10 unidades de Peñailillo; **entra la tesis que admite
+la comunicación**, como "otra parte de la doctrina", con el cuadro
+comparativo de dos columnas (No hay comunicación / Hay comunicación;
+criterios: qué sostiene, lectura del código, efecto declarativo,
+comunidad hereditaria, tradición de la cuota, comunero incapaz) y el No
+confundir "Derecho real de herencia vs. comunidad sobre los bienes
+hereditarios"; **se borra 5.2** (repetía el punto 4): 5.3 Duración pasa
+a 5.2 y la clase nueva "Según su funcionamiento" queda como 5.3; arts.
+2304, 1317 y 1344 en `.ley`; precisiones de los arts. 1098, 2307, 1909,
+524 CPC y 655 CPC; 5.1 a)/b)/c) a (i)/(ii)/(iii) con los argumentos en
+a)-c); se reemplaza el ejemplo de Boetsch de 5.1 (ii), se retira el No
+confundir "Chile se apartó" (pasa al texto) y entran los ejemplos propios
+del informe (hermanos Fuentes y la casa de Curicó; Rodrigo hipotecó antes
+de la partición; la cuota de Sofía en la herencia del abuelo; vender tu
+tercio sin preguntar; breves: usufructuario y nudo propietario,
+medianería, lancha pesquera de tres hermanos como comunidad activa);
+pregunta clásica solo "¿Qué título es la adjudicación?", en 5.1 (ii).
+Conexiones a Sucesorio, Contratos y Obligaciones con `[FALTA: sección]`.
+Laura no tiene material propio.
+
+Lo que se hizo: IV.1-6 reescritos en voz propia (de 30 oraciones sobre
+70% a 2: un título y la definición de cuota, que se deja literal);
+recuperados los 4 matices de Boetsch; las 10 unidades de Peñailillo; la
+tesis de la comunicación con cuadro y No confundir; arts. 2304, 1317 y
+1344 en `.ley`; precisiones de los arts. 1098, 2307, 1909, 2417, 524 CPC
+y 655 CPC; 5.1 con (i)-(iii) (los ids `cIV-5-1-a/b/c` desaparecieron, no
+estaban en el índice); `cIV-5-2` ahora es Duración y `cIV-5-3`
+Funcionamiento (índice actualizado). Cajas nuevas: "Los hermanos Fuentes
+y la casa de Curicó" (1), "Rodrigo hipotecó antes de la partición" y la
+pregunta clásica "¿Qué título es la adjudicación?" (5.1 (ii), menciona
+el art. 703 inc. 4º), "La cuota de Sofía en la herencia del abuelo"
+(5.1 (iii)), "Vender tu tercio sin preguntar" (6); breves en cursiva
+(nudo propietario y usufructuario, pandereta, lancha pesquera y sitio
+eriazo). Conexiones a Obligaciones, Sucesorio y Contratos con `[FALTA:
+sección]`. Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 960 caracteres,
+capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
+del job (`05_Bienes_antes_4a.html`).
+
 ## Siguiente paso exacto (2026-10-09, vigente)
 
-1. **Tramo 3b: esperar la revisión de Laura en la vista previa**
-   (`Vista_previa/Bienes_vista_previa.html#cIII-6`). Con su visto bueno,
+1. **Tramo 4a: esperar la revisión de Laura en la vista previa**
+   (`Vista_previa/Bienes_vista_previa.html#cIV`). Con su visto bueno,
    commit en `main` del manual y de este estado.
-2. **Tramo 4a: IV. La copropiedad (1ª mitad), p. 63-72.** Informe nuevo.
+2. **Tramo 4b: IV.7-10, p. 70-80.** Informe nuevo. Peñailillo p. 47-48
+   (administración: ius prohibendi, mandato tácito, art. 2307, medidas
+   conservativas, jurisprudencia), p. 53-57 (coposesión, copropiedad
+   inmobiliaria con Ley 19.537, hoy derogada por la 21.442, y tiempo
+   compartido). Boetsch cita la Ley 19.537 en IV.9: verificar contra la
+   Ley 21.442.
 3. Repetir tramo por tramo según la tabla de "Reparto de tramos".
