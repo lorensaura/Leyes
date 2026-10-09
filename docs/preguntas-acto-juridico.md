@@ -313,6 +313,18 @@ se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
     esté en la sección del manual indicada como respaldo.
   - `informe_fc.py lote_fcN N "descripción"`: arma el informe de
     revisión del lote en `DERECHO LIBRE/Informes/`.
+- Revisión de Flashcards ya cargadas (2026-10-09), sin escribir en Airtable:
+  - `revisar_fc.py`: baja todas las Flashcards de Airtable, las cruza con
+    los lotes **por el texto de la pregunta** (ojo: `filas_lote_fc6.json`
+    quedó con ids corridos, `aj-fc-195` a `207`, porque se volvió a correr
+    después de subir; las tarjetas reales del lote 6 son `182` a `194`),
+    avisa si alguna se editó en Airtable y agrega controles que
+    `verificar_respaldo.py` no hace (comillas literales, artículos y autores
+    sin formato). Deja en `generado/revision_fc.json` cada tarjeta con el
+    texto de su sección, para la lectura de fondo.
+  - `correcciones_revision.py`: las correcciones propuestas (id, nivel,
+    problema, texto actual, texto propuesto). `informe_revision.py` arma con
+    ellas `Informe_AJ_revision_flashcards.html`.
 
 ## Pasos para que el contenido llegue a la app, en este orden
 
@@ -439,10 +451,37 @@ en el orden del manual.
 ## Siguiente paso exacto
 
 **Flashcards de AJ terminadas** (2026-10-08): 291 en Airtable, los 132
-subtemas cubiertos, todas sin publicar y en Revisar. Lo que sigue
-depende de Laura:
-1. **Revisar los informes** de los lotes (`Informe_AJ_flashcards_lote2`
-   a `lote10` en `DERECHO LIBRE/Informes/`) y corregir o aprobar.
+subtemas cubiertos, todas sin publicar y en Revisar.
+
+**Revisión contra el manual hecha (2026-10-09):** se leyeron las 291, una
+por una, contra el manual actual, con los criterios de
+`digesto-revision` y la regla anti-alucinación de
+`docs/prompts-practica/nucleo.md`. Resultado: ningún artículo, autor ni
+fallo inventado, nada fuera de la materia; de las 269 con archivo de
+lote, ninguna editada en Airtable (las 22 primeras no tienen con qué
+compararse). 14 correcciones propuestas: 2 de fondo (`aj-fc-248`: el
+tope de diez años es del art. 1692 inc. final, no del 2520 inc. 2°;
+`aj-fc-156`: cita del art. 1467 cortada), 5 de precisión (`101`, `159`,
+`278`, `089`, `005`) y 7 de forma (`060`, `009`, `157`, `193`, `222`,
+`232`, `270`). Están en `scripts/practica_aj/correcciones_revision.py`
+(con la cita literal del manual de cada una) y en
+`DERECHO LIBRE/Informes/Informe_AJ_revision_flashcards.html`. **No se
+aplicaron**: esperan el visto bueno de Laura. Aprobadas, se aplican en
+Airtable reemplazando el texto actual por el propuesto (el script de
+informe ya comprueba que cada texto actual exista tal cual). **Ojo al
+aplicar:** cuatro cambian la pregunta (`009`, `060`, `232`, `270`), y
+`revisar_fc.py` y el control de duplicados de `subir_fc.py` cruzan por
+el texto de la pregunta: actualizar también la entrada en su
+`lote_fcN.py` (la `009` no tiene lote). Esta revisión miró solo la
+fidelidad al manual, **no la redundancia** entre tarjetas (hay pares
+parecidos, como `031`/`074`, `033`/`103`, `039`/`193`, `040`/`192` y
+`202`/`229`/`231`/`232`): queda como pasada opcional.
+
+Lo que sigue depende de Laura:
+1. **Aprobar o ajustar las 14 correcciones** del informe de revisión;
+   luego aplicarlas en Airtable. Los informes por lote
+   (`Informe_AJ_flashcards_lote2` a `lote10`) siguen sirviendo para leer
+   las tarjetas completas.
 2. **Decidir cómo seguir con Evaluación y Alternativas** (ver "Por
    acordar con Laura" en "Método"): cuántas por tema según su
    relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
