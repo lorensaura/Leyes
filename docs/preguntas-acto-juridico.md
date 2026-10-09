@@ -15,9 +15,9 @@
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Introducción, IV.A Inexistencia y IV.B.1 a B.3.5 Nulidad (temas 18 a 20): Flashcards cubiertas** (lotes 6 y 7). Desde el tema 21 (Ratificación): pendiente |
-| V. Representación | Pendiente |
-| VI. Modalidades | Pendiente |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9) |
+| V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
+| VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
 Además existen, de antes y también en Revisar, 10 ítems del Cap. I
 cargados el 2026-09-28 (`aj-aplic-001`, `aj-det-001`, `aj-just-001`,
@@ -230,55 +230,55 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | · | · | · | · | · | 3 | · | · |
 | &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | · | · | · | · | · | 3 | · | 2 |
 | &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | · | · | · | · | · | 4 | · | 1 |
-| **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **1** | **1** | **5** |
-| &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 1 | 1 | 5 |
-| **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **2** | **2** | **3** |
-| &nbsp;&nbsp;&nbsp;Efectos de la nulidad entre las partes (restituciones mutuas) | IV.B.4.1-2 | | 1 | · | · | · | · | · | · | · | 2 |
-| &nbsp;&nbsp;&nbsp;Efectos respecto de terceros y acción reivindicatoria | IV.B.4.3-4 | | 1 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;La conversión del acto nulo | IV.B.4.5 | | · | · | · | · | · | · | 2 | 2 | · |
-| **23. Lesión** | IV.C | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
-| &nbsp;&nbsp;&nbsp;Concepto de lesión | IV.C.1 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;¿Es la lesión un vicio del consentimiento? | IV.C.2 | | 3 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Casos de lesión en el Código Civil | IV.C.3 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Sanción de la lesión | IV.C.4 | | 1 | · | · | · | · | · | · | · | · |
-| **24. Simulación** | IV.D | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **1** |
-| &nbsp;&nbsp;&nbsp;Concepto de simulación y su reconocimiento en Chile | IV.D.1-2 | | 6 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Simulación lícita e ilícita y sus requisitos | IV.D.3-4.1 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Clases: absoluta y relativa (e interposición de persona) | IV.D.4.2 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Sanción, prueba y acción de simulación | IV.D.4.3-4.5 | | 6 | · | · | · | · | · | · | · | 1 |
-| **25. Inoponibilidad** | IV.E | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
-| &nbsp;&nbsp;&nbsp;Concepto de inoponibilidad | IV.E.1 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Inoponibilidades de forma y de fondo (incluida la acción pauliana) | IV.E.2 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Inoponibilidad derivada de la nulidad o resolución | IV.E.3 | | 1 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Cómo se hace valer y diferencias con la nulidad | IV.E.4-5 | | · | · | · | · | · | · | · | · | · |
-| **26. Fraude a la ley** | IV.F | **Baja** | **1 (1%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
-| &nbsp;&nbsp;&nbsp;Fraude a la ley: concepto, requisitos, figuras afines y sanción | IV.F | | 1 | · | · | · | · | · | · | · | · |
-| **27. Otras causales de ineficacia (resolución, resciliación, revocación, caducidad...)** | IV.G | **Baja** | **4 (5%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
-| &nbsp;&nbsp;&nbsp;Resolución | IV.G.2 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Resciliación | IV.G.3 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Revocación y desistimiento unilateral | IV.G.4-5 | | 2 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Suspensión, caducidad, terminación, renuncia y muerte | IV.G.1, 6-9 | | 1 | · | · | · | · | · | · | · | · |
-| **28. Representación (y estipulación por otro, promesa de hecho ajeno)** | V | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **1** | **1** | **3** |
-| &nbsp;&nbsp;&nbsp;Concepto, utilidad y clases de representación | V.1-3.2 | | 4 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Mandato y representación voluntaria | V.3.3 | | 3 | · | · | · | · | · | 1 | 1 | 1 |
-| &nbsp;&nbsp;&nbsp;Naturaleza jurídica de la representación | V.4 | | 1 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Circunstancias personales: capacidad, vicios y buena fe | V.5 | | 1 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Requisitos y efectos de la representación (contemplatio domini, poder) | V.6-7 | | 1 | · | · | · | · | · | · | · | 1 |
-| &nbsp;&nbsp;&nbsp;Actos sin poder o con extralimitación y su ratificación | V.8-9 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Estipulación para otro y promesa de hecho ajeno | V.10 | | · | · | · | · | · | · | · | · | · |
-| **29. Modalidades: condición, plazo y modo** | VI | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **·** | **·** | **·** |
-| &nbsp;&nbsp;&nbsp;Condición: concepto y clasificaciones | VI.A.1-2 | | 3 | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | · | · | · |
-| &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | · | · | · |
-| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **232** | **23** | **47** |
+| **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **8** | **1** | **5** |
+| &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 8 | 1 | 5 |
+| **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **20** | **2** | **3** |
+| &nbsp;&nbsp;&nbsp;Efectos de la nulidad entre las partes (restituciones mutuas) | IV.B.4.1-2 | | 1 | · | · | · | · | · | 5 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Efectos respecto de terceros y acción reivindicatoria | IV.B.4.3-4 | | 1 | · | · | · | · | · | 8 | · | 1 |
+| &nbsp;&nbsp;&nbsp;La conversión del acto nulo | IV.B.4.5 | | · | · | · | · | · | · | 7 | 2 | · |
+| **23. Lesión** | IV.C | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **5** | **·** | **·** |
+| &nbsp;&nbsp;&nbsp;Concepto de lesión | IV.C.1 | | 2 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;¿Es la lesión un vicio del consentimiento? | IV.C.2 | | 3 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Casos de lesión en el Código Civil | IV.C.3 | | 2 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Sanción de la lesión | IV.C.4 | | 1 | · | · | · | · | · | 1 | · | · |
+| **24. Simulación** | IV.D | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **6** | **·** | **1** |
+| &nbsp;&nbsp;&nbsp;Concepto de simulación y su reconocimiento en Chile | IV.D.1-2 | | 6 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Simulación lícita e ilícita y sus requisitos | IV.D.3-4.1 | | 2 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Clases: absoluta y relativa (e interposición de persona) | IV.D.4.2 | | 2 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Sanción, prueba y acción de simulación | IV.D.4.3-4.5 | | 6 | · | · | · | · | · | 2 | · | 1 |
+| **25. Inoponibilidad** | IV.E | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **4** | **·** | **·** |
+| &nbsp;&nbsp;&nbsp;Concepto de inoponibilidad | IV.E.1 | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Inoponibilidades de forma y de fondo (incluida la acción pauliana) | IV.E.2 | | 2 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Inoponibilidad derivada de la nulidad o resolución | IV.E.3 | | 1 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Cómo se hace valer y diferencias con la nulidad | IV.E.4-5 | | · | · | · | · | · | · | 1 | · | · |
+| **26. Fraude a la ley** | IV.F | **Baja** | **1 (1%)** | **·** | **·** | **·** | **·** | **·** | **2** | **·** | **·** |
+| &nbsp;&nbsp;&nbsp;Fraude a la ley: concepto, requisitos, figuras afines y sanción | IV.F | | 1 | · | · | · | · | · | 2 | · | · |
+| **27. Otras causales de ineficacia (resolución, resciliación, revocación, caducidad...)** | IV.G | **Baja** | **4 (5%)** | **·** | **·** | **·** | **·** | **·** | **4** | **·** | **·** |
+| &nbsp;&nbsp;&nbsp;Resolución | IV.G.2 | | 2 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Resciliación | IV.G.3 | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Revocación y desistimiento unilateral | IV.G.4-5 | | 2 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Suspensión, caducidad, terminación, renuncia y muerte | IV.G.1, 6-9 | | 1 | · | · | · | · | · | 1 | · | · |
+| **28. Representación (y estipulación por otro, promesa de hecho ajeno)** | V | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **9** | **1** | **3** |
+| &nbsp;&nbsp;&nbsp;Concepto, utilidad y clases de representación | V.1-3.2 | | 4 | · | · | · | · | · | 1 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Mandato y representación voluntaria | V.3.3 | | 3 | · | · | · | · | · | 2 | 1 | 1 |
+| &nbsp;&nbsp;&nbsp;Naturaleza jurídica de la representación | V.4 | | 1 | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Circunstancias personales: capacidad, vicios y buena fe | V.5 | | 1 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Requisitos y efectos de la representación (contemplatio domini, poder) | V.6-7 | | 1 | · | · | · | · | · | 1 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Actos sin poder o con extralimitación y su ratificación | V.8-9 | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Estipulación para otro y promesa de hecho ajeno | V.10 | | · | · | · | · | · | · | 1 | · | · |
+| **29. Modalidades: condición, plazo y modo** | VI | **Baja** | **6 (7%)** | **·** | **·** | **·** | **·** | **·** | **5** | **·** | **·** |
+| &nbsp;&nbsp;&nbsp;Condición: concepto y clasificaciones | VI.A.1-2 | | 3 | · | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | 1 | · | · |
+| &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | 1 | · | · |
+| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
 ## Dónde está cada cosa (al 2026-10-08)
 
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
-| Flashcards | **232** (`aj-fc-001` a `232`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
+| Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | Todas sin publicar y en `Revisar`, cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
 | Evaluación | 12 (3 por tipo: `aj-*-001` a `003`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema. Todo del Cap. I (lote 1 y 2026-09-28) |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
@@ -288,7 +288,7 @@ Informes de revisión (fuera del repo, en `DERECHO LIBRE/Informes/`):
 `Informe_AJ_relevancia_temas.html` (relevancia y tablero por subtema,
 se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
 (lote 1 de Evaluación, Alternativas y definiciones) e
-`Informe_AJ_flashcards_lote2.html` a `lote7.html`.
+`Informe_AJ_flashcards_lote2.html` a `lote10.html`.
 
 ## Herramientas (scripts del repo)
 
@@ -316,14 +316,13 @@ se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
 
 ## Pasos para que el contenido llegue a la app, en este orden
 
-1. **Llevar a `main` y desplegar** los cambios de código del 2026-10-07
-   (`app/alternativas.html` y `scripts/sync_airtable_supabase.py`). Hoy
-   están sin commit en la worktree `acto-juridico-cap4`, rama
-   `worktree-bienes-preparacion`. Laura pushea con GitHub Desktop.
-   **No saltarse este paso:** con el código viejo en producción,
-   Evaluación no filtra por materia Civil y un ítem de AJ publicado
-   aparecería mezclado bajo Responsabilidad y Todas; y una definición de
-   Memorice pediría un número de artículo que no existe.
+1. ~~Llevar a `main` y desplegar los cambios de código del 2026-10-07~~
+   **Hecho** (comprobado el 2026-10-08: `app/alternativas.html` y
+   `scripts/sync_airtable_supabase.py` ya están en `origin/main`). Sin
+   esos cambios, un ítem de AJ publicado aparecería mezclado bajo
+   Responsabilidad y una definición de Memorice pediría un número de
+   artículo. Las Flashcards viven en Airtable, así que no necesitan
+   fusionar esta rama para llegar a la app.
 2. Laura revisa los informes y corrige o aprueba.
 3. Flashcards y Evaluación: en Airtable, marcar `publicado` y poner
    `Revision_status = Verificado`; luego correr
@@ -401,32 +400,61 @@ en el orden del manual.
   nulidad absoluta (6), principios comunes (5) y saneamiento de la
   relativa (4). Control sin fallos al primer intento. Informe:
   `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote7.html`.
+- **Lote 8 (2026-10-08), hecho:** 25 Flashcards (`aj-fc-233` a `257`)
+  de los temas 21 (Ratificación, 7) y 22 (Efectos de la nulidad, 18:
+  partes 5, terceros y acciones 8, conversión 5). Se evitó repetir lo ya
+  cubierto (los 3 recuadros No confundir del lote 2 y el art. 1692 del
+  lote 7, que aquí solo aparece por la regla de no extender la suspensión
+  por analogía). Control sin fallos al primer intento. Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote8.html`.
+- **Lote 9 (2026-10-08), hecho:** 21 Flashcards (`aj-fc-258` a `278`)
+  de los temas 23 a 27 (Lesión 5, Simulación 6, Inoponibilidad 4, Fraude
+  a la ley 2, Otras causales 4), ya con el criterio de **pocas tarjetas**:
+  una por subtema, dos solo donde el subtema junta ideas distintas. Cierra
+  el Capítulo IV. Control sin fallos al primer intento. Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote9.html`.
+- **Lote 10 (2026-10-08), hecho, el último:** 13 Flashcards (`aj-fc-279`
+  a `291`) de los temas 28 (Representación, 8) y 29 (Modalidades, 5), con
+  el criterio de pocas tarjetas. Control sin fallos al primer intento.
+  Con este lote, **los 132 subtemas del manual tienen al menos una
+  Flashcard** (comprobado en el tablero). Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_flashcards_lote10.html`.
 - **Criterio de cantidad usado:** al menos una por subtema; dos a cuatro
   en los subtemas que más aparecen en exámenes (error esencial y
   sustancial, error en la persona, clases de dolo, requisitos de la
   fuerza, etc.). Una idea por tarjeta, con el artículo cuando el manual
   lo cita, y el pasaje del manual que la respalda.
+- **Desde el tema 23 (IV.C Lesión) en adelante, pocas tarjetas** (Laura,
+  2026-10-08): lo más relevante ya se tocó. Basta **una por subtema**, y
+  dos solo donde el subtema tenga dos ideas que no caben en una tarjeta.
+  No se agregan tarjetas de detalle doctrinal fino.
 - **Control anti-alucinación (obligatorio en cada lote):** cada tarjeta se
   redacta solo desde el texto del manual leído en ese momento, con su
   respaldo (sección exacta). Antes de subir, un script comprueba que cada
   artículo y cada autor citado aparezca **en esa misma sección** del
   manual (no solo en alguna parte), que no haya guiones largos ni
   etiquetas no permitidas y que ninguna pregunta repita una existente; si
-  algo falla, no se sube. Lotes 2 a 7: 210 tarjetas, ninguna subida con fallos.
+  algo falla, no se sube. Lotes 2 a 10: 269 tarjetas, ninguna subida con fallos.
 
 ## Siguiente paso exacto
 
-Seguir con Flashcards, **dos temas por tanda**, en orden del manual,
-con las herramientas de `scripts/practica_aj/` (ver "Herramientas"):
-próxima tanda, **temas 21 (Ratificación, IV.B.3.6) y 22 (Efectos de la
-nulidad, IV.B.4)**. El tema 20 (Nulidad) quedó hecho en el lote 7.
-Lote nuevo en `scripts/practica_aj/lote_fc8.py`. Antes de redactar, correr
-`python3 scripts/tablero_cobertura_aj.py` para ver qué subtemas ya tienen
-algo. Al terminar: verificar (artículos y autores en su sección), subir a
-Airtable sin publicar con tema y subtema exacto, correr de nuevo el
-tablero, hacer el informe en `DERECHO LIBRE/Informes/` y actualizar esta
-sección. Próximo id libre: `aj-fc-233`. Evaluación y Alternativas siguen
-en pausa hasta que Laura decida cómo seguir con ellas.
+**Flashcards de AJ terminadas** (2026-10-08): 291 en Airtable, los 132
+subtemas cubiertos, todas sin publicar y en Revisar. Lo que sigue
+depende de Laura:
+1. **Revisar los informes** de los lotes (`Informe_AJ_flashcards_lote2`
+   a `lote10` en `DERECHO LIBRE/Informes/`) y corregir o aprobar.
+2. **Decidir cómo seguir con Evaluación y Alternativas** (ver "Por
+   acordar con Laura" en "Método"): cuántas por tema según su
+   relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
+   entran a Memorice.
+3. Para publicar lo aprobado, seguir "Pasos para que el contenido llegue
+   a la app" (el paso de código ya está hecho; queda marcar en Airtable y
+   correr el sync).
+
+Si más adelante hacen falta más Flashcards, el lote nuevo va en
+`scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes
+`python3 scripts/tablero_cobertura_aj.py`; verificar, subir sin publicar,
+informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
 
 ## Reglas y decisiones que no cambian
 
@@ -448,7 +476,7 @@ en pausa hasta que Laura decida cómo seguir con ellas.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-233`,
+  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-292`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
