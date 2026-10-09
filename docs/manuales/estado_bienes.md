@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-09, revisado tras las fusiones de AJ (tramo 3a aprobado y commiteado;
-> siguiente: informe del tramo 3b).
+> antes de seguir. Última actualización: 2026-10-09 (tramo 3b reescrito,
+> esperando la revisión de Laura en la vista previa; sin commit).
 
 ## Resumen para retomar (léelo primero)
 
@@ -42,8 +42,9 @@
 - **Tramo 3 dividido en 3a (III.1-5, p. 52-58) y 3b (III.6-9, p.
   58-63), aprobada por Laura 2026-10-09. Tramo 3a: terminado y
   aprobado por Laura (2026-10-09), commit `bcabce8`.** Detalle en "Tramo 3a", más abajo.
-- **Siguiente: tramo 3b (III.6-9, p. 58-63), informe sin empezar.** Detalle en "Tramo 2b", más
-  abajo; siguiente paso al final de este archivo.
+- **Tramo 3b (III.6-9, p. 58-63): reescrito con las decisiones de Laura,
+  esperando su revisión en la vista previa. Sin commit todavía.** Detalle en "Tramo 3b", más abajo;
+  siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -636,20 +637,76 @@ Conexiones a Contratos en 5. Verificación: cero guiones largos, ids
 caracteres, artículos presentes, capturas revisadas, vista previa
 actualizada.
 
+## Tramo 3b: reescrito, esperando revisión (2026-10-09)
+
+**III.6 a III.9, páginas 58 a 63 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo3b.html`. Laura pidió (2026-10-09) un
+**cuadro comparativo de las tesis sobre las cláusulas de no enajenar**
+(validez general / nulidad salvo permiso legal / validez relativa); el
+informe trae el cuadro armado (sección 3). Hallazgos:
+
+- Boetsch completo en el manual, sin matices faltantes.
+- Paráfrasis: 25/80 oraciones sobre 70% (medido en el 3a). Se reescribe todo.
+- **Autores del cuadro:** ninguna fuente (Boetsch, Peñailillo, anexo de
+  discusiones doctrinales, VIAL, AJ II.C.4.3) nombra quién sostiene la
+  validez ni la nulidad. Solo hay nombre en la relativa: PEÑAILILLO la
+  considera "la más aceptable" porque desarma el argumento de la libre
+  circulación. Jurisprudencia (anexo de discusiones, sin rol): C.S. acepta
+  (no desnaturaliza el dominio; otro fallo, condición resolutoria); C.A.
+  Valparaíso en contra. Opciones a Laura: (a) "parte de la doctrina";
+  (b) ella da la fuente; (c) buscar en fuentes públicas con cita y su
+  aprobación. **No inventar nombres.**
+- Precisiones de cita (sin errores graves): art. 1964 no prohíbe sino que
+  limita el efecto del pacto; arts. 637 y 642 son de especies náufragas y
+  represadas, no perdidas (citar 629, 632, 633); art. 2327 imputa "al que
+  lo tenga"; art. 1432 Nº 1 da acción contra terceros; art. 53 Nº 3 del
+  Reglamento del Conservador sin verificar (no está en `Apuntes/CODIGOS`).
+- Nuevo propuesto: 10 unidades breves (Peñailillo, anexos, VIAL: No
+  confundir prohibición legal/judicial/convencional); puntos nuevos
+  pendientes de decisión: extensión material (8), vecindad (9.4),
+  propiedad familiar breve (10), con la renumeración de 8 y 9; encuadre
+  de una línea de las restricciones de utilidad pública/privada.
+- No incorporar del anexo: art. 2328 como responsabilidad del dueño
+  (inexacto); certificado de gastos comunes (Ley 19.537 derogada).
+- 3 preguntas clásicas candidatas (se recomiendan la 1 y la 2).
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** cuadro
+comparativo sin fila "Quién la sostiene" (así se resolvió el tema de los
+autores: no se buscan); los artículos que prohíben y los que permiten
+van en una sola fila "Lectura del código", con los artículos entre
+paréntesis dentro de cada celda; las celdas sin argumento llevan "-".
+**No entran** extensión material, relaciones de vecindad ni propiedad
+familiar (numeración 6-9 se mantiene, sin ids nuevos). Sí entra el
+encuadre de una línea de utilidad privada/pública al abrir 8. Pregunta
+clásica solo la Nº 2 (efecto de la contravención), en 6.4. Sin material
+propio.
+
+Lo que se hizo: III.6-9 reescritos en voz propia (de 25 oraciones sobre
+70% a 1, la cita del art. 53 Nº 3 del Reglamento); arts. 1126, 1810 y
+1555 en `.ley`; los demás descritos en una línea (1964 resta efecto,
+793 pierde el usufructo, 1432 Nº 1 acción contra terceros); opinión de
+PEÑAILILLO y jurisprudencia en 6.3; cuadro de las tres tesis; No
+confundir legal/judicial/convencional (VIAL); Conexiones a AJ II.C.4.3,
+Obligaciones (`[FALTA: sección]`) y Extracontractual P. Clasificaciones
+y extinción al markup nuevo de `.enum-i`. Ley 21.442 en (ii). Salida por
+abandono (art. 858) en 8.1; caja-lista de artículos de 8.1 retirada.
+Art. 2327 "al que lo tenga"; arts. 629, 632, 633 para perdidas y 637/642
+como náufragas y represadas. Novedades de PEÑAILILLO en abandono,
+incomerciabilidad y modos relativos. Cajas de Ejemplo nuevas: "Cinco
+años sin vender la parcela de Pirque" (6.3), "Josefina vendió igual"
+(6.4), "La pandereta de los Muñoz y los Rojas" (8.1), "La lancha que se
+llevó el temporal" (9.1); ejemplos breves en cursiva (Benjamín y la
+propiedad fiduciaria, Carolina y las contribuciones). Verificación: cero
+guiones largos, ids únicos, `href` resuelven, etiquetas balanceadas,
+párrafo más largo 653 caracteres, capturas revisadas (se partió el
+`.art` largo de dos celdas del cuadro para que no se desborde). Vista
+previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_3b.html`).
+
 ## Siguiente paso exacto (2026-10-09, vigente)
 
-1. **Tramo 3b: III.6-9, p. 58-63.** Informe nuevo con el resto de
-   Peñailillo cap. I (extensión material/subsuelo, relaciones de
-   vecindad, propiedad familiar, extinción), restricciones específicas
-   del anexo (p. 8-10) y las preguntas de cláusulas de no enajenar. Ojo:
-   el anexo cita la Ley 19.537 para gastos comunes (derogada, hoy Ley
-   21.442).
-   Para ahorrar tiempo: el texto de Peñailillo para 3b está desde
-   "Estipulación limitativa de la facultad de disposición" hasta
-   "Capítulo II: La Copropiedad" (p. 35-44 del PDF); el texto actual de
-   III.6-9 tiene 25/80 oraciones sobre 70% de paráfrasis. Recordar que
-   Laura **rechazó** en 3a los bloques de urbanismo, preservación
-   natural y cultural, historia y "formas de propiedad": no volver a
-   proponerlos por la vía de las restricciones de utilidad pública del
-   anexo (sí se puede nombrar la restricción en una línea).
-2. Repetir tramo por tramo según la tabla de "Reparto de tramos".
+1. **Tramo 3b: esperar la revisión de Laura en la vista previa**
+   (`Vista_previa/Bienes_vista_previa.html#cIII-6`). Con su visto bueno,
+   commit en `main` del manual y de este estado.
+2. **Tramo 4a: IV. La copropiedad (1ª mitad), p. 63-72.** Informe nuevo.
+3. Repetir tramo por tramo según la tabla de "Reparto de tramos".
