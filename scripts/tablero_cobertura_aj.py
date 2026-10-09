@@ -21,6 +21,9 @@ Fuentes que cuenta:
 Escribe el tablero en `docs/preguntas-acto-juridico.md` (entre las
 marcas `<!-- tablero:inicio -->` y `<!-- tablero:fin -->`) y en el
 informe `DERECHO LIBRE/Informes/Informe_AJ_relevancia_temas.html`.
+Además arma `Informe_AJ_cobertura_evaluacion.html`, solo con los cuatro
+tipos de Evaluación (publicadas y en borrador) y los temas ordenados por
+relevancia, que es el orden de trabajo acordado con Laura (2026-10-09).
 
 Uso: python3 scripts/tablero_cobertura_aj.py
 """
@@ -31,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CAT = json.loads((ROOT / 'scripts' / 'aj_temas_subtemas.json').read_text(encoding='utf-8'))
 DOC = ROOT / 'docs' / 'preguntas-acto-juridico.md'
 INFORME = Path('/Users/lorensaura/Desktop/DERECHO LIBRE/Informes/Informe_AJ_relevancia_temas.html')
+INFORME_EVAL = INFORME.with_name('Informe_AJ_cobertura_evaluacion.html')
 BASE = 'appBDWY3eCXgxBGpL'
 TABLAS = {'A': 'Aplicación', 'D': 'Detección de error', 'J': 'Justificación', 'M': 'Discriminación MC', 'FC': 'Flashcards'}
 SUPABASE = 'https://byyukzhxhtopojgvgglp.supabase.co/rest/v1/'
@@ -75,7 +79,9 @@ def contar():
     for col, tabla in TABLAS.items():
         for r in airtable(e['AIRTABLE_TOKEN'], tabla):
             sub = por_nombre.get((r['fields'].get('subtema') or '').strip())
-            if sub: c[sub][col] += 1
+            if sub:
+                c[sub][col] += 1
+                if r['fields'].get('publicado'): c[sub][col + '_pub'] += 1
             else: sin_subtema.append(f"{tabla}: {r['fields'].get('id')}")
     h = {'apikey': e['SUPABASE_SECRET_KEY'], 'Authorization': 'Bearer ' + e['SUPABASE_SECRET_KEY']}
     alts = get(SUPABASE + 'alternativas?select=id,subtema&materia=ilike.*acto_juridico*', h)
@@ -173,6 +179,62 @@ td.cero{{color:var(--mut)}} td.alerta{{background:var(--alerta)}} .aviso{{color:
     INFORME.write_text(doc, encoding='utf-8')
 
 
+def informe_evaluacion(c, n):
+    """Cobertura de los cuatro tipos de Evaluación, con los temas en orden de relevancia."""
+    E = html.escape
+    tipos = ['A', 'D', 'J', 'M']
+    nombres = {'A': 'Aplicación', 'D': 'Detección de error', 'J': 'Justificación', 'M': 'Discriminación MC'}
+    def celda(cnt, k, tema=False):
+        v, pub = cnt[k], cnt[k + '_pub']
+        if not v: return "<td class='cero'>·</td>"
+        borr = v - pub
+        det = f"<span class='pub'>{pub}</span>" if pub else ''
+        det += f"<span class='borr'>{borr}</span>" if borr else ''
+        return f"<td>{det}</td>"
+    temas = sorted(CAT['temas'], key=lambda t: (-t['pct'], t['numero']))
+    rows, tot, vacios = '', collections.Counter(), 0
+    for orden, t in enumerate(temas, 1):
+        tt = collections.Counter()
+        for s in t['subtemas']: tt.update(c[s['codigo']])
+        tot.update(tt)
+        nv = nivel(t['pct'])
+        rows += (f"<tr class='tema'><td class='ord'>{orden}</td><td>{t['numero']}. {E(t['nombre'])} <span class='ref'>{E(t['ref'])}</span></td>"
+                 f"<td class='n-{nv.lower()}'>{nv}<div class='ref'>{t['examenes']} exámenes ({t['pct']}%)</div></td>"
+                 + ''.join(celda(tt, k) for k in tipos) + '</tr>')
+        for s in t['subtemas']:
+            cs = c[s['codigo']]
+            vacios += sum(1 for k in tipos if not cs[k])
+            rows += (f"<tr class='sub'><td></td><td>{E(s['nombre'])} <span class='ref'>{E(s['ref'])}</span></td><td class='ref'>{s['examenes'] or '·'}</td>"
+                     + ''.join(celda(cs, k) for k in tipos) + '</tr>')
+    rows += "<tr class='tema'><td></td><td>Total</td><td></td>" + ''.join(celda(tot, k) for k in tipos) + '</tr>'
+    total_sub = sum(len(t['subtemas']) for t in CAT['temas'])
+    doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cobertura Evaluación AJ</title><style>
+:root{{--bg:#FAF8F5;--fg:#1d1d1f;--mut:#6b6b70;--line:#e3ded6;--card:#fff;--tema:#f3efe8;--alta:#C41E2E;--media:#B7791F;--baja:#6b6b70;--ok:#2f7d4f;--okbg:#e4f2e9;--bo:#8a5a00;--bobg:#fbefd5}}
+@media (prefers-color-scheme:dark){{:root:not([data-theme="light"]){{--bg:#17171a;--fg:#ececef;--mut:#a0a0a8;--line:#34343a;--card:#202024;--tema:#2a2a30;--alta:#ff6b78;--media:#e0a84a;--baja:#a0a0a8;--ok:#7fd1a0;--okbg:#1f3428;--bo:#e8c27a;--bobg:#3a3020}}}}
+:root[data-theme="dark"]{{--bg:#17171a;--fg:#ececef;--mut:#a0a0a8;--line:#34343a;--card:#202024;--tema:#2a2a30;--alta:#ff6b78;--media:#e0a84a;--baja:#a0a0a8;--ok:#7fd1a0;--okbg:#1f3428;--bo:#e8c27a;--bobg:#3a3020}}
+body{{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;margin:0;padding:24px 16px 80px}} main{{max-width:1050px;margin:0 auto}}
+h1{{font:700 1.6rem Georgia,serif;margin:0 0 6px}} p,ul{{max-width:860px}} .tw{{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}}
+table{{border-collapse:collapse;width:100%;font-size:.86rem}} th,td{{padding:5px 8px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}}
+th{{position:sticky;top:0;background:var(--card);font-weight:600;font-size:.8rem}} td:nth-child(2),th:nth-child(2){{text-align:left}}
+tr.tema td{{background:var(--tema);font-weight:700;border-top:2px solid var(--line)}} tr.sub td:nth-child(2){{padding-left:24px}}
+.ord{{color:var(--mut)}} .ref{{color:var(--mut);font-size:.76rem;font-weight:400}}
+.n-alta{{color:var(--alta)}} .n-media{{color:var(--media)}} .n-baja{{color:var(--baja);font-weight:500}}
+td.cero{{color:var(--mut)}} .pub,.borr{{display:inline-block;min-width:1.5em;padding:0 5px;border-radius:9px;margin:0 2px;font-weight:600}}
+.pub{{background:var(--okbg);color:var(--ok)}} .borr{{background:var(--bobg);color:var(--bo)}}
+</style></head><body><main>
+<h1>Acto Jurídico: cobertura de Evaluación</h1>
+<p>Los cuatro tipos de pregunta de Evaluación, contados por tema y subtema. Los temas van <b>ordenados por relevancia</b> en los {n} exámenes de grado reales (columna "#"), que es el orden de trabajo: se toma un tema y se completan sus subtemas tipo por tipo (Aplicación, luego Detección de error, Justificación y Discriminación MC) antes de pasar al siguiente.</p>
+<ul><li><span class="pub">n</span> preguntas publicadas (ya en la app).</li>
+<li><span class="borr">n</span> preguntas en borrador: en Airtable, sin publicar, esperando revisión.</li>
+<li><b>·</b> sin preguntas de ese tipo. Hoy hay {vacios} casillas vacías de {total_sub * 4} ({total_sub} subtemas por 4 tipos).</li></ul>
+<p>En la fila de cada subtema, la tercera columna dice en cuántos exámenes apareció ese punto.</p>
+<div class="tw"><table><tr><th>#</th><th>Tema / subtema</th><th>Relevancia</th>{''.join(f'<th>{nombres[k]}</th>' for k in tipos)}</tr>{rows}</table></div>
+</main></body></html>"""
+    assert '\u2014' not in doc
+    INFORME_EVAL.write_text(doc, encoding='utf-8')
+
+
 def main():
     c, sin_subtema, borrador = contar()
     filas, tot = tablero(c)
@@ -186,7 +248,9 @@ def main():
     else:
         print('No encontré las marcas del tablero en', DOC.name)
     informe(filas, tot, n, borrador, sin_subtema)
+    informe_evaluacion(c, n)
     print('Informe:', INFORME)
+    print('Informe de Evaluación:', INFORME_EVAL)
     print('Totales:', dict(tot))
     if sin_subtema: print('Sin subtema reconocible:', sin_subtema)
 

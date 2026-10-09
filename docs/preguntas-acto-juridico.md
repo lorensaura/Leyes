@@ -11,8 +11,8 @@
 ## Estado por capítulo
 
 **Flashcards de los seis capítulos: revisadas contra el manual y
-publicadas el 2026-10-09** (291). Evaluación y Alternativas: pendientes
-de decidir con Laura (ver "Siguiente paso exacto").
+publicadas el 2026-10-09** (291). Evaluación: método decidido, se parte
+por Nulidad (ver "Siguiente paso exacto"). Alternativas: después.
 
 | Capítulo del manual | Estado |
 |---|---|
@@ -368,8 +368,8 @@ Decidido:
   "Lotes de Flashcards").
 
 Por acordar con Laura (no bloquea seguir con Flashcards):
-1. Cuántas preguntas de **Evaluación y Alternativas** por tema según su
-   nivel (Alta, Media, Baja), y cuándo retomarlas.
+1. ~~Cómo trabajar Evaluación~~ **decidido el 2026-10-09** (ver
+   "Siguiente paso exacto"). Falta: cuántas por subtema, y Alternativas.
 2. Qué hacer con el lote 1 del Cap. I (Evaluación, Alternativas y
    definiciones en borrador): revisarlo, ajustarlo o descartarlo.
 3. Qué definiciones entran a Memorice (38 en el manual, 7 en el piloto).
@@ -476,26 +476,29 @@ en el orden del manual.
   subió además 12 Flashcards de Responsabilidad que ya estaban publicadas
   en Airtable y faltaban en Supabase.
 
-**Lo que sigue: Evaluación y Alternativas. Conversación abierta con
-Laura, sin decisión todavía.** Laura pidió verlo ahora; la propuesta que
-quedó sobre la mesa (ella pidió aclarar antes de decidir, retomar
-preguntándole qué quería aclarar):
-1. **Cantidad por relevancia** (ver tablero; Alta 8 temas, Media 10, Baja
-   11): Alta 4 de Evaluación (una de cada tipo) + 4 Alternativas por tema
-   (64); Media 2 + 2 (40); Baja 1 + 1 (22). Unas 126 en total, en tandas
-   chicas partiendo por los temas Altos, con el mismo control
-   anti-alucinación e informe por tanda. Alternativas que se ofrecieron:
-   más carga en los Altos (6 + 6, unas 158) o sin los temas Bajos (unas 104).
-2. **El "borrador del Cap. I"** (Laura no sabía a qué se refería; se le
-   explicó): el lote 1 del 2026-10-07, hecho antes de acordar partir por
-   Flashcards y nunca revisado por ella. Son 12 de Evaluación (3 por tipo,
-   en Airtable sin publicar), 12 Alternativas (SQL sin correr) y 7
-   definiciones de Memorice (SQL sin correr); inventario al final de este
-   archivo. Opciones: revisarlo contra el manual actual con el mismo método
-   y aprovechar lo que sirva para los temas del Cap. I (recomendada), o
-   descartarlo.
-3. Pendiente aparte: qué definiciones entran a Memorice (38 en el manual,
-   7 en el piloto).
+**Lo que sigue: Evaluación. Método decidido por Laura el 2026-10-09:**
+- **Tablero propio de Evaluación:**
+  `DERECHO LIBRE/Informes/Informe_AJ_cobertura_evaluacion.html`, que se
+  genera con el mismo `python3 scripts/tablero_cobertura_aj.py`. Muestra
+  los 4 tipos (Aplicación, Detección de error, Justificación,
+  Discriminación MC) por tema y subtema, separando publicadas y borrador,
+  con los temas **ordenados por relevancia**. Ese orden es el orden de
+  trabajo: 1° Nulidad (tema 20), 2° Error (9), 3° Causa (15), 4° Objeto
+  (13), 5° Objeto ilícito (14), 6° Dolo (10), y así.
+- **Se trabaja tema por tema y, dentro del tema, tipo por tipo:** primero
+  Aplicación de todos los subtemas del tema, luego Detección de error,
+  luego Justificación, luego Discriminación MC. Terminados los 4 tipos se
+  pasa al tema siguiente. Cada tanda (un tipo de un tema) lleva el control
+  anti-alucinación y su informe de revisión.
+- **Al 2026-10-09:** 12 de 528 casillas (132 subtemas por 4 tipos) tienen
+  preguntas, todas del lote 1 del Cap. I, en borrador.
+- **Por definir con Laura antes de la primera tanda (Nulidad,
+  Aplicación):** cuántas preguntas por subtema (¿una por subtema y tipo,
+  o más en los subtemas que más salen en los exámenes?).
+- **Alternativas:** se dejan para después de Evaluación (no se habló
+  todavía de cómo trabajarlas).
+- El borrador del Cap. I (lote 1) y las definiciones de Memorice siguen
+  pendientes de decidir (ver "Por acordar").
 
 Si más adelante hacen falta más Flashcards, el lote nuevo va en
 `scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes
