@@ -11,8 +11,9 @@
 ## Estado por capítulo
 
 **Flashcards de los seis capítulos: revisadas contra el manual y
-publicadas el 2026-10-09** (291). Evaluación y Alternativas: pendientes
-de decidir con Laura (ver "Siguiente paso exacto").
+publicadas el 2026-10-09** (291). Evaluación: en curso, tema por tema y
+tipo por tipo; tanda 1 (Nulidad, Aplicación) cargada y esperando revisión
+(ver "Siguiente paso exacto"). Alternativas: después.
 
 | Capítulo del manual | Estado |
 |---|---|
@@ -222,18 +223,18 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Concepto, características y origen de la inexistencia | IV.A.1-2 | | 1 | · | · | · | · | · | 3 | · | · |
 | &nbsp;&nbsp;&nbsp;Diferencias entre inexistencia y nulidad | IV.A.3 | | · | · | · | · | · | · | 2 | · | · |
 | &nbsp;&nbsp;&nbsp;¿Distingue el Código la inexistencia? (doctrinas, historia y jurisprudencia) | IV.A.4 | | 6 | · | · | · | · | · | 7 | 2 | · |
-| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **·** | **·** | **·** | **·** | **·** | **39** | **1** | **8** |
-| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | · | · | · | · | · | 4 | · | 2 |
-| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | · | · | · | · | · | 2 | · | · |
-| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | · | · | · | · | · | 2 | · | · |
-| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | · | · | · | · | · | 5 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | · | · | · | · | · | 3 | 1 | · |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | · | · | · | · | · | 3 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | · | · | · | · | · | 6 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | · | · | · | · | · | 4 | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | · | · | · | · | · | 3 | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | · | · | · | · | · | 3 | · | 2 |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | · | · | · | · | · | 4 | · | 1 |
+| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **17** | **·** | **·** | **·** | **·** | **39** | **1** | **8** |
+| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | 2 | · | · | · | · | 4 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | 1 | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | 1 | · | · | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | 1 | · | · | · | · | 5 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | 1 | · | · | · | · | 3 | 1 | · |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | 2 | · | · | · | · | 3 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | 2 | · | · | · | · | 6 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | 1 | · | · | · | · | 4 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | 2 | · | · | · | · | 3 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | 2 | · | · | · | · | 3 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | 2 | · | · | · | · | 4 | · | 1 |
 | **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **8** | **1** | **5** |
 | &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 8 | 1 | 5 |
 | **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **20** | **2** | **3** |
@@ -275,7 +276,7 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | 1 | · | · |
-| **Total** | | | | **3** | **3** | **3** | **3** | **12** | **291** | **23** | **47** |
+| **Total** | | | | **20** | **3** | **3** | **3** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
 ## Dónde está cada cosa (al 2026-10-09)
@@ -283,7 +284,7 @@ la cuenta.
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
 | Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
-| Evaluación | 12 (3 por tipo: `aj-*-001` a `003`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema. Todo del Cap. I (lote 1 y 2026-09-28) |
+| Evaluación | 29: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`) y 17 de Aplicación de Nulidad (`aj-aplic-004` a `020`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
@@ -368,8 +369,8 @@ Decidido:
   "Lotes de Flashcards").
 
 Por acordar con Laura (no bloquea seguir con Flashcards):
-1. Cuántas preguntas de **Evaluación y Alternativas** por tema según su
-   nivel (Alta, Media, Baja), y cuándo retomarlas.
+1. ~~Cómo trabajar Evaluación~~ **decidido el 2026-10-09** (ver
+   "Siguiente paso exacto"). Falta: cuántas por subtema, y Alternativas.
 2. Qué hacer con el lote 1 del Cap. I (Evaluación, Alternativas y
    definiciones en borrador): revisarlo, ajustarlo o descartarlo.
 3. Qué definiciones entran a Memorice (38 en el manual, 7 en el piloto).
@@ -476,26 +477,63 @@ en el orden del manual.
   subió además 12 Flashcards de Responsabilidad que ya estaban publicadas
   en Airtable y faltaban en Supabase.
 
-**Lo que sigue: Evaluación y Alternativas. Conversación abierta con
-Laura, sin decisión todavía.** Laura pidió verlo ahora; la propuesta que
-quedó sobre la mesa (ella pidió aclarar antes de decidir, retomar
-preguntándole qué quería aclarar):
-1. **Cantidad por relevancia** (ver tablero; Alta 8 temas, Media 10, Baja
-   11): Alta 4 de Evaluación (una de cada tipo) + 4 Alternativas por tema
-   (64); Media 2 + 2 (40); Baja 1 + 1 (22). Unas 126 en total, en tandas
-   chicas partiendo por los temas Altos, con el mismo control
-   anti-alucinación e informe por tanda. Alternativas que se ofrecieron:
-   más carga en los Altos (6 + 6, unas 158) o sin los temas Bajos (unas 104).
-2. **El "borrador del Cap. I"** (Laura no sabía a qué se refería; se le
-   explicó): el lote 1 del 2026-10-07, hecho antes de acordar partir por
-   Flashcards y nunca revisado por ella. Son 12 de Evaluación (3 por tipo,
-   en Airtable sin publicar), 12 Alternativas (SQL sin correr) y 7
-   definiciones de Memorice (SQL sin correr); inventario al final de este
-   archivo. Opciones: revisarlo contra el manual actual con el mismo método
-   y aprovechar lo que sirva para los temas del Cap. I (recomendada), o
-   descartarlo.
-3. Pendiente aparte: qué definiciones entran a Memorice (38 en el manual,
-   7 en el piloto).
+**Lo que sigue: Evaluación. Método decidido por Laura el 2026-10-09:**
+- **Tablero propio de Evaluación:**
+  `DERECHO LIBRE/Informes/Informe_AJ_cobertura_evaluacion.html`, que se
+  genera con el mismo `python3 scripts/tablero_cobertura_aj.py`. Muestra
+  los 4 tipos (Aplicación, Detección de error, Justificación,
+  Discriminación MC) por tema y subtema, separando publicadas y borrador,
+  con los temas **ordenados por relevancia**. Ese orden es el orden de
+  trabajo: 1° Nulidad (tema 20), 2° Error (9), 3° Causa (15), 4° Objeto
+  (13), 5° Objeto ilícito (14), 6° Dolo (10), y así.
+- **Se trabaja tema por tema y, dentro del tema, tipo por tipo:** primero
+  Aplicación de todos los subtemas del tema, luego Detección de error,
+  luego Justificación, luego Discriminación MC. Terminados los 4 tipos se
+  pasa al tema siguiente. Cada tanda (un tipo de un tema) lleva el control
+  anti-alucinación y su informe de revisión.
+- **Cantidad (Laura, 2026-10-09, opción B):** dos preguntas por tipo en
+  los subtemas que aparecen en **10 o más exámenes** (columna del tablero)
+  y una en el resto. Si un subtema es solo terminología o no da para el
+  tipo, no se fuerza: se dice en el informe (pedido expreso de Laura).
+- **Prompt:** el de Responsabilidad, `docs/prompts-practica/nucleo.md` +
+  `{tipo}.md` + `elementos-clave.md`, con estas adaptaciones para AJ (que
+  mandan sobre lo que digan esos archivos): cantidad según la regla de
+  arriba (no "2-4 por eje entre los 4 tipos"); un tipo a la vez dentro de
+  cada tema; destino la base `Digesto Acto Jurídico` (el sync fuerza
+  `materia = acto_juridico`); `subtema` con el nombre **exacto** del
+  catálogo; y la entrega en el orden del núcleo dentro del informe.
+- **Flujo de cada tanda** (scripts en `scripts/practica_aj/`):
+  1. `python3 scripts/practica_aj/extraer.py` si cambió el manual.
+  2. Leer la sección del tema en `generado/manual.txt`, y lo que ya existe
+     de ese tipo (tablero), antes de redactar.
+  3. Escribir `lote_<tipo>N.py` (formato de `lote_aplic1.py`: `TABLA`,
+     `PREFIJO`, `ITEMS` con subtema, caso, enunciado, respuesta,
+     elementos, artículos, objetivo y secciones de respaldo; e `INFORME`
+     con puntos activados, cobertura por ítem, avisos y redundancia).
+  4. `python3 scripts/practica_aj/subir_eval.py lote_<tipo>N`: revisa
+     (artículos y autores en su sección de respaldo, guiones, 3-4
+     elementos con 4-6 keywords, keywords que no estén ya en el caso o el
+     enunciado, que la respuesta modelo obtenga todos los elementos con la
+     regla de la app, sin repetir lo cargado). Con `--subir` y cero
+     problemas, carga sin publicar y en Revisar.
+  5. `python3 scripts/practica_aj/informe_eval.py lote_<tipo>N` y abrir el
+     informe; `python3 scripts/tablero_cobertura_aj.py`.
+  6. Ojo con los puntos discutidos del manual: no darlos por zanjados. Ej.:
+     la **compraventa** de cosa embargada es válida para la Corte Suprema
+     (tesis de Velasco, II.C.4.3); los casos atacan la **tradición**.
+- **Tanda 1 (2026-10-09): Nulidad, Aplicación.** 17 preguntas,
+  `aj-aplic-004` a `020` (`lote_aplic1.py`), en Airtable sin publicar y en
+  Revisar. Informe: `DERECHO LIBRE/Informes/Informe_AJ_aplic1.html`.
+  **Esperando la revisión de Laura.** El subtema de terminología se cubrió
+  solo con la regla general (la terminología no da para Aplicación).
+- **Siguiente tanda: Nulidad, Detección de error** (`lote_det1.py`,
+  tabla `Detección de error`, prefijo `aj-det`, desde `aj-det-004`), con
+  el prompt `docs/prompts-practica/deteccion-error.md`. Antes, aplicar lo
+  que Laura corrija de la tanda 1.
+- **Alternativas:** se dejan para después de Evaluación (no se habló
+  todavía de cómo trabajarlas).
+- El borrador del Cap. I (lote 1) y las definiciones de Memorice siguen
+  pendientes de decidir (ver "Por acordar").
 
 Si más adelante hacen falta más Flashcards, el lote nuevo va en
 `scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes
@@ -522,7 +560,7 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-004`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-292`,
+  `aj-aplic-021`, `aj-det-004`, `aj-just-004`, `aj-mc-004`, `aj-fc-292`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.

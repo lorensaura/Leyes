@@ -1,0 +1,123 @@
+"""Revisa y, con --subir, carga a Airtable una tanda de Evaluación de Acto Jurídico
+(Aplicación, Detección de error, Justificación o Discriminación MC).
+
+Uso: python3 scripts/practica_aj/subir_eval.py lote_aplic1 [--subir]
+
+El lote es un módulo de esta carpeta con TABLA, PREFIJO e ITEMS (ver lote_aplic1.py).
+Controles, todos obligatorios antes de subir:
+- subtema existente en el catálogo (scripts/aj_temas_subtemas.json);
+- cero guiones largos y comillas angulares en todos los campos;
+- cada artículo citado (caso, enunciado, respuesta, elementos, articulos) y cada autor
+  en mayúsculas aparece en alguna de las secciones del manual indicadas como respaldo;
+- entre 3 y 4 elementos clave, cada uno con 4 a 6 keywords, sin keywords repetidas
+  entre elementos del mismo ítem ni ya contenidas en el caso o el enunciado;
+- la respuesta modelo obtiene todos los elementos con la regla de la app;
+- enunciado + caso no repetidos respecto de lo que ya está en la tabla.
+Sin --subir solo revisa y deja generado/filas_<lote>.json para el informe.
+Con --subir, y cero problemas, carga sin publicar y en Revisar.
+"""
+import importlib, json, os, re, sys, unicodedata
+AQUI = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(os.path.dirname(AQUI))
+GEN = os.path.join(AQUI, 'generado') + '/'
+sys.path.insert(0, AQUI)
+sys.path.insert(0, os.path.join(REPO, 'scripts'))
+from airtable_aj import req, todos, BASE  # noqa: E402
+import urllib.parse  # noqa: E402
+
+LOTE = next(a for a in sys.argv[1:] if a.startswith('lote_'))
+m = importlib.import_module(LOTE)
+cat = json.load(open(os.path.join(REPO, 'scripts', 'aj_temas_subtemas.json'), encoding='utf-8'))
+sub = {s['codigo']: (s['nombre'], t['nombre']) for t in cat['temas'] for s in t['subtemas']}
+
+# Texto del manual por sección, con la misma convención de códigos que verificar_respaldo.py
+manual = open(GEN + 'manual.txt', encoding='utf-8').read().split('\n')
+cod = []; h1 = h2l = h2n = h3 = ''
+for l in manual:
+    mm = re.match(r'^(#{1,3}) (.*)', l)
+    if mm:
+        niv, t = len(mm.group(1)), mm.group(2)
+        if niv == 1: h1 = t.split('.')[0]; h2l = h2n = h3 = ''
+        elif niv == 2:
+            if re.match(r'^[A-G]\. ', t): h2l = t[0]; h2n = h3 = ''
+            elif re.match(r'^[A-G]\.\d', t): h2l = t.split()[0]; h2n = h3 = ''
+            else: h2n = t.split('.')[0]; h3 = ''
+        else: h3 = t.split('.')[1] if '.' in t else ''
+    cod.append('.'.join(x for x in [h1, h2l, h2n] if x) + ('.' + h3 if h3 else ''))
+def seccion(base):
+    return '\n'.join(l for c, l in zip(cod, manual) if c == base or c.startswith(base + '.'))
+
+def n(s):
+    s = unicodedata.normalize('NFD', s.lower())
+    return re.sub(r'[^a-z0-9 ]', '', ''.join(c for c in s if unicodedata.category(c) != 'Mn'))
+
+def quitar_tildes(s):
+    return ''.join(c for c in unicodedata.normalize('NFD', s.lower()) if unicodedata.category(c) != 'Mn')
+
+def articulos_citados(texto):
+    """Números de artículo citados con 'art.' o 'arts.', sin incisos ni numerales."""
+    nums = set()
+    for frag in re.findall(r'\barts?\. ([^():;"]+)', texto):
+        frag = re.split(r'\.\s', frag)[0]
+        frag = re.sub(r'inc\. (\d+[°º]?|final)', '', frag)
+        frag = re.sub(r'N[º°] ?\d+', '', frag)
+        nums.update(re.findall(r'\b\d{1,4}\b', frag))
+    return nums
+
+existentes = todos(m.TABLA)
+ya = {n(r['fields'].get('caso', '') + r['fields'].get('enunciado', '')) for r in existentes}
+ids = [r['fields'].get('id') for r in existentes if r['fields'].get('id')]
+siguiente = max([int(i.split('-')[-1]) for i in ids] or [0]) + 1
+temas = {r['fields']['nombre']: r['id'] for r in todos('Temas')}
+
+problemas, filas = [], []
+for it in m.ITEMS:
+    iid = f'{m.PREFIJO}-{siguiente:03d}'; siguiente += 1
+    if it['sub'] not in sub:
+        problemas.append(f'{iid}: subtema {it["sub"]} no existe'); continue
+    elementos = [dict(texto=t, keywords=k, pregunta=p) for t, k, p in it['elementos']]
+    todo = ' '.join([it['caso'], it['enunciado'], it['respuesta'], it['objetivo']] +
+                    [e['texto'] + ' ' + e['pregunta'] + ' ' + ' '.join(e['keywords']) for e in elementos])
+    if re.search('[—–«»]', todo): problemas.append(f'{iid}: guion largo o comillas angulares')
+    respaldo = '\n'.join(seccion(s) for s in it['respaldo'])
+    for s in it['respaldo']:
+        if not seccion(s): problemas.append(f'{iid}: sección {s} no encontrada en el manual')
+    citados = articulos_citados(todo) | set(re.findall(r'\b\d{1,4}\b', re.sub(r'N[º°] ?\d+|inc\. \S+', '', it['articulos'])))
+    for a in sorted(citados):
+        if not re.search(r'\b' + a + r'\b', respaldo): problemas.append(f'{iid}: art. {a} no está en su respaldo {it["respaldo"]}')
+    for autor in re.findall(r'\b([A-ZÁÉÍÓÚÑ]{4,}(?: [A-ZÁÉÍÓÚÑ]{4,})*)\b', todo):
+        if autor not in ('COT',) and autor not in respaldo: problemas.append(f'{iid}: autor {autor} no está en su respaldo')
+    if not 3 <= len(elementos) <= 4: problemas.append(f'{iid}: {len(elementos)} elementos clave')
+    vistos = set()
+    for e in elementos:
+        if not 4 <= len(e['keywords']) <= 6: problemas.append(f'{iid}: elemento con {len(e["keywords"])} keywords: {e["texto"][:40]}')
+        for k in e['keywords']:
+            if k != n(k): problemas.append(f'{iid}: keyword con tildes o signos: {k}')
+            if k in vistos: problemas.append(f'{iid}: keyword repetida entre elementos: {k}')
+            vistos.add(k)
+            # una keyword que ya está en la pregunta la "obtiene" cualquier respuesta que la repita
+            if k in quitar_tildes(it['caso'] + ' ' + it['enunciado']):
+                problemas.append(f'{iid}: keyword ya contenida en el caso o el enunciado: {k}')
+        # misma regla que evaluarRespuesta() en app/alternativas.html: basta una keyword literal
+        if not any(k in quitar_tildes(it['respuesta']) for k in e['keywords']):
+            problemas.append(f'{iid}: la respuesta modelo no obtiene el elemento "{e["texto"][:50]}"')
+    clave = n(it['caso'] + it['enunciado'])
+    if clave in ya: problemas.append(f'{iid}: ya existe en Airtable')
+    ya.add(clave)
+    nombre_sub, nombre_tema = sub[it['sub']]
+    filas.append(dict(id=iid, codigo=it['sub'], subtema=nombre_sub, tema=nombre_tema, caso=it['caso'],
+                      enunciado=it['enunciado'], respuesta_modelo=it['respuesta'], elementos_clave=elementos,
+                      articulos_referencia=it['articulos'], objetivo_pedagogico=it['objetivo'], respaldo=it['respaldo']))
+
+json.dump(filas, open(f'{GEN}filas_{LOTE}.json', 'w'), ensure_ascii=False, indent=1)
+print(f'{len(filas)} ítems ({m.TABLA}), ids {filas[0]["id"]} a {filas[-1]["id"]}')
+print('problemas:', problemas or 'ninguno')
+if problemas or '--subir' not in sys.argv:
+    sys.exit(1 if problemas else 0)
+for i in range(0, len(filas), 10):
+    req('POST', f'https://api.airtable.com/v0/{BASE}/{urllib.parse.quote(m.TABLA)}', {'records': [{'fields': {
+        'id': f['id'], 'tema': [temas[f['tema']]], 'subtema': f['subtema'], 'caso': f['caso'], 'enunciado': f['enunciado'],
+        'respuesta_modelo': f['respuesta_modelo'], 'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
+        'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico'],
+        'publicado': False, 'Revision_status': 'Revisar'}} for f in filas[i:i + 10]]})
+print('cargados en Airtable:', len(filas), '| total en la tabla ahora:', len(todos(m.TABLA)))
