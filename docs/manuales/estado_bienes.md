@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-08 (tramo 1b terminado y
-> aprobado por Laura; tramo 2a con informe hecho, esperando decisiones).
+> antes de seguir. Última actualización: 2026-10-09 (tramo 2b reescrito, esperando
+> que Laura apruebe la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -35,9 +35,12 @@
   abajo.
 - **Tramo 1b (II.B, p. 28-36): terminado y aprobado por Laura
   (2026-10-08).** Detalle en "Tramo 1b: hecho y aprobado", más abajo.
-- **Tramo 2a (II.C a II.H, p. 36-44): reescrito (2026-10-08), falta
-  que Laura apruebe la vista previa y commitear.** Detalle en "Tramo
-  2a", más abajo; siguiente paso al final de este archivo.
+- **Tramo 2a (II.C a II.H, p. 36-44): terminado y aprobado por Laura
+  (2026-10-08), commit `c97ba01`.** Detalle en "Tramo 2a", más abajo.
+- **Tramo 2b (II.I a II.K, p. 45-51): terminado y aprobado por Laura
+  (2026-10-09).** Cierra el capítulo II.
+- **Tramo 3 (III. El dominio, p. 52-63): en curso, armando el informe.** Detalle en "Tramo 2b", más
+  abajo; siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -102,8 +105,8 @@ que en AJ.
 |---|---|---|---|
 | 1a | 18-28 | 1 | I. Aspectos generales + II.A Bienes corporales e incorporales (corregido 2026-10-07, hecho y aprobado: ver "Tramo 1a: hecho y aprobado") |
 | 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A). Hecho 2026-10-08 |
-| 2a | 36-44 | 2 | II.C-H (consumibles, fungibles, principales y accesorios, divisibles, singulares y universales, presentes y futuros). Corte confirmado 2026-10-08. Reescrito, falta aprobación de la vista previa |
-| 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). II.9 empieza en la p. 45 |
+| 2a | 36-44 | 2 | II.C-H (consumibles, fungibles, principales y accesorios, divisibles, singulares y universales, presentes y futuros). Corte confirmado 2026-10-08. Hecho y aprobado 2026-10-08 |
+| 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). Corte confirmado 2026-10-08 (cierra el capítulo II). Hecho y aprobado 2026-10-09 |
 | 3 | 52-63 | 3 | III. El dominio |
 | 4a | 63-72 | 4 | IV. La copropiedad (1ª mitad) |
 | 4b | 72-80 | 4 | IV. La copropiedad (2ª mitad) |
@@ -467,7 +470,7 @@ Lo que se hizo:
   todos los artículos presentes, capturas en Chrome headless revisadas.
   Vista previa actualizada en `Vista_previa/Bienes_vista_previa.html`.
 
-## Tramo 2a: reescrito, esperando aprobación de la vista previa (2026-10-08)
+## Tramo 2a: hecho y aprobado (2026-10-08)
 
 **II.C a II.H, páginas 36 a 44 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo2a.html`. Decisiones de Laura al informe
@@ -514,17 +517,70 @@ esos manuales no existen aún). Verificación: cero guiones largos, ids
 caracteres, todos los artículos presentes, capturas revisadas. Vista
 previa actualizada.
 
-## Siguiente paso exacto (2026-10-08, vigente)
+## Tramo 2b: hecho y aprobado (2026-10-09)
 
-1. **Si Laura aprueba la vista previa del tramo 2a:** commitear en
-   `main` ("Reescribir Bienes II.C a II.H con el método completo
-   (tramo 2a)"), junto con este archivo, `guia-editorial.md` y
-   `decisiones.md`. Si pide ajustes, aplicarlos y anotarlos arriba.
-2. **Tramo 2b: II.I a II.K (comerciables, apropiables, privados y
-   públicos), p. 45-51.** Mismo checklist: inventario de Boetsch y de
-   Peñailillo (desde "XI. Bienes comerciables" de su resumen),
-   artículos contra `Apuntes/CODIGOS`, paráfrasis medida con 6-gramas,
-   cajas de Ejemplo propias y ejemplos nuevos, sin referencias
-   internas, preguntas candidatas desde `PREGUNTAS BIENES.pages`,
-   informe en `Informes/` antes de tocar el manual.
-3. Repetir tramo por tramo según la tabla de "Reparto de tramos".
+**II.I a II.K, páginas 45 a 51 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo2b.html`. Hallazgos principales:
+
+- Boetsch completo en el manual salvo 4 matices (definición de cosas
+  consagradas; "leyes especiales reglamentan cada caso"; frase
+  introductoria de los dominios; nombre de la LOC de Municipalidades).
+- Paráfrasis actual: 39/68 oraciones sobre el umbral, 18 sobre 70%. Se
+  reescribe todo.
+- **Errores de cita:** art. 60 Nº 10 CPR es hoy el **63 Nº 10**
+  (reforma 2005); el art. 587 no "deja en claro" que las cosas
+  consagradas son comerciables, se deduce de lo que dispone (capillas y
+  cementerios pasan con el predio); art. 589 omite "y sus playas" y
+  "generalmente"; art. 19 Nº 23 inc. 2º omite "cuando así lo exija el
+  interés nacional"; art. 596 trae también la plataforma continental.
+- Art. 42 Ley 19.496 verificado vigente (sitio SERNAC).
+- Peñailillo: 8 unidades nuevas propuestas (comerciabilidad limitada,
+  medios de producción/actividades vedadas, derechos de concesionarios
+  discutidos, tratados, Ley 16.640 y derecho de aprovechamiento,
+  espacio aéreo no es bien ni cosa, presunción del 590 de dominio y no
+  de posesión, excepción al 700). Una afirmación dudosa (bienes
+  municipales como fiscales) propuesta para no incorporar.
+- Propuestas pendientes de decisión: línea sobre Ley 21.435 (aguas,
+  2022); cuadro BNUP vs. fiscales; 3 preguntas clásicas candidatas;
+  reorden de K.1 (1.1 Características, 1.2 Desafectación, 1.3 Dominios
+  con (i)-(iv)); retirar el Dato de grado de K.2.
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** entran
+las 8 unidades de Peñailillo (incluida la de medios de producción y
+actividades vedadas); **no** se agrega la Ley 21.435 (aguas, 2022);
+**no** se incorporan los bienes municipales como fiscales; **sin**
+cuadro comparativo BNUP/fiscales; **ninguna** pregunta clásica en este
+tramo; Laura no tiene material propio.
+
+Lo que se hizo: I, J y K reescritos completos en voz propia
+(paráfrasis: de 18 oraciones sobre 70% a solo 3, que son
+transcripciones de artículos); recuperados los 4 matices de Boetsch;
+corregidos art. 63 Nº 10 CPR (era 60 Nº 10), la cita del art. 587, el
+art. 589 y el art. 19 Nº 23 inc. 2º; agregados art. 596 (plataforma
+continental), art. 592 y art. 602 completo; transcritos en `.ley` los
+arts. 585, 589, 590, 595, 599, 602 y 19 Nº 23 CPR. No confundir de I
+ampliado a tres categorías; Dato de grado de K.2 retirado (pasó a
+texto con la presunción de dominio, excepción al art. 700 inc. 2º).
+K.1 reordenado: 1.1 Características (i)-(iii), 1.2 Desafectación, 1.3
+Los dominios públicos (i)-(iv); los ids `cII-K-1-1` a `cII-K-1-3` se
+reusaron con contenido nuevo y `cII-K-1-4` desapareció (no estaba en
+el índice). Cajas de Ejemplo propias: "La mitad de la plaza" (I), "El
+sillón de la vereda y la bicicleta del taller" (J.1), "El kiosco de
+Maitencillo" (K.1), "La herencia de don Anselmo y el terreno de Aysén"
+(K.2); ejemplos breves en cursiva (abuela Teresa, Farellones, capilla
+de los Pérez, Panchito y el cobre, pesquero en Talcahuano, dron).
+Conexiones en I (AJ II.C.2.2 y II.C.4.3) y K (Sucesorio, `[FALTA:
+sección]`). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 852 caracteres,
+todos los artículos presentes, capturas revisadas. Vista previa
+actualizada.
+
+## Siguiente paso exacto (2026-10-09, vigente)
+
+1. **Tramo 3: III. El dominio, p. 52-63** (parte 3 de Boetsch; ahí
+   entran las p. 2-12 de `anexo_secundario.pdf` y Peñailillo desde la
+   "SEGUNDA PARTE: LA PROPIEDAD Y LA POSESIÓN"). Mismo checklist:
+   inventario, artículos contra `Apuntes/CODIGOS`, paráfrasis medida con
+   6-gramas, cajas de Ejemplo propias, sin referencias internas,
+   preguntas candidatas, informe en `Informes/` antes de tocar el manual.
+2. Repetir tramo por tramo según la tabla de "Reparto de tramos".
