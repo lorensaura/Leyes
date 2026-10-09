@@ -1,7 +1,7 @@
 """Revisa y, con --subir, carga a Airtable una tanda de Evaluación de Acto Jurídico
 (Aplicación, Detección de error, Justificación o Discriminación MC).
 
-Uso: python3 scripts/practica_aj/subir_eval.py lote_aplic1 [--subir]
+Uso: python3 scripts/practica_aj/subir_eval.py lote_aplic1 [--subir | --actualizar]
 
 El lote es un módulo de esta carpeta con TABLA, PREFIJO e ITEMS (ver lote_aplic1.py).
 Controles, todos obligatorios antes de subir:
@@ -9,12 +9,19 @@ Controles, todos obligatorios antes de subir:
 - cero guiones largos y comillas angulares en todos los campos;
 - cada artículo citado (caso, enunciado, respuesta, elementos, articulos) y cada autor
   en mayúsculas aparece en alguna de las secciones del manual indicadas como respaldo;
-- entre 3 y 4 elementos clave, cada uno con 4 a 6 keywords, sin keywords repetidas
-  entre elementos del mismo ítem ni ya contenidas en el caso o el enunciado;
-- la respuesta modelo obtiene todos los elementos con la regla de la app;
+- entre 3 y 4 elementos clave, cada uno con 4 a 6 keywords;
+- keywords pensadas para la corrección flexible de la app (docs/prompts-practica/
+  elementos-clave.md): de 1 a 4 palabras con significado, sin repetirse entre
+  elementos, sin que la corrección flexible las encuentre ya en el caso, el enunciado
+  o la repregunta (`pregunta`) de su propio elemento; avisa (sin bloquear) de las de
+  una sola palabra que no es un número;
+- la respuesta modelo obtiene todos los elementos con la corrección de la app
+  (keywordPresente(), copiada en scripts/prueba_correccion_flexible.py);
 - enunciado + caso no repetidos respecto de lo que ya está en la tabla.
 Sin --subir solo revisa y deja generado/filas_<lote>.json para el informe.
 Con --subir, y cero problemas, carga sin publicar y en Revisar.
+Con --actualizar, reescribe en Airtable los ítems del lote ya cargados (los reconoce
+por caso + enunciado y conserva su id); sirve para corregir keywords o textos.
 """
 import importlib, json, os, re, sys, unicodedata
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -23,6 +30,7 @@ GEN = os.path.join(AQUI, 'generado') + '/'
 sys.path.insert(0, AQUI)
 sys.path.insert(0, os.path.join(REPO, 'scripts'))
 from airtable_aj import req, todos, BASE  # noqa: E402
+from prueba_correccion_flexible import flexible, palabras  # noqa: E402
 import urllib.parse  # noqa: E402
 
 LOTE = next(a for a in sys.argv[1:] if a.startswith('lote_'))
@@ -65,14 +73,20 @@ def articulos_citados(texto):
     return nums
 
 existentes = todos(m.TABLA)
-ya = {n(r['fields'].get('caso', '') + r['fields'].get('enunciado', '')) for r in existentes}
+ACTUALIZAR = '--actualizar' in sys.argv
+ya = {n(r['fields'].get('caso', '') + r['fields'].get('enunciado', '')): r for r in existentes}
 ids = [r['fields'].get('id') for r in existentes if r['fields'].get('id')]
 siguiente = max([int(i.split('-')[-1]) for i in ids] or [0]) + 1
 temas = {r['fields']['nombre']: r['id'] for r in todos('Temas')}
 
-problemas, filas = [], []
+problemas, avisos, filas = [], [], []
 for it in m.ITEMS:
-    iid = f'{m.PREFIJO}-{siguiente:03d}'; siguiente += 1
+    clave = n(it['caso'] + it['enunciado'])
+    previo = ya.get(clave)
+    if ACTUALIZAR and previo:
+        iid = previo['fields']['id']
+    else:
+        iid = f'{m.PREFIJO}-{siguiente:03d}'; siguiente += 1
     if it['sub'] not in sub:
         problemas.append(f'{iid}: subtema {it["sub"]} no existe'); continue
     elementos = [dict(texto=t, keywords=k, pregunta=p) for t, k, p in it['elementos']]
@@ -95,15 +109,19 @@ for it in m.ITEMS:
             if k != n(k): problemas.append(f'{iid}: keyword con tildes o signos: {k}')
             if k in vistos: problemas.append(f'{iid}: keyword repetida entre elementos: {k}')
             vistos.add(k)
-            # una keyword que ya está en la pregunta la "obtiene" cualquier respuesta que la repita
-            if k in quitar_tildes(it['caso'] + ' ' + it['enunciado']):
-                problemas.append(f'{iid}: keyword ya contenida en el caso o el enunciado: {k}')
-        # misma regla que evaluarRespuesta() en app/alternativas.html: basta una keyword literal
-        if not any(k in quitar_tildes(it['respuesta']) for k in e['keywords']):
+            pal = palabras(k)
+            if len(pal) > 4: problemas.append(f'{iid}: keyword de más de 4 palabras con significado (vuelve a ser frase exacta): {k}')
+            if len(pal) == 1 and not pal[0].isdigit(): avisos.append(f'{iid}: keyword de una sola palabra, revisar que pruebe el elemento: {k}')
+            # una keyword que la corrección ya encuentra en la pregunta la "obtiene" cualquier respuesta que la repita
+            if flexible(k, it['caso'] + ' ' + it['enunciado']):
+                problemas.append(f'{iid}: keyword ya presente en el caso o el enunciado: {k}')
+            if flexible(k, e['pregunta']):
+                problemas.append(f'{iid}: keyword presente en la repregunta de su elemento (la regala): {k}')
+        # misma corrección que la app (keywordPresente en app/alternativas.html)
+        if not any(flexible(k, it['respuesta']) for k in e['keywords']):
             problemas.append(f'{iid}: la respuesta modelo no obtiene el elemento "{e["texto"][:50]}"')
-    clave = n(it['caso'] + it['enunciado'])
-    if clave in ya: problemas.append(f'{iid}: ya existe en Airtable')
-    ya.add(clave)
+    if previo and not ACTUALIZAR: problemas.append(f'{iid}: ya existe en Airtable (usar --actualizar para corregirlo)')
+    if ACTUALIZAR and not previo: problemas.append(f'{iid}: --actualizar, pero no está en Airtable')
     nombre_sub, nombre_tema = sub[it['sub']]
     filas.append(dict(id=iid, codigo=it['sub'], subtema=nombre_sub, tema=nombre_tema, caso=it['caso'],
                       enunciado=it['enunciado'], respuesta_modelo=it['respuesta'], elementos_clave=elementos,
@@ -112,8 +130,19 @@ for it in m.ITEMS:
 json.dump(filas, open(f'{GEN}filas_{LOTE}.json', 'w'), ensure_ascii=False, indent=1)
 print(f'{len(filas)} ítems ({m.TABLA}), ids {filas[0]["id"]} a {filas[-1]["id"]}')
 print('problemas:', problemas or 'ninguno')
-if problemas or '--subir' not in sys.argv:
+for a in avisos: print('aviso:', a)
+if problemas or not ('--subir' in sys.argv or ACTUALIZAR):
     sys.exit(1 if problemas else 0)
+if ACTUALIZAR:
+    for i in range(0, len(filas), 10):
+        req('PATCH', f'https://api.airtable.com/v0/{BASE}/{urllib.parse.quote(m.TABLA)}', {'records': [{
+            'id': ya[n(f['caso'] + f['enunciado'])]['id'], 'fields': {
+            'subtema': f['subtema'], 'respuesta_modelo': f['respuesta_modelo'],
+            'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
+            'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico']}}
+            for f in filas[i:i + 10]]})
+    print('actualizados en Airtable:', len(filas))
+    sys.exit(0)
 for i in range(0, len(filas), 10):
     req('POST', f'https://api.airtable.com/v0/{BASE}/{urllib.parse.quote(m.TABLA)}', {'records': [{'fields': {
         'id': f['id'], 'tema': [temas[f['tema']]], 'subtema': f['subtema'], 'caso': f['caso'], 'enunciado': f['enunciado'],

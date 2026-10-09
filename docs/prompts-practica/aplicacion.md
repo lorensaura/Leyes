@@ -104,6 +104,12 @@ cada eje). Prioriza calidad y verificabilidad sobre volumen.
 Además de la auto-auditoría del núcleo y de `elementos-clave.md`,
 verifica:
 
+- [ ] **Corrección flexible (obligatorio, Laura 2026-10-09):** las
+      `keywords` están redactadas para la corrección flexible de la app
+      (palabras con significado cercanas, por raíz, no frases exactas) y
+      cada `pregunta` sirve como repregunta para la segunda pasada. Ver
+      `elementos-clave.md`; si una respuesta correcta escrita con palabras
+      propias no obtendría el elemento, la pregunta está mal hecha.
 - [ ] El ítem depende de verdad de los hechos del `caso`; no sería igual
       de válido sin ellos (ver "Filosofía" del núcleo).
 - [ ] El `caso` varía los hechos respecto de cualquier recuadro

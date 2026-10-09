@@ -15,6 +15,17 @@ objetivo es que la próxima sesión no tenga que redescubrir nada de esto.
 viviendo en `docs/prompt-generacion-contenido-practica.md` (sección 0
 y 0.3) — este skill orquesta y agrega los chequeos que faltaban ahí.
 
+## Regla obligatoria: corrección flexible (2026-10-09)
+
+Toda pregunta de Aplicación, Detección de error o Justificación se
+redacta para la **corrección flexible** de la app (keywords de 2 a 4
+palabras con significado, comparadas por raíz y en cualquier orden, no
+frases exactas; una `pregunta` por elemento que sirva de repregunta
+cuando la alumna logra 2 de 3). Las reglas y la checklist están en
+`docs/prompts-practica/elementos-clave.md`, que **manda** sobre lo que
+diga de keywords el prompt antiguo `docs/prompt-generacion-contenido-practica.md`.
+Al terminar un lote, correr `python3 scripts/prueba_correccion_flexible.py`.
+
 ## 0. La distinción que causó la confusión de hoy
 
 - **`Preguntas_Evaluacion`** (tabla de Airtable por materia, banco de

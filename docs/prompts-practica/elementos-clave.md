@@ -1,4 +1,4 @@
-# Elementos clave y palabras clave: cómo redactarlos para tolerar parafraseo
+# Elementos clave y palabras clave: cómo redactarlos para la corrección flexible
 
 > Referenciado por los prompts de **Aplicación**, **Detección de error** y
 > **Justificación** (los tres tipos de Evaluación que piden una respuesta
@@ -7,52 +7,108 @@
 > respuesta libre, ni a Memorice, que usa su propio mecanismo de
 > `palabras_criticas` a propósito estricto). Aplican además, sin
 > excepción, las reglas de `docs/prompts-practica/nucleo.md`.
+>
+> **Regla obligatoria (Laura, 2026-10-09): toda pregunta de Evaluación se
+> redacta para la corrección flexible descrita aquí.** Las keywords no se
+> escriben como frases que la alumna deba reproducir, sino como el
+> **conjunto mínimo de palabras con significado que prueban que entendió
+> el elemento**. Una pregunta que solo aprueba quien repite el manual de
+> memoria está mal hecha, aunque su contenido jurídico sea correcto.
 
 ## Por qué existe este documento
 
-Feedback real de Laura (2026-09-16): la pauta de corrección de Evaluación
-se sintió muy estricta. La causa es mecánica, no de criterio: `app/alternativas.html`
-(`evaluarRespuesta`) da por cubierto un `elemento_clave` si **al menos
-una** de sus frases en `keywords` aparece **literal** (normalizada sin
-tildes, en minúsculas) dentro de lo que escribió la alumna:
+Feedback real de Laura (2026-09-16 y 2026-10-09): la corrección de
+Evaluación exigía respuestas demasiado específicas. La medición del
+2026-10-09 lo confirmó: con la comparación literal de antes, en 86 de las
+276 preguntas publicadas ni siquiera la propia respuesta modelo aprobaba,
+y de 8 respuestas correctas escritas con palabras propias aprobaba 1. La
+causa eran keywords pensadas como frases del manual ("razonamiento
+riguroso", "no procede reserva de perjuicios en materia
+extracontractual") que ninguna alumna escribe tal cual.
 
-```js
-const found = el.keywords.some(kw => texto.includes(quitarTildes(kw.toLowerCase())));
-```
+## Cómo corrige la app (hay que redactar pensando en esto)
 
-No hay sinónimos automáticos, ni tolerancia de orden de palabras, ni
-fuzzy match: si ninguna de las frases que redactaste como `keywords`
-aparece tal cual en la respuesta, ese elemento se marca como no logrado,
-aunque la alumna haya dicho lo mismo con otras palabras. La única
-palanca disponible hoy para tolerar parafraseo es **redactar más y
-mejores variantes en `keywords`**, previendo cómo una alumna real diría
-lo mismo, no solo cómo lo dice el manual.
+`evaluarRespuesta()` y `keywordPresente()` en `app/alternativas.html`:
+
+1. **Un elemento se logra si al menos una de sus keywords está presente**
+   en la respuesta.
+2. **Una keyword está presente** si aparece literal (sin tildes ni
+   mayúsculas), **o** si **todas sus palabras con significado** aparecen
+   en la respuesta **a no más de 8 palabras unas de otras, en cualquier
+   orden**. No cuentan como palabras con significado: el, la, los, las,
+   de, del, y, o, a, en, que, por, para, con, se, su, sus, un, una, lo,
+   al, es, son, le, les, ya, este, esta.
+3. **Cómo se compara cada palabra:** las de más de 3 letras, por su
+   **raíz** (las primeras 5 letras: "ratificar", "ratificación" y
+   "ratificó" son la misma; "nulidad" y "nulo" **no**, porque "nulo"
+   tiene solo 4 letras y no coincide con "nulid"). Las de 3 letras o menos y los
+   números, **exactas** ("no" no se confunde con "norma"; "1683" no se
+   confunde con "1682").
+4. **Para aprobar hay que lograr el 75% de los elementos:** con 3
+   elementos, los 3; con 4, al menos 3.
+5. **Repregunta:** si en la primera pasada la alumna logra entre el 35% y
+   el 75% (por ejemplo, 2 de 3), la app **no** le muestra qué le faltó:
+   le hace la **`pregunta` socrática de cada elemento faltante** y le da
+   una segunda pasada para completar. Solo si después sigue faltando,
+   muestra el veredicto final.
+6. **"Lo dije con otras palabras":** en el veredicto final, la alumna
+   puede marcar como logrado un elemento que el sistema no detectó. Queda
+   registrado en `evaluacion_correcciones` y la IA lo revisa después
+   (`scripts/revisar_correcciones_evaluacion.py`): si tenía razón, su
+   forma de decirlo se agrega como keyword; si se aprobó algo incorrecto,
+   se ajusta o se saca la keyword. Todo con aprobación de Laura.
 
 ## Regla de redacción
 
-Por cada `elemento_clave`, después de escribir el `texto` (la idea que
-debía aparecer) y la `pregunta` socrática, genera un arreglo `keywords`
-de **4 a 6 variantes** que cubran, cuando aplique:
+**El `texto`** del elemento es la idea completa que debía aparecer (la
+alumna la ve en "Presentes" o "Faltantes"). **La `pregunta`** es la
+repregunta: tiene que llevar a la alumna hacia ese elemento sin
+regalárselo (no debe contener las palabras de sus keywords). Si una
+pregunta no tiene buena repregunta para cada elemento, la segunda pasada
+no sirve.
 
-1. **La frase técnica tal como aparece en el manual** (la cita de
-   respaldo del paso 1 de `nucleo.md`).
-2. **Una paráfrasis en lenguaje corriente**, como la diría una alumna sin
-   citar el manual de memoria.
-3. **El número de artículo solo**, si el elemento gira en torno a un
-   artículo puntual (a veces la alumna solo escribe "1547" en vez de
-   nombrar la institución).
-4. **El nombre corto de la institución**, sin el resto de la frase, si
-   por sí solo ya identifica el elemento sin ambigüedad dentro del ítem.
-5. **Una variante con orden de palabras distinto** de la frase técnica,
-   cuando el orden natural al escribir difiere del orden del manual (ej.
-   "la culpa se presume" además de "se presume la culpa").
+**Las `keywords`**, de 4 a 6 por elemento, cada una de **2 a 4 palabras
+con significado** que juntas prueban el elemento:
 
-No agregues una variante que cambie el sentido jurídico del elemento:
-esto sigue siendo una regla anti-alucinación, cada variante debe ser una
-forma distinta de decir lo mismo, no una idea distinta. Si una variante
-quedaría ambigua o podría hacer match con la respuesta de un elemento
-distinto del mismo ítem, no la agregues: es preferible perder algo de
-tolerancia que dar crédito a la idea equivocada.
+1. **El núcleo técnico, reducido a sus palabras esenciales**, no la frase
+   completa del manual. En vez de "la nulidad absoluta no puede sanearse
+   por la ratificación de las partes", escribir "absoluta no ratificacion"
+   o "no sanea ratificacion": la corrección flexible las encuentra en
+   "la nulidad absoluta no se puede ratificar" y en "la ratificación no
+   sanea la nulidad".
+2. **La forma en que lo diría una alumna**, en lenguaje corriente
+   ("no tiene que probar la culpa", "solo la victima puede pedirla").
+3. **El número de artículo solo**, cuando el elemento gira en torno a él
+   ("1691"). Ojo: un número es exacto; si dos elementos del mismo ítem
+   citan el mismo artículo, no sirve para distinguirlos.
+4. **Sinónimos de raíz distinta**, porque la raíz no los une: "rescision"
+   y "anulacion"; "saneada" y "plazo vencido"; "herederos" y
+   "sucesores".
+5. **La conclusión del caso con sus datos**, en Aplicación ("marta ya no
+   puede", "vencio marzo 2024"): obliga a haber resuelto el caso, no solo
+   a nombrar la regla.
+
+**Qué evitar, porque la corrección flexible lo castiga o lo deja pasar:**
+
+- **Keywords de una sola palabra común** ("nulidad", "contrato",
+  "herederos", "plazo"): aparecen en casi cualquier respuesta del tema y
+  dan el elemento por logrado aunque esté mal. Una sola palabra solo vale
+  si es un término técnico que por sí mismo prueba el elemento dentro de
+  ese ítem ("cesionario", "impuber", "1685").
+- **Keywords que ya están en el caso o en el enunciado**: cualquier
+  respuesta que repita la pregunta las obtiene.
+- **Keywords que no distinguen el sí del no**: si el elemento es "Ximena
+  no puede pedirla", la keyword debe llevar la negación ("ximena no
+  puede"), porque "ximena puede" también estaría en una respuesta
+  equivocada. Aun así, la corrección no entiende frases enteras: una
+  respuesta que diga lo contrario con las mismas palabras puede pasar.
+  Por eso la keyword debe ser lo más cercana posible a la conclusión, no
+  al tema.
+- **Keywords de más de 4 palabras con significado**: exigen que la alumna
+  use justo esas palabras; es volver a la frase exacta.
+- **Variantes que cambian el sentido jurídico** del elemento (sigue siendo
+  una regla anti-alucinación) o que podrían calzar con otro elemento del
+  mismo ítem.
 
 ## Ejemplo
 
@@ -60,65 +116,64 @@ tolerancia que dar crédito a la idea equivocada.
 {
   texto: 'Identifica que la culpa se presume en materia contractual (art. 1547)',
   keywords: [
-    'se presume', '1547', 'presuncion de culpa', 'la culpa se presume',
-    'no tiene que probar la culpa', 'se presume la culpa del deudor'
+    'culpa se presume', '1547', 'presuncion de culpa',
+    'no tiene que probar la culpa', 'deudor debe probar diligencia'
   ],
-  pregunta: '¿Quién debe probar la culpa en materia contractual?'
+  pregunta: 'En un contrato incumplido, ¿a quién le toca acreditar si hubo o no descuido?'
 }
 ```
 
-La keyword `'no tiene que probar la culpa'` no aparece en el manual con
-esas palabras, pero es como una alumna real suele expresar la misma idea
-(la presunción libera a la víctima de la carga de la prueba) sin citar
-el artículo textualmente.
+`'culpa se presume'` se encuentra también en "se presume la culpa" o "la
+culpa del deudor se presume". `'no tiene que probar la culpa'` es como lo
+dice una alumna. La `pregunta` orienta sin usar "presume" ni "1547".
+
+## Cómo comprobarlo antes de cargar
+
+- **Acto Jurídico:** `scripts/practica_aj/subir_eval.py` rechaza la tanda
+  si la respuesta modelo, corregida con la misma regla que la app, no
+  obtiene todos sus elementos; si una keyword está en el caso o el
+  enunciado; si una keyword está en la repregunta de su propio elemento;
+  si un elemento no tiene 4 a 6 keywords; y avisa de las keywords de una
+  sola palabra.
+- **Cualquier materia:** `python3 scripts/prueba_correccion_flexible.py`
+  mide el banco publicado (respuesta modelo, respuestas de prueba y
+  "ensalada" de palabras sueltas). Correrlo después de cargar contenido
+  nuevo o de cambiar la corrección.
+- **Prueba mental obligatoria por ítem:** escribir una respuesta correcta
+  con palabras propias (sin mirar el manual) y una equivocada que use el
+  vocabulario del tema. La primera debe obtener cada elemento; la
+  segunda, no. Si falla, se corrigen las keywords, no la respuesta.
 
 ## Checklist específica
 
 Además de la auto-auditoría del núcleo, verifica:
 
-- [ ] Cada `elemento_clave` tiene entre 4 y 6 `keywords`, no 1 ni 2.
-- [ ] Al menos una `keyword` por elemento es una paráfrasis en lenguaje
-      no técnico, no solo la frase literal del manual.
-- [ ] Ninguna `keyword` es tan corta o genérica que podría aparecer en
-      la respuesta de un elemento distinto del mismo ítem por
-      casualidad (ej. una sola palabra común como "contrato" o
-      "responsabilidad" sin ningún calificador).
+- [ ] Cada `elemento_clave` tiene entre 4 y 6 `keywords`, de 2 a 4
+      palabras con significado cada una (salvo números de artículo o
+      términos técnicos que por sí solos prueban el elemento).
+- [ ] Al menos una `keyword` por elemento es como lo diría una alumna, no
+      la frase del manual, y al menos una usa un sinónimo de raíz distinta
+      cuando exista.
+- [ ] Ninguna `keyword` está en el caso, en el enunciado ni en la
+      `pregunta` de su propio elemento.
+- [ ] Las keywords de un elemento con conclusión negativa llevan la
+      negación.
+- [ ] La `pregunta` de cada elemento sirve como repregunta: orienta hacia
+      lo que falta sin regalarlo.
+- [ ] La respuesta modelo obtiene todos los elementos con la corrección
+      de la app.
 - [ ] Ninguna `keyword` cambia el sentido jurídico del elemento respecto
       de la cita de respaldo.
 
-## Corrección flexible y registro de reclamos (2026-10-09)
+## Medición y riesgo conocido (2026-10-09)
 
-Lo que anticipaba la versión anterior de esta sección ya se hizo, a pedido
-de Laura. `keywordPresente()` en `app/alternativas.html` da por presente
-una keyword si aparece **literal** o si **todas sus palabras con
-significado aparecen cerca** (ventana de 8 palabras), en cualquier orden,
-comparando por raíz (primeras 5 letras) las de más de 3 letras y en forma
-exacta las cortas y los números (para no confundir "no" con "norma"). El
-umbral para aprobar sigue en 75%.
-
-Además, en el veredicto final cada elemento faltante tiene el botón **"Lo
-dije con otras palabras"**: la alumna lo marca como logrado, sube su
-crédito y, si aprueba, sale del cuaderno de errores. No aparece en la
-segunda pasada (ahí los faltantes se ocultan a propósito).
-
-Cada corrección final y cada reclamo quedan en `evaluacion_correcciones`
-(con el texto de la respuesta). `python3
-scripts/revisar_correcciones_evaluacion.py` los junta por pregunta y
-elemento en `DERECHO LIBRE/Documentos de trabajo/`, y la IA los revisa:
-reclamos legítimos se vuelven keywords nuevas; aprobaciones flexibles o
-por reclamo que no correspondían llevan a ajustar o sacar keywords. Todo
-pasa por Laura antes de tocar Airtable.
-
-Medición (`python3 scripts/prueba_correccion_flexible.py`, 2026-10-09):
-la respuesta modelo aprueba en 254 de 293 ítems (antes 207); respuestas
-correctas de prueba con palabras propias, 5 de 8 (antes 1); respuestas
-equivocadas de prueba, 0 de 8 (igual que antes). Riesgo conocido: quien
-escribiera solo las palabras de las keywords revueltas aprobaría casi
-siempre (235 de 293; antes 61). Las keywords no se le muestran a la
-alumna, pero por eso importa revisar las aprobaciones flexibles.
-
-**Consecuencias para redactar keywords:** siguen valiendo las reglas de
-arriba, con dos ajustes. (1) Evitar keywords de una o dos palabras muy
-generales: con la ventana, son las que más fácil dan un falso positivo.
-(2) Una keyword no debe estar ya contenida en el caso o el enunciado
-(`subir_eval.py` de AJ lo controla).
+`python3 scripts/prueba_correccion_flexible.py`: con la corrección
+flexible, la respuesta modelo aprueba en 254 de 293 ítems (antes 207);
+respuestas correctas de prueba con palabras propias, 5 de 8 (antes 1);
+respuestas equivocadas de prueba, 0 de 8 (igual que antes). Riesgo:
+quien escribiera solo las palabras de las keywords revueltas aprobaría
+casi siempre (235 de 293; antes 61). Las keywords no se le muestran a la
+alumna, pero por eso importan las reglas de "Qué evitar" y la revisión
+periódica de las aprobaciones flexibles. Quedan 39 ítems publicados de
+Responsabilidad cuya respuesta modelo no aprueba ni con la corrección
+flexible (ver `docs/camino-a-beta.md`).
