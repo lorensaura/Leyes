@@ -644,4 +644,12 @@ actualizada.
    del anexo (p. 8-10) y las preguntas de cláusulas de no enajenar. Ojo:
    el anexo cita la Ley 19.537 para gastos comunes (derogada, hoy Ley
    21.442).
+   Para ahorrar tiempo: el texto de Peñailillo para 3b está desde
+   "Estipulación limitativa de la facultad de disposición" hasta
+   "Capítulo II: La Copropiedad" (p. 35-44 del PDF); el texto actual de
+   III.6-9 tiene 25/80 oraciones sobre 70% de paráfrasis. Recordar que
+   Laura **rechazó** en 3a los bloques de urbanismo, preservación
+   natural y cultural, historia y "formas de propiedad": no volver a
+   proponerlos por la vía de las restricciones de utilidad pública del
+   anexo (sí se puede nombrar la restricción en una línea).
 2. Repetir tramo por tramo según la tabla de "Reparto de tramos".
