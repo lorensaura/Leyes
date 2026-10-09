@@ -392,6 +392,18 @@
     }
     .btn-reportar:hover { color: #111111; }
     .btn-reportar:disabled { cursor: default; text-decoration: none; opacity: 0.7; }
+    .btn-reclamar {
+      display: block;
+      background: none;
+      border: 1px solid #D8D0C4;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin: 0 0 0.5rem 1.1rem;
+      font-size: 0.72rem;
+      color: #7A6E5F;
+      cursor: pointer;
+    }
+    .btn-reclamar:hover { color: #111111; border-color: #7A6E5F; }
 
     /* ── CUADERNO DE ERRORES ── */
     .errores-list { display: flex; flex-direction: column; gap: 1rem; }
@@ -934,6 +946,36 @@ const bancoTransversal = [
     // tiene su propia normalización más estricta en normalizarPalabra.
     function quitarTildes(s) {
       return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    // Corrección flexible de Evaluación (2026-10-09). Una keyword cuenta como
+    // presente si aparece literal ('literal') o si todas sus palabras con
+    // significado aparecen cerca unas de otras, en cualquier orden, dentro de
+    // una ventana de 8 palabras ('flexible'). Las palabras de más de 3 letras
+    // se comparan por su raíz (primeras 5 letras: "ratificar" = "ratificación");
+    // las cortas y los números, exactas, para no confundir "no" con "norma".
+    // La ventana evita dar crédito a palabras sueltas repartidas por la
+    // respuesta. Probado contra el banco publicado y respuestas de prueba
+    // (scripts/prueba_correccion_flexible.py).
+    const PALABRAS_VACIAS = new Set('el la los las de del y o a en que por para con se su sus un una lo al es son le les ya este esta'.split(' '));
+    function palabrasConSignificado(s) {
+      return (quitarTildes((s || '').toLowerCase()).match(/[a-z0-9]+/g) || []).filter(w => !PALABRAS_VACIAS.has(w));
+    }
+    function mismaPalabra(p, w) {
+      if (/^\d+$/.test(p) || /^\d+$/.test(w) || p.length <= 3 || w.length <= 3) return p === w;
+      return p.slice(0, 5) === w.slice(0, 5);
+    }
+    function keywordPresente(kw, textoNormalizado) {
+      if (textoNormalizado.includes(quitarTildes(kw.toLowerCase()))) return 'literal';
+      const pal = palabrasConSignificado(kw);
+      if (pal.length === 0) return null;
+      const ws = palabrasConSignificado(textoNormalizado);
+      const ancho = Math.max(pal.length, 8);
+      for (let i = 0; i < ws.length; i++) {
+        const trozo = ws.slice(i, i + ancho);
+        if (pal.every(p => trozo.some(w => mismaPalabra(p, w)))) return 'flexible';
+      }
+      return null;
     }
     // Las respuestas modelo deben leerse como una lista de puntos, uno bajo
     // el otro, no como un párrafo corrido. Esta función arma esos párrafos
@@ -1632,9 +1674,17 @@ const bancoTransversal = [
 
       const acertados = [];
       const faltantes = [];
+      // detalle por elemento, para el registro de correcciones (evaluacion_correcciones):
+      // cómo se detectó (literal / flexible / faltante) y con qué keyword.
+      const detalle = [];
       item.elementos_clave.forEach(el => {
-        const found = el.keywords.some(kw => texto.includes(quitarTildes(kw.toLowerCase())));
-        if (found) acertados.push(el.texto); else faltantes.push(el);
+        let como = 'faltante', kwUsada = null;
+        for (const kw of el.keywords) {
+          const r = keywordPresente(kw, texto);
+          if (r) { como = r; kwUsada = kw; if (r === 'literal') break; }
+        }
+        detalle.push({ texto: el.texto, como, keyword: kwUsada });
+        if (como !== 'faltante') acertados.push(el.texto); else faltantes.push(el);
       });
 
       // minimo_elementos: para preguntas tipo "menciona N de M posibles" (M > N),
@@ -1678,34 +1728,45 @@ const bancoTransversal = [
 
       ultimaEvaluacion = {
         codigo: item.codigo,
+        materia: item.materia,
+        subtema: item.subtema,
+        tipo: item.tipo,
+        enunciado: item.enunciado,
         elementosClave: item.elementos_clave,
         acertados,
+        faltantes,
+        detalle,
+        elementosRequeridos,
         credito,
+        creditoInicial: credito,
+        reclamados: [],
         respuestaAlumna: document.getElementById('recall-text')?.value || '',
       };
+      if (siguienteAccion !== 'segunda_pasada') registrarCorreccion('correccion', null);
 
       const feedbackHTML = `
         <div class="feedback-panel">
           <div class="feedback-header">
             <div class="credito-bar-wrap">
               <div class="credito-label">Crédito parcial</div>
-              <div class="credito-bar-bg"><div class="credito-bar-fill" style="width:${pct}%; background:${color}"></div></div>
+              <div class="credito-bar-bg"><div class="credito-bar-fill" id="credito-bar-fill" style="width:${pct}%; background:${color}"></div></div>
             </div>
-            <div class="credito-pct" style="color:${color}">${pct}%</div>
+            <div class="credito-pct" id="credito-pct" style="color:${color}">${pct}%</div>
           </div>
-          <div class="veredicto">${veredicto}</div>
+          <div class="veredicto" id="veredicto-eval">${veredicto}</div>
           <div class="elementos-grid">
-            <div class="elementos-col ok">
+            <div class="elementos-col ok" id="col-presentes">
               <h4>✓ Presentes</h4>
-              ${acertados.length > 0 ? acertados.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('') : '<div class="elemento-tag" style="color:#7A6E5F; font-style:italic">Ninguno detectado</div>'}
+              ${acertados.length > 0 ? acertados.map(e => `<div class="elemento-tag"><div class="dot"></div><span>${e}</span></div>`).join('') : '<div class="elemento-tag" id="ninguno-detectado" style="color:#7A6E5F; font-style:italic">Ninguno detectado</div>'}
             </div>
             ${siguienteAccion !== 'segunda_pasada' && faltantes.length > 0 ? `
             <div class="elementos-col faltan">
               <h4>✗ Faltantes</h4>
-              ${faltantes.map(el => `<div class="elemento-tag"><div class="dot"></div><span>${el.texto}</span></div>`).join('')}
+              ${faltantes.map((el, i) => `<div class="elemento-tag" id="faltante-${i}"><div class="dot"></div><span>${el.texto}</span></div>
+              <button class="btn-reclamar" onclick="reclamarElemento(${i})">Lo dije con otras palabras</button>`).join('')}
             </div>` : ''}
           </div>
-          <div class="feedback-diag">${feedbackDiag}</div>
+          <div class="feedback-diag" id="feedback-diag">${feedbackDiag}</div>
           <button class="btn-reportar" id="btn-reportar-calificacion" onclick="reportarCalificacion()">¿Calificación incorrecta? Repórtala</button>
           ${siguienteAccion === 'segunda_pasada' ? `
             <div class="segunda-pasada" style="margin-top:1.25rem;">
@@ -1724,6 +1785,78 @@ const bancoTransversal = [
 
       document.getElementById('feedback-area').innerHTML = feedbackHTML;
       document.getElementById('feedback-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Registro de cada corrección final de Evaluación y de cada "Lo dije con
+    // otras palabras" (tabla evaluacion_correcciones, solo inserciones). Sirve
+    // para que la IA revise periódicamente: los reclamos (¿faltaba una
+    // variante en las keywords?) y las aprobaciones por coincidencia flexible
+    // o por reclamo (¿se aprobó algo que no era correcto?). Ver
+    // scripts/revisar_correcciones_evaluacion.py.
+    async function registrarCorreccion(evento, elementoReclamado) {
+      const u = ultimaEvaluacion;
+      if (!u) return;
+      try {
+        await sb.from('evaluacion_correcciones').insert({
+          user_id: usuarioId,
+          evento,
+          evaluacion_codigo: u.codigo,
+          materia: u.materia,
+          tipo: u.tipo,
+          respuesta_alumna: u.respuestaAlumna,
+          elementos_clave_snapshot: u.elementosClave,
+          detalle: u.detalle.map(d => ({ ...d })),  // copia: un reclamo posterior no altera esta fila
+          elemento_reclamado: elementoReclamado,
+          credito: u.credito,
+          aprobada: u.credito >= 0.75,
+          aprobada_por_reclamo: u.credito >= 0.75 && u.creditoInicial < 0.75,
+        });
+      } catch (e) { /* el registro nunca debe bloquear el estudio */ }
+    }
+
+    // "Lo dije con otras palabras": la alumna marca como logrado un elemento que
+    // la corrección automática no detectó. Se suma al crédito, se registra para
+    // revisión y, si con eso aprueba, sale del cuaderno de errores. No agrega
+    // otro intento en practica_intentos (ya se registró el de esta respuesta).
+    function reclamarElemento(i) {
+      const u = ultimaEvaluacion;
+      if (!u || !u.faltantes[i] || u.reclamados.includes(i)) return;
+      u.reclamados.push(i);
+      const el = u.faltantes[i];
+      const d = u.detalle.find(x => x.texto === el.texto && x.como === 'faltante');
+      if (d) d.como = 'reclamado';
+      u.acertados.push(el.texto);
+      const efectivos = Math.min(u.acertados.length, u.elementosRequeridos);
+      const anterior = u.credito;
+      u.credito = efectivos / u.elementosRequeridos;
+      creditoTotal += u.credito - anterior;
+      if (u.credito >= 0.75 && anterior < 0.75) limpiarError('evaluacion', u.codigo);
+      registrarCorreccion('reclamo', el.texto);
+
+      // actualizar el panel
+      const pct = Math.round(u.credito * 100);
+      const color = u.credito >= 0.75 ? '#1A7A40' : u.credito >= 0.4 ? '#A06000' : '#C41E2E';
+      const barra = document.getElementById('credito-bar-fill');
+      if (barra) { barra.style.width = pct + '%'; barra.style.background = color; }
+      const pctEl = document.getElementById('credito-pct');
+      if (pctEl) { pctEl.textContent = pct + '%'; pctEl.style.color = color; }
+      const ver = document.getElementById('veredicto-eval');
+      const diag = document.getElementById('feedback-diag');
+      if (u.credito >= 0.75) {
+        if (ver) ver.textContent = '✓ Respuesta sólida. Cubriste los elementos esenciales.';
+        if (diag) diag.textContent = 'Marcaste que lo dijiste con otras palabras. Compáralo igual con la respuesta modelo.';
+      } else {
+        if (ver && u.credito >= 0.35) ver.textContent = '◐ Respuesta parcial. Captaste la idea general pero faltaron elementos clave.';
+        if (diag) diag.textContent = `Identificaste ${efectivos} de ${u.elementosRequeridos} elementos requeridos. Revisa el modelo abajo.`;
+      }
+      const tag = document.getElementById('faltante-' + i);
+      if (tag) {
+        tag.nextElementSibling?.remove();
+        tag.remove();
+        document.getElementById('ninguno-detectado')?.remove();
+        tag.querySelector('span').textContent = el.texto + ' (con tus palabras)';
+        document.getElementById('col-presentes')?.appendChild(tag);
+      }
     }
 
     async function reportarCalificacion() {

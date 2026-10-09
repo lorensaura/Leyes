@@ -54,6 +54,19 @@ tablas de uso (`memorice_intentos`, `flashcard_progreso`,
 
 ## Pendiente
 
+**Corrección flexible de Evaluación (hecha el 2026-10-09, falta
+publicarla):** corrección por palabras cercanas en vez de frase exacta,
+botón "Lo dije con otras palabras" y registro para revisión por IA (ver
+`docs/prompts-practica/elementos-clave.md`). Verificado en Chrome
+headless con Supabase simulado. Para publicarlo, en este orden: (1) Laura
+corre `scripts/supabase_schema_evaluacion_correcciones.sql` en el SQL
+Editor de Supabase; (2) se fusiona la rama a `main` y Laura hace push
+desde GitHub Desktop. Después: correr
+`scripts/revisar_correcciones_evaluacion.py` cada cierto tiempo (por
+definir) y revisar con la IA. Pendiente aparte: 39 ítems publicados
+de Responsabilidad cuya propia respuesta modelo no aprueba
+ni con la corrección flexible, por keywords mal elegidas.
+
 **Contenido generado, sin publicar todavía (verificado en vivo contra
 Airtable/Supabase el 2026-08-13, no solo este doc):** de ~950 registros
 entre las 3 materias, **68 (≈7%)** siguen con `publicado=false` o en

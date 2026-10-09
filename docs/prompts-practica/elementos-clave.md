@@ -86,17 +86,39 @@ Además de la auto-auditoría del núcleo, verifica:
 - [ ] Ninguna `keyword` cambia el sentido jurídico del elemento respecto
       de la cita de respaldo.
 
-## Límite de esta solución (explícito, no un pendiente silencioso)
+## Corrección flexible y registro de reclamos (2026-10-09)
 
-Como el matching sigue siendo por substring literal, ninguna cantidad de
-variantes cubre el 100% de las formas posibles de parafrasear: una
-alumna puede reordenar o sinonimizar dentro de una misma frase de un
-modo que ninguna keyword prevista contempla. Esta convención reduce el
-problema de raíz (curación pobre de keywords) pero no lo elimina del
-todo. Si después de aplicarla Laura sigue viendo corrección injustamente
-estricta, el siguiente paso sería cambiar el mecanismo de comparación en
-`app/alternativas.html` (ej. exigir las palabras con carga semántica de
-cada `keyword` en cualquier orden, en vez de la frase completa como
-substring), un cambio de código, no de contenido, que no se hizo acá
-porque no fue lo pedido y afecta el comportamiento de todo el banco
-existente.
+Lo que anticipaba la versión anterior de esta sección ya se hizo, a pedido
+de Laura. `keywordPresente()` en `app/alternativas.html` da por presente
+una keyword si aparece **literal** o si **todas sus palabras con
+significado aparecen cerca** (ventana de 8 palabras), en cualquier orden,
+comparando por raíz (primeras 5 letras) las de más de 3 letras y en forma
+exacta las cortas y los números (para no confundir "no" con "norma"). El
+umbral para aprobar sigue en 75%.
+
+Además, en el veredicto final cada elemento faltante tiene el botón **"Lo
+dije con otras palabras"**: la alumna lo marca como logrado, sube su
+crédito y, si aprueba, sale del cuaderno de errores. No aparece en la
+segunda pasada (ahí los faltantes se ocultan a propósito).
+
+Cada corrección final y cada reclamo quedan en `evaluacion_correcciones`
+(con el texto de la respuesta). `python3
+scripts/revisar_correcciones_evaluacion.py` los junta por pregunta y
+elemento en `DERECHO LIBRE/Documentos de trabajo/`, y la IA los revisa:
+reclamos legítimos se vuelven keywords nuevas; aprobaciones flexibles o
+por reclamo que no correspondían llevan a ajustar o sacar keywords. Todo
+pasa por Laura antes de tocar Airtable.
+
+Medición (`python3 scripts/prueba_correccion_flexible.py`, 2026-10-09):
+la respuesta modelo aprueba en 254 de 293 ítems (antes 207); respuestas
+correctas de prueba con palabras propias, 5 de 8 (antes 1); respuestas
+equivocadas de prueba, 0 de 8 (igual que antes). Riesgo conocido: quien
+escribiera solo las palabras de las keywords revueltas aprobaría casi
+siempre (235 de 293; antes 61). Las keywords no se le muestran a la
+alumna, pero por eso importa revisar las aprobaciones flexibles.
+
+**Consecuencias para redactar keywords:** siguen valiendo las reglas de
+arriba, con dos ajustes. (1) Evitar keywords de una o dos palabras muy
+generales: con la ventana, son las que más fácil dan un falso positivo.
+(2) Una keyword no debe estar ya contenida en el caso o el enunciado
+(`subir_eval.py` de AJ lo controla).
