@@ -3,7 +3,7 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-09 (tramo 3a aprobado y commiteado;
+> antes de seguir. Última actualización: 2026-10-09, revisado tras las fusiones de AJ (tramo 3a aprobado y commiteado;
 > siguiente: informe del tramo 3b).
 
 ## Resumen para retomar (léelo primero)
@@ -38,10 +38,10 @@
 - **Tramo 2a (II.C a II.H, p. 36-44): terminado y aprobado por Laura
   (2026-10-08), commit `c97ba01`.** Detalle en "Tramo 2a", más abajo.
 - **Tramo 2b (II.I a II.K, p. 45-51): terminado y aprobado por Laura
-  (2026-10-09).** Cierra el capítulo II.
+  (2026-10-09), commit `b311f56`.** Cierra el capítulo II.
 - **Tramo 3 dividido en 3a (III.1-5, p. 52-58) y 3b (III.6-9, p.
   58-63), aprobada por Laura 2026-10-09. Tramo 3a: terminado y
-  aprobado por Laura (2026-10-09).** Detalle en "Tramo 3a", más abajo.
+  aprobado por Laura (2026-10-09), commit `bcabce8`.** Detalle en "Tramo 3a", más abajo.
 - **Siguiente: tramo 3b (III.6-9, p. 58-63), informe sin empezar.** Detalle en "Tramo 2b", más
   abajo; siguiente paso al final de este archivo.
 
