@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-09 (tramo 3b aprobado y
-> commiteado; tramo 4a reescrito, esperando revisión de Laura; sin commit).
+> antes de seguir. Última actualización: 2026-10-09 (tramos 3b y
+> 4a aprobados y commiteados; siguiente: informe del tramo 4b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -44,9 +44,10 @@
   aprobado por Laura (2026-10-09), commit `bcabce8`.** Detalle en "Tramo 3a", más abajo.
 - **Tramo 3b (III.6-9, p. 58-63): terminado y aprobado por Laura
   (2026-10-09), commit `c7eb772`.** Cierra el capítulo III.
-- **Tramo 4a (IV.1-6, p. 63-70): reescrito, esperando la revisión de
-  Laura en la vista previa. Sin commit todavía.** Detalle en "Tramo 4a", más abajo. Detalle en "Tramo 3b", más abajo;
-  siguiente paso al final de este archivo.
+- **Tramo 4a (IV.1-6, p. 63-70): terminado y aprobado por Laura
+  (2026-10-09), commit `43bb930`.**
+- **Siguiente: tramo 4b (IV.7-10, p. 70-80), informe sin empezar.**
+  Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -115,7 +116,7 @@ que en AJ.
 | 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). Corte confirmado 2026-10-08 (cierra el capítulo II). Hecho y aprobado 2026-10-09 |
 | 3a | 52-58 | 3 | III.1-5 (preliminares, concepto, bases constitucionales, caracteres, facultades). División aprobada 2026-10-09. Hecho y aprobado 2026-10-09 |
 | 3b | 58-63 | 3 | III.6-9 (cláusulas de no enajenar, clasificaciones, aspectos pasivos, extinción) + de Peñailillo: extensión material, vecindad, propiedad familiar; del anexo: restricciones específicas |
-| 4a | 63-70 | 4 | IV.1-6 (terminología, naturaleza, el Código, fuentes, clases, cuota). Corte por contenido aprobado 2026-10-09 |
+| 4a | 63-70 | 4 | IV.1-6 (terminología, naturaleza, el Código, fuentes, clases, cuota). Corte por contenido aprobado 2026-10-09. Hecho y aprobado 2026-10-09 |
 | 4b | 70-80 | 4 | IV.7-10 (administración, coposesión, copropiedad inmobiliaria, extinción) |
 | 5a | 81-88 | 5 | V.1 Aspectos generales (modos de adquirir) |
 | 5b | 88-94 | 5 | V.2 La ocupación |
@@ -705,7 +706,7 @@ párrafo más largo 653 caracteres, capturas revisadas (se partió el
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_3b.html`).
 
-## Tramo 4a: reescrito, esperando revisión (2026-10-09)
+## Tramo 4a: hecho y aprobado (2026-10-09), commit `43bb930`
 
 **IV.1 a IV.6, páginas 63 a 70 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo4a.html`. Hallazgos:
@@ -780,13 +781,10 @@ del job (`05_Bienes_antes_4a.html`).
 
 ## Siguiente paso exacto (2026-10-09, vigente)
 
-1. **Tramo 4a: esperar la revisión de Laura en la vista previa**
-   (`Vista_previa/Bienes_vista_previa.html#cIV`). Con su visto bueno,
-   commit en `main` del manual y de este estado.
-2. **Tramo 4b: IV.7-10, p. 70-80.** Informe nuevo. Peñailillo p. 47-48
+1. **Tramo 4b: IV.7-10, p. 70-80.** Informe nuevo. Peñailillo p. 47-48
    (administración: ius prohibendi, mandato tácito, art. 2307, medidas
    conservativas, jurisprudencia), p. 53-57 (coposesión, copropiedad
    inmobiliaria con Ley 19.537, hoy derogada por la 21.442, y tiempo
    compartido). Boetsch cita la Ley 19.537 en IV.9: verificar contra la
    Ley 21.442.
-3. Repetir tramo por tramo según la tabla de "Reparto de tramos".
+2. Repetir tramo por tramo según la tabla de "Reparto de tramos".
