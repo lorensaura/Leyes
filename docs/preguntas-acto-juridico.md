@@ -465,23 +465,21 @@ tope de diez años es del art. 1692 inc. final, no del 2520 inc. 2°;
 `278`, `089`, `005`) y 7 de forma (`060`, `009`, `157`, `193`, `222`,
 `232`, `270`). Están en `scripts/practica_aj/correcciones_revision.py`
 (con la cita literal del manual de cada una) y en
-`DERECHO LIBRE/Informes/Informe_AJ_revision_flashcards.html`. **No se
-aplicaron**: esperan el visto bueno de Laura. Aprobadas, se aplican en
-Airtable reemplazando el texto actual por el propuesto (el script de
-informe ya comprueba que cada texto actual exista tal cual). **Ojo al
-aplicar:** cuatro cambian la pregunta (`009`, `060`, `232`, `270`), y
-`revisar_fc.py` y el control de duplicados de `subir_fc.py` cruzan por
-el texto de la pregunta: actualizar también la entrada en su
-`lote_fcN.py` (la `009` no tiene lote). Esta revisión miró solo la
+`DERECHO LIBRE/Informes/Informe_AJ_revision_flashcards.html`. **Laura
+las aprobó todas el 2026-10-09**, con un ajuste: en la `005`, "prenda
+ordinaria" pasa a "prenda civil" (no "prenda" a secas). **Aplicadas en
+Airtable el mismo día** con `scripts/practica_aj/aplicar_correcciones.py`,
+que también actualizó los `lote_fcN.py` y los `filas_lote_fc*.json` para
+que sigan cuadrando (se comprobó: las 291 siguen en Revisar y sin
+publicar, y las 269 con lote calzan con su archivo). Esta revisión miró solo la
 fidelidad al manual, **no la redundancia** entre tarjetas (hay pares
 parecidos, como `031`/`074`, `033`/`103`, `039`/`193`, `040`/`192` y
 `202`/`229`/`231`/`232`): queda como pasada opcional.
 
 Lo que sigue depende de Laura:
-1. **Aprobar o ajustar las 14 correcciones** del informe de revisión;
-   luego aplicarlas en Airtable. Los informes por lote
-   (`Informe_AJ_flashcards_lote2` a `lote10`) siguen sirviendo para leer
-   las tarjetas completas.
+1. ~~Aprobar y aplicar las correcciones de la revisión~~ **Hecho
+   (2026-10-09).** Queda opcional una pasada de redundancia entre
+   tarjetas (ver arriba).
 2. **Decidir cómo seguir con Evaluación y Alternativas** (ver "Por
    acordar con Laura" en "Método"): cuántas por tema según su
    relevancia, qué hacer con el lote 1 del Cap. I y qué definiciones
