@@ -47,7 +47,9 @@
 - **Tramo 4a (IV.1-6, p. 63-70): terminado y aprobado por Laura
   (2026-10-09), commit `43bb930`.**
 - **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
-  (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV. Detalle en "Tramo 4b",
+  (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV.
+- **Tramo 5a (V.1 completo, p. 81-86): reescrito (2026-10-10), falta la
+  revisión de Laura.** Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
   más abajo.
   Siguiente paso al final de este archivo.
 
@@ -120,8 +122,8 @@ que en AJ.
 | 3b | 58-63 | 3 | III.6-9 (cláusulas de no enajenar, clasificaciones, aspectos pasivos, extinción) + de Peñailillo: extensión material, vecindad, propiedad familiar; del anexo: restricciones específicas |
 | 4a | 63-70 | 4 | IV.1-6 (terminología, naturaleza, el Código, fuentes, clases, cuota). Corte por contenido aprobado 2026-10-09. Hecho y aprobado 2026-10-09 |
 | 4b | 70-80 | 4 | IV.7-10 (administración, coposesión, copropiedad inmobiliaria, extinción) |
-| 5a | 81-88 | 5 | V.1 Aspectos generales (modos de adquirir) |
-| 5b | 88-94 | 5 | V.2 La ocupación |
+| 5a | 81-86 | 5 | V.1 Aspectos generales (modos de adquirir). Corte por contenido aprobado 2026-10-10 (antes 81-88) |
+| 5b | 87-94 | 5 | V.2 La ocupación completa (corregido 2026-10-10, antes 88-94) |
 | 6a | 95-103 | 6 | V.3 La accesión (1ª mitad) |
 | 6b | 103-110 | 6 | V.3 La accesión (2ª mitad) |
 | 7a | 111-118 | 7 | V.4.A Tradición, descripción general |
@@ -866,27 +868,63 @@ balanceadas, capturas revisadas, vista previa actualizada. Respaldo
 previo en el tmp del job (`05_Bienes_antes_4b.html`). Aprobado por Laura
 el 2026-10-10.
 
+## Tramo 5a: reescrito (2026-10-10), falta la revisión de Laura
+
+**V.1 completo, páginas 81 a 86 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo5a.html`.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** corte 5a =
+V.1 (p. 81-86), 5b = V.2 (p. 87-94); entran los cuadros (a) tesis de
+V.1.6, (b) dualidad vs. consensual y (c) qué se adquiere por cada modo
+(no el (d)); el tesoro como ley-modo se precisa: la mitad que el art. 626
+da al dueño del terreno por el solo hecho de serlo; preguntas clásicas:
+"¿Qué es un modo de adquirir el dominio?", "¿Qué importancia tiene
+distinguir entre modo originario y derivativo?" y "¿Cuál es el modo de
+adquirir más amplio?" (se les agregaron signos de interrogación y la
+tilde de "Qué"; el texto del banco no los traía); entra "la ley en la
+expropiación es a título oneroso", con el art. 19 Nº 24 inc. 3º CPR (no
+viene de las fuentes de Bienes, lo aprobó Laura); Laura no tiene
+material propio.
+
+**PENDIENTE PARA EL TRAMO 11b (decisión de Laura, no olvidar):** el
+argumento de VIAL sobre el art. 703 (TRADICIÓN Y PRESCRIPCIÓN, p. 56-57:
+"título" en el 703 no es título posesorio, porque la prescripción supone
+posesión previa y el contrato translaticio no hace poseedor; en los
+modos originarios el título es constitutivo y se confunde con el modo)
+va en el **justo título**, no en V.1.6. Por eso el cuadro de V.1.6 no
+nombra a VIAL.
+
+**Corrección al mapa de anexos:** la discusión nº 1 del anexo de
+discusiones doctrinales es de V.1.6 y la p. 1 del anexo de relaciones
+jurídicas es de V.1.3.1; ninguno agrega contenido propio.
+
+Lo que se hizo: V.1 reescrito en voz propia (paráfrasis: de 26 oraciones
+sobre 70% a 14, de las cuales 6 son citas textuales del Mensaje y del
+art. 675 y 8 son fragmentos cortos de enumeraciones técnicas); los 4
+matices de Boetsch; las 3 referencias internas eliminadas; 10 unidades de
+Peñailillo; de VIAL, su definición de modo y título, la ley como modo
+originario, el antecesor irrelevante en el originario, la prueba del
+dominio derivativo y el gravamen en la compraventa; precisiones de los
+arts. 882, 810 (con 250 y 252), 2180 Nº 1 y 2186, 682, 588, 626 y 952;
+arts. 806 y 819 como respaldo; arts. 588, 675 y 703 (inc. 1º a 3º) en
+`.ley`; definición de título y modo en `.definicion` (fórmula "la
+doctrina"). Cajas: No confundir "¿Título o modo de adquirir?"; tres
+preguntas clásicas; ejemplos "La bici de Martina" (1.2), "La guitarra que
+no era de Pía" (3.1), "La pieza de Antonia en Viña" (4), "El auto del tío
+Lucho" (5); breves en cursiva (Ignacio en Valparaíso, Javiera en La
+Reina, la abuela Tere y el Yaris, Florencia y el crédito, el primo Nico,
+Diego en Maitencillo). Cuadros (a), (b), (c); el (c) tiene 6 columnas y
+lleva la clase nueva `cols-angostas` (celdas alineadas a la izquierda,
+regla agregada a la hoja de estilos, solo afecta a ese cuadro).
+Conexiones a Contratos, Familia, Constitucional (manual aún no existe) y
+Sucesorio con `[FALTA: sección]`. Verificación: 62 unidades del
+inventario presentes, cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, todos los artículos en rojo, capturas revisadas,
+vista previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_5a.html`).
+
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Tramo 5a: informe listo, esperando decisiones de Laura**
-   (`Informes/Informe_Bienes_tramo5a.html`, 2026-10-10). Propone cortar
-   por contenido: 5a = V.1 completo (p. 81-86), 5b = V.2 La ocupación
-   (p. 87-94); la tabla de "Reparto de tramos" se corrige cuando Laura
-   lo apruebe. Decisiones pendientes: corte; argumento de VIAL sobre el
-   art. 703 en V.1.6 o en 11b; cuadros (a) tesis de V.1.6, (b) dualidad
-   vs. consensual, (c) qué se adquiere por cada modo, (d) opcional;
-   precisión del tesoro (art. 626) como ley-modo; preguntas clásicas
-   (recomendadas: "Qué es un modo de adquirir el dominio.", "Que
-   importancia tiene distinguir entre modo originario y derivativo",
-   "¿Cuál es el modo de adquirir más amplio?"); si entra "la ley,
-   ¿gratuito u oneroso?" con el art. 19 Nº 24 CPR; material propio.
-   Hallazgos clave: 4 matices de Boetsch, 3 referencias internas,
-   paráfrasis 26/101 sobre 70% (5 son la cita del Mensaje); 10 unidades
-   de Peñailillo; 6 de VIAL; precisiones de arts. 882, 810 (con 250 y
-   252), 2180 Nº 1 y 2186, 682, 588, 626, 952.
-   **Corrección al mapa de anexos:** la discusión nº 1 del anexo de
-   discusiones doctrinales es de V.1.6 (no "tramo 7 en adelante") y la
-   p. 1 del anexo de relaciones jurídicas es de V.1.3.1 (no "tramo 11
-   en adelante"); ninguno agrega contenido propio (repiten a Boetsch,
-   Peñailillo y VIAL).
-2. Con las decisiones de Laura, reescribir V.1 y verificar.
+1. **Revisión de Laura del tramo 5a** (vista previa actualizada, ancla
+   `#cV-1`). Con su visto bueno, commit del manual.
+2. Después, **tramo 5b** (V.2 La ocupación, p. 87-94): informe nuevo.
