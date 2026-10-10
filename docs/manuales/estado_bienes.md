@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-10 (tramo 5a
-> aprobado; empieza el tramo 5b).
+> antes de seguir. Última actualización: 2026-10-10 (tramo 5b
+> reescrito, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -49,7 +49,9 @@
 - **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
   (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV.
 - **Tramo 5a (V.1 completo, p. 81-86): terminado y aprobado por Laura
-  (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
+  (2026-10-10), commit `231b5fd`.**
+- **Tramo 5b (V.2 La ocupación, p. 87-94): reescrito (2026-10-10), falta
+  la revisión de Laura.** Detalle en "Tramo 5b", más abajo. Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
   más abajo.
   Siguiente paso al final de este archivo.
 
@@ -923,22 +925,55 @@ etiquetas balanceadas, todos los artículos en rojo, capturas revisadas,
 vista previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_5a.html`). Aprobado por Laura el 2026-10-10.
 
+## Tramo 5b: reescrito (2026-10-10), falta la revisión de Laura
+
+**V.2 La ocupación, páginas 87 a 94 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo5b.html`.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** se escribe
+el texto vigente en la caza (art. 609, Ley 19.473: solo tierras propias o
+ajenas con permiso; ya no hay excepción de tierras sin cercar ni
+notificación) y en las especies náufragas (art. 637 remite a los arts.
+629 y ss.: reparto con la municipalidad, no con el hospital; art. 638,
+gratificación de salvamento hasta la mitad del valor); **no** se agregan
+los arts. 631, 634, 635 y 636; invención, tesoro y captura bélica pasan a
+(i)-(iii) dentro de 4.2, con a) y a.1); entran las preguntas clásicas
+"Si el niño aún no cumple los 18 años, ¿igual adquiere el dominio por
+ocupación?" (en 2) y "¿Qué tipos de bienes se pueden adquirir por
+ocupación?" (en 3 (i)); Laura no tiene material propio. Laura agregó a
+`Apuntes/CODIGOS/` la Ley de Pesca (Decreto 430 de 1991, texto refundido
+de la Ley 18.892, última modificación Ley 21.770) y el DL 3.063
+(Decreto 2.385 de 1996); ambos confirman lo que dice Boetsch (art. 1 y
+art. 43). **El DFL 34 de 1931 no lo encontró:** queda con `[FALTA:
+verificar vigencia y texto del DFL 34 de 1931]` en 4.1 (iii) b).
+
+Lo que se hizo: V.2 reescrito en voz propia (paráfrasis: de 12 oraciones
+sobre 70% a 1, que es el texto del art. 625); los 3 matices de Boetsch
+(ánimo de donar a persona indeterminada, ante la duda especie perdida,
+el dueño no puede negarse a la extracción del art. 627); las unidades de
+Peñailillo (definición con su nombre, modo más antiguo, no incorporales,
+título para poseer, elementos de hecho de la inminencia, restricciones
+legales); cita del art. 597 eliminada (no correspondía); art. 623 citado
+para los domésticos; art. 640 con los nacionales; art. 607 y art. 26
+agregados; arts. 606, 625 y 626 en `.ley`; definición de la doctrina en
+`.definicion`; las tres opiniones de Boetsch con su nombre (art. 723,
+DFL 34, presunción del art. 624 inc. 4º). Formato: 2 y 3 con (i)-(iii);
+4.1 ordenado en (i)-(v); 4.2 con (i)-(iii), a)-d) y a.1)-a.5) (los ids
+`cV-2-4-2-a` a `-c` desaparecieron, no tenían enlaces); 4.3 con (i)-(ii).
+Cajas: No confundir "¿Especie perdida o res derelicta?" reescrito;
+ejemplos "El salmón de Valentina" (4.1), "Lo que Sofía encontró en
+Zapallar" (4.2 (i)), "Las monedas bajo el parrón" (4.2 (ii)); breves en
+cursiva (Agustín y la concha, Gaspar y los audífonos en el Metro). Sin
+Conexiones (la de Penal dependía de los arts. 631 y 635, que no entraron).
+Verificación: 71 unidades presentes, cero guiones largos, ids únicos,
+`href` resuelven, etiquetas balanceadas, artículos del Código en rojo
+(los de leyes especiales sin rojo, como en 4b), capturas revisadas, vista
+previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_5b.html`). Sin commit del manual todavía.
+
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Tramo 5b (V.2 La ocupación, p. 87-94): informe listo, esperando
-   decisiones de Laura** (`Informes/Informe_Bienes_tramo5b.html`,
-   2026-10-10). Hallazgos clave: Boetsch está desactualizado en la caza
-   en tierras ajenas (art. 609 vigente, Ley 19.473: solo tierras propias
-   o ajenas con permiso) y en las especies náufragas (no hay reparto con
-   el hospital: art. 637 remite al 629 y ss., municipalidad; art. 638
-   tope de gratificación); la cita del art. 597 no corresponde; el art.
-   623 dice lo contrario de lo que se le atribuye; art. 640 incluye a
-   los nacionales. 3 matices de Boetsch; 6 unidades de Peñailillo;
-   paráfrasis 12/123 sobre 70%. Decisiones pendientes: texto vigente en
-   caza y náufragas; leyes no verificables (Ley 18.892, DFL 34 de 1931,
-   DL 3.063): PDF o `[FALTA]`; agregar arts. 631, 634, 635, 636 y 638;
-   formato de 4.2 ((i)-(iii) con a) y a.1), o subir a 4.2-4.4);
-   preguntas clásicas (recomendadas: "¿Qué tipos de bienes se pueden
-   adquirir por ocupación?" y la del niño menor de 18); material propio.
-   Pregunta sin respuesta en las fuentes: "Cuáles son los bienes
-   vacantes".
+1. **Revisión de Laura del tramo 5b** (vista previa actualizada, ancla
+   `#cV-2`). Con su visto bueno, commit del manual.
+2. Después, **tramo 6a** (V.3 La accesión, 1ª mitad, p. 95-103): informe
+   nuevo. Ajustar el corte por contenido al llegar.
