@@ -4,7 +4,7 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-10-10 (tramo 4b
-> reescrito con las decisiones de Laura, esperando su revisión).
+> aprobado; empieza el tramo 5a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -46,8 +46,8 @@
   (2026-10-09), commit `c7eb772`.** Cierra el capítulo III.
 - **Tramo 4a (IV.1-6, p. 63-70): terminado y aprobado por Laura
   (2026-10-09), commit `43bb930`.**
-- **Tramo 4b (IV.7-10, p. 70-80): reescrito (2026-10-10), esperando
-  revisión de Laura.** Cierra el capítulo IV. Detalle en "Tramo 4b",
+- **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
+  (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV. Detalle en "Tramo 4b",
   más abajo.
   Siguiente paso al final de este archivo.
 
@@ -781,7 +781,7 @@ resuelven, etiquetas balanceadas, párrafo más largo 960 caracteres,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_4a.html`).
 
-## Tramo 4b: reescrito (2026-10-10), falta la revisión de Laura
+## Tramo 4b: hecho y aprobado (2026-10-10), commit `ef9f28f`
 
 **IV.7 a IV.10, páginas 70 a 80 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo4b.html`. Laura agregó la **Ley 21.442** a
@@ -863,11 +863,10 @@ nombrado mal como Javiera e Ignacio). Conexiones a Contratos,
 Obligaciones, Procesal y Familia con `[FALTA: sección]`. Verificación:
 cero guiones largos, ids únicos, `href` resuelven, etiquetas
 balanceadas, capturas revisadas, vista previa actualizada. Respaldo
-previo en el tmp del job (`05_Bienes_antes_4b.html`). Sin commit todavía.
+previo en el tmp del job (`05_Bienes_antes_4b.html`). Aprobado por Laura
+el 2026-10-10.
 
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Revisión de Laura del tramo 4b** (vista previa actualizada). Con
-   su visto bueno, commit.
-2. Después, **tramo 5** según la tabla de "Reparto de tramos": informe
-   nuevo.
+1. **Tramo 5a (V.1 Aspectos generales de los modos de adquirir, p.
+   81-88 de Boetsch): informe nuevo**, en curso.
