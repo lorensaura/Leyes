@@ -288,6 +288,7 @@ la cuenta.
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
+| Conexiones con otras materias | 61 (`aj-con-001` a `061`) | Airtable, base de AJ, tabla **Conexiones** (creada el 2026-10-10) | En `Revisar`. Extraídas de los 19 recuadros "Conexiones" del manual (`scripts/practica_aj/extraer_conexiones.py` y `subir_conexiones.py`). Una fila por materia conectada, con tema, subtema, sección y dónde está en el otro apunte. **Para qué (Laura):** que los exámenes con IA de toda la materia puedan ir conectando materias. No se sincroniza a Supabase todavía |
 
 Informes de revisión (fuera del repo, en `DERECHO LIBRE/Informes/`):
 `Informe_AJ_relevancia_temas.html` (relevancia y tablero por subtema,

@@ -506,6 +506,19 @@ sin depender de ninguna función especial de un modelo en particular, así
 que funciona igual en modo examen (Opus 4.8) y en modo práctica
 (Sonnet 5).)
 
+## Conexiones entre materias (pendiente, idea de Laura del 2026-10-10)
+
+Para los exámenes con IA de toda una materia (o de varias), Laura quiere
+que el examinador vaya **conectando materias**, como en el examen de
+grado real. La materia prima ya existe: la tabla `Conexiones` de la base
+de Acto Jurídico en Airtable (61 filas, una por cada conexión de los
+recuadros "Conexiones" del manual: punto de AJ, materia conectada,
+institución o artículo, y dónde está en el otro apunte). Falta decidir
+cómo la usa el Interrogador (por ejemplo, sincronizarla a Supabase y
+darle al examinador, cuando el turno toca una sección con conexiones,
+la opción de saltar a la materia conectada) y repetir la tabla en las
+demás materias a medida que sus manuales estén al día.
+
 ## Requisitos de configuración (Vercel)
 Variables de entorno necesarias en Production + Preview:
 - `ANTHROPIC_API_KEY` — cuenta y facturación separada del Claude Pro

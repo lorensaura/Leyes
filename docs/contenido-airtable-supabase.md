@@ -312,6 +312,23 @@ el 2026-07-20 — no hay que construir nada nuevo, solo repetir el patrón:
   de un diseño anterior (una base por tipo) que se descartó a favor de una
   base por materia. Laura las va a borrar a mano.
 
+## Cambios del 2026-10-10
+
+- **Columna `minimo_elementos`** (número) en Aplicación, Detección de
+  error y Justificación de las 4 bases que sincroniza el script (las 3
+  de Responsabilidad y la de Acto Jurídico). El sync la lleva a
+  `evaluacion_practica.minimo_elementos`. Para preguntas "menciona N de
+  M" (ver `docs/prompts-practica/elementos-clave.md`). Las bases de
+  Bienes no la tienen: agregarla cuando se conecten.
+- **Tabla `Conexiones`** en la base `Digesto Acto Jurídico`: las
+  conexiones del manual con otras materias (61, de los recuadros
+  "Conexiones"). Pensada para los exámenes con IA de toda una materia o
+  de varias. Todavía no se sincroniza a Supabase ni la usa el
+  Interrogador; ver `docs/interrogador.md`. Cuando otra materia tenga su
+  manual al día, su base lleva la misma tabla (scripts en
+  `scripts/practica_aj/extraer_conexiones.py` y `subir_conexiones.py`,
+  adaptables).
+
 ## Pendiente / no construido
 - Materias más allá de Contractual/Extracontractual/Precontractual (Acto
   Jurídico, Bienes, Familia, Sucesorio, Procesal, etc.) — en stand by desde

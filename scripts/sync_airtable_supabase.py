@@ -394,6 +394,10 @@ def _fila_evaluacion_texto(record, materia, tipo, tema_nombre):
         "enunciado": fields.get("enunciado", ""),
         "respuesta_modelo": fields.get("respuesta_modelo"),
         "elementos_clave": elementos_clave,
+        # Preguntas "menciona N de M" (docs/prompts-practica/elementos-clave.md):
+        # cuántos elementos bastan para el 100%. Vacío en Airtable = se exigen todos.
+        # Campo agregado a Airtable el 2026-10-10; antes se fijaba a mano en Supabase.
+        "minimo_elementos": fields.get("minimo_elementos"),
         "opciones": [],
         "correcta": None,
         "articulos_referencia": fields.get("articulos_referencia"),
@@ -423,6 +427,7 @@ def _fila_evaluacion_mc(record, materia, tema_nombre):
         "enunciado": fields.get("enunciado", ""),
         "respuesta_modelo": None,
         "elementos_clave": [],
+        "minimo_elementos": None,  # mismas claves que _fila_evaluacion_texto (upsert por lote)
         "opciones": opciones,
         "correcta": fields.get("correcta"),
         "articulos_referencia": fields.get("articulos_referencia"),
