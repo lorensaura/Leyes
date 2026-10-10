@@ -91,7 +91,9 @@ grado reales:
 
 - **4 preguntas por tipo** en los subtemas importantes (los que aparecen
   en **10 o más exámenes** del conteo de la materia);
-- **2 preguntas por tipo** en el resto.
+- **hasta 2 preguntas por tipo** en el resto (con 1 basta si el subtema
+  es chico: entre los 4 tipos de Evaluación, Flashcards y Alternativas
+  igual suma 5 o 6 preguntas por subtema).
 
 La idea es que alcance para quien estudia **solo esa materia**. Para
 aplicarla a una materia nueva, primero se cuentan sus temas y subtemas en

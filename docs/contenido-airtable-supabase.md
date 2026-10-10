@@ -329,6 +329,18 @@ el 2026-07-20 — no hay que construir nada nuevo, solo repetir el patrón:
   `scripts/practica_aj/extraer_conexiones.py` y `subir_conexiones.py`,
   adaptables).
 
+## Acto Jurídico en tres bases (2026-10-10)
+
+Por el límite de 1.000 registros por base, la Evaluación de AJ vive en
+dos bases aparte, partidas por capítulo del manual:
+`Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1
+a 17) y `Digesto Acto Jurídico - Evaluación IV-VI` (`appjmtz9O5CARhCYe`,
+temas 18 a 29), cada una con su tabla Temas (mismos nombres) y las 4
+tablas de Evaluación. `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`)
+quedó con Temas, Flashcards y Conexiones. El sync lee la Evaluación de
+AJ desde `EVALUACION_EN_BASES_APARTE` (lista de pares materia y base;
+sirve para partir cualquier otra materia igual).
+
 ## Pendiente / no construido
 - Materias más allá de Contractual/Extracontractual/Precontractual (Acto
   Jurídico, Bienes, Familia, Sucesorio, Procesal, etc.) — en stand by desde

@@ -60,7 +60,7 @@ tabla Supabase `evaluacion_practica` vía
 | Bienes - Hasta tradición | Digesto Bienes - Hasta Tradición |
 | Bienes - Posesión | Digesto Bienes - Posesión |
 | Bienes - Prescripción y otros | Digesto Bienes - Prescripción y Otros |
-| Acto Jurídico | Digesto Acto Jurídico (conectada a Supabase; el sync fuerza `materia = acto_juridico`) |
+| Acto Jurídico | Evaluación en dos bases por capítulo: Digesto Acto Jurídico - Evaluación I-III y - Evaluación IV-VI (conectadas a Supabase; el sync fuerza `materia = acto_juridico`). Las Flashcards siguen en Digesto Acto Jurídico |
 
 Las 3 bases de Bienes tienen la misma estructura que las de
 Responsabilidad (Temas, Flashcards, Aplicación, Detección de error,
