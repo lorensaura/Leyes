@@ -10,10 +10,19 @@
 
 ## Estado por capítulo
 
-**Flashcards de los seis capítulos: revisadas contra el manual y
-publicadas el 2026-10-09** (291). Evaluación: en curso, tema por tema y
-tipo por tipo; tanda 1 (Nulidad, Aplicación) cargada y esperando revisión
-(ver "Siguiente paso exacto"). Alternativas: después.
+**Dónde quedó (al 2026-10-10, todo fusionado en `main` y en GitHub):**
+- **Flashcards:** 291, revisadas contra el manual y **publicadas** (2026-10-09).
+- **Evaluación:** en curso, tema por tema (orden de relevancia) y tipo por
+  tipo. Tanda 1, **Nulidad · Aplicación**: 17 preguntas aprobadas por
+  Laura, sin publicar. **Siguiente paso: completarla a ~34** con la regla
+  nueva de 4 y 2, y después Nulidad · Detección de error (ver "Siguiente
+  paso exacto").
+- **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
+- **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
+- **Infraestructura nueva (2026-10-09 y 10):** corrección flexible en la
+  app con botón "Lo dije con otras palabras" y registro para revisión por
+  IA; un solo prompt de creación (`docs/prompts-practica/`); Evaluación de
+  AJ en dos bases aparte de Airtable por capítulo.
 
 | Capítulo del manual | Estado |
 |---|---|
@@ -279,7 +288,7 @@ la cuenta.
 | **Total** | | | | **20** | **3** | **3** | **3** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
-## Dónde está cada cosa (al 2026-10-09)
+## Dónde está cada cosa (al 2026-10-10)
 
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
@@ -346,6 +355,18 @@ se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
     problema, texto actual, texto propuesto). `informe_revision.py` arma con
     ellas `Informe_AJ_revision_flashcards.html`.
 
+- Evaluación (2026-10-09 y 10): `airtable_aj.py` (acceso a las tres bases
+  y a qué base va cada tema), `lote_aplicN.py` / `lote_detN.py`... (el
+  contenido de cada tanda), `subir_eval.py` (revisa y carga; detalle en
+  "Siguiente paso exacto"), `informe_eval.py` (informe de revisión).
+- Conexiones (2026-10-10): `extraer_conexiones.py` (lee los recuadros
+  "Conexiones" del manual a `generado/conexiones.json`) y
+  `subir_conexiones.py` (crea la tabla si falta y carga sin duplicar).
+- Corrección de la app (2026-10-09, en `scripts/`):
+  `prueba_correccion_flexible.py` (mide la corrección contra el banco
+  publicado y respuestas de prueba) y `revisar_correcciones_evaluacion.py`
+  (junta los reclamos "Lo dije con otras palabras" para revisarlos con IA).
+
 ## Pasos para que el contenido llegue a la app, en este orden
 
 1. ~~Llevar a `main` y desplegar los cambios de código del 2026-10-07~~
@@ -355,6 +376,10 @@ se regenera con el script del tablero), `Informe_AJ_practica_capI.html`
    Responsabilidad y una definición de Memorice pediría un número de
    artículo. Las Flashcards viven en Airtable, así que no necesitan
    fusionar esta rama para llegar a la app.
+   **Hecho también** el código del 2026-10-09 y 10 (corrección flexible,
+   botón de reclamo, sync con `minimo_elementos` y con las bases de
+   Evaluación aparte): fusionado y en GitHub el 2026-10-10. La tabla
+   `evaluacion_correcciones` ya existe en Supabase.
 2. Laura revisa los informes y corrige o aprueba.
 3. Flashcards y Evaluación: en Airtable, marcar `publicado` y poner
    `Revision_status = Verificado`; luego correr
@@ -383,12 +408,18 @@ Decidido:
 - **Control anti-alucinación obligatorio** antes de subir cada lote (ver
   "Lotes de Flashcards").
 
-Por acordar con Laura (no bloquea seguir con Flashcards):
-1. ~~Cómo trabajar Evaluación~~ **decidido el 2026-10-09** (ver
-   "Siguiente paso exacto"). Falta: cuántas por subtema, y Alternativas.
-2. Qué hacer con el lote 1 del Cap. I (Evaluación, Alternativas y
-   definiciones en borrador): revisarlo, ajustarlo o descartarlo.
-3. Qué definiciones entran a Memorice (38 en el manual, 7 en el piloto).
+Por acordar con Laura:
+1. ~~Cómo trabajar Evaluación y cuántas preguntas~~ **decidido** (2026-10-09
+   y 10, ver "Siguiente paso exacto").
+2. Qué hacer con el borrador del Cap. I (12 de Evaluación, 12
+   Alternativas y 7 definiciones, del 2026-10-07): revisarlo y ajustarlo o
+   descartarlo. Lo natural es revisarlo cuando la Evaluación llegue a los
+   temas del Cap. I, contra el prompt actual (corrección flexible).
+3. **Alternativas:** viven solo en Supabase (SQL que corre Laura,
+   decisión del 2026-07-27). Laura pidió, cuando lleguemos, **revisar cómo
+   se generan** antes de seguir.
+4. Qué definiciones entran a Memorice (38 en el manual, 7 en el piloto).
+   Memorice vive solo en Supabase.
 
 ## Lotes de Flashcards (método acordado el 2026-10-07)
 
@@ -469,6 +500,11 @@ en el orden del manual.
   algo falla, no se sube. Lotes 2 a 10: 269 tarjetas, ninguna subida con fallos.
 
 ## Siguiente paso exacto
+
+**Lo inmediato:** completar **Nulidad · Aplicación** de 17 a ~34
+(`lote_aplic2.py`, desde `aj-aplic-021`, 4 por subtema importante y 2
+o 1 en los chicos, sin repetir lo de `lote_aplic1.py`); informe; luego
+**Nulidad · Detección de error**. Detalle del método más abajo.
 
 **Flashcards de AJ: terminadas, revisadas y publicadas (2026-10-09).**
 291 en Airtable y en la app (Supabase, `materia = acto_juridico`), los
@@ -567,18 +603,16 @@ en el orden del manual.
   estaban en el caso, repreguntas que regalaban la respuesta, palabras
   sueltas muy generales); el contenido jurídico no cambió. Siguen sin
   publicar: se publican junto con el resto de Nulidad.
-- **Pendiente por la regla nueva: completar Aplicación de Nulidad** de 17
-  a hasta 34 preguntas (4 en los 6 subtemas importantes, 2 en los otros
-  5), con `lote_aplic2.py` desde `aj-aplic-021`. Laura decide si va antes
-  de Detección de error.
+- **Siguiente: completar Aplicación de Nulidad** de 17 a hasta 34
+  preguntas (4 en los 6 subtemas importantes, 2 o 1 en los otros 5), con
+  `lote_aplic2.py` desde `aj-aplic-021`. Va antes de Detección de error,
+  para cerrar Nulidad tipo por tipo.
 - **Siguiente tanda: Nulidad, Detección de error** (`lote_det1.py`,
   tabla `Detección de error`, prefijo `aj-det`, desde `aj-det-004`), con
   el prompt `docs/prompts-practica/deteccion-error.md` y las reglas de
   corrección flexible de `elementos-clave.md`.
-- **Alternativas:** se dejan para después de Evaluación (no se habló
-  todavía de cómo trabajarlas).
-- El borrador del Cap. I (lote 1) y las definiciones de Memorice siguen
-  pendientes de decidir (ver "Por acordar").
+- **Alternativas, Memorice de definiciones y el borrador del Cap. I:**
+  pendientes, ver "Por acordar".
 
 Si más adelante hacen falta más Flashcards, el lote nuevo va en
 `scripts/practica_aj/lote_fc11.py` con el mismo flujo (correr antes
