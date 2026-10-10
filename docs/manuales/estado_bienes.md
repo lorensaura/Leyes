@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-09 (tramos 3b y
-> 4a aprobados y commiteados; siguiente: informe del tramo 4b).
+> antes de seguir. Última actualización: 2026-10-10 (tramo 4b
+> reescrito con las decisiones de Laura, esperando su revisión).
 
 ## Resumen para retomar (léelo primero)
 
@@ -46,7 +46,9 @@
   (2026-10-09), commit `c7eb772`.** Cierra el capítulo III.
 - **Tramo 4a (IV.1-6, p. 63-70): terminado y aprobado por Laura
   (2026-10-09), commit `43bb930`.**
-- **Siguiente: tramo 4b (IV.7-10, p. 70-80), informe sin empezar.**
+- **Tramo 4b (IV.7-10, p. 70-80): reescrito (2026-10-10), esperando
+  revisión de Laura.** Cierra el capítulo IV. Detalle en "Tramo 4b",
+  más abajo.
   Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -779,12 +781,93 @@ resuelven, etiquetas balanceadas, párrafo más largo 960 caracteres,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_4a.html`).
 
-## Siguiente paso exacto (2026-10-09, vigente)
+## Tramo 4b: reescrito (2026-10-10), falta la revisión de Laura
 
-1. **Tramo 4b: IV.7-10, p. 70-80.** Informe nuevo. Peñailillo p. 47-48
-   (administración: ius prohibendi, mandato tácito, art. 2307, medidas
-   conservativas, jurisprudencia), p. 53-57 (coposesión, copropiedad
-   inmobiliaria con Ley 19.537, hoy derogada por la 21.442, y tiempo
-   compartido). Boetsch cita la Ley 19.537 en IV.9: verificar contra la
-   Ley 21.442.
-2. Repetir tramo por tramo según la tabla de "Reparto de tramos".
+**IV.7 a IV.10, páginas 70 a 80 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo4b.html`. Laura agregó la **Ley 21.442** a
+`Apuntes/CODIGOS/Ley 21442.pdf` (versión BCN, última modificación
+23-09-2026, Ley 21.842). Hallazgos:
+
+- Boetsch completo salvo 7 matices (reforma legal; texto y criterio del
+  acto de conservación; el partidor sigue conociendo lo promovido ante
+  la justicia ordinaria; los tres escenarios del comparendo; la opinión
+  de Boetsch sobre letra vs. sentido de la doble mayoría; "el propietario
+  más bien tiene la exclusividad del uso").
+- 4 opiniones propias de Boetsch están en la voz del manual: van con su
+  nombre (demolición inviable, solución del art. 669, doble mayoría,
+  cesión previa al comparendo).
+- **Art. 699 mal citado: es el 669** (y da dos opciones al dueño del
+  terreno). Art. 645 CPC derogado: "646 y siguientes". Art. 653 CPC
+  incluye "cuando falte el árbitro". **Arts. 1728 y 1729 no son
+  indivisión forzada**: se propone sacarlos (decide Laura).
+- **IV.9 desactualizado**: Boetsch y Peñailillo resumen la Ley 19.537,
+  derogada por el art. 100 de la Ley 21.442. Tabla de comparación idea
+  por idea en el informe (sección 4). La ley no tiene una norma de
+  "indivisibilidad perpetua": se reformula con arts. 2 Nº 3 inc. final y
+  3, y el término del régimen (arts. 52, 63, 64). Art. 28 (uso y goce
+  exclusivo) es más estricto que lo que decía Peñailillo.
+- Propuesto ajustar media frase de 5.3 (aprobado en 4a): la comunidad de
+  los bienes comunes de un edificio dura "mientras subsista el régimen".
+- Peñailillo: 6 unidades breves (por qué el Código no regula la
+  administración; origen del veto y "paralizante"; agente oficioso vs.
+  mandato; medidas conservativas solo si es la única forma de proteger
+  la cuota; jurisprudencia con arts. 2305 y 2081, el "2035" del resumen
+  es error; Ley 6.071 vs. sitios). Pendiente de decisión: punto 11 nuevo
+  "Situaciones semejantes a la comunidad" (tiempo compartido; cementerios
+  opcional). El dato "en Chile no hay estatuto del tiempo compartido" no
+  está verificado: si entra, atribuido a Peñailillo.
+- Paráfrasis: 11/116 oraciones sobre 70%, 37 sobre 35%. Se reescribe todo.
+- Formato: 7.1 a)-c) (h4) pasan a (i)-(iii); 7.2 vuelve a los cuatro
+  (i)-(iv) de Boetsch; IV.9 a)-g) pasa a (i)-(x). Los ids `cIV-7-1-a` a
+  `cIV-7-2-c` no tienen enlaces (verificado). La remisión de IV.8 a la
+  prescripción pasa a enlace a `#cV-5-B-5-1-iv`.
+- Cajas: retirar el Dato de grado del mandato tácito; reemplazar el
+  ejemplo del giro (es de Boetsch); No confundir "Acto de conservación
+  vs. innovación"; cuadro "Comunidad del CC vs. copropiedad inmobiliaria"
+  (6 criterios, decide Laura); ejemplos propios con la familia Fuentes
+  (Javiera y el arriendo, la gotera, el quincho de Ignacio, 70 contra
+  30, la viña de Colchagua) y otros (primos de Pichilemu, departamento
+  de Catalina en Ñuñoa, semana en Pucón).
+- `.ley` propuestos: art. 2081, art. 654 CPC, art. 718.
+- 2 preguntas clásicas candidatas (mandato tácito; ¿la partición es un
+  derecho absoluto?), se recomiendan las dos.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** IV.9 se
+rehace con la Ley 21.442, resumida en (i)-(x); **no** entra el punto 11
+(tiempo compartido ni cementerios); de los arts. 1728 y 1729 queda
+**solo el art. 1728 en su segunda hipótesis** (terreno contiguo que forma
+con la finca una heredad que no puede desmembrarse sin daño) en la
+indivisión forzada, y el 1729 sale; entra el cuadro "Comunidad del CC vs.
+copropiedad inmobiliaria"; entran las dos preguntas clásicas; se ajusta
+5.3 ("que dura mientras subsista el régimen de copropiedad"). Laura no
+tiene material propio.
+
+Lo que se hizo: IV.7-10 reescritos en voz propia (paráfrasis: de 11
+oraciones sobre 70% a 1, que es una cita de artículos); los 7 matices de
+Boetsch; las 4 opiniones de Boetsch con su nombre; las 6 unidades de
+Peñailillo; art. 669 (no 699) con sus dos opciones; arts. 646 y
+siguientes CPC; art. 653 completo; arts. 2081, 654 CPC y 718 en `.ley`;
+7.1 con (i)-(iii) y 7.2 con (i)-(iv) (los ids `cIV-7-1-a` a `cIV-7-2-c`
+desaparecieron, no tenían enlaces); IV.9 con (i)-(x) y la Ley 21.442;
+enlaces a `#cV-5-B-5-1-iv`, `#cIII-8-1`, `#cIV-5-1` y `#cIV-3-2`. Se
+retiró el Dato de grado y el ejemplo del giro de Boetsch. Cajas nuevas:
+Pregunta clásica "¿Hay mandato tácito y recíproco entre comuneros?"
+(7.1 (i)) y "¿Es una facultad o un derecho absoluto...?" (10); No
+confundir "Acto de conservación vs. innovación"; ejemplos "El quincho de
+Tomás", "Paula quiere arrendar la casa de Curicó", "La gotera en pleno
+invierno", "Setenta contra treinta" (Rocío y Martín), "El giro de la
+viña de Colchagua", "Tres primos y el sitio en Pichilemu" (corregido por Laura el mismo día: compran a Rodrigo, poseedor inscrito no dueño, para evitar el problema de la posesión inscrita; prescripción ordinaria de 5 años), "El
+departamento de Catalina en Ñuñoa"; breves en cursiva en 10. Los
+hermanos Fuentes son Andrés, Paula y Tomás (en el informe se habían
+nombrado mal como Javiera e Ignacio). Conexiones a Contratos,
+Obligaciones, Procesal y Familia con `[FALTA: sección]`. Verificación:
+cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, capturas revisadas, vista previa actualizada. Respaldo
+previo en el tmp del job (`05_Bienes_antes_4b.html`). Sin commit todavía.
+
+## Siguiente paso exacto (2026-10-10, vigente)
+
+1. **Revisión de Laura del tramo 4b** (vista previa actualizada). Con
+   su visto bueno, commit.
+2. Después, **tramo 5** según la tabla de "Reparto de tramos": informe
+   nuevo.
