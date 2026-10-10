@@ -10,12 +10,9 @@
 
 ## Estado por capítulo
 
-**Dónde quedó (al 2026-10-10; lo anterior a la tanda 2 de Aplicación está
-fusionado en `main` y en GitHub; la tanda 2 de Aplicación, la tanda 1 de
-Detección de error y esta actualización están con commit en la rama
-`worktree-aj-ejemplos-error`, falta que Laura la suba con GitHub Desktop
-y la fusione a `main`. El contenido ya está en
-Airtable, así que no depende de esa fusión):**
+**Dónde quedó (al 2026-10-10; todo, incluida la tanda 1 de Detección de
+error, está fusionado en `main` y en GitHub. El contenido vive en
+Airtable, así que no depende del repo):**
 - **Flashcards:** 291, revisadas contra el manual y **publicadas** (2026-10-09).
 - **Evaluación:** en curso, tema por tema (orden de relevancia) y tipo por
   tipo. **Nulidad · Aplicación completa: 30 preguntas**, sin publicar
@@ -508,7 +505,11 @@ en el orden del manual.
 ## Siguiente paso exacto
 
 **Lo inmediato:** que Laura revise la **tanda 1 de Nulidad · Detección
-de error** (`DERECHO LIBRE/Informes/Informe_AJ_det1.html`). Con su visto
+de error** (`DERECHO LIBRE/Informes/Informe_AJ_det1.html`); dijo que la
+revisa más adelante. **Por decidir con Laura:** si la tanda 2 se hace
+antes de esa revisión (recomendado: si cambia algún criterio, se corrige
+en las dos de una vez) o se espera, como se hizo con Aplicación. Al
+retomar, preguntárselo antes de empezar. Con su visto
 bueno (o sus correcciones, que se aplican con `subir_eval.py lote_det1
 --actualizar`), la **tanda 2** (`lote_det2.py`, desde `aj-det-021`)
 completa el tema: 14 preguntas, dos más en cada subtema de 10 o más
