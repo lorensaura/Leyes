@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-10 (tramo 5b
-> aprobado; sigue el tramo 6a).
+> antes de seguir. Última actualización: 2026-10-10 (tramo 6a
+> escrito, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -53,7 +53,9 @@
   (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
 - **Tramo 5b (V.2 La ocupación, p. 87-94): terminado y aprobado por
   Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
-  Siguiente paso al final de este archivo.
+- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): escrito (2026-10-10),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
+  6a", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -126,8 +128,8 @@ que en AJ.
 | 4b | 70-80 | 4 | IV.7-10 (administración, coposesión, copropiedad inmobiliaria, extinción) |
 | 5a | 81-86 | 5 | V.1 Aspectos generales (modos de adquirir). Corte por contenido aprobado 2026-10-10 (antes 81-88) |
 | 5b | 87-94 | 5 | V.2 La ocupación completa (corregido 2026-10-10, antes 88-94) |
-| 6a | 95-103 | 6 | V.3 La accesión (1ª mitad) |
-| 6b | 103-110 | 6 | V.3 La accesión (2ª mitad) |
+| 6a | 95-102 | 6 | V.3.1 a V.3.5.1 (concepto, clases, naturaleza, frutos, inmueble a inmueble). Corte por contenido aprobado 2026-10-10 |
+| 6b | 102-110 | 6 | V.3.5.2 mueble a mueble y V.3.5.3 mueble a inmueble (corregido 2026-10-10) |
 | 7a | 111-118 | 7 | V.4.A Tradición, descripción general |
 | 7b | 118-125 | 7 | V.4.B Tradición, requisitos |
 | 7c | 125-129 | 7 | V.4.C Tradición, efectos |
@@ -971,11 +973,64 @@ Verificación: 71 unidades presentes, cero guiones largos, ids únicos,
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_5b.html`). Aprobado por Laura el 2026-10-10.
 
+## Tramo 6a: escrito (2026-10-10), esperando revisión de Laura
+
+**V.3.1 a V.3.5.1, páginas 95 a 102 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo6a.html`.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** corte 6a =
+hasta la nueva isla (p. 95-102), 6b = mueble a mueble y mueble a
+inmueble (p. 102-110); la inundación (art. 653) es **interrupción
+natural** (art. 2502 Nº 1), no suspensión como dice Boetsch; **no** se
+agregan las reglas 4ª y 5ª del art. 656; en el art. 654 queda solo
+"autoridad competente" (lo que dice el Código, sin la municipalidad de
+Boetsch y sin `[FALTA]`); los frutos en la comunidad (arts. 2310, 1338
+Nº 3, art. 655 CPC con las dos lecturas de Peñailillo) van en **IV.6 La
+cuota**, no en V.3; formato de 5.1 con (i)-(iv); **ninguna pregunta
+clásica**; Laura no tiene material propio. La línea del "aluvión" del
+habla común (avalancha de barro) en el No confundir no se agregó: Laura
+no la aprobó.
+
+Lo que se hizo: V.3.1 a V.3.5.1 reescritos en voz propia (paráfrasis:
+de 26 de 47 oraciones sobre 70% a 3 de 94: el texto del art. 643 y dos
+enumeraciones de nombres técnicos); arts. 643, 644, 647 (memorice) y 652
+en `.ley`; el matiz de Boetsch (sub-clases en 5); unidades de Peñailillo
+(extensión física, utilidad práctica de la distinción, periodicidad de
+los naturales, expropiación con frutos pendientes, creación jurídica y
+"desde que se pagan", art. 646 incs. 2º y 3º, cesión gratuita de frutos,
+art. 1816, relevancia de la accesión continua solo con distintos
+dueños, cauce como BNUP, 653 parecido al aluvión). Correcciones:
+interrupción natural en el 653; reglas del aluvión (arts. 649-651) en vez
+de "art. 651"; puerto habilitado con mercaderías (no "personas") y
+atribuido a BOETSCH; regla 3ª "hasta la isla"; regla 6ª explicada antes
+de la discusión, con la opinión de BOETSCH; art. 597 con mar
+territorial; "subsiguiente año" en el 652 y las obras de movimiento de
+tierras atribuidas a BOETSCH. Formato: 2 con (i)-(ii); 3 con (i)-(iii)
+(no a)-c), porque el punto no tiene subpuntos, `formato.md` 1); 4.3 con
+(i)-(ii) y a)-c); 4.4 con (i)-(ii); 5 con (i)-(iii); 5.1 con (i)-(iv),
+a)-d) y a.1)-a.3) (ids `cV-3-4-3-a/-b` y `cV-3-5-1-a` a `-d`
+eliminados, nada enlazaba a ellos). Cuadro de las tres teorías en 3.
+Cajas: No confundir "¿Aluvión o avulsión?" reescrito y movido al final
+de (ii); ejemplos "Las paltas de la tía Leonor" (4.3, art. 781) y "El
+trozo de huerto de don Arturo" (5.1 (ii), art. 652); breves en cursiva
+(Renata en Ñuñoa, la isla del estero de Curacaví). Conexiones a
+Contratos (arts. 1816 y 2435) en 4; en IV.6 se agregó la conexión a
+Sucesorio (art. 1338 Nº 3). Verificación: unidades del inventario
+presentes, cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, párrafo más largo 868 caracteres, artículos en rojo,
+capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
+del job (`05_Bienes_antes_6a.html`).
+
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Tramo 6a** (V.3 La accesión, 1ª mitad, p. 95-103): informe nuevo.
-   Ajustar el corte por contenido al llegar (como en 4a y 5a). Paso 0
+1. **Laura revisa el tramo 6a** en `Vista_previa/Bienes_vista_previa.html`
+   (anclas `#cV-3` y `#cIV-6`). Si lo aprueba, anotar la aprobación aquí.
+2. **Tramo 6b** (V.3.5.2 y V.3.5.3, p. 102-110): informe nuevo. Paso 0
    de siempre: releer `lecciones-acto-juridico.md` (checklist de la
-   sección 6) antes del informe.
-2. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+   sección 6). Fuentes: Boetsch p. 102-110, Peñailillo p. 67-68 del PDF
+   (función, valor y volumen para determinar lo principal). Preguntas
+   del banco que van ahí: "principio rector en el caso de la Accesión?",
+   "mecanismos que establece el legislador para determinar lo accesorio,
+   y lo principal?", "como debe ser la unión?".
+3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a").
