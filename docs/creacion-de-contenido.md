@@ -2,8 +2,9 @@
 
 > Ábrelo cuando el trabajo sea generar o revisar manuales, preguntas de
 > Evaluación, Alternativas, Memorice o Flashcards. Es el punto de entrada:
-> el detalle mecánico vive en `docs/prompt-generacion-contenido-practica.md`
-> (reglas de redacción, anti-alucinación, esquema exacto por modelo) y en
+> el detalle mecánico vive en `docs/prompts-practica/` (`nucleo.md` y un
+> prompt por tipo: reglas de redacción, anti-alucinación, esquema exacto
+> por modelo, corrección flexible) y en
 > `docs/practica.md` (cómo funciona el módulo en la app). El skill
 > `generar-practica` orquesta el proceso completo, léelo antes de generar
 > el primer lote de una sesión. Para escribir o revisar manuales, ver
@@ -159,7 +160,7 @@ legal, pero no hace falta correr este script de nuevo.
   y la trampa a evitar (cita vs. aplicación real) en
   `.claude/skills/generar-practica/SKILL.md`.
 - Antes de dar una pregunta nueva por buena, pasa la auto-auditoría de la
-  sección 6 de `docs/prompt-generacion-contenido-practica.md` (artículos
+  del núcleo, `docs/prompts-practica/nucleo.md`, y la del tipo (artículos
   citados literales del manual, cero jurisprudencia inventada,
   distractores no obvios, etc.). Todo contenido jurídico nuevo queda
   pendiente de revisión de Laura hasta que ella lo confirme — nunca se

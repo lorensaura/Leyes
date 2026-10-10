@@ -9,24 +9,25 @@ Genera Evaluación, Alternativas, Memorice y Flashcards para una materia,
 siguiendo el mismo proceso que ya se usó para Extracontractual (y antes,
 Precontractual). El contenido en sí (qué preguntar, cómo redactar, qué
 prohibiciones anti-alucinación aplican) está en
-`docs/prompt-generacion-contenido-practica.md` — **este skill no repite esas
-reglas, las orquesta**. Léelo antes de generar el primer lote de la sesión.
+`docs/prompts-practica/` (`nucleo.md` más el prompt de cada tipo,
+`elementos-clave.md` y `transversales.md`): **este skill no repite esas
+reglas, las orquesta**. Léelos antes de generar el primer lote de la sesión.
 
 ## Antes de arrancar
 
 1. Confirmá con Laura qué materia y qué tramo del manual (por ejes, nunca el
-   manual completo de una pasada — ver sección 1 de
-   `docs/prompt-generacion-contenido-practica.md`).
-2. Revisá qué ya existe en las **cinco** fuentes de contenido (paso 1 de la
-   sección 1 de ese mismo doc) antes de generar nada.
+   manual completo de una pasada: ver "Proceso de trabajo por tandas" en
+   `docs/prompts-practica/nucleo.md`).
+2. Revisá qué ya existe en los destinos de cada tipo (Airtable y Supabase
+   vía API, paso 1 del trabajo por tandas del núcleo) antes de generar nada.
 3. Contá cuántas Flashcards/Alternativas/Memorice tiene ya esa materia en
    Supabase y Airtable, para saber si el pedido es "completar" o "arrancar
    de cero" (ver consultas de la sección "Verificación" más abajo).
 
 ## El ciclo por lote (tanda de ~10 páginas o 1-2 ejes)
 
-1. Generá los ítems de los 4 modelos según `docs/prompt-generacion-contenido-practica.md`.
-2. Corré la auto-auditoría de la sección 6 de ese doc antes de entregar nada.
+1. Generá los ítems según el prompt de cada tipo en `docs/prompts-practica/`.
+2. Corré la auto-auditoría del núcleo y la checklist del tipo antes de entregar nada.
 3. Armá el SQL de Alternativas/Memorice (`insert ... on conflict (id) do
    nothing;`) y la tabla de Flashcards para Airtable, siguiendo las
    convenciones de la próxima sección.
@@ -66,9 +67,9 @@ reglas, las orquesta**. Léelo antes de generar el primer lote de la sesión.
   (confirmado 2026-07-28).** No es un modelo que se genere solo: no salgas
   a buscar ni a proponer qué artículo memorizar, ni a verificar el texto
   vos mismo contra `Apuntes/CODIGOS/Codigo Civil Chileno.pdf` o `leychile.cl`. Eso
-  contradice lo que decía esta sección antes (y lo que sigue diciendo
-  `docs/prompt-generacion-contenido-practica.md`, sección 0, punto de
-  Memorice) — ese proceso ya se usó en lotes anteriores (incluido
+  contradice lo que decía esta sección antes (y el prompt antiguo, ya
+  archivado); `docs/prompts-practica/memorice.md` ya lo dice así. Ese
+  proceso ya se usó en lotes anteriores (incluido
   `scripts/memorice_literales_2026-07-28.sql`), pero el criterio actual es
   este: pedile a Laura el artículo y el texto verbatim, y trabajá solo a
   partir de lo que ella entregue.

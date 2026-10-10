@@ -20,31 +20,29 @@ Digesto, para la materia **{MATERIA}**. El público son estudiantes de
 derecho chilenos preparando el examen de grado. La precisión importa
 tanto como en un examen real.
 
-## Regla de oro específica de Memorice: texto oficial, no la paráfrasis del manual
+## Regla de oro específica de Memorice: quién pone el texto (Laura, 2026-07-28 y 2026-10-07)
 
-A diferencia de los demás tipos, acá **no trabajas solo con el manual**.
-El campo `texto` debe ser el texto oficial del artículo, palabra por
-palabra, verificado contra una fuente textual confiable (Biblioteca del
-Congreso Nacional, leychile.cl), no reconstruido de memoria ni copiado
-del manual.
+Memorice tiene dos clases de ítem, con reglas distintas:
 
-Ojo: los manuales casi siempre **parafrasean** los artículos en vez de
-citarlos textual (ej. "el artículo 2332 establece un plazo especial de
-prescripción de cuatro años, contado desde la perpetración del acto...",
-que es un resumen, no el texto legal). Nunca reconstruyas el texto legal
-a partir de esa paráfrasis: búscalo en su fuente oficial y verifica que
-el número de artículo y la materia coincidan con lo que el manual
-describe. **Si no puedes verificar el texto exacto, no generes ese ítem
-de Memorice**, repórtalo como pendiente en vez de aproximarlo.
+- **Artículos de ley: Laura decide qué artículo entra y manda ella el
+  texto legal exacto.** No salgas a buscar el artículo ni a verificar su
+  texto por tu cuenta (ni en leychile.cl ni en los PDF de códigos), y no
+  lo reconstruyas desde el manual: los manuales casi siempre
+  **parafrasean** los artículos ("el artículo 2332 establece un plazo de
+  cuatro años..." es un resumen, no el texto legal). Pídele a Laura el
+  artículo y el texto verbatim y trabaja solo con lo que ella entregue.
+  Lo cargado antes con verificación propia (ej.
+  `scripts/memorice_literales_2026-07-28.sql`) sigue valiendo.
+- **Definiciones doctrinales** (desde 2026-10-07): el texto se copia
+  **literal** de la definición entre comillas del manual, sin la frase
+  que la introduce. Laura elige cuáles entran: el informe del lote le
+  lista las candidatas.
 
 ## Qué extraer
 
-Solo para los artículos numerados que el eje trata como centrales (ej.
-un artículo que define una institución, fija un plazo, o establece un
-requisito puntual), y solo si puedes verificar su texto oficial vigente.
-No generes Memorice para un eje que no gira en torno a un artículo
-específico: no todos los ejes rinden un buen ítem de Memorice, y eso
-está bien.
+Artículos: solo los que Laura indique. Definiciones: las definiciones
+entre comillas del manual (párrafos `p.definicion`), propuestas a Laura
+para que elija.
 
 ## Esquema exacto y destino
 
@@ -67,6 +65,14 @@ values (
 )
 on conflict (id) do nothing;
 ```
+
+**Definiciones:** misma tabla, con `articulo = ''`, id
+`<materia>-def-NNN` (ej. `aj-def-001`) y en `fuente` el autor si el
+manual lo nombra más la ubicación (ej. "Definición de acto jurídico de
+VIAL. Manual de Acto Jurídico, I.4"). Los grupos de
+`prioridad_ocultamiento` deben aparecer tal cual en el texto, y
+`palabras_criticas` van como palabras sueltas (la app las compara palabra
+por palabra).
 
 `palabras_criticas` son las palabras que exigen coincidencia exacta sin
 tolerancia al practicar; elige las que cambian el sentido normativo si se
@@ -97,9 +103,10 @@ por eje, solo si el eje tiene un artículo central verificable.
 
 Además de la auto-auditoría del núcleo, verifica:
 
-- [ ] El `texto` es el texto oficial verbatim del artículo, no una
-      paráfrasis ni una reconstrucción de memoria; verificado contra una
-      fuente legal oficial, no contra el manual.
+- [ ] Artículos: el `texto` es exactamente el que mandó Laura, no una
+      paráfrasis del manual ni una reconstrucción de memoria.
+- [ ] Definiciones: el `texto` es literal del manual, y Laura eligió que
+      entrara.
 - [ ] `palabras_criticas` incluye los verbos rectores, cifras y plazos
       que cambian el sentido normativo si se alteran.
 - [ ] Ningún artículo nuevo reusa el `id` de uno ya cargado en otra

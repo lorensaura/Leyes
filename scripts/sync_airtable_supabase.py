@@ -35,7 +35,7 @@ Alternativas y Memorice (tabla `alternativas`/`memorice_articulos`) NO
 pasan por Airtable (decidido 2026-07-27): Laura las redacta directo como
 SQL y las corre ella misma en el SQL Editor de Supabase — modo más rápido
 para ítems que no necesitan quedar perfectos a la primera. Ver
-`docs/prompt-generacion-contenido-practica.md` para el formato del INSERT.
+`docs/prompts-practica/alternativas.md` y `memorice.md` para el formato del INSERT.
 
 Campo `tema` (2026-07-29): Preguntas_Evaluacion y las 4 tablas de Evaluación
 ya tenían en Airtable un campo de link `tema` -> `Temas` (igual al que usa

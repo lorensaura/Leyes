@@ -150,8 +150,7 @@ Además de la auto-auditoría del núcleo, verifica:
       esta materia (revisa el máximo correlativo ya cargado antes de
       numerar los nuevos).
 - [ ] `materia` usa el valor normalizado correcto, o `'transversal'` si
-      corresponde (ver `docs/prompts-practica/nucleo.md` y, cuando
-      exista, el prompt de transversales).
+      corresponde (ver `docs/prompts-practica/transversales.md`).
 - [ ] Ninguna Alternativa nueva reformula, con otro enunciado, una
       Flashcard o un ítem de Evaluación ya existente sobre el mismo
       punto (chequeo entre tipos del núcleo).
