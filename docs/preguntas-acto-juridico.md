@@ -11,8 +11,9 @@
 ## Estado por capítulo
 
 **Dónde quedó (al 2026-10-10; hasta la tanda 1 de Detección de error
-está fusionado en `main` y en GitHub; la tanda 2 está commiteada en la
-rama `worktree-aj-ejemplos-error`, por fusionar. El contenido vive en
+está fusionado en `main` y en GitHub; la tanda 2 de Detección de error
+y la tanda 1 de Justificación están commiteadas en la rama
+`worktree-aj-ejemplos-error`, por fusionar. El contenido vive en
 Airtable, así que no depende del repo):**
 - **Flashcards:** 291, revisadas contra el manual y **publicadas** (2026-10-09).
 - **Evaluación:** en curso, tema por tema (orden de relevancia) y tipo por
@@ -20,8 +21,9 @@ Airtable, así que no depende del repo):**
   (tanda 1, 17, y tanda 2, 13, **ambas aprobadas por Laura**; se
   publican junto con el resto de Nulidad). **Nulidad · Detección de error
   completa: 30 preguntas** (tanda 1, 17, y tanda 2, 13), cargadas sin
-  publicar y **las dos esperando la revisión de Laura** (ver "Siguiente
-  paso exacto").
+  publicar y **las dos esperando la revisión de Laura**. **Nulidad ·
+  Justificación: tanda 1 (17) cargada, por revisar**; la tanda 2 (13) la
+  completa (ver "Siguiente paso exacto").
 - **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
 - **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
 - **Infraestructura nueva (2026-10-09 y 10):** corrección flexible en la
@@ -34,7 +36,7 @@ Airtable, así que no depende del repo):**
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), y **Detección de error completa, 30 por revisar** (tandas 1 y 2); todo sin publicar |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 por revisar** (tandas 1 y 2) y **Justificación, tanda 1 (17) por revisar**; todo sin publicar |
 | V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 | VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
@@ -237,18 +239,18 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Concepto, características y origen de la inexistencia | IV.A.1-2 | | 1 | · | · | · | · | · | 3 | · | · |
 | &nbsp;&nbsp;&nbsp;Diferencias entre inexistencia y nulidad | IV.A.3 | | · | · | · | · | · | · | 2 | · | · |
 | &nbsp;&nbsp;&nbsp;¿Distingue el Código la inexistencia? (doctrinas, historia y jurisprudencia) | IV.A.4 | | 6 | · | · | · | · | · | 7 | 2 | · |
-| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **30** | **30** | **·** | **·** | **·** | **39** | **1** | **8** |
-| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | 4 | 4 | · | · | · | 4 | · | 2 |
-| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | 1 | 1 | · | · | · | 2 | · | · |
-| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | 2 | 2 | · | · | · | 2 | · | · |
-| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | 1 | 1 | · | · | · | 5 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | 1 | 1 | · | · | · | 3 | 1 | · |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | 4 | 4 | · | · | · | 3 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | 4 | 4 | · | · | · | 6 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | 2 | 2 | · | · | · | 4 | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | 4 | 4 | · | · | · | 3 | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | 3 | 3 | · | · | · | 3 | · | 2 |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | 4 | 4 | · | · | · | 4 | · | 1 |
+| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **30** | **30** | **17** | **·** | **·** | **39** | **1** | **8** |
+| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | 4 | 4 | 2 | · | · | 4 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | 1 | 1 | 1 | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | 2 | 2 | 1 | · | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | 1 | 1 | 1 | · | · | 5 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | 1 | 1 | 1 | · | · | 3 | 1 | · |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | 4 | 4 | 2 | · | · | 3 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | 4 | 4 | 2 | · | · | 6 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | 2 | 2 | 1 | · | · | 4 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | 4 | 4 | 2 | · | · | 3 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | 3 | 3 | 2 | · | · | 3 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | 4 | 4 | 2 | · | · | 4 | · | 1 |
 | **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **8** | **1** | **5** |
 | &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 8 | 1 | 5 |
 | **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **20** | **2** | **3** |
@@ -290,7 +292,7 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | 1 | · | · |
-| **Total** | | | | **33** | **33** | **3** | **3** | **12** | **291** | **23** | **47** |
+| **Total** | | | | **33** | **33** | **20** | **3** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
 ## Dónde está cada cosa (al 2026-10-10)
@@ -298,7 +300,7 @@ la cuenta.
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
 | Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
-| Evaluación | 59: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) y 30 de Detección de error de Nulidad (`aj-det-004` a `033`) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
+| Evaluación | 59: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) y 17 de Justificación de Nulidad (`aj-just-004` a `020`) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
@@ -506,16 +508,23 @@ en el orden del manual.
 
 ## Siguiente paso exacto
 
-**Lo inmediato:** que Laura revise las **dos tandas de Nulidad ·
+**Lo inmediato:** Laura tiene por revisar las **dos tandas de Nulidad ·
 Detección de error** (`DERECHO LIBRE/Informes/Informe_AJ_det1.html` y
-`Informe_AJ_det2.html`). Laura decidió (2026-10-10) hacer la tanda 2
-antes de revisar la 1, para corregir las dos de una vez si cambia algún
-criterio. Sus correcciones se aplican con `subir_eval.py lote_det1
---actualizar` o `lote_det2 --actualizar`. Con su visto bueno, Nulidad
-sigue con **Justificación** (`lote_just1.py`, desde `aj-just-004`), con
-el prompt `docs/prompts-practica/justificacion.md` y la misma regla de
-cantidad. Nulidad · Aplicación (30) está completa y aprobada; Detección
-de error (30), completa y por revisar. Detalle del método más abajo.
+`Informe_AJ_det2.html`) y la **tanda 1 de Justificación**
+(`Informe_AJ_just1.html`). Decidió (2026-10-10) seguir avanzando antes de
+revisar, para corregir todo de una vez si cambia algún criterio. Las
+correcciones se aplican con `subir_eval.py lote_<x> --actualizar`.
+**Siguiente tanda: Justificación, tanda 2** (`lote_just2.py`, desde
+`aj-just-021`): 13 preguntas, dos más en cada subtema de 10 o más
+exámenes (T21.01, .06, .07, .09, .10, .11) y una más en diferencias
+(T21.03) y en saneamiento de la absoluta (T21.08), sin repetir los
+elementos de la tanda 1. Candidatos que la tanda 1 no usó: conocimiento
+real y art. 1468 "a sabiendas"; herederos de quien contrató a sabiendas
+(dos posturas); representado; por qué "manifiesto" exige solo leer el
+instrumento; BARAONA y el art. 705; no opera de pleno derecho (y la
+postura contraria); causa sobreviniente y art. 1690; nulidad parcial y
+art. 1536 (estos dos últimos son de subtemas sin exámenes, ya cubiertos).
+Después, Discriminación MC de Nulidad. Detalle del método más abajo.
 
 **Flashcards de AJ: terminadas, revisadas y publicadas (2026-10-09).**
 291 en Airtable y en la app (Supabase, `materia = acto_juridico`), los
@@ -657,7 +666,17 @@ de error (30), completa y por revisar. Detalle del método más abajo.
   ningún elemento en ninguna). Usa pasajes de otros capítulos cuando el
   subtema lo pide: II.C.4.3 (cosa embargada, 025), IV.A.4 (inexistencia,
   024), II.A.7 y II.A.5.3 (fuerza y error en la persona, 029 y 030).
-- **Siguiente tanda: Nulidad, Justificación** (ver "Lo inmediato").
+- **Tanda 5 (2026-10-10): Nulidad, Justificación, primera mitad.** 17
+  preguntas, `aj-just-004` a `020` (`lote_just1.py`), en Airtable sin
+  publicar y en Revisar. Informe:
+  `DERECHO LIBRE/Informes/Informe_AJ_just1.html`. **Por revisar.** Dos
+  en cada subtema importante y una en los demás. Sin caso: todas piden
+  fundamento, comparación o distinción. Prueba propia: por ítem, una
+  respuesta correcta en palabras propias (aprueba las 17) y una
+  equivocada con el vocabulario del tema (no aprueba ninguna; algunas
+  obtienen 1 elemento, por el límite conocido de la corrección con las
+  negaciones). Usa II.B.3 (capacidad, 016) e IV.A.4 (inexistencia, 011).
+- **Siguiente tanda: Nulidad, Justificación, tanda 2** (ver "Lo inmediato").
 - **Alternativas, Memorice de definiciones y el borrador del Cap. I:**
   pendientes, ver "Por acordar".
 
@@ -686,7 +705,7 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-034`, `aj-det-034`, `aj-just-004`, `aj-mc-004`, `aj-fc-292`,
+  `aj-aplic-034`, `aj-det-034`, `aj-just-021`, `aj-mc-004`, `aj-fc-292`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
