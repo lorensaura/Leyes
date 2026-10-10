@@ -35,7 +35,9 @@ CAT = json.loads((ROOT / 'scripts' / 'aj_temas_subtemas.json').read_text(encodin
 DOC = ROOT / 'docs' / 'preguntas-acto-juridico.md'
 INFORME = Path('/Users/lorensaura/Desktop/DERECHO LIBRE/Informes/Informe_AJ_relevancia_temas.html')
 INFORME_EVAL = INFORME.with_name('Informe_AJ_cobertura_evaluacion.html')
-BASE = 'appBDWY3eCXgxBGpL'
+BASE = 'appBDWY3eCXgxBGpL'  # Temas, Flashcards, Conexiones
+# Evaluación partida por capítulo desde el 2026-10-10 (límite de 1.000 registros por base)
+BASES_EVAL = ['apps4GBOUCo8c5JV6', 'appjmtz9O5CARhCYe']
 TABLAS = {'A': 'Aplicación', 'D': 'Detección de error', 'J': 'Justificación', 'M': 'Discriminación MC', 'FC': 'Flashcards'}
 SUPABASE = 'https://byyukzhxhtopojgvgglp.supabase.co/rest/v1/'
 COLS = ['A', 'D', 'J', 'M', 'ALT', 'FC', 'NC', 'MEM']
@@ -58,10 +60,10 @@ def get(url, headers):
         return json.load(r)
 
 
-def airtable(token, tabla):
+def airtable(token, tabla, base=BASE):
     out, off = [], None
     while True:
-        u = f'https://api.airtable.com/v0/{BASE}/{urllib.parse.quote(tabla)}?pageSize=100' + (f'&offset={off}' if off else '')
+        u = f'https://api.airtable.com/v0/{base}/{urllib.parse.quote(tabla)}?pageSize=100' + (f'&offset={off}' if off else '')
         d = get(u, {'Authorization': 'Bearer ' + token})
         out += d['records']; off = d.get('offset')
         if not off: return out
@@ -77,7 +79,8 @@ def contar():
     c = collections.defaultdict(collections.Counter)
     sin_subtema = []
     for col, tabla in TABLAS.items():
-        for r in airtable(e['AIRTABLE_TOKEN'], tabla):
+        bases = [BASE] if col == 'FC' else BASES_EVAL
+        for r in [x for b in bases for x in airtable(e['AIRTABLE_TOKEN'], tabla, b)]:
             sub = por_nombre.get((r['fields'].get('subtema') or '').strip())
             if sub:
                 c[sub][col] += 1

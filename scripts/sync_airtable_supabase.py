@@ -90,6 +90,16 @@ BASES_SOLO_PRACTICA = {
     "acto_juridico": "appBDWY3eCXgxBGpL",
 }
 
+# Evaluación de materias que la tienen en bases aparte (para no topar el límite de
+# 1.000 registros por base de Airtable). Lista de (materia, base): una materia puede
+# tener varias. Las materias que no aparecen acá leen su Evaluación de su base de
+# PREGUNTAS_BASES / BASES_SOLO_PRACTICA. AJ desde el 2026-10-10: capítulos I a III y
+# IV a VI (su base principal quedó con Temas, Flashcards y Conexiones).
+EVALUACION_EN_BASES_APARTE = [
+    ("acto_juridico", "apps4GBOUCo8c5JV6"),  # Digesto Acto Jurídico - Evaluación I-III
+    ("acto_juridico", "appjmtz9O5CARhCYe"),  # Digesto Acto Jurídico - Evaluación IV-VI
+]
+
 
 def cargar_env():
     valores = {}
@@ -444,7 +454,9 @@ def sync_evaluacion(airtable_token, supabase_key):
     antes = supabase_count(supabase_key, "evaluacion_practica")
     total = 0
     total_airtable = 0
-    for materia, base in {**PREGUNTAS_BASES, **BASES_SOLO_PRACTICA}.items():
+    aparte = {m for m, _ in EVALUACION_EN_BASES_APARTE}
+    bases_eval = [(m, b) for m, b in {**PREGUNTAS_BASES, **BASES_SOLO_PRACTICA}.items() if m not in aparte]
+    for materia, base in bases_eval + EVALUACION_EN_BASES_APARTE:
         info_tema = _leer_temas(airtable_token, base)
         filas = []
         malos_ids = []

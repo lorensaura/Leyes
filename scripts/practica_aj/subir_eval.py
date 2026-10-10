@@ -29,14 +29,14 @@ REPO = os.path.dirname(os.path.dirname(AQUI))
 GEN = os.path.join(AQUI, 'generado') + '/'
 sys.path.insert(0, AQUI)
 sys.path.insert(0, os.path.join(REPO, 'scripts'))
-from airtable_aj import req, todos, BASE  # noqa: E402
+from airtable_aj import req, todos, BASES_EVAL, base_eval  # noqa: E402
 from prueba_correccion_flexible import flexible, palabras  # noqa: E402
 import urllib.parse  # noqa: E402
 
 LOTE = next(a for a in sys.argv[1:] if a.startswith('lote_'))
 m = importlib.import_module(LOTE)
 cat = json.load(open(os.path.join(REPO, 'scripts', 'aj_temas_subtemas.json'), encoding='utf-8'))
-sub = {s['codigo']: (s['nombre'], t['nombre']) for t in cat['temas'] for s in t['subtemas']}
+sub = {s['codigo']: (s['nombre'], t['nombre'], t['numero']) for t in cat['temas'] for s in t['subtemas']}
 
 # Texto del manual por sección, con la misma convención de códigos que verificar_respaldo.py
 manual = open(GEN + 'manual.txt', encoding='utf-8').read().split('\n')
@@ -72,12 +72,14 @@ def articulos_citados(texto):
         nums.update(re.findall(r'\b\d{1,4}\b', frag))
     return nums
 
-existentes = todos(m.TABLA)
+# La Evaluación de AJ vive en dos bases, por capítulo (ver airtable_aj.py): se leen las dos,
+# los ids siguen un solo correlativo, y cada ítem va a la base de su tema.
+existentes = [(b, r) for b in BASES_EVAL.values() for r in todos(m.TABLA, b)]
 ACTUALIZAR = '--actualizar' in sys.argv
-ya = {n(r['fields'].get('caso', '') + r['fields'].get('enunciado', '')): r for r in existentes}
-ids = [r['fields'].get('id') for r in existentes if r['fields'].get('id')]
+ya = {n(r['fields'].get('caso', '') + r['fields'].get('enunciado', '')): r for _, r in existentes}
+ids = [r['fields'].get('id') for _, r in existentes if r['fields'].get('id')]
 siguiente = max([int(i.split('-')[-1]) for i in ids] or [0]) + 1
-temas = {r['fields']['nombre']: r['id'] for r in todos('Temas')}
+temas = {b: {r['fields']['nombre']: r['id'] for r in todos('Temas', b)} for b in BASES_EVAL.values()}
 
 problemas, avisos, filas = [], [], []
 for it in m.ITEMS:
@@ -122,8 +124,8 @@ for it in m.ITEMS:
             problemas.append(f'{iid}: la respuesta modelo no obtiene el elemento "{e["texto"][:50]}"')
     if previo and not ACTUALIZAR: problemas.append(f'{iid}: ya existe en Airtable (usar --actualizar para corregirlo)')
     if ACTUALIZAR and not previo: problemas.append(f'{iid}: --actualizar, pero no está en Airtable')
-    nombre_sub, nombre_tema = sub[it['sub']]
-    filas.append(dict(id=iid, codigo=it['sub'], subtema=nombre_sub, tema=nombre_tema, caso=it['caso'],
+    nombre_sub, nombre_tema, numero_tema = sub[it['sub']]
+    filas.append(dict(id=iid, codigo=it['sub'], subtema=nombre_sub, tema=nombre_tema, base=base_eval(numero_tema), caso=it['caso'],
                       enunciado=it['enunciado'], respuesta_modelo=it['respuesta'], elementos_clave=elementos,
                       articulos_referencia=it['articulos'], objetivo_pedagogico=it['objetivo'], respaldo=it['respaldo']))
 
@@ -133,20 +135,23 @@ print('problemas:', problemas or 'ninguno')
 for a in avisos: print('aviso:', a)
 if problemas or not ('--subir' in sys.argv or ACTUALIZAR):
     sys.exit(1 if problemas else 0)
+por_base = {b: [f for f in filas if f['base'] == b] for b in BASES_EVAL.values()}
 if ACTUALIZAR:
-    for i in range(0, len(filas), 10):
-        req('PATCH', f'https://api.airtable.com/v0/{BASE}/{urllib.parse.quote(m.TABLA)}', {'records': [{
-            'id': ya[n(f['caso'] + f['enunciado'])]['id'], 'fields': {
-            'subtema': f['subtema'], 'respuesta_modelo': f['respuesta_modelo'],
-            'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
-            'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico']}}
-            for f in filas[i:i + 10]]})
+    for b, fs in por_base.items():
+        for i in range(0, len(fs), 10):
+            req('PATCH', f'https://api.airtable.com/v0/{b}/{urllib.parse.quote(m.TABLA)}', {'records': [{
+                'id': ya[n(f['caso'] + f['enunciado'])]['id'], 'fields': {
+                'subtema': f['subtema'], 'respuesta_modelo': f['respuesta_modelo'],
+                'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
+                'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico']}}
+                for f in fs[i:i + 10]]})
     print('actualizados en Airtable:', len(filas))
     sys.exit(0)
-for i in range(0, len(filas), 10):
-    req('POST', f'https://api.airtable.com/v0/{BASE}/{urllib.parse.quote(m.TABLA)}', {'records': [{'fields': {
-        'id': f['id'], 'tema': [temas[f['tema']]], 'subtema': f['subtema'], 'caso': f['caso'], 'enunciado': f['enunciado'],
-        'respuesta_modelo': f['respuesta_modelo'], 'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
-        'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico'],
-        'publicado': False, 'Revision_status': 'Revisar'}} for f in filas[i:i + 10]]})
-print('cargados en Airtable:', len(filas), '| total en la tabla ahora:', len(todos(m.TABLA)))
+for b, fs in por_base.items():
+    for i in range(0, len(fs), 10):
+        req('POST', f'https://api.airtable.com/v0/{b}/{urllib.parse.quote(m.TABLA)}', {'records': [{'fields': {
+            'id': f['id'], 'tema': [temas[b][f['tema']]], 'subtema': f['subtema'], 'caso': f['caso'], 'enunciado': f['enunciado'],
+            'respuesta_modelo': f['respuesta_modelo'], 'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
+            'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico'],
+            'publicado': False, 'Revision_status': 'Revisar'}} for f in fs[i:i + 10]]})
+print('cargados en Airtable:', len(filas), '| total en la tabla ahora:', sum(len(todos(m.TABLA, b)) for b in BASES_EVAL.values()))
