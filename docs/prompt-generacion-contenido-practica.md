@@ -8,6 +8,11 @@
 > grave, no un detalle. Ver `docs/practica.md` para el contexto del
 > módulo y `docs/contenido-airtable-supabase.md` para dónde vive cada
 > tabla.
+>
+> **Ojo (2026-10-09): para las keywords de Evaluación manda
+> `docs/prompts-practica/elementos-clave.md`** (corrección flexible,
+> decisión de Laura). Donde este documento hable de keywords como frases
+> que deben aparecer literal, está superado.
 
 ---
 

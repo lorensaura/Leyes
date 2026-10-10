@@ -502,6 +502,17 @@ en el orden del manual.
   cada tema; destino la base `Digesto Acto Jurídico` (el sync fuerza
   `materia = acto_juridico`); `subtema` con el nombre **exacto** del
   catálogo; y la entrega en el orden del núcleo dentro del informe.
+- **Corrección flexible (obligatoria, Laura 2026-10-09):** las keywords se
+  redactan para la corrección flexible de la app (palabras con
+  significado cercanas, por raíz, en cualquier orden; no frases del
+  manual). Reglas en `docs/prompts-practica/elementos-clave.md`. Para
+  aprobar se exige el 75% (con 3 elementos, los 3); **con 2 de 3 la
+  alumna recibe una repregunta** (la `pregunta` del elemento faltante) y
+  una segunda pasada antes del veredicto final, decisión de Laura: no se
+  baja el umbral. Por eso cada elemento necesita una repregunta que
+  oriente sin regalar la respuesta. En el veredicto final está el botón
+  "Lo dije con otras palabras", cuyos reclamos se revisan con
+  `scripts/revisar_correcciones_evaluacion.py`.
 - **Flujo de cada tanda** (scripts en `scripts/practica_aj/`):
   1. `python3 scripts/practica_aj/extraer.py` si cambió el manual.
   2. Leer la sección del tema en `generado/manual.txt`, y lo que ya existe
@@ -512,10 +523,14 @@ en el orden del manual.
      con puntos activados, cobertura por ítem, avisos y redundancia).
   4. `python3 scripts/practica_aj/subir_eval.py lote_<tipo>N`: revisa
      (artículos y autores en su sección de respaldo, guiones, 3-4
-     elementos con 4-6 keywords, keywords que no estén ya en el caso o el
-     enunciado, que la respuesta modelo obtenga todos los elementos con la
-     regla de la app, sin repetir lo cargado). Con `--subir` y cero
-     problemas, carga sin publicar y en Revisar.
+     elementos con 4-6 keywords de hasta 4 palabras con significado, que
+     la corrección flexible no las encuentre ya en el caso, el enunciado
+     ni la repregunta de su elemento, que la respuesta modelo obtenga
+     todos los elementos con la corrección de la app, sin repetir lo
+     cargado; avisa de las keywords de una sola palabra). Sin opciones
+     solo revisa. Con `--subir` y cero problemas, carga sin publicar y en
+     Revisar. **Con `--actualizar` escribe en Airtable** los ítems ya
+     cargados (para corregirlos), así que no usarlo para solo revisar.
   5. `python3 scripts/practica_aj/informe_eval.py lote_<tipo>N` y abrir el
      informe; `python3 scripts/tablero_cobertura_aj.py`.
   6. Ojo con los puntos discutidos del manual: no darlos por zanjados. Ej.:
@@ -524,12 +539,17 @@ en el orden del manual.
 - **Tanda 1 (2026-10-09): Nulidad, Aplicación.** 17 preguntas,
   `aj-aplic-004` a `020` (`lote_aplic1.py`), en Airtable sin publicar y en
   Revisar. Informe: `DERECHO LIBRE/Informes/Informe_AJ_aplic1.html`.
-  **Esperando la revisión de Laura.** El subtema de terminología se cubrió
-  solo con la regla general (la terminología no da para Aplicación).
+  **Revisada por Laura (2026-10-09): bien.** El subtema de terminología se
+  cubrió solo con la regla general (la terminología no da para
+  Aplicación). Después, al pasar a la corrección flexible, se ajustaron en
+  Airtable las keywords y repreguntas de 13 de las 17 (keywords que ya
+  estaban en el caso, repreguntas que regalaban la respuesta, palabras
+  sueltas muy generales); el contenido jurídico no cambió. Siguen sin
+  publicar: se publican junto con el resto de Nulidad.
 - **Siguiente tanda: Nulidad, Detección de error** (`lote_det1.py`,
   tabla `Detección de error`, prefijo `aj-det`, desde `aj-det-004`), con
-  el prompt `docs/prompts-practica/deteccion-error.md`. Antes, aplicar lo
-  que Laura corrija de la tanda 1.
+  el prompt `docs/prompts-practica/deteccion-error.md` y las reglas de
+  corrección flexible de `elementos-clave.md`.
 - **Alternativas:** se dejan para después de Evaluación (no se habló
   todavía de cómo trabajarlas).
 - El borrador del Cap. I (lote 1) y las definiciones de Memorice siguen

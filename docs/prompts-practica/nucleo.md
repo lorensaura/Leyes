@@ -38,6 +38,35 @@
 4. Revisa el reporte de auto-auditoría antes de pegar cualquier contenido
    en Airtable, Supabase o el código, igual que con el prompt anterior.
 
+## Regla obligatoria: preguntas pensadas para la corrección flexible
+
+**Decisión de Laura (2026-10-09), aplica a todas las materias.** En
+Aplicación, Detección de error y Justificación, la app corrige la
+respuesta libre de la alumna con **corrección flexible**: una keyword
+cuenta si sus palabras con significado aparecen cerca unas de otras, en
+cualquier orden y comparadas por raíz, no solo si está la frase exacta.
+Con 2 de 3 elementos la alumna recibe una **repregunta** (la `pregunta`
+socrática del elemento que falta) antes del veredicto, y en el veredicto
+final puede marcar "Lo dije con otras palabras".
+
+Por eso cada ítem se redacta así, sin excepción:
+- **Keywords de 2 a 4 palabras con significado** que prueban el elemento,
+  no frases del manual que haya que reproducir; con variantes como las
+  diría una alumna y sinónimos de raíz distinta.
+- **Nada de keywords de una palabra común**, ni keywords que ya estén en
+  el caso, el enunciado o la repregunta; la negación va dentro de la
+  keyword cuando la conclusión es negativa.
+- **Cada elemento con una `pregunta` que sirva de repregunta**: lleva
+  hacia lo que falta sin regalarlo.
+- **Prueba antes de entregar:** una respuesta correcta escrita con
+  palabras propias debe obtener cada elemento, y una equivocada que use
+  el vocabulario del tema, no.
+
+El detalle, con ejemplos y la checklist, está en
+`docs/prompts-practica/elementos-clave.md`. Un ítem que solo aprueba
+quien repite el manual de memoria está mal hecho aunque su contenido
+jurídico sea correcto.
+
 ## Antes de generar: qué tipo de ítem es cada cosa
 
 - **Ítems CON caso** (llevan un relato narrativo ficticio, campo `caso`):

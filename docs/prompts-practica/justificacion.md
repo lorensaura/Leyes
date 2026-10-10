@@ -81,6 +81,12 @@ instituciones parecidas.
 Además de la auto-auditoría del núcleo y de `elementos-clave.md`,
 verifica:
 
+- [ ] **Corrección flexible (obligatorio, Laura 2026-10-09):** las
+      `keywords` están redactadas para la corrección flexible de la app
+      (palabras con significado cercanas, por raíz, no frases exactas) y
+      cada `pregunta` sirve como repregunta para la segunda pasada. Ver
+      `elementos-clave.md`; si una respuesta correcta escrita con palabras
+      propias no obtendría el elemento, la pregunta está mal hecha.
 - [ ] El ítem no se responde con la definición aislada de un solo
       concepto: compara, distingue o fundamenta algo (ver ejemplo
       arriba).

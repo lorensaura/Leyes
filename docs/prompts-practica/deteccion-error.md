@@ -77,6 +77,12 @@ auto-auditoría en vez de completarlo igual.
 Además de la auto-auditoría del núcleo y de `elementos-clave.md`,
 verifica:
 
+- [ ] **Corrección flexible (obligatorio, Laura 2026-10-09):** las
+      `keywords` están redactadas para la corrección flexible de la app
+      (palabras con significado cercanas, por raíz, no frases exactas) y
+      cada `pregunta` sirve como repregunta para la segunda pasada. Ver
+      `elementos-clave.md`; si una respuesta correcta escrita con palabras
+      propias no obtendría el elemento, la pregunta está mal hecha.
 - [ ] El error del párrafo es un error real y plausible (algo que una
       alumna que estudió el eje pero confundió un punto efectivamente
       podría escribir), no un error absurdo o de sentido común.
