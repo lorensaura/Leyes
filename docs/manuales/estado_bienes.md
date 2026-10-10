@@ -868,5 +868,25 @@ el 2026-10-10.
 
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Tramo 5a (V.1 Aspectos generales de los modos de adquirir, p.
-   81-88 de Boetsch): informe nuevo**, en curso.
+1. **Tramo 5a: informe listo, esperando decisiones de Laura**
+   (`Informes/Informe_Bienes_tramo5a.html`, 2026-10-10). Propone cortar
+   por contenido: 5a = V.1 completo (p. 81-86), 5b = V.2 La ocupación
+   (p. 87-94); la tabla de "Reparto de tramos" se corrige cuando Laura
+   lo apruebe. Decisiones pendientes: corte; argumento de VIAL sobre el
+   art. 703 en V.1.6 o en 11b; cuadros (a) tesis de V.1.6, (b) dualidad
+   vs. consensual, (c) qué se adquiere por cada modo, (d) opcional;
+   precisión del tesoro (art. 626) como ley-modo; preguntas clásicas
+   (recomendadas: "Qué es un modo de adquirir el dominio.", "Que
+   importancia tiene distinguir entre modo originario y derivativo",
+   "¿Cuál es el modo de adquirir más amplio?"); si entra "la ley,
+   ¿gratuito u oneroso?" con el art. 19 Nº 24 CPR; material propio.
+   Hallazgos clave: 4 matices de Boetsch, 3 referencias internas,
+   paráfrasis 26/101 sobre 70% (5 son la cita del Mensaje); 10 unidades
+   de Peñailillo; 6 de VIAL; precisiones de arts. 882, 810 (con 250 y
+   252), 2180 Nº 1 y 2186, 682, 588, 626, 952.
+   **Corrección al mapa de anexos:** la discusión nº 1 del anexo de
+   discusiones doctrinales es de V.1.6 (no "tramo 7 en adelante") y la
+   p. 1 del anexo de relaciones jurídicas es de V.1.3.1 (no "tramo 11
+   en adelante"); ninguno agrega contenido propio (repiten a Boetsch,
+   Peñailillo y VIAL).
+2. Con las decisiones de Laura, reescribir V.1 y verificar.
