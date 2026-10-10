@@ -65,8 +65,7 @@
   (retirada), títulos en mayúsculas copiados de Boetsch, sin inventario,
   sin voz propia ni paráfrasis controlada (reglas del 2026-09-30 en
   adelante), y la hoja de estilos de esa fecha, no la actual de AJ/Bienes.
-- **Decisión (recomendada por Claude 2026-10-10, Laura puede
-  cambiarla):** no se pasa por `actualizar-manuales-existentes.md`
+- **Decisión (Laura, 2026-10-10):** no se pasa por `actualizar-manuales-existentes.md`
   (ese proceso es para manuales grandes ya armados, como AJ). Se crea
   el manual nuevo desde `main` con la hoja de estilos vigente y el
   tramo 1 se escribe de cero con el método completo.
@@ -74,10 +73,14 @@
   hacer el inventario, comparar su texto con Boetsch p. 13-19 y listar
   en el informe del tramo todo lo que el borrador tenga y la fuente no
   (puede ser algo que Laura agregó, o algo inventado): Laura decide qué
-  se rescata. Verlo con
-  `git show worktree-manual-obligaciones:06_Obligaciones_Manual.html`.
-- **No trabajar sobre esa rama ni mergearla.** Cuando el tramo 1 nuevo
-  esté aprobado, preguntar a Laura si se borra la rama y su worktree.
+  se rescata. **Copia archivada (idéntica al último commit de la rama):
+  `archivo/06_Obligaciones_Manual_borrador_2026-09-28.html`.** Usar
+  esa, no la rama.
+- **Laura confirmó partir de cero (2026-10-10).** La rama
+  `worktree-manual-obligaciones` y su worktree ya no se usan: no
+  trabajar sobre ellas ni mergearlas. Se pueden borrar sin perder nada
+  (la copia está en `archivo/`); si siguen existiendo, preguntar a
+  Laura antes de borrarlas.
 
 ## Material fuente
 

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obligaciones: Manual de Estudio | Digesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#C41E2E;--accent2:#111111;--light:#E8D8B8;--soft:#F5EAD4;
+    --grey:#7A6E5F;--warn:#8A5A00;--warnbg:#FFF6E5;
+    --green:#1A6B3A;--greenbg:#F4FAF6;--greenborder:#4CAF50;
+    --orange:#7B3F00;--orangebg:#FFFAF4;--orangeborder:#C87028;
+    --juris:#111111;--jurisbg:#F5EAD4;--jurisborder:#2A2A2A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Times New Roman',Times,Georgia,serif;
+    font-size:11pt;color:#111;line-height:1.45;max-width:800px;
+    margin:0 auto;padding:52px 58px 88px;background:#fff;
+    text-align:justify;hyphens:auto;-webkit-hyphens:auto;
+  }
+  h1{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-weight:700;
+    color:var(--accent2);font-size:1.35rem;margin:0 0 .9rem;text-align:center;
+    text-transform:uppercase;text-decoration:underline;letter-spacing:.03em;
+    page-break-before:always;page-break-after:avoid;
+  }
+  h2{
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:var(--accent);
+    font-size:1.35rem;margin:2.4rem 0 .45rem;text-align:center;
+    text-transform:uppercase;text-decoration:underline;page-break-after:avoid;
+  }
+  h3{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;
+    color:#222;font-size:1.02rem;margin:1.7rem 0 .3rem;text-align:left;
+    text-decoration:underline;page-break-after:avoid;
+  }
+  h4{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;
+    color:#222;font-size:1.02rem;margin:1.3rem 0 .2rem;text-align:left;
+    text-decoration:underline;page-break-after:avoid;
+  }
+  h5{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:400;
+    font-style:normal;color:#333;font-size:1rem;margin:1rem 0 .2rem;
+    text-align:left;page-break-after:avoid;
+  }
+  h6{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:400;
+    font-style:normal;color:#444;font-size:.95rem;margin:.8rem 0 .15rem;
+    text-align:left;page-break-after:avoid;
+  }
+  div.h7{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:400;
+    font-style:italic;color:#555;font-size:.92rem;margin:.65rem 0 .1rem;
+    text-align:left;page-break-after:avoid;
+  }
+  div.h8{
+    font-family:'Times New Roman',Times,Georgia,serif;font-weight:700;
+    font-style:normal;color:#555;font-size:.9rem;margin:.55rem 0 .1rem;
+    text-align:left;page-break-after:avoid;
+  }
+  div.h8 .tit{text-decoration:none;}
+  .enum-i{display:block;font-style:italic;margin:.9rem 0 .15rem;}
+  .enum-a{display:block;text-decoration:underline;margin:.7rem 0 .15rem;}
+  .enum-a-inline{font-style:italic;}
+  .enum-a-inline .tit{text-decoration:none;}
+  .num{text-decoration:none;}
+  .tit{text-decoration:underline;}
+  h4 .tit{text-decoration:none;}
+  .enum-c{display:block;font-style:italic;margin:.6rem 0 .15rem;}
+  p{margin:.75rem 0 .75rem;text-align:justify;}
+  ul,ol{margin:.55rem 0 .95rem;padding-left:1.5rem;text-align:left;}
+  li{margin:.4rem 0;text-align:justify;}
+  table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:10pt;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif;}
+  th{background:var(--accent);color:#fff;text-align:left;padding:7px 10px;font-size:9pt;}
+  td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .art{font-weight:700;color:var(--accent);white-space:nowrap;}
+
+  .caja-tipo{display:block;text-align:center;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;font-size:9pt;margin-bottom:4px;}
+  .caja-titulo{display:block;text-align:center;font-weight:700;font-size:10pt;margin-bottom:.4rem;}
+  .jurisprudencia .caja-titulo{text-transform:uppercase;font-size:9.5pt;margin-bottom:6px;
+    padding-bottom:5px;border-bottom:1px solid var(--jurisborder);}
+  .callout .caja-tipo{color:var(--accent);}
+  .warn .caja-tipo{color:var(--warn);}
+  .jurisprudencia .caja-tipo{color:var(--juris);}
+  .ejemplo .caja-tipo{color:var(--green);}
+  .dato-grado .caja-tipo{color:var(--orange);}
+
+  .callout{border-left:5px solid var(--accent);background:var(--soft);padding:12px 16px;margin:1.3rem 0;}
+  .warn{border-left:5px solid var(--warn);background:var(--warnbg);padding:12px 16px;margin:1.3rem 0;}
+  .jurisprudencia{border:1px solid var(--jurisborder);background:var(--jurisbg);
+    padding:10px 14px;margin:1.5rem 0;font-size:12pt;line-height:1.2;}
+  .jurisprudencia .titulo-bloque{font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-weight:700;color:var(--juris);display:block;margin-bottom:6px;padding-bottom:5px;
+    border-bottom:1px solid var(--jurisborder);font-size:9pt;text-transform:uppercase;
+    letter-spacing:.04em;text-align:left;}
+  .jurisprudencia p,.jurisprudencia strong{font-size:12pt;}
+  .jurisprudencia strong{color:#333;}
+  .ejemplo{border-left:4px solid var(--greenborder);background:var(--greenbg);padding:12px 16px;margin:1.3rem 0;}
+  .dato-grado{border:2px dashed var(--orangeborder);background:var(--orangebg);padding:12px 16px;margin:1.3rem 0;}
+
+  .repaso{border-left:4px solid var(--accent);background:#FCF7EC;padding:11px 16px;
+    margin:2.4rem 0 .4rem;font-family:-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:9.5pt;line-height:1.4;color:#5a5043;text-align:left;page-break-inside:avoid;}
+
+  .cover{text-align:center;padding:96px 20px 60px;border-bottom:none;margin-bottom:2rem;}
+  .cover .brand{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;display:inline-block;
+    background:var(--accent2);color:var(--light);font-size:1.5rem;letter-spacing:7px;
+    font-weight:400;padding:9px 28px 6px;text-indent:7px;}
+  .cover .doc{font-family:'Bebas Neue',-apple-system,Arial,sans-serif;color:var(--accent2);
+    font-size:4.4rem;font-weight:400;line-height:.92;letter-spacing:1px;margin-top:2.2rem;
+    text-transform:uppercase;}
+  .cover .rule{width:84px;height:4px;background:var(--accent);margin:1.8rem auto 1.5rem;}
+  .cover .sub{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--accent);
+    font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;}
+  .cover .author{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--accent2);
+    font-size:1.05rem;font-weight:400;margin-top:1.7rem;}
+  .cover .meta{font-family:'Inter',-apple-system,Arial,sans-serif;color:var(--grey);
+    margin-top:1.3rem;font-size:.8rem;font-weight:300;line-height:1.55;max-width:460px;
+    margin-left:auto;margin-right:auto;}
+
+  .toc{background:var(--soft);border:1px solid var(--light);padding:14px 22px;
+    margin-bottom:2rem;font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:10pt;}
+  .toc a{color:var(--accent);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  .toc ol,.toc ul{text-align:left;}
+
+  @media print{
+    body{margin:0;padding:0;max-width:none;font-size:12pt;line-height:1.3;}
+    h1{page-break-after:avoid;} h2,h3{page-break-after:avoid;}
+    .callout,.warn,.jurisprudencia,.ejemplo,.dato-grado,.repaso,table,tr,li{page-break-inside:avoid;}
+    .cover{page-break-after:always;display:flex;flex-direction:column;justify-content:center;
+      align-items:center;min-height:23cm;box-sizing:border-box;padding:0 20px;margin:0;}
+    .toc{page-break-after:always;margin-bottom:1.4rem;}
+    .toc li{page-break-inside:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">DIGESTO</div>
+  <div class="doc">Obligaciones</div>
+  <div class="rule"></div>
+  <div class="sub">Manual de estudio · Nivel examen de grado</div>
+  <div class="author">Elaborado por <strong>Laura Schultz Solano</strong></div>
+  <div class="meta">Texto refundido a partir de los apuntes de Cristián Boetsch Gillet · Borrador en construcción, pendiente de revisión</div>
+</div>
+
+<div class="toc">
+<strong>Índice</strong>
+<ul style="list-style:none;padding-left:0;margin:0;">
+  <li><a href="#cI">I. Nociones generales</a>
+    <ol type="A">
+      <li><a href="#cI-A">La obligación</a>
+        <ol type="1">
+          <li><a href="#cI-A-1">Las relaciones jurídicas: derechos reales y derechos personales o créditos</a></li>
+          <li><a href="#cI-A-2">Las nociones de derecho personal o crédito y obligación son correlativas</a></li>
+          <li><a href="#cI-A-3">Diferencias entre derechos reales y personales según la doctrina clásica</a></li>
+          <li><a href="#cI-A-4">Críticas a la concepción clásica</a></li>
+          <li><a href="#cI-A-5">Concepto de obligación</a></li>
+          <li><a href="#cI-A-6">Elementos de la obligación</a>
+            <ol type="1" style="list-style:none;padding-left:1rem;">
+              <li><a href="#cI-A-6-1">6.1. Sujetos de la obligación: acreedor y deudor</a></li>
+              <li><a href="#cI-A-6-2">6.2. Del objeto de la obligación</a></li>
+              <li><a href="#cI-A-6-3">6.3. Vínculo jurídico</a></li>
+            </ol>
+          </li>
+          <li><a href="#cI-A-7">Carácter excepcional de las obligaciones</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ul>
+</div>
+
+<h1 id="cI" style="text-decoration:none"><span class="num">I.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Nociones generales</span></h1>
+
+<h2 id="cI-A" style="text-decoration:none"><span class="num">A.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">La obligación</span></h2>
+
+<h3 id="cI-A-1" style="text-decoration:none"><span class="num">1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">LAS RELACIONES JURÍDICAS: DERECHOS REALES Y DERECHOS PERSONALES O CRÉDITOS</span></h3>
+
+<p>En términos generales, la <strong>relación jurídica</strong> puede existir <em>entre dos personas</em>, o bien <em>entre una persona y una cosa</em>.</p>
+
+<p>Dentro de la relación jurídica que vincula a dos personas se encuentra lo que <strong>VIAL</strong> denomina <strong>"relación de obligación"</strong>, que es aquella que impone a una persona (denominada <em>deudor</em>) el deber de efectuar a favor de otra persona (denominada <em>acreedor</em>) una prestación, que puede consistir en dar o entregar una cosa, o en hacer o no hacer algo.</p>
+
+<p>Por su parte, la principal relación jurídica que vincula a una persona y a una cosa es el <strong>derecho real</strong>, que es aquel que se tiene sobre una cosa sin respecto a determinada persona.</p>
+
+<p>Lo dicho se encuentra recogido en el Código Civil. El <span class="art">art. 565</span> dispone: "Los bienes consisten en cosas <strong>corporales o incorporales</strong>. Corporales son las que tienen un ser real y pueden ser percibidas por los sentidos, como una casa, un libro. Incorporales <strong>las que consisten en meros derechos</strong>, como los créditos, y las servidumbres activas."</p>
+
+<p>Por su parte, el <span class="art">art. 576</span> expresa que "Las cosas incorporales son <strong>derechos reales o personales</strong>." Y, en las disposiciones siguientes, define ambas categorías.</p>
+
+<p>El <span class="art">art. 577</span> define el derecho real: "Derecho real es el que tenemos <strong>sobre una cosa sin respecto a determinada persona</strong>. Son derechos reales el de dominio, el de herencia, los de usufructo, uso o habitación, los de servidumbres activas, el de prenda y el de hipoteca. De estos derechos nacen las acciones reales."</p>
+
+<p>El <span class="art">art. 578</span> define el derecho personal: "Derechos personales o créditos son los que <strong>sólo pueden reclamarse de ciertas personas</strong>, que, por un hecho suyo o la sola disposición de la ley, han contraído las <strong>obligaciones correlativas</strong>; como el que tiene el prestamista contra su deudor por el dinero prestado, o el hijo contra el padre por alimentos. De estos derechos nacen las acciones personales."</p>
+
+<h3 id="cI-A-2" style="text-decoration:none"><span class="num">2.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">LAS NOCIONES DE DERECHO PERSONAL O CRÉDITO Y OBLIGACIÓN SON CORRELATIVAS</span></h3>
+
+<p>En efecto, las palabras <strong>derecho personal</strong> y <strong>crédito</strong>, que significan lo mismo, surgen de considerar que la relación de obligación faculta a una de las partes para <em>reclamar de la otra la prestación debida</em>, y esta facultad es lo que constituye un derecho personal o crédito.</p>
+
+<p>En cambio, las palabras <strong>obligación</strong> o <strong>deuda</strong> emanan del hecho de que en la relación de obligación una de las partes se encuentra en la <em>necesidad de efectuar una determinada prestación</em>.</p>
+
+<p>La ley utiliza la palabra obligación en dos sentidos:</p>
+
+<p><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span>En <strong>sentido amplio</strong>, esto es, de relación de obligación, que comprende el aspecto activo (el crédito) y el aspecto pasivo (la deuda).</p>
+
+<p><span class="num">(ii)&nbsp;&nbsp;&nbsp;&nbsp;</span>En <strong>sentido restringido</strong>, de deuda.</p>
+
+<p>En otras palabras, <strong>no puede concebirse un crédito sin deuda</strong>, de modo que, en definitiva, se hablará de derecho personal o de obligación según la relación entre los sujetos se mire desde el punto de vista del <em>acreedor</em> (titular de un crédito) o del <em>deudor</em> (obligado en esa relación). Así lo deja en evidencia el <span class="art">artículo 578</span> al definir el derecho personal o crédito.</p>
+
+<h3 id="cI-A-3" style="text-decoration:none"><span class="num">3.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">DIFERENCIAS ENTRE DERECHOS REALES Y PERSONALES SEGÚN LA DOCTRINA CLÁSICA</span></h3>
+
+<p>La doctrina clásica contrapone los derechos reales a los personales, destacando varias diferencias:</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">a)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto a los sujetos de la relación.</span></span>
+<p>En los derechos reales existe una <strong>relación directa de persona a cosa</strong>. En cambio, en los personales, la relación es <strong>entre dos sujetos determinados</strong>: acreedor y deudor.</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">b)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto al contenido.</span></span>
+<p>Los derechos reales confieren un <strong>poder jurídico inmediato y directo sobre la cosa</strong>. En cambio, en los derechos personales, el titular (acreedor) solo puede obtener el beneficio correspondiente <strong>mediante un acto del obligado</strong> (deudor).</p>
+
+<p>En el derecho real existe una relación directa entre el titular del derecho y la cosa en que se ejerce, y por ello los romanos hablaban de <em>jure in re</em>, derechos en la cosa.</p>
+
+<p>El derecho personal se caracteriza, en cambio, fundamentalmente porque en él no existe una relación directa entre el titular del derecho y la cosa, sino un <em>vínculo jurídico entre personas</em>: acreedor y deudor. En consecuencia, el titular del crédito tiene una relación indirecta con la cosa, y por ello los romanos hablaban de <em>jure ad rem</em>, derecho a la cosa.</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">c)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto a la forma de adquirirlos.</span></span>
+<p>Los derechos reales se adquieren por la concurrencia de un <strong>título y de un modo de adquirir</strong>. En cambio, en los derechos personales, <strong>basta el título</strong>.</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">d)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto a su oponibilidad.</span></span>
+<p>Los derechos reales, se dice, son <strong>derechos absolutos</strong>, en cuanto al titular le corresponde una acción persecutoria y restitutoria, dirigida al reintegro de la cosa y <em>ejercitable frente a terceros</em>. Los derechos personales, en tanto, son <strong>derechos relativos</strong>, porque solo se pueden exigir <em>del deudor</em>.</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">e)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto a su contravención.</span></span>
+<p>Los derechos reales pueden ser <strong>violados por cualquiera</strong>, no así los personales, que solo pueden serlo <strong>por el deudor</strong>.</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">f)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto a las acciones que generan.</span></span>
+<p>De los derechos reales nacen las <strong>acciones reales</strong>, que son aquellas que tiene el titular de un derecho real para perseguir la cosa sobre la cual ejerce dicho derecho de manos de quien la tuviera en su poder. En cambio, de los derechos personales surgen <strong>acciones personales</strong>, en cuya virtud el titular del crédito puede reclamar al deudor el cumplimiento de la prestación debida.</p>
+
+<p>Por ende, si la obligación consiste en dar una cosa, y esta es transferida por el deudor a un tercero, el acreedor <em>no puede solicitar al tercero la restitución de la cosa debida</em>, sino que, dependiendo del caso, deberá ejercer otra clase de acciones contra el deudor (de indemnización de perjuicios, de nulidad absoluta, pauliana, etc.).</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">g)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">En cuanto a su fuente de creación.</span></span>
+<p>Finalmente, se argumenta que los derechos reales <strong>solo los puede crear la ley</strong> (<em>numerus clausus</em>), quedando inhibidas las partes de establecerlos. La situación es totalmente distinta en los derechos personales, en que las partes, en virtud del principio de la <em>autonomía de la voluntad</em>, pueden generar cualquier tipo de derecho personal sin más limitación que la ley, el orden público o la moral (<em>numerus apertus</em>).</p>
+
+<p>De lo anterior se sigue que el número de derechos reales es <strong>limitado</strong>, y no hay otros derechos reales que los que la ley determina; en cambio, el número de derechos personales es <strong>ilimitado</strong>, por lo que hay tantos derechos personales como relaciones jurídicas puedan crearse.</p>
+
+<div class="ejemplo">
+  <span class="caja-tipo">Ejemplo</span>
+  <span class="caja-titulo">La diferencia de acciones, en un caso</span>
+  <p>Pedro vende a Juan su automóvil y se obliga a entregárselo el lunes. Antes de esa fecha, Pedro se lo vende y entrega a Diego. Juan solo tiene un <strong>derecho personal</strong> contra Pedro: no puede dirigirse contra Diego para que le entregue el auto, porque su crédito solo se puede exigir del deudor. Deberá accionar contra Pedro (por ejemplo, pidiendo la indemnización de perjuicios). Distinto sería si Juan ya fuera dueño del automóvil: como titular de un <strong>derecho real</strong>, podría perseguirlo en manos de quien lo tenga.</p>
+</div>
+
+<h3 id="cI-A-4" style="text-decoration:none"><span class="num">4.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">CRÍTICAS A LA CONCEPCIÓN CLÁSICA</span></h3>
+
+<p>La concepción clásica, que diferencia con nitidez los derechos reales y personales, es objeto de las siguientes críticas:</p>
+
+<span class="enum-i"><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span>En los derechos reales también hay un sujeto pasivo.</span>
+<p>No es cierto, se argumenta, que en los derechos reales exista un solo sujeto, su titular, pues también hay un <strong>sujeto pasivo constituido por la colectividad toda</strong>, en cuanto sus integrantes tienen la obligación de abstenerse de ejecutar cualquier acto que perturbe o impida el ejercicio del derecho.</p>
+
+<p><strong>PLANIOL</strong> y <strong>RIPERT</strong> explican que "el derecho real debe, pues, concebirse bajo la forma de una <strong>relación obligatoria</strong>, en la cual el sujeto activo es simple y está representado por una sola persona, mientras que el sujeto pasivo es ilimitado en número y comprende a todas las personas que están en relación con el sujeto activo".</p>
+
+<p>La situación es todavía más clara, se agrega, en los <em>derechos reales limitados</em> que constituyen desmembración del dominio, pues estos derechos deben ejercerse sin perturbar el derecho de propiedad.</p>
+
+<span class="enum-i"><span class="num">(ii)&nbsp;&nbsp;&nbsp;&nbsp;</span>No existen relaciones jurídicas de persona a cosa.</span>
+<p>Tampoco sería efectivo que en los derechos reales exista una relación de persona a cosa, pues <strong>siempre las relaciones jurídicas se dan entre personas</strong>, ya que todos los derechos y deberes conciernen a las personas y afectan su comportamiento.</p>
+
+<p>Sin embargo, no debe desconocerse que las cosas tienen un significado distinto en los derechos reales y personales: son <em>fundamentales en los primeros</em>, en tanto que <em>pueden faltar en ciertas obligaciones</em>, como ocurre con las de hacer y no hacer. Las cosas solo integran el objeto de las obligaciones de dar.</p>
+
+<h3 id="cI-A-5" style="text-decoration:none"><span class="num">5.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">CONCEPTO DE OBLIGACIÓN</span></h3>
+
+<p>Tradicionalmente se define la obligación como el <strong>vínculo jurídico entre dos personas determinadas</strong> (deudor y acreedor) en virtud del cual el primero se encuentra en la <strong>necesidad jurídica de dar, hacer o no hacer algo</strong> en favor del segundo.</p>
+
+<p>Si el deudor no cumple con su prestación puede ser compelido a hacerlo, respondiendo no con su persona, como acontecía en el antiguo Derecho Romano, sino <strong>con su patrimonio</strong>.</p>
+
+<p>Sobre el particular, el <span class="art">artículo 2465</span> del Código Civil dispone: "Toda obligación personal da al acreedor el derecho de <strong>perseguir su ejecución sobre todos los bienes raíces o muebles del deudor</strong>, sean presentes o futuros, exceptuándose solamente los no embargables, designados en el <span class="art">artículo 1618</span>."</p>
+
+<p>De manera que cuando se contrae una obligación, el deudor está respondiendo de su cumplimiento con todo su patrimonio, lo que se denomina <strong>"derecho de prenda general"</strong>.</p>
+
+<div class="callout">
+  <span class="caja-tipo">No confundir</span>
+  <span class="caja-titulo">Derecho de prenda general vs. prenda</span>
+  <p>La denominación "derecho de prenda general" es <strong>inadecuada</strong>, pues no hay propiamente un derecho de prenda, que es un <em>derecho real</em>. Lo que describe el <span class="art">art. 2465</span> es la responsabilidad patrimonial del deudor frente a su acreedor.</p>
+</div>
+
+<p>Como observa <strong>FUEYO</strong>, tradicionalmente las definiciones que la doctrina ha dado de la voz obligación tienen en común "la <em>subordinación del deudor hacia el acreedor</em>, en un plano inclinado en que los derechos son todos del acreedor, y los deberes corresponden todos al deudor".</p>
+
+<p>Agrega que la tendencia actual es a corregir este criterio absolutista, reconociéndose <strong>derechos al deudor</strong> y la imposición de <strong>deberes al acreedor</strong>. Ello lo lleva a definir la obligación como "una relación de derecho entre dos o más personas, en cuya virtud una parte tiene el deber jurídico de satisfacer una prestación determinada en favor de otra, a la vez que el derecho a que el poder del acreedor no se exceda en sus límites, y a ser liberada al tiempo del cumplimiento, y la otra parte la facultad de exigir tal prestación, aun coercitivamente, a la vez que el deber de no excederse en su pretensión".</p>
+
+<p>En este sentido, existen una serie de instituciones que le otorgan al deudor la facultad de poder liberarse de su obligación (<strong>"derecho al pago"</strong>), como son el <em>pago por consignación</em> y la <em>mora del acreedor</em>.</p>
+
+<h3 id="cI-A-6" style="text-decoration:none"><span class="num">6.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">ELEMENTOS DE LA OBLIGACIÓN</span></h3>
+
+<p>Los elementos de la obligación son:</p>
+
+<p><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span>Los <strong>sujetos</strong> de la obligación (acreedor y deudor).</p>
+
+<p><span class="num">(ii)&nbsp;&nbsp;&nbsp;&nbsp;</span>Una <strong>prestación</strong>.</p>
+
+<p><span class="num">(iii)&nbsp;&nbsp;&nbsp;&nbsp;</span>Un <strong>vínculo jurídico</strong>.</p>
+
+<h4 id="cI-A-6-1" style="text-decoration:none"><span class="num">6.1.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit" style="text-decoration:underline">Sujetos de la obligación: acreedor y deudor</span></h4>
+
+<p>Los sujetos de toda obligación son el acreedor y el deudor. El <strong>acreedor</strong> es el titular del derecho personal o crédito, en virtud del cual puede exigir del deudor una determinada prestación. El <strong>deudor</strong> es quien debe dar, hacer o no hacer algo en favor del acreedor.</p>
+
+<p>En los <em>contratos bilaterales</em>, aquellos en que las partes se obligan recíprocamente (<span class="art">artículo 1439</span>), ambas partes tendrán el carácter de acreedoras y deudoras de sus respectivos derechos y obligaciones.</p>
+
+<p>Los dos sujetos tienen que ser <strong>personas determinadas o a lo menos determinables</strong>. Si bien hay casos en que los sujetos no quedan determinados al momento de nacer la obligación, no es posible que se desconozca quién es el acreedor o el deudor <em>al momento de hacerse exigible la obligación</em>, pues es físicamente imposible exigir el cumplimiento de alguien indeterminado.</p>
+
+<p>Desde el punto de vista <strong>pasivo</strong>, el caso se presenta en las llamadas <strong>obligaciones ambulatorias o <em>propter rem</em></strong>, en que resulta obligado a satisfacer la deuda quien tenga la calidad de dueño o poseedor de la cosa al tiempo de exigirse su cumplimiento. En ellas el deudor no es tal personalmente, sino en cuanto tiene derechos sobre la cosa, de manera que si cesa su relación con ella, deja de estar obligado.</p>
+
+<p>Por ejemplo, así ocurre con las <em>expensas comunes en la propiedad horizontal</em>: el dueño del piso o departamento responde aun de las anteriores a su adquisición del dominio, de manera que estará obligado solo mientras sea dueño.</p>
+
+<p>El sujeto <strong>activo</strong> estará indeterminado en todos aquellos casos que se consideran como de <strong>declaración unilateral de voluntad</strong>. Por ejemplo, en los <em>títulos al portador</em>, en que de antemano se sabe quién es el deudor, pero el acreedor se determinará por la posesión del título.</p>
+
+<p>Otro caso lo encontramos en la <em>promesa de recompensa</em>, una de cuyas posibilidades reglamenta el <span class="art">art. 632</span> respecto de las especies perdidas. Si el dueño ha ofrecido un premio a quien la encuentre, el denunciador elegirá entre el premio de salvamento y la recompensa ofrecida. Si hace esto último, adquiere en ese momento la calidad de acreedor, que anteriormente estaba indeterminada.</p>
+
+<p>Tanto el deudor como el acreedor pueden ser <strong>una o varias personas</strong>, desde que, de acuerdo al <span class="art">artículo 1438</span>, "Cada parte puede ser una o muchas personas."</p>
+
+<h4 id="cI-A-6-2" style="text-decoration:none"><span class="num">6.2.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit" style="text-decoration:underline">Del objeto de la obligación</span></h4>
+
+<span class="enum-i"><span class="num">(i)&nbsp;&nbsp;&nbsp;&nbsp;</span>Concepto.</span>
+<p>Como se sabe, el objeto del contrato es la obligación. Por su parte, el <strong>objeto de la obligación es la prestación</strong> a que se obliga el deudor. Consiste en un determinado <em>comportamiento, positivo o negativo</em>, que este asume en favor del acreedor.</p>
+
+<p>Empleando el lenguaje del <span class="art">artículo 1438</span>, es lo que el deudor debe <strong>dar, hacer o no hacer</strong>. Estas distintas categorías de la prestación conducen a una clasificación de las obligaciones en de dar, hacer y no hacer.</p>
+
+<span class="enum-i"><span class="num">(ii)&nbsp;&nbsp;&nbsp;&nbsp;</span>Características.</span>
+<p>La prestación debe reunir las siguientes características:</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">a)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Debe ser física y jurídicamente posible.</span></span>
+<p>Que sea posible quiere decir que <strong>se debe poder realizar</strong>. En caso contrario, nos encontramos ante la <em>imposibilidad de la prestación</em>, que puede ser <strong>absoluta</strong>, cuando la prestación no puede cumplirse bajo ningún respecto, o <strong>relativa</strong>, cuando objetivamente no hay imposibilidad, pero para el deudor no es realizable la prestación.</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">b)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Debe ser lícita.</span></span>
+<p>Que la prestación sea lícita significa que <strong>no debe estar prohibida por la ley</strong> ni ser contraria a las buenas costumbres o al orden público (<span class="art">artículo 1461</span> inc. 3º).</p>
+
+<span class="enum-a" style="text-decoration:none"><span class="num">c)&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">Debe ser determinada o a lo menos determinable.</span></span>
+<p>Que sea <strong>determinada</strong> importa decir que la prestación tiene que estar precisada, identificada. Que sea <strong>determinable</strong> significa que pueda llegar a definirse <em>sin necesidad de un nuevo acuerdo de las partes</em> (así ocurre, por ejemplo, en las obligaciones alternativas, <span class="art">arts. 1499</span> y ss.).</p>
+
+<p>El <span class="art">artículo 1461</span>, refiriéndose a las obligaciones de dar (o de entregar), nos dice que cuando lo que se debe es una cosa, "La cantidad puede ser incierta con tal que el acto o contrato <strong>fije reglas o contenga datos que sirvan para determinarla</strong>" (inc. 2º).</p>
+
+<span class="enum-i"><span class="num">(iii)&nbsp;&nbsp;&nbsp;&nbsp;</span>Para que exista obligación, ¿debe la prestación tener contenido patrimonial (pecuniario)?</span>
+<p><strong>SAVIGNY</strong> y algunos juristas pertenecientes a la escuela histórica así lo entendieron. De esa forma, el derecho de las obligaciones venía a ser <em>esencialmente un derecho patrimonial</em>. Así ocurría también en el derecho romano, en que se consideraba de la esencia de la obligación el que la prestación tuviera un valor pecuniario o económico.</p>
+
+<p>A partir de mediados del siglo XIX, algunos autores (<strong>SCIALOJA</strong>, <strong>CASTÁN</strong>, <strong>RUGGIERO</strong>, <strong>MESSINEO</strong>, <strong>PUIG PEÑA</strong>, entre otros) comienzan a distinguir entre <strong>"la prestación en sí"</strong> y <strong>"el interés del acreedor"</strong>:</p>
+
+<p><span class="num">(a)&nbsp;&nbsp;&nbsp;&nbsp;</span>La <strong>prestación</strong> debe tener siempre un <strong>contenido patrimonial</strong> pues, en caso contrario, no se podría ejecutar la obligación en el patrimonio del deudor.</p>
+
+<p><span class="num">(b)&nbsp;&nbsp;&nbsp;&nbsp;</span>No así el <strong>interés del acreedor</strong>, que puede ser <em>patrimonial, moral, humanitario, científico, artístico, estético, etc.</em></p>
+
+<p>Así, el Código italiano, uno de los pocos que se pronuncia directamente sobre el problema, en su <span class="art">art. 1174</span> dice: "la prestación que constituye objeto de la obligación debe ser <strong>susceptible de valorización económica</strong> y debe corresponder a un interés, <strong>aun cuando no sea patrimonial</strong> del acreedor".</p>
+
+<p>El ejemplo clásico que se señala es el de una persona que, por el deseo de poseerlo, <em>encarga un cuadro a un pintor famoso</em>. El interés del acreedor es meramente estético, pero la prestación tiene valor económico, ya que el cuadro terminado lo tendrá, y en consecuencia es posible, si no la ejecución forzada, al menos la indemnización de perjuicios.</p>
+
+<div class="dato-grado">
+  <span class="caja-tipo">Dato de grado</span>
+  <span class="caja-titulo">¿Debe la prestación tener contenido patrimonial?</span>
+  <p>La respuesta esperada distingue dos planos. La <strong>prestación en sí</strong> debe ser susceptible de valorización económica, porque de lo contrario no podría ejecutarse en el patrimonio del deudor. El <strong>interés del acreedor</strong>, en cambio, puede ser extrapatrimonial (moral, estético, científico, etc.). Conviene recordar la posición contraria de <strong>SAVIGNY</strong> y la escuela histórica, el <span class="art">art. 1174</span> del Código italiano y el ejemplo del cuadro encargado a un pintor famoso.</p>
+</div>
+
+<h4 id="cI-A-6-3" style="text-decoration:none"><span class="num">6.3.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit" style="text-decoration:underline">Vínculo jurídico</span></h4>
+
+<p>Que se trate de un vínculo jurídico significa que nos encontramos ante una <strong>relación protegida por el derecho objetivo</strong>, lo que hace la diferencia entre obligación y otros deberes, como los <em>morales</em>.</p>
+
+<h3 id="cI-A-7" style="text-decoration:none"><span class="num">7.&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tit">CARÁCTER EXCEPCIONAL DE LAS OBLIGACIONES</span></h3>
+
+<p>Como bien señala <strong>VIAL</strong>, una característica de la relación de obligación que presenta importancia en materia probatoria es que, para la ley, <strong>lo normal o corriente es que las personas no se encuentren obligadas</strong>. De ello emana que las obligaciones sean <strong>excepcionales</strong> y que <strong>no se presuman</strong>.</p>
+
+<p>En razón de lo anterior, y como se analizará en detalle al estudiar la prueba de las obligaciones, en conformidad al <span class="art">art. 1698</span> ("Incumbe probar las obligaciones o su extinción al que alega aquéllas o ésta."), la persona que alega la existencia de un hecho que no constituye lo normal o corriente <strong>debe acreditarlo</strong>, recayendo sobre ella el peso de la prueba.</p>
+
+</body>
+</html>
