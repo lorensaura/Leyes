@@ -112,7 +112,9 @@ la numeración de Boetsch.** Mapa (pendiente de confirmación de Laura):
 | X. Prescripción extintiva | 49-76 | IV.I | Relacionada |
 | Cuestionario (178 preguntas) | 76-82 | todo IV | **Dudosa**: no es materia para el texto del manual; puede servir para las preguntas de Práctica |
 
-Orrego no trata la cesión de bienes (Boetsch IV.B.4) como capítulo propio.
+Orrego no trata la cesión de bienes (Boetsch IV.B.4) como capítulo
+propio: solo la menciona de pasada en el pago y en el beneficio de
+competencia (verificado con búsqueda en el texto, 2026-10-10).
 
 **Chicos** (cada uno se inventaría completo cuando toca su tramo):
 
@@ -139,7 +141,7 @@ manual. Eso lo decide Laura.
 
 | # | Tema | Boetsch Oblig. | Ya está en |
 |---|---|---|---|
-| S1 | Modalidades: condición, plazo, modo | II.E, p. 85-129 (unas 44 p., 5 tramos) | AJ, capítulo VI (A condición, B plazo, C modo) |
+| S1 | Modalidades: condición, plazo, modo | II.E, p. 85-129 (unas 44 p., 5 tramos) | AJ, capítulo VI (A condición, B plazo, C modo); su fuente, Boetsch AJ parte 17, tiene solo 13 p. (209-221 de 221) |
 | S2 | Reglas comunes a toda prescripción | IV.I.6, p. 225-229 | Bienes V.5.B.4 (**ese tramo de Bienes todavía no se hace**: conviene decidir antes de que Bienes llegue ahí) |
 | S3 | Derechos reales y personales | I.A.1-4, p. 13-16 | Bienes II.A.4.2-4.3 (aprobado) |
 | S4 | Condición resolutoria y resolución; medio y resultado; imposibilidad | II.E.1.7 (105-116), II.F.2 (130), IV.H (215-223) | Contractual D (resolución, condición resolutoria tácita, pacto comisorio), B.3 (medio y resultado), C.6 (imposibilidad) |
