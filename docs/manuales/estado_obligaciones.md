@@ -77,10 +77,9 @@
   `archivo/06_Obligaciones_Manual_borrador_2026-09-28.html`.** Usar
   esa, no la rama.
 - **Laura confirmó partir de cero (2026-10-10).** La rama
-  `worktree-manual-obligaciones` y su worktree ya no se usan: no
-  trabajar sobre ellas ni mergearlas. Se pueden borrar sin perder nada
-  (la copia está en `archivo/`); si siguen existiendo, preguntar a
-  Laura antes de borrarlas.
+  `worktree-manual-obligaciones` y su worktree **se borraron**
+  (local y en GitHub, con autorización de Laura, 2026-10-10). Lo único
+  que queda del borrador es la copia en `archivo/`.
 
 ## Material fuente
 
