@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-10 (tramo 4b
-> aprobado; empieza el tramo 5a).
+> antes de seguir. Última actualización: 2026-10-10 (tramo 5a
+> aprobado; empieza el tramo 5b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -48,8 +48,8 @@
   (2026-10-09), commit `43bb930`.**
 - **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
   (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV.
-- **Tramo 5a (V.1 completo, p. 81-86): reescrito (2026-10-10), falta la
-  revisión de Laura.** Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
+- **Tramo 5a (V.1 completo, p. 81-86): terminado y aprobado por Laura
+  (2026-10-10).** Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
   más abajo.
   Siguiente paso al final de este archivo.
 
@@ -868,7 +868,7 @@ balanceadas, capturas revisadas, vista previa actualizada. Respaldo
 previo en el tmp del job (`05_Bienes_antes_4b.html`). Aprobado por Laura
 el 2026-10-10.
 
-## Tramo 5a: reescrito (2026-10-10), falta la revisión de Laura
+## Tramo 5a: hecho y aprobado (2026-10-10)
 
 **V.1 completo, páginas 81 a 86 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo5a.html`.
@@ -921,10 +921,8 @@ Sucesorio con `[FALTA: sección]`. Verificación: 62 unidades del
 inventario presentes, cero guiones largos, ids únicos, `href` resuelven,
 etiquetas balanceadas, todos los artículos en rojo, capturas revisadas,
 vista previa actualizada. Respaldo previo en el tmp del job
-(`05_Bienes_antes_5a.html`).
+(`05_Bienes_antes_5a.html`). Aprobado por Laura el 2026-10-10.
 
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Revisión de Laura del tramo 5a** (vista previa actualizada, ancla
-   `#cV-1`). Con su visto bueno, commit del manual.
-2. Después, **tramo 5b** (V.2 La ocupación, p. 87-94): informe nuevo.
+1. **Tramo 5b (V.2 La ocupación, p. 87-94): informe nuevo**, en curso.
