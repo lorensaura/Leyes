@@ -49,7 +49,7 @@
 - **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
   (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV.
 - **Tramo 5a (V.1 completo, p. 81-86): terminado y aprobado por Laura
-  (2026-10-10).** Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
+  (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
   más abajo.
   Siguiente paso al final de este archivo.
 
@@ -925,4 +925,20 @@ vista previa actualizada. Respaldo previo en el tmp del job
 
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Tramo 5b (V.2 La ocupación, p. 87-94): informe nuevo**, en curso.
+1. **Tramo 5b (V.2 La ocupación, p. 87-94): informe listo, esperando
+   decisiones de Laura** (`Informes/Informe_Bienes_tramo5b.html`,
+   2026-10-10). Hallazgos clave: Boetsch está desactualizado en la caza
+   en tierras ajenas (art. 609 vigente, Ley 19.473: solo tierras propias
+   o ajenas con permiso) y en las especies náufragas (no hay reparto con
+   el hospital: art. 637 remite al 629 y ss., municipalidad; art. 638
+   tope de gratificación); la cita del art. 597 no corresponde; el art.
+   623 dice lo contrario de lo que se le atribuye; art. 640 incluye a
+   los nacionales. 3 matices de Boetsch; 6 unidades de Peñailillo;
+   paráfrasis 12/123 sobre 70%. Decisiones pendientes: texto vigente en
+   caza y náufragas; leyes no verificables (Ley 18.892, DFL 34 de 1931,
+   DL 3.063): PDF o `[FALTA]`; agregar arts. 631, 634, 635, 636 y 638;
+   formato de 4.2 ((i)-(iii) con a) y a.1), o subir a 4.2-4.4);
+   preguntas clásicas (recomendadas: "¿Qué tipos de bienes se pueden
+   adquirir por ocupación?" y la del niño menor de 18); material propio.
+   Pregunta sin respuesta en las fuentes: "Cuáles son los bienes
+   vacantes".
