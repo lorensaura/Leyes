@@ -3,8 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-10-10 (organización inicial: mapa de la
-> fuente, solapes y reparto de tramos propuestos; nada aprobado todavía).
+> Última actualización: 2026-10-10 (organización aprobada por Laura:
+> solapes, Orrego, reparto y nombre del manual decididos; ningún tramo
+> redactado todavía).
 
 ## Resumen para retomar (léelo primero)
 
@@ -15,16 +16,40 @@
 - **Bienes va primero.** Obligaciones se organiza en paralelo
   (decisión de Laura, 2026-10-10). No se redacta ningún tramo hasta que
   Laura lo diga.
-- **Hecho:** texto extraído, mapa completo de la fuente por página real,
-  mapa de Orrego, anexos chicos asignados, solapes con otros manuales
-  detectados y reparto de 34 tramos propuesto. Todo en el informe
+- **Hecho y aprobado (2026-10-10):** texto extraído, mapa completo de la
+  fuente por página real, mapa de Orrego, anexos chicos asignados,
+  solapes con otros manuales y reparto de 34 tramos. Informe:
   `DERECHO LIBRE/Informes/Informe_Obligaciones_organizacion.html`.
-- **Falta que Laura decida:** los solapes (S1 a S6), el mapa de Orrego
-  (incluido el cuestionario) y el nombre y número del manual. Ver
-  "Siguiente paso exacto".
-- **No existe todavía `NN_Obligaciones_Manual.html`**: no crearlo sin
-  que Laura confirme número y nombre (la web, el build y
-  `scripts/generar_pdf_manual.py` leen esos archivos de la raíz).
+  Decisiones en "Decisiones tomadas con Laura", más abajo.
+- **Nombre del manual: `06_Obligaciones_Manual.html`** (confirmado por
+  Laura). **Todavía no se crea:** se crea al empezar el tramo 1 (la web,
+  el build y `scripts/generar_pdf_manual.py` leen los manuales de la
+  raíz, así que no se deja un archivo vacío ahí).
+- **Siguiente:** tramo 1, cuando Laura dé la partida. Ver "Siguiente
+  paso exacto".
+
+## Decisiones tomadas con Laura (2026-10-10)
+
+1. **Solapes S1 a S6: todos se desarrollan completos** en este manual,
+   siguiendo a Boetsch Obligaciones, con una caja **Conexiones** al
+   cierre del punto hacia el otro manual (sección y `p. __`). No se
+   resume ni se remite en lugar de desarrollar.
+2. **S2 es chico:** Bienes trata la prescripción **adquisitiva** y este
+   manual la **extintiva**; solo comparten las **reglas comunes a toda
+   prescripción** (Boetsch IV.I.6, p. 225-229, unas 4 páginas). Se
+   desarrollan completas aquí también (decisión 1), con Conexión a
+   Bienes V.5.B.4.
+3. **Orrego entra completo** (sus 10 capítulos), cada capítulo en el
+   tramo de su letra de Boetsch IV.
+4. **El cuestionario de Orrego (p. 76-82 del PDF, 178 preguntas) va
+   para las preguntas de Práctica, no para el manual.** Ojo (Laura): no
+   podemos atribuírnoslo ni copiarlo. Se usa solo como referencia de
+   qué se pregunta; cada pregunta se reescribe con caso, ejemplo y
+   redacción propios. Cuando se trabajen las preguntas de Obligaciones,
+   anotarlo en un `docs/preguntas-obligaciones.md`.
+5. **Reparto de 34 tramos: aprobado** tal como está abajo. Los cortes
+   se pueden ajustar al llegar a cada tramo, igual que en Bienes.
+6. **Número y nombre:** `06_Obligaciones_Manual.html`.
 
 ## Material fuente
 
@@ -96,7 +121,7 @@ Verificado contra el temario (p. 3 a 12) y ubicado en el cuerpo.
 
 **Grande (regla de `proceso.md` sección 5):** `Obligaciones 2/Extinción
 de las obligaciones_ORREGO.pdf`, 82 páginas. **Usa páginas del PDF, no
-la numeración de Boetsch.** Mapa (pendiente de confirmación de Laura):
+la numeración de Boetsch.** Mapa (confirmado por Laura 2026-10-10: entra completo):
 
 | Orrego | Páginas PDF | Corresponde a Boetsch | Clasificación propuesta |
 |---|---|---|---|
@@ -110,7 +135,7 @@ la numeración de Boetsch.** Mapa (pendiente de confirmación de Laura):
 | VIII. Confusión | 45-47 | IV.G | Relacionada |
 | IX. Pérdida de la cosa que se debe | 47-49 | IV.H | Relacionada |
 | X. Prescripción extintiva | 49-76 | IV.I | Relacionada |
-| Cuestionario (178 preguntas) | 76-82 | todo IV | **Dudosa**: no es materia para el texto del manual; puede servir para las preguntas de Práctica |
+| Cuestionario (178 preguntas) | 76-82 | todo IV | **Para Práctica**, no para el manual (decisión 4): solo como referencia, nunca copiado ni atribuido |
 
 Orrego no trata la cesión de bienes (Boetsch IV.B.4) como capítulo
 propio: solo la menciona de pasada en el pago y en el beneficio de
@@ -132,23 +157,23 @@ competencia (verificado con búsqueda en el texto, 2026-10-10).
 | `Cuadro_Indivisibilidad_vs_Solidaridad.pdf` (1 p.) | 9 | Cuadro, para el paralelo de C.3.7 |
 | `Obligaciones 2/Clasificación de la prescripción extintiva.pdf` (3 p.) | 27 y 28 | Autor no indicado: cruzar con fuente de cátedra |
 
-## Solapes con otros manuales (pendiente de decisión de Laura)
+## Solapes con otros manuales (decidido: todos completos, ver decisiones 1 y 2)
 
 El precedente del repo es la caja **Conexiones** (`guia-editorial.md`
-4.8): sección y página del otro manual, sin enlaces. No hay regla
-escrita sobre cuánto del contenido repetido se desarrolla en cada
-manual. Eso lo decide Laura.
+4.8): sección y página del otro manual, sin enlaces. Laura decidió
+(2026-10-10) que en este manual cada solape se desarrolla **completo**,
+con la Conexión al cierre del punto (decisión 1).
 
 | # | Tema | Boetsch Oblig. | Ya está en |
 |---|---|---|---|
 | S1 | Modalidades: condición, plazo, modo | II.E, p. 85-129 (unas 44 p., 5 tramos) | AJ, capítulo VI (A condición, B plazo, C modo); su fuente, Boetsch AJ parte 17, tiene solo 13 p. (209-221 de 221) |
-| S2 | Reglas comunes a toda prescripción | IV.I.6, p. 225-229 | Bienes V.5.B.4 (**ese tramo de Bienes todavía no se hace**: conviene decidir antes de que Bienes llegue ahí) |
+| S2 | Reglas comunes a toda prescripción | IV.I.6, p. 225-229 | Bienes V.5.B.4. Solo las reglas comunes (unas 4 p.): Bienes es adquisitiva, este manual extintiva |
 | S3 | Derechos reales y personales | I.A.1-4, p. 13-16 | Bienes II.A.4.2-4.3 (aprobado) |
 | S4 | Condición resolutoria y resolución; medio y resultado; imposibilidad | II.E.1.7 (105-116), II.F.2 (130), IV.H (215-223) | Contractual D (resolución, condición resolutoria tácita, pacto comisorio), B.3 (medio y resultado), C.6 (imposibilidad) |
 | S5 | Cesión de créditos | III.3.2, p. 135 | Bienes V.4.D.4 (tradición de derechos personales, arts. 1901 y siguientes) |
 | S6 | Formalidades por vía de prueba, limitación de la prueba de testigos | VI.8, p. 288-299 | AJ (formalidades: arts. 1701, 1708, 1709, 1711) |
 
-## Reparto de tramos (propuesta 2026-10-10, sin aprobar)
+## Reparto de tramos (aprobado por Laura 2026-10-10)
 
 Cortes en límite de título del mapa de arriba, no por número de página.
 Unas 10 páginas por tramo, menos en los temas clásicos de examen
@@ -195,13 +220,18 @@ decisión de solape.
 
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. Laura revisa `Informes/Informe_Obligaciones_organizacion.html` y
-   decide: S1 a S6, el mapa de Orrego (en especial el cuestionario), el
-   reparto de tramos y el número y nombre del manual.
-2. Con eso, anotar las decisiones aquí (sección nueva "Decisiones
-   tomadas con Laura") y corregir el reparto si cambia.
-3. Cuando Laura dé la partida (después de Bienes, o en paralelo si lo
-   pide): crear el manual con la hoja de estilos vigente de AJ/Bienes
-   (`formato.md`) y empezar por el tramo 1 con el checklist de
-   `lecciones-acto-juridico.md` sección 6, incluida la pregunta a Laura
-   por material extra del tema.
+Organización cerrada. Lo que sigue, **cuando Laura dé la partida**
+(Bienes va primero; en paralelo solo si ella lo pide):
+
+1. Leer `lecciones-acto-juridico.md` completo (sobre todo la sección
+   6), `proceso.md`, `guia-editorial.md` y `formato.md`.
+2. Crear `06_Obligaciones_Manual.html` en la raíz del repo con la hoja
+   de estilos vigente de AJ/Bienes (`formato.md`), y revisar qué hay
+   que tocar para que la web, el build y `scripts/generar_pdf_manual.py`
+   lo reconozcan (arreglo `FUENTES`).
+3. Tramo 1 (p. 13-19, I.A La obligación): preguntar a Laura si tiene
+   material extra, inventario desde
+   `Apuntes/CIVIL/Obligaciones/_texto_extraido/Obligaciones1_principal.txt`,
+   informe en `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`
+   y aprobación de Laura antes de escribir en el manual. Conexión de
+   I.A.1-4 hacia Bienes II.A.4.2-4.3 (S3).
