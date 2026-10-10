@@ -7,7 +7,7 @@
 > escribe, en `guia-editorial.md`; la auditoría de cobertura del manual
 > terminado, en `auditoria.md`; poner al día un manual escrito con las
 > reglas antiguas, en `actualizar-manuales-existentes.md`. Generar preguntas de práctica a partir de
-> un manual ya escrito es otro paso: `docs/prompt-generacion-contenido-practica.md`.
+> un manual ya escrito es otro paso: `docs/prompts-practica/nucleo.md`.
 
 ---
 

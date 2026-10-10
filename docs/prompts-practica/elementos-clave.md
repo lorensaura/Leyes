@@ -127,6 +127,24 @@ con significado** que juntas prueban el elemento:
 culpa del deudor se presume". `'no tiene que probar la culpa'` es como lo
 dice una alumna. La `pregunta` orienta sin usar "presume" ni "1547".
 
+## Preguntas "menciona N de M" (M mayor que N): `minimo_elementos`
+
+Si el enunciado pide "menciona/explica N diferencias, requisitos o
+consecuencias" y el manual ofrece **más de N** válidas (ej. un recuadro
+con seis diferencias y el enunciado pide cuatro), poner solo N
+`elementos_clave` califica mal a la alumna que eligió otras N igualmente
+correctas. Regla (hallazgo del 2026-07-31):
+
+- Si el manual **cierra la enumeración exactamente en N**, se ponen esos
+  N elementos y la app exige todos (lo normal).
+- Si el manual ofrece **M mayor que N**, se ponen las **M** completas en
+  `elementos_clave` y el campo `minimo_elementos: N`. La app da el 100%
+  con cualquier N correctos de los M.
+
+Hoy `minimo_elementos` existe en Supabase (`evaluacion_practica`) pero no
+en Airtable, y el sync no lo lleva: se fija directo en Supabase (caso
+real: `rc-just-009`). Avisar a Laura cuando un ítem lo necesite.
+
 ## Cómo comprobarlo antes de cargar
 
 - **Acto Jurídico:** `scripts/practica_aj/subir_eval.py` rechaza la tanda

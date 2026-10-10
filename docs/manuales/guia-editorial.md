@@ -431,7 +431,7 @@ prácticos, así que son mucho más amplios que las preguntas de un examen
 oral.
 
 - Se generan en un paso posterior, con
-  `docs/prompt-generacion-contenido-practica.md` y el skill
+  `docs/prompts-practica/` y el skill
   `generar-practica`. **Ninguno se escribe dentro del manual.**
 - La Pregunta clásica es otra cosa: la pregunta literal de examen, dentro
   del manual, para preparar la interrogación.

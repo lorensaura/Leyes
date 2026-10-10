@@ -11,9 +11,10 @@ Discriminación MC y Alternativas, confusión entre `Preguntas_Evaluacion`
 y las tablas de Evaluación, y volumen demasiado bajo por materia). El
 objetivo es que la próxima sesión no tenga que redescubrir nada de esto.
 
-**No repite** las reglas de redacción y anti-alucinación, que siguen
-viviendo en `docs/prompt-generacion-contenido-practica.md` (sección 0
-y 0.3) — este skill orquesta y agrega los chequeos que faltaban ahí.
+**No repite** las reglas de redacción y anti-alucinación, que viven en
+`docs/prompts-practica/` (`nucleo.md`, el prompt de cada tipo y
+`elementos-clave.md`): este skill orquesta y agrega los chequeos que
+faltaban ahí.
 
 ## Regla obligatoria: corrección flexible (2026-10-09)
 
@@ -22,8 +23,7 @@ redacta para la **corrección flexible** de la app (keywords de 2 a 4
 palabras con significado, comparadas por raíz y en cualquier orden, no
 frases exactas; una `pregunta` por elemento que sirva de repregunta
 cuando la alumna logra 2 de 3). Las reglas y la checklist están en
-`docs/prompts-practica/elementos-clave.md`, que **manda** sobre lo que
-diga de keywords el prompt antiguo `docs/prompt-generacion-contenido-practica.md`.
+`docs/prompts-practica/elementos-clave.md`.
 Al terminar un lote, correr `python3 scripts/prueba_correccion_flexible.py`.
 
 ## 0. La distinción que causó la confusión de hoy
@@ -55,25 +55,26 @@ con:
 - **Columnas:** Aplicación, Detección de error, Justificación,
   Discriminación MC, Flashcards, Alternativas. (Memorice queda afuera:
   no es un modelo de cobertura completa por tema, solo cubre artículos
-  centrales puntuales, ver `docs/prompt-generacion-contenido-practica.md`.)
+  centrales puntuales, ver `docs/prompts-practica/memorice.md`.)
 - Marcá qué casillas ya tienen contenido y cuáles están vacías, contando
   contra las fuentes reales (Supabase/Airtable vía API), nunca contra
   este mismo doc ni contra la memoria de una sesión anterior.
 
 Generá contenido nuevo priorizando las casillas vacías, hasta llegar al
-techo real del apunte por subtema (sección 0.3 del prompt maestro:
-mapeo de instituciones, tabla de cobertura de elementos jurídicos,
-cuota por subtema, avisar si un subtema ya llegó a su techo). La tabla
-de esta sección (tema × modelo) y la tabla de cobertura de la sección
-0.3 (elemento jurídico × ángulo) son dos herramientas distintas, para
+techo real del apunte por subtema ("Control de redundancia" del
+núcleo, `docs/prompts-practica/nucleo.md`: mapeo de instituciones, tabla
+de cobertura de elementos jurídicos, cuota por subtema, avisar si un
+subtema ya llegó a su techo). La tabla de esta sección (tema × modelo) y
+la tabla de cobertura del núcleo (elemento jurídico × ángulo) son dos
+herramientas distintas, para
 dos preguntas distintas: esta responde "¿qué casillas del tablero
 completo faltan?", la otra responde "¿ya agoté este subtema puntual?".
 
 ## 2. Límite de lote: nunca generar un volumen grande de una sola pasada
 
 Chequeo explícito, agregado a pedido de Laura como red de seguridad
-adicional (2026-07-29), aunque ya se desprende de
-`docs/prompt-generacion-contenido-practica.md` sección 1 y 5: **no
+adicional (2026-07-29), aunque ya se desprende del trabajo por tandas
+del núcleo (`docs/prompts-practica/nucleo.md`): **no
 generes 100 preguntas (ni 50, ni 30) en una sola tanda**, aunque la
 tabla de cobertura muestre muchas casillas vacías y aunque técnicamente
 puedas hacerlo en una sola respuesta. Volumen alto de una sola pasada es

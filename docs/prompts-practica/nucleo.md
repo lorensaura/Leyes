@@ -8,15 +8,15 @@
 > lo específico de ese tipo: qué extraer del manual, el esquema exacto de
 > entrega, su volumen esperado y su parte de la auto-auditoría.
 >
-> **Estado (2026-09-17):** los 7 prompts por tipo ya existen
+> **Estado (2026-10-10):** este núcleo y los prompts por tipo
 > (`aplicacion.md`, `deteccion-error.md`, `justificacion.md`,
 > `discriminacion-mc.md`, `alternativas.md`, `memorice.md`,
-> `flashcards.md`), reemplazando al antiguo
-> `docs/prompt-generacion-contenido-practica.md` (un solo prompt
-> larguísimo, atado a las tres materias de Responsabilidad). Ese doc
-> anterior sigue vigente por ahora porque los skills `generar-evaluacion`
-> y `generar-practica` todavía apuntan a él; migrarlos es el paso
-> pendiente antes de poder retirarlo. No lo borres todavía.
+> `flashcards.md`), más `elementos-clave.md` y `transversales.md`, son
+> **el único prompt vigente** de creación de preguntas. El antiguo
+> `docs/prompt-generacion-contenido-practica.md` (un solo prompt atado a
+> Responsabilidad) se revisó punto por punto, se rescató lo que faltaba y
+> se archivó en `archivo/` el 2026-10-10. Los skills `generar-evaluacion`
+> y `generar-practica` apuntan aquí.
 
 ## Cómo se usa
 
@@ -82,6 +82,21 @@ entienda mejor"; si de verdad necesita un caso para tener sentido, es
 Aplicación, Detección de error o Discriminación MC, no Alternativas ni
 Justificación.
 
+## Cantidad de preguntas
+
+Cada prompt por tipo trae un volumen por defecto (por eje), pero **manda
+lo que diga el documento de preguntas de la materia** cuando existe. Ej.
+Acto Jurídico (`docs/preguntas-acto-juridico.md`): se trabaja por tema y
+subtema, tipo por tipo, con dos preguntas por tipo en los subtemas que
+aparecen en 10 o más exámenes reales y una en el resto. En cualquier
+caso: nunca un volumen grande de una sola pasada, y si un subtema no da
+para más sin repetir, se dice en vez de completar el número.
+
+## Preguntas que relacionan materias
+
+Se hacen aparte, con `docs/prompts-practica/transversales.md`, cuando
+las materias involucradas ya tienen su primera pasada.
+
 ## Filosofía: aplicación y relación entre instituciones por sobre memoria
 
 Digesto separa deliberadamente memorización de razonamiento: **memorizar
@@ -126,8 +141,8 @@ probablemente rinde mejor como Memorice o Flashcard.
 ## 0. Regla de oro: prohibido alucinar, y cómo se aplica en la práctica
 
 No trabajas de memoria. Trabajas **solo** con el texto del manual de
-{MATERIA} que tienes abierto (y, para Memorice específicamente, además
-con el texto oficial y vigente del código citado, ver `memorice.md`).
+{MATERIA} que tienes abierto (y, para Memorice de artículos, con el texto
+legal que manda Laura, ver `memorice.md`).
 
 Para **cada ítem** que generes, sigue este proceso de tres pasos, en este
 orden, y no te saltes ninguno:
@@ -225,7 +240,11 @@ completo antes de abrir el siguiente tramo del manual.
    el destino de este tipo (ver "Dónde vive" en el prompt del tipo) y,
    cuando aplique, en la tabla de cobertura liviana compartida entre
    tipos (ver más abajo). Es una lista negra para no repetir, no una
-   fuente de inspiración para parafrasear.
+   fuente de inspiración para parafrasear. Cuenta contra los datos
+   reales (Airtable y Supabase vía API), no contra un documento. Ojo:
+   `Preguntas_Evaluacion` (banco del Interrogador) es otro banco, no un
+   espejo de las tablas de Evaluación de Práctica; ver el skill
+   `generar-evaluacion`, sección 0.
 2. Abre solo el tramo del manual que corresponde a este lote.
 3. Recorre ese tramo **eje por eje**, en orden, sin saltarte ninguno.
 4. Genera los ítems siguiendo el proceso de tres pasos de la sección 0,

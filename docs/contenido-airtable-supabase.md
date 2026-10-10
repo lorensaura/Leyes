@@ -263,7 +263,7 @@ Preguntas_Evaluacion), así que sigue siendo más rápido que ella redacte el
 SQL directo y lo corra en el SQL Editor de Supabase — agregar un paso de
 edición en Airtable sería más fricción, no menos. `scripts/sync_airtable_supabase.py`
 no toca `alternativas` ni `memorice_articulos`; el formato del INSERT está
-en `docs/prompt-generacion-contenido-practica.md`, sección 3.
+en `docs/prompts-practica/alternativas.md` y `memorice.md`.
 
 ## El banco de preguntas de examen real ya se usa como grounding del Interrogador IA
 Las 328 preguntas en la tabla Supabase `preguntas_evaluacion` (55
