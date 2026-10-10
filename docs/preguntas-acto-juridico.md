@@ -492,10 +492,14 @@ en el orden del manual.
   luego Justificación, luego Discriminación MC. Terminados los 4 tipos se
   pasa al tema siguiente. Cada tanda (un tipo de un tema) lleva el control
   anti-alucinación y su informe de revisión.
-- **Cantidad (Laura, 2026-10-09, opción B):** dos preguntas por tipo en
-  los subtemas que aparecen en **10 o más exámenes** (columna del tablero)
-  y una en el resto. Si un subtema es solo terminología o no da para el
-  tipo, no se fuerza: se dice en el informe (pedido expreso de Laura).
+- **Cantidad (Laura, 2026-10-10, sube desde la opción B del 2026-10-09):**
+  **cuatro preguntas por tipo** en los subtemas que aparecen en **10 o más
+  exámenes** (columna del tablero; son 23 de los 132) y **dos en el
+  resto**, para que alcance a quien estudia solo esta materia. Es la regla
+  de todas las materias (núcleo, "Cantidad de preguntas"). Es un techo: si
+  un subtema no da para más sin repetir, o no da para el tipo (ej.
+  terminología en Aplicación), se dice en el informe. Total estimado de
+  AJ: ~310 por tipo, ~1.240 entre los 4.
 - **Prompt:** el de Responsabilidad, `docs/prompts-practica/nucleo.md` +
   `{tipo}.md` + `elementos-clave.md`, con estas adaptaciones para AJ (que
   mandan sobre lo que digan esos archivos): cantidad según la regla de
@@ -547,6 +551,10 @@ en el orden del manual.
   estaban en el caso, repreguntas que regalaban la respuesta, palabras
   sueltas muy generales); el contenido jurídico no cambió. Siguen sin
   publicar: se publican junto con el resto de Nulidad.
+- **Pendiente por la regla nueva: completar Aplicación de Nulidad** de 17
+  a hasta 34 preguntas (4 en los 6 subtemas importantes, 2 en los otros
+  5), con `lote_aplic2.py` desde `aj-aplic-021`. Laura decide si va antes
+  de Detección de error.
 - **Siguiente tanda: Nulidad, Detección de error** (`lote_det1.py`,
   tabla `Detección de error`, prefijo `aj-det`, desde `aj-det-004`), con
   el prompt `docs/prompts-practica/deteccion-error.md` y las reglas de
