@@ -60,7 +60,7 @@ tabla Supabase `evaluacion_practica` vía
 | Bienes - Hasta tradición | Digesto Bienes - Hasta Tradición |
 | Bienes - Posesión | Digesto Bienes - Posesión |
 | Bienes - Prescripción y otros | Digesto Bienes - Prescripción y Otros |
-| Acto Jurídico | Digesto Acto Jurídico (conectada a Supabase; el sync fuerza `materia = acto_juridico`) |
+| Acto Jurídico | Evaluación en dos bases por capítulo: Digesto Acto Jurídico - Evaluación I-III y - Evaluación IV-VI (conectadas a Supabase; el sync fuerza `materia = acto_juridico`). Las Flashcards siguen en Digesto Acto Jurídico |
 
 Las 3 bases de Bienes tienen la misma estructura que las de
 Responsabilidad (Temas, Flashcards, Aplicación, Detección de error,
@@ -94,13 +94,12 @@ El entregable es una fila por ítem, lista para pegar en la tabla
 
 ## Volumen esperado
 
-Por defecto, el volumen de Evaluación es **agregado entre los 4
-subtipos** (Aplicación, Detección de error, Justificación,
-Discriminación MC): 2-4 ítems en total por eje, repartidos según qué
-subtipos rinden mejor (no fuerces los 4 en cada eje). **Si la materia
-tiene su propio documento de preguntas, manda ese** (ver "Cantidad de
-preguntas" en el núcleo; Acto Jurídico trabaja tipo por tipo, por
-subtema). Prioriza calidad y verificabilidad sobre volumen.
+Manda la regla de "Cantidad de preguntas" del núcleo: por subtema y por
+tipo, **4 preguntas en los subtemas importantes** (10 o más exámenes
+reales) **y 2 en el resto**, como techo (si no da para más sin repetir,
+se dice). Solo si la materia todavía no tiene conteo de exámenes, se usa
+el criterio antiguo: 2-4 ítems de Evaluación por eje entre los 4
+subtipos. Prioriza calidad y verificabilidad sobre volumen.
 
 ## Checklist específica de Aplicación
 

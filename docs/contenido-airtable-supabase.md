@@ -312,6 +312,35 @@ el 2026-07-20 — no hay que construir nada nuevo, solo repetir el patrón:
   de un diseño anterior (una base por tipo) que se descartó a favor de una
   base por materia. Laura las va a borrar a mano.
 
+## Cambios del 2026-10-10
+
+- **Columna `minimo_elementos`** (número) en Aplicación, Detección de
+  error y Justificación de las 4 bases que sincroniza el script (las 3
+  de Responsabilidad y la de Acto Jurídico). El sync la lleva a
+  `evaluacion_practica.minimo_elementos`. Para preguntas "menciona N de
+  M" (ver `docs/prompts-practica/elementos-clave.md`). Las bases de
+  Bienes no la tienen: agregarla cuando se conecten.
+- **Tabla `Conexiones`** en la base `Digesto Acto Jurídico`: las
+  conexiones del manual con otras materias (61, de los recuadros
+  "Conexiones"). Pensada para los exámenes con IA de toda una materia o
+  de varias. Todavía no se sincroniza a Supabase ni la usa el
+  Interrogador; ver `docs/interrogador.md`. Cuando otra materia tenga su
+  manual al día, su base lleva la misma tabla (scripts en
+  `scripts/practica_aj/extraer_conexiones.py` y `subir_conexiones.py`,
+  adaptables).
+
+## Acto Jurídico en tres bases (2026-10-10)
+
+Por el límite de 1.000 registros por base, la Evaluación de AJ vive en
+dos bases aparte, partidas por capítulo del manual:
+`Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1
+a 17) y `Digesto Acto Jurídico - Evaluación IV-VI` (`appjmtz9O5CARhCYe`,
+temas 18 a 29), cada una con su tabla Temas (mismos nombres) y las 4
+tablas de Evaluación. `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`)
+quedó con Temas, Flashcards y Conexiones. El sync lee la Evaluación de
+AJ desde `EVALUACION_EN_BASES_APARTE` (lista de pares materia y base;
+sirve para partir cualquier otra materia igual).
+
 ## Pendiente / no construido
 - Materias más allá de Contractual/Extracontractual/Precontractual (Acto
   Jurídico, Bienes, Familia, Sucesorio, Procesal, etc.) — en stand by desde

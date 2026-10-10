@@ -82,15 +82,35 @@ entienda mejor"; si de verdad necesita un caso para tener sentido, es
 Aplicación, Detección de error o Discriminación MC, no Alternativas ni
 Justificación.
 
-## Cantidad de preguntas
+## Cantidad de preguntas (regla para todas las materias, Laura 2026-10-10)
 
-Cada prompt por tipo trae un volumen por defecto (por eje), pero **manda
-lo que diga el documento de preguntas de la materia** cuando existe. Ej.
-Acto Jurídico (`docs/preguntas-acto-juridico.md`): se trabaja por tema y
-subtema, tipo por tipo, con dos preguntas por tipo en los subtemas que
-aparecen en 10 o más exámenes reales y una en el resto. En cualquier
-caso: nunca un volumen grande de una sola pasada, y si un subtema no da
-para más sin repetir, se dice en vez de completar el número.
+En Evaluación (Aplicación, Detección de error, Justificación y
+Discriminación MC) se trabaja **por tema y subtema, un tipo a la vez**, y
+la cantidad depende de cuánto se pregunta cada subtema en exámenes de
+grado reales:
+
+- **4 preguntas por tipo** en los subtemas importantes (los que aparecen
+  en **10 o más exámenes** del conteo de la materia);
+- **hasta 2 preguntas por tipo** en el resto (con 1 basta si el subtema
+  es chico: entre los 4 tipos de Evaluación, Flashcards y Alternativas
+  igual suma 5 o 6 preguntas por subtema).
+
+La idea es que alcance para quien estudia **solo esa materia**. Para
+aplicarla a una materia nueva, primero se cuentan sus temas y subtemas en
+los exámenes reales, como se hizo con Acto Jurídico (sección "Relevancia
+de los temas" de `docs/preguntas-acto-juridico.md` y
+`scripts/aj_temas_subtemas.json`).
+
+El número es un techo, no una cuota: si un subtema no da para 4 (o 2)
+preguntas que evalúen elementos distintos sin repetirse (ver "Control de
+redundancia"), se hacen las que den y se dice en el informe, en vez de
+completar el número. Si un subtema no da para el tipo (ej. pura
+terminología en Aplicación), también se dice. Y nunca un volumen grande
+de una sola pasada: tandas de un tipo de un tema.
+
+Los volúmenes "por eje" que traen los prompts por tipo quedan solo para
+Alternativas, Flashcards y Memorice, y para materias que todavía no
+tengan su conteo de exámenes.
 
 ## Preguntas que relacionan materias
 

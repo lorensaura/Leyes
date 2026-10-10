@@ -284,10 +284,25 @@ la cuenta.
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
 | Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
-| Evaluación | 29: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`) y 17 de Aplicación de Nulidad (`aj-aplic-004` a `020`) | Misma base, tablas Aplicación / Detección de error / Justificación / Discriminación MC | Sin publicar, en `Revisar`, con tema y subtema |
+| Evaluación | 29: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`) y 17 de Aplicación de Nulidad (`aj-aplic-004` a `020`) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
+| Conexiones con otras materias | 61 (`aj-con-001` a `061`) | Airtable, base de AJ, tabla **Conexiones** (creada el 2026-10-10) | En `Revisar`. Extraídas de los 19 recuadros "Conexiones" del manual (`scripts/practica_aj/extraer_conexiones.py` y `subir_conexiones.py`). Una fila por materia conectada, con tema, subtema, sección y dónde está en el otro apunte. **Para qué (Laura):** que los exámenes con IA de toda la materia puedan ir conectando materias. No se sincroniza a Supabase todavía |
+
+**Por qué tres bases (Laura, 2026-10-10):** Airtable permite 1.000
+registros por base, y la Evaluación completa de AJ con la regla de 4 y 2
+(entre 800 y 1.240 preguntas) no cabía junto a las Flashcards. Para no
+hacer menos preguntas por esa sola razón, la Evaluación se partió por
+capítulo del manual. La base principal (`Digesto Acto Jurídico`) quedó
+con Temas, Flashcards y Conexiones. Las 29 preguntas existentes se
+movieron y se verificaron campo por campo; las 4 tablas antiguas se
+eliminaron de la base principal (códigos para deshacer en Airtable:
+`actafvUjMbKlcQWhO`, `actIRnt2b7vaAkUKR`, `actXwWFy0ox5Jqh2H`,
+`actCtKtl07cBLLlsa`). Los scripts (`airtable_aj.py`, `subir_eval.py`,
+`tablero_cobertura_aj.py`) y el sync (`EVALUACION_EN_BASES_APARTE`) ya
+leen y escriben en la base que corresponde a cada tema. Si un capítulo
+volviera a acercarse a 1.000, se parte igual.
 
 Informes de revisión (fuera del repo, en `DERECHO LIBRE/Informes/`):
 `Informe_AJ_relevancia_temas.html` (relevancia y tablero por subtema,
@@ -491,16 +506,22 @@ en el orden del manual.
   luego Justificación, luego Discriminación MC. Terminados los 4 tipos se
   pasa al tema siguiente. Cada tanda (un tipo de un tema) lleva el control
   anti-alucinación y su informe de revisión.
-- **Cantidad (Laura, 2026-10-09, opción B):** dos preguntas por tipo en
-  los subtemas que aparecen en **10 o más exámenes** (columna del tablero)
-  y una en el resto. Si un subtema es solo terminología o no da para el
-  tipo, no se fuerza: se dice en el informe (pedido expreso de Laura).
+- **Cantidad (Laura, 2026-10-10, sube desde la opción B del 2026-10-09):**
+  **cuatro preguntas por tipo** en los subtemas que aparecen en **10 o más
+  exámenes** (columna del tablero; son 23 de los 132) y **dos en el
+  resto** (en los subtemas chicos, con 1 basta: entre los 4 tipos, las
+  Flashcards y las Alternativas ya suman 5 o 6 preguntas por subtema),
+  para que alcance a quien estudia solo esta materia. Es la regla
+  de todas las materias (núcleo, "Cantidad de preguntas"). Es un techo: si
+  un subtema no da para más sin repetir, o no da para el tipo (ej.
+  terminología en Aplicación), se dice en el informe. Total estimado de
+  AJ: ~310 por tipo, ~1.240 entre los 4.
 - **Prompt:** el de Responsabilidad, `docs/prompts-practica/nucleo.md` +
   `{tipo}.md` + `elementos-clave.md`, con estas adaptaciones para AJ (que
   mandan sobre lo que digan esos archivos): cantidad según la regla de
   arriba (no "2-4 por eje entre los 4 tipos"); un tipo a la vez dentro de
-  cada tema; destino la base `Digesto Acto Jurídico` (el sync fuerza
-  `materia = acto_juridico`); `subtema` con el nombre **exacto** del
+  cada tema; destino la base de Evaluación del capítulo del tema (I-III o IV-VI;
+  `subir_eval.py` la elige sola; el sync fuerza `materia = acto_juridico`); `subtema` con el nombre **exacto** del
   catálogo; y la entrega en el orden del núcleo dentro del informe.
 - **Corrección flexible (obligatoria, Laura 2026-10-09):** las keywords se
   redactan para la corrección flexible de la app (palabras con
@@ -546,6 +567,10 @@ en el orden del manual.
   estaban en el caso, repreguntas que regalaban la respuesta, palabras
   sueltas muy generales); el contenido jurídico no cambió. Siguen sin
   publicar: se publican junto con el resto de Nulidad.
+- **Pendiente por la regla nueva: completar Aplicación de Nulidad** de 17
+  a hasta 34 preguntas (4 en los 6 subtemas importantes, 2 en los otros
+  5), con `lote_aplic2.py` desde `aj-aplic-021`. Laura decide si va antes
+  de Detección de error.
 - **Siguiente tanda: Nulidad, Detección de error** (`lote_det1.py`,
   tabla `Detección de error`, prefijo `aj-det`, desde `aj-det-004`), con
   el prompt `docs/prompts-practica/deteccion-error.md` y las reglas de

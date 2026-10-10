@@ -141,9 +141,11 @@ correctas. Regla (hallazgo del 2026-07-31):
   `elementos_clave` y el campo `minimo_elementos: N`. La app da el 100%
   con cualquier N correctos de los M.
 
-Hoy `minimo_elementos` existe en Supabase (`evaluacion_practica`) pero no
-en Airtable, y el sync no lo lleva: se fija directo en Supabase (caso
-real: `rc-just-009`). Avisar a Laura cuando un ítem lo necesite.
+`minimo_elementos` es una columna (número) de las tablas Aplicación,
+Detección de error y Justificación en Airtable (agregada el 2026-10-10 en
+las bases de Responsabilidad y de Acto Jurídico), y el sync la lleva a
+Supabase. Vacía = se exigen todos los elementos. Caso real: `rc-just-009`
+(3).
 
 ## Cómo comprobarlo antes de cargar
 
