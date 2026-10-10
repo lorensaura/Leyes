@@ -22,9 +22,12 @@
   `DERECHO LIBRE/Informes/Informe_Obligaciones_organizacion.html`.
   Decisiones en "Decisiones tomadas con Laura", más abajo.
 - **Nombre del manual: `06_Obligaciones_Manual.html`** (confirmado por
-  Laura). **Todavía no se crea:** se crea al empezar el tramo 1 (la web,
-  el build y `scripts/generar_pdf_manual.py` leen los manuales de la
-  raíz, así que no se deja un archivo vacío ahí).
+  Laura). **En `main` todavía no existe:** se crea al empezar el tramo 1
+  (la web, el build y `scripts/generar_pdf_manual.py` leen los manuales
+  de la raíz, así que no se deja un archivo vacío ahí).
+- **Ojo, hay un borrador viejo** (ver "Borrador anterior", más abajo):
+  no se actualiza, se escribe el tramo 1 de cero y el borrador solo se
+  usa como referencia.
 - **Siguiente:** tramo 1, cuando Laura dé la partida. Ver "Siguiente
   paso exacto".
 
@@ -50,6 +53,31 @@
 5. **Reparto de 34 tramos: aprobado** tal como está abajo. Los cortes
    se pueden ajustar al llegar a cada tramo, igual que en Bienes.
 6. **Número y nombre:** `06_Obligaciones_Manual.html`.
+
+## Borrador anterior (2026-09-28): no se actualiza, se parte de cero
+
+- Existe una rama **`worktree-manual-obligaciones`** (worktree en
+  `.claude/worktrees/manual-obligaciones`, commits `ddfa673` y
+  `31654c5`, 2026-09-28, **nunca mergeada a `main`**) con un
+  `06_Obligaciones_Manual.html` que tiene portada, índice y **solo el
+  tramo I.A La obligación** (Boetsch p. 13-19). Nada más.
+- Es anterior a las reglas vigentes: usa la caja **Dato de grado**
+  (retirada), títulos en mayúsculas copiados de Boetsch, sin inventario,
+  sin voz propia ni paráfrasis controlada (reglas del 2026-09-30 en
+  adelante), y la hoja de estilos de esa fecha, no la actual de AJ/Bienes.
+- **Decisión (recomendada por Claude 2026-10-10, Laura puede
+  cambiarla):** no se pasa por `actualizar-manuales-existentes.md`
+  (ese proceso es para manuales grandes ya armados, como AJ). Se crea
+  el manual nuevo desde `main` con la hoja de estilos vigente y el
+  tramo 1 se escribe de cero con el método completo.
+- **Cómo se usa el borrador:** solo como referencia en el tramo 1. Al
+  hacer el inventario, comparar su texto con Boetsch p. 13-19 y listar
+  en el informe del tramo todo lo que el borrador tenga y la fuente no
+  (puede ser algo que Laura agregó, o algo inventado): Laura decide qué
+  se rescata. Verlo con
+  `git show worktree-manual-obligaciones:06_Obligaciones_Manual.html`.
+- **No trabajar sobre esa rama ni mergearla.** Cuando el tramo 1 nuevo
+  esté aprobado, preguntar a Laura si se borra la rama y su worktree.
 
 ## Material fuente
 
@@ -225,8 +253,9 @@ Organización cerrada. Lo que sigue, **cuando Laura dé la partida**
 
 1. Leer `lecciones-acto-juridico.md` completo (sobre todo la sección
    6), `proceso.md`, `guia-editorial.md` y `formato.md`.
-2. Crear `06_Obligaciones_Manual.html` en la raíz del repo con la hoja
-   de estilos vigente de AJ/Bienes (`formato.md`), y revisar qué hay
+2. En una rama nueva desde `main` (no la del borrador viejo), crear
+   `06_Obligaciones_Manual.html` en la raíz del repo con la hoja de
+   estilos vigente de AJ/Bienes (`formato.md`), y revisar qué hay
    que tocar para que la web, el build y `scripts/generar_pdf_manual.py`
    lo reconozcan (arreglo `FUENTES`).
 3. Tramo 1 (p. 13-19, I.A La obligación): preguntar a Laura si tiene
@@ -234,4 +263,6 @@ Organización cerrada. Lo que sigue, **cuando Laura dé la partida**
    `Apuntes/CIVIL/Obligaciones/_texto_extraido/Obligaciones1_principal.txt`,
    informe en `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`
    y aprobación de Laura antes de escribir en el manual. Conexión de
-   I.A.1-4 hacia Bienes II.A.4.2-4.3 (S3).
+   I.A.1-4 hacia Bienes II.A.4.2-4.3 (S3). El informe incluye la lista
+   de lo que trae el borrador viejo y no está en Boetsch (ver "Borrador
+   anterior").
