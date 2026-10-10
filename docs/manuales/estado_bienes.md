@@ -47,12 +47,12 @@
 - **Tramo 4a (IV.1-6, p. 63-70): terminado y aprobado por Laura
   (2026-10-09), commit `43bb930`.**
 - **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
-  (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV.
+  (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV. Detalle en
+  "Tramo 4b", más abajo.
 - **Tramo 5a (V.1 completo, p. 81-86): terminado y aprobado por Laura
-  (2026-10-10), commit `231b5fd`.**
+  (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
 - **Tramo 5b (V.2 La ocupación, p. 87-94): reescrito (2026-10-10), falta
-  la revisión de Laura.** Detalle en "Tramo 5b", más abajo. Detalle en "Tramo 5a", más abajo. Detalle en "Tramo 4b",
-  más abajo.
+  la revisión de Laura.** Detalle en "Tramo 5b", más abajo.
   Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
