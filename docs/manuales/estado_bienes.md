@@ -4,7 +4,7 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-10-10 (tramo 5b
-> reescrito, esperando revisión de Laura).
+> aprobado; sigue el tramo 6a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -51,8 +51,8 @@
   "Tramo 4b", más abajo.
 - **Tramo 5a (V.1 completo, p. 81-86): terminado y aprobado por Laura
   (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
-- **Tramo 5b (V.2 La ocupación, p. 87-94): reescrito (2026-10-10), falta
-  la revisión de Laura.** Detalle en "Tramo 5b", más abajo.
+- **Tramo 5b (V.2 La ocupación, p. 87-94): terminado y aprobado por
+  Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
   Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -925,7 +925,7 @@ etiquetas balanceadas, todos los artículos en rojo, capturas revisadas,
 vista previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_5a.html`). Aprobado por Laura el 2026-10-10.
 
-## Tramo 5b: reescrito (2026-10-10), falta la revisión de Laura
+## Tramo 5b: hecho y aprobado (2026-10-10), commit `5a5d94f`
 
 **V.2 La ocupación, páginas 87 a 94 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo5b.html`.
@@ -969,11 +969,13 @@ Verificación: 71 unidades presentes, cero guiones largos, ids únicos,
 `href` resuelven, etiquetas balanceadas, artículos del Código en rojo
 (los de leyes especiales sin rojo, como en 4b), capturas revisadas, vista
 previa actualizada. Respaldo previo en el tmp del job
-(`05_Bienes_antes_5b.html`). Sin commit del manual todavía.
+(`05_Bienes_antes_5b.html`). Aprobado por Laura el 2026-10-10.
 
 ## Siguiente paso exacto (2026-10-10, vigente)
 
-1. **Revisión de Laura del tramo 5b** (vista previa actualizada, ancla
-   `#cV-2`). Con su visto bueno, commit del manual.
-2. Después, **tramo 6a** (V.3 La accesión, 1ª mitad, p. 95-103): informe
-   nuevo. Ajustar el corte por contenido al llegar.
+1. **Tramo 6a** (V.3 La accesión, 1ª mitad, p. 95-103): informe nuevo.
+   Ajustar el corte por contenido al llegar (como en 4a y 5a). Paso 0
+   de siempre: releer `lecciones-acto-juridico.md` (checklist de la
+   sección 6) antes del informe.
+2. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+   art. 703 (ver "Tramo 5a").
