@@ -11,8 +11,10 @@
 ## Estado por capítulo
 
 **Dónde quedó (al 2026-10-10; lo anterior a la tanda 2 de Aplicación está
-fusionado en `main` y en GitHub; la tanda 2 y esta actualización están en
-el worktree `acto-juridico-cap4`, rama `worktree-aj-ejemplos-error`):**
+fusionado en `main` y en GitHub; la tanda 2 y esta actualización están
+con commit en la rama `worktree-aj-ejemplos-error`, falta que Laura la
+suba con GitHub Desktop y la fusione a `main`. El contenido ya está en
+Airtable, así que no depende de esa fusión):**
 - **Flashcards:** 291, revisadas contra el manual y **publicadas** (2026-10-09).
 - **Evaluación:** en curso, tema por tema (orden de relevancia) y tipo por
   tipo. **Nulidad · Aplicación completa: 30 preguntas**, sin publicar
@@ -31,7 +33,7 @@ el worktree `acto-juridico-cap4`, rama `worktree-aj-ejemplos-error`):**
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9) |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), sin publicar; sigue Nulidad · Detección de error |
 | V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 | VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
