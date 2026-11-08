@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-08 (tramo 1b terminado y
-> aprobado por Laura; tramo 2a con informe hecho, esperando decisiones).
+> antes de seguir. Última actualización: 2026-10-10 (tramo 6a
+> escrito, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -35,9 +35,27 @@
   abajo.
 - **Tramo 1b (II.B, p. 28-36): terminado y aprobado por Laura
   (2026-10-08).** Detalle en "Tramo 1b: hecho y aprobado", más abajo.
-- **Tramo 2a (II.C a II.H, p. 36-44): reescrito (2026-10-08), falta
-  que Laura apruebe la vista previa y commitear.** Detalle en "Tramo
-  2a", más abajo; siguiente paso al final de este archivo.
+- **Tramo 2a (II.C a II.H, p. 36-44): terminado y aprobado por Laura
+  (2026-10-08), commit `c97ba01`.** Detalle en "Tramo 2a", más abajo.
+- **Tramo 2b (II.I a II.K, p. 45-51): terminado y aprobado por Laura
+  (2026-10-09), commit `b311f56`.** Cierra el capítulo II.
+- **Tramo 3 dividido en 3a (III.1-5, p. 52-58) y 3b (III.6-9, p.
+  58-63), aprobada por Laura 2026-10-09. Tramo 3a: terminado y
+  aprobado por Laura (2026-10-09), commit `bcabce8`.** Detalle en "Tramo 3a", más abajo.
+- **Tramo 3b (III.6-9, p. 58-63): terminado y aprobado por Laura
+  (2026-10-09), commit `c7eb772`.** Cierra el capítulo III.
+- **Tramo 4a (IV.1-6, p. 63-70): terminado y aprobado por Laura
+  (2026-10-09), commit `43bb930`.**
+- **Tramo 4b (IV.7-10, p. 70-80): terminado y aprobado por Laura
+  (2026-10-10), commit `ef9f28f`.** Cierra el capítulo IV. Detalle en
+  "Tramo 4b", más abajo.
+- **Tramo 5a (V.1 completo, p. 81-86): terminado y aprobado por Laura
+  (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
+- **Tramo 5b (V.2 La ocupación, p. 87-94): terminado y aprobado por
+  Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
+- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): escrito (2026-10-10),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
+  6a", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -102,15 +120,16 @@ que en AJ.
 |---|---|---|---|
 | 1a | 18-28 | 1 | I. Aspectos generales + II.A Bienes corporales e incorporales (corregido 2026-10-07, hecho y aprobado: ver "Tramo 1a: hecho y aprobado") |
 | 1b | 28-36 | 1 | II.B Bienes muebles e inmuebles (corregido 2026-10-07; antes decía 27-36 y II.A). Hecho 2026-10-08 |
-| 2a | 36-44 | 2 | II.C-H (consumibles, fungibles, principales y accesorios, divisibles, singulares y universales, presentes y futuros). Corte confirmado 2026-10-08. Reescrito, falta aprobación de la vista previa |
-| 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). II.9 empieza en la p. 45 |
-| 3 | 52-63 | 3 | III. El dominio |
-| 4a | 63-72 | 4 | IV. La copropiedad (1ª mitad) |
-| 4b | 72-80 | 4 | IV. La copropiedad (2ª mitad) |
-| 5a | 81-88 | 5 | V.1 Aspectos generales (modos de adquirir) |
-| 5b | 88-94 | 5 | V.2 La ocupación |
-| 6a | 95-103 | 6 | V.3 La accesión (1ª mitad) |
-| 6b | 103-110 | 6 | V.3 La accesión (2ª mitad) |
+| 2a | 36-44 | 2 | II.C-H (consumibles, fungibles, principales y accesorios, divisibles, singulares y universales, presentes y futuros). Corte confirmado 2026-10-08. Hecho y aprobado 2026-10-08 |
+| 2b | 45-51 | 2 | II.I-K (comerciables, apropiables, privados y públicos). Corte confirmado 2026-10-08 (cierra el capítulo II). Hecho y aprobado 2026-10-09 |
+| 3a | 52-58 | 3 | III.1-5 (preliminares, concepto, bases constitucionales, caracteres, facultades). División aprobada 2026-10-09. Hecho y aprobado 2026-10-09 |
+| 3b | 58-63 | 3 | III.6-9 (cláusulas de no enajenar, clasificaciones, aspectos pasivos, extinción) + de Peñailillo: extensión material, vecindad, propiedad familiar; del anexo: restricciones específicas |
+| 4a | 63-70 | 4 | IV.1-6 (terminología, naturaleza, el Código, fuentes, clases, cuota). Corte por contenido aprobado 2026-10-09. Hecho y aprobado 2026-10-09 |
+| 4b | 70-80 | 4 | IV.7-10 (administración, coposesión, copropiedad inmobiliaria, extinción) |
+| 5a | 81-86 | 5 | V.1 Aspectos generales (modos de adquirir). Corte por contenido aprobado 2026-10-10 (antes 81-88) |
+| 5b | 87-94 | 5 | V.2 La ocupación completa (corregido 2026-10-10, antes 88-94) |
+| 6a | 95-102 | 6 | V.3.1 a V.3.5.1 (concepto, clases, naturaleza, frutos, inmueble a inmueble). Corte por contenido aprobado 2026-10-10 |
+| 6b | 102-110 | 6 | V.3.5.2 mueble a mueble y V.3.5.3 mueble a inmueble (corregido 2026-10-10) |
 | 7a | 111-118 | 7 | V.4.A Tradición, descripción general |
 | 7b | 118-125 | 7 | V.4.B Tradición, requisitos |
 | 7c | 125-129 | 7 | V.4.C Tradición, efectos |
@@ -467,7 +486,7 @@ Lo que se hizo:
   todos los artículos presentes, capturas en Chrome headless revisadas.
   Vista previa actualizada en `Vista_previa/Bienes_vista_previa.html`.
 
-## Tramo 2a: reescrito, esperando aprobación de la vista previa (2026-10-08)
+## Tramo 2a: hecho y aprobado (2026-10-08)
 
 **II.C a II.H, páginas 36 a 44 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo2a.html`. Decisiones de Laura al informe
@@ -514,17 +533,504 @@ esos manuales no existen aún). Verificación: cero guiones largos, ids
 caracteres, todos los artículos presentes, capturas revisadas. Vista
 previa actualizada.
 
-## Siguiente paso exacto (2026-10-08, vigente)
+## Tramo 2b: hecho y aprobado (2026-10-09)
 
-1. **Si Laura aprueba la vista previa del tramo 2a:** commitear en
-   `main` ("Reescribir Bienes II.C a II.H con el método completo
-   (tramo 2a)"), junto con este archivo, `guia-editorial.md` y
-   `decisiones.md`. Si pide ajustes, aplicarlos y anotarlos arriba.
-2. **Tramo 2b: II.I a II.K (comerciables, apropiables, privados y
-   públicos), p. 45-51.** Mismo checklist: inventario de Boetsch y de
-   Peñailillo (desde "XI. Bienes comerciables" de su resumen),
-   artículos contra `Apuntes/CODIGOS`, paráfrasis medida con 6-gramas,
-   cajas de Ejemplo propias y ejemplos nuevos, sin referencias
-   internas, preguntas candidatas desde `PREGUNTAS BIENES.pages`,
-   informe en `Informes/` antes de tocar el manual.
-3. Repetir tramo por tramo según la tabla de "Reparto de tramos".
+**II.I a II.K, páginas 45 a 51 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo2b.html`. Hallazgos principales:
+
+- Boetsch completo en el manual salvo 4 matices (definición de cosas
+  consagradas; "leyes especiales reglamentan cada caso"; frase
+  introductoria de los dominios; nombre de la LOC de Municipalidades).
+- Paráfrasis actual: 39/68 oraciones sobre el umbral, 18 sobre 70%. Se
+  reescribe todo.
+- **Errores de cita:** art. 60 Nº 10 CPR es hoy el **63 Nº 10**
+  (reforma 2005); el art. 587 no "deja en claro" que las cosas
+  consagradas son comerciables, se deduce de lo que dispone (capillas y
+  cementerios pasan con el predio); art. 589 omite "y sus playas" y
+  "generalmente"; art. 19 Nº 23 inc. 2º omite "cuando así lo exija el
+  interés nacional"; art. 596 trae también la plataforma continental.
+- Art. 42 Ley 19.496 verificado vigente (sitio SERNAC).
+- Peñailillo: 8 unidades nuevas propuestas (comerciabilidad limitada,
+  medios de producción/actividades vedadas, derechos de concesionarios
+  discutidos, tratados, Ley 16.640 y derecho de aprovechamiento,
+  espacio aéreo no es bien ni cosa, presunción del 590 de dominio y no
+  de posesión, excepción al 700). Una afirmación dudosa (bienes
+  municipales como fiscales) propuesta para no incorporar.
+- Propuestas pendientes de decisión: línea sobre Ley 21.435 (aguas,
+  2022); cuadro BNUP vs. fiscales; 3 preguntas clásicas candidatas;
+  reorden de K.1 (1.1 Características, 1.2 Desafectación, 1.3 Dominios
+  con (i)-(iv)); retirar el Dato de grado de K.2.
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** entran
+las 8 unidades de Peñailillo (incluida la de medios de producción y
+actividades vedadas); **no** se agrega la Ley 21.435 (aguas, 2022);
+**no** se incorporan los bienes municipales como fiscales; **sin**
+cuadro comparativo BNUP/fiscales; **ninguna** pregunta clásica en este
+tramo; Laura no tiene material propio.
+
+Lo que se hizo: I, J y K reescritos completos en voz propia
+(paráfrasis: de 18 oraciones sobre 70% a solo 3, que son
+transcripciones de artículos); recuperados los 4 matices de Boetsch;
+corregidos art. 63 Nº 10 CPR (era 60 Nº 10), la cita del art. 587, el
+art. 589 y el art. 19 Nº 23 inc. 2º; agregados art. 596 (plataforma
+continental), art. 592 y art. 602 completo; transcritos en `.ley` los
+arts. 585, 589, 590, 595, 599, 602 y 19 Nº 23 CPR. No confundir de I
+ampliado a tres categorías; Dato de grado de K.2 retirado (pasó a
+texto con la presunción de dominio, excepción al art. 700 inc. 2º).
+K.1 reordenado: 1.1 Características (i)-(iii), 1.2 Desafectación, 1.3
+Los dominios públicos (i)-(iv); los ids `cII-K-1-1` a `cII-K-1-3` se
+reusaron con contenido nuevo y `cII-K-1-4` desapareció (no estaba en
+el índice). Cajas de Ejemplo propias: "La mitad de la plaza" (I), "El
+sillón de la vereda y la bicicleta del taller" (J.1), "El kiosco de
+Maitencillo" (K.1), "La herencia de don Anselmo y el terreno de Aysén"
+(K.2); ejemplos breves en cursiva (abuela Teresa, Farellones, capilla
+de los Pérez, Panchito y el cobre, pesquero en Talcahuano, dron).
+Conexiones en I (AJ II.C.2.2 y II.C.4.3) y K (Sucesorio, `[FALTA:
+sección]`). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 852 caracteres,
+todos los artículos presentes, capturas revisadas. Vista previa
+actualizada.
+
+## Tramo 3a: hecho y aprobado (2026-10-09)
+
+**III.1 a III.5, páginas 52 a 58 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo3a.html`. Fuentes: Boetsch p. 52-58;
+`anexo_secundario.pdf` p. 2-12 (fuente real de abuso del derecho,
+abstracto/elástico y el muro de 10 m); Peñailillo Segunda Parte cap. I
+(p. 18-44 del PDF; lo que es de 3b quedó anotado en el informe);
+Memorice (arts. 582 y 583 completos). Hallazgos:
+
+- Boetsch completo salvo 2 matices (cierre de las consideraciones
+  preliminares; DL 2.186 de expropiaciones).
+- Paráfrasis: 27/104 oraciones sobre 70% en III.1-5 (y 25/80 en
+  III.6-9, para 3b).
+- **Error de cita:** art. 36 Ley de Copropiedad (19.537, derogada por
+  Ley 21.442 de 2022; el art. trataba de seguro y plan de emergencia,
+  no del mal menor). Propuesto reemplazar por art. 10 Nº 7 CP
+  (verificado en fuentes públicas). Arts. 582 y 583 incompletos;
+  "corporales o incorporales" (19 Nº 24); orden de las reglas de la
+  indemnización (peritos va con la toma de posesión).
+- Peñailillo: error "art. 19 Nº 20" por art. 20 (no se incorpora).
+- Decisiones pendientes: confirmar la división 3a/3b; mover el abuso
+  del derecho dentro de 4.2 Absoluto (hoy es "4.3", como si fuera un
+  carácter); 14 unidades breves (sección 3.1); 6 bloques grandes de
+  Peñailillo (A historia, B orientaciones, C privación/restricción/
+  esencia, D preservación, E urbanismo, F formas de propiedad); 3
+  preguntas clásicas candidatas; material propio.
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** división
+3a/3b sí; abuso del derecho dentro de 4.2 Absoluto (ya no es un
+carácter numerado); entran las 14 unidades breves; de los bloques
+grandes de Peñailillo **solo B (orientaciones actuales) y C
+(restricción, privación y esencia)**; **no** entran A (historia), D
+(preservación natural y cultural), E (urbanismo) ni F (formas de
+propiedad); art. 36 Ley de Copropiedad reemplazado por art. 10 Nº 7 CP
+(Laura agregó `Apuntes/CODIGOS/Código Penal.pdf`, verificado ahí);
+pregunta clásica solo la Nº 2 (facultades del dominio, con uso y goce:
+comodato / usufructo), puesta en 5; sin material propio.
+
+Lo que se hizo: III.1-5 reescritos en voz propia (de 27 oraciones
+sobre 70% a 10, todas transcripciones o frases de la CPR); arts. 582 y
+583 completos en `.ley` (Memorice); art. 19 Nº 24 inc. 2º, art. 2517 y
+art. 10 Nº 7 CP en `.ley`; "corporales o incorporales"; reglas de la
+indemnización en a)-e) con los peritos en la toma de posesión; DL
+2.186; bloque C como 3 (v); caracteres renumerados 4.1 Real, 4.2
+Absoluto (con abuso del derecho, No confundir abuso/colisión, caja
+"Los pinos de la discordia" y Conexiones a Responsabilidad
+Extracontractual), 4.3 Exclusivo, 4.4 Perpetuo, 4.5 Abstracto, 4.6
+Elástico (ids `cIII-4-3` a `cIII-4-6` reasignados, `cIII-4-7`
+eliminado, índice actualizado). Dato de grado de 4.2 retirado; caja
+del muro de 10 m reemplazada. Cajas nuevas: "La autopista que pasa por
+la parcela de don Julio" (3), "La casa de la abuela Inés" (4.5-4.6),
+"El auto de Catalina" (5); No confundir "¿Fruto o producto?" (5.2);
+Conexiones a Contratos en 5. Verificación: cero guiones largos, ids
+únicos, `href` resuelven, etiquetas balanceadas, párrafo más largo 868
+caracteres, artículos presentes, capturas revisadas, vista previa
+actualizada.
+
+## Tramo 3b: hecho y aprobado (2026-10-09), commit `c7eb772`
+
+**III.6 a III.9, páginas 58 a 63 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo3b.html`. Laura pidió (2026-10-09) un
+**cuadro comparativo de las tesis sobre las cláusulas de no enajenar**
+(validez general / nulidad salvo permiso legal / validez relativa); el
+informe trae el cuadro armado (sección 3). Hallazgos:
+
+- Boetsch completo en el manual, sin matices faltantes.
+- Paráfrasis: 25/80 oraciones sobre 70% (medido en el 3a). Se reescribe todo.
+- **Autores del cuadro:** ninguna fuente (Boetsch, Peñailillo, anexo de
+  discusiones doctrinales, VIAL, AJ II.C.4.3) nombra quién sostiene la
+  validez ni la nulidad. Solo hay nombre en la relativa: PEÑAILILLO la
+  considera "la más aceptable" porque desarma el argumento de la libre
+  circulación. Jurisprudencia (anexo de discusiones, sin rol): C.S. acepta
+  (no desnaturaliza el dominio; otro fallo, condición resolutoria); C.A.
+  Valparaíso en contra. Opciones a Laura: (a) "parte de la doctrina";
+  (b) ella da la fuente; (c) buscar en fuentes públicas con cita y su
+  aprobación. **No inventar nombres.**
+- Precisiones de cita (sin errores graves): art. 1964 no prohíbe sino que
+  limita el efecto del pacto; arts. 637 y 642 son de especies náufragas y
+  represadas, no perdidas (citar 629, 632, 633); art. 2327 imputa "al que
+  lo tenga"; art. 1432 Nº 1 da acción contra terceros; art. 53 Nº 3 del
+  Reglamento del Conservador sin verificar (no está en `Apuntes/CODIGOS`).
+- Nuevo propuesto: 10 unidades breves (Peñailillo, anexos, VIAL: No
+  confundir prohibición legal/judicial/convencional); puntos nuevos
+  pendientes de decisión: extensión material (8), vecindad (9.4),
+  propiedad familiar breve (10), con la renumeración de 8 y 9; encuadre
+  de una línea de las restricciones de utilidad pública/privada.
+- No incorporar del anexo: art. 2328 como responsabilidad del dueño
+  (inexacto); certificado de gastos comunes (Ley 19.537 derogada).
+- 3 preguntas clásicas candidatas (se recomiendan la 1 y la 2).
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** cuadro
+comparativo sin fila "Quién la sostiene" (así se resolvió el tema de los
+autores: no se buscan); los artículos que prohíben y los que permiten
+van en una sola fila "Lectura del código", con los artículos entre
+paréntesis dentro de cada celda; las celdas sin argumento llevan "-".
+**No entran** extensión material, relaciones de vecindad ni propiedad
+familiar (numeración 6-9 se mantiene, sin ids nuevos). Sí entra el
+encuadre de una línea de utilidad privada/pública al abrir 8. Pregunta
+clásica solo la Nº 2 (efecto de la contravención), en 6.4. Sin material
+propio.
+
+Lo que se hizo: III.6-9 reescritos en voz propia (de 25 oraciones sobre
+70% a 1, la cita del art. 53 Nº 3 del Reglamento); arts. 1126, 1810 y
+1555 en `.ley`; los demás descritos en una línea (1964 resta efecto,
+793 pierde el usufructo, 1432 Nº 1 acción contra terceros); opinión de
+PEÑAILILLO y jurisprudencia en 6.3; cuadro de las tres tesis; No
+confundir legal/judicial/convencional (VIAL); Conexiones a AJ II.C.4.3,
+Obligaciones (`[FALTA: sección]`) y Extracontractual P. Clasificaciones
+y extinción al markup nuevo de `.enum-i`. Ley 21.442 en (ii). Salida por
+abandono (art. 858) en 8.1; caja-lista de artículos de 8.1 retirada.
+Art. 2327 "al que lo tenga"; arts. 629, 632, 633 para perdidas y 637/642
+como náufragas y represadas. Novedades de PEÑAILILLO en abandono,
+incomerciabilidad y modos relativos. Cajas de Ejemplo nuevas: "Cinco
+años sin vender la parcela de Pirque" (6.3), "Josefina vendió igual"
+(6.4), "La pandereta de los Muñoz y los Rojas" (8.1), "La lancha que se
+llevó el temporal" (9.1); ejemplos breves en cursiva (Benjamín y la
+propiedad fiduciaria, Carolina y las contribuciones). Verificación: cero
+guiones largos, ids únicos, `href` resuelven, etiquetas balanceadas,
+párrafo más largo 653 caracteres, capturas revisadas (se partió el
+`.art` largo de dos celdas del cuadro para que no se desborde). Vista
+previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_3b.html`).
+
+## Tramo 4a: hecho y aprobado (2026-10-09), commit `43bb930`
+
+**IV.1 a IV.6, páginas 63 a 70 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo4a.html`. Hallazgos:
+
+- Corte propuesto por contenido (4a = IV.1-6, p. 63-70; 4b = IV.7-10,
+  p. 70-80), porque la p. 72 cae en mitad del debate del mandato tácito.
+- Boetsch completo salvo 4 matices (qué regula el título de la
+  comunidad; "si se admite la comunicación, consecuencias inversas"; los
+  actos sobre la cuota siguen las reglas del objeto; lesión enorme).
+- Paráfrasis: 30/84 oraciones sobre 70%. Se reescribe todo.
+- Peñailillo (p. 45-53 del PDF): 10 unidades breves (proindiviso/
+  prodiviso; Roma la veía transitoria y los códigos dan poder a la
+  mayoría; germánica permanente y por mayoría; adopción de la romana
+  discutida; herencia plural como universalidad de hecho; art. 1344
+  completo y venta de cosa ajena; comunidades activas/pasivas; art. 1317
+  completo; art. 2417; art. 892). Pendiente de decisión: la **tesis que
+  admite la comunicación** (art. 580, partición no es la única forma de
+  terminar, derecho real de herencia vs. comunidad sobre bienes,
+  reivindicatoria del heredero), con cuadro y No confundir; presentarla
+  como "otra parte de la doctrina" (el resumen no dice si es de
+  Peñailillo).
+- Precisiones: arts. 1098 y 2307 no consagran la igualdad de cuotas como
+  regla general (aplicaciones); goce gratuito es el art. 655 CPC; art.
+  1909 exige "sin especificar los efectos"; art. 524 CPC más preciso.
+- Formato: 5.1 a)/b)/c) pasan a (i)/(ii)/(iii) y sus argumentos a a)-c).
+  Puntos 4 y 5.2 repetidos: se recomienda borrar 5.2.
+- Cajas: reemplazar el ejemplo de Boetsch de 5.1 (ii); retirar el falso
+  No confundir "Chile se apartó"; ejemplos propios propuestos.
+- 3 preguntas clásicas candidatas (se recomienda "¿Qué título es la
+  adjudicación?").
+
+**Decisiones de Laura al informe (2026-10-09), no cambiar:** aprobó
+todas las propuestas. Corte 4a = IV.1-6 (p. 63-70), 4b = IV.7-10 (p.
+70-80); entran las 10 unidades de Peñailillo; **entra la tesis que admite
+la comunicación**, como "otra parte de la doctrina", con el cuadro
+comparativo de dos columnas (No hay comunicación / Hay comunicación;
+criterios: qué sostiene, lectura del código, efecto declarativo,
+comunidad hereditaria, tradición de la cuota, comunero incapaz) y el No
+confundir "Derecho real de herencia vs. comunidad sobre los bienes
+hereditarios"; **se borra 5.2** (repetía el punto 4): 5.3 Duración pasa
+a 5.2 y la clase nueva "Según su funcionamiento" queda como 5.3; arts.
+2304, 1317 y 1344 en `.ley`; precisiones de los arts. 1098, 2307, 1909,
+524 CPC y 655 CPC; 5.1 a)/b)/c) a (i)/(ii)/(iii) con los argumentos en
+a)-c); se reemplaza el ejemplo de Boetsch de 5.1 (ii), se retira el No
+confundir "Chile se apartó" (pasa al texto) y entran los ejemplos propios
+del informe (hermanos Fuentes y la casa de Curicó; Rodrigo hipotecó antes
+de la partición; la cuota de Sofía en la herencia del abuelo; vender tu
+tercio sin preguntar; breves: usufructuario y nudo propietario,
+medianería, lancha pesquera de tres hermanos como comunidad activa);
+pregunta clásica solo "¿Qué título es la adjudicación?", en 5.1 (ii).
+Conexiones a Sucesorio, Contratos y Obligaciones con `[FALTA: sección]`.
+Laura no tiene material propio.
+
+Lo que se hizo: IV.1-6 reescritos en voz propia (de 30 oraciones sobre
+70% a 2: un título y la definición de cuota, que se deja literal);
+recuperados los 4 matices de Boetsch; las 10 unidades de Peñailillo; la
+tesis de la comunicación con cuadro y No confundir; arts. 2304, 1317 y
+1344 en `.ley`; precisiones de los arts. 1098, 2307, 1909, 2417, 524 CPC
+y 655 CPC; 5.1 con (i)-(iii) (los ids `cIV-5-1-a/b/c` desaparecieron, no
+estaban en el índice); `cIV-5-2` ahora es Duración y `cIV-5-3`
+Funcionamiento (índice actualizado). Cajas nuevas: "Los hermanos Fuentes
+y la casa de Curicó" (1), "Rodrigo hipotecó antes de la partición" y la
+pregunta clásica "¿Qué título es la adjudicación?" (5.1 (ii), menciona
+el art. 703 inc. 4º), "La cuota de Sofía en la herencia del abuelo"
+(5.1 (iii)), "Vender tu tercio sin preguntar" (6); breves en cursiva
+(nudo propietario y usufructuario, pandereta, lancha pesquera y sitio
+eriazo). Conexiones a Obligaciones, Sucesorio y Contratos con `[FALTA:
+sección]`. Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 960 caracteres,
+capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
+del job (`05_Bienes_antes_4a.html`).
+
+## Tramo 4b: hecho y aprobado (2026-10-10), commit `ef9f28f`
+
+**IV.7 a IV.10, páginas 70 a 80 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo4b.html`. Laura agregó la **Ley 21.442** a
+`Apuntes/CODIGOS/Ley 21442.pdf` (versión BCN, última modificación
+23-09-2026, Ley 21.842). Hallazgos:
+
+- Boetsch completo salvo 7 matices (reforma legal; texto y criterio del
+  acto de conservación; el partidor sigue conociendo lo promovido ante
+  la justicia ordinaria; los tres escenarios del comparendo; la opinión
+  de Boetsch sobre letra vs. sentido de la doble mayoría; "el propietario
+  más bien tiene la exclusividad del uso").
+- 4 opiniones propias de Boetsch están en la voz del manual: van con su
+  nombre (demolición inviable, solución del art. 669, doble mayoría,
+  cesión previa al comparendo).
+- **Art. 699 mal citado: es el 669** (y da dos opciones al dueño del
+  terreno). Art. 645 CPC derogado: "646 y siguientes". Art. 653 CPC
+  incluye "cuando falte el árbitro". **Arts. 1728 y 1729 no son
+  indivisión forzada**: se propone sacarlos (decide Laura).
+- **IV.9 desactualizado**: Boetsch y Peñailillo resumen la Ley 19.537,
+  derogada por el art. 100 de la Ley 21.442. Tabla de comparación idea
+  por idea en el informe (sección 4). La ley no tiene una norma de
+  "indivisibilidad perpetua": se reformula con arts. 2 Nº 3 inc. final y
+  3, y el término del régimen (arts. 52, 63, 64). Art. 28 (uso y goce
+  exclusivo) es más estricto que lo que decía Peñailillo.
+- Propuesto ajustar media frase de 5.3 (aprobado en 4a): la comunidad de
+  los bienes comunes de un edificio dura "mientras subsista el régimen".
+- Peñailillo: 6 unidades breves (por qué el Código no regula la
+  administración; origen del veto y "paralizante"; agente oficioso vs.
+  mandato; medidas conservativas solo si es la única forma de proteger
+  la cuota; jurisprudencia con arts. 2305 y 2081, el "2035" del resumen
+  es error; Ley 6.071 vs. sitios). Pendiente de decisión: punto 11 nuevo
+  "Situaciones semejantes a la comunidad" (tiempo compartido; cementerios
+  opcional). El dato "en Chile no hay estatuto del tiempo compartido" no
+  está verificado: si entra, atribuido a Peñailillo.
+- Paráfrasis: 11/116 oraciones sobre 70%, 37 sobre 35%. Se reescribe todo.
+- Formato: 7.1 a)-c) (h4) pasan a (i)-(iii); 7.2 vuelve a los cuatro
+  (i)-(iv) de Boetsch; IV.9 a)-g) pasa a (i)-(x). Los ids `cIV-7-1-a` a
+  `cIV-7-2-c` no tienen enlaces (verificado). La remisión de IV.8 a la
+  prescripción pasa a enlace a `#cV-5-B-5-1-iv`.
+- Cajas: retirar el Dato de grado del mandato tácito; reemplazar el
+  ejemplo del giro (es de Boetsch); No confundir "Acto de conservación
+  vs. innovación"; cuadro "Comunidad del CC vs. copropiedad inmobiliaria"
+  (6 criterios, decide Laura); ejemplos propios con la familia Fuentes
+  (Javiera y el arriendo, la gotera, el quincho de Ignacio, 70 contra
+  30, la viña de Colchagua) y otros (primos de Pichilemu, departamento
+  de Catalina en Ñuñoa, semana en Pucón).
+- `.ley` propuestos: art. 2081, art. 654 CPC, art. 718.
+- 2 preguntas clásicas candidatas (mandato tácito; ¿la partición es un
+  derecho absoluto?), se recomiendan las dos.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** IV.9 se
+rehace con la Ley 21.442, resumida en (i)-(x); **no** entra el punto 11
+(tiempo compartido ni cementerios); de los arts. 1728 y 1729 queda
+**solo el art. 1728 en su segunda hipótesis** (terreno contiguo que forma
+con la finca una heredad que no puede desmembrarse sin daño) en la
+indivisión forzada, y el 1729 sale; entra el cuadro "Comunidad del CC vs.
+copropiedad inmobiliaria"; entran las dos preguntas clásicas; se ajusta
+5.3 ("que dura mientras subsista el régimen de copropiedad"). Laura no
+tiene material propio.
+
+Lo que se hizo: IV.7-10 reescritos en voz propia (paráfrasis: de 11
+oraciones sobre 70% a 1, que es una cita de artículos); los 7 matices de
+Boetsch; las 4 opiniones de Boetsch con su nombre; las 6 unidades de
+Peñailillo; art. 669 (no 699) con sus dos opciones; arts. 646 y
+siguientes CPC; art. 653 completo; arts. 2081, 654 CPC y 718 en `.ley`;
+7.1 con (i)-(iii) y 7.2 con (i)-(iv) (los ids `cIV-7-1-a` a `cIV-7-2-c`
+desaparecieron, no tenían enlaces); IV.9 con (i)-(x) y la Ley 21.442;
+enlaces a `#cV-5-B-5-1-iv`, `#cIII-8-1`, `#cIV-5-1` y `#cIV-3-2`. Se
+retiró el Dato de grado y el ejemplo del giro de Boetsch. Cajas nuevas:
+Pregunta clásica "¿Hay mandato tácito y recíproco entre comuneros?"
+(7.1 (i)) y "¿Es una facultad o un derecho absoluto...?" (10); No
+confundir "Acto de conservación vs. innovación"; ejemplos "El quincho de
+Tomás", "Paula quiere arrendar la casa de Curicó", "La gotera en pleno
+invierno", "Setenta contra treinta" (Rocío y Martín), "El giro de la
+viña de Colchagua", "Tres primos y el sitio en Pichilemu" (corregido por Laura el mismo día: compran a Rodrigo, poseedor inscrito no dueño, para evitar el problema de la posesión inscrita; prescripción ordinaria de 5 años), "El
+departamento de Catalina en Ñuñoa"; breves en cursiva en 10. Los
+hermanos Fuentes son Andrés, Paula y Tomás (en el informe se habían
+nombrado mal como Javiera e Ignacio). Conexiones a Contratos,
+Obligaciones, Procesal y Familia con `[FALTA: sección]`. Verificación:
+cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, capturas revisadas, vista previa actualizada. Respaldo
+previo en el tmp del job (`05_Bienes_antes_4b.html`). Aprobado por Laura
+el 2026-10-10.
+
+## Tramo 5a: hecho y aprobado (2026-10-10)
+
+**V.1 completo, páginas 81 a 86 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo5a.html`.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** corte 5a =
+V.1 (p. 81-86), 5b = V.2 (p. 87-94); entran los cuadros (a) tesis de
+V.1.6, (b) dualidad vs. consensual y (c) qué se adquiere por cada modo
+(no el (d)); el tesoro como ley-modo se precisa: la mitad que el art. 626
+da al dueño del terreno por el solo hecho de serlo; preguntas clásicas:
+"¿Qué es un modo de adquirir el dominio?", "¿Qué importancia tiene
+distinguir entre modo originario y derivativo?" y "¿Cuál es el modo de
+adquirir más amplio?" (se les agregaron signos de interrogación y la
+tilde de "Qué"; el texto del banco no los traía); entra "la ley en la
+expropiación es a título oneroso", con el art. 19 Nº 24 inc. 3º CPR (no
+viene de las fuentes de Bienes, lo aprobó Laura); Laura no tiene
+material propio.
+
+**PENDIENTE PARA EL TRAMO 11b (decisión de Laura, no olvidar):** el
+argumento de VIAL sobre el art. 703 (TRADICIÓN Y PRESCRIPCIÓN, p. 56-57:
+"título" en el 703 no es título posesorio, porque la prescripción supone
+posesión previa y el contrato translaticio no hace poseedor; en los
+modos originarios el título es constitutivo y se confunde con el modo)
+va en el **justo título**, no en V.1.6. Por eso el cuadro de V.1.6 no
+nombra a VIAL.
+
+**Corrección al mapa de anexos:** la discusión nº 1 del anexo de
+discusiones doctrinales es de V.1.6 y la p. 1 del anexo de relaciones
+jurídicas es de V.1.3.1; ninguno agrega contenido propio.
+
+Lo que se hizo: V.1 reescrito en voz propia (paráfrasis: de 26 oraciones
+sobre 70% a 14, de las cuales 6 son citas textuales del Mensaje y del
+art. 675 y 8 son fragmentos cortos de enumeraciones técnicas); los 4
+matices de Boetsch; las 3 referencias internas eliminadas; 10 unidades de
+Peñailillo; de VIAL, su definición de modo y título, la ley como modo
+originario, el antecesor irrelevante en el originario, la prueba del
+dominio derivativo y el gravamen en la compraventa; precisiones de los
+arts. 882, 810 (con 250 y 252), 2180 Nº 1 y 2186, 682, 588, 626 y 952;
+arts. 806 y 819 como respaldo; arts. 588, 675 y 703 (inc. 1º a 3º) en
+`.ley`; definición de título y modo en `.definicion` (fórmula "la
+doctrina"). Cajas: No confundir "¿Título o modo de adquirir?"; tres
+preguntas clásicas; ejemplos "La bici de Martina" (1.2), "La guitarra que
+no era de Pía" (3.1), "La pieza de Antonia en Viña" (4), "El auto del tío
+Lucho" (5); breves en cursiva (Ignacio en Valparaíso, Javiera en La
+Reina, la abuela Tere y el Yaris, Florencia y el crédito, el primo Nico,
+Diego en Maitencillo). Cuadros (a), (b), (c); el (c) tiene 6 columnas y
+lleva la clase nueva `cols-angostas` (celdas alineadas a la izquierda,
+regla agregada a la hoja de estilos, solo afecta a ese cuadro).
+Conexiones a Contratos, Familia, Constitucional (manual aún no existe) y
+Sucesorio con `[FALTA: sección]`. Verificación: 62 unidades del
+inventario presentes, cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, todos los artículos en rojo, capturas revisadas,
+vista previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_5a.html`). Aprobado por Laura el 2026-10-10.
+
+## Tramo 5b: hecho y aprobado (2026-10-10), commit `5a5d94f`
+
+**V.2 La ocupación, páginas 87 a 94 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo5b.html`.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** se escribe
+el texto vigente en la caza (art. 609, Ley 19.473: solo tierras propias o
+ajenas con permiso; ya no hay excepción de tierras sin cercar ni
+notificación) y en las especies náufragas (art. 637 remite a los arts.
+629 y ss.: reparto con la municipalidad, no con el hospital; art. 638,
+gratificación de salvamento hasta la mitad del valor); **no** se agregan
+los arts. 631, 634, 635 y 636; invención, tesoro y captura bélica pasan a
+(i)-(iii) dentro de 4.2, con a) y a.1); entran las preguntas clásicas
+"Si el niño aún no cumple los 18 años, ¿igual adquiere el dominio por
+ocupación?" (en 2) y "¿Qué tipos de bienes se pueden adquirir por
+ocupación?" (en 3 (i)); Laura no tiene material propio. Laura agregó a
+`Apuntes/CODIGOS/` la Ley de Pesca (Decreto 430 de 1991, texto refundido
+de la Ley 18.892, última modificación Ley 21.770) y el DL 3.063
+(Decreto 2.385 de 1996); ambos confirman lo que dice Boetsch (art. 1 y
+art. 43). **El DFL 34 de 1931 no lo encontró:** queda con `[FALTA:
+verificar vigencia y texto del DFL 34 de 1931]` en 4.1 (iii) b).
+
+Lo que se hizo: V.2 reescrito en voz propia (paráfrasis: de 12 oraciones
+sobre 70% a 1, que es el texto del art. 625); los 3 matices de Boetsch
+(ánimo de donar a persona indeterminada, ante la duda especie perdida,
+el dueño no puede negarse a la extracción del art. 627); las unidades de
+Peñailillo (definición con su nombre, modo más antiguo, no incorporales,
+título para poseer, elementos de hecho de la inminencia, restricciones
+legales); cita del art. 597 eliminada (no correspondía); art. 623 citado
+para los domésticos; art. 640 con los nacionales; art. 607 y art. 26
+agregados; arts. 606, 625 y 626 en `.ley`; definición de la doctrina en
+`.definicion`; las tres opiniones de Boetsch con su nombre (art. 723,
+DFL 34, presunción del art. 624 inc. 4º). Formato: 2 y 3 con (i)-(iii);
+4.1 ordenado en (i)-(v); 4.2 con (i)-(iii), a)-d) y a.1)-a.5) (los ids
+`cV-2-4-2-a` a `-c` desaparecieron, no tenían enlaces); 4.3 con (i)-(ii).
+Cajas: No confundir "¿Especie perdida o res derelicta?" reescrito;
+ejemplos "El salmón de Valentina" (4.1), "Lo que Sofía encontró en
+Zapallar" (4.2 (i)), "Las monedas bajo el parrón" (4.2 (ii)); breves en
+cursiva (Agustín y la concha, Gaspar y los audífonos en el Metro). Sin
+Conexiones (la de Penal dependía de los arts. 631 y 635, que no entraron).
+Verificación: 71 unidades presentes, cero guiones largos, ids únicos,
+`href` resuelven, etiquetas balanceadas, artículos del Código en rojo
+(los de leyes especiales sin rojo, como en 4b), capturas revisadas, vista
+previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_5b.html`). Aprobado por Laura el 2026-10-10.
+
+## Tramo 6a: escrito (2026-10-10), esperando revisión de Laura
+
+**V.3.1 a V.3.5.1, páginas 95 a 102 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo6a.html`.
+
+**Decisiones de Laura al informe (2026-10-10), no cambiar:** corte 6a =
+hasta la nueva isla (p. 95-102), 6b = mueble a mueble y mueble a
+inmueble (p. 102-110); la inundación (art. 653) es **interrupción
+natural** (art. 2502 Nº 1), no suspensión como dice Boetsch; **no** se
+agregan las reglas 4ª y 5ª del art. 656; en el art. 654 queda solo
+"autoridad competente" (lo que dice el Código, sin la municipalidad de
+Boetsch y sin `[FALTA]`); los frutos en la comunidad (arts. 2310, 1338
+Nº 3, art. 655 CPC con las dos lecturas de Peñailillo) van en **IV.6 La
+cuota**, no en V.3; formato de 5.1 con (i)-(iv); **ninguna pregunta
+clásica**; Laura no tiene material propio. La línea del "aluvión" del
+habla común (avalancha de barro) en el No confundir no se agregó: Laura
+no la aprobó.
+
+Lo que se hizo: V.3.1 a V.3.5.1 reescritos en voz propia (paráfrasis:
+de 26 de 47 oraciones sobre 70% a 3 de 94: el texto del art. 643 y dos
+enumeraciones de nombres técnicos); arts. 643, 644, 647 (memorice) y 652
+en `.ley`; el matiz de Boetsch (sub-clases en 5); unidades de Peñailillo
+(extensión física, utilidad práctica de la distinción, periodicidad de
+los naturales, expropiación con frutos pendientes, creación jurídica y
+"desde que se pagan", art. 646 incs. 2º y 3º, cesión gratuita de frutos,
+art. 1816, relevancia de la accesión continua solo con distintos
+dueños, cauce como BNUP, 653 parecido al aluvión). Correcciones:
+interrupción natural en el 653; reglas del aluvión (arts. 649-651) en vez
+de "art. 651"; puerto habilitado con mercaderías (no "personas") y
+atribuido a BOETSCH; regla 3ª "hasta la isla"; regla 6ª explicada antes
+de la discusión, con la opinión de BOETSCH; art. 597 con mar
+territorial; "subsiguiente año" en el 652 y las obras de movimiento de
+tierras atribuidas a BOETSCH. Formato: 2 con (i)-(ii); 3 con (i)-(iii)
+(no a)-c), porque el punto no tiene subpuntos, `formato.md` 1); 4.3 con
+(i)-(ii) y a)-c); 4.4 con (i)-(ii); 5 con (i)-(iii); 5.1 con (i)-(iv),
+a)-d) y a.1)-a.3) (ids `cV-3-4-3-a/-b` y `cV-3-5-1-a` a `-d`
+eliminados, nada enlazaba a ellos). Cuadro de las tres teorías en 3.
+Cajas: No confundir "¿Aluvión o avulsión?" reescrito y movido al final
+de (ii); ejemplos "Las paltas de la tía Leonor" (4.3, art. 781) y "El
+trozo de huerto de don Arturo" (5.1 (ii), art. 652); breves en cursiva
+(Renata en Ñuñoa, la isla del estero de Curacaví). Conexiones a
+Contratos (arts. 1816 y 2435) en 4; en IV.6 se agregó la conexión a
+Sucesorio (art. 1338 Nº 3). Verificación: unidades del inventario
+presentes, cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, párrafo más largo 868 caracteres, artículos en rojo,
+capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
+del job (`05_Bienes_antes_6a.html`).
+
+## Siguiente paso exacto (2026-10-10, vigente)
+
+1. **Laura revisa el tramo 6a** en `Vista_previa/Bienes_vista_previa.html`
+   (anclas `#cV-3` y `#cIV-6`). Si lo aprueba, anotar la aprobación aquí.
+2. **Tramo 6b** (V.3.5.2 y V.3.5.3, p. 102-110): informe nuevo. Paso 0
+   de siempre: releer `lecciones-acto-juridico.md` (checklist de la
+   sección 6). Fuentes: Boetsch p. 102-110, Peñailillo p. 67-68 del PDF
+   (función, valor y volumen para determinar lo principal). Preguntas
+   del banco que van ahí: "principio rector en el caso de la Accesión?",
+   "mecanismos que establece el legislador para determinar lo accesorio,
+   y lo principal?", "como debe ser la unión?".
+3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+   art. 703 (ver "Tramo 5a").
