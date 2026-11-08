@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-10 (tramo 6a
-> escrito, esperando revisión de Laura).
+> antes de seguir. Última actualización: 2026-11-08 (informe del
+> tramo 6b listo, esperando decisiones de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -53,9 +53,14 @@
   (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
 - **Tramo 5b (V.2 La ocupación, p. 87-94): terminado y aprobado por
   Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
-- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): escrito (2026-10-10),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
-  6a", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): escrito (2026-10-10).**
+  El 2026-11-08 Laura pidió seguir con el 6b sin decir expresamente
+  que lo aprobaba: **no anotarlo como aprobado** hasta que responda la
+  decisión 1 del informe 6b. Detalle en "Tramo 6a", más abajo.
+- **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): informe listo
+  (2026-11-08), esperando decisiones de Laura.** Manual sin tocar.
+  Detalle en "Tramo 6b", más abajo. Siguiente paso al final de este
+  archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1021,16 +1026,52 @@ balanceadas, párrafo más largo 868 caracteres, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_6a.html`).
 
-## Siguiente paso exacto (2026-10-10, vigente)
+## Tramo 6b: informe listo (2026-11-08), esperando decisiones de Laura
 
-1. **Laura revisa el tramo 6a** en `Vista_previa/Bienes_vista_previa.html`
-   (anclas `#cV-3` y `#cIV-6`). Si lo aprueba, anotar la aprobación aquí.
-2. **Tramo 6b** (V.3.5.2 y V.3.5.3, p. 102-110): informe nuevo. Paso 0
-   de siempre: releer `lecciones-acto-juridico.md` (checklist de la
-   sección 6). Fuentes: Boetsch p. 102-110, Peñailillo p. 67-68 del PDF
-   (función, valor y volumen para determinar lo principal). Preguntas
-   del banco que van ahí: "principio rector en el caso de la Accesión?",
-   "mecanismos que establece el legislador para determinar lo accesorio,
-   y lo principal?", "como debe ser la unión?".
-3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+**V.3.5.2 y V.3.5.3, páginas 102 a 110 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo6b.html`. El manual no se ha tocado.
+
+Hallazgos principales: faltan 15 unidades de Boetsch (casi todas de
+mueble a inmueble: elección del dueño del suelo, a sabiendas = mala fe,
+hurto o apropiación indebida, la ley presume el consentimiento, plantar
+vs. sembrar, inmuebles por adherencia, reparto del art. 662 inc. 4º,
+fin de producción y cuestión de hecho en la especificación, entre
+otras); 4 unidades de Peñailillo (incluida la unidad 14 diferida del
+6a: función, valor y volumen; y su objeción a que la especificación sea
+accesión, frente a la "mayoría" de Boetsch). Correcciones al Código:
+art. 669 inc. 1º (al que sembró, renta **y perjuicios**), art. 669
+inc. 2º ("para recobrarlo"), art. 662 inc. 2º ("reclamar", no "se hace
+dueño"), art. 662 inc. 1º (la definición legal no es la de Boetsch),
+art. 663 ("áridas"), art. 658 (fórmula del requisito), incisos del art.
+668 (cuatro incisos; Boetsch cita mal el 2º y nadie cita el 3º),
+voluptuarias (arts. 910 y 911). Dato de grado al final de 5.3 → No
+confundir "¿Accesión o tradición?". Adjunción ya está en II.E.1
+(arts. 659 a 661 en `.ley`, "El anillo de Camila"): propuesta de no
+repetir. **Error de rótulos detectado:** 15 `a.1)` que cuelgan de `b)` o
+`c)` en V.2.4.2 (tramo 5b) y V.3.5.1 (tramo 6a); deben llevar la letra
+del padre (`b.1)`, `c.1)`), como en AJ. Se corrigen en la pasada del 6b.
+
+Decisiones pedidas a Laura (las 8 del recuadro del informe): aprobar el
+6a; adjunción resumida con enlace a II.E.1; cuadro para los tres grados
+de conducta del art. 668 (la escalera no admite `a.1.1)`); arts. 668 y
+669 en `.ley` (657 y 662 inc. 1º van por regla); conexión al art. 1500;
+cuadro de las tres especies de mueble a mueble; pregunta clásica
+"mecanismos para determinar lo principal y lo accesorio"; material
+propio. Ejemplos propuestos: "El pipeño de Gonzalo" (caja, 662 y 665),
+trigo de Marisol y Fabián (cursiva, 663), ladrillos de Iván (cursiva,
+668), "El quincho de Óscar" (caja, 669 incs. 1º y 2º).
+
+## Siguiente paso exacto (2026-11-08, vigente)
+
+1. **Laura responde las 8 decisiones del informe 6b**
+   (`Informes/Informe_Bienes_tramo6b.html`). Anotar sus respuestas en
+   "Tramo 6b" (y la aprobación del 6a, si la da).
+2. Reescribir V.3.5.2 y V.3.5.3 según lo decidido, corregir los 15
+   rótulos de 5b y 6a, medir paráfrasis de nuevo (script del job:
+   n-gramas de 6 palabras contra `b6b_clean.txt`), verificación con
+   scripts sobre todo el manual, capturas, vista previa y commit
+   (agregar archivos por ruta, nunca `git add -A`: hay muchos
+   duplicados " 2.md" sin versionar).
+3. **Tramo 7a** (V.4.A Tradición, descripción general, p. 111-118).
+4. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a").
