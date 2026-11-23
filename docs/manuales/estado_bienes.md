@@ -82,7 +82,7 @@
 - **Tramo 10b (V.4.D.3 y D.4, p. 175-183): terminado y aprobado por
   Laura (2026-11-23, "todo ok"), commit `4580ceb`.** Cierra V.4 La
   tradición.
-- **Tramo 11a (V.5.A.1, p. 184-191): informe en curso (2026-11-23).** Detalle en "Tramo 10b", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): informe hecho (2026-11-23, `Informes/Informe_Bienes_tramo11a.html`), esperando decisiones de Laura.** Detalle en "Tramo 10b", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
