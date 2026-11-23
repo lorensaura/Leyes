@@ -59,8 +59,8 @@
 - **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): terminado y aprobado por
   Laura (2026-11-23, "ok, sigue con el tramo 7a"), commit `5643d37`.**
   Cierra V.3 La accesión. Detalle en "Tramo 6b", más abajo.
-- **Tramo 7a: informe entregado (2026-11-23), esperando las 9
-  decisiones de Laura.** Detalle en "Tramo 7a", más abajo. Siguiente
+- **Tramo 7a (V.4.A + V.4.B.1, p. 111-116): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 7a", más abajo. Siguiente
   paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -136,9 +136,9 @@ que en AJ.
 | 5b | 87-94 | 5 | V.2 La ocupación completa (corregido 2026-10-10, antes 88-94) |
 | 6a | 95-102 | 6 | V.3.1 a V.3.5.1 (concepto, clases, naturaleza, frutos, inmueble a inmueble). Corte por contenido aprobado 2026-10-10 |
 | 6b | 102-110 | 6 | V.3.5.2 mueble a mueble y V.3.5.3 mueble a inmueble (corregido 2026-10-10) |
-| 7a | 111-116 | 7 | V.4.A Tradición, descripción general + V.4.B.1 tradente y adquirente (corte por contenido propuesto 2026-11-23; antes 111-118: A termina en la p. 114) |
-| 7b | 116-123 | 7 | V.4.B.2-B.4 Tradición: consentimiento, título, entrega (propuesto 2026-11-23; antes 118-125) |
-| 7c | 123-129 | 7 | V.4.C Tradición, efectos (propuesto 2026-11-23; antes 125-129) |
+| 7a | 111-116 | 7 | V.4.A Tradición, descripción general + V.4.B.1 tradente y adquirente (corte por contenido aprobado 2026-11-23; antes 111-118: A termina en la p. 114). Hecho 2026-11-23 |
+| 7b | 116-123 | 7 | V.4.B.2-B.4 Tradición: consentimiento, título, entrega (aprobado 2026-11-23; antes 118-125) |
+| 7c | 123-129 | 7 | V.4.C Tradición, efectos (aprobado 2026-11-23; antes 125-129) |
 | 8 | 129-141 | 8 | V.4.D.1 Tradición de muebles |
 | 9a | 142-150 | 9 | V.4.D.2 Sistema registral: introducción y fundamentos |
 | 9b | 150-160 | 9 | V.4.D.2 Sistema registral chileno (el grueso: Repertorio, Registro, inscripciones) |
@@ -1148,19 +1148,42 @@ repeticiones con V.1 resumidas con enlace; VIAL obligación de dar (dos
 posturas con nombre) en B.1.2; clasificación existencia/validez de VIAL
 al abrir B; cuadro "Entrega y tradición" en vez del No confundir;
 pregunta clásica **solo "¿La tradición es un contrato?"** (en A.2.2).
-**A.2.5 ("sirve de justo título") queda pendiente:** Laura pidió ver
-primero un esquema de cómo quedaría explicado, por ser tema sensible
-(esquema entregado en el chat el 2026-11-23).
+**A.2.5 ("sirve de justo título"):** Laura pidió ver primero un
+esquema, por ser tema sensible; lo aprobó tal cual (2026-11-23): título
+de Boetsch se mantiene; regla (arts. 682 y 683); fórmula con nombre de
+BOETSCH; precisión del art. 702 inc. 3º (justo título = contrato,
+tradición = requisito adicional, art. 703 inc. 3º); "otros sostienen"
+que el título de la posesión es la tradición (anexos, sin autor);
+resultado práctico común (arts. 2508 y 708); enlace a
+`#cV-5-A-2-2-2`; ejemplo de Amanda y Bastián con la bicicleta. No se
+toma partido ni se desarrolla el 703 (queda para 11b).
+
+Lo que se hizo: V.4.A y V.4.B.1 reescritos en voz propia (paráfrasis:
+de 20 de 73 oraciones sobre 70% a 3, dos de ellas transcripciones de los
+arts. 670 y 682); unidades de Boetsch y de VIAL verificadas por script;
+arts. 670, 671, 679 y 682 en `.ley`; correcciones de los arts. 1575 y
+1578 Nº 1; enlaces a V.1.1, V.1.3.1, V.1.3.2, V.1.3.4, V.1.4 y
+V.5.A.2.2.2; cuadro "Entrega y tradición" (reemplaza al No confundir);
+B.1.1 con (i)/(ii) y a)-c) (ids `cV-4-B-1-1-a`/`-b` eliminados, nada
+enlazaba); pregunta clásica "¿La tradición es un contrato?" en A.2.2;
+cajas "El kayak de Maite" y "El notebook de la hermana"; breves en
+cursiva (Domingo y Elisa, Amanda y Bastián, Matilde y la lancha, tía
+Pilar); Conexiones al final de A y de B.1. Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafo
+más largo 848 caracteres, artículos en rojo, capturas revisadas, vista
+previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_7a.html`).
 
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura aprueba (o corrige) el esquema de A.2.5.** El resto del
-   informe ya está aprobado. Marcar el corte como aprobado en la tabla
-   del reparto (hoy dice "propuesto").
-2. Con eso, reescribir V.4.A y V.4.B.1 en el manual (respaldo previo en
-   el tmp del job), verificar con scripts y capturas, actualizar la vista
-   previa (anclas `#cV-4-A` y `#cV-4-B-1`) y commitear. Ojo con los
-   rótulos: bajo `b)` va `b.1)`, nunca `a.1)`.
+1. **Laura revisa el tramo 7a** en `Vista_previa/Bienes_vista_previa.html`
+   (anclas `#cV-4-A` y `#cV-4-B-1`). Si lo aprueba, anotarlo aquí.
+2. **Tramo 7b** (V.4.B.2-B.4: consentimiento, título, entrega, p.
+   116-123): informe nuevo. Paso 0 de siempre (checklist de
+   `lecciones-acto-juridico.md` 6). El art. 671 ya está en `.ley` en B.1:
+   en B.2.3 y B.2.4 enlazar, no repetir. De VIAL: representación (art.
+   1448), intención, art. 675 existencia/validez. Ojo con los rótulos:
+   bajo `b)` va `b.1)`, nunca `a.1)`.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a"), y ahora también la discusión de si la
    tradición de quien no es dueño es el título de la posesión (ver
