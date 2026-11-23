@@ -59,8 +59,10 @@
 - **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): terminado y aprobado por
   Laura (2026-11-23, "ok, sigue con el tramo 7a"), commit `5643d37`.**
   Cierra V.3 La accesión. Detalle en "Tramo 6b", más abajo.
-- **Tramo 7a (V.4.A + V.4.B.1, p. 111-116): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 7a", más abajo. Siguiente
+- **Tramo 7a (V.4.A + V.4.B.1, p. 111-116): terminado y aprobado por
+  Laura (2026-11-23), commit `541c37d`.**
+- **Tramo 7b (V.4.B.2-B.4, p. 116-123): informe entregado (2026-11-23),
+  esperando 8 decisiones de Laura.** Detalle en "Tramo 7b", más abajo. Detalle en "Tramo 7a", más abajo. Siguiente
   paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -1089,7 +1091,7 @@ propio. Ejemplos propuestos: "El pipeño de Gonzalo" (caja, 662 y 665),
 trigo de Marisol y Fabián (cursiva, 663), ladrillos de Iván (cursiva,
 668), "El quincho de Óscar" (caja, 669 incs. 1º y 2º).
 
-## Tramo 7a: informe entregado (2026-11-23), esperando decisiones
+## Tramo 7a: hecho y aprobado (2026-11-23), commit `541c37d`
 
 **V.4.A + V.4.B.1, páginas 111 a 116 de Boetsch** (corte propuesto).
 Informe en `Informes/Informe_Bienes_tramo7a.html`. Hallazgos:
@@ -1174,17 +1176,61 @@ más largo 848 caracteres, artículos en rojo, capturas revisadas, vista
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_7a.html`).
 
+## Tramo 7b: informe entregado (2026-11-23), esperando decisiones
+
+**V.4.B.2 a B.4, páginas 116 a 123 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo7b.html`. Hallazgos:
+
+- Boetsch: faltan 7 unidades (la mayoría en 3.2: nula por defectos
+  propios, "influencia del título", primera solución que borra la
+  posesión, ejemplo de la compraventa nula; en 3.1, el título necesita
+  la tradición y la discusión causal/abstracta extranjera; en 2.4, el
+  art. 894 CPC) y la jurisprudencia RDJ/F. del M. Tres opiniones de
+  Boetsch en la voz del manual (inoponibilidad en 672-673; pago de lo
+  no debido; posesión con título nulo): van con su nombre. Paráfrasis:
+  18/83 sobre 70%.
+- **Errores:** art. 1452 citado para "vicios" (es el 1451); art. 1455
+  citado para el error en el nombre (es la regla general del error en
+  la persona); art. 1576 a su texto. **Caja "Las dos formas de error en
+  el título" mal** (Pedro/Juan: dice que comodato vs. donación son
+  ambos traslaticios, y el 2º caso no es hipótesis del 677): se
+  reemplaza.
+- VIAL (p. 7-10, 19-26), 11 unidades: 672 (falta de voluntad = no hay
+  tradición; suplantación o falso representante; ratificación;
+  tradición de cosa ajena no es nula, como la venta, 1815); 673
+  (inoponible al falso adquirente); 674 (doctrina antigua nulidad,
+  actual modalidad: no se radica en el representado); error en la
+  cosa (distinto del 1453; resumen confuso, leído como nulidad
+  relativa; dación en pago); error en la persona (mayoritaria: NR y
+  posesión; VIAL: pago de lo no debido, 2295, mero tenedor); error en
+  el título (677 innecesario, error esencial, no hay tradición); **675:
+  sin título no hay tradición ni posesión (choca con Boetsch); título
+  nulo: posesión irregular**; 675 inc. 2º (cónyuges, art. 1138);
+  intención presumida y art. 684; otros títulos (sociedad,
+  cuasiusufructo, transacción 703).
+- Propuestas: arts. 672-678 en `.ley`; cuadro "El error en la
+  tradición" (Boetsch vs. VIAL); Dato de grado de 2.4 al texto (CLARO
+  SOLAR); h6 a)-d) de 2.2 a (i)-(iv); esquema de 3.2 (sección 6 del
+  informe) para aprobar antes, como el 2.5 del 7a.
+- Ejemplos: "La bicicleta de Simón" (677, primo Tadeo), "El remate del
+  departamento de don Patricio" (671 inc. 3º, 497 CPC), "La moto de
+  Colomba" (Colomba de 16 vende a Rafael; NR, 1684, 1687; posesión
+  irregular); breves: sofá de Antonella (persona), Isidora/Isadora
+  (nombre), corredor (674).
+- 4 preguntas clásicas candidatas (remate: ¿quién hace la tradición?;
+  error en la tradición; sanción del 672; títulos traslaticios y
+  transacción).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 7a** en `Vista_previa/Bienes_vista_previa.html`
-   (anclas `#cV-4-A` y `#cV-4-B-1`). Si lo aprueba, anotarlo aquí.
-2. **Tramo 7b** (V.4.B.2-B.4: consentimiento, título, entrega, p.
-   116-123): informe nuevo. Paso 0 de siempre (checklist de
-   `lecciones-acto-juridico.md` 6). El art. 671 ya está en `.ley` en B.1:
-   en B.2.3 y B.2.4 enlazar, no repetir. De VIAL: representación (art.
-   1448), intención, art. 675 existencia/validez. Ojo con los rótulos:
-   bajo `b)` va `b.1)`, nunca `a.1)`.
-3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
-   art. 703 (ver "Tramo 5a"), y ahora también la discusión de si la
-   tradición de quien no es dueño es el título de la posesión (ver
-   "Tramo 7a").
+1. **Laura responde las 8 decisiones del informe del tramo 7b**
+   (`Informes/Informe_Bienes_tramo7b.html`, recuadro amarillo; el
+   esquema de 3.2 está en su sección 6). Anotar aquí sus decisiones.
+2. Con eso, reescribir V.4.B.2 a B.4 (respaldo previo en el tmp del
+   job), verificar, vista previa (anclas `#cV-4-B-2`, `#cV-4-B-3`) y
+   commit.
+3. Después, tramo 7c (V.4.C Efectos, p. 123-129). De VIAL: arts. 680,
+   681, 1874 (discusión nº 14) y el alcance de los arts. 682-683.
+4. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+   art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
+   no es dueño es el título de la posesión (ver "Tramo 7a").
