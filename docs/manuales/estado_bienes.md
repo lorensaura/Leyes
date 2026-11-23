@@ -4,7 +4,7 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 8
-> escrito, esperando revisión de Laura en la vista previa).
+> aprobado; informe del tramo 9a esperando decisiones de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -65,10 +65,12 @@
   Detalle en "Tramo 7b", más abajo.
 - **Tramo 7c (V.4.C Efectos, p. 123-129): terminado y aprobado por
   Laura (2026-11-23), commit `7e3087e`.**
-- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): escrito
-  (2026-11-23), esperando revisión de Laura en la vista previa.** Detalle en
-  "Tramo 8", más abajo. Detalle en "Tramo
-  7c", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): terminado y
+  aprobado por Laura (2026-11-23, "sigue con el tramo 9a"), commit
+  `c28471a`.** Detalle en "Tramo 8", más abajo.
+- **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): informe escrito
+  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo 9a",
+  más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -147,8 +149,8 @@ que en AJ.
 | 7b | 116-123 | 7 | V.4.B.2-B.4 Tradición: consentimiento, título, entrega (aprobado 2026-11-23; antes 118-125) |
 | 7c | 123-129 | 7 | V.4.C Tradición, efectos (aprobado 2026-11-23; antes 125-129) |
 | 8 | 129-141 | 8 | V.4.D.1 Tradición de muebles |
-| 9a | 142-150 | 9 | V.4.D.2 Sistema registral: introducción y fundamentos |
-| 9b | 150-160 | 9 | V.4.D.2 Sistema registral chileno (el grueso: Repertorio, Registro, inscripciones) |
+| 9a | 142-152 | 9 | V.4.D.2.1 a D.2.3.2 Sistema registral: introducción, tipos de registro, el Conservador, principios (corte por contenido propuesto 2026-11-23, antes 142-150: los principios terminan en la p. 152) |
+| 9b | 152-160 | 9 | V.4.D.2 Sistema registral chileno (el grueso: Repertorio, Registro, inscripciones) |
 | 9c | 160-166 | 9 | V.4.D.2 cont. (cuotas, inscripciones por sucesión, prescripción) |
 | 10a | 166-175 | 10 | V.4.D.3 Tradición del derecho de herencia |
 | 10b | 175-183 | 10 | V.4.D.4 Tradición de derechos personales |
@@ -1335,7 +1337,7 @@ contrastar con Boetsch (Bienes V.4.C.4.3) y con los arts. 1486 y 1488
 frutos del tiempo intermedio), que muestran que la retroactividad no es
 absoluta. Buscar fuente doctrinal antes de escribir.
 
-## Tramo 8: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 8: hecho y aprobado (2026-11-23), commit `c28471a`
 
 **V.4.D (entrada) y D.1, páginas 129 a 141 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo8.html`. Hallazgos:
@@ -1415,11 +1417,64 @@ con nombre de BOETSCH y precisión de VIAL (resuelve la tensión del
 1.071, capturas revisadas, vista previa actualizada. Respaldo en el
 tmp del job (`05_Bienes_antes_8.html`).
 
+## Tramo 9a: informe escrito (2026-11-23), esperando decisiones de Laura
+
+**V.4.D.2.1 a D.2.3.2, páginas 142 a 152 de Boetsch** (corte por
+contenido propuesto: 3.2 Principios termina en la p. 152). Informe en
+`Informes/Informe_Bienes_tramo9a.html`. Hallazgos:
+
+- **Ley 21.772 (D.O. 01.10.2025, vigente en esto desde 02.04.2026):**
+  el Reglamento del Registro Conservatorio pasó a llamarse **Ley del
+  Registro Conservatorio de Bienes Raíces** y se reescribieron varios
+  artículos. Texto vigente bajado de la BCN y guardado en
+  `Apuntes/CODIGOS/Ley del Registro Conservatorio de Bienes Raíces (ex
+  Reglamento 1857).pdf` (antes no estaba: ya se pueden verificar sus
+  artículos). "Reglamento" aparece 52 veces en Bienes (solo en Bienes),
+  incluso en tramos aprobados: decisión de Laura pendiente, renombrar
+  todo de una vez (recomendado) o tramo por tramo.
+- Desactualizado en Boetsch: responsabilidad del Conservador (art. 96
+  hoy es disciplinario con exoneración; art. 97 derogado; art. 98
+  remite al 443 COT; art. 8 garantía); "en la mayoría de las comunas el
+  notario es Conservador" (hoy arts. 447 inc. 2º, 448 y 450 COT, más
+  norma transitoria); publicidad por sitio web y repositorio digital
+  (arts. 5, 5 bis, 49). Art. 78 Nºs 6 y 7 refuerza el tracto sucesivo.
+- Error: art. 2409 citado para la inscripción de la hipoteca (es el
+  2410). "COT 530 y ss." para la responsabilidad funcionaria: se cita
+  el 539 inc. 2º (nombra a los conservadores).
+- Boetsch: falta buena parte del Mensaje (simple tradición que deja a
+  salvo al verdadero dueño; todo inscrito con los años; modelo alemán;
+  adjudicaciones y transmisiones), detalles de Torrens y del sistema
+  alemán, enunciaciones del Repertorio (art. 24), arts. 42, 44, 46,
+  certificado de inscripción (85, 86), rogación inferida de los arts.
+  12, 15 y 21, gradualidad de la fe pública. El Mensaje está en un Dato
+  de grado (se retira, pasa al texto como cita; V.5.A.5.4.1 (i) remite
+  aquí). Paráfrasis: 16/125 sobre 70% (5 son el Mensaje).
+- VIAL (p. 14-17): lista del 686 por tipo de derecho; **uso y
+  habitación: VIAL dice que no hay error en el 686 (constitución por
+  tradición), frente a BOETSCH (3.3, p. 152, art. 819)**: dos lecturas
+  con nombre aquí, enlace en el 9b; 724 y posesión del derecho vs. del
+  inmueble; dar y entregar (hipoteca sin entrega). No se arrastra "dueño
+  en 5 años" (simplifica 2508/2511). Ley 6.977 y servidumbres de agua:
+  no verificadas (tramo 9c).
+- ALCALDE (RChDP 30, p. 226 y nota 4, p. 227): art. 826 del Proyecto
+  de 1853 (tradición simbólica opcional), reglas de la posesión inscrita
+  en el Proyecto Inédito, crítica "grueso error" con su nombre.
+- Propuestas: arts. 686 y 692 en `.ley`; esquema de funciones (i)-(v);
+  cuadro "Tres opciones para construir un registro"; cajas "La casa de
+  doña Herminia" (Baltazar, Agustina; 686, 724, 1817) y "El
+  departamento de Teodoro" (Olga, Eusebio; 1689, 2508); breves
+  (Wilfredo, Celinda); pregunta clásica recomendada "¿Es prueba de
+  dominio la inscripción conservatoria?" (alternativa: "¿684 o 686?").
+- **Para el 9b:** arts. 13, 58 y 78 de la ley cambiaron; art. 451 COT
+  (Ley 21.718) plazo máximo de 20 días para inscribir; lo de VIAL sobre
+  negativa, Repertorio y dos meses.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 8** en la vista previa (ancla `#cV-4-D`).
-   Si lo aprueba, anotarlo aquí.
-2. Después, tramo 9a (V.4.D.2 Sistema registral, introducción, p. 142-150).
+1. **Laura decide sobre el informe del tramo 9a** (10 preguntas al
+   inicio del informe). Con sus respuestas, reescribir D.2.1 a D.2.3.2
+   (ancla `#cV-4-D-2`), verificar, vista previa y commit.
+2. Después, tramo 9b (V.4.D.2.3.3 en adelante, p. 152-160).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
