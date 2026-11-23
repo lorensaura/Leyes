@@ -4,7 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 10b
-> aprobado, V.4 cerrada; tramo 11a en informe).
+> aprobado, V.4 cerrada; tramo 11a escrito, esperando revisión de Laura
+> en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -82,7 +83,9 @@
 - **Tramo 10b (V.4.D.3 y D.4, p. 175-183): terminado y aprobado por
   Laura (2026-11-23, "todo ok"), commit `4580ceb`.** Cierra V.4 La
   tradición.
-- **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): informe hecho (2026-11-23, `Informes/Informe_Bienes_tramo11a.html`), esperando decisiones de Laura.** Detalle en "Tramo 10b", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 11a",
+  más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1780,11 +1783,61 @@ resuelven, etiquetas balanceadas, párrafo más largo 1.080, capturas
 revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_10b.html`).
 
+## Tramo 11a: escrito (2026-11-23), esperando revisión de Laura
+
+**V.5 (introducción) y V.5.A.1, páginas 184 a 191 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo11a.html`. Hallazgos: bajo "V.5 La
+prescripción" no había texto (falta el art. 2492); Mensaje recortado en un
+Dato de grado; art. 894 (publiciana solo del poseedor regular);
+paráfrasis 52 de 73 sobre 70%; VIAL (Relaciones jurídicas con una cosa,
+p. 1-5), Bozzo e Ibarra (corpus y animus), discusiones nº 5 (POTHIER,
+MOLITOR).
+
+**Material nuevo de Laura (2026-11-23):** el *Tratado de la posesión* de
+SAVIGNY en seis anexos (`Apuntes/CIVIL/Bienes/Anexo_*_Savigny.pdf`:
+Nociones sobre la posesión, Adquisición, Pérdida, De los interdictos, De
+la juris quasi possessio, Modificaciones del derecho romano). Es derecho
+romano, largo (unas 750 mil letras): usarlo por citas puntuales. En el
+11a se usaron el batelero (corpus, § 1), el animus domini (§ 9), "al
+mismo tiempo hecho y derecho" (§ 5) y el fundamento de los interdictos
+(§ 2). Para los tramos 13b-13c (adquisición y pérdida) y 20c
+(interdictos/acciones posesorias) revisar sus secciones respectivas.
+
+**Decisiones de Laura (2026-11-23):** cuadro de los derechos personales;
+**no decir cuál postura es mayoritaria, pero sí que "se ha entendido que
+pueden poseerse los créditos que permiten un ejercicio continuado"**;
+No confundir de la posesión notoria (arts. 200 y 310); fundamento de la
+protección posesoria en ventajas (explicación frecuente + SAVIGNY); **las
+dos preguntas clásicas**; y una **pregunta clásica nueva en V.5.A.5.1.1
+(capacidad para adquirir la posesión): "¿Por qué los requisitos de
+capacidad para poseer son menores que para celebrar un acto jurídico?"**
+(respuesta: es un hecho, no un derecho; art. 723). Ya agregada, aunque
+V.5.A.5 es del tramo 13c: al trabajar ese tramo, conservarla.
+
+Lo que se hizo: introducción de V.5 (art. 2492); A.1 reescrito en voz
+propia (paráfrasis de prosa: quedan solo citas del Mensaje y artículos y
+dos o tres oraciones breves); Mensaje completo en `.ley` (Dato de grado
+retirado); arts. 700 incs. 1º y 2º, 714 y 715 en `.ley`; SALAS; SAVIGNY,
+BOZZO e IBARRA, VIAL (título posesorio, objeción a IHERING, derecho a la
+posesión, presunción simplemente legal, art. 701, tres relaciones),
+POTHIER, MOLITOR; 3 en (i)-(iii); ventajas (i)-(iv) con art. 894 y art.
+907 inc. 3º precisados; caja "La lancha de Anacleto" (Primitivo,
+Hermelinda, Lisandro); No confundir posesión notoria; breves (Úrsula y
+Edelmira, Eusebia); art. 585 (alta mar), arts. 948-949 con la recompensa;
+8 en (i)/(ii); 9 en (i)/(ii) con cuadro; dos preguntas clásicas;
+Conexiones (Obligaciones, Contratos, Familia con `[FALTA: sección]`).
+Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafos bajo 1.200 salvo la cita del Mensaje,
+capturas revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_11a.html`).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Tramo 11a** (V.5.A.1 Posesión, aspectos generales, p. 184-191):
-   informe a Laura (`Informes/Informe_Bienes_tramo11a.html`), luego
-   reescritura.
+1. **Laura revisa el tramo 11a** en la vista previa (ancla `#cV-5`).
+   Si lo aprueba, anotarlo aquí.
+2. Después, tramo 11b (V.5.A.2 clases de posesión: regular, concepto,
+   justo título, p. 191-198). Recordar el pendiente de VIAL sobre el art.
+   703 (abajo).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
