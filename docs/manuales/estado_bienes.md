@@ -1129,8 +1129,13 @@ Informe en `Informes/Informe_Bienes_tramo7a.html`. Hallazgos:
   a)-c); No confundir "Entrega vs. tradición" → cuadro de 5 criterios
   (decide Laura); sin latinazgo *nemo plus*; grafía "traslaticio".
 - Ejemplos propuestos: "El kayak de Maite" (A.4), "El notebook de la
-  hermana" (B.1.2, Emilia, Lucas, Trinidad); breves: Domingo (herencia),
-  tía Pilar curadora (art. 679), Bastián y Amanda (A.4).
+  hermana" (B.1.2, Emilia, Lucas, Trinidad; obligación **de género** a
+  propósito: con especie determinada habría error en la identidad,
+  art. 676, y la tradición sería inválida); breves: Domingo (herencia),
+  tía Pilar curadora (art. 679), Bastián y Amanda con un sofá (A.4; no
+  un auto, que es mueble registrable).
+- Criterio VIAL (resumen): lo expuesto va con su nombre (como en 5a);
+  "la doctrina clásica" / "un sector" sin nombre; sin citas literales.
 - 4 preguntas clásicas candidatas (¿qué es la tradición?; ¿es un
   contrato? recomendada; ¿modo más importante?; ¿qué capacidad?
   recomendada).
@@ -1141,8 +1146,8 @@ Informe en `Informes/Informe_Bienes_tramo7a.html`. Hallazgos:
 
 1. **Laura responde las 9 decisiones del informe del tramo 7a**
    (`Informes/Informe_Bienes_tramo7a.html`, recuadro amarillo). Anotar
-   aquí sus decisiones ("no cambiar") y corregir la tabla del reparto si
-   aprueba el corte.
+   aquí sus decisiones ("no cambiar") y marcar el corte como aprobado en
+   la tabla del reparto (hoy dice "propuesto").
 2. Con eso, reescribir V.4.A y V.4.B.1 en el manual (respaldo previo en
    el tmp del job), verificar con scripts y capturas, actualizar la vista
    previa (anclas `#cV-4-A` y `#cV-4-B-1`) y commitear. Ojo con los
