@@ -61,8 +61,8 @@
   Cierra V.3 La accesión. Detalle en "Tramo 6b", más abajo.
 - **Tramo 7a (V.4.A + V.4.B.1, p. 111-116): terminado y aprobado por
   Laura (2026-11-23), commit `541c37d`.**
-- **Tramo 7b (V.4.B.2-B.4, p. 116-123): informe entregado (2026-11-23),
-  esperando 8 decisiones de Laura.** Detalle en "Tramo 7b", más abajo. Detalle en "Tramo 7a", más abajo. Siguiente
+- **Tramo 7b (V.4.B.2-B.4, p. 116-123): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 7b", más abajo. Detalle en "Tramo 7a", más abajo. Siguiente
   paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -1176,7 +1176,7 @@ más largo 848 caracteres, artículos en rojo, capturas revisadas, vista
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_7a.html`).
 
-## Tramo 7b: informe entregado (2026-11-23), esperando decisiones
+## Tramo 7b: escrito (2026-11-23), esperando revisión de Laura
 
 **V.4.B.2 a B.4, páginas 116 a 123 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo7b.html`. Hallazgos:
@@ -1221,16 +1221,38 @@ previa actualizada. Respaldo previo en el tmp del job
   error en la tradición; sanción del 672; títulos traslaticios y
   transacción).
 
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: arts. 672-678 en `.ley`; tres lecturas de la falta de
+voluntad con nombre; cuadro "El error en la tradición"; esquema de 3.2
+aprobado tal cual; art. 675 inc. 2º con art. 1138; jurisprudencia:
+**solo** RDJ t. 6, p. 266 (acoge a CLARO SOLAR); pregunta clásica
+**solo una, nueva, pedida por Laura:** "¿En qué se diferencia el error
+como vicio del consentimiento del error en la tradición?" (en 2.2,
+tras el cuadro). Laura no tiene material propio (se anota, no se
+agrega nada).
+
+Lo que se hizo: B.2-B.4 reescritos en voz propia (paráfrasis: de 18/83
+sobre 70% a 6, todas transcripciones de los arts. 672, 673, 675, 676 y
+677); las 7 unidades de Boetsch y las 11 de VIAL presentes (verificado
+por script); opiniones de BOETSCH con nombre (inoponibilidad, pago de
+lo no debido, posesión con título nulo); arts. 1451 (no 1452), 1455 y
+1576 corregidos; art. 894 CPC; Dato de grado de 2.4 al texto; 2.2 con
+(i)-(iv) y a)/b) (ids `cV-4-B-2-2-a` a `-d` eliminados, nada enlazaba);
+cuadro con clase `cols-angostas`; caja errónea Pedro/Juan reemplazada
+por "La bicicleta de Simón"; cajas "El remate del departamento de don
+Patricio" y "La moto de Colomba"; breves (Antonella, Isidora/Isadora,
+Fermín); enlaces a A.4, B.1 y V.5.A.2.2.2; una caja Conexiones al final
+de B. Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafo más largo 973, artículos en rojo,
+capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
+del job (`05_Bienes_antes_7b.html`).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura responde las 8 decisiones del informe del tramo 7b**
-   (`Informes/Informe_Bienes_tramo7b.html`, recuadro amarillo; el
-   esquema de 3.2 está en su sección 6). Anotar aquí sus decisiones.
-2. Con eso, reescribir V.4.B.2 a B.4 (respaldo previo en el tmp del
-   job), verificar, vista previa (anclas `#cV-4-B-2`, `#cV-4-B-3`) y
-   commit.
-3. Después, tramo 7c (V.4.C Efectos, p. 123-129). De VIAL: arts. 680,
+1. **Laura revisa el tramo 7b** en la vista previa (anclas
+   `#cV-4-B-2`, `#cV-4-B-3`). Si lo aprueba, anotarlo aquí.
+2. Después, tramo 7c (V.4.C Efectos, p. 123-129). De VIAL: arts. 680,
    681, 1874 (discusión nº 14) y el alcance de los arts. 682-683.
-4. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
