@@ -3,8 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 8
-> aprobado; tramo 9a escrito, esperando revisión de Laura).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 9a
+> aprobado; informe del tramo 9b entregado, esperando decisiones de
+> Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -68,9 +69,12 @@
 - **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): terminado y
   aprobado por Laura (2026-11-23, "sigue con el tramo 9a"), commit
   `c28471a`.** Detalle en "Tramo 8", más abajo.
-- **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
-  9a", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): terminado y aprobado
+  por Laura (2026-11-23, "sigamos con el tramo 9b"), commit `e47fe19`.**
+  Detalle en "Tramo 9a", más abajo.
+- **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): informe entregado
+  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo 9b",
+  más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1417,7 +1421,7 @@ con nombre de BOETSCH y precisión de VIAL (resuelve la tensión del
 1.071, capturas revisadas, vista previa actualizada. Respaldo en el
 tmp del job (`05_Bienes_antes_8.html`).
 
-## Tramo 9a: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 9a: hecho y aprobado (2026-11-23), commit `e47fe19`
 
 **V.4.D.2.1 a D.2.3.2, páginas 142 a 152 de Boetsch** (corte por
 contenido propuesto: 3.2 Principios termina en la p. 152). Informe en
@@ -1500,11 +1504,65 @@ resuelven, etiquetas balanceadas, párrafo más largo 1.002, capturas
 revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_9a.html`).
 
+## Tramo 9b: informe entregado (2026-11-23), esperando decisiones de Laura
+
+**V.4.D.2.3.3 a 3.10, páginas 152 a 160 de Boetsch** (3.11 empieza en
+la p. 161). Informe en `Informes/Informe_Bienes_tramo9b.html`. Hallazgos:
+
+- **Reparto mal rotulado desde el 9c** (propuesta en el informe, sin
+  aplicar a la tabla hasta que Laura decida): 9c = 3.11-3.15 (p.
+  161-166: cancelaciones, reinscripciones, sanción, saneamiento y DL
+  2.695, inscripciones paralelas y de papel); 10a = D.2.4-D.2.7 (p.
+  166-175: tradición de derechos reales sobre inmuebles, cuotas, art.
+  688, la inscripción en la prescripción); 10b = D.3 y D.4 (p. 175-183).
+- **Ley 21.772:** art. 78 reescrito (Nº 2 identificación del inmueble:
+  nombre, dirección, región, provincia, comuna, rol de avalúo,
+  superficie, planos; Nº 4 es la firma; "linderos" ya no aparece, solo
+  en la hipoteca, art. 81 Nº 3); art. 13 (comuna en vez de
+  departamento; sin "papel competente"; "o éstas no son correctas";
+  fundamentos por escrito en hoja aparte; costos del notario
+  negligente); art. 58 (aviso en el sitio web); art. 57 (certificación
+  de sentencia ejecutoriada). Art. 451 COT (Ley 21.718): 20 días para
+  inscribir, 10 tras reparos (va en 3.5, con el art. 96 Nº 3).
+- Citas: art. 659 CPC no trata la comuna (partidor y adjudicaciones);
+  arts. 56 y 59 (solo el 56 es de comuna; el 59 exige resolución
+  judicial previa); art. 69 (copia de la anotación, no "certificado de
+  repertorio" general); art. 92 (la nota de referencia es obligatoria,
+  no "práctica").
+- Boetsch: faltan ALESSANDRI (instrumentos públicos), "impedimento de
+  registro" y el argumento del art. 13 "por ley, no por acuerdo", los
+  ejemplos de embargo amplio, arts. 56 y 59, volver a pedir la
+  inscripción subsanado el defecto, la opinión de BOETSCH sobre inscribir
+  antes de que caduque la primera anotación, la caducidad de las
+  posteriores (art. 17), art. 19, el argumento del "título" en sentido
+  instrumental, la regla del art. 14 ("hasta que se le haga constar..."),
+  linderos como determinación del objeto. Paráfrasis: 29 de 55
+  oraciones de prosa sobre 70%.
+- VIAL (p. 15-16, 30): confirma, nada nuevo; prohibición de enajenar ya
+  en el No confundir de III.6.4 (enlace).
+- Título de 3.8 quedó anacrónico con el renombre del 9a ("anteriores a
+  la vigencia de la Ley del Registro Conservatorio"): propuesto
+  "anteriores a la entrada en funciones del Registro"; fecha 1859 no
+  verificable en la carpeta (decide Laura).
+- Propuestas: listas de los arts. 52 y 53 por sus Nºs (corrige "l." y
+  "m."); 3.3, 3.4 y 3.5 con (i)...; cuadro "Anotación en el Repertorio
+  e inscripción"; cajas "El galpón de Gumercindo" (Nelly, Yolanda;
+  arts. 15, 17, 78 Nº 2, 82) y "La parcela de doña Clotilde" (Abelardo,
+  Chonchi; arts. 693 y 58); breves (Osvaldo, minuta "Los Aromos 1280",
+  Baltazar y art. 14, Josefina de III.6.4, Graciela); pregunta clásica
+  recomendada "¿Cómo se individualiza el bien inmueble en el
+  Conservador?" (de PREGUNTAS BIENES), alternativa "¿Puede el
+  Conservador negarse a inscribir un título?". Conexiones: AJ IV.B.1.6
+  (art. 1683); Procesal y Contratos con `[FALTA: sección]`.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 9a** en la vista previa (ancla `#cV-4-D-2`).
-   Si lo aprueba, anotarlo aquí.
-2. Después, tramo 9b (V.4.D.2.3.3 en adelante, p. 152-160).
+1. **Laura decide sobre el informe del tramo 9b** (8 preguntas: corte y
+   reparto, art. 78 y linderos, leyes nuevas, título del 3.8, listas de
+   los arts. 52 y 53, cuadro, pregunta clásica, material propio).
+   Anotar sus decisiones aquí, corregir la tabla del reparto si aprueba
+   el nuevo, y reescribir D.2.3.3 a D.2.3.10 con respaldo previo.
+2. Después, tramo 9c (3.11 a 3.15, p. 161-166, si se aprueba el corte).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
