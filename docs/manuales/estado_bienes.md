@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 10a
-> aprobado; tramo 10b escrito, esperando revisión de Laura en la vista
-> previa).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 10b
+> aprobado, V.4 cerrada; tramo 11a en informe).
 
 ## Resumen para retomar (léelo primero)
 
@@ -80,9 +79,10 @@
 - **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): terminado y aprobado
   por Laura (2026-11-23, "ok"), commits `852c58a` y `5065c22`.** Detalle
   en "Tramo 10a", más abajo.
-- **Tramo 10b (V.4.D.3 y D.4, p. 175-183): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Cierra V.4 La
-  tradición. Detalle en "Tramo 10b", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 10b (V.4.D.3 y D.4, p. 175-183): terminado y aprobado por
+  Laura (2026-11-23, "todo ok"), commit `4580ceb`.** Cierra V.4 La
+  tradición.
+- **Tramo 11a (V.5.A.1, p. 184-191): informe en curso (2026-11-23).** Detalle en "Tramo 10b", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1737,7 +1737,7 @@ de GUTIÉRREZ sí, si hay inmuebles).
 del derecho de herencia" ya quedó en el No confundir de 6.2; en D.3
 enlazar de vuelta.
 
-## Tramo 10b: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 10b: hecho y aprobado (2026-11-23), commit `4580ceb`
 
 **V.4.D.3 y D.4, páginas 175 a 183 de Boetsch** (cierra V.4). Informe en
 `Informes/Informe_Bienes_tramo10b.html`. Hallazgos: art. 54 Ley 16.271
@@ -1782,9 +1782,9 @@ revisadas, vista previa actualizada. Respaldo en el tmp del job
 
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 10b** en la vista previa (ancla
-   `#cV-4-D-3`). Si lo aprueba, anotarlo aquí.
-2. Después, tramo 11a (V.5.A.1 Posesión, aspectos generales, p. 184-191).
+1. **Tramo 11a** (V.5.A.1 Posesión, aspectos generales, p. 184-191):
+   informe a Laura (`Informes/Informe_Bienes_tramo11a.html`), luego
+   reescritura.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
