@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-08 (informe del
-> tramo 6b listo, esperando decisiones de Laura).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 6b
+> escrito, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -53,14 +53,12 @@
   (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
 - **Tramo 5b (V.2 La ocupación, p. 87-94): terminado y aprobado por
   Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
-- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): escrito (2026-10-10).**
-  El 2026-11-08 Laura pidió seguir con el 6b sin decir expresamente
-  que lo aprobaba: **no anotarlo como aprobado** hasta que responda la
-  decisión 1 del informe 6b. Detalle en "Tramo 6a", más abajo.
-- **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): informe listo
-  (2026-11-08), esperando decisiones de Laura.** Manual sin tocar.
-  Detalle en "Tramo 6b", más abajo. Siguiente paso al final de este
-  archivo.
+- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): terminado y aprobado por
+  Laura (2026-11-23), commit `de6ca42`.** Detalle en "Tramo 6a", más abajo.
+- **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Cierra V.3 La
+  accesión. Detalle en "Tramo 6b", más abajo. Siguiente paso al final
+  de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -978,7 +976,7 @@ Verificación: 71 unidades presentes, cero guiones largos, ids únicos,
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_5b.html`). Aprobado por Laura el 2026-10-10.
 
-## Tramo 6a: escrito (2026-10-10), esperando revisión de Laura
+## Tramo 6a: hecho y aprobado (2026-11-23), commit `de6ca42`
 
 **V.3.1 a V.3.5.1, páginas 95 a 102 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo6a.html`.
@@ -1026,10 +1024,37 @@ balanceadas, párrafo más largo 868 caracteres, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_6a.html`).
 
-## Tramo 6b: informe listo (2026-11-08), esperando decisiones de Laura
+## Tramo 6b: escrito (2026-11-23), esperando revisión de Laura
 
 **V.3.5.2 y V.3.5.3, páginas 102 a 110 de Boetsch.** Informe en
-`Informes/Informe_Bienes_tramo6b.html`. El manual no se ha tocado.
+`Informes/Informe_Bienes_tramo6b.html`.
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: adjunción resumida con enlace a II.E.1 (sin repetir los arts.
+659 a 661 ni nuevo ejemplo de adjunción); cuadro para los tres grados de
+conducta del art. 668; arts. 657, 662 inc. 1º, 668 y 669 en `.ley`;
+conexión al art. 1500 (Obligaciones); cuadro de las tres especies de
+mueble a mueble; pregunta clásica "¿Qué mecanismos establece el
+legislador para determinar lo principal y lo accesorio?"; Laura no tiene
+material propio. Aprobó el 6a.
+
+Lo que se hizo: V.3.5.2 y V.3.5.3 reescritos en voz propia (paráfrasis:
+de 9 frases de prosa sobre 70% a 0; solo quedan sobre 70% títulos de
+Boetsch, textos de artículos y una fila del cuadro). Las 15 unidades de
+Boetsch y las 4 de Peñailillo, presentes (verificado por script). Todas
+las correcciones del informe aplicadas. Formato: 5.2 con (i)-(iv),
+a)-d), b.1)-b.4) y d.1)-d.3); 5.3 con (i)-(iv), a)-c), a.1)/a.2) y
+b.1)/b.2) (ids `cV-3-5-2-a` a `-d` y `cV-3-5-3-a`/`-b` eliminados, nada
+enlazaba a ellos). Intro de V.3.5 reordenada (ii mueble a mueble, iii
+mueble a inmueble). Los 15 rótulos `a.1)` mal puestos de V.2.4.2 y
+V.3.5.1 corregidos a `b.1)`/`c.1)`. Dato de grado → No confundir
+"¿Accesión o tradición?". Ejemplos: "El pipeño de Gonzalo" y "El quincho
+de Óscar" (cajas), trigo de Marisol y Fabián e Iván en Chillán
+(cursiva). Enlaces a II.E.1, II.B.4.2 y VII.2.6. Verificación: cero
+guiones largos, ids únicos, `href` resuelven, etiquetas balanceadas,
+párrafo más largo 911 caracteres, artículos en rojo, capturas revisadas,
+vista previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_6b.html`).
 
 Hallazgos principales: faltan 15 unidades de Boetsch (casi todas de
 mueble a inmueble: elección del dueño del suelo, a sabiendas = mala fe,
@@ -1061,17 +1086,13 @@ propio. Ejemplos propuestos: "El pipeño de Gonzalo" (caja, 662 y 665),
 trigo de Marisol y Fabián (cursiva, 663), ladrillos de Iván (cursiva,
 668), "El quincho de Óscar" (caja, 669 incs. 1º y 2º).
 
-## Siguiente paso exacto (2026-11-08, vigente)
+## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura responde las 8 decisiones del informe 6b**
-   (`Informes/Informe_Bienes_tramo6b.html`). Anotar sus respuestas en
-   "Tramo 6b" (y la aprobación del 6a, si la da).
-2. Reescribir V.3.5.2 y V.3.5.3 según lo decidido, corregir los 15
-   rótulos de 5b y 6a, medir paráfrasis de nuevo (script del job:
-   n-gramas de 6 palabras contra `b6b_clean.txt`), verificación con
-   scripts sobre todo el manual, capturas, vista previa y commit
-   (agregar archivos por ruta, nunca `git add -A`: hay muchos
-   duplicados " 2.md" sin versionar).
-3. **Tramo 7a** (V.4.A Tradición, descripción general, p. 111-118).
-4. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
+1. **Laura revisa el tramo 6b** en `Vista_previa/Bienes_vista_previa.html`
+   (anclas `#cV-3-5-2` y `#cV-3-5-3`). Si lo aprueba, anotarlo aquí.
+2. **Tramo 7a** (V.4.A Tradición, descripción general, p. 111-118):
+   informe nuevo. Paso 0 de siempre: releer `lecciones-acto-juridico.md`
+   (checklist de la sección 6). Ojo con los rótulos: bajo `b)` va
+   `b.1)`, nunca `a.1)`.
+3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a").
