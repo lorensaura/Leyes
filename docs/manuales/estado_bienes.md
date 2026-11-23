@@ -1718,6 +1718,18 @@ resuelven, etiquetas balanceadas, párrafo más largo 1.170, capturas
 revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_10a.html`).
 
+Ajustes de la revisión final (mismo día): nulidad relativa con el
+art. 1682 incs. 1º y 3º (la "calidad o estado de las personas" está en
+el inc. 1º, como contraste; el informe decía inc. 3º); art. 1815 citado
+con su texto ("vale, sin perjuicio de los derechos del dueño"); enlaces
+de la comunicación de la cuota a IV.5.1 (no IV.6); caja de don Belarmino
+recorre todas las tesis del cuadro; Herminio sin tomar partido en el art.
+2505; sin "Conservador de Buin" (art. 687); breve de Domitila con
+servidumbre de **acueducto** (continua y aparente, arts. 822 y 882; la de
+tránsito no se adquiere por prescripción); No confundir matizado con D.3.4
+(la jurisprudencia no exige inscripciones para ceder la herencia; la tesis
+de GUTIÉRREZ sí, si hay inmuebles).
+
 **Pendiente para el 10b:** la nota "el art. 688 no se aplica a la cesión
 del derecho de herencia" ya quedó en el No confundir de 6.2; en D.3
 enlazar de vuelta.
