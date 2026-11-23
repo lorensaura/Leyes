@@ -4,7 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 10a
-> aprobado; tramo 10b en informe, esperando decisiones de Laura).
+> aprobado; tramo 10b escrito, esperando revisión de Laura en la vista
+> previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -79,10 +80,9 @@
 - **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): terminado y aprobado
   por Laura (2026-11-23, "ok"), commits `852c58a` y `5065c22`.** Detalle
   en "Tramo 10a", más abajo.
-- **Tramo 10b (V.4.D.3 y D.4, p. 175-183): informe hecho
-  (2026-11-23, `Informes/Informe_Bienes_tramo10b.html`), esperando
-  decisiones de Laura.** Incluye corregir 6.2 del 10a (a)-e) a (i)-(v),
-  escalera de formato.md). Siguiente paso al final de este archivo.
+- **Tramo 10b (V.4.D.3 y D.4, p. 175-183): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Cierra V.4 La
+  tradición. Detalle en "Tramo 10b", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1737,10 +1737,54 @@ de GUTIÉRREZ sí, si hay inmuebles).
 del derecho de herencia" ya quedó en el No confundir de 6.2; en D.3
 enlazar de vuelta.
 
+## Tramo 10b: escrito (2026-11-23), esperando revisión de Laura
+
+**V.4.D.3 y D.4, páginas 175 a 183 de Boetsch** (cierra V.4). Informe en
+`Informes/Informe_Bienes_tramo10b.html`. Hallazgos: art. 54 Ley 16.271
+reformado (Ley 21.420, 2022: también notarios y enajenaciones en común);
+art. 1911 inc. 2º (litigioso desde la notificación de la demanda) y art.
+1913 (retracto) ausentes; oración rota en el legado de especie; D.3.4.2
+con `h7`, `h5` y `enum-a` mezclados; paráfrasis 30 de 54 sobre 70%; VIAL
+(p. 17-18: derecho de herencia distinto del patrimonio, se cede la
+calidad de heredero, adhiere a URRUTIA; arts. 1903-1907); discusiones nº 4
+(hechos que la jurisprudencia aceptó como tradición de la herencia).
+
+**Decisiones de Laura (2026-11-23):** 6.2 del 10a (sanción del art. 688)
+de a)-e) a **(i)-(v)**, y las dos críticas minoritarias como **(i)
+Primero / (ii) Segundo**; derechos litigiosos con una **conexión al art.
+1464 Nº 4** (AJ II.C.4.3 ya tiene el No confundir "Especie litigiosa y
+derecho litigioso"); el cuadro se deja (no es imprescindible), con
+**conexión a Sucesorio**; **solo la primera pregunta clásica** (tradición
+del derecho de herencia; la de derechos personales, no). No respondió
+sobre la cesión de créditos ni el retracto: se aplicó lo recomendado
+(párrafo breve con arts. 1903, 1904, 1906 y 1907 y remisión a Contratos;
+art. 1911 inc. 2º y una línea del art. 1913). Avisado en el mensaje final
+para que pueda pedir quitarlo.
+
+Lo que se hizo: D.3 y D.4 reescritos en voz propia (paráfrasis: de 30 de
+54 a 2 de 144, un título y la cita literal del art. 1911); introducción
+con VIAL; D.3.1 con art. 1811 y 1204; D.3.2 (i) GUTIÉRREZ / (ii) URRUTIA
+con VIAL, jurisprudencia con citas y hechos aceptados; caja "La herencia
+de la tía Clorinda" (Eleuterio, Gertrudis, Casimiro); pregunta clásica;
+D.3.3 (i)/(ii) con art. 1910 inc. final; cuadro "Quien cede / Qué
+adquirió / Cómo se tradita / ¿Art. 688?"; D.3.4.1 con STITCHKIN; D.3.4.2
+(i) género / (ii) especie → a)/b) → a.1)-b.2) (`enum-c-run`; ids
+`cV-4-D-3-4-2-a/b` y los `h5` eliminados, nada enlazaba); art. 54
+vigente; caja "Los legados de don Florindo" (Pascuala, Nicanor); D.4.1
+con art. 699 en `.ley`, dos sentidos de "título", arts. 1902-1907, breve
+de Ismael, Etelvina y Abigail, SILVA BASCUÑÁN; D.4.2 con arts. 1911 inc.
+2º, 1913, 1464 Nº 4, (i) RIOSECO / (ii) SILVA BASCUÑÁN, breve de Ofelia e
+Hipólito; Conexiones (AJ II.C.4.2 y II.C.4.3; Contratos y Sucesorio con
+`[FALTA: sección]`). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 1.080, capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_10b.html`).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Tramo 10b** (D.3 y D.4, p. 175-183): informe a Laura
-   (`Informes/Informe_Bienes_tramo10b.html`), luego reescritura.
+1. **Laura revisa el tramo 10b** en la vista previa (ancla
+   `#cV-4-D-3`). Si lo aprueba, anotarlo aquí.
+2. Después, tramo 11a (V.5.A.1 Posesión, aspectos generales, p. 184-191).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
