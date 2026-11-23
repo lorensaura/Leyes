@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 9c
-> aprobado; tramo 10a escrito, esperando revisión de Laura en la vista
-> previa).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 10a
+> aprobado; tramo 10b en informe, esperando decisiones de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -77,9 +76,13 @@
 - **Tramo 9c (V.4.D.2.3.11 a 3.15, p. 161-166): terminado y aprobado
   por Laura (2026-11-23, "continuemos con el tramo que sigue"), commits
   `e389e95` y `eb39226`.** Detalle en "Tramo 9c", más abajo.
-- **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
-  10a", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): terminado y aprobado
+  por Laura (2026-11-23, "ok"), commits `852c58a` y `5065c22`.** Detalle
+  en "Tramo 10a", más abajo.
+- **Tramo 10b (V.4.D.3 y D.4, p. 175-183): informe hecho
+  (2026-11-23, `Informes/Informe_Bienes_tramo10b.html`), esperando
+  decisiones de Laura.** Incluye corregir 6.2 del 10a (a)-e) a (i)-(v),
+  escalera de formato.md). Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1659,7 +1662,7 @@ en el tramo 16b, revisar V.5.B.6 y V.5.B.8 contra el texto vigente del
 DL 2.695 (falta el requisito del art. 2 Nº 3 y el avalúo de 1.000 UTM,
 si se menciona).
 
-## Tramo 10a: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 10a: hecho y aprobado (2026-11-23), commits `852c58a` y `5065c22`
 
 **V.4.D.2.4 a D.2.7, páginas 166 a 175 de Boetsch** (cierra D.2).
 Informe en `Informes/Informe_Bienes_tramo10a.html`. Hallazgos:
@@ -1736,9 +1739,8 @@ enlazar de vuelta.
 
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 10a** en la vista previa (ancla
-   `#cV-4-D-2-4`). Si lo aprueba, anotarlo aquí.
-2. Después, tramo 10b (D.3 y D.4, p. 175-183).
+1. **Tramo 10b** (D.3 y D.4, p. 175-183): informe a Laura
+   (`Informes/Informe_Bienes_tramo10b.html`), luego reescritura.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
