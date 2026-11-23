@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 7c
-> aprobado; informe del tramo 8 entregado, esperando decisiones de
-> Laura).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 8
+> escrito, esperando revisión de Laura en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -66,8 +65,8 @@
   Detalle en "Tramo 7b", más abajo.
 - **Tramo 7c (V.4.C Efectos, p. 123-129): terminado y aprobado por
   Laura (2026-11-23), commit `7e3087e`.**
-- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): informe
-  entregado (2026-11-23), esperando decisiones de Laura.** Detalle en
+- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): escrito
+  (2026-11-23), esperando revisión de Laura en la vista previa.** Detalle en
   "Tramo 8", más abajo. Detalle en "Tramo
   7c", más abajo. Siguiente paso al final de este archivo.
 
@@ -1336,7 +1335,7 @@ contrastar con Boetsch (Bienes V.4.C.4.3) y con los arts. 1486 y 1488
 frutos del tiempo intermedio), que muestran que la retroactividad no es
 absoluta. Buscar fuente doctrinal antes de escribir.
 
-## Tramo 8: informe entregado (2026-11-23), esperando decisiones de Laura
+## Tramo 8: escrito (2026-11-23), esperando revisión de Laura
 
 **V.4.D (entrada) y D.1, páginas 129 a 141 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo8.html`. Hallazgos:
@@ -1376,10 +1375,50 @@ absoluta. Buscar fuente doctrinal antes de escribir.
 - Pregunta clásica propuesta: "¿Es taxativa la enumeración del art.
   684?". La de "¿684 o 686 regla general?" queda para el tramo 9a.
 
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: esquema de las dos lecturas del art. 684 (tradicional:
+BOETSCH y VIAL en ediciones anteriores; actual de VIAL) y cuadro;
+**Laura no encontró el libro de VIAL en vLex** (solo el de Acto
+Jurídico): se dice "en la edición más reciente de su obra", sin número
+de edición. Dato: Alcalde (2018) cita VIAL, *La tradición y la
+prescripción adquisitiva como modo de adquirir el dominio*, 3ª ed.,
+Ediciones UC, 2009; no consta que sea la edición del resumen. `.ley`:
+684, 685, 1817, 148 y 149 C. de Com.; vehículos sin números de
+artículo; RDJ t. 36, p. 435 entra; pregunta clásica "¿Es taxativa la
+enumeración del art. 684?".
+
+**Material propio de Laura (2026-11-23):** Jaime Alcalde Silva, "De
+los bienes y de su dominio, posesión, uso y goce", comentario de
+jurisprudencia, *Revista Chilena de Derecho Privado* Nº 30 (2018), pp.
+221-239 (C.S., rol 12.210-2017, art. 915). Copia en `Downloads/`
+(`de-los-bienes-y-de-su-dominio-posesin-uso-y-goce-revista-chi.pdf`).
+**No aplica al tramo 8.** Usar en: tramo 9a (historia del art. 686:
+el Proyecto de 1853, art. 826, preveía una tradición simbólica
+opcional de inmuebles; las reglas de la posesión inscrita entraron en
+el Proyecto Inédito), tramo 13a (mera tenencia, el poseedor a nombre
+ajeno del art. 915), tramo 14 (posesión inscrita) y tramos 20a-20b
+(acción contra el injusto detentador, legitimación pasiva de la
+reivindicatoria, propuesta de reconstrucción de las acciones reales).
+
+Lo que se hizo: V.4.D (entrada con enlaces a D.1-D.4) y D.1 reescritos
+en voz propia (paráfrasis: de 14 sobre 70% a 11, todas transcripciones
+de artículos o títulos); entrada de 3. con las dos lecturas en
+(i)/(ii); 3.1, 3.2, 3.4, 7 y 8 con (i)/(ii); No confundir de 3.2
+mantenido y atribuido al razonamiento de VIAL; cuadro "Las cinco
+formas del art. 684, según las dos lecturas" al final de 3.7; D.1.4
+con nombre de BOETSCH y precisión de VIAL (resuelve la tensión del
+7c); art. 1817 completo; cajas "La bicicleta eléctrica de Rosario" y
+"La enfardadora de don Hugo" (reemplazan las genéricas); breves
+(Lautaro, Damián, Julieta, doña Irma, cláusula de prueba); latinazgos
+*tradens*/*accipiens* fuera. Verificación: cero guiones largos, ids
+únicos, `href` resuelven, etiquetas balanceadas, párrafo más largo
+1.071, capturas revisadas, vista previa actualizada. Respaldo en el
+tmp del job (`05_Bienes_antes_8.html`).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura decide sobre el informe del tramo 8** (las 8 decisiones del
-   recuadro). Anotarlas aquí y escribir el tramo con el método completo.
+1. **Laura revisa el tramo 8** en la vista previa (ancla `#cV-4-D`).
+   Si lo aprueba, anotarlo aquí.
 2. Después, tramo 9a (V.4.D.2 Sistema registral, introducción, p. 142-150).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
