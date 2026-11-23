@@ -4,8 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 9b
-> aprobado; informe del tramo 9c entregado, esperando decisiones de
-> Laura).
+> aprobado; tramo 9c escrito, esperando revisión de Laura en la vista
+> previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -74,8 +74,8 @@
   Detalle en "Tramo 9a", más abajo.
 - **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): terminado y aprobado
   por Laura (2026-11-23, "ok, sigue con el tramo 9c"), commit `70f1d71`.**
-- **Tramo 9c (V.4.D.2.3.11 a 3.15, p. 161-166): informe entregado
-  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo 9c",
+- **Tramo 9c (V.4.D.2.3.11 a 3.15, p. 161-166): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 9c",
   más abajo. Detalle en "Tramo 9b",
   más abajo. Siguiente paso al final de este archivo.
 
@@ -1586,7 +1586,7 @@ etiquetas balanceadas, párrafo más largo 840, unidades del inventario
 verificadas por script, capturas revisadas, vista previa actualizada.
 Respaldo en el tmp del job (`05_Bienes_antes_9b.html`).
 
-## Tramo 9c: informe entregado (2026-11-23), esperando decisiones de Laura
+## Tramo 9c: escrito (2026-11-23), esperando revisión de Laura
 
 **V.4.D.2.3.11 a 3.15, páginas 161 a 166 de Boetsch** (cierra el punto 3
 de D.2). Informe en `Informes/Informe_Bienes_tramo9c.html`. Hallazgos:
@@ -1619,15 +1619,49 @@ de D.2). Informe en `Informes/Informe_Bienes_tramo9c.html`. Hallazgos:
   PREGUNTAS BIENES) propuesta para el tramo 14. Conexiones: AJ IV.B.2.2
   (art. 1682); Contratos 1817 con `[FALTA: sección]`.
 
+**Decisiones de Laura al informe (2026-11-23): "ok a todo el resto"**,
+y agregó el texto vigente del DL a `Apuntes/CODIGOS/DL-2695_21-JUL-1979.pdf`
+(BCN, última modificación Ley 21.737, 21-04-2025). **El texto vigente
+corrige también a ORREGO:** el avalúo hoy es igual o inferior a **1.000
+UTM**, rural o urbano (Ley 21.737, 2025; ya no 800/380), y hay un
+requisito nuevo: declaración jurada de no tener juicio pendiente ni
+condena por usurpación (art. 2 Nº 3, Ley 21.633, 2023). La resolución
+vale como justo título (art. 15).
+
+Lo que se hizo: D.2.3.11 a 3.15 reescritos en voz propia (paráfrasis:
+de 8 de 25 oraciones sobre 70% a ninguna de prosa propia; las que
+quedan son la cita de URRUTIA y el art. 728); art. 728 inc. 1º en
+`.ley` ("decreto judicial"); resciliación con VIAL; reinscripción con
+la crítica minoritaria y enlace a D.2.6.2; 3.13 con (i) PEÑAILILLO /
+(ii) ROZAS; DL 2.695 resumido con el texto vigente (arts. 1, 2, 15 y
+16) y enlaces a V.5.B.6 y V.5.B.8; 3.15 con (i)/(ii) (ids
+`cV-4-D-2-3-15-a/b` eliminados, nada enlazaba); causa c) corregida;
+cuadro "Tres criterios" con la cita de TRUCCO; caja "El sitio de
+Leontina"; pregunta clásica "¿Qué son las inscripciones paralelas y
+cómo se resuelven?"; inscripciones de papel con las dos posturas;
+breves (Hortensia y Teófilo, Eduvigis, Filomena); Conexiones (AJ
+IV.B.2.2; Obligaciones 1567 y Contratos 1817 con `[FALTA: sección]`).
+Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafo más largo 759, capturas revisadas,
+vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_9c.html`).
+
+**Pendientes que deja el 9c:** pregunta clásica "¿Cómo se cancela la
+posesión inscrita?" (PREGUNTAS BIENES) para el tramo 14 (V.5.A.5.4.3);
+en el tramo 16b, revisar V.5.B.6 y V.5.B.8 contra el texto vigente del
+DL 2.695 (falta el requisito del art. 2 Nº 3 y el avalúo de 1.000 UTM,
+si se menciona).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura decide sobre el informe del tramo 9c** (5 preguntas: DL
-   2.695, PEÑAILILLO/ROZAS, inscripciones de papel, cuadro, pregunta
-   clásica). Anotar sus decisiones aquí y reescribir D.2.3.11 a 3.15 con
-   respaldo previo.
+1. **Laura revisa el tramo 9c** en la vista previa (ancla
+   `#cV-4-D-2-3-11`). Si lo aprueba, anotarlo aquí.
 2. Después, tramo 10a (D.2.4 a D.2.7, p. 166-175).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
-   inmuebles (ver "Tramo 7c").
+   inmuebles (ver "Tramo 7c") y la pregunta clásica "¿Cómo se cancela
+   la posesión inscrita?" (ver "Tramo 9c").
+5. Pendiente para el tramo 16b: V.5.B.6 y V.5.B.8 contra el texto
+   vigente del DL 2.695 (ver "Tramo 9c").
