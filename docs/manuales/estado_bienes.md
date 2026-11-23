@@ -4,7 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 9c
-> aprobado; tramo 10a en informe, esperando decisiones de Laura).
+> aprobado; tramo 10a escrito, esperando revisión de Laura en la vista
+> previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -76,9 +77,9 @@
 - **Tramo 9c (V.4.D.2.3.11 a 3.15, p. 161-166): terminado y aprobado
   por Laura (2026-11-23, "continuemos con el tramo que sigue"), commits
   `e389e95` y `eb39226`.** Detalle en "Tramo 9c", más abajo.
-- **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): informe hecho
-  (2026-11-23), esperando decisiones de Laura.** Siguiente paso al final
-  de este archivo.
+- **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
+  10a", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1658,11 +1659,73 @@ en el tramo 16b, revisar V.5.B.6 y V.5.B.8 contra el texto vigente del
 DL 2.695 (falta el requisito del art. 2 Nº 3 y el avalúo de 1.000 UTM,
 si se menciona).
 
+## Tramo 10a: escrito (2026-11-23), esperando revisión de Laura
+
+**V.4.D.2.4 a D.2.7, páginas 166 a 175 de Boetsch** (cierra D.2).
+Informe en `Informes/Informe_Bienes_tramo10a.html`. Hallazgos:
+
+- Art. 687: "territorio", no "departamento" (Ley 18.776); los arts. 54
+  y 55 de la Ley del Registro Conservatorio siguen con el texto de 1857
+  (manda el art. 688 vigente).
+- Art. 1876 inc. 2º (precio declarado pagado: contra terceros solo
+  nulidad o falsificación), ausente en Boetsch: es la base legal de la
+  instrucción al notario.
+- **Laura agregó a `Apuntes/CODIGOS/`** la Ley 19.903
+  (`LEY-19903_10-OCT-2003.pdf`) y el DFL 1 de 2000
+  (`DFL-1_30-MAY-2000.pdf`), que trae al final el texto refundido de la
+  **Ley 16.271** (desde el "ARTICULO 8º" del DFL). Verificados: art. 25
+  (no se dispone de bienes de la herencia sin inscribir la posesión
+  efectiva) y art. 30 (inmuebles de la sociedad conyugal a nombre del
+  cónyuge y los herederos). **Corrección a Boetsch:** la Ley 19.903 (art.
+  8) no dice que la resolución administrativa se inscriba en el Registro
+  de Propiedad del Conservador del último domicilio: el certificado del
+  Registro Nacional sirve para pedir las inscripciones especiales. Que el
+  decreto judicial "también se inscribe" en el Registro Nacional no está
+  en la ley: se dejó lo que dice el art. 882 CPC (el tribunal oficia al
+  Registro Civil).
+- Paráfrasis: 30 de 61 oraciones sobre 70%. Dato de grado en 5.1. Citas
+  RDJ y Gaceta perdidas.
+- VIAL (p. 31-38) y discusiones nº 3: ver el informe.
+
+**Decisiones de Laura al informe (2026-11-23):** corregir "departamento";
+agregar el art. 1876 inc. 2º; cuadro de la sanción del art. 688; **no
+incluir la salida de la querella de amparo** (anexo de discusiones, sin
+autor ni explicación); **las dos preguntas clásicas**; sin material
+propio; "ok el resto".
+
+Lo que se hizo: D.2.4 a D.2.7 reescritos en voz propia (paráfrasis: de
+30 de 61 a 6 de 190, todas títulos u oraciones fácticas breves); citas
+RDJ y Gaceta repuestas; arts. 1824 y 1876 inc. 2º (este en `.ley`);
+art. 688 completo en `.ley`; Dato de grado de 5.1 retirado (al texto);
+5.2 con enlaces a IV.5.1 y IV.6; 6.1 con Ley 19.903 (art. 1 y 8) y Ley
+16.271 (arts. 25 y 30) verificadas, art. 687 "territorio", arts. 882 y
+883 CPC, VIAL con nombre (rol de las inscripciones, especiales siempre
+en el Conservador, bastan las dos primeras), enlaces a V.6.C y
+V.5.A.2.2.2; (i)-(iii) y a)-e) al marcado `enum-i-run`/`enum-a-run`
+(sin ids propios, nada enlazaba); 6.2 con el caso del remate, el
+argumento contra la nulidad absoluta, VIAL (arts. 679 y 696, nota de
+"posesión efectiva"), críticas minoritarias, mero tenedor, nulidad
+relativa por la calidad de heredero (1682 inc. 3º) con anotación
+marginal; cuadro "Respuesta / Qué pasa con la venta / Quién / Objeción";
+No confundir (art. 688 frente a cesión del derecho de herencia, enlace
+a D.3); 7 con VIAL (servidumbres, art. 698; el "título" del 689);
+cajas "La casa de Segismundo" (Fresia, Wenceslao) y "La parcela de don
+Belarmino" (Rodolfo, Zunilda, Aníbal, Bernardita; Conservador de Buin);
+breves (Rebeca, Herminio); dos preguntas clásicas; Conexiones (AJ IV.D.3,
+IV.B.2.5 y IV.B.3.6; Obligaciones, Contratos y Sucesorio con `[FALTA:
+sección]`). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 1.170, capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_10a.html`).
+
+**Pendiente para el 10b:** la nota "el art. 688 no se aplica a la cesión
+del derecho de herencia" ya quedó en el No confundir de 6.2; en D.3
+enlazar de vuelta.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura decide sobre el informe del tramo 10a**
-   (`Informes/Informe_Bienes_tramo10a.html`). Con sus decisiones,
-   reescribir D.2.4 a D.2.7 del manual.
+1. **Laura revisa el tramo 10a** en la vista previa (ancla
+   `#cV-4-D-2-4`). Si lo aprueba, anotarlo aquí.
 2. Después, tramo 10b (D.3 y D.4, p. 175-183).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
