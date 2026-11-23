@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 6b
-> aprobado; informe del tramo 7a entregado, esperando decisiones de
+> antes de seguir. Última actualización: 2026-11-23 (tramo 7b
+> aprobado; informe del tramo 7c entregado, esperando decisiones de
 > Laura).
 
 ## Resumen para retomar (léelo primero)
@@ -61,9 +61,12 @@
   Cierra V.3 La accesión. Detalle en "Tramo 6b", más abajo.
 - **Tramo 7a (V.4.A + V.4.B.1, p. 111-116): terminado y aprobado por
   Laura (2026-11-23), commit `541c37d`.**
-- **Tramo 7b (V.4.B.2-B.4, p. 116-123): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 7b", más abajo. Detalle en "Tramo 7a", más abajo. Siguiente
-  paso al final de este archivo.
+- **Tramo 7b (V.4.B.2-B.4, p. 116-123): terminado y aprobado por
+  Laura (2026-11-23, "sigue con el tramo 7c"), commit `812353c`.**
+  Detalle en "Tramo 7b", más abajo.
+- **Tramo 7c (V.4.C Efectos, p. 123-129): informe entregado
+  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo
+  7c", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1176,7 +1179,7 @@ más largo 848 caracteres, artículos en rojo, capturas revisadas, vista
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_7a.html`).
 
-## Tramo 7b: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 7b: hecho y aprobado (2026-11-23), commit `812353c`
 
 **V.4.B.2 a B.4, páginas 116 a 123 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo7b.html`. Hallazgos:
@@ -1247,12 +1250,66 @@ etiquetas balanceadas, párrafo más largo 973, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_7b.html`).
 
+## Tramo 7c: informe entregado (2026-11-23), esperando decisiones de Laura
+
+**V.4.C Efectos, páginas 123 a 129 de Boetsch** (cierra la parte 7).
+Informe en `Informes/Informe_Bienes_tramo7c.html`. Hallazgos:
+
+- Boetsch: faltan la intro de C, el caso de la cosa ajena mostrada y
+  nunca tenida (C.1), la cita de la C.S. sobre "transmisibles" (RDJ t.
+  24, p. 200), la discusión sobre retroactividad del título (4.1),
+  "tradición anticipada" y el momento del traspaso (4.3 i), y casi toda
+  la discusión 680/1874: objeción de Boetsch a la especialidad, los dos
+  rebatimientos de CAPRILE, condición sobre la tradición y no sobre el
+  contrato, accesoriedad (cesión y extinción del crédito), liquidación
+  concursal, par condicio, crédito interempresas. Hoy está en un Dato
+  de grado (se retira). Crítica del 682 y C.3 en la voz del manual: van
+  con nombre de BOETSCH (C.3 hoy contradice el esquema aprobado de
+  A.2.5). Paráfrasis: 4/66 sobre 70%, bajo porque el texto está
+  comprimido; se reescribe igual.
+- VIAL (p. 8-9 y 26-29), 9 unidades: 682 solo si la intención era
+  transferir ese derecho (opuesto a Boetsch); derechos intransferibles;
+  682 inc. 2º "la ley finge"; 683 muebles (sin tenencia no hay
+  posesión) e inmuebles (inscripción da posesión pero para prescribir
+  hacen falta actos posesorios: queda para el tramo 14); 681 plazo
+  tácito y decreto judicial; condición suspensiva y resolutoria en sus
+  tres estados (cumplida suspensiva: retroactivo a la tradición, frente
+  a Boetsch "en el instante"; cumplida resolutoria: la posesión
+  subsiste); reserva de dominio con y sin el 1874; "unánime" + art. 13.
+  VIAL p. 26 cita el 681 por el 680: no se arrastra.
+- Discusiones nº 14: ALESSANDRI por el 1874, **no verificado en el
+  original** (apunte de alumnas).
+- Citas: art. 730 (el mero tenedor que enajena a su propio nombre;
+  inc. 2º poseedor inscrito); art. 681 solo habla de plazo (la
+  condición viene del 1485); art. 1874 segunda parte omitida;
+  "quiebra" → liquidación concursal (Ley 20.720, sin artículos).
+  `.ley` propuestos: 680, 681, 1873, 1874; 682 y 683 solo enlace.
+- **Tensión con AJ:** AJ VI.A.3.1 (ii) afirma la retroactividad de la
+  condición cumplida sin matices; Boetsch la discute. Propuesto: dos
+  lecturas con nombre en Bienes, no tocar AJ en este tramo.
+- **Para el tramo 8:** V.4.D.1.4 dice que en toda tradición ficta el
+  adquirente queda en posesión; Boetsch (C.1) y VIAL dicen que sin
+  tenencia no hay posesión. Revisar al llegar ahí.
+- Esquema de la reserva de dominio (sección 6 del informe) y cuadro
+  "Art. 680 o art. 1874" para aprobar antes.
+- Ejemplos: "El caballo del potrero vecino" (Octavio y Leticia, 684 Nº
+  2), "El piano de la tía Dominga" (Facundo y Ximena, 682 inc. 2º y
+  1819), "El comedor de Ignacia" (reserva de dominio, Florencio);
+  breves: violín de la abuela Amparo y Emiliano (condición suspensiva y
+  resolutoria).
+- Pregunta clásica propuesta: solo "¿Qué ocurre si el tradente no es
+  dueño de la cosa?" (al final de C.3).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 7b** en la vista previa (anclas
-   `#cV-4-B-2`, `#cV-4-B-3`). Si lo aprueba, anotarlo aquí.
-2. Después, tramo 7c (V.4.C Efectos, p. 123-129). De VIAL: arts. 680,
-   681, 1874 (discusión nº 14) y el alcance de los arts. 682-683.
+1. **Laura decide sobre el informe del 7c** (las 8 decisiones del
+   recuadro). Anotarlas aquí y escribir el tramo con el método completo
+   (respaldo previo en el tmp del job, verificación con scripts,
+   capturas, vista previa, commit).
+2. Después, tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141), con la
+   tensión de V.4.D.1.4 anotada arriba.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
+4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
+   inmuebles (ver "Tramo 7c").
