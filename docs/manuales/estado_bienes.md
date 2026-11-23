@@ -4,7 +4,7 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 8
-> aprobado; informe del tramo 9a esperando decisiones de Laura).
+> aprobado; tramo 9a escrito, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -68,9 +68,9 @@
 - **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): terminado y
   aprobado por Laura (2026-11-23, "sigue con el tramo 9a"), commit
   `c28471a`.** Detalle en "Tramo 8", más abajo.
-- **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): informe escrito
-  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo 9a",
-  más abajo. Siguiente paso al final de este archivo.
+- **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
+  9a", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1417,7 +1417,7 @@ con nombre de BOETSCH y precisión de VIAL (resuelve la tensión del
 1.071, capturas revisadas, vista previa actualizada. Respaldo en el
 tmp del job (`05_Bienes_antes_8.html`).
 
-## Tramo 9a: informe escrito (2026-11-23), esperando decisiones de Laura
+## Tramo 9a: escrito (2026-11-23), esperando revisión de Laura
 
 **V.4.D.2.1 a D.2.3.2, páginas 142 a 152 de Boetsch** (corte por
 contenido propuesto: 3.2 Principios termina en la p. 152). Informe en
@@ -1469,11 +1469,41 @@ contenido propuesto: 3.2 Principios termina en la p. 152). Informe en
   (Ley 21.718) plazo máximo de 20 días para inscribir; lo de VIAL sobre
   negativa, Repertorio y dos meses.
 
+**Decisiones de Laura al informe (2026-11-23): "todo ok"**, no
+cambiar: corte 142-152; **"Reglamento" renombrado en todo el manual
+de una vez** a "Ley del Registro Conservatorio" (se dejaron a propósito
+las menciones históricas: III.6 d) con nota sobre la Ley 21.772, la
+casación del 3.5 "el antiguo Reglamento constituía un DFL", la
+explicación de 3.1 y el Reglamento del Registro de Vehículos);
+actualizaciones de las Leyes 21.772 y 21.718 resumidas; dos lecturas
+de uso y habitación (BOETSCH/VIAL); párrafo de ALCALDE; Mensaje al
+texto como cita (Dato de grado retirado); arts. 686 y 692 en `.ley`;
+cuadro "Tres opciones para construir un registro"; fallo C.S. 29-12-2009
+con fecha, sin rol; pregunta clásica **solo "¿Es prueba de dominio la
+inscripción conservatoria?"** (la de "¿684 o 686?" se descarta). Laura
+no indicó material propio.
+
+Lo que se hizo: D.2.1 a D.2.3.2 reescritos en voz propia (paráfrasis:
+de 16 oraciones sobre 70% a 0 de prosa; las que quedan son el Mensaje,
+el art. 686, el fallo y la lista de los tres libros); unidades de
+Boetsch, VIAL y ALCALDE verificadas por script; art. 2410 (no 2409);
+responsabilidad del Conservador (arts. 96, 98, 8 de la ley; 539 inc. 2º
+COT); notario conservador (arts. 447-450 COT); publicidad digital
+(arts. 5, 5 bis, 49); art. 78 Nºs 6 y 7 en tracto sucesivo; funciones
+en (i)-(v); 2.2, 3.1 y 3.2 con (i)-(vi) y a)-c) (ids de los antiguos
+a)-f) eliminados, nada enlazaba); en el punto 3, "artículos sin otra
+indicación = Ley del Registro Conservatorio" (dicho en 3.1); cajas "La
+casa de doña Herminia" y "El departamento de Teodoro"; breves
+(Wilfredo, Celinda, Agustina, Baltazar); Conexiones (AJ IV.B.4.3;
+Contratos 1817). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 1.002, capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_9a.html`).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura decide sobre el informe del tramo 9a** (10 preguntas al
-   inicio del informe). Con sus respuestas, reescribir D.2.1 a D.2.3.2
-   (ancla `#cV-4-D-2`), verificar, vista previa y commit.
+1. **Laura revisa el tramo 9a** en la vista previa (ancla `#cV-4-D-2`).
+   Si lo aprueba, anotarlo aquí.
 2. Después, tramo 9b (V.4.D.2.3.3 en adelante, p. 152-160).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
