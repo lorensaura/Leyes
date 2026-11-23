@@ -4,7 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 7c
-> escrito, esperando revisión de Laura en la vista previa).
+> aprobado; informe del tramo 8 entregado, esperando decisiones de
+> Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -65,7 +66,9 @@
   Detalle en "Tramo 7b", más abajo.
 - **Tramo 7c (V.4.C Efectos, p. 123-129): terminado y aprobado por
   Laura (2026-11-23), commit `7e3087e`.**
-- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): en curso.** Detalle en "Tramo
+- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): informe
+  entregado (2026-11-23), esperando decisiones de Laura.** Detalle en
+  "Tramo 8", más abajo. Detalle en "Tramo
   7c", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -1333,11 +1336,51 @@ contrastar con Boetsch (Bienes V.4.C.4.3) y con los arts. 1486 y 1488
 frutos del tiempo intermedio), que muestran que la retroactividad no es
 absoluta. Buscar fuente doctrinal antes de escribir.
 
+## Tramo 8: informe entregado (2026-11-23), esperando decisiones de Laura
+
+**V.4.D (entrada) y D.1, páginas 129 a 141 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo8.html`. Hallazgos:
+
+- **VIAL cambió de postura y el manual se contradice.** Boetsch (sección
+  3) sigue a VIAL en sus ediciones anteriores: sin recepción no hay
+  tradición (Nº 1), mostrar no basta (Nº 2), el encargo del Nº 4 debe
+  cumplirse. El resumen de VIAL dice "ha cambiado su postura": la
+  tradición (dominio) ocurre con la conducta del tradente (permitir,
+  mostrar, encargarse); la posesión exige que el adquirente reciba;
+  dar vs. entregar; mora de recibir y consignación. En el Nº 4 VIAL hoy
+  adhiere a la lectura literal (con PEÑAILILLO y la doctrina nacional).
+  A.4 (7a) ya recoge la postura nueva; D.1 3.1, 3.2 y 3.4 tienen la
+  antigua atribuida a VIAL. Propuesto: esquema con lectura tradicional
+  (BOETSCH, VIAL ediciones anteriores, CLARO SOLAR en Nº 4) y lectura
+  actual de VIAL, y cuadro por número del 684. El resumen cita "art.
+  681 Nº 1" por el 684 Nº 1: no se arrastra.
+- Principio de las fictas (D.1.4): con nombre de BOETSCH; para VIAL
+  vale en Nºs 3 y 5, no en 2 y 4 sin entrega (resuelve la tensión
+  anotada en el 7c).
+- Boetsch: faltan la entrada de D (cuatro distinciones), forma más
+  corriente (Nº 1), primera tesis de la negativa, aprehensión simbólica
+  y la alternativa "solo contrato o ficta" (Nº 2), disponer entregando
+  las llaves (Nº 3), tradición por el solo contrato y la cita de CLARO
+  SOLAR (Nº 4), finalidad de brevi manu y constituto, acciones del
+  título (685 inc. 2º), RDJ t. 36 p. 435 (taxatividad), detalles de
+  valor comparativo y de vehículos. Paráfrasis: 14 sobre 70%, 43 sobre
+  35%.
+- Citas: art. 1817 tiene tres reglas (el manual da una); art. 149 C.
+  de Com. (tránsito por mar o tierra; uso constante del comercio); art.
+  148 inc. 2º (consignatario). Ley 18.290 y D.S. 1.111/1985 no
+  verificables en la carpeta de códigos.
+- Ejemplos: "La bicicleta eléctrica de Rosario" (Mateo, brevi manu),
+  "La enfardadora de don Hugo" (Celeste y Germán, constituto + 1817);
+  breves: Lautaro (Nº 1), Damián (llaves), Julieta (Nº 4), doña Irma
+  (pinos, 685), cláusula de prueba.
+- Pregunta clásica propuesta: "¿Es taxativa la enumeración del art.
+  684?". La de "¿684 o 686 regla general?" queda para el tramo 9a.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Tramo 8**: informe en preparación.
-2. Después, tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141), con la
-   tensión de V.4.D.1.4 anotada arriba.
+1. **Laura decide sobre el informe del tramo 8** (las 8 decisiones del
+   recuadro). Anotarlas aquí y escribir el tramo con el método completo.
+2. Después, tramo 9a (V.4.D.2 Sistema registral, introducción, p. 142-150).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
