@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 7b
-> aprobado; informe del tramo 7c entregado, esperando decisiones de
-> Laura).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 7c
+> escrito, esperando revisión de Laura en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -64,8 +63,8 @@
 - **Tramo 7b (V.4.B.2-B.4, p. 116-123): terminado y aprobado por
   Laura (2026-11-23, "sigue con el tramo 7c"), commit `812353c`.**
   Detalle en "Tramo 7b", más abajo.
-- **Tramo 7c (V.4.C Efectos, p. 123-129): informe entregado
-  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo
+- **Tramo 7c (V.4.C Efectos, p. 123-129): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
   7c", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -1250,7 +1249,7 @@ etiquetas balanceadas, párrafo más largo 973, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_7b.html`).
 
-## Tramo 7c: informe entregado (2026-11-23), esperando decisiones de Laura
+## Tramo 7c: escrito (2026-11-23), esperando revisión de Laura
 
 **V.4.C Efectos, páginas 123 a 129 de Boetsch** (cierra la parte 7).
 Informe en `Informes/Informe_Bienes_tramo7c.html`. Hallazgos:
@@ -1300,12 +1299,39 @@ Informe en `Informes/Informe_Bienes_tramo7c.html`. Hallazgos:
 - Pregunta clásica propuesta: solo "¿Qué ocurre si el tradente no es
   dueño de la cosa?" (al final de C.3).
 
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: esquema de la reserva de dominio tal cual; cuadro "Art. 680 o
+art. 1874"; dos lecturas de la condición cumplida (BOETSCH/VIAL) sin
+tocar AJ; las dos lecturas del 682 con nombre; arts. 680, 681, 1873 y
+1874 en `.ley`; "liquidación concursal (la antigua quiebra)"; pregunta
+clásica solo "¿Qué ocurre si el tradente no es dueño de la cosa?".
+Laura pidió además una **Conexión** a AJ por la retroactividad de la
+condición, para que se revise esa parte (hecho, en la caja Conexiones
+al final de C). Laura no indicó material propio.
+
+Lo que se hizo: V.4.C reescrito en voz propia (paráfrasis: 1 oración
+sobre 70%, la transcripción del art. 681); unidades de Boetsch y de
+VIAL verificadas por script; Dato de grado retirado; C.2 y 4.2 con
+(i)/(ii)/(iii); 4.3 (i) con a)/b) y a.1)/a.2), b.1)/b.2); cajas "El
+caballo del potrero vecino", "El piano de la tía Dominga" y "El comedor
+de Ignacia"; breves (Remigio y Pascual, 682; violín de Amparo y
+Emiliano); cuadro con `cols-angostas`; enlaces a A.2.5, B.1.1,
+D.1.3.2, V.5.A.2.2.2, V.5.A.5.4, VI.1 y VI.2. Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafo
+más largo 985, capturas revisadas, vista previa actualizada. Respaldo
+en el tmp del job (`05_Bienes_antes_7c.html`).
+
+**Pendiente para AJ (no para Bienes):** VI.A.3.1 (ii) afirma la
+retroactividad de la condición cumplida sin matices. Al revisar AJ,
+contrastar con Boetsch (Bienes V.4.C.4.3) y con los arts. 1486 y 1488
+(el acreedor recibe la cosa en el estado en que esté; no se deben los
+frutos del tiempo intermedio), que muestran que la retroactividad no es
+absoluta. Buscar fuente doctrinal antes de escribir.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura decide sobre el informe del 7c** (las 8 decisiones del
-   recuadro). Anotarlas aquí y escribir el tramo con el método completo
-   (respaldo previo en el tmp del job, verificación con scripts,
-   capturas, vista previa, commit).
+1. **Laura revisa el tramo 7c** en la vista previa (ancla `#cV-4-C`).
+   Si lo aprueba, anotarlo aquí.
 2. Después, tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141), con la
    tensión de V.4.D.1.4 anotada arriba.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
