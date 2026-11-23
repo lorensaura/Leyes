@@ -1641,6 +1641,11 @@ Leontina"; pregunta clásica "¿Qué son las inscripciones paralelas y
 cómo se resuelven?"; inscripciones de papel con las dos posturas;
 breves (Hortensia y Teófilo, Eduvigis, Filomena); Conexiones (AJ
 IV.B.2.2; Obligaciones 1567 y Contratos 1817 con `[FALTA: sección]`).
+Ajuste pedido por Laura (2026-11-23): VIAL con nombre en 3.15 (i):
+causa a), su lectura del art. 730 inc. 2º (la inscripción por avisos
+hecha por el mero tenedor sería "competente inscripción" y pondría fin
+a la posesión anterior, enlace a V.5.A.5.4.3); y la paralela por título
+que no proviene del poseedor inscrito (una eficaz, otra ineficaz).
 Verificación: cero guiones largos, ids únicos, `href` resuelven,
 etiquetas balanceadas, párrafo más largo 759, capturas revisadas,
 vista previa actualizada. Respaldo en el tmp del job
