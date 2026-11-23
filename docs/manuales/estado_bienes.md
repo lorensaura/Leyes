@@ -63,8 +63,9 @@
 - **Tramo 7b (V.4.B.2-B.4, p. 116-123): terminado y aprobado por
   Laura (2026-11-23, "sigue con el tramo 7c"), commit `812353c`.**
   Detalle en "Tramo 7b", más abajo.
-- **Tramo 7c (V.4.C Efectos, p. 123-129): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
+- **Tramo 7c (V.4.C Efectos, p. 123-129): terminado y aprobado por
+  Laura (2026-11-23), commit `7e3087e`.**
+- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): en curso.** Detalle en "Tramo
   7c", más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -1231,7 +1232,11 @@ aprobado tal cual; art. 675 inc. 2º con art. 1138; jurisprudencia:
 **solo una, nueva, pedida por Laura:** "¿En qué se diferencia el error
 como vicio del consentimiento del error en la tradición?" (en 2.2,
 tras el cuadro). Laura no tiene material propio (se anota, no se
-agrega nada).
+agrega nada). **Cambio posterior (2026-11-23, pedido de Laura al
+aprobar el 7c, commit `62012c6`):** esa pregunta clásica se reemplazó
+por un **cuadro comparativo** "error como vicio del consentimiento /
+error en la tradición" (9 criterios), después del cuadro "El error en
+la tradición" en 2.2. No volver a la caja de pregunta.
 
 Lo que se hizo: B.2-B.4 reescritos en voz propia (paráfrasis: de 18/83
 sobre 70% a 6, todas transcripciones de los arts. 672, 673, 675, 676 y
@@ -1249,7 +1254,7 @@ etiquetas balanceadas, párrafo más largo 973, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_7b.html`).
 
-## Tramo 7c: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 7c: hecho y aprobado (2026-11-23), commit `7e3087e`
 
 **V.4.C Efectos, páginas 123 a 129 de Boetsch** (cierra la parte 7).
 Informe en `Informes/Informe_Bienes_tramo7c.html`. Hallazgos:
@@ -1330,8 +1335,7 @@ absoluta. Buscar fuente doctrinal antes de escribir.
 
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 7c** en la vista previa (ancla `#cV-4-C`).
-   Si lo aprueba, anotarlo aquí.
+1. **Tramo 8**: informe en preparación.
 2. Después, tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141), con la
    tensión de V.4.D.1.4 anotada arriba.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
