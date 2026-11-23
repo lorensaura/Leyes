@@ -4,7 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 6b
-> escrito, esperando revisión de Laura).
+> aprobado; informe del tramo 7a entregado, esperando decisiones de
+> Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -55,10 +56,12 @@
   Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
 - **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): terminado y aprobado por
   Laura (2026-11-23), commit `de6ca42`.** Detalle en "Tramo 6a", más abajo.
-- **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Cierra V.3 La
-  accesión. Detalle en "Tramo 6b", más abajo. Siguiente paso al final
-  de este archivo.
+- **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): terminado y aprobado por
+  Laura (2026-11-23, "ok, sigue con el tramo 7a"), commit `5643d37`.**
+  Cierra V.3 La accesión. Detalle en "Tramo 6b", más abajo.
+- **Tramo 7a: informe entregado (2026-11-23), esperando las 9
+  decisiones de Laura.** Detalle en "Tramo 7a", más abajo. Siguiente
+  paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -133,9 +136,9 @@ que en AJ.
 | 5b | 87-94 | 5 | V.2 La ocupación completa (corregido 2026-10-10, antes 88-94) |
 | 6a | 95-102 | 6 | V.3.1 a V.3.5.1 (concepto, clases, naturaleza, frutos, inmueble a inmueble). Corte por contenido aprobado 2026-10-10 |
 | 6b | 102-110 | 6 | V.3.5.2 mueble a mueble y V.3.5.3 mueble a inmueble (corregido 2026-10-10) |
-| 7a | 111-118 | 7 | V.4.A Tradición, descripción general |
-| 7b | 118-125 | 7 | V.4.B Tradición, requisitos |
-| 7c | 125-129 | 7 | V.4.C Tradición, efectos |
+| 7a | 111-116 | 7 | V.4.A Tradición, descripción general + V.4.B.1 tradente y adquirente (corte por contenido propuesto 2026-11-23; antes 111-118: A termina en la p. 114) |
+| 7b | 116-123 | 7 | V.4.B.2-B.4 Tradición: consentimiento, título, entrega (propuesto 2026-11-23; antes 118-125) |
+| 7c | 123-129 | 7 | V.4.C Tradición, efectos (propuesto 2026-11-23; antes 125-129) |
 | 8 | 129-141 | 8 | V.4.D.1 Tradición de muebles |
 | 9a | 142-150 | 9 | V.4.D.2 Sistema registral: introducción y fundamentos |
 | 9b | 150-160 | 9 | V.4.D.2 Sistema registral chileno (el grueso: Repertorio, Registro, inscripciones) |
@@ -1024,7 +1027,7 @@ balanceadas, párrafo más largo 868 caracteres, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_6a.html`).
 
-## Tramo 6b: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 6b: hecho y aprobado (2026-11-23), commit `5643d37`
 
 **V.3.5.2 y V.3.5.3, páginas 102 a 110 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo6b.html`.
@@ -1086,13 +1089,65 @@ propio. Ejemplos propuestos: "El pipeño de Gonzalo" (caja, 662 y 665),
 trigo de Marisol y Fabián (cursiva, 663), ladrillos de Iván (cursiva,
 668), "El quincho de Óscar" (caja, 669 incs. 1º y 2º).
 
+## Tramo 7a: informe entregado (2026-11-23), esperando decisiones
+
+**V.4.A + V.4.B.1, páginas 111 a 116 de Boetsch** (corte propuesto).
+Informe en `Informes/Informe_Bienes_tramo7a.html`. Hallazgos:
+
+- **Corte:** V.4.A termina en la p. 114; B.1 en la 116; B.2-B.4 p.
+  116-123; C p. 123-129. Propuesto 7a = A + B.1, 7b = B.2-B.4, 7c = C.
+- Boetsch: faltan 3 unidades (arts. 1443 "parcialmente adecuado" y 2197
+  "con redundancia" en A.4; la frase que abre B) y 2 matices. Paráfrasis:
+  20/73 oraciones sobre 70%, se reescribe todo.
+- **Repeticiones con V.1:** A.2.1 (V.1.3.1), A.2.3 (V.1.3.4, Yaris),
+  A.2.4 (V.1.3.2 iii), A.3 (V.1.4 iv y cuadro), A.1 (V.1.1). Propuesta:
+  versión corta con enlace. Art. 682 en `.ley` solo en B.1.1 (i).
+- **A.2.5 "sirve de justo título":** choca con art. 702 inc. 3º; los
+  anexos de posesión (Bozzo e Ibarra; Lombardo) dicen que la tradición
+  de quien no es dueño es título de la posesión. Propuesta: frase con
+  nombre de BOETSCH + art. 683 + una línea "se discute" + enlace a
+  `#cV-5-A-2-2-2`. El argumento de VIAL sobre el 703 sigue para 11b.
+- **VIAL (resumen, p. 1-10 y 18-19), 14 unidades:** enajenar = tradición
+  (una línea + conexión a AJ II.C.4.3); naturaleza jurídica; entre vivos
+  (no entra, ya en V.1.3.3, el pacto va al 7c); universal "patrimonio"
+  (no entra, contradice a Boetsch); entrega/tradición, inexactitud en
+  inmuebles, dar vs. entregar (1548, 1824, 1826) y discusión VIAL vs.
+  "otra parte de la doctrina" sobre cuándo se cumple la obligación de
+  dar; art. 1443 (contratos reales); existencia/validez; art. 671;
+  facultad = dueño (VIAL) vs. poder de disposición (Boetsch); capacidad
+  de ejercicio en ambos; incapacidades especiales anulan la venta, no
+  la tradición; **art. 679** (no estaba en el manual) con arts. 254 y 393.
+- Peñailillo no trata la tradición (lo que trae ya está en V.1.1).
+- Citas: art. 670 sin inc. 2º; art. 1575 sin "o con consentimiento del
+  dueño" ni inc. 3º (fungible consumida de buena fe); art. 1578 Nº 1 dice
+  "administración" (no "libre") y la salvedad es el provecho "con arreglo
+  al art. 1688". `.ley` propuestos: 670, 671 (completo, Memorice), 679,
+  682.
+- Opinión de Boetsch en B.1.2 ("parece claro" que el pago es nulo) va
+  con su nombre.
+- Formato: B.1.1 h6 a)/b) a (i)/(ii) y las tres posturas del adquirente
+  a)-c); No confundir "Entrega vs. tradición" → cuadro de 5 criterios
+  (decide Laura); sin latinazgo *nemo plus*; grafía "traslaticio".
+- Ejemplos propuestos: "El kayak de Maite" (A.4), "El notebook de la
+  hermana" (B.1.2, Emilia, Lucas, Trinidad); breves: Domingo (herencia),
+  tía Pilar curadora (art. 679), Bastián y Amanda (A.4).
+- 4 preguntas clásicas candidatas (¿qué es la tradición?; ¿es un
+  contrato? recomendada; ¿modo más importante?; ¿qué capacidad?
+  recomendada).
+- Conexiones: AJ II.C.4.3, II.B.2, II.B.3.3; Obligaciones y Contratos
+  con `[FALTA: sección]`.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 6b** en `Vista_previa/Bienes_vista_previa.html`
-   (anclas `#cV-3-5-2` y `#cV-3-5-3`). Si lo aprueba, anotarlo aquí.
-2. **Tramo 7a** (V.4.A Tradición, descripción general, p. 111-118):
-   informe nuevo. Paso 0 de siempre: releer `lecciones-acto-juridico.md`
-   (checklist de la sección 6). Ojo con los rótulos: bajo `b)` va
-   `b.1)`, nunca `a.1)`.
+1. **Laura responde las 9 decisiones del informe del tramo 7a**
+   (`Informes/Informe_Bienes_tramo7a.html`, recuadro amarillo). Anotar
+   aquí sus decisiones ("no cambiar") y corregir la tabla del reparto si
+   aprueba el corte.
+2. Con eso, reescribir V.4.A y V.4.B.1 en el manual (respaldo previo en
+   el tmp del job), verificar con scripts y capturas, actualizar la vista
+   previa (anclas `#cV-4-A` y `#cV-4-B-1`) y commitear. Ojo con los
+   rótulos: bajo `b)` va `b.1)`, nunca `a.1)`.
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
-   art. 703 (ver "Tramo 5a").
+   art. 703 (ver "Tramo 5a"), y ahora también la discusión de si la
+   tradición de quien no es dueño es el título de la posesión (ver
+   "Tramo 7a").
