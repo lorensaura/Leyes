@@ -1747,5 +1747,12 @@ enlazar de vuelta.
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
    inmuebles (ver "Tramo 7c") y la pregunta clásica "¿Cómo se cancela
    la posesión inscrita?" (ver "Tramo 9c").
-5. Pendiente para el tramo 16b: V.5.B.6 y V.5.B.8 contra el texto
+5. Pendiente para el tramo 19: VI.4.6.2 Servidumbres legales sigue con
+   el marcado antiguo (b.1 a b.7 en `h5`). Laura corrigió en vista previa
+   (2026-11-23) que a) y b) iban en negrita y subrayado (`h4`): ya pasaron
+   a negrita sin subrayado (`enum-i`), conservando a)/b). Al trabajar el
+   tramo 19, ordenar todo el 6.2 según la escalera. Igual en VII (tramos
+   20a-20c): quedan `h4` sin número ("Cosas susceptibles de
+   reivindicarse", "Ser poseedor", etc.).
+6. Pendiente para el tramo 16b: V.5.B.6 y V.5.B.8 contra el texto
    vigente del DL 2.695 (ver "Tramo 9c").
