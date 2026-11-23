@@ -1142,12 +1142,21 @@ Informe en `Informes/Informe_Bienes_tramo7a.html`. Hallazgos:
 - Conexiones: AJ II.C.4.3, II.B.2, II.B.3.3; Obligaciones y Contratos
   con `[FALTA: sección]`.
 
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: corte 7a = A + B.1 (p. 111-116), 7b = B.2-B.4, 7c = C;
+repeticiones con V.1 resumidas con enlace; VIAL obligación de dar (dos
+posturas con nombre) en B.1.2; clasificación existencia/validez de VIAL
+al abrir B; cuadro "Entrega y tradición" en vez del No confundir;
+pregunta clásica **solo "¿La tradición es un contrato?"** (en A.2.2).
+**A.2.5 ("sirve de justo título") queda pendiente:** Laura pidió ver
+primero un esquema de cómo quedaría explicado, por ser tema sensible
+(esquema entregado en el chat el 2026-11-23).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura responde las 9 decisiones del informe del tramo 7a**
-   (`Informes/Informe_Bienes_tramo7a.html`, recuadro amarillo). Anotar
-   aquí sus decisiones ("no cambiar") y marcar el corte como aprobado en
-   la tabla del reparto (hoy dice "propuesto").
+1. **Laura aprueba (o corrige) el esquema de A.2.5.** El resto del
+   informe ya está aprobado. Marcar el corte como aprobado en la tabla
+   del reparto (hoy dice "propuesto").
 2. Con eso, reescribir V.4.A y V.4.B.1 en el manual (respaldo previo en
    el tmp del job), verificar con scripts y capturas, actualizar la vista
    previa (anclas `#cV-4-A` y `#cV-4-B-1`) y commitear. Ojo con los
