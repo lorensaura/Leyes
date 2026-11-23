@@ -4,7 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-23 (tramo 9b
-> escrito, esperando revisión de Laura en la vista previa).
+> aprobado; informe del tramo 9c entregado, esperando decisiones de
+> Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -71,8 +72,11 @@
 - **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): terminado y aprobado
   por Laura (2026-11-23, "sigamos con el tramo 9b"), commit `e47fe19`.**
   Detalle en "Tramo 9a", más abajo.
-- **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 9b",
+- **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): terminado y aprobado
+  por Laura (2026-11-23, "ok, sigue con el tramo 9c"), commit `70f1d71`.**
+- **Tramo 9c (V.4.D.2.3.11 a 3.15, p. 161-166): informe entregado
+  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo 9c",
+  más abajo. Detalle en "Tramo 9b",
   más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -1503,7 +1507,7 @@ resuelven, etiquetas balanceadas, párrafo más largo 1.002, capturas
 revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_9a.html`).
 
-## Tramo 9b: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 9b: hecho y aprobado (2026-11-23), commit `70f1d71`
 
 **V.4.D.2.3.3 a 3.10, páginas 152 a 160 de Boetsch** (3.11 empieza en
 la p. 161). Informe en `Informes/Informe_Bienes_tramo9b.html`. Hallazgos:
@@ -1582,11 +1586,46 @@ etiquetas balanceadas, párrafo más largo 840, unidades del inventario
 verificadas por script, capturas revisadas, vista previa actualizada.
 Respaldo en el tmp del job (`05_Bienes_antes_9b.html`).
 
+## Tramo 9c: informe entregado (2026-11-23), esperando decisiones de Laura
+
+**V.4.D.2.3.11 a 3.15, páginas 161 a 166 de Boetsch** (cierra el punto 3
+de D.2). Informe en `Informes/Informe_Bienes_tramo9c.html`. Hallazgos:
+
+- **DL 2.695 desactualizado en Boetsch:** "al cabo de un año" dueño; desde
+  la Ley 21.108 (2018) son dos años (el manual ya lo dice en V.5.B.8).
+  Avalúo: menos de 800 UTM rural / 380 UTM urbano. Verificado con ORREGO
+  (2020), no con la BCN (el DL no está en `Apuntes/CODIGOS/`).
+- Citas: art. 728 dice "decreto judicial" (el manual, "sentencia");
+  PEÑAILILLO habla de requisitos "en consideración a la naturaleza del
+  acto" (fórmula del art. 1682), no "requisitos de forma"; en la causa
+  c) de las paralelas (art. 14) la doble inscripción nace después de la
+  notificación judicial, no "en el intertanto".
+- "La doctrina y jurisprudencia en general" (inscripciones de papel)
+  choca con V.5.A.5.4 (TRUCCO, LIRA, ALESSANDRI); el anexo de
+  discusiones dice que es la jurisprudencia reciente. Propuesto: dos
+  posturas sin tomar partido.
+- VIAL (p. 72-75): resciliación/transacción como "voluntad de las
+  partes" del 728 (nuevo, con nombre); lo demás del 728 y 730 ya está en
+  V.5.A.5.4.3 (enlace). Discusiones doctrinales nº 3: crítica a la
+  reinscripción (minoritaria, sin autor).
+- Paráfrasis: 8 de 25 oraciones sobre 70%.
+- Propuestas: 3.13 con (i) PEÑAILILLO / (ii) ROZAS; 3.15 a)/b) a
+  (i)/(ii); art. 728 inc. 1º en `.ley`; cuadro "Tres criterios para
+  resolver las inscripciones paralelas"; caja "El sitio de Leontina"
+  (Renato, Rosalía, Los Vilos); breves (Hortensia y Teófilo, heredero y
+  reinscripción, Eduvigis en Coyhaique, Filomena en Melipilla); pregunta
+  clásica recomendada "¿Qué son las inscripciones paralelas y cómo se
+  resuelven?"; la de "¿cómo se cancela la posesión inscrita?" (de
+  PREGUNTAS BIENES) propuesta para el tramo 14. Conexiones: AJ IV.B.2.2
+  (art. 1682); Contratos 1817 con `[FALTA: sección]`.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura revisa el tramo 9b** en la vista previa (ancla
-   `#cV-4-D-2-3-3`). Si lo aprueba, anotarlo aquí.
-2. Después, tramo 9c (D.2.3.11 a 3.15, p. 161-166).
+1. **Laura decide sobre el informe del tramo 9c** (5 preguntas: DL
+   2.695, PEÑAILILLO/ROZAS, inscripciones de papel, cuadro, pregunta
+   clásica). Anotar sus decisiones aquí y reescribir D.2.3.11 a 3.15 con
+   respaldo previo.
+2. Después, tramo 10a (D.2.4 a D.2.7, p. 166-175).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
