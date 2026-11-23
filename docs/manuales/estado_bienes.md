@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 9a
-> aprobado; informe del tramo 9b entregado, esperando decisiones de
-> Laura).
+> antes de seguir. Última actualización: 2026-11-23 (tramo 9b
+> escrito, esperando revisión de Laura en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -72,8 +71,8 @@
 - **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): terminado y aprobado
   por Laura (2026-11-23, "sigamos con el tramo 9b"), commit `e47fe19`.**
   Detalle en "Tramo 9a", más abajo.
-- **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): informe entregado
-  (2026-11-23), esperando decisiones de Laura.** Detalle en "Tramo 9b",
+- **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): escrito (2026-11-23),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 9b",
   más abajo. Siguiente paso al final de este archivo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -154,10 +153,10 @@ que en AJ.
 | 7c | 123-129 | 7 | V.4.C Tradición, efectos (aprobado 2026-11-23; antes 125-129) |
 | 8 | 129-141 | 8 | V.4.D.1 Tradición de muebles |
 | 9a | 142-152 | 9 | V.4.D.2.1 a D.2.3.2 Sistema registral: introducción, tipos de registro, el Conservador, principios (corte por contenido propuesto 2026-11-23, antes 142-150: los principios terminan en la p. 152) |
-| 9b | 152-160 | 9 | V.4.D.2 Sistema registral chileno (el grueso: Repertorio, Registro, inscripciones) |
-| 9c | 160-166 | 9 | V.4.D.2 cont. (cuotas, inscripciones por sucesión, prescripción) |
-| 10a | 166-175 | 10 | V.4.D.3 Tradición del derecho de herencia |
-| 10b | 175-183 | 10 | V.4.D.4 Tradición de derechos personales |
+| 9b | 152-160 | 9 | V.4.D.2.3.3 a 3.10 (qué se inscribe, cómo, negativa, plazo, avisos, contenido, subinscripciones). Corte aprobado 2026-11-23 |
+| 9c | 161-166 | 9 | V.4.D.2.3.11 a 3.15 (cancelaciones, reinscripciones, sanción, saneamiento y DL 2.695, inscripciones paralelas y de papel). Corregido 2026-11-23 |
+| 10a | 166-175 | 10 | V.4.D.2.4 a D.2.7 (tradición de derechos reales sobre inmuebles, cuotas, art. 688, la inscripción en la prescripción). Corregido 2026-11-23 |
+| 10b | 175-183 | 10 | V.4.D.3 Tradición del derecho de herencia + V.4.D.4 Tradición de derechos personales. Corregido 2026-11-23 |
 | 11a | 184-191 | 11 | V.5.A.1 Posesión, aspectos generales |
 | 11b | 191-198 | 11 | V.5.A.2 Clases de posesión (regular: concepto, justo título) |
 | 11c | 198-204 | 11 | V.5.A.2 cont. (buena fe, tradición, ventajas) |
@@ -1504,7 +1503,7 @@ resuelven, etiquetas balanceadas, párrafo más largo 1.002, capturas
 revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_9a.html`).
 
-## Tramo 9b: informe entregado (2026-11-23), esperando decisiones de Laura
+## Tramo 9b: escrito (2026-11-23), esperando revisión de Laura
 
 **V.4.D.2.3.3 a 3.10, páginas 152 a 160 de Boetsch** (3.11 empieza en
 la p. 161). Informe en `Informes/Informe_Bienes_tramo9b.html`. Hallazgos:
@@ -1555,14 +1554,39 @@ la p. 161). Informe en `Informes/Informe_Bienes_tramo9b.html`. Hallazgos:
   Conservador negarse a inscribir un título?". Conexiones: AJ IV.B.1.6
   (art. 1683); Procesal y Contratos con `[FALTA: sección]`.
 
+**Decisiones de Laura al informe (2026-11-23): "ok"**, no cambiar:
+reparto nuevo (9c = 3.11-3.15; 10a = D.2.4-D.2.7; 10b = D.3 y D.4,
+tabla corregida); art. 78 actual con el razonamiento de BOETSCH sobre
+los linderos; leyes nuevas resumidas; título de 3.8 "anteriores a la
+entrada en funciones del Registro", **sin fecha**; listas de los arts.
+52 y 53 por sus Nºs; cuadro; **las dos preguntas clásicas** (negativa
+al final de 3.5, individualización al final de 3.9). Laura **no tiene
+material propio**. El `AJ_vista_previa.html` suelto en la raíz de
+`DERECHO LIBRE/` (copia del 7 de octubre del manual de AJ) **se deja
+donde está**, por decisión de Laura.
+
+Lo que se hizo: D.2.3.3 a D.2.3.10 reescritos en voz propia
+(paráfrasis: de 29 oraciones de prosa sobre 70% a ninguna de prosa
+propia; las que quedan son ítems de la ley, el art. 14 o la frase
+atribuida a BOETSCH); 3.3 con (i)/(ii) y a)-d) / a)-c) por Nºs de los
+arts. 52 y 53; 3.4 (i)-(iv); 3.5 (i)-(ii) (ids `-3-3-a/b`,
+`-3-4-a..d`, `-3-5-a/b` eliminados, nada enlazaba); arts. 13, 57, 58
+y 78 vigentes; art. 451 COT y 96 Nº 3; arts. 56, 59, 69, 89 y 92;
+ALESSANDRI; opiniones de BOETSCH con nombre; lo de los tribunales
+atribuido; cuadro "Anotación e inscripción"; cajas "El galpón de
+Gumercindo" y "La parcela de doña Clotilde"; breves (Osvaldo, minuta,
+Baltazar y art. 14, Josefina, Graciela); dos preguntas clásicas;
+Conexiones (AJ IV.B.1.6; Procesal y Contratos con `[FALTA: sección]`).
+Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafo más largo 840, unidades del inventario
+verificadas por script, capturas revisadas, vista previa actualizada.
+Respaldo en el tmp del job (`05_Bienes_antes_9b.html`).
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
-1. **Laura decide sobre el informe del tramo 9b** (8 preguntas: corte y
-   reparto, art. 78 y linderos, leyes nuevas, título del 3.8, listas de
-   los arts. 52 y 53, cuadro, pregunta clásica, material propio).
-   Anotar sus decisiones aquí, corregir la tabla del reparto si aprueba
-   el nuevo, y reescribir D.2.3.3 a D.2.3.10 con respaldo previo.
-2. Después, tramo 9c (3.11 a 3.15, p. 161-166, si se aprueba el corte).
+1. **Laura revisa el tramo 9b** en la vista previa (ancla
+   `#cV-4-D-2-3-3`). Si lo aprueba, anotarlo aquí.
+2. Después, tramo 9c (D.2.3.11 a 3.15, p. 161-166).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
    art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
    no es dueño es el título de la posesión (ver "Tramo 7a").
