@@ -20,10 +20,10 @@ Airtable, así que no depende del repo):**
   tipo. **Nulidad · Aplicación completa: 30 preguntas**, sin publicar
   (tanda 1, 17, y tanda 2, 13, **ambas aprobadas por Laura**; se
   publican junto con el resto de Nulidad). **Nulidad · Detección de error
-  completa: 30 preguntas** (tanda 1, 17, y tanda 2, 13), cargadas sin
-  publicar y **las dos esperando la revisión de Laura**. **Nulidad ·
-  Justificación: tanda 1 (17) cargada, por revisar**; la tanda 2 (13) la
-  completa (ver "Siguiente paso exacto").
+  completa: 30 preguntas** (tanda 1, 17, y tanda 2, 13), **aprobadas**.
+  **Nulidad · Justificación: tanda 1 (17) aprobada**; la tanda 2 (13) la
+  completa (ver "Siguiente paso exacto"). Todo sin publicar: se publica
+  con el tema completo.
 - **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
 - **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
 - **Infraestructura nueva (2026-10-09 y 10):** corrección flexible en la
@@ -508,12 +508,18 @@ en el orden del manual.
 
 ## Siguiente paso exacto
 
-**Lo inmediato:** Laura tiene por revisar las **dos tandas de Nulidad ·
-Detección de error** (`DERECHO LIBRE/Informes/Informe_AJ_det1.html` y
-`Informe_AJ_det2.html`) y la **tanda 1 de Justificación**
-(`Informe_AJ_just1.html`). Decidió (2026-10-10) seguir avanzando antes de
-revisar, para corregir todo de una vez si cambia algún criterio. Las
-correcciones se aplican con `subir_eval.py lote_<x> --actualizar`.
+**Revisión de Laura cerrada (2026-11-26):** revisó por muestra las tandas
+de Detección de error y la tanda 1 de Justificación (y varias de
+Aplicación). Con sus criterios se hizo una pasada por las 77 preguntas de
+Nulidad (18 cambiaron; informe
+`DERECHO LIBRE/Informes/Informe_AJ_cambios_nulidad.html`), y aprobó las 5
+que se le indicaron. Criterios en "Reglas y decisiones que no cambian".
+Las correcciones se aplican con `subir_eval.py lote_<x> --actualizar`; si
+cambia el caso o el enunciado, primero hay que actualizar ese texto en
+Airtable por su id, porque `--actualizar` reconoce los ítems por caso +
+enunciado. Ojo: correr `subir_eval.py` sin opciones reescribe
+`generado/filas_<lote>.json` con ids nuevos; antes de generar un informe
+de un lote ya cargado, correrlo con `--actualizar`.
 **Siguiente tanda: Justificación, tanda 2** (`lote_just2.py`, desde
 `aj-just-021`): 13 preguntas, dos más en cada subtema de 10 o más
 exámenes (T21.01, .06, .07, .09, .10, .11) y una más en diferencias
