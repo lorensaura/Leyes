@@ -24,11 +24,12 @@
 4. **Paywall** — pendiente, después de validar el Interrogador con alumnas reales. Ver `docs/paywall.md`.
 5. **Revisar las demás materias de Civil y Procesal** — en stand by hasta terminar de validar Responsabilidad. Excepción en curso: actualización de manuales de Civil con el método nuevo. Acto Jurídico terminado (2026-10-07); **el siguiente es Bienes: empezar siempre por `docs/manuales/estado_bienes.md`**, que exige leer antes `docs/manuales/lecciones-acto-juridico.md` para hacerlo en una sola pasada.
 
-**Prioridad actual (desde 2026-11-26): lanzar y vender el martes 26 de
-enero de 2027.** El plan semana a semana, las decisiones abiertas y lo
+**Prioridad actual (desde 2026-11-26): lanzar y vender el lunes 8 de
+febrero de 2027 con todo Civil** (Laura a dedicación completa). El plan semana a semana, las decisiones abiertas y lo
 que bloquea la venta viven en `docs/camino-a-lanzamiento.md`. **Ábrelo
-al empezar cualquier sesión** si no está claro por dónde seguir. Bienes
-no bloquea el lanzamiento (máximo 2 sesiones por semana hasta esa fecha).
+al empezar cualquier sesión** si no está claro por dónde seguir. Ahí está
+la cuota diaria y el orden de materias (Bienes, Obligaciones, Contratos,
+Familia, Sucesorio).
 `docs/camino-a-beta.md` quedó como detalle histórico de pendientes de
 contenido (congelado en agosto).
 

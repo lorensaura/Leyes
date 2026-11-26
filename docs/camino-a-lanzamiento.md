@@ -1,8 +1,9 @@
 # Camino al lanzamiento de Digesto (vender)
 
 > Plan vivo para pasar de beta cerrada a **Digesto en venta**. Creado el
-> 2026-11-26. **Fecha límite: martes 26 de enero de 2027** (lanzamiento
-> público). Se actualiza **in place**: lo que se termina se marca `[x]`,
+> 2026-11-26. **Fecha meta: lunes 8 de febrero de 2027** (lanzamiento
+> público) **con todo Civil** (cambio del 2026-11-26: Laura pasa a
+> dedicación completa, 8+ horas al día; ver "Meta de contenido"). Se actualiza **in place**: lo que se termina se marca `[x]`,
 > lo que cambia se corrige ahí mismo. Reemplaza a `docs/camino-a-beta.md`
 > como punto de partida de cada sesión (ese doc quedó congelado en
 > agosto y sirve solo como detalle histórico de pendientes de contenido).
@@ -17,23 +18,64 @@ registradora": pasarela de pago, acceso automático al pagar, PDFs
 protegidos, precios en la landing, términos y privacidad, y alguien
 que se entere de que existe.
 
-**Bienes no bloquea el lanzamiento.** Va ~en la mitad (22 de ~43
-tramos, p. 191 de ~382). Terminarlo en 8 semanas exigiría ~3 tramos
-por semana además de todo lo demás. Regla: **máximo 2 sesiones de
-Bienes por semana** hasta el lanzamiento; se publica después como
-"manual nuevo" (es además una buena noticia para comunicar en
-febrero/marzo).
+**Meta de contenido (decidida por Laura el 2026-11-26): todo Civil**
+(Acto Jurídico, Bienes, Obligaciones, Contratos, Familia, Sucesorio,
+además de Responsabilidad, que ya está) antes de vender. Ver la sección
+siguiente.
+
+## Meta de contenido: todo Civil al 8 de febrero
+
+**Por qué es posible:** hasta noviembre Laura no estaba dedicada
+completa. Dato medido el 2026-11-26: revisó 47 preguntas de Nulidad en
+2 horas (~25 por hora). Su revisión total estimada es de 190 a 300
+horas (tramos de manual a 30-45 min c/u, ~2.300 preguntas a ~25/hora,
+pruebas y decisiones), y hay ~430 horas disponibles (8 h x 6 días x 10
+semanas, menos feriados). **El nuevo cuello de botella es que Claude
+tenga siempre listo el siguiente tramo**: se trabaja con dos sesiones en
+paralelo (una prepara, otra se revisa).
+
+**Cuota diaria (6 días a la semana):**
+- **3 a 4 tramos de manual aprobados** (~3 a 4 horas de Laura).
+- **~45 preguntas revisadas** (~2 horas).
+- **1 hora de venta/trámites** (semanas 1 a 6 del plan de abajo).
+- El resto: pruebas, decisiones, imprevistos.
+
+**Orden y metas semanales** (~18 tramos por semana; si algo se atrasa,
+se atrasa lo último, no lo primero):
+
+| Semanas | Manual | Preguntas en paralelo |
+|---|---|---|
+| 30 nov a 9 dic | Bienes terminado (~21 tramos) | AJ cerrado (Nulidad publicada, resto de temas, Alternativas, Memorice) |
+| 10 dic a 29 dic | Obligaciones (~35 tramos, desde cero) | Bienes |
+| 30 dic a 19 ene | Contratos (~45 tramos, estimado) | Obligaciones |
+| 20 ene a 5 feb | Familia (~35, estimado) | Contratos |
+| 6 feb a ~19 feb | Sucesorio (~35, estimado) | Familia y Sucesorio |
+
+**Riesgo honesto:** a 18 tramos por semana, Sucesorio termina hacia
+mediados de febrero. Red de seguridad: se lanza igual el 8 de febrero y
+Sucesorio (y sus preguntas) se anuncia "disponible en febrero". Las
+cifras de Contratos, Familia y Sucesorio son estimadas: sus fuentes no
+están en `Apuntes/CIVIL` (carpetas vacías al 2026-11-26). **Bloqueante
+de la semana 1: que Laura las ubique.** Por confirmar: si Teoría de la
+Ley, Personas y Cauciones entran (sumarían ~20 a 30 tramos).
+
+**Ya existe, no es trabajo nuevo:** cuaderno de errores (falta solo
+agruparlo por tipo, medio día). **Gamificación:** versión liviana
+(puntos y "¡bien hecho!"; la racha ya existe) en enero, 4 a 6 días de
+Claude; la liga, después del lanzamiento. **Interrogador y JustinIAno:**
+se amplían a cada materia apenas su manual queda aprobado (1 a 2 días
+de Claude por materia).
 
 ## Decisiones (con recomendación; Laura confirma o cambia)
 
 | # | Decisión | Recomendación | Estado |
 |---|---|---|---|
-| D1 | Catálogo del lanzamiento | Responsabilidad (Contractual, Extracontractual, Precontractual) + Acto Jurídico. Bienes "próximamente", incluido sin costo extra cuando salga | por confirmar |
+| D1 | Catálogo del lanzamiento | **Decidido: todo Civil** (ver "Meta de contenido"); lo que no alcance se anuncia con fecha | decidido 2026-11-26 |
 | D2 | Pasarela | **Flow** (chilena, acepta Webpay, tarjetas y transferencia, alta simple para persona natural o empresa). Alternativa: Mercado Pago | por confirmar |
 | D3 | Tipo de cobro | **Solo pagos únicos** al lanzar: "pase" de 30 días (mensual), semestral y anual. Sin suscripción automática (evita cobros recurrentes, cancelaciones y reclamos). Suscripción automática se evalúa después | por confirmar |
 | D4 | Precios | Los definidos el 2026-08-07 (`docs/pricing/planes-y-precios.md`), **revisando el margen del Gradista** (ver "Costos" abajo). Precio fundadora: 40% de descuento para las primeras alumnas (beta + lista de espera) | por confirmar |
 | D5 | Recargas | Fuera del lanzamiento. Se agregan en febrero si alguien se queda corta | por confirmar |
-| D6 | Fechas | Lanzamiento suave (fundadoras) lunes **11 de enero**; público martes **26 de enero**. Supuesto: el verano es cuando más se prepara el examen; si el calendario real de las alumnas es otro, se mueve | por confirmar |
+| D6 | Fechas | **Decidido: primeras semanas de febrero.** Lanzamiento suave (fundadoras) lunes **1 de febrero**; público lunes **8 de febrero** | decidido 2026-11-26 |
 | D7 | Canales de venta | Instagram + TikTok de Digesto, grupos de egresadas/os de derecho, centros de alumnos, boca a boca de las 5 beta | por confirmar |
 
 ## Costos (corregido 2026-11-26)
@@ -122,18 +164,18 @@ Laura); **D** = decisión.
   para que un pico de uso no corte el servicio.
 - [ ] L: armar la lista de fundadoras (beta + lista de espera + contactos).
 
-### Semana 7 (11 a 17 ene): lanzamiento suave
-- [ ] L: abrir venta solo a fundadoras (lunes 11). Meta: **10 ventas**.
+### Semana 7 (11 a 17 ene, ahora se usa para contenido; esto se corre a la semana del 1 de febrero): lanzamiento suave
+- [ ] L: abrir venta solo a fundadoras (lunes 1 de febrero). Meta: **10 ventas**.
 - [ ] C+L: corregir lo que reporten, rápido.
 - [ ] L: pedir 2 o 3 testimonios para la landing.
 
-### Semana 8 (18 a 26 ene): lanzamiento público
+### Semana 8 (se corre a la semana del 8 de febrero): lanzamiento público
 - [ ] C: testimonios en la landing, ajustes finales.
 - [ ] L: publicaciones diarias, contacto con centros de alumnos y grupos.
-- [ ] **Martes 26 de enero: venta abierta a todo público.**
+- [ ] **Lunes 8 de febrero: venta abierta a todo público.**
 
 ## Después del lanzamiento (no antes)
-Bienes completo y publicado (con sus preguntas); Recargas; suscripción
+Lo que no alcance de Civil (con fecha anunciada); Recargas; liga de gamificación; suscripción
 automática; casos para resolver; Justiniano como persona unificadora;
 interrogación oral.
 
