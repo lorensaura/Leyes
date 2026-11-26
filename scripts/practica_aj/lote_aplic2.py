@@ -60,7 +60,7 @@ ITEMS = [
     '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?'),
    ('Segunda posición (ALESSANDRI BESA): nulidad absoluta, la sanción más grave que el Código sí contempla',
     ['nulidad absoluta', 'absolutamente nulo', 'alessandri', 'sancion mas grave', 'no recoge la inexistencia', 'torres con fisco'],
-    '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?'),
+    '¿Qué sanción defienden quienes comparten ese punto de partida, pero niegan que el Código contemple algo distinto de las sanciones que nombra?'),
    ('Tercera posición (LEÓN HURTADO): nulidad relativa, porque el art. 1453 dice que el error vicia el consentimiento',
     ['nulidad relativa', 'relativamente nulo', 'leon hurtado', 'vicia el consentimiento', 'interes particular', 'letra de la ley'],
     '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?')],
