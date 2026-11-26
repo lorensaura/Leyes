@@ -729,6 +729,20 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   las formas en que lo diría una alumna y los sinónimos de raíz distinta
   (idéntico/mismo, beneficia/aprovecha, solamente/solo), y que la pista
   no sea obvia. Revisar que cada elemento sea de verdad indispensable.
+- **No exigir nombres de autores (Laura, 2026-11-26):** si el manual
+  atribuye una opinión a un autor, la pregunta y los elementos la tratan
+  como "una parte de la doctrina" o "algunos autores"; el nombre puede
+  quedar como palabra clave alternativa, nunca como la única forma de
+  obtener el elemento. Caso real: `aj-aplic-023` reprobaba a quien
+  exponía las tres posturas sin nombrar a ALESSANDRI ni a LEÓN HURTADO.
+- **No pedir lo que la pregunta ya da (Laura, 2026-11-26):** si el
+  enunciado entrega el fundamento, los elementos piden solo lo que falta
+  (`aj-just-011`).
+- **Revisión por muestra (Laura, 2026-11-26):** en cada informe se le
+  dice a Laura **exactamente qué preguntas revisar** (unas 5, de tipos y
+  dificultades distintas, con el motivo); con lo que encuentre se hace
+  una pasada sistemática por toda la tanda y se le entrega un informe
+  solo con los cambios.
 - Cada ítem tiene su cita de respaldo del manual; los artículos citados
   aparecen en ese pasaje.
 

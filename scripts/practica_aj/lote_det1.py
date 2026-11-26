@@ -109,7 +109,7 @@ ITEMS = [
 
  # T21.05 Nulidad total y parcial; consecuencial y refleja (0 exámenes)
  dict(sub='T21.05',
-  caso='Un alumno escribe: "Si una sola cláusula de un testamento es nula, todo el testamento cae, porque la nulidad de una parte contagia necesariamente el acto entero. Por la misma razón, si se anula la cláusula penal de un contrato, se anula también la obligación principal a la que accede."',
+  caso='Un alumno escribe: "Si una sola cláusula de un testamento es nula, todo el testamento cae, porque la nulidad de una parte contagia necesariamente el acto entero. Por la misma razón, si se anula la cláusula penal de un contrato (la que fija de antemano lo que pagará el deudor si no cumple), se anula también la obligación principal a la que accede."',
   enunciado=ENUN,
   respuesta='Hay dos errores.\n\nPrimero, la nulidad puede ser parcial: cuando el vicio afecta solo una parte o una cláusula del acto, el resto subsiste con plena validez. Hay que ponderar si lo viciado toca la esencia del acto o es un accidente tan secundario que las partes lo habrían celebrado igual. En los testamentos el Código resuelve esa ponderación varias veces: la disposición en favor del escribano que autoriza el testamento no vale (art. 1061), pero el resto del testamento sí.\n\nSegundo, lo accesorio sigue la suerte de lo principal, y no a la inversa. Según el art. 1536, la nulidad de la obligación principal acarrea la de la cláusula penal, pero la nulidad de la cláusula penal no acarrea la de la obligación principal.',
   elementos=[

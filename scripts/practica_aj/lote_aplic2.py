@@ -57,13 +57,13 @@ ITEMS = [
     '¿Sobre qué recayó el desacuerdo: sobre la cosa, sobre sus calidades o sobre el tipo de negocio que cada uno creyó celebrar?'),
    ('Primera posición: el contrato es inexistente, porque el error impide que se forme el consentimiento',
     ['acto inexistente', 'contrato inexistente', 'contrato no nace', 'no llega a nacer', 'no se forma consentimiento', 'no hubo consentimiento'],
-    '¿Qué sanción corresponde si se piensa que aquí nunca llegó a haber acuerdo de voluntades y se acepta una sanción que el Código no nombra?'),
+    '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?'),
    ('Segunda posición (ALESSANDRI BESA): nulidad absoluta, la sanción más grave que el Código sí contempla',
-    ['alessandri', 'sancion mas grave', 'torres con fisco', 'grave que contempla', 'no recoge la inexistencia'],
-    '¿Qué sanción defienden quienes comparten ese punto de partida, pero niegan que el Código contemple algo distinto de las sanciones que nombra?'),
+    ['nulidad absoluta', 'absolutamente nulo', 'alessandri', 'sancion mas grave', 'no recoge la inexistencia', 'torres con fisco'],
+    '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?'),
    ('Tercera posición (LEÓN HURTADO): nulidad relativa, porque el art. 1453 dice que el error vicia el consentimiento',
-    ['leon hurtado', 'vicia el consentimiento', 'interes particular', 'otra especie de vicio', 'letra de la ley'],
-    '¿Qué sanción resulta si uno se atiene a la letra del artículo que regula este error y a la cláusula residual del Código?')],
+    ['nulidad relativa', 'relativamente nulo', 'leon hurtado', 'vicia el consentimiento', 'interes particular', 'letra de la ley'],
+    '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?')],
   articulos='1453, 1682',
   objetivo='Evaluar si el alumno identifica un error esencial en un caso y aplica las tres posiciones sobre su sanción, que explican por qué algunos lo incluyen entre las causales de nulidad absoluta.',
   respaldo=['II.A.5.3', 'IV.B.2.2']),
@@ -88,7 +88,7 @@ ITEMS = [
 
  # T21.07 Nulidad absoluta: quién la declara o pide (14 exámenes: 4; la tanda 1 dejó 2)
  dict(sub='T21.07',
-  caso='Esteban demanda a Felipe el pago de $10.000.000 que este le prometió en un contrato escrito. El contrato dice que el pago es "por servicios de asesoría". Durante el juicio, un testigo declara que, en realidad, el dinero era la recompensa por haber amenazado a un competidor de Felipe para que se retirara de una licitación. Ninguna de las partes ha pedido la nulidad. Enterado del caso por la prensa, un fiscal del Ministerio Público que investiga esas amenazas anuncia que pedirá ante el juez civil la nulidad absoluta del contrato "en el interés de la moral".',
+  caso='Esteban demanda a Felipe el pago de $10.000.000 que este le prometió en un contrato escrito. El contrato dice que el pago es "por servicios de asesoría". Durante el juicio, un testigo declara que, en realidad, el dinero era la recompensa por haber amenazado a un competidor de Felipe para que se retirara de una licitación, el concurso en que varias empresas compiten por adjudicarse un contrato. Ninguna de las partes ha pedido la nulidad. Enterado del caso por la prensa, un fiscal del Ministerio Público que investiga esas amenazas anuncia que pedirá ante el juez civil la nulidad absoluta del contrato "en el interés de la moral".',
   enunciado='¿Puede el juez declarar de oficio la nulidad absoluta del contrato? ¿Está habilitado ese fiscal para pedirla? Fundamente.',
   respuesta='La promesa de dar algo en recompensa de un crimen o de un hecho inmoral tiene causa ilícita (art. 1467), causal de nulidad absoluta (art. 1682).\n\nAun así, el juez no puede declararla de oficio. La nulidad absoluta puede y debe declararse sin petición de parte solo "cuando aparece de manifiesto en el acto o contrato" (art. 1683), es decir, cuando basta leer el propio instrumento, sin acudir a ningún otro antecedente del proceso, para darla por establecida. Aquí el contrato habla de servicios de asesoría: el vicio solo se conoce por la declaración de un testigo. No es manifiesto, de modo que la nulidad tendrá que pedirla alguien habilitado.\n\nEse fiscal no lo está. El ministerio público que puede pedir la nulidad absoluta en el interés de la moral o de la ley (art. 1683) es el organismo auxiliar de la administración de justicia que regula el art. 350 COT, integrado por el fiscal de la Corte Suprema y los fiscales de las Cortes de Apelaciones, y no el organismo del mismo nombre que participa en el proceso penal. Podría pedirla, en cambio, el fiscal judicial de la Corte respectiva, o cualquier persona con un interés pecuniario en ello.',
   elementos=[
@@ -143,7 +143,7 @@ ITEMS = [
   respaldo=['IV.B.3.2', 'II.A.5.3', 'IV.C.3', 'IV.C.4']),
 
  dict(sub='T21.09',
-  caso='Tres ventas en Talca. (1) Ignacio le vende su moto a Marcela porque un exsocio de ella, sin que Marcela lo sepa ni gane nada con ello, lo amenaza gravemente para que venda. (2) Rocío, declarada en interdicción por disipación en 2024, vende al año siguiente su piano sin intervención de su curador. (3) Tomás, hermano de Rocío, apuesta todos los meses gran parte de su sueldo, pero nadie ha pedido su interdicción; también vende su auto.',
+  caso='Tres ventas en Talca. (1) Ignacio le vende su moto a Marcela porque un exsocio de ella, sin que Marcela lo sepa ni gane nada con ello, lo amenaza gravemente para que venda. (2) Rocío, declarada en interdicción por disipación en 2024, vende al año siguiente su piano sin intervención de su curador, que es su representante legal. (3) Tomás, hermano de Rocío, apuesta todos los meses gran parte de su sueldo, pero nadie ha pedido su interdicción; también vende su auto.',
   enunciado='¿Adolece de nulidad cada una de las tres ventas? En su caso, ¿de qué especie y por qué?',
   respuesta='(1) Sí, de nulidad relativa. Para que la fuerza vicie el consentimiento no es necesario que la ejerza aquel que es beneficiado por ella; basta que se haya empleado por cualquier persona con el objeto de obtener el consentimiento (art. 1457). Es la gran diferencia con el dolo, que en los actos bilaterales debe ser obra de una de las partes. La fuerza no está entre las causales de nulidad absoluta, así que produce nulidad relativa (art. 1682 inc. final).\n\n(2) Sí, de nulidad relativa. Los disipadores que se hallan bajo interdicción de administrar lo suyo son relativamente incapaces (art. 1447 inc. 3°), y los actos de los relativamente incapaces adolecen de nulidad relativa.\n\n(3) No: la venta de Tomás es válida. Ser disipador no basta para ser incapaz; solo lo es el disipador declarado en interdicción por decreto judicial. Mientras eso no ocurra, conserva toda su capacidad.',
   elementos=[
@@ -162,7 +162,7 @@ ITEMS = [
 
  # T21.10 Nulidad relativa: quiénes pueden alegarla (11 exámenes: la tanda 1 dejó 2; esta suma 1, ver avisos)
  dict(sub='T21.10',
-  caso='Gonzalo está bajo interdicción por disipación desde 2022. En 2025 celebra, sin su curador, dos ventas: le vende su colección de vinos a Paula, a quien le asegura de palabra que "esa interdicción ya se alzó"; y le vende su caballo a Rubén, a quien le exhibe una resolución judicial que él mismo falsificó para aparentar que lo habían rehabilitado. Meses después, Gonzalo le cede a su amigo Lucas, por acto entre vivos, los derechos que le corresponden en ambos contratos. Un fiscal judicial que se entera de la falsificación quiere pedir la rescisión de la venta a Rubén en el solo interés de la ley.',
+  caso='Gonzalo está bajo interdicción por disipación desde 2022. En 2025 celebra, sin su curador (su representante legal), dos ventas: le vende su colección de vinos a Paula, a quien le asegura de palabra que "esa interdicción ya se alzó"; y le vende su caballo a Rubén, a quien le exhibe una resolución judicial que él mismo falsificó para aparentar que lo habían rehabilitado. Meses después, Gonzalo le cede a su amigo Lucas, por acto entre vivos, los derechos que le corresponden en ambos contratos. Un fiscal judicial que se entera de la falsificación quiere pedir la rescisión de la venta a Rubén en el solo interés de la ley.',
   enunciado='¿Puede Gonzalo pedir la nulidad de cada venta? ¿Y Lucas? ¿Y el fiscal judicial? Fundamente.',
   respuesta='Gonzalo, disipador bajo interdicción, es relativamente incapaz, y por eso, en principio, ambas ventas adolecen de nulidad relativa. Pero el art. 1685 distingue dos situaciones.\n\nVenta a Paula: Gonzalo sí puede pedir la nulidad. La aserción de no existir la interdicción no inhabilita al incapaz para obtener el pronunciamiento de nulidad (art. 1685, segunda parte). La negligencia es de Paula, que se conformó con su palabra sin cerciorarse de su verdadero estado.\n\nVenta a Rubén: Gonzalo no puede. No hubo una simple aserción, sino dolo del incapaz para inducir el contrato, y en ese caso ni él ni sus herederos o cesionarios pueden alegar la nulidad (art. 1685, primera parte): ya no hay negligencia que reprocharle a Rubén, que no está obligado a presumir la mala fe ajena.\n\nLucas, como cesionario, puede pedirla respecto de la venta a Paula, porque recibe junto con los derechos del contrato el derecho a demandar la rescisión; pero no respecto de la venta a Rubén, porque el art. 1685 excluye también a los cesionarios del incapaz que actuó con dolo.\n\nEl fiscal judicial no puede: la nulidad relativa no puede pedirse por el ministerio público en el solo interés de la ley (art. 1684), porque no protege el interés general sino a personas determinadas.',
   elementos=[
@@ -227,7 +227,7 @@ ITEMS = [
   elementos=[
    ('La ratificación no sanea el primer contrato (nulidad absoluta), pero sí el segundo (nulidad relativa), porque la hizo la víctima del dolo',
     ['absoluta no se ratifica', 'no sanea la absoluta', 'relativa si se ratifica', 'segunda queda saneada', 'primera no produce efecto', 'ratifico la victima'],
-    '¿Pueden las partes, por su sola voluntad, validar cualquier contrato nulo, o depende de a quién protege la nulidad?'),
+    '¿Qué efecto tiene cada una de las dos ratificaciones?'),
    ('El fiscal judicial puede pedir la nulidad absoluta (interés de la moral o de la ley), pero no la relativa',
     ['fiscal solo la absoluta', 'fiscal puede la primera', 'fiscal no puede la segunda', 'interes de la moral', 'no en la relativa'],
     '¿En qué interés interviene el ministerio público, y está ese interés comprometido en los dos contratos?'),
@@ -241,8 +241,8 @@ ITEMS = [
  # T21.08 Nulidad absoluta: saneamiento y no opera de pleno derecho (9 exámenes: 2; la tanda 1 dejó 1)
  dict(sub='T21.08',
   caso='El 1 de febrero de 2013, Ana, que se encontraba bajo interdicción por demencia, firmó la venta de su parcela de Paine a Bernardo, quien inscribió a su nombre y la ocupa desde entonces. En 2016, el curador de Ana le envió una carta a Bernardo en que le dice que la venta "es nula de pleno derecho, así que la parcela nunca dejó de ser de Ana", y no hizo nada más. En 2024 el curador demanda la nulidad absoluta. Bernardo se defiende diciendo que el tiempo transcurrido consolidó su situación.',
-  enunciado='¿Tenía razón el curador en su carta de 2016? ¿Prospera la demanda de 2024? ¿Qué efecto tiene, según BARAONA, el paso del tiempo sobre la situación de Bernardo?',
-  respuesta='La venta adolecía de nulidad absoluta, porque Ana, demente, era absolutamente incapaz (arts. 1447 y 1682).\n\nLa carta del curador no tenía razón, según la doctrina tradicional: la nulidad absoluta no opera de pleno derecho, sino que necesita ser declarada por el juez, como se deduce de las normas que hablan de la nulidad judicialmente declarada o pronunciada (arts. 1683, 1687 y 1689). Mientras esa sentencia no existe, el acto nulo sigue produciendo todos sus efectos.\n\nLa demanda de 2024 no prospera. La nulidad absoluta se sanea por el transcurso de diez años (art. 1683), contados desde la celebración del acto: vencieron el 1 de febrero de 2023.\n\nPara BARAONA, lo que el art. 1683 llama saneamiento es, en realidad, una caducidad de los derechos de quienes podían impugnar el acto. Su efecto es consolidar los desplazamientos patrimoniales: al no ser impugnado durante diez años, el título de Bernardo pasa de injusto a justo y permite que opere la prescripción adquisitiva. Por eso el art. 705 habla de la validación del título "por otro medio legal", que aquí es el transcurso del tiempo.',
+  enunciado='¿Tenía razón el curador en su carta de 2016? ¿Prospera la demanda de 2024? ¿Qué efecto tiene, según una parte de la doctrina, el paso del tiempo sobre la situación de Bernardo?',
+  respuesta='La venta adolecía de nulidad absoluta, porque Ana, demente, era absolutamente incapaz (arts. 1447 y 1682).\n\nLa carta del curador no tenía razón, según la doctrina tradicional: la nulidad absoluta no opera de pleno derecho, sino que necesita ser declarada por el juez, como se deduce de las normas que hablan de la nulidad judicialmente declarada o pronunciada (arts. 1683, 1687 y 1689). Mientras esa sentencia no existe, el acto nulo sigue produciendo todos sus efectos.\n\nLa demanda de 2024 no prospera. La nulidad absoluta se sanea por el transcurso de diez años (art. 1683), contados desde la celebración del acto: vencieron el 1 de febrero de 2023.\n\nPara una parte de la doctrina, lo que el art. 1683 llama saneamiento es, en realidad, una caducidad de los derechos de quienes podían impugnar el acto. Su efecto es consolidar los desplazamientos patrimoniales: al no ser impugnado durante diez años, el título de Bernardo pasa de injusto a justo y permite que opere la prescripción adquisitiva. Por eso el art. 705 habla de la validación del título "por otro medio legal", que aquí es el transcurso del tiempo.',
   elementos=[
    ('La nulidad absoluta no opera de pleno derecho: necesita sentencia, y mientras tanto el acto produce sus efectos',
     ['requiere sentencia', 'declaracion judicial', 'declarada por el juez', 'sigue produciendo efectos', 'necesita sentencia', 'judicialmente declarada'],
@@ -250,11 +250,11 @@ ITEMS = [
    ('La demanda de 2024 no prospera: los diez años desde la celebración vencieron el 1 de febrero de 2023',
     ['1 febrero 2023', 'diez anos', '10 anos', 'ya se saneo', 'plazo vencido', 'demanda no prospera'],
     '¿Cuánto tiempo hay para alegar esta nulidad, desde cuándo se cuenta y cuándo terminó en este caso?'),
-   ('Para BARAONA es una caducidad: el título de Bernardo pasa de injusto a justo (art. 705) y permite la prescripción adquisitiva',
+   ('Para una parte de la doctrina es una caducidad: el título de Bernardo pasa de injusto a justo (art. 705) y permite la prescripción adquisitiva',
     ['caducidad', 'titulo justo', '705', 'prescripcion adquisitiva', 'de injusto a justo', 'validacion del titulo'],
     '¿Puede el simple paso del tiempo volver válido lo que nunca lo fue, y qué cambia entonces para quien tiene la parcela?')],
   articulos='705, 1447, 1682, 1683, 1687, 1689',
-  objetivo='Evaluar si el alumno aplica que la nulidad absoluta no opera de pleno derecho, computa los diez años del art. 1683 y explica la lectura de BARAONA sobre su efecto en el título del adquirente.',
+  objetivo='Evaluar si el alumno aplica que la nulidad absoluta no opera de pleno derecho, computa los diez años del art. 1683 y explica la lectura que ve ahí una caducidad y su efecto en el título del adquirente.',
   respaldo=['IV.B.2.6', 'IV.B.2.7', 'IV.B.2.2', 'II.B.3.1']),
 ]
 
@@ -266,7 +266,7 @@ INFORME = dict(
   ('Causales que agregan quienes rechazan la inexistencia (IV.B.2.2)', 'El error esencial (con las tres posiciones de II.A.5.3) y la falta de voluntad (fuerza física).'),
   ('Declaración de oficio y ministerio público (IV.B.2.4)', 'Qué significa que el vicio aparezca de manifiesto, y que el fiscal penal no es el ministerio público del art. 1683.'),
   ('Exclusión del que sabía o debía saber (IV.B.2.4)', 'Conocimiento real frente al presunto del art. 8° y las dos posturas sobre los herederos.'),
-  ('Saneamiento de la absoluta y pleno derecho (IV.B.2.6 y 7)', 'La carta que da por nulo el acto, los diez años y la lectura de BARAONA con el art. 705.'),
+  ('Saneamiento de la absoluta y pleno derecho (IV.B.2.6 y 7)', 'La carta que da por nulo el acto, los diez años y la lectura que ve una caducidad, con el art. 705.'),
   ('Causales de nulidad relativa (IV.B.3.2)', 'Error en la persona, lesión enorme, fuerza de un tercero y disipador interdicto o no.'),
   ('Titulares de la relativa (IV.B.3.4)', 'Aserción de no existir la interdicción frente al dolo, cesionarios y ministerio público.'),
   ('Saneamiento de la relativa (IV.B.3.5)', 'Cómputo en el error y en la incapacidad del disipador, contrato saneado, y herederos mayor y menor en la fuerza sin que opere el tope.'),
@@ -285,7 +285,7 @@ INFORME = dict(
   ('Cómputo en el error y en la incapacidad; acto saneado', 'Aplicación con fechas'),
   ('Herederos mayor y menor en la fuerza, sin que opere el tope', 'Aplicación con fechas'),
   ('Ratificación, ministerio público y plazo en ambas nulidades', 'Comparación aplicada'),
-  ('No opera de pleno derecho; diez años; lectura de BARAONA y art. 705', 'Aplicación con fechas y controversia'),
+  ('No opera de pleno derecho; diez años; caducidad y art. 705', 'Aplicación con fechas y controversia'),
  ],
  avisos=[
   '<b>Cuántas quedan por subtema:</b> con esta tanda, Nulidad · Aplicación llega a 30. Cuatro en los subtemas de 10 o más exámenes (concepto y especies, causales de la absoluta, quién la pide, causales de la relativa, saneamiento de la relativa), dos en diferencias y en saneamiento de la absoluta, y una en terminología, principios comunes y nulidad total o parcial, que no aparecen en ningún examen.',
