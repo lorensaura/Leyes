@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-23 (tramo 10b
-> aprobado, V.4 cerrada; tramo 11a escrito, esperando revisión de Laura
-> en la vista previa).
+> antes de seguir. Última actualización: 2026-11-26 (tramo 11a
+> aprobado con ajustes de negritas; tramo 11b en informe, esperando
+> decisiones de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -83,9 +83,12 @@
 - **Tramo 10b (V.4.D.3 y D.4, p. 175-183): terminado y aprobado por
   Laura (2026-11-23, "todo ok"), commit `4580ceb`.** Cierra V.4 La
   tradición.
-- **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): escrito (2026-11-23),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo 11a",
-  más abajo.
+- **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): terminado y aprobado
+  por Laura (2026-11-26, ajustes de negritas y art. 700 completo, luego
+  "sigamos con el tramo 11b").** Detalle en "Tramo 11a", más abajo.
+- **Tramo 11b (V.5.A.2 intro, posesión regular y justo título): informe
+  hecho (2026-11-26), esperando decisiones de Laura.** Detalle en
+  "Tramo 11b", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1783,7 +1786,7 @@ resuelven, etiquetas balanceadas, párrafo más largo 1.080, capturas
 revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_10b.html`).
 
-## Tramo 11a: escrito (2026-11-23), esperando revisión de Laura
+## Tramo 11a: hecho y aprobado (2026-11-26)
 
 **V.5 (introducción) y V.5.A.1, páginas 184 a 191 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo11a.html`. Hallazgos: bajo "V.5 La
@@ -1839,11 +1842,41 @@ las definiciones legales se transcriben con sus incisos centrales: el art.
 (que además sigue en 4). Commits `c1b1cc9`, `b6e4309`, `93f46c9`,
 `2ba9963`.
 
-## Siguiente paso exacto (2026-11-23, vigente)
+## Tramo 11b: informe hecho (2026-11-26), esperando decisiones de Laura
 
-1. **Laura revisa el tramo 11a** en la vista previa (ancla `#cV-5`).
-   Si lo aprueba, anotarlo aquí.
-2. Después, tramo 11b (V.5.A.2 clases de posesión: regular, concepto,
+**V.5.A.2 introducción, posesión regular y justo título completo,
+páginas 191 a 202 de Boetsch** (corte por contenido propuesto: el
+reparto decía 191-198, pero cortaba la sucesión por causa de muerte; el
+justo título termina con el art. 704 en la p. 202). Informe en
+`Informes/Informe_Bienes_tramo11b.html`. Hallazgos: falta la tesis
+contraria a STITCHKIN en la adjudicación (declarativa, el 703 hablaría
+de adjudicaciones a extraños); faltan el comentario a) de Boetsch al
+concepto, la justificación del inc. 5º (juicios coludidos), POTHIER y el
+causante mero tenedor, y casi todo el art. 704 (VERDUGO, nulidad
+relativa y art. 1684, art. 1815 ecléctico, título putativo y desde
+cuándo corre); art. 702 sin incs. 1º y 4º; "art. 704 Nº 4" debe ser inc.
+final (art. 1269); el comentario del legatario putativo es del texto
+anterior a la Ley 19.903; marcado roto en a) y b) de los títulos
+injustos; tres ejemplos de Boetsch a rehacer; paráfrasis 53 de 82 sobre
+70%. Fuentes: VIAL p. 56-62 y 42-43, Bozzo e Ibarra p. 2-4 (ROZAS),
+Lombardo p. 6-7; discusiones nº 1 ya en V.1.6.
+
+**Decisiones pedidas a Laura (8):** unir 11c (p. 202-204) con el 12;
+esquema de la discusión "¿Cuál es el título de la posesión?" (BOETSCH /
+VIAL / ROZAS, sin tomar partido); nombrar a ROZAS (viene de resumen);
+cuadro de 3 posturas x 4 preguntas; art. 702 completo en 2.1; ajustar la
+frase "otros sostienen" de V.4.A.2.5 con nombres; preguntas clásicas
+(recomendadas: posesión regular y requisitos, justo título y
+clasificación, heredero putativo); material propio.
+
+**Pendientes que salen de aquí:** VIAL sobre la tradición "equívoca" del
+art. 702 (2.4, próximo tramo, y tramo 14); plazos de la herencia (16a);
+apoderamiento del art. 729 (13b y 14).
+
+## Siguiente paso exacto (2026-11-26, vigente)
+
+1. ~~Laura revisa el tramo 11a~~: aprobado el 2026-11-26.
+2. Tramo 11b (en curso, ver "Tramo 11b") (V.5.A.2 clases de posesión: regular, concepto,
    justo título, p. 191-198). Recordar el pendiente de VIAL sobre el art.
    703 (abajo).
 3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
