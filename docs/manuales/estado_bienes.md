@@ -1924,8 +1924,20 @@ actualizada. Respaldo en el tmp del job (`05_Bienes_antes_11b.html`).
 
 **Revisión de V.1 a V.5.A.2 contra PEÑAILILLO 2010 (pedido de Laura,
 2026-11-26):** informe en
-`Informes/Informe_Bienes_revision_Penailillo.html`, esperando sus
-decisiones; **el manual no se ha tocado**. Resultado: Boetsch copia
+`Informes/Informe_Bienes_revision_Penailillo.html`. **Laura dijo "ok
+a todo" (2026-11-26) y la pasada corta ya está hecha** (respaldo en el
+tmp del job, `05_Bienes_antes_penailillo.html`): 26 cambios de nombre
+BOETSCH → PEÑAILILLO (incluidos la pregunta clásica de V.4.C.3, el
+ejemplo de Colomba y "coincide/se separa de" en V.4.B.3.2), una cuarta
+razón en V.4.B.3.2 ("la posesión es un hecho"), la propuesta de
+PEÑAILILLO de una tradición causada atenuada (con el art. 1689), su
+razón práctica para el art. 1874, su cautela en las inscripciones
+paralelas, su apoyo a la cesión de créditos sin documento (V.4.D.4.1),
+una línea sobre universalidades de hecho (V.5.A.1.7) y otra sobre
+"predomina ampliamente que es un hecho" con los arts. 919 y 2500
+(V.5.A.1.3). La crítica a la especificación ya nombraba a PEÑAILILLO
+(error del informe). Los 4 opcionales no se agregaron. Quedan 43
+menciones a BOETSCH en V.1-V.5.A.2, revisadas: son suyas. Resultado: Boetsch copia
 604 de 1.248 oraciones de Peñailillo (nº 73 a 167). Hay 15 lugares
 donde el manual dice "BOETSCH" y la opinión es de PEÑAILILLO (V.2.2,
 V.3.5.3, V.4.A.4, V.4.B.1.1, V.4.B.1.2, V.4.B.3.2, V.4.C.2, V.4.C.3,
@@ -1954,9 +1966,8 @@ apoderamiento del art. 729 (13b y 14).
 ## Siguiente paso exacto (2026-11-26, vigente)
 
 1. **Laura revisa el tramo 11b** en la vista previa (ancla
-   `#cV-5-A-2`) y **decide sobre el informe de la revisión contra
-   Peñailillo** (ver "Tramo 11b"). Con su respuesta, hacer esa pasada
-   corta (atribuciones y vacíos aprobados) antes del tramo 12.
+   `#cV-5-A-2`) y **revisa también los cambios de la pasada contra Peñailillo** (hecha
+   el 2026-11-26, ver "Tramo 11b").
 2. Después, tramo 12 (unido con el ex 11c): buena fe, tradición,
    ventajas, posesión irregular y viciosa, p. 202-213. Cotejar con
    PEÑAILILLO 2010 (nº 168 a 173). Llevar la crítica de VIAL a la
