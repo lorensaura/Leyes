@@ -1831,6 +1831,14 @@ etiquetas balanceadas, párrafos bajo 1.200 salvo la cita del Mensaje,
 capturas revisadas, vista previa actualizada. Respaldo en el tmp del job
 (`05_Bienes_antes_11a.html`).
 
+**Ajustes pedidos por Laura en vista previa (2026-11-26), regla para
+todos los tramos que siguen:** cada artículo transcrito en `.ley` lleva en
+negrita sus elementos clave (aplicado a los arts. 2492, 700, 714 y 715), y
+las definiciones legales se transcriben con sus incisos centrales: el art.
+700 va completo en V.5.A.1.2, con la presunción de dominio del inc. 2º
+(que además sigue en 4). Commits `c1b1cc9`, `b6e4309`, `93f46c9`,
+`2ba9963`.
+
 ## Siguiente paso exacto (2026-11-23, vigente)
 
 1. **Laura revisa el tramo 11a** en la vista previa (ancla `#cV-5`).
