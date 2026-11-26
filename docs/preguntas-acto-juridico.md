@@ -718,8 +718,9 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
 - **Figuras de otras materias en los casos (Laura, 2026-11-26):** la
   Práctica de AJ también la usa quien cursa AJ por primera vez, que aún
   no ha visto desahucio, juicio ejecutivo, mutuo o testamento. Si un caso
-  usa una figura que no es de AJ, se explica en una frase dentro del caso
-  (qué es, no su régimen), sin regalar la respuesta. Aplicado en
+  usa una figura que no es de AJ, se nombra igual (para que la alumna
+  aprenda el término) y se explica en una frase dentro del caso (qué es,
+  no su régimen), sin regalar la respuesta. Aplicado en
   `aj-aplic-021` y `022`.
 - **Corrección menos estricta (Laura, 2026-11-26):** se mantiene el tope
   de 6 palabras clave por elemento (subirlo arriesga aprobar casi
