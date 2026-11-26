@@ -1919,9 +1919,33 @@ cero guiones largos, ids únicos, `href` resuelven, etiquetas
 balanceadas, párrafos bajo 1.100, capturas revisadas, vista previa
 actualizada. Respaldo en el tmp del job (`05_Bienes_antes_11b.html`).
 
-**Ojo, una pregunta clásica de más:** se aprobaron tres, pero también
-quedó la de la adjudicación ("¿Qué clase de título es la
-adjudicación?"); avisado a Laura para que diga si la saca.
+**Pregunta clásica de la adjudicación:** Laura decidió dejarla
+(2026-11-26), así que el 11b tiene cuatro.
+
+**Revisión de V.1 a V.5.A.2 contra PEÑAILILLO 2010 (pedido de Laura,
+2026-11-26):** informe en
+`Informes/Informe_Bienes_revision_Penailillo.html`, esperando sus
+decisiones; **el manual no se ha tocado**. Resultado: Boetsch copia
+604 de 1.248 oraciones de Peñailillo (nº 73 a 167). Hay 15 lugares
+donde el manual dice "BOETSCH" y la opinión es de PEÑAILILLO (V.2.2,
+V.3.5.3, V.4.A.4, V.4.B.1.1, V.4.B.1.2, V.4.B.3.2, V.4.C.2, V.4.C.3,
+V.4.C.4.3, V.4.D.1.4, V.4.D.2.1, V.4.D.2.3.3, V.4.D.2.3.4, V.4.D.2.3.9 y
+la columna "BOETSCH" del cuadro de V.5.A.2.2.2 (iii)). También hay 7
+vacíos recomendados: tradición causada o abstracta y la propuesta de
+PEÑAILILLO (V.4.B.3); su razón para preferir el 1874 (V.4.C.4.3);
+nombrarlo en la crítica a la especificación (V.3.5.2); la cautela con
+la posesión material en las inscripciones paralelas (V.4.D.2.3.15);
+créditos sin título entregable (V.4.D.4); universalidades de hecho
+poseíbles (V.5.A.1.7); "predomina ampliamente" que es un hecho, más los
+arts. 919 y 2500 (V.5.A.1.3). Y 4 opcionales: interés que es reajuste
+(V.3), cancelación judicial con emplazamiento (V.4.D.2.3.11), naturaleza
+de la función registral, catastro y Ley 16.665 (V.4.D.2), y la
+precedencia entre posesión y propiedad (V.5.A.1.4). Propuesta: una
+pasada corta antes del tramo 12.
+
+**Sentencia de la Corte Suprema para Contratos:** anotada en
+`docs/manuales/material_para_contratos.md` (pedido de Laura: usarla en
+las solemnidades legales de la compraventa).
 
 **Pendientes que salen de aquí:** VIAL sobre la tradición "equívoca" del
 art. 702 (2.4, próximo tramo, y tramo 14); plazos de la herencia (16a);
@@ -1930,7 +1954,9 @@ apoderamiento del art. 729 (13b y 14).
 ## Siguiente paso exacto (2026-11-26, vigente)
 
 1. **Laura revisa el tramo 11b** en la vista previa (ancla
-   `#cV-5-A-2`). Si lo aprueba, anotarlo aquí.
+   `#cV-5-A-2`) y **decide sobre el informe de la revisión contra
+   Peñailillo** (ver "Tramo 11b"). Con su respuesta, hacer esa pasada
+   corta (atribuciones y vacíos aprobados) antes del tramo 12.
 2. Después, tramo 12 (unido con el ex 11c): buena fe, tradición,
    ventajas, posesión irregular y viciosa, p. 202-213. Cotejar con
    PEÑAILILLO 2010 (nº 168 a 173). Llevar la crítica de VIAL a la
