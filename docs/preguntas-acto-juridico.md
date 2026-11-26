@@ -715,6 +715,19 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
 - **Distractores no adivinables por descarte.** `aj-alt-010` se reescribió
   por eso (antes sus distractores eran nombres de contratos).
 - Cero guiones largos y cero comillas angulares en cualquier campo.
+- **Figuras de otras materias en los casos (Laura, 2026-11-26):** la
+  Práctica de AJ también la usa quien cursa AJ por primera vez, que aún
+  no ha visto desahucio, juicio ejecutivo, mutuo o testamento. Si un caso
+  usa una figura que no es de AJ, se explica en una frase dentro del caso
+  (qué es, no su régimen), sin regalar la respuesta. Aplicado en
+  `aj-aplic-021` y `022`.
+- **Corrección menos estricta (Laura, 2026-11-26):** se mantiene el tope
+  de 6 palabras clave por elemento (subirlo arriesga aprobar casi
+  cualquier cosa); los sinónimos que falten se agregan a medida que
+  lleguen reclamos de "Lo dije con otras palabras". Al redactar, incluir
+  las formas en que lo diría una alumna y los sinónimos de raíz distinta
+  (idéntico/mismo, beneficia/aprovecha, solamente/solo), y que la pista
+  no sea obvia. Revisar que cada elemento sea de verdad indispensable.
 - Cada ítem tiene su cita de respaldo del manual; los artículos citados
   aparecen en ese pasaje.
 
