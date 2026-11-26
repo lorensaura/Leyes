@@ -63,7 +63,7 @@ ITEMS = [
     '¿Qué sanción defienden quienes comparten ese punto de partida, pero niegan que el Código contemple algo distinto de las sanciones que nombra?'),
    ('Tercera posición (LEÓN HURTADO): nulidad relativa, porque el art. 1453 dice que el error vicia el consentimiento',
     ['nulidad relativa', 'relativamente nulo', 'leon hurtado', 'vicia el consentimiento', 'interes particular', 'letra de la ley'],
-    '¿Qué sanciones proponen las distintas posturas, y en qué se funda cada una?')],
+    '¿Qué sanción resulta si uno se atiene a la letra del artículo que regula este error y a la cláusula residual del Código?')],
   articulos='1453, 1682',
   objetivo='Evaluar si el alumno identifica un error esencial en un caso y aplica las tres posiciones sobre su sanción, que explican por qué algunos lo incluyen entre las causales de nulidad absoluta.',
   respaldo=['II.A.5.3', 'IV.B.2.2']),
