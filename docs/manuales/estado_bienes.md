@@ -4,8 +4,8 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-26 (tramo 11a
-> aprobado con ajustes de negritas; tramo 11b en informe, esperando
-> decisiones de Laura).
+> aprobado; tramo 11b escrito, esperando revisión de Laura en la vista
+> previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -86,8 +86,9 @@
 - **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): terminado y aprobado
   por Laura (2026-11-26, ajustes de negritas y art. 700 completo, luego
   "sigamos con el tramo 11b").** Detalle en "Tramo 11a", más abajo.
-- **Tramo 11b (V.5.A.2 intro, posesión regular y justo título): informe
-  hecho (2026-11-26), esperando decisiones de Laura.** Detalle en
+- **Tramo 11b (V.5.A.2 intro, posesión regular y justo título, p.
+  191-202): escrito (2026-11-26), esperando revisión de Laura en la
+  vista previa.** Detalle en
   "Tramo 11b", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -173,9 +174,9 @@ que en AJ.
 | 10a | 166-175 | 10 | V.4.D.2.4 a D.2.7 (tradición de derechos reales sobre inmuebles, cuotas, art. 688, la inscripción en la prescripción). Corregido 2026-11-23 |
 | 10b | 175-183 | 10 | V.4.D.3 Tradición del derecho de herencia + V.4.D.4 Tradición de derechos personales. Corregido 2026-11-23 |
 | 11a | 184-191 | 11 | V.5.A.1 Posesión, aspectos generales |
-| 11b | 191-198 | 11 | V.5.A.2 Clases de posesión (regular: concepto, justo título) |
-| 11c | 198-204 | 11 | V.5.A.2 cont. (buena fe, tradición, ventajas) |
-| 12 | 204-213 | 12 | V.5.A.2 cont. (posesión irregular y viciosa) |
+| 11b | 191-202 | 11 | V.5.A.2 Clases de posesión (regular: concepto, justo título completo hasta el art. 704). Corregido 2026-11-26 |
+| 11c | (unido al 12) | 11 | Laura aprobó el 2026-11-26 unirlo al 12 |
+| 12 | 202-213 | 11-12 | V.5.A.2 cont. (buena fe, tradición, ventajas, posesión irregular y viciosa) |
 | 13a | 213-220 | 13 | V.5.A.3 Mera tenencia |
 | 13b | 220-228 | 13 | V.5.A.4 Transmisibilidad, agregación, interversión |
 | 13c | 228-235 | 13 | V.5.A.5 ACP posesión de muebles |
@@ -1842,7 +1843,7 @@ las definiciones legales se transcriben con sus incisos centrales: el art.
 (que además sigue en 4). Commits `c1b1cc9`, `b6e4309`, `93f46c9`,
 `2ba9963`.
 
-## Tramo 11b: informe hecho (2026-11-26), esperando decisiones de Laura
+## Tramo 11b: escrito (2026-11-26), esperando revisión de Laura
 
 **V.5.A.2 introducción, posesión regular y justo título completo,
 páginas 191 a 202 de Boetsch** (corte por contenido propuesto: el
@@ -1869,19 +1870,73 @@ frase "otros sostienen" de V.4.A.2.5 con nombres; preguntas clásicas
 (recomendadas: posesión regular y requisitos, justo título y
 clasificación, heredero putativo); material propio.
 
+**Decisiones de Laura (2026-11-26): "todo ok"** a las 8 (11c se une al
+12, que queda p. 202-213; esquema, ROZAS con nombre, cuadro, art. 702
+completo en 2.1, frase de V.4.A.2.5 con VIAL y ROZAS, tres preguntas
+clásicas recomendadas). Laura no tenía material propio, pero trajo dos
+fuentes nuevas:
+
+- **`Apuntes/CIVIL/Bienes/Apuntes/Anexo_Modos de adquirir el
+  dominio_Peñaililo,2010.pdf`** (106 p., nº 73 a 189+: modos, tradición,
+  posesión). **Hallazgo importante: Boetsch sigue casi literal a
+  PEÑAILILLO en este tramo** (la "expresión de un autor", la crítica a
+  la ocupación, la nulidad relativa "algo artificiosa", la crítica al
+  Nº 4, los ejemplos de 1980, 1990 y el camión son suyos). Por eso las
+  opiniones se atribuyeron a PEÑAILILLO. Aporta además: el título
+  traslaticio no necesita emanar del dueño; fines de la posesión
+  efectiva; arts. 717 y 1268; **heredero de un mero tenedor: parece
+  predominar que no basta ser heredero** (se puso junto a la postura de
+  BOETSCH); envergadura de la falsificación; actos simulados y
+  resueltos como putativos; legatario de especie y no de género; crítica
+  a la taxatividad del 704. **Para los tramos siguientes (12 en
+  adelante: buena fe, tradición, irregular, viciosa, mera tenencia,
+  agregación, ACP posesión), cotejar siempre con este anexo**: es la
+  fuente de Boetsch. Los tramos ya aprobados no se revisaron contra él
+  (decidir con Laura si vale la pena).
+- **`Apuntes/CIVIL/Bienes/Sentencias/sentencia-n-17962025...pdf`**:
+  Corte Suprema, 24-02-2026, rol 1796-2025: compraventa de inmueble por
+  instrumento privado protocolizado es nula absolutamente (art. 1801
+  inc. 2º), título injusto (704 Nº 3), sin posesión regular ni
+  publiciana. Entró en (v) c). Sirve también para VII.2 (publiciana,
+  art. 894) y para la tradición de inmuebles.
+
+Lo que se hizo: A.2 intro y 2.1-2.2 completos reescritos en voz propia
+(paráfrasis sin `.ley`: 9 de 241 sobre 70%, fragmentos y citas; contra
+Peñailillo, 9 de 261); arts. 702, 703 y 704 completos en `.ley` con
+negritas; 2.2 en escalera (i)-(v), clasificación a)-c) con c.1)-c.3),
+sucesión a)-b) con b.1)-b.2); id nuevo `cV-5-A-2-2-2-v` (títulos
+injustos); discusión (iii) BOETSCH / VIAL / ROZAS con cuadro; tesis
+declarativa de la adjudicación agregada; art. 704 inc. final y art.
+1269 corregidos; legatario putativo con la advertencia de la Ley
+19.903; cajas "El tractor de Chimbarongo" y "El sitio de Pichidangui";
+breves (Fortunato, aluvión, Eduviges y Saturnino, Gumercinda y Nemesio,
+Evaristo y Ponciano, Rosendo, Aurelia y Teodosio); No confundir de la
+posesión de la herencia conservado; tres preguntas clásicas (posesión
+regular, justo título, heredero putativo) más la de la adjudicación;
+Conexiones (AJ IV.B.3.4 y IV.B.3.6; Contratos y Sucesorio con
+`[FALTA: sección]`); V.4.A.2.5 nombra a VIAL y ROZAS. Verificación:
+cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, párrafos bajo 1.100, capturas revisadas, vista previa
+actualizada. Respaldo en el tmp del job (`05_Bienes_antes_11b.html`).
+
+**Ojo, una pregunta clásica de más:** se aprobaron tres, pero también
+quedó la de la adjudicación ("¿Qué clase de título es la
+adjudicación?"); avisado a Laura para que diga si la saca.
+
 **Pendientes que salen de aquí:** VIAL sobre la tradición "equívoca" del
 art. 702 (2.4, próximo tramo, y tramo 14); plazos de la herencia (16a);
 apoderamiento del art. 729 (13b y 14).
 
 ## Siguiente paso exacto (2026-11-26, vigente)
 
-1. ~~Laura revisa el tramo 11a~~: aprobado el 2026-11-26.
-2. Tramo 11b (en curso, ver "Tramo 11b") (V.5.A.2 clases de posesión: regular, concepto,
-   justo título, p. 191-198). Recordar el pendiente de VIAL sobre el art.
-   703 (abajo).
-3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
-   art. 703 (ver "Tramo 5a") y la discusión de si la tradición de quien
-   no es dueño es el título de la posesión (ver "Tramo 7a").
+1. **Laura revisa el tramo 11b** en la vista previa (ancla
+   `#cV-5-A-2`). Si lo aprueba, anotarlo aquí.
+2. Después, tramo 12 (unido con el ex 11c): buena fe, tradición,
+   ventajas, posesión irregular y viciosa, p. 202-213. Cotejar con
+   PEÑAILILLO 2010 (nº 168 a 173). Llevar la crítica de VIAL a la
+   tradición "equívoca" del art. 702 al tercer elemento (2.4).
+3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
+   dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
    inmuebles (ver "Tramo 7c") y la pregunta clásica "¿Cómo se cancela
    la posesión inscrita?" (ver "Tramo 9c").
