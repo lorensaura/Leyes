@@ -24,10 +24,13 @@
 4. **Paywall** — pendiente, después de validar el Interrogador con alumnas reales. Ver `docs/paywall.md`.
 5. **Revisar las demás materias de Civil y Procesal** — en stand by hasta terminar de validar Responsabilidad. Excepción en curso: actualización de manuales de Civil con el método nuevo. Acto Jurídico terminado (2026-10-07); **el siguiente es Bienes: empezar siempre por `docs/manuales/estado_bienes.md`**, que exige leer antes `docs/manuales/lecciones-acto-juridico.md` para hacerlo en una sola pasada.
 
-**¿Qué falta exactamente antes de invitar alumnas beta?** Eso ya no vive
-acá, ver `docs/camino-a-beta.md`, la lista viva de hecho / pendiente /
-por determinar. Ábrelo al empezar una sesión si no está claro por dónde
-seguir.
+**Prioridad actual (desde 2026-11-26): lanzar y vender el martes 26 de
+enero de 2027.** El plan semana a semana, las decisiones abiertas y lo
+que bloquea la venta viven en `docs/camino-a-lanzamiento.md`. **Ábrelo
+al empezar cualquier sesión** si no está claro por dónde seguir. Bienes
+no bloquea el lanzamiento (máximo 2 sesiones por semana hasta esa fecha).
+`docs/camino-a-beta.md` quedó como detalle histórico de pendientes de
+contenido (congelado en agosto).
 
 ## Git / deploy
 - Laura **pushea con GitHub Desktop** (ahí tiene sus credenciales). Desde el terminal el push directo puede fallar por credenciales.
@@ -68,7 +71,8 @@ seguir.
 Clasificado por para qué lo abrirías — no leas ninguno de entrada, solo el que aplique:
 
 **Estado del proyecto:**
-- `docs/camino-a-beta.md`: hecho / pendiente / por determinar antes de invitar alumnas beta. Se actualiza in place cada sesión, es el punto de partida si no está claro qué sigue. Corto a propósito; el detalle sesión a sesión vive aparte en `docs/historial-2026-08.md` (archivo, no se actualiza in place, abrir solo si hace falta el detalle fino).
+- `docs/camino-a-lanzamiento.md`: plan vivo hasta el lanzamiento (26-ene-2027), semana a semana, con decisiones y checklist. Punto de partida de cada sesión.
+- `docs/camino-a-beta.md`: pendientes de contenido de la etapa beta (congelado en agosto, consultar como detalle). Corto a propósito; el detalle sesión a sesión vive aparte en `docs/historial-2026-08.md` (archivo, no se actualiza in place, abrir solo si hace falta el detalle fino).
 
 **Contenido jurídico (manuales, preguntas, Práctica):**
 - `docs/creacion-de-contenido.md` — punto de entrada: qué modelo vive dónde, qué revisar antes de generar, pendientes de contenido. Ábrelo siempre antes de tocar manuales o preguntas.
