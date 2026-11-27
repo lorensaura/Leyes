@@ -25,6 +25,14 @@ siguiente.
 
 ## Meta de contenido: todo Civil al 8 de febrero
 
+**Mapa de metas día a día (Airtable):** base "Digesto · Mapa de metas"
+(`appXc03xzw4k5Q96v`), interfaz "Mi plan Digesto" con las páginas
+*Mi día* (hoy y atrasado), *Avance por materia* y *¿Voy a tiempo?*
+(ritmo real, horas por día necesarias y fecha proyectada de término,
+recalculadas solas). 374 tareas con fecha meta. Al aprobar un tramo o
+una tanda, Laura marca **Hecho**; Claude puede marcarlo también vía la
+API de Airtable cuando cierra un tramo en sesión.
+
 **Por qué es posible:** hasta noviembre Laura no estaba dedicada
 completa. Dato medido el 2026-11-26: revisó 47 preguntas de Nulidad en
 2 horas (~25 por hora). Su revisión total estimada es de 190 a 300
