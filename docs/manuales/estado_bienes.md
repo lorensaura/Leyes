@@ -98,6 +98,9 @@
 - **Tramo 13a (V.5.A.3 y V.5.A.4, p. 208-214): terminado y aprobado
   por Laura (2026-11-27, "ok, haz el commit").** Detalle en "Tramo 13a",
   más abajo.
+- **Tramo 13b (V.5.A.5.1 a A.5.3, p. 214-218): escrito (2026-11-27),
+  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
+  13b", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -2097,11 +2100,46 @@ Boetsch (títulos, citas y frases cortas) y 6 contra Peñailillo, 4.027
 palabras (antes unas 1.400), capturas revisadas, vista previa
 actualizada. Respaldo en el tmp del job (`05_Bienes_antes_13a.html`).
 
+## Tramo 13b: hecho, esperando revisión (2026-11-27)
+
+**V.5.A.5.1 a A.5.3 (observaciones generales, principio básico y
+muebles), p. 214-218.** Informe en `Informes/Informe_Bienes_tramo13b.html`.
+Hallazgos: título de A.5 decía "de bienes muebles" (corregido también en
+el índice); art. 1446 por 1448; art. 721 "en lugar o a nombre"; art. 723
+"derechos" de poseedores; art. 608 inc. 2º es de domesticados; marcado
+roto en 3.3 b) y c); Boetsch copia a PEÑAILILLO (nº 184 a 188) en 40 de
+63 oraciones y se salta el nº 187 (cosas incorporales) y el cotejo de los
+arts. 726 y 730. Paráfrasis del texto anterior: 44 de 51 sobre 70%.
+
+**Decisiones de Laura (2026-11-27): "todo ok", sin material propio.**
+Lo que se hizo: arts. 720, 721, 723, 725, 726, 727 y 731 en `.ley` con
+negritas; 1.1 con la lectura literal del 723 (impúber mayor de siete y
+sordo del art. 1447 no excluidos; sin atribuir a autor), SAVIGNY (el que
+duerme, "cosa de hecho"); pregunta clásica del 11a conservada y ampliada;
+1.2 en escalera (i)-(iii) con SAVIGNY y pregunta clásica nueva; 2 en
+(i)/(ii) con las cosas incorporales de PEÑAILILLO en a)-d); 3.1 con
+BOETSCH (703 y 684); 3.2 con PEÑAILILLO, POTHIER, SAVIGNY, BOETSCH (730,
+1815) y VIAL (731), enlace a V.5.A.4.3.2; caja "La guitarra de
+Curacautín"; 3.3 a)-c) con la contradicción BOETSCH/PEÑAILILLO vs VIAL
+(art. 2502 Nº 1) expuesta sin tomar partido; No confundir "Apoderarse de
+la cosa no es lo mismo que usurparla"; pregunta clásica de conservación y
+pérdida; Conexiones (AJ II.B.2.2, V.6.3 y V.8; Contratos con
+`[FALTA: sección]`). Breves: Benigno, la guagua, la junta de vecinos,
+Crisóstomo, Clemira, usufructo de auto y de casa, el canal del vecino,
+Teobaldo, Eufrasia, el sillón, Clarisa, Sofanor, Rosaura. Verificación:
+cero guiones largos, ids únicos, `href` resuelven, etiquetas balanceadas,
+párrafos bajo 1.100, paráfrasis 8 de 204 sobre 70% contra Boetsch y 5
+contra Peñailillo (títulos y frases cortas atribuidas), 4.037 palabras
+(antes unas 1.400), capturas revisadas, vista previa actualizada.
+Respaldo en el tmp del job (`05_Bienes_antes_13b.html`).
+
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Tramo 13a aprobado. **Sigue el tramo 13b** (informe primero).
-2. Después, tramo 13b (A.5.1 a A.5.3, p. 214-218). Cotejar con
-   PEÑAILILLO 2010 nº 184 a 188.
+1. Tramo 13b escrito en el manual (2026-11-27), **esperando revisión de
+   Laura en la vista previa** (ancla `cV-5-A-5`). Detalle en "Tramo 13b".
+2. Después, tramo 13c (A.5.4.1, inmuebles: aspectos generales, p.
+   218-228). Cotejar con PEÑAILILLO 2010 nº 189 en adelante y Lombardo.
+   El art. 729 (pendiente del 11b) va al 14a.
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
    dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
