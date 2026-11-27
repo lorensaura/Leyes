@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-26 (tramo 11b y
-> pasada contra Peñailillo aprobados; tramo 12 escrito, esperando
-> revisión de Laura en la vista previa).
+> antes de seguir. Última actualización: 2026-11-27 (tramo 13b
+> y 13c aprobados; sigue el tramo 14a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -98,9 +97,12 @@
 - **Tramo 13a (V.5.A.3 y V.5.A.4, p. 208-214): terminado y aprobado
   por Laura (2026-11-27, "ok, haz el commit").** Detalle en "Tramo 13a",
   más abajo.
-- **Tramo 13b (V.5.A.5.1 a A.5.3, p. 214-218): escrito (2026-11-27),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
-  13b", más abajo.
+- **Tramo 13b (V.5.A.5.1 a A.5.3, p. 214-218): terminado y aprobado
+  por Laura (2026-11-27, "sigamos con el tramo 13c"), commit `85f2dd4`.**
+  Detalle en "Tramo 13b", más abajo.
+- **Tramo 13c (V.5.A.5.4.1, p. 218-228): terminado y aprobado por
+  Laura (2026-11-27, "ok, haz el commit y sigue con el tramo 14a").** Detalle en "Tramo
+  13c", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -2100,7 +2102,7 @@ Boetsch (títulos, citas y frases cortas) y 6 contra Peñailillo, 4.027
 palabras (antes unas 1.400), capturas revisadas, vista previa
 actualizada. Respaldo en el tmp del job (`05_Bienes_antes_13a.html`).
 
-## Tramo 13b: hecho, esperando revisión (2026-11-27)
+## Tramo 13b: hecho y aprobado (2026-11-27), commit `85f2dd4`
 
 **V.5.A.5.1 a A.5.3 (observaciones generales, principio básico y
 muebles), p. 214-218.** Informe en `Informes/Informe_Bienes_tramo13b.html`.
@@ -2133,13 +2135,86 @@ contra Peñailillo (títulos y frases cortas atribuidas), 4.037 palabras
 (antes unas 1.400), capturas revisadas, vista previa actualizada.
 Respaldo en el tmp del job (`05_Bienes_antes_13b.html`).
 
+## Tramo 13c: hecho y aprobado (2026-11-27)
+
+**V.5.A.5.4.1 Aspectos generales de la posesión de inmuebles (Mensaje,
+diferencias con los muebles, problemas, doctrinas, jurisprudencia y plan
+de estudio), p. 218-228.** Informe en `Informes/Informe_Bienes_tramo13c.html`.
+Hallazgos: errata de Boetsch en la doctrina de ÁLVAREZ ("posesión regular
+que habilita para la prescripción extraordinaria": es ordinaria) y "2310"
+por 2510 (ya corregida en el manual); art. 686 inc. 2º no alude a "todos
+los derechos reales" sino que los enumera; falta la parte final del art.
+696; falta la lectura del art. 2505 de la doctrina intermedia; las cinco
+citas del Mensaje ya están en V.4.D.2.1. Boetsch copia a PEÑAILILLO (nº
+189 y 195) en 16 de 144 oraciones. Paráfrasis del texto actual: 24 de 63
+sobre 70%. **Atribuciones dudosas:** ALESSANDRI, URRUTIA, CLARO SOLAR y
+las etiquetas ficción/garantía vienen del anexo de 3 páginas; las
+discusiones nº 10 ponen a CLARO SOLAR del lado contrario a ÁLVAREZ en el
+art. 2505; PEÑAILILLO define "inscripción-garantía" de otro modo. Lombardo
+agrega una cuarta postura (relación aparente entre las inscripciones).
+
+**Decisiones pedidas a Laura (8):** autores de cada doctrina; cuatro
+posturas; cuadro en vez del Dato de grado y si se aplica ya el estilo
+nuevo de rótulos a la hoja de Bienes; Mensaje con enlace a V.4.D.2.1;
+VIAL y el art. 724 en una línea; el art. 2505 en breve aquí y completo en
+prescripción; tres preguntas clásicas; material propio.
+
+**Decisiones de Laura (2026-11-27): "el resto todo ok"**, y agregó dos
+fuentes nuevas: `Apuntes/CIVIL/Bienes/Sentencias/de-los-bienes-y-de-su-dominio-posesin-uso-y-goce-revista-chi-2.pdf`
+(BARCIA, comentario de jurisprudencia, RChDP Nº 23, 2014) y
+`Apuntes/CIVIL/Bienes/Apuntes/teora-de-los-bienes-derecho-civil-en-3600-preguntas-y-respue_es.pdf`
+(libro de preguntas y respuestas de examen, nº 585 en adelante; útil para
+preguntas clásicas, pero con errores: cita el art. 2502 por el 2505 en la
+nº 831, "resciliación = anulación" en la nº 832, y dice que el Conservador
+"estudia la legalidad" de los títulos en la nº 757). **BARCIA resolvió la
+atribución:** según ALESSANDRI, SOMARRIVA y VODANOVIC (2009, Nº 848)
+aplican el art. 2505 a las dos prescripciones FABRES, AGUIRRE, CLARO
+SOLAR y BARROS ERRÁZURIZ; ALESSANDRI y SOMARRIVA (1941): "la inscripción
+es la posesión". Con eso, CLARO SOLAR queda del lado contrario a ÁLVAREZ;
+el resumen anónimo que lo pone en la inscripción-garantía se menciona
+como tal. URRUTIA sigue sin verificar en el original.
+
+Lo que se hizo: intro con la definición de posesión inscrita de VIAL;
+(i) resumen del plan de BELLO con enlace a V.4.D.2.1 y solo las dos
+frases clave del Mensaje; art. 696 en `.ley` con su parte final; los tres
+incentivos en a)-c) con arts. 728, 729, 924 y 2505 en `.ley`; (ii) y (iii)
+atribuidos a PEÑAILILLO (concepto "difuminado"); (iv) con los preceptos de
+PEÑAILILLO nº 192, inmuebles por destinación, las dos concepciones de
+fondo (ficción y garantía) y **cuatro posturas en a)-d)**, ordenadas de
+más a menos peso de la inscripción: clásica (a.1-a.3 con art. 724 en
+`.ley`, 702 inc. final, 40-50 años, PEÑAILILLO nº 195 bis), relación
+aparente (VIAL frente a PEÑAILILLO), requisito adicional (c.1-c.3, con el
+2505 que "choque violentamente"), solo para la regular (ÁLVAREZ, debate del
+2505 con autores, DE LA MAZA, críticas d.1-d.4 con VIAL); cuadro de 4
+posturas x 6 criterios; caja "La parcela de Pichidangui"; No confundir
+art. 729 vs 728 inc. 2º; (v) PEÑAILILLO, recopilación nº 9 y BARCIA sin
+decir cuál es mayoritaria, cinco fallos RDJ contados, caja Jurisprudencia
+con CS roles 7.769-2014 y 9.300-2012 (comentados por BARCIA); (vi) con
+ejemplo; tres preguntas clásicas; Conexiones (Contratos, `[FALTA:
+sección]`). **Hoja de estilos de Bienes:** aplicado el rótulo nuevo de
+cuadros (20%, mayúscula, fondo y filete); el cuadro de V.5.A.1.9 (créditos)
+lleva la clase `sin-rotulo` porque su primera columna es contenido.
+Verificación: cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, párrafos bajo 1.100, paráfrasis 17 de 287 sobre 70% contra
+Boetsch y 15 contra Peñailillo (citas del Mensaje, títulos y frases
+atribuidas), 5.878 palabras (antes 1.906; Boetsch unas 4.400), capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_13c.html`).
+
+**Pendientes que salen de aquí:** BARCIA sobre la reivindicatoria contra
+el mero tenedor y el cambio de ALESSANDRI y SOMARRIVA entre ediciones
+(1941 frente a 2009, con VODANOVIC) van al 20a (VII.2); la pregunta nº 831
+del libro ("¿se requiere inscripción para la posesión irregular de un
+inmueble inscrito con título traslaticio?") y las nº 803-804 (título
+injusto) como preguntas clásicas candidatas del 14b; el debate completo
+del art. 2505 a la prescripción (15-16).
+
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Tramo 13b escrito en el manual (2026-11-27), **esperando revisión de
-   Laura en la vista previa** (ancla `cV-5-A-5`). Detalle en "Tramo 13b".
-2. Después, tramo 13c (A.5.4.1, inmuebles: aspectos generales, p.
-   218-228). Cotejar con PEÑAILILLO 2010 nº 189 en adelante y Lombardo.
-   El art. 729 (pendiente del 11b) va al 14a.
+1. Tramo 13b aprobado (2026-11-27, "sigamos con el tramo 13c").
+2. Tramo 13c aprobado (2026-11-27). Sigue el tramo 14a (A.5.4.2, no inscritos, p.
+   228-235): PEÑAILILLO nº 190 y 191, art. 729, Lombardo p. 6-7, libro de
+   3600 preguntas (nº 829) y BARCIA (DE LA MAZA).
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
    dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
