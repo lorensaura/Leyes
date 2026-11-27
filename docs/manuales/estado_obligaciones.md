@@ -3,10 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (Laura dio la partida: tramo 1
-> inventariado e informe entregado, esperando su visto bueno; manual
-> creado solo con portada e índice vacío en la rama
-> `obligaciones-tramo1`).
+> Última actualización: 2026-11-27 (tramo 1 escrito en la rama
+> `obligaciones-tramo1`, con las opciones recomendadas del informe;
+> esperando revisión de Laura en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -33,11 +32,13 @@
 - **Ojo, hay un borrador viejo** (ver "Borrador anterior", más abajo):
   no se actualiza, se escribe el tramo 1 de cero y el borrador solo se
   usa como referencia.
-- **Tramo 1 (p. 13-19): inventario hecho e informe entregado**
-  (`DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`), con 6
-  decisiones pendientes de Laura. Detalle en "Tramo 1", más abajo.
-- **Siguiente:** las respuestas de Laura al informe del tramo 1 y
-  escribir el tramo. Ver "Siguiente paso exacto".
+- **Tramo 1 (p. 13-19): escrito, esperando revisión de Laura** en
+  `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`. Laura
+  dijo "continúa" sin responder las 6 decisiones del informe: se
+  aplicó en todas la opción recomendada (ver "Tramo 1"). Cobertura
+  96% 🟢. Detalle en "Tramo 1", más abajo.
+- **Siguiente:** revisión de Laura; con su visto bueno, merge y tramo 2.
+  Ver "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -257,11 +258,24 @@ decisión de solape.
 | 33 | 288-296 | VI Prueba instrumental (públicos y privados) | | S6 |
 | 34 | 296-305 | VI Testigos, inspección, peritos, confesión, presunciones | | S6 |
 
-## Tramo 1 (p. 13-19, I.A La obligación): informe entregado, sin escribir
+## Tramo 1 (p. 13-19, I.A La obligación): escrito, esperando revisión
 
 - **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`
   (2026-11-27). Inventario de 44 unidades; ninguna se descarta.
-- **Decisiones pendientes de Laura** (numeradas como en el informe):
+- **Escrito el 2026-11-27** (Laura: "continúa", sin responder las
+  decisiones). Se aplicó la opción recomendada en las 6: sin material
+  propio; línea con el art. 1461 inc. 3º transcrito; Ley 21.442 art. 6º
+  resumido **con** el derecho a repetir contra el antecesor; cuadro con
+  los rótulos "En cuanto a..."; Preguntas clásicas en los puntos 2, 3 y
+  5; Conexiones al cierre de los puntos 4, 5 y 6. Si Laura cambia
+  alguna, se corrige sobre lo escrito. Chequeos: cobertura 96% 🟢
+  (STITCHKIN, falso aviso: es de I.B en la p. 19); 44/44 unidades;
+  paráfrasis 0 de 25 oraciones sobre 70%; 0 guiones largos; párrafo
+  máximo 609 caracteres. A las Preguntas clásicas se les agregaron los
+  signos "¿?" y la tilde; el resto es literal. Pendiente de mirar con
+  Laura: la columna "Criterio" del cuadro deja los rótulos en tres
+  líneas.
+- **Las 6 decisiones del informe** (numeradas como en él):
   1. ¿Material propio sobre I.A?
   2. "Física y jurídicamente posible" (Boetsch) frente a "física y
      moralmente posible" (art. 1461 inc. 3º): propuesta, mantener las
@@ -306,16 +320,12 @@ decisión de solape.
 
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Con las respuestas de Laura al informe del tramo 1, escribir I.A en
-   `06_Obligaciones_Manual.html` (rama `obligaciones-tramo1`), con la
-   estructura de la sección 3 del informe, y el índice con `toc-lista`.
-2. Chequeos: `scripts/cobertura_tramo.py` (hoy **solo está en la rama
-   `worktree-plan-lanzamiento`**, commit `314038f`, sin mergear: usarlo
-   desde ahí o esperar el merge), bloque con semáforo arriba del
-   informe final; las 44 unidades; comparación oración por oración
-   contra Boetsch (cuántas sobre 70%); etiquetas, cero guiones largos,
-   párrafos bajo 1.200 caracteres.
-3. Vista previa en `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`
+1. Hecho: I.A escrito en `06_Obligaciones_Manual.html` (rama
+   `obligaciones-tramo1`), índice con `toc-lista`.
+2. Hecho: chequeos. Ojo: `scripts/cobertura_tramo.py` **solo está en la
+   rama `worktree-plan-lanzamiento`** (commit `314038f`, sin mergear);
+   se usó una copia sacada con `git show 314038f:scripts/cobertura_tramo.py`.
+3. Pendiente: revisión de Laura en la vista previa en `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`
    para que Laura la revise; con su aprobación, merge a `main`, borrar
    la rama y marcar el tramo como Hecho en el mapa de metas de Airtable.
 4. Tramo 2 (p. 19-27, I.B Fuentes, más el anexo de Vial sobre fuentes).
