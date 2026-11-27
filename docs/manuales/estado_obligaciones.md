@@ -3,8 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (tramos 1 y 2 aprobados y
-> mergeados; reparto rehecho en 74 tramos chicos; siguiente: tramo 3a).
+> Última actualización: 2026-11-27 (tramos 1 y 2 aprobados; reparto
+> en 74 tramos chicos; tramo 3a escrito en `obligaciones-tramo3a`,
+> esperando revisión, junto con la corrección de paráfrasis de 1 y 2).
 
 ## Resumen para retomar (léelo primero)
 
@@ -42,7 +43,18 @@
   perfecto"). Cierra el capítulo I. Detalle en "Tramo 2", más abajo.
 - **Reparto rehecho en 74 tramos chicos** (2026-11-27), ver "Reparto de
   tramos". Ya está en Airtable.
-- **Siguiente:** tramo 3a. Ver "Siguiente paso exacto".
+- **Tramo 3a (p. 27-31 + Vial nº 67-69): escrito, esperando revisión.**
+  Informe: `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3a.html`.
+  Detalle en "Tramo 3a", más abajo.
+- **Ojo, corrección de los tramos 1 y 2 (en la misma rama 3a):** el
+  script de paráfrasis tenía un error (el filtro de citas entre comillas
+  se comía párrafos enteros cuando las comillas quedaban desparejas), y
+  en 1 y 2 midió muchas menos oraciones de las reales. Ya corregido
+  (filtra cita por párrafo). Al medir de nuevo salieron 13 oraciones del
+  tramo 1 y 22 del tramo 2 (13 frente a Boetsch, 9 frente a Vial) sobre
+  70%; se reescribieron todas, sin perder unidades.
+- **Siguiente:** revisión de Laura del 3a; luego 3b. Ver "Siguiente paso
+  exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -241,8 +253,8 @@ pocas grandes." (memoria `tandas-pequenas`). El reparto de 34 tramos del
 |---|---|---|---|---|
 | 1 | 13-19 | I.A La obligación |  | ✅ |
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
-| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales); Ramos Pazos |  |
-| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Abeliuk; apunte de eficacia |  |
+| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 |  |
+| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Vial (final del nº 69 y nº 70); Ramos Pazos; Abeliuk; apunte de eficacia |  |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
 | 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
@@ -413,19 +425,42 @@ pocas grandes." (memoria `tandas-pequenas`). El reparto de 34 tramos del
   Laura: las 36 tareas estimadas se reutilizaron (renombradas) y se
   crearon 38 más, una por tramo real; tramos 1 y 2 marcados Hecho.
 
+## Tramo 3a (p. 27-31, II intro y II.A.1-3): escrito, esperando revisión
+
+- **Escrito el 2026-11-27** en `obligaciones-tramo3a`. Abre el capítulo
+  II (`cII`), con la lista de clasificaciones de Boetsch como
+  enumeración, y el tema A (`cII-A`) con los puntos 1 a 3.
+- **Anexo de Vial (nº 67-69 hasta su definición):** completo en este
+  tramo. El final del nº 69 ("desde cuándo" es natural la obligación) y
+  el nº 70 van al 3b, junto con **todo el anexo de Ramos Pazos**, que
+  trata solo de eso.
+- **Decisiones aplicadas, para que Laura confirme:** cuadro de
+  taxatividad (tesis taxativa: CLARO SOLAR y VIAL; no taxativa: FUEYO,
+  STITCHKIN, VODANOVIC), con la "mayoría" atribuida a BOETSCH y la
+  contradicción de VIAL dicha en una línea; "deber moral del acreedor"
+  (posible error de Boetsch) escrito solo como "un deber moral";
+  Pregunta clásica "¿Qué son las obligaciones naturales?" (Grado ACA).
+- **Verificado:** arts. 98, 99, 578, 1247, 1466, 1468, 1470 (con inciso
+  final), 1472, 1625, 1630, 2208, 2259, 2260, 2263, 2296. **Sin
+  verificar:** Ley 18.010, arts. 12 y 15 (no está en la carpeta).
+- **Controles:** cobertura 100% 🟢 (p. 27-30); 55/55 unidades;
+  paráfrasis 0/96 contra Vial y 12/96 contra Boetsch (listas técnicas,
+  citas, autores y títulos), tras reescribir 13.
+- **Script nuevo para insertar tramos:**
+  `$CLAUDE_JOB_DIR/tmp/insertar_tramo.py <cuerpo.html> <id nuevo>`
+  agrega al final del manual y regenera el índice. Vive en la carpeta
+  temporal de la sesión: si se pierde, rehacerlo (está descrito aquí).
+
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Rama `obligaciones-tramo3a` (desde `main`, ya trae el commit del
-   art. 1750). Tramo **3a**: Boetsch p. 27 a ~31 (apertura del capítulo
-   II con la lista de clasificaciones; II.A.1-3), con los anexos de
-   Vial (civiles vs. naturales) y Ramos Pazos. Cortar en límite de
-   título.
-2. Mismo modo de trabajo: informe y texto a la vez, decisiones aplicadas
-   por defecto y marcadas en el informe, vista previa, controles
-   (`cobertura_tramo.py`, unidades, paráfrasis contra la fuente **y**
-   contra cada anexo, mecánicos).
-3. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
-   Airtable.
-4. `scripts/cobertura_tramo.py` sigue solo en la rama
+1. Revisión de Laura del tramo 3a (y de la corrección de 1 y 2); con su
+   visto bueno, merge de `obligaciones-tramo3a`, borrar la rama y marcar
+   3a como Hecho en Airtable.
+2. Tramo **3b**: Boetsch p. 31 (punto 4) a 36 (II.A.4-6: análisis de
+   cada número del art. 1470, sentencia y efectos), con Vial (final del
+   nº 69 y nº 70), Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e
+   Ibarra: cruzar con cátedra y no nombrarlo). Si sale grande, partirlo
+   en 3b y 3c y avisar. Conexión con AJ IV.B (nulidad).
+3. `scripts/cobertura_tramo.py` sigue solo en la rama
    `worktree-plan-lanzamiento` (commit `314038f`); se usa una copia con
    `git show 314038f:scripts/cobertura_tramo.py`.
