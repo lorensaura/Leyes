@@ -41,8 +41,13 @@
 - **Tramo 2 (p. 19-26 + anexo de Vial completo): aprobado y mergeado**
   (2026-11-27, merge `49f2683`; Laura: "Lo que decidiste está
   perfecto"). Cierra el capítulo I. Detalle en "Tramo 2", más abajo.
-- **Reparto rehecho en 74 tramos chicos** (2026-11-27), ver "Reparto de
-  tramos". Ya está en Airtable.
+- **Reparto rehecho en 69 tramos chicos por subtema, con las fuentes
+  integradas** (2026-11-27), ver "Reparto de tramos". Ya está en
+  Airtable.
+- **Orden de trabajo (Laura, 2026-11-27):** como en Bienes, **primero el
+  informe y Laura decide; después se redacta**. Los tramos 1, 2 y 3a se
+  redactaron antes del visto bueno (se tomó "continúa" como permiso):
+  no se repite (memoria `informe-antes-de-redactar`).
 - **Tramo 3a (p. 27-31 + Vial nº 67-69): escrito, esperando revisión.**
   Informe: `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3a.html`.
   Detalle en "Tramo 3a", más abajo.
@@ -229,32 +234,33 @@ con la Conexión al cierre del punto (decisión 1).
 | S6 | Formalidades por vía de prueba, limitación de la prueba de testigos | VI.8, p. 288-299 | AJ (formalidades: arts. 1701, 1708, 1709, 1711) |
 | S7 | Requisitos del objeto (art. 1461), imposibilidad, prenda general (hallado en el tramo 1, 2026-11-27) | I.A.5 y I.A.6.2, p. 16-19 | AJ II.C.2 y II.C.3 (objeto sobre cosa y sobre hecho); Contractual C.6 (imposibilidad) y G.1 (derecho de prenda general). Se desarrolla completo aquí, con Conexión (misma regla de la decisión 1) |
 
-## Reparto de tramos (rehecho 2026-11-27: tandas chicas)
+## Reparto de tramos (rehecho 2026-11-27: tandas chicas, fuentes integradas)
 
-Laura (2026-11-27): "Lo importante es que sigas trabajando en tandas como
-lo estamos haciendo con bienes. Varias tandas pequeñas son mejores que
-pocas grandes." (memoria `tandas-pequenas`). El reparto de 34 tramos del
-2026-10-10 se partió en **74 tramos**:
+Dos indicaciones de Laura del 2026-11-27 (memoria `tandas-pequenas`):
 
-- Unas **4 a 6 páginas de Boetsch** por tramo, con sufijo a/b/c como en
-  Bienes. Las páginas de corte son aproximadas: **al llegar a cada tramo
-  se ajusta el corte a un límite de título** y, si sale grande, se parte
-  de nuevo y se le avisa a Laura.
-- Los anexos chicos van con el tramo de su tema. **Cada capítulo de
-  Orrego es su propio tramo**, después de los de Boetsch de esa
-  institución (Orrego X, prescripción, 27 p., en tres: 28c, 28d, 28e).
-- Mismas fuentes y mismas decisiones de solape (S1 a S7) que antes; la
-  columna de solapes del reparto anterior sigue valiendo por tema.
-- El mismo reparto está en el **mapa de metas de Airtable** (74 tareas
-  "Obligaciones · tramo X", tramos 1 y 2 marcados Hecho). Si se parte o
-  se junta un tramo, actualizar también ahí.
+- "Varias tandas pequeñas son mejores que pocas grandes", como en
+  Bienes: unas **4 a 6 páginas de Boetsch** por tramo, con sufijo a/b/c.
+- "Estamos haciendo un mix de los manuales, por lo tanto no es que
+  quiera tramos de distintos autores, sino uno que diga: Orrego dice X,
+  pero Boetsch/Peñailillo dicen Y". Cada tramo es un **subtema con todas
+  sus fuentes integradas**. Un primer reparto de este mismo día ponía
+  cada capítulo de Orrego en su propio tramo; **eso estaba mal** y se
+  corrigió: las páginas de Orrego se repartieron por subtema dentro de
+  los tramos de Boetsch, según sus títulos (mapeados el 2026-11-27). Lo
+  mismo vale para todos los anexos.
 
-| # | Boetsch p. | Contenido | Anexo | Hecho |
+Las páginas de corte son aproximadas: **al llegar a cada tramo se ajusta
+el corte a un límite de título**, y si sale grande se parte por
+subtema (nunca por autor) y se le avisa a Laura. El mismo reparto (69
+tramos) está en el **mapa de metas de Airtable**; si se parte o se junta
+un tramo, actualizar también ahí.
+
+| # | Boetsch p. | Contenido | Anexo integrado | Hecho |
 |---|---|---|---|---|
 | 1 | 13-19 | I.A La obligación |  | ✅ |
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
-| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 |  |
-| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Vial (final del nº 69 y nº 70); Ramos Pazos; Abeliuk; apunte de eficacia |  |
+| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales); Ramos Pazos |  |
+| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Abeliuk; apunte de eficacia |  |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
 | 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
@@ -276,44 +282,39 @@ pocas grandes." (memoria `tandas-pequenas`). El reparto de 34 tramos del
 | 13b | 120-125 | II.E.2.4-5 Plazo: efectos y extinción |  |  |
 | 14a | 125-129 | II.E.3 Modo |  |  |
 | 14b | 129-133 | II.F Otras categorías (sucesivas, medio y resultado, propter rem, abstractas) |  |  |
-| 15a | 133-137 | III Modificación; IV.1-3 Modos de extinguir, generalidades | Orrego I |  |
-| 15b | 137-140 | IV.A Resciliación | Orrego II |  |
-| 16a | 140-145 | IV.B.1 Pago efectivo: concepto a quién paga |  |  |
-| 16b | 145-149 | IV.B.1 Pago en las obligaciones de dar |  |  |
-| 17a | 149-153 | IV.B.1 A quién se paga, época |  |  |
-| 17b | 153-157 | IV.B.1 Lugar, imputación, prueba y efectos del pago |  |  |
-| 17c | Orrego | Orrego III.A Pago efectivo (1ª parte, PDF p. 6-10) | Orrego III.A |  |
-| 17d | Orrego | Orrego III.A Pago efectivo (2ª parte, PDF p. 10-15) | Orrego III.A |  |
-| 18a | 157-161 | IV.B.2 Pago por consignación (1) |  |  |
-| 18b | 161-166 | IV.B.2 Pago por consignación (2) |  |  |
-| 18c | Orrego | Orrego III.B Pago por consignación (PDF p. 15-18) | Orrego III.B |  |
-| 19a | 166-171 | IV.B.3 Pago con subrogación: concepto y clases (1) |  |  |
-| 19b | 171-176 | IV.B.3 Pago con subrogación: clases (2) |  |  |
-| 20a | 176-179 | IV.B.3.5-6 Subrogación: efectos y paralelo |  |  |
-| 20b | 179-183 | IV.B.4 Cesión de bienes; IV.B.5 Beneficio de competencia |  |  |
-| 20c | Orrego | Orrego III.C-D Subrogación y beneficio de competencia (PDF p. 18-25) | Orrego III.C-D |  |
-| 21a | 183-190 | IV.C Dación en pago |  |  |
-| 21b | Orrego | Orrego IV Dación en pago (PDF p. 25-28) | Orrego IV |  |
-| 22a | 190-194 | IV.D Novación (1) |  |  |
-| 22b | 194-198 | IV.D.4 Novación: clases |  |  |
-| 22c | 198-201 | IV.D.5 Novación: efectos |  |  |
-| 22d | Orrego | Orrego V Novación (1ª parte, PDF p. 28-32) | Orrego V |  |
-| 22e | Orrego | Orrego V Novación (2ª parte, PDF p. 32-36) | Orrego V |  |
-| 23a | 201-205 | IV.E Compensación (1) |  |  |
-| 23b | 205-210 | IV.E Compensación: prohibida y efectos |  |  |
-| 23c | Orrego | Orrego VII Compensación (PDF p. 40-45) | Orrego VII |  |
-| 24a | 210-215 | IV.F Remisión; IV.G Confusión |  |  |
-| 24b | Orrego | Orrego VI Remisión y VIII Confusión (PDF p. 36-40 y 45-47) | Orrego VI y VIII |  |
-| 25a | 215-219 | IV.H Imposibilidad y pérdida de la cosa debida |  |  |
-| 25b | 219-223 | IV.H.5 Teoría de los riesgos | Orrego IX |  |
-| 26 | 223-229 | IV.I.1-6 Prescripción: generalidades y reglas comunes |  |  |
-| 27a | 229-234 | IV.I.7.1-7.2 Acción prescriptible; interrupción (1) |  |  |
-| 27b | 234-238 | IV.I.7.2 Interrupción y suspensión (2) |  |  |
-| 28a | 238-244 | IV.I.7.3 Tiempo de prescripción |  |  |
-| 28b | 244-250 | IV.I.8-9 Cláusulas; prescripción y caducidad | Clasificación de la prescripción extintiva |  |
-| 28c | Orrego | Orrego X Prescripción extintiva (1ª parte, PDF p. 49-58) | Orrego X |  |
-| 28d | Orrego | Orrego X Prescripción extintiva (2ª parte, PDF p. 58-67) | Orrego X |  |
-| 28e | Orrego | Orrego X Prescripción extintiva (3ª parte, PDF p. 67-76) | Orrego X |  |
+| 15a | 133-137 | III Modificación; IV.1-3 Modos de extinguir, generalidades | Orrego I (p. 2-4) |  |
+| 15b | 137-140 | IV.A Resciliación | Orrego II (p. 4-6) |  |
+| 16a | 140-145 | IV.B.1 Pago: concepto y quién puede pagar | Orrego III.A.1-2 (p. 6-8) |  |
+| 16b | 145-149 | IV.B.1 Pago en las obligaciones de dar (requisitos de validez) | Orrego III.A.3 (p. 8-9) |  |
+| 17a | 149-153 | IV.B.1 A quién debe hacerse el pago | Orrego III.A.4 (p. 9-11) |  |
+| 17b | 153-155 | IV.B.1 Época, lugar y forma del pago | Orrego III.A.5-8 (p. 11-14) |  |
+| 17c | 155-157 | IV.B.1 Imputación, prueba y efectos del pago | Orrego III.A.9-10 (p. 14-15) |  |
+| 18a | 157-161 | IV.B.2 Pago por consignación: concepto y oferta | Orrego III.B.1-2.1 (p. 15-17) |  |
+| 18b | 161-166 | IV.B.2 Pago por consignación: consignación y efectos | Orrego III.B.2.2 (p. 17-18) |  |
+| 19a | 166-171 | IV.B.3 Pago con subrogación: concepto y clases (1) | Orrego III.C.1-3.1 (p. 18-20) |  |
+| 19b | 171-176 | IV.B.3 Pago con subrogación: legal y convencional (2) | Orrego III.C.3.1-3.2 (p. 20-22) |  |
+| 20a | 176-179 | IV.B.3.5-6 Subrogación: efectos y paralelos | Orrego III.C.4-8 (p. 22-24) |  |
+| 20b | 179-183 | IV.B.4 Cesión de bienes; IV.B.5 Beneficio de competencia | Orrego III.D (p. 24-25) |  |
+| 21a | 183-187 | IV.C Dación en pago: concepto y requisitos | Orrego IV.1-2 (p. 25-26) |  |
+| 21b | 187-190 | IV.C Dación en pago: naturaleza jurídica | Orrego IV.3 (p. 26-28) |  |
+| 22a | 190-194 | IV.D Novación: concepto y requisitos | Orrego V.1-2 (p. 28-30) |  |
+| 22b | 194-198 | IV.D.4 Novación: clases | Orrego V.3 (p. 30-34) |  |
+| 22c | 198-201 | IV.D.5 Novación: efectos; delegación | Orrego V.4-5 (p. 34-36) |  |
+| 23a | 201-205 | IV.E Compensación: concepto, clases y requisitos | Orrego VII.1-3 (p. 40-44) |  |
+| 23b | 205-210 | IV.E Compensación prohibida, voluntaria, judicial y efectos | Orrego VII.3-4 (p. 44-45) |  |
+| 24a | 210-212 | IV.F Remisión | Orrego VI (p. 36-40) |  |
+| 24b | 212-215 | IV.G Confusión | Orrego VIII (p. 45-47) |  |
+| 25a | 215-219 | IV.H Imposibilidad y pérdida de la cosa debida | Orrego IX (p. 47-49) |  |
+| 25b | 219-223 | IV.H.5 Teoría de los riesgos |  |  |
+| 26a | 223-225 | IV.I.1-5 Prescripción extintiva: generalidades | Orrego X.1-3 (p. 50-51) |  |
+| 26b | 225-227 | IV.I.6 Reglas comunes (1): alegación | Orrego X.3 b (p. 52-56) |  |
+| 26c | 227-229 | IV.I.6 Reglas comunes (2): quién alega, oportunidad, renuncia | Orrego X.3 b.3-b.5 (p. 56-58) |  |
+| 27a | 229-231 | IV.I.7.1 Acción prescriptible | Orrego X.3 a (p. 51-52) |  |
+| 27b | 231-234 | IV.I.7.2 Inactividad: interrupción natural y civil | Orrego X.3 c.1-c.2 (p. 59-63) |  |
+| 27c | 234-238 | IV.I.7.2 Efectos de la interrupción; suspensión | Orrego X.3 c.3-d (p. 63-68) |  |
+| 28a | 238-242 | IV.I.7.3 Tiempo de prescripción (1) | Orrego X.3 e.1-e.3 (p. 68-71) |  |
+| 28b | 242-247 | IV.I.7.3 Tiempo de prescripción (2): prescripciones especiales | Orrego X.3 e.4 (p. 71-74) |  |
+| 28c | 247-250 | IV.I.8-9 Cláusulas; prescripción y caducidad | Orrego X.4 (p. 74-76); Clasificación de la prescripción extintiva |  |
 | 29a | 250-254 | V.1-9 Prelación de créditos: generalidades |  |  |
 | 29b | 254-260 | V.10.1 Primera clase |  |  |
 | 30 | 260-267 | V.10.2-10.3 Segunda y tercera clase |  |  |
@@ -456,7 +457,8 @@ pocas grandes." (memoria `tandas-pequenas`). El reparto de 34 tramos del
 1. Revisión de Laura del tramo 3a (y de la corrección de 1 y 2); con su
    visto bueno, merge de `obligaciones-tramo3a`, borrar la rama y marcar
    3a como Hecho en Airtable.
-2. Tramo **3b**: Boetsch p. 31 (punto 4) a 36 (II.A.4-6: análisis de
+2. Tramo **3b**, **primero solo el informe** (inventario y decisiones),
+   esperar a Laura, y recién después redactar: Boetsch p. 31 (punto 4) a 36 (II.A.4-6: análisis de
    cada número del art. 1470, sentencia y efectos), con Vial (final del
    nº 69 y nº 70), Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e
    Ibarra: cruzar con cátedra y no nombrarlo). Si sale grande, partirlo
