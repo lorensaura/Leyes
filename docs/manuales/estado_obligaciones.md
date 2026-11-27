@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (tramo 1 escrito en la rama
-> `obligaciones-tramo1`, con las opciones recomendadas del informe;
-> esperando revisión de Laura en la vista previa).
+> Última actualización: 2026-11-27 (tramo 1 aprobado y mergeado;
+> tramo 2 escrito en la rama `obligaciones-tramo2`, que incluye el
+> cambio de formato de los rótulos de los cuadros; esperando revisión).
 
 ## Resumen para retomar (léelo primero)
 
@@ -32,13 +32,18 @@
 - **Ojo, hay un borrador viejo** (ver "Borrador anterior", más abajo):
   no se actualiza, se escribe el tramo 1 de cero y el borrador solo se
   usa como referencia.
-- **Tramo 1 (p. 13-19): escrito, esperando revisión de Laura** en
-  `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`. Laura
-  dijo "continúa" sin responder las 6 decisiones del informe: se
-  aplicó en todas la opción recomendada (ver "Tramo 1"). Cobertura
-  96% 🟢. Detalle en "Tramo 1", más abajo.
-- **Siguiente:** revisión de Laura; con su visto bueno, merge y tramo 2.
-  Ver "Siguiente paso exacto".
+- **Tramo 1 (p. 13-19): aprobado y mergeado** por Laura (2026-11-27,
+  merge `b283629`). Al revisarlo pidió el **formato nuevo de los rótulos
+  de los cuadros** (corto, mayúscula, negrita, fondo propio): aplicado y
+  anotado en `formato.md` 4.1, `guia-editorial.md` 4.12, `proceso.md`
+  4.1 y `decisiones.md` (rama `formato-cuadro-rotulos`, incluida en
+  `obligaciones-tramo2`).
+- **Tramo 2 (p. 19-26 + anexo de Vial completo): escrito, esperando
+  revisión de Laura.** Informe:
+  `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo2.html`. Cierra el
+  capítulo I (lleva la Pausa). Detalle en "Tramo 2", más abajo.
+- **Siguiente:** revisión de Laura del tramo 2; con su visto bueno,
+  merge de `obligaciones-tramo2` y tramo 3. Ver "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -258,7 +263,7 @@ decisión de solape.
 | 33 | 288-296 | VI Prueba instrumental (públicos y privados) | | S6 |
 | 34 | 296-305 | VI Testigos, inspección, peritos, confesión, presunciones | | S6 |
 
-## Tramo 1 (p. 13-19, I.A La obligación): escrito, esperando revisión
+## Tramo 1 (p. 13-19, I.A La obligación): aprobado y mergeado
 
 - **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`
   (2026-11-27). Inventario de 44 unidades; ninguna se descarta.
@@ -318,17 +323,53 @@ decisión de solape.
   descomprimiendo Snappy). Si hace falta de nuevo, rehacerlo así o
   pedirle a Laura que exporte a PDF.
 
+## Tramo 2 (p. 19-26, I.B Fuentes): escrito, esperando revisión
+
+- **Escrito el 2026-11-27** (Laura: "Sigamos") en la rama
+  `obligaciones-tramo2`, con el mismo modo del tramo 1: informe y texto
+  a la vez, con las decisiones aplicadas por defecto y marcadas en el
+  informe para que Laura las cambie si quiere.
+- **Anexo de Vial completo**, salvo su primer párrafo (art. 1698 y la
+  extinción: se agregó a I.A.7) y su última página (inicio de su
+  capítulo de clasificación: dar, entregar, hacer, no hacer), que
+  **queda para el tramo 4**.
+- **Decisiones aplicadas, pendientes de confirmar por Laura:**
+  clasificaciones de los contratos (arts. 1439 a 1443, de Vial) dentro
+  de I.B.3.1, con No confundir "¿Acto jurídico unilateral o contrato
+  unilateral?" (se solapa con el futuro manual de Contratos); cuadro
+  "responsabilidad penal y civil" en I.B.3.3; párrafo de Vial agregado a
+  I.A.7; 4 Preguntas clásicas (fuentes; delito y cuasidelito; declaración
+  unilateral; enriquecimiento sin causa); "En nuestra opinión" de
+  Boetsch atribuido a **BOETSCH**; los dos fallos sin rol sobre la
+  declaración unilateral, en el texto con `[FALTA: rol, tribunal y fecha
+  de ambos fallos]`.
+- **Verificado:** art. 1437 vigente (Boetsch trae el texto anterior a la
+  Ley 19.585); art. 2284 con sus 5 incisos; art. 2238 con el texto del
+  Código ("un adulto que no tiene la libre administración...", no "un
+  incapaz"); art. 99 del Código de Comercio; la cita de VIAL corregida
+  contra su original. **Sin verificar:** art. 173 del Código de Minería
+  y los códigos extranjeros; la regla de los actos del marido sobre los
+  bienes de la mujer (Boetsch no da artículo; puede estar
+  desactualizada): avisado a Laura en el informe.
+- **Controles:** cobertura 98% 🟢 (art. 1698, falso aviso: es de I.A.7);
+  98/98 unidades (63 de Boetsch, 35 de Vial); 9 oraciones reescritas
+  por paráfrasis; párrafo máximo 911 caracteres; 0 guiones largos.
+- **Mapa de metas en Airtable:** el tramo 1 no se marcó como Hecho
+  porque la base tiene el reparto **estimado** de Obligaciones ("Oblig.
+  1, tramo 1 de 16 (p. 1-8)"...), que no calza con los 34 tramos reales
+  de este archivo. Pendiente: proponerle a Laura reemplazarlo
+  (memoria `mapa-metas-airtable`).
+
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Hecho: I.A escrito en `06_Obligaciones_Manual.html` (rama
-   `obligaciones-tramo1`), índice con `toc-lista`.
-2. Hecho: chequeos. Ojo: `scripts/cobertura_tramo.py` **solo está en la
-   rama `worktree-plan-lanzamiento`** (commit `314038f`, sin mergear);
-   se usó una copia sacada con `git show 314038f:scripts/cobertura_tramo.py`.
-3. Pendiente: revisión de Laura en la vista previa en `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`
-   para que Laura la revise; con su aprobación, merge a `main`, borrar
-   la rama y marcar el tramo como Hecho en el mapa de metas de Airtable.
-4. Tramo 2 (p. 19-27, I.B Fuentes, más el anexo de Vial sobre fuentes).
-   Ojo: Boetsch transcribe el art. 1437 con el texto anterior a la Ley
-   19.585; usar el vigente ("padres y los hijos sujetos a patria
-   potestad"). Cierra el capítulo I: lleva la Pausa.
+1. Revisión de Laura del tramo 2 en la vista previa; con su visto
+   bueno, merge de `obligaciones-tramo2` (incluye el formato de
+   rótulos) y borrar las ramas `obligaciones-tramo1`,
+   `formato-cuadro-rotulos` y `obligaciones-tramo2`.
+2. Tramo 3 (p. 27-36, II.A Civiles y naturales): abre el capítulo II
+   con la lista de clasificaciones de la p. 27. Anexos: Vial (civiles
+   y naturales), Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e
+   Ibarra: cruzar con cátedra y no nombrarlo).
+3. `scripts/cobertura_tramo.py` sigue solo en la rama
+   `worktree-plan-lanzamiento` (commit `314038f`); se usa una copia con
+   `git show 314038f:scripts/cobertura_tramo.py`.
