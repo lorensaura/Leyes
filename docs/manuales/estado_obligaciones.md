@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (tramo 1 aprobado y mergeado;
-> tramo 2 escrito en la rama `obligaciones-tramo2`, que incluye el
-> cambio de formato de los rótulos de los cuadros; esperando revisión).
+> Última actualización: 2026-11-27 (tramos 1 y 2 aprobados y
+> mergeados; reparto rehecho en 74 tramos chicos; siguiente: tramo 3a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -38,12 +37,12 @@
   anotado en `formato.md` 4.1, `guia-editorial.md` 4.12, `proceso.md`
   4.1 y `decisiones.md` (rama `formato-cuadro-rotulos`, incluida en
   `obligaciones-tramo2`).
-- **Tramo 2 (p. 19-26 + anexo de Vial completo): escrito, esperando
-  revisión de Laura.** Informe:
-  `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo2.html`. Cierra el
-  capítulo I (lleva la Pausa). Detalle en "Tramo 2", más abajo.
-- **Siguiente:** revisión de Laura del tramo 2; con su visto bueno,
-  merge de `obligaciones-tramo2` y tramo 3. Ver "Siguiente paso exacto".
+- **Tramo 2 (p. 19-26 + anexo de Vial completo): aprobado y mergeado**
+  (2026-11-27, merge `49f2683`; Laura: "Lo que decidiste está
+  perfecto"). Cierra el capítulo I. Detalle en "Tramo 2", más abajo.
+- **Reparto rehecho en 74 tramos chicos** (2026-11-27), ver "Reparto de
+  tramos". Ya está en Airtable.
+- **Siguiente:** tramo 3a. Ver "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -218,50 +217,102 @@ con la Conexión al cierre del punto (decisión 1).
 | S6 | Formalidades por vía de prueba, limitación de la prueba de testigos | VI.8, p. 288-299 | AJ (formalidades: arts. 1701, 1708, 1709, 1711) |
 | S7 | Requisitos del objeto (art. 1461), imposibilidad, prenda general (hallado en el tramo 1, 2026-11-27) | I.A.5 y I.A.6.2, p. 16-19 | AJ II.C.2 y II.C.3 (objeto sobre cosa y sobre hecho); Contractual C.6 (imposibilidad) y G.1 (derecho de prenda general). Se desarrolla completo aquí, con Conexión (misma regla de la decisión 1) |
 
-## Reparto de tramos (aprobado por Laura 2026-10-10)
+## Reparto de tramos (rehecho 2026-11-27: tandas chicas)
 
-Cortes en límite de título del mapa de arriba, no por número de página.
-Unas 10 páginas por tramo, menos en los temas clásicos de examen
-(solidaridad, indivisibilidad, subrogación, novación, compensación,
-prescripción, prelación). Los tramos marcados con S dependen de una
-decisión de solape.
+Laura (2026-11-27): "Lo importante es que sigas trabajando en tandas como
+lo estamos haciendo con bienes. Varias tandas pequeñas son mejores que
+pocas grandes." (memoria `tandas-pequenas`). El reparto de 34 tramos del
+2026-10-10 se partió en **74 tramos**:
 
-| # | Páginas | Contenido | Anexos | Solape |
+- Unas **4 a 6 páginas de Boetsch** por tramo, con sufijo a/b/c como en
+  Bienes. Las páginas de corte son aproximadas: **al llegar a cada tramo
+  se ajusta el corte a un límite de título** y, si sale grande, se parte
+  de nuevo y se le avisa a Laura.
+- Los anexos chicos van con el tramo de su tema. **Cada capítulo de
+  Orrego es su propio tramo**, después de los de Boetsch de esa
+  institución (Orrego X, prescripción, 27 p., en tres: 28c, 28d, 28e).
+- Mismas fuentes y mismas decisiones de solape (S1 a S7) que antes; la
+  columna de solapes del reparto anterior sigue valiendo por tema.
+- El mismo reparto está en el **mapa de metas de Airtable** (74 tareas
+  "Obligaciones · tramo X", tramos 1 y 2 marcados Hecho). Si se parte o
+  se junta un tramo, actualizar también ahí.
+
+| # | Boetsch p. | Contenido | Anexo | Hecho |
 |---|---|---|---|---|
-| 1 | 13-19 | I.A La obligación | | S3 |
-| 2 | 19-27 | I.B Fuentes | Vial (fuentes) | |
-| 3 | 27-36 | II.A Civiles y naturales | Vial, Ramos Pazos, Abeliuk, Bozzo (eficacia) | |
-| 4 | 36-44 | II.B.1-B.3 Positivas y negativas; dar, hacer, no hacer; objeto singular y compuestas | | |
-| 5 | 44-53 | II.B.4 Especie y género; obligaciones de dinero e intereses | | |
-| 6 | 53-64 | II.C intro; C.1 conjuntas; C.2.1 solidaridad, reglas generales; C.2.2 activa | Bozzo (sujetos) | |
-| 7 | 64-72 | II.C.2.3 Solidaridad pasiva | Sentencia; Bozzo (sujetos) | |
-| 8 | 72-78 | II.C.3.1-5 Indivisibilidad: nociones, fuentes, clases, efectos | Docx; C. Domínguez; Bozzo (sujetos) | |
-| 9 | 78-84 | II.C.3.6-7 Excepciones a la divisibilidad (art. 1526); paralelo | Cuadro | |
-| 10 | 84-96 | II.D Principales y accesorias; II.E generalidades; E.1.1-4 condición: definición, elementos, clasificación | | S1 |
-| 11 | 96-105 | II.E.1.5-6 Reglas comunes; condición suspensiva | | S1 |
-| 12 | 105-116 | II.E.1.7 Condición resolutoria y efectos (partes y terceros) | | S1, S4 |
-| 13 | 116-125 | II.E.2 Plazo | | S1 |
-| 14 | 125-133 | II.E.3 Modo; II.F Otras categorías | | S1, S4 |
-| 15 | 133-140 | III Modificación; IV generalidades; IV.A Resciliación | Orrego I-II | S5 |
-| 16 | 140-149 | IV.B.1.1-7 Pago: concepto a obligaciones de dar | Orrego III.A | |
-| 17 | 149-157 | IV.B.1.8-15 Pago: a quién, época, lugar, imputación, prueba, efectos | Orrego III.A | |
-| 18 | 157-166 | IV.B.2 Pago por consignación | Orrego III.B | |
-| 19 | 166-176 | IV.B.3.1-4 Subrogación: concepto y clases | Orrego III.C | |
-| 20 | 176-183 | IV.B.3.5-6 efectos y paralelo; B.4 cesión de bienes; B.5 beneficio de competencia | Orrego III.C-D | |
-| 21 | 183-190 | IV.C Dación en pago | Orrego IV | |
-| 22 | 190-201 | IV.D Novación | Orrego V | |
-| 23 | 201-210 | IV.E Compensación | Orrego VII | |
-| 24 | 210-215 | IV.F Remisión; IV.G Confusión | Orrego VI, VIII | |
-| 25 | 215-223 | IV.H Imposibilidad y pérdida de la cosa; teoría de los riesgos | Orrego IX | S4 |
-| 26 | 223-229 | IV.I.1-6 Prescripción: generalidades y reglas comunes | Orrego X | S2 |
-| 27 | 229-238 | IV.I.7.1-7.2 Acción prescriptible; interrupción y suspensión | Orrego X; clasificación prescripción | |
-| 28 | 238-250 | IV.I.7.3 Tiempo; 8 cláusulas; 9 prescripción y caducidad | Orrego X; clasificación prescripción | |
-| 29 | 250-260 | V.1-9 Prelación, generalidades; 10.1 primera clase | | |
-| 30 | 260-267 | V.10.2-10.3 Segunda y tercera clase | | |
-| 31 | 267-276 | V.10.4-10.5 Cuarta y quinta clase | | |
-| 32 | 276-288 | VI.1-8.2 Prueba: concepto, leyes, sistemas, pactos, objeto, carga, medios | | |
-| 33 | 288-296 | VI Prueba instrumental (públicos y privados) | | S6 |
-| 34 | 296-305 | VI Testigos, inspección, peritos, confesión, presunciones | | S6 |
+| 1 | 13-19 | I.A La obligación |  | ✅ |
+| 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
+| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales); Ramos Pazos |  |
+| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Abeliuk; apunte de eficacia |  |
+| 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
+| 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
+| 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
+| 5b | 48-53 | II.B.4 Obligaciones de dinero e intereses |  |  |
+| 6a | 53-59 | II.C intro; C.1 Simplemente conjuntas; C.2.1 Solidaridad, reglas generales | Apunte según los sujetos (parte) |  |
+| 6b | 59-64 | II.C.2.2 Solidaridad activa |  |  |
+| 7a | 64-68 | II.C.2.3 Solidaridad pasiva (1) | Sentencia codeudor vs. fiador solidario |  |
+| 7b | 68-72 | II.C.2.3 Solidaridad pasiva (2) | Apunte según los sujetos (parte) |  |
+| 8a | 72-75 | II.C.3.1-3 Indivisibilidad: nociones, fuentes, clases | Obligaciones indivisibles (docx) |  |
+| 8b | 75-78 | II.C.3.4-5 Indivisibilidad: efectos | C. Domínguez |  |
+| 9 | 78-84 | II.C.3.6-7 Excepciones a la divisibilidad (art. 1526); paralelo | Cuadro indivisibilidad vs. solidaridad |  |
+| 10a | 84-90 | II.D Principales y accesorias; II.E generalidades; E.1.1-3 Condición |  |  |
+| 10b | 90-96 | II.E.1.4 Clasificación de las condiciones |  |  |
+| 11a | 96-102 | II.E.1.5 Reglas comunes a las condiciones |  |  |
+| 11b | 102-105 | II.E.1.6 Condición suspensiva |  |  |
+| 12a | 105-110 | II.E.1.7 Condición resolutoria |  |  |
+| 12b | 110-116 | II.E.1.7 Efectos entre partes y respecto de terceros |  |  |
+| 13a | 116-120 | II.E.2.1-3 Plazo: concepto y clasificación |  |  |
+| 13b | 120-125 | II.E.2.4-5 Plazo: efectos y extinción |  |  |
+| 14a | 125-129 | II.E.3 Modo |  |  |
+| 14b | 129-133 | II.F Otras categorías (sucesivas, medio y resultado, propter rem, abstractas) |  |  |
+| 15a | 133-137 | III Modificación; IV.1-3 Modos de extinguir, generalidades | Orrego I |  |
+| 15b | 137-140 | IV.A Resciliación | Orrego II |  |
+| 16a | 140-145 | IV.B.1 Pago efectivo: concepto a quién paga |  |  |
+| 16b | 145-149 | IV.B.1 Pago en las obligaciones de dar |  |  |
+| 17a | 149-153 | IV.B.1 A quién se paga, época |  |  |
+| 17b | 153-157 | IV.B.1 Lugar, imputación, prueba y efectos del pago |  |  |
+| 17c | Orrego | Orrego III.A Pago efectivo (1ª parte, PDF p. 6-10) | Orrego III.A |  |
+| 17d | Orrego | Orrego III.A Pago efectivo (2ª parte, PDF p. 10-15) | Orrego III.A |  |
+| 18a | 157-161 | IV.B.2 Pago por consignación (1) |  |  |
+| 18b | 161-166 | IV.B.2 Pago por consignación (2) |  |  |
+| 18c | Orrego | Orrego III.B Pago por consignación (PDF p. 15-18) | Orrego III.B |  |
+| 19a | 166-171 | IV.B.3 Pago con subrogación: concepto y clases (1) |  |  |
+| 19b | 171-176 | IV.B.3 Pago con subrogación: clases (2) |  |  |
+| 20a | 176-179 | IV.B.3.5-6 Subrogación: efectos y paralelo |  |  |
+| 20b | 179-183 | IV.B.4 Cesión de bienes; IV.B.5 Beneficio de competencia |  |  |
+| 20c | Orrego | Orrego III.C-D Subrogación y beneficio de competencia (PDF p. 18-25) | Orrego III.C-D |  |
+| 21a | 183-190 | IV.C Dación en pago |  |  |
+| 21b | Orrego | Orrego IV Dación en pago (PDF p. 25-28) | Orrego IV |  |
+| 22a | 190-194 | IV.D Novación (1) |  |  |
+| 22b | 194-198 | IV.D.4 Novación: clases |  |  |
+| 22c | 198-201 | IV.D.5 Novación: efectos |  |  |
+| 22d | Orrego | Orrego V Novación (1ª parte, PDF p. 28-32) | Orrego V |  |
+| 22e | Orrego | Orrego V Novación (2ª parte, PDF p. 32-36) | Orrego V |  |
+| 23a | 201-205 | IV.E Compensación (1) |  |  |
+| 23b | 205-210 | IV.E Compensación: prohibida y efectos |  |  |
+| 23c | Orrego | Orrego VII Compensación (PDF p. 40-45) | Orrego VII |  |
+| 24a | 210-215 | IV.F Remisión; IV.G Confusión |  |  |
+| 24b | Orrego | Orrego VI Remisión y VIII Confusión (PDF p. 36-40 y 45-47) | Orrego VI y VIII |  |
+| 25a | 215-219 | IV.H Imposibilidad y pérdida de la cosa debida |  |  |
+| 25b | 219-223 | IV.H.5 Teoría de los riesgos | Orrego IX |  |
+| 26 | 223-229 | IV.I.1-6 Prescripción: generalidades y reglas comunes |  |  |
+| 27a | 229-234 | IV.I.7.1-7.2 Acción prescriptible; interrupción (1) |  |  |
+| 27b | 234-238 | IV.I.7.2 Interrupción y suspensión (2) |  |  |
+| 28a | 238-244 | IV.I.7.3 Tiempo de prescripción |  |  |
+| 28b | 244-250 | IV.I.8-9 Cláusulas; prescripción y caducidad | Clasificación de la prescripción extintiva |  |
+| 28c | Orrego | Orrego X Prescripción extintiva (1ª parte, PDF p. 49-58) | Orrego X |  |
+| 28d | Orrego | Orrego X Prescripción extintiva (2ª parte, PDF p. 58-67) | Orrego X |  |
+| 28e | Orrego | Orrego X Prescripción extintiva (3ª parte, PDF p. 67-76) | Orrego X |  |
+| 29a | 250-254 | V.1-9 Prelación de créditos: generalidades |  |  |
+| 29b | 254-260 | V.10.1 Primera clase |  |  |
+| 30 | 260-267 | V.10.2-10.3 Segunda y tercera clase |  |  |
+| 31a | 267-273 | V.10.4 Cuarta clase |  |  |
+| 31b | 273-276 | V.10.5 Quinta clase |  |  |
+| 32a | 276-282 | VI.1-6 Prueba: concepto, sistemas, pactos, objeto |  |  |
+| 32b | 282-288 | VI.7-8 Carga de la prueba y medios |  |  |
+| 33a | 288-292 | VI Instrumentos públicos |  |  |
+| 33b | 292-296 | VI Instrumentos privados |  |  |
+| 34a | 296-300 | VI Testigos e inspección personal |  |  |
+| 34b | 300-305 | VI Peritos, confesión y presunciones |  |  |
 
 ## Tramo 1 (p. 13-19, I.A La obligación): aprobado y mergeado
 
@@ -323,7 +374,7 @@ decisión de solape.
   descomprimiendo Snappy). Si hace falta de nuevo, rehacerlo así o
   pedirle a Laura que exporte a PDF.
 
-## Tramo 2 (p. 19-26, I.B Fuentes): escrito, esperando revisión
+## Tramo 2 (p. 19-26, I.B Fuentes): aprobado y mergeado
 
 - **Escrito el 2026-11-27** (Laura: "Sigamos") en la rama
   `obligaciones-tramo2`, con el mismo modo del tramo 1: informe y texto
@@ -333,7 +384,8 @@ decisión de solape.
   extinción: se agregó a I.A.7) y su última página (inicio de su
   capítulo de clasificación: dar, entregar, hacer, no hacer), que
   **queda para el tramo 4**.
-- **Decisiones aplicadas, pendientes de confirmar por Laura:**
+- **Decisiones aplicadas, confirmadas por Laura (2026-11-27, "Lo que
+  decidiste está perfecto"):**
   clasificaciones de los contratos (arts. 1439 a 1443, de Vial) dentro
   de I.B.3.1, con No confundir "¿Acto jurídico unilateral o contrato
   unilateral?" (se solapa con el futuro manual de Contratos); cuadro
@@ -349,27 +401,31 @@ decisión de solape.
   incapaz"); art. 99 del Código de Comercio; la cita de VIAL corregida
   contra su original. **Sin verificar:** art. 173 del Código de Minería
   y los códigos extranjeros; la regla de los actos del marido sobre los
-  bienes de la mujer (Boetsch no da artículo; puede estar
-  desactualizada): avisado a Laura en el informe.
+  bienes de la mujer: **resuelto**, es el art. 1750 inc. 2º, vigente en
+  el Código de `Apuntes/CODIGOS/` (versión 14-jul-2026); se citó en
+  I.B.4.2 con su texto (Boetsch agregaba "hasta concurrencia del
+  beneficio", que el artículo no dice) en la rama
+  `obligaciones-tramo3a`, commit `5f5be86`.
 - **Controles:** cobertura 98% 🟢 (art. 1698, falso aviso: es de I.A.7);
   98/98 unidades (63 de Boetsch, 35 de Vial); 9 oraciones reescritas
   por paráfrasis; párrafo máximo 911 caracteres; 0 guiones largos.
-- **Mapa de metas en Airtable:** el tramo 1 no se marcó como Hecho
-  porque la base tiene el reparto **estimado** de Obligaciones ("Oblig.
-  1, tramo 1 de 16 (p. 1-8)"...), que no calza con los 34 tramos reales
-  de este archivo. Pendiente: proponerle a Laura reemplazarlo
-  (memoria `mapa-metas-airtable`).
+- **Mapa de metas en Airtable:** resuelto el 2026-11-27, con el OK de
+  Laura: las 36 tareas estimadas se reutilizaron (renombradas) y se
+  crearon 38 más, una por tramo real; tramos 1 y 2 marcados Hecho.
 
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Revisión de Laura del tramo 2 en la vista previa; con su visto
-   bueno, merge de `obligaciones-tramo2` (incluye el formato de
-   rótulos) y borrar las ramas `obligaciones-tramo1`,
-   `formato-cuadro-rotulos` y `obligaciones-tramo2`.
-2. Tramo 3 (p. 27-36, II.A Civiles y naturales): abre el capítulo II
-   con la lista de clasificaciones de la p. 27. Anexos: Vial (civiles
-   y naturales), Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e
-   Ibarra: cruzar con cátedra y no nombrarlo).
-3. `scripts/cobertura_tramo.py` sigue solo en la rama
+1. Rama `obligaciones-tramo3a` (desde `main`, ya trae el commit del
+   art. 1750). Tramo **3a**: Boetsch p. 27 a ~31 (apertura del capítulo
+   II con la lista de clasificaciones; II.A.1-3), con los anexos de
+   Vial (civiles vs. naturales) y Ramos Pazos. Cortar en límite de
+   título.
+2. Mismo modo de trabajo: informe y texto a la vez, decisiones aplicadas
+   por defecto y marcadas en el informe, vista previa, controles
+   (`cobertura_tramo.py`, unidades, paráfrasis contra la fuente **y**
+   contra cada anexo, mecánicos).
+3. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
+   Airtable.
+4. `scripts/cobertura_tramo.py` sigue solo en la rama
    `worktree-plan-lanzamiento` (commit `314038f`); se usa una copia con
    `git show 314038f:scripts/cobertura_tramo.py`.
