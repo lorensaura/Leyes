@@ -91,9 +91,23 @@ for it in m.ITEMS:
         iid = f'{m.PREFIJO}-{siguiente:03d}'; siguiente += 1
     if it['sub'] not in sub:
         problemas.append(f'{iid}: subtema {it["sub"]} no existe'); continue
-    elementos = [dict(texto=t, keywords=k, pregunta=p) for t, k, p in it['elementos']]
-    todo = ' '.join([it['caso'], it['enunciado'], it['respuesta'], it['objetivo']] +
-                    [e['texto'] + ' ' + e['pregunta'] + ' ' + ' '.join(e['keywords']) for e in elementos])
+    MC = m.TABLA == 'Discriminación MC'
+    if MC:  # alternativas: sin elementos clave; controles de opciones (alternativas.md)
+        elementos, ops = [], it['opciones']
+        todo = ' '.join([it['caso'], it['enunciado'], it['objetivo']] + [t + ' ' + r for t, r in ops])
+        if len(ops) != 4 or it['correcta'] not in 'ABCD' or len(it['correcta']) != 1:
+            problemas.append(f'{iid}: debe tener 4 opciones y una letra correcta')
+        for letra, (t, r) in zip('ABCD', ops):
+            esperado = 'CORRECTO.' if letra == it['correcta'] else 'Incorrecto.'
+            if not r.startswith(esperado): problemas.append(f'{iid}: el rationale de {letra} debe empezar con "{esperado}"')
+        largos = [len(t) for t, _ in ops]
+        if max(largos) > 1.3 * min(largos): problemas.append(f'{iid}: opciones de extensión dispareja {largos}')
+        if largos['ABCD'.index(it['correcta'])] == max(largos) and largos.count(max(largos)) == 1:
+            avisos.append(f'{iid}: la opción correcta es la más larga {largos}')
+    else:
+        elementos = [dict(texto=t, keywords=k, pregunta=p) for t, k, p in it['elementos']]
+        todo = ' '.join([it['caso'], it['enunciado'], it['respuesta'], it['objetivo']] +
+                        [e['texto'] + ' ' + e['pregunta'] + ' ' + ' '.join(e['keywords']) for e in elementos])
     if re.search('[—–«»]', todo): problemas.append(f'{iid}: guion largo o comillas angulares')
     respaldo = '\n'.join(seccion(s) for s in it['respaldo'])
     for s in it['respaldo']:
@@ -102,8 +116,8 @@ for it in m.ITEMS:
     for a in sorted(citados):
         if not re.search(r'\b' + a + r'\b', respaldo): problemas.append(f'{iid}: art. {a} no está en su respaldo {it["respaldo"]}')
     for autor in re.findall(r'\b([A-ZÁÉÍÓÚÑ]{4,}(?: [A-ZÁÉÍÓÚÑ]{4,})*)\b', todo):
-        if autor not in ('COT',) and autor not in respaldo: problemas.append(f'{iid}: autor {autor} no está en su respaldo')
-    if not 3 <= len(elementos) <= 4: problemas.append(f'{iid}: {len(elementos)} elementos clave')
+        if autor not in ('COT', 'CORRECTO') and autor not in respaldo: problemas.append(f'{iid}: autor {autor} no está en su respaldo')
+    if not MC and not 3 <= len(elementos) <= 4: problemas.append(f'{iid}: {len(elementos)} elementos clave')
     vistos = set()
     for e in elementos:
         if not 4 <= len(e['keywords']) <= 6: problemas.append(f'{iid}: elemento con {len(e["keywords"])} keywords: {e["texto"][:40]}')
@@ -125,9 +139,11 @@ for it in m.ITEMS:
     if previo and not ACTUALIZAR: problemas.append(f'{iid}: ya existe en Airtable (usar --actualizar para corregirlo)')
     if ACTUALIZAR and not previo: problemas.append(f'{iid}: --actualizar, pero no está en Airtable')
     nombre_sub, nombre_tema, numero_tema = sub[it['sub']]
-    filas.append(dict(id=iid, codigo=it['sub'], subtema=nombre_sub, tema=nombre_tema, base=base_eval(numero_tema), caso=it['caso'],
-                      enunciado=it['enunciado'], respuesta_modelo=it['respuesta'], elementos_clave=elementos,
-                      articulos_referencia=it['articulos'], objetivo_pedagogico=it['objetivo'], respaldo=it['respaldo']))
+    fila = dict(id=iid, codigo=it['sub'], subtema=nombre_sub, tema=nombre_tema, base=base_eval(numero_tema), caso=it['caso'],
+                enunciado=it['enunciado'], articulos_referencia=it['articulos'], objetivo_pedagogico=it['objetivo'], respaldo=it['respaldo'])
+    if MC: fila.update(opciones=[dict(letra=l, texto=t, rationale=r) for l, (t, r) in zip('ABCD', it['opciones'])], correcta=it['correcta'])
+    else: fila.update(respuesta_modelo=it['respuesta'], elementos_clave=elementos)
+    filas.append(fila)
 
 json.dump(filas, open(f'{GEN}filas_{LOTE}.json', 'w'), ensure_ascii=False, indent=1)
 print(f'{len(filas)} ítems ({m.TABLA}), ids {filas[0]["id"]} a {filas[-1]["id"]}')
@@ -136,13 +152,19 @@ for a in avisos: print('aviso:', a)
 if problemas or not ('--subir' in sys.argv or ACTUALIZAR):
     sys.exit(1 if problemas else 0)
 por_base = {b: [f for f in filas if f['base'] == b] for b in BASES_EVAL.values()}
+def campos(f):  # campos propios del tipo
+    if 'opciones' in f:
+        d = {'correcta': f['correcta']}
+        for o in f['opciones']:
+            d['opcion_' + o['letra'].lower()] = o['texto']; d['rationale_' + o['letra'].lower()] = o['rationale']
+        return d
+    return {'respuesta_modelo': f['respuesta_modelo'], 'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False)}
 if ACTUALIZAR:
     for b, fs in por_base.items():
         for i in range(0, len(fs), 10):
             req('PATCH', f'https://api.airtable.com/v0/{b}/{urllib.parse.quote(m.TABLA)}', {'records': [{
                 'id': ya[n(f['caso'] + f['enunciado'])]['id'], 'fields': {
-                'subtema': f['subtema'], 'respuesta_modelo': f['respuesta_modelo'],
-                'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
+                'subtema': f['subtema'], **campos(f),
                 'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico']}}
                 for f in fs[i:i + 10]]})
     print('actualizados en Airtable:', len(filas))
@@ -151,7 +173,6 @@ for b, fs in por_base.items():
     for i in range(0, len(fs), 10):
         req('POST', f'https://api.airtable.com/v0/{b}/{urllib.parse.quote(m.TABLA)}', {'records': [{'fields': {
             'id': f['id'], 'tema': [temas[b][f['tema']]], 'subtema': f['subtema'], 'caso': f['caso'], 'enunciado': f['enunciado'],
-            'respuesta_modelo': f['respuesta_modelo'], 'elementos_clave': json.dumps(f['elementos_clave'], ensure_ascii=False),
-            'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico'],
+            **campos(f), 'articulos_referencia': f['articulos_referencia'], 'objetivo_pedagogico': f['objetivo_pedagogico'],
             'publicado': False, 'Revision_status': 'Revisar'}} for f in fs[i:i + 10]]})
 print('cargados en Airtable:', len(filas), '| total en la tabla ahora:', sum(len(todos(m.TABLA, b)) for b in BASES_EVAL.values()))
