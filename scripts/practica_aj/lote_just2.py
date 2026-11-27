@@ -1,0 +1,243 @@
+# Evaluación de Acto Jurídico, tanda 6: Justificación del tema 20 (Nulidad), segunda y última tanda.
+# Completa lo que dejó lote_just1.py con el tope de la regla de cantidad (cuatro por tipo en los
+# subtemas de 10 o más exámenes, dos en los de menos, uno en los sin exámenes), sin repetir los
+# elementos de la tanda 1. Redactada desde el principio con los criterios de la revisión de Laura
+# del 2026-11-26: no exigir nombres de autores, no pedir lo que el enunciado ya da, sinónimos de
+# raíz distinta en las keywords y repreguntas que no regalen la respuesta.
+#
+# Formato de cada ítem: el mismo de lote_aplic1.py, con caso vacío.
+TABLA = 'Justificación'
+PREFIJO = 'aj-just'
+
+ITEMS = [
+ # T21.01 Reglas, concepto general y especies de nulidad (15 exámenes; la tanda 1 dejó 2)
+ dict(sub='T21.01',
+  caso='',
+  enunciado='Las reglas del Título XX del Libro IV del Código Civil (arts. 1681 a 1697) son de orden público. Además de ese rasgo, ¿qué alcance tienen? Explique a qué actos se aplican y en qué ramas del derecho rigen.',
+  respuesta='Además de ser de orden público, estas reglas tienen dos rasgos que fijan su alcance.\n\nPrimero, son de alcance general: rigen para cualquier acto jurídico, unilateral o bilateral, a menos que una disposición expresa consulte una sanción distinta de la nulidad.\n\nSegundo, son de derecho privado: se aplican también en las demás ramas del derecho privado si no hay una norma especial en contrario.\n\nPero no se extienden al derecho público, que tiene reglas propias y distintas en cada rama: la nulidad en el derecho administrativo no es la misma que en el derecho procesal.',
+  elementos=[
+   ('Rigen para cualquier acto jurídico, unilateral o bilateral, salvo que una norma expresa fije una sanción distinta',
+    ['unilateral o bilateral', 'cualquier acto', 'todo acto', 'sancion distinta', 'otra sancion', 'disposicion expresa'],
+    '¿Importa la clase de acto de que se trate? ¿Hay alguna salvedad?'),
+   ('Se aplican también en las demás ramas del derecho privado, si no hay norma especial en contrario',
+    ['demas ramas', 'otras ramas', 'derecho comercial', 'norma especial', 'derecho privado en general'],
+    '¿Quedan limitadas al Código Civil?'),
+   ('No se extienden al derecho público, que tiene reglas propias en cada rama',
+    ['no al derecho publico', 'no rigen en el derecho publico', 'reglas propias', 'sus propias reglas', 'no se extienden', 'excluido el derecho publico'],
+    '¿Hay algún ámbito en que no rijan?')],
+  articulos='',
+  objetivo='Evaluar si el alumno explica el alcance de las reglas generales de la nulidad: todo acto jurídico salvo sanción distinta, todo el derecho privado salvo norma especial, y no el derecho público.',
+  respaldo=['IV.B.1.1']),
+
+ # T21.03 Diferencias entre nulidad absoluta y relativa (5 exámenes; la tanda 1 dejó 1)
+ dict(sub='T21.03',
+  caso='',
+  enunciado='La nulidad absoluta no puede sanearse por la ratificación de las partes, porque es una institución de orden público. Para quienes aceptan la teoría de la inexistencia, el acto inexistente tampoco puede ratificarse. Explique por qué el motivo no es el mismo en uno y otro caso, y qué ocurre, en cambio, con la nulidad relativa.',
+  respuesta='En la inexistencia, el motivo es que no hay nada que confirmar: falta un requisito de existencia, el acto ni siquiera nació, y la nada confirmada continúa siendo la nada.\n\nEn la nulidad absoluta el problema es otro. El acto existe, aunque viciado, porque lo que falta es un requisito de validez; lo que impide ratificarlo es que la nulidad absoluta está establecida en interés de la moral y de la ley, y no de las partes.\n\nLa nulidad relativa, en cambio, sí puede sanearse por la ratificación o confirmación del acto rescindible (art. 1684). Esa ratificación emana de la persona en cuyo beneficio la ley establece la nulidad, o de sus herederos o cesionarios.',
+  elementos=[
+   ('Inexistencia: no hay acto que confirmar; la nada confirmada continúa siendo la nada',
+    ['la nada confirmada', 'nada que confirmar', 'nada que ratificar', 'no nacio', 'no hay acto que', 'nunca existio'],
+    '¿Hay algo que validar cuando el acto es inexistente?'),
+   ('En la nulidad absoluta el acto existe, aunque viciado: falta un requisito de validez',
+    ['acto si existe', 'existe aunque viciado', 'requisito de validez', 'falta la validez', 'nace viciado', 'existe pero'],
+    '¿Qué clase de requisito falta en el acto absolutamente nulo?'),
+   ('La relativa sí admite ratificación, que emana del protegido o de sus herederos o cesionarios (art. 1684)',
+    ['en cuyo beneficio', 'herederos o cesionarios', 'admite confirmacion', 'si puede ratificarse', 'parte protegida', '1684'],
+    '¿Quién puede validar un acto rescindible?')],
+  articulos='1684',
+  objetivo='Evaluar si el alumno distingue por qué ni la inexistencia ni la nulidad absoluta admiten ratificación, con motivos distintos, y quién puede ratificar en la nulidad relativa.',
+  respaldo=['IV.A.3', 'IV.B.1.6']),
+
+ # T21.06 Nulidad absoluta: concepto, causales y fundamento (10 exámenes; la tanda 1 dejó 2)
+ dict(sub='T21.06',
+  caso='',
+  enunciado='¿Por qué el acto con objeto ilícito adolece de nulidad absoluta y no es, en cambio, un acto inexistente? Explique la distinción entre tener objeto y que ese objeto sea lícito.',
+  respuesta='Hay que separar dos planos. Que el acto tenga objeto es un requisito de existencia: sin objeto, el acto no existe. Que ese objeto sea lícito es un requisito de validez (art. 1445 Nº 3).\n\nPor eso el acto con objeto ilícito sí existe, pero nace viciado: no le falta el objeto, sino la licitud de ese objeto.\n\nY ese vicio está entre las causales de nulidad absoluta del art. 1682, junto con la causa ilícita, la incapacidad absoluta y la omisión de formalidades exigidas en consideración a la naturaleza del acto.',
+  elementos=[
+   ('Tener objeto es un requisito de existencia: sin objeto el acto no existe',
+    ['requisito de existencia', 'sin objeto no existe', 'no existe sin objeto', 'condicion de existencia', 'requisito para existir'],
+    '¿Qué ocurre con un acto que no tiene objeto alguno?'),
+   ('Que el objeto sea lícito es un requisito de validez (art. 1445 Nº 3)',
+    ['requisito de validez', '1445', 'condicion de validez', 'requisito para valer', 'licito para valer'],
+    '¿Para qué exige la ley que el objeto sea lícito?'),
+   ('El acto con objeto ilícito existe, pero nace viciado, y es causal de nulidad absoluta (art. 1682)',
+    ['nace viciado', 'si existe', 'existe pero', '1682', 'causal de nulidad absoluta'],
+    '¿En cuál de los dos planos falla el acto con objeto ilícito?')],
+  articulos='1445, 1682',
+  objetivo='Evaluar si el alumno fundamenta la sanción del objeto ilícito distinguiendo el objeto como requisito de existencia y su licitud como requisito de validez.',
+  respaldo=['II.C.4', 'IV.A.3', 'IV.B.2.2']),
+
+ # T21.07 Nulidad absoluta: quién la declara o pide (14 exámenes; la tanda 1 dejó 2)
+ dict(sub='T21.07',
+  caso='',
+  enunciado='El art. 1683 excluye de la acción de nulidad absoluta a quien ejecutó el acto o celebró el contrato sabiendo o debiendo saber el vicio. ¿Alcanza esa exclusión a sus herederos? Exponga los argumentos de las dos posturas.',
+  respuesta='Doctrina y jurisprudencia no resuelven igual esta pregunta.\n\nPara una postura, los herederos sí pueden alegar la nulidad. La prohibición es una verdadera inhabilidad y, como regla de excepción, debe interpretarse restrictivamente: si la letra de la ley no comprende a los herederos, no puede extenderse a ellos.\n\nPara la otra, no pueden. Primero, porque no han podido adquirir por sucesión un derecho que su causante no tenía, y que la ley expresamente le vedaba. Segundo, porque si cuando el dolo es imputable a un incapaz la ley no permite alegar la nulidad ni a él ni a sus herederos (art. 1685), con mayor razón la prohibición debe comprender a los herederos y cesionarios de las personas capaces.',
+  elementos=[
+   ('Pueden: la prohibición es una inhabilidad de excepción, de interpretación restrictiva, y su letra no comprende a los herederos',
+    ['interpretacion restrictiva', 'inhabilidad', 'norma de excepcion', 'no los menciona', 'no se extiende'],
+    '¿Cómo se interpretan las normas que privan a alguien de un derecho?'),
+   ('No pueden: no adquieren por sucesión un derecho que su causante no tenía',
+    ['no tenia el causante', 'derecho que no tenia', 'nadie transmite', 'no pueden adquirir', 'mas derechos que'],
+    '¿Qué reciben los herederos de su causante?'),
+   ('No pueden: si el art. 1685 excluye a los herederos del incapaz doloso, con mayor razón a los de las personas capaces',
+    ['1685', 'con mayor razon', 'incapaz doloso', 'a fortiori', 'dolo del incapaz'],
+    '¿Qué dispone la ley en un caso parecido de la nulidad relativa?')],
+  articulos='1683, 1685',
+  objetivo='Evaluar si el alumno reconoce que la situación de los herederos de quien contrató a sabiendas es discutida y fundamenta cada postura.',
+  respaldo=['IV.B.2.4']),
+
+ dict(sub='T21.07',
+  caso='',
+  enunciado='Si fue el representante quien celebró el contrato sabiendo el vicio, sin que el representado lo supiera ni debiera saberlo, ¿puede el representado alegar la nulidad absoluta? Exponga los argumentos de cada postura y cuál se impone hoy.',
+  respuesta='Los tribunales se han pronunciado en ambos sentidos.\n\nPara quienes sostienen que el representado no puede alegarla, según la ley lo hecho por el representante se estima hecho por el representado (art. 1448).\n\nPara quienes sostienen que sí puede, el dolo es una determinación personalísima de la voluntad, y el representante solo está autorizado para ejecutar actos lícitos, no ilícitos.\n\nHoy se impone la segunda: la prohibición del art. 1683 alcanza a quien intervino directamente en el acto o contrato, no a quien actuó representado convencional o legalmente, salvo que se acredite de modo inequívoco que su propia voluntad concurrió en el vicio.',
+  elementos=[
+   ('No puede: lo hecho por el representante se estima hecho por el representado (art. 1448)',
+    ['1448', 'como si lo hubiera hecho', 'se estima hecho', 'se le imputa al representado', 'efectos se radican'],
+    '¿Qué regla general rige los efectos de la representación?'),
+   ('Puede: el dolo es personalísimo, y el representante solo está autorizado para actos lícitos',
+    ['personalisimo', 'personalisima', 'actos licitos', 'no autoriza lo ilicito', 'mandato no cubre'],
+    '¿Puede trasladarse a otro la mala fe de quien actuó?'),
+   ('Se impone que puede, salvo que se pruebe que su propia voluntad concurrió en el vicio',
+    ['su propia voluntad', 'propia voluntad', 'intervino directamente', 'concurrio en el vicio', 'participo en el vicio', 'solo quien intervino'],
+    '¿Hay algún caso en que el representado sí quede excluido?')],
+  articulos='1448, 1683',
+  objetivo='Evaluar si el alumno expone las dos posturas sobre el representado frente a la exclusión del art. 1683 y cuál prevalece, con su salvedad.',
+  respaldo=['IV.B.2.4']),
+
+ # T21.08 Nulidad absoluta: saneamiento y no opera de pleno derecho (9 exámenes; la tanda 1 dejó 1)
+ dict(sub='T21.08',
+  caso='',
+  enunciado='El art. 1683 dispone que la nulidad absoluta no puede sanearse por un lapso de tiempo que no pase de diez años. ¿Cuál es la razón de ese tope, y por qué algunos autores sostienen que no hay ahí un verdadero saneamiento? Explique qué efecto le atribuyen al transcurso de los diez años.',
+  respuesta='Para la doctrina mayoritaria, superado ese plazo la acción o la excepción de nulidad ya no proceden, porque en algún momento hay que consolidar los derechos adquiridos.\n\nAlgunos autores dudan, sin embargo, de que haya un verdadero saneamiento: dogmáticamente, el simple paso del tiempo no puede convertir en válido lo que nunca lo fue. Para ellos se trata de una caducidad de derechos respecto de quienes podían impugnar el acto: el juez, las partes, los terceros interesados y el ministerio público.\n\nSu efecto es consolidar los desplazamientos patrimoniales: al no ser impugnado durante diez años, el acto pasa de título injusto a título justo y permite que opere la prescripción adquisitiva. Por eso el art. 705 habla de la validación del título "por otro medio legal", que en este caso es el transcurso del tiempo del art. 1683.',
+  elementos=[
+   ('El tope busca consolidar los derechos adquiridos (certeza)',
+    ['consolidar', 'derechos adquiridos', 'seguridad juridica', 'estabilidad de los derechos', 'consolidacion'],
+    '¿Qué interés se protege al poner un límite a la posibilidad de impugnar?'),
+   ('Para esos autores no es un saneamiento, sino una caducidad de los derechos de quienes podían impugnar el acto',
+    ['caducidad', 'caducan', 'caduca la accion', 'pierden el derecho', 'ya no pueden impugnar'],
+    '¿Qué ocurre, según esa lectura, con quienes podían atacar el acto?'),
+   ('El título pasa de injusto a justo y permite la prescripción adquisitiva (art. 705)',
+    ['titulo justo', 'de injusto a justo', 'prescripcion adquisitiva', '705', 'otro medio legal', 'deja de ser injusto'],
+    '¿Qué consecuencia tiene eso para quien recibió la cosa en virtud del acto?')],
+  articulos='705, 1683',
+  objetivo='Evaluar si el alumno fundamenta el tope de diez años y explica la lectura que ve en él una caducidad y su efecto sobre el título.',
+  respaldo=['IV.B.2.6']),
+
+ # T21.09 Nulidad relativa: definición, fundamento, causales y características (11 exámenes; la tanda 1 dejó 2)
+ dict(sub='T21.09',
+  caso='',
+  enunciado='El Código enumera las causales de nulidad absoluta, pero no las de nulidad relativa. ¿Por qué no necesita hacerlo? Explique qué consecuencia tiene esa técnica para un vicio que la ley no sancione expresamente de otro modo.',
+  respuesta='El art. 1682 enumera los casos de nulidad absoluta: el objeto ilícito, la causa ilícita, la incapacidad absoluta y la omisión de los requisitos o formalidades que las leyes prescriben para el valor de ciertos actos en consideración a su naturaleza.\n\nY cierra esa enumeración con una cláusula residual: "cualquiera otra especie de vicio produce nulidad relativa, y da derecho a la rescisión del acto o contrato". No hace falta, entonces, enumerar las causales de nulidad relativa: son todas las demás.\n\nPor construcción, la regla general no es la nulidad absoluta sino la relativa: todo vicio que la ley no sancione expresamente de otro modo cae ahí.',
+  elementos=[
+   ('La absoluta queda limitada a los casos que la ley enumera en el art. 1682',
+    ['objeto ilicito', 'causa ilicita', 'incapacidad absoluta', 'casos enumerados', 'solo los casos', 'formalidades por la naturaleza'],
+    '¿En qué casos hay nulidad absoluta?'),
+   ('Una cláusula residual: cualquier otro vicio produce nulidad relativa (art. 1682 inc. final)',
+    ['cualquiera otra especie', 'cualquier otro vicio', 'clausula residual', 'residual', 'por exclusion', 'todos los demas'],
+    '¿Con qué frase cierra el art. 1682 su enumeración?'),
+   ('Por eso la regla general es la nulidad relativa',
+    ['regla general es la relativa', 'relativa es la regla', 'la regla es la relativa', 'relativa por defecto', 'en principio relativa'],
+    'Si aparece un vicio que la ley no calificó, ¿qué especie de nulidad corresponde?')],
+  articulos='1682',
+  objetivo='Evaluar si el alumno explica la técnica residual con que el Código fija las causales de nulidad relativa y por qué de ella resulta que esta es la regla general.',
+  respaldo=['IV.B.1.5', 'IV.B.2.2', 'IV.B.3.2']),
+
+ # T21.10 Nulidad relativa: quiénes pueden alegarla (11 exámenes; la tanda 1 dejó 2)
+ dict(sub='T21.10',
+  caso='',
+  enunciado='Compare quiénes pueden alegar la nulidad de un contrato celebrado por un menor adulto sin cumplir las formalidades habilitantes y la de uno celebrado por un impúber. ¿Puede alegarla, en cada caso, la persona capaz que contrató con ellos?',
+  respuesta='Son dos especies distintas de nulidad, y cada una tiene sus propios titulares.\n\nEl contrato del menor adulto, relativamente incapaz, adolece de nulidad relativa. Solo pueden alegarla aquellos en cuyo beneficio la han establecido las leyes, o sus herederos o cesionarios (art. 1684): el derecho a pedirla es del incapaz, nunca de su contraparte.\n\nEl contrato del impúber, absolutamente incapaz, adolece de nulidad absoluta (art. 1682). Puede alegarla todo el que tenga interés en ello (art. 1683), fórmula que habilita tanto a las partes como a terceros: la persona capaz que contrató con él también puede.\n\nCon una excepción: queda fuera si celebró el contrato sabiendo o debiendo saber el vicio que lo invalidaba.',
+  elementos=[
+   ('Menor adulto: nulidad relativa, que solo pueden alegar él, sus herederos o cesionarios; nunca la contraparte',
+    ['solo el menor', 'no la contraparte', 'no puede el otro', 'en cuyo beneficio', 'solo el incapaz'],
+    '¿En beneficio de quién se estableció la nulidad del primer contrato?'),
+   ('Impúber: nulidad absoluta, que puede alegar todo el que tenga interés, también la contraparte',
+    ['todo el que tenga interes', 'cualquier interesado', 'tambien la contraparte', 'las partes y terceros', 'la contraparte si'],
+    '¿A quiénes habilita la ley para alegar la nulidad del segundo contrato?'),
+   ('Salvo que la contraparte haya contratado sabiendo o debiendo saber el vicio (art. 1683)',
+    ['sabiendo o debiendo saber', 'conocia el vicio', 'a sabiendas', 'sabia que', 'debia saber'],
+    '¿Hay alguna situación en que la persona capaz pierda esa posibilidad?')],
+  articulos='1682, 1683, 1684',
+  objetivo='Evaluar si el alumno compara los titulares de la nulidad relativa y de la absoluta a propósito de la incapacidad, incluida la posición de la contraparte capaz.',
+  respaldo=['IV.B.2.2', 'IV.B.2.4', 'IV.B.3.4']),
+
+ # T21.11 Nulidad relativa: saneamiento por el transcurso del tiempo (15 exámenes; la tanda 1 dejó 2)
+ dict(sub='T21.11',
+  caso='',
+  enunciado='Los diez años de la nulidad absoluta se cuentan desde la celebración del acto (art. 1683), y el cuadrienio de la nulidad relativa por fuerza, desde el día en que la fuerza cesó (art. 1691). Explique la razón de cada uno de estos cómputos, y con qué regla de la prescripción extintiva coincide el primero.',
+  respuesta='En la nulidad absoluta, el cómputo parte el día de la celebración del acto nulo porque desde ese momento ya era posible ejercer la acción. Es el mismo criterio que, para la prescripción extintiva, cuenta el plazo desde que la obligación se vuelve exigible (art. 2514 inc. final).\n\nEn la fuerza, en cambio, los cuatro años no se cuentan desde la celebración. La razón es evidente: mientras dura la amenaza, la víctima no está en condiciones de demandar.\n\nEn los dos casos, entonces, el plazo corre desde que quien puede alegar la nulidad está en condiciones de hacerlo.',
+  elementos=[
+   ('Absoluta: desde la celebración ya es posible ejercer la acción',
+    ['ya era posible', 'posible ejercer', 'puede ejercerse', 'desde entonces puede', 'ya puede demandar', 'ya se puede accionar'],
+    '¿Qué impide demandar la nulidad absoluta desde el primer día?'),
+   ('Es el mismo criterio de la prescripción extintiva, que corre desde que la obligación se hace exigible (art. 2514)',
+    ['2514', 'exigible', 'se hace exigible', 'desde la exigibilidad'],
+    '¿Desde cuándo corre el plazo de prescripción de una obligación?'),
+   ('Fuerza: mientras dura la amenaza, la víctima no está en condiciones de demandar',
+    ['mientras dura la amenaza', 'bajo amenaza', 'no puede demandar', 'no esta en condiciones', 'sigue presionada', 'sigue amenazada'],
+    '¿Qué le pasaría a la víctima si el plazo le corriera desde la firma?')],
+  articulos='1683, 1691, 2514',
+  objetivo='Evaluar si el alumno fundamenta desde cuándo se cuentan el plazo de la nulidad absoluta y el de la nulidad relativa por fuerza, y la coincidencia del primero con la prescripción extintiva.',
+  respaldo=['IV.B.2.6', 'II.A.7.7']),
+
+ dict(sub='T21.11',
+  caso='',
+  enunciado='Explique qué ocurre con el acto rescindible cuando vence el plazo para pedir la rescisión sin que nadie la haya alegado, si ese plazo es siempre de cuatro años, y qué ocurre, según la doctrina mayoritaria, cuando se cumplen los diez años de la nulidad absoluta.',
+  respuesta='En la nulidad relativa, transcurrido el plazo sin que la persona legitimada alegue la nulidad, el vicio se extingue y el acto queda sano, como si nunca hubiera adolecido de un defecto.\n\nEse plazo es de cuatro años, pero el propio art. 1691 aclara que todo ello se entiende en los casos en que leyes especiales no hubieren designado otro plazo.\n\nEn la nulidad absoluta, la doctrina mayoritaria lee el art. 1683 como un tope: cumplidos los diez años desde la celebración, la acción o la excepción de nulidad ya no proceden.',
+  elementos=[
+   ('Relativa: el vicio se extingue y el acto queda sano, como si nunca hubiera tenido defecto',
+    ['queda sano', 'vicio se extingue', 'como si nunca', 'queda valido', 'se convalida', 'desaparece el vicio'],
+    '¿En qué estado queda el acto rescindible cuando nadie lo impugnó a tiempo?'),
+   ('No siempre son cuatro años: leyes especiales pueden fijar otro plazo (art. 1691)',
+    ['leyes especiales', 'ley especial', 'otro plazo', 'plazo distinto', 'salvo ley'],
+    '¿Admite excepciones la regla general del cuadrienio?'),
+   ('Absoluta: cumplidos los diez años, ni la acción ni la excepción de nulidad proceden',
+    ['ya no proceden', 'ya no procede', 'no puede alegarse', 'ya no puede pedirse', 'no puede hacerse valer'],
+    '¿Puede alguien hacer valer la nulidad absoluta después de ese tope?')],
+  articulos='1683, 1691',
+  objetivo='Evaluar si el alumno explica el efecto del vencimiento del plazo en la nulidad relativa, la salvedad de las leyes especiales y el efecto del tope de diez años en la absoluta.',
+  respaldo=['IV.B.3.5', 'IV.B.2.6']),
+]
+
+INFORME = dict(
+ titulo='Justificación · Tema 20: Nulidad (tanda 2)',
+ puntos=[
+  ('Alcance de las reglas (IV.B.1.1)', 'A qué actos y en qué ramas del derecho rigen las reglas del Título XX.'),
+  ('Diferencias (IV.B.1.6 y IV.A.3)', 'Por qué ni la inexistencia ni la absoluta admiten ratificación, con motivos distintos, y quién ratifica en la relativa.'),
+  ('Causales de la absoluta (IV.B.2.2)', 'Por qué el objeto ilícito es causal de nulidad y no de inexistencia.'),
+  ('Quién la pide (IV.B.2.4)', 'Herederos de quien contrató a sabiendas y el representado: dos puntos discutidos, con los argumentos de cada lado.'),
+  ('Saneamiento de la absoluta (IV.B.2.6)', 'Razón del tope de diez años y la lectura que ve una caducidad (art. 705).'),
+  ('Causales de la relativa (IV.B.3.2)', 'La cláusula residual del art. 1682 y por qué hace de la relativa la regla general.'),
+  ('Titulares de la relativa (IV.B.3.4)', 'Comparación con la absoluta a propósito de la incapacidad: menor adulto frente a impúber.'),
+  ('Saneamiento por el tiempo (IV.B.3.5)', 'Razón de cada cómputo; efecto del vencimiento del plazo, leyes especiales y efecto del tope de la absoluta.'),
+ ],
+ cobertura=[
+  ('Alcance general y derecho privado', 'Fundamento y límite'),
+  ('Ratificación: inexistencia, absoluta y relativa', 'Distinción con fundamento'),
+  ('Objeto: existencia frente a licitud', 'Distinción con fundamento'),
+  ('Herederos de quien contrató a sabiendas', 'Controversia (dos posturas)'),
+  ('El representado', 'Controversia y postura que se impone'),
+  ('Tope de diez años; caducidad; art. 705', 'Fundamento y controversia'),
+  ('Cláusula residual; regla general', 'Fundamento'),
+  ('Menor adulto frente a impúber', 'Comparación'),
+  ('Cómputo de la absoluta y de la fuerza; art. 2514', 'Fundamento'),
+  ('Efecto del tiempo en una y otra nulidad; leyes especiales', 'Comparación'),
+ ],
+ revisar=[
+  ('aj-just-024', 'Punto discutido (herederos de quien contrató a sabiendas). Mira que las dos posturas estén bien presentadas y que ninguna se dé por ganadora.'),
+  ('aj-just-025', 'Punto discutido (el representado), con la postura que el manual dice que hoy se impone y su salvedad. Mira si exigir la salvedad como elemento es justo.'),
+  ('aj-just-026', 'Controversia sobre el saneamiento de la absoluta, sin pedir el nombre del autor. Mira si la palabra caducidad basta o si una alumna lo diría de otra forma.'),
+  ('aj-just-022', 'Usa la teoría de la inexistencia (discutida) como término de comparación. Mira si la pregunta la presenta bien como opinión de quienes la aceptan.'),
+  ('aj-just-023', 'Toca el objeto ilícito, que tiene su propio tema (14). Ojo con la frontera: pregunto solo por qué su sanción es la nulidad y no la inexistencia, no qué es el objeto ilícito.'),
+  ('aj-just-029', 'Usa el pasaje de la fuerza (II.A.7.7) y la prescripción extintiva (art. 2514), y tiene palabras clave rehechas para que no aprobara una respuesta equivocada. Mira si el elemento del art. 2514 es indispensable (la pregunta lo pide expresamente).'),
+  ('aj-just-028', 'Comparación de dos especies a propósito de la incapacidad. Mira si las palabras clave del segundo y el tercer elemento cubren cómo lo diría una alumna.'),
+ ],
+ avisos=[
+  '<b>Diez y no trece:</b> con estas 10, Justificación de Nulidad queda en 27 y no en 30. Al revisarlas saqué dos que ya estaban redactadas, porque preguntaban materia de otros temas: la sanción del error esencial (es del tema Error, 21 exámenes) y la sanción de la lesión (tema Lesión). También rehíce la de las causales de la relativa para no preguntar los requisitos de la fuerza y del dolo, que son de sus propios temas. Se harán cuando toque cada uno.',
+  '<b>Subtemas que quedan bajo el tope:</b> "reglas, concepto y especies" queda en 3, "nulidad absoluta: causales" en 3 y "nulidad relativa: causales" en 3; "quiénes pueden alegar la relativa" queda en 3, como en Aplicación y en Detección de error. Lo que queda de esos pasajes ya está en la tanda 1, o es materia de otro tema, o (en el concepto de nulidad) obligaría a tomar partido en el debate sobre la inexistencia.',
+  '<b>Sin nombres de autores:</b> ningún elemento exige un nombre propio. La caducidad (026) se pide como opinión de "algunos autores".',
+  '<b>Puntos discutidos, presentados como tales:</b> la inexistencia (022, "para quienes aceptan la teoría"), los herederos (024), el representado (025, con la postura que hoy se impone según el manual) y el saneamiento de la absoluta (026).',
+  '<b>Prueba propia, además del control automático:</b> cada pregunta aprueba con una respuesta correcta escrita en palabras propias, y ninguna aprueba con una respuesta equivocada que usa el vocabulario del tema (con esa prueba se corrigieron palabras clave que la dejaban pasar). Las que obtienen un elemento con la respuesta equivocada lo obtienen por citar el número de artículo correcto.',
+ ],
+ redundancia='Ningún elemento repite uno de la tanda 1. Donde los temas se tocan, el ángulo cambia: la tanda 1 preguntó por qué la absoluta no se ratifica (014), y aquí 022 distingue ese motivo del de la inexistencia; la tanda 1 comparó los plazos y su cómputo (020), y aquí 029 pide la razón de cada cómputo y 030 el efecto del vencimiento; la tanda 1 explicó el art. 1685 y el conocimiento real del vicio (018, 012), y aquí 024 y 025 tratan las dos controversias sobre quién queda excluido. Dentro de la tanda, 026 y 030 tocan los diez años de la absoluta con elementos distintos: 026 pide la razón del tope y la caducidad; 030, que pasado el tope la nulidad ya no puede alegarse.',
+)
