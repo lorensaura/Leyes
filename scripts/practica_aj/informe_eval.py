@@ -67,6 +67,11 @@ for f in filas:
               f"<p class='meta'><b>Artículos:</b> {E(f['articulos_referencia'])} · <b>Objetivo:</b> {E(f['objetivo_pedagogico'])}</p>"
               f"<div class='lbl'>Respaldo en el manual (para verificar)</div>{resp}</article>")
 avisos = ''.join(f'<li>{a}</li>' for a in inf['avisos'])
+revisar = ''.join(f"<li><a href='#{i}'><code>{i}</code></a>: {r}</li>" for i, r in inf.get('revisar', []))
+bloque_revisar = (f"<h2>Qué revisar ({len(inf['revisar'])} de {len(filas)})</h2>"
+                  "<p>Las elegí para que la muestra cubra todos los tipos de pregunta, con prioridad para los puntos discutidos, "
+                  "lo que toca otros temas y las palabras clave con más riesgo. Con lo que encuentres hago una pasada por toda la tanda.</p>"
+                  f"<ul class='avisos'>{revisar}</ul>") if revisar else ''
 
 doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Revisión {E(m.TABLA)} AJ</title><style>
@@ -94,6 +99,7 @@ details{{margin:4px 0}} summary{{cursor:pointer;color:var(--acc);font-size:.9rem
 <li>Si aun así la app no reconoce algo que sí dijo, puede marcar <b>"Lo dije con otras palabras"</b>; esos reclamos se revisan y sirven para agregar palabras clave.</li>
 <li><b>Qué conviene mirar:</b> si cada elemento es de verdad indispensable para una buena respuesta (si no lo es, sobra y vuelve estricta la corrección), y si las palabras clave cubren las formas razonables de decirlo. Si piensas en una forma correcta de decirlo que no está en la lista, anótala y la agrego.</li>
 </ul>
+{bloque_revisar}
 <h2>Lo que tienes que mirar</h2><ul class="avisos">{avisos}</ul>
 <h2>1. Auto-auditoría</h2>{aud}
 <h2>2. Puntos de derecho que cubre la tanda</h2><ul>{puntos}</ul>
