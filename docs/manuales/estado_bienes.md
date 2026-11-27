@@ -92,8 +92,12 @@
   `6f04967`, aprobada en el mismo mensaje.** Detalle en "Tramo 11b", más
   abajo.
 - **Tramo 12 (V.5.A.2.2.3 a V.5.A.2.4, buena fe a posesiones viciosas,
-  p. 202-208): escrito (2026-11-27), esperando revisión de Laura en la
-  vista previa.** Detalle en "Tramo 12", más abajo.
+  p. 202-208): terminado y aprobado por Laura (2026-11-27, "ok, haz el
+  commit y sigue con el tramo 13a"), commit `3ff941f`.** Detalle en
+  "Tramo 12", más abajo.
+- **Tramo 13a (V.5.A.3 y V.5.A.4, p. 208-214): informe entregado
+  (2026-11-27), esperando decisiones de Laura.** Detalle en "Tramo 13a",
+  más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -1968,7 +1972,7 @@ las solemnidades legales de la compraventa).
 art. 702 (2.4, próximo tramo, y tramo 14); plazos de la herencia (16a);
 apoderamiento del art. 729 (13b y 14).
 
-## Tramo 12: escrito (2026-11-27), esperando revisión de Laura
+## Tramo 12: hecho y aprobado (2026-11-27), commit `3ff941f`
 
 **V.5.A.2.2.3 a V.5.A.2.4 (buena fe, tradición, ventajas, posesión
 irregular y posesiones viciosas), páginas 202 a 208 de Boetsch** (el
@@ -2040,13 +2044,32 @@ previa actualizada. Respaldo en el tmp del job (`05_Bienes_antes_12.html`).
 viciosas y acciones posesorias, arts. 918 y 920 inc. 3º (20c); VIAL y el
 art. 724 (14); cruce de V.5.A.1.5 "Mera tenencia" con A.3 (13a).
 
-## Siguiente paso exacto (2026-11-26, vigente)
+## Tramo 13a: informe entregado (2026-11-27), esperando decisiones de Laura
 
-1. **Laura revisa el tramo 12** en la vista previa (ancla
-   `#cV-5-A-2-2-3`).
-2. Después, tramo 13a (A.3 Mera tenencia y A.4, p. 208-214). Cotejar con
-   PEÑAILILLO 2010 nº 174 en adelante y resolver el cruce con
-   V.5.A.1.5 "Mera tenencia".
+**V.5.A.3 La mera tenencia y V.5.A.4 Transmisibilidad, agregación e
+interversión, p. 208-214.** Informe en `Informes/Informe_Bienes_tramo13a.html`.
+Hallazgos: Boetsch copia a PEÑAILILLO (nº 174 a 183) en agregación e
+interversión (52 de 106 oraciones); se salta el nº 180 entero (disolución
+del título y otros casos discutidos de agregación) y el fundamento de
+"disociar" y la exclusión del ladrón (nº 179). A.3 repite la definición de
+V.5.A.1.5 (11a). Citas: plazo mínimo de las acciones posesorias es el art.
+918 (no 920 inc. 4º); art. 2494 es renuncia de prescripción cumplida.
+Paráfrasis: 51 de 62 sobre 70%. Fuentes: discusiones nº 6 (ALESSANDRI,
+SOMARRIVA), VIAL (el reconocimiento de dominio ajeno está en el título),
+SAVIGNY (en Roma no pasaba al heredero la posesión; constituto en Paulo).
+
+**Decisiones pedidas (4):** no repetir el art. 714 en A.3.1 y dejar
+V.5.A.1.5 como presentación; nuevo 2.3 "Casos discutidos de agregación";
+tres preguntas clásicas (mera tenencia, transmisión, agregación);
+material propio.
+
+## Siguiente paso exacto (2026-11-27, vigente)
+
+1. **Laura decide las 4 preguntas del informe del tramo 13a.** Con sus
+   respuestas: respaldar el manual en el tmp del job y reescribir
+   V.5.A.3 y V.5.A.4 (ids `cV-5-A-3` a `cV-5-A-4-3-3`, se conservan).
+2. Después, tramo 13b (A.5.1 a A.5.3, p. 214-218). Cotejar con
+   PEÑAILILLO 2010 nº 184 a 188.
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
    dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
