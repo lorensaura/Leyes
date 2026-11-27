@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-26 (tramo 11a
-> aprobado; tramo 11b escrito, esperando revisión de Laura en la vista
-> previa).
+> antes de seguir. Última actualización: 2026-11-26 (tramo 11b y
+> pasada contra Peñailillo aprobados; tramo 12 escrito, esperando
+> revisión de Laura en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -87,9 +87,13 @@
   por Laura (2026-11-26, ajustes de negritas y art. 700 completo, luego
   "sigamos con el tramo 11b").** Detalle en "Tramo 11a", más abajo.
 - **Tramo 11b (V.5.A.2 intro, posesión regular y justo título, p.
-  191-202): escrito (2026-11-26), esperando revisión de Laura en la
-  vista previa.** Detalle en
-  "Tramo 11b", más abajo.
+  191-202): terminado y aprobado por Laura (2026-11-26, "sigamos con el
+  tramo 12"), commit `0fe8380`; la pasada contra Peñailillo, commit
+  `6f04967`, aprobada en el mismo mensaje.** Detalle en "Tramo 11b", más
+  abajo.
+- **Tramo 12 (V.5.A.2.2.3 a V.5.A.2.4, buena fe a posesiones viciosas,
+  p. 202-208): escrito (2026-11-27), esperando revisión de Laura en la
+  vista previa.** Detalle en "Tramo 12", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -176,11 +180,12 @@ que en AJ.
 | 11a | 184-191 | 11 | V.5.A.1 Posesión, aspectos generales |
 | 11b | 191-202 | 11 | V.5.A.2 Clases de posesión (regular: concepto, justo título completo hasta el art. 704). Corregido 2026-11-26 |
 | 11c | (unido al 12) | 11 | Laura aprobó el 2026-11-26 unirlo al 12 |
-| 12 | 202-213 | 11-12 | V.5.A.2 cont. (buena fe, tradición, ventajas, posesión irregular y viciosa) |
-| 13a | 213-220 | 13 | V.5.A.3 Mera tenencia |
-| 13b | 220-228 | 13 | V.5.A.4 Transmisibilidad, agregación, interversión |
-| 13c | 228-235 | 13 | V.5.A.5 ACP posesión de muebles |
-| 14 | 235-245 | 14 | V.5.A.5 ACP posesión de inmuebles (posesión inscrita) + A.6 prueba — **candidato a dividir en 2-3 cuando se llegue**, es de los temas más preguntados |
+| 12 | 202-208 | 11-12 | V.5.A.2 cont. (buena fe, tradición, ventajas, posesión irregular y viciosa). Corregido 2026-11-27 |
+| 13a | 208-214 | 12 | V.5.A.3 Mera tenencia + A.4 Transmisibilidad, agregación, interversión (corregido 2026-11-27) |
+| 13b | 214-218 | 13 | V.5.A.5.1 a A.5.3 (observaciones generales, principio básico, muebles). Corregido 2026-11-27 |
+| 13c | 218-228 | 13 | V.5.A.5.4.1 Posesión de inmuebles, aspectos generales (Mensaje, doctrinas antagónicas). Corregido 2026-11-27 |
+| 14a | 228-235 | 14 | V.5.A.5.4.2 Inmuebles no inscritos (corregido 2026-11-27) |
+| 14b | 235-245 | 14 | V.5.A.5.4.3 Inmuebles inscritos + A.6 prueba (corregido 2026-11-27) |
 | 15a | 246-253 | 15 | V.5.B.1-B.3 Prescripción adquisitiva: nociones, fundamento, características |
 | 15b | 253-259 | 15 | V.5.B.4 Reglas comunes |
 | 15c | 259-264 | 15 | V.5.B.5 Elementos (cosa, posesión, inicio del tiempo) |
@@ -1843,7 +1848,7 @@ las definiciones legales se transcriben con sus incisos centrales: el art.
 (que además sigue en 4). Commits `c1b1cc9`, `b6e4309`, `93f46c9`,
 `2ba9963`.
 
-## Tramo 11b: escrito (2026-11-26), esperando revisión de Laura
+## Tramo 11b: hecho y aprobado (2026-11-26), commits `0fe8380` y `6f04967`
 
 **V.5.A.2 introducción, posesión regular y justo título completo,
 páginas 191 a 202 de Boetsch** (corte por contenido propuesto: el
@@ -1963,15 +1968,85 @@ las solemnidades legales de la compraventa).
 art. 702 (2.4, próximo tramo, y tramo 14); plazos de la herencia (16a);
 apoderamiento del art. 729 (13b y 14).
 
+## Tramo 12: escrito (2026-11-27), esperando revisión de Laura
+
+**V.5.A.2.2.3 a V.5.A.2.4 (buena fe, tradición, ventajas, posesión
+irregular y posesiones viciosas), páginas 202 a 208 de Boetsch** (el
+reparto decía 202-213, pero ese contenido termina en la p. 208, antes de
+"A.3 La mera tenencia"). Informe en `Informes/Informe_Bienes_tramo12.html`.
+
+Hallazgos: Boetsch copia a PEÑAILILLO (nº 168 a 171) en buena fe,
+tradición, ventajas y concepto de irregular (45 de 108 oraciones); en las
+viciosas sigue a VIAL. **Paralelo e) está mal en el fondo**: los frutos
+dependen de la buena o mala fe al percibirlos (arts. 907 inc. 3º y 913),
+no de que la posesión sea regular. Citas: art. 907 inc. 3º (no 2º); art.
+702 inc. 3º para la tradición (no 2º); arts. 94 y 2510 por reglas.
+Marcado roto en a), b), c) y e) del paralelo. Faltan arts. 706 y 707 en
+`.ley`, DE RUGGIERO y PLANIOL/RIPERT, cuestión de hecho, POTHIER, la
+presunción de mala fe exclusiva de la posesión, la analogía con la fuerza
+como vicio del consentimiento, y VIAL sobre la tradición "equívoca" (art.
+708). Paráfrasis: 16 de 30 sobre 70%. **Dos contradicciones entre
+fuentes**: cuál es la opinión mayoritaria sobre la utilidad de la
+posesión viciosa (BOETSCH y VIAL: útil; PEÑAILILLO y discusiones nº 15:
+la tradicional es inútil) y si la violencia es vicio permanente
+(PEÑAILILLO: discutido). Fuentes nuevas usadas: discusiones nº 15
+(BELMAR), SAVIGNY (vicio relativo, *ab adversario*), CLARO SOLAR vía VIAL
+(art. 711).
+
+**Decisiones pedidas a Laura (10):** corte 202-208 y reparto corregido
+de 13 y 14; corregir paralelo e) con No confundir "Poseedor regular no es
+lo mismo que poseedor de buena fe"; VIAL en 3.1 con enlace desde 2.4; no
+decir cuál postura es mayoritaria en la utilidad; rehacer el No confundir
+de la violencia con PEÑAILILLO y SAVIGNY; cuadro de 4 posturas x 4
+preguntas; nombrar a BELMAR y CLARO SOLAR "según recoge" la fuente; no
+incluir la frase ambigua de VIAL sobre el error de Derecho; tres
+preguntas clásicas (buena fe, irregular, utilidad de la viciosa);
+material propio.
+
+**Reparto corregido propuesto (páginas reales):** 13a 208-214 (A.3 y
+A.4); 13b 214-218 (A.5.1 a A.5.3, muebles); 13c 218-228 (A.5.4.1,
+inmuebles: aspectos generales); 14a 228-235 (no inscritos); 14b 235-245
+(inscritos y A.6 prueba). Pendiente de aprobación: hasta entonces vale la
+tabla de "Reparto de tramos".
+
+**Decisiones de Laura (2026-11-27): "todas ok"**, las tres preguntas
+clásicas recomendadas, sin material propio. Pidió que se le explicara la
+crítica de VIAL: se explicó en el chat y quedó en 3.1 con enlace desde
+2.4 (si al verla prefiere otra ubicación, se mueve).
+
+Lo que se hizo: 2.3 en escalera (i)-(iii) con arts. 706 y 707 en `.ley`,
+PEÑAILILLO (concepto único, método, creencia/comportamiento, prueba),
+VIAL (desglose del 706), DE RUGGIERO, PLANIOL y RIPERT, cuestión de hecho,
+BELLO, POTHIER, presunción de mala fe exclusiva de la posesión; arts. 907
+inc. 3º, 702 inc. 3º y reglas de los arts. 94 y 2510 corregidos; caja
+"Dos bicicletas en Puerto Varas"; No confundir "Poseedor regular no es lo
+mismo que poseedor de buena fe" (cerezos de Clodomiro); 2.4 con la mesa
+de pool y enlace a 3.1; 2.5 con PEÑAILILLO; 3.1 con art. 708 en `.ley` y
+la crítica de VIAL; 3.2 a)-e) con marcado arreglado y e) corregido; 4.1
+con arts. 709 a 713 en `.ley`, analogía con la fuerza, POTHIER,
+SAVIGNY, CLARO SOLAR vs VIAL (art. 711), breves de Emeterio y Florinda y
+de Rosalba; No confundir de la violencia rehecho (permanente para
+BOETSCH y VIAL, discutido según PEÑAILILLO, art. 920 inc. 3º, SAVIGNY);
+4.2 (i)-(ii) con caja "El kayak de Licán Ray", posturas a)-d)
+(tradicional con el Mensaje, BELMAR, RODRÍGUEZ GREZ, VIAL con art. 2502
+Nº 1) y cuadro; tres preguntas clásicas; Conexiones (AJ II.A.5.2 y
+II.A.7; Contratos con `[FALTA: sección]`). Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafos
+bajo 1.100, paráfrasis 6 de 164 sobre 70% contra Boetsch (citas y
+artículos) y 2 de 164 contra Peñailillo, capturas revisadas, vista
+previa actualizada. Respaldo en el tmp del job (`05_Bienes_antes_12.html`).
+
+**Pendientes que salen de aquí:** tres lecturas del art. 894 (20a);
+viciosas y acciones posesorias, arts. 918 y 920 inc. 3º (20c); VIAL y el
+art. 724 (14); cruce de V.5.A.1.5 "Mera tenencia" con A.3 (13a).
+
 ## Siguiente paso exacto (2026-11-26, vigente)
 
-1. **Laura revisa el tramo 11b** en la vista previa (ancla
-   `#cV-5-A-2`) y **revisa también los cambios de la pasada contra Peñailillo** (hecha
-   el 2026-11-26, ver "Tramo 11b").
-2. Después, tramo 12 (unido con el ex 11c): buena fe, tradición,
-   ventajas, posesión irregular y viciosa, p. 202-213. Cotejar con
-   PEÑAILILLO 2010 (nº 168 a 173). Llevar la crítica de VIAL a la
-   tradición "equívoca" del art. 702 al tercer elemento (2.4).
+1. **Laura revisa el tramo 12** en la vista previa (ancla
+   `#cV-5-A-2-2-3`).
+2. Después, tramo 13a (A.3 Mera tenencia y A.4, p. 208-214). Cotejar con
+   PEÑAILILLO 2010 nº 174 en adelante y resolver el cruce con
+   V.5.A.1.5 "Mera tenencia".
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
    dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
 4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
