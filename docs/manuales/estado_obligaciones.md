@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (tramos 1 y 2 aprobados; reparto
-> en 74 tramos chicos; tramo 3a escrito en `obligaciones-tramo3a`,
-> esperando revisión, junto con la corrección de paráfrasis de 1 y 2).
+> Última actualización: 2026-11-27 (tramos 1, 2 y 3a aprobados y
+> mergeados, con la corrección de paráfrasis de 1 y 2; reparto en 69
+> tramos por subtema con fuentes integradas; siguiente: informe del 3b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -48,18 +48,18 @@
   informe y Laura decide; después se redacta**. Los tramos 1, 2 y 3a se
   redactaron antes del visto bueno (se tomó "continúa" como permiso):
   no se repite (memoria `informe-antes-de-redactar`).
-- **Tramo 3a (p. 27-31 + Vial nº 67-69): escrito, esperando revisión.**
-  Informe: `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3a.html`.
-  Detalle en "Tramo 3a", más abajo.
+- **Tramo 3a (p. 27-31 + Vial nº 67-69): aprobado y mergeado**
+  (2026-11-27, `main` en `00e9f4c`; Laura: "Ya mergeé el 3a"). Sus
+  decisiones quedan firmes (ver "Tramo 3a"). Marcado Hecho en Airtable.
 - **Ojo, corrección de los tramos 1 y 2 (en la misma rama 3a):** el
   script de paráfrasis tenía un error (el filtro de citas entre comillas
   se comía párrafos enteros cuando las comillas quedaban desparejas), y
   en 1 y 2 midió muchas menos oraciones de las reales. Ya corregido
   (filtra cita por párrafo). Al medir de nuevo salieron 13 oraciones del
   tramo 1 y 22 del tramo 2 (13 frente a Boetsch, 9 frente a Vial) sobre
-  70%; se reescribieron todas, sin perder unidades.
-- **Siguiente:** revisión de Laura del 3a; luego 3b. Ver "Siguiente paso
-  exacto".
+  70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
+- **Siguiente:** informe del tramo 3b (solo el informe; redactar recién
+  con el visto bueno de Laura). Ver "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -259,8 +259,8 @@ un tramo, actualizar también ahí.
 |---|---|---|---|---|
 | 1 | 13-19 | I.A La obligación |  | ✅ |
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
-| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales); Ramos Pazos |  |
-| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Abeliuk; apunte de eficacia |  |
+| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 | ✅ |
+| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Vial (final del nº 69 y nº 70); Ramos Pazos; Abeliuk; apunte de eficacia |  |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
 | 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
@@ -426,7 +426,7 @@ un tramo, actualizar también ahí.
   Laura: las 36 tareas estimadas se reutilizaron (renombradas) y se
   crearon 38 más, una por tramo real; tramos 1 y 2 marcados Hecho.
 
-## Tramo 3a (p. 27-31, II intro y II.A.1-3): escrito, esperando revisión
+## Tramo 3a (p. 27-31, II intro y II.A.1-3): aprobado y mergeado
 
 - **Escrito el 2026-11-27** en `obligaciones-tramo3a`. Abre el capítulo
   II (`cII`), con la lista de clasificaciones de Boetsch como
@@ -435,7 +435,7 @@ un tramo, actualizar también ahí.
   tramo. El final del nº 69 ("desde cuándo" es natural la obligación) y
   el nº 70 van al 3b, junto con **todo el anexo de Ramos Pazos**, que
   trata solo de eso.
-- **Decisiones aplicadas, para que Laura confirme:** cuadro de
+- **Decisiones aplicadas, aprobadas con el merge (2026-11-27):** cuadro de
   taxatividad (tesis taxativa: CLARO SOLAR y VIAL; no taxativa: FUEYO,
   STITCHKIN, VODANOVIC), con la "mayoría" atribuida a BOETSCH y la
   contradicción de VIAL dicha en una línea; "deber moral del acreedor"
@@ -454,15 +454,19 @@ un tramo, actualizar también ahí.
 
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Revisión de Laura del tramo 3a (y de la corrección de 1 y 2); con su
-   visto bueno, merge de `obligaciones-tramo3a`, borrar la rama y marcar
-   3a como Hecho en Airtable.
-2. Tramo **3b**, **primero solo el informe** (inventario y decisiones),
-   esperar a Laura, y recién después redactar: Boetsch p. 31 (punto 4) a 36 (II.A.4-6: análisis de
-   cada número del art. 1470, sentencia y efectos), con Vial (final del
-   nº 69 y nº 70), Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e
-   Ibarra: cruzar con cátedra y no nombrarlo). Si sale grande, partirlo
-   en 3b y 3c y avisar. Conexión con AJ IV.B (nulidad).
-3. `scripts/cobertura_tramo.py` sigue solo en la rama
+1. Rama `obligaciones-tramo3b` (ya creada desde `main`; las ramas
+   `obligaciones-tramo1`, `formato-cuadro-rotulos`, `obligaciones-tramo2`
+   y `obligaciones-tramo3a` están mergeadas y borradas).
+2. Tramo **3b**, **primero solo el informe** (inventario y decisiones) en
+   `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3b.html`; esperar a
+   Laura y recién después redactar. Fuentes: Boetsch p. 31 (punto 4) a
+   36 (II.A.4-6: análisis de cada número del art. 1470, sentencia y
+   efectos), integrando en cada subtema Vial (final del nº 69 y nº 70),
+   Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e Ibarra: cruzar
+   con cátedra y no nombrarlo). Si sale grande, partirlo por subtema
+   (3b y 3c) y avisar. Conexión con AJ IV.B (nulidad).
+3. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
+   Airtable (lo hace Claude; Laura no tiene que tocarlo).
+4. `scripts/cobertura_tramo.py` sigue solo en la rama
    `worktree-plan-lanzamiento` (commit `314038f`); se usa una copia con
    `git show 314038f:scripts/cobertura_tramo.py`.
