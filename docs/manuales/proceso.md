@@ -175,7 +175,11 @@ solo las secciones del anexo que Laura confirmó en el mapa.
   `td` con la tipografía del texto principal. Al escribir o revisar un
   cuadro comparativo en cualquier manual, comprobar que sus celdas `td`
   usan la tipografía del texto y no la del encabezado (`formato.md`,
-  sección 4.1).
+  sección 4.1). **Excepción (2026-11-27):** la primera columna, la de
+  los rótulos de fila, es etiqueta y no cuerpo: va como el encabezado
+  (sans serif, 9pt, mayúscula, negrita), con fondo propio y filete
+  rojo, y sus rótulos son cortos ("Sujetos", no "En cuanto a los
+  sujetos"). Comprobarlo también (`formato.md`, sección 4.1).
 - **Ancho de columnas en cuadros comparativos.** Otro bug real
   encontrado en Acto Jurídico (2026-10-05): sin un ancho fijo, la
   columna "Criterio" podía quedar tan angosta que el navegador partía

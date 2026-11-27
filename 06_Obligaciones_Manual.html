@@ -81,7 +81,12 @@
     font-family:'Times New Roman',Times,Georgia,serif;font-size:11pt;
     hyphens:none;-webkit-hyphens:none;}
   tr:nth-child(even) td{background:var(--soft);}
-  th:first-child,td:first-child{width:15%;text-align:left;}
+  th:first-child,td:first-child{width:20%;text-align:left;}
+  /* Rótulo de fila del cuadro comparativo (Laura, 2026-11-27): la primera columna es una etiqueta,
+     no información; corta, en mayúscula y negrita, con fondo y filete propios */
+  table tr td:first-child{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:9pt;
+    font-weight:700;text-transform:uppercase;color:var(--accent2);
+    background:var(--light);border-right:2px solid var(--accent);}
   table.cols-angostas td{text-align:left;}
   .art{font-weight:700;color:var(--accent);white-space:nowrap;}
 
@@ -264,13 +269,13 @@
 
 <table>
 <tr><th>Criterio</th><th>Derechos reales</th><th>Derechos personales</th></tr>
-<tr><td>En cuanto a los sujetos</td><td>Relación directa de una persona con una cosa</td><td>Relación entre dos sujetos determinados: acreedor y deudor</td></tr>
-<tr><td>En cuanto al contenido</td><td>Poder jurídico inmediato y directo sobre la cosa (<em>jure in re</em>)</td><td>El acreedor solo obtiene su beneficio a través de un acto del deudor (<em>jure ad rem</em>)</td></tr>
-<tr><td>En cuanto a la forma de adquirirlos</td><td>Concurrencia de un título y un modo de adquirir</td><td>Basta el título</td></tr>
-<tr><td>En cuanto a su oponibilidad</td><td>Absolutos, se dice: su titular tiene una acción persecutoria y restitutoria, que apunta al reintegro de la cosa y puede ejercerse frente a terceros</td><td>Relativos: solo pueden exigirse del deudor</td></tr>
-<tr><td>En cuanto a su contravención</td><td>Cualquiera puede violarlos</td><td>Solo el deudor puede violarlos</td></tr>
-<tr><td>En cuanto a las acciones que generan</td><td>Acciones reales: permiten perseguir la cosa de manos de quien la tenga en su poder</td><td>Acciones personales: permiten reclamar del deudor el cumplimiento de la prestación debida</td></tr>
-<tr><td>En cuanto a su fuente de creación</td><td>Según se argumenta, solo los crea la ley, y las partes no pueden establecerlos (<em>numerus clausus</em>). Su número es limitado</td><td>Las partes pueden crear cualquier derecho personal, en virtud de la autonomía de la voluntad, con el solo límite de la ley, el orden público o la moral (<em>numerus apertus</em>). Su número es ilimitado</td></tr>
+<tr><td>Sujetos</td><td>Relación directa de una persona con una cosa</td><td>Relación entre dos sujetos determinados: acreedor y deudor</td></tr>
+<tr><td>Contenido</td><td>Poder jurídico inmediato y directo sobre la cosa (<em>jure in re</em>)</td><td>El acreedor solo obtiene su beneficio a través de un acto del deudor (<em>jure ad rem</em>)</td></tr>
+<tr><td>Forma de adquirirlos</td><td>Concurrencia de un título y un modo de adquirir</td><td>Basta el título</td></tr>
+<tr><td>Oponibilidad</td><td>Absolutos, se dice: su titular tiene una acción persecutoria y restitutoria, que apunta al reintegro de la cosa y puede ejercerse frente a terceros</td><td>Relativos: solo pueden exigirse del deudor</td></tr>
+<tr><td>Contravención</td><td>Cualquiera puede violarlos</td><td>Solo el deudor puede violarlos</td></tr>
+<tr><td>Acciones que generan</td><td>Acciones reales: permiten perseguir la cosa de manos de quien la tenga en su poder</td><td>Acciones personales: permiten reclamar del deudor el cumplimiento de la prestación debida</td></tr>
+<tr><td>Fuente de creación</td><td>Según se argumenta, solo los crea la ley, y las partes no pueden establecerlos (<em>numerus clausus</em>). Su número es limitado</td><td>Las partes pueden crear cualquier derecho personal, en virtud de la autonomía de la voluntad, con el solo límite de la ley, el orden público o la moral (<em>numerus apertus</em>). Su número es ilimitado</td></tr>
 </table>
 
 <p>La diferencia de contenido explica las expresiones que usaban los romanos. En el derecho real, el titular se relaciona directamente con la cosa sobre la que lo ejerce: por eso hablaban de <em>jure in re</em>, derecho en la cosa. Lo que caracteriza al derecho personal, en cambio, es que esa relación directa falta. Lo que hay es un vínculo jurídico entre acreedor y deudor, y el acreedor llega a la cosa solo de manera indirecta, a través del deudor: de ahí la expresión <em>jure ad rem</em>, derecho a la cosa.</p>

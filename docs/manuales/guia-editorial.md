@@ -310,6 +310,10 @@ era materia, no un dato de examen.
   queda en el cuadro o en el texto que lo acompaña. Si un argumento
   necesita más desarrollo del que cabe en una celda, se desarrolla en el
   texto y el cuadro lo nombra.
+- **Rótulos de fila cortos (Laura, 2026-11-27):** la primera columna
+  lleva solo el nombre del criterio ("Sujetos", "Contenido",
+  "Oponibilidad"), nunca "En cuanto a los sujetos...". Se ve como
+  etiqueta (mayúscula, negrita, fondo propio): `formato.md` 4.1.
 - **Se introduce con una frase que termina en dos puntos**, por ejemplo:
   "Paralelo entre nulidad absoluta y relativa:".
 - **Diferencia con No confundir:** No confundir es para dos conceptos

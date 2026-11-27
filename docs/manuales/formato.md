@@ -374,6 +374,32 @@ rojo con letra blanca, filas alternadas), **sin cambiarlo**. En la
 impresión **no se cortan filas entre páginas**: la base ya lo asegura
 con `tr{page-break-inside:avoid}` dentro de `@media print`.
 
+**Rótulos de fila (Laura, 2026-11-27).** La primera columna de un
+cuadro comparativo es una **etiqueta**, no una columna más de
+información, y tiene que verse así:
+
+- **Rótulo corto**, solo el criterio: "Sujetos", "Contenido",
+  "Oponibilidad", "Fuente de creación". **Nunca** "En cuanto a los
+  sujetos", "En cuanto al contenido"...: la muletilla sobra, porque el
+  encabezado de la columna ya dice "Criterio".
+- **Mayúscula y negrita**, en la letra sans serif de los títulos y a
+  9pt, igual que el encabezado `th`.
+- **Fondo propio** (`--light`, el beige más oscuro, en todas las filas,
+  sin alternar) y un **filete rojo** a su derecha que la separa del
+  contenido.
+- Ancho de **20%** (antes 15%): con 15% las palabras largas en mayúscula
+  ("OPONIBILIDAD", "CONTRAVENCIÓN") se salían de la celda.
+
+Es una excepción a la regla de que los `td` usan la tipografía del
+cuerpo (abajo y `proceso.md` 4.1): las demás celdas siguen en Times
+11pt; solo la primera columna, que es etiqueta, toma la del encabezado.
+Ya está en la hoja base (sección 8). Primer manual que la usa:
+Obligaciones (I.A.3). **Pendiente** en los manuales existentes (Acto
+Jurídico, Bienes, Responsabilidad): se aplica al revisar cada uno, igual
+que cualquier ajuste de la hoja de estilos; también en el lector de la
+app (`app/manuales.html`) al conectar el manual nuevo, porque allá las
+tablas tienen sus propias reglas.
+
 **La primera columna (el "Criterio") nunca debe quedar angosta al
 punto de que el navegador parta palabras con guion** (ej. "CRI-TE-RIO",
 "Ejem-plo"): pasaba porque `body` tiene `hyphens:auto` global y, sin un
@@ -393,8 +419,8 @@ no la tiene, igual que con cualquier otro ajuste de la hoja de estilos
 <p>Paralelo entre nulidad absoluta y relativa:</p>
 <table>
   <tr><th>Criterio</th><th>Nulidad absoluta</th><th>Nulidad relativa</th></tr>
-  <tr><td>Quién puede alegarla</td><td>...</td><td>...</td></tr>
-  <tr><td>Saneamiento por el tiempo</td><td>...</td><td>...</td></tr>
+  <tr><td>Titulares</td><td>...</td><td>...</td></tr>
+  <tr><td>Saneamiento</td><td>...</td><td>...</td></tr>
 </table>
 ```
 
@@ -590,7 +616,11 @@ La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
   td{border:1px solid #bbb;padding:7px 10px;vertical-align:top;
     hyphens:none;-webkit-hyphens:none;}
   tr:nth-child(even) td{background:var(--soft);}
-  th:first-child,td:first-child{width:15%;text-align:left;}
+  th:first-child,td:first-child{width:20%;text-align:left;}
+  /* Rótulo de fila (2026-11-27): etiqueta, no información */
+  table tr td:first-child{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:9pt;
+    font-weight:700;text-transform:uppercase;color:var(--accent2);
+    background:var(--light);border-right:2px solid var(--accent);}
   .art{font-weight:700;color:var(--accent);white-space:nowrap;}
 
   .caja-tipo{display:block;text-align:center;font-weight:700;text-transform:uppercase;
