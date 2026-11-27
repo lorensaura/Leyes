@@ -527,9 +527,29 @@ revisar" (7 de 10). Con lo que Laura encuentre, pasada por toda la tanda
 e informe solo de cambios. Quedaron 10 y no 13: se sacaron la sanción del
 error esencial (tema Error) y la de la lesión (tema Lesión), y no se
 preguntan los requisitos de la fuerza y del dolo (sus temas). Al llegar a
-esos temas, esas preguntas se hacen allá. **Después: Discriminación MC de
-Nulidad** (3 de cada 5 en la revisión, tipo nuevo para Laura), y con eso
-Nulidad queda lista para publicarse. **Pendiente técnico:** el
+esos temas, esas preguntas se hacen allá.
+
+**Orden de lo que sigue (acordado con Laura el 2026-11-27):**
+1. **Cerrar Justificación tanda 2:** con los hallazgos de Laura en la
+   muestra, pasada por las 10 e informe solo de cambios.
+2. **Discriminación MC de Nulidad:** hoy hay 0 de Nulidad (los
+   `aj-mc-001` a `003` son del Cap. I). Tope de ~30 con la regla de
+   cantidad, en dos tandas como los otros tipos (`lote_mc1.py` y
+   `lote_mc2.py`, desde `aj-mc-004`). Revisión 3 de cada 5 (tipo nuevo
+   para Laura). Posición de la respuesta correcta repartida desde el
+   principio y distractores no adivinables por descarte (ver "Reglas y
+   decisiones que no cambian"). Misma prueba propia y mismo cuidado de
+   fronteras entre temas que en Justificación tanda 2.
+3. **Publicar Nulidad completa:** marcar `publicado` y `Revision_status =
+   Verificado` en Airtable y correr `scripts/sync_airtable_supabase.py`;
+   antes, confirmar que Supabase responde (ver pendiente técnico).
+4. **Tema siguiente: Error (tema 9)**, los mismos 4 tipos. Ahí entran la
+   sanción del error esencial que se sacó de esta tanda. Después Causa,
+   Objeto, Objeto ilícito y Dolo (orden de relevancia del tablero); la
+   sanción de la lesión va con el tema Lesión, y los requisitos de la
+   fuerza y del dolo, con sus temas.
+
+**Pendiente técnico:** el
 2026-11-27 `tablero_cobertura_aj.py` falló porque el dominio de Supabase
 no resolvía (NXDOMAIN); volver a correrlo y, si sigue, revisar si el
 proyecto de Supabase está pausado (afectaría a la app en vivo). Detalle del
