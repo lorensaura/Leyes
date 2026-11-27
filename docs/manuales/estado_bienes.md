@@ -95,8 +95,8 @@
   p. 202-208): terminado y aprobado por Laura (2026-11-27, "ok, haz el
   commit y sigue con el tramo 13a"), commit `3ff941f`.** Detalle en
   "Tramo 12", más abajo.
-- **Tramo 13a (V.5.A.3 y V.5.A.4, p. 208-214): informe entregado
-  (2026-11-27), esperando decisiones de Laura.** Detalle en "Tramo 13a",
+- **Tramo 13a (V.5.A.3 y V.5.A.4, p. 208-214): terminado y aprobado
+  por Laura (2026-11-27, "ok, haz el commit").** Detalle en "Tramo 13a",
   más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -2044,7 +2044,7 @@ previa actualizada. Respaldo en el tmp del job (`05_Bienes_antes_12.html`).
 viciosas y acciones posesorias, arts. 918 y 920 inc. 3º (20c); VIAL y el
 art. 724 (14); cruce de V.5.A.1.5 "Mera tenencia" con A.3 (13a).
 
-## Tramo 13a: informe entregado (2026-11-27), esperando decisiones de Laura
+## Tramo 13a: hecho y aprobado (2026-11-27)
 
 **V.5.A.3 La mera tenencia y V.5.A.4 Transmisibilidad, agregación e
 interversión, p. 208-214.** Informe en `Informes/Informe_Bienes_tramo13a.html`.
@@ -2058,16 +2058,48 @@ Paráfrasis: 51 de 62 sobre 70%. Fuentes: discusiones nº 6 (ALESSANDRI,
 SOMARRIVA), VIAL (el reconocimiento de dominio ajeno está en el título),
 SAVIGNY (en Roma no pasaba al heredero la posesión; constituto en Paulo).
 
-**Decisiones pedidas (4):** no repetir el art. 714 en A.3.1 y dejar
-V.5.A.1.5 como presentación; nuevo 2.3 "Casos discutidos de agregación";
-tres preguntas clásicas (mera tenencia, transmisión, agregación);
-material propio.
+**Decisiones de Laura (2026-11-27):** 1 ok (A.3.1 no repite el art.
+714, remite a V.5.A.1.5); 2 sí (nuevo 2.3); 3 las tres más "¿Muda la
+mera tenencia en posesión por el solo transcurso del tiempo?" (la primera
+quedó como "¿Qué es la mera tenencia y cuáles son sus características?"
+para no pisarse); 4 sin material propio.
+
+**Preocupación de Laura (2026-11-27): que no se resuma la materia.** Se
+midió: 11b pasó de 2.298 a 6.203 palabras y el 12 de 1.125 a 4.147
+(Boetsch, unas 2.400). **Regla desde el 13a:** cada concepto que pueda
+prestarse a duda lleva su ejemplo breve en cursiva, además de las cajas
+para casos de varios pasos. Laura: "los ejemplos son una muy buena forma
+de volver a explicar sin explicar directamente".
+
+Lo que se hizo: A.3 reescrito (remite al 714; VIAL: el reconocimiento
+está en el título; PEÑAILILLO: casos dudosos, contactos que no son
+tenencia, efectos dispersos arts. 896, 928, 1930, 2315); A.3.3 en
+escalera 3.1/3.2 (ids nuevos `cV-5-A-3-3-1` y `cV-5-A-3-3-2`) con art.
+716 en `.ley`; dos preguntas clásicas de mera tenencia; A.4.1 con art.
+717 en `.ley`, VIAL, SAVIGNY, PEÑAILILLO (derecho a poseer, códigos del
+siglo XX), las tres lecturas del 919 en (i)-(iii), SOMARRIVA y
+ALESSANDRI según la recopilación, art. 683 y 725; No confundir
+"Transmitir la posesión no es lo mismo que agregarla"; pregunta clásica
+de transmisión; A.4.2 con arts. 918 y 920 inc. 4º precisados, disociar
+con su fundamento, el ladrón no agrega, caja "La carreta de Chonchi";
+nuevo 2.3 "Casos discutidos de agregación" (id `cV-5-A-4-2-3`):
+disolución del título, reivindicante, petición de herencia, repudiación,
+art. 718; pregunta clásica de agregación; A.4.3 con 3.2 en a)/b),
+PESCIO y BOETSCH, SAVIGNY (Paulo) en el constituto, art. 2494
+precisado; Conexiones (Sucesorio, Contratos con `[FALTA: sección]`; AJ
+IV.B.4). Ejemplos breves: Leoncio (arrendatario), garzón e invitado,
+Melania (usufructuaria), Sinforoso y Ruperta (heredera), el bote de
+cuatro poseedores, Fidelina y Zenobia (lancha), Telésforo, Eulogia y
+Marcelino (nulidad), Eleodoro y Brígida (art. 730), Arsenio
+(constituto). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, paráfrasis 10 de 164 sobre 70% contra
+Boetsch (títulos, citas y frases cortas) y 6 contra Peñailillo, 4.027
+palabras (antes unas 1.400), capturas revisadas, vista previa
+actualizada. Respaldo en el tmp del job (`05_Bienes_antes_13a.html`).
 
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. **Laura decide las 4 preguntas del informe del tramo 13a.** Con sus
-   respuestas: respaldar el manual en el tmp del job y reescribir
-   V.5.A.3 y V.5.A.4 (ids `cV-5-A-3` a `cV-5-A-4-3-3`, se conservan).
+1. Tramo 13a aprobado. **Sigue el tramo 13b** (informe primero).
 2. Después, tramo 13b (A.5.1 a A.5.3, p. 214-218). Cotejar con
    PEÑAILILLO 2010 nº 184 a 188.
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
