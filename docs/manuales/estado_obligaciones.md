@@ -4,8 +4,8 @@
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
 > Última actualización: 2026-11-27 (tramos 1, 2 y 3a aprobados y
-> mergeados; informe del 3b entregado, esperando las decisiones de
-> Laura; nada redactado del 3b).
+> mergeados; 3b partido en 3b y 3c; 3b redactado en la rama
+> `obligaciones-tramo3b`, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -58,10 +58,9 @@
   (filtra cita por párrafo). Al medir de nuevo salieron 13 oraciones del
   tramo 1 y 22 del tramo 2 (13 frente a Boetsch, 9 frente a Vial) sobre
   70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
-- **Tramo 3b: informe entregado** (2026-11-27,
-  `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3b.html`), **sin
-  redactar**: se espera la respuesta de Laura. Ver "Tramo 3b" y
-  "Siguiente paso exacto".
+- **Tramo 3b: redactado** (2026-11-27), con las decisiones del informe
+  aprobadas por Laura. Falta que lo revise en la vista previa y lo
+  mergee. Ver "Tramo 3b" y "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -262,7 +261,8 @@ un tramo, actualizar también ahí.
 | 1 | 13-19 | I.A La obligación |  | ✅ |
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
 | 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 | ✅ |
-| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Vial (final del nº 69 y nº 70); Ramos Pazos; Abeliuk; apunte de eficacia |  |
+| 3b | 31-34 | II.A.4 Obligaciones naturales del art. 1470, número por número | Vial nº 70 (primer párrafo); apunte de eficacia (sin unidades nuevas) |  |
+| 3c | 34-36 | II.A.5-6 Desde cuándo es natural la obligación; efectos; conversión en civil | Vial (final del nº 69); Ramos Pazos; Abeliuk; apunte de eficacia p. 5-6 |  |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
 | 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
@@ -454,7 +454,7 @@ un tramo, actualizar también ahí.
   agrega al final del manual y regenera el índice. Vive en la carpeta
   temporal de la sesión: si se pierde, rehacerlo (está descrito aquí).
 
-## Tramo 3b (p. 31-34, II.A.4): informe entregado, sin redactar
+## Tramo 3b (p. 31-34, II.A.4): redactado, esperando revisión
 
 - **Propuesta de partir el 3b del reparto** (salió con unas 100
   unidades): **3b** = punto 4 de Boetsch, p. 31-34 (los cuatro números
@@ -478,6 +478,26 @@ un tramo, actualizar también ahí.
   autores en Nº 1 y Nº 2) solo con confirmación de Laura; 7 Preguntas
   clásicas (agrupar; otros incapaces; actos o contratos), el punto 4
   pasaría de dos recuadros; 8 material propio.
+- **Respuestas de Laura (2026-11-27):** 1 partir: sí (reparto
+  actualizado aquí y en Airtable, 70 tramos, registro nuevo
+  `rec8V2eesm9xIsM9t` para el 3c). 2 el "deber moral del acreedor" del
+  3a no lo encontró porque se escribió solo "un deber moral" (se le
+  explicó). 3 Vial nº 70: no hace falta buscar más. **Ramos Pazos es
+  resumen de una alumna sobre un texto:** en el 3c, una opinión
+  (quién sostiene qué) entra solo si también está en Boetsch; la
+  información extra o una buena explicación sí se puede usar. 4 el fallo
+  del corredor no lo tiene: se le dieron instrucciones para buscarlo
+  en vLex; queda `[FALTA: rol y fecha del fallo]`. Resto: aprobado.
+- **Redactado (2026-11-27):** punto 4 (`cII-A-4`, `cII-A-4-1`,
+  `cII-A-4-2`), con los tres cuadros, caja "La donación que la tía
+  Gloria no insinuó", 3 Preguntas clásicas y 2 Conexiones (AJ II.B.3.2,
+  IV.A.4, IV.B.4.2; Bienes V.5.B.1). Enlace a `#cII-A-5` (punto 5) que
+  queda roto hasta escribir el 3c. Controles: cobertura 85% 🟡 por un
+  solo falso aviso (el subtítulo "Rol de la sentencia judicial" está en
+  la p. 34 pero es del 3c; artículos 6/6, autores 9/9, densidad 148%);
+  39/39 unidades; paráfrasis 1/72 sobre 70% (la lista de los tres
+  incapaces relativos), tras reescribir 4; 0 guiones largos; párrafo
+  máximo bajo 650 tras partir la caja de ejemplo.
 - **Apunte de eficacia:** 0 unidades nuevas en 3a y 3b (copia a
   Boetsch). No entra su afirmación de que "de manera general" el Nº 1
   excluye al disipador por falta de juicio (no corroborada).
@@ -502,15 +522,16 @@ un tramo, actualizar también ahí.
 1. Rama `obligaciones-tramo3b` (ya creada desde `main`; las ramas
    `obligaciones-tramo1`, `formato-cuadro-rotulos`, `obligaciones-tramo2`
    y `obligaciones-tramo3a` están mergeadas y borradas).
-2. Tramo **3b**: el informe ya está entregado
-   (`DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3b.html`). **Esperar
-   la respuesta de Laura a sus 8 decisiones** y recién entonces redactar
-   el punto 4 (Boetsch p. 31-34) en `06_Obligaciones_Manual.html`, con
-   `insertar_tramo.py` (ver "Tramo 3a"), controles y vista previa. Si
-   aprueba partir, actualizar el reparto aquí y en Airtable, y el 3c
-   (p. 34-36) lleva su propio informe antes de redactar.
-3. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
+2. Tramo **3b**: redactado en `obligaciones-tramo3b`; esperar que Laura
+   lo revise en la vista previa y lo mergee. Al aprobarlo: marcar Hecho
+   en Airtable (`recXYWts6CURD0Uoe`).
+3. Tramo **3c** (Boetsch p. 34-36, puntos 5 y 6): **primero el informe**
+   (`Informe_Obligaciones_tramo3c.html`), con lo ya anotado arriba
+   (contradicción Boetsch/Vial sobre el pago del menor adulto, art. 2297,
+   art. 2034 italiano, preguntas clásicas, criterio de Laura para Ramos
+   Pazos). Al escribirlo, el punto 5 debe llevar `id="cII-A-5"`.
+4. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
    Airtable (lo hace Claude; Laura no tiene que tocarlo).
-4. `scripts/cobertura_tramo.py` sigue solo en la rama
+5. `scripts/cobertura_tramo.py` sigue solo en la rama
    `worktree-plan-lanzamiento` (commit `314038f`); se usa una copia con
    `git show 314038f:scripts/cobertura_tramo.py`.
