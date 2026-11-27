@@ -21,8 +21,8 @@ así que no depende del repo:**
   publican junto con el resto de Nulidad). **Nulidad · Detección de error
   completa: 30 preguntas** (tanda 1, 17, y tanda 2, 13), **aprobadas**.
   **Nulidad · Justificación completa: 27 preguntas** (tanda 1, 17,
-  aprobada; tanda 2, 10, cargada el 2026-11-27 y **esperando la revisión
-  por muestra de Laura**). Todo sin publicar: se publica con el tema
+  aprobada; tanda 2, 10, revisada por Laura el 2026-11-27, cambios
+  aplicados, **falta su visto bueno al informe de cambios**). Todo sin publicar: se publica con el tema
   completo.
 - **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
 - **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
@@ -36,7 +36,7 @@ así que no depende del repo:**
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) y **Justificación completa, 27** (tanda 1 aprobada, tanda 2 por revisar); todo sin publicar |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) y **Justificación completa, 27** (tanda 1 aprobada, tanda 2 revisada, cambios por confirmar); todo sin publicar |
 | V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 | VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
@@ -520,18 +520,24 @@ Airtable por su id, porque `--actualizar` reconoce los ítems por caso +
 enunciado. Ojo: correr `subir_eval.py` sin opciones reescribe
 `generado/filas_<lote>.json` con ids nuevos; antes de generar un informe
 de un lote ya cargado, correrlo con `--actualizar`.
-**Justificación, tanda 2: cargada el 2026-11-27, esperando revisión.**
+**Justificación, tanda 2: revisada por Laura y corregida (2026-11-27).**
 10 preguntas, `aj-just-021` a `030` (`lote_just2.py`), informe
-`DERECHO LIBRE/Informes/Informe_AJ_just2.html` con la lista "Qué
-revisar" (7 de 10). Con lo que Laura encuentre, pasada por toda la tanda
-e informe solo de cambios. Quedaron 10 y no 13: se sacaron la sanción del
+`DERECHO LIBRE/Informes/Informe_AJ_just2.html`. Laura las revisó todas;
+de sus tres dudas salieron dos criterios (los elementos deben calzar con
+lo que se pregunta, en ambos sentidos; ninguna repregunta cuya respuesta
+sea "nada" o sugiera una regla equivocada). La pasada cambió 4: 027 y 029
+(las suyas), 023 y 026; la 028 queda igual. Informe de cambios:
+`DERECHO LIBRE/Informes/Informe_AJ_cambios_just2.html`. **Falta su visto
+bueno**, sobre todo a la frase nueva de la respuesta modelo de 029 (la
+acción de nulidad nace con el acto aunque las obligaciones tengan plazo o
+condición), que es aclaración y no cita del manual. Quedaron 10 y no 13: se sacaron la sanción del
 error esencial (tema Error) y la de la lesión (tema Lesión), y no se
 preguntan los requisitos de la fuerza y del dolo (sus temas). Al llegar a
 esos temas, esas preguntas se hacen allá.
 
 **Orden de lo que sigue (acordado con Laura el 2026-11-27):**
-1. **Cerrar Justificación tanda 2:** con los hallazgos de Laura en la
-   muestra, pasada por las 10 e informe solo de cambios.
+1. **Cerrar Justificación tanda 2:** pasada hecha (2026-11-27); falta
+   que Laura apruebe el informe de cambios.
 2. **Discriminación MC de Nulidad:** hoy hay 0 de Nulidad (los
    `aj-mc-001` a `003` son del Cap. I). Tope de ~30 con la regla de
    cantidad, en dos tandas como los otros tipos (`lote_mc1.py` y
@@ -708,8 +714,9 @@ método más abajo.
 - **Tanda 6 (2026-11-27): Nulidad, Justificación, completa.** 10
   preguntas, `aj-just-021` a `030` (`lote_just2.py`), en Airtable sin
   publicar y en Revisar. Informe:
-  `DERECHO LIBRE/Informes/Informe_AJ_just2.html`. **Esperando la
-  revisión por muestra de Laura.** Primera tanda redactada con los
+  `DERECHO LIBRE/Informes/Informe_AJ_just2.html`. **Revisada por Laura y
+  corregida el 2026-11-27** (4 cambios, `Informe_AJ_cambios_just2.html`,
+  falta su visto bueno). Primera tanda redactada con los
   criterios del 2026-11-26. Prueba propia más estricta que en las tandas
   anteriores: la respuesta equivocada **usa el vocabulario del tema**
   (nombra los términos correctos con la regla equivocada); así
@@ -782,7 +789,13 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   exponía las tres posturas sin nombrar a ALESSANDRI ni a LEÓN HURTADO.
 - **No pedir lo que la pregunta ya da (Laura, 2026-11-26):** si el
   enunciado entrega el fundamento, los elementos piden solo lo que falta
-  (`aj-just-011`).
+  (`aj-just-011`). Y al revés: cada parte que el enunciado pregunta debe
+  tener su elemento, o la alumna que la contesta no recibe puntaje
+  (Laura, 2026-11-27: `aj-just-027`, `023` y `026`).
+- **Repreguntas sin trampa (Laura, 2026-11-27):** ninguna pista cuya
+  respuesta correcta sea "nada" o "no" dicha al revés ("¿Qué impide...?"),
+  ni que sugiera una regla equivocada; tampoco se agrega "nada" como
+  palabra clave, porque aprobaría respuestas erradas (`aj-just-029`).
 - **Revisión por muestra (Laura, 2026-11-26; proporción decidida el
   2026-11-27), con una regla que se ajusta sola:**
   - **3 de cada 5** preguntas (alrededor del 60%) cuando la tanda es de
