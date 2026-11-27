@@ -10,11 +10,10 @@
 
 ## Estado por capítulo
 
-**Dónde quedó (al 2026-10-10; hasta la tanda 1 de Detección de error
-está fusionado en `main` y en GitHub; la tanda 2 de Detección de error
-y la tanda 1 de Justificación están commiteadas en la rama
-`worktree-aj-ejemplos-error`, por fusionar. El contenido vive en
-Airtable, así que no depende del repo):**
+**Dónde quedó (al 2026-11-27). Lo último (revisión de Laura y pasada por
+toda Nulidad) está commiteado en la rama `worktree-aj-ejemplos-error`,
+por fusionar a `main` con GitHub Desktop. El contenido vive en Airtable,
+así que no depende del repo:**
 - **Flashcards:** 291, revisadas contra el manual y **publicadas** (2026-10-09).
 - **Evaluación:** en curso, tema por tema (orden de relevancia) y tipo por
   tipo. **Nulidad · Aplicación completa: 30 preguntas**, sin publicar
@@ -527,10 +526,15 @@ exámenes (T21.01, .06, .07, .09, .10, .11) y una más en diferencias
 elementos de la tanda 1. Candidatos que la tanda 1 no usó: conocimiento
 real y art. 1468 "a sabiendas"; herederos de quien contrató a sabiendas
 (dos posturas); representado; por qué "manifiesto" exige solo leer el
-instrumento; BARAONA y el art. 705; no opera de pleno derecho (y la
-postura contraria); causa sobreviniente y art. 1690; nulidad parcial y
-art. 1536 (estos dos últimos son de subtemas sin exámenes, ya cubiertos).
-Después, Discriminación MC de Nulidad. Detalle del método más abajo.
+instrumento; la caducidad que ven algunos autores y el art. 705 (sin
+exigir el nombre de BARAONA); no opera de pleno derecho (y la postura
+contraria); causa sobreviniente y art. 1690; nulidad parcial y art. 1536
+(estos dos últimos son de subtemas sin exámenes, ya cubiertos). Redactar
+desde el principio con los criterios de la revisión del 2026-11-26 (ver
+"Reglas y decisiones que no cambian") y entregar con la lista de las
+~8 preguntas que Laura debe revisar. Después, Discriminación MC de
+Nulidad, y con eso Nulidad queda lista para publicarse. Detalle del
+método más abajo.
 
 **Flashcards de AJ: terminadas, revisadas y publicadas (2026-10-09).**
 291 en Airtable y en la app (Supabase, `materia = acto_juridico`), los
@@ -744,11 +748,15 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
 - **No pedir lo que la pregunta ya da (Laura, 2026-11-26):** si el
   enunciado entrega el fundamento, los elementos piden solo lo que falta
   (`aj-just-011`).
-- **Revisión por muestra (Laura, 2026-11-26):** en cada informe se le
-  dice a Laura **exactamente qué preguntas revisar** (unas 5, de tipos y
-  dificultades distintas, con el motivo); con lo que encuentre se hace
-  una pasada sistemática por toda la tanda y se le entrega un informe
-  solo con los cambios.
+- **Revisión por muestra (Laura, 2026-11-26; proporción ajustada el
+  2026-11-27):** Laura revisa **3 de cada 5 preguntas** de cada tanda
+  (alrededor del 60%; en una tanda de 13, unas 8), y Claude elige
+  cuáles: de todos los tipos de caso y dificultad, priorizando las que
+  tocan puntos discutidos, figuras de otras materias, cálculos con fechas
+  y elementos con más riesgo de corrección estricta. En el informe va la
+  lista **"Qué revisar"** con el motivo de cada una. Con lo que encuentre
+  se hace una pasada sistemática por toda la tanda y se le entrega un
+  informe solo con los cambios (antes y después).
 - Cada ítem tiene su cita de respaldo del manual; los artículos citados
   aparecen en ese pasaje.
 
