@@ -532,7 +532,7 @@ contraria); causa sobreviniente y art. 1690; nulidad parcial y art. 1536
 (estos dos últimos son de subtemas sin exámenes, ya cubiertos). Redactar
 desde el principio con los criterios de la revisión del 2026-11-26 (ver
 "Reglas y decisiones que no cambian") y entregar con la lista de las
-~8 preguntas que Laura debe revisar. Después, Discriminación MC de
+~8 preguntas que Laura debe revisar (3 de cada 5, ver la regla de revisión). Después, Discriminación MC de
 Nulidad, y con eso Nulidad queda lista para publicarse. Detalle del
 método más abajo.
 
@@ -748,10 +748,18 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
 - **No pedir lo que la pregunta ya da (Laura, 2026-11-26):** si el
   enunciado entrega el fundamento, los elementos piden solo lo que falta
   (`aj-just-011`).
-- **Revisión por muestra (Laura, 2026-11-26; proporción ajustada el
-  2026-11-27):** Laura revisa **3 de cada 5 preguntas** de cada tanda
-  (alrededor del 60%; en una tanda de 13, unas 8), y Claude elige
-  cuáles: de todos los tipos de caso y dificultad, priorizando las que
+- **Revisión por muestra (Laura, 2026-11-26; proporción decidida el
+  2026-11-27), con una regla que se ajusta sola:**
+  - **3 de cada 5** preguntas (alrededor del 60%) cuando la tanda es de
+    un **tipo nuevo**, de un **tema nuevo** o la **primera con criterios
+    nuevos**.
+  - **Bajar a 1 de cada 3** (alrededor del 30%) cuando la tanda anterior
+    del mismo tipo y tema salió con **una corrección de fondo o menos**.
+  - **Volver a 3 de cada 5** si en una tanda aparece un problema nuevo.
+  - Próximas: Justificación tanda 2 (primera con los criterios del
+    2026-11-26) y Discriminación MC (tipo nuevo para Laura) van con 3 de
+    cada 5.
+  Claude elige cuáles: de todos los tipos de caso y dificultad, priorizando las que
   tocan puntos discutidos, figuras de otras materias, cálculos con fechas
   y elementos con más riesgo de corrección estricta. En el informe va la
   lista **"Qué revisar"** con el motivo de cada una. Con lo que encuentre
