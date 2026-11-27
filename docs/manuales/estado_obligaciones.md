@@ -498,6 +498,21 @@ un tramo, actualizar también ahí.
   39/39 unidades; paráfrasis 1/72 sobre 70% (la lista de los tres
   incapaces relativos), tras reescribir 4; 0 guiones largos; párrafo
   máximo bajo 650 tras partir la caja de ejemplo.
+- **Correcciones de Laura al revisar (2026-11-27):** (1) los `(i)` de
+  los números del art. 1470 iban subrayados igual que las `a)`: pasan a
+  `.enum-i` en negrita (clasificación), y las `a)` siguen subrayadas
+  (Laura eligió eso, no cambiar las `a)` a cursiva). (2) se agregó en el
+  punto 4 un párrafo que adelanta "desde cuándo" es natural (y por qué
+  importa: si se paga antes de la sentencia se paga una obligación civil)
+  y que el deudor no se defiende alegando obligación natural, sino
+  nulidad, prescripción o cosa juzgada; el desarrollo completo sigue
+  siendo del 3c. (3) "La prescripción no extingue el derecho" se
+  desarrolló en un recuadro fusionado No confundir | Pregunta clásica en
+  4.2 (i) (arts. 1567 Nº 10, 2492, 2493, 2494, 1470 Nº 2, 2296,
+  verificados; pregunta de Grado ACA "¿se extingue la obligación? No,
+  subsiste como natural"); la Conexión a Bienes se mantiene. Se agregó a
+  la hoja de estilos `.fusion .t-pc` y `.fusion .sep` (de `formato.md`).
+  El punto 4 queda con 5 recuadros grandes (Laura lo sabe).
 - **Apunte de eficacia:** 0 unidades nuevas en 3a y 3b (copia a
   Boetsch). No entra su afirmación de que "de manera general" el Nº 1
   excluye al disipador por falta de juicio (no corroborada).
