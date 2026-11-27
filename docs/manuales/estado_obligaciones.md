@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-10-10 (organización aprobada por Laura:
-> solapes, Orrego, reparto y nombre del manual decididos; ningún tramo
-> redactado todavía).
+> Última actualización: 2026-11-27 (tramo 1 escrito en la rama
+> `obligaciones-tramo1`, con las opciones recomendadas del informe;
+> esperando revisión de Laura en la vista previa).
 
 ## Resumen para retomar (léelo primero)
 
@@ -13,23 +13,32 @@
   `docs/manuales/proceso.md` (no `actualizar-manuales-existentes.md`),
   con todo lo de `lecciones-acto-juridico.md` aplicado desde el primer
   tramo (checklist único de su sección 6).
-- **Bienes va primero.** Obligaciones se organiza en paralelo
-  (decisión de Laura, 2026-10-10). No se redacta ningún tramo hasta que
-  Laura lo diga.
+- **Laura dio la partida el 2026-11-27** ("Empecemos a redactar el
+  manual de obligaciones"). Bienes sigue en paralelo (va en su tramo
+  13a). Orden de materias y cuota diaria: memoria
+  `lanzamiento-digesto-2027-01-26`.
 - **Hecho y aprobado (2026-10-10):** texto extraído, mapa completo de la
   fuente por página real, mapa de Orrego, anexos chicos asignados,
   solapes con otros manuales y reparto de 34 tramos. Informe:
   `DERECHO LIBRE/Informes/Informe_Obligaciones_organizacion.html`.
   Decisiones en "Decisiones tomadas con Laura", más abajo.
 - **Nombre del manual: `06_Obligaciones_Manual.html`** (confirmado por
-  Laura). **En `main` todavía no existe:** se crea al empezar el tramo 1
-  (la web, el build y `scripts/generar_pdf_manual.py` leen los manuales
-  de la raíz, así que no se deja un archivo vacío ahí).
+  Laura). **Creado el 2026-11-27 en la rama `obligaciones-tramo1`**
+  (worktree `.claude/worktrees/obligaciones-tramo1`), solo con portada,
+  índice vacío y la hoja de estilos de Bienes sin las clases antiguas
+  (h2.subinst, h6, div.h7, div.h8). En `main` no existe hasta que se
+  mergee con el tramo 1 escrito. No hay que conectarlo a nada todavía:
+  ni la app, ni Vercel, ni los arreglos `FUENTES` nombran a AJ o Bienes.
 - **Ojo, hay un borrador viejo** (ver "Borrador anterior", más abajo):
   no se actualiza, se escribe el tramo 1 de cero y el borrador solo se
   usa como referencia.
-- **Siguiente:** tramo 1, cuando Laura dé la partida. Ver "Siguiente
-  paso exacto".
+- **Tramo 1 (p. 13-19): escrito, esperando revisión de Laura** en
+  `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`. Laura
+  dijo "continúa" sin responder las 6 decisiones del informe: se
+  aplicó en todas la opción recomendada (ver "Tramo 1"). Cobertura
+  96% 🟢. Detalle en "Tramo 1", más abajo.
+- **Siguiente:** revisión de Laura; con su visto bueno, merge y tramo 2.
+  Ver "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -202,6 +211,7 @@ con la Conexión al cierre del punto (decisión 1).
 | S4 | Condición resolutoria y resolución; medio y resultado; imposibilidad | II.E.1.7 (105-116), II.F.2 (130), IV.H (215-223) | Contractual D (resolución, condición resolutoria tácita, pacto comisorio), B.3 (medio y resultado), C.6 (imposibilidad) |
 | S5 | Cesión de créditos | III.3.2, p. 135 | Bienes V.4.D.4 (tradición de derechos personales, arts. 1901 y siguientes) |
 | S6 | Formalidades por vía de prueba, limitación de la prueba de testigos | VI.8, p. 288-299 | AJ (formalidades: arts. 1701, 1708, 1709, 1711) |
+| S7 | Requisitos del objeto (art. 1461), imposibilidad, prenda general (hallado en el tramo 1, 2026-11-27) | I.A.5 y I.A.6.2, p. 16-19 | AJ II.C.2 y II.C.3 (objeto sobre cosa y sobre hecho); Contractual C.6 (imposibilidad) y G.1 (derecho de prenda general). Se desarrolla completo aquí, con Conexión (misma regla de la decisión 1) |
 
 ## Reparto de tramos (aprobado por Laura 2026-10-10)
 
@@ -248,23 +258,77 @@ decisión de solape.
 | 33 | 288-296 | VI Prueba instrumental (públicos y privados) | | S6 |
 | 34 | 296-305 | VI Testigos, inspección, peritos, confesión, presunciones | | S6 |
 
-## Siguiente paso exacto (2026-10-10, vigente)
+## Tramo 1 (p. 13-19, I.A La obligación): escrito, esperando revisión
 
-Organización cerrada. Lo que sigue, **cuando Laura dé la partida**
-(Bienes va primero; en paralelo solo si ella lo pide):
+- **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`
+  (2026-11-27). Inventario de 44 unidades; ninguna se descarta.
+- **Escrito el 2026-11-27** (Laura: "continúa", sin responder las
+  decisiones). Se aplicó la opción recomendada en las 6: sin material
+  propio; línea con el art. 1461 inc. 3º transcrito; Ley 21.442 art. 6º
+  resumido **con** el derecho a repetir contra el antecesor; cuadro con
+  los rótulos "En cuanto a..."; Preguntas clásicas en los puntos 2, 3 y
+  5; Conexiones al cierre de los puntos 4, 5 y 6. Si Laura cambia
+  alguna, se corrige sobre lo escrito. Chequeos: cobertura 96% 🟢
+  (STITCHKIN, falso aviso: es de I.B en la p. 19); 44/44 unidades;
+  paráfrasis 0 de 25 oraciones sobre 70%; 0 guiones largos; párrafo
+  máximo 609 caracteres. A las Preguntas clásicas se les agregaron los
+  signos "¿?" y la tilde; el resto es literal. Pendiente de mirar con
+  Laura: la columna "Criterio" del cuadro deja los rótulos en tres
+  líneas.
+- **Las 6 decisiones del informe** (numeradas como en él):
+  1. ¿Material propio sobre I.A?
+  2. "Física y jurídicamente posible" (Boetsch) frente a "física y
+     moralmente posible" (art. 1461 inc. 3º): propuesta, mantener las
+     tres características de Boetsch y agregar una línea con el texto
+     del Código.
+  3. Gastos comunes: decir "copropiedad inmobiliaria" y citar resumido
+     el art. 6º inc. 2º de la Ley 21.442 (verificado); y si se agrega el
+     derecho a repetir contra el antecesor, que Boetsch no trae.
+  4. Paralelo a) a g) en cuadro comparativo, con los rótulos "En cuanto
+     a..." del borrador viejo (lo único que se rescata de él).
+  5. Preguntas clásicas: recomendadas las diferencias entre derechos
+     reales y personales (punto 3), prenda general (punto 5) y por qué
+     se oponen derecho personal y obligación (punto 2).
+  6. Conexiones: una sola caja al cierre del punto 4 (Bienes II.A.4.1 a
+     4.3), una en el 5 (Contractual G.1) y una en el 6 (AJ II.C.2 y
+     II.C.3; Contractual C.6).
+- **Ya resuelto en el informe (no volver a discutir):** art. 565 se
+  transcribe con el texto vigente ("corporales o incorporales"; Boetsch
+  dice "e"); art. 1698 solo inc. 1º; art. 1618 solo mencionado; Código
+  italiano art. 1174 como cita textual de Boetsch, sin bloque de ley; a
+  VIAL se le atribuye solo el término "relación de obligación"; la
+  definición tradicional va con la fórmula fija sin autor; la de FUEYO,
+  textual en `.definicion`; se sacan "Como se sabe" (6.2) y "como se
+  analizará en detalle al estudiar la prueba" (7); sin `A.1`; la Pausa
+  del capítulo I va en el tramo 2. No se importan a este manual las
+  tres filas extra del paralelo de Bienes (fuentes, duración,
+  posesión y prescripción). Se mantiene *jure in re* / *jure ad rem*
+  de la fuente (Bienes dice *ius in re*).
+- **Ejemplos propuestos (propios):** caja "El depa con deuda incluida"
+  (propter rem, gastos comunes, 6.1); en el texto, la mochila de
+  Sebastián y la recompensa (art. 632, 6.1), correr a Valparaíso en
+  diez minutos frente al retrato al óleo (imposibilidad absoluta y
+  relativa), los sacos de cemento de Pancho (determinable, art. 1461
+  inc. 2º); caja "El mural de la abuela" (reemplaza el del pintor,
+  6.2 iii). No confundir "¿Derecho de prenda general o derecho real de
+  prenda?" (punto 5).
+- **Banco de preguntas:** no hay archivo de Obligaciones. El texto de
+  los .pages y .numbers de `Apuntes/CIVIL/PREGUNTAS /` no estaba
+  extraído; se sacó con un script de una sola vez (lee los `.iwa`
+  descomprimiendo Snappy). Si hace falta de nuevo, rehacerlo así o
+  pedirle a Laura que exporte a PDF.
 
-1. Leer `lecciones-acto-juridico.md` completo (sobre todo la sección
-   6), `proceso.md`, `guia-editorial.md` y `formato.md`.
-2. En una rama nueva desde `main` (no la del borrador viejo), crear
-   `06_Obligaciones_Manual.html` en la raíz del repo con la hoja de
-   estilos vigente de AJ/Bienes (`formato.md`), y revisar qué hay
-   que tocar para que la web, el build y `scripts/generar_pdf_manual.py`
-   lo reconozcan (arreglo `FUENTES`).
-3. Tramo 1 (p. 13-19, I.A La obligación): preguntar a Laura si tiene
-   material extra, inventario desde
-   `Apuntes/CIVIL/Obligaciones/_texto_extraido/Obligaciones1_principal.txt`,
-   informe en `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo1.html`
-   y aprobación de Laura antes de escribir en el manual. Conexión de
-   I.A.1-4 hacia Bienes II.A.4.2-4.3 (S3). El informe incluye la lista
-   de lo que trae el borrador viejo y no está en Boetsch (ver "Borrador
-   anterior").
+## Siguiente paso exacto (2026-11-27, vigente)
+
+1. Hecho: I.A escrito en `06_Obligaciones_Manual.html` (rama
+   `obligaciones-tramo1`), índice con `toc-lista`.
+2. Hecho: chequeos. Ojo: `scripts/cobertura_tramo.py` **solo está en la
+   rama `worktree-plan-lanzamiento`** (commit `314038f`, sin mergear);
+   se usó una copia sacada con `git show 314038f:scripts/cobertura_tramo.py`.
+3. Pendiente: revisión de Laura en la vista previa en `DERECHO LIBRE/Vista_previa/Obligaciones_vista_previa.html`
+   para que Laura la revise; con su aprobación, merge a `main`, borrar
+   la rama y marcar el tramo como Hecho en el mapa de metas de Airtable.
+4. Tramo 2 (p. 19-27, I.B Fuentes, más el anexo de Vial sobre fuentes).
+   Ojo: Boetsch transcribe el art. 1437 con el texto anterior a la Ley
+   19.585; usar el vigente ("padres y los hijos sujetos a patria
+   potestad"). Cierra el capítulo I: lleva la Pausa.
