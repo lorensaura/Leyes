@@ -88,7 +88,7 @@ ITEMS = [
   respaldo=['IV.B.2.2', 'IV.A.4']),
 
  dict(sub='T21.06',
-  caso='Un alumno escribe: "Si alguien enajena un inmueble embargado sin autorización del juez ni consentimiento del acreedor, hay objeto ilícito (art. 1464 Nº 3). Pero como el embargo está pensado en beneficio del acreedor, la sanción es la nulidad relativa; y si el acreedor da su consentimiento un mes después de la enajenación, el vicio queda saneado."',
+  caso='Un alumno escribe: "Si alguien enajena un inmueble embargado (afectado por el tribunal al pago de una deuda) sin autorización del juez ni consentimiento del acreedor, hay objeto ilícito (art. 1464 Nº 3). Pero como el embargo está pensado en beneficio del acreedor, la sanción es la nulidad relativa; y si el acreedor da su consentimiento un mes después de la enajenación, el vicio queda saneado."',
   enunciado=ENUN,
   respuesta='Hay dos errores.\n\nPrimero, el objeto ilícito es causal de nulidad absoluta (art. 1682), y la enajenación de una cosa embargada sin autorización del juez ni consentimiento del acreedor tiene objeto ilícito. Que el embargo esté establecido en beneficio del acreedor explica que él pueda consentir en la enajenación, pero no cambia la sanción que la ley fija.\n\nSegundo, la autorización y el consentimiento tienen que ser anteriores a la enajenación. Darlos después sería sanear una nulidad absoluta por ratificación, y eso no cabe (art. 1683).',
   elementos=[
@@ -144,15 +144,15 @@ ITEMS = [
 
  # T21.08 Nulidad absoluta: saneamiento y no opera de pleno derecho (9 exámenes)
  dict(sub='T21.08',
-  caso='Un alumno escribe: "Al cumplirse diez años, la nulidad absoluta se sanea en el sentido literal: el acto que nació viciado se vuelve válido, y en eso no hay discrepancia. Por otra parte, quien adquirió una cosa por un título nulo nunca podrá ganarla por prescripción adquisitiva, porque un título nulo es siempre injusto."',
+  caso='Un alumno escribe: "Al cumplirse diez años, la nulidad absoluta se sanea en el sentido literal: el acto que nació viciado se vuelve válido, y en eso no hay discrepancia. Por otra parte, quien adquirió una cosa por un título nulo nunca podrá ganarla por prescripción adquisitiva (adquirir el dominio por haber poseído la cosa durante cierto tiempo), porque un título nulo es siempre injusto."',
   enunciado=ENUN,
-  respuesta='Hay dos errores.\n\nPrimero, hay quienes dudan de que el art. 1683, pese a sus propias palabras, consagre un verdadero saneamiento: dogmáticamente, el simple paso del tiempo no puede convertir en válido lo que nunca lo fue. BARAONA sostiene que se trata de una caducidad de derechos respecto de quienes podían impugnar el acto: el juez, las partes, los terceros interesados y el ministerio público.\n\nSegundo, el efecto de esos diez años es precisamente consolidar los desplazamientos patrimoniales: al no ser impugnado durante ese tiempo, el acto pasa de título injusto a título justo, y permite que opere la prescripción adquisitiva. Por eso el art. 705 habla de la validación del título "por otro medio legal", que en este caso es el transcurso del tiempo del art. 1683.',
+  respuesta='Hay dos errores.\n\nPrimero, hay quienes dudan de que el art. 1683, pese a sus propias palabras, consagre un verdadero saneamiento: dogmáticamente, el simple paso del tiempo no puede convertir en válido lo que nunca lo fue. Algunos autores sostienen que se trata de una caducidad de derechos respecto de quienes podían impugnar el acto: el juez, las partes, los terceros interesados y el ministerio público.\n\nSegundo, el efecto de esos diez años es precisamente consolidar los desplazamientos patrimoniales: al no ser impugnado durante ese tiempo, el acto pasa de título injusto a título justo, y permite que opere la prescripción adquisitiva. Por eso el art. 705 habla de la validación del título "por otro medio legal", que en este caso es el transcurso del tiempo del art. 1683.',
   elementos=[
    ('Se discute que sea un verdadero saneamiento: el paso del tiempo no convierte en válido lo que nunca lo fue',
     ['verdadero saneamiento', 'no convierte en valido', 'hay quienes dudan', 'se discute', 'nunca lo fue'],
     '¿Hay acuerdo en que el tiempo realmente cure el vicio?'),
-   ('Para BARAONA es una caducidad de los derechos de quienes podían impugnar el acto',
-    ['caducidad', 'baraona', 'caducan los derechos', 'pierden el derecho a impugnar', 'caduca la accion'],
+   ('Para algunos autores es una caducidad de los derechos de quienes podían impugnar el acto',
+    ['caducidad', 'caducan los derechos', 'pierden el derecho a impugnar', 'caduca la accion', 'ya no pueden impugnar'],
     '¿Qué explicación alternativa da un sector de la doctrina a lo que ocurre a los diez años?'),
    ('El título pasa de injusto a justo y permite la prescripción adquisitiva (art. 705)',
     ['pasa a justo', 'titulo justo', 'se valida el titulo', '705', 'otro medio legal'],
@@ -262,7 +262,7 @@ INFORME = dict(
   ('Diferencias (IV.B.1.6)', 'Plazos de saneamiento de cada especie y de quién emana la ratificación del acto rescindible.'),
   ('Causales de la absoluta (IV.B.2.2)', 'Las cuatro del art. 1682 frente a las cinco que agregan quienes rechazan la inexistencia; la enajenación de cosa embargada.'),
   ('Quién la declara o pide (IV.B.2.4)', 'El ministerio público del art. 350 COT, el juicio que supone la declaración de oficio y los herederos de quien contrató a sabiendas.'),
-  ('Saneamiento de la absoluta (IV.B.2.6)', 'Saneamiento discutido, la caducidad de BARAONA y el título que se valida (art. 705).'),
+  ('Saneamiento de la absoluta (IV.B.2.6)', 'Saneamiento discutido, la caducidad que ven algunos autores y el título que se valida (art. 705).'),
   ('Causales de la relativa (IV.B.3.2)', 'Lesión solo en los casos legales, fuerza de un tercero (art. 1457) y error en la persona (art. 1455).'),
   ('Titulares de la relativa (IV.B.3.4)', 'El autor del vicio no puede alegarla; el cesionario sí.'),
   ('Saneamiento de la relativa (IV.B.3.5)', 'Cómputo en el dolo y en la incapacidad, leyes especiales y efecto del plazo vencido.'),
@@ -275,7 +275,7 @@ INFORME = dict(
   ('Cosa embargada: nulidad absoluta y consentimiento previo', 'Regla aplicada'),
   ('Ministerio público del art. 350 COT; juicio para declarar de oficio', 'Requisitos'),
   ('Herederos de quien contrató a sabiendas', 'Controversia'),
-  ('Saneamiento discutido; BARAONA; art. 705', 'Controversia y efecto'),
+  ('Saneamiento discutido; caducidad; art. 705', 'Controversia y efecto'),
   ('Lesión; fuerza de un tercero frente al dolo de un tercero', 'Requisitos de las causales'),
   ('Error en la persona e indemnización (art. 1455)', 'Regla y excepción'),
   ('El autor del dolo no puede alegarla; el cesionario sí', 'Regla general'),
@@ -285,7 +285,7 @@ INFORME = dict(
  avisos=[
   '<b>Segunda y última tanda:</b> con estas 13, Nulidad queda en 30 preguntas de Detección de error. Cuatro en cinco de los seis subtemas importantes, y <b>3 en "quiénes pueden alegar la nulidad relativa"</b>: una cuarta repetiría lo de la tanda 1 (herederos y art. 1685), igual que pasó en Aplicación. Dos en diferencias y en saneamiento de la absoluta, y una en los tres subtemas sin exámenes.',
   '<b>Prueba propia de este tipo:</b> como en la tanda 1, cada pregunta se probó con una respuesta correcta en palabras propias (debe aprobar) y con el párrafo equivocado del alumno copiado como respuesta (no debe obtener ningún elemento).',
-  '<b>Puntos discutidos, presentados como tales:</b> las causales que agregan quienes rechazan la inexistencia (aj-det-024), los herederos de quien contrató a sabiendas (027, con las dos posturas, porque el manual no dice cuál se impone) y el saneamiento por diez años (028, con la lectura de BARAONA).',
+  '<b>Puntos discutidos, presentados como tales:</b> las causales que agregan quienes rechazan la inexistencia (aj-det-024), los herederos de quien contrató a sabiendas (027, con las dos posturas, porque el manual no dice cuál se impone) y el saneamiento por diez años (028, con la lectura que ve una caducidad, sin exigir el nombre del autor).',
   '<b>Cosa embargada (025):</b> el caso ataca la enajenación, no la compraventa, porque la validez de la compraventa de cosa embargada es discutida (tesis de VELASCO, II.C.4.3). La corrección dice que el embargo sí está en beneficio del acreedor, como dice el manual: eso explica que pueda consentir, pero no cambia la sanción.',
   '<b>Fuera del tema, para que la pregunta se entienda:</b> 029 (fuerza de un tercero, art. 1457, y dolo de un tercero, art. 1458) y 030 (error en la persona, art. 1455) usan pasajes del capítulo de vicios del consentimiento, porque el subtema las nombra como causales de nulidad relativa.',
  ],

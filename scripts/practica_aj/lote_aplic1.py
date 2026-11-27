@@ -14,7 +14,7 @@ PREFIJO = 'aj-aplic'
 ITEMS = [
  # T21.01 Reglas, concepto general y especies de nulidad (15 exámenes: 2 preguntas)
  dict(sub='T21.01',
-  caso='Constructora Los Aromos SpA y Áridos del Maipo Ltda. celebran un contrato de suministro de áridos, que para ambas es un acto de comercio. En una de sus cláusulas pactan: "Este contrato no quedará sujeto a las normas del Código Civil sobre nulidad; cualquier defecto en su celebración solo dará derecho a una rebaja del precio". Un año después, Áridos del Maipo demanda la nulidad del contrato. Constructora Los Aromos se defiende con dos argumentos: (1) las reglas del Código Civil sobre nulidad no se aplican a un contrato mercantil; y (2) en cualquier caso, las partes las excluyeron de común acuerdo.',
+  caso='Constructora Los Aromos SpA y Áridos del Maipo Ltda. celebran un contrato de suministro de áridos, por el que la segunda se obliga a entregarle a la primera, periódicamente, arena y piedras para sus obras; para ambas es un acto de comercio. En una de sus cláusulas pactan: "Este contrato no quedará sujeto a las normas del Código Civil sobre nulidad; cualquier defecto en su celebración solo dará derecho a una rebaja del precio". Un año después, Áridos del Maipo demanda la nulidad del contrato. Constructora Los Aromos se defiende con dos argumentos: (1) las reglas del Código Civil sobre nulidad no se aplican a un contrato mercantil; y (2) en cualquier caso, las partes las excluyeron de común acuerdo.',
   enunciado='¿Son correctos los dos argumentos de Constructora Los Aromos? Fundamente cada uno.',
   respuesta='Ninguno es correcto.\n\n(1) Las reglas generales de la nulidad (arts. 1681 a 1697) tienen alcance general: rigen para cualquier acto jurídico y se aplican también en las demás ramas del derecho privado, como el derecho comercial, si no hay una norma especial en contrario. Solo no se extienden al derecho público, que tiene reglas propias. Que el suministro sea mercantil no lo saca de ellas.\n\n(2) Esas reglas son de orden público: son de aplicación estricta y las partes no pueden derogarlas. Además, la nulidad no puede renunciarse anticipadamente: según el art. 1469, los actos que la ley declara inválidos no dejan de serlo por las cláusulas en que se renuncie la acción de nulidad. La cláusula no impide, entonces, que se alegue la nulidad.',
   elementos=[
@@ -22,7 +22,7 @@ ITEMS = [
     ['demas ramas del derecho privado', 'se aplican al derecho comercial', 'tambien rigen para contratos mercantiles', 'alcance general', 'cualquier acto juridico', 'tambien al derecho privado'],
     '¿Hasta dónde llegan las reglas del Código Civil sobre nulidad: solo a los actos civiles, o a todo el derecho privado?'),
    ('Las reglas de la nulidad son de orden público: las partes no pueden derogarlas',
-    ['orden publico', 'no pueden derogarlas', 'no pueden excluirlas', 'aplicacion estricta', 'no se pueden derogar'],
+    ['orden publico', 'no pueden derogarlas', 'no pueden excluirlas', 'aplicacion estricta', 'no se pueden derogar', 'normas imperativas'],
     '¿Pueden las partes, de común acuerdo, dejar sin aplicación las reglas de la nulidad?'),
    ('La nulidad no puede renunciarse anticipadamente (art. 1469)',
     ['1469', 'renuncie la accion de nulidad', 'renunciar anticipadamente', 'renuncia anticipada', 'no dejan de ser invalidos', 'no se puede renunciar a la nulidad'],
@@ -37,10 +37,10 @@ ITEMS = [
   respuesta='No es correcto. La distinción entre nulidad absoluta y relativa no mide cuán grave es la ineficacia: la relativa no deja al acto "medio nulo". Una vez declaradas judicialmente, las dos producen exactamente los mismos efectos: vuelven a las partes al estado anterior a la celebración del acto nulo. Por eso, en ambos juicios, las partes deben quedar como estaban antes de contratar.\n\nLo que distingue a una especie de la otra es la razón por la que se exige el requisito omitido (art. 1681): hay nulidad absoluta cuando el requisito se exige en consideración a la naturaleza o especie del acto, y nulidad relativa cuando se exige en atención a la calidad o estado de las partes que lo celebran. Por eso el vicio de la absoluta es objetivo, y el de la relativa, subjetivo. Las diferencias entre ambas están en las causales, en quién puede pedir cada una y en el plazo en que se sanean, no en sus efectos.',
   elementos=[
    ('Declaradas, ambas nulidades producen los mismos efectos: la distinción no mide la gravedad',
-    ['mismos efectos', 'no mide la gravedad', 'no es menos grave', 'producen los mismos efectos', 'no hay diferencia en los efectos', 'medio nulo'],
+    ['mismos efectos', 'efectos identicos', 'no mide la gravedad', 'no es menos grave', 'no hay diferencia en los efectos', 'medio nulo'],
     'Una vez declarada por el juez, ¿produce la nulidad relativa efectos distintos de la absoluta?'),
    ('Las partes vuelven al estado anterior a la celebración del acto, también Esteban y Gloria',
-    ['estado anterior', 'como estaban antes', 'tambien deben restituir', 'restituirse', 'antes de contratar'],
+    ['estado anterior', 'como estaban antes', 'tambien deben restituir', 'restituirse', 'antes de contratar', 'restituciones mutuas'],
     '¿En qué situación deben quedar Esteban y Gloria después de la sentencia?'),
    ('La especie depende de por qué se exige el requisito: naturaleza o especie del acto (absoluta) o calidad o estado de las partes (relativa)',
     ['naturaleza o especie del acto', 'calidad o estado de las partes', 'naturaleza del acto', 'calidad de las partes', '1681'],
@@ -94,10 +94,10 @@ ITEMS = [
   respuesta='La demanda de la curadora no prospera. El vicio tiene que existir al momento mismo en que el acto se celebra: no hay nulidad por causa sobreviniente. En marzo de 2023 Hernán era capaz, de modo que la venta nació válida, y la interdicción posterior no puede volverla nula.\n\nFelipe tampoco puede aprovechar la sentencia de Lorena. La nulidad solo aprovecha a quien la obtiene: cuando dos o más personas han contratado con un tercero, la nulidad declarada a favor de una de ellas no aprovecha a las otras (art. 1690). Si Felipe quisiera la nulidad, tendría que obtener su propia declaración judicial.',
   elementos=[
    ('El vicio debe existir al celebrarse el acto; no hay nulidad por causa sobreviniente',
-    ['causa sobreviniente', 'al momento de celebrarse', 'al celebrarse el acto', 'nacio valido', 'al momento de la celebracion', 'vicio posterior'],
+    ['causa sobreviniente', 'al momento de celebrarse', 'al celebrarse el acto', 'nacio valido', 'interdiccion posterior no afecta', 'vicio posterior'],
     '¿En qué momento debe existir el vicio para que el acto sea nulo?'),
    ('La nulidad solo aprovecha a quien la obtiene (art. 1690)',
-    ['1690', 'solo aprovecha a quien la obtiene', 'no aprovecha a las otras', 'no aprovechara a las otras', 'no le aprovecha', 'no lo beneficia'],
+    ['1690', 'solo aprovecha a quien la obtiene', 'no aprovecha a las otras', 'solo beneficia al que la obtuvo', 'no le aprovecha', 'no lo beneficia'],
     'Si dos personas contrataron con un tercero, ¿a quién beneficia la nulidad declarada a favor de una de ellas?'),
    ('Felipe debe obtener su propia declaración judicial',
     ['su propia declaracion', 'propia sentencia', 'litigar el mismo', 'demandar el mismo', 'pedirla por su cuenta'],
@@ -120,7 +120,7 @@ ITEMS = [
     '¿Arrastra la nulidad de uno de los actos a los demás que constan en la misma escritura?'),
    ('El criterio es si la escritura es la forma exigida para el acto o solo el documento donde consta',
     ['solo el documento', 'no es la forma exigida', 'forma y contenido', 'mismo documento', 'solo consta en la escritura'],
-    '¿Qué papel cumple la escritura respecto del préstamo: es su forma exigida o solo el papel donde quedó escrito?')],
+    '¿Qué papel cumple la escritura respecto del préstamo?')],
   articulos='1801 inc. 2°',
   objetivo='Evaluar si el alumno distingue la nulidad refleja de un acto solemne por vicio de su forma de la situación de actos independientes que solo comparten un mismo instrumento.',
   respaldo=['IV.B.1.9', 'II.E.2']),
@@ -164,7 +164,7 @@ ITEMS = [
 
  # T21.07 Nulidad absoluta: quién la declara o pide (14 exámenes: 2 preguntas)
  dict(sub='T21.07',
-  caso='Bruno le vende a Ana un departamento que estaba embargado por decreto judicial en un juicio que le seguía su acreedor Carlos, y sin esperar a que se alce el embargo, sin autorización del juez ni consentimiento de Carlos, le hace la tradición. Enterados de esa enajenación, tres personas quieren que se declare su nulidad absoluta: (1) Carlos, el acreedor embargante, que ve frustrada la posibilidad de cobrarse con el departamento; (2) Daniela, una vecina sin ningún interés patrimonial en el asunto, que considera inmoral lo que hizo Bruno; y (3) el fiscal judicial de la Corte de Apelaciones respectiva.',
+  caso='Bruno le vende a Ana un departamento que estaba embargado por decreto judicial en un juicio que le seguía su acreedor Carlos (el embargo es la medida con que el tribunal deja un bien del deudor afecto al pago de la deuda). Sin esperar a que se alce el embargo, sin autorización del juez ni consentimiento de Carlos, le hace la tradición, es decir, le transfiere el dominio del departamento. Enterados de esa enajenación, tres personas quieren que se declare su nulidad absoluta: (1) Carlos, el acreedor embargante, que ve frustrada la posibilidad de cobrarse con el departamento; (2) Daniela, una vecina sin ningún interés patrimonial en el asunto, que considera inmoral lo que hizo Bruno; y (3) el fiscal judicial de la Corte de Apelaciones respectiva.',
   enunciado='¿Puede cada una de estas tres personas pedir la nulidad absoluta de la enajenación? Fundamente.',
   respuesta='Hay objeto ilícito en la enajenación de las cosas embargadas por decreto judicial, a menos que el juez lo autorice o el acreedor consienta en ello (art. 1464 Nº 3). La tradición que Bruno le hizo a Ana es una enajenación hecha sin esa autorización ni ese consentimiento, y es absolutamente nula (art. 1682). (Si la compraventa misma tiene objeto ilícito es un punto discutido; aquí se ataca la tradición, que no lo es.)\n\n(1) Carlos, sí. La nulidad absoluta puede alegarse "por todo el que tenga interés en ello" (art. 1683), fórmula que habilita tanto a las partes como a terceros. Debe acreditar un interés real, de carácter pecuniario, como el de Carlos, que se ve perjudicado por el acto viciado.\n\n(2) Daniela, no. Su interés es puramente moral, y ese interés no basta: está reservado a la intervención del ministerio público.\n\n(3) El fiscal judicial, sí. El art. 1683 permite que el ministerio público pida la declaración de nulidad absoluta en el interés de la moral o de la ley. Se trata del organismo auxiliar de la administración de justicia del art. 350 COT, integrado por el fiscal de la Corte Suprema y los fiscales de las Cortes de Apelaciones, no del que actúa en el proceso penal.',
   elementos=[
@@ -182,7 +182,7 @@ ITEMS = [
   respaldo=['IV.B.2.4', 'II.C.4']),
 
  dict(sub='T21.07',
-  caso='Joaquín, abogado, le compra a su amigo Rodrigo, por $20.000.000, "todos los derechos que le corresponderán a Rodrigo en la herencia de su madre", que está viva. Joaquín sabía perfectamente que ese contrato estaba prohibido por la ley. Un año después, arrepentido del precio, Joaquín demanda la nulidad absoluta para recuperar su dinero.\n\nEn otro asunto, Teresa le encarga a su mandatario Luis que le compre un auto; Luis se lo compra a un tercero y recibe para ella la tradición del auto, sabiendo que estaba embargado por decreto judicial y que ni el juez lo había autorizado ni el acreedor había consentido; Teresa no lo sabía ni tenía cómo saberlo. Al enterarse, Teresa demanda la nulidad absoluta de esa enajenación.',
+  caso='Joaquín, abogado, le compra a su amigo Rodrigo, por $20.000.000, "todos los derechos que le corresponderán a Rodrigo en la herencia de su madre", que está viva. Joaquín sabía perfectamente que ese contrato estaba prohibido por la ley. Un año después, arrepentido del precio, Joaquín demanda la nulidad absoluta para recuperar su dinero.\n\nEn otro asunto, Teresa le encarga a su mandatario Luis (a quien ella encargó actuar en su nombre) que le compre un auto; Luis se lo compra a un tercero y recibe para ella la tradición del auto, es decir, la transferencia de su dominio, sabiendo que estaba embargado por decreto judicial y que ni el juez lo había autorizado ni el acreedor había consentido; Teresa no lo sabía ni tenía cómo saberlo. Al enterarse, Teresa demanda la nulidad absoluta de esa enajenación.',
   enunciado='¿Puede Joaquín alegar la nulidad absoluta? ¿Y Teresa? Fundamente.',
   respuesta='Ambos contratos tienen objeto ilícito: el derecho de suceder por causa de muerte a una persona viva no puede ser objeto de un contrato (art. 1463), y hay objeto ilícito en la enajenación de las cosas embargadas por decreto judicial sin autorización del juez ni consentimiento del acreedor (art. 1464 Nº 3), como la tradición del auto.\n\nJoaquín no puede. El art. 1683 excluye de los titulares de la acción al que celebró el contrato "sabiendo o debiendo saber el vicio que lo invalidaba". Ese conocimiento debe ser real y efectivo, no el conocimiento presunto de la ley del art. 8°; y Joaquín tenía ese conocimiento real. La razón de fondo es que nadie puede sacar provecho de su propia mala fe (nemo auditur propriam suam turpitudinem allegans).\n\nTeresa sí puede, según la posición que hoy se impone. La prohibición alcanza a quien intervino directamente en el acto, no a quien actuó representado, salvo que se acredite de modo inequívoco que su propia voluntad concurrió en el vicio. El dolo es una determinación personalísima de la voluntad, y el representante solo está autorizado para ejecutar actos lícitos. Los tribunales, con todo, han fallado en ambos sentidos: la postura contraria sostiene que lo hecho por el representante se estima hecho por el representado (art. 1448).',
   elementos=[
@@ -247,7 +247,7 @@ ITEMS = [
   respaldo=['IV.B.3.2', 'II.A.5', 'II.A.6']),
 
  dict(sub='T21.09',
-  caso='Don Ernesto es tutor de su sobrina Josefa, de diez años, que heredó de sus padres una casa en La Serena. Para costear sus estudios, Ernesto vende la casa a un matrimonio por escritura pública, cumpliendo todos los requisitos de la compraventa de inmuebles, pero sin pedir autorización judicial. El matrimonio, que compró de buena fe, sostiene que la venta es plenamente válida porque se otorgó por escritura pública. Un abogado consultado por Josefa, en cambio, afirma que la venta es absolutamente nula, porque se omitió una formalidad legal.',
+  caso='Don Ernesto es tutor de su sobrina Josefa, de diez años: es su representante legal, porque Josefa perdió a sus padres, de quienes heredó una casa en La Serena. Para costear sus estudios, Ernesto vende la casa a un matrimonio por escritura pública, cumpliendo todos los requisitos de la compraventa de inmuebles, pero sin pedir autorización judicial. El matrimonio, que compró de buena fe, sostiene que la venta es plenamente válida porque se otorgó por escritura pública. Un abogado consultado por Josefa, en cambio, afirma que la venta es absolutamente nula, porque se omitió una formalidad legal.',
   enunciado='¿Quién tiene razón? Determine si la venta es válida y, si no lo es, qué especie de nulidad la afecta y por qué.',
   respuesta='Ninguno de los dos tiene toda la razón. La venta no es plenamente válida: para enajenar los bienes de su pupila, el tutor necesita autorización judicial previa. Esa exigencia es una formalidad habilitante, porque se exige en consideración al estado o calidad de la persona, Josefa, y no a la naturaleza del acto. La escritura pública no la suple, porque es otra formalidad, la que corresponde a la naturaleza de la compraventa de inmuebles.\n\nPero tampoco es absolutamente nula. La omisión de una formalidad habilitante, exigida en atención a la calidad o estado de las personas que celebran el acto, se sanciona con nulidad relativa (art. 1682). Solo la omisión de requisitos exigidos en consideración a la naturaleza del acto produce nulidad absoluta.',
   elementos=[
@@ -289,7 +289,7 @@ ITEMS = [
   respuesta='Agustín es menor adulto, relativamente incapaz, de modo que en principio ambas compras adolecen de nulidad relativa y es él quien puede alegarla. Pero el art. 1685 distingue dos situaciones.\n\nCompra de la moto: sí puede. La simple aserción de mayor edad no inhabilita al incapaz para obtener la nulidad (art. 1685, segunda parte). La negligencia es de Cristóbal, que se conformó con la sola palabra de Agustín sin cerciorarse de su verdadero estado. Sus herederos también podrían alegarla.\n\nCompra del computador: no puede. Aquí no hubo una simple aserción, sino dolo del incapaz para inducir el contrato, y en ese caso ni él ni sus herederos o cesionarios pueden alegar la nulidad (art. 1685, primera parte). Ya no hay negligencia que reprochar a Daniela, que no está obligada a presumir la mala fe ajena.',
   elementos=[
    ('La simple aserción de mayor edad no le impide pedir la nulidad de la compra de la moto (art. 1685)',
-    ['simple asercion', 'asercion de mayor edad', 'solo dijo', 'basta decirlo', 'mera declaracion'],
+    ['simple asercion', 'asercion de mayor edad', 'solo dijo', 'basta decirlo', 'mera declaracion', 'solo lo afirmo'],
     '¿Pierde el incapaz la acción de nulidad por haber dicho que era mayor de edad?'),
    ('Cristóbal fue negligente al no cerciorarse del verdadero estado de Agustín',
     ['negligente', 'negligencia', 'debio cerciorarse', 'no se cercioro', 'debio verificar'],

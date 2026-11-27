@@ -61,7 +61,7 @@ ITEMS = [
     '¿Qué relación establece realmente el art. 1682 inc. final entre las dos expresiones?'),
    ('No hay error del legislador: la rescisión es el efecto común a ambas nulidades, por eso se usa también en la absoluta',
     ['uso generico', 'efecto de ambas', 'cualquiera de las dos', 'no es error', 'sentido generico', 'ambas nulidades producen'],
-    '¿Es exclusivo de una sola especie de nulidad el resultado que describe la palabra rescindir?'),
+    'Si rescindir fuera solo el efecto de la nulidad relativa, ¿cuál sería el de la absoluta?'),
    ('La regla general es la nulidad relativa, por la cláusula residual del art. 1682',
     ['regla general es la relativa', 'clausula residual', 'cualquiera otra especie', 'relativa regla general', 'todo otro vicio'],
     '¿Qué sanción dispone el art. 1682 para los vicios que no menciona expresamente?')],
@@ -98,10 +98,10 @@ ITEMS = [
     ['al momento de celebrarse', 'al celebrar el contrato', 'presente al celebrarse', 'existir al celebrar', 'vicio originario'],
     '¿En qué momento tiene que estar presente el defecto para que el acto sea nulo?'),
    ('No hay nulidad por causa sobreviniente: la compraventa nació válida y la ley posterior no la anula',
-    ['causa sobreviniente', 'hecho posterior', 'sigue siendo valida', 'nacio valido', 'ley posterior no'],
+    ['causa sobreviniente', 'hecho posterior', 'sigue siendo valida', 'nacio valido', 'ley posterior no', 'ley nueva no le afecta'],
     '¿Qué pasa con un acto que nació sin vicios si después cambian las circunstancias?'),
    ('La nulidad solo aprovecha a quien la obtiene: cada cual debe obtener su declaración (art. 1690)',
-    ['1690', 'solo aprovecha', 'aprovecha a quien la obtiene', 'cada cual debe obtener', 'su propia declaracion', 'cada uno debe pedirla'],
+    ['1690', 'solo aprovecha', 'solo beneficia al que la obtuvo', 'cada cual debe obtener', 'su propia declaracion', 'cada uno debe pedirla'],
     '¿Qué tendría que hacer cada uno de los otros compradores para quedar libre de su contrato?')],
   articulos='1690',
   objetivo='Evaluar si el alumno detecta dos principios comunes a ambas nulidades: no hay nulidad por causa sobreviniente y la nulidad solo aprovecha a quien la obtiene.',
@@ -109,7 +109,7 @@ ITEMS = [
 
  # T21.05 Nulidad total y parcial; consecuencial y refleja (0 exámenes)
  dict(sub='T21.05',
-  caso='Un alumno escribe: "Si una sola cláusula de un testamento es nula, todo el testamento cae, porque la nulidad de una parte contagia necesariamente el acto entero. Por la misma razón, si se anula la cláusula penal de un contrato, se anula también la obligación principal a la que accede."',
+  caso='Un alumno escribe: "Si una sola cláusula de un testamento es nula, todo el testamento cae, porque la nulidad de una parte contagia necesariamente el acto entero. Por la misma razón, si se anula la cláusula penal de un contrato (la que fija de antemano lo que pagará el deudor si no cumple), se anula también la obligación principal a la que accede."',
   enunciado=ENUN,
   respuesta='Hay dos errores.\n\nPrimero, la nulidad puede ser parcial: cuando el vicio afecta solo una parte o una cláusula del acto, el resto subsiste con plena validez. Hay que ponderar si lo viciado toca la esencia del acto o es un accidente tan secundario que las partes lo habrían celebrado igual. En los testamentos el Código resuelve esa ponderación varias veces: la disposición en favor del escribano que autoriza el testamento no vale (art. 1061), pero el resto del testamento sí.\n\nSegundo, lo accesorio sigue la suerte de lo principal, y no a la inversa. Según el art. 1536, la nulidad de la obligación principal acarrea la de la cláusula penal, pero la nulidad de la cláusula penal no acarrea la de la obligación principal.',
   elementos=[
