@@ -4,8 +4,8 @@
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
 > Última actualización: 2026-11-27 (tramos 1, 2 y 3a aprobados y
-> mergeados; 3b partido en 3b y 3c; 3b redactado en la rama
-> `obligaciones-tramo3b`, esperando revisión de Laura).
+> mergeados; 3b aprobado y mergeado el 2026-11-28; siguiente: informe
+> del 3c).
 
 ## Resumen para retomar (léelo primero)
 
@@ -58,9 +58,10 @@
   (filtra cita por párrafo). Al medir de nuevo salieron 13 oraciones del
   tramo 1 y 22 del tramo 2 (13 frente a Boetsch, 9 frente a Vial) sobre
   70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
-- **Tramo 3b: redactado** (2026-11-27), con las decisiones del informe
-  aprobadas por Laura. Falta que lo revise en la vista previa y lo
-  mergee. Ver "Tramo 3b" y "Siguiente paso exacto".
+- **Tramo 3b: aprobado y mergeado** (2026-11-28, merge `ce732cc`;
+  Laura: "aprobado el tramo 3b"). Marcado Hecho en Airtable.
+- **Siguiente:** informe del 3c (solo el informe). Ver "Siguiente paso
+  exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -261,7 +262,7 @@ un tramo, actualizar también ahí.
 | 1 | 13-19 | I.A La obligación |  | ✅ |
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
 | 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 | ✅ |
-| 3b | 31-34 | II.A.4 Obligaciones naturales del art. 1470, número por número | Vial nº 70 (primer párrafo); apunte de eficacia (sin unidades nuevas) |  |
+| 3b | 31-34 | II.A.4 Obligaciones naturales del art. 1470, número por número | Vial nº 70 (primer párrafo); apunte de eficacia (sin unidades nuevas) | ✅ |
 | 3c | 34-36 | II.A.5-6 Desde cuándo es natural la obligación; efectos; conversión en civil | Vial (final del nº 69); Ramos Pazos; Abeliuk; apunte de eficacia p. 5-6 |  |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
@@ -454,7 +455,7 @@ un tramo, actualizar también ahí.
   agrega al final del manual y regenera el índice. Vive en la carpeta
   temporal de la sesión: si se pierde, rehacerlo (está descrito aquí).
 
-## Tramo 3b (p. 31-34, II.A.4): redactado, esperando revisión
+## Tramo 3b (p. 31-34, II.A.4): aprobado y mergeado
 
 - **Propuesta de partir el 3b del reparto** (salió con unas 100
   unidades): **3b** = punto 4 de Boetsch, p. 31-34 (los cuatro números
@@ -537,9 +538,8 @@ un tramo, actualizar también ahí.
 1. Rama `obligaciones-tramo3b` (ya creada desde `main`; las ramas
    `obligaciones-tramo1`, `formato-cuadro-rotulos`, `obligaciones-tramo2`
    y `obligaciones-tramo3a` están mergeadas y borradas).
-2. Tramo **3b**: redactado en `obligaciones-tramo3b`; esperar que Laura
-   lo revise en la vista previa y lo mergee. Al aprobarlo: marcar Hecho
-   en Airtable (`recXYWts6CURD0Uoe`).
+2. Rama `obligaciones-tramo3c`, creada desde `main` (ya con el 3b). La
+   rama `obligaciones-tramo3b` está mergeada.
 3. Tramo **3c** (Boetsch p. 34-36, puntos 5 y 6): **primero el informe**
    (`Informe_Obligaciones_tramo3c.html`), con lo ya anotado arriba
    (contradicción Boetsch/Vial sobre el pago del menor adulto, art. 2297,
