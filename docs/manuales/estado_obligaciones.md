@@ -4,7 +4,7 @@
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
 > Última actualización: 2026-11-28 (tramos 1, 2, 3a y 3b aprobados y
-> mergeados; informe del 3c escrito, esperando las decisiones de Laura).
+> mergeados; 3c redactado en su rama, esperando la revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -59,8 +59,8 @@
   70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
 - **Tramo 3b: aprobado y mergeado** (2026-11-28, merge `ce732cc`;
   Laura: "aprobado el tramo 3b"). Marcado Hecho en Airtable.
-- **Tramo 3c: informe escrito (2026-11-28), sin redactar.** Esperando
-  las 9 decisiones de Laura. Ver "Tramo 3c" y "Siguiente paso exacto".
+- **Tramo 3c: redactado (2026-11-28)** en `obligaciones-tramo3c`, tras
+  las respuestas de Laura. Falta que lo revise y apruebe. Ver "Tramo 3c".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -532,7 +532,28 @@ un tramo, actualizar también ahí.
   extingue? subsiste como natural"; prescrita "¿pago bien o mal?"; la
   del art. 1575 del archivo de repaso (solo la pregunta).
 
-## Tramo 3c (p. 34-36, II.A.5-7): informe escrito, falta el visto bueno
+## Tramo 3c (p. 34-36, II.A.5-7): redactado, falta la revisión de Laura
+
+- **Respuestas de Laura (2026-11-28):** 1 punto 7 sí; 2 **opción (b),
+  mostrar ambas opiniones** (preguntó si era indiscutido que el pago
+  antes de la sentencia es ratificación: no lo es, porque AJ IV.B.3.6.2
+  recoge la discusión sobre si la ejecución voluntaria exige conocer el
+  vicio); 6 el fallo de 1881 entra en el texto con fecha y Gaceta;
+  9 sin material propio; resto aprobado. Por la (b) no hay No confundir:
+  la ratificación va atribuida a VIAL (5 (i)) y la regla del menor
+  adulto a BOETSCH, seguida de la lectura de VIAL (6 (i)).
+- **Redactado:** puntos 5 (`cII-A-5`), 6 (`cII-A-6`) y 7 (`cII-A-7`).
+  Recuadros: punto 5, Pregunta clásica (demandado que no hace nada) y
+  Conexión AJ IV.B.2.5, IV.B.3.6 y IV.B.4.2; punto 6, dos Preguntas
+  clásicas (efectos y fianza; pago bien o mal) y Conexión AJ II.A.5.2;
+  punto 7 sin recuadros. Controles: cobertura 82% 🟡 por falsos avisos
+  (subtítulos B y B.1, del tramo 4a; artículos 8/8, autores 4/4,
+  densidad 230%); 42/42 unidades; paráfrasis 0/96 contra las cuatro
+  fuentes tras reescribir 4; 0 guiones largos; párrafo máximo bajo 650;
+  sin enlaces rotos. Vista previa actualizada.
+
+### Informe (2026-11-28)
+
 
 - **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3c.html`
   (2026-11-28). El manual no se ha tocado. Cierra el tema II.A.
@@ -589,11 +610,13 @@ un tramo, actualizar también ahí.
    y `obligaciones-tramo3a` están mergeadas y borradas).
 2. Rama `obligaciones-tramo3c`, creada desde `main` (ya con el 3b). La
    rama `obligaciones-tramo3b` está mergeada.
-3. Tramo **3c**: informe escrito (ver "Tramo 3c"). **Esperar las
-   respuestas de Laura** a las 9 decisiones; recién entonces redactar
-   los puntos 5, 6 y 7 en la rama `obligaciones-tramo3c`, correr los
-   controles y generar la vista previa. El punto 5 lleva
-   `id="cII-A-5"`.
+3. Tramo **3c**: redactado en `obligaciones-tramo3c`. **Esperar la
+   revisión de Laura**; al aprobar, merge, borrar la rama y marcar Hecho
+   en Airtable (registro `rec8V2eesm9xIsM9t`). Después, informe del
+   tramo **4a** (p. 36-39, II.B.1-2, con la última página de Vial: dar y
+   entregar). Pendiente menor: llenar el `[FALTA: sección]` de la
+   Conexión de AJ a las obligaciones naturales (ahora es Obligaciones
+   II.A.1 a II.A.7).
 4. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
    Airtable (lo hace Claude; Laura no tiene que tocarlo).
 5. `scripts/cobertura_tramo.py` sigue solo en la rama
