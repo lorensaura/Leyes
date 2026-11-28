@@ -579,6 +579,23 @@ esos temas, esas preguntas se hacen allá.
    sync a Supabase. Desde la worktree el sync no encuentra el `.env`: se
    corre cargando las claves del `.env` del repo principal en el entorno.
    **Siguiente: el punto 4, tema Error.**
+
+**Tandas por tema completo (decisión de Laura, 2026-11-28):** se mantiene
+la regla completa de cantidad (4 por tipo en subtemas con 10+ exámenes, 2
+en el resto; faltan ~1.100 para AJ), pero **cada tanda pasa a ser un tema
+(o un grupo de temas chicos) con sus 4 tipos juntos**, ~110 a 135
+preguntas, una por día hábil. Laura revisa la muestra de "Qué revisar" (3
+de cada 5, ~70 a 80 preguntas, ~3 horas). Claude deja lista cada tanda el
+día anterior. Calendario en el mapa de metas (Airtable "Digesto · Mapa de
+metas", tareas "Acto Jurídico · preguntas tanda N de 11"):
+3 Error (30 nov); 4 Causa, vicios en general, ratificación e ineficacia
+en general (1 dic); 5 Objeto y objeto ilícito (2 dic); 6 Dolo, fuerza y
+lesión (3 dic); 7 Cap. I y modalidades (4 dic); 8 Clasificaciones y
+fraude a la ley (5 dic); 9 Voluntad, formación del consentimiento,
+capacidad y formalidades (7 dic); 10 Efectos del acto, inexistencia,
+efectos de la nulidad y simulación (9 dic); 11 Inoponibilidad, otras
+causales y representación (10 dic); y el 10 dic, decidir Alternativas y
+Memorice. El 8 de diciembre es feriado.
 4. **Tema siguiente: Error (tema 9)**, los mismos 4 tipos. Ahí entran la
    sanción del error esencial que se sacó de esta tanda. Después Causa,
    Objeto, Objeto ilícito y Dolo (orden de relevancia del tablero); la
