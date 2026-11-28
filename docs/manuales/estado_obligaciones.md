@@ -3,9 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (tramos 1, 2 y 3a aprobados y
-> mergeados; 3b aprobado y mergeado el 2026-11-28; siguiente: informe
-> del 3c).
+> Última actualización: 2026-11-28 (tramos 1, 2, 3a y 3b aprobados y
+> mergeados; informe del 3c escrito, esperando las decisiones de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -60,8 +59,8 @@
   70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
 - **Tramo 3b: aprobado y mergeado** (2026-11-28, merge `ce732cc`;
   Laura: "aprobado el tramo 3b"). Marcado Hecho en Airtable.
-- **Siguiente:** informe del 3c (solo el informe). Ver "Siguiente paso
-  exacto".
+- **Tramo 3c: informe escrito (2026-11-28), sin redactar.** Esperando
+  las 9 decisiones de Laura. Ver "Tramo 3c" y "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -533,18 +532,65 @@ un tramo, actualizar también ahí.
   extingue? subsiste como natural"; prescrita "¿pago bien o mal?"; la
   del art. 1575 del archivo de repaso (solo la pregunta).
 
-## Siguiente paso exacto (2026-11-27, vigente)
+## Tramo 3c (p. 34-36, II.A.5-7): informe escrito, falta el visto bueno
+
+- **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3c.html`
+  (2026-11-28). El manual no se ha tocado. Cierra el tema II.A.
+- **Unidades: 42 nuevas** (Boetsch 16, Vial 10, Ramos Pazos 4 solo
+  argumentos, Abeliuk 12; apunte de eficacia 0) y **6 ya escritas**
+  que no se repiten: la adhesión de BOETSCH a VIAL, la defensa del
+  deudor y la retención después de la sentencia (punto 2); el pago de
+  la prescrita antes y después de la sentencia (4.2 (i)); los efectos
+  solo después de la sentencia (punto 2); el ejemplo de Pedro de Vial,
+  que se reemplaza por Sebastián del punto 2.
+- **Estructura propuesta:** punto 5 (`id="cII-A-5"`, repara el enlace
+  del 3b) con cuadro A (desde cuándo es natural: argumentos sin autores;
+  ABELIUK solo en la fila del Nº 2) y la postura de VIAL debajo; punto 6
+  con los cinco efectos como enumeración (i) a (v) y cuadro B
+  ("voluntariamente": CLARO SOLAR, BARROS ERRÁZURIZ, ABELIUK frente a
+  una postura sin autores con el art. 2297); **punto 7 nuevo**
+  "¿Puede la obligación natural convertirse en civil?" (Abeliuk).
+- **Las 9 decisiones planteadas** (numeradas como en el informe):
+  1 punto 7 nuevo (recomendado) o dentro del 6; 2 contradicción
+  Boetsch/Vial sobre el pago del menor adulto: (a) armonizar en un No
+  confundir "¿ratificación o pago de obligación natural?" (recomendado:
+  Boetsch adhiere a VIAL en el punto 5) o (b) exponer sin conciliar;
+  3 los dos cuadros; 4 confirmación de que los autores de Ramos Pazos no
+  entran (solo sus argumentos); 5 art. 1688 según Vial (no calza exacto
+  con el texto): atribuirlo a VIAL con el texto del artículo al lado, u
+  omitir; 6 fallo de Santiago de 6-may-1881 (G.T. 1881 Nº 528 p. 333,
+  doctrina del deber moral) en el texto con fecha y Gaceta, o fuera;
+  7 Pregunta clásica "si lo demandan y no hace nada", respondida con
+  los arts. 1683, 1684 y 2493 (Código, no fuente); 8 cuatro preguntas
+  y tres recuadros por punto en 5 y 6 (si sobra, sacar "pago bien o
+  mal"); 9 material propio.
+- **Ya resuelto en el informe:** art. 2297 con texto vigente; nota de
+  MAZEAUD y art. 2034 italiano omitidos; remisiones internas de Abeliuk
+  fuera; "¿se extingue?" descartada (usada en el 3b); la ruta del art.
+  1575 del archivo de repaso **queda para el tramo 16b** (su respuesta
+  trata como natural una prescrita no declarada).
+- **Ejemplos propuestos:** Sebastián paga a los 18 antes del juicio
+  (ratificación tácita, punto 5); Catalina paga una prescrita declarada
+  creyendo que solo tenía más plazo (cuadro B); Andrea y Felipe del 3b:
+  fianza del hermano vale, prenda del propio Felipe no, sin compensación
+  legal (punto 6); promesa de Felipe = renuncia a la cosa juzgada y
+  promesa de la tía Gloria no obliga, art. 1683 (punto 7).
+- **Conexiones propuestas:** punto 5, AJ IV.B.3.6, IV.B.2.5 y IV.B.4.2;
+  punto 6, AJ II.A.5.2 (error de derecho). Para después: llenar el
+  `[FALTA: sección]` de la Conexión de AJ a las obligaciones naturales.
+
+## Siguiente paso exacto (2026-11-28, vigente)
 
 1. Rama `obligaciones-tramo3b` (ya creada desde `main`; las ramas
    `obligaciones-tramo1`, `formato-cuadro-rotulos`, `obligaciones-tramo2`
    y `obligaciones-tramo3a` están mergeadas y borradas).
 2. Rama `obligaciones-tramo3c`, creada desde `main` (ya con el 3b). La
    rama `obligaciones-tramo3b` está mergeada.
-3. Tramo **3c** (Boetsch p. 34-36, puntos 5 y 6): **primero el informe**
-   (`Informe_Obligaciones_tramo3c.html`), con lo ya anotado arriba
-   (contradicción Boetsch/Vial sobre el pago del menor adulto, art. 2297,
-   art. 2034 italiano, preguntas clásicas, criterio de Laura para Ramos
-   Pazos). Al escribirlo, el punto 5 debe llevar `id="cII-A-5"`.
+3. Tramo **3c**: informe escrito (ver "Tramo 3c"). **Esperar las
+   respuestas de Laura** a las 9 decisiones; recién entonces redactar
+   los puntos 5, 6 y 7 en la rama `obligaciones-tramo3c`, correr los
+   controles y generar la vista previa. El punto 5 lleva
+   `id="cII-A-5"`.
 4. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
    Airtable (lo hace Claude; Laura no tiene que tocarlo).
 5. `scripts/cobertura_tramo.py` sigue solo en la rama
