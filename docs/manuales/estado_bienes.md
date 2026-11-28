@@ -3,7 +3,7 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-27 (tramo 13b
+> antes de seguir. Última actualización: 2026-11-28 (tramos 13b,
 > 13c y 14a aprobados; sigue el tramo 14b).
 
 ## Resumen para retomar (léelo primero)
