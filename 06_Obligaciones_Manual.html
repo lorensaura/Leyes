@@ -81,6 +81,8 @@
     font-family:'Times New Roman',Times,Georgia,serif;font-size:11pt;
     hyphens:none;-webkit-hyphens:none;}
   tr:nth-child(even) td{background:var(--soft);}
+  /* Títulos, subtítulos y rótulos nunca se cortan con guion: la palabra pasa entera a la línea siguiente (Laura, 2026-11-28) */
+  h1,h2,h3,h4,.enum-i .tit,.enum-i-run .tit,.enum-a .tit,.enum-a-run .tit,.caja-tipo,.caja-titulo,.toc{hyphens:none;-webkit-hyphens:none;}
   th:first-child,td:first-child{width:20%;text-align:left;}
   /* Rótulo de fila del cuadro comparativo (Laura, 2026-11-27): la primera columna es una etiqueta,
      no información; corta, en mayúscula y negrita, con fondo y filete propios */
