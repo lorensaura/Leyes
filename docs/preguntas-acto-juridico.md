@@ -584,18 +584,18 @@ esos temas, esas preguntas se hacen allá.
 la regla completa de cantidad (4 por tipo en subtemas con 10+ exámenes, 2
 en el resto; faltan ~1.100 para AJ), pero **cada tanda pasa a ser un tema
 (o un grupo de temas chicos) con sus 4 tipos juntos**, ~110 a 135
-preguntas, una por día hábil. Laura revisa la muestra de "Qué revisar" (3
-de cada 5, ~70 a 80 preguntas, ~3 horas). Claude deja lista cada tanda el
-día anterior. Calendario en el mapa de metas (Airtable "Digesto · Mapa de
+preguntas. **Ritmo (Laura, 2026-11-28): dos tandas por día; Claude las
+prepara de noche y Laura las revisa en la mañana**, mientras Claude prepara
+las siguientes. Laura revisa 1 de cada 3 (~40 por tanda, ~1,6 horas). Calendario en el mapa de metas (Airtable "Digesto · Mapa de
 metas", tareas "Acto Jurídico · preguntas tanda N de 11"):
-3 Error (30 nov); 4 Causa, vicios en general, ratificación e ineficacia
-en general (1 dic); 5 Objeto y objeto ilícito (2 dic); 6 Dolo, fuerza y
-lesión (3 dic); 7 Cap. I y modalidades (4 dic); 8 Clasificaciones y
-fraude a la ley (5 dic); 9 Voluntad, formación del consentimiento,
-capacidad y formalidades (7 dic); 10 Efectos del acto, inexistencia,
-efectos de la nulidad y simulación (9 dic); 11 Inoponibilidad, otras
-causales y representación (10 dic); y el 10 dic, decidir Alternativas y
-Memorice. El 8 de diciembre es feriado.
+30 nov: 3 Error y 4 Causa, vicios en general, ratificación e ineficacia
+en general; 1 dic: 5 Objeto y objeto ilícito y 6 Dolo, fuerza y lesión;
+2 dic: 7 Cap. I y modalidades y 8 Clasificaciones y fraude a la ley;
+3 dic: 9 Voluntad, formación del consentimiento, capacidad y formalidades
+y 10 Efectos del acto, inexistencia, efectos de la nulidad y simulación;
+4 dic: 11 Inoponibilidad, otras causales y representación, y decidir
+Alternativas y Memorice. Laura medirá cuánto se demora de verdad y se
+ajusta.
 4. **Tema siguiente: Error (tema 9)**, los mismos 4 tipos. Ahí entran la
    sanción del error esencial que se sacó de esta tanda. Después Causa,
    Objeto, Objeto ilícito y Dolo (orden de relevancia del tablero); la
@@ -904,8 +904,12 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   - **Bajar a 1 de cada 3** (alrededor del 30%) cuando la tanda anterior
     del mismo tipo y tema salió con **una corrección de fondo o menos**.
   - **Volver a 3 de cada 5** si en una tanda aparece un problema nuevo.
-  - Discriminación MC tanda 3: 4 de 6 en "Qué revisar" (las tandas 1 y
-    2 tuvieron varias correcciones, aunque de forma más que de fondo).
+  - Discriminación MC tanda 3: 4 de 6 en "Qué revisar".
+  - **Desde el 2026-11-28 (Laura): 1 de cada 3 por defecto en todos los
+    temas**, porque los criterios de los 4 tipos ya quedaron fijados con
+    Nulidad; lo que cambia de tema a tema es el contenido, que cubre el
+    control contra el manual. Una tanda vuelve a 3 de cada 5 si aparece un
+    problema nuevo.
   Claude elige cuáles: de todos los tipos de caso y dificultad, priorizando las que
   tocan puntos discutidos, figuras de otras materias, cálculos con fechas
   y elementos con más riesgo de corrección estricta. En el informe va la
