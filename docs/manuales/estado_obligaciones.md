@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-27 (tramos 1 y 2 aprobados; reparto
-> en 74 tramos chicos; tramo 3a escrito en `obligaciones-tramo3a`,
-> esperando revisión, junto con la corrección de paráfrasis de 1 y 2).
+> Última actualización: 2026-11-27 (tramos 1, 2 y 3a aprobados y
+> mergeados; 3b partido en 3b y 3c; 3b redactado en la rama
+> `obligaciones-tramo3b`, esperando revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -48,18 +48,19 @@
   informe y Laura decide; después se redacta**. Los tramos 1, 2 y 3a se
   redactaron antes del visto bueno (se tomó "continúa" como permiso):
   no se repite (memoria `informe-antes-de-redactar`).
-- **Tramo 3a (p. 27-31 + Vial nº 67-69): escrito, esperando revisión.**
-  Informe: `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo3a.html`.
-  Detalle en "Tramo 3a", más abajo.
+- **Tramo 3a (p. 27-31 + Vial nº 67-69): aprobado y mergeado**
+  (2026-11-27, `main` en `00e9f4c`; Laura: "Ya mergeé el 3a"). Sus
+  decisiones quedan firmes (ver "Tramo 3a"). Marcado Hecho en Airtable.
 - **Ojo, corrección de los tramos 1 y 2 (en la misma rama 3a):** el
   script de paráfrasis tenía un error (el filtro de citas entre comillas
   se comía párrafos enteros cuando las comillas quedaban desparejas), y
   en 1 y 2 midió muchas menos oraciones de las reales. Ya corregido
   (filtra cita por párrafo). Al medir de nuevo salieron 13 oraciones del
   tramo 1 y 22 del tramo 2 (13 frente a Boetsch, 9 frente a Vial) sobre
-  70%; se reescribieron todas, sin perder unidades.
-- **Siguiente:** revisión de Laura del 3a; luego 3b. Ver "Siguiente paso
-  exacto".
+  70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
+- **Tramo 3b: redactado** (2026-11-27), con las decisiones del informe
+  aprobadas por Laura. Falta que lo revise en la vista previa y lo
+  mergee. Ver "Tramo 3b" y "Siguiente paso exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -259,8 +260,9 @@ un tramo, actualizar también ahí.
 |---|---|---|---|---|
 | 1 | 13-19 | I.A La obligación |  | ✅ |
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
-| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales); Ramos Pazos |  |
-| 3b | 31-36 | II.A.4-6 Art. 1470, sentencia y efectos de la obligación natural | Abeliuk; apunte de eficacia |  |
+| 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 | ✅ |
+| 3b | 31-34 | II.A.4 Obligaciones naturales del art. 1470, número por número | Vial nº 70 (primer párrafo); apunte de eficacia (sin unidades nuevas) |  |
+| 3c | 34-36 | II.A.5-6 Desde cuándo es natural la obligación; efectos; conversión en civil | Vial (final del nº 69); Ramos Pazos; Abeliuk; apunte de eficacia p. 5-6 |  |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
 | 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
@@ -426,7 +428,7 @@ un tramo, actualizar también ahí.
   Laura: las 36 tareas estimadas se reutilizaron (renombradas) y se
   crearon 38 más, una por tramo real; tramos 1 y 2 marcados Hecho.
 
-## Tramo 3a (p. 27-31, II intro y II.A.1-3): escrito, esperando revisión
+## Tramo 3a (p. 27-31, II intro y II.A.1-3): aprobado y mergeado
 
 - **Escrito el 2026-11-27** en `obligaciones-tramo3a`. Abre el capítulo
   II (`cII`), con la lista de clasificaciones de Boetsch como
@@ -435,7 +437,7 @@ un tramo, actualizar también ahí.
   tramo. El final del nº 69 ("desde cuándo" es natural la obligación) y
   el nº 70 van al 3b, junto con **todo el anexo de Ramos Pazos**, que
   trata solo de eso.
-- **Decisiones aplicadas, para que Laura confirme:** cuadro de
+- **Decisiones aplicadas, aprobadas con el merge (2026-11-27):** cuadro de
   taxatividad (tesis taxativa: CLARO SOLAR y VIAL; no taxativa: FUEYO,
   STITCHKIN, VODANOVIC), con la "mayoría" atribuida a BOETSCH y la
   contradicción de VIAL dicha en una línea; "deber moral del acreedor"
@@ -452,17 +454,99 @@ un tramo, actualizar también ahí.
   agrega al final del manual y regenera el índice. Vive en la carpeta
   temporal de la sesión: si se pierde, rehacerlo (está descrito aquí).
 
+## Tramo 3b (p. 31-34, II.A.4): redactado, esperando revisión
+
+- **Propuesta de partir el 3b del reparto** (salió con unas 100
+  unidades): **3b** = punto 4 de Boetsch, p. 31-34 (los cuatro números
+  del art. 1470, hasta el fallo del corredor), 39 unidades (38 de
+  Boetsch, 1 de Vial nº 70); **3c** = puntos 5 y 6, p. 34-36 (desde
+  cuándo es natural, efectos, conversión), con todo Ramos Pazos, el
+  final del nº 69 de Vial (desde "Debemos hacer presente que el
+  enfoque...") y Abeliuk. Si Laura acepta: agregar el 3c a la tabla del
+  reparto y a Airtable (70 tramos).
+- **Decisiones planteadas** (numeradas como en el informe): 1 partir;
+  2 tres cuadros comparativos (A disipadores, con la tesis histórica de
+  BOETSCH debajo; B solemnidades según la inexistencia, sin autores;
+  C "actos" unilaterales o bilaterales, con VIAL debajo); 3 corregir sin
+  comentar la errata "inexistencia" (p. 33, es "existencia") y
+  "compraventa" (p. 32: de un inmueble, art. 1801 inc. 2º); 4 fallo del
+  corredor sin rol, `[FALTA]`; 5 **Vial nº 70 viene cortado** (el anexo
+  termina en su p. 209 a mitad de frase): preguntar si hay más; 6
+  **"Ramos Pazos" sería un resumen de alumna** (el apunte de eficacia lo
+  titula "Tomado del manual de Ramos Pazos, Resumen Beatriz Narváez"):
+  en el 3c, cruzar con cátedra y lo no corroborado (atribución de
+  autores en Nº 1 y Nº 2) solo con confirmación de Laura; 7 Preguntas
+  clásicas (agrupar; otros incapaces; actos o contratos), el punto 4
+  pasaría de dos recuadros; 8 material propio.
+- **Respuestas de Laura (2026-11-27):** 1 partir: sí (reparto
+  actualizado aquí y en Airtable, 70 tramos, registro nuevo
+  `rec8V2eesm9xIsM9t` para el 3c). 2 el "deber moral del acreedor" del
+  3a no lo encontró porque se escribió solo "un deber moral" (se le
+  explicó). 3 Vial nº 70: no hace falta buscar más. **Ramos Pazos es
+  resumen de una alumna sobre un texto:** en el 3c, una opinión
+  (quién sostiene qué) entra solo si también está en Boetsch; la
+  información extra o una buena explicación sí se puede usar. 4 el fallo
+  del corredor no lo tiene: se le dieron instrucciones para buscarlo
+  en vLex; queda `[FALTA: rol y fecha del fallo]`. Resto: aprobado.
+- **Redactado (2026-11-27):** punto 4 (`cII-A-4`, `cII-A-4-1`,
+  `cII-A-4-2`), con los tres cuadros, caja "La donación que la tía
+  Gloria no insinuó", 3 Preguntas clásicas y 2 Conexiones (AJ II.B.3.2,
+  IV.A.4, IV.B.4.2; Bienes V.5.B.1). Enlace a `#cII-A-5` (punto 5) que
+  queda roto hasta escribir el 3c. Controles: cobertura 85% 🟡 por un
+  solo falso aviso (el subtítulo "Rol de la sentencia judicial" está en
+  la p. 34 pero es del 3c; artículos 6/6, autores 9/9, densidad 148%);
+  39/39 unidades; paráfrasis 1/72 sobre 70% (la lista de los tres
+  incapaces relativos), tras reescribir 4; 0 guiones largos; párrafo
+  máximo bajo 650 tras partir la caja de ejemplo.
+- **Correcciones de Laura al revisar (2026-11-27):** (1) los `(i)` de
+  los números del art. 1470 iban subrayados igual que las `a)`: pasan a
+  `.enum-i` en negrita (clasificación), y las `a)` siguen subrayadas
+  (Laura eligió eso, no cambiar las `a)` a cursiva). (2) se agregó en el
+  punto 4 un párrafo que adelanta "desde cuándo" es natural (y por qué
+  importa: si se paga antes de la sentencia se paga una obligación civil)
+  y que el deudor no se defiende alegando obligación natural, sino
+  nulidad, prescripción o cosa juzgada; el desarrollo completo sigue
+  siendo del 3c. (3) "La prescripción no extingue el derecho" se
+  desarrolló en un recuadro fusionado No confundir | Pregunta clásica en
+  4.2 (i) (arts. 1567 Nº 10, 2492, 2493, 2494, 1470 Nº 2, 2296,
+  verificados; pregunta de Grado ACA "¿se extingue la obligación? No,
+  subsiste como natural"); la Conexión a Bienes se mantiene. Se agregó a
+  la hoja de estilos `.fusion .t-pc` y `.fusion .sep` (de `formato.md`).
+  El punto 4 queda con 5 recuadros grandes (Laura lo sabe).
+- **Apunte de eficacia:** 0 unidades nuevas en 3a y 3b (copia a
+  Boetsch). No entra su afirmación de que "de manera general" el Nº 1
+  excluye al disipador por falta de juicio (no corroborada).
+- **Verificado:** arts. 445, 1401, 1447, 1470, 1567, 1687, 1801. Para el
+  3c ya verificados: 1471, 1472, 1630, 1656, 1683, 1684, 1688, 2208,
+  2296, 2297 (Boetsch lo cita mal: "con por error", falta
+  "puramente"), 2375. **Ojo:** el "art. 2034" de la nota de Abeliuk es
+  del Código italiano, no del chileno (el chileno es de censos): sin
+  verificar. No importar las remisiones internas de Abeliuk (N° 315,
+  336, 1.107).
+- **Para el 3c, contradicción a exponer:** Boetsch (p. 36) dice que el
+  menor adulto debe pagar llegado a la mayoría de edad; Vial (final del
+  nº 69) dice que ese pago, antes de cualquier sentencia, es
+  ratificación tácita y no pago de obligación natural.
+- **Preguntas clásicas anotadas para el 3c:** afianzar; efectos y
+  caución; características; "si lo demandan y no hace nada"; "¿se
+  extingue? subsiste como natural"; prescrita "¿pago bien o mal?"; la
+  del art. 1575 del archivo de repaso (solo la pregunta).
+
 ## Siguiente paso exacto (2026-11-27, vigente)
 
-1. Revisión de Laura del tramo 3a (y de la corrección de 1 y 2); con su
-   visto bueno, merge de `obligaciones-tramo3a`, borrar la rama y marcar
-   3a como Hecho en Airtable.
-2. Tramo **3b**, **primero solo el informe** (inventario y decisiones),
-   esperar a Laura, y recién después redactar: Boetsch p. 31 (punto 4) a 36 (II.A.4-6: análisis de
-   cada número del art. 1470, sentencia y efectos), con Vial (final del
-   nº 69 y nº 70), Ramos Pazos, Abeliuk y el apunte de eficacia (Bozzo e
-   Ibarra: cruzar con cátedra y no nombrarlo). Si sale grande, partirlo
-   en 3b y 3c y avisar. Conexión con AJ IV.B (nulidad).
-3. `scripts/cobertura_tramo.py` sigue solo en la rama
+1. Rama `obligaciones-tramo3b` (ya creada desde `main`; las ramas
+   `obligaciones-tramo1`, `formato-cuadro-rotulos`, `obligaciones-tramo2`
+   y `obligaciones-tramo3a` están mergeadas y borradas).
+2. Tramo **3b**: redactado en `obligaciones-tramo3b`; esperar que Laura
+   lo revise en la vista previa y lo mergee. Al aprobarlo: marcar Hecho
+   en Airtable (`recXYWts6CURD0Uoe`).
+3. Tramo **3c** (Boetsch p. 34-36, puntos 5 y 6): **primero el informe**
+   (`Informe_Obligaciones_tramo3c.html`), con lo ya anotado arriba
+   (contradicción Boetsch/Vial sobre el pago del menor adulto, art. 2297,
+   art. 2034 italiano, preguntas clásicas, criterio de Laura para Ramos
+   Pazos). Al escribirlo, el punto 5 debe llevar `id="cII-A-5"`.
+4. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
+   Airtable (lo hace Claude; Laura no tiene que tocarlo).
+5. `scripts/cobertura_tramo.py` sigue solo en la rama
    `worktree-plan-lanzamiento` (commit `314038f`); se usa una copia con
    `git show 314038f:scripts/cobertura_tramo.py`.
