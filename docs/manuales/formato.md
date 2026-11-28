@@ -415,6 +415,16 @@ corrección** (comparar contra la base de esta sección) y aplicarla si
 no la tiene, igual que con cualquier otro ajuste de la hoja de estilos
 (decisión 2026-10-05, ver `decisiones.md`).
 
+**Tampoco se cortan con guion los títulos, subtítulos ni rótulos**
+(Laura, 2026-11-28, al ver "atendiendo a su ob-jeto" en el título de
+II.B de Obligaciones): si una palabra no cabe, pasa entera a la línea
+siguiente. Vale para `h1` a `h4`, los títulos de las enumeraciones
+(`(i)`, `a)`), los rótulos de los recuadros (`.caja-tipo`,
+`.caja-titulo`) y el índice. Dentro del texto explicativo, el corte con
+guion sí se mantiene (`hyphens:auto` del `body`). Ya está en la hoja
+base (sección 8). Aplicado en Obligaciones; **pendiente** en Acto
+Jurídico, Bienes y Responsabilidad, que se aplica al revisar cada uno.
+
 ```html
 <p>Paralelo entre nulidad absoluta y relativa:</p>
 <table>
@@ -617,6 +627,8 @@ La fuente de la portada (`Bebas Neue`/`Inter`) se carga con el mismo
     hyphens:none;-webkit-hyphens:none;}
   tr:nth-child(even) td{background:var(--soft);}
   th:first-child,td:first-child{width:20%;text-align:left;}
+  /* Títulos, subtítulos y rótulos nunca se cortan con guion (2026-11-28) */
+  h1,h2,h3,h4,.enum-i .tit,.enum-i-run .tit,.enum-a .tit,.enum-a-run .tit,.caja-tipo,.caja-titulo,.toc{hyphens:none;-webkit-hyphens:none;}
   /* Rótulo de fila (2026-11-27): etiqueta, no información */
   table tr td:first-child{font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:9pt;
     font-weight:700;text-transform:uppercase;color:var(--accent2);
