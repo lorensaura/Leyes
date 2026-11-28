@@ -24,10 +24,14 @@
 4. **Paywall** — pendiente, después de validar el Interrogador con alumnas reales. Ver `docs/paywall.md`.
 5. **Revisar las demás materias de Civil y Procesal** — en stand by hasta terminar de validar Responsabilidad. Excepción en curso: actualización de manuales de Civil con el método nuevo. Acto Jurídico terminado (2026-10-07); **el siguiente es Bienes: empezar siempre por `docs/manuales/estado_bienes.md`**, que exige leer antes `docs/manuales/lecciones-acto-juridico.md` para hacerlo en una sola pasada.
 
-**¿Qué falta exactamente antes de invitar alumnas beta?** Eso ya no vive
-acá, ver `docs/camino-a-beta.md`, la lista viva de hecho / pendiente /
-por determinar. Ábrelo al empezar una sesión si no está claro por dónde
-seguir.
+**Prioridad actual (desde 2026-11-26): lanzar y vender el lunes 8 de
+febrero de 2027 con todo Civil** (Laura a dedicación completa). El plan semana a semana, las decisiones abiertas y lo
+que bloquea la venta viven en `docs/camino-a-lanzamiento.md`. **Ábrelo
+al empezar cualquier sesión** si no está claro por dónde seguir. Ahí está
+la cuota diaria y el orden de materias (Bienes, Obligaciones, Contratos,
+Familia, Sucesorio).
+`docs/camino-a-beta.md` quedó como detalle histórico de pendientes de
+contenido (congelado en agosto).
 
 ## Git / deploy
 - Laura **pushea con GitHub Desktop** (ahí tiene sus credenciales). Desde el terminal el push directo puede fallar por credenciales.
@@ -68,11 +72,12 @@ seguir.
 Clasificado por para qué lo abrirías — no leas ninguno de entrada, solo el que aplique:
 
 **Estado del proyecto:**
-- `docs/camino-a-beta.md`: hecho / pendiente / por determinar antes de invitar alumnas beta. Se actualiza in place cada sesión, es el punto de partida si no está claro qué sigue. Corto a propósito; el detalle sesión a sesión vive aparte en `docs/historial-2026-08.md` (archivo, no se actualiza in place, abrir solo si hace falta el detalle fino).
+- `docs/camino-a-lanzamiento.md`: plan vivo hasta el lanzamiento (26-ene-2027), semana a semana, con decisiones y checklist. Punto de partida de cada sesión.
+- `docs/camino-a-beta.md`: pendientes de contenido de la etapa beta (congelado en agosto, consultar como detalle). Corto a propósito; el detalle sesión a sesión vive aparte en `docs/historial-2026-08.md` (archivo, no se actualiza in place, abrir solo si hace falta el detalle fino).
 
 **Contenido jurídico (manuales, preguntas, Práctica):**
 - `docs/creacion-de-contenido.md` — punto de entrada: qué modelo vive dónde, qué revisar antes de generar, pendientes de contenido. Ábrelo siempre antes de tocar manuales o preguntas.
-- `docs/manuales/`: cómo se construyen y cómo se ven los manuales (materia nueva o reparación de uno existente). `proceso.md` (reglas de oro, inventario de la fuente, verificación por tramo), `formato.md` (escalera de numeración, enumeraciones, recuadros, hoja de estilos), `guia-editorial.md` (criterio de redacción, recuadros, ejemplos), `auditoria.md` (auditoría de cobertura, sin reescribir), `actualizar-manuales-existentes.md` (poner al día un manual antiguo por tramos), `decisiones.md` (el porqué de cada regla, con fecha), `bienes-reestructuracion.md` (plan de capítulos de Bienes) y `lecciones-acto-juridico.md` (qué se aprendió actualizando AJ: leerlo antes de actualizar Bienes u otro manual). `docs/script_apuntes.md` quedó solo como tabla de equivalencias de secciones antiguas. Además, `docs/manuales/estado_<manual>.md` por cada manual en trabajo activo (ver "Convenciones de trabajo"): léelo primero al retomar ese manual.
+- `docs/manuales/`: cómo se construyen y cómo se ven los manuales (materia nueva o reparación de uno existente). `proceso.md` (reglas de oro, inventario de la fuente, verificación por tramo), `formato.md` (escalera de numeración, enumeraciones, recuadros, hoja de estilos), `guia-editorial.md` (criterio de redacción, recuadros, ejemplos), `auditoria.md` (auditoría de cobertura, sin reescribir), `actualizar-manuales-existentes.md` (poner al día un manual antiguo por tramos), `decisiones.md` (el porqué de cada regla, con fecha), `bienes-reestructuracion.md` (plan de capítulos de Bienes) y `lecciones-acto-juridico.md` (qué se aprendió actualizando AJ: leerlo antes de actualizar Bienes u otro manual). `material_para_contratos.md`: lo que Laura pidió reservar para el futuro manual de Contratos (leerlo al empezarlo). `docs/script_apuntes.md` quedó solo como tabla de equivalencias de secciones antiguas. Además, `docs/manuales/estado_<manual>.md` por cada manual en trabajo activo (ver "Convenciones de trabajo"): léelo primero al retomar ese manual.
 - `docs/preguntas-acto-juridico.md`: estado vivo de las preguntas de Práctica de Acto Jurídico (por capítulo, qué está cargado, qué falta, siguiente paso). Leerlo primero si Laura dice "retoma las preguntas de Acto Jurídico".
 - `docs/practica.md` — cómo funciona el módulo Práctica en la app (los 3 ejes de filtro, el motor de Memorice).
 - `docs/prompts-practica/`: el prompt de creación de preguntas: `nucleo.md` (reglas comunes, anti-alucinación, corrección flexible), un prompt por tipo, `elementos-clave.md` (keywords) y `transversales.md`. El prompt maestro antiguo está archivado.

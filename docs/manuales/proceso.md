@@ -175,7 +175,11 @@ solo las secciones del anexo que Laura confirmó en el mapa.
   `td` con la tipografía del texto principal. Al escribir o revisar un
   cuadro comparativo en cualquier manual, comprobar que sus celdas `td`
   usan la tipografía del texto y no la del encabezado (`formato.md`,
-  sección 4.1).
+  sección 4.1). **Excepción (2026-11-27):** la primera columna, la de
+  los rótulos de fila, es etiqueta y no cuerpo: va como el encabezado
+  (sans serif, 9pt, mayúscula, negrita), con fondo propio y filete
+  rojo, y sus rótulos son cortos ("Sujetos", no "En cuanto a los
+  sujetos"). Comprobarlo también (`formato.md`, sección 4.1).
 - **Ancho de columnas en cuadros comparativos.** Otro bug real
   encontrado en Acto Jurídico (2026-10-05): sin un ancho fijo, la
   columna "Criterio" podía quedar tan angosta que el navegador partía
@@ -209,6 +213,11 @@ solo las secciones del anexo que Laura confirmó en el mapa.
   Con voz propia el largo puede variar un poco, así que este número es un
   piso, no la prueba principal: la prueba principal es la 4.2.
 
+  **Desde 2026-11-27 esto se mide con `scripts/cobertura_tramo.py`**
+  (no a mano), que además de la densidad cuenta artículos, autores y
+  subtítulos de la fuente presentes en el manual y da un índice con
+  semáforo. Ver 4.3, punto 0.
+
 ### 4.2 Chequeo de unidades
 
 Cada unidad del inventario de la fuente (sección 2, paso 2) tiene que
@@ -223,6 +232,21 @@ Con el tramo escrito, se relee completo como un revisor externo buscando
 temas omitidos frente a la fuente, errores de redacción y errores de
 formato. El resultado es un informe breve para Laura con:
 
+0. **Bloque "Cobertura del tramo: N% 🟢/🟡/🔴" al inicio del informe,
+   obligatorio** (pedido de Laura, 2026-11-27: el riesgo principal es
+   resumir de más y que algún tema quede sin tocar). Se genera con:
+   `python3 scripts/cobertura_tramo.py --fuente <PDF> --paginas <a-b>
+   --manual <manual.html> --desde <id primer encabezado> --hasta <id
+   primer encabezado del tramo siguiente> --titulo "Tramo X" --html
+   <archivo>` y se pega tal cual arriba del informe. Mide densidad
+   (mínimo 80%), artículos de la fuente presentes (meta 95%), autores
+   presentes (meta 95%) y subtítulos tocados (meta 90%); con densidad
+   bajo 75% el índice nunca sale verde. **Un tramo en 🔴 no se entrega
+   a Laura**: se completa primero. Cada faltante que se descarta como
+   falso aviso (artículo citado de pasada, página compartida con el
+   tramo vecino) se anota con su motivo en el mismo bloque. Referencia
+   de calibración: Bienes tramo 11a (método nuevo) dio 91% 🟢; la
+   versión antigua de V.5.A.2 (la del incidente de compresión) da 56% 🔴.
 1. **Cobertura:** unidades faltantes (o la confirmación de que están
    todas) y la razón de caracteres.
 2. **Redacción:** errores corregidos y frases dudosas.

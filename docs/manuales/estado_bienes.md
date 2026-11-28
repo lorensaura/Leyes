@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-10-10 (tramo 6a
-> escrito, esperando revisión de Laura).
+> antes de seguir. Última actualización: 2026-11-28 (tramos 13b,
+> 13c y 14a aprobados; sigue el tramo 14b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -53,9 +53,60 @@
   (2026-10-10), commit `231b5fd`.** Detalle en "Tramo 5a", más abajo.
 - **Tramo 5b (V.2 La ocupación, p. 87-94): terminado y aprobado por
   Laura (2026-10-10), commit `5a5d94f`.** Detalle en "Tramo 5b", más abajo.
-- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): escrito (2026-10-10),
-  esperando revisión de Laura en la vista previa.** Detalle en "Tramo
-  6a", más abajo. Siguiente paso al final de este archivo.
+- **Tramo 6a (V.3.1 a V.3.5.1, p. 95-102): terminado y aprobado por
+  Laura (2026-11-23), commit `de6ca42`.** Detalle en "Tramo 6a", más abajo.
+- **Tramo 6b (V.3.5.2 y V.3.5.3, p. 102-110): terminado y aprobado por
+  Laura (2026-11-23, "ok, sigue con el tramo 7a"), commit `5643d37`.**
+  Cierra V.3 La accesión. Detalle en "Tramo 6b", más abajo.
+- **Tramo 7a (V.4.A + V.4.B.1, p. 111-116): terminado y aprobado por
+  Laura (2026-11-23), commit `541c37d`.**
+- **Tramo 7b (V.4.B.2-B.4, p. 116-123): terminado y aprobado por
+  Laura (2026-11-23, "sigue con el tramo 7c"), commit `812353c`.**
+  Detalle en "Tramo 7b", más abajo.
+- **Tramo 7c (V.4.C Efectos, p. 123-129): terminado y aprobado por
+  Laura (2026-11-23), commit `7e3087e`.**
+- **Tramo 8 (V.4.D.1 Tradición de muebles, p. 129-141): terminado y
+  aprobado por Laura (2026-11-23, "sigue con el tramo 9a"), commit
+  `c28471a`.** Detalle en "Tramo 8", más abajo.
+- **Tramo 9a (V.4.D.2.1 a D.2.3.2, p. 142-152): terminado y aprobado
+  por Laura (2026-11-23, "sigamos con el tramo 9b"), commit `e47fe19`.**
+  Detalle en "Tramo 9a", más abajo.
+- **Tramo 9b (V.4.D.2.3.3 a 3.10, p. 152-160): terminado y aprobado
+  por Laura (2026-11-23, "ok, sigue con el tramo 9c"), commit `70f1d71`.**
+- **Tramo 9c (V.4.D.2.3.11 a 3.15, p. 161-166): terminado y aprobado
+  por Laura (2026-11-23, "continuemos con el tramo que sigue"), commits
+  `e389e95` y `eb39226`.** Detalle en "Tramo 9c", más abajo.
+- **Tramo 10a (V.4.D.2.4 a D.2.7, p. 166-175): terminado y aprobado
+  por Laura (2026-11-23, "ok"), commits `852c58a` y `5065c22`.** Detalle
+  en "Tramo 10a", más abajo.
+- **Tramo 10b (V.4.D.3 y D.4, p. 175-183): terminado y aprobado por
+  Laura (2026-11-23, "todo ok"), commit `4580ceb`.** Cierra V.4 La
+  tradición.
+- **Tramo 11a (V.5 intro y V.5.A.1, p. 184-191): terminado y aprobado
+  por Laura (2026-11-26, ajustes de negritas y art. 700 completo, luego
+  "sigamos con el tramo 11b").** Detalle en "Tramo 11a", más abajo.
+- **Tramo 11b (V.5.A.2 intro, posesión regular y justo título, p.
+  191-202): terminado y aprobado por Laura (2026-11-26, "sigamos con el
+  tramo 12"), commit `0fe8380`; la pasada contra Peñailillo, commit
+  `6f04967`, aprobada en el mismo mensaje.** Detalle en "Tramo 11b", más
+  abajo.
+- **Tramo 12 (V.5.A.2.2.3 a V.5.A.2.4, buena fe a posesiones viciosas,
+  p. 202-208): terminado y aprobado por Laura (2026-11-27, "ok, haz el
+  commit y sigue con el tramo 13a"), commit `3ff941f`.** Detalle en
+  "Tramo 12", más abajo.
+- **Tramo 13a (V.5.A.3 y V.5.A.4, p. 208-214): terminado y aprobado
+  por Laura (2026-11-27, "ok, haz el commit").** Detalle en "Tramo 13a",
+  más abajo.
+- **Tramo 13b (V.5.A.5.1 a A.5.3, p. 214-218): terminado y aprobado
+  por Laura (2026-11-27, "sigamos con el tramo 13c"), commit `85f2dd4`.**
+  Detalle en "Tramo 13b", más abajo.
+- **Tramo 13c (V.5.A.5.4.1, p. 218-228): terminado y aprobado por
+  Laura (2026-11-27, "ok, haz el commit y sigue con el tramo 14a"),
+  commit `9eb73b2`.**
+- **Tramo 14a (V.5.A.5.4.2, p. 228-235): terminado y aprobado por
+  Laura (2026-11-28, "ok, haz el commit"), marcado Hecho en Airtable.** Detalle en "Tramo
+  14a", más abajo. Detalle en "Tramo
+  13c", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -130,23 +181,24 @@ que en AJ.
 | 5b | 87-94 | 5 | V.2 La ocupación completa (corregido 2026-10-10, antes 88-94) |
 | 6a | 95-102 | 6 | V.3.1 a V.3.5.1 (concepto, clases, naturaleza, frutos, inmueble a inmueble). Corte por contenido aprobado 2026-10-10 |
 | 6b | 102-110 | 6 | V.3.5.2 mueble a mueble y V.3.5.3 mueble a inmueble (corregido 2026-10-10) |
-| 7a | 111-118 | 7 | V.4.A Tradición, descripción general |
-| 7b | 118-125 | 7 | V.4.B Tradición, requisitos |
-| 7c | 125-129 | 7 | V.4.C Tradición, efectos |
+| 7a | 111-116 | 7 | V.4.A Tradición, descripción general + V.4.B.1 tradente y adquirente (corte por contenido aprobado 2026-11-23; antes 111-118: A termina en la p. 114). Hecho 2026-11-23 |
+| 7b | 116-123 | 7 | V.4.B.2-B.4 Tradición: consentimiento, título, entrega (aprobado 2026-11-23; antes 118-125) |
+| 7c | 123-129 | 7 | V.4.C Tradición, efectos (aprobado 2026-11-23; antes 125-129) |
 | 8 | 129-141 | 8 | V.4.D.1 Tradición de muebles |
-| 9a | 142-150 | 9 | V.4.D.2 Sistema registral: introducción y fundamentos |
-| 9b | 150-160 | 9 | V.4.D.2 Sistema registral chileno (el grueso: Repertorio, Registro, inscripciones) |
-| 9c | 160-166 | 9 | V.4.D.2 cont. (cuotas, inscripciones por sucesión, prescripción) |
-| 10a | 166-175 | 10 | V.4.D.3 Tradición del derecho de herencia |
-| 10b | 175-183 | 10 | V.4.D.4 Tradición de derechos personales |
+| 9a | 142-152 | 9 | V.4.D.2.1 a D.2.3.2 Sistema registral: introducción, tipos de registro, el Conservador, principios (corte por contenido propuesto 2026-11-23, antes 142-150: los principios terminan en la p. 152) |
+| 9b | 152-160 | 9 | V.4.D.2.3.3 a 3.10 (qué se inscribe, cómo, negativa, plazo, avisos, contenido, subinscripciones). Corte aprobado 2026-11-23 |
+| 9c | 161-166 | 9 | V.4.D.2.3.11 a 3.15 (cancelaciones, reinscripciones, sanción, saneamiento y DL 2.695, inscripciones paralelas y de papel). Corregido 2026-11-23 |
+| 10a | 166-175 | 10 | V.4.D.2.4 a D.2.7 (tradición de derechos reales sobre inmuebles, cuotas, art. 688, la inscripción en la prescripción). Corregido 2026-11-23 |
+| 10b | 175-183 | 10 | V.4.D.3 Tradición del derecho de herencia + V.4.D.4 Tradición de derechos personales. Corregido 2026-11-23 |
 | 11a | 184-191 | 11 | V.5.A.1 Posesión, aspectos generales |
-| 11b | 191-198 | 11 | V.5.A.2 Clases de posesión (regular: concepto, justo título) |
-| 11c | 198-204 | 11 | V.5.A.2 cont. (buena fe, tradición, ventajas) |
-| 12 | 204-213 | 12 | V.5.A.2 cont. (posesión irregular y viciosa) |
-| 13a | 213-220 | 13 | V.5.A.3 Mera tenencia |
-| 13b | 220-228 | 13 | V.5.A.4 Transmisibilidad, agregación, interversión |
-| 13c | 228-235 | 13 | V.5.A.5 ACP posesión de muebles |
-| 14 | 235-245 | 14 | V.5.A.5 ACP posesión de inmuebles (posesión inscrita) + A.6 prueba — **candidato a dividir en 2-3 cuando se llegue**, es de los temas más preguntados |
+| 11b | 191-202 | 11 | V.5.A.2 Clases de posesión (regular: concepto, justo título completo hasta el art. 704). Corregido 2026-11-26 |
+| 11c | (unido al 12) | 11 | Laura aprobó el 2026-11-26 unirlo al 12 |
+| 12 | 202-208 | 11-12 | V.5.A.2 cont. (buena fe, tradición, ventajas, posesión irregular y viciosa). Corregido 2026-11-27 |
+| 13a | 208-214 | 12 | V.5.A.3 Mera tenencia + A.4 Transmisibilidad, agregación, interversión (corregido 2026-11-27) |
+| 13b | 214-218 | 13 | V.5.A.5.1 a A.5.3 (observaciones generales, principio básico, muebles). Corregido 2026-11-27 |
+| 13c | 218-228 | 13 | V.5.A.5.4.1 Posesión de inmuebles, aspectos generales (Mensaje, doctrinas antagónicas). Corregido 2026-11-27 |
+| 14a | 228-235 | 14 | V.5.A.5.4.2 Inmuebles no inscritos (corregido 2026-11-27) |
+| 14b | 235-245 | 14 | V.5.A.5.4.3 Inmuebles inscritos + A.6 prueba (corregido 2026-11-27) |
 | 15a | 246-253 | 15 | V.5.B.1-B.3 Prescripción adquisitiva: nociones, fundamento, características |
 | 15b | 253-259 | 15 | V.5.B.4 Reglas comunes |
 | 15c | 259-264 | 15 | V.5.B.5 Elementos (cosa, posesión, inicio del tiempo) |
@@ -973,7 +1025,7 @@ Verificación: 71 unidades presentes, cero guiones largos, ids únicos,
 previa actualizada. Respaldo previo en el tmp del job
 (`05_Bienes_antes_5b.html`). Aprobado por Laura el 2026-10-10.
 
-## Tramo 6a: escrito (2026-10-10), esperando revisión de Laura
+## Tramo 6a: hecho y aprobado (2026-11-23), commit `de6ca42`
 
 **V.3.1 a V.3.5.1, páginas 95 a 102 de Boetsch.** Informe en
 `Informes/Informe_Bienes_tramo6a.html`.
@@ -1021,16 +1073,1217 @@ balanceadas, párrafo más largo 868 caracteres, artículos en rojo,
 capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
 del job (`05_Bienes_antes_6a.html`).
 
-## Siguiente paso exacto (2026-10-10, vigente)
+## Tramo 6b: hecho y aprobado (2026-11-23), commit `5643d37`
 
-1. **Laura revisa el tramo 6a** en `Vista_previa/Bienes_vista_previa.html`
-   (anclas `#cV-3` y `#cIV-6`). Si lo aprueba, anotar la aprobación aquí.
-2. **Tramo 6b** (V.3.5.2 y V.3.5.3, p. 102-110): informe nuevo. Paso 0
-   de siempre: releer `lecciones-acto-juridico.md` (checklist de la
-   sección 6). Fuentes: Boetsch p. 102-110, Peñailillo p. 67-68 del PDF
-   (función, valor y volumen para determinar lo principal). Preguntas
-   del banco que van ahí: "principio rector en el caso de la Accesión?",
-   "mecanismos que establece el legislador para determinar lo accesorio,
-   y lo principal?", "como debe ser la unión?".
-3. Pendiente arrastrado para el tramo 11b: el argumento de VIAL sobre el
-   art. 703 (ver "Tramo 5a").
+**V.3.5.2 y V.3.5.3, páginas 102 a 110 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo6b.html`.
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: adjunción resumida con enlace a II.E.1 (sin repetir los arts.
+659 a 661 ni nuevo ejemplo de adjunción); cuadro para los tres grados de
+conducta del art. 668; arts. 657, 662 inc. 1º, 668 y 669 en `.ley`;
+conexión al art. 1500 (Obligaciones); cuadro de las tres especies de
+mueble a mueble; pregunta clásica "¿Qué mecanismos establece el
+legislador para determinar lo principal y lo accesorio?"; Laura no tiene
+material propio. Aprobó el 6a.
+
+Lo que se hizo: V.3.5.2 y V.3.5.3 reescritos en voz propia (paráfrasis:
+de 9 frases de prosa sobre 70% a 0; solo quedan sobre 70% títulos de
+Boetsch, textos de artículos y una fila del cuadro). Las 15 unidades de
+Boetsch y las 4 de Peñailillo, presentes (verificado por script). Todas
+las correcciones del informe aplicadas. Formato: 5.2 con (i)-(iv),
+a)-d), b.1)-b.4) y d.1)-d.3); 5.3 con (i)-(iv), a)-c), a.1)/a.2) y
+b.1)/b.2) (ids `cV-3-5-2-a` a `-d` y `cV-3-5-3-a`/`-b` eliminados, nada
+enlazaba a ellos). Intro de V.3.5 reordenada (ii mueble a mueble, iii
+mueble a inmueble). Los 15 rótulos `a.1)` mal puestos de V.2.4.2 y
+V.3.5.1 corregidos a `b.1)`/`c.1)`. Dato de grado → No confundir
+"¿Accesión o tradición?". Ejemplos: "El pipeño de Gonzalo" y "El quincho
+de Óscar" (cajas), trigo de Marisol y Fabián e Iván en Chillán
+(cursiva). Enlaces a II.E.1, II.B.4.2 y VII.2.6. Verificación: cero
+guiones largos, ids únicos, `href` resuelven, etiquetas balanceadas,
+párrafo más largo 911 caracteres, artículos en rojo, capturas revisadas,
+vista previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_6b.html`).
+
+Hallazgos principales: faltan 15 unidades de Boetsch (casi todas de
+mueble a inmueble: elección del dueño del suelo, a sabiendas = mala fe,
+hurto o apropiación indebida, la ley presume el consentimiento, plantar
+vs. sembrar, inmuebles por adherencia, reparto del art. 662 inc. 4º,
+fin de producción y cuestión de hecho en la especificación, entre
+otras); 4 unidades de Peñailillo (incluida la unidad 14 diferida del
+6a: función, valor y volumen; y su objeción a que la especificación sea
+accesión, frente a la "mayoría" de Boetsch). Correcciones al Código:
+art. 669 inc. 1º (al que sembró, renta **y perjuicios**), art. 669
+inc. 2º ("para recobrarlo"), art. 662 inc. 2º ("reclamar", no "se hace
+dueño"), art. 662 inc. 1º (la definición legal no es la de Boetsch),
+art. 663 ("áridas"), art. 658 (fórmula del requisito), incisos del art.
+668 (cuatro incisos; Boetsch cita mal el 2º y nadie cita el 3º),
+voluptuarias (arts. 910 y 911). Dato de grado al final de 5.3 → No
+confundir "¿Accesión o tradición?". Adjunción ya está en II.E.1
+(arts. 659 a 661 en `.ley`, "El anillo de Camila"): propuesta de no
+repetir. **Error de rótulos detectado:** 15 `a.1)` que cuelgan de `b)` o
+`c)` en V.2.4.2 (tramo 5b) y V.3.5.1 (tramo 6a); deben llevar la letra
+del padre (`b.1)`, `c.1)`), como en AJ. Se corrigen en la pasada del 6b.
+
+Decisiones pedidas a Laura (las 8 del recuadro del informe): aprobar el
+6a; adjunción resumida con enlace a II.E.1; cuadro para los tres grados
+de conducta del art. 668 (la escalera no admite `a.1.1)`); arts. 668 y
+669 en `.ley` (657 y 662 inc. 1º van por regla); conexión al art. 1500;
+cuadro de las tres especies de mueble a mueble; pregunta clásica
+"mecanismos para determinar lo principal y lo accesorio"; material
+propio. Ejemplos propuestos: "El pipeño de Gonzalo" (caja, 662 y 665),
+trigo de Marisol y Fabián (cursiva, 663), ladrillos de Iván (cursiva,
+668), "El quincho de Óscar" (caja, 669 incs. 1º y 2º).
+
+## Tramo 7a: hecho y aprobado (2026-11-23), commit `541c37d`
+
+**V.4.A + V.4.B.1, páginas 111 a 116 de Boetsch** (corte propuesto).
+Informe en `Informes/Informe_Bienes_tramo7a.html`. Hallazgos:
+
+- **Corte:** V.4.A termina en la p. 114; B.1 en la 116; B.2-B.4 p.
+  116-123; C p. 123-129. Propuesto 7a = A + B.1, 7b = B.2-B.4, 7c = C.
+- Boetsch: faltan 3 unidades (arts. 1443 "parcialmente adecuado" y 2197
+  "con redundancia" en A.4; la frase que abre B) y 2 matices. Paráfrasis:
+  20/73 oraciones sobre 70%, se reescribe todo.
+- **Repeticiones con V.1:** A.2.1 (V.1.3.1), A.2.3 (V.1.3.4, Yaris),
+  A.2.4 (V.1.3.2 iii), A.3 (V.1.4 iv y cuadro), A.1 (V.1.1). Propuesta:
+  versión corta con enlace. Art. 682 en `.ley` solo en B.1.1 (i).
+- **A.2.5 "sirve de justo título":** choca con art. 702 inc. 3º; los
+  anexos de posesión (Bozzo e Ibarra; Lombardo) dicen que la tradición
+  de quien no es dueño es título de la posesión. Propuesta: frase con
+  nombre de BOETSCH + art. 683 + una línea "se discute" + enlace a
+  `#cV-5-A-2-2-2`. El argumento de VIAL sobre el 703 sigue para 11b.
+- **VIAL (resumen, p. 1-10 y 18-19), 14 unidades:** enajenar = tradición
+  (una línea + conexión a AJ II.C.4.3); naturaleza jurídica; entre vivos
+  (no entra, ya en V.1.3.3, el pacto va al 7c); universal "patrimonio"
+  (no entra, contradice a Boetsch); entrega/tradición, inexactitud en
+  inmuebles, dar vs. entregar (1548, 1824, 1826) y discusión VIAL vs.
+  "otra parte de la doctrina" sobre cuándo se cumple la obligación de
+  dar; art. 1443 (contratos reales); existencia/validez; art. 671;
+  facultad = dueño (VIAL) vs. poder de disposición (Boetsch); capacidad
+  de ejercicio en ambos; incapacidades especiales anulan la venta, no
+  la tradición; **art. 679** (no estaba en el manual) con arts. 254 y 393.
+- Peñailillo no trata la tradición (lo que trae ya está en V.1.1).
+- Citas: art. 670 sin inc. 2º; art. 1575 sin "o con consentimiento del
+  dueño" ni inc. 3º (fungible consumida de buena fe); art. 1578 Nº 1 dice
+  "administración" (no "libre") y la salvedad es el provecho "con arreglo
+  al art. 1688". `.ley` propuestos: 670, 671 (completo, Memorice), 679,
+  682.
+- Opinión de Boetsch en B.1.2 ("parece claro" que el pago es nulo) va
+  con su nombre.
+- Formato: B.1.1 h6 a)/b) a (i)/(ii) y las tres posturas del adquirente
+  a)-c); No confundir "Entrega vs. tradición" → cuadro de 5 criterios
+  (decide Laura); sin latinazgo *nemo plus*; grafía "traslaticio".
+- Ejemplos propuestos: "El kayak de Maite" (A.4), "El notebook de la
+  hermana" (B.1.2, Emilia, Lucas, Trinidad; obligación **de género** a
+  propósito: con especie determinada habría error en la identidad,
+  art. 676, y la tradición sería inválida); breves: Domingo (herencia),
+  tía Pilar curadora (art. 679), Bastián y Amanda con un sofá (A.4; no
+  un auto, que es mueble registrable).
+- Criterio VIAL (resumen): lo expuesto va con su nombre (como en 5a);
+  "la doctrina clásica" / "un sector" sin nombre; sin citas literales.
+- 4 preguntas clásicas candidatas (¿qué es la tradición?; ¿es un
+  contrato? recomendada; ¿modo más importante?; ¿qué capacidad?
+  recomendada).
+- Conexiones: AJ II.C.4.3, II.B.2, II.B.3.3; Obligaciones y Contratos
+  con `[FALTA: sección]`.
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: corte 7a = A + B.1 (p. 111-116), 7b = B.2-B.4, 7c = C;
+repeticiones con V.1 resumidas con enlace; VIAL obligación de dar (dos
+posturas con nombre) en B.1.2; clasificación existencia/validez de VIAL
+al abrir B; cuadro "Entrega y tradición" en vez del No confundir;
+pregunta clásica **solo "¿La tradición es un contrato?"** (en A.2.2).
+**A.2.5 ("sirve de justo título"):** Laura pidió ver primero un
+esquema, por ser tema sensible; lo aprobó tal cual (2026-11-23): título
+de Boetsch se mantiene; regla (arts. 682 y 683); fórmula con nombre de
+BOETSCH; precisión del art. 702 inc. 3º (justo título = contrato,
+tradición = requisito adicional, art. 703 inc. 3º); "otros sostienen"
+que el título de la posesión es la tradición (anexos, sin autor);
+resultado práctico común (arts. 2508 y 708); enlace a
+`#cV-5-A-2-2-2`; ejemplo de Amanda y Bastián con la bicicleta. No se
+toma partido ni se desarrolla el 703 (queda para 11b).
+
+Lo que se hizo: V.4.A y V.4.B.1 reescritos en voz propia (paráfrasis:
+de 20 de 73 oraciones sobre 70% a 3, dos de ellas transcripciones de los
+arts. 670 y 682); unidades de Boetsch y de VIAL verificadas por script;
+arts. 670, 671, 679 y 682 en `.ley`; correcciones de los arts. 1575 y
+1578 Nº 1; enlaces a V.1.1, V.1.3.1, V.1.3.2, V.1.3.4, V.1.4 y
+V.5.A.2.2.2; cuadro "Entrega y tradición" (reemplaza al No confundir);
+B.1.1 con (i)/(ii) y a)-c) (ids `cV-4-B-1-1-a`/`-b` eliminados, nada
+enlazaba); pregunta clásica "¿La tradición es un contrato?" en A.2.2;
+cajas "El kayak de Maite" y "El notebook de la hermana"; breves en
+cursiva (Domingo y Elisa, Amanda y Bastián, Matilde y la lancha, tía
+Pilar); Conexiones al final de A y de B.1. Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafo
+más largo 848 caracteres, artículos en rojo, capturas revisadas, vista
+previa actualizada. Respaldo previo en el tmp del job
+(`05_Bienes_antes_7a.html`).
+
+## Tramo 7b: hecho y aprobado (2026-11-23), commit `812353c`
+
+**V.4.B.2 a B.4, páginas 116 a 123 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo7b.html`. Hallazgos:
+
+- Boetsch: faltan 7 unidades (la mayoría en 3.2: nula por defectos
+  propios, "influencia del título", primera solución que borra la
+  posesión, ejemplo de la compraventa nula; en 3.1, el título necesita
+  la tradición y la discusión causal/abstracta extranjera; en 2.4, el
+  art. 894 CPC) y la jurisprudencia RDJ/F. del M. Tres opiniones de
+  Boetsch en la voz del manual (inoponibilidad en 672-673; pago de lo
+  no debido; posesión con título nulo): van con su nombre. Paráfrasis:
+  18/83 sobre 70%.
+- **Errores:** art. 1452 citado para "vicios" (es el 1451); art. 1455
+  citado para el error en el nombre (es la regla general del error en
+  la persona); art. 1576 a su texto. **Caja "Las dos formas de error en
+  el título" mal** (Pedro/Juan: dice que comodato vs. donación son
+  ambos traslaticios, y el 2º caso no es hipótesis del 677): se
+  reemplaza.
+- VIAL (p. 7-10, 19-26), 11 unidades: 672 (falta de voluntad = no hay
+  tradición; suplantación o falso representante; ratificación;
+  tradición de cosa ajena no es nula, como la venta, 1815); 673
+  (inoponible al falso adquirente); 674 (doctrina antigua nulidad,
+  actual modalidad: no se radica en el representado); error en la
+  cosa (distinto del 1453; resumen confuso, leído como nulidad
+  relativa; dación en pago); error en la persona (mayoritaria: NR y
+  posesión; VIAL: pago de lo no debido, 2295, mero tenedor); error en
+  el título (677 innecesario, error esencial, no hay tradición); **675:
+  sin título no hay tradición ni posesión (choca con Boetsch); título
+  nulo: posesión irregular**; 675 inc. 2º (cónyuges, art. 1138);
+  intención presumida y art. 684; otros títulos (sociedad,
+  cuasiusufructo, transacción 703).
+- Propuestas: arts. 672-678 en `.ley`; cuadro "El error en la
+  tradición" (Boetsch vs. VIAL); Dato de grado de 2.4 al texto (CLARO
+  SOLAR); h6 a)-d) de 2.2 a (i)-(iv); esquema de 3.2 (sección 6 del
+  informe) para aprobar antes, como el 2.5 del 7a.
+- Ejemplos: "La bicicleta de Simón" (677, primo Tadeo), "El remate del
+  departamento de don Patricio" (671 inc. 3º, 497 CPC), "La moto de
+  Colomba" (Colomba de 16 vende a Rafael; NR, 1684, 1687; posesión
+  irregular); breves: sofá de Antonella (persona), Isidora/Isadora
+  (nombre), corredor (674).
+- 4 preguntas clásicas candidatas (remate: ¿quién hace la tradición?;
+  error en la tradición; sanción del 672; títulos traslaticios y
+  transacción).
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: arts. 672-678 en `.ley`; tres lecturas de la falta de
+voluntad con nombre; cuadro "El error en la tradición"; esquema de 3.2
+aprobado tal cual; art. 675 inc. 2º con art. 1138; jurisprudencia:
+**solo** RDJ t. 6, p. 266 (acoge a CLARO SOLAR); pregunta clásica
+**solo una, nueva, pedida por Laura:** "¿En qué se diferencia el error
+como vicio del consentimiento del error en la tradición?" (en 2.2,
+tras el cuadro). Laura no tiene material propio (se anota, no se
+agrega nada). **Cambio posterior (2026-11-23, pedido de Laura al
+aprobar el 7c, commit `62012c6`):** esa pregunta clásica se reemplazó
+por un **cuadro comparativo** "error como vicio del consentimiento /
+error en la tradición" (9 criterios), después del cuadro "El error en
+la tradición" en 2.2. No volver a la caja de pregunta.
+
+Lo que se hizo: B.2-B.4 reescritos en voz propia (paráfrasis: de 18/83
+sobre 70% a 6, todas transcripciones de los arts. 672, 673, 675, 676 y
+677); las 7 unidades de Boetsch y las 11 de VIAL presentes (verificado
+por script); opiniones de BOETSCH con nombre (inoponibilidad, pago de
+lo no debido, posesión con título nulo); arts. 1451 (no 1452), 1455 y
+1576 corregidos; art. 894 CPC; Dato de grado de 2.4 al texto; 2.2 con
+(i)-(iv) y a)/b) (ids `cV-4-B-2-2-a` a `-d` eliminados, nada enlazaba);
+cuadro con clase `cols-angostas`; caja errónea Pedro/Juan reemplazada
+por "La bicicleta de Simón"; cajas "El remate del departamento de don
+Patricio" y "La moto de Colomba"; breves (Antonella, Isidora/Isadora,
+Fermín); enlaces a A.4, B.1 y V.5.A.2.2.2; una caja Conexiones al final
+de B. Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafo más largo 973, artículos en rojo,
+capturas revisadas, vista previa actualizada. Respaldo previo en el tmp
+del job (`05_Bienes_antes_7b.html`).
+
+## Tramo 7c: hecho y aprobado (2026-11-23), commit `7e3087e`
+
+**V.4.C Efectos, páginas 123 a 129 de Boetsch** (cierra la parte 7).
+Informe en `Informes/Informe_Bienes_tramo7c.html`. Hallazgos:
+
+- Boetsch: faltan la intro de C, el caso de la cosa ajena mostrada y
+  nunca tenida (C.1), la cita de la C.S. sobre "transmisibles" (RDJ t.
+  24, p. 200), la discusión sobre retroactividad del título (4.1),
+  "tradición anticipada" y el momento del traspaso (4.3 i), y casi toda
+  la discusión 680/1874: objeción de Boetsch a la especialidad, los dos
+  rebatimientos de CAPRILE, condición sobre la tradición y no sobre el
+  contrato, accesoriedad (cesión y extinción del crédito), liquidación
+  concursal, par condicio, crédito interempresas. Hoy está en un Dato
+  de grado (se retira). Crítica del 682 y C.3 en la voz del manual: van
+  con nombre de BOETSCH (C.3 hoy contradice el esquema aprobado de
+  A.2.5). Paráfrasis: 4/66 sobre 70%, bajo porque el texto está
+  comprimido; se reescribe igual.
+- VIAL (p. 8-9 y 26-29), 9 unidades: 682 solo si la intención era
+  transferir ese derecho (opuesto a Boetsch); derechos intransferibles;
+  682 inc. 2º "la ley finge"; 683 muebles (sin tenencia no hay
+  posesión) e inmuebles (inscripción da posesión pero para prescribir
+  hacen falta actos posesorios: queda para el tramo 14); 681 plazo
+  tácito y decreto judicial; condición suspensiva y resolutoria en sus
+  tres estados (cumplida suspensiva: retroactivo a la tradición, frente
+  a Boetsch "en el instante"; cumplida resolutoria: la posesión
+  subsiste); reserva de dominio con y sin el 1874; "unánime" + art. 13.
+  VIAL p. 26 cita el 681 por el 680: no se arrastra.
+- Discusiones nº 14: ALESSANDRI por el 1874, **no verificado en el
+  original** (apunte de alumnas).
+- Citas: art. 730 (el mero tenedor que enajena a su propio nombre;
+  inc. 2º poseedor inscrito); art. 681 solo habla de plazo (la
+  condición viene del 1485); art. 1874 segunda parte omitida;
+  "quiebra" → liquidación concursal (Ley 20.720, sin artículos).
+  `.ley` propuestos: 680, 681, 1873, 1874; 682 y 683 solo enlace.
+- **Tensión con AJ:** AJ VI.A.3.1 (ii) afirma la retroactividad de la
+  condición cumplida sin matices; Boetsch la discute. Propuesto: dos
+  lecturas con nombre en Bienes, no tocar AJ en este tramo.
+- **Para el tramo 8:** V.4.D.1.4 dice que en toda tradición ficta el
+  adquirente queda en posesión; Boetsch (C.1) y VIAL dicen que sin
+  tenencia no hay posesión. Revisar al llegar ahí.
+- Esquema de la reserva de dominio (sección 6 del informe) y cuadro
+  "Art. 680 o art. 1874" para aprobar antes.
+- Ejemplos: "El caballo del potrero vecino" (Octavio y Leticia, 684 Nº
+  2), "El piano de la tía Dominga" (Facundo y Ximena, 682 inc. 2º y
+  1819), "El comedor de Ignacia" (reserva de dominio, Florencio);
+  breves: violín de la abuela Amparo y Emiliano (condición suspensiva y
+  resolutoria).
+- Pregunta clásica propuesta: solo "¿Qué ocurre si el tradente no es
+  dueño de la cosa?" (al final de C.3).
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: esquema de la reserva de dominio tal cual; cuadro "Art. 680 o
+art. 1874"; dos lecturas de la condición cumplida (BOETSCH/VIAL) sin
+tocar AJ; las dos lecturas del 682 con nombre; arts. 680, 681, 1873 y
+1874 en `.ley`; "liquidación concursal (la antigua quiebra)"; pregunta
+clásica solo "¿Qué ocurre si el tradente no es dueño de la cosa?".
+Laura pidió además una **Conexión** a AJ por la retroactividad de la
+condición, para que se revise esa parte (hecho, en la caja Conexiones
+al final de C). Laura no indicó material propio.
+
+Lo que se hizo: V.4.C reescrito en voz propia (paráfrasis: 1 oración
+sobre 70%, la transcripción del art. 681); unidades de Boetsch y de
+VIAL verificadas por script; Dato de grado retirado; C.2 y 4.2 con
+(i)/(ii)/(iii); 4.3 (i) con a)/b) y a.1)/a.2), b.1)/b.2); cajas "El
+caballo del potrero vecino", "El piano de la tía Dominga" y "El comedor
+de Ignacia"; breves (Remigio y Pascual, 682; violín de Amparo y
+Emiliano); cuadro con `cols-angostas`; enlaces a A.2.5, B.1.1,
+D.1.3.2, V.5.A.2.2.2, V.5.A.5.4, VI.1 y VI.2. Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafo
+más largo 985, capturas revisadas, vista previa actualizada. Respaldo
+en el tmp del job (`05_Bienes_antes_7c.html`).
+
+**Pendiente para AJ (no para Bienes):** VI.A.3.1 (ii) afirma la
+retroactividad de la condición cumplida sin matices. Al revisar AJ,
+contrastar con Boetsch (Bienes V.4.C.4.3) y con los arts. 1486 y 1488
+(el acreedor recibe la cosa en el estado en que esté; no se deben los
+frutos del tiempo intermedio), que muestran que la retroactividad no es
+absoluta. Buscar fuente doctrinal antes de escribir.
+
+## Tramo 8: hecho y aprobado (2026-11-23), commit `c28471a`
+
+**V.4.D (entrada) y D.1, páginas 129 a 141 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo8.html`. Hallazgos:
+
+- **VIAL cambió de postura y el manual se contradice.** Boetsch (sección
+  3) sigue a VIAL en sus ediciones anteriores: sin recepción no hay
+  tradición (Nº 1), mostrar no basta (Nº 2), el encargo del Nº 4 debe
+  cumplirse. El resumen de VIAL dice "ha cambiado su postura": la
+  tradición (dominio) ocurre con la conducta del tradente (permitir,
+  mostrar, encargarse); la posesión exige que el adquirente reciba;
+  dar vs. entregar; mora de recibir y consignación. En el Nº 4 VIAL hoy
+  adhiere a la lectura literal (con PEÑAILILLO y la doctrina nacional).
+  A.4 (7a) ya recoge la postura nueva; D.1 3.1, 3.2 y 3.4 tienen la
+  antigua atribuida a VIAL. Propuesto: esquema con lectura tradicional
+  (BOETSCH, VIAL ediciones anteriores, CLARO SOLAR en Nº 4) y lectura
+  actual de VIAL, y cuadro por número del 684. El resumen cita "art.
+  681 Nº 1" por el 684 Nº 1: no se arrastra.
+- Principio de las fictas (D.1.4): con nombre de BOETSCH; para VIAL
+  vale en Nºs 3 y 5, no en 2 y 4 sin entrega (resuelve la tensión
+  anotada en el 7c).
+- Boetsch: faltan la entrada de D (cuatro distinciones), forma más
+  corriente (Nº 1), primera tesis de la negativa, aprehensión simbólica
+  y la alternativa "solo contrato o ficta" (Nº 2), disponer entregando
+  las llaves (Nº 3), tradición por el solo contrato y la cita de CLARO
+  SOLAR (Nº 4), finalidad de brevi manu y constituto, acciones del
+  título (685 inc. 2º), RDJ t. 36 p. 435 (taxatividad), detalles de
+  valor comparativo y de vehículos. Paráfrasis: 14 sobre 70%, 43 sobre
+  35%.
+- Citas: art. 1817 tiene tres reglas (el manual da una); art. 149 C.
+  de Com. (tránsito por mar o tierra; uso constante del comercio); art.
+  148 inc. 2º (consignatario). Ley 18.290 y D.S. 1.111/1985 no
+  verificables en la carpeta de códigos.
+- Ejemplos: "La bicicleta eléctrica de Rosario" (Mateo, brevi manu),
+  "La enfardadora de don Hugo" (Celeste y Germán, constituto + 1817);
+  breves: Lautaro (Nº 1), Damián (llaves), Julieta (Nº 4), doña Irma
+  (pinos, 685), cláusula de prueba.
+- Pregunta clásica propuesta: "¿Es taxativa la enumeración del art.
+  684?". La de "¿684 o 686 regla general?" queda para el tramo 9a.
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo"**, no
+cambiar: esquema de las dos lecturas del art. 684 (tradicional:
+BOETSCH y VIAL en ediciones anteriores; actual de VIAL) y cuadro;
+**Laura no encontró el libro de VIAL en vLex** (solo el de Acto
+Jurídico): se dice "en la edición más reciente de su obra", sin número
+de edición. Dato: Alcalde (2018) cita VIAL, *La tradición y la
+prescripción adquisitiva como modo de adquirir el dominio*, 3ª ed.,
+Ediciones UC, 2009; no consta que sea la edición del resumen. `.ley`:
+684, 685, 1817, 148 y 149 C. de Com.; vehículos sin números de
+artículo; RDJ t. 36, p. 435 entra; pregunta clásica "¿Es taxativa la
+enumeración del art. 684?".
+
+**Material propio de Laura (2026-11-23):** Jaime Alcalde Silva, "De
+los bienes y de su dominio, posesión, uso y goce", comentario de
+jurisprudencia, *Revista Chilena de Derecho Privado* Nº 30 (2018), pp.
+221-239 (C.S., rol 12.210-2017, art. 915). Copia en `Downloads/`
+(`de-los-bienes-y-de-su-dominio-posesin-uso-y-goce-revista-chi.pdf`).
+**No aplica al tramo 8.** Usar en: tramo 9a (historia del art. 686:
+el Proyecto de 1853, art. 826, preveía una tradición simbólica
+opcional de inmuebles; las reglas de la posesión inscrita entraron en
+el Proyecto Inédito), tramo 13a (mera tenencia, el poseedor a nombre
+ajeno del art. 915), tramo 14 (posesión inscrita) y tramos 20a-20b
+(acción contra el injusto detentador, legitimación pasiva de la
+reivindicatoria, propuesta de reconstrucción de las acciones reales).
+
+Lo que se hizo: V.4.D (entrada con enlaces a D.1-D.4) y D.1 reescritos
+en voz propia (paráfrasis: de 14 sobre 70% a 11, todas transcripciones
+de artículos o títulos); entrada de 3. con las dos lecturas en
+(i)/(ii); 3.1, 3.2, 3.4, 7 y 8 con (i)/(ii); No confundir de 3.2
+mantenido y atribuido al razonamiento de VIAL; cuadro "Las cinco
+formas del art. 684, según las dos lecturas" al final de 3.7; D.1.4
+con nombre de BOETSCH y precisión de VIAL (resuelve la tensión del
+7c); art. 1817 completo; cajas "La bicicleta eléctrica de Rosario" y
+"La enfardadora de don Hugo" (reemplazan las genéricas); breves
+(Lautaro, Damián, Julieta, doña Irma, cláusula de prueba); latinazgos
+*tradens*/*accipiens* fuera. Verificación: cero guiones largos, ids
+únicos, `href` resuelven, etiquetas balanceadas, párrafo más largo
+1.071, capturas revisadas, vista previa actualizada. Respaldo en el
+tmp del job (`05_Bienes_antes_8.html`).
+
+## Tramo 9a: hecho y aprobado (2026-11-23), commit `e47fe19`
+
+**V.4.D.2.1 a D.2.3.2, páginas 142 a 152 de Boetsch** (corte por
+contenido propuesto: 3.2 Principios termina en la p. 152). Informe en
+`Informes/Informe_Bienes_tramo9a.html`. Hallazgos:
+
+- **Ley 21.772 (D.O. 01.10.2025, vigente en esto desde 02.04.2026):**
+  el Reglamento del Registro Conservatorio pasó a llamarse **Ley del
+  Registro Conservatorio de Bienes Raíces** y se reescribieron varios
+  artículos. Texto vigente bajado de la BCN y guardado en
+  `Apuntes/CODIGOS/Ley del Registro Conservatorio de Bienes Raíces (ex
+  Reglamento 1857).pdf` (antes no estaba: ya se pueden verificar sus
+  artículos). "Reglamento" aparece 52 veces en Bienes (solo en Bienes),
+  incluso en tramos aprobados: decisión de Laura pendiente, renombrar
+  todo de una vez (recomendado) o tramo por tramo.
+- Desactualizado en Boetsch: responsabilidad del Conservador (art. 96
+  hoy es disciplinario con exoneración; art. 97 derogado; art. 98
+  remite al 443 COT; art. 8 garantía); "en la mayoría de las comunas el
+  notario es Conservador" (hoy arts. 447 inc. 2º, 448 y 450 COT, más
+  norma transitoria); publicidad por sitio web y repositorio digital
+  (arts. 5, 5 bis, 49). Art. 78 Nºs 6 y 7 refuerza el tracto sucesivo.
+- Error: art. 2409 citado para la inscripción de la hipoteca (es el
+  2410). "COT 530 y ss." para la responsabilidad funcionaria: se cita
+  el 539 inc. 2º (nombra a los conservadores).
+- Boetsch: falta buena parte del Mensaje (simple tradición que deja a
+  salvo al verdadero dueño; todo inscrito con los años; modelo alemán;
+  adjudicaciones y transmisiones), detalles de Torrens y del sistema
+  alemán, enunciaciones del Repertorio (art. 24), arts. 42, 44, 46,
+  certificado de inscripción (85, 86), rogación inferida de los arts.
+  12, 15 y 21, gradualidad de la fe pública. El Mensaje está en un Dato
+  de grado (se retira, pasa al texto como cita; V.5.A.5.4.1 (i) remite
+  aquí). Paráfrasis: 16/125 sobre 70% (5 son el Mensaje).
+- VIAL (p. 14-17): lista del 686 por tipo de derecho; **uso y
+  habitación: VIAL dice que no hay error en el 686 (constitución por
+  tradición), frente a BOETSCH (3.3, p. 152, art. 819)**: dos lecturas
+  con nombre aquí, enlace en el 9b; 724 y posesión del derecho vs. del
+  inmueble; dar y entregar (hipoteca sin entrega). No se arrastra "dueño
+  en 5 años" (simplifica 2508/2511). Ley 6.977 y servidumbres de agua:
+  no verificadas (tramo 9c).
+- ALCALDE (RChDP 30, p. 226 y nota 4, p. 227): art. 826 del Proyecto
+  de 1853 (tradición simbólica opcional), reglas de la posesión inscrita
+  en el Proyecto Inédito, crítica "grueso error" con su nombre.
+- Propuestas: arts. 686 y 692 en `.ley`; esquema de funciones (i)-(v);
+  cuadro "Tres opciones para construir un registro"; cajas "La casa de
+  doña Herminia" (Baltazar, Agustina; 686, 724, 1817) y "El
+  departamento de Teodoro" (Olga, Eusebio; 1689, 2508); breves
+  (Wilfredo, Celinda); pregunta clásica recomendada "¿Es prueba de
+  dominio la inscripción conservatoria?" (alternativa: "¿684 o 686?").
+- **Para el 9b:** arts. 13, 58 y 78 de la ley cambiaron; art. 451 COT
+  (Ley 21.718) plazo máximo de 20 días para inscribir; lo de VIAL sobre
+  negativa, Repertorio y dos meses.
+
+**Decisiones de Laura al informe (2026-11-23): "todo ok"**, no
+cambiar: corte 142-152; **"Reglamento" renombrado en todo el manual
+de una vez** a "Ley del Registro Conservatorio" (se dejaron a propósito
+las menciones históricas: III.6 d) con nota sobre la Ley 21.772, la
+casación del 3.5 "el antiguo Reglamento constituía un DFL", la
+explicación de 3.1 y el Reglamento del Registro de Vehículos);
+actualizaciones de las Leyes 21.772 y 21.718 resumidas; dos lecturas
+de uso y habitación (BOETSCH/VIAL); párrafo de ALCALDE; Mensaje al
+texto como cita (Dato de grado retirado); arts. 686 y 692 en `.ley`;
+cuadro "Tres opciones para construir un registro"; fallo C.S. 29-12-2009
+con fecha, sin rol; pregunta clásica **solo "¿Es prueba de dominio la
+inscripción conservatoria?"** (la de "¿684 o 686?" se descarta). Laura
+no indicó material propio.
+
+Lo que se hizo: D.2.1 a D.2.3.2 reescritos en voz propia (paráfrasis:
+de 16 oraciones sobre 70% a 0 de prosa; las que quedan son el Mensaje,
+el art. 686, el fallo y la lista de los tres libros); unidades de
+Boetsch, VIAL y ALCALDE verificadas por script; art. 2410 (no 2409);
+responsabilidad del Conservador (arts. 96, 98, 8 de la ley; 539 inc. 2º
+COT); notario conservador (arts. 447-450 COT); publicidad digital
+(arts. 5, 5 bis, 49); art. 78 Nºs 6 y 7 en tracto sucesivo; funciones
+en (i)-(v); 2.2, 3.1 y 3.2 con (i)-(vi) y a)-c) (ids de los antiguos
+a)-f) eliminados, nada enlazaba); en el punto 3, "artículos sin otra
+indicación = Ley del Registro Conservatorio" (dicho en 3.1); cajas "La
+casa de doña Herminia" y "El departamento de Teodoro"; breves
+(Wilfredo, Celinda, Agustina, Baltazar); Conexiones (AJ IV.B.4.3;
+Contratos 1817). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 1.002, capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_9a.html`).
+
+## Tramo 9b: hecho y aprobado (2026-11-23), commit `70f1d71`
+
+**V.4.D.2.3.3 a 3.10, páginas 152 a 160 de Boetsch** (3.11 empieza en
+la p. 161). Informe en `Informes/Informe_Bienes_tramo9b.html`. Hallazgos:
+
+- **Reparto mal rotulado desde el 9c** (propuesta en el informe, sin
+  aplicar a la tabla hasta que Laura decida): 9c = 3.11-3.15 (p.
+  161-166: cancelaciones, reinscripciones, sanción, saneamiento y DL
+  2.695, inscripciones paralelas y de papel); 10a = D.2.4-D.2.7 (p.
+  166-175: tradición de derechos reales sobre inmuebles, cuotas, art.
+  688, la inscripción en la prescripción); 10b = D.3 y D.4 (p. 175-183).
+- **Ley 21.772:** art. 78 reescrito (Nº 2 identificación del inmueble:
+  nombre, dirección, región, provincia, comuna, rol de avalúo,
+  superficie, planos; Nº 4 es la firma; "linderos" ya no aparece, solo
+  en la hipoteca, art. 81 Nº 3); art. 13 (comuna en vez de
+  departamento; sin "papel competente"; "o éstas no son correctas";
+  fundamentos por escrito en hoja aparte; costos del notario
+  negligente); art. 58 (aviso en el sitio web); art. 57 (certificación
+  de sentencia ejecutoriada). Art. 451 COT (Ley 21.718): 20 días para
+  inscribir, 10 tras reparos (va en 3.5, con el art. 96 Nº 3).
+- Citas: art. 659 CPC no trata la comuna (partidor y adjudicaciones);
+  arts. 56 y 59 (solo el 56 es de comuna; el 59 exige resolución
+  judicial previa); art. 69 (copia de la anotación, no "certificado de
+  repertorio" general); art. 92 (la nota de referencia es obligatoria,
+  no "práctica").
+- Boetsch: faltan ALESSANDRI (instrumentos públicos), "impedimento de
+  registro" y el argumento del art. 13 "por ley, no por acuerdo", los
+  ejemplos de embargo amplio, arts. 56 y 59, volver a pedir la
+  inscripción subsanado el defecto, la opinión de BOETSCH sobre inscribir
+  antes de que caduque la primera anotación, la caducidad de las
+  posteriores (art. 17), art. 19, el argumento del "título" en sentido
+  instrumental, la regla del art. 14 ("hasta que se le haga constar..."),
+  linderos como determinación del objeto. Paráfrasis: 29 de 55
+  oraciones de prosa sobre 70%.
+- VIAL (p. 15-16, 30): confirma, nada nuevo; prohibición de enajenar ya
+  en el No confundir de III.6.4 (enlace).
+- Título de 3.8 quedó anacrónico con el renombre del 9a ("anteriores a
+  la vigencia de la Ley del Registro Conservatorio"): propuesto
+  "anteriores a la entrada en funciones del Registro"; fecha 1859 no
+  verificable en la carpeta (decide Laura).
+- Propuestas: listas de los arts. 52 y 53 por sus Nºs (corrige "l." y
+  "m."); 3.3, 3.4 y 3.5 con (i)...; cuadro "Anotación en el Repertorio
+  e inscripción"; cajas "El galpón de Gumercindo" (Nelly, Yolanda;
+  arts. 15, 17, 78 Nº 2, 82) y "La parcela de doña Clotilde" (Abelardo,
+  Chonchi; arts. 693 y 58); breves (Osvaldo, minuta "Los Aromos 1280",
+  Baltazar y art. 14, Josefina de III.6.4, Graciela); pregunta clásica
+  recomendada "¿Cómo se individualiza el bien inmueble en el
+  Conservador?" (de PREGUNTAS BIENES), alternativa "¿Puede el
+  Conservador negarse a inscribir un título?". Conexiones: AJ IV.B.1.6
+  (art. 1683); Procesal y Contratos con `[FALTA: sección]`.
+
+**Decisiones de Laura al informe (2026-11-23): "ok"**, no cambiar:
+reparto nuevo (9c = 3.11-3.15; 10a = D.2.4-D.2.7; 10b = D.3 y D.4,
+tabla corregida); art. 78 actual con el razonamiento de BOETSCH sobre
+los linderos; leyes nuevas resumidas; título de 3.8 "anteriores a la
+entrada en funciones del Registro", **sin fecha**; listas de los arts.
+52 y 53 por sus Nºs; cuadro; **las dos preguntas clásicas** (negativa
+al final de 3.5, individualización al final de 3.9). Laura **no tiene
+material propio**. El `AJ_vista_previa.html` suelto en la raíz de
+`DERECHO LIBRE/` (copia del 7 de octubre del manual de AJ) **se deja
+donde está**, por decisión de Laura.
+
+Lo que se hizo: D.2.3.3 a D.2.3.10 reescritos en voz propia
+(paráfrasis: de 29 oraciones de prosa sobre 70% a ninguna de prosa
+propia; las que quedan son ítems de la ley, el art. 14 o la frase
+atribuida a BOETSCH); 3.3 con (i)/(ii) y a)-d) / a)-c) por Nºs de los
+arts. 52 y 53; 3.4 (i)-(iv); 3.5 (i)-(ii) (ids `-3-3-a/b`,
+`-3-4-a..d`, `-3-5-a/b` eliminados, nada enlazaba); arts. 13, 57, 58
+y 78 vigentes; art. 451 COT y 96 Nº 3; arts. 56, 59, 69, 89 y 92;
+ALESSANDRI; opiniones de BOETSCH con nombre; lo de los tribunales
+atribuido; cuadro "Anotación e inscripción"; cajas "El galpón de
+Gumercindo" y "La parcela de doña Clotilde"; breves (Osvaldo, minuta,
+Baltazar y art. 14, Josefina, Graciela); dos preguntas clásicas;
+Conexiones (AJ IV.B.1.6; Procesal y Contratos con `[FALTA: sección]`).
+Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafo más largo 840, unidades del inventario
+verificadas por script, capturas revisadas, vista previa actualizada.
+Respaldo en el tmp del job (`05_Bienes_antes_9b.html`).
+
+## Tramo 9c: hecho y aprobado (2026-11-23), commits `e389e95` y `eb39226`
+
+**V.4.D.2.3.11 a 3.15, páginas 161 a 166 de Boetsch** (cierra el punto 3
+de D.2). Informe en `Informes/Informe_Bienes_tramo9c.html`. Hallazgos:
+
+- **DL 2.695 desactualizado en Boetsch:** "al cabo de un año" dueño; desde
+  la Ley 21.108 (2018) son dos años (el manual ya lo dice en V.5.B.8).
+  Avalúo: menos de 800 UTM rural / 380 UTM urbano. Verificado con ORREGO
+  (2020), no con la BCN (el DL no está en `Apuntes/CODIGOS/`).
+- Citas: art. 728 dice "decreto judicial" (el manual, "sentencia");
+  PEÑAILILLO habla de requisitos "en consideración a la naturaleza del
+  acto" (fórmula del art. 1682), no "requisitos de forma"; en la causa
+  c) de las paralelas (art. 14) la doble inscripción nace después de la
+  notificación judicial, no "en el intertanto".
+- "La doctrina y jurisprudencia en general" (inscripciones de papel)
+  choca con V.5.A.5.4 (TRUCCO, LIRA, ALESSANDRI); el anexo de
+  discusiones dice que es la jurisprudencia reciente. Propuesto: dos
+  posturas sin tomar partido.
+- VIAL (p. 72-75): resciliación/transacción como "voluntad de las
+  partes" del 728 (nuevo, con nombre); lo demás del 728 y 730 ya está en
+  V.5.A.5.4.3 (enlace). Discusiones doctrinales nº 3: crítica a la
+  reinscripción (minoritaria, sin autor).
+- Paráfrasis: 8 de 25 oraciones sobre 70%.
+- Propuestas: 3.13 con (i) PEÑAILILLO / (ii) ROZAS; 3.15 a)/b) a
+  (i)/(ii); art. 728 inc. 1º en `.ley`; cuadro "Tres criterios para
+  resolver las inscripciones paralelas"; caja "El sitio de Leontina"
+  (Renato, Rosalía, Los Vilos); breves (Hortensia y Teófilo, heredero y
+  reinscripción, Eduvigis en Coyhaique, Filomena en Melipilla); pregunta
+  clásica recomendada "¿Qué son las inscripciones paralelas y cómo se
+  resuelven?"; la de "¿cómo se cancela la posesión inscrita?" (de
+  PREGUNTAS BIENES) propuesta para el tramo 14. Conexiones: AJ IV.B.2.2
+  (art. 1682); Contratos 1817 con `[FALTA: sección]`.
+
+**Decisiones de Laura al informe (2026-11-23): "ok a todo el resto"**,
+y agregó el texto vigente del DL a `Apuntes/CODIGOS/DL-2695_21-JUL-1979.pdf`
+(BCN, última modificación Ley 21.737, 21-04-2025). **El texto vigente
+corrige también a ORREGO:** el avalúo hoy es igual o inferior a **1.000
+UTM**, rural o urbano (Ley 21.737, 2025; ya no 800/380), y hay un
+requisito nuevo: declaración jurada de no tener juicio pendiente ni
+condena por usurpación (art. 2 Nº 3, Ley 21.633, 2023). La resolución
+vale como justo título (art. 15).
+
+Lo que se hizo: D.2.3.11 a 3.15 reescritos en voz propia (paráfrasis:
+de 8 de 25 oraciones sobre 70% a ninguna de prosa propia; las que
+quedan son la cita de URRUTIA y el art. 728); art. 728 inc. 1º en
+`.ley` ("decreto judicial"); resciliación con VIAL; reinscripción con
+la crítica minoritaria y enlace a D.2.6.2; 3.13 con (i) PEÑAILILLO /
+(ii) ROZAS; DL 2.695 resumido con el texto vigente (arts. 1, 2, 15 y
+16) y enlaces a V.5.B.6 y V.5.B.8; 3.15 con (i)/(ii) (ids
+`cV-4-D-2-3-15-a/b` eliminados, nada enlazaba); causa c) corregida;
+cuadro "Tres criterios" con la cita de TRUCCO; caja "El sitio de
+Leontina"; pregunta clásica "¿Qué son las inscripciones paralelas y
+cómo se resuelven?"; inscripciones de papel con las dos posturas;
+breves (Hortensia y Teófilo, Eduvigis, Filomena); Conexiones (AJ
+IV.B.2.2; Obligaciones 1567 y Contratos 1817 con `[FALTA: sección]`).
+Ajuste pedido por Laura (2026-11-23): VIAL con nombre en 3.15 (i):
+causa a), su lectura del art. 730 inc. 2º (la inscripción por avisos
+hecha por el mero tenedor sería "competente inscripción" y pondría fin
+a la posesión anterior, enlace a V.5.A.5.4.3); y la paralela por título
+que no proviene del poseedor inscrito (una eficaz, otra ineficaz).
+Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafo más largo 759, capturas revisadas,
+vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_9c.html`).
+
+**Pendientes que deja el 9c:** pregunta clásica "¿Cómo se cancela la
+posesión inscrita?" (PREGUNTAS BIENES) para el tramo 14 (V.5.A.5.4.3);
+en el tramo 16b, revisar V.5.B.6 y V.5.B.8 contra el texto vigente del
+DL 2.695 (falta el requisito del art. 2 Nº 3 y el avalúo de 1.000 UTM,
+si se menciona).
+
+## Tramo 10a: hecho y aprobado (2026-11-23), commits `852c58a` y `5065c22`
+
+**V.4.D.2.4 a D.2.7, páginas 166 a 175 de Boetsch** (cierra D.2).
+Informe en `Informes/Informe_Bienes_tramo10a.html`. Hallazgos:
+
+- Art. 687: "territorio", no "departamento" (Ley 18.776); los arts. 54
+  y 55 de la Ley del Registro Conservatorio siguen con el texto de 1857
+  (manda el art. 688 vigente).
+- Art. 1876 inc. 2º (precio declarado pagado: contra terceros solo
+  nulidad o falsificación), ausente en Boetsch: es la base legal de la
+  instrucción al notario.
+- **Laura agregó a `Apuntes/CODIGOS/`** la Ley 19.903
+  (`LEY-19903_10-OCT-2003.pdf`) y el DFL 1 de 2000
+  (`DFL-1_30-MAY-2000.pdf`), que trae al final el texto refundido de la
+  **Ley 16.271** (desde el "ARTICULO 8º" del DFL). Verificados: art. 25
+  (no se dispone de bienes de la herencia sin inscribir la posesión
+  efectiva) y art. 30 (inmuebles de la sociedad conyugal a nombre del
+  cónyuge y los herederos). **Corrección a Boetsch:** la Ley 19.903 (art.
+  8) no dice que la resolución administrativa se inscriba en el Registro
+  de Propiedad del Conservador del último domicilio: el certificado del
+  Registro Nacional sirve para pedir las inscripciones especiales. Que el
+  decreto judicial "también se inscribe" en el Registro Nacional no está
+  en la ley: se dejó lo que dice el art. 882 CPC (el tribunal oficia al
+  Registro Civil).
+- Paráfrasis: 30 de 61 oraciones sobre 70%. Dato de grado en 5.1. Citas
+  RDJ y Gaceta perdidas.
+- VIAL (p. 31-38) y discusiones nº 3: ver el informe.
+
+**Decisiones de Laura al informe (2026-11-23):** corregir "departamento";
+agregar el art. 1876 inc. 2º; cuadro de la sanción del art. 688; **no
+incluir la salida de la querella de amparo** (anexo de discusiones, sin
+autor ni explicación); **las dos preguntas clásicas**; sin material
+propio; "ok el resto".
+
+Lo que se hizo: D.2.4 a D.2.7 reescritos en voz propia (paráfrasis: de
+30 de 61 a 6 de 190, todas títulos u oraciones fácticas breves); citas
+RDJ y Gaceta repuestas; arts. 1824 y 1876 inc. 2º (este en `.ley`);
+art. 688 completo en `.ley`; Dato de grado de 5.1 retirado (al texto);
+5.2 con enlaces a IV.5.1 y IV.6; 6.1 con Ley 19.903 (art. 1 y 8) y Ley
+16.271 (arts. 25 y 30) verificadas, art. 687 "territorio", arts. 882 y
+883 CPC, VIAL con nombre (rol de las inscripciones, especiales siempre
+en el Conservador, bastan las dos primeras), enlaces a V.6.C y
+V.5.A.2.2.2; (i)-(iii) y a)-e) al marcado `enum-i-run`/`enum-a-run`
+(sin ids propios, nada enlazaba); 6.2 con el caso del remate, el
+argumento contra la nulidad absoluta, VIAL (arts. 679 y 696, nota de
+"posesión efectiva"), críticas minoritarias, mero tenedor, nulidad
+relativa por la calidad de heredero (1682 inc. 3º) con anotación
+marginal; cuadro "Respuesta / Qué pasa con la venta / Quién / Objeción";
+No confundir (art. 688 frente a cesión del derecho de herencia, enlace
+a D.3); 7 con VIAL (servidumbres, art. 698; el "título" del 689);
+cajas "La casa de Segismundo" (Fresia, Wenceslao) y "La parcela de don
+Belarmino" (Rodolfo, Zunilda, Aníbal, Bernardita; Conservador de Buin);
+breves (Rebeca, Herminio); dos preguntas clásicas; Conexiones (AJ IV.D.3,
+IV.B.2.5 y IV.B.3.6; Obligaciones, Contratos y Sucesorio con `[FALTA:
+sección]`). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 1.170, capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_10a.html`).
+
+Ajustes de la revisión final (mismo día): nulidad relativa con el
+art. 1682 incs. 1º y 3º (la "calidad o estado de las personas" está en
+el inc. 1º, como contraste; el informe decía inc. 3º); art. 1815 citado
+con su texto ("vale, sin perjuicio de los derechos del dueño"); enlaces
+de la comunicación de la cuota a IV.5.1 (no IV.6); caja de don Belarmino
+recorre todas las tesis del cuadro; Herminio sin tomar partido en el art.
+2505; sin "Conservador de Buin" (art. 687); breve de Domitila con
+servidumbre de **acueducto** (continua y aparente, arts. 822 y 882; la de
+tránsito no se adquiere por prescripción); No confundir matizado con D.3.4
+(la jurisprudencia no exige inscripciones para ceder la herencia; la tesis
+de GUTIÉRREZ sí, si hay inmuebles).
+
+**Pendiente para el 10b:** la nota "el art. 688 no se aplica a la cesión
+del derecho de herencia" ya quedó en el No confundir de 6.2; en D.3
+enlazar de vuelta.
+
+## Tramo 10b: hecho y aprobado (2026-11-23), commit `4580ceb`
+
+**V.4.D.3 y D.4, páginas 175 a 183 de Boetsch** (cierra V.4). Informe en
+`Informes/Informe_Bienes_tramo10b.html`. Hallazgos: art. 54 Ley 16.271
+reformado (Ley 21.420, 2022: también notarios y enajenaciones en común);
+art. 1911 inc. 2º (litigioso desde la notificación de la demanda) y art.
+1913 (retracto) ausentes; oración rota en el legado de especie; D.3.4.2
+con `h7`, `h5` y `enum-a` mezclados; paráfrasis 30 de 54 sobre 70%; VIAL
+(p. 17-18: derecho de herencia distinto del patrimonio, se cede la
+calidad de heredero, adhiere a URRUTIA; arts. 1903-1907); discusiones nº 4
+(hechos que la jurisprudencia aceptó como tradición de la herencia).
+
+**Decisiones de Laura (2026-11-23):** 6.2 del 10a (sanción del art. 688)
+de a)-e) a **(i)-(v)**, y las dos críticas minoritarias como **(i)
+Primero / (ii) Segundo**; derechos litigiosos con una **conexión al art.
+1464 Nº 4** (AJ II.C.4.3 ya tiene el No confundir "Especie litigiosa y
+derecho litigioso"); el cuadro se deja (no es imprescindible), con
+**conexión a Sucesorio**; **solo la primera pregunta clásica** (tradición
+del derecho de herencia; la de derechos personales, no). No respondió
+sobre la cesión de créditos ni el retracto: se aplicó lo recomendado
+(párrafo breve con arts. 1903, 1904, 1906 y 1907 y remisión a Contratos;
+art. 1911 inc. 2º y una línea del art. 1913). Avisado en el mensaje final
+para que pueda pedir quitarlo.
+
+Lo que se hizo: D.3 y D.4 reescritos en voz propia (paráfrasis: de 30 de
+54 a 2 de 144, un título y la cita literal del art. 1911); introducción
+con VIAL; D.3.1 con art. 1811 y 1204; D.3.2 (i) GUTIÉRREZ / (ii) URRUTIA
+con VIAL, jurisprudencia con citas y hechos aceptados; caja "La herencia
+de la tía Clorinda" (Eleuterio, Gertrudis, Casimiro); pregunta clásica;
+D.3.3 (i)/(ii) con art. 1910 inc. final; cuadro "Quien cede / Qué
+adquirió / Cómo se tradita / ¿Art. 688?"; D.3.4.1 con STITCHKIN; D.3.4.2
+(i) género / (ii) especie → a)/b) → a.1)-b.2) (`enum-c-run`; ids
+`cV-4-D-3-4-2-a/b` y los `h5` eliminados, nada enlazaba); art. 54
+vigente; caja "Los legados de don Florindo" (Pascuala, Nicanor); D.4.1
+con art. 699 en `.ley`, dos sentidos de "título", arts. 1902-1907, breve
+de Ismael, Etelvina y Abigail, SILVA BASCUÑÁN; D.4.2 con arts. 1911 inc.
+2º, 1913, 1464 Nº 4, (i) RIOSECO / (ii) SILVA BASCUÑÁN, breve de Ofelia e
+Hipólito; Conexiones (AJ II.C.4.2 y II.C.4.3; Contratos y Sucesorio con
+`[FALTA: sección]`). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, párrafo más largo 1.080, capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_10b.html`).
+
+## Tramo 11a: hecho y aprobado (2026-11-26)
+
+**V.5 (introducción) y V.5.A.1, páginas 184 a 191 de Boetsch.** Informe en
+`Informes/Informe_Bienes_tramo11a.html`. Hallazgos: bajo "V.5 La
+prescripción" no había texto (falta el art. 2492); Mensaje recortado en un
+Dato de grado; art. 894 (publiciana solo del poseedor regular);
+paráfrasis 52 de 73 sobre 70%; VIAL (Relaciones jurídicas con una cosa,
+p. 1-5), Bozzo e Ibarra (corpus y animus), discusiones nº 5 (POTHIER,
+MOLITOR).
+
+**Material nuevo de Laura (2026-11-23):** el *Tratado de la posesión* de
+SAVIGNY en seis anexos (`Apuntes/CIVIL/Bienes/Anexo_*_Savigny.pdf`:
+Nociones sobre la posesión, Adquisición, Pérdida, De los interdictos, De
+la juris quasi possessio, Modificaciones del derecho romano). Es derecho
+romano, largo (unas 750 mil letras): usarlo por citas puntuales. En el
+11a se usaron el batelero (corpus, § 1), el animus domini (§ 9), "al
+mismo tiempo hecho y derecho" (§ 5) y el fundamento de los interdictos
+(§ 2). Para los tramos 13b-13c (adquisición y pérdida) y 20c
+(interdictos/acciones posesorias) revisar sus secciones respectivas.
+
+**Decisiones de Laura (2026-11-23):** cuadro de los derechos personales;
+**no decir cuál postura es mayoritaria, pero sí que "se ha entendido que
+pueden poseerse los créditos que permiten un ejercicio continuado"**;
+No confundir de la posesión notoria (arts. 200 y 310); fundamento de la
+protección posesoria en ventajas (explicación frecuente + SAVIGNY); **las
+dos preguntas clásicas**; y una **pregunta clásica nueva en V.5.A.5.1.1
+(capacidad para adquirir la posesión): "¿Por qué los requisitos de
+capacidad para poseer son menores que para celebrar un acto jurídico?"**
+(respuesta: es un hecho, no un derecho; art. 723). Ya agregada, aunque
+V.5.A.5 es del tramo 13c: al trabajar ese tramo, conservarla.
+
+Lo que se hizo: introducción de V.5 (art. 2492); A.1 reescrito en voz
+propia (paráfrasis de prosa: quedan solo citas del Mensaje y artículos y
+dos o tres oraciones breves); Mensaje completo en `.ley` (Dato de grado
+retirado); arts. 700 incs. 1º y 2º, 714 y 715 en `.ley`; SALAS; SAVIGNY,
+BOZZO e IBARRA, VIAL (título posesorio, objeción a IHERING, derecho a la
+posesión, presunción simplemente legal, art. 701, tres relaciones),
+POTHIER, MOLITOR; 3 en (i)-(iii); ventajas (i)-(iv) con art. 894 y art.
+907 inc. 3º precisados; caja "La lancha de Anacleto" (Primitivo,
+Hermelinda, Lisandro); No confundir posesión notoria; breves (Úrsula y
+Edelmira, Eusebia); art. 585 (alta mar), arts. 948-949 con la recompensa;
+8 en (i)/(ii); 9 en (i)/(ii) con cuadro; dos preguntas clásicas;
+Conexiones (Obligaciones, Contratos, Familia con `[FALTA: sección]`).
+Verificación: cero guiones largos, ids únicos, `href` resuelven,
+etiquetas balanceadas, párrafos bajo 1.200 salvo la cita del Mensaje,
+capturas revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_11a.html`).
+
+**Ajustes pedidos por Laura en vista previa (2026-11-26), regla para
+todos los tramos que siguen:** cada artículo transcrito en `.ley` lleva en
+negrita sus elementos clave (aplicado a los arts. 2492, 700, 714 y 715), y
+las definiciones legales se transcriben con sus incisos centrales: el art.
+700 va completo en V.5.A.1.2, con la presunción de dominio del inc. 2º
+(que además sigue en 4). Commits `c1b1cc9`, `b6e4309`, `93f46c9`,
+`2ba9963`.
+
+## Tramo 11b: hecho y aprobado (2026-11-26), commits `0fe8380` y `6f04967`
+
+**V.5.A.2 introducción, posesión regular y justo título completo,
+páginas 191 a 202 de Boetsch** (corte por contenido propuesto: el
+reparto decía 191-198, pero cortaba la sucesión por causa de muerte; el
+justo título termina con el art. 704 en la p. 202). Informe en
+`Informes/Informe_Bienes_tramo11b.html`. Hallazgos: falta la tesis
+contraria a STITCHKIN en la adjudicación (declarativa, el 703 hablaría
+de adjudicaciones a extraños); faltan el comentario a) de Boetsch al
+concepto, la justificación del inc. 5º (juicios coludidos), POTHIER y el
+causante mero tenedor, y casi todo el art. 704 (VERDUGO, nulidad
+relativa y art. 1684, art. 1815 ecléctico, título putativo y desde
+cuándo corre); art. 702 sin incs. 1º y 4º; "art. 704 Nº 4" debe ser inc.
+final (art. 1269); el comentario del legatario putativo es del texto
+anterior a la Ley 19.903; marcado roto en a) y b) de los títulos
+injustos; tres ejemplos de Boetsch a rehacer; paráfrasis 53 de 82 sobre
+70%. Fuentes: VIAL p. 56-62 y 42-43, Bozzo e Ibarra p. 2-4 (ROZAS),
+Lombardo p. 6-7; discusiones nº 1 ya en V.1.6.
+
+**Decisiones pedidas a Laura (8):** unir 11c (p. 202-204) con el 12;
+esquema de la discusión "¿Cuál es el título de la posesión?" (BOETSCH /
+VIAL / ROZAS, sin tomar partido); nombrar a ROZAS (viene de resumen);
+cuadro de 3 posturas x 4 preguntas; art. 702 completo en 2.1; ajustar la
+frase "otros sostienen" de V.4.A.2.5 con nombres; preguntas clásicas
+(recomendadas: posesión regular y requisitos, justo título y
+clasificación, heredero putativo); material propio.
+
+**Decisiones de Laura (2026-11-26): "todo ok"** a las 8 (11c se une al
+12, que queda p. 202-213; esquema, ROZAS con nombre, cuadro, art. 702
+completo en 2.1, frase de V.4.A.2.5 con VIAL y ROZAS, tres preguntas
+clásicas recomendadas). Laura no tenía material propio, pero trajo dos
+fuentes nuevas:
+
+- **`Apuntes/CIVIL/Bienes/Apuntes/Anexo_Modos de adquirir el
+  dominio_Peñaililo,2010.pdf`** (106 p., nº 73 a 189+: modos, tradición,
+  posesión). **Hallazgo importante: Boetsch sigue casi literal a
+  PEÑAILILLO en este tramo** (la "expresión de un autor", la crítica a
+  la ocupación, la nulidad relativa "algo artificiosa", la crítica al
+  Nº 4, los ejemplos de 1980, 1990 y el camión son suyos). Por eso las
+  opiniones se atribuyeron a PEÑAILILLO. Aporta además: el título
+  traslaticio no necesita emanar del dueño; fines de la posesión
+  efectiva; arts. 717 y 1268; **heredero de un mero tenedor: parece
+  predominar que no basta ser heredero** (se puso junto a la postura de
+  BOETSCH); envergadura de la falsificación; actos simulados y
+  resueltos como putativos; legatario de especie y no de género; crítica
+  a la taxatividad del 704. **Para los tramos siguientes (12 en
+  adelante: buena fe, tradición, irregular, viciosa, mera tenencia,
+  agregación, ACP posesión), cotejar siempre con este anexo**: es la
+  fuente de Boetsch. Los tramos ya aprobados no se revisaron contra él
+  (decidir con Laura si vale la pena).
+- **`Apuntes/CIVIL/Bienes/Sentencias/sentencia-n-17962025...pdf`**:
+  Corte Suprema, 24-02-2026, rol 1796-2025: compraventa de inmueble por
+  instrumento privado protocolizado es nula absolutamente (art. 1801
+  inc. 2º), título injusto (704 Nº 3), sin posesión regular ni
+  publiciana. Entró en (v) c). Sirve también para VII.2 (publiciana,
+  art. 894) y para la tradición de inmuebles.
+
+Lo que se hizo: A.2 intro y 2.1-2.2 completos reescritos en voz propia
+(paráfrasis sin `.ley`: 9 de 241 sobre 70%, fragmentos y citas; contra
+Peñailillo, 9 de 261); arts. 702, 703 y 704 completos en `.ley` con
+negritas; 2.2 en escalera (i)-(v), clasificación a)-c) con c.1)-c.3),
+sucesión a)-b) con b.1)-b.2); id nuevo `cV-5-A-2-2-2-v` (títulos
+injustos); discusión (iii) BOETSCH / VIAL / ROZAS con cuadro; tesis
+declarativa de la adjudicación agregada; art. 704 inc. final y art.
+1269 corregidos; legatario putativo con la advertencia de la Ley
+19.903; cajas "El tractor de Chimbarongo" y "El sitio de Pichidangui";
+breves (Fortunato, aluvión, Eduviges y Saturnino, Gumercinda y Nemesio,
+Evaristo y Ponciano, Rosendo, Aurelia y Teodosio); No confundir de la
+posesión de la herencia conservado; tres preguntas clásicas (posesión
+regular, justo título, heredero putativo) más la de la adjudicación;
+Conexiones (AJ IV.B.3.4 y IV.B.3.6; Contratos y Sucesorio con
+`[FALTA: sección]`); V.4.A.2.5 nombra a VIAL y ROZAS. Verificación:
+cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, párrafos bajo 1.100, capturas revisadas, vista previa
+actualizada. Respaldo en el tmp del job (`05_Bienes_antes_11b.html`).
+
+**Pregunta clásica de la adjudicación:** Laura decidió dejarla
+(2026-11-26), así que el 11b tiene cuatro.
+
+**Revisión de V.1 a V.5.A.2 contra PEÑAILILLO 2010 (pedido de Laura,
+2026-11-26):** informe en
+`Informes/Informe_Bienes_revision_Penailillo.html`. **Laura dijo "ok
+a todo" (2026-11-26) y la pasada corta ya está hecha** (respaldo en el
+tmp del job, `05_Bienes_antes_penailillo.html`): 26 cambios de nombre
+BOETSCH → PEÑAILILLO (incluidos la pregunta clásica de V.4.C.3, el
+ejemplo de Colomba y "coincide/se separa de" en V.4.B.3.2), una cuarta
+razón en V.4.B.3.2 ("la posesión es un hecho"), la propuesta de
+PEÑAILILLO de una tradición causada atenuada (con el art. 1689), su
+razón práctica para el art. 1874, su cautela en las inscripciones
+paralelas, su apoyo a la cesión de créditos sin documento (V.4.D.4.1),
+una línea sobre universalidades de hecho (V.5.A.1.7) y otra sobre
+"predomina ampliamente que es un hecho" con los arts. 919 y 2500
+(V.5.A.1.3). La crítica a la especificación ya nombraba a PEÑAILILLO
+(error del informe). Los 4 opcionales no se agregaron. Quedan 43
+menciones a BOETSCH en V.1-V.5.A.2, revisadas: son suyas. Resultado: Boetsch copia
+604 de 1.248 oraciones de Peñailillo (nº 73 a 167). Hay 15 lugares
+donde el manual dice "BOETSCH" y la opinión es de PEÑAILILLO (V.2.2,
+V.3.5.3, V.4.A.4, V.4.B.1.1, V.4.B.1.2, V.4.B.3.2, V.4.C.2, V.4.C.3,
+V.4.C.4.3, V.4.D.1.4, V.4.D.2.1, V.4.D.2.3.3, V.4.D.2.3.4, V.4.D.2.3.9 y
+la columna "BOETSCH" del cuadro de V.5.A.2.2.2 (iii)). También hay 7
+vacíos recomendados: tradición causada o abstracta y la propuesta de
+PEÑAILILLO (V.4.B.3); su razón para preferir el 1874 (V.4.C.4.3);
+nombrarlo en la crítica a la especificación (V.3.5.2); la cautela con
+la posesión material en las inscripciones paralelas (V.4.D.2.3.15);
+créditos sin título entregable (V.4.D.4); universalidades de hecho
+poseíbles (V.5.A.1.7); "predomina ampliamente" que es un hecho, más los
+arts. 919 y 2500 (V.5.A.1.3). Y 4 opcionales: interés que es reajuste
+(V.3), cancelación judicial con emplazamiento (V.4.D.2.3.11), naturaleza
+de la función registral, catastro y Ley 16.665 (V.4.D.2), y la
+precedencia entre posesión y propiedad (V.5.A.1.4). Propuesta: una
+pasada corta antes del tramo 12.
+
+**Sentencia de la Corte Suprema para Contratos:** anotada en
+`docs/manuales/material_para_contratos.md` (pedido de Laura: usarla en
+las solemnidades legales de la compraventa).
+
+**Pendientes que salen de aquí:** VIAL sobre la tradición "equívoca" del
+art. 702 (2.4, próximo tramo, y tramo 14); plazos de la herencia (16a);
+apoderamiento del art. 729 (13b y 14).
+
+## Tramo 12: hecho y aprobado (2026-11-27), commit `3ff941f`
+
+**V.5.A.2.2.3 a V.5.A.2.4 (buena fe, tradición, ventajas, posesión
+irregular y posesiones viciosas), páginas 202 a 208 de Boetsch** (el
+reparto decía 202-213, pero ese contenido termina en la p. 208, antes de
+"A.3 La mera tenencia"). Informe en `Informes/Informe_Bienes_tramo12.html`.
+
+Hallazgos: Boetsch copia a PEÑAILILLO (nº 168 a 171) en buena fe,
+tradición, ventajas y concepto de irregular (45 de 108 oraciones); en las
+viciosas sigue a VIAL. **Paralelo e) está mal en el fondo**: los frutos
+dependen de la buena o mala fe al percibirlos (arts. 907 inc. 3º y 913),
+no de que la posesión sea regular. Citas: art. 907 inc. 3º (no 2º); art.
+702 inc. 3º para la tradición (no 2º); arts. 94 y 2510 por reglas.
+Marcado roto en a), b), c) y e) del paralelo. Faltan arts. 706 y 707 en
+`.ley`, DE RUGGIERO y PLANIOL/RIPERT, cuestión de hecho, POTHIER, la
+presunción de mala fe exclusiva de la posesión, la analogía con la fuerza
+como vicio del consentimiento, y VIAL sobre la tradición "equívoca" (art.
+708). Paráfrasis: 16 de 30 sobre 70%. **Dos contradicciones entre
+fuentes**: cuál es la opinión mayoritaria sobre la utilidad de la
+posesión viciosa (BOETSCH y VIAL: útil; PEÑAILILLO y discusiones nº 15:
+la tradicional es inútil) y si la violencia es vicio permanente
+(PEÑAILILLO: discutido). Fuentes nuevas usadas: discusiones nº 15
+(BELMAR), SAVIGNY (vicio relativo, *ab adversario*), CLARO SOLAR vía VIAL
+(art. 711).
+
+**Decisiones pedidas a Laura (10):** corte 202-208 y reparto corregido
+de 13 y 14; corregir paralelo e) con No confundir "Poseedor regular no es
+lo mismo que poseedor de buena fe"; VIAL en 3.1 con enlace desde 2.4; no
+decir cuál postura es mayoritaria en la utilidad; rehacer el No confundir
+de la violencia con PEÑAILILLO y SAVIGNY; cuadro de 4 posturas x 4
+preguntas; nombrar a BELMAR y CLARO SOLAR "según recoge" la fuente; no
+incluir la frase ambigua de VIAL sobre el error de Derecho; tres
+preguntas clásicas (buena fe, irregular, utilidad de la viciosa);
+material propio.
+
+**Reparto corregido propuesto (páginas reales):** 13a 208-214 (A.3 y
+A.4); 13b 214-218 (A.5.1 a A.5.3, muebles); 13c 218-228 (A.5.4.1,
+inmuebles: aspectos generales); 14a 228-235 (no inscritos); 14b 235-245
+(inscritos y A.6 prueba). Pendiente de aprobación: hasta entonces vale la
+tabla de "Reparto de tramos".
+
+**Decisiones de Laura (2026-11-27): "todas ok"**, las tres preguntas
+clásicas recomendadas, sin material propio. Pidió que se le explicara la
+crítica de VIAL: se explicó en el chat y quedó en 3.1 con enlace desde
+2.4 (si al verla prefiere otra ubicación, se mueve).
+
+Lo que se hizo: 2.3 en escalera (i)-(iii) con arts. 706 y 707 en `.ley`,
+PEÑAILILLO (concepto único, método, creencia/comportamiento, prueba),
+VIAL (desglose del 706), DE RUGGIERO, PLANIOL y RIPERT, cuestión de hecho,
+BELLO, POTHIER, presunción de mala fe exclusiva de la posesión; arts. 907
+inc. 3º, 702 inc. 3º y reglas de los arts. 94 y 2510 corregidos; caja
+"Dos bicicletas en Puerto Varas"; No confundir "Poseedor regular no es lo
+mismo que poseedor de buena fe" (cerezos de Clodomiro); 2.4 con la mesa
+de pool y enlace a 3.1; 2.5 con PEÑAILILLO; 3.1 con art. 708 en `.ley` y
+la crítica de VIAL; 3.2 a)-e) con marcado arreglado y e) corregido; 4.1
+con arts. 709 a 713 en `.ley`, analogía con la fuerza, POTHIER,
+SAVIGNY, CLARO SOLAR vs VIAL (art. 711), breves de Emeterio y Florinda y
+de Rosalba; No confundir de la violencia rehecho (permanente para
+BOETSCH y VIAL, discutido según PEÑAILILLO, art. 920 inc. 3º, SAVIGNY);
+4.2 (i)-(ii) con caja "El kayak de Licán Ray", posturas a)-d)
+(tradicional con el Mensaje, BELMAR, RODRÍGUEZ GREZ, VIAL con art. 2502
+Nº 1) y cuadro; tres preguntas clásicas; Conexiones (AJ II.A.5.2 y
+II.A.7; Contratos con `[FALTA: sección]`). Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafos
+bajo 1.100, paráfrasis 6 de 164 sobre 70% contra Boetsch (citas y
+artículos) y 2 de 164 contra Peñailillo, capturas revisadas, vista
+previa actualizada. Respaldo en el tmp del job (`05_Bienes_antes_12.html`).
+
+**Pendientes que salen de aquí:** tres lecturas del art. 894 (20a);
+viciosas y acciones posesorias, arts. 918 y 920 inc. 3º (20c); VIAL y el
+art. 724 (14); cruce de V.5.A.1.5 "Mera tenencia" con A.3 (13a).
+
+## Tramo 13a: hecho y aprobado (2026-11-27)
+
+**V.5.A.3 La mera tenencia y V.5.A.4 Transmisibilidad, agregación e
+interversión, p. 208-214.** Informe en `Informes/Informe_Bienes_tramo13a.html`.
+Hallazgos: Boetsch copia a PEÑAILILLO (nº 174 a 183) en agregación e
+interversión (52 de 106 oraciones); se salta el nº 180 entero (disolución
+del título y otros casos discutidos de agregación) y el fundamento de
+"disociar" y la exclusión del ladrón (nº 179). A.3 repite la definición de
+V.5.A.1.5 (11a). Citas: plazo mínimo de las acciones posesorias es el art.
+918 (no 920 inc. 4º); art. 2494 es renuncia de prescripción cumplida.
+Paráfrasis: 51 de 62 sobre 70%. Fuentes: discusiones nº 6 (ALESSANDRI,
+SOMARRIVA), VIAL (el reconocimiento de dominio ajeno está en el título),
+SAVIGNY (en Roma no pasaba al heredero la posesión; constituto en Paulo).
+
+**Decisiones de Laura (2026-11-27):** 1 ok (A.3.1 no repite el art.
+714, remite a V.5.A.1.5); 2 sí (nuevo 2.3); 3 las tres más "¿Muda la
+mera tenencia en posesión por el solo transcurso del tiempo?" (la primera
+quedó como "¿Qué es la mera tenencia y cuáles son sus características?"
+para no pisarse); 4 sin material propio.
+
+**Preocupación de Laura (2026-11-27): que no se resuma la materia.** Se
+midió: 11b pasó de 2.298 a 6.203 palabras y el 12 de 1.125 a 4.147
+(Boetsch, unas 2.400). **Regla desde el 13a:** cada concepto que pueda
+prestarse a duda lleva su ejemplo breve en cursiva, además de las cajas
+para casos de varios pasos. Laura: "los ejemplos son una muy buena forma
+de volver a explicar sin explicar directamente".
+
+Lo que se hizo: A.3 reescrito (remite al 714; VIAL: el reconocimiento
+está en el título; PEÑAILILLO: casos dudosos, contactos que no son
+tenencia, efectos dispersos arts. 896, 928, 1930, 2315); A.3.3 en
+escalera 3.1/3.2 (ids nuevos `cV-5-A-3-3-1` y `cV-5-A-3-3-2`) con art.
+716 en `.ley`; dos preguntas clásicas de mera tenencia; A.4.1 con art.
+717 en `.ley`, VIAL, SAVIGNY, PEÑAILILLO (derecho a poseer, códigos del
+siglo XX), las tres lecturas del 919 en (i)-(iii), SOMARRIVA y
+ALESSANDRI según la recopilación, art. 683 y 725; No confundir
+"Transmitir la posesión no es lo mismo que agregarla"; pregunta clásica
+de transmisión; A.4.2 con arts. 918 y 920 inc. 4º precisados, disociar
+con su fundamento, el ladrón no agrega, caja "La carreta de Chonchi";
+nuevo 2.3 "Casos discutidos de agregación" (id `cV-5-A-4-2-3`):
+disolución del título, reivindicante, petición de herencia, repudiación,
+art. 718; pregunta clásica de agregación; A.4.3 con 3.2 en a)/b),
+PESCIO y BOETSCH, SAVIGNY (Paulo) en el constituto, art. 2494
+precisado; Conexiones (Sucesorio, Contratos con `[FALTA: sección]`; AJ
+IV.B.4). Ejemplos breves: Leoncio (arrendatario), garzón e invitado,
+Melania (usufructuaria), Sinforoso y Ruperta (heredera), el bote de
+cuatro poseedores, Fidelina y Zenobia (lancha), Telésforo, Eulogia y
+Marcelino (nulidad), Eleodoro y Brígida (art. 730), Arsenio
+(constituto). Verificación: cero guiones largos, ids únicos, `href`
+resuelven, etiquetas balanceadas, paráfrasis 10 de 164 sobre 70% contra
+Boetsch (títulos, citas y frases cortas) y 6 contra Peñailillo, 4.027
+palabras (antes unas 1.400), capturas revisadas, vista previa
+actualizada. Respaldo en el tmp del job (`05_Bienes_antes_13a.html`).
+
+## Tramo 13b: hecho y aprobado (2026-11-27), commit `85f2dd4`
+
+**V.5.A.5.1 a A.5.3 (observaciones generales, principio básico y
+muebles), p. 214-218.** Informe en `Informes/Informe_Bienes_tramo13b.html`.
+Hallazgos: título de A.5 decía "de bienes muebles" (corregido también en
+el índice); art. 1446 por 1448; art. 721 "en lugar o a nombre"; art. 723
+"derechos" de poseedores; art. 608 inc. 2º es de domesticados; marcado
+roto en 3.3 b) y c); Boetsch copia a PEÑAILILLO (nº 184 a 188) en 40 de
+63 oraciones y se salta el nº 187 (cosas incorporales) y el cotejo de los
+arts. 726 y 730. Paráfrasis del texto anterior: 44 de 51 sobre 70%.
+
+**Decisiones de Laura (2026-11-27): "todo ok", sin material propio.**
+Lo que se hizo: arts. 720, 721, 723, 725, 726, 727 y 731 en `.ley` con
+negritas; 1.1 con la lectura literal del 723 (impúber mayor de siete y
+sordo del art. 1447 no excluidos; sin atribuir a autor), SAVIGNY (el que
+duerme, "cosa de hecho"); pregunta clásica del 11a conservada y ampliada;
+1.2 en escalera (i)-(iii) con SAVIGNY y pregunta clásica nueva; 2 en
+(i)/(ii) con las cosas incorporales de PEÑAILILLO en a)-d); 3.1 con
+BOETSCH (703 y 684); 3.2 con PEÑAILILLO, POTHIER, SAVIGNY, BOETSCH (730,
+1815) y VIAL (731), enlace a V.5.A.4.3.2; caja "La guitarra de
+Curacautín"; 3.3 a)-c) con la contradicción BOETSCH/PEÑAILILLO vs VIAL
+(art. 2502 Nº 1) expuesta sin tomar partido; No confundir "Apoderarse de
+la cosa no es lo mismo que usurparla"; pregunta clásica de conservación y
+pérdida; Conexiones (AJ II.B.2.2, V.6.3 y V.8; Contratos con
+`[FALTA: sección]`). Breves: Benigno, la guagua, la junta de vecinos,
+Crisóstomo, Clemira, usufructo de auto y de casa, el canal del vecino,
+Teobaldo, Eufrasia, el sillón, Clarisa, Sofanor, Rosaura. Verificación:
+cero guiones largos, ids únicos, `href` resuelven, etiquetas balanceadas,
+párrafos bajo 1.100, paráfrasis 8 de 204 sobre 70% contra Boetsch y 5
+contra Peñailillo (títulos y frases cortas atribuidas), 4.037 palabras
+(antes unas 1.400), capturas revisadas, vista previa actualizada.
+Respaldo en el tmp del job (`05_Bienes_antes_13b.html`).
+
+## Tramo 13c: hecho y aprobado (2026-11-27)
+
+**V.5.A.5.4.1 Aspectos generales de la posesión de inmuebles (Mensaje,
+diferencias con los muebles, problemas, doctrinas, jurisprudencia y plan
+de estudio), p. 218-228.** Informe en `Informes/Informe_Bienes_tramo13c.html`.
+Hallazgos: errata de Boetsch en la doctrina de ÁLVAREZ ("posesión regular
+que habilita para la prescripción extraordinaria": es ordinaria) y "2310"
+por 2510 (ya corregida en el manual); art. 686 inc. 2º no alude a "todos
+los derechos reales" sino que los enumera; falta la parte final del art.
+696; falta la lectura del art. 2505 de la doctrina intermedia; las cinco
+citas del Mensaje ya están en V.4.D.2.1. Boetsch copia a PEÑAILILLO (nº
+189 y 195) en 16 de 144 oraciones. Paráfrasis del texto actual: 24 de 63
+sobre 70%. **Atribuciones dudosas:** ALESSANDRI, URRUTIA, CLARO SOLAR y
+las etiquetas ficción/garantía vienen del anexo de 3 páginas; las
+discusiones nº 10 ponen a CLARO SOLAR del lado contrario a ÁLVAREZ en el
+art. 2505; PEÑAILILLO define "inscripción-garantía" de otro modo. Lombardo
+agrega una cuarta postura (relación aparente entre las inscripciones).
+
+**Decisiones pedidas a Laura (8):** autores de cada doctrina; cuatro
+posturas; cuadro en vez del Dato de grado y si se aplica ya el estilo
+nuevo de rótulos a la hoja de Bienes; Mensaje con enlace a V.4.D.2.1;
+VIAL y el art. 724 en una línea; el art. 2505 en breve aquí y completo en
+prescripción; tres preguntas clásicas; material propio.
+
+**Decisiones de Laura (2026-11-27): "el resto todo ok"**, y agregó dos
+fuentes nuevas: `Apuntes/CIVIL/Bienes/Sentencias/de-los-bienes-y-de-su-dominio-posesin-uso-y-goce-revista-chi-2.pdf`
+(BARCIA, comentario de jurisprudencia, RChDP Nº 23, 2014) y
+`Apuntes/CIVIL/Bienes/Apuntes/teora-de-los-bienes-derecho-civil-en-3600-preguntas-y-respue_es.pdf`
+(libro de preguntas y respuestas de examen, nº 585 en adelante; útil para
+preguntas clásicas, pero con errores: cita el art. 2502 por el 2505 en la
+nº 831, "resciliación = anulación" en la nº 832, y dice que el Conservador
+"estudia la legalidad" de los títulos en la nº 757). **BARCIA resolvió la
+atribución:** según ALESSANDRI, SOMARRIVA y VODANOVIC (2009, Nº 848)
+aplican el art. 2505 a las dos prescripciones FABRES, AGUIRRE, CLARO
+SOLAR y BARROS ERRÁZURIZ; ALESSANDRI y SOMARRIVA (1941): "la inscripción
+es la posesión". Con eso, CLARO SOLAR queda del lado contrario a ÁLVAREZ;
+el resumen anónimo que lo pone en la inscripción-garantía se menciona
+como tal. URRUTIA sigue sin verificar en el original.
+
+Lo que se hizo: intro con la definición de posesión inscrita de VIAL;
+(i) resumen del plan de BELLO con enlace a V.4.D.2.1 y solo las dos
+frases clave del Mensaje; art. 696 en `.ley` con su parte final; los tres
+incentivos en a)-c) con arts. 728, 729, 924 y 2505 en `.ley`; (ii) y (iii)
+atribuidos a PEÑAILILLO (concepto "difuminado"); (iv) con los preceptos de
+PEÑAILILLO nº 192, inmuebles por destinación, las dos concepciones de
+fondo (ficción y garantía) y **cuatro posturas en a)-d)**, ordenadas de
+más a menos peso de la inscripción: clásica (a.1-a.3 con art. 724 en
+`.ley`, 702 inc. final, 40-50 años, PEÑAILILLO nº 195 bis), relación
+aparente (VIAL frente a PEÑAILILLO), requisito adicional (c.1-c.3, con el
+2505 que "choque violentamente"), solo para la regular (ÁLVAREZ, debate del
+2505 con autores, DE LA MAZA, críticas d.1-d.4 con VIAL); cuadro de 4
+posturas x 6 criterios; caja "La parcela de Pichidangui"; No confundir
+art. 729 vs 728 inc. 2º; (v) PEÑAILILLO, recopilación nº 9 y BARCIA sin
+decir cuál es mayoritaria, cinco fallos RDJ contados, caja Jurisprudencia
+con CS roles 7.769-2014 y 9.300-2012 (comentados por BARCIA); (vi) con
+ejemplo; tres preguntas clásicas; Conexiones (Contratos, `[FALTA:
+sección]`). **Hoja de estilos de Bienes:** aplicado el rótulo nuevo de
+cuadros (20%, mayúscula, fondo y filete); el cuadro de V.5.A.1.9 (créditos)
+lleva la clase `sin-rotulo` porque su primera columna es contenido.
+Verificación: cero guiones largos, ids únicos, `href` resuelven, etiquetas
+balanceadas, párrafos bajo 1.100, paráfrasis 17 de 287 sobre 70% contra
+Boetsch y 15 contra Peñailillo (citas del Mensaje, títulos y frases
+atribuidas), 5.878 palabras (antes 1.906; Boetsch unas 4.400), capturas
+revisadas, vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_13c.html`).
+
+**Pendientes que salen de aquí:** BARCIA sobre la reivindicatoria contra
+el mero tenedor y el cambio de ALESSANDRI y SOMARRIVA entre ediciones
+(1941 frente a 2009, con VODANOVIC) van al 20a (VII.2); la pregunta nº 831
+del libro ("¿se requiere inscripción para la posesión irregular de un
+inmueble inscrito con título traslaticio?") y las nº 803-804 (título
+injusto) como preguntas clásicas candidatas del 14b; el debate completo
+del art. 2505 a la prescripción (15-16).
+
+## Tramo 14a: hecho y aprobado (2026-11-28)
+
+**V.5.A.5.4.2 Inmuebles no inscritos, p. 228-235.** Informe en
+`Informes/Informe_Bienes_tramo14a.html`. Hallazgos: la postura propia de
+BOETSCH en la tradición ("a cuya postura adherimos") es la de VIAL, con sus
+mismos argumentos; el manual dice "el propio apunte". Boetsch copia a
+PEÑAILILLO nº 190-191 (35 de 108 oraciones). Errata: "inmueble inscrito"
+por "no inscrito" al final de a.2). a.4) afirma que la posesión viciosa es
+"inútil", contra lo decidido en el 12. Faltan: fallo RDJ t. 26 (art. 590,
+dominio sin posesión), argumento del Mensaje en a.3), la opinión que exige
+inscripción, los argumentos de los arts. 729 y 730 en e.1), el argumento
+(5) de e.2), heredero putativo (VIAL, BOZZO e IBARRA), pérdida e) completa
+(título de tercero inscrito, papel) y el cotejo 729/730. DE LA MAZA según
+BARCIA. Marcado roto en a) a d). Paráfrasis 13 de 28. 848 palabras.
+
+**Decisiones pedidas a Laura (6):** atribuir a VIAL; posesión viciosa
+"inútil" solo para quienes lo sostienen; DE LA MAZA; cuadro de las tres
+posturas sobre la tradición; dos preguntas clásicas (una del libro, nº
+829); material propio.
+
+**Decisiones de Laura (2026-11-28): "todo sí", sin material propio.**
+Ese mismo día notó que 13b y 13c no estaban marcados en Airtable: se
+marcaron Hecho y se renombraron 13a, 13b, 13c, 14a y 14b con el reparto
+real (el 14c de Airtable, "Posesión inscrita 3/3 + A.6", quedó sobrante:
+su contenido es parte del 14b; marcarlo Hecho junto con el 14b, como se
+hizo con el 11c).
+
+Lo que se hizo: intro; (i) a) con PEÑAILILLO (ocupación = apoderamiento),
+a.1) art. 590 en `.ley` y fallo RDJ t. 26; a.2) con VIAL (728 a contrario)
+y la tesis aislada de PEÑAILILLO; a.3) con el argumento del Mensaje, la
+opinión que exige inscripción y la mala fe por los arts. 590 y 8; a.4) con
+VIAL y la utilidad de la viciosa como discutida (enlace a V.5.A.2.4.2);
+b) accesión con PEÑAILILLO y VIAL (arts. 649, 652, 655, 656); c) con la
+opinión del efecto retroactivo; d) art. 722 en `.ley`, art. 688 por
+enlace, heredero putativo (VIAL; arts. 1264, 1269, 2512); e) e.1 FABRES y
+DE LA MAZA (BARCIA) con los argumentos de los arts. 729 y 730 y BOZZO e
+IBARRA; e.2 VIAL con BOETSCH, cinco argumentos y el art. 730; art. 693
+(V.4.D.2.3.7); cuadro de tres posturas; caja "El sitio de Curanilahue";
+(ii) a)-e) con arts. 920 y 731, 2510 regla 3ª (V.5.A.3.3), e) inscripción
+de un tercero (papel, RDJ t. 67); cotejo 729/730 con enlace a 3.3; dos
+preguntas clásicas; Conexiones (Sucesorio). Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafos
+bajo 1.100, paráfrasis 9 de 190 sobre 70% contra Boetsch y 6 contra
+Peñailillo (citas y oraciones cortas; se reescribieron tres), 3.594
+palabras (antes 848), capturas revisadas, vista previa actualizada.
+Respaldo en el tmp del job (`05_Bienes_antes_14a.html`).
+
+## Siguiente paso exacto (2026-11-27, vigente)
+
+1. Tramo 13b aprobado (2026-11-27, "sigamos con el tramo 13c").
+2. Tramo 14a aprobado (2026-11-28) y marcado Hecho en Airtable. **Sigue
+   el tramo 14b** (V.5.A.5.4.3 inmuebles inscritos + A.6 prueba, p.
+   235-245): PEÑAILILLO nº 192-194 y 196, VIAL p. 72-74 (art. 728,
+   competente inscripción, posesión de papel; art. 683 en inmuebles),
+   discusiones nº 8 (924/925), libro de 3600 preguntas nº 830-834 y
+   803-804, pregunta clásica "¿Cómo se cancela la posesión inscrita?".
+   Al aprobarlo, marcar Hecho el 14b (`recnCsQQcKKkCYVjm`) y el 14c
+   sobrante (`recgGwVO4dctNSzLy`). Fuentes que se usaron en el 14a (A.5.4.2, no inscritos, p.
+   228-235): PEÑAILILLO nº 190 y 191, art. 729, Lombardo p. 6-7, libro de
+   3600 preguntas (nº 829) y BARCIA (DE LA MAZA).
+3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
+   dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
+4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
+   inmuebles (ver "Tramo 7c") y la pregunta clásica "¿Cómo se cancela
+   la posesión inscrita?" (ver "Tramo 9c").
+5. Pendiente para el tramo 19: VI.4.6.2 Servidumbres legales sigue con
+   el marcado antiguo (b.1 a b.7 en `h5`). Laura corrigió en vista previa
+   (2026-11-23) que a) y b) iban en negrita y subrayado (`h4`): ya pasaron
+   a negrita sin subrayado (`enum-i`), conservando a)/b). Al trabajar el
+   tramo 19, ordenar todo el 6.2 según la escalera. Igual en VII (tramos
+   20a-20c): quedan `h4` sin número ("Cosas susceptibles de
+   reivindicarse", "Ser poseedor", etc.).
+6. Pendiente para el tramo 16b: V.5.B.6 y V.5.B.8 contra el texto
+   vigente del DL 2.695 (ver "Tramo 9c").
