@@ -4,8 +4,7 @@
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
 > Última actualización: 2026-11-28 (tramos 1 a 3c aprobados y
-> mergeados; informe del 4a entregado, esperando las decisiones de
-> Laura).
+> mergeados; 4a escrito, esperando la revisión de Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -64,9 +63,9 @@
   Cierra el tema II.A. Marcado Hecho en Airtable. La rama
   `obligaciones-tramo3c` sigue sin borrar (Claude no tuvo permiso; la
   borra Laura en GitHub Desktop).
-- **Tramo 4a: informe entregado** (2026-11-28), rama
-  `obligaciones-tramo4a`. Esperando las 9 decisiones de Laura; el manual
-  no se ha tocado. Ver "Tramo 4a".
+- **Tramo 4a: escrito** (2026-11-28), rama `obligaciones-tramo4a`
+  (commit `4bf3a45`). Laura aprobó las 9 decisiones tal como se
+  propusieron. Falta su revisión. Ver "Tramo 4a".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -609,7 +608,29 @@ un tramo, actualizar también ahí.
   punto 6, AJ II.A.5.2 (error de derecho). Para después: llenar el
   `[FALTA: sección]` de la Conexión de AJ a las obligaciones naturales.
 
-## Tramo 4a (p. 36-39, II.B.1-2): informe entregado
+## Tramo 4a (p. 36-39, II.B.1-2): escrito, falta revisión de Laura
+
+- **Respuestas de Laura (2026-11-28):** todo aprobado como se propuso,
+  sin material propio. Preguntó por la decisión 5 (art. 1557): se le
+  explicó que Boetsch dice la misma regla en B.1 y en B.2.4 b), y aceptó
+  desarrollarla en B.1 y dejarla solo como fila del cuadro del punto 4.
+- **Redactado:** B (`cII-B`), B.1 (`cII-B1`), B.2 (`cII-B2`) con puntos
+  1 (1.1 y 1.2), 2, 3 y 4 (`cII-B2-1` a `cII-B2-4`). Recuadros: B.1,
+  Conexión (Contractual C.5 y E.7); 1.1, Pregunta clásica (vendedor y
+  precio); 1.2, fusión No confundir | Pregunta clásica (dar y entregar)
+  y Conexión (Bienes V.4.A.4); 2, Pregunta clásica (promesa); 4, cuadro
+  y Conexión (Bienes II.B.5; Contractual C.5 y C.6). En el cuadro, la
+  fila del procedimiento ejecutivo dice "Libro III del CPC" en el
+  rótulo y solo "Título I/II" en las celdas.
+- **Controles:** cobertura 89% 🟡 por falsos avisos (arts. 1471, 1472,
+  1630, 1656 y 2297, de los efectos de la obligación natural, que son
+  del 3c; contando solo el 4a, 100%); 38/38 unidades; paráfrasis 0/81
+  tras reescribir 6; 0 guiones largos; párrafo máximo 633; sin enlaces
+  rotos. Vista previa actualizada. Para medir la paráfrasis, las marcas
+  de Boetsch tienen que ser frases del cuerpo: los títulos aparecen
+  primero en el temario.
+
+### Informe (2026-11-28)
 
 - **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo4a.html`
   (2026-11-28). Corte: desde "B. Clasificación... atendiendo a su
@@ -652,9 +673,10 @@ un tramo, actualizar también ahí.
 
 1. Ramas `obligaciones-tramo1` a `obligaciones-tramo3c`: mergeadas.
    Falta borrar `obligaciones-tramo3c` (local y en GitHub; Laura).
-2. Tramo **4a**: esperar las respuestas de Laura a las 9 decisiones del
-   informe; con su visto bueno, redactar en `obligaciones-tramo4a`,
-   correr los controles y generar la vista previa. Pendiente menor:
+2. Tramo **4a**: escrito; esperar la revisión de Laura. Con su
+   aprobación: merge a `main`, borrar la rama, marcar Hecho en Airtable,
+   y seguir con el informe del **4b** (p. 39-44, II.B.3 objeto singular
+   y compuestas: alternativas y facultativas). Pendiente menor:
    llenar el `[FALTA: sección]` de la Conexión de AJ a las obligaciones
    naturales (ahora es Obligaciones II.A.1 a II.A.7).
 4. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
