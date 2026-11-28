@@ -561,7 +561,7 @@ un tramo, actualizar también ahí.
   omitir; 6 fallo de Santiago de 6-may-1881 (G.T. 1881 Nº 528 p. 333,
   doctrina del deber moral) en el texto con fecha y Gaceta, o fuera;
   7 Pregunta clásica "si lo demandan y no hace nada", respondida con
-  los arts. 1683, 1684 y 2493 (Código, no fuente); 8 cuatro preguntas
+  los arts. 1683, 1684 y 2493 (Código, no fuente); 8 tres preguntas
   y tres recuadros por punto en 5 y 6 (si sobra, sacar "pago bien o
   mal"); 9 material propio.
 - **Ya resuelto en el informe:** art. 2297 con texto vigente; nota de
@@ -571,10 +571,13 @@ un tramo, actualizar también ahí.
   trata como natural una prescrita no declarada).
 - **Ejemplos propuestos:** Sebastián paga a los 18 antes del juicio
   (ratificación tácita, punto 5); Catalina paga una prescrita declarada
-  creyendo que solo tenía más plazo (cuadro B); Andrea y Felipe del 3b:
-  fianza del hermano vale, prenda del propio Felipe no, sin compensación
-  legal (punto 6); promesa de Felipe = renuncia a la cosa juzgada y
-  promesa de la tía Gloria no obliga, art. 1683 (punto 7).
+  creyendo que solo tenía más plazo (cuadro B); fianza del tío de
+  Sebastián vale y no puede oponer la incapacidad (arts. 1472 y 2354);
+  **ojo: no usar un ejemplo de fianza del Nº 4**, porque el fiador
+  puede oponer la cosa juzgada (art. 2354, excepción real); Andrea y
+  Felipe sin compensación legal (punto 6); promesa de Felipe = renuncia
+  a la cosa juzgada y, como variante, promesa de la tía Gloria no
+  obliga, art. 1683 (punto 7).
 - **Conexiones propuestas:** punto 5, AJ IV.B.3.6, IV.B.2.5 y IV.B.4.2;
   punto 6, AJ II.A.5.2 (error de derecho). Para después: llenar el
   `[FALTA: sección]` de la Conexión de AJ a las obligaciones naturales.
