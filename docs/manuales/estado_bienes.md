@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-28 (tramo 14b
-> aprobado; sigue el tramo 15a).
+> antes de seguir. Última actualización: 2026-11-28 (tramo 15a
+> aprobado; sigue el tramo 15b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -109,6 +109,9 @@
 - **Tramo 14b (V.5.A.5.4.3 inmuebles inscritos y V.5.A.6 prueba, p.
   235-245): terminado y aprobado por Laura (2026-11-28, "ok, haz el
   commit"), marcado Hecho en Airtable junto con el 14c sobrante.** Detalle en "Tramo 14b", más abajo.
+- **Tramo 15a (V.5.B.1 a B.4, p. 246-253): terminado y aprobado por
+  Laura (2026-11-28, "ok haz el commit").** Detalle en "Siguiente paso
+  exacto". Sigue el 15b.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -201,9 +204,9 @@ que en AJ.
 | 13c | 218-228 | 13 | V.5.A.5.4.1 Posesión de inmuebles, aspectos generales (Mensaje, doctrinas antagónicas). Corregido 2026-11-27 |
 | 14a | 228-235 | 14 | V.5.A.5.4.2 Inmuebles no inscritos (corregido 2026-11-27) |
 | 14b | 235-245 | 14 | V.5.A.5.4.3 Inmuebles inscritos + A.6 prueba (corregido 2026-11-27) |
-| 15a | 246-253 | 15 | V.5.B.1-B.3 Prescripción adquisitiva: nociones, fundamento, características |
-| 15b | 253-259 | 15 | V.5.B.4 Reglas comunes |
-| 15c | 259-264 | 15 | V.5.B.5 Elementos (cosa, posesión, inicio del tiempo) |
+| 15a | 246-253 | 15 | V.5.B.1-B.4 Prescripción adquisitiva: nociones, fundamento, características y reglas comunes (corregido 2026-11-28). Hecho y aprobado 2026-11-28 |
+| 15b | 253-258 | 15 | V.5.B.5 intro, 5.1 cosa susceptible de prescripción y 5.2 posesión (corregido 2026-11-28) |
+| 15c | 258-264 | 15 | V.5.B.5.3 Transcurso del tiempo (corregido 2026-11-28) |
 | 16a | 264-273 | 16 | V.5.B.5 cont. (tiempo, interrupción, suspensión) |
 | 16b | 273-283 | 16 | V.5.B.6-9 + V.6.A Sucesión, ideas generales |
 | 17a | 283-290 | 17 | V.6.B Apertura de la sucesión |
@@ -2351,7 +2354,38 @@ que admite poseer sin inscripción; motosierra de Policarpo (Peumo).
 1. Tramo 13b aprobado (2026-11-27, "sigamos con el tramo 13c").
 2. Tramo 14a aprobado (2026-11-28) y marcado Hecho en Airtable.
    Tramo 14b aprobado (2026-11-28) y marcado Hecho en Airtable (también
-   el 14c sobrante). **Sigue el tramo 15a**
+   el 14c sobrante). **Tramo 15a (B.1 a B.4, p. 246-253): informe
+   aprobado ("todo sí, sin material propio") y tramo redactado
+   (2026-11-28), aprobado por Laura ("ok haz el commit").** Marcado
+   Hecho en Airtable; renombrados 15b (B.5 intro, 5.1 y 5.2, p. 253-258) y 15c (5.3, p. 258-264).
+   Lo hecho: art. 2492 en `.ley`; B.1 con PEÑAILILLO (actividad del
+   poseedor, otros códigos, tratamiento unificado); B.2 sin "Dato de
+   grado" (LAURENT en el texto), críticas morales, VIAL, fundamentos
+   subjetivos (i) y objetivos (ii) con breve de Albina y Ubaldo
+   (Paredones), conflicto constitucional (art. 19 Nº 24 y 26, enlace a
+   III.3 y V.4.D.2.3.14); B.3 con derivativo, derechos reales de quien no
+   es dueño (Exequiel y Jesusa, Pelluhue), derechos personales y VIAL
+   (enlace a A.1.9), universalidades de hecho (Cupertino y Margarita);
+   B.4.1 en (i)-(iv) con arts. 441 y 442 CPC (texto Ley 21.394),
+   caducidad, fallos, cuatro posturas a)-d) con autores y cuadro, caja
+   B.4.2 en
+   (i)-(v) con art. 2494 en `.ley`, dos caminos de nulidad, crítica y
+   caso de PEÑAILILLO (Casimira y Malaquías), No confundir "no alegar no
+   es renunciar", curadora (Ismenia y Delfina, art. 393); B.4.3 con art.
+   2497 en `.ley`, acción rescisoria (Heriberto, Ránquil); dos preguntas
+   clásicas; caja "El bote de Cobquecura" (Rigoberta y Celestino);
+   Conexiones. Verificación: cero guiones largos, ids únicos, `href`
+   resuelven, etiquetas balanceadas, párrafo más largo 955, paráfrasis
+   15 de 249 sobre 70% contra Boetsch y 12 contra Peñailillo (títulos,
+   citas y referencias; se reescribieron tres), unas 5.000 palabras
+   (antes 1.500; Boetsch 3.000). Respaldo `05_Bienes_antes_15a.html`.
+   **Pendiente para el 16b (B.6, art. 2505):** sentencia CS rol
+   28.754-2021 (12-07-2022, "Sánchez con Vega"), fuente nueva de Laura en
+   `Apuntes/CIVIL/Bienes/Sentencias/`: la promitente compradora que ocupa
+   un inmueble inscrito sin inscripción a su favor es mera tenedora y no
+   prescribe contra el título inscrito (arts. 686, 696, 724, 728, 730
+   inc. 2º, 924 y 2505); se alegó por demanda reconvencional. Laura
+   decidió (2026-11-28) no usarla en el 15a.
    (V.5.B.1-B.3 prescripción adquisitiva: nociones, fundamento,
    características, p. 246-253). Fuentes a revisar: Boetsch parte 15
    (`Bienes_principal_15_prescripción_elementos_boetsch (dragged).pdf`),
