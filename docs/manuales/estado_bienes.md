@@ -3,8 +3,8 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
-> antes de seguir. Última actualización: 2026-11-28 (tramos 13b,
-> 13c y 14a aprobados; sigue el tramo 14b).
+> antes de seguir. Última actualización: 2026-11-28 (tramo 14b
+> aprobado; sigue el tramo 15a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -105,8 +105,10 @@
   commit `9eb73b2`.**
 - **Tramo 14a (V.5.A.5.4.2, p. 228-235): terminado y aprobado por
   Laura (2026-11-28, "ok, haz el commit"), marcado Hecho en Airtable.** Detalle en "Tramo
-  14a", más abajo. Detalle en "Tramo
-  13c", más abajo.
+  14a", más abajo.
+- **Tramo 14b (V.5.A.5.4.3 inmuebles inscritos y V.5.A.6 prueba, p.
+  235-245): terminado y aprobado por Laura (2026-11-28, "ok, haz el
+  commit"), marcado Hecho en Airtable junto con el 14c sobrante.** Detalle en "Tramo 14b", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
 
@@ -2260,24 +2262,104 @@ Peñailillo (citas y oraciones cortas; se reescribieron tres), 3.594
 palabras (antes 848), capturas revisadas, vista previa actualizada.
 Respaldo en el tmp del job (`05_Bienes_antes_14a.html`).
 
-## Siguiente paso exacto (2026-11-27, vigente)
+## Tramo 14b: hecho y aprobado (2026-11-28)
+
+**V.5.A.5.4.3 Inmuebles inscritos y V.5.A.6 Prueba de la posesión, p.
+235-245.** Informe en `Informes/Informe_Bienes_tramo14b.html`. Hallazgos:
+art. 730 inc. 2º mal citado ("a nombre de otro"; el Código dice "de un
+poseedor inscrito") y sin transcribir en todo el manual; art. 1567 inc.
+1º no define la resciliación (dice "darla por nula"); art. 14 RCBR no es
+rechazo definitivo; erratas de Boetsch p. 236 ("prescripción" por
+posesión, "mueble" por inmueble); caso (i) de VIAL del art. 925 se
+precisa con el art. 696 parte final. Boetsch copia a PEÑAILILLO (nº
+192-194 y 196) en 34 de 159 oraciones y a VIAL (p. 69-78) en 29; sus
+opiniones sin autor son de VIAL. Paráfrasis del texto anterior: 50 de 84
+sobre 70%. Libro de 3600 preguntas con errores (nº 830 prescripción como
+título sin inscripción; nº 831 2502 por 2505; nº 832 resciliación =
+anulación). PEÑAILILLO nº 278 (prueba de inmuebles) no está en el
+material. **Laura (2026-11-28): de Peñailillo, no usar solo la prueba de
+la posesión de inmuebles (nº 278)**; lo demás de Peñailillo sí se usa.
+
+**Decisiones de Laura (2026-11-28): "todo sí, sin material propio".**
+Atribuir a VIAL; TRUCCO y BAHAMONDES y MONTERO "según recoge la
+recopilación" (nº 8); orden de Boetsch en (ii) (b.1/b.2/b.3 y decreto
+judicial como c)); "Tradición" como e) con e.1/e.2; e.2) sin repetir el
+14a (enlace) y con lo propio de los inscritos; las tres contradicciones
+sobre la jurisprudencia expuestas sin tomar partido; Dato de grado
+retirado; debate de los arts. 924 y 925 completo en A.6.2; dos cuadros;
+tres preguntas clásicas.
+
+Lo que se hizo: (i) intro con PEÑAILILLO; a) ocupación con el argumento
+de la "dilatada redacción" del 724, la concepción realista, VIAL y
+BOETSCH (art. 728 inc. 2º por enlace), breve de Bartolo (Licantén); b)
+accesión con VIAL, breve de Ercilia (Teno); c) con la opinión contraria
+por enlace al 14a; d) con enlace al heredero putativo, breve de Anatolia
+y Toribio (Quellón); e.1) y e.2) con FABRES solo, DE LA MAZA (BARCIA),
+"la mayoría" (BARCIA) y "buena parte" (BOETSCH), artículos de cada lado
+y argumento de sentido de PEÑAILILLO, breve de Jacinta y Godofredo
+(Collipulli). (ii) intro con enlace a V.4.D.2.3.11; a) resciliación con
+el texto real del 1567 y enlace al ejemplo del 9c, transacción (art.
+2446) con breve de Dorila y Melquíades (Yumbel); b.1) cancelación
+virtual (art. 692 por enlace), art. 92 RCBR, breve de Clarita y
+Natividad (Ancud); b.2) art. 14 corregido, lectura literal, razones de
+PEÑAILILLO (728, 2505, 730) y del libro (2510 regla 1ª), criterio de la
+apariencia con breve de Tegualda, estado de la jurisprudencia según
+cada fuente, posesión de papel con las dos corrientes de VIAL, su
+criterio (art. 2502 Nº 1) y el art. 683 en inmuebles (enlace a V.4.C.3);
+No confundir "Tener la posesión inscrita no es lo mismo que estar en
+camino de prescribir" (Rosalindo, Lonquimay); b.3) art. 730 en `.ley`
+con negritas, primera controversia (VIAL), tres doctrinas (i)-(iii) con
+arts. 1818/1819 y 2505/2513/683 de PEÑAILILLO, críticas de VIAL, caso
+general imposible y responsabilidad del Conservador, situaciones a) y
+b), "permanece en discusión"; cuadro de las tres doctrinas; caja "El
+fundo de Pelarco" (Maclovia, Nicasio, Gumersinda, Clotario); c) decreto
+judicial con RDJ t. 47, emplazamiento y paralelas, breve de Ramona y
+Feliciano (Molina); preguntas clásicas "¿Cómo se cancela la posesión
+inscrita?" y "¿Qué es la competente inscripción del art. 730 inc. 2º?";
+Conexiones (Obligaciones 1567 y 2446, Contratos 1815/1818/1819, con
+`[FALTA: sección]`). A.6: intro con art. 700 inc. 2º; 1.1 a 1.3 nuevos
+(ids `cV-5-A-6-1-1` a `-1-3`): medios (1698, 341 CPC), corpus y animus
+con VIAL (acción publiciana) y vehículos (enlace a V.4.D.1.9), art. 719
+en `.ley`, art. 731 por enlace; 2. art. 925 en `.ley`, (i) TRUCCO, (ii)
+BAHAMONDES y MONTERO (art. 916), (iii) VIAL con a)-c) (art. 696 y 698) y
+su lectura del 925; cuadro de las tres lecturas; pregunta clásica "¿Cómo
+se prueba la posesión de un inmueble?"; Conexiones (Procesal). Nombres
+de ejemplos revisados contra el manual. Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafo más
+largo 1.074, paráfrasis 13 de 364 sobre 70% contra Boetsch, 7 contra
+Peñailillo y 6 contra VIAL (títulos, artículos y frases atribuidas),
+unas 6.900 palabras (antes 2.540; Boetsch 4.300), capturas revisadas,
+vista previa actualizada. Respaldo en el tmp del job
+(`05_Bienes_antes_14b.html`).
+
+**Pendiente que sale de aquí:** en el tramo 20c, ordenar VII.3.A.5
+"Prueba de la posesión" con A.6.2 para no repetir el debate de los arts.
+924 y 925, **sin borrar** lo que A.6.2 no tiene: los arts. 700, 715 y
+916 tras BAHAMONDES y MONTERO, la excepción "cuando ninguna de las
+partes tiene inscrito el predio", los arts. 686, 724, 728 y 729 como
+apoyo y "la jurisprudencia se ha inclinado mayoritariamente" (moverlo a
+A.6.2 o mantenerlo allí, según Boetsch p. 374-382).
+
+**Ajustes tras la revisión final (2026-11-28):** A.6.2 (iii) y el cuadro
+atribuyen la lectura solo a VIAL (Boetsch la expone, no la hace suya);
+las excepciones de la lectura de TRUCCO van como "según quienes la
+aceptan con modificaciones"; e.2) remite también a ÁLVAREZ (4.1 (iv) d)),
+que admite poseer sin inscripción; motosierra de Policarpo (Peumo).
+
+## Siguiente paso exacto (2026-11-28, vigente)
 
 1. Tramo 13b aprobado (2026-11-27, "sigamos con el tramo 13c").
-2. Tramo 14a aprobado (2026-11-28) y marcado Hecho en Airtable. **Sigue
-   el tramo 14b** (V.5.A.5.4.3 inmuebles inscritos + A.6 prueba, p.
-   235-245): PEÑAILILLO nº 192-194 y 196, VIAL p. 72-74 (art. 728,
-   competente inscripción, posesión de papel; art. 683 en inmuebles),
-   discusiones nº 8 (924/925), libro de 3600 preguntas nº 830-834 y
-   803-804, pregunta clásica "¿Cómo se cancela la posesión inscrita?".
-   Al aprobarlo, marcar Hecho el 14b (`recnCsQQcKKkCYVjm`) y el 14c
-   sobrante (`recgGwVO4dctNSzLy`). Fuentes que se usaron en el 14a (A.5.4.2, no inscritos, p.
-   228-235): PEÑAILILLO nº 190 y 191, art. 729, Lombardo p. 6-7, libro de
-   3600 preguntas (nº 829) y BARCIA (DE LA MAZA).
+2. Tramo 14a aprobado (2026-11-28) y marcado Hecho en Airtable.
+   Tramo 14b aprobado (2026-11-28) y marcado Hecho en Airtable (también
+   el 14c sobrante). **Sigue el tramo 15a**
+   (V.5.B.1-B.3 prescripción adquisitiva: nociones, fundamento,
+   características, p. 246-253). Pendiente arrastrado para el 15-16: el
+   debate completo del art. 2505 (ver "Tramo 13c").
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
    dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
-4. Pendiente para el tramo 14: la lectura de VIAL sobre el art. 683 en
-   inmuebles (ver "Tramo 7c") y la pregunta clásica "¿Cómo se cancela
-   la posesión inscrita?" (ver "Tramo 9c").
+4. ~~Pendiente para el tramo 14: VIAL y el art. 683 en inmuebles; la
+   pregunta clásica "¿Cómo se cancela la posesión inscrita?"~~: resueltos
+   en el 14b.
 5. Pendiente para el tramo 19: VI.4.6.2 Servidumbres legales sigue con
    el marcado antiguo (b.1 a b.7 en `h5`). Laura corrigió en vista previa
    (2026-11-23) que a) y b) iban en negrita y subrayado (`h4`): ya pasaron
