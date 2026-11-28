@@ -557,7 +557,16 @@ esos temas, esas preguntas se hacen allá.
    (2026-11-28), tanda 2:** 020, 022 y 023 aprobadas; 025, 026 y 028
    corregidas con sus indicaciones (sacar del caso o del enunciado lo
    que la alumna debe deducir), y con ese criterio se corrigió también el
-   caso de 007. **Falta:** su revisión de la tanda 1 y **sumar
+   caso de 007. **Tanda 1, revisión de Laura (2026-11-28):** 004, 011,
+   012, 014, 015, 018 y 019 aprobadas (012 y 019 "muy buenas"); 006 (se
+   sacó "cuyo objeto es por eso ilícito": la alumna lo deduce del art.
+   1466), 007 (distractor B reemplazado: confunde el orden público de
+   las reglas con una facultad del ministerio público) y 010 (opción B
+   con la lucidez al momento de la venta, y su explicación: con
+   interdicción no se puede probar lucidez, art. 465) corregidas. En la
+   pasada se cambiaron además los casos de 008, 016 y 019 (hechos del
+   engaño en vez de "dolo determinante"). **Falta:** su visto bueno a
+   esos cambios y **sumar
    ~6 preguntas para llegar al tope (~31)**: el motivo para quedarse en
    25 era no repetir escenarios de Aplicación, y Laura lo rechazó (ver
    "Reglas y decisiones"). Con lo que encuentre, pasada por todas e informe

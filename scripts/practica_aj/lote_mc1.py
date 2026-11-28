@@ -48,11 +48,11 @@ ITEMS = [
 
  # T21.02 Terminología y nulidad como regla general (sin exámenes: 1)
  dict(sub='T21.02',
-  caso='Una ley especial prohíbe cierto contrato, cuyo objeto es por eso ilícito, y dispone que el contrato celebrado contra esa prohibición "podrá rescindirse", sin decir más. Al leerla, Constanza concluye que, como la ley usa la palabra rescisión, el contrato adolece de nulidad relativa.',
+  caso='Una ley especial prohíbe cierto contrato y dispone que el contrato celebrado contra esa prohibición "podrá rescindirse", sin decir más. Al leerla, Constanza concluye que, como la ley usa la palabra rescisión, el contrato adolece de nulidad relativa.',
   enunciado='¿Qué especie de nulidad afecta a ese contrato?',
   opciones=[
    ('Absoluta: el objeto ilícito es causal del art. 1682, y esa palabra no cambia la especie.',
-    'CORRECTO. El objeto ilícito es causal de nulidad absoluta (art. 1682). Que la ley hable de rescisión no la vuelve relativa: para un sector de la doctrina, la rescisión no es sinónimo de la nulidad relativa, sino el derecho genérico a pedir que el acto quede sin efecto, y el legislador la usa también para vicios de nulidad absoluta.'),
+    'CORRECTO. Hay objeto ilícito en todo contrato prohibido por las leyes (art. 1466), y el objeto ilícito es causal de nulidad absoluta (art. 1682). Que la ley hable de rescisión no la vuelve relativa: para un sector de la doctrina, la rescisión no es sinónimo de la nulidad relativa, sino el derecho genérico a pedir que el acto quede sin efecto, y el legislador la usa también para vicios de nulidad absoluta.'),
    ('Relativa: la ley habla de rescisión, que es el nombre propio de la nulidad relativa.',
     'Incorrecto. Es la sinonimia que ese sector rechaza: el art. 1682 inc. final no iguala los términos, sino que dice que la nulidad relativa da derecho a la rescisión. La palabra no decide la especie; la decide la causal.'),
    ('Relativa: cuando la ley no nombra la especie, rige la regla general de la relativa.',
@@ -60,9 +60,9 @@ ITEMS = [
    ('Absoluta, con el plazo de cuatro años que corresponde a la rescisión.',
     'Incorrecto. Acierta en la especie, pero mezcla las reglas: el cuadrienio es el plazo de la nulidad relativa (art. 1691). La absoluta se sanea en diez años (art. 1683), cualquiera sea la palabra que use la ley.')],
   correcta='A',
-  articulos='1682, 1683, 1691',
+  articulos='1466, 1682, 1683, 1691',
   objetivo='Evaluar si el alumno sabe que la palabra rescisión no define la especie de nulidad, que se determina por la causal.',
-  respaldo=['IV.B.1.4', 'IV.B.1.5', 'IV.B.2.2', 'IV.B.2.6', 'IV.B.3.5']),
+  respaldo=['IV.B.1.4', 'IV.B.1.5', 'IV.B.2.2', 'IV.B.2.6', 'IV.B.3.5', 'II.C.4']),
 
  # T21.03 Diferencias entre nulidad absoluta y relativa (5 exámenes: 1)
  dict(sub='T21.03',
@@ -71,8 +71,8 @@ ITEMS = [
   opciones=[
    ('Sí, porque el ministerio público puede pedirla en el interés de la moral o de la ley.',
     'Incorrecto. Esa facultad la da el art. 1683 para la nulidad absoluta. El dolo produce nulidad relativa, y para ella el art. 1684 excluye expresamente al ministerio público en el solo interés de la ley.'),
-   ('Sí, porque Rodrigo no ha demandado y alguien tiene que proteger su interés.',
-    'Incorrecto. La nulidad relativa protege a Rodrigo dejando en sus manos la decisión de alegarla. Si no lo hace, nadie puede hacerlo por él en el solo interés de la ley (art. 1684).'),
+   ('Sí, porque las reglas de la nulidad son de orden público y a él le toca velar por ellas.',
+    'Incorrecto. Que las reglas de la nulidad sean de orden público significa que las partes no pueden derogarlas, no que el ministerio público pueda pedir cualquier nulidad. La relativa mira al interés de personas determinadas, y el art. 1684 le prohíbe pedirla en el solo interés de la ley.'),
    ('No, porque el ministerio público solo interviene cuando una de las partes es incapaz.',
     'Incorrecto. La intervención del ministerio público no depende de la capacidad de las partes, sino de la especie de nulidad: puede pedir la absoluta, nunca la relativa en el solo interés de la ley.'),
    ('No, porque en esta especie de nulidad no puede pedirla en el solo interés de la ley.',
@@ -80,7 +80,7 @@ ITEMS = [
   correcta='D',
   articulos='1683, 1684',
   objetivo='Evaluar si el alumno aplica una de las diferencias entre ambas nulidades: el ministerio público puede pedir la absoluta, no la relativa en el solo interés de la ley.',
-  respaldo=['IV.B.1.6', 'IV.B.3.4']),
+  respaldo=['IV.B.1.6', 'IV.B.3.4', 'IV.B.1.1']),
 
  # T21.04 Principios comunes a ambas nulidades (1)
  dict(sub='T21.04',
@@ -120,13 +120,13 @@ ITEMS = [
 
  # T21.06 Nulidad absoluta: concepto, causales y fundamento (10 exámenes: 2)
  dict(sub='T21.06',
-  caso='Don Aurelio fue declarado en interdicción por demencia hace dos años. Hace un mes vendió su auto a Ana, que no sabía de la interdicción. Su familia sostiene que firmó en un día en que estaba completamente lúcido.',
+  caso='Don Aurelio fue declarado en interdicción por demencia hace dos años. Hace un mes vendió su auto a Ana, que no sabía de la interdicción. Ana sostiene que ese día don Aurelio estaba completamente lúcido.',
   enunciado='¿Qué sanción afecta a la compraventa?',
   opciones=[
    ('Nulidad absoluta, porque don Aurelio es demente y, por eso, absolutamente incapaz.',
     'CORRECTO. Los dementes son absolutamente incapaces, y el art. 1682 sanciona con nulidad absoluta los actos de los absolutamente incapaces. Como don Aurelio estaba en interdicción, su acto es nulo aunque se alegue que lo celebró en un intervalo lúcido (art. 465).'),
-   ('Nulidad relativa, porque la interdicción se estableció para proteger a don Aurelio.',
-    'Incorrecto. Que la incapacidad busque proteger al incapaz no cambia la sanción que fija la ley: el art. 1682 sanciona con nulidad absoluta los actos de los absolutamente incapaces. La relativa es la de los actos de los relativamente incapaces.'),
+   ('Nulidad relativa, porque al momento de la venta don Aurelio estaba lúcido.',
+    'Incorrecto. Con decreto de interdicción, lo que hace el demente es nulo aunque se alegue que lo hizo en un intervalo lúcido (art. 465): la lucidez no puede probarse para salvar el acto ni para cambiar su sanción, que es la nulidad absoluta de los actos de los absolutamente incapaces (art. 1682).'),
    ('Nulidad relativa, porque la incapacidad mira a la calidad o estado de las partes.',
     'Incorrecto. Aplica la regla general a un caso que el art. 1682 sanciona expresamente de otro modo: la incapacidad absoluta es causal de nulidad absoluta.'),
    ('Nulidad absoluta, que la familia deberá fundar en su demencia el día de la venta.',
