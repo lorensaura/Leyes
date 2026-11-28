@@ -22,9 +22,12 @@ así que no depende del repo:**
   completa: 30 preguntas** (tanda 1, 17, y tanda 2, 13), **aprobadas**.
   **Nulidad · Justificación completa: 27 preguntas** (tanda 1, 17, y
   tanda 2, 10), **aprobadas** (la tanda 2, con sus cambios, el
-  2026-11-27). **Nulidad · Discriminación MC: 25 preguntas** (tanda 1, 16, y
-  tanda 2, 9), **aprobadas por Laura el 2026-11-28** con sus cambios;
-  falta una tanda 3 de ~6 para llegar al tope (~31).
+  2026-11-27). **Nulidad · Discriminación MC: 31 preguntas** (tanda 1, 16, y
+  tanda 2, 9, **aprobadas por Laura el 2026-11-28** con sus cambios;
+  tanda 3, 6, aprobada sin cambios). **Nulidad completa (118 preguntas de
+  los 4 tipos) publicada el 2026-11-28**: `publicado` y `Verificado` en
+  Airtable, y sincronizada a Supabase (118 filas `acto_juridico` en
+  `evaluacion_practica`, comprobado).
   Todo sin publicar: se publica con el tema completo.
 - **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
 - **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
@@ -38,7 +41,7 @@ así que no depende del repo:**
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) **Justificación completa, 27 aprobadas** (tandas 1 y 2) y **Discriminación MC, 25 aprobadas** (tandas 1 y 2; falta tanda 3 de ~6); todo sin publicar |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) **Justificación completa, 27 aprobadas** (tandas 1 y 2) y **Discriminación MC completa, 31**; **las 118 publicadas el 2026-11-28**; todo sin publicar |
 | V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 | VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
@@ -241,18 +244,18 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Concepto, características y origen de la inexistencia | IV.A.1-2 | | 1 | · | · | · | · | · | 3 | · | · |
 | &nbsp;&nbsp;&nbsp;Diferencias entre inexistencia y nulidad | IV.A.3 | | · | · | · | · | · | · | 2 | · | · |
 | &nbsp;&nbsp;&nbsp;¿Distingue el Código la inexistencia? (doctrinas, historia y jurisprudencia) | IV.A.4 | | 6 | · | · | · | · | · | 7 | 2 | · |
-| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **30** | **30** | **17** | **·** | **·** | **39** | **1** | **8** |
-| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | 4 | 4 | 2 | · | · | 4 | · | 2 |
-| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | 1 | 1 | 1 | · | · | 2 | · | · |
-| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | 2 | 2 | 1 | · | · | 2 | · | · |
-| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | 1 | 1 | 1 | · | · | 5 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | 1 | 1 | 1 | · | · | 3 | 1 | · |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | 4 | 4 | 2 | · | · | 3 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | 4 | 4 | 2 | · | · | 6 | · | 1 |
-| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | 2 | 2 | 1 | · | · | 4 | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | 4 | 4 | 2 | · | · | 3 | · | · |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | 3 | 3 | 2 | · | · | 3 | · | 2 |
-| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | 4 | 4 | 2 | · | · | 4 | · | 1 |
+| **20. Nulidad: concepto, clases, causales, titulares y saneamiento** | IV.B.1-3 | **Alta** | **39 (48%)** | **30** | **30** | **27** | **31** | **·** | **39** | **1** | **8** |
+| &nbsp;&nbsp;&nbsp;Reglas, concepto general y especies de nulidad | IV.B.1.1-3 | | 15 | 4 | 4 | 3 | 4 | · | 4 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Terminología y nulidad como regla general | IV.B.1.4-5 | | · | 1 | 1 | 1 | 1 | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Diferencias entre nulidad absoluta y relativa | IV.B.1.6 | | 5 | 2 | 2 | 2 | 2 | · | 2 | · | · |
+| &nbsp;&nbsp;&nbsp;Principios comunes a ambas nulidades | IV.B.1.7 | | · | 1 | 1 | 1 | 1 | · | 5 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad total y parcial; consecuencial y refleja | IV.B.1.8-9 | | · | 1 | 1 | 1 | 1 | · | 3 | 1 | · |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: concepto, causales y fundamento | IV.B.2.1-3 | | 10 | 4 | 4 | 3 | 4 | · | 3 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: quién la declara o pide (juez de oficio, interesado, ministerio público) | IV.B.2.4 | | 14 | 4 | 4 | 4 | 4 | · | 6 | · | 1 |
+| &nbsp;&nbsp;&nbsp;Nulidad absoluta: saneamiento (no por ratificación, sí por tiempo) y no opera de pleno derecho | IV.B.2.5-7 | | 9 | 2 | 2 | 2 | 2 | · | 4 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: definición, fundamento, causales y características | IV.B.3.1-3 | | 11 | 4 | 4 | 3 | 4 | · | 3 | · | · |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: quiénes pueden alegarla (y el incapaz que no puede) | IV.B.3.4 | | 11 | 3 | 3 | 3 | 4 | · | 3 | · | 2 |
+| &nbsp;&nbsp;&nbsp;Nulidad relativa: saneamiento por el transcurso del tiempo | IV.B.3.5 | | 15 | 4 | 4 | 4 | 4 | · | 4 | · | 1 |
 | **21. Ratificación o confirmación** | IV.B.3.6 | **Baja** | **3 (4%)** | **·** | **·** | **·** | **·** | **·** | **8** | **1** | **5** |
 | &nbsp;&nbsp;&nbsp;Ratificación o confirmación: concepto, clases, características y requisitos | IV.B.3.6 | | 3 | · | · | · | · | · | 8 | 1 | 5 |
 | **22. Efectos de la nulidad, restituciones, reivindicación y conversión** | IV.B.4 | **Media** | **8 (10%)** | **·** | **·** | **·** | **·** | **·** | **20** | **2** | **3** |
@@ -294,7 +297,7 @@ la cuenta.
 | &nbsp;&nbsp;&nbsp;Estados y efectos de la condición (suspensiva y resolutoria) | VI.A.3 | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Plazo: concepto, diferencias con la condición, clases y efectos | VI.B | | · | · | · | · | · | · | 1 | · | · |
 | &nbsp;&nbsp;&nbsp;Modo | VI.C | | 3 | · | · | · | · | · | 1 | · | · |
-| **Total** | | | | **33** | **33** | **20** | **3** | **12** | **291** | **23** | **47** |
+| **Total** | | | | **33** | **33** | **30** | **34** | **12** | **291** | **23** | **47** |
 <!-- tablero:fin -->
 
 ## Dónde está cada cosa (al 2026-10-10)
@@ -302,7 +305,7 @@ la cuenta.
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
 | Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
-| Evaluación | 122: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) 27 de Justificación de Nulidad (`aj-just-004` a `030`) y 25 de Discriminación MC de Nulidad (`aj-mc-004` a `028`, base IV-VI) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
+| Evaluación | 128: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) 27 de Justificación de Nulidad (`aj-just-004` a `030`) y 31 de Discriminación MC de Nulidad (`aj-mc-004` a `034`, base IV-VI) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema; **Nulidad (118) publicada el 2026-11-28** |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
@@ -566,35 +569,42 @@ esos temas, esas preguntas se hacen allá.
    interdicción no se puede probar lucidez, art. 465) corregidas. En la
    pasada se cambiaron además los casos de 008, 016 y 019 (hechos del
    engaño en vez de "dolo determinante"); Laura los aprobó. **Las 25
-   quedan aprobadas.** **Siguiente: tanda 3 (`lote_mc3.py`, desde
-   `aj-mc-029`), ~6 preguntas para llegar al tope (~31)**: el motivo para
-   quedarse en 25 era no repetir escenarios de Aplicación, y Laura lo
-   rechazó (ver "Reglas y decisiones"). Subtemas bajo el tope: "reglas y
-   especies" (3 de 4), "nulidad absoluta: causales" (3 de 4), "nulidad
-   relativa: causales" (2 de 4), "quiénes alegan la relativa" (3 de 4) y
-   "saneamiento por el tiempo" (3 de 4). Redactarla con todos los
-   criterios de "Reglas y decisiones" (hechos y no calificaciones en el
-   caso, opciones semi correctas, ninguna fórmula exclusiva de las
-   incorrectas). Revisión 3 de cada 5. Los cambios de texto de opciones van con
-   `--actualizar`; si cambia el caso o el enunciado, actualizarlo antes
-   a mano en Airtable). Posición de la respuesta correcta repartida desde el
-   principio y distractores no adivinables por descarte (ver "Reglas y
-   decisiones que no cambian"). Misma prueba propia y mismo cuidado de
-   fronteras entre temas que en Justificación tanda 2.
-3. **Publicar Nulidad completa:** marcar `publicado` y `Revision_status =
-   Verificado` en Airtable y correr `scripts/sync_airtable_supabase.py`;
-   antes, confirmar que Supabase responde (ver pendiente técnico).
+   quedan aprobadas.** **Tanda 3 (2026-11-28): `aj-mc-029` a `034`
+   (`lote_mc3.py`, informe `Informe_AJ_mc3.html`, "Qué revisar" 4 de 6),
+   **aprobada por Laura sin cambios (2026-11-28).** Los seis subtemas
+   importantes quedan en 4 y el total en 31 (tope).
+3. ~~Publicar Nulidad completa~~: **hecho el 2026-11-28.** 118 preguntas
+   (30 Aplicación, 30 Detección de error, 27 Justificación, 31
+   Discriminación MC) con `publicado` y `Verificado` en la base IV-VI, y
+   sync a Supabase. Desde la worktree el sync no encuentra el `.env`: se
+   corre cargando las claves del `.env` del repo principal en el entorno.
+   **Siguiente: el punto 4, tema Error.**
+
+**Tandas por tema completo (decisión de Laura, 2026-11-28):** se mantiene
+la regla completa de cantidad (4 por tipo en subtemas con 10+ exámenes, 2
+en el resto; faltan ~1.100 para AJ), pero **cada tanda pasa a ser un tema
+(o un grupo de temas chicos) con sus 4 tipos juntos**, ~110 a 135
+preguntas. **Ritmo (Laura, 2026-11-28): dos tandas por día; Claude las
+prepara de noche y Laura las revisa en la mañana**, mientras Claude prepara
+las siguientes. Laura revisa 1 de cada 3 (~40 por tanda, ~1,6 horas). Calendario en el mapa de metas (Airtable "Digesto · Mapa de
+metas", tareas "Acto Jurídico · preguntas tanda N de 11"):
+30 nov: 3 Error y 4 Causa, vicios en general, ratificación e ineficacia
+en general; 1 dic: 5 Objeto y objeto ilícito y 6 Dolo, fuerza y lesión;
+2 dic: 7 Cap. I y modalidades y 8 Clasificaciones y fraude a la ley;
+3 dic: 9 Voluntad, formación del consentimiento, capacidad y formalidades
+y 10 Efectos del acto, inexistencia, efectos de la nulidad y simulación;
+4 dic: 11 Inoponibilidad, otras causales y representación, y decidir
+Alternativas y Memorice. Laura medirá cuánto se demora de verdad y se
+ajusta.
 4. **Tema siguiente: Error (tema 9)**, los mismos 4 tipos. Ahí entran la
    sanción del error esencial que se sacó de esta tanda. Después Causa,
    Objeto, Objeto ilícito y Dolo (orden de relevancia del tablero); la
    sanción de la lesión va con el tema Lesión, y los requisitos de la
    fuerza y del dolo, con sus temas.
 
-**Pendiente técnico:** el
-2026-11-27 `tablero_cobertura_aj.py` falló porque el dominio de Supabase
-no resolvía (NXDOMAIN); volver a correrlo y, si sigue, revisar si el
-proyecto de Supabase está pausado (afectaría a la app en vivo). Detalle del
-método más abajo.
+**Pendiente técnico resuelto:** el 2026-11-27 `tablero_cobertura_aj.py`
+falló porque el dominio de Supabase no resolvía; el 2026-11-28 volvió a
+correr sin problemas. Detalle del método más abajo.
 
 **Flashcards de AJ: terminadas, revisadas y publicadas (2026-10-09).**
 291 en Airtable y en la app (Supabase, `materia = acto_juridico`), los
@@ -788,8 +798,18 @@ método más abajo.
   descartarlas): se reescribieron, y la tanda 1 se actualizó con
   `--actualizar`. También se cambió una pregunta que repetía casi igual
   `aj-mc-014` (ahora 025 trata la absoluta que no opera de pleno derecho).
-- **Siguiente: Discriminación MC tanda 3** (~6, hasta el tope); después,
-  publicar Nulidad completa (ver "Siguiente paso exacto").
+- **Tanda 9 (2026-11-28): Nulidad, Discriminación MC, tercera y última
+  tanda.** 6 preguntas, `aj-mc-029` a `034` (`lote_mc3.py`), sin publicar
+  y en Revisar. Informe: `DERECHO LIBRE/Informes/Informe_AJ_mc3.html`.
+  **Aprobada por Laura sin cambios (2026-11-28).** Una revisión independiente antes de
+  subir cambió tres cosas: se reemplazó una pregunta sobre la fuerza de un
+  tercero (requisito de la fuerza, otro tema) por la ratificación como
+  característica de la relativa (032, la primera de Nulidad en que la
+  correcta es "Ninguna"); la cláusula de 029 pasó de acortar el plazo
+  (punto que el manual no trata) a renunciar a la acción (art. 1469); y se
+  quitó un "siempre" que solo aparecía en una opción incorrecta.
+- **Nulidad publicada completa (2026-11-28).** Siguiente: tema Error
+  (tema 9), los 4 tipos (ver "Siguiente paso exacto").
 - **Alternativas, Memorice de definiciones y el borrador del Cap. I:**
   pendientes, ver "Por acordar".
 
@@ -818,7 +838,7 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-034`, `aj-det-034`, `aj-just-031`, `aj-mc-029`, `aj-fc-292`,
+  `aj-aplic-034`, `aj-det-034`, `aj-just-031`, `aj-mc-035`, `aj-fc-292`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
@@ -884,8 +904,12 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   - **Bajar a 1 de cada 3** (alrededor del 30%) cuando la tanda anterior
     del mismo tipo y tema salió con **una corrección de fondo o menos**.
   - **Volver a 3 de cada 5** si en una tanda aparece un problema nuevo.
-  - Próxima: Discriminación MC tanda 3, con 3 de cada 5 (las tandas 1 y
-    2 tuvieron varias correcciones, aunque de forma más que de fondo).
+  - Discriminación MC tanda 3: 4 de 6 en "Qué revisar".
+  - **Desde el 2026-11-28 (Laura): 1 de cada 3 por defecto en todos los
+    temas**, porque los criterios de los 4 tipos ya quedaron fijados con
+    Nulidad; lo que cambia de tema a tema es el contenido, que cubre el
+    control contra el manual. Una tanda vuelve a 3 de cada 5 si aparece un
+    problema nuevo.
   Claude elige cuáles: de todos los tipos de caso y dificultad, priorizando las que
   tocan puntos discutidos, figuras de otras materias, cálculos con fechas
   y elementos con más riesgo de corrección estricta. En el informe va la
