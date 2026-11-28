@@ -4,7 +4,7 @@
 > [de Bienes]". Al decir "retoma Bienes" (o "empecemos Bienes"), leer
 > este archivo completo primero y resumir en pocas líneas dónde quedó
 > antes de seguir. Última actualización: 2026-11-27 (tramo 13b
-> y 13c aprobados; sigue el tramo 14a).
+> 13c y 14a aprobados; sigue el tramo 14b).
 
 ## Resumen para retomar (léelo primero)
 
@@ -101,7 +101,11 @@
   por Laura (2026-11-27, "sigamos con el tramo 13c"), commit `85f2dd4`.**
   Detalle en "Tramo 13b", más abajo.
 - **Tramo 13c (V.5.A.5.4.1, p. 218-228): terminado y aprobado por
-  Laura (2026-11-27, "ok, haz el commit y sigue con el tramo 14a").** Detalle en "Tramo
+  Laura (2026-11-27, "ok, haz el commit y sigue con el tramo 14a"),
+  commit `9eb73b2`.**
+- **Tramo 14a (V.5.A.5.4.2, p. 228-235): terminado y aprobado por
+  Laura (2026-11-28, "ok, haz el commit"), marcado Hecho en Airtable.** Detalle en "Tramo
+  14a", más abajo. Detalle en "Tramo
   13c", más abajo.
 
 ## Paso 0, obligatorio: leer las lecciones de Acto Jurídico
@@ -2209,10 +2213,64 @@ inmueble inscrito con título traslaticio?") y las nº 803-804 (título
 injusto) como preguntas clásicas candidatas del 14b; el debate completo
 del art. 2505 a la prescripción (15-16).
 
+## Tramo 14a: hecho y aprobado (2026-11-28)
+
+**V.5.A.5.4.2 Inmuebles no inscritos, p. 228-235.** Informe en
+`Informes/Informe_Bienes_tramo14a.html`. Hallazgos: la postura propia de
+BOETSCH en la tradición ("a cuya postura adherimos") es la de VIAL, con sus
+mismos argumentos; el manual dice "el propio apunte". Boetsch copia a
+PEÑAILILLO nº 190-191 (35 de 108 oraciones). Errata: "inmueble inscrito"
+por "no inscrito" al final de a.2). a.4) afirma que la posesión viciosa es
+"inútil", contra lo decidido en el 12. Faltan: fallo RDJ t. 26 (art. 590,
+dominio sin posesión), argumento del Mensaje en a.3), la opinión que exige
+inscripción, los argumentos de los arts. 729 y 730 en e.1), el argumento
+(5) de e.2), heredero putativo (VIAL, BOZZO e IBARRA), pérdida e) completa
+(título de tercero inscrito, papel) y el cotejo 729/730. DE LA MAZA según
+BARCIA. Marcado roto en a) a d). Paráfrasis 13 de 28. 848 palabras.
+
+**Decisiones pedidas a Laura (6):** atribuir a VIAL; posesión viciosa
+"inútil" solo para quienes lo sostienen; DE LA MAZA; cuadro de las tres
+posturas sobre la tradición; dos preguntas clásicas (una del libro, nº
+829); material propio.
+
+**Decisiones de Laura (2026-11-28): "todo sí", sin material propio.**
+Ese mismo día notó que 13b y 13c no estaban marcados en Airtable: se
+marcaron Hecho y se renombraron 13a, 13b, 13c, 14a y 14b con el reparto
+real (el 14c de Airtable, "Posesión inscrita 3/3 + A.6", quedó sobrante:
+su contenido es parte del 14b; marcarlo Hecho junto con el 14b, como se
+hizo con el 11c).
+
+Lo que se hizo: intro; (i) a) con PEÑAILILLO (ocupación = apoderamiento),
+a.1) art. 590 en `.ley` y fallo RDJ t. 26; a.2) con VIAL (728 a contrario)
+y la tesis aislada de PEÑAILILLO; a.3) con el argumento del Mensaje, la
+opinión que exige inscripción y la mala fe por los arts. 590 y 8; a.4) con
+VIAL y la utilidad de la viciosa como discutida (enlace a V.5.A.2.4.2);
+b) accesión con PEÑAILILLO y VIAL (arts. 649, 652, 655, 656); c) con la
+opinión del efecto retroactivo; d) art. 722 en `.ley`, art. 688 por
+enlace, heredero putativo (VIAL; arts. 1264, 1269, 2512); e) e.1 FABRES y
+DE LA MAZA (BARCIA) con los argumentos de los arts. 729 y 730 y BOZZO e
+IBARRA; e.2 VIAL con BOETSCH, cinco argumentos y el art. 730; art. 693
+(V.4.D.2.3.7); cuadro de tres posturas; caja "El sitio de Curanilahue";
+(ii) a)-e) con arts. 920 y 731, 2510 regla 3ª (V.5.A.3.3), e) inscripción
+de un tercero (papel, RDJ t. 67); cotejo 729/730 con enlace a 3.3; dos
+preguntas clásicas; Conexiones (Sucesorio). Verificación: cero guiones
+largos, ids únicos, `href` resuelven, etiquetas balanceadas, párrafos
+bajo 1.100, paráfrasis 9 de 190 sobre 70% contra Boetsch y 6 contra
+Peñailillo (citas y oraciones cortas; se reescribieron tres), 3.594
+palabras (antes 848), capturas revisadas, vista previa actualizada.
+Respaldo en el tmp del job (`05_Bienes_antes_14a.html`).
+
 ## Siguiente paso exacto (2026-11-27, vigente)
 
 1. Tramo 13b aprobado (2026-11-27, "sigamos con el tramo 13c").
-2. Tramo 13c aprobado (2026-11-27). Sigue el tramo 14a (A.5.4.2, no inscritos, p.
+2. Tramo 14a aprobado (2026-11-28) y marcado Hecho en Airtable. **Sigue
+   el tramo 14b** (V.5.A.5.4.3 inmuebles inscritos + A.6 prueba, p.
+   235-245): PEÑAILILLO nº 192-194 y 196, VIAL p. 72-74 (art. 728,
+   competente inscripción, posesión de papel; art. 683 en inmuebles),
+   discusiones nº 8 (924/925), libro de 3600 preguntas nº 830-834 y
+   803-804, pregunta clásica "¿Cómo se cancela la posesión inscrita?".
+   Al aprobarlo, marcar Hecho el 14b (`recnCsQQcKKkCYVjm`) y el 14c
+   sobrante (`recgGwVO4dctNSzLy`). Fuentes que se usaron en el 14a (A.5.4.2, no inscritos, p.
    228-235): PEÑAILILLO nº 190 y 191, art. 729, Lombardo p. 6-7, libro de
    3600 preguntas (nº 829) y BARCIA (DE LA MAZA).
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
