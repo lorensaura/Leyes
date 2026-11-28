@@ -549,7 +549,7 @@ un tramo, actualizar también ahí.
   punto 7 sin recuadros. Controles: cobertura 82% 🟡 por falsos avisos
   (subtítulos B y B.1, del tramo 4a; artículos 8/8, autores 4/4,
   densidad 230%); 42/42 unidades; paráfrasis 0/96 contra las cuatro
-  fuentes tras reescribir 4; 0 guiones largos; párrafo máximo bajo 650;
+  fuentes tras reescribir 4; 0 guiones largos; párrafo máximo 671;
   sin enlaces rotos. Vista previa actualizada.
 
 ### Informe (2026-11-28)
