@@ -1648,7 +1648,8 @@ const bancoTransversal = [
     function evaluarRespuesta(esSegundaPasada = false) {
       const item = itemsFiltrados[idxActual];
       const texto = quitarTildes((document.getElementById('recall-text')?.value || '').toLowerCase());
-      if (texto.trim().length < 30) {
+      // En Discriminación lo escrito no se corrige: sin mínimo de caracteres (Laura, 2026-11-28)
+      if (item.tipo !== 'discriminacion_mc' && texto.trim().length < 30) {
         document.getElementById('recall-text').style.borderColor = '#C41E2E';
         setTimeout(() => document.getElementById('recall-text').style.borderColor = '', 1500);
         const hint = document.getElementById('recall-hint');
@@ -1898,7 +1899,7 @@ const bancoTransversal = [
       const letras = ['A', 'B', 'C', 'D'];
       const mcHTML = `
         <div class="mc-section">
-          <div class="step-label"><div class="step-num-badge">2</div>Discriminación — Selecciona la opción correcta y justifica en una línea.</div>
+          <div class="step-label"><div class="step-num-badge">2</div>Discriminación — Selecciona la opción correcta.</div>
           <div class="mc-intro">Ahora que ya escribiste tu análisis, elige la alternativa que corresponde.</div>
           <div class="options-grid" id="mc-options">
             ${item.opciones.map((op, i) => `
@@ -1906,8 +1907,6 @@ const bancoTransversal = [
                 <span class="option-letter">${letras[i]}</span><span>${op.texto}</span>
               </button>`).join('')}
           </div>
-          <div class="justificacion-label">Justificación (1 línea) — ¿Por qué elegiste esa opción?</div>
-          <textarea id="justificacion-text" class="justificacion" placeholder="Elijo X porque…" onpaste="return false;" ondrop="return false;"></textarea>
           <div class="btn-row"><button class="btn btn-primary" id="btn-confirmar-mc" onclick="evaluarMC()">Confirmar selección</button></div>
           <div id="mc-feedback"></div>
         </div>`;
@@ -1943,9 +1942,11 @@ const bancoTransversal = [
         document.getElementById('mc-opt-' + seleccionMC).classList.add('wrong');
       }
       const opcionElegida = item.opciones[seleccionMC];
+      // la explicación guardada empieza con "CORRECTO." / "Incorrecto." / "Error:"; se quita para no repetirlo
+      const sinMarca = r => (r || '').replace(/^\s*(CORRECTO|Correcto|INCORRECTO|Incorrecto|Error)\s*[.:]\s*/, '');
       const distractorFeedback = esCorrecta
-        ? `<strong>Correcto.</strong> ${item.opciones[correctaIdx].rationale}`
-        : `<strong>Incorrecto.</strong> Elegiste ${letras[seleccionMC]}: ${opcionElegida.rationale}. La correcta es ${item.correcta}: ${item.opciones[correctaIdx].rationale}`;
+        ? `<strong>Correcto.</strong> ${sinMarca(item.opciones[correctaIdx].rationale)}`
+        : `<strong>Incorrecto.</strong> Elegiste ${letras[seleccionMC]}: ${sinMarca(opcionElegida.rationale).replace(/\.\s*$/, '')}. La correcta es ${item.correcta}: ${sinMarca(item.opciones[correctaIdx].rationale)}`;
       document.getElementById('mc-feedback').innerHTML = `
         <div class="distractor-feedback">${distractorFeedback}</div>
         <div class="btn-row" style="margin-top:1rem;">

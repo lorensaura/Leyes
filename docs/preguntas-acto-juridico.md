@@ -418,17 +418,15 @@ Decidido:
   "Lotes de Flashcards").
 
 Por acordar con Laura:
-0. **Repregunta después de la alternativa (propuesta de Laura,
-   2026-11-28):** en Discriminación MC, después de elegir, una pregunta
-   corta que pida lo que el caso ya no regala (ej. "¿Qué tipo de error
-   cometió?", "¿Qué requisitos debe reunir la fuerza para viciar el
-   consentimiento?"). Claude la recomienda, con respuesta visible al
-   apretar un botón (autoevaluación, sin palabras clave). Requiere campos
-   nuevos en Airtable (`repregunta`, `respuesta_repregunta`), columna en
-   `evaluacion_practica` de Supabase, ampliar el sync y la pantalla de
-   `app/alternativas.html` (verificar en headless). Si la repregunta toca
-   otro tema (requisitos de la fuerza), se acepta como puente, sin
-   contarla como cobertura de ese tema. Esperando la decisión de Laura.
+0. ~~Repregunta después de la alternativa~~ **decidido (Laura,
+   2026-11-28): no.** Al probar Discriminación en digesto.cl prefirió
+   quitar pasos, no agregarlos: se eliminó el cuadro "Justificación (1
+   línea)" después de las opciones y el mínimo de 30 caracteres de la
+   recuperación libre (solo en Discriminación; en los otros tipos se
+   mantiene, porque ahí lo escrito se corrige). Además se corrigió que la
+   app mostraba "Correcto. CORRECTO." (la explicación guardada ya trae su
+   marca). Cambio en `app/alternativas.html`, verificado en Chrome
+   headless; llega a digesto.cl cuando se mezcle con `main`.
 1. ~~Cómo trabajar Evaluación y cuántas preguntas~~ **decidido** (2026-10-09
    y 10, ver "Siguiente paso exacto").
 2. Qué hacer con el borrador del Cap. I (12 de Evaluación, 12
@@ -559,8 +557,7 @@ esos temas, esas preguntas se hacen allá.
    (2026-11-28), tanda 2:** 020, 022 y 023 aprobadas; 025, 026 y 028
    corregidas con sus indicaciones (sacar del caso o del enunciado lo
    que la alumna debe deducir), y con ese criterio se corrigió también el
-   caso de 007. **Falta:** su revisión de la tanda 1; decidir las
-   repreguntas después de la alternativa (ver "Por acordar"); y **sumar
+   caso de 007. **Falta:** su revisión de la tanda 1 y **sumar
    ~6 preguntas para llegar al tope (~31)**: el motivo para quedarse en
    25 era no repetir escenarios de Aplicación, y Laura lo rechazó (ver
    "Reglas y decisiones"). Con lo que encuentre, pasada por todas e informe
