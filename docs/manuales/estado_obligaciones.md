@@ -3,9 +3,9 @@
 > Se actualiza **in place** cada vez que Laura diga "guarda el estado
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
-> Última actualización: 2026-11-28 (tramos 1, 2, 3a y 3b aprobados y
-> mergeados; 3c aprobado el 2026-11-28, falta mergearlo; siguiente:
-> informe del 4a).
+> Última actualización: 2026-11-28 (tramos 1 a 3c aprobados y
+> mergeados; informe del 4a entregado, esperando las decisiones de
+> Laura).
 
 ## Resumen para retomar (léelo primero)
 
@@ -60,11 +60,13 @@
   70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
 - **Tramo 3b: aprobado y mergeado** (2026-11-28, merge `ce732cc`;
   Laura: "aprobado el tramo 3b"). Marcado Hecho en Airtable.
-- **Tramo 3c: aprobado** (2026-11-28; Laura: "ok perfecto. Aprobado").
-  Cierra el tema II.A. Marcado Hecho en Airtable. **Falta mergear** la
-  rama `obligaciones-tramo3c` a `main` (Laura, con GitHub Desktop).
-- **Siguiente:** informe del 4a (solo el informe). Ver "Siguiente paso
-  exacto".
+- **Tramo 3c: aprobado y mergeado** (2026-11-28, merge `4a534e6`).
+  Cierra el tema II.A. Marcado Hecho en Airtable. La rama
+  `obligaciones-tramo3c` sigue sin borrar (Claude no tuvo permiso; la
+  borra Laura en GitHub Desktop).
+- **Tramo 4a: informe entregado** (2026-11-28), rama
+  `obligaciones-tramo4a`. Esperando las 9 decisiones de Laura; el manual
+  no se ha tocado. Ver "Tramo 4a".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -607,19 +609,54 @@ un tramo, actualizar también ahí.
   punto 6, AJ II.A.5.2 (error de derecho). Para después: llenar el
   `[FALTA: sección]` de la Conexión de AJ a las obligaciones naturales.
 
+## Tramo 4a (p. 36-39, II.B.1-2): informe entregado
+
+- **Informe:** `DERECHO LIBRE/Informes/Informe_Obligaciones_tramo4a.html`
+  (2026-11-28). Corte: desde "B. Clasificación... atendiendo a su
+  objeto" (p. 36) hasta antes de B.3 (p. 39). 38 unidades (31 Boetsch,
+  7 Vial). Otros anexos: nada del tema.
+- **Estructura propuesta:** B (`cII-B`, h2.grupo); B.1 (`cII-B1`,
+  h2.inst) en prosa directa con (i) art. 1555 y (ii) art. 1557; B.2
+  (`cII-B2`) con 1 Dar (1.1 Concepto, 1.2 Entregar), 2 Hacer, 3 No hacer,
+  4 Importancia (cuadro de 4 criterios: acción mueble/inmueble, mora,
+  ejecución CPC, imposibilidad que extingue). B.3 y B.4 llegan en 4b, 5a
+  y 5b (todo o nada de la letra).
+- **Las 9 decisiones planteadas:** 1 dar: tradicional (fórmula fija, sin
+  autores) frente a VIAL (hacer la tradición, art. 1815), con BOETSCH
+  adhiriendo; 2 contradicción de Boetsch p. 37 ("transferir la cosa
+  vendida"): escribir "hacer la tradición" sin comentar; 3 ¿entregar es
+  dar o hacer?: mostrar sin conciliar (regla chilena con los 3
+  argumentos de BOETSCH; VIAL: hacer = distinto de la tradición, y su
+  clasificación en cuatro); 4 "abstenerse de dar" fuera; 5 art. 1557
+  desarrollado en B.1, solo fila del cuadro en el 4; 6 cuadro en el 4 y
+  no cuadro dar/entregar (ya está en Bienes V.4.A.4, Conexión); 7 B.1
+  sin puntos; 8 tres Preguntas clásicas (1.1 vendedor y precio; 1.2
+  fusión No confundir dar/entregar; 2 promesa = hacer, art. 1554 inc.
+  final → 1553); 9 material propio.
+- **Verificado:** CC 580, 581, 1438, 1460, 1548 (Boetsch lo corta: se
+  transcribe entero, conservación al 5a), 1553, 1554, 1555, 1557, 1567,
+  1670, 1815, 1924; CPC 464 Nº 15, 534, Libro III títulos I y II; CCom
+  404 Nº 4 ("ramo de industria", no "giro"). **Sin verificar:** historia
+  fidedigna del CPC (atribuida a BOETSCH).
+- **Conexiones propuestas:** B.1, Contractual C.5 y E.7; 1.2, Bienes
+  V.4.A.4; punto 4, Bienes II.B.5 y Contractual C.5 y C.6.
+- **Ejemplos propuestos:** Josefa y el segundo piso (B.1); Rodrigo vende
+  a Javiera la bicicleta del hermano (1.1); Constanza arrienda a Martín
+  (1.2); Ignacia, la ilustradora y el maestro de la reja (2); Marcela y
+  la cafetería de Ñuñoa (3); acción del comprador del departamento frente
+  a la de la remodelación (4).
+- **Para el 10a:** el párrafo de Vial sobre puras y simples y sujetas a
+  modalidad (ejemplo de la compraventa).
+
 ## Siguiente paso exacto (2026-11-28, vigente)
 
-1. Ramas `obligaciones-tramo1`, `formato-cuadro-rotulos`,
-   `obligaciones-tramo2`, `obligaciones-tramo3a` y `obligaciones-tramo3b`:
-   mergeadas.
-2. El 4a se trabaja en una rama nueva `obligaciones-tramo4a`, creada
-   desde `main` **después** de mergear el 3c.
-3. Tramo **3c**: aprobado y marcado Hecho en Airtable. Falta el merge
-   de `obligaciones-tramo3c` a `main` y borrar la rama. Después, informe del
-   tramo **4a** (p. 36-39, II.B.1-2, con la última página de Vial: dar y
-   entregar). Pendiente menor: llenar el `[FALTA: sección]` de la
-   Conexión de AJ a las obligaciones naturales (ahora es Obligaciones
-   II.A.1 a II.A.7).
+1. Ramas `obligaciones-tramo1` a `obligaciones-tramo3c`: mergeadas.
+   Falta borrar `obligaciones-tramo3c` (local y en GitHub; Laura).
+2. Tramo **4a**: esperar las respuestas de Laura a las 9 decisiones del
+   informe; con su visto bueno, redactar en `obligaciones-tramo4a`,
+   correr los controles y generar la vista previa. Pendiente menor:
+   llenar el `[FALTA: sección]` de la Conexión de AJ a las obligaciones
+   naturales (ahora es Obligaciones II.A.1 a II.A.7).
 4. Al aprobar Laura cada tramo: merge, borrar la rama, marcar Hecho en
    Airtable (lo hace Claude; Laura no tiene que tocarlo).
 5. `scripts/cobertura_tramo.py` sigue solo en la rama
