@@ -2353,7 +2353,13 @@ que admite poseer sin inscripción; motosierra de Policarpo (Peumo).
    Tramo 14b aprobado (2026-11-28) y marcado Hecho en Airtable (también
    el 14c sobrante). **Sigue el tramo 15a**
    (V.5.B.1-B.3 prescripción adquisitiva: nociones, fundamento,
-   características, p. 246-253). Pendiente arrastrado para el 15-16: el
+   características, p. 246-253). Fuentes a revisar: Boetsch parte 15
+   (`Bienes_principal_15_prescripción_elementos_boetsch (dragged).pdf`),
+   PEÑAILILLO 2010 nº 197 en adelante (en el tmp del job,
+   `pena2010.txt`), VIAL "La tradición y la prescripción" p. 79 en
+   adelante (`vial.txt`), recopilación de discusiones nº 10 (art. 2505) y
+   el libro de 3600 preguntas. De PEÑAILILLO no usar solo la prueba de la
+   posesión de inmuebles (nº 278). Pendiente arrastrado para el 15-16: el
    debate completo del art. 2505 (ver "Tramo 13c").
 3. ~~Pendiente de VIAL sobre el art. 703 y la tradición de quien no es
    dueño~~: resuelto en el 11b, V.5.A.2.2.2 (iii).
