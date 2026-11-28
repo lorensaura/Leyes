@@ -4,7 +4,8 @@
 > [de Obligaciones]". Al decir "retoma Obligaciones", leer este archivo
 > completo primero y resumir en pocas líneas dónde quedó antes de seguir.
 > Última actualización: 2026-11-28 (tramos 1, 2, 3a y 3b aprobados y
-> mergeados; 3c redactado en su rama, esperando la revisión de Laura).
+> mergeados; 3c aprobado el 2026-11-28, falta mergearlo; siguiente:
+> informe del 4a).
 
 ## Resumen para retomar (léelo primero)
 
@@ -59,8 +60,11 @@
   70%; se reescribieron todas, sin perder unidades. Mergeado con el 3a.
 - **Tramo 3b: aprobado y mergeado** (2026-11-28, merge `ce732cc`;
   Laura: "aprobado el tramo 3b"). Marcado Hecho en Airtable.
-- **Tramo 3c: redactado (2026-11-28)** en `obligaciones-tramo3c`, tras
-  las respuestas de Laura. Falta que lo revise y apruebe. Ver "Tramo 3c".
+- **Tramo 3c: aprobado** (2026-11-28; Laura: "ok perfecto. Aprobado").
+  Cierra el tema II.A. Marcado Hecho en Airtable. **Falta mergear** la
+  rama `obligaciones-tramo3c` a `main` (Laura, con GitHub Desktop).
+- **Siguiente:** informe del 4a (solo el informe). Ver "Siguiente paso
+  exacto".
 
 ## Decisiones tomadas con Laura (2026-10-10)
 
@@ -262,7 +266,7 @@ un tramo, actualizar también ahí.
 | 2 | 19-26 | I.B Fuentes de las obligaciones | Vial (fuentes) | ✅ |
 | 3a | 27-31 | II intro; II.A.1-3 Civiles y naturales: concepto | Vial (civiles vs. naturales), nº 67-69 | ✅ |
 | 3b | 31-34 | II.A.4 Obligaciones naturales del art. 1470, número por número | Vial nº 70 (primer párrafo); apunte de eficacia (sin unidades nuevas) | ✅ |
-| 3c | 34-36 | II.A.5-6 Desde cuándo es natural la obligación; efectos; conversión en civil | Vial (final del nº 69); Ramos Pazos; Abeliuk; apunte de eficacia p. 5-6 |  |
+| 3c | 34-36 | II.A.5-7 Desde cuándo es natural la obligación; efectos; conversión en civil | Vial (final del nº 69); Ramos Pazos; Abeliuk; apunte de eficacia p. 5-6 | ✅ |
 | 4a | 36-39 | II.B.1-2 Positivas y negativas; dar, hacer y no hacer | Vial (última página: dar y entregar) |  |
 | 4b | 39-44 | II.B.3 Objeto singular y compuestas (alternativas, facultativas) |  |  |
 | 5a | 44-48 | II.B.4 Especie o cuerpo cierto y género |  |  |
@@ -532,7 +536,7 @@ un tramo, actualizar también ahí.
   extingue? subsiste como natural"; prescrita "¿pago bien o mal?"; la
   del art. 1575 del archivo de repaso (solo la pregunta).
 
-## Tramo 3c (p. 34-36, II.A.5-7): redactado, falta la revisión de Laura
+## Tramo 3c (p. 34-36, II.A.5-7): aprobado
 
 - **Respuestas de Laura (2026-11-28):** 1 punto 7 sí; 2 **opción (b),
   mostrar ambas opiniones** (preguntó si era indiscutido que el pago
@@ -605,14 +609,13 @@ un tramo, actualizar también ahí.
 
 ## Siguiente paso exacto (2026-11-28, vigente)
 
-1. Rama `obligaciones-tramo3b` (ya creada desde `main`; las ramas
-   `obligaciones-tramo1`, `formato-cuadro-rotulos`, `obligaciones-tramo2`
-   y `obligaciones-tramo3a` están mergeadas y borradas).
-2. Rama `obligaciones-tramo3c`, creada desde `main` (ya con el 3b). La
-   rama `obligaciones-tramo3b` está mergeada.
-3. Tramo **3c**: redactado en `obligaciones-tramo3c`. **Esperar la
-   revisión de Laura**; al aprobar, merge, borrar la rama y marcar Hecho
-   en Airtable (registro `rec8V2eesm9xIsM9t`). Después, informe del
+1. Ramas `obligaciones-tramo1`, `formato-cuadro-rotulos`,
+   `obligaciones-tramo2`, `obligaciones-tramo3a` y `obligaciones-tramo3b`:
+   mergeadas.
+2. El 4a se trabaja en una rama nueva `obligaciones-tramo4a`, creada
+   desde `main` **después** de mergear el 3c.
+3. Tramo **3c**: aprobado y marcado Hecho en Airtable. Falta el merge
+   de `obligaciones-tramo3c` a `main` y borrar la rama. Después, informe del
    tramo **4a** (p. 36-39, II.B.1-2, con la última página de Vial: dar y
    entregar). Pendiente menor: llenar el `[FALTA: sección]` de la
    Conexión de AJ a las obligaciones naturales (ahora es Obligaciones
