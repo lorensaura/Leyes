@@ -101,7 +101,7 @@ ITEMS = [
  # T21.08 Nulidad absoluta: saneamiento y no opera de pleno derecho (9 exámenes; la tanda 1 dejó 1)
  dict(sub='T21.08',
   caso='Andrea le vende a Joaquín un terreno mediante un contrato con causa ilícita. Joaquín toma posesión del terreno y lo arrienda a un tercero. Andrea se arrepiente: le escribe que "el contrato es nulo de pleno derecho y no vale nada", y le exige que desocupe el terreno. Nadie ha demandado la nulidad.',
-  enunciado='Para la doctrina tradicional, mientras no exista una sentencia, ¿en qué situación está el contrato?',
+  enunciado='Para la doctrina tradicional, ¿en qué situación está el contrato?',
   opciones=[
    ('No produce efectos: por la gravedad del vicio, la nulidad absoluta opera sola.',
     'Incorrecto. Es la opinión de quienes discrepan de la doctrina tradicional: para ellos, la gravedad de la nulidad absoluta hace que opere de pleno derecho. La doctrina tradicional exige que el juez la declare.'),
@@ -118,7 +118,7 @@ ITEMS = [
 
  # T21.09 Nulidad relativa: definición, fundamento, causales y características (11 exámenes; la tanda 1 dejó 1)
  dict(sub='T21.09',
-  caso='Patricio le vende su auto a Ramón porque este lo amenazó, de manera seria y creíble, con golpear a su hijo si no firmaba. La amenaza fue injusta, grave y determinante: sin ella, Patricio no habría vendido.',
+  caso='Patricio le vende su auto a Ramón porque este lo amenazó, de manera seria y creíble, con golpear a su hijo si no firmaba. Sin la amenaza, Patricio no habría vendido.',
   enunciado='¿Qué sanción afecta a la compraventa?',
   opciones=[
    ('Nulidad absoluta: amenazar con un delito hace ilícito el contrato que se obtiene.',
@@ -154,21 +154,21 @@ ITEMS = [
 
  # T21.11 Nulidad relativa: saneamiento por el transcurso del tiempo (15 exámenes; la tanda 1 dejó 2)
  dict(sub='T21.11',
-  caso='El 1 de junio de 2021, Lucía compró una pintura convencida de que era un óleo original, y era una reproducción. Nadie la engañó: se equivocó sola, en un error sustancial sobre la cosa. Lo descubrió el 1 de marzo de 2023. Hoy es 1 de agosto de 2025.',
+  caso='El 1 de junio de 2021, Lucía compró una pintura convencida de que era un óleo original, y era una reproducción. Nadie la engañó: se equivocó sola. Lo descubrió el 1 de marzo de 2023. Hoy es 1 de agosto de 2025.',
   enunciado='¿Puede Lucía todavía pedir la rescisión?',
   opciones=[
    ('Sí: el cuadrienio corre desde que descubrió el error, hasta el 1 de marzo de 2027.',
     'Incorrecto. En el caso de error, el cuadrienio se cuenta desde el día de la celebración del contrato, no desde que se descubre (art. 1691).'),
    ('No: el cuadrienio corrió desde la celebración y venció el 1 de junio de 2025.',
-    'CORRECTO. En el caso de error o de dolo, el cuadrienio se cuenta desde el día de la celebración del acto o contrato (art. 1691). Venció el 1 de junio de 2025, antes de hoy, aunque Lucía descubrió el error recién en 2023.'),
+    'CORRECTO. Lucía incurrió en un error sustancial: creyó que la pintura tenía una calidad esencial que no tenía (art. 1454 inc. 1°). En el caso de error o de dolo, el cuadrienio se cuenta desde el día de la celebración del acto o contrato (art. 1691). Venció el 1 de junio de 2025, antes de hoy, aunque Lucía descubrió el error recién en 2023.'),
    ('Sí: tiene diez años desde la celebración, es decir, hasta el 1 de junio de 2031.',
     'Incorrecto. Diez años desde la celebración es el plazo de la nulidad absoluta (art. 1683). El error sustancial produce nulidad relativa, que se sanea en cuatro años.'),
    ('No: como nadie la engañó, su error no le da derecho a pedir la nulidad.',
-    'Incorrecto. Llega a la conclusión correcta por una razón equivocada: el error sustancial es causal de nulidad relativa aunque nadie lo haya provocado. No puede pedirla porque venció el cuadrienio.')],
+    'Incorrecto. Llega a la conclusión correcta por una razón equivocada: creer que una reproducción es un original es un error sobre una calidad esencial de la cosa, es decir, un error sustancial (art. 1454 inc. 1°), que es causal de nulidad relativa aunque nadie lo haya provocado. No puede pedirla porque venció el cuadrienio.')],
   correcta='B',
-  articulos='1683, 1691',
+  articulos='1454, 1683, 1691',
   objetivo='Evaluar si el alumno cuenta el cuadrienio del error desde la celebración y no desde su descubrimiento.',
-  respaldo=['IV.B.3.5', 'IV.B.3.2']),
+  respaldo=['IV.B.3.5', 'IV.B.3.2', 'II.A.5.3']),
 ]
 
 INFORME = dict(

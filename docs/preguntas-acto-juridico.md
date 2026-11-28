@@ -418,6 +418,17 @@ Decidido:
   "Lotes de Flashcards").
 
 Por acordar con Laura:
+0. **Repregunta después de la alternativa (propuesta de Laura,
+   2026-11-28):** en Discriminación MC, después de elegir, una pregunta
+   corta que pida lo que el caso ya no regala (ej. "¿Qué tipo de error
+   cometió?", "¿Qué requisitos debe reunir la fuerza para viciar el
+   consentimiento?"). Claude la recomienda, con respuesta visible al
+   apretar un botón (autoevaluación, sin palabras clave). Requiere campos
+   nuevos en Airtable (`repregunta`, `respuesta_repregunta`), columna en
+   `evaluacion_practica` de Supabase, ampliar el sync y la pantalla de
+   `app/alternativas.html` (verificar en headless). Si la repregunta toca
+   otro tema (requisitos de la fuerza), se acepta como puente, sin
+   contarla como cobertura de ese tema. Esperando la decisión de Laura.
 1. ~~Cómo trabajar Evaluación y cuántas preguntas~~ **decidido** (2026-10-09
    y 10, ver "Siguiente paso exacto").
 2. Qué hacer con el borrador del Cap. I (12 de Evaluación, 12
@@ -544,10 +555,15 @@ esos temas, esas preguntas se hacen allá.
    `aj-mc-004` a `019` (`lote_mc1.py`, informe
    `DERECHO LIBRE/Informes/Informe_AJ_mc1.html`, "Qué revisar" 10 de 16).
    Tanda 2: `aj-mc-020` a `028` (`lote_mc2.py`, informe
-   `Informe_AJ_mc2.html`, "Qué revisar" 6 de 9). Quedaron 25 y no ~30:
-   lo que falta para el tope ya está usado, se repetiría casi igual en
-   Aplicación o es de otro tema (explicado en los avisos del informe de
-   la tanda 2). Con lo que Laura encuentre, pasada por las 25 e informe
+   `Informe_AJ_mc2.html`, "Qué revisar" 6 de 9). **Revisión de Laura
+   (2026-11-28), tanda 2:** 020, 022 y 023 aprobadas; 025, 026 y 028
+   corregidas con sus indicaciones (sacar del caso o del enunciado lo
+   que la alumna debe deducir), y con ese criterio se corrigió también el
+   caso de 007. **Falta:** su revisión de la tanda 1; decidir las
+   repreguntas después de la alternativa (ver "Por acordar"); y **sumar
+   ~6 preguntas para llegar al tope (~31)**: el motivo para quedarse en
+   25 era no repetir escenarios de Aplicación, y Laura lo rechazó (ver
+   "Reglas y decisiones"). Con lo que encuentre, pasada por todas e informe
    solo de cambios (los cambios de texto de opciones van con
    `--actualizar`; si cambia el caso o el enunciado, actualizarlo antes
    a mano en Airtable). Posición de la respuesta correcta repartida desde el
@@ -829,6 +845,20 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   (`aj-just-011`). Y al revés: cada parte que el enunciado pregunta debe
   tener su elemento, o la alumna que la contesta no recibe puntaje
   (Laura, 2026-11-27: `aj-just-027`, `023` y `026`).
+- **Cada tipo debe poder usarse solo (Laura, 2026-11-28):** una alumna
+  puede practicar solo Discriminación MC (por cansancio, por no querer
+  escribir), así que no se deja fuera una pregunta de un tipo porque su
+  punto o su escenario ya esté en otro tipo. La redundancia se controla
+  solo dentro del mismo tipo. El tope de cada tipo lo fija la regla de
+  cantidad, no lo que ya cubren los demás.
+- **Opciones "semi correctas" (Laura, 2026-11-28):** le gustan mucho las
+  opciones que llegan a la conclusión correcta por un camino equivocado
+  (`aj-mc-020`); seguir usándolas en Discriminación MC y Alternativas.
+- **El caso da hechos, no calificaciones (Laura, 2026-11-28):** no poner
+  en el caso o el enunciado la calificación jurídica que la alumna debe
+  deducir ("injusta, grave y determinante", "error sustancial", "vicia de
+  nulidad relativa", "mientras no exista sentencia" si el caso ya dice
+  que nadie demandó). Se describen los hechos y la alumna califica.
 - **Repreguntas sin trampa (Laura, 2026-11-27):** ninguna pista cuya
   respuesta correcta sea "nada" o "no" dicha al revés ("¿Qué impide...?"),
   ni que sugiera una regla equivocada; tampoco se agrega "nada" como

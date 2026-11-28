@@ -66,7 +66,7 @@ ITEMS = [
 
  # T21.03 Diferencias entre nulidad absoluta y relativa (5 exámenes: 1)
  dict(sub='T21.03',
-  caso='Rodrigo le vendió su casa a Elisa porque ella lo engañó con un dolo determinante, que vicia la venta de nulidad relativa. Rodrigo no ha demandado. El fiscal judicial de la Corte de Apelaciones, que integra el ministerio público (el organismo auxiliar de la administración de justicia, no la fiscalía que investiga delitos), se entera del caso y quiere pedir la nulidad en el solo interés de la ley.',
+  caso='Rodrigo le vendió su casa a Elisa porque ella, para convencerlo, le mostró un informe técnico falso según el cual la casa tenía daños estructurales graves; sin ese engaño, Rodrigo no la habría vendido. Rodrigo no ha demandado. El fiscal judicial de la Corte de Apelaciones, que integra el ministerio público (el organismo auxiliar de la administración de justicia, no la fiscalía que investiga delitos), se entera del caso y quiere pedir la nulidad en el solo interés de la ley.',
   enunciado='¿Puede el fiscal judicial pedir la declaración de nulidad?',
   opciones=[
    ('Sí, porque el ministerio público puede pedirla en el interés de la moral o de la ley.',

@@ -92,7 +92,7 @@ COMO_LIBRE = '''<ul class="avisos">
 <li>Si aun así la app no reconoce algo que sí dijo, puede marcar <b>"Lo dije con otras palabras"</b>; esos reclamos se revisan y sirven para agregar palabras clave.</li>
 <li><b>Qué conviene mirar:</b> si cada elemento es de verdad indispensable para una buena respuesta (si no lo es, sobra y vuelve estricta la corrección), y si las palabras clave cubren las formas razonables de decirlo. Si piensas en una forma correcta de decirlo que no está en la lista, anótala y la agrego.</li>
 </ul>'''
-COMO_MC = ('<ul class="avisos"><li>La alumna lee el caso y elige una de cuatro opciones. No hay respuesta libre ni palabras clave.</li>'
+COMO_MC = ('<ul class="avisos"><li>La alumna lee el caso y primero escribe lo que recuerda, sin ver las opciones; ese texto no se corrige (no hay palabras clave). Después ve las cuatro opciones y elige una.</li>'
            '<li>Al responder, la app le dice si acertó y le muestra la explicación de cada opción: por qué la correcta lo es y en qué se equivoca cada una de las otras.</li>'
            '<li><b>Qué conviene mirar:</b> que la correcta sea indiscutible según el manual, que cada distractor sea un error jurídico que una alumna podría cometer de verdad, y que ninguna opción se adivine por descarte o por su forma.</li></ul>')
 doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
