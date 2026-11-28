@@ -24,8 +24,10 @@ así que no depende del repo:**
   tanda 2, 10), **aprobadas** (la tanda 2, con sus cambios, el
   2026-11-27). **Nulidad · Discriminación MC: 31 preguntas** (tanda 1, 16, y
   tanda 2, 9, **aprobadas por Laura el 2026-11-28** con sus cambios;
-  tanda 3, 6, subida el 2026-11-28 y **esperando la revisión de Laura**).
-  Con ella Discriminación MC llega al tope.
+  tanda 3, 6, aprobada sin cambios). **Nulidad completa (118 preguntas de
+  los 4 tipos) publicada el 2026-11-28**: `publicado` y `Verificado` en
+  Airtable, y sincronizada a Supabase (118 filas `acto_juridico` en
+  `evaluacion_practica`, comprobado).
   Todo sin publicar: se publica con el tema completo.
 - **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
 - **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
@@ -39,7 +41,7 @@ así que no depende del repo:**
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) **Justificación completa, 27 aprobadas** (tandas 1 y 2) y **Discriminación MC completa, 31** (tandas 1 y 2 aprobadas; tanda 3 esperando revisión); todo sin publicar |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) **Justificación completa, 27 aprobadas** (tandas 1 y 2) y **Discriminación MC completa, 31**; **las 118 publicadas el 2026-11-28**; todo sin publicar |
 | V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 | VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
@@ -303,7 +305,7 @@ la cuenta.
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
 | Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
-| Evaluación | 128: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) 27 de Justificación de Nulidad (`aj-just-004` a `030`) y 31 de Discriminación MC de Nulidad (`aj-mc-004` a `034`, base IV-VI) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
+| Evaluación | 128: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) 27 de Justificación de Nulidad (`aj-just-004` a `030`) y 31 de Discriminación MC de Nulidad (`aj-mc-004` a `034`, base IV-VI) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema; **Nulidad (118) publicada el 2026-11-28** |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
@@ -569,14 +571,14 @@ esos temas, esas preguntas se hacen allá.
    engaño en vez de "dolo determinante"); Laura los aprobó. **Las 25
    quedan aprobadas.** **Tanda 3 (2026-11-28): `aj-mc-029` a `034`
    (`lote_mc3.py`, informe `Informe_AJ_mc3.html`, "Qué revisar" 4 de 6),
-   subida sin publicar; esperando la revisión de Laura.** Con ella los seis
-   subtemas importantes quedan en 4 y el total en 31 (tope). **Siguiente:
-   aplicar lo que Laura diga de la tanda 3** (cambios de opciones con
-   `--actualizar`; si cambia el caso o el enunciado, actualizarlo antes a
-   mano en Airtable) y pasar al punto 3.
-3. **Publicar Nulidad completa:** marcar `publicado` y `Revision_status =
-   Verificado` en Airtable y correr `scripts/sync_airtable_supabase.py`;
-   antes, confirmar que Supabase responde (ver pendiente técnico).
+   **aprobada por Laura sin cambios (2026-11-28).** Los seis subtemas
+   importantes quedan en 4 y el total en 31 (tope).
+3. ~~Publicar Nulidad completa~~: **hecho el 2026-11-28.** 118 preguntas
+   (30 Aplicación, 30 Detección de error, 27 Justificación, 31
+   Discriminación MC) con `publicado` y `Verificado` en la base IV-VI, y
+   sync a Supabase. Desde la worktree el sync no encuentra el `.env`: se
+   corre cargando las claves del `.env` del repo principal en el entorno.
+   **Siguiente: el punto 4, tema Error.**
 4. **Tema siguiente: Error (tema 9)**, los mismos 4 tipos. Ahí entran la
    sanción del error esencial que se sacó de esta tanda. Después Causa,
    Objeto, Objeto ilícito y Dolo (orden de relevancia del tablero); la
@@ -782,15 +784,15 @@ correr sin problemas. Detalle del método más abajo.
 - **Tanda 9 (2026-11-28): Nulidad, Discriminación MC, tercera y última
   tanda.** 6 preguntas, `aj-mc-029` a `034` (`lote_mc3.py`), sin publicar
   y en Revisar. Informe: `DERECHO LIBRE/Informes/Informe_AJ_mc3.html`.
-  **Esperando la revisión de Laura.** Una revisión independiente antes de
+  **Aprobada por Laura sin cambios (2026-11-28).** Una revisión independiente antes de
   subir cambió tres cosas: se reemplazó una pregunta sobre la fuerza de un
   tercero (requisito de la fuerza, otro tema) por la ratificación como
   característica de la relativa (032, la primera de Nulidad en que la
   correcta es "Ninguna"); la cláusula de 029 pasó de acortar el plazo
   (punto que el manual no trata) a renunciar a la acción (art. 1469); y se
   quitó un "siempre" que solo aparecía en una opción incorrecta.
-- **Siguiente: revisión de Laura de la tanda 3**; después, publicar
-  Nulidad completa (ver "Siguiente paso exacto").
+- **Nulidad publicada completa (2026-11-28).** Siguiente: tema Error
+  (tema 9), los 4 tipos (ver "Siguiente paso exacto").
 - **Alternativas, Memorice de definiciones y el borrador del Cap. I:**
   pendientes, ver "Por acordar".
 
