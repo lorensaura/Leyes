@@ -22,8 +22,9 @@ así que no depende del repo:**
   completa: 30 preguntas** (tanda 1, 17, y tanda 2, 13), **aprobadas**.
   **Nulidad · Justificación completa: 27 preguntas** (tanda 1, 17, y
   tanda 2, 10), **aprobadas** (la tanda 2, con sus cambios, el
-  2026-11-27). **Nulidad · Discriminación MC: tanda 1, 16 preguntas,
-  cargada el 2026-11-27 y esperando la revisión por muestra de Laura.**
+  2026-11-27). **Nulidad · Discriminación MC: 25 preguntas** (tanda 1, 16, y
+  tanda 2, 9), **aprobadas por Laura el 2026-11-28** con sus cambios;
+  falta una tanda 3 de ~6 para llegar al tope (~31).
   Todo sin publicar: se publica con el tema completo.
 - **Conexiones con otras materias:** 61, en Airtable (tabla Conexiones).
 - **Alternativas y Memorice de definiciones:** pendientes (ver "Por acordar").
@@ -37,7 +38,7 @@ así que no depende del repo:**
 | I. Teoría general del acto jurídico | **Flashcards: todos los subtemas cubiertos** (lote 2). Evaluación y Alternativas: lote 1 en borrador |
 | II. Requisitos (A voluntad, B capacidad, C objeto, D causa, E formalidades) | **Capítulo completo (temas 6 a 16): Flashcards de todos los subtemas cubiertas** (lotes 2 a 5) |
 | III. Efectos | **Flashcards de todos los subtemas cubiertas** (lote 5) |
-| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) **Justificación completa, 27 aprobadas** (tandas 1 y 2) y **Discriminación MC, tanda 1: 16** (por revisar); todo sin publicar |
+| IV. Ineficacia (A inexistencia, B nulidad, C lesión, D simulación, E inoponibilidad, F fraude a la ley, G otras) | **Capítulo completo (temas 18 a 27): Flashcards de todos los subtemas cubiertas** (lotes 6 a 9). **Evaluación: Nulidad (tema 20) · Aplicación completa, 30 aprobadas** (tandas 1 y 2), **Detección de error completa, 30 aprobadas** (tandas 1 y 2) **Justificación completa, 27 aprobadas** (tandas 1 y 2) y **Discriminación MC, 25 aprobadas** (tandas 1 y 2; falta tanda 3 de ~6); todo sin publicar |
 | V. Representación | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 | VI. Modalidades | **Flashcards de todos los subtemas cubiertas** (lote 10, con pocas tarjetas) |
 
@@ -301,7 +302,7 @@ la cuenta.
 | Modelo | Cantidad | Dónde | Estado |
 |---|---|---|---|
 | Flashcards | **291** (`aj-fc-001` a `291`) | Airtable, base `Digesto Acto Jurídico` (`appBDWY3eCXgxBGpL`), tabla Flashcards | **Publicadas** (2026-10-09): en Airtable con `publicado` y `Verificado`, y en Supabase; cada una ligada a uno de los 29 temas (tabla Temas) y con su `subtema` exacto. Detalle por lote en "Lotes de Flashcards" |
-| Evaluación | 113: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) 27 de Justificación de Nulidad (`aj-just-004` a `030`) y 16 de Discriminación MC de Nulidad (`aj-mc-004` a `019`, base IV-VI) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
+| Evaluación | 122: 12 del Cap. I (3 por tipo, `aj-*-001` a `003`), 30 de Aplicación de Nulidad (`aj-aplic-004` a `033`) 30 de Detección de error de Nulidad (`aj-det-004` a `033`) 27 de Justificación de Nulidad (`aj-just-004` a `030`) y 25 de Discriminación MC de Nulidad (`aj-mc-004` a `028`, base IV-VI) | **Bases aparte desde el 2026-10-10** (ver abajo): `Digesto Acto Jurídico - Evaluación I-III` (`apps4GBOUCo8c5JV6`, temas 1 a 17) y `... - Evaluación IV-VI` (`appjmtz9O5CARhCYe`, temas 18 a 29), cada una con Temas y las 4 tablas | Sin publicar, en `Revisar`, con tema y subtema |
 | Alternativas | 12 (`aj-alt-001` a `012`) | `scripts/alternativas_acto_juridico_2026-10-07_capI.sql` | **SQL sin correr**; entra con `publicado = false`. Cap. I |
 | Memorice de definiciones | 7, piloto (`aj-def-001` a `007`) | `scripts/memorice_definiciones_acto_juridico_2026-10-07_piloto.sql` | **SQL sin correr**; entra con `publicado = false` |
 | Memorice de artículos | 40 | Supabase `memorice_articulos` | Publicados desde 2026-08-12 |
@@ -417,6 +418,15 @@ Decidido:
   "Lotes de Flashcards").
 
 Por acordar con Laura:
+0. ~~Repregunta después de la alternativa~~ **decidido (Laura,
+   2026-11-28): no.** Al probar Discriminación en digesto.cl prefirió
+   quitar pasos, no agregarlos: se eliminó el cuadro "Justificación (1
+   línea)" después de las opciones y el mínimo de 30 caracteres de la
+   recuperación libre (solo en Discriminación; en los otros tipos se
+   mantiene, porque ahí lo escrito se corrige). Además se corrigió que la
+   app mostraba "Correcto. CORRECTO." (la explicación guardada ya trae su
+   marca). Cambio en `app/alternativas.html`, verificado en Chrome
+   headless; llega a digesto.cl cuando se mezcle con `main`.
 1. ~~Cómo trabajar Evaluación y cuántas preguntas~~ **decidido** (2026-10-09
    y 10, ver "Siguiente paso exacto").
 2. Qué hacer con el borrador del Cap. I (12 de Evaluación, 12
@@ -538,17 +548,36 @@ esos temas, esas preguntas se hacen allá.
 
 **Orden de lo que sigue (acordado con Laura el 2026-11-27):**
 1. ~~Cerrar Justificación tanda 2~~: aprobada el 2026-11-27.
-2. **Discriminación MC de Nulidad:** **tanda 1 cargada el 2026-11-27,
-   16 preguntas, `aj-mc-004` a `019` (`lote_mc1.py`), esperando la
-   revisión por muestra de Laura** (informe
-   `DERECHO LIBRE/Informes/Informe_AJ_mc1.html`, lista "Qué revisar" con
-   10 de 16). Con lo que encuentre, pasada por las 16 e informe solo de
-   cambios; después la tanda 2 (`lote_mc2.py`, desde `aj-mc-020`) hasta
-   el tope de ~30 con la regla de cantidad. Quedaron 16 y no 17: salió
-   una cuya dificultad estaba en las edades del art. 26 (tema
-   Capacidad), así que "nulidad relativa: causales" quedó con 1 y la
-   tanda 2 puede sumar otra. Revisión 3 de cada 5 (tipo nuevo
-   para Laura). Posición de la respuesta correcta repartida desde el
+2. **Discriminación MC de Nulidad: 25 preguntas aprobadas por Laura
+   (2026-11-28); falta la tanda 3.** Tanda 1:
+   `aj-mc-004` a `019` (`lote_mc1.py`, informe
+   `DERECHO LIBRE/Informes/Informe_AJ_mc1.html`, "Qué revisar" 10 de 16).
+   Tanda 2: `aj-mc-020` a `028` (`lote_mc2.py`, informe
+   `Informe_AJ_mc2.html`, "Qué revisar" 6 de 9). **Revisión de Laura
+   (2026-11-28), tanda 2:** 020, 022 y 023 aprobadas; 025, 026 y 028
+   corregidas con sus indicaciones (sacar del caso o del enunciado lo
+   que la alumna debe deducir), y con ese criterio se corrigió también el
+   caso de 007. **Tanda 1, revisión de Laura (2026-11-28):** 004, 011,
+   012, 014, 015, 018 y 019 aprobadas (012 y 019 "muy buenas"); 006 (se
+   sacó "cuyo objeto es por eso ilícito": la alumna lo deduce del art.
+   1466), 007 (distractor B reemplazado: confunde el orden público de
+   las reglas con una facultad del ministerio público) y 010 (opción B
+   con la lucidez al momento de la venta, y su explicación: con
+   interdicción no se puede probar lucidez, art. 465) corregidas. En la
+   pasada se cambiaron además los casos de 008, 016 y 019 (hechos del
+   engaño en vez de "dolo determinante"); Laura los aprobó. **Las 25
+   quedan aprobadas.** **Siguiente: tanda 3 (`lote_mc3.py`, desde
+   `aj-mc-029`), ~6 preguntas para llegar al tope (~31)**: el motivo para
+   quedarse en 25 era no repetir escenarios de Aplicación, y Laura lo
+   rechazó (ver "Reglas y decisiones"). Subtemas bajo el tope: "reglas y
+   especies" (3 de 4), "nulidad absoluta: causales" (3 de 4), "nulidad
+   relativa: causales" (2 de 4), "quiénes alegan la relativa" (3 de 4) y
+   "saneamiento por el tiempo" (3 de 4). Redactarla con todos los
+   criterios de "Reglas y decisiones" (hechos y no calificaciones en el
+   caso, opciones semi correctas, ninguna fórmula exclusiva de las
+   incorrectas). Revisión 3 de cada 5. Los cambios de texto de opciones van con
+   `--actualizar`; si cambia el caso o el enunciado, actualizarlo antes
+   a mano en Airtable). Posición de la respuesta correcta repartida desde el
    principio y distractores no adivinables por descarte (ver "Reglas y
    decisiones que no cambian"). Misma prueba propia y mismo cuidado de
    fronteras entre temas que en Justificación tanda 2.
@@ -737,8 +766,9 @@ método más abajo.
 - **Tanda 7 (2026-11-27): Nulidad, Discriminación MC, primera tanda.**
   16 preguntas, `aj-mc-004` a `019` (`lote_mc1.py`), en la base IV-VI,
   sin publicar y en Revisar. Informe:
-  `DERECHO LIBRE/Informes/Informe_AJ_mc1.html`. **Esperando la revisión
-  por muestra de Laura.** Primer lote de este tipo para Nulidad:
+  `DERECHO LIBRE/Informes/Informe_AJ_mc1.html`. **Aprobada por Laura
+  (2026-11-28)** con sus cambios (006, 007 y 010) y los de la pasada
+  (007, 008, 016 y 019). Primer lote de este tipo para Nulidad:
   `subir_eval.py` e `informe_eval.py` ahora aceptan `TABLA =
   'Discriminación MC'` (ítems con `opciones` de 4 pares texto/rationale y
   `correcta`; controles: una sola correcta marcada "CORRECTO.", las demás
@@ -748,8 +778,18 @@ método más abajo.
   única opción con su conclusión (tres "No" y un "Sí" se adivina por
   descarte); se cambia un distractor por la conclusión correcta con una
   razón equivocada.
-- **Siguiente tanda: Nulidad, Discriminación MC tanda 2**, después de la
-  revisión de la tanda 1 (ver "Siguiente paso exacto").
+- **Tanda 8 (2026-11-28): Nulidad, Discriminación MC, segunda y última
+  tanda.** 9 preguntas, `aj-mc-020` a `028` (`lote_mc2.py`), sin publicar
+  y en Revisar. Informe: `DERECHO LIBRE/Informes/Informe_AJ_mc2.html`.
+  **Aprobada por Laura (2026-11-28)** con sus cambios (025, 026 y 028).
+  Antes de subir,
+  una revisión independiente encontró que todas las opciones del tipo
+  "…, pero solo si…" eran incorrectas en las dos tandas (se aprende a
+  descartarlas): se reescribieron, y la tanda 1 se actualizó con
+  `--actualizar`. También se cambió una pregunta que repetía casi igual
+  `aj-mc-014` (ahora 025 trata la absoluta que no opera de pleno derecho).
+- **Siguiente: Discriminación MC tanda 3** (~6, hasta el tope); después,
+  publicar Nulidad completa (ver "Siguiente paso exacto").
 - **Alternativas, Memorice de definiciones y el borrador del Cap. I:**
   pendientes, ver "Por acordar".
 
@@ -778,7 +818,7 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   de siempre: los manda Laura.
 - **Ids:** `aj-aplic-NNN`, `aj-det-NNN`, `aj-just-NNN`, `aj-mc-NNN`,
   `aj-fc-NNN`, `aj-alt-NNN`, `aj-def-NNN`, correlativos. Próximos libres:
-  `aj-aplic-034`, `aj-det-034`, `aj-just-031`, `aj-mc-020`, `aj-fc-292`,
+  `aj-aplic-034`, `aj-det-034`, `aj-just-031`, `aj-mc-029`, `aj-fc-292`,
   `aj-alt-013`, `aj-def-008`.
 - **Todo entra sin publicar** y en Revisar; nunca se marca Verificado sin
   que Laura lo confirme.
@@ -789,7 +829,9 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   por eso (antes sus distractores eran nombres de contratos). Tampoco por
   su conclusión: si tres opciones concluyen lo mismo y solo la correcta
   difiere, una de ellas se cambia por la conclusión correcta con una razón
-  equivocada (2026-11-27, `lote_mc1.py`).
+  equivocada (2026-11-27, `lote_mc1.py`). Y por su forma: ninguna
+  fórmula (como "…, pero solo si…") puede aparecer solo en opciones
+  incorrectas (2026-11-28).
 - Cero guiones largos y cero comillas angulares en cualquier campo.
 - **Figuras de otras materias en los casos (Laura, 2026-11-26):** la
   Práctica de AJ también la usa quien cursa AJ por primera vez, que aún
@@ -816,6 +858,20 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   (`aj-just-011`). Y al revés: cada parte que el enunciado pregunta debe
   tener su elemento, o la alumna que la contesta no recibe puntaje
   (Laura, 2026-11-27: `aj-just-027`, `023` y `026`).
+- **Cada tipo debe poder usarse solo (Laura, 2026-11-28):** una alumna
+  puede practicar solo Discriminación MC (por cansancio, por no querer
+  escribir), así que no se deja fuera una pregunta de un tipo porque su
+  punto o su escenario ya esté en otro tipo. La redundancia se controla
+  solo dentro del mismo tipo. El tope de cada tipo lo fija la regla de
+  cantidad, no lo que ya cubren los demás.
+- **Opciones "semi correctas" (Laura, 2026-11-28):** le gustan mucho las
+  opciones que llegan a la conclusión correcta por un camino equivocado
+  (`aj-mc-020`); seguir usándolas en Discriminación MC y Alternativas.
+- **El caso da hechos, no calificaciones (Laura, 2026-11-28):** no poner
+  en el caso o el enunciado la calificación jurídica que la alumna debe
+  deducir ("injusta, grave y determinante", "error sustancial", "vicia de
+  nulidad relativa", "mientras no exista sentencia" si el caso ya dice
+  que nadie demandó). Se describen los hechos y la alumna califica.
 - **Repreguntas sin trampa (Laura, 2026-11-27):** ninguna pista cuya
   respuesta correcta sea "nada" o "no" dicha al revés ("¿Qué impide...?"),
   ni que sugiera una regla equivocada; tampoco se agrega "nada" como
@@ -828,8 +884,8 @@ informe, actualizar este archivo). Próximo id libre: `aj-fc-292`.
   - **Bajar a 1 de cada 3** (alrededor del 30%) cuando la tanda anterior
     del mismo tipo y tema salió con **una corrección de fondo o menos**.
   - **Volver a 3 de cada 5** si en una tanda aparece un problema nuevo.
-  - Próxima: Discriminación MC tanda 1 (tipo nuevo para Laura) va con 3
-    de cada 5 (10 de 16).
+  - Próxima: Discriminación MC tanda 3, con 3 de cada 5 (las tandas 1 y
+    2 tuvieron varias correcciones, aunque de forma más que de fondo).
   Claude elige cuáles: de todos los tipos de caso y dificultad, priorizando las que
   tocan puntos discutidos, figuras de otras materias, cálculos con fechas
   y elementos con más riesgo de corrección estricta. En el informe va la

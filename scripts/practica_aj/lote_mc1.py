@@ -22,7 +22,7 @@ ITEMS = [
     'Incorrecto. Llega a la conclusión correcta por una razón equivocada: las reglas del Título XX rigen para cualquier acto jurídico, unilateral o bilateral. Lo que las excluye es que el decreto pertenece al derecho público.'),
    ('Las del derecho administrativo, porque las del Código no alcanzan al derecho público.',
     'CORRECTO. Las reglas del Título XX del Libro IV son de derecho privado. No se extienden al derecho público, que tiene reglas propias y distintas en cada rama: la nulidad en el derecho administrativo no es la misma que en el derecho procesal.'),
-   ('Las del Código Civil, pero solo a falta de una norma especial del derecho administrativo.',
+   ('Las del Código Civil, en subsidio de las normas especiales del derecho administrativo.',
     'Incorrecto. Aplicarlas a falta de norma especial es la regla para las demás ramas del derecho privado, como el derecho comercial. El derecho administrativo es derecho público, y las reglas del Código no se extienden a él.')],
   correcta='C',
   articulos='',
@@ -48,31 +48,31 @@ ITEMS = [
 
  # T21.02 Terminología y nulidad como regla general (sin exámenes: 1)
  dict(sub='T21.02',
-  caso='Una ley especial prohíbe cierto contrato, cuyo objeto es por eso ilícito, y dispone que el contrato celebrado contra esa prohibición "podrá rescindirse", sin decir más. Al leerla, Constanza concluye que, como la ley usa la palabra rescisión, el contrato adolece de nulidad relativa.',
+  caso='Una ley especial prohíbe cierto contrato y dispone que el contrato celebrado contra esa prohibición "podrá rescindirse", sin decir más. Al leerla, Constanza concluye que, como la ley usa la palabra rescisión, el contrato adolece de nulidad relativa.',
   enunciado='¿Qué especie de nulidad afecta a ese contrato?',
   opciones=[
    ('Absoluta: el objeto ilícito es causal del art. 1682, y esa palabra no cambia la especie.',
-    'CORRECTO. El objeto ilícito es causal de nulidad absoluta (art. 1682). Que la ley hable de rescisión no la vuelve relativa: para un sector de la doctrina, la rescisión no es sinónimo de la nulidad relativa, sino el derecho genérico a pedir que el acto quede sin efecto, y el legislador la usa también para vicios de nulidad absoluta.'),
+    'CORRECTO. Hay objeto ilícito en todo contrato prohibido por las leyes (art. 1466), y el objeto ilícito es causal de nulidad absoluta (art. 1682). Que la ley hable de rescisión no la vuelve relativa: para un sector de la doctrina, la rescisión no es sinónimo de la nulidad relativa, sino el derecho genérico a pedir que el acto quede sin efecto, y el legislador la usa también para vicios de nulidad absoluta.'),
    ('Relativa: la ley habla de rescisión, que es el nombre propio de la nulidad relativa.',
     'Incorrecto. Es la sinonimia que ese sector rechaza: el art. 1682 inc. final no iguala los términos, sino que dice que la nulidad relativa da derecho a la rescisión. La palabra no decide la especie; la decide la causal.'),
    ('Relativa: cuando la ley no nombra la especie, rige la regla general de la relativa.',
     'Incorrecto. La regla general de la nulidad relativa cubre los vicios que la ley no sanciona expresamente de otro modo. El objeto ilícito sí lo está: el art. 1682 lo sanciona con nulidad absoluta.'),
-   ('Absoluta, pero la acción dura cuatro años, porque la ley habla de rescisión.',
+   ('Absoluta, con el plazo de cuatro años que corresponde a la rescisión.',
     'Incorrecto. Acierta en la especie, pero mezcla las reglas: el cuadrienio es el plazo de la nulidad relativa (art. 1691). La absoluta se sanea en diez años (art. 1683), cualquiera sea la palabra que use la ley.')],
   correcta='A',
-  articulos='1682, 1683, 1691',
+  articulos='1466, 1682, 1683, 1691',
   objetivo='Evaluar si el alumno sabe que la palabra rescisión no define la especie de nulidad, que se determina por la causal.',
-  respaldo=['IV.B.1.4', 'IV.B.1.5', 'IV.B.2.2', 'IV.B.2.6', 'IV.B.3.5']),
+  respaldo=['IV.B.1.4', 'IV.B.1.5', 'IV.B.2.2', 'IV.B.2.6', 'IV.B.3.5', 'II.C.4']),
 
  # T21.03 Diferencias entre nulidad absoluta y relativa (5 exámenes: 1)
  dict(sub='T21.03',
-  caso='Rodrigo le vendió su casa a Elisa porque ella lo engañó con un dolo determinante, que vicia la venta de nulidad relativa. Rodrigo no ha demandado. El fiscal judicial de la Corte de Apelaciones, que integra el ministerio público (el organismo auxiliar de la administración de justicia, no la fiscalía que investiga delitos), se entera del caso y quiere pedir la nulidad en el solo interés de la ley.',
+  caso='Rodrigo le vendió su casa a Elisa porque ella, para convencerlo, le mostró un informe técnico falso según el cual la casa tenía daños estructurales graves; sin ese engaño, Rodrigo no la habría vendido. Rodrigo no ha demandado. El fiscal judicial de la Corte de Apelaciones, que integra el ministerio público (el organismo auxiliar de la administración de justicia, no la fiscalía que investiga delitos), se entera del caso y quiere pedir la nulidad en el solo interés de la ley.',
   enunciado='¿Puede el fiscal judicial pedir la declaración de nulidad?',
   opciones=[
    ('Sí, porque el ministerio público puede pedirla en el interés de la moral o de la ley.',
     'Incorrecto. Esa facultad la da el art. 1683 para la nulidad absoluta. El dolo produce nulidad relativa, y para ella el art. 1684 excluye expresamente al ministerio público en el solo interés de la ley.'),
-   ('Sí, pero solo si el engaño aparece de manifiesto en la escritura de la venta.',
-    'Incorrecto. Que el vicio aparezca de manifiesto es la condición para que el juez declare de oficio la nulidad absoluta. No habilita al ministerio público a pedir la relativa.'),
+   ('Sí, porque las reglas de la nulidad son de orden público y a él le toca velar por ellas.',
+    'Incorrecto. Que las reglas de la nulidad sean de orden público significa que las partes no pueden derogarlas, no que el ministerio público pueda pedir cualquier nulidad. La relativa mira al interés de personas determinadas, y el art. 1684 le prohíbe pedirla en el solo interés de la ley.'),
    ('No, porque el ministerio público solo interviene cuando una de las partes es incapaz.',
     'Incorrecto. La intervención del ministerio público no depende de la capacidad de las partes, sino de la especie de nulidad: puede pedir la absoluta, nunca la relativa en el solo interés de la ley.'),
    ('No, porque en esta especie de nulidad no puede pedirla en el solo interés de la ley.',
@@ -80,11 +80,11 @@ ITEMS = [
   correcta='D',
   articulos='1683, 1684',
   objetivo='Evaluar si el alumno aplica una de las diferencias entre ambas nulidades: el ministerio público puede pedir la absoluta, no la relativa en el solo interés de la ley.',
-  respaldo=['IV.B.1.6', 'IV.B.3.4']),
+  respaldo=['IV.B.1.6', 'IV.B.3.4', 'IV.B.1.1']),
 
  # T21.04 Principios comunes a ambas nulidades (1)
  dict(sub='T21.04',
-  caso='Raimundo le vendió su furgón a Teresa, que lo engañó con un dolo determinante. Al descubrirlo, Raimundo no va a tribunales: le envía a Teresa una carta en que le dice que "el contrato es nulo y no produce efecto alguno", y le exige que le devuelva el furgón.',
+  caso='Raimundo le vendió su furgón a Teresa porque ella le mostró un informe de taller falso según el cual el motor estaba fundido; sin ese engaño, Raimundo no lo habría vendido. Al descubrirlo, Raimundo no va a tribunales: le envía a Teresa una carta en que le dice que "el contrato es nulo y no produce efecto alguno", y le exige que le devuelva el furgón.',
   enunciado='Mientras ningún tribunal se pronuncie, ¿en qué situación está la compraventa?',
   opciones=[
    ('Es nula desde su celebración, porque el dolo la vició desde el primer momento.',
@@ -120,16 +120,16 @@ ITEMS = [
 
  # T21.06 Nulidad absoluta: concepto, causales y fundamento (10 exámenes: 2)
  dict(sub='T21.06',
-  caso='Don Aurelio fue declarado en interdicción por demencia hace dos años. Hace un mes vendió su auto a Ana, que no sabía de la interdicción. Su familia sostiene que firmó en un día en que estaba completamente lúcido.',
+  caso='Don Aurelio fue declarado en interdicción por demencia hace dos años. Hace un mes vendió su auto a Ana, que no sabía de la interdicción. Ana sostiene que ese día don Aurelio estaba completamente lúcido.',
   enunciado='¿Qué sanción afecta a la compraventa?',
   opciones=[
    ('Nulidad absoluta, porque don Aurelio es demente y, por eso, absolutamente incapaz.',
     'CORRECTO. Los dementes son absolutamente incapaces, y el art. 1682 sanciona con nulidad absoluta los actos de los absolutamente incapaces. Como don Aurelio estaba en interdicción, su acto es nulo aunque se alegue que lo celebró en un intervalo lúcido (art. 465).'),
-   ('Nulidad relativa, porque la interdicción se estableció para proteger a don Aurelio.',
-    'Incorrecto. Que la incapacidad busque proteger al incapaz no cambia la sanción que fija la ley: el art. 1682 sanciona con nulidad absoluta los actos de los absolutamente incapaces. La relativa es la de los actos de los relativamente incapaces.'),
+   ('Nulidad relativa, porque al momento de la venta don Aurelio estaba lúcido.',
+    'Incorrecto. Con decreto de interdicción, lo que hace el demente es nulo aunque se alegue que lo hizo en un intervalo lúcido (art. 465): la lucidez no puede probarse para salvar el acto ni para cambiar su sanción, que es la nulidad absoluta de los actos de los absolutamente incapaces (art. 1682).'),
    ('Nulidad relativa, porque la incapacidad mira a la calidad o estado de las partes.',
     'Incorrecto. Aplica la regla general a un caso que el art. 1682 sanciona expresamente de otro modo: la incapacidad absoluta es causal de nulidad absoluta.'),
-   ('Nulidad absoluta, pero solo si se prueba que estaba demente el día de la venta.',
+   ('Nulidad absoluta, que la familia deberá fundar en su demencia el día de la venta.',
     'Incorrecto. Esa prueba se exige cuando no hay interdicción: lo que hace el demente sin interdicción previa vale, a menos que se pruebe que estaba demente al celebrar el acto. Con decreto de interdicción, el acto es nulo aunque se alegue un intervalo lúcido (art. 465).')],
   correcta='A',
   articulos='465, 1682',
@@ -140,7 +140,7 @@ ITEMS = [
   caso='Simón le promete a Eugenio $3.000.000 si este le da una golpiza a un vecino con quien Simón tiene una disputa. Eugenio cumple el encargo, pero Simón no le paga, y Eugenio lo demanda para cobrarle.',
   enunciado='¿Qué sanción afecta a la promesa de Simón?',
   opciones=[
-   ('Nulidad absoluta, pero solo si el vecino llegó a sufrir lesiones con la golpiza.',
+   ('Nulidad absoluta, que nace cuando el vecino sufre las lesiones de la golpiza.',
     'Incorrecto. La ilicitud de la causa existe desde que se hace la promesa. El vicio debe existir al celebrarse el acto, y no depende de lo que ocurra después.'),
    ('Inexistencia, porque un acto con causa ilícita no alcanza a nacer a la vida del derecho.',
     'Incorrecto. La ilicitud de la causa es un vicio de validez, que el art. 1682 sanciona expresamente con nulidad absoluta. Quienes aceptan la inexistencia la reservan para la falta de causa, no para su ilicitud.'),
@@ -226,7 +226,7 @@ ITEMS = [
 
  # T21.10 Nulidad relativa: quiénes pueden alegarla (11 exámenes: 2)
  dict(sub='T21.10',
-  caso='Marcela le vendió su departamento a Esteban, que la engañó con un dolo determinante. Marcela murió sin demandar la rescisión; su único heredero es su hijo Pedro, de 30 años. Esteban, arrepentido de la compra, también quiere que el contrato se deje sin efecto.',
+  caso='Marcela le vendió su departamento a Esteban porque él le mostró un informe municipal falso según el cual el edificio sería demolido; sin ese engaño, Marcela no lo habría vendido. Marcela murió sin demandar la rescisión; su único heredero es su hijo Pedro, de 30 años. Esteban, arrepentido de la compra, también quiere que el contrato se deje sin efecto.',
   enunciado='¿Quién puede alegar la nulidad de la compraventa?',
   opciones=[
    ('Pedro y Esteban, porque ambos tienen interés en que el contrato quede sin efecto.',
@@ -278,7 +278,7 @@ ITEMS = [
   respaldo=['IV.B.3.5']),
 
  dict(sub='T21.11',
-  caso='El 1 de mayo de 2020, Gabriel vendió su parcela, engañado por el comprador con un dolo determinante. Murió el 1 de mayo de 2022 sin haber demandado la rescisión. Su única heredera es su hija Amanda, nacida el 1 de enero de 2015.',
+  caso='El 1 de mayo de 2020, Gabriel vendió su parcela porque el comprador le hizo creer, con un estudio de suelos falso, que el terreno estaba contaminado; sin ese engaño, no la habría vendido. Murió el 1 de mayo de 2022 sin haber demandado la rescisión. Su única heredera es su hija Amanda, nacida el 1 de enero de 2015.',
   enunciado='¿Hasta qué fecha puede pedirse la rescisión de la venta?',
   opciones=[
    ('Hasta el 1 de mayo de 2024, porque la muerte de Gabriel no suspende el plazo.',
@@ -344,6 +344,7 @@ INFORME = dict(
   '<b>Tipo nuevo para ti:</b> estas preguntas no se corrigen por palabras clave. La alumna elige una de cuatro opciones y la app le muestra la explicación de cada una. Lo que conviene mirar es que la correcta sea indiscutible según el manual, y que cada distractor sea un error jurídico real, no un relleno.',
   '<b>Sin adivinar por descarte:</b> en ninguna pregunta la correcta es la única opción con su conclusión. Cuando tres opciones decían lo mismo (por ejemplo, tres "No" y un "Sí"), cambié una por la conclusión correcta con una razón equivocada ("Acierta en..., pero..." en la explicación). Las cuatro opciones tienen extensión pareja, controlada por el script.',
   '<b>Posición de la correcta repartida:</b> 4 en A, 4 en B, 4 en C y 4 en D.',
+  '<b>Cambio del 2026-11-28, antes de tu revisión:</b> al redactar la tanda 2 noté que todas las opciones del tipo "…, pero solo si…" eran incorrectas, y una alumna podía aprender a descartarlas sin saber la materia. Reescribí las cinco de esta tanda (004 D, 006 D, 007 B, 010 D y 011 A) con otra estructura; el contenido de cada error no cambia, salvo 007 B, que ahora confunde la protección del incapaz con un deber del ministerio público.',
   '<b>Dieciséis y no diecisiete:</b> saqué una pregunta sobre una niña de 13 años (menor adulta, no impúber), porque toda su dificultad estaba en las edades del art. 26, que son del tema Capacidad. "Nulidad relativa: causales" queda con 1 en esta tanda; la tanda 2 puede sumar otra.',
   '<b>Fronteras entre temas:</b> no se preguntan los requisitos del error, la fuerza, el dolo ni la lesión, ni la ratificación (tema 21). Donde un caso los usa, el vicio viene dado ("un dolo determinante") y la pregunta es solo sobre la nulidad.',
  ],
