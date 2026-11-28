@@ -84,7 +84,7 @@ ITEMS = [
 
  # T21.04 Principios comunes a ambas nulidades (1)
  dict(sub='T21.04',
-  caso='Raimundo le vendió su furgón a Teresa, que lo engañó con un dolo determinante. Al descubrirlo, Raimundo no va a tribunales: le envía a Teresa una carta en que le dice que "el contrato es nulo y no produce efecto alguno", y le exige que le devuelva el furgón.',
+  caso='Raimundo le vendió su furgón a Teresa porque ella le mostró un informe de taller falso según el cual el motor estaba fundido; sin ese engaño, Raimundo no lo habría vendido. Al descubrirlo, Raimundo no va a tribunales: le envía a Teresa una carta en que le dice que "el contrato es nulo y no produce efecto alguno", y le exige que le devuelva el furgón.',
   enunciado='Mientras ningún tribunal se pronuncie, ¿en qué situación está la compraventa?',
   opciones=[
    ('Es nula desde su celebración, porque el dolo la vició desde el primer momento.',
@@ -226,7 +226,7 @@ ITEMS = [
 
  # T21.10 Nulidad relativa: quiénes pueden alegarla (11 exámenes: 2)
  dict(sub='T21.10',
-  caso='Marcela le vendió su departamento a Esteban, que la engañó con un dolo determinante. Marcela murió sin demandar la rescisión; su único heredero es su hijo Pedro, de 30 años. Esteban, arrepentido de la compra, también quiere que el contrato se deje sin efecto.',
+  caso='Marcela le vendió su departamento a Esteban porque él le mostró un informe municipal falso según el cual el edificio sería demolido; sin ese engaño, Marcela no lo habría vendido. Marcela murió sin demandar la rescisión; su único heredero es su hijo Pedro, de 30 años. Esteban, arrepentido de la compra, también quiere que el contrato se deje sin efecto.',
   enunciado='¿Quién puede alegar la nulidad de la compraventa?',
   opciones=[
    ('Pedro y Esteban, porque ambos tienen interés en que el contrato quede sin efecto.',
@@ -278,7 +278,7 @@ ITEMS = [
   respaldo=['IV.B.3.5']),
 
  dict(sub='T21.11',
-  caso='El 1 de mayo de 2020, Gabriel vendió su parcela, engañado por el comprador con un dolo determinante. Murió el 1 de mayo de 2022 sin haber demandado la rescisión. Su única heredera es su hija Amanda, nacida el 1 de enero de 2015.',
+  caso='El 1 de mayo de 2020, Gabriel vendió su parcela porque el comprador le hizo creer, con un estudio de suelos falso, que el terreno estaba contaminado; sin ese engaño, no la habría vendido. Murió el 1 de mayo de 2022 sin haber demandado la rescisión. Su única heredera es su hija Amanda, nacida el 1 de enero de 2015.',
   enunciado='¿Hasta qué fecha puede pedirse la rescisión de la venta?',
   opciones=[
    ('Hasta el 1 de mayo de 2024, porque la muerte de Gabriel no suspende el plazo.',
